@@ -14,6 +14,6 @@ jobs:
       with:
         server: 156.67.217.3
         username: admin_auto_deploy_github
-        password: @aA417528639
+        password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftp
         port: 21
