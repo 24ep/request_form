@@ -8,13 +8,12 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
-    
+
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: 156.67.217.3
         username: admin_auto_deploy_github
-        password: ${{ secrets.ftp_password }}
+        password: @aA417528639
         protocol: ftp
         port: 21
-     
