@@ -13,7 +13,7 @@ function get_comment_cr($id){
         $query_attach = "SELECT * FROM attachment WHERE ticket_type = 'cr_comment' and ticket_id = ".$row['id']." ORDER BY id ASC" or die("Error:" . mysqli_error());
         $result_attach = mysqli_query($con, $query_attach);
         while($row_attach = mysqli_fetch_array($result_attach)) {
-            $herf = str_replace("../..",'cdsecommercecontent.ga',$row_attach['file_path'].$row_attach['file_name']);
+            $herf = str_replace("../..",'https://dsecommercecontent.ga',$row_attach['file_path'].$row_attach['file_name']);
             if($row_attach['is_image']==1){
                 $list_image .= '<a target= "_blank" href="'.$herf.'"><img src="'.$herf.'"  class="img-thumbnail" alt="'.$row_attach['file_name'].'" style="object-fit:cover;width:180px;height:180px;"></a>';
             }else{
