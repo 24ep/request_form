@@ -15,3 +15,6 @@ jobs:
         server: cdsecommercecontent.ga
         username: admin_auto_deploy_github
         password: ${{ secrets.ftp_password }}
+        protocol: ftps
+        port: 21
+     
