@@ -1,7 +1,7 @@
     <?php
     session_start();
-    if (!$_SESSION["login_csg"]){  //check session
-        Header("Location: login_page.php"); //ssdsdsdsdsdgfgfgsfsdfsdsdsdsdfsdsd
+    if (!$_SESSION["login_csg"]){ 
+        Header("Location: login_page.php");
     }else{
     include('get/get_card_content_request.php'); 
     include_once('get/get_count_status.php');
