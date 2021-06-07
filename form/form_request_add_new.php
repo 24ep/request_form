@@ -112,6 +112,7 @@ session_start();
                           if($select_option==$row[$col]){
                             $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
                           }else{
+                            $value_allow_internal = array("Itemmize - Credit", "Closslising", "Itemmize - Consignment");
                             if(in_array($row[$col],$value_allow_internal)){
                                 if(strpos($_SESSION["department"],"Content")!==false){
                                   $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
