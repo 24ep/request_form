@@ -8,7 +8,7 @@ session_start();
             while($row = mysqli_fetch_array($result)) {
           // split array store
                   if($sorm=="multi"){
-                    if($col=="store" or $col=="itemmize_type" or $col=="product_website" or $col=="tags"){
+                    if($col=="store" or $col=="product_website" or $col=="tags"){
                       $array_store = explode(', ', $select_option);
                       $duplicate_op = false;
                       $loop_in_null = false;
