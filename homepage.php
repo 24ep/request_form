@@ -568,6 +568,7 @@
                             <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
                                 <tr>
                                     <th scope="col">Ticket ID</th>
+                                    <th scope="col">Department</th>
                                     <!-- <th scope="col">Create date</th> -->
                                     <th scope="col">Brand</th>
                                     <th scope="col">SKU</th>
