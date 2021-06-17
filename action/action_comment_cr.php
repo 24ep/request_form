@@ -118,7 +118,7 @@ if($comment<>'' or $file_size <>0){
                   $key = $row["token_line"];
               }
               if($key<>"" and $key<>null){
-                sent_line_noti("\nNS-".$id." [ ".$brand." ".$sku." SKUs ]\n----------------------------\n".$_SESSION["nickname"]." has comment : \n".$comment,$key);
+                sent_line_noti("\nCR-".$id." [ ".$brand." ".$sku." SKUs ]\n----------------------------\n".$_SESSION["nickname"]." has comment : \n".$comment,$key);
               }
          }
       }
