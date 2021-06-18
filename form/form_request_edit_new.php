@@ -20,13 +20,14 @@ function return_input_box($att_name,$site_element,$current_value,$code_element){
         type="'.$site_element.'"
         style="border: 0px"
         value="'.$current_value.'"
+        '.$enable_edit.'
       />
     </div>
   </li>
   ';
   return $element;
 }
-function return_s_select_box($att_name,$site_element,$current_value,$code_element,$attr_id){
+function return_s_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit){
   $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM content_service_gate.attribute_option
     WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
@@ -48,6 +49,7 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
         id="'.$code_element.'"
         name="'.$code_element.'"
         style="border: 0px"
+        '.$enable_edit.'
       >
       '.$option_element.'
       </select>
@@ -57,7 +59,7 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
   unset($option_element);
   return $element;
 }
-function return_m_select_box($att_name,$site_element,$current_value,$code_element,$attr_id){
+function return_m_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit){
   $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM content_service_gate.attribute_option
     WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
@@ -80,6 +82,7 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
         id="'.$code_element.'[]"
         name="'.$code_element.'[]"
         style="border: 0px"
+        '.$enable_edit.'
       >
       '.$option_element.'
       </select>
@@ -89,7 +92,7 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
   unset($option_element);
   return $element;
 }
-function return_textarea_box($att_name,$site_element,$current_value,$code_element){
+function return_textarea_box($att_name,$site_element,$current_value,$code_element,$enable_edit){
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
     <div class="col-4 fw-bold">'.$att_name.'</div>
@@ -99,7 +102,8 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
         id="'.$code_element.'"
         name="'.$code_element.'"
         style="border: 0px"
-        row="5"
+        rows="5"
+        '.$enable_edit.'
       >'.$current_value.'
       </textarea>
     </div>
@@ -182,25 +186,26 @@ $query = "SELECT * FROM content_service_gate.attribute_entity
 $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
     //--
-    // if($row["attribute_code"]=="brand"){$current_value==$brand;}
-    // elseif($row["attribute_code"]=="department"){$current_value==$department;}
-    // elseif($row["attribute_code"]=="sku"){$current_value==$sku;}
-    // elseif($row["attribute_code"]=="product"){$current_value==$department;}
+    if(strpos($_SESSION["department"],"Content")!==false){
+        $allow_edit == "";
+    }else{
+        $allow_edit == "disabled";
+    }
     //---
     if($row["site_element"]=="number"){
-        $element .= return_input_box($row["attribute_label"],"number",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"]);
+        $element .= return_input_box($row["attribute_label"],"number",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit);
     }elseif($row["site_element"]=="text"){
-      $element .= return_input_box($row["attribute_label"],"text",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"]);
+      $element .= return_input_box($row["attribute_label"],"text",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit);
     }elseif($row["site_element"]=="datetime"){
-      $element .= return_input_box($row["attribute_label"],"datetime-local",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"]);
+      $element .= return_input_box($row["attribute_label"],"datetime-local",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit);
     }elseif($row["site_element"]=="date"){
-      $element .= return_input_box($row["attribute_label"],"date",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"]);
+      $element .= return_input_box($row["attribute_label"],"date",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit);
     }elseif($row["site_element"]=="textarea"){
-      $element .= return_textarea_box($row["attribute_label"],"textarea",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"]);
+      $element .= return_textarea_box($row["attribute_label"],"textarea",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit);
     }elseif($row["site_element"]=="single_select"){
-      $element .= return_s_select_box($row["attribute_label"],"single_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"]);
+      $element .= return_s_select_box($row["attribute_label"],"single_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"],$allow_edit);
     }elseif($row["site_element"]=="multi_select"){
-      $element .= return_m_select_box($row["attribute_label"],"multi_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"]);
+      $element .= return_m_select_box($row["attribute_label"],"multi_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"],$allow_edit);
     }
   }
 
