@@ -76,7 +76,7 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
     <div class="col-8">
       <select
         multiple="multiple"
-        class="multiple-select_ens"
+        class="form-select"
         id="'.$code_element.'[]"
         name="'.$code_element.'[]"
         style="border: 0px"
