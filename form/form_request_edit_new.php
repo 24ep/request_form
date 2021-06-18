@@ -8,7 +8,7 @@
 <?php
 
 $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
-function return_input_box($att_name,$site_element,$current_value,$code_element){
+function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit){
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
     <div class="col-4 fw-bold">'.$att_name.'</div>
@@ -187,9 +187,9 @@ $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
     //--
     if(strpos($_SESSION["department"],"Content")!==false){
-        $allow_edit == "";
+        $allow_edit = "";
     }else{
-        $allow_edit == "disabled";
+        $allow_edit = "disabled";
     }
     //---
     if($row["site_element"]=="number"){
