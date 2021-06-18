@@ -33,7 +33,7 @@ function return_select_box($att_name,$site_element,$current_value,$code_element,
   
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
-    <div class="col-4 fw-bold">'.$att_name.'</div>
+    <div class="col-4 fw-bold">'.$att_name." - ".$attr_id.'</div>
     <div class="col-8">
       <select
         class="form-control form-control-sm"
