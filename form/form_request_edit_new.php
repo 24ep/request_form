@@ -1,3 +1,6 @@
+<?php if($_SESSION["username"]<>"poojaroonwit"){
+
+?>
 <table class="table caption-top" >
   <thead>
     <tr>
@@ -64,3 +67,84 @@
     </tr>
   </tbody>
 </table>
+
+
+<?php }else{
+$con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
+$query = "SELECT * FROM content_service_gate.attribute_id 
+          WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY id ASC" or die("Error:" . mysqli_error());
+$result = mysqli_query($con, $query);
+  while($row = mysqli_fetch_array($result)) {
+    if($row["site_element"]=="number"){
+        echo return_input_box($row["attribute_label"],"number",$current_value,"ns_edit_".$row["attribute_code"]);
+    }elseif($row["site_element"]=="text"){
+        echo return_input_box($row["attribute_label"],"text",$current_value,"ns_edit_".$row["attribute_code"]);
+    }elseif($row["site_element"]=="datetime"){
+        echo return_input_box($row["attribute_label"],"datetime-local",$current_value,"ns_edit_".$row["attribute_code"]);
+    }elseif($row["site_element"]=="date"){
+        echo return_input_box($row["attribute_label"],"date",$current_value,"ns_edit_".$row["attribute_code"]);
+    }elseif($row["site_element"]=="textarea"){
+        echo return_textarea_box($row["attribute_label"],"textarea",$current_value,"ns_edit_".$row["attribute_code"]);
+    }elseif($row["site_element"]=="single_select"){
+        echo return_select_box($row["attribute_label"],"",$current_value,"ns_edit_".$row["attribute_code"]);
+    }elseif($row["site_element"]=="multi_select"){
+        echo return_select_box($row["attribute_label"],"",$current_value,"ns_edit_".$row["attribute_code"]);
+    }
+  }
+function return_input_box($att_name,$site_element,$current_value,$code_element){
+    $element = '
+    <ul class="list-group">
+    <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
+      <div class="col-6 fw-bold">'.$att_name.'</div>
+      <div class="col-6">
+        <input
+          class="form-control form-control-sm"
+          id="'.$code_element.'"
+          name="'.$code_element.'"
+          type="'.$site_element.'"
+          style="border: 0px"
+          value=""
+        />
+      </div>
+    </li>
+    ';
+    return $element;
+}
+function return_select_box($att_name,$site_element,$current_value,$code_element){
+    $element = '
+    <ul class="list-group">
+    <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
+      <div class="col-6 fw-bold">'.$att_name.'</div>
+      <div class="col-6">
+        <select
+          class="form-control form-control-sm"
+          id="'.$code_element.'"
+          name="'.$code_element.'"
+          type="'.$site_element.'"
+          style="border: 0px"
+        >
+        </select>
+      </div>
+    </li>
+    ';
+    return $element;
+}
+function return_textarea_box($att_name,$site_element,$current_value,$code_element){
+    $element = '
+    <ul class="list-group">
+    <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
+      <div class="col-6 fw-bold">'.$att_name.'</div>
+      <div class="col-6">
+        <textarea
+          class="form-control form-control-sm"
+          id="'.$code_element.'"
+          name="'.$code_element.'"
+          style="border: 0px"
+        >
+        </textarea>
+      </div>
+    </li>
+    ';
+    return $element;
+}
+}

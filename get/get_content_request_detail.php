@@ -2,10 +2,11 @@
 .multiple-select_cr_edit .ms-choice {
     border: 0px;
 }
-label#label_file{
-  color: #adb5bd;
+
+label#label_file {
+    color: #adb5bd;
     font-size: 12px;
-    font-weight: 600!important;
+    font-weight: 600 !important;
 }
 </style>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -232,7 +233,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             </div>';
             echo '
             <div class="row">
-            <div class="col" style=" padding-left: 25px;">'.$case_name."Tell : ".$office_tell.'</div>
+              <div class="col" style=" padding-left: 25px;">'.$case_name."Tell : ".$office_tell.'</div>
             </div>
             <hr>
             <ul class="list-group">
@@ -303,23 +304,24 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
 var actualBtn = document.getElementById('actual-btn');
 var fileChosen = document.getElementById('file-chosen');
 var fileChosen_bt = document.getElementById('label_file');
-actualBtn.addEventListener('change', function(){
-  // fileChosen.textContent = this.files[0].name
-  count_file = this.files.length;
-  var i;
-  var file_name;
-  for (i = 0; i < count_file; i++) {
-    if(i==0){
-      file_name = this.files[i].name ;
-    }else{
-      file_name +=  " , " + this.files[i].name;
+actualBtn.addEventListener('change', function() {
+    // fileChosen.textContent = this.files[0].name
+    count_file = this.files.length;
+    var i;
+    var file_name;
+    for (i = 0; i < count_file; i++) {
+        if (i == 0) {
+            file_name = this.files[i].name;
+        } else {
+            file_name += " , " + this.files[i].name;
+        }
     }
-  }
-  if(file_name=="undefined"){
-    fileChosen_bt.textContent = "";
-  }
-  fileChosen_bt.textContent = ' Selected file : ' + file_name ;
+    if (file_name == "undefined") {
+        fileChosen_bt.textContent = "";
+    }
+    fileChosen_bt.textContent = ' Selected file : ' + file_name;
 })
+
 function comment_cr_id(id) {
     var comment = document.getElementById("comment_input_cr").value;
     document.getElementById('comment_input_cr').value = ''; //clear value
@@ -335,35 +337,37 @@ function comment_cr_id(id) {
             });
     }
 }
+
 function comment_cr_id_with_file(id) {
-var form_data = new FormData(); 
-var comment = document.getElementById("comment_input_cr").value;
-document.getElementById('comment_input_cr').value = ''; //clear value
-// var files = document.getElementById('actual-btn').files;
-var ins = document.getElementById('actual-btn').files.length;
-			for (var x = 0; x < ins; x++) {
-				form_data.append("files[]", document.getElementById('actual-btn').files[x]);
-			}
-// form_data.append("files", files)              // Appending parameter named file with properties of file_field to form_data
-form_data.append("comment", comment)                 // Adding extra parameters to form_data
-form_data.append("id", id)     
-$.ajax({
-                url: "action/action_comment_cr.php",
-                dataType: 'text',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: form_data,                         // Setting the data attribute of ajax with file_data
-                type: 'post',
-                success:function(data) {
-                $('#call_ticket_comment_cr').html(data);
-                document.getElementById('comment_box_cr').scrollBy(0, document.getElementById(
-                    "call_ticket_comment_cr").offsetHeight);
-                    document.getElementById('actual-btn').value = ''; //clear value
-                    fileChosen_bt.textContent = ' + Attach file or image';
-            }
-       });
+    var form_data = new FormData();
+    var comment = document.getElementById("comment_input_cr").value;
+    document.getElementById('comment_input_cr').value = ''; //clear value
+    // var files = document.getElementById('actual-btn').files;
+    var ins = document.getElementById('actual-btn').files.length;
+    for (var x = 0; x < ins; x++) {
+        form_data.append("files[]", document.getElementById('actual-btn').files[x]);
+    }
+    // form_data.append("files", files)              // Appending parameter named file with properties of file_field to form_data
+    form_data.append("comment", comment) // Adding extra parameters to form_data
+    form_data.append("id", id)
+    $.ajax({
+        url: "action/action_comment_cr.php",
+        dataType: 'text',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data, // Setting the data attribute of ajax with file_data
+        type: 'post',
+        success: function(data) {
+            $('#call_ticket_comment_cr').html(data);
+            document.getElementById('comment_box_cr').scrollBy(0, document.getElementById(
+                "call_ticket_comment_cr").offsetHeight);
+            document.getElementById('actual-btn').value = ''; //clear value
+            fileChosen_bt.textContent = ' + Attach file or image';
+        }
+    });
 }
+
 function update_cr_detail(id, id_name) {
     var id_name = id_name;
     var value_change = document.getElementById(id_name).value;
@@ -384,6 +388,7 @@ function update_cr_detail(id, id_name) {
 var elements = document.getElementsByClassName('window-full');
 var windowheight = window.innerHeight + "px";
 fullheight(elements);
+
 function fullheight(elements) {
     for (let el in elements) {
         if (elements.hasOwnProperty(el)) {
