@@ -25,7 +25,7 @@ function get_comment($id){
     $comment = str_replace("#need_more_data ","<span style='color:#842029;'><strong><ion-icon name='alert-circle-outline'></ion-icon> Need more data</strong></span><hr style='margin:10px 0px 10px 0px'>",($comment));
     $comment = str_replace("#need_more_image","<span style='color:#842029;'><strong><ion-icon name='alert-circle-outline'></ion-icon> Need more image</strong></span><hr style='margin:10px 0px 10px 0px'>",($comment));
     $comment = str_replace("#need_more_data","<span style='color:#842029;'><strong><ion-icon name='alert-circle-outline'></ion-icon> Need more data</strong></span><hr style='margin:10px 0px 10px 0px'>",($comment));
-    $comment = str_replace("#traffic_need_more","<span style='color:#842029;'><strong><ion-icon name='alert-circle-outline'></ion-icon> NTraffic need more</strong></span><hr style='margin:10px 0px 10px 0px'>",($comment));
+    $comment = str_replace("#traffic_need_more","<span style='color:#842029;'><strong><ion-icon name='alert-circle-outline'></ion-icon> Traffic need more</strong></span><hr style='margin:10px 0px 10px 0px'>",($comment));
     $query_account = "SELECT * FROM account where username = '".$row["comment_by"]."' ORDER BY id DESC " or die("Error:" . mysqli_error());
     $result_account = mysqli_query($con, $query_account);
     while($row_account = mysqli_fetch_array($result_account)) {
@@ -57,7 +57,7 @@ function get_comment($id){
                 echo "<small class='form-text' style='margin-right: 10px;text-align: end;'>".$comment_by." - ".$comment_by_nickname." <br> ". $comment_by_dp."<hr style='margin:2px'>".date('d/m/y h:i A',strtotime($row['comment_date']))."</small>";
             echo '</div>';
         }else{
-            if(strpos($row['comment'],"#need_more")!==false){
+            if(strpos($row['comment'],"need_more")!==false){
                 $background_cm = '';
                 $sd = 'style="background: #f8d7da;color:#842029!important;"';
                 $last_comment = "need_more";
@@ -96,9 +96,6 @@ function get_bt_comment($id){
             $last_comment_by = $row['comment_by'];
         }
     }
-    // #need_more_image = stamp need more image and time\n
-    // #need_more_data = stamp need more data and time\n
-    // #traffic_need_more = traffic reply to follow up team
     if($last_comment == "need_more" and $_SESSION['username']<>$last_comment_by){
         $send_type = "'send_back_data'";
         $bt_comment_type ='
