@@ -18,13 +18,12 @@ function return_input_box($att_name,$site_element,$current_value,$code_element){
   ';
   return $element;
 }
-function return_select_box($att_name,$site_element,$current_value,$code_element,$attr_id){
+function return_s_select_box($att_name,$site_element,$current_value,$code_element,$attr_id){
   $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM content_service_gate.attribute_option
     WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
     $result_op = mysqli_query($con, $query_op);
     while($option = mysqli_fetch_array($result_op)) {
-      echo $option["attribute_option"];
     if($option["attribute_option"]==$current_value){
         $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
       }else{
@@ -37,9 +36,41 @@ function return_select_box($att_name,$site_element,$current_value,$code_element,
     <div class="col-4 fw-bold">'.$att_name.'</div>
     <div class="col-8">
       <select
-        class="form-control form-control-sm"
+        class="form-select form-select-sm"
         id="'.$code_element.'"
         name="'.$code_element.'"
+        style="border: 0px"
+      >
+      '.$option_element.'
+      </select>
+    </div>
+  </li>
+  ';
+  unset($option_element);
+  return $element;
+}
+function return_m_select_box($att_name,$site_element,$current_value,$code_element,$attr_id){
+  $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
+    $query_op = "SELECT * FROM content_service_gate.attribute_option
+    WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
+    $result_op = mysqli_query($con, $query_op);
+    while($option = mysqli_fetch_array($result_op)) {
+    if($option["attribute_option"]==$current_value){
+        $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+      }else{
+        $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+      }
+    }
+  
+  $element = '
+  <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
+    <div class="col-4 fw-bold">'.$att_name.'</div>
+    <div class="col-8">
+      <select
+        multiple="multiple"
+        class="form-select form-select-sm multiple-select"
+        id="'.$code_element.'[]"
+        name="'.$code_element.'[]"
         style="border: 0px"
       >
       '.$option_element.'
@@ -60,7 +91,7 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
         id="'.$code_element.'"
         name="'.$code_element.'"
         style="border: 0px"
-        row="4"
+        row="5"
       >'.$current_value.'
       </textarea>
     </div>
@@ -159,9 +190,9 @@ $result = mysqli_query($con, $query);
     }elseif($row["site_element"]=="textarea"){
       $element .= return_textarea_box($row["attribute_label"],"textarea",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"]);
     }elseif($row["site_element"]=="single_select"){
-      $element .= return_select_box($row["attribute_label"],"single_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"]);
+      $element .= return_s_select_box($row["attribute_label"],"single_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"]);
     }elseif($row["site_element"]=="multi_select"){
-      $element .= return_select_box($row["attribute_label"],"multi_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"]);
+      $element .= return_m_select_box($row["attribute_label"],"multi_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"]);
     }
   }
 
