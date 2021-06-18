@@ -1,3 +1,10 @@
+<style>
+.multiple-select_ens .ms-choice {
+    border: 0px;
+    width:100%!important;
+}
+
+</style>
 <?php
 
 $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
@@ -88,7 +95,7 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
     <div class="col-4 fw-bold">'.$att_name.'</div>
     <div class="col-8">
       <textarea
-        class="form-control form-control-sm"
+        class="form-control"
         id="'.$code_element.'"
         name="'.$code_element.'"
         style="border: 0px"
