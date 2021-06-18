@@ -74,6 +74,7 @@ $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password
 $query = "SELECT * FROM content_service_gate.attribute_entity
           WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY attribute_id ASC" or die("Error:" . mysqli_error());
 $result = mysqli_query($con, $query);
+echo '<ul class="list-group">';
   while($row = mysqli_fetch_array($result)) {
     if($row["site_element"]=="number"){
         echo return_input_box($row["attribute_label"],"number",$current_value,"ns_edit_".$row["attribute_code"]);
@@ -91,9 +92,11 @@ $result = mysqli_query($con, $query);
         echo return_select_box($row["attribute_label"],"",$current_value,"ns_edit_".$row["attribute_code"]);
     }
   }
+  
+  echo '</ul>';
 function return_input_box($att_name,$site_element,$current_value,$code_element){
     $element = '
-    <ul class="list-group">
+
     <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
       <div class="col-6 fw-bold">'.$att_name.'</div>
       <div class="col-6">
@@ -107,12 +110,13 @@ function return_input_box($att_name,$site_element,$current_value,$code_element){
         />
       </div>
     </li>
+ 
     ';
     return $element;
 }
 function return_select_box($att_name,$site_element,$current_value,$code_element){
     $element = '
-    <ul class="list-group">
+
     <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
       <div class="col-6 fw-bold">'.$att_name.'</div>
       <div class="col-6">
@@ -126,12 +130,13 @@ function return_select_box($att_name,$site_element,$current_value,$code_element)
         </select>
       </div>
     </li>
+    
     ';
     return $element;
 }
 function return_textarea_box($att_name,$site_element,$current_value,$code_element){
     $element = '
-    <ul class="list-group">
+ 
     <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
       <div class="col-6 fw-bold">'.$att_name.'</div>
       <div class="col-6">
