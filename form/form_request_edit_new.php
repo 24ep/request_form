@@ -20,11 +20,11 @@ function return_input_box($att_name,$site_element,$current_value,$code_element){
 }
 function return_select_box($att_name,$site_element,$current_value,$code_element,$attr_id){
   
-  if($code_element=="multi_select"){
+  if($site_element=="multi_select"){
 
-  }elseif($code_element=="single_select"){
+  }elseif($site_element=="single_select"){
     $query_op = "SELECT * FROM content_service_gate.attribute_option
-    WHERE attribute_id = ".$attr_id." ORDER BY option_id ASC" or die("Error:" . mysqli_error());
+    WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
     $result_op = mysqli_query($con, $query_op);
     while($option = mysqli_fetch_array($result_op)) {
     if($option["attribute_option"]==$current_value){
@@ -160,11 +160,12 @@ $result = mysqli_query($con, $query);
     }elseif($row["site_element"]=="textarea"){
       $element .= return_textarea_box($row["attribute_label"],"textarea",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"]);
     }elseif($row["site_element"]=="single_select"){
-      $element .= return_select_box($row["attribute_label"],"",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"]);
+      $element .= return_select_box($row["attribute_label"],"single_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"]);
     }elseif($row["site_element"]=="multi_select"){
-      $element .= return_select_box($row["attribute_label"],"",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"]);
+      $element .= return_select_box($row["attribute_label"],"multi_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"]);
     }
   }
+  
   echo '<ul class="list-group">';
   echo $element;
   echo '</ul>';
