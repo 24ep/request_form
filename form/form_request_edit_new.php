@@ -11,7 +11,7 @@ function return_input_box($att_name,$site_element,$current_value,$code_element){
         name="'.$code_element.'"
         type="'.$site_element.'"
         style="border: 0px"
-        value=""
+        value="'.$current_value.'"
       />
     </div>
   </li>
@@ -138,8 +138,20 @@ $query = "SELECT * FROM content_service_gate.attribute_entity
 $result = mysqli_query($con, $query);
 
   while($row = mysqli_fetch_array($result)) {
+    //--
+    // if($row["attribute_code"]=="brand"){$current_value==$brand;}
+    // elseif($row["attribute_code"]=="department"){$current_value==$department;}
+    // elseif($row["attribute_code"]=="sku"){$current_value==$sku;}
+    // elseif($row["attribute_code"]=="product"){$current_value==$department;}
+
+    
+
+
+
+
+    //---
     if($row["site_element"]=="number"){
-        $element .= return_input_box($row["attribute_label"],"number",$current_value,"ns_edit_".$row["attribute_code"]);
+        $element .= return_input_box($row["attribute_label"],"number",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"]);
     }elseif($row["site_element"]=="text"){
       $element .= return_input_box($row["attribute_label"],"text",$current_value,"ns_edit_".$row["attribute_code"]);
     }elseif($row["site_element"]=="datetime"){
