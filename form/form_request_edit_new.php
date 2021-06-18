@@ -45,6 +45,7 @@ function return_select_box($att_name,$site_element,$current_value,$code_element,
         type="'.$site_element.'"
         style="border: 0px"
       >
+      '.$option_element.'
       </select>
     </div>
   </li>
