@@ -1,4 +1,5 @@
 <?php
+
 $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
 function return_input_box($att_name,$site_element,$current_value,$code_element){
   $element = '
@@ -55,7 +56,7 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
     WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
     $result_op = mysqli_query($con, $query_op);
     while($option = mysqli_fetch_array($result_op)) {
-    if(strpos($current_value ,$option["attribute_option"])===true){
+    if(strpos($current_value ,$option["attribute_option"])!==false){
         $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
       }else{
         $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
@@ -68,7 +69,7 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
     <div class="col-8">
       <select
         multiple="multiple"
-        class="multiple-select"
+        class="multiple-select_ens"
         id="'.$code_element.'[]"
         name="'.$code_element.'[]"
         style="border: 0px"
@@ -200,3 +201,8 @@ $result = mysqli_query($con, $query);
   echo $element;
   echo '</ul>';
 }?>
+<script>
+    $(function () {
+        $(".multiple-select_ens").multipleSelect()
+    });
+</script>
