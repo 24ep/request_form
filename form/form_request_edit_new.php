@@ -152,4 +152,4 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
     ';
     return $element;
 }
-}
+}?>
