@@ -3,8 +3,8 @@ $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password
 function return_input_box($att_name,$site_element,$current_value,$code_element){
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
-    <div class="col-5 fw-bold">'.$att_name.'</div>
-    <div class="col-7">
+    <div class="col-4 fw-bold">'.$att_name.'</div>
+    <div class="col-8">
       <input
         class="form-control form-control-sm"
         id="'.$code_element.'"
@@ -36,13 +36,12 @@ function return_select_box($att_name,$site_element,$current_value,$code_element,
   }
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
-    <div class="col-5 fw-bold">'.$att_name.'</div>
-    <div class="col-7">
+    <div class="col-4 fw-bold">'.$att_name.'</div>
+    <div class="col-8">
       <select
         class="form-control form-control-sm"
         id="'.$code_element.'"
         name="'.$code_element.'"
-        type="'.$site_element.'"
         style="border: 0px"
       >
       '.$option_element.'
@@ -50,18 +49,20 @@ function return_select_box($att_name,$site_element,$current_value,$code_element,
     </div>
   </li>
   ';
+  unset($option_element);
   return $element;
 }
 function return_textarea_box($att_name,$site_element,$current_value,$code_element){
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
-    <div class="col-5 fw-bold">'.$att_name.'</div>
-    <div class="col-7">
+    <div class="col-4 fw-bold">'.$att_name.'</div>
+    <div class="col-8">
       <textarea
         class="form-control form-control-sm"
         id="'.$code_element.'"
         name="'.$code_element.'"
         style="border: 0px"
+        row="3"
       >'.$current_value.'
       </textarea>
     </div>
@@ -165,7 +166,7 @@ $result = mysqli_query($con, $query);
       $element .= return_select_box($row["attribute_label"],"multi_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"]);
     }
   }
-  
+
   echo '<ul class="list-group">';
   echo $element;
   echo '</ul>';
