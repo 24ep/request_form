@@ -1,4 +1,66 @@
-<?php if($_SESSION["username"]<>"poojaroonwit"){
+<?php
+function return_input_box($att_name,$site_element,$current_value,$code_element){
+  $element = '
+
+  <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
+    <div class="col-6 fw-bold">'.$att_name.'</div>
+    <div class="col-6">
+      <input
+        class="form-control form-control-sm"
+        id="'.$code_element.'"
+        name="'.$code_element.'"
+        type="'.$site_element.'"
+        style="border: 0px"
+        value=""
+      />
+    </div>
+  </li>
+
+  ';
+  return $element;
+}
+function return_select_box($att_name,$site_element,$current_value,$code_element){
+  $element = '
+
+  <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
+    <div class="col-6 fw-bold">'.$att_name.'</div>
+    <div class="col-6">
+      <select
+        class="form-control form-control-sm"
+        id="'.$code_element.'"
+        name="'.$code_element.'"
+        type="'.$site_element.'"
+        style="border: 0px"
+      >
+      </select>
+    </div>
+  </li>
+  
+  ';
+  return $element;
+}
+function return_textarea_box($att_name,$site_element,$current_value,$code_element){
+  $element = '
+
+  <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
+    <div class="col-6 fw-bold">'.$att_name.'</div>
+    <div class="col-6">
+      <textarea
+        class="form-control form-control-sm"
+        id="'.$code_element.'"
+        name="'.$code_element.'"
+        style="border: 0px"
+      >
+      </textarea>
+    </div>
+  </li>
+  ';
+  return $element;
+}
+
+
+
+if($_SESSION["username"]<>"poojaroonwit"){
 
 ?>
 <table class="table caption-top" >
@@ -94,62 +156,5 @@ echo '<ul class="list-group">';
   }
   
   echo '</ul>';
-function return_input_box($att_name,$site_element,$current_value,$code_element){
-    $element = '
 
-    <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
-      <div class="col-6 fw-bold">'.$att_name.'</div>
-      <div class="col-6">
-        <input
-          class="form-control form-control-sm"
-          id="'.$code_element.'"
-          name="'.$code_element.'"
-          type="'.$site_element.'"
-          style="border: 0px"
-          value=""
-        />
-      </div>
-    </li>
- 
-    ';
-    return $element;
-}
-function return_select_box($att_name,$site_element,$current_value,$code_element){
-    $element = '
-
-    <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
-      <div class="col-6 fw-bold">'.$att_name.'</div>
-      <div class="col-6">
-        <select
-          class="form-control form-control-sm"
-          id="'.$code_element.'"
-          name="'.$code_element.'"
-          type="'.$site_element.'"
-          style="border: 0px"
-        >
-        </select>
-      </div>
-    </li>
-    
-    ';
-    return $element;
-}
-function return_textarea_box($att_name,$site_element,$current_value,$code_element){
-    $element = '
- 
-    <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
-      <div class="col-6 fw-bold">'.$att_name.'</div>
-      <div class="col-6">
-        <textarea
-          class="form-control form-control-sm"
-          id="'.$code_element.'"
-          name="'.$code_element.'"
-          style="border: 0px"
-        >
-        </textarea>
-      </div>
-    </li>
-    ';
-    return $element;
-}
 }?>
