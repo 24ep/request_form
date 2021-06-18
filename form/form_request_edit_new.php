@@ -136,25 +136,26 @@ $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password
 $query = "SELECT * FROM content_service_gate.attribute_entity
           WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY attribute_id ASC" or die("Error:" . mysqli_error());
 $result = mysqli_query($con, $query);
-echo '<ul class="list-group">';
-  while($row = mysqli_fetch_array($result)) {
-    if($row["site_element"]=="number"){
-        echo return_input_box($row["attribute_label"],"number",$current_value,"ns_edit_".$row["attribute_code"]);
-    }elseif($row["site_element"]=="text"){
-        echo return_input_box($row["attribute_label"],"text",$current_value,"ns_edit_".$row["attribute_code"]);
-    }elseif($row["site_element"]=="datetime"){
-        echo return_input_box($row["attribute_label"],"datetime-local",$current_value,"ns_edit_".$row["attribute_code"]);
-    }elseif($row["site_element"]=="date"){
-        echo return_input_box($row["attribute_label"],"date",$current_value,"ns_edit_".$row["attribute_code"]);
-    }elseif($row["site_element"]=="textarea"){
-        echo return_textarea_box($row["attribute_label"],"textarea",$current_value,"ns_edit_".$row["attribute_code"]);
-    }elseif($row["site_element"]=="single_select"){
-        echo return_select_box($row["attribute_label"],"",$current_value,"ns_edit_".$row["attribute_code"]);
-    }elseif($row["site_element"]=="multi_select"){
-        echo return_select_box($row["attribute_label"],"",$current_value,"ns_edit_".$row["attribute_code"]);
-    }
-  }
+echo 111;
+// echo '<ul class="list-group">';
+//   while($row = mysqli_fetch_array($result)) {
+//     if($row["site_element"]=="number"){
+//         echo return_input_box($row["attribute_label"],"number",$current_value,"ns_edit_".$row["attribute_code"]);
+//     }elseif($row["site_element"]=="text"){
+//         echo return_input_box($row["attribute_label"],"text",$current_value,"ns_edit_".$row["attribute_code"]);
+//     }elseif($row["site_element"]=="datetime"){
+//         echo return_input_box($row["attribute_label"],"datetime-local",$current_value,"ns_edit_".$row["attribute_code"]);
+//     }elseif($row["site_element"]=="date"){
+//         echo return_input_box($row["attribute_label"],"date",$current_value,"ns_edit_".$row["attribute_code"]);
+//     }elseif($row["site_element"]=="textarea"){
+//         echo return_textarea_box($row["attribute_label"],"textarea",$current_value,"ns_edit_".$row["attribute_code"]);
+//     }elseif($row["site_element"]=="single_select"){
+//         echo return_select_box($row["attribute_label"],"",$current_value,"ns_edit_".$row["attribute_code"]);
+//     }elseif($row["site_element"]=="multi_select"){
+//         echo return_select_box($row["attribute_label"],"",$current_value,"ns_edit_".$row["attribute_code"]);
+//     }
+//   }
   
-  echo '</ul>';
+//   echo '</ul>';
 
 }?>
