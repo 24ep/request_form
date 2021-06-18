@@ -1,12 +1,12 @@
 <style>
-.ms-parent,.multiple-select_ens,.ms-choice {
+.ms-parent,
+.multiple-select_ens,
+.ms-choice {
     border: 0px;
-    width:100%!important;
+    width: 100% !important;
 }
-
 </style>
 <?php
-
 $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
 function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit){
   $element = '
@@ -39,7 +39,6 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
         $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
       }
     }
-  
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
     <div class="col-4 fw-bold">'.$att_name.'</div>
@@ -71,7 +70,6 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
         $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
       }
     }
-  
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
     <div class="col-4 fw-bold">'.$att_name.'</div>
@@ -111,83 +109,13 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
   ';
   return $element;
 }
-if($_SESSION["username"]<>"poojaroonwit"){
-?>
-<table class="table caption-top">
-    <thead>
-        <tr>
-            <th scope="col">Topic</th>
-            <th scope="col">Value</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">Department</th>
-            <td><?php echo $department;?></td>
-        </tr>
-        <tr>
-            <th scope="row">Brand</th>
-            <td><?php echo $brand;?></td>
-        </tr>
-        <tr>
-            <th scope="row">SKU</th>
-            <td><?php echo $sku;?></td>
-        </tr>
-        <tr>
-            <th scope="row">Production type</th>
-            <td><?php echo $production_type;?></td>
-        </tr>
-        <tr>
-            <th scope="row">Business type</th>
-            <td><?php echo $business_type;?></td>
-        </tr>
-        <tr>
-            <th scope="row">Project type</th>
-            <td><?php echo $project_type;?></td>
-        </tr>
-        <tr>
-            <th scope="row">Launch date</th>
-            <td><?php echo $launch_date;?></td>
-        </tr>
-        <tr>
-            <th scope="row">Store</th>
-            <td><?php echo $stock_source;?></td>
-        </tr>
-        <tr>
-            <th scope="row">Business unit</th>
-            <td><?php echo $bu;?></td>
-        </tr>
-        <tr>
-            <th scope="row">Online chanel </th>
-            <td><?php echo $online_channel;?></td>
-        </tr>
-        <tr>
-            <th scope="row">Contact Buyer </th>
-            <td><?php echo $contact_buyer;?></td>
-        </tr>
-        <tr>
-            <th scope="row">Contact Vender</th>
-            <td><?php echo htmlspecialchars($contact_vender, ENT_QUOTES); ?></td>
-        </tr>
-        <tr>
-            <th scope="row">Link for information</th>
-            <td><?php echo $link_info;?></td>
-        </tr>
-        <tr>
-            <th scope="row">Remark</th>
-            <td><?php echo $remark;?></td>
-        </tr>
-    </tbody>
-</table>
-<?php }else{
-
 $query = "SELECT * FROM content_service_gate.attribute_entity
           WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY attribute_id ASC" or die("Error:" . mysqli_error());
 $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
     //--
     if(strpos($_SESSION["department"],"Content")!==false){
-        $allow_edit = "";
+        $allow_edit = "disabled";
     }else{
         $allow_edit = "disabled";
     }
@@ -208,13 +136,12 @@ $result = mysqli_query($con, $query);
       $element .= return_m_select_box($row["attribute_label"],"multi_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"],$allow_edit);
     }
   }
-
   echo '<ul class="list-group">';
   echo $element;
   echo '</ul>';
-}?>
+?>
 <script>
-    $(function () {
-        $(".multiple-select_ens").multipleSelect()
-    });
+$(function() {
+    $(".multiple-select_ens").multipleSelect()
+});
 </script>
