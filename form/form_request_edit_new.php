@@ -1,5 +1,5 @@
 <style>
-.multiple-select_ens .ms-choice {
+.ms-parent,.multiple-select_ens,.ms-choice {
     border: 0px;
     width:100%!important;
 }
