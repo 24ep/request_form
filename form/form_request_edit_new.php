@@ -19,7 +19,7 @@ function return_input_box($att_name,$site_element,$current_value,$code_element){
   return $element;
 }
 function return_select_box($att_name,$site_element,$current_value,$code_element,$attr_id){
-
+  $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM content_service_gate.attribute_option
     WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
     $result_op = mysqli_query($con, $query_op);
@@ -34,7 +34,7 @@ function return_select_box($att_name,$site_element,$current_value,$code_element,
   
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
-    <div class="col-4 fw-bold">'.$att_name." - ".$attr_id.'</div>
+    <div class="col-4 fw-bold">'.$att_name.'</div>
     <div class="col-8">
       <select
         class="form-control form-control-sm"
