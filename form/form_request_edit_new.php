@@ -51,6 +51,7 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
         name="'.$code_element.'"
         style="border: 0px"
       >
+      '.$current_value.'
       </textarea>
     </div>
   </li>
@@ -153,17 +154,17 @@ $result = mysqli_query($con, $query);
     if($row["site_element"]=="number"){
         $element .= return_input_box($row["attribute_label"],"number",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"]);
     }elseif($row["site_element"]=="text"){
-      $element .= return_input_box($row["attribute_label"],"text",$current_value,"ns_edit_".$row["attribute_code"]);
+      $element .= return_input_box($row["attribute_label"],"text",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"]);
     }elseif($row["site_element"]=="datetime"){
-      $element .= return_input_box($row["attribute_label"],"datetime-local",$current_value,"ns_edit_".$row["attribute_code"]);
+      $element .= return_input_box($row["attribute_label"],"datetime-local",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"]);
     }elseif($row["site_element"]=="date"){
-      $element .= return_input_box($row["attribute_label"],"date",$current_value,"ns_edit_".$row["attribute_code"]);
+      $element .= return_input_box($row["attribute_label"],"date",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"]);
     }elseif($row["site_element"]=="textarea"){
-      $element .= return_textarea_box($row["attribute_label"],"textarea",$current_value,"ns_edit_".$row["attribute_code"]);
+      $element .= return_textarea_box($row["attribute_label"],"textarea",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"]);
     }elseif($row["site_element"]=="single_select"){
-      $element .= return_select_box($row["attribute_label"],"",$current_value,"ns_edit_".$row["attribute_code"]);
+      $element .= return_select_box($row["attribute_label"],"",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"]);
     }elseif($row["site_element"]=="multi_select"){
-      $element .= return_select_box($row["attribute_label"],"",$current_value,"ns_edit_".$row["attribute_code"]);
+      $element .= return_select_box($row["attribute_label"],"",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"]);
     }
   }
   echo '<ul class="list-group">';
