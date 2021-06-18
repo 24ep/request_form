@@ -72,7 +72,7 @@
 <?php }else{
 $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
 $query = "SELECT * FROM content_service_gate.attribute_entity
-          WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY id ASC" or die("Error:" . mysqli_error());
+          WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY attribute_id ASC" or die("Error:" . mysqli_error());
 $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
     if($row["site_element"]=="number"){
