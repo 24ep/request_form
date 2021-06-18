@@ -21,10 +21,11 @@ function get_comment($id){
         }
         //end
     $comment = $row['comment'];
-    $comment = str_replace("#need_more_image ","<span style='color:#842029;'><strong>! Need more image</strong></span><hr style='margin:10px 0px 10px 0px'>",($comment));
-    $comment = str_replace("#need_more_data ","<span style='color:#842029;'><strong>! Need more data</strong></span><hr style='margin:10px 0px 10px 0px'>",($comment));
-    $comment = str_replace("#need_more_image","<span style='color:#842029;'><strong>! Need more image</strong></span><hr style='margin:10px 0px 10px 0px'>",($comment));
-    $comment = str_replace("#need_more_data","<span style='color:#842029;'><strong>! Need more data</strong></span><hr style='margin:10px 0px 10px 0px'>",($comment));
+    $comment = str_replace("#need_more_image ","<span style='color:#842029;'><strong><ion-icon name='alert-circle-outline'></ion-icon> Need more image</strong></span><hr style='margin:10px 0px 10px 0px'>",($comment));
+    $comment = str_replace("#need_more_data ","<span style='color:#842029;'><strong><ion-icon name='alert-circle-outline'></ion-icon> Need more data</strong></span><hr style='margin:10px 0px 10px 0px'>",($comment));
+    $comment = str_replace("#need_more_image","<span style='color:#842029;'><strong><ion-icon name='alert-circle-outline'></ion-icon> Need more image</strong></span><hr style='margin:10px 0px 10px 0px'>",($comment));
+    $comment = str_replace("#need_more_data","<span style='color:#842029;'><strong><ion-icon name='alert-circle-outline'></ion-icon> Need more data</strong></span><hr style='margin:10px 0px 10px 0px'>",($comment));
+    $comment = str_replace("#traffic_need_more","<span style='color:#842029;'><strong><ion-icon name='alert-circle-outline'></ion-icon> NTraffic need more</strong></span><hr style='margin:10px 0px 10px 0px'>",($comment));
     $query_account = "SELECT * FROM account where username = '".$row["comment_by"]."' ORDER BY id DESC " or die("Error:" . mysqli_error());
     $result_account = mysqli_query($con, $query_account);
     while($row_account = mysqli_fetch_array($result_account)) {
@@ -36,9 +37,9 @@ function get_comment($id){
     }
         if($row["comment_by"]==$_SESSION["username"] or $row["comment_by"]==$nickname){
                         //driver style only
-            if(strpos($row['comment'],"#need_more")!==false){
+            if(strpos($row['comment'],"need_more")!==false){
                 $background_cm = '';
-                $sd = 'style="background: #f8d7da;color:#8a8a8a!important;"';
+                $sd = 'style="background: #f8d7da;color:#842029!important;"';
                 $last_comment = "need_more";
                 $last_comment_by = $row['comment_by'];
             }else{
@@ -56,10 +57,9 @@ function get_comment($id){
                 echo "<small class='form-text' style='margin-right: 10px;text-align: end;'>".$comment_by." - ".$comment_by_nickname." <br> ". $comment_by_dp."<hr style='margin:2px'>".date('d/m/y h:i A',strtotime($row['comment_date']))."</small>";
             echo '</div>';
         }else{
-                               //driver style only
             if(strpos($row['comment'],"#need_more")!==false){
                 $background_cm = '';
-                $sd = 'style="background: #f8d7da;color:#8a8a8a!important;"';
+                $sd = 'style="background: #f8d7da;color:#842029!important;"';
                 $last_comment = "need_more";
                 $last_comment_by = $row['comment_by'];
             }else{
@@ -88,7 +88,7 @@ function get_bt_comment($id){
   $query = "SELECT * FROM comment WHERE ticket_id = ".$id." ORDER BY id ASC" or die("Error:" . mysqli_error());
    $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
-        if(strpos($row['comment'],"#need_more")!==false){
+        if(strpos($row['comment'],"need_more")!==false){
             $last_comment = "need_more";
             $last_comment_by = $row['comment_by'];
         }else{
