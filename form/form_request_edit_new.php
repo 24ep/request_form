@@ -11,8 +11,8 @@ $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password
 function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit){
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
-    <div class="col-4 fw-bold">'.$att_name.'</div>
-    <div class="col-8">
+    <div class="col-3 fw-bold">'.$att_name.'</div>
+    <div class="col-9">
       <input
         class="form-control form-control-sm"
         id="'.$code_element.'"
@@ -41,8 +41,8 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
     }
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
-    <div class="col-4 fw-bold">'.$att_name.'</div>
-    <div class="col-8">
+    <div class="col-3 fw-bold">'.$att_name.'</div>
+    <div class="col-9">
       <select
         class="form-select form-select-sm"
         id="'.$code_element.'"
@@ -72,8 +72,8 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
     }
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
-    <div class="col-4 fw-bold">'.$att_name.'</div>
-    <div class="col-8">
+    <div class="col-3 fw-bold">'.$att_name.'</div>
+    <div class="col-9">
       <select
         multiple="multiple"
         class="form-select"
@@ -93,8 +93,8 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
 function return_textarea_box($att_name,$site_element,$current_value,$code_element,$enable_edit){
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
-    <div class="col-4 fw-bold">'.$att_name.'</div>
-    <div class="col-8">
+    <div class="col-3 fw-bold">'.$att_name.'</div>
+    <div class="col-9">
       <textarea
         class="form-control"
         id="'.$code_element.'"
