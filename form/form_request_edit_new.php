@@ -19,10 +19,7 @@ function return_input_box($att_name,$site_element,$current_value,$code_element){
   return $element;
 }
 function return_select_box($att_name,$site_element,$current_value,$code_element,$attr_id){
-  
-  if($site_element=="multi_select"){
 
-  }elseif($site_element=="single_select"){
     $query_op = "SELECT * FROM content_service_gate.attribute_option
     WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
     $result_op = mysqli_query($con, $query_op);
@@ -33,7 +30,7 @@ function return_select_box($att_name,$site_element,$current_value,$code_element,
         $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
       }
     }
-  }
+  
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #dee2e6">
     <div class="col-4 fw-bold">'.$att_name.'</div>
@@ -62,7 +59,7 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
         id="'.$code_element.'"
         name="'.$code_element.'"
         style="border: 0px"
-        row="3"
+        row="4"
       >'.$current_value.'
       </textarea>
     </div>
