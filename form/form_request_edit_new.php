@@ -24,6 +24,7 @@ function return_select_box($att_name,$site_element,$current_value,$code_element,
     WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
     $result_op = mysqli_query($con, $query_op);
     while($option = mysqli_fetch_array($result_op)) {
+      echo $option["attribute_option"];
     if($option["attribute_option"]==$current_value){
         $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
       }else{
