@@ -55,7 +55,7 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
     WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
     $result_op = mysqli_query($con, $query_op);
     while($option = mysqli_fetch_array($result_op)) {
-    if($option["attribute_option"]==$current_value){
+    if(strpos($current_value ,$option["attribute_option"])===true){
         $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
       }else{
         $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
@@ -68,7 +68,7 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
     <div class="col-8">
       <select
         multiple="multiple"
-        class="form-select form-select-sm multiple-select"
+        class="multiple-select"
         id="'.$code_element.'[]"
         name="'.$code_element.'[]"
         style="border: 0px"
