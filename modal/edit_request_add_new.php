@@ -125,8 +125,9 @@ label#label_file_cme {
                     <div class="col-2" style="border-right: 1px #e6e6e6;border-right-style: double;height: auto;">
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
                             aria-orientation="vertical">
-                            <a class="nav-link btn btn-link"  role="tab" aria-controls="v-pills-progress"
+                            <!-- <a class="nav-link btn btn-link"  role="tab" aria-controls="v-pills-progress"
                                 aria-selected="false"><?php echo $status; ?></a>
+                                <hr> -->
                             <a class="nav-link active inpo" id="v-pills-progress-tab" data-toggle="pill"
                                 href="#v-pills-progress" role="tab" aria-controls="v-pills-progress"
                                 aria-selected="false"><ion-icon name="speedometer-outline"></ion-icon>Progress</a>
