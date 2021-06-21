@@ -3,7 +3,7 @@ session_start();
 if($_POST["cr_search_input"]<> "" ){
   $_SESSION["cr_search_input"] = $_POST["cr_search_input"];
  }else{
-  //  unset($_SESSION["cr_search_input"]);
+   unset($_SESSION["cr_search_input"]);
 }
  if($_POST["user_cr_filter"]<>""){
   $_SESSION["user_cr_filter"]= $_POST["user_cr_filter"];
