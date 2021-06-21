@@ -3,7 +3,7 @@
 $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
 function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
   $element = '
-  <li class="list-group-item" style="display: inline-flex; background: #ffffff">
+  <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
     <div class="col-3 fw-bold">'.$att_name.'</div>
     <div class="col-9">
       <input
@@ -34,7 +34,7 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
       }
     }
   $element = '
-  <li class="list-group-item" style="display: inline-flex; background: #ffffff">
+  <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
     <div class="col-3 fw-bold">'.$att_name.'</div>
     <div class="col-9">
       <select
@@ -66,7 +66,7 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
       }
     }
   $element = '
-  <li class="list-group-item" style="display: inline-flex; background: #ffffff">
+  <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
     <div class="col-3 fw-bold">'.$att_name.'</div>
     <div class="col-9">
       <select
@@ -88,7 +88,7 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
 }
 function return_textarea_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
   $element = '
-  <li class="list-group-item" style="display: inline-flex; background: #ffffff">
+  <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
     <div class="col-3 fw-bold">'.$att_name.'</div>
     <div class="col-9">
       <textarea
