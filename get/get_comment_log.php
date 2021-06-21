@@ -5,5 +5,5 @@
     $arr_comment = array('type' => 'comment');
     $arr_comment = array('value' => $row['comment']);
    }
-   echo $arr_comment[comment];
+   echo $arr_comment["comment"];
 ?>
