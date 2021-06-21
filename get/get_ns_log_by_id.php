@@ -1,5 +1,5 @@
 <?php
-  $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
   $query = "SELECT * FROM all_in_one_project.log " or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
    while($row = mysqli_fetch_array($result)) {
