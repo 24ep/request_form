@@ -137,7 +137,7 @@ label#label_file_cme {
                 <h5 class="modal-title" id="edit_add_new_title">
                     <?php echo "<strong><span style='color:red'>NS</span>-".$_POST["id"]."</strong> ".$brand." ".$sku." SKU ". $dp_tags; ?>
                 </h5>
-                <button type="button" class="btn btn-dark" <?php echo $status_style; ?> ><?php  echo $status; ?></button>
+                <button type="button" class="btn btn-dark btn-sm" <?php echo $status_style; ?> ><?php  echo $status; ?></button>
             </div>
             <div class="modal-body overflow-auto" style="height:100%">
                 <!--"-->
