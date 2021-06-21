@@ -184,8 +184,8 @@ label#label_file_cme {
                                 aria-labelledby="v-pills-progress-tab">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                     <h5><strong>Contact Person</strong>|<small class="card-text">Content & Studio Team - Follow up</small></h5>
-                                        <div class="card shadow" style="border:0px;">
+                                     <h5><strong>Contact Person</strong> | <small class="card-text">Content & Studio Team - Follow up</small></h5>
+                                        <div class="card" style="border:1px;">
                                             <!-- <div class="card-body"
                                                 style="background: #fba574;border-top-right-radius: 5px;border-top-left-radius: 5px;color: #ffffff;"> -->
                                                 <!-- <h5 class="card-title"><strong>Contact Person</strong>|<small class="card-text">Content & Studio Team - Follow up</small></h5> -->
@@ -230,7 +230,9 @@ label#label_file_cme {
                                         <?php include('../get/get_list_job_cms.php'); ?>
                                     </div>
                                 </div>
+                               
                             </div>
+                            <hr>
                             <div class="tab-pane fade" id="v-pills-request_detail" role="tabpanel"
                                 aria-labelledby="v-pills-request_detail-tab">
                                 <div class="container" style="padding: 20px!important;">
