@@ -335,8 +335,8 @@ label#label_file_cme {
             <div class="modal-header">
                 <h5 class="modal-title"><ion-icon name="chatbubbles-outline"></ion-icon>Comment</h5>
             </div>
-            <div class="modal-body overflow-auto" style="max-height: 840px;" id="over_comment">
-                <div class=" " id="comment_box" style="height: auto;margin-bottom: 10px;margin-top: 10px;">
+            <div class="modal-body" style="height: 85%;padding-top: 0px;padding-right: 0px;" id="over_comment">
+                <div class=" overflow-auto" id="comment_box" style="height: auto;margin-bottom: 0px;margin-top: 0px;">
                     <div id="call_ticket_comment">
                         <?php   include('../get/get_comment_ticket.php');?>
                     </div>
