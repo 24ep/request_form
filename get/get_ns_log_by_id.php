@@ -10,7 +10,7 @@ if($_GET['action_data']=="24ep"){;
   while($row = mysqli_fetch_array($result)) {
      $tr .= 
      '<tr>
-       <th scope="row">'.$row["action_date"].'</th>
+       <td>'.$row["action_date"].'</td>
        <td>'.$row["value_change"].'</td>
        <td>'.$row["action_from_user"].'</td>
      </tr>';
@@ -21,7 +21,7 @@ if($_GET['action_data']=="24ep"){;
   while($row = mysqli_fetch_array($result)) {
      $tr .= 
      '<tr>
-       <th scope="row">'.$row["action_date"].'</th>
+       <td>'.$row["action_date"].'</td>
        <td>'.$row["action"].'</td>
        <td>'.$row["action_by"].'</td>
      </tr>';
@@ -43,15 +43,15 @@ if($_GET['action_data']=="24ep"){;
 
     <title>log NS-<?php echo $id;?></title>
   </head>
-  <body>
+  <body style="font-size:14px">
     
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <div class="container-md" style="padding:20px">
-    <h3>Content Service Gate | log ticket ID NS-<?php echo $id;?></h3>
+    <div class="container-md" style="padding:40px">
+    <h6>log NS-<?php echo $id;?></h6>
     <table class="table table-bordered">
       <thead>
         <tr>
