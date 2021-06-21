@@ -43,7 +43,7 @@
     } 
     if($pass==false){
         echo "<tr>";
-        echo "<td colspan='6' style='text-align: center;'>เลข job number จะแสดงเมื่อข้อมูลครบถ้วน พร้อมสำหรับการเปิด Job</td>";
+        echo "<td colspan='7' style='text-align: center;'>เลข job number จะแสดงเมื่อข้อมูลครบถ้วน พร้อมสำหรับการเปิด Job</td>";
         echo  "</tr>";
       }
   echo "</tbody>
