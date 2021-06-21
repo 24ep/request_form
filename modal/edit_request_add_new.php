@@ -184,13 +184,29 @@ label#label_file_cme {
                                 aria-labelledby="v-pills-progress-tab">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                     <h5><strong>Contact Person</strong> | <small class="card-text">Content & Studio Team - Follow up</small></h5>
-                                        <div class="card" style="border:1px;">
+                                     <h4><strong>Contact Person</strong> | <small class="card-text">Content & Studio Team - Follow up</small></h4>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Tell</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td scope="col"><?php echo $follow_up_name;?></td>
+                                                <td scope="col"><?php echo $office_tell;?></td>
+                                                <td scope="col"><?php echo $work_email;?></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- <div class="card" style="border:1px;"> -->
                                             <!-- <div class="card-body"
                                                 style="background: #fba574;border-top-right-radius: 5px;border-top-left-radius: 5px;color: #ffffff;"> -->
                                                 <!-- <h5 class="card-title"><strong>Contact Person</strong>|<small class="card-text">Content & Studio Team - Follow up</small></h5> -->
                                             <!-- </div> -->
-                                            <ul class="list-group list-group-flush">
+                                            <!-- <ul class="list-group list-group-flush">
                                                 <li class="list-group-item" style="padding: 0px;">
                                                     <div class="row" style="padding: 0px;margin: 0px;">
                                                         <div class="col-3"
@@ -198,7 +214,7 @@ label#label_file_cme {
                                                             <strong>Name</strong>
                                                         </div>
                                                         <div class="col-8" style="padding: 10px 12px;">
-                                                            <?php echo $follow_up_name;?></div>
+                                                            <?php //echo $follow_up_name;?></div>
                                                     </div>
                                                 </li>
                                                 <li class="list-group-item" style="padding: 0px;">
@@ -208,7 +224,7 @@ label#label_file_cme {
                                                             <strong>Tell</strong>
                                                         </div>
                                                         <div class="col-8" style="padding: 10px 12px;">
-                                                            <?php echo $office_tell;?></div>
+                                                            <?php //echo $office_tell;?></div>
                                                     </div>
                                                 </li>
                                                 <li class="list-group-item" style="padding: 0px;">
@@ -218,13 +234,15 @@ label#label_file_cme {
                                                             <strong>Email</strong>
                                                         </div>
                                                         <div class="col-9" style="padding: 10px 12px;">
-                                                            <?php echo $work_email;?></div>
+                                                            <?php //echo $work_email;?></div>
                                                     </div>
                                                 </li>
-                                            </ul>
-                                        </div>
+                                            </ul> -->
+                                        <!-- </div> -->
                                     </div>
                                     </div>
+                                    <hr>
+                                    <h4><strong>Writer & Studio Job</strong></h4>
                                     <div class="row">
                                     <div class="col-sm-12">
                                         <?php include('../get/get_list_job_cms.php'); ?>
@@ -232,7 +250,7 @@ label#label_file_cme {
                                 </div>
                                
                             </div>
-                            <hr>
+                           
                             <div class="tab-pane fade" id="v-pills-request_detail" role="tabpanel"
                                 aria-labelledby="v-pills-request_detail-tab">
                                 <div class="container" style="padding: 20px!important;">
