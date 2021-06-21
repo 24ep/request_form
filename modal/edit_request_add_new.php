@@ -114,11 +114,7 @@ label#label_file_cme {
     $office_tell = $row['office_tell'];
     $work_email = $row['work_email'];
   }
-  if($follow_up_nickname==""){
-    $follow_up_name = "in queue";
-    $office_tell  = "in queue";
-    $work_email = "in queue";
-  }
+  
   mysqli_close($con);
   if($request_important=="Urgent"){
     $dp_tags .= '<span class="badge rounded-pill bg-danger" style="margin-left:10px">'.$request_important.'</span>';
@@ -189,15 +185,20 @@ label#label_file_cme {
                                             <thead>
                                                 <tr>
                                                 <th scope="col">Name</th>
-                                                <th scope="col">Email</th>
                                                 <th scope="col">Tell</th>
+                                                <th scope="col">Email</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                             <tr>
-                                                <td scope="col"><?php echo $follow_up_name;?></td>
-                                                <td scope="col"><?php echo $office_tell;?></td>
-                                                <td scope="col"><?php echo $work_email;?></td>
+                                            <?php if($follow_up_name==""){
+                                                echo '<td colspan="3" >กำลังรอการยืนยัน content person ที่จะมาดูแล ticket นี้</td>';
+                                            }else{
+                                                echo '<td scope="col">'. $follow_up_name.'</td>
+                                                <td scope="col">'. $office_tell.'</td>
+                                                <td scope="col">'. $work_email.'</td>';
+                                            }?>
+                                                
                                             </tr>
                                             </tbody>
                                         </table>
