@@ -96,7 +96,7 @@ label#label_file_cme {
     $work_email = $row['work_email'];
   }
   if($follow_up_nickname==""){
-    $follow_up_nickname = "in queue";
+    $follow_up_name = "in queue";
     $office_tell  = "in queue";
     $work_email = "in queue";
   }

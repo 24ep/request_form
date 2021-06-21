@@ -1,14 +1,7 @@
-<style>
-.ms-parent,
-.multiple-select_ens,
-.ms-choice {
-    border: 0px;
-    width: 100% !important;
-}
-</style>
+
 <?php
 $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
-function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit){
+function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #ffffff">
     <div class="col-3 fw-bold">'.$att_name.'</div>
@@ -21,13 +14,14 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
         style="border: 0px"
         value="'.$current_value.'"
         '.$enable_edit.'
+        onchange="update_ns_detail('.$id.','.$code_element.')"
       />
     </div>
   </li>
   ';
   return $element;
 }
-function return_s_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit){
+function return_s_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit,$id){
   $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM content_service_gate.attribute_option
     WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
@@ -49,6 +43,7 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
         name="'.$code_element.'"
         style="border: 0px"
         '.$enable_edit.'
+        onchange="update_ns_detail('.$id.','.$code_element.')"
       >
       '.$option_element.'
       </select>
@@ -58,7 +53,7 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
   unset($option_element);
   return $element;
 }
-function return_m_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit){
+function return_m_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit,$id){
   $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM content_service_gate.attribute_option
     WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
@@ -81,6 +76,7 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
         name="'.$code_element.'[]"
         style="border: 0px"
         '.$enable_edit.'
+        onchange="update_ns_detail('.$id.','.$code_element.')"
       >
       '.$option_element.'
       </select>
@@ -90,7 +86,7 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
   unset($option_element);
   return $element;
 }
-function return_textarea_box($att_name,$site_element,$current_value,$code_element,$enable_edit){
+function return_textarea_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #ffffff">
     <div class="col-3 fw-bold">'.$att_name.'</div>
@@ -102,6 +98,7 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
         style="border: 0px"
         rows="4"
         '.$enable_edit.'
+        onchange="update_ns_detail('.$id.','.$code_element.')"
       >'.$current_value.'
       </textarea>
     </div>
@@ -121,27 +118,39 @@ $result = mysqli_query($con, $query);
     }
     //---
     if($row["site_element"]=="number"){
-        $element .= return_input_box($row["attribute_label"],"number",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit);
+        $element .= return_input_box($row["attribute_label"],"number",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
     }elseif($row["site_element"]=="text"){
-      $element .= return_input_box($row["attribute_label"],"text",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit);
+      $element .= return_input_box($row["attribute_label"],"text",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
     }elseif($row["site_element"]=="datetime"){
-      $element .= return_input_box($row["attribute_label"],"datetime-local",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit);
+      $element .= return_input_box($row["attribute_label"],"datetime-local",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
     }elseif($row["site_element"]=="date"){
-      $element .= return_input_box($row["attribute_label"],"date",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit);
+      $element .= return_input_box($row["attribute_label"],"date",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
     }elseif($row["site_element"]=="textarea"){
-      $element .= return_textarea_box($row["attribute_label"],"textarea",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit);
+      $element .= return_textarea_box($row["attribute_label"],"textarea",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
     }elseif($row["site_element"]=="single_select"){
-      $element .= return_s_select_box($row["attribute_label"],"single_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"],$allow_edit);
+      $element .= return_s_select_box($row["attribute_label"],"single_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"],$allow_edit,$id);
     }elseif($row["site_element"]=="multi_select"){
-      $element .= return_m_select_box($row["attribute_label"],"multi_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"],$allow_edit);
+      $element .= return_m_select_box($row["attribute_label"],"multi_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"],$allow_edit,$id);
     }
   }
+  echo '<div id="call_update_ns_complete"></div>';
   echo '<ul class="list-group">';
   echo $element;
   echo '</ul>';
 ?>
 <script>
-$(function() {
-    $(".multiple-select_ens").multipleSelect()
-});
+function update_ns_detail(id, id_name) {
+    var id_name = id_name;
+    var value_change = document.getElementById(id_name).value;
+    if (id) {
+        $.post("action/action_update_ns_detail.php", {
+                id: id,
+                value_change: value_change,
+                id_name: id_name
+            },
+            function(data) {
+                $('#call_update_ns_complete').html(data);
+            });
+    }
+}
 </script>
