@@ -194,9 +194,9 @@ label#label_file_cme {
                                             <?php if($follow_up_name==""){
                                                 echo '<td colspan="3" style="text-align: center;" >กำลังรอการยืนยัน content person ที่จะมาดูแล ticket นี้</td>';
                                             }else{
-                                                echo '<td scope="col">'. $follow_up_name.'</td>
-                                                <td scope="col">'. $office_tell.'</td>
-                                                <td scope="col">'. $work_email.'</td>';
+                                                echo '<td scope="col" style="background: #ededed;">'. $follow_up_name.'</td>
+                                                <td scope="col" style="background: #ededed;">'. $office_tell.'</td>
+                                                <td scope="col" style="background: #ededed;">'. $work_email.'</td>';
                                             }?>
                                                 
                                             </tr>
