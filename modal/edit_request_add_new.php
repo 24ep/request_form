@@ -86,7 +86,26 @@ label#label_file_cme {
       $tags = $row['tags'];
       $online_channel = $row['online_channel'];
       $request_important = $row['request_important'];
+
+    //stamp color status
+    if($row["status"]=="pending"){
+    $status_style = 'style="background: #a9a9a94f;color:#8f8f8f"';
+    }elseif($row["status"]=="checking"){
+        $status_style = 'style="background: #ffff7e;color:#997300"';
+    }elseif($row["status"]=="accepted"){
+        $status_style = 'style="background: #7befb2;color:#115636"';
+    }elseif($row["status"]=="waiting confirm"){
+        $status_style = 'style="background: #499CF7;color:#093f8e"';
+    }elseif($row["status"]=="waiting image"){
+        $status_style = 'style="background: #FE7A6F;color:#a80c1b"';
+    }elseif($row["status"]=="waiting data"){
+        $status_style = 'style="background: #FE7A6F;color:#a80c1b"';
+    }elseif($row["status"]=="waiting traffic"){
+        $status_style = 'style="background: #ea79f7;color:#6a2e71"';
+    }
   }
+
+
   $query = "SELECT * FROM account where username = '".$follow_up_by."' ORDER BY id DESC " or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
@@ -118,6 +137,7 @@ label#label_file_cme {
                 <h5 class="modal-title" id="edit_add_new_title">
                     <?php echo "<strong><span style='color:red'>NS</span>-".$_POST["id"]."</strong> ".$brand." ".$sku." SKU ". $dp_tags; ?>
                 </h5>
+                <button type="button" class="btn btn-dark" <?php echo $status_style; ?> ><?php  echo $status; ?></button>
             </div>
             <div class="modal-body overflow-auto" style="height:100%">
                 <!--"-->
