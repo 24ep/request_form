@@ -1,10 +1,10 @@
 <?php
 $id = $_GET['id'];
 $action_table = $_GET['action_table'];
-$actiob_data = $_GET['action_table'];
+$actiob_data = $_GET['action_data'];
 $job_number = $_GET['job_number'];
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-if($_GET['action_table']=="24ep"){;
+if($_GET['action_data']=="24ep"){;
   $query = "SELECT * FROM u749625779_cdscontent.log_cms where action_at_table='".$action_table."' and job_number =".$job_number or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
@@ -15,7 +15,7 @@ if($_GET['action_table']=="24ep"){;
        <td>'.$row["action_from_user"].'</td>
      </tr>';
   }
-}elseif($_GET['action_table']=="csg"){
+}elseif($_GET['action_data']=="csg"){
   $query = "SELECT * FROM all_in_one_project.log where action_table='".$action_table."' and action_data_id =".$id or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
@@ -50,7 +50,7 @@ if($_GET['action_table']=="24ep"){;
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <div class="container-md">
+    <div class="container-md" style="padding:20px">
     <h3>Content Service Gate | log ticket ID NS-<?php echo $id;?></h3>
     <table class="table table-bordered">
       <thead>
