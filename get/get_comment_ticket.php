@@ -38,9 +38,8 @@ function get_comment($id){
         $comment_by_dp = str_replace("Buyer ","Ⓑ",$comment_by_dp);
     }elseif(strpos($comment_by_dp,"Operation")!==false){
         $comment_by_dp = str_replace("Buyer ","Ⓞ",$comment_by_dp);
-    }
-    // $case_name = "Contact : ".$row['firstname']." ".$row['lastname']." ( ".$case_nickname." ) ";
-    // $office_tell = $row['office_tell'];
+    }else{}
+    $comment_by_dp = $comment_by_dp;
     }
         if($row["comment_by"]==$_SESSION["username"] or $row["comment_by"]==$nickname){
                         //driver style only
