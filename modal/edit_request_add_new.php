@@ -211,9 +211,9 @@ label#label_file_cme {
                             <div class="tab-pane fade" id="v-pills-request_detail" role="tabpanel"
                                 aria-labelledby="v-pills-request_detail-tab">
                                 <div class="container" style="padding: 20px!important;">
-                                    <form class="row g-3" action="action/action_submit_add_new_job.php" method="POST">
+                                    
                                         <?php include('../form/form_request_edit_new.php')?>
-                                    </form>
+                                
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="v-pills-log" role="tabpanel"
