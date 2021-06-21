@@ -34,8 +34,6 @@ function get_comment($id){
     $comment_by_dp = $row_account['department'];
     if(strpos($comment_by_dp,"Content")!==false){
         $comment_by_dp = str_replace("Content ","Ⓒ",$comment_by_dp);
-    }elseif(strpos($comment_by_dp,"Buyer")!==false){
-        $comment_by_dp = str_replace("Buyer ","Ⓑ",$comment_by_dp);
     }
     // $case_name = "Contact : ".$row['firstname']." ".$row['lastname']." ( ".$case_nickname." ) ";
     // $office_tell = $row['office_tell'];
