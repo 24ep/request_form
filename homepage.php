@@ -385,12 +385,12 @@
                             <button style="color:#eee;padding:8px 16px;font-size:14px"
                                 class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
                                 data-bs-target="#admin-collapse" aria-expanded="true">
-                                <ion-icon style="color:white" name="terminal-outline"></ion-icon> Account Management
+                                <ion-icon style="color:white" name="terminal-outline"></ion-icon> Account
                             </button>
                             <div class="collapse" id="admin-collapse">
                                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                                     <li><a target="_Blank" href=""
-                                            class="d-inline-flex align-items-center rounded link-light">Account Setting</a>
+                                            class="d-inline-flex align-items-center rounded link-light">Setting</a>
                                     </li>
                                     <li><a href="action/action_logout.php"
                                             class="d-inline-flex align-items-center rounded link-light">Logout</a></li>
