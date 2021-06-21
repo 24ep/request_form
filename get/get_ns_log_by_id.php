@@ -10,10 +10,7 @@
         <td>'.$row["action_by"].'</td>
       </tr>';
    }
-  
- 
 ?>
-
 <table class="table">
   <thead>
     <tr>
