@@ -192,7 +192,7 @@ label#label_file_cme {
                                             <tbody>
                                             <tr>
                                             <?php if($follow_up_name==""){
-                                                echo '<td colspan="3" >กำลังรอการยืนยัน content person ที่จะมาดูแล ticket นี้</td>';
+                                                echo '<td colspan="3" style="text-align: center;" >กำลังรอการยืนยัน content person ที่จะมาดูแล ticket นี้</td>';
                                             }else{
                                                 echo '<td scope="col">'. $follow_up_name.'</td>
                                                 <td scope="col">'. $office_tell.'</td>
@@ -202,44 +202,7 @@ label#label_file_cme {
                                             </tr>
                                             </tbody>
                                         </table>
-                                        <!-- <div class="card" style="border:1px;"> -->
-                                            <!-- <div class="card-body"
-                                                style="background: #fba574;border-top-right-radius: 5px;border-top-left-radius: 5px;color: #ffffff;"> -->
-                                                <!-- <h5 class="card-title"><strong>Contact Person</strong>|<small class="card-text">Content & Studio Team - Follow up</small></h5> -->
-                                            <!-- </div> -->
-                                            <!-- <ul class="list-group list-group-flush">
-                                                <li class="list-group-item" style="padding: 0px;">
-                                                    <div class="row" style="padding: 0px;margin: 0px;">
-                                                        <div class="col-3"
-                                                            style="border-right:solid 1px #cccccc;padding: 10px 12px;">
-                                                            <strong>Name</strong>
-                                                        </div>
-                                                        <div class="col-8" style="padding: 10px 12px;">
-                                                            <?php //echo $follow_up_name;?></div>
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item" style="padding: 0px;">
-                                                    <div class="row" style="padding: 0px;margin: 0px;">
-                                                        <div class="col-3"
-                                                            style="border-right:solid 1px #cccccc;padding: 10px 12px;">
-                                                            <strong>Tell</strong>
-                                                        </div>
-                                                        <div class="col-8" style="padding: 10px 12px;">
-                                                            <?php //echo $office_tell;?></div>
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item" style="padding: 0px;">
-                                                    <div class="row" style="padding: 0px;margin: 0px;">
-                                                        <div class="col-3"
-                                                            style="border-right:solid 1px #cccccc;padding: 10px 12px;">
-                                                            <strong>Email</strong>
-                                                        </div>
-                                                        <div class="col-9" style="padding: 10px 12px;">
-                                                            <?php //echo $work_email;?></div>
-                                                    </div>
-                                                </li>
-                                            </ul> -->
-                                        <!-- </div> -->
+                                        
                                     </div>
                                     </div>
                                     <hr>
