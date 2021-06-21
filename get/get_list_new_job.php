@@ -88,7 +88,7 @@ if($_POST["from_post"] ==true ){
   if($row['launch_date']<>""){
     $launch_date = date('d/m/y',strtotime($row['launch_date']));
   }else{
-    $launch_date = "No launch date";
+    $launch_date = "<span style='color:#E0E0E0'>No launch date</span>";
   }
       echo "<tr>";
       echo "<th scope='row'>NS-".$row["id"]."</th>";
@@ -105,8 +105,8 @@ if($_POST["from_post"] ==true ){
       echo "<td ".$status_style." ><strong>".$row["status"]."</strong></td>";
       echo "<td>". $ticket_role ."</td>";
       echo "<td>";
-      echo "<button type='button' id='ns_ticket_".$row['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row["id"].")' >
-      Detail</button></td>";
+      echo "<button type='button' id='ns_ticket_".$row['id']."' class='btn btn-transparent btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row["id"].")' >
+      <ion-icon name='pencil-outline'></ion-icon></button></td>";
       echo  "</tr>";
   }
   ?>
