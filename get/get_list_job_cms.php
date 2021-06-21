@@ -13,8 +13,8 @@
     echo "<th>job type</th>";
     echo "<th>traffic</th>";  
     echo "<th>job state</th>";
-    echo "<th>datapump</th>";
     echo "<th>last update</th>";
+    echo "<th>Update</th>";
     echo  "</tr>
     </thead>
      <tbody>";
@@ -34,8 +34,8 @@
         echo "<td style='background: #ededed;'>".$row["job_type"]."</dh>";  
         echo "<td style='background: #ededed;'>".$row["traffic"]."</td>";
         echo "<td style='background: #ededed;'>".$state ."</td>";  
-        echo "<td style='background: #ededed;'>".$row["datapump"]."</td>";
         echo "<td style='background: #ededed;'>".$row["last_update_at"]."</td>";
+        echo "<td style='background: #ededed;'><a target='_Blank' href='https://content-service-gate.cdsecommercecontent.ga/get/get_ns_log_by_id.php?job_number=".$row["job_number"]."&action_table=job_cms&action_data=24ep'><ion-icon name='calendar-outline'>history log</ion-icon></a></td>";
         echo "</tr>";
         $pass = true;
     } 
