@@ -30,12 +30,12 @@
       ,$row["upload_image_date"]
       ,$row["shoots_complete_date"]);
         echo "<tr>";
-        echo "<th scope='row'>".$row["job_number"]."</th>";
-        echo "<td>".$row["job_type"]."</dh>";  
-        echo "<td>".$row["traffic"]."</td>";
-        echo "<td>".$state ."</td>";  
-        echo "<td>".$row["datapump"]."</td>";
-        echo "<td>".$row["last_update_at"]."</td>";
+        echo "<th scope='row' style='background: #ededed;'>".$row["job_number"]."</th>";
+        echo "<td style='background: #ededed;'>".$row["job_type"]."</dh>";  
+        echo "<td style='background: #ededed;'>".$row["traffic"]."</td>";
+        echo "<td style='background: #ededed;'>".$state ."</td>";  
+        echo "<td style='background: #ededed;'>".$row["datapump"]."</td>";
+        echo "<td style='background: #ededed;'>".$row["last_update_at"]."</td>";
         echo "</tr>";
         $pass = true;
     } 
