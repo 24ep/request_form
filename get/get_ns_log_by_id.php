@@ -28,13 +28,13 @@ $action_table = $_GET['action_table'];
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h3>Content Service Gate | log ticket ID NS-<?php echo $id;?></h3>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
+    <div class="container-md">
     <table class="table">
       <thead>
         <tr>
@@ -47,6 +47,7 @@ $action_table = $_GET['action_table'];
         <?php echo $tr; ?>
       </tbody>
     </table>
+    </div>
 
   </body>
 </html>
