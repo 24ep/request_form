@@ -11,6 +11,7 @@
             <tr>";
     echo "<th scope='row'>job number</th>";  
     echo "<th>job type</th>";
+    echo "<th>sku</th>";
     echo "<th>traffic</th>";  
     echo "<th>job state</th>";
     echo "<th>last update</th>";
@@ -31,7 +32,8 @@
       ,$row["shoots_complete_date"]);
         echo "<tr>";
         echo "<th scope='row' style='background: #ededed;'>".$row["job_number"]."</th>";
-        echo "<td style='background: #ededed;'>".$row["job_type"]."</dh>";  
+        echo "<td style='background: #ededed;'>".$row["job_type"]."</dh>";
+        echo "<td style='background: #ededed;'>".$row["sku"]."</td>";  
         echo "<td style='background: #ededed;'>".$row["traffic"]."</td>";
         echo "<td style='background: #ededed;'>".$state ."</td>";  
         echo "<td style='background: #ededed;'>".$row["last_update_at"]."</td>";
