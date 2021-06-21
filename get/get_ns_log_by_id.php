@@ -5,7 +5,7 @@ $actiob_data = $_GET['action_data'];
 $job_number = $_GET['job_number'];
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 if($_GET['action_data']=="24ep"){;
-  $query = "SELECT * FROM u749625779_cdscontent.log_cms where action_at_table='".$action_table."' and job_number =".$job_number or die("Error:" . mysqli_error());
+  $query = "SELECT * FROM u749625779_cdscontent.log_cms where action_at_table='".$action_table."' and job_number ='".$job_number."'" or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
      $tr .= 
