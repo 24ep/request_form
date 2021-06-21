@@ -38,6 +38,8 @@ function get_comment($id){
         $comment_by_dp = str_replace("Buyer ","Ⓑ",$comment_by_dp);
     }elseif(strpos($comment_by_dp,"Operation")!==false){
         $comment_by_dp = str_replace("Buyer ","Ⓞ",$comment_by_dp);
+    }else{$comment_by_dp = $comment_by_dp;}
+    
     }
         if($row["comment_by"]==$_SESSION["username"] or $row["comment_by"]==$nickname){
                         //driver style only
