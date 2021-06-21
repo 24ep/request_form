@@ -112,7 +112,7 @@ $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
     //--
     if(strpos($_SESSION["department"],"Content")!==false){
-        $allow_edit = "disabled";
+        $allow_edit = "";
     }else{
         $allow_edit = "disabled";
     }
