@@ -32,6 +32,13 @@ function get_comment($id){
     $comment_by_nickname = $row_account['nickname'];
     $comment_by = $row_account['username'];
     $comment_by_dp = $row_account['department'];
+    if(strpos($comment_by_dp,"Content")!==false){
+        $comment_by_dp = str_replace("Content ","Ⓒ",$comment_by_dp);
+    }elseif(strpos($comment_by_dp,"Buyer")!==false){
+        $comment_by_dp = str_replace("Buyer ","Ⓑ",$comment_by_dp);
+    }elseif(strpos($comment_by_dp,"Operation")!==false){
+        $comment_by_dp = str_replace("Buyer ","Ⓞ",$comment_by_dp);
+    }
     // $case_name = "Contact : ".$row['firstname']." ".$row['lastname']." ( ".$case_nickname." ) ";
     // $office_tell = $row['office_tell'];
     }
@@ -54,7 +61,7 @@ function get_comment($id){
                 echo "<span class='comment_label  shadow-sm cl_right badge rounded-pill ".$background_cm." text-light' ".$sd.">".$comment."</span>";
             echo '</div>';
             echo '<div class="d-grid gap-2 d-md-flex justify-content-md-end" style="width:100%;margin-bottom: 15px;">';
-                echo "<small class='form-text' style='margin-right: 10px;text-align: end;'>".$comment_by." - ".$comment_by_nickname." <br> ". $comment_by_dp."<hr style='margin:2px'>".date('d/m/y h:i A',strtotime($row['comment_date']))."</small>";
+                echo "<small class='form-text' style='margin-right: 10px;text-align: end;'>".$comment_by." - ".$comment_by_nickname." | ". $comment_by_dp."<hr style='margin:2px'>".date('d/m/y h:i A',strtotime($row['comment_date']))."</small>";
             echo '</div>';
         }else{
             if(strpos($row['comment'],"need_more")!==false){
@@ -74,7 +81,7 @@ function get_comment($id){
                 echo "<span class='comment_label shadow-sm cl_left badge rounded-pill ".$background_cm." text-dark ' ".$sd." >".$comment."</span>";
             echo '</div>';
             echo '<div style="width:100%;margin-bottom: 15px;">';
-            echo "<small class='form-text' style='margin-right: 10px;text-align: start;'>".$comment_by." - ".$comment_by_nickname." <br> ". $comment_by_dp."<hr style='margin:2px;width: 40%;'>".date('d/m/y h:i A',strtotime($row['comment_date']))."</small>";
+            echo "<small class='form-text' style='margin-right: 10px;text-align: start;'>".$comment_by." - ".$comment_by_nickname." | ". $comment_by_dp."<hr style='margin:2px;width: 40%;'>".date('d/m/y h:i A',strtotime($row['comment_date']))."</small>";
             echo '</div>';
         }
         unset($list_file);
