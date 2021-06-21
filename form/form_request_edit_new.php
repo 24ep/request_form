@@ -14,7 +14,7 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
         style="border: 0px"
         value="'.$current_value.'"
         '.$enable_edit.'
-        onchange="update_ns_detail('.$id.','.$code_element.')"
+        onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
       />
     </div>
   </li>
@@ -43,7 +43,7 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
         name="'.$code_element.'"
         style="border: 0px"
         '.$enable_edit.'
-        onchange="update_ns_detail('.$id.','.$code_element.')"
+        onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
       >
       '.$option_element.'
       </select>
@@ -76,7 +76,7 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
         name="'.$code_element.'[]"
         style="border: 0px"
         '.$enable_edit.'
-        onchange="update_ns_detail('.$id.','.$code_element.')"
+        onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
       >
       '.$option_element.'
       </select>
@@ -98,7 +98,7 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
         style="border: 0px"
         rows="4"
         '.$enable_edit.'
-        onchange="update_ns_detail('.$id.','.$code_element.')"
+        onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
       >'.$current_value.'
       </textarea>
     </div>
