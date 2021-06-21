@@ -100,7 +100,7 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
         id="'.$code_element.'"
         name="'.$code_element.'"
         style="border: 0px"
-        rows="5"
+        rows="4"
         '.$enable_edit.'
       >'.$current_value.'
       </textarea>

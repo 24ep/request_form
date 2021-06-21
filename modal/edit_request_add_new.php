@@ -127,19 +127,19 @@ label#label_file_cme {
                             aria-orientation="vertical">
                             <a class="nav-link active inpo" id="v-pills-progress-tab" data-toggle="pill"
                                 href="#v-pills-progress" role="tab" aria-controls="v-pills-progress"
-                                aria-selected="false">Progress</a>
+                                aria-selected="false"><ion-icon name="speedometer-outline"></ion-icon>Progress</a>
                             <a class="nav-link inpo" id="v-pills-request_detail-tab" data-toggle="pill"
                                 href="#v-pills-request_detail" role="tab" aria-controls="v-pills-request_detail"
-                                aria-selected="true">Request Detail</a>
+                                aria-selected="true"><ion-icon name="reader-outline"></ion-icon>Request Detail</a>
                             <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                             <hr>
                             <a class="nav-link inpo" id="v-pills-fu_team-tab" data-toggle="pill" href="#v-pills-fu_team"
-                                role="tab" aria-controls="v-pills-fu_team" aria-selected="false">follow-up team</a>
+                                role="tab" aria-controls="v-pills-fu_team" aria-selected="false"><ion-icon name="sparkles-outline"></ion-icon>follow-up team</a>
                             <a class="nav-link inpo" id="v-pills-tf_team-tab" data-toggle="pill" href="#v-pills-tf_team"
-                                role="tab" aria-controls="v-pills-tf_team" aria-selected="false">traffic team</a>
+                                role="tab" aria-controls="v-pills-tf_team" aria-selected="false"><ion-icon name="trail-sign-outline"></ion-icon>traffic team</a>
                             <a class="nav-link inpo" id="v-pills-internal_note-tab" data-toggle="pill"
                                 href="#v-pills-internal_note" role="tab" aria-controls="v-pills-internal_note"
-                                aria-selected="false">Internal note</a>
+                                aria-selected="false"><ion-icon name="chatbox-ellipses-outline"></ion-icon>Internal note</a>
                             <?php }?>
                         </div>
                     </div>
