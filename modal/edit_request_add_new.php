@@ -296,7 +296,7 @@ label#label_file_cme {
                                         </div>
                                     </div>
                                 </ul>
-                                <small style="font-weight: bolder;color: #adb5bd;">Comment</small>
+                                <small style="font-weight: bolder;color: #adb5bd;"><ion-icon name="chatbubbles-outline"></ion-icon>Comment</small>
                                 <textarea id="comment_input_ins"
                                     style="margin-top:0px;margin-bottom:10px;font-size: 14px;" class="form-control"
                                     placeholder="Leave a comment here..." rows="4" style="height: 100px"></textarea>
@@ -326,7 +326,7 @@ label#label_file_cme {
         </div>
         <div class="col-3" style="padding-left:0px">
             <div class="modal-header">
-                <h5 class="modal-title">Comment</h5>
+                <h5 class="modal-title"><ion-icon name="chatbubbles-outline"></ion-icon>Comment</h5>
             </div>
             <div class="modal-body overflow-auto" style="max-height: 840px;" id="over_comment">
                 <div class=" " id="comment_box" style="height: auto;margin-bottom: 10px;margin-top: 10px;">
