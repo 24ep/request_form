@@ -184,7 +184,7 @@ label#label_file_cme {
                                 aria-labelledby="v-pills-progress-tab">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                     <h4><strong>Contact Person</strong> | <small class="card-text">Content & Studio Team - Follow up</small></h4>
+                                     <h6><strong>Contact Person</strong> | <small class="card-text">Content & Studio Team - Follow up</small></h6>
                                         <table class="table table-bordered">
                                             <thead>
                                                 <tr>
@@ -242,7 +242,7 @@ label#label_file_cme {
                                     </div>
                                     </div>
                                     <hr>
-                                    <h4><strong>Writer & Studio Job</strong></h4>
+                                    <h6><strong>Writer & Studio Job</strong></h6>
                                     <div class="row">
                                     <div class="col-sm-12">
                                         <?php include('../get/get_list_job_cms.php'); ?>
