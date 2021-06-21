@@ -183,13 +183,13 @@ label#label_file_cme {
                             <div class="tab-pane fade show active" id="v-pills-progress" role="tabpanel"
                                 aria-labelledby="v-pills-progress-tab">
                                 <div class="row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-12">
+                                     <h5><strong>Contact Person</strong>|<small class="card-text">Content & Studio Team - Follow up</small></h5>
                                         <div class="card shadow" style="border:0px;">
-                                            <div class="card-body"
-                                                style="background: #fba574;border-top-right-radius: 5px;border-top-left-radius: 5px;color: #ffffff;">
-                                                <h5 class="card-title"><strong>Contact Person</strong></h5>
-                                                <p class="card-text">Content & Studio Team - Follow up</p>
-                                            </div>
+                                            <!-- <div class="card-body"
+                                                style="background: #fba574;border-top-right-radius: 5px;border-top-left-radius: 5px;color: #ffffff;"> -->
+                                                <!-- <h5 class="card-title"><strong>Contact Person</strong>|<small class="card-text">Content & Studio Team - Follow up</small></h5> -->
+                                            <!-- </div> -->
                                             <ul class="list-group list-group-flush">
                                                 <li class="list-group-item" style="padding: 0px;">
                                                     <div class="row" style="padding: 0px;margin: 0px;">
@@ -224,7 +224,9 @@ label#label_file_cme {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="col-sm-8">
+                                    </div>
+                                    <div class="row">
+                                    <div class="col-sm-12">
                                         <?php include('../get/get_list_job_cms.php'); ?>
                                     </div>
                                 </div>
