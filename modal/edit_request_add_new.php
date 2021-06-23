@@ -312,9 +312,9 @@ label#label_file_cme {
                                                 <button type="button" onclick="split_to_subtask()" class="btn btn-outline-primary">Create Sub Task</button>
                                             </div>
                                             <div id="emailHelp" class="form-text">in development</div>
-                                            <div id="call_subtask">
-                                                <?php include('../get/get_sub_task_in_task.php'); ?>
-                                            </div>
+                                            <!-- <div id="call_subtask">
+                                                <?php //include('../get/get_sub_task_in_task.php'); ?>
+                                            </div> -->
                                         </div>
                                     <?php if(strpos($status,"review")!==false){
                         echo '<div class="alert alert-warning" style="border-radius: 0px;" role="alert">
