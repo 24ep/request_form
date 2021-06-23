@@ -1,6 +1,7 @@
 <?php
 $id = $_POST["id"];
 $sku_task_set = $_POST["sku_task_set"];
+echo '<script>console.log("'.$id.'|'.$sku_task_set.'");</script>';
 $array_number_subtask = explode(",",$sku_task_set );
 //loop insert new to new ticket
 foreach ($array_number_subtask as $number_of_sku) {
