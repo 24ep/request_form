@@ -17,7 +17,7 @@ foreach ($array_number_subtask as $number_of_sku) {
         if($query_update_parent){
             //show log
         }
-        $sql_update_child = "UPDATE add_new_job SET sku =".$number_of_sku.",status = 'pending',parent=".$id."where id=".$last_id ;
+        $sql_update_child = "UPDATE add_new_job SET sku =".$number_of_sku.",status = 'pending',parent=".$id." where id=".$last_id ;
 	    $query_update_child = mysqli_query($con,$sql_update_child);
         if($query_update_child){
             //show log

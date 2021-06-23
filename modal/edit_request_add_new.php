@@ -309,7 +309,7 @@ label#label_file_cme {
                                                     placeholder="10,40,23,45,45">
                                             </div>
                                             <div class="col-sm-3">
-                                                <button type="button" onclick="split_to_subtask(<?php echo $id; ?>)" class="btn btn-outline-primary">Create sub ticket</button>
+                                                <button type="button" onclick="split_to_subtask(<?php echo $id; ?>);" class="btn btn-outline-primary">Create sub ticket</button>
                                             </div>
                                             <div id="emailHelp" class="form-text">in development</div>
                                             <!-- <div id="call_subtask">
@@ -535,7 +535,7 @@ function comment_cme_id_with_file(id, send_type) {
 function split_to_subtask(id){
     var sku_task_set = document.getElementById("sku_task_set").value;
     document.getElementById('sku_task_set').value = ''; //clear value
-    if (id) {
+    if(id) {
         $.post("action/action_ns_create_subtask.php", {
                 id: id,
                 sku_task_set: sku_task_set
