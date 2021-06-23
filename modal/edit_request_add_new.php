@@ -3,24 +3,29 @@
     border-radius: 0rem;
     border-color: #b4b4b4;
 }
+
 .close {
     background: transparent;
     border: none;
     font-size: 30px;
 }
+
 label#label_file_ins {
     color: #adb5bd;
     font-size: 12px;
     font-weight: 600 !important;
 }
+
 label#label_file_cme {
     color: #adb5bd;
     font-size: 12px;
     font-weight: 500 !important;
 }
+
 .modal {
     background: #fffcfc73;
 }
+
 .comment_label {
     padding: 12px;
     text-align: initial;
@@ -31,14 +36,17 @@ label#label_file_cme {
     line-height: normal;
     overflow-wrap: anywhere;
 }
+
 .cl_left {
     margin-right: 70px;
     border-radius: 0.7rem 0.7rem 0.7rem 0rem !important;
 }
+
 .cl_right {
     margin-left: 70px;
     border-radius: 0.7rem 0.7rem 0rem 0.7rem !important;
 }
+
 .inpo.active {
     /* background-color: red!important; */
     background: url('image/11.jpg') !important;
@@ -133,7 +141,8 @@ label#label_file_cme {
                 <h5 class="modal-title" id="edit_add_new_title">
                     <?php echo "<strong><span style='color:red'>NS</span>-".$_POST["id"]."</strong> ".$brand." ".$sku." SKU ". $dp_tags . "<a style='font-size:10px;margin-left:10px' target='_Blank' href='https://content-service-gate.cdsecommercecontent.ga/get/get_ns_log_by_id.php?id=".$_POST["id"]."&action_table=add_new_job&action_data=csg'><small><ion-icon name='time-outline'></ion-icon>Changed log</small></a>"; ?>
                 </h5>
-                <button type="button" class="btn btn-light btn-sm" <?php echo $status_style; ?> ><?php  echo $status; ?></button>
+                <button type="button" class="btn btn-light btn-sm"
+                    <?php echo $status_style; ?>><?php  echo $status; ?></button>
             </div>
             <div class="modal-body overflow-auto" style="height:100%">
                 <!--"-->
@@ -141,22 +150,32 @@ label#label_file_cme {
                     <div class="col-2" style="border-right: 1px #e6e6e6;border-right-style: double;height: auto;">
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
                             aria-orientation="vertical">
-                            
+
                             <a class="nav-link active inpo" id="v-pills-progress-tab" data-toggle="pill"
                                 href="#v-pills-progress" role="tab" aria-controls="v-pills-progress"
-                                aria-selected="false"><ion-icon name="speedometer-outline"></ion-icon>Progress</a>
+                                aria-selected="false">
+                                <ion-icon name="speedometer-outline"></ion-icon>Progress
+                            </a>
                             <a class="nav-link inpo" id="v-pills-request_detail-tab" data-toggle="pill"
                                 href="#v-pills-request_detail" role="tab" aria-controls="v-pills-request_detail"
-                                aria-selected="true"><ion-icon name="reader-outline"></ion-icon>Request Detail</a>
+                                aria-selected="true">
+                                <ion-icon name="reader-outline"></ion-icon>Request Detail
+                            </a>
                             <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                             <hr>
                             <a class="nav-link inpo" id="v-pills-fu_team-tab" data-toggle="pill" href="#v-pills-fu_team"
-                                role="tab" aria-controls="v-pills-fu_team" aria-selected="false"><ion-icon name="sparkles-outline"></ion-icon>follow-up team</a>
+                                role="tab" aria-controls="v-pills-fu_team" aria-selected="false">
+                                <ion-icon name="sparkles-outline"></ion-icon>follow-up team
+                            </a>
                             <a class="nav-link inpo" id="v-pills-tf_team-tab" data-toggle="pill" href="#v-pills-tf_team"
-                                role="tab" aria-controls="v-pills-tf_team" aria-selected="false"><ion-icon name="trail-sign-outline"></ion-icon>traffic team</a>
+                                role="tab" aria-controls="v-pills-tf_team" aria-selected="false">
+                                <ion-icon name="trail-sign-outline"></ion-icon>traffic team
+                            </a>
                             <a class="nav-link inpo" id="v-pills-internal_note-tab" data-toggle="pill"
                                 href="#v-pills-internal_note" role="tab" aria-controls="v-pills-internal_note"
-                                aria-selected="false"><ion-icon name="chatbox-ellipses-outline"></ion-icon>Internal note</a>
+                                aria-selected="false">
+                                <ion-icon name="chatbox-ellipses-outline"></ion-icon>Internal note
+                            </a>
                             <?php }?>
                         </div>
                     </div>
@@ -180,47 +199,53 @@ label#label_file_cme {
                                 aria-labelledby="v-pills-progress-tab">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                     <h6><strong>Contact Person</strong> | <small class="card-text">Content & Studio Team - Follow up</small></h6>
+                                            
+                                        <h6><strong>Contact Person</strong> | <small class="card-text">Content & Studio
+                                                Team - Follow up</small></h6>
                                         <table class="table table-bordered">
                                             <thead>
                                                 <tr>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Tell</th>
-                                                <th scope="col">Email</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Tell</th>
+                                                    <th scope="col">Email</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                            <?php if($follow_up_name==""){
+                                                <tr>
+                                                    <?php if($follow_up_name==""){
                                                 echo '<td colspan="3" style="text-align: center;" >กำลังรอการยืนยัน content person ที่จะมาดูแล ticket นี้</td>';
                                             }else{
                                                 echo '<td scope="col" style="background: #ededed;">'. $follow_up_name.'</td>
                                                 <td scope="col" style="background: #ededed;">'. $office_tell.'</td>
                                                 <td scope="col" style="background: #ededed;">'. $work_email.'</td>';
                                             }?>
-                                                
-                                            </tr>
+
+                                                </tr>
                                             </tbody>
                                         </table>
-                                        
+
+                                        <div id="call_subtask">
+                                                <?php include('../get/get_sub_task_in_task.php'); ?>
+                                            </div>
+
                                     </div>
-                                    </div>
-                                    <hr>
-                                    <h6><strong>Writer & Studio Job</strong></h6>
-                                    <div class="row">
+                                </div>
+                                <hr>
+                                <h6><strong>Writer & Studio Job</strong></h6>
+                                <div class="row">
                                     <div class="col-sm-12">
                                         <?php include('../get/get_list_job_cms.php'); ?>
                                     </div>
                                 </div>
-                               
+
                             </div>
-                           
+
                             <div class="tab-pane fade" id="v-pills-request_detail" role="tabpanel"
                                 aria-labelledby="v-pills-request_detail-tab">
                                 <div class="container" style="padding: 20px!important;">
-                                    
-                                        <?php include('../form/form_request_edit_new.php')?>
-                                   
+
+                                    <?php include('../form/form_request_edit_new.php')?>
+
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="v-pills-log" role="tabpanel"
@@ -237,7 +262,7 @@ label#label_file_cme {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th scope="row">Checking infomation</th>
+                                            <th scope="row">Checking information</th>
                                             <td><a onclick="start_checking(<?php echo $id; ?>);" type="button"
                                                     class="btn btn-primary btn-sm"
                                                     style="width: 100%;border-radius: 0px;">Start
@@ -262,7 +287,7 @@ label#label_file_cme {
                                             <td>
                                                 <div class="form-floating">
                                                     <input type="text" class="form-control" id="resone_cancel"
-                                                       name="resone_cancel" value="">
+                                                        name="resone_cancel" value="">
                                                     <label for="floatingInputGrid">Resone</label>
                                                 </div>
                                                 <button onclick="cancel_stt(<?php echo $id; ?>);" type="button"
@@ -275,6 +300,22 @@ label#label_file_cme {
                                             </td>
                                         </tr>
                                     </tbody>
+                                    <hr>
+                                    <h6>Split to Subtask</h6>
+                                        <div class="row mb-1">
+                                            <label for="inputEmail3"  class="col-sm-2 col-form-label">SKU</label>
+                                            <div class="col-sm-7">
+                                                <input type="text" class="form-control" id="sku_task_set" name="sku_task_set"
+                                                    placeholder="10,40,23,45,45">
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <button type="button" onclick="split_to_subtask()" class="btn btn-outline-primary">Create Sub Task</button>
+                                            </div>
+                                            <div id="emailHelp" class="form-text">in development</div>
+                                            <div id="call_subtask">
+                                                <?php include('../get/get_sub_task_in_task.php'); ?>
+                                            </div>
+                                        </div>
                                     <?php if(strpos($status,"review")!==false){
                         echo '<div class="alert alert-warning" style="border-radius: 0px;" role="alert">
                         <h6 class="alert-heading" style="margin:0px">
@@ -303,7 +344,9 @@ label#label_file_cme {
                                         </div>
                                     </div>
                                 </ul>
-                                <small style="font-weight: bolder;color: #adb5bd;"><ion-icon name="chatbubbles-outline"></ion-icon>Comment</small>
+                                <small style="font-weight: bolder;color: #adb5bd;">
+                                    <ion-icon name="chatbubbles-outline"></ion-icon>Comment
+                                </small>
                                 <textarea id="comment_input_ins"
                                     style="margin-top:0px;margin-bottom:10px;font-size: 14px;" class="form-control"
                                     placeholder="Leave a comment here..." rows="4" style="height: 100px"></textarea>
@@ -333,7 +376,9 @@ label#label_file_cme {
         </div>
         <div class="col-3" style="padding-left:0px">
             <div class="modal-header">
-                <h5 class="modal-title"><ion-icon name="chatbubbles-outline"></ion-icon>Comment</h5>
+                <h5 class="modal-title">
+                    <ion-icon name="chatbubbles-outline"></ion-icon>Comment
+                </h5>
             </div>
             <div class="modal-body" style="height: 85%;padding-top: 0px;padding-right: 0px;" id="over_comment">
                 <div class=" overflow-auto" id="comment_box" style="height: auto;margin-bottom: 0px;margin-top: 0px;">
@@ -392,6 +437,7 @@ actualBtn.addEventListener('change', function() {
     }
     fileChosen_bt.textContent = ' Selected file : ' + file_name;
 })
+
 function comment_ins_id_with_file(id) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input_ins").value;
@@ -421,6 +467,7 @@ function comment_ins_id_with_file(id) {
         }
     });
 }
+
 function comment_cr_id(id) {
     var comment = document.getElementById("comment_input_cr").value;
     document.getElementById('comment_input_cr').value = ''; //clear value
@@ -436,6 +483,7 @@ function comment_cr_id(id) {
             });
     }
 }
+
 function comment_ticket_id(id, send_type) {
     var comment = document.getElementById("comment_input").value;
     document.getElementById('comment_input').value = ''; //clear value
@@ -452,6 +500,7 @@ function comment_ticket_id(id, send_type) {
             });
     }
 }
+
 function comment_cme_id_with_file(id, send_type) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input").value;
@@ -482,4 +531,19 @@ function comment_cme_id_with_file(id, send_type) {
         }
     });
 }
+function split_to_subtask(){
+    var sku_task_set = document.getElementById("sku_task_set").value;
+    document.getElementById('sku_task_set').value = ''; //clear value
+    if (id) {
+        $.post("action/action_ns_create_subtask.php", {
+                id: id,
+                sku_task_set: sku_task_set
+            },
+            function(data) {
+                $('#call_subtask').html(data);
+            });
+    }
+}
+
+
 </script>
