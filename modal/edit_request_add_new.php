@@ -309,7 +309,7 @@ label#label_file_cme {
                                                     placeholder="10,40,23,45,45">
                                             </div>
                                             <div class="col-sm-3">
-                                                <button type="button" onclick="split_to_subtask($id)" class="btn btn-outline-primary">Create sub ticket</button>
+                                                <button type="button" onclick="split_to_subtask(<?php echo $id; ?>)" class="btn btn-outline-primary">Create sub ticket</button>
                                             </div>
                                             <div id="emailHelp" class="form-text">in development</div>
                                             <!-- <div id="call_subtask">
