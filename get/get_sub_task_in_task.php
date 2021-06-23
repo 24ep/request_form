@@ -10,7 +10,7 @@
       $subtask .='
         <tr>
               <td scope="col" style="background: #ededed;"><a href="https://content-service-gate.cdsecommercecontent.ga/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'"></a>
-               NS-'$row["parent"].'-'.$i.' ('.$row["id"].')</a></td>
+               NS-'.$row["parent"].'-'.$i.' ('.$row["id"].')</a></td>
               <td scope="col" style="background: #ededed;">'. $row["sku"].'</td>
               <td scope="col" style="background: #ededed;">'. $row["status"].'</td>
               <td scope="col" style="background: #ededed;">'. $row["contact_person"].'</td>
