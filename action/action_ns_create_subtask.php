@@ -29,8 +29,8 @@ foreach ($array_number_subtask as $number_of_sku) {
             //show log
         }
     }else{
-        echo '<script>console.log("'.$mysqli -> close();.'");</script>';
-        echo '<script>alert("'.$mysqli -> close();.'");</script>';
+        echo '<script>console.log("'.$con -> error.'");</script>';
+        echo '<script>alert("'.$con ->error.'");</script>';
         
     }
 }
