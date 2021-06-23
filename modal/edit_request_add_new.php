@@ -301,7 +301,7 @@ label#label_file_cme {
                                         </tr>
                                     </tbody>
                                     <hr>
-                                    <h6>Split to Subtask</h6>
+                                    <h6>Create sub ticket</h6>
                                         <div class="row mb-1">
                                             <label for="inputEmail3"  class="col-sm-2 col-form-label">SKU</label>
                                             <div class="col-sm-7">
@@ -309,13 +309,14 @@ label#label_file_cme {
                                                     placeholder="10,40,23,45,45">
                                             </div>
                                             <div class="col-sm-3">
-                                                <button type="button" onclick="split_to_subtask()" class="btn btn-outline-primary">Create Sub Task</button>
+                                                <button type="button" onclick="split_to_subtask($id)" class="btn btn-outline-primary">Create sub ticket</button>
                                             </div>
                                             <div id="emailHelp" class="form-text">in development</div>
                                             <!-- <div id="call_subtask">
                                                 <?php //include('../get/get_sub_task_in_task.php'); ?>
                                             </div> -->
                                         </div>
+                                        <hr>
                                     <?php if(strpos($status,"review")!==false){
                         echo '<div class="alert alert-warning" style="border-radius: 0px;" role="alert">
                         <h6 class="alert-heading" style="margin:0px">
@@ -531,7 +532,7 @@ function comment_cme_id_with_file(id, send_type) {
         }
     });
 }
-function split_to_subtask(){
+function split_to_subtask(id){
     var sku_task_set = document.getElementById("sku_task_set").value;
     document.getElementById('sku_task_set').value = ''; //clear value
     if (id) {
