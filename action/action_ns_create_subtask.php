@@ -11,10 +11,10 @@ foreach ($array_number_subtask as $number_of_sku) {
     mysqli_query($con, "SET NAMES 'utf8' ");
 	$sql = "INSERT INTO add_new_job (brand,department,sku,production_type,project_type,business_type,link_info,launch_date,stock_source,contact_buyer,
     contact_vender,remark,request_username,new_brand,start_checking_date,follow_up_by,accepted_date,need_more_info_date,
-    need_more_status,online_channel,bu,request_important,tags,reply_black_info_date,participant,internal_note,cancel_resone)
+    need_more_status,online_channel,bu,request_important,tags,reply_back_info_date,participant,internal_note,cancel_resone)
     SELECT brand,department,sku,production_type,project_type,business_type,link_info,launch_date,stock_source,contact_buyer,
     contact_vender,remark,request_username,new_brand,start_checking_date,follow_up_by,accepted_date,need_more_info_date,
-    need_more_status,online_channel,bu,request_important,tags,reply_black_info_date,participant,internal_note,cancel_resone FROM add_new_job WHERE id=".$id ;
+    need_more_status,online_channel,bu,request_important,tags,reply_back_info_date,participant,internal_note,cancel_resone FROM add_new_job WHERE id=".$id ;
 	$query = mysqli_query($con,$sql);
 	if($query) {
         $last_id = $conn->insert_id;
