@@ -28,6 +28,10 @@ foreach ($array_number_subtask as $number_of_sku) {
         if($query_update_child){
             //show log
         }
+    }else{
+        echo '<script>console.log("'.$mysqli -> close();.'");</script>';
+        echo '<script>alert("'.$mysqli -> close();.'");</script>';
+        
     }
 }
 mysqli_close($con);
