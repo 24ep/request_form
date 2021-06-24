@@ -1,3 +1,46 @@
+<style>
+.tree_label {
+    position: relative;
+    display: inline-block;
+    background: #fff;
+    color: gray
+}
+
+.tree_label:after {
+    position: absolute;
+    top: 0em;
+    left: -2.3em;
+    display: block;
+    height: 0.8em;
+    width: 1.4em;
+    border-bottom: 1px solid #777;
+    border-left: 2px solid #777;
+    border-radius: 0 0 0 .4em;
+    content: '';
+}
+
+.tree_lift {
+    position: absolute;
+    padding-left: 35px !important;
+    border-left: 2px solid #777;
+    margin-left: 2em;
+    height: 50px
+}
+
+.tree_lift_end {
+    position: relative;
+    padding-left: 69px !important;
+    margin-left: 2em;
+}
+
+.sub-ticket{
+		  border:0px solid transparent
+	  }
+label.tree_label:hover {
+    color: #666;
+}
+</style>
+
 <?php
 session_start();
 if( $_GET["fopenticket"]<>""){
@@ -110,11 +153,13 @@ if($_POST["from_post"] ==true ){
       echo  "</tr>";
 
       //get sub ticket
-      $query_child = "SELECT * FROM add_new_job where parent = ".$row["id"]  or die("Error:" . mysqli_error());
+      $query_child = "SELECT * FROM add_new_job where parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error());
       date_default_timezone_set("Asia/Bangkok");
       $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
       mysqli_query($con, "SET NAMES 'utf8' ");
       $result_child = mysqli_query($con, $query_child);
+      $i = 1;
+      $count_sub_ticket = count(mysqli_fetch_array($result_child));
       while($row_child = mysqli_fetch_array($result_child)) {
             //check guest
           if($_SESSION['username']==$row_child["request_username"]){
@@ -150,9 +195,14 @@ if($_POST["from_post"] ==true ){
         }else{
           $launch_date = "<span style='color:#E0E0E0'>No launch date</span>";
         }
+        if($i==$count_sub_ticket){
+          $th_class = "class='tree_lift'";
+        }else{
+          $th_class = "class='tree_lift_end'";
+        }
         //data row
         echo "<tr>";
-        echo "<th scope='row'>NS-".$row_child["id"]."</th>";
+        echo "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i."(".$row_child["id"].")</sapn></th>";
         echo "<td>".$row_child["department"]."</td>";
         // echo "<td>".date('d/m/y h:i A',strtotime($row['create_date']))."</td>";
         echo "<td>".$row_child["brand"]."</td>";
@@ -169,6 +219,7 @@ if($_POST["from_post"] ==true ){
         echo "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
          Detail </button></td>";
         echo  "</tr>";
+        $i++;
       }
 
   }

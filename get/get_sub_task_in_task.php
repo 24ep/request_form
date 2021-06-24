@@ -4,7 +4,7 @@
   mysqli_query($con, "SET NAMES 'utf8' ");
   $query = "SELECT * FROM add_new_job where parent =".$id  or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
-    $i=0;
+    $i=1;
   while($row = mysqli_fetch_array($result)) {
 
       $subtask .='
