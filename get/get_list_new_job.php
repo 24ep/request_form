@@ -3,7 +3,7 @@
     position: relative;
     display: inline-block;
     background: transparent;
-    color: #b549c9;
+    color: #727476;
 }
 
 .tree_label:after {
@@ -13,8 +13,8 @@
     display: block;
     height: 0.8em;
     width: 1.4em;
-    border-bottom: 2px solid #b549c9;
-    border-left: 2px solid #b549c9;
+    border-bottom: 2px solid #727476;
+    border-left: 2px solid #727476;
     border-radius: 0 0 0 .4em;
     content: '';
 }
@@ -22,7 +22,7 @@
 .tree_lift {
    position: absolute;
     padding-left: 1.5% !important;
-    border-left: 2px solid #b549c9;
+    border-left: 2px solid #727476;
     margin-left: 2.5%;
     height: 6.3%;
 }
