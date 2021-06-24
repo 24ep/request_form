@@ -4,6 +4,7 @@
     display: inline-block;
     background: transparent;
     color: #727476;
+    vertical-align: -webkit-baseline-middle;
 }
 
 .tree_label:after {
