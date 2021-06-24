@@ -137,11 +137,11 @@ if($_POST["from_post"] ==true ){
   }
 
   if($row["config_type"]=="parent"){
-    $tr_class = "class='sub-ticket'";
+    $tr_class = "class='sub-ticket shadow'";
   }else{
     unset($tr_class);
   }
-      echo "<tr ".$tr_class." shadow>";
+      echo "<tr ".$tr_class." >";
       echo "<th scope='row'>NS-".$row["id"]."</th>";
       echo "<td>".$row["department"]."</td>";
       // echo "<td>".date('d/m/y h:i A',strtotime($row['create_date']))."</td>";
