@@ -202,7 +202,7 @@ if($_POST["from_post"] ==true ){
         }
         //data row
         echo "<tr>";
-        echo "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i."(".$row_child["id"].")</sapn></th>";
+        echo "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i."(".$row_child["id"].")</span></th>";
         echo "<td>".$row_child["department"]."</td>";
         // echo "<td>".date('d/m/y h:i A',strtotime($row['create_date']))."</td>";
         echo "<td>".$row_child["brand"]."</td>";
