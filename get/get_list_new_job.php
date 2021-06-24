@@ -203,12 +203,13 @@ if($_POST["from_post"] ==true ){
         }else{
           $launch_date = "<span style='color:#E0E0E0'>No launch date</span>";
         }
-        if($i==$subtask_count-1){
-          $th_class = "class='tree_lift_end'";
-          unset($tr_class);
-        }else{
+        if($i<$subtask_count-1){
           $th_class = "class='tree_lift'";
           $tr_class = "class='sub-ticket'";
+        }else{
+          
+          $th_class = "class='tree_lift_end'";
+          unset($tr_class);
         }
         //data row
         echo "<tr ".$tr_class.">";
