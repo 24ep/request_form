@@ -564,29 +564,30 @@
                                 </nav>
                             </div>
                         </div>
-                        <table class="table table-hover  "
-                            style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
-                            <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
-                                <tr>
-                                    <th scope="col">Ticket ID</th>
-                                    <th scope="col">Department</th>
-                                    <!-- <th scope="col">Create date</th> -->
-                                    <th scope="col">Brand</th>
-                                    <th scope="col">SKU</th>
-                                    <th scope="col">Important</th>
-                                    <th scope="col">Production request</th>
-                                    <th scope="col">Project-type</th>
-                                    <th scope="col">Modal</th>
-                                    <th scope="col">launch date</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Role</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody id="job_list">
-                                <?php include('get/get_list_new_job.php'); ?>
-                            </tbody>
-                        </table>
+                        <div class="container-fluid" style="border-radius: 10px;width: 95%;">
+                            <table class="table table-hover  "
+                                style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
+                                <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
+                                    <tr>
+                                        <th scope="col">Ticket ID</th>
+                                        <th scope="col">Department</th>
+                                        <th scope="col">Brand</th>
+                                        <th scope="col">SKU</th>
+                                        <th scope="col">Important</th>
+                                        <th scope="col">Production request</th>
+                                        <th scope="col">Project-type</th>
+                                        <th scope="col">Modal</th>
+                                        <th scope="col">launch date</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Role</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="job_list">
+                                    <?php include('get/get_list_new_job.php'); ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="v-pills-cr" role="tabpanel" aria-labelledby="v-pills-cr-tab">
                         <div class="tab-content" id="myTabContent">

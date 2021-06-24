@@ -1,10 +1,9 @@
 <style>
 .tree_label {
-  position: relative;
+    position: relative;
     display: inline-block;
-    background: #fff;
+    background: transparent;
     color: #b549c9;
-
 }
 
 .tree_label:after {
@@ -142,7 +141,7 @@ if($_POST["from_post"] ==true ){
   }else{
     unset($tr_class);
   }
-      echo "<tr ".$tr_class.">";
+      echo "<tr ".$tr_class." shadow>";
       echo "<th scope='row'>NS-".$row["id"]."</th>";
       echo "<td>".$row["department"]."</td>";
       // echo "<td>".date('d/m/y h:i A',strtotime($row['create_date']))."</td>";
