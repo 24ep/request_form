@@ -82,9 +82,9 @@ if($_POST["from_post"] ==true ){
     }
     if($row['request_important']=="Urgent"){
       $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row['request_important'].'</span>';
-  }else{
-    $ri_style = '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">'.$row['request_important'].'</span>';
-  }
+    }else{
+      $ri_style = '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">'.$row['request_important'].'</span>';
+    }
   if($row['launch_date']<>""){
     $launch_date = date('d/m/y',strtotime($row['launch_date']));
   }else{
@@ -108,5 +108,68 @@ if($_POST["from_post"] ==true ){
       echo "<button type='button' id='ns_ticket_".$row['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row["id"].")' >
        Detail </button></td>";
       echo  "</tr>";
+
+      //get sub ticket
+      $query_child = "SELECT * FROM add_new_job where parent = ".$row["id"]  or die("Error:" . mysqli_error());
+      date_default_timezone_set("Asia/Bangkok");
+      $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+      mysqli_query($con, "SET NAMES 'utf8' ");
+      $result_child = mysqli_query($con, $query_child);
+      while($row_child = mysqli_fetch_array($result_child)) {
+            //check guest
+          if($_SESSION['username']==$row_child["request_username"]){
+            $ticket_role = "Owner";
+          }elseif($_SESSION['username']==$row_child["follow_up_by"]){
+            $ticket_role = "officer";
+          }else{
+            $ticket_role = "participant";
+          }
+          //stamp color status
+          if($row_child["status"]=="pending"){
+            $status_style = 'style="background: #a9a9a94f;color:#8f8f8f"';
+          }elseif($row_child["status"]=="checking"){
+            $status_style = 'style="background: #ffff7e;color:#997300"';
+          }elseif($row_child["status"]=="accepted"){
+            $status_style = 'style="background: #7befb2;color:#115636"';
+          }elseif($row_child["status"]=="waiting confirm"){
+            $status_style = 'style="background: #499CF7;color:#093f8e"';
+          }elseif($row_child["status"]=="waiting image"){
+            $status_style = 'style="background: #FE7A6F;color:#a80c1b"';
+          }elseif($row_child["status"]=="waiting data"){
+            $status_style = 'style="background: #FE7A6F;color:#a80c1b"';
+          }elseif($row_child["status"]=="waiting traffic"){
+            $status_style = 'style="background: #ea79f7;color:#6a2e71"';
+          }
+          if($row['request_important']=="Urgent"){
+            $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row['request_important'].'</span>';
+          }else{
+            $ri_style = '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">'.$row['request_important'].'</span>';
+          }
+        if($row['launch_date']<>""){
+          $launch_date = date('d/m/y',strtotime($row['launch_date']));
+        }else{
+          $launch_date = "<span style='color:#E0E0E0'>No launch date</span>";
+        }
+        //data row
+        echo "<tr>";
+        echo "<th scope='row'>NS-".$row_child["id"]."</th>";
+        echo "<td>".$row_child["department"]."</td>";
+        // echo "<td>".date('d/m/y h:i A',strtotime($row['create_date']))."</td>";
+        echo "<td>".$row_child["brand"]."</td>";
+        echo "<td>".$row_child["sku"]."</td>";
+        echo "<td>". $ri_style ."</td>";
+        
+        echo "<td>".$row_child["production_type"]."</td>";
+        echo "<td>".$row_child["project_type"]."</td>";
+        echo "<td>".$row["business_type"]."</td>";
+        echo "<td>".$launch_date."</td>";
+        echo "<td ".$status_style." ><strong>".$row_child["status"]."</strong></td>";
+        echo "<td>". $ticket_role ."</td>";
+        echo "<td>";
+        echo "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+         Detail </button></td>";
+        echo  "</tr>";
+      }
+
   }
   ?>
