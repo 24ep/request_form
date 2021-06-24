@@ -14,8 +14,8 @@
     display: block;
     height: 0.8em;
     width: 1.4em;
-    border-bottom: 1px solid #777;
-    border-left: 2px solid #777;
+    border-bottom: 1px solid #b549c9;
+    border-left: 1px solid #b549c9;
     border-radius: 0 0 0 .4em;
     content: '';
 }
@@ -23,9 +23,9 @@
 .tree_lift {
    position: absolute;
     padding-left: 01.5% !important;
-    border-left: 2px solid #777;
+    border-left: 1px solid #b549c9;
     margin-left: 4%;
-    height: 6.2%;
+    height: 6.3%;
 }
 
 .tree_lift_end {
