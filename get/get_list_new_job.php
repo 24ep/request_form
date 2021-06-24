@@ -14,16 +14,16 @@
     display: block;
     height: 0.8em;
     width: 1.4em;
-    border-bottom: 1px solid #b549c9;
-    border-left: 1px solid #b549c9;
+    border-bottom: 2px solid #b549c9;
+    border-left: 2px solid #b549c9;
     border-radius: 0 0 0 .4em;
     content: '';
 }
 
 .tree_lift {
    position: absolute;
-    padding-left: 01.5% !important;
-    border-left: 1px solid #b549c9;
+    padding-left: 1.5% !important;
+    border-left: 2px solid #b549c9;
     margin-left: 4%;
     height: 6.3%;
 }
@@ -216,7 +216,7 @@ if($_POST["from_post"] ==true ){
         }
         //data row
         echo "<tr ".$tr_class.">";
-        echo "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i."(".$row_child["id"].")</span></th>";
+        echo "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></th>";
         echo "<td></td>";
         echo "<td></td>";
         echo "<td>".$row_child["sku"]."</td>";
