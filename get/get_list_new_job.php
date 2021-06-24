@@ -1,9 +1,10 @@
 <style>
 .tree_label {
-    position: relative;
+  position: relative;
     display: inline-block;
     background: #fff;
-    color: #b549c9
+    color: #b549c9;
+}
 }
 
 .tree_label:after {
@@ -20,17 +21,17 @@
 }
 
 .tree_lift {
-    position: absolute;
-    padding-left: 1.5% !important;
+   position: absolute;
+    padding-left: 01.5% !important;
     border-left: 2px solid #777;
-    margin-left: 2.5%;
-    height: 50px
+    margin-left: 4%;
+    height: 6.2%;
 }
 
 .tree_lift_end {
-    position: relative;
-    padding-left: 1.5%px !important;
-    margin-left: 2.5em;
+  position: relative;
+    left: 4.61% !important;
+    margin-left: 4%!important;;
 }
 
 .sub-ticket{
