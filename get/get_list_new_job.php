@@ -203,7 +203,7 @@ if($_POST["from_post"] ==true ){
         }else{
           $launch_date = "<span style='color:#E0E0E0'>No launch date</span>";
         }
-        if($i==$subtask_count){
+        if($i==$subtask_count-1){
           $th_class = "class='tree_lift_end'";
           unset($tr_class);
         }else{
