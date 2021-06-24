@@ -159,7 +159,8 @@ if($_POST["from_post"] ==true ){
       echo  "</tr>";
 
       //get sub ticket
-      $result_count=mysqli_query("SELECT count(*) as total from add_new_job where parent = ".$row["id"]);
+      $query_count=mysqli_query("SELECT count(*) as total from add_new_job where parent = ".$row["id"]);
+      $result_count = mysqli_query($con, $query_count);
       $data_count=mysqli_fetch_assoc($result_count);
       $subtask_count = $data_count['total'];
       $query_child = "SELECT * FROM add_new_job where parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error());
