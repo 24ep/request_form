@@ -3,7 +3,7 @@
     position: relative;
     display: inline-block;
     background: #fff;
-    color: gray
+    color: #b549c9
 }
 
 .tree_label:after {
@@ -21,16 +21,16 @@
 
 .tree_lift {
     position: absolute;
-    padding-left: 35px !important;
+    padding-left: 1.5% !important;
     border-left: 2px solid #777;
-    margin-left: 2em;
+    margin-left: 2.5%;
     height: 50px
 }
 
 .tree_lift_end {
     position: relative;
-    padding-left: 49px !important;
-    margin-left: 2em;
+    padding-left: 1.5%px !important;
+    margin-left: 2.5em;
 }
 
 .sub-ticket{
