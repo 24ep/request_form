@@ -133,6 +133,12 @@ if($_POST["from_post"] ==true ){
   }else{
     $launch_date = "<span style='color:#E0E0E0'>No launch date</span>";
   }
+
+  if($row["config_type"]=="parent"){
+    $tr_class = "class='sub-ticket'";
+  }else{
+    unset($tr_class);
+  }
       echo "<tr>";
       echo "<th scope='row'>NS-".$row["id"]."</th>";
       echo "<td>".$row["department"]."</td>";
@@ -186,12 +192,12 @@ if($_POST["from_post"] ==true ){
             $status_style = 'style="background: #ea79f7;color:#6a2e71"';
           }
           if($row['request_important']=="Urgent"){
-            $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row['request_important'].'</span>';
+            $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row_child['request_important'].'</span>';
           }else{
-            $ri_style = '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">'.$row['request_important'].'</span>';
+            $ri_style = '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">'.$row_child['request_important'].'</span>';
           }
         if($row['launch_date']<>""){
-          $launch_date = date('d/m/y',strtotime($row['launch_date']));
+          $launch_date = date('d/m/y',strtotime($row_child['launch_date']));
         }else{
           $launch_date = "<span style='color:#E0E0E0'>No launch date</span>";
         }
@@ -201,7 +207,7 @@ if($_POST["from_post"] ==true ){
           $th_class = "class='tree_lift_end'";
         }
         //data row
-        echo "<tr>";
+        echo "<tr class='sub-ticket'>";
         echo "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i."(".$row_child["id"].")</span></th>";
         echo "<td>".$row_child["department"]."</td>";
         // echo "<td>".date('d/m/y h:i A',strtotime($row['create_date']))."</td>";
