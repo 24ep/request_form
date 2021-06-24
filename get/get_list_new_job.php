@@ -139,7 +139,7 @@ if($_POST["from_post"] ==true ){
   }else{
     unset($tr_class);
   }
-      echo "<tr>";
+      echo "<tr ".$tr_class.">";
       echo "<th scope='row'>NS-".$row["id"]."</th>";
       echo "<td>".$row["department"]."</td>";
       // echo "<td>".date('d/m/y h:i A',strtotime($row['create_date']))."</td>";
@@ -202,12 +202,14 @@ if($_POST["from_post"] ==true ){
           $launch_date = "<span style='color:#E0E0E0'>No launch date</span>";
         }
         if($i==$count_sub_ticket){
-          $th_class = "class='tree_lift'";
-        }else{
           $th_class = "class='tree_lift_end'";
+          unset($tr_class);
+        }else{
+          $th_class = "class='tree_lift'";
+          $tr_class = "class='sub-ticket'";
         }
         //data row
-        echo "<tr class='sub-ticket'>";
+        echo "<tr ".$tr_class.">";
         echo "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i."(".$row_child["id"].")</span></th>";
         echo "<td>".$row_child["department"]."</td>";
         // echo "<td>".date('d/m/y h:i A',strtotime($row['create_date']))."</td>";
