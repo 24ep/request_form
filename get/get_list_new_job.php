@@ -165,7 +165,7 @@ if($_POST["from_post"] ==true ){
       mysqli_query($con, "SET NAMES 'utf8' ");
       $result_child = mysqli_query($con, $query_child);
       $i = 1;
-      $count_sub_ticket = count(mysqli_fetch_array($result_child));
+      // $count_sub_ticket = count(mysqli_fetch_array($result_child));
       while($row_child = mysqli_fetch_array($result_child)) {
             //check guest
           if($_SESSION['username']==$row_child["request_username"]){
@@ -202,7 +202,7 @@ if($_POST["from_post"] ==true ){
           $launch_date = "<span style='color:#E0E0E0'>No launch date</span>";
         }
         if($i==$count_sub_ticket){
-          $th_class = "class='tree_lift_end'";
+          $th_class = "class='tree_lift'";
         }else{
           $th_class = "class='tree_lift_end'";
         }
