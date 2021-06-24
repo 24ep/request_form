@@ -90,8 +90,8 @@ if($_POST["from_post"] ==true ){
   $query = "SELECT * FROM add_new_job where id =".$_SESSION['fopenticket']."  ORDER BY id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
   unset($_SESSION['fopenticket']);
  }else{
-  $query = "SELECT * FROM add_new_job where (".$status_filter." and ".$brand_filter."
-         and ".$position_filter.") and parent is null ORDER BY id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
+  $query = "SELECT * FROM add_new_job where ((".$status_filter.") and (".$brand_filter.")
+         and (".$position_filter.")) and parent is null ORDER BY id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
  }
 //  echo "<script>console.log('".$filter_ns_list."');</script>";
   date_default_timezone_set("Asia/Bangkok");
