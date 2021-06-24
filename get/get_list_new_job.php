@@ -165,7 +165,7 @@ if($_POST["from_post"] ==true ){
       mysqli_query($con, "SET NAMES 'utf8' ");
       $result_child = mysqli_query($con, $query_child);
       $i = 1;
-      // $count_sub_ticket = count(mysqli_fetch_array($result_child));
+      $count_sub_ticket = count($result_child);
       while($row_child = mysqli_fetch_array($result_child)) {
             //check guest
           if($_SESSION['username']==$row_child["request_username"]){
