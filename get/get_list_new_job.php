@@ -137,9 +137,9 @@ if($_POST["from_post"] ==true ){
   }
 
   if($row["config_type"]=="parent"){
-    $tr_class = "class='sub-ticket shadow'";
+    $tr_class = "class='sub-ticket shadow-sm p-3 mb-5 bg-body rounded'";
   }else{
-    $tr_class = "class='shadow'";
+    $tr_class = "class='shadow-sm p-3 mb-5 bg-body rounded'";
   }
       echo "<tr ".$tr_class." >";
       echo "<th scope='row'>NS-".$row["id"]."</th>";
