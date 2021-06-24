@@ -4,7 +4,7 @@
     display: inline-block;
     background: #fff;
     color: #b549c9;
-}
+
 }
 
 .tree_label:after {
