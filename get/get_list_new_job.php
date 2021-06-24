@@ -159,13 +159,15 @@ if($_POST["from_post"] ==true ){
       echo  "</tr>";
 
       //get sub ticket
+      $result_count=mysql_query("SELECT count(*) as total from add_new_job where parent = ".$row["id"]);
+      $data_count=mysql_fetch_assoc($result_count);
+      $subtask_count = $data_count['total'];
       $query_child = "SELECT * FROM add_new_job where parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error());
       date_default_timezone_set("Asia/Bangkok");
       $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
       mysqli_query($con, "SET NAMES 'utf8' ");
       $result_child = mysqli_query($con, $query_child);
       $i = 1;
-      $count_sub_ticket = count($result_child);
       while($row_child = mysqli_fetch_array($result_child)) {
             //check guest
           if($_SESSION['username']==$row_child["request_username"]){
@@ -201,7 +203,7 @@ if($_POST["from_post"] ==true ){
         }else{
           $launch_date = "<span style='color:#E0E0E0'>No launch date</span>";
         }
-        if($i==$count_sub_ticket){
+        if($i==$subtask_count){
           $th_class = "class='tree_lift_end'";
           unset($tr_class);
         }else{
