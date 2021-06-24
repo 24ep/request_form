@@ -404,7 +404,7 @@
                     style="margin: 0px 20px 0px 20px;bottom: 30px;width: 13%;position: absolute;">
                     <?php echo $_SESSION["username"]; ?></button>
             </div>
-            <div class="col-10 window-full overflow-auto">
+            <div class="col-10 window-full overflow-auto" style="background:#f9fafb">
                 <div class="tab-content" id="v-pills-tabContent" style="margin-top:15px">
                     <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel"
                         aria-labelledby="v-pills-dashboard-tab">
@@ -565,7 +565,7 @@
                             </div>
                         </div>
                         <div class="container-fluid" style="border-radius: 10px;width: 95%;">
-                            <table class="table table-hover  "
+                            <table class="table table-hover table-borderless  "
                                 style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
                                 <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
                                     <tr>
