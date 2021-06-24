@@ -24,7 +24,7 @@
    position: absolute;
     padding-left: 1.5% !important;
     border-left: 2px solid #b549c9;
-    margin-left: 4%;
+    margin-left: 2.5%;
     height: 6.3%;
 }
 
@@ -32,7 +32,7 @@
   position: absolute;
     padding-left: 1.5% !important;
     border-left: 2px solid transparent;
-    margin-left: 4%;
+    margin-left: 2.5%;
     height: 5%;
 }
 
