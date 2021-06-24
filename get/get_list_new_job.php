@@ -217,16 +217,15 @@ if($_POST["from_post"] ==true ){
         //data row
         echo "<tr ".$tr_class.">";
         echo "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i."(".$row_child["id"].")</span></th>";
-        echo "<td>".$row_child["department"]."</td>";
-        // echo "<td>".date('d/m/y h:i A',strtotime($row['create_date']))."</td>";
-        echo "<td>".$row_child["brand"]."</td>";
+        echo "<td></td>";
+        echo "<td></td>";
         echo "<td>".$row_child["sku"]."</td>";
-        echo "<td>". $ri_style ."</td>";
+        echo "<td></td>";
         
-        echo "<td>".$row_child["production_type"]."</td>";
-        echo "<td>".$row_child["project_type"]."</td>";
-        echo "<td>".$row["business_type"]."</td>";
-        echo "<td>".$launch_date."</td>";
+        echo "<td></td>";
+        echo "<td></td>";
+        echo "<td></td>";
+        echo "<td></td>";
         echo "<td ".$status_style." ><strong>".$row_child["status"]."</strong></td>";
         echo "<td>". $ticket_role ."</td>";
         echo "<td>";
