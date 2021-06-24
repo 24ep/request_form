@@ -29,9 +29,11 @@
 }
 
 .tree_lift_end {
-  position: relative;
-    left: 4.61% !important;
-    margin-left: 4%!important;;
+  position: absolute;
+    padding-left: 1.5% !important;
+    border-left: 2px solid transparent;
+    margin-left: 4%;
+    height: 5%;
 }
 
 .sub-ticket{
