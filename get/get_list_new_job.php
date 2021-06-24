@@ -202,7 +202,7 @@ if($_POST["from_post"] ==true ){
           $launch_date = "<span style='color:#E0E0E0'>No launch date</span>";
         }
         if($i==$count_sub_ticket){
-          $th_class = "class='tree_lift'";
+          $th_class = "class='tree_lift_end'";
         }else{
           $th_class = "class='tree_lift_end'";
         }
