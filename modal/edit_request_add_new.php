@@ -199,31 +199,6 @@ label#label_file_cme {
                                 aria-labelledby="v-pills-progress-tab">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                            
-                                        <h6><strong>Contact Person</strong> | <small class="card-text">Content & Studio
-                                                Team - Follow up</small></h6>
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Tell</th>
-                                                    <th scope="col">Email</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <?php if($follow_up_name==""){
-                                                echo '<td colspan="3" style="text-align: center;" >กำลังรอการยืนยัน content person ที่จะมาดูแล ticket นี้</td>';
-                                            }else{
-                                                echo '<td scope="col" style="background: #ededed;">'. $follow_up_name.'</td>
-                                                <td scope="col" style="background: #ededed;">'. $office_tell.'</td>
-                                                <td scope="col" style="background: #ededed;">'. $work_email.'</td>';
-                                            }?>
-
-                                                </tr>
-                                            </tbody>
-                                        </table>
-
                                         <div id="call_subtask">
                                                 <?php include('../get/get_sub_task_in_task.php'); ?>
                                             </div>

@@ -199,37 +199,30 @@ if($_POST["from_post"] ==true ){
           //stamp color status
           if($row_child["status"]=="pending"){
             $status_style = 'style="background: #a9a9a94f;color:#8f8f8f"';
-            $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
+            $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
           }elseif($row_child["status"]=="checking"){
             $status_style = 'style="background: #ffff7e;color:#997300"';
-            $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #ffff7e;color:#997300;border:#ffff7e">pending</button>';
+            $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ffff7e;color:#997300;border:#ffff7e">checking</button>';
           }elseif($row_child["status"]=="accepted"){
             $status_style = 'style="background: #7befb2;color:#115636"';
-            $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #7befb2;color:#115636;border:#ffff7e">pending</button>';
+            $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm"  style="background: #7befb2;color:#115636;border:#ffff7e">accepted</button>';
           }elseif($row_child["status"]=="waiting confirm"){
             $status_style = 'style="background: #499CF7;color:#093f8e"';
-            $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #499CF7;color:#093f8e;border:#499CF7">pending</button>';
+            $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #499CF7;color:#093f8e;border:#499CF7">waiting confirm</button>';
           }elseif($row_child["status"]=="waiting image"){
             $status_style = 'style="background: #FE7A6F;color:#a80c1b"';
-            $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">pending</button>';
+            $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">pending</button>';
           }elseif($row_child["status"]=="waiting data"){
             $status_style = 'style="background: #FE7A6F;color:#a80c1b"';
-            $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">pending</button>';
+            $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">pending</button>';
           }elseif($row_child["status"]=="waiting traffic"){
             $status_style = 'style="background: #ea79f7;color:#6a2e71"';
-            $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #ea79f7;color:#6a2e71;border:#ea79f7">pending</button>';
+            $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ea79f7;color:#6a2e71;border:#ea79f7">pending</button>';
           }
-          if($row['request_important']=="Urgent"){
-            $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row_child['request_important'].'</span>';
-          }else{
-            $ri_style = '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">'.$row_child['request_important'].'</span>';
-          }
-        if($row['launch_date']<>""){
-          $launch_date = date('d/m/y',strtotime($row_child['launch_date']));
-        }else{
-          $launch_date = "<span style='color:#E0E0E0'>No launch date</span>";
+ 
+      $launch_date = "<span style='color:#E0E0E0'>No launch date</span>";
         }
-        echo '<script>console.log("s-'.$subtask_count.'");</script>';
+  
         if($i<$subtask_count){
           $th_class = "class='tree_lift'";
           $tr_class = "class='sub-ticket'";
