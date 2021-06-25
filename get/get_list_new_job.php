@@ -43,6 +43,7 @@
     left: 55px !important;
     border-left: 2px solid #727476;
     margin-left: 2.5%;
+    height: 0px
     
 }
 
