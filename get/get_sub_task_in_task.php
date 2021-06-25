@@ -16,7 +16,19 @@
   $result = mysqli_query($con, $query);
     $i=1;
   while($row = mysqli_fetch_array($result)) {
+    if($row["firstname"]==""){
+      $subtask .='
+        <tr>
+              <td scope="col" style="background: #ededed;"><a href="https://content-service-gate.cdsecommercecontent.ga/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'">
+               NS-'.$row["parent"].'-'.$i.' ('.$row["id"].')</a></td>
+              <td scope="col" style="background: #ededed;">'. $row["sku"].'</td>
+              <td scope="col" style="background: #ededed;">'. $row["status"].'</td>
+              <td scope="col" colspan="3" style="background: #ededed;">กำลังรอการยืนยัน content person ที่จะมาดูแล ticket นี้</td>
+              
+        </tr>
+      ';
 
+    }else{
       $subtask .='
         <tr>
               <td scope="col" style="background: #ededed;"><a href="https://content-service-gate.cdsecommercecontent.ga/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'">
@@ -28,6 +40,7 @@
               <td scope="col" style="background: #ededed;">'. $row["work_email"].'</td>
         </tr>
       ';
+    }
     $i++;
   }
 if($subtask<>""){
