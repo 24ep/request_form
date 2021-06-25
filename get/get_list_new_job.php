@@ -8,12 +8,12 @@
 }
 
 .tree_label:after {
-    position: absolute;
+  position: absolute;
     top: 0em;
-    left: -2.3em;
+    left: -25%;
     display: block;
-    height: 0.8em;
-    width: 1.4em;
+    height: 50%;
+    width: 20%;
     border-bottom: 2px solid #727476;
     border-left: 2px solid #727476;
     border-radius: 0 0 0 .4em;
@@ -139,22 +139,30 @@ if($_POST["from_post"] ==true ){
 
   if($row["config_type"]=="parent"){
     $tr_class = "class='sub-ticket shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'";
+    $task_status = '<ion-icon name="caret-down-outline"></ion-icon>';
+    $query_sum="SELECT sum(sku) as total from add_new_job where parent = ".$row["id"];
+    $result_sum = mysqli_query($con, $query_sum);
+    $data_sum=mysqli_fetch_assoc($result_sum);
+    $subtask_sum = "(".$data_sum['total'].")";
   }else{
     $tr_class = "class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'";
+    $task_status = $row["status"];
+    $subtask_sum = .$row["sku"];
   }
+
       echo "<tr ".$tr_class." >";
       echo "<th scope='row'>NS-".$row["id"]."</th>";
       echo "<td>".$row["department"]."</td>";
       // echo "<td>".date('d/m/y h:i A',strtotime($row['create_date']))."</td>";
       echo "<td>".$row["brand"]."</td>";
-      echo "<td>".$row["sku"]."</td>";
+      echo "<td>".$subtask_sum."</td>";
       echo "<td>". $ri_style ."</td>";
       
       echo "<td>".$row["production_type"]."</td>";
       echo "<td>".$row["project_type"]."</td>";
       echo "<td>".$row["business_type"]."</td>";
       echo "<td>".$launch_date."</td>";
-      echo "<td ".$status_style." ><strong>".$row["status"]."</strong></td>";
+      echo "<td ".$status_style." ><strong>".$task_status."</strong></td>";
       echo "<td>". $ticket_role ."</td>";
       echo "<td>";
       echo "<button type='button' id='ns_ticket_".$row['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row["id"].")' >
