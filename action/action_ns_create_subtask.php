@@ -51,7 +51,7 @@ foreach ($array_number_subtask as $number_of_sku) {
                         $key = $row["token_line"];
                     }
                     if($key<>"" and $key<>null){
-                        sent_line_noti("\nNS-".$id." [".$brand." ".$sku."]  \n----------------------------\n".$_SESSION["nickname"]." create new sub-ticket",$key);
+                        sent_line_noti("\nNS-".$id." [".$brand." ".$sku." SKUs]  \n----------------------------\n".$_SESSION["nickname"]." create new sub-ticket",$key);
                     }
                 }
             }

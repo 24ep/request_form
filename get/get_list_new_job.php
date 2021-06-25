@@ -153,7 +153,7 @@ if($_POST["from_post"] ==true ){
     $subtask_sum = $row["sku"]." S(".$data_sum['total'].")";
   }else{
     $tr_class = "class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'";
-    $task_status = $row["status"];
+    $task_status = $status ;
     $subtask_sum = $row["sku"];
   }
 
@@ -169,7 +169,7 @@ if($_POST["from_post"] ==true ){
       echo "<td>".$row["project_type"]."</td>";
       echo "<td>".$row["business_type"]."</td>";
       echo "<td>".$launch_date."</td>";
-      echo "<td >".$status."</td>";
+      echo "<td >". $task_status ."</td>";
       echo "<td>". $ticket_role ."</td>";
       echo "<td>";
       echo "<button type='button' id='ns_ticket_".$row['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row["id"].")' >
