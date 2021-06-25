@@ -22,15 +22,15 @@
 
 .tree_lift {
    position: absolute;
-    padding-left: 1.5% !important;
+    padding-left: 20.5px !important;
     border-left: 2px solid #727476;
     margin-left: 2.5%;
-    height: 6.3%;
+    height: 65px;
 }
 
 .tree_lift_end {
   position: absolute;
-    padding-left: 1.5% !important;
+    padding-left: 1.15% !important;
     border-left: 2px solid transparent;
     margin-left: 2.5%;
     height: 5%;
