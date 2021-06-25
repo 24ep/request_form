@@ -141,8 +141,7 @@ label#label_file_cme {
                 <h5 class="modal-title" id="edit_add_new_title">
                     <?php echo "<strong><span style='color:red'>NS</span>-".$_POST["id"]."</strong> ".$brand." ".$sku." SKU ". $dp_tags . "<a style='font-size:10px;margin-left:10px' target='_Blank' href='https://content-service-gate.cdsecommercecontent.ga/get/get_ns_log_by_id.php?id=".$_POST["id"]."&action_table=add_new_job&action_data=csg'><small><ion-icon name='time-outline'></ion-icon>Changed log</small></a>"; ?>
                 </h5>
-                <button type="button" class="btn btn-light btn-sm"
-                    <?php echo $status_style; ?>><?php  echo $status; ?></button>
+                <button type="button" class="btn btn-light btn-sm" <?php echo $status_style; ?> > <?php  echo $status; ?></button>
             </div>
             <div class="modal-body overflow-auto" style="height:100%">
                 <!--"-->
