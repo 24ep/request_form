@@ -21,19 +21,29 @@
 }
 
 .tree_lift {
-   position: absolute;
+   /* position: absolute;
     padding-left: 20.5px !important;
+    border-left: 2px solid #727476;
+    margin-left: 2.5%;
+    height: 65px; */
+    position: relative;
+    left: 55px !important;
     border-left: 2px solid #727476;
     margin-left: 2.5%;
     height: 65px;
 }
 
 .tree_lift_end {
-  position: absolute;
+  /* position: absolute;
     padding-left: 21.5px !important;
     border-left: 2px solid transparent;
     margin-left: 2.5%;
-    height: 5%;
+    height: 5%; */
+    position: relative;
+    left: 55px !important;
+    border-left: 2px solid #727476;
+    margin-left: 2.5%;
+    
 }
 
 .sub-ticket{
