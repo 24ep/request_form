@@ -111,20 +111,27 @@ if($_POST["from_post"] ==true ){
       $ticket_role = "participant";
     }
     //stamp color status
-    if($row["status"]=="pending"){
+    if($row_child["status"]=="pending"){
       $status_style = 'style="background: #a9a9a94f;color:#8f8f8f"';
-    }elseif($row["status"]=="checking"){
+      $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
+    }elseif($row_child["status"]=="checking"){
       $status_style = 'style="background: #ffff7e;color:#997300"';
-    }elseif($row["status"]=="accepted"){
+      $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #ffff7e;color:#997300;border:#ffff7e">pending</button>';
+    }elseif($row_child["status"]=="accepted"){
       $status_style = 'style="background: #7befb2;color:#115636"';
-    }elseif($row["status"]=="waiting confirm"){
+      $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #7befb2;color:#115636;border:#ffff7e">pending</button>';
+    }elseif($row_child["status"]=="waiting confirm"){
       $status_style = 'style="background: #499CF7;color:#093f8e"';
-    }elseif($row["status"]=="waiting image"){
+      $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #499CF7;color:#093f8e;border:#499CF7">pending</button>';
+    }elseif($row_child["status"]=="waiting image"){
       $status_style = 'style="background: #FE7A6F;color:#a80c1b"';
-    }elseif($row["status"]=="waiting data"){
+      $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">pending</button>';
+    }elseif($row_child["status"]=="waiting data"){
       $status_style = 'style="background: #FE7A6F;color:#a80c1b"';
-    }elseif($row["status"]=="waiting traffic"){
+      $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">pending</button>';
+    }elseif($row_child["status"]=="waiting traffic"){
       $status_style = 'style="background: #ea79f7;color:#6a2e71"';
+      $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #ea79f7;color:#6a2e71;border:#ea79f7">pending</button>';
     }
     if($row['request_important']=="Urgent"){
       $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row['request_important'].'</span>';
@@ -162,7 +169,7 @@ if($_POST["from_post"] ==true ){
       echo "<td>".$row["project_type"]."</td>";
       echo "<td>".$row["business_type"]."</td>";
       echo "<td>".$launch_date."</td>";
-      echo "<td ".$status_style." ><strong>".$task_status."</strong></td>";
+      echo "<td >".$status."</td>";
       echo "<td>". $ticket_role ."</td>";
       echo "<td>";
       echo "<button type='button' id='ns_ticket_".$row['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row["id"].")' >
