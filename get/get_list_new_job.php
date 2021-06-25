@@ -139,7 +139,7 @@ if($_POST["from_post"] ==true ){
 
   if($row["config_type"]=="parent"){
     $tr_class = "class='sub-ticket shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'";
-    $task_status = '<ion-icon name="caret-down-outline"></ion-icon>';
+    $task_status = '';
     $query_sum="SELECT sum(sku) as total from add_new_job where parent = ".$row["id"];
     $result_sum = mysqli_query($con, $query_sum);
     $data_sum=mysqli_fetch_assoc($result_sum);
