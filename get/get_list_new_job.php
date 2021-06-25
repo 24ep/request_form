@@ -39,7 +39,7 @@
     margin-left: 2.5%;
     height: 5%; */
     position: relative;
-    left: 672.5px !important;
+    left: 72.5px !important;
     border-left: 2px solid transparent;
     margin-left: 2.5%;
     height: 0px
