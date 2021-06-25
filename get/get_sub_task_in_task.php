@@ -22,7 +22,7 @@
                NS-'.$row["parent"].'-'.$i.' ('.$row["id"].')</a></td>
               <td scope="col" style="background: #ededed;">'. $row["sku"].'</td>
               <td scope="col" style="background: #ededed;">'. $row["status"].'</td>
-              <td scope="col" style="background: #ededed;">'. $row["firstname"]." ".$row["lastname"]." (".$row["nickname"]')</td>
+              <td scope="col" style="background: #ededed;">'. $row["firstname"].' '.$row["lastname"].' ('.$row["nickname"].')</td>
               <td scope="col" style="background: #ededed;">'. $row["office_tell"].'</td>
               <td scope="col" style="background: #ededed;">'. $row["work_email"].'</td>
         </tr>
