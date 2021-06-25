@@ -43,8 +43,15 @@ if($subtask<>""){
 
     </tbody>
 </table>
-<?php }else{ ?>
-<h6><strong>Contact Person</strong> | <small class="card-text">Content & Studio Team - Follow up</small></h6>
+<?php }else{ 
+      if($follow_up_name==""){
+        $tr_filst = '<td colspan="3" style="text-align: center;" >กำลังรอการยืนยัน content person ที่จะมาดูแล ticket นี้</td>';
+    }else{
+      $tr_filst '<td scope="col" style="background: #ededed;">'. $follow_up_name.'</td>
+              <td scope="col" style="background: #ededed;">'. $office_tell.'</td>
+              <td scope="col" style="background: #ededed;">'. $work_email.'</td>';
+    }
+echo '<h6><strong>Contact Person</strong> | <small class="card-text">Content & Studio Team - Follow up</small></h6>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -55,19 +62,10 @@ if($subtask<>""){
     </thead>
     <tbody>
         <tr>
-            <?php if($follow_up_name==""){
-                      echo '<td colspan="3" style="text-align: center;" >กำลังรอการยืนยัน content person ที่จะมาดูแล ticket นี้</td>';
-                  }else{
-                      echo '<td scope="col" style="background: #ededed;">'. $follow_up_name.'</td>
-                            <td scope="col" style="background: #ededed;">'. $office_tell.'</td>
-                            <td scope="col" style="background: #ededed;">'. $work_email.'</td>';
-                  }?>
+       '.$tr_filst.'
 
         </tr>
     </tbody>
-</table>
-<?php
-
-
+</table>'
 
 } ?>
