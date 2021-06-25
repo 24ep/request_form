@@ -2,17 +2,7 @@
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
-  $query = "SELECT 
-  add_new.id as id,
-  add_new.sku as sku,
-  add_new.status as status,
-  account.firstname as firstname,
-  account.lastname as lastname,
-  account.nickname as nickname,
-  account.work_email as work_email,
-  account.office_tell as office_tell,
-  add_new.parent as parent
-  FROM add_new_job as add_new left join account as account on add_new.follow_up_by = account.username  where add_new.parent =".$id  or die("Error:" . mysqli_error());
+  $query = "SELECT * FROM add_new_job where parent =".$id  or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
     $i=1;
   while($row = mysqli_fetch_array($result)) {
@@ -23,9 +13,9 @@
                NS-'.$row["parent"].'-'.$i.' ('.$row["id"].')</a></td>
               <td scope="col" style="background: #ededed;">'. $row["sku"].'</td>
               <td scope="col" style="background: #ededed;">'. $row["status"].'</td>
-              <td scope="col" style="background: #ededed;"></td>
-              <td scope="col" style="background: #ededed;">'. $row["office_tell"].'</td>
-              <td scope="col" style="background: #ededed;">'. $row["work_email"].'</td>
+              <td scope="col" style="background: #ededed;">'. $row["contact_person"].'</td>
+              <td scope="col" style="background: #ededed;">'. $row["tell"].'</td>
+              <td scope="col" style="background: #ededed;">'. $row["Email"].'</td>
         </tr>
       ';
     $i++;
