@@ -27,10 +27,9 @@
     margin-left: 2.5%;
     height: 65px; */
     position: relative;
-    left: 73px !important;
+    left: 67px !important;
     border-left: 2px solid #727476;
     margin-left: 2.5%;
-    height: 65px;
 }
 
 .tree_lift_end {
@@ -40,7 +39,7 @@
     margin-left: 2.5%;
     height: 5%; */
     position: relative;
-    left: 73px !important;
+    left: 67px !important;
     border-left: 2px solid transparent;
     margin-left: 2.5%;
     height: 0px
