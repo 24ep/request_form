@@ -12,7 +12,7 @@
   account.work_email as work_email,
   account.office_tell as office_tell,
   add_new.parent as parent
-  FROM add_new_job as add_new left join account as account on add_new.follow_up_by = account.username  where parent =".$id  or die("Error:" . mysqli_error());
+  FROM add_new_job as add_new left join account as account on add_new.follow_up_by = account.username  where add_new.parent =".$id  or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
     $i=1;
   while($row = mysqli_fetch_array($result)) {
