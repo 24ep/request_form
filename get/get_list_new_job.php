@@ -27,7 +27,7 @@
     margin-left: 2.5%;
     height: 65px; */
     position: relative;
-    left: 67px !important;
+    left: 72.5px !important;
     border-left: 2px solid #727476;
     margin-left: 2.5%;
 }
@@ -39,7 +39,7 @@
     margin-left: 2.5%;
     height: 5%; */
     position: relative;
-    left: 67px !important;
+    left: 672.5px !important;
     border-left: 2px solid transparent;
     margin-left: 2.5%;
     height: 0px
