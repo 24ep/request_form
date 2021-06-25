@@ -147,7 +147,7 @@ if($_POST["from_post"] ==true ){
   }else{
     $tr_class = "class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'";
     $task_status = $row["status"];
-    $subtask_sum = .$row["sku"];
+    $subtask_sum = $row["sku"];
   }
 
       echo "<tr ".$tr_class." >";
