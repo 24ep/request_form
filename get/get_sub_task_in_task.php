@@ -66,6 +66,6 @@ echo '<h6><strong>Contact Person</strong> | <small class="card-text">Content & S
 
         </tr>
     </tbody>
-</table>'
+</table>';
 
 } ?>

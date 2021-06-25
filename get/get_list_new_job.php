@@ -199,25 +199,25 @@ if($_POST["from_post"] ==true ){
           //stamp color status
           if($row_child["status"]=="pending"){
             $status_style = 'style="background: #a9a9a94f;color:#8f8f8f"';
-            $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
+            $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
           }elseif($row_child["status"]=="checking"){
             $status_style = 'style="background: #ffff7e;color:#997300"';
-            $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #ffff7e;color:#997300;border:#ffff7e">checking</button>';
+            $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ffff7e;color:#997300;border:#ffff7e">checking</button>';
           }elseif($row_child["status"]=="accepted"){
             $status_style = 'style="background: #7befb2;color:#115636"';
-            $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #7befb2;color:#115636;border:#ffff7e">accepted</button>';
+            $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #7befb2;color:#115636;border:#ffff7e">accepted</button>';
           }elseif($row_child["status"]=="waiting confirm"){
             $status_style = 'style="background: #499CF7;color:#093f8e"';
-            $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #499CF7;color:#093f8e;border:#499CF7">waiting confirm</button>';
+            $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #499CF7;color:#093f8e;border:#499CF7">waiting confirm</button>';
           }elseif($row_child["status"]=="waiting image"){
             $status_style = 'style="background: #FE7A6F;color:#a80c1b"';
-            $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting image</button>';
+            $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting image</button>';
           }elseif($row_child["status"]=="waiting data"){
             $status_style = 'style="background: #FE7A6F;color:#a80c1b"';
-            $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting data</button>';
+            $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting data</button>';
           }elseif($row_child["status"]=="waiting traffic"){
             $status_style = 'style="background: #ea79f7;color:#6a2e71"';
-            $status = '<button type="button" class="btn btn-secondary btn-sm" style="background: #ea79f7;color:#6a2e71;border:#ea79f7">waiting traffic</button>';
+            $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ea79f7;color:#6a2e71;border:#ea79f7">waiting traffic</button>';
           }
  
 
