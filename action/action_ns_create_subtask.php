@@ -18,7 +18,7 @@ foreach ($array_number_subtask as $number_of_sku) {
 	$query = mysqli_query($con,$sql);
 	if($query) {
         $last_id = $con->insert_id;
-        $sql_update_parent = "UPDATE add_new_job SET sku =0,status = 'none',config_type= 'parent' where id=".$id ;
+        $sql_update_parent = "UPDATE add_new_job SET status = 'none',config_type= 'parent' where id=".$id ;
         $query_update_parent = mysqli_query($con,$sql_update_parent);
         if($query_update_parent){
             //show log

@@ -150,7 +150,7 @@ if($_POST["from_post"] ==true ){
     $query_sum="SELECT sum(sku) as total from add_new_job where parent = ".$row["id"];
     $result_sum = mysqli_query($con, $query_sum);
     $data_sum=mysqli_fetch_assoc($result_sum);
-    $subtask_sum = "(".$data_sum['total'].")";
+    $subtask_sum = " S(".$data_sum['total'].")";
   }else{
     $tr_class = "class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'";
     $task_status = $row["status"];
@@ -162,7 +162,7 @@ if($_POST["from_post"] ==true ){
       echo "<td>".$row["department"]."</td>";
       // echo "<td>".date('d/m/y h:i A',strtotime($row['create_date']))."</td>";
       echo "<td>".$row["brand"]."</td>";
-      echo "<td>".$subtask_sum."</td>";
+      echo "<td>".$row["sku"].$subtask_sum."</td>";
       echo "<td>". $ri_style ."</td>";
       
       echo "<td>".$row["production_type"]."</td>";
