@@ -30,7 +30,7 @@
 
 .tree_lift_end {
   position: absolute;
-    padding-left: 1.15% !important;
+    padding-left: 20.5% !important;
     border-left: 2px solid transparent;
     margin-left: 2.5%;
     height: 5%;
