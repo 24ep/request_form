@@ -287,7 +287,7 @@ label#label_file_cme {
                                         </div>
                                         <div class="col-sm-3">
                                             <button type="button" onclick="split_to_subtask(<?php echo $id; ?>);"
-                                                class="btn btn-outline-primary btn-sm">Create sub ticket</button>
+                                                class="btn btn-outline-primary btn-sm"><ion-icon name="color-wand-outline"></ion-icon>Create sub ticket</button>
                                         </div>
                                         <div id="emailHelp" class="form-text">
                                             <ul>
