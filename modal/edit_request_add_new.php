@@ -253,9 +253,9 @@ label#label_file_cme {
                         $allow_cancel = "disabled";
                         $allow_send_to_traffic = "disabled";
                         $allow_task_ticket = "disabled";
-                        $help_start = "<small>you has been cancel ticket</small>";
-                        $help_traffic = "<small>you has been cancel ticket</small>";
-                        $help_cancel = "<small>you has been cancel ticket</small>";
+                        $help_start = "<small>you has been cancel this ticket</small>";
+                        $help_traffic = "<small>you has been cancel this ticket</small>";
+                        $help_cancel = "<small>you has been cancel this ticket</small>";
                     }
                         else{
                             unset($allow_cancel);
@@ -266,8 +266,8 @@ label#label_file_cme {
                     ?>
                             <h6><strong>Create Sub Ticket</strong></h6>
                                 <small>Generate new sub-ticket and convert ticket from buyer to parent ticket</small>
-                                <br style="margin-bottom:5px">
-                                <div class="row mb-1">
+                           
+                                <div class="row mb-1" style="margin-top:10px">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">SKU</label>
                                     <div class="col-sm-7">
                                         <input type="text" class="form-control form-control-sm" id="sku_task_set"
@@ -292,8 +292,8 @@ label#label_file_cme {
                                 <hr>
                                 <h6><strong>Main action Console</strong></h6>
                                 <small>Manage you ticket at here , please make sure your step before take action</small>
-                                <br style="margin-bottom:5px">
-                                <div class="card-group">
+                               
+                                <div class="card-group" style="margin-top:10px">
                                     <div class="card">
                                         <div class="card-body">
                                             <h6 class="card-title">1.Checking information</h6>
