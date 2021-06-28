@@ -48,8 +48,8 @@
     min-height: 20px;
     display:block; */
     border-left: 2px solid #727476;
-    margin-left: 95px;
-    min-height: 65px;
+    margin-left: 75px;
+    height: 54px;
     display: block;
 
 }
