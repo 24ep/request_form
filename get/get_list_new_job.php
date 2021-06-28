@@ -29,7 +29,7 @@
     padding-left: 15px !important;
     border-left: 2px solid #727476;
     margin-left: 120px;
-    height: 65px;
+    min-height: 20px;
     display:block;
 
 }
@@ -41,9 +41,9 @@
     margin-left: 2.5%;
     height: 5%; */
     padding-left: 15px !important;
-    border-left: 2px solid #727476;
+    border-left: 2px solid transparent;
     margin-left: 120px;
-    height: 65px;
+    min-height: 20px;
     display:block;
     
 }
