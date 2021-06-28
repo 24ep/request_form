@@ -241,9 +241,25 @@ label#label_file_cme {
                         </div>';
                     }?>
                     <?php 
-                    if($start_checking_date<>"" and $start_checking_date<>null){$allow_task_ticket = "disabled";}else{unset($allow_task_ticket);} 
-                    if($accepted_date<>"" and $accepted_date<>null){$allow_send_to_traffic = "disabled";}else{unset($allow_send_to_traffic);} 
-                    if($cancel_resone<>"" and $cancel_resone<>null){$allow_cancel = "disabled";}else{unset($allow_cancel);} 
+                    if($start_checking_date<>"" and $start_checking_date<>null){
+                        $allow_task_ticket = "disabled";
+                        $help_start = "<small>you has been start checking information</small>";
+                    }else{unset($allow_task_ticket);unset($help_start;} 
+                    if($accepted_date<>"" and $accepted_date<>null){
+                        $allow_send_to_traffic = "disabled";
+                        $help_traffic = "<small>you has been send this ticket to traffic</small>";
+                    }else{unset($allow_send_to_traffic);unset($help_traffic);} 
+                    if($cancel_resone<>"" and $cancel_resone<>null){
+                        $allow_cancel = "disabled";
+                        $allow_send_to_traffic = "disabled";
+                        $allow_task_ticket = "disabled";}
+                        $help_start = "<small>you has been cancel ticket</small>";
+                        $help_traffic = "<small>you has been cancel ticket</small>";
+                        $help_cancel = "<small>you has been cancel ticket</small>";
+                        else{
+                            unset($allow_cancel);
+                            unset($help_cancel);
+                        } 
 
                     
                     ?>
@@ -275,19 +291,21 @@ label#label_file_cme {
                                 <hr>
                                 <h6><strong>Main action Console</strong></h6>
                                 <small>Manage you ticket at here , please make sure your step before take action</small>
-                                
+                                <br 
                                 <div class="card-group">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">1.Checking information</h5>
+                                            <h6 class="card-title">1.Checking information</h6>
                                             <p class="card-text">Press this button first for take a job,the system will
                                                 show your contact on detail of ticket and notification to requester
                                                 ticket</p>
                                             
                                             <button onclick="start_checking(<?php echo $id; ?>);" type="button"
                                                 class="btn btn-primary btn-sm" <?php echo $allow_task_ticket; ?>
-                                                style="width: 100%;border-radius: 0px;">Start
+                                                style="width: 100%;">Start
                                                 Checking</button>
+                                            <?php echo $help_start; ?>
+                                                
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted">
@@ -298,14 +316,15 @@ label#label_file_cme {
                                     </div>
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">2.Confirm send to traffic</h5>
+                                            <h6 class="card-title">2.Confirm send to traffic</h6>
                                             <p class="card-text">Press this button when you completed information for
                                                 those SKUs,the system will change status of ticket to 'waiting traffic
                                             </p>
                                             <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
                                                 class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?> 
-                                                style="width: 100%;border-radius: 0px;">Sent to
+                                                style="width: 100%;">Sent to
                                                 Traffic</button>
+                                                <?php echo $help_traffic; ?>
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted">
@@ -315,7 +334,7 @@ label#label_file_cme {
                                     </div>
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">2.Cancel ticket</h5>
+                                            <h6 class="card-title">2.Cancel ticket</h6>
                                             <p class="card-text">Press this button when you want ... or requester
                                                 request to cancel this ticket,please make sure you have a reason for
                                                 take this action </p>
@@ -327,8 +346,9 @@ label#label_file_cme {
                                             </div>
                                             <button onclick="cancel_stt(<?php echo $id; ?>);" type="button"
                                                 class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?> 
-                                                style="width: 100%;border-radius: 0px;margin-top:5px">Cancel
+                                                style="width: 100%;;margin-top:5px">Cancel
                                             </button>
+                                            <?php echo $help_cancel; ?>
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted">
