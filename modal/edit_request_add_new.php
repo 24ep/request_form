@@ -265,7 +265,7 @@ label#label_file_cme {
                     ?>
                             <h6><strong>Create Sub Ticket</strong></h6>
                                 <small>Generate new sub-ticket and convert ticket from buyer to parent ticket</small>
-                                <br>
+                                <br style="margin-bottom:5px">
                                 <div class="row mb-1">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">SKU</label>
                                     <div class="col-sm-7">
@@ -291,7 +291,7 @@ label#label_file_cme {
                                 <hr>
                                 <h6><strong>Main action Console</strong></h6>
                                 <small>Manage you ticket at here , please make sure your step before take action</small>
-                                <br 
+                                <br style="margin-bottom:5px">
                                 <div class="card-group">
                                     <div class="card">
                                         <div class="card-body">
