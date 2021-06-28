@@ -10,7 +10,7 @@
     background: transparent;
     color: #727476;
     vertical-align: -webkit-baseline-middle;
-    margin-left: -24px;
+    margin-left: -5px;
 }
 
 .tree_label:after {
@@ -39,7 +39,7 @@
     display:block; */
     border-left: 2px solid #727476;
     margin-left: 95px;
-    min-height: 50px;
+    min-height: 65px;
     display: block;
 
 }
