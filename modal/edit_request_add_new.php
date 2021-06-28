@@ -229,18 +229,74 @@ label#label_file_cme {
                                 aria-labelledby="v-pills-log-tab">...</div>
                             <div class="tab-pane fade" id="v-pills-fu_team" role="tabpanel"
                                 aria-labelledby="v-pills-fu_team-tab">
+<!-- ///////////////// -->
+<div class="card-group">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">1.Checking information</h5>
+      <p class="card-text">Press this button first for take a job,the system will show your contact on detail of ticket and notification to requester ticket</p>
+      <button onclick="start_checking(<?php echo $id; ?>);" type="button"
+                                                    class="btn btn-primary btn-sm"
+                                                    style="width: 100%;border-radius: 0px;">Start
+                                                    Checking</button>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"> <div id="start_checking_resault"><?php echo $start_checking_date;?></div></small>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">2.Confirm send to traffic</h5>
+      <p class="card-text">Press this button when you completed information for those SKUs,the system will change status of ticket to 'waiting traffic</p>
+      <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
+                                                    class="btn btn-success  btn-sm"
+                                                    style="width: 100%;border-radius: 0px;">Sent to
+                                                    Traffic</button>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"><div id="accept_checking_resault"><?php echo $accepted_date;?></div></small>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">2.Cancel ticket</h5>
+      <p class="card-text">Press this button when you want ... or requester request to cancel this ticket,please make sure you have a reason for take this action </p>
+     
+      <div class="form-floating">
+                                                    <input type="text" class="form-control" id="resone_cancel"
+                                                        name="resone_cancel" value="">
+                                                    <label for="floatingInputGrid">Reason</label>
+                                                </div>
+      <button onclick="cancel_stt(<?php echo $id; ?>);" type="button"
+                                                    class="btn btn-danger btn-sm"
+                                                    style="width: 100%;border-radius: 0px;margin-top:5px">Cancel
+                                                </button>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"> <div id="cancel_checking_resault"><?php echo $cancel_resone;?></div></small>
+    </div>
+  </div>
+</div>
+
+
+                                <!-- ///////////////////// -->
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
+                                           
                                             <th scope="col">State</th>
-                                            <th scope="col">Action</th>
-                                            <th scope="col">Action Date</th>
+                                            <th scope="col">Action Log</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th scope="row">Checking information</th>
-                                            <td><a onclick="start_checking(<?php echo $id; ?>);" type="button"
+                                            
+                                            <td>
+                                            <strong>1.Checking information</strong><br>
+                                            <p>Press this button first for take a job,
+                                            the system will show your contact on detail of ticket and notification to requester ticket</p>
+                                            
+                                            <button onclick="start_checking(<?php echo $id; ?>);" type="button"
                                                     class="btn btn-primary btn-sm"
                                                     style="width: 100%;border-radius: 0px;">Start
                                                     Checking</button></td>
@@ -250,8 +306,12 @@ label#label_file_cme {
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Accept request > Sent to traffic</th>
-                                            <td><button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
+                                            
+                                            <td>
+                                            <strong>2.Confirm send to traffic</strong><br>
+                                            <p>Press this button when you completed information for those SKUs,
+                                            the system will change status of ticket to 'waiting traffic'</p>
+                                            <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
                                                     class="btn btn-success  btn-sm"
                                                     style="width: 100%;border-radius: 0px;">Sent to
                                                     Traffic</button></td>
@@ -260,8 +320,11 @@ label#label_file_cme {
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Need to Cancel ?</th>
+                                            
                                             <td>
+                                            <strong>2.Cancel ticket</strong><br>
+                                            <p>Press this button when you want ... or requester request to cancel this ticket,
+                                            please make sure you have a reason for take this action '</p>
                                                 <div class="form-floating">
                                                     <input type="text" class="form-control" id="resone_cancel"
                                                         name="resone_cancel" value="">
@@ -315,33 +378,7 @@ label#label_file_cme {
                                     </div>
 
                                 </div>
-                                <?php if($_SESSION["username"]=="poojaroonwit"){ ?>
-                                <div class="position-relative m-4">
-                                    <div class="progress" style="height: 1px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 20%;"
-                                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <button type="button"
-                                        class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill"
-                                        style="width: 2rem; height:2rem;">pending</button>
-                                    <button type="button"
-                                        class="position-absolute top-0 start-20 translate-middle btn btn-sm btn-secondary rounded-pill"
-                                        style="width: 2rem; height:2rem;">checking</button>
-                                    <button type="button"
-                                        class="position-absolute top-0 start-40 translate-middle btn btn-sm btn-secondary rounded-pill"
-                                        style="width: 2rem; height:2rem;">waiting traffic</button>
-                                    <button type="button"
-                                        class="position-absolute top-0 start-60 translate-middle btn btn-sm btn-secondary rounded-pill"
-                                        style="width: 2rem; height:2rem;">wait assign</button>
-                                    <button type="button"
-                                        class="position-absolute top-0 start-60 translate-middle btn btn-sm btn-secondary rounded-pill"
-                                        style="width: 2rem; height:2rem;">writer/studio in progress</button>
-                                    <button type="button"
-                                        class="position-absolute top-0 start-80 translate-middle btn btn-sm btn-secondary rounded-pill"
-                                        style="width: 2rem; height:2rem;">approved</button>
-                                    
-                                </div>
-                                <?php } ?>
+                              
 
                             </div>
                             <div class="tab-pane fade" id="v-pills-tf_team" role="tabpanel"
