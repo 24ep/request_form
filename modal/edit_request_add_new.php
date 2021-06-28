@@ -256,6 +256,7 @@ label#label_file_cme {
                         $help_start = "<small>you has been cancel ticket</small>";
                         $help_traffic = "<small>you has been cancel ticket</small>";
                         $help_cancel = "<small>you has been cancel ticket</small>";
+                    }
                         else{
                             unset($allow_cancel);
                             unset($help_cancel);
