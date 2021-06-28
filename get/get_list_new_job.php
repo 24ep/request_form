@@ -15,7 +15,6 @@
 
 .tree_label:after {
   /* position: absolute;
-  
     top: 0em;
     left: -25%;
     display: block;
