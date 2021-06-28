@@ -247,73 +247,7 @@ label#label_file_cme {
 
                     
                     ?>
-                                <!-- ///////////////// -->
-                                <div class="card-group">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">1.Checking information</h5>
-                                            <p class="card-text">Press this button first for take a job,the system will
-                                                show your contact on detail of ticket and notification to requester
-                                                ticket</p>
-                                            
-                                            <button onclick="start_checking(<?php echo $id; ?>);" type="button"
-                                                class="btn btn-primary btn-sm" <?php $allow_task_ticket; ?>
-                                                style="width: 100%;border-radius: 0px;">Start
-                                                Checking</button>
-                                        </div>
-                                        <div class="card-footer">
-                                            <small class="text-muted">
-                                                <div id="start_checking_resault">Latest : <?php echo $start_checking_date;?> 
-                                                </div>
-                                            </small>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">2.Confirm send to traffic</h5>
-                                            <p class="card-text">Press this button when you completed information for
-                                                those SKUs,the system will change status of ticket to 'waiting traffic
-                                            </p>
-                                            <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
-                                                class="btn btn-success  btn-sm" <?php $allow_send_to_traffic; ?> 
-                                                style="width: 100%;border-radius: 0px;">Sent to
-                                                Traffic</button>
-                                        </div>
-                                        <div class="card-footer">
-                                            <small class="text-muted">
-                                                <div id="accept_checking_resault">Latest : <?php echo $accepted_date;?></div>
-                                            </small>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">2.Cancel ticket</h5>
-                                            <p class="card-text">Press this button when you want ... or requester
-                                                request to cancel this ticket,please make sure you have a reason for
-                                                take this action </p>
-
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control" id="resone_cancel" <?php $allow_cancel; ?> 
-                                                    name="resone_cancel" value="">
-                                                <label for="floatingInputGrid">Reason</label>
-                                            </div>
-                                            <button onclick="cancel_stt(<?php echo $id; ?>);" type="button"
-                                                class="btn btn-danger btn-sm" <?php $allow_cancel; ?> 
-                                                style="width: 100%;border-radius: 0px;margin-top:5px">Cancel
-                                            </button>
-                                        </div>
-                                        <div class="card-footer">
-                                            <small class="text-muted">
-                                                <div id="cancel_checking_resault">Latest : <?php echo $cancel_resone;?></div>
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <hr>
-                                <h6><strong>Create Sub Ticket</strong></h6>
+                            <h6><strong>Create Sub Ticket</strong></h6>
                                 <small>Generate new sub-ticket and convert ticket from buyer to parent ticket</small>
                                 <br>
                                 <div class="row mb-1">
@@ -338,6 +272,76 @@ label#label_file_cme {
                                     </div>
 
                                 </div>
+                                <hr>
+                                <h6><strong>Main action Console</strong></h6>
+                                <small>Manage you ticket at here , please make sure your step before take action</small>
+                                
+                                <div class="card-group">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">1.Checking information</h5>
+                                            <p class="card-text">Press this button first for take a job,the system will
+                                                show your contact on detail of ticket and notification to requester
+                                                ticket</p>
+                                            
+                                            <button onclick="start_checking(<?php echo $id; ?>);" type="button"
+                                                class="btn btn-primary btn-sm" <?php echo $allow_task_ticket; ?>
+                                                style="width: 100%;border-radius: 0px;">Start
+                                                Checking</button>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">
+                                                <div id="start_checking_resault">Latest : <?php echo $start_checking_date;?> 
+                                                </div>
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">2.Confirm send to traffic</h5>
+                                            <p class="card-text">Press this button when you completed information for
+                                                those SKUs,the system will change status of ticket to 'waiting traffic
+                                            </p>
+                                            <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
+                                                class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?> 
+                                                style="width: 100%;border-radius: 0px;">Sent to
+                                                Traffic</button>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">
+                                                <div id="accept_checking_resault">Latest : <?php echo $accepted_date;?></div>
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">2.Cancel ticket</h5>
+                                            <p class="card-text">Press this button when you want ... or requester
+                                                request to cancel this ticket,please make sure you have a reason for
+                                                take this action </p>
+
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="resone_cancel" <?php $allow_cancel; ?> 
+                                                    name="resone_cancel" value="">
+                                                <label for="floatingInputGrid">Reason</label>
+                                            </div>
+                                            <button onclick="cancel_stt(<?php echo $id; ?>);" type="button"
+                                                class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?> 
+                                                style="width: 100%;border-radius: 0px;margin-top:5px">Cancel
+                                            </button>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">
+                                                <div id="cancel_checking_resault">Latest : <?php echo $cancel_resone;?></div>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                
+                               
 
 
                             </div>
