@@ -244,7 +244,7 @@ label#label_file_cme {
                     if($start_checking_date<>"" and $start_checking_date<>null){
                         $allow_task_ticket = "disabled";
                         $help_start = "<small>you has been start checking information</small>";
-                    }else{unset($allow_task_ticket);unset($help_start;} 
+                    }else{unset($allow_task_ticket);unset($help_start);} 
                     if($accepted_date<>"" and $accepted_date<>null){
                         $allow_send_to_traffic = "disabled";
                         $help_traffic = "<small>you has been send this ticket to traffic</small>";
@@ -334,7 +334,7 @@ label#label_file_cme {
                                     </div>
                                     <div class="card">
                                         <div class="card-body">
-                                            <h6 class="card-title">2.Cancel ticket</h6>
+                                            <h6 class="card-title">Cancel ticket</h6>
                                             <p class="card-text">Press this button when you want ... or requester
                                                 request to cancel this ticket,please make sure you have a reason for
                                                 take this action </p>
