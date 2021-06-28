@@ -240,6 +240,13 @@ label#label_file_cme {
                         </p>
                         </div>';
                     }?>
+                    <?php 
+                    if($start_checking_date=="" or $start_checking_date==null){$allow_task_ticket = "disabled";}else{unset($allow_task_ticket);} 
+                    if($accepted_date=="" or $accepted_date==null){$allow_send_to_traffic = "disabled";}else{unset($allow_send_to_traffic);} 
+                    if($cancel_resone=="" or $cancel_resone==null){$allow_cancel = "disabled";}else{unset($allow_cancel);} 
+
+                    
+                    ?>
                                 <!-- ///////////////// -->
                                 <div class="card-group">
                                     <div class="card">
@@ -248,14 +255,15 @@ label#label_file_cme {
                                             <p class="card-text">Press this button first for take a job,the system will
                                                 show your contact on detail of ticket and notification to requester
                                                 ticket</p>
+                                            
                                             <button onclick="start_checking(<?php echo $id; ?>);" type="button"
-                                                class="btn btn-primary btn-sm"
+                                                class="btn btn-primary btn-sm" <?php $allow_task_ticket; ?>
                                                 style="width: 100%;border-radius: 0px;">Start
                                                 Checking</button>
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted">
-                                                <div id="start_checking_resault">Latest : <?php echo $start_checking_date;?>
+                                                <div id="start_checking_resault">Latest : <?php echo $start_checking_date;?> 
                                                 </div>
                                             </small>
                                         </div>
@@ -267,7 +275,7 @@ label#label_file_cme {
                                                 those SKUs,the system will change status of ticket to 'waiting traffic
                                             </p>
                                             <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
-                                                class="btn btn-success  btn-sm"
+                                                class="btn btn-success  btn-sm" <?php $allow_send_to_traffic; ?> 
                                                 style="width: 100%;border-radius: 0px;">Sent to
                                                 Traffic</button>
                                         </div>
@@ -285,12 +293,12 @@ label#label_file_cme {
                                                 take this action </p>
 
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="resone_cancel"
+                                                <input type="text" class="form-control" id="resone_cancel" <?php $allow_cancel; ?> 
                                                     name="resone_cancel" value="">
                                                 <label for="floatingInputGrid">Reason</label>
                                             </div>
                                             <button onclick="cancel_stt(<?php echo $id; ?>);" type="button"
-                                                class="btn btn-danger btn-sm"
+                                                class="btn btn-danger btn-sm" <?php $allow_cancel; ?> 
                                                 style="width: 100%;border-radius: 0px;margin-top:5px">Cancel
                                             </button>
                                         </div>
