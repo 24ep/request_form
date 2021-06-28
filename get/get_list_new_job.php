@@ -14,12 +14,22 @@
 }
 
 .tree_label:after {
-  position: absolute;
+  /* position: absolute;
     top: 0em;
     left: -25%;
     display: block;
     height: 50%;
     width: 20%;
+    border-bottom: 2px solid #727476;
+    border-left: 2px solid #727476;
+    border-radius: 0 0 0 .4em;
+    content: ''; */
+    position: absolute;
+    top: 0em;
+    left: -24px;
+    display: table-column-group;
+    height: 10px;
+    width: 20px;
     border-bottom: 2px solid #727476;
     border-left: 2px solid #727476;
     border-radius: 0 0 0 .4em;
@@ -57,7 +67,7 @@
     display:block; */
     border-left: 2px solid transparent;
     margin-left: 95px;
-    min-height: 50px;
+    min-height: 65px;
     display: block;
     
 }
