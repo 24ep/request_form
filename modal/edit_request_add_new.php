@@ -277,28 +277,7 @@ label#label_file_cme {
                                             </td>
                                         </tr>
                                     </tbody>
-                                    <hr>
-                                    <h6>Create Sub Ticket</h6>
-                                    <div class="row mb-1">
-                                        <label for="inputEmail3" class="col-sm-2 col-form-label">SKU</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control form-control-sm" id="sku_task_set"
-                                                name="sku_task_set" placeholder="10,40,23,45,45">
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <button type="button" onclick="split_to_subtask(<?php echo $id; ?>);"
-                                                class="btn btn-outline-primary btn-sm"><ion-icon name="color-wand-outline"></ion-icon>Create sub ticket</button>
-                                        </div>
-                                        <div id="emailHelp" class="form-text">
-                                            <ul>
-                                                <li>Fll separate number of SKUs you want to create sub-ticket,</li>
-                                                <li>Additional data will be copy from parent ticket</li>
-                                                <li>Parent sku do not calculate on report</li>
-                                            </ul>
-                                        </div>
-                                      
-                                    </div>
-                                    <hr>
+
                                     <?php if(strpos($status,"review")!==false){
                         echo '<div class="alert alert-warning" style="border-radius: 0px;" role="alert">
                         <h6 class="alert-heading" style="margin:0px">
@@ -310,6 +289,59 @@ label#label_file_cme {
                         </div>';
                     }?>
                                 </table>
+                                <hr>
+                                <h6><strong>Create Sub Ticket</strong></h6>
+                                <small>Generate new sub-ticket and convert ticket from buyer to parent ticket</small>
+                                <div class="row mb-1">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">SKU</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control form-control-sm" id="sku_task_set"
+                                            name="sku_task_set" placeholder="10,40,23,45,45">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <button type="button" onclick="split_to_subtask(<?php echo $id; ?>);"
+                                            class="btn btn-outline-primary btn-sm">
+                                            <ion-icon name="color-wand-outline"></ion-icon>Create sub ticket
+                                        </button>
+                                    </div>
+                                    <div id="emailHelp" class="form-text">
+                                        <strong>Does it work ?</strong>
+                                        <ul>
+                                            <li>Fll separate number of SKUs you want to create sub-ticket</li>
+                                            <li>Additional data will be copy from parent ticket</li>
+                                            <li>Parent sku do not calculate on report</li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <?php if($_SESSION["username"]=="poojaroonwit"){ ?>
+                                <div class="position-relative m-4">
+                                    <div class="progress" style="height: 1px;">
+                                        <div class="progress-bar" role="progressbar" style="width: 50%;"
+                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <button type="button"
+                                        class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill"
+                                        style="width: 2rem; height:2rem;">pending</button>
+                                    <button type="button"
+                                        class="position-absolute top-0 start-20 translate-middle btn btn-sm btn-primary rounded-pill"
+                                        style="width: 2rem; height:2rem;">checking</button>
+                                    <button type="button"
+                                        class="position-absolute top-0 start-40 translate-middle btn btn-sm btn-secondary rounded-pill"
+                                        style="width: 2rem; height:2rem;">waiting traffic</button>
+                                    <button type="button"
+                                        class="position-absolute top-0 start-60 translate-middle btn btn-sm btn-secondary rounded-pill"
+                                        style="width: 2rem; height:2rem;">wait assign</button>
+                                    <button type="button"
+                                        class="position-absolute top-0 start-60 translate-middle btn btn-sm btn-secondary rounded-pill"
+                                        style="width: 2rem; height:2rem;">writer/studio in progress</button>
+                                    <button type="button"
+                                        class="position-absolute top-0 start-80 translate-middle btn btn-sm btn-secondary rounded-pill"
+                                        style="width: 2rem; height:2rem;">approved</button>
+                                    
+                                </div>
+                                <?php } ?>
+
                             </div>
                             <div class="tab-pane fade" id="v-pills-tf_team" role="tabpanel"
                                 aria-labelledby="v-pills-tf_team-tab">
