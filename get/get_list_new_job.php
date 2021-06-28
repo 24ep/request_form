@@ -11,6 +11,8 @@
     color: #727476;
     vertical-align: -webkit-baseline-middle;
     margin-left: -5px; */
+    padding-left: 17px;
+    color: gray;
 }
 
 .tree_label:after {
@@ -34,6 +36,8 @@
     border-left: 2px solid #727476;
     border-radius: 0 0 0 .4em;
     content: '';
+    padding-top: 23px;
+    
 }
 
 .tree_lift {
