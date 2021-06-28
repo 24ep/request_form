@@ -1,10 +1,16 @@
 <style>
 .tree_label {
-    position: relative;
+    /* position: relative;
+    display: inline-block;
+    background: transparent;
+    color: #727476;
+    vertical-align: -webkit-baseline-middle; */
+    position: absolute;
     display: inline-block;
     background: transparent;
     color: #727476;
     vertical-align: -webkit-baseline-middle;
+    margin-left: -24px;
 }
 
 .tree_label:after {
@@ -26,11 +32,15 @@
     border-left: 2px solid #727476;
     margin-left: 2.5%;
     height: 65px; */
-    padding-left: 15px !important;
+    /* padding-left: 15px !important;
     border-left: 2px solid #727476;
     margin-left: 120px;
     min-height: 20px;
-    display:block;
+    display:block; */
+    border-left: 2px solid #727476;
+    margin-left: 95px;
+    min-height: 50px;
+    display: block;
 
 }
 
@@ -40,11 +50,15 @@
     border-left: 2px solid transparent;
     margin-left: 2.5%;
     height: 5%; */
-    padding-left: 15px !important;
+    /* padding-left: 15px !important;
     border-left: 2px solid transparent;
     margin-left: 120px;
     min-height: 20px;
-    display:block;
+    display:block; */
+    border-left: 2px solid transparent;
+    margin-left: 95px;
+    min-height: 50px;
+    display: block;
     
 }
 
