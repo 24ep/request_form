@@ -292,6 +292,7 @@ label#label_file_cme {
                                 <hr>
                                 <h6><strong>Create Sub Ticket</strong></h6>
                                 <small>Generate new sub-ticket and convert ticket from buyer to parent ticket</small>
+                                <br>
                                 <div class="row mb-1">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">SKU</label>
                                     <div class="col-sm-7">
@@ -317,14 +318,14 @@ label#label_file_cme {
                                 <?php if($_SESSION["username"]=="poojaroonwit"){ ?>
                                 <div class="position-relative m-4">
                                     <div class="progress" style="height: 1px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 50%;"
-                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar" role="progressbar" style="width: 20%;"
+                                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                     <button type="button"
                                         class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill"
                                         style="width: 2rem; height:2rem;">pending</button>
                                     <button type="button"
-                                        class="position-absolute top-0 start-20 translate-middle btn btn-sm btn-primary rounded-pill"
+                                        class="position-absolute top-0 start-20 translate-middle btn btn-sm btn-secondary rounded-pill"
                                         style="width: 2rem; height:2rem;">checking</button>
                                     <button type="button"
                                         class="position-absolute top-0 start-40 translate-middle btn btn-sm btn-secondary rounded-pill"
