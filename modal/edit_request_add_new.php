@@ -296,9 +296,7 @@ label#label_file_cme {
                                                 <li>Parent sku do not calculate on report</li>
                                             </ul>
                                         </div>
-                                        <!-- <div id="call_subtask">
-                                                <?php //include('../get/get_sub_task_in_task.php'); ?>
-                                            </div> -->
+                                      
                                     </div>
                                     <hr>
                                     <?php if(strpos($status,"review")!==false){
