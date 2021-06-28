@@ -11,7 +11,7 @@
     color: #727476;
     vertical-align: -webkit-baseline-middle;
     margin-left: -5px; */
-    padding-left: 17px;
+    padding-left: 15px;
     color: gray;
 }
 

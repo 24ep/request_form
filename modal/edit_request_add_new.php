@@ -141,7 +141,8 @@ label#label_file_cme {
                 <h5 class="modal-title" id="edit_add_new_title">
                     <?php echo "<strong><span style='color:red'>NS</span>-".$_POST["id"]."</strong> ".$brand." ".$sku." SKU ". $dp_tags . "<a style='font-size:10px;margin-left:10px' target='_Blank' href='https://content-service-gate.cdsecommercecontent.ga/get/get_ns_log_by_id.php?id=".$_POST["id"]."&action_table=add_new_job&action_data=csg'><small><ion-icon name='time-outline'></ion-icon>Changed log</small></a>"; ?>
                 </h5>
-                <button type="button" class="btn btn-light btn-sm" <?php echo $status_style; ?> > <?php  echo $status; ?></button>
+                <button type="button" class="btn btn-light btn-sm" <?php echo $status_style; ?>>
+                    <?php  echo $status; ?></button>
             </div>
             <div class="modal-body overflow-auto" style="height:100%">
                 <!--"-->
@@ -198,11 +199,11 @@ label#label_file_cme {
                                 aria-labelledby="v-pills-progress-tab">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                            
+
 
                                         <div id="call_subtask">
-                                                <?php include('../get/get_sub_task_in_task.php'); ?>
-                                            </div>
+                                            <?php include('../get/get_sub_task_in_task.php'); ?>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -277,22 +278,29 @@ label#label_file_cme {
                                         </tr>
                                     </tbody>
                                     <hr>
-                                    <h6>Create sub ticket</h6>
-                                        <div class="row mb-1">
-                                            <label for="inputEmail3"  class="col-sm-2 col-form-label">SKU</label>
-                                            <div class="col-sm-7">
-                                                <input type="text" class="form-control" id="sku_task_set" name="sku_task_set"
-                                                    placeholder="10,40,23,45,45">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <button type="button" onclick="split_to_subtask(<?php echo $id; ?>);" class="btn btn-outline-primary">Create sub ticket</button>
-                                            </div>
-                                            <div id="emailHelp" class="form-text">in development</div>
-                                            <!-- <div id="call_subtask">
+                                    <h6>Create Sub Ticket</h6>
+                                    <div class="row mb-1">
+                                        <label for="inputEmail3" class="col-sm-2 col-form-label">SKU</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control form-control-sm" id="sku_task_set"
+                                                name="sku_task_set" placeholder="10,40,23,45,45">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <button type="button" onclick="split_to_subtask(<?php echo $id; ?>);"
+                                                class="btn btn-outline-primary btn-sm">Create sub ticket</button>
+                                        </div>
+                                        <div id="emailHelp" class="form-text">
+                                            <ul>
+                                                <li>Fll separate number of SKUs you want to create sub-ticket,</li>
+                                                <li>Additional data will be copy from parent ticket</li>
+                                                <li>Parent sku do not calculate on report</li>
+                                            </ul>
+                                        </div>
+                                        <!-- <div id="call_subtask">
                                                 <?php //include('../get/get_sub_task_in_task.php'); ?>
                                             </div> -->
-                                        </div>
-                                        <hr>
+                                    </div>
+                                    <hr>
                                     <?php if(strpos($status,"review")!==false){
                         echo '<div class="alert alert-warning" style="border-radius: 0px;" role="alert">
                         <h6 class="alert-heading" style="margin:0px">
@@ -508,10 +516,11 @@ function comment_cme_id_with_file(id, send_type) {
         }
     });
 }
-function split_to_subtask(id){
+
+function split_to_subtask(id) {
     var sku_task_set = document.getElementById("sku_task_set").value;
     document.getElementById('sku_task_set').value = ''; //clear value
-    if(id) {
+    if (id) {
         $.post("action/action_ns_create_subtask.php", {
                 id: id,
                 sku_task_set: sku_task_set
@@ -521,6 +530,4 @@ function split_to_subtask(id){
             });
     }
 }
-
-
 </script>
