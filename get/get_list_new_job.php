@@ -5,16 +5,17 @@
     background: transparent;
     color: #727476;
     vertical-align: -webkit-baseline-middle; */
-    position: absolute;
+    /* position: absolute;
     display: inline-block;
     background: transparent;
     color: #727476;
     vertical-align: -webkit-baseline-middle;
-    margin-left: -5px;
+    margin-left: -5px; */
 }
 
 .tree_label:after {
   /* position: absolute;
+  
     top: 0em;
     left: -25%;
     display: block;
@@ -26,7 +27,7 @@
     content: ''; */
     position: absolute;
     top: 0em;
-    left: -24px;
+    left: -2px;
     display: table-column-group;
     height: 10px;
     width: 20px;
@@ -47,10 +48,9 @@
     margin-left: 120px;
     min-height: 20px;
     display:block; */
-    border-left: 2px solid #727476;
-    margin-left: 75px;
-    height: 54px;
-    display: block;
+    left: 75px;
+    position: relative;
+    border-left: 2px solid #6c757d;
 
 }
 
@@ -65,10 +65,9 @@
     margin-left: 120px;
     min-height: 20px;
     display:block; */
+    left: 75px;
+    position: relative;
     border-left: 2px solid transparent;
-    margin-left: 75px;
-    height: 54px;
-    display: block;
     
 }
 
