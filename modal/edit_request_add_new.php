@@ -252,7 +252,7 @@ label#label_file_cme {
                     if($cancel_resone<>"" and $cancel_resone<>null){
                         $allow_cancel = "disabled";
                         $allow_send_to_traffic = "disabled";
-                        $allow_task_ticket = "disabled";}
+                        $allow_task_ticket = "disabled";
                         $help_start = "<small>you has been cancel ticket</small>";
                         $help_traffic = "<small>you has been cancel ticket</small>";
                         $help_cancel = "<small>you has been cancel ticket</small>";
