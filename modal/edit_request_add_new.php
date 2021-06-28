@@ -241,9 +241,9 @@ label#label_file_cme {
                         </div>';
                     }?>
                     <?php 
-                    if($start_checking_date=="" or $start_checking_date==null){$allow_task_ticket = "disabled";}else{unset($allow_task_ticket);} 
-                    if($accepted_date=="" or $accepted_date==null){$allow_send_to_traffic = "disabled";}else{unset($allow_send_to_traffic);} 
-                    if($cancel_resone=="" or $cancel_resone==null){$allow_cancel = "disabled";}else{unset($allow_cancel);} 
+                    if($start_checking_date<>"" and $start_checking_date<>null){$allow_task_ticket = "disabled";}else{unset($allow_task_ticket);} 
+                    if($accepted_date<>"" and $accepted_date<>null){$allow_send_to_traffic = "disabled";}else{unset($allow_send_to_traffic);} 
+                    if($cancel_resone<>"" and $cancel_resone<>null){$allow_cancel = "disabled";}else{unset($allow_cancel);} 
 
                     
                     ?>
