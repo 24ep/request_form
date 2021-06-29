@@ -132,14 +132,7 @@ label#label_file_cme {
    $dp_tags .= '<span class="badge rounded-pill bg-dark" style="margin-left:10px">'.$tag.'</span>';
   }
 ?>
-<div class="toast align-items-center text-white bg-primary border-0" id="alert_ms" role="alert" aria-live="assertive" aria-atomic="true">
-  <div class="d-flex">
-    <div class="toast-body">
-      Hello, world! This is a toast message.
-    </div>
-    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-  </div>
-</div>
+
 <div class="offcanvas-body" style="padding-bottom: 0px;height: 100%;">
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="position: fixed;right: 40px;"
         aria-label="Close"></button>
@@ -281,7 +274,7 @@ label#label_file_cme {
                                         <input type="text" class="form-control form-control-sm" id="sku_task_set"
                                             name="sku_task_set" placeholder="10,40,23,45,45" required>
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-3" id="bt_create_task">
                                         <button type="submit" onclick="split_to_subtask(<?php echo $id; ?>);"
                                             class="btn btn-outline-primary btn-sm">
                                             <ion-icon name="color-wand-outline"></ion-icon>Create Sub-ticket
@@ -580,6 +573,7 @@ function comment_cme_id_with_file(id, send_type) {
 }
 
 function split_to_subtask(id) {
+    document.getElementById('bt_create_task').html = '<button class="btn btn-primary" type="button" disabled><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Loading...</button>';
     var sku_task_set = document.getElementById("sku_task_set").value;
     document.getElementById('sku_task_set').value = ''; //clear value
     if (id) {
@@ -589,7 +583,7 @@ function split_to_subtask(id) {
             },
             function(data) {
                 $('#call_subtask').html(data);
-                $("#alert_ms").toast('show');
+                document.getElementById('bt_create_task').html = '<button class="btn btn-success" type="button" disabled><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Success</button>';
             });
     }
 }
