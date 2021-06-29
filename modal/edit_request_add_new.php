@@ -583,7 +583,7 @@ function split_to_subtask(id) {
             },
             function(data) {
                 $('#call_subtask').html(data);
-                document.getElementById('bt_create_task').htinnerHTML ml = '<button class="btn btn-success" type="button" disabled><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Success</button>';
+                document.getElementById('bt_create_task').innerHTML  = '<button class="btn btn-success" type="button" disabled><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Success</button>';
                 var sku_task_set = document.getElementById("sku_task_set").value;
             });
     }
