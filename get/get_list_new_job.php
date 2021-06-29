@@ -251,6 +251,8 @@ if($_POST["from_post"] ==true ){
           }elseif($row_child["status"]=="waiting traffic"){
             $status_style = 'style="background: #ea79f7;color:#6a2e71"';
             $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ea79f7;color:#6a2e71;border:#ea79f7">waiting traffic</button>';
+          }else{
+            $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">'.$row_child["status"].'</button>';
           }
  
 
