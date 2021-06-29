@@ -16,14 +16,31 @@
   $result = mysqli_query($con, $query);
     $i=1;
   while($row = mysqli_fetch_array($result)) {
+    //stamp color status
+    if($row["status"]=="pending"){
+      $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
+    }elseif($row["status"]=="checking"){
+      $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ffff7e;color:#997300;border:#ffff7e">checking</button>';
+    }elseif($row["status"]=="accepted"){
+      $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #7befb2;color:#115636;border:#115636">accepted</button>';
+    }elseif($row["status"]=="waiting confirm"){
+      $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #499CF7;color:#093f8e;border:#499CF7">waiting confirm</button>';
+    }elseif($row["status"]=="waiting image"){
+      $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting image</button>';
+    }elseif($row["status"]=="waiting data"){
+      $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting data</button>';
+    }elseif($row["status"]=="waiting traffic"){
+      $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ea79f7;color:#6a2e71;border:#ea79f7">waiting traffic</button>';
+    }
+    //end
     if($row["firstname"]==""){
       $subtask .='
         <tr>
-              <td scope="col" style="background: #ededed;"><a href="https://content-service-gate.cdsecommercecontent.ga/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'">
+              <td ><a href="https://content-service-gate.cdsecommercecontent.ga/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'">
                NS-'.$row["parent"].'-'.$i.' ('.$row["id"].')</a></td>
-              <td scope="col" style="background: #ededed;">'. $row["sku"].'</td>
-              <td scope="col" style="background: #ededed;">'. $row["status"].'</td>
-              <td scope="col" colspan="3" style="background: #ededed;">กำลังรอการยืนยัน content person ที่จะมาดูแล ticket นี้</td>
+              <td >'. $row["sku"].'</td>
+              <td >'. $status .'</td>
+              <td  colspan="3" >กำลังรอการยืนยัน content person ที่จะมาดูแล ticket นี้</td>
               
         </tr>
       ';
@@ -31,13 +48,13 @@
     }else{
       $subtask .='
         <tr>
-              <td scope="col" style="background: #ededed;"><a href="https://content-service-gate.cdsecommercecontent.ga/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'">
+              <td ><a href="https://content-service-gate.cdsecommercecontent.ga/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'">
                NS-'.$row["parent"].'-'.$i.' ('.$row["id"].')</a></td>
-              <td scope="col" style="background: #ededed;">'. $row["sku"].'</td>
-              <td scope="col" style="background: #ededed;">'. $row["status"].'</td>
-              <td scope="col" style="background: #ededed;">'. $row["firstname"].' '. $row["firstname"].'('.$row["nickname"].')</td>
-              <td scope="col" style="background: #ededed;">'. $row["office_tell"].'</td>
-              <td scope="col" style="background: #ededed;">'. $row["work_email"].'</td>
+              <td '. $row["sku"].'</td>
+              <td '. $row["status"].'</td>
+              <td '. $row["firstname"].' '. $row["firstname"].'('.$row["nickname"].')</td>
+              <td '. $row["office_tell"].'</td>
+              <td '. $row["work_email"].'</td>
         </tr>
       ';
     }
@@ -48,7 +65,7 @@ if($subtask<>""){
 ?>
 
 <h6><strong>Sub ticket</strong> - <small class="card-text">Contact person</small></h6>
-<table class="table table-bordered">
+<table class="table table-borderless">
     <thead>
         <tr>
             <th scope="col">id</th>
@@ -60,7 +77,7 @@ if($subtask<>""){
 
         </tr>
     </thead>
-    <tbody>
+    <tbody class="shadow-sm">
 
         <?php echo $subtask; ?>
 
