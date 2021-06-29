@@ -584,11 +584,13 @@ function split_to_subtask(id) {
             },
             function(data) {
                 $('#call_subtask').html(data);
-                 document.getElementById('bt_create_task').innerHTML  = '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
+                
             
-                document.getElementById('sku_task_set').value = ''; //clear value
+                
                 // alert("Created new sub ticket");
             });
+            document.getElementById('sku_task_set').value = ''; //clear value
+            document.getElementById('bt_create_task').innerHTML  = '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
     }
 }
 </script>
