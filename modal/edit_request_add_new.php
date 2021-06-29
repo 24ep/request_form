@@ -266,12 +266,12 @@ label#label_file_cme {
                     ?>
                             <h6><strong>Create Sub Ticket</strong></h6>
                                 <small>Generate new sub-ticket and convert ticket from buyer to parent ticket</small>
-                           
+                            <from>
                                 <div class="row mb-1" style="margin-top:10px">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">SKU</label>
                                     <div class="col-sm-7">
                                         <input type="text" class="form-control form-control-sm" id="sku_task_set"
-                                            name="sku_task_set" placeholder="10,40,23,45,45">
+                                            name="sku_task_set" placeholder="10,40,23,45,45" required>
                                     </div>
                                     <div class="col-sm-3">
                                         <button type="button" onclick="split_to_subtask(<?php echo $id; ?>);"
@@ -289,6 +289,7 @@ label#label_file_cme {
                                     </div>
 
                                 </div>
+                                </from>
                                 <hr>
                                 <h6><strong>Main action Console</strong></h6>
                                 <small>Manage you ticket at here , please make sure your step before take action</small>
