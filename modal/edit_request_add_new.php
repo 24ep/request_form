@@ -132,7 +132,7 @@ label#label_file_cme {
    $dp_tags .= '<span class="badge rounded-pill bg-dark" style="margin-left:10px">'.$tag.'</span>';
   }
 ?>
-<div class="toast align-items-center text-white bg-primary border-0" id="alert_ms"role="alert" aria-live="assertive" aria-atomic="true">
+<div class="toast align-items-center text-white bg-primary border-0" id="alert_ms" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="d-flex">
     <div class="toast-body">
       Hello, world! This is a toast message.
@@ -282,7 +282,7 @@ label#label_file_cme {
                                             name="sku_task_set" placeholder="10,40,23,45,45" required>
                                     </div>
                                     <div class="col-sm-3">
-                                        <button type="button" onclick="split_to_subtask(<?php echo $id; ?>);"
+                                        <button type="submit" onclick="split_to_subtask(<?php echo $id; ?>);"
                                             class="btn btn-outline-primary btn-sm">
                                             <ion-icon name="color-wand-outline"></ion-icon>Create sub ticket
                                         </button>
