@@ -53,7 +53,7 @@
               <td ><a href="https://content-service-gate.cdsecommercecontent.ga/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'">
                NS-'.$row["parent"].'-'.$i.' ('.$row["id"].')</a></td>
               <td>'. $row["sku"].'</td>
-              <td >'. $row["status"].'</td>
+              <td >'.$status.'</td>
               <td >'. $row["firstname"].' '. $row["poolnai"].' ('.$row["nickname"].')</td>
               <td >'. $row["office_tell"].'</td>
               <td >'. $row["work_email"].'</td>
