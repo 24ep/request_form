@@ -132,6 +132,14 @@ label#label_file_cme {
    $dp_tags .= '<span class="badge rounded-pill bg-dark" style="margin-left:10px">'.$tag.'</span>';
   }
 ?>
+<div class="toast align-items-center text-white bg-primary border-0" id="alert_ms"role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</div>
 <div class="offcanvas-body" style="padding-bottom: 0px;height: 100%;">
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="position: fixed;right: 40px;"
         aria-label="Close"></button>
@@ -581,6 +589,7 @@ function split_to_subtask(id) {
             },
             function(data) {
                 $('#call_subtask').html(data);
+                $("#alert_ms").toast('show');
             });
     }
 }
