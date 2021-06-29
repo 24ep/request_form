@@ -57,6 +57,7 @@ foreach ($array_number_subtask as $number_of_sku) {
             }
                 add_participant($_POST['id'],"add_new_job");
                 insert_log("create new sub-ticket (".$last_id.")","add_new_job",$_POST['id']);
+                echo 'success';
 
 
     }else{
