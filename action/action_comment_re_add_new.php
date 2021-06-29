@@ -62,6 +62,7 @@ $send_type= $_POST["send_type"];
     $sql = "UPDATE add_new_job SET 
     need_more_info_date = CURRENT_TIMESTAMP , 
     need_more_info_note = '".$comment_to_nmi."',
+    accepted_date = null,
     status = 'waiting confirm'  WHERE id=".$id;
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
