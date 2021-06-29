@@ -54,7 +54,7 @@
                NS-'.$row["parent"].'-'.$i.' ('.$row["id"].')</a></td>
               <td>'. $row["sku"].'</td>
               <td >'.$status.'</td>
-              <td >'. $row["firstname"].' '. $row["poolnai"].' ('.$row["nickname"].')</td>
+              <td >'. $row["firstname"].' '. $row["lastname"].' ('.$row["nickname"].')</td>
               <td >'. $row["office_tell"].'</td>
               <td >'. $row["work_email"].'</td>
         </tr>
