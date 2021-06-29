@@ -584,7 +584,7 @@ function split_to_subtask(id) {
             },
             function(data) {
             
-                // $('#call_subtask').html(data);
+                $('#call_subtask').html(data);
                 
                 // alert("Created new sub ticket");
             });
