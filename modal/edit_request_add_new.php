@@ -583,13 +583,13 @@ function split_to_subtask(id) {
                 sku_task_set: sku_task_set
             },
             function(data) {
-            document.getElementById('sku_task_set').value = ''; //clear value
-            document.getElementById('bt_create_task').innerHTML  = '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
+            
                 // $('#call_subtask').html(data);
                 
                 // alert("Created new sub ticket");
             });
-           
+            document.getElementById('sku_task_set').value = ''; //clear value
+            document.getElementById('bt_create_task').innerHTML  = '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
     }
 }
 </script>
