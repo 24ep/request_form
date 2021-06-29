@@ -275,7 +275,7 @@ label#label_file_cme {
                                             name="sku_task_set" placeholder="10,40,23,45,45" required>
                                     </div>
                                     <div class="col-sm-3" id="bt_create_task">
-                                        <button type="submit" onclick="split_to_subtask(<?php echo $id; ?>);"
+                                        <button type="button" onclick="split_to_subtask(<?php echo $id; ?>);"
                                             class="btn btn-outline-primary btn-sm">
                                             <ion-icon name="color-wand-outline"></ion-icon>Create Sub-ticket
                                         </button>
