@@ -573,7 +573,8 @@ function comment_cme_id_with_file(id, send_type) {
 }
 
 function split_to_subtask(id) {
-    // document.getElementById('bt_create_task').innerHTML  = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Loading...';
+    var sku_task_set = document.getElementById("sku_task_set").value;
+     document.getElementById('bt_create_task').innerHTML  = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Loading...';
     
    
     if (id) {
@@ -583,10 +584,10 @@ function split_to_subtask(id) {
             },
             function(data) {
                 $('#call_subtask').html(data);
-                // document.getElementById('bt_create_task').innerHTML  = '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
-                var sku_task_set = document.getElementById("sku_task_set").value;
+                 document.getElementById('bt_create_task').innerHTML  = '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
+            
                 document.getElementById('sku_task_set').value = ''; //clear value
-                alert("Created new sub ticket");
+                // alert("Created new sub ticket");
             });
     }
 }
