@@ -226,7 +226,7 @@ if($_POST["from_post"] ==true ){
       }
       if($_SESSION['status_filter']<>""){
         if($row["config_type"]=="parent"){
-          if($sub_ticket<>"" or $sub_ticket==null){
+          if($sub_ticket<>"" or $sub_ticket<>null){
             echo $ticket.$sub_ticket;
           }
         }else{
@@ -237,5 +237,6 @@ if($_POST["from_post"] ==true ){
        }
        unset($ticket);
        unset($sub_ticket);
+       unset($status);
   }
   ?>
