@@ -96,7 +96,7 @@ if($_POST["from_post"] ==true ){
    }
  }
  if($_SESSION['status_filter']<>""){
-  $status_filter ="status like '%".$_SESSION['status_filter']."%'";
+  $status_filter ="status like '%".$_SESSION['status_filter']."%' or status = 'none'";
  }else{
   $status_filter ="1=1";
  }
@@ -146,7 +146,7 @@ if($_POST["from_post"] ==true ){
       $tr_class = "class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'";
       $task_status = $status ;
       $subtask_sum = $row["sku"];
-  }
+    }
       $ticket .= "<tr ".$tr_class." >";
       $ticket .= "<th scope='row'>NS-".$row["id"]."</th>";
       $ticket .= "<td>".$row["department"]."</td>";
@@ -203,7 +203,6 @@ if($_POST["from_post"] ==true ){
             $sub_ticket .= "<td>". $ticket_role ."</td>";
             $sub_ticket .= "<td>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
             Detail </button></td>";
-            $sub_ticket .= "<td>".  "</tr>";
             $i++;
           }
         }else{
@@ -222,7 +221,6 @@ if($_POST["from_post"] ==true ){
         $sub_ticket .= "<td>". $ticket_role ."</td>";
         $sub_ticket .= "<td>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
          Detail </button></td>";
-        $sub_ticket .= "<td>".  "</tr>";
         $i++;
         }
       }
