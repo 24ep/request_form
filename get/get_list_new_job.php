@@ -239,5 +239,7 @@ if($_POST["from_post"] ==true ){
        }else{
         echo $ticket.$sub_ticket;
        }
+       unset($ticket);
+       unset($sub_ticket);
   }
   ?>
