@@ -384,15 +384,15 @@ label#label_file_cme {
                                             while($row = mysqli_fetch_array($result)) {
                                                 if($row["backlog_sku"]==null){$backlog_sku = 0;}
                                                 if($row["username"]==$follow_assign_name){
-                                                    $follow_assign_option .= '<option selected value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
+                                                    echo  '<option selected value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
                                                 }else{
-                                                    $follow_assign_option .= '<option value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
+                                                    echo  '<option value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
                                                 }
                                         
                                             }
 
                                         ?>
-                                  <?php echo  $follow_assign_option; ?>
+                                
                                         </select>
                                     </div>
                                     
