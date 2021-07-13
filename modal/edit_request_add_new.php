@@ -385,6 +385,8 @@ label#label_file_cme {
                                                 if($row["backlog_sku"]==null){$backlog_sku = 0;}else{$backlog_sku = $row["backlog_sku"];}
                                                 if($row["username"]==$follow_assign_name){
                                                     echo  '<option selected value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
+                                                }elseif($row["username"]==null or $row["username"]=='unassign' ){
+                                                    echo  '<option value="unassign">unassign</option>';
                                                 }else{
                                                     echo  '<option value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
                                                 }
@@ -636,8 +638,9 @@ function action_assign_follow(id) {
             },
             function(data) {
                 // $('#call_subtask').html(data);       
-                alert("Assigned !");
+                // alert("Assigned !");
             });
+            alert("Assigned !");
  
     }
 }
