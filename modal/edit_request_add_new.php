@@ -374,7 +374,7 @@ label#label_file_cme {
                                     <div class="col-auto">
                                         <select class="form-select" id="op_follow_assign_name" name="op_follow_assign_name" aria-label="Default select example">
                                         <?php
-
+                                            $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
                                             $query = "SELECT account.username as username,account.nickname as nickname,account.department as department,sum(new_job.sku) as backlog_sku 
                                             FROM account as account 
                                             left join add_new_job as new_job on account.username = new_job.follow_up_by and new_job.status <> 'accepted' and  new_job.status <> 'cancel'
@@ -390,6 +390,7 @@ label#label_file_cme {
                                                 }
                                         
                                             }
+                                            mysqli_close($con);
 
                                         ?>
                                 
