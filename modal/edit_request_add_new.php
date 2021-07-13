@@ -369,7 +369,7 @@ label#label_file_cme {
                                 <h6>Assign follow-up</h6>
                                 <form class="row g-3">
                                     <div class="col-auto">
-                                        <label for="staticEmail2" class="visually-hidden">follow-up name</label>
+                                        <label for="staticEmail2" class="">follow-up name</label>
                                     </div>
                                     <div class="col-auto">
                                         <select class="form-select" id="op_follow_assign_name" name="op_follow_assign_name" aria-label="Default select example">
