@@ -372,7 +372,7 @@ label#label_file_cme {
                                         <label for="staticEmail2" class="visually-hidden">follow-up name</label>
                                     </div>
                                     <div class="col-auto">
-                                        <select class="form-select" id="action_assign_follow" name="action_assign_follow" aria-label="Default select example">
+                                        <select class="form-select" id="op_follow_assign_name" name="op_follow_assign_name" aria-label="Default select example">
                                         <?php
 
                                             $query = "SELECT account.username as username,account.nickname as nickname ,account.department as department ,sum(new_job.sku) as backlog_sku 
@@ -392,11 +392,11 @@ label#label_file_cme {
                                             }
 
                                         ?>
-                                
+                                  <?php echo  $follow_assign_option; ?>
                                         </select>
                                     </div>
                                     
-                                        <?php echo  $follow_assign_option; ?>
+                                      
                                    
                                     <div class="col-auto">
                                         <button type="button" onchange="action_assign_follow(<?php echo  $_POST['id']; ?>)" class="btn btn-primary mb-3">Update</button>
