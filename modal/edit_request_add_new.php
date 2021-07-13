@@ -400,7 +400,7 @@ label#label_file_cme {
                                       
                                    
                                     <div class="col-auto">
-                                        <button type="button" onchange="action_assign_follow(<?php echo  $_POST['id']; ?>)" class="btn btn-primary mb-3">Update</button>
+                                        <button type="button" onclick="action_assign_follow(<?php echo  $_POST['id']; ?>)" class="btn btn-primary mb-3">Update</button>
                                     </div>
                                 </form>
                                 <hr>
