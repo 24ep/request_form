@@ -375,7 +375,7 @@ label#label_file_cme {
                                         <select class="form-select" id="op_follow_assign_name" name="op_follow_assign_name" aria-label="Default select example">
                                         <?php
 
-                                            $query = "SELECT account.username as username,account.nickname as nickname ,account.department as department ,sum(new_job.sku) as backlog_sku 
+                                            $query = "SELECT account.username as username,account.nickname as nickname,account.department as department,sum(new_job.sku) as backlog_sku 
                                             FROM account as account 
                                             left join add_new_job as new_job on account.username = new_job.follow_up_by and new_job.status <> 'accepted' and  new_job.status <> 'cancel'
                                             group by account.username 
@@ -384,9 +384,9 @@ label#label_file_cme {
                                             while($row = mysqli_fetch_array($result)) {
                                                 if($row["backlog_sku"]==null){$backlog_sku = 0;}
                                                 if($row["username"]==$follow_assign_name){
-                                                    $follow_assign_option = '<option selected value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
+                                                    $follow_assign_option .= '<option selected value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
                                                 }else{
-                                                    $follow_assign_option = '<option value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
+                                                    $follow_assign_option .= '<option value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
                                                 }
                                         
                                             }
