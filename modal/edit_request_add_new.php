@@ -381,17 +381,17 @@ label#label_file_cme {
                                             group by account.username 
                                             having account.department like '%follow%'" or die("Error:" . mysqli_error());
                                             $result = mysqli_query($con, $query);
+                                            echo  '<option value="unassign">unassign</option>';
                                             while($row = mysqli_fetch_array($result)) {
                                                 if($row["backlog_sku"]==null){$backlog_sku = 0;}else{$backlog_sku = $row["backlog_sku"];}
                                                
                                                 if($row["username"]==$follow_assign_name){
-                                                    if($follow_assign_name=='unassign' ){
-                                                        echo  '<option value="unassign">unassign</option>';
-                                                    }else{
+                                                  
                                                         echo  '<option selected value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
-                                                    }
                                                     
+                                        
                                                 }else{
+                                                    
                                                     echo  '<option value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
                                                 }
                                         
