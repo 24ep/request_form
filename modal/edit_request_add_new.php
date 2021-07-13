@@ -94,6 +94,8 @@ label#label_file_cme {
       $tags = $row['tags'];
       $online_channel = $row['online_channel'];
       $request_important = $row['request_important'];
+      $follow_assign_name = $row['follow_assign_name'];
+      $follow_assign_date = $row['follow_assign_date'];
 
     //stamp color status
     if($row["status"]=="pending"){
@@ -361,15 +363,46 @@ label#label_file_cme {
                                     </div>
                                 </div>
 
-
-
-                                
-                               
-
-
                             </div>
                             <div class="tab-pane fade" id="v-pills-tf_team" role="tabpanel"
                                 aria-labelledby="v-pills-tf_team-tab">
+                                <h6>Assign follow-up</h6>
+                                <form class="row g-3">
+                                    <div class="col-auto">
+                                        <label for="staticEmail2" class="visually-hidden">follow-up name</label>
+                                    </div>
+                                    <div class="col-auto">
+                                        <select class="form-select" id="action_assign_follow" name="action_assign_follow" aria-label="Default select example">
+                                        <?php
+
+                                            $query = "SELECT account.username as username,account.nickname as nickname ,account.department as department ,sum(new_job.sku) as backlog_sku 
+                                            FROM account as account 
+                                            left join add_new_job as new_job on account.username = new_job.follow_up_by and new_job.status <> 'accepted' and  new_job .status <> 'cancel'
+                                            group by account.username 
+                                            having account.department like '%follow%'" or die("Error:" . mysqli_error());
+                                            $result = mysqli_query($con, $query);
+                                            while($row = mysqli_fetch_array($result)) {
+                                                if($row["backlog_sku"]==null){$backlog_sku = 0;}
+                                                if($row["username"]==$follow_assign_name){
+                                                    $follow_assign_option = '<option selected value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
+                                                }else{
+                                                    $follow_assign_option = '<option value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
+                                                }
+                                        
+                                            }
+
+                                        ?>
+                                
+                                        </select>
+                                    </div>
+                                    
+                                        <?php echo  $follow_assign_option; ?>
+                                   
+                                    <div class="col-auto">
+                                        <button type="submit" onchange="action_assign_follow(<?php echo  $_POST['id']; ?>)" class="btn btn-primary mb-3">Update</button>
+                                    </div>
+                                </form>
+                                <hr>
                                 <form action="action/action_create_job_cms.php" method="POST" target="_blank">
                                     <input type="hidden" id="id_adj" name="id_adj" value="<?php echo  $_POST['id']; ?>">
                                     <?php include('../form/form_create_job_cms.php')?>
@@ -590,6 +623,21 @@ function split_to_subtask(id) {
             });
             document.getElementById('sku_task_set').value = ''; //clear value
             document.getElementById('bt_create_task').innerHTML  = '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
+    }
+}
+function action_assign_follow(id) {
+    var op_follow_assign_name = document.getElementById("op_follow_assign_name").value;
+    
+    if (id) {
+        $.post("action/action_assign_follow.php", {
+                id: id,
+                op_follow_assign_name: op_follow_assign_name
+            },
+            function(data) {
+                // $('#call_subtask').html(data);       
+                alert("Assigned !);
+            });
+ 
     }
 }
 </script>
