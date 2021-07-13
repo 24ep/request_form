@@ -377,7 +377,7 @@ label#label_file_cme {
 
                                             $query = "SELECT account.username as username,account.nickname as nickname ,account.department as department ,sum(new_job.sku) as backlog_sku 
                                             FROM account as account 
-                                            left join add_new_job as new_job on account.username = new_job.follow_up_by and new_job.status <> 'accepted' and  new_job .status <> 'cancel'
+                                            left join add_new_job as new_job on account.username = new_job.follow_up_by and new_job.status <> 'accepted' and  new_job.status <> 'cancel'
                                             group by account.username 
                                             having account.department like '%follow%'" or die("Error:" . mysqli_error());
                                             $result = mysqli_query($con, $query);
@@ -399,7 +399,7 @@ label#label_file_cme {
                                         <?php echo  $follow_assign_option; ?>
                                    
                                     <div class="col-auto">
-                                        <button type="submit" onchange="action_assign_follow(<?php echo  $_POST['id']; ?>)" class="btn btn-primary mb-3">Update</button>
+                                        <button type="button" onchange="action_assign_follow(<?php echo  $_POST['id']; ?>)" class="btn btn-primary mb-3">Update</button>
                                     </div>
                                 </form>
                                 <hr>
