@@ -636,9 +636,10 @@ function action_assign_follow(id) {
             },
             function(data) {
                 // $('#call_subtask').html(data);       
-                alert("Assigned !);
+                alert("Assigned !");
             });
  
     }
 }
+
 </script>
