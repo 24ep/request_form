@@ -50,6 +50,7 @@ session_start();
                                 $row[$col]<>"RBS_SR" and
                                 $row[$col]<>"NJMJ" and
                                 $row[$col]<>"ZWMJ" and
+                                $row[$col]<>"10153_Patong" and
                                 $row[$col]<>"PA" 
                               ){
                                 $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
