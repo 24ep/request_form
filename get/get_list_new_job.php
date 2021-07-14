@@ -101,7 +101,12 @@ if($_POST["from_post"] ==true ){
   $status_filter ="1=1";
  }
  if($_SESSION['brand_filter']<>""){
-  $brand_filter ="brand like '%".$_SESSION['brand_filter']."%' or id = ".str_replace('NS-','',$_SESSION['brand_filter']);
+   if(gettype($_SESSION['brand_filter'])=='integer'){
+    $brand_filter ="id = ".str_replace('NS-','',$_SESSION['brand_filter']);
+   }else{
+    $brand_filter ="brand like '%".$_SESSION['brand_filter']."%'";
+   }
+  
  }else{
   $brand_filter ="1=1";
  }
