@@ -387,12 +387,12 @@ label#label_file_cme {
                                                
                                                 if($row["username"]==$follow_assign_name){
                                                   
-                                                        echo  '<option selected value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
+                                                        echo  '<option selected value="'.$row["username"].'">'.$row["nickname"].' - '.$backlog_sku.'</option>';
                                                     
                                         
                                                 }else{
                                                     
-                                                    echo  '<option value="'.$row["username"].'">'.$row["nickname"].'('.$backlog_sku.')</option>';
+                                                    echo  '<option value="'.$row["username"].'">'.$row["nickname"].' - '.$backlog_sku.'</option>';
                                                 }
                                         
                                             }
