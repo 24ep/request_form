@@ -17,16 +17,17 @@ while($row = mysqli_fetch_array($result)) {
     <div class="modal-body" id="messagebody">
     '.$description.'
     </div>';
+    $target_ms_id = $row['target_ms_id'];
   
 }
-// $sql_update_read = "UPDATE all_in_one_project.target_message_box SET readable = 1,read_date=CURRENT_TIMESTAMP where id=".$row['target_ms_id'] ;
-// $query_update_read = mysqli_query($con,$sql_update_read);
-// if($query_update_read){
-//     echo '<script>
-//     document.getElementById("ms_bt_id_'.$id.'").innerHTML  ="ตรวจสอบแล้ว";
-//     document.getElementById("ms_bt_id_'$id.'").className ="btn btn-secondary btn-sm";
-//     </script>';    
-// }
+$sql_update_read = "UPDATE all_in_one_project.target_message_box SET readable = 1,read_date=CURRENT_TIMESTAMP where id=".$target_ms_id;
+$query_update_read = mysqli_query($con,$sql_update_read);
+if($query_update_read){
+    echo '<script>
+    document.getElementById("ms_bt_id_'.$id.'").innerHTML  ="ตรวจสอบแล้ว";
+    document.getElementById("ms_bt_id_'$id.'").className ="btn btn-secondary btn-sm";
+    </script>';    
+}
 
 
 ?>
