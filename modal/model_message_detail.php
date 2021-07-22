@@ -10,7 +10,7 @@ message_box.title as title,
 message_box.description as description 
   FROM all_in_one_project.target_message_box as target
   left join all_in_one_project.message_box as message_box on target.msid = message_box.id 
-  where target.target_username = '".$_SESSION['username']."' and msid=".$id." ORDER BY message_box.id  DESC " or die("Error:" . mysqli_error());
+  where target.target_username = '".$_SESSION["username"]."' and target.msid=".$id." ORDER BY message_box.id  DESC " or die("Error:" . mysqli_error());
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     $description = htmlspecialchars_decode($row["description"],ENT_NOQUOTES);
