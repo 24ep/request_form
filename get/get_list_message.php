@@ -32,13 +32,6 @@
   ?>
 
 <div class="modal fade" id="messagemodel" tabindex="-1" aria-labelledby="messagemodelLabel" aria-hidden="true">
-<script>
-function message_get(title, description) {
-    document.getElementById("messagemodelLabel").innerHTML = title;
-    document.getElementById("messagebody").innerHTML = description;
-
-}
-</script>
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -52,3 +45,10 @@ function message_get(title, description) {
         </div>
     </div>
 </div>
+<script>
+function message_get(title, description) {
+    document.getElementById("messagemodelLabel").innerHTML = "itle";
+    document.getElementById("messagebody").innerHTML = description;
+
+}
+</script>
