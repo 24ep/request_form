@@ -34,21 +34,21 @@
 <div class="modal fade" id="messagemodel" tabindex="-1" aria-labelledby="messagemodelLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="messagemodelLabel" >title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="messagebody">
-                description
-            </div>
+            <div id="callmodel_message_detail">
+</div>
 
         </div>
     </div>
 </div>
 <script>
-function message_get(title, description) {
-    document.getElementById("messagemodelLabel").innerHTML = "itle";
-    document.getElementById("messagebody").innerHTML = description;
-
+function postcomfirmconvertakeneoid(id) {
+    if (id) {
+        $.post("model/model_message_detail.php", {
+                id: id
+            },
+            function(data) {
+                $('#callmodel_message_detail').html(data);
+            });
+    }
 }
 </script>
