@@ -231,11 +231,11 @@ if($_POST["from_post"] ==true ){
       }
       if($_SESSION['status_filter']<>""){
         if($row["config_type"]=="parent"){
-          if($sub_ticket<>"" and $sub_ticket<>null){
+          if( isset($sub_ticket)){
             echo $ticket.$sub_ticket;
           }
         }else{
-          if($sub_ticket<>"" and $sub_ticket<>null){
+          if(isset($sub_ticket)){
             echo $ticket.$sub_ticket;
           }else{
             echo $ticket;
@@ -243,7 +243,7 @@ if($_POST["from_post"] ==true ){
           
         }
        }else{
-        if($sub_ticket<>"" and $sub_ticket<>null){
+        if(isset($sub_ticket)){
           echo $ticket.$sub_ticket;
         }else{
           echo $ticket;
