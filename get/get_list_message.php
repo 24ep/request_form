@@ -8,7 +8,7 @@
   $result = mysqli_query($con, $query_tg);
   while($row = mysqli_fetch_array($result)) {
       if($row["important"]==1){
-        $important = '<ion-icon name="star" style="color:yellow"></ion-icon>';
+        $important = '<ion-icon name="star"></ion-icon>';
       }else{
         $important = "";
       }
@@ -20,5 +20,5 @@
         echo "</tr>";
     } 
 
-  mysqli_close($con);
+  mysqli_close($con); 
   ?>
