@@ -808,7 +808,7 @@
                                                     <div class="mb-3">
                                                         <label for="exampleFormControlInput1" class="form-label">To
                                                             user</label>
-                                                        <input class="form-control" list="datalistOptions"
+                                                        <input multiple class="form-control" list="datalistOptions"
                                                             id="ms_target" name="ms_target"
                                                             placeholder="Type to search...">
                                                         <datalist id="datalistOptions">
@@ -819,7 +819,7 @@
                                                         <label for="exampleFormControlInput1"
                                                             class="form-label">Title</label>
                                                         <input type="email" class="form-control" id="ms_title"
-                                                            name="ms_title" placeholder="name@example.com">
+                                                            name="ms_title" placeholder="">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="exampleFormControlTextarea1"
