@@ -25,7 +25,7 @@ $query_update_read = mysqli_query($con,$sql_update_read);
 if($query_update_read){
     echo '<script>
     document.getElementById("ms_bt_id_'.$id.'").innerHTML  ="ตรวจสอบแล้ว";
-    document.getElementById("ms_bt_id_'$id.'").className ="btn btn-secondary btn-sm";
+    document.getElementById("ms_bt_id_'.$id.'").className ="btn btn-secondary btn-sm";
     </script>';    
 }
 
