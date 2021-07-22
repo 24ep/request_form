@@ -14,10 +14,10 @@
       }
 
       if($row["readable"]==0){
-        $button_check = "<td style='width: 15%;'><button type='button' class='btn btn-danger btn-sm' data-bs-toggle='modal' onclick='message_get('".$row["title"]."','".$row["description"]."')' data-bs-target='#messagemodel'><ion-icon name='mail-unread-outline'></ion-icon> ตรวจสอบ</button></td>";
+        $button_check = "<td style='width: 15%;'><button type='button' class='btn btn-danger btn-sm' data-bs-toggle='modal' onclick='message_get(".$row["id"].")' data-bs-target='#messagemodel'><ion-icon name='mail-unread-outline'></ion-icon> ตรวจสอบ</button></td>";
         unset($st_font_color);
       }else{
-        $button_check = "<td style='width: 15%;'><button type='button' class='btn btn-secondary btn-sm' data-bs-toggle='modal' data-bs-target='#messagemodel'><ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบแล้ว</button></td>";
+        $button_check = "<td style='width: 15%;'><button type='button' class='btn btn-secondary btn-sm' data-bs-toggle='modal 'onclick='message_get(".$row["id"].")'  data-bs-target='#messagemodel'><ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบแล้ว</button></td>";
         $st_font_color = "color: grey"; 
       }
         echo "<tr class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'>";
@@ -41,7 +41,7 @@
     </div>
 </div>
 <script>
-function postcomfirmconvertakeneoid(id) {
+function message_get(id) {
     if (id) {
         $.post("model/model_message_detail.php", {
                 id: id
