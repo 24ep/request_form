@@ -13,7 +13,7 @@
         unset($important);
       }
 
-      if($row["readable"]==1){
+      if($row["readable"]==0){
         $button_check = "<td style='width: 15%;'><button type='button' class='btn btn-danger btn-sm'><ion-icon name='mail-unread-outline'></ion-icon> ตรวจสอบ</button></td>";
       }else{
         $button_check = "<td style='width: 15%;'><button type='button' class='btn btn-secondary btn-sm'><ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบ</button></td>";
