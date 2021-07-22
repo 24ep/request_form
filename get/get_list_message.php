@@ -7,11 +7,16 @@
   left join all_in_one_project.message_box as message_box on target.msid = message_box.id where target.target_username = '".$_SESSION["username"]."' ORDER BY message_box.id  DESC " or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query_tg);
   while($row = mysqli_fetch_array($result)) {
-        echo "<tr>";
-        echo "<th scope='row' style='background: #ededed;'>star</th>";
-        echo "<td style='background: #ededed;'>".$row["id"]."</dh>";
-        echo "<td style='background: #ededed;'>".$row["title"]."</td>";  
-        echo "<td style='background: #ededed;'><button type='button' class='btn btn-warning'>ตรวจสอบ</button></td>";
+      if($row["important"]==1){
+        $important = '<ion-icon name="star" style="color:yellow"></ion-icon>';
+      }else{
+
+      }
+        echo "<tr class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;>";
+        echo "<th scope='row'>".$important."</th>";
+        echo "<td >".$row["id"]."</dh>";
+        echo "<td >".$row["title"]."</td>";  
+        echo "<td ><button type='button' class='btn btn-warning btn-sm'>ตรวจสอบ</button></td>";
         echo "</tr>";
     } 
 

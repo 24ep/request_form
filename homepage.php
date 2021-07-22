@@ -851,7 +851,7 @@
                                                 style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
                                                 <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
                                                     <tr>
-                                                        <th scope="col"></th>
+                                                        <th scope="col">Important</th>
                                                         <th scope="col">Message ID</th>
                                                         <th scope="col">title</th>
                                                         <th scope="col">check</th>
