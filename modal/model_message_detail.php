@@ -17,7 +17,7 @@ while($row = mysqli_fetch_array($result)) {
     <div class="modal-body" id="messagebody">
     '.$description.'
     </div>';
-    $target_ms_id = $row['msid'];
+    $target_ms_id = $row['id'];
   
 }
 $sql_update_read = "UPDATE target_message_box SET readable = 1,read_date=CURRENT_TIMESTAMP where id=".$target_ms_id;
