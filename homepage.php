@@ -69,6 +69,7 @@
     ?>
     <!DOCTYPE html>
     <html lang="en">
+
     <head>
         <title>Content and Studio - Homepage</title>
         <!-- Required meta tags -->
@@ -104,36 +105,44 @@
             font-family: 'Prompt', sans-serif !important;
             font-size: 14px;
         }
+
         a {
             color: gray;
             text-decoration: auto;
         }
+
         a:hover {
             color: black;
             text-decoration: auto;
             font-weight: bold;
         }
+
         label {
             font-weight: 800 !important;
         }
+
         .row {
             margin-bottom: 15px;
         }
+
         .multiple-select,
         .multiple-select_adj,
         .multiple-select_edit {
             width: 100%;
         }
+
         .header_form {
             text-align: center;
             margin-bottom: 50px;
             margin-top: 50px;
         }
+
         .container-sm {
             max-width: 500px;
             margin-top: 8%;
             padding: 10px !important 50px !important 100px !important !important;
         }
+
         .list_bra .nav-pills .nav-link.active,
         .list_bra .nav-pills .show .nav-link {
             color: white;
@@ -142,37 +151,45 @@
             background-color: #f0f2fc87;
             font-weight: bolder;
         }
+
         /* .nav-link{
             color: white;
         } */
         .list_bra .nav-pills .nav-link {
             color: white !important;
         }
+
         .list_bra .nav-link:hover {
             color: white !important;
             width: 100%;
             s font-weight: bolder;
         }
+
         .list_bra .nav-link.active:hover {
             color: #ffff !important;
         }
+
         .nav-pills .nav-link.active,
         .nav-pills .show .nav-link {
             background-color: #f0f2fc87;
             color: white !important;
             width: 100%;
         }
+
         .navbar-brand {
             margin-left: 10px;
             margin-right: 10px;
             font-weight: 1000;
         }
+
         .navbar-brand {
             color: #ffff !important;
         }
+
         .navbar-brand:hover {
             color: #ffff !important;
         }
+
         .list_bra {
             padding-right: 0;
             /* background: rgba(236, 236, 236, 1); */
@@ -181,27 +198,33 @@
             background-image: url('image/11.jpg');
             color: black;
         }
+
         .my-1 {
             margin-top: 1rem !important;
             margin-bottom: 1rem !important;
         }
+
         .selection_filter {
             width: 150px;
             border: transparent;
             /* border-bottom:1px gray; */
             /* border-bottom-style: dotted; */
         }
+
         .selection_filter:active {
             border: transparent !important;
         }
+
         .selection_filter:focus {
             border: transparent !important;
             border-style: none;
         }
+
         ion-icon {
             font-size: 20px;
             margin: -0.2rem;
         }
+
         .link-light {
             color: white;
             padding: 0.2rem;
@@ -211,32 +234,39 @@
             font-size: 14px;
             font-family: 'Prompt', sans-serif !important;
         }
+
         .link-light:hover {
             color: white;
             background-color: #dbdbdb38;
             width: 100%;
             border-radius: 0px !important;
         }
+
         .link-light:focus {
             color: white;
             background-color: #dbdbdb38;
             width: 100%;
             border-radius: 0px !important;
         }
+
         .btn-check:focus+.btn,
         .btn:focus {
             box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 0%)
         }
+
         .total_count_dashboard {
             text-align: center;
             font-size: 70px;
         }
+
         .unit_count_dashboard {
             text-align: center;
         }
+
         ion-icon {
             margin-right: 5px;
         }
+
         .task_detial {
             color: #6c757d;
             ;
@@ -247,27 +277,33 @@
             padding-bottom: 3px;
             padding-top: 3px;
         }
+
         .icon_bar_tootle {
             margin-left: 20px;
             margin-right: 50px;
             font-size: 13px;
         }
+
         .icon_ocv {
             margin-right: 0px !important;
             font-size: 14px;
             color: gray;
         }
+
         .ticket_relate {
             border-color: white;
             padding: 0px;
             padding-bottom: 5px
         }
+
         .col-board {
             border-right: 1px #f0f2fc87 solid;
         }
+
         .cr_title {
             margin-bottom: 10px;
         }
+
         .status_cr_list {
             margin-right: 5px;
             margin-left: 10px;
@@ -276,23 +312,29 @@
         }
         </style>
     </head>
+
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140386041-2"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-140386041-2');
-    </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140386041-2"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-140386041-2');
+        </script>
         <div class="offcanvas offcanvas-start overflow-auto" role="dialog" tabindex="-1" id="edit_add_new"
             style="width:100%" aria-labelledby="offcanvasExampleLabel">
-            <div id="callmodal_request_add_new"style="height: 100%;"></div>
+            <div id="callmodal_request_add_new" style="height: 100%;"></div>
         </div>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="notificationcanvas" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="notificationcanvas"
+            aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
                 <h5 id="offcanvasRightLabel">Update</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <?php include("get/get_log.php"); ?>
@@ -301,7 +343,8 @@
         <div class="row " style="margin-bottom: 0px;--bs-gutter-x: 0rem;">
             <div class="col-2 list_bra window-full shadow">
                 <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="navbar-brand" href="#" style="margin: 15px;">Content <small style="color: #dc3545;">Service
+                    <a class="navbar-brand" href="#" style="margin: 15px;">Content <small
+                            style="color: #dc3545;">Service
                             Gate</small></a>
                     <a class="nav-link active" id="v-pills-dashboard-tab" data-toggle="pill" href="#v-pills-dashboard"
                         role="tab" aria-controls="v-pills-dashboard" onclick="updateURL('v-pills-dashboard');"
@@ -327,6 +370,12 @@
                         <ion-icon stle="color:white" name="grid-outline"></ion-icon> Board
                     </a>
                     <?php }?>
+                    <?php if(strpos($_SESSION["username"],'poojaroonwit')!==false){?>
+                    <a class="nav-link" id="v-pills-ms_admin-tab" data-toggle="pill" href="#v-pills-ms_admin" role="tab"
+                        aria-controls="v-pills-ms_admin" onclick="updateURL('v-pills-ms_admin');" aria-selected="false">
+                        <ion-icon stle="color:white" name="grid-outline"></ion-icon> message admin
+                    </a>
+                    <?php }?>
                     <hr style="color: #eee!important;">
                     <ul class="list-unstyled ps-0">
                         <li class="mb-1">
@@ -346,12 +395,17 @@
                                             class="d-inline-flex align-items-center rounded link-light">ISSUE 
                                             checking</a></li> -->
                                     <li><a target="_Blank" href=""
-                                            class="d-inline-flex align-items-center rounded link-light">Product-Feed (สินค้าหน้าเว็บ 4 ชั่วโมงล่าสุด)</a></li>
-                                    <li><a target="_Blank" href="https://centralgroup-my.sharepoint.com/personal/ton_central_tech/_layouts/15/onedrive.aspx?originalPath=aHR0cHM6Ly9jZW50cmFsZ3JvdXAtbXkuc2hhcmVwb2ludC5jb20vOmY6L2cvcGVyc29uYWwvdG9uX2NlbnRyYWxfdGVjaC9FazduSEkzODZNWkFnQ3ZVNWUxeEF2a0JwNDJFNlBtOG9sQUJra3QxTUx5WlpnP3J0aW1lPUhuOGo5YmRIMTBn&sortField=Modified&isAscending=false&viewid=8d7d0290%2D9094%2D4b5e%2Daeb9%2D7719dd3ae652&id=%2Fpersonal%2Fton%5Fcentral%5Ftech%2FDocuments%2FCDS%2Fshare%2Fcds%5Fcontent"
-                                            class="d-inline-flex align-items-center rounded link-light">Lamton Daily Export
+                                            class="d-inline-flex align-items-center rounded link-light">Product-Feed
+                                            (สินค้าหน้าเว็บ 4 ชั่วโมงล่าสุด)</a></li>
+                                    <li><a target="_Blank"
+                                            href="https://centralgroup-my.sharepoint.com/personal/ton_central_tech/_layouts/15/onedrive.aspx?originalPath=aHR0cHM6Ly9jZW50cmFsZ3JvdXAtbXkuc2hhcmVwb2ludC5jb20vOmY6L2cvcGVyc29uYWwvdG9uX2NlbnRyYWxfdGVjaC9FazduSEkzODZNWkFnQ3ZVNWUxeEF2a0JwNDJFNlBtOG9sQUJra3QxTUx5WlpnP3J0aW1lPUhuOGo5YmRIMTBn&sortField=Modified&isAscending=false&viewid=8d7d0290%2D9094%2D4b5e%2Daeb9%2D7719dd3ae652&id=%2Fpersonal%2Fton%5Fcentral%5Ftech%2FDocuments%2FCDS%2Fshare%2Fcds%5Fcontent"
+                                            class="d-inline-flex align-items-center rounded link-light">Lamton Daily
+                                            Export
                                             (all sku)</a></li>
-                                    <li><a target="_Blank" href="https://tableau.central.co.th/#/site/central/views/Newassortment/REPORT"
-                                            class="d-inline-flex align-items-center rounded link-light">Tableau assoertment
+                                    <li><a target="_Blank"
+                                            href="https://tableau.central.co.th/#/site/central/views/Newassortment/REPORT"
+                                            class="d-inline-flex align-items-center rounded link-light">Tableau
+                                            assoertment
                                             (CDS)</a></li>
                                 </ul>
                             </div>
@@ -364,19 +418,28 @@
                             </button>
                             <div class="collapse" id="more-collapse">
                                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a target="_Blank" href="https://backend.central.co.th/gutentag/admin/index/index/key/431e9e114e344c145c2f4899f39ed31f830b3ba301989086767f865e46a5f443/"
-                                            class="d-inline-flex align-items-center rounded link-light">Magento CDS</a></li>
-                                    <li><a target="_Blank" href="https://doa.robinson.co.th/getmein/admin/dashboard/index/key/de971d117d6693136b0c5f5728929afd7b63bf21f20f1529937366f5fa08223e/"
-                                            class="d-inline-flex align-items-center rounded link-light">Magento RBS</a></li>
+                                    <li><a target="_Blank"
+                                            href="https://backend.central.co.th/gutentag/admin/index/index/key/431e9e114e344c145c2f4899f39ed31f830b3ba301989086767f865e46a5f443/"
+                                            class="d-inline-flex align-items-center rounded link-light">Magento CDS</a>
+                                    </li>
+                                    <li><a target="_Blank"
+                                            href="https://doa.robinson.co.th/getmein/admin/dashboard/index/key/de971d117d6693136b0c5f5728929afd7b63bf21f20f1529937366f5fa08223e/"
+                                            class="d-inline-flex align-items-center rounded link-light">Magento RBS</a>
+                                    </li>
                                     <hr style="width: 70%;margin: 10px 35px 10px 35px;color: white;">
-                                    <li><a target="_Blank" href="https://cenergy.atlassian.net/servicedesk/customer/portals"
-                                            class="d-inline-flex align-items-center rounded link-light">Cenergy (แจ้งปัญหา CTO)</a></li>
+                                    <li><a target="_Blank"
+                                            href="https://cenergy.atlassian.net/servicedesk/customer/portals"
+                                            class="d-inline-flex align-items-center rounded link-light">Cenergy
+                                            (แจ้งปัญหา CTO)</a></li>
                                     <li><a target="_Blank" href="http://cnext.centralgroup.com/"
                                             class="d-inline-flex align-items-center rounded link-light">C-next</a></li>
-                                    <li><a target="_Blank" href="https://ris6789.central.co.th/arsys/shared/login.jsp?/arsys/"
-                                            class="d-inline-flex align-items-center rounded link-light">RIS 6789</a></li>
+                                    <li><a target="_Blank"
+                                            href="https://ris6789.central.co.th/arsys/shared/login.jsp?/arsys/"
+                                            class="d-inline-flex align-items-center rounded link-light">RIS 6789</a>
+                                    </li>
                                     <li><a target="_Blank" href="https://cdsecommercecontent.ga"
-                                            class="d-inline-flex align-items-center rounded link-light">Linesheet</a></li>     
+                                            class="d-inline-flex align-items-center rounded link-light">Linesheet</a>
+                                    </li>
                                     <hr style="width: 70%;margin: 10px 35px 10px 35px;color: white;">
                                 </ul>
                             </div>
@@ -394,7 +457,7 @@
                                     </li>
                                     <li><a href="action/action_logout.php"
                                             class="d-inline-flex align-items-center rounded link-light">Logout</a></li>
-                                    
+
                                 </ul>
                             </div>
                         </li>
@@ -547,8 +610,8 @@
                                                 </div>
                                                 <div class="offcanvas-body">
                                                     <div class="container-md" style="padding:0px 80px 0px 80px;">
-                                                        <form class="row g-3" action="action/action_submit_add_new_job.php"
-                                                            method="POST">
+                                                        <form class="row g-3"
+                                                            action="action/action_submit_add_new_job.php" method="POST">
                                                             <div id="add_new_job_result"></div>
                                                             <?php include('form/form_request_add_new.php')?>
                                                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -605,9 +668,11 @@
                                         <button onclick="filter_cr_ticket('Close')" class="btn btn-secondary">
                                             <ion-icon name="checkmark-done-circle-outline"></ion-icon>Fixed (Lastest 10)
                                         </button>
-                                        <select class="form-select" style="width:150px" onchange="search_cr_ticket();" id="user_cr_filter" name="user_cr_filter" aria-label="Default select example">
-                                        <option value="all_user">All User</option>
-                                        <?php echo $username_op_cr; ?>
+                                        <select class="form-select" style="width:150px" onchange="search_cr_ticket();"
+                                            id="user_cr_filter" name="user_cr_filter"
+                                            aria-label="Default select example">
+                                            <option value="all_user">All User</option>
+                                            <?php echo $username_op_cr; ?>
                                         </select>
                                     </div>
                                     <button class="btn btn-primary " style="margin-left:10px;" type="button"
@@ -662,34 +727,94 @@
                             </nav>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-cr_admin" role="tabpanel" aria-labelledby="v-pills-cr_admin-tab">
+                    <div class="tab-pane fade" id="v-pills-cr_admin" role="tabpanel"
+                        aria-labelledby="v-pills-cr_admin-tab">
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
                                     <div class="row">
-                                        <div class="col col-board window-full col-2" id="col_pending" ondrop="drop_card_cr(event,'Pending')" ondragover="allowDrop(event)">
+                                        <div class="col col-board window-full col-2" id="col_pending"
+                                            ondrop="drop_card_cr(event,'Pending')" ondragover="allowDrop(event)">
                                             <small style="margin-bottom:5px">Pending</small>
                                             <?php echo get_card("Pending");?>
                                         </div>
-                                        <div class="col col-board window-full col-2" id="col_inprogress" ondrop="drop_card_cr(event,'Inprogress')" ondragover="allowDrop(event)">
+                                        <div class="col col-board window-full col-2" id="col_inprogress"
+                                            ondrop="drop_card_cr(event,'Inprogress')" ondragover="allowDrop(event)">
                                             <small style="margin-bottom:5px">Inprogress</small>
                                             <?php echo get_card("Inprogress");?>
-                                        </div>                                                                                  
-                                        <div class="col col-board window-full col-2" id="col_waiting_user" ondrop="drop_card_cr(event,'Waiting Buyer')" ondragover="allowDrop(event)">
+                                        </div>
+                                        <div class="col col-board window-full col-2" id="col_waiting_user"
+                                            ondrop="drop_card_cr(event,'Waiting Buyer')" ondragover="allowDrop(event)">
                                             <small style="margin-bottom:5px">Waiting Buyer</small>
                                             <?php echo get_card("Waiting Buyer");?>
                                         </div>
-                                        <div class="col col-board window-full col-2" id="col_wait_excution" ondrop="drop_card_cr(event,'Waiting Excution')" ondragover="allowDrop(event)">
+                                        <div class="col col-board window-full col-2" id="col_wait_excution"
+                                            ondrop="drop_card_cr(event,'Waiting Excution')"
+                                            ondragover="allowDrop(event)">
                                             <small style="margin-bottom:5px">Waiting Execution</small>
                                             <?php echo get_card("Waiting Execution");?>
                                         </div>
-                                        <div class="col col-board window-full col-2" id="col_wait_cto" ondrop="drop_card_cr(event,'Waiting CTO')" ondragover="allowDrop(event)">
+                                        <div class="col col-board window-full col-2" id="col_wait_cto"
+                                            ondrop="drop_card_cr(event,'Waiting CTO')" ondragover="allowDrop(event)">
                                             <small style="margin-bottom:5px">Waiting CTO</small>
                                             <?php echo get_card("Waiting CTO");?>
                                         </div>
-                                        <div class="col col-board window-full col-2" id="col_close_cancel" ondrop="drop_card_cr(event,'Close')" ondragover="allowDrop(event)">
+                                        <div class="col col-board window-full col-2" id="col_close_cancel"
+                                            ondrop="drop_card_cr(event,'Close')" ondragover="allowDrop(event)">
                                             <small style="margin-bottom:5px">Close (lastest 5)</small>
                                             <?php echo get_card("Close");?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-ms_admin" role="tabpanel"
+                        aria-labelledby="v-pills-ms_admin-tab">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="row align-items-center" style="padding:20px">
+                                <div class="container ">
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                                            data-bs-target="#offcanvasWithBackdrop"
+                                            aria-controls="offcanvasWithBackdrop">Create new message</button>
+                                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop"
+                                            aria-labelledby="offcanvasWithBackdropLabel">
+                                            <div class="offcanvas-header">
+                                                <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Message box
+                                                </h5>
+                                                <button type="button" class="btn-close text-reset"
+                                                    data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                            </div>
+                                            <div class="offcanvas-body">
+                                                <div class="mb-3">
+                                                    <label for="exampleFormControlInput1"
+                                                        class="form-label">Title</label>
+                                                    <input type="email" class="form-control"
+                                                        id="exampleFormControlInput1" placeholder="name@example.com">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="exampleFormControlTextarea1"
+                                                        class="form-label">Detail</label>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                        rows="5"></textarea>
+                                                    <div class="row mb-3">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">To
+                                                            user</label>
+                                                        <div class="col-sm-10">
+                                                            <input class="form-control" list="datalistOptions"
+                                                                id="exampleDataList" placeholder="Type to search...">
+                                                            <datalist id="datalistOptions">
+                                                                <option value="San Francisco">
+                                                                <option value="New York">
+                                                                <option value="Seattle">
+                                                                <option value="Los Angeles">
+                                                                <option value="Chicago">
+                                                            </datalist>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -713,9 +838,9 @@
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
     <script>
-    $(function() {
-        $(".multiple-select").multipleSelect()
-    });
+$(function() {
+    $(".multiple-select").multipleSelect()
+});
     </script>
     <!-- bootsrap js -->
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -729,341 +854,356 @@
     </script>
     <!-- end bootsrap js -->
     <script>
-    function call_edit_add_new_modal(id, brand) {
-        if (id) {
-            $.post("modal/edit_request_add_new.php", {
-                id: id
-            }, function(data) {
-                $('#callmodal_request_add_new').html(data);
-            });
-        }
+function call_edit_add_new_modal(id, brand) {
+    if (id) {
+        $.post("modal/edit_request_add_new.php", {
+            id: id
+        }, function(data) {
+            $('#callmodal_request_add_new').html(data);
+        });
     }
-    function cr_id_toggle(id, func) {
-        if (id) {
-            $.post("get/get_content_request_detail.php", {
-                id: id,
-                func: func
-            }, function(data) {
-                $('#calloffcanvas_cr').html(data);
-            });
-        }
+}
+
+function cr_id_toggle(id, func) {
+    if (id) {
+        $.post("get/get_content_request_detail.php", {
+            id: id,
+            func: func
+        }, function(data) {
+            $('#calloffcanvas_cr').html(data);
+        });
     }
-    function start_checking(id) {
-        ;
-        if (id) {
-            $.post("action/action_start_checking.php", {
-                id: id
-            }, function(data) {
-                $('#start_checking_resault').html(data);
-            });
-        }
+}
+
+function start_checking(id) {
+    ;
+    if (id) {
+        $.post("action/action_start_checking.php", {
+            id: id
+        }, function(data) {
+            $('#start_checking_resault').html(data);
+        });
     }
-    function accepted_stt(id) {
-        if (id) {
-            $.post("action/action_accept_stt.php", {
-                id: id
-            }, function(data) {
-                $('#accept_checking_resault').html(data);
-            });
-        }
+}
+
+function accepted_stt(id) {
+    if (id) {
+        $.post("action/action_accept_stt.php", {
+            id: id
+        }, function(data) {
+            $('#accept_checking_resault').html(data);
+        });
     }
-    function cancel_stt(id) {
-        if (id) {
-            resone_cancel = document.getElementById('resone_cancel').value;
-            $.post("action/action_cancel_stt.php", {
-                id: id,resone_cancel:resone_cancel
-            }, function(data) {
-                $('#cancel_checking_resault').html(data);
-            });
-        }
+}
+
+function cancel_stt(id) {
+    if (id) {
+        resone_cancel = document.getElementById('resone_cancel').value;
+        $.post("action/action_cancel_stt.php", {
+            id: id,
+            resone_cancel: resone_cancel
+        }, function(data) {
+            $('#cancel_checking_resault').html(data);
+        });
     }
-    function filter_cr_ticket(status) {
-        document.getElementById('cr_search_input').value = '';
-        var update = true;
-        if (status) {
-            $.post("get/get_list_content_request.php", {
-                status: status,
-                update: update
-            }, function(data) {
-                $('#list_grouping').html(data);
-            });
-        }
+}
+
+function filter_cr_ticket(status) {
+    document.getElementById('cr_search_input').value = '';
+    var update = true;
+    if (status) {
+        $.post("get/get_list_content_request.php", {
+            status: status,
+            update: update
+        }, function(data) {
+            $('#list_grouping').html(data);
+        });
     }
-    function search_cr_ticket() {
-        var cr_search_input = document.getElementById("cr_search_input").value
-        var user_cr_filter = document.getElementById("user_cr_filter").value
-        // if (cr_search_input) {
-            $.post("get/get_list_content_request.php", {
-                cr_search_input: cr_search_input,
-                user_cr_filter:user_cr_filter
-            }, function(data) {
-                $('#list_grouping').html(data);
-            });
-    }
+}
+
+function search_cr_ticket() {
+    var cr_search_input = document.getElementById("cr_search_input").value
+    var user_cr_filter = document.getElementById("user_cr_filter").value
+    // if (cr_search_input) {
+    $.post("get/get_list_content_request.php", {
+        cr_search_input: cr_search_input,
+        user_cr_filter: user_cr_filter
+    }, function(data) {
+        $('#list_grouping').html(data);
+    });
+}
     </script>
     <script type="text/javascript">
-    function select_current_tab(selecttab) {
-        if (selecttab == "v-pills-dashboard") {
-            document
-                .getElementById("v-pills-dashboard-tab")
-                .classList
-                .add('active');
-            document
-                .getElementById("v-pills-request_list-tab")
-                .classList
-                .remove('active');
-            document
-                .getElementById("v-pills-cr-tab")
-                .classList
-                .remove('active');
-            document
-                .getElementById("v-pills-dashboard")
-                .classList
-                .add('active');
-            document
-                .getElementById("v-pills-request_list")
-                .classList
-                .remove('active');
-            document
-                .getElementById("v-pills-cr")
-                .classList
-                .remove('active');
-            document
-                .getElementById("v-pills-dashboard")
-                .classList
-                .add('show');
-            document
-                .getElementById("v-pills-request_list")
-                .classList
-                .remove('show');
-            document
-                .getElementById("v-pills-cr")
-                .classList
-                .remove('show');
-        } else if (selecttab == "v-pills-request_list") {
-            document
-                .getElementById("v-pills-dashboard-tab")
-                .classList
-                .remove('active');
-            document
-                .getElementById("v-pills-cr-tab")
-                .classList
-                .remove('active');
-            document
-                .getElementById("v-pills-request_list-tab")
-                .classList
-                .add('active');
-            document
-                .getElementById("v-pills-dashboard")
-                .classList
-                .remove('active');
-            document
-                .getElementById("v-pills-cr")
-                .classList
-                .remove('active');
-            document
-                .getElementById("v-pills-request_list")
-                .classList
-                .add('active');
-            document
-                .getElementById("v-pills-dashboard")
-                .classList
-                .remove('show');
-            document
-                .getElementById("v-pills-cr")
-                .classList
-                .remove('show');
-            document
-                .getElementById("v-pills-request_list")
-                .classList
-                .add('show');
-        } else if (selecttab == "v-pills-cr") {
-            document
-                .getElementById("v-pills-dashboard-tab")
-                .classList
-                .remove('active');
-            document
-                .getElementById("v-pills-cr-tab")
-                .classList
-                .add('active');
-            document
-                .getElementById("v-pills-request_list-tab")
-                .classList
-                .remove('active');
-            document
-                .getElementById("v-pills-dashboard")
-                .classList
-                .remove('active');
-            document
-                .getElementById("v-pills-cr")
-                .classList
-                .add('active');
-            document
-                .getElementById("v-pills-request_list")
-                .classList
-                .remove('active');
-            document
-                .getElementById("v-pills-dashboard")
-                .classList
-                .remove('show');
-            document
-                .getElementById("v-pills-cr")
-                .classList
-                .add('show');
-            document
-                .getElementById("v-pills-request_list")
-                .classList
-                .remove('show');
-        }
+function select_current_tab(selecttab) {
+    if (selecttab == "v-pills-dashboard") {
+        document
+            .getElementById("v-pills-dashboard-tab")
+            .classList
+            .add('active');
+        document
+            .getElementById("v-pills-request_list-tab")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-cr-tab")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-dashboard")
+            .classList
+            .add('active');
+        document
+            .getElementById("v-pills-request_list")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-cr")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-dashboard")
+            .classList
+            .add('show');
+        document
+            .getElementById("v-pills-request_list")
+            .classList
+            .remove('show');
+        document
+            .getElementById("v-pills-cr")
+            .classList
+            .remove('show');
+    } else if (selecttab == "v-pills-request_list") {
+        document
+            .getElementById("v-pills-dashboard-tab")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-cr-tab")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-request_list-tab")
+            .classList
+            .add('active');
+        document
+            .getElementById("v-pills-dashboard")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-cr")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-request_list")
+            .classList
+            .add('active');
+        document
+            .getElementById("v-pills-dashboard")
+            .classList
+            .remove('show');
+        document
+            .getElementById("v-pills-cr")
+            .classList
+            .remove('show');
+        document
+            .getElementById("v-pills-request_list")
+            .classList
+            .add('show');
+    } else if (selecttab == "v-pills-cr") {
+        document
+            .getElementById("v-pills-dashboard-tab")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-cr-tab")
+            .classList
+            .add('active');
+        document
+            .getElementById("v-pills-request_list-tab")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-dashboard")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-cr")
+            .classList
+            .add('active');
+        document
+            .getElementById("v-pills-request_list")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-dashboard")
+            .classList
+            .remove('show');
+        document
+            .getElementById("v-pills-cr")
+            .classList
+            .add('show');
+        document
+            .getElementById("v-pills-request_list")
+            .classList
+            .remove('show');
     }
-    function open_ticket_detail(id){
-        document.getElementById("ns_ticket_"+id).click();
+}
+
+function open_ticket_detail(id) {
+    document.getElementById("ns_ticket_" + id).click();
+}
+
+function updateURL(pill) {
+    if (history.pushState) {
+        var newurl = window.location.protocol + "//" + window.location.host +
+            window.location.pathname + '?tab=' + pill;
+        window
+            .history
+            .pushState({
+                path: newurl
+            }, '', newurl);
     }
-    function updateURL(pill) {
-        if (history.pushState) {
-            var newurl = window.location.protocol + "//" + window.location.host +
-                window.location.pathname + '?tab=' + pill;
-            window
-                .history
-                .pushState({
-                    path: newurl
-                }, '', newurl);
-        }
+}
+
+function filter_update(be) {
+    var user_filter = document.getElementById("user_filter").value
+    var status_filter = document.getElementById("status_filter").value
+    var pagenation_input = document.getElementById("pagenation_input").value
+    var brand_filter = document.getElementById("brand_filter").value
+    var from_post = true;
+    if (from_post) {
+        $.post("get/get_list_new_job.php", {
+            user_filter: user_filter,
+            status_filter: status_filter,
+            from_post: from_post,
+            pagenation_input: pagenation_input,
+            brand_filter: brand_filter
+        }, function(data) {
+            $('#job_list').html(data);
+        });
     }
-    function filter_update(be) {
-        var user_filter = document.getElementById("user_filter").value
-        var status_filter = document.getElementById("status_filter").value
-        var pagenation_input = document.getElementById("pagenation_input").value
-        var brand_filter = document.getElementById("brand_filter").value
-        var from_post = true;
-        if (from_post) {
-            $.post("get/get_list_new_job.php", {
-                user_filter: user_filter,
-                status_filter: status_filter,
-                from_post: from_post,
-                pagenation_input: pagenation_input,
-                brand_filter: brand_filter
-            }, function(data) {
-                $('#job_list').html(data);
-            });
-        }
-        if (from_post) {
-            $.post("get/get_total_page_nj.php", {
-                user_filter: user_filter,
-                status_filter: status_filter,
-                from_post: from_post,
-                pagenation_input: pagenation_input,
-                brand_filter: brand_filter
-            }, function(data) {
-                $('#total_page_nj').html(data);
-            });
-        }
+    if (from_post) {
+        $.post("get/get_total_page_nj.php", {
+            user_filter: user_filter,
+            status_filter: status_filter,
+            from_post: from_post,
+            pagenation_input: pagenation_input,
+            brand_filter: brand_filter
+        }, function(data) {
+            $('#total_page_nj').html(data);
+        });
     }
+}
     </script>
     <?php 
                 $tab_select = $_GET["tab"];
                 echo '<script>select_current_tab("'.$tab_select.'");</script>';
                 ?>
     <script>
-    var elements = document.getElementsByClassName('window-full');
-    var windowheight = window.innerHeight + "px";
-    fullheight(elements);
-    function fullheight(elements) {
-        for (let el in elements) {
-            if (elements.hasOwnProperty(el)) {
-                elements[el].style.height = windowheight;
-            }
+var elements = document.getElementsByClassName('window-full');
+var windowheight = window.innerHeight + "px";
+fullheight(elements);
+
+function fullheight(elements) {
+    for (let el in elements) {
+        if (elements.hasOwnProperty(el)) {
+            elements[el].style.height = windowheight;
         }
     }
-    window.onresize = function(event) {
-        fullheight(elements);
-    }
+}
+window.onresize = function(event) {
+    fullheight(elements);
+}
     </script>
     <script>
-    function Inint_AJAX() {
-        try {
-            return new ActiveXObject("Msxml2.XMLHTTP");
-        } catch (e) {}
-        try {
-            return new ActiveXObject("Microsoft.XMLHTTP");
-        } catch (e) {}
-        try {
-            return new XMLHttpRequest();
-        } catch (e) {}
-        alert("XMLHttpRequest not supported")
-        return null
-    }
-    function doAutoRefresh() {
-        var req = Inint_AJAX();
-        //var req_cr = Inint_AJAX();
-        // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-        req.open("POST", 'get/get_list_new_job.php?' + new Date().getTime(), true);
-        //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
-        // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
-        req.onreadystatechange = function() {
-            if (req.readyState == 4) {
-                if (req.status == 200) {
-                    // รับค่ากลับมา และ แสดงผล
-                    //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
-                    document.getElementById("job_list").innerHTML = req.responseText;
-                    // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
-                    setTimeout("doAutoRefresh()", 3000);
-                }
+function Inint_AJAX() {
+    try {
+        return new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {}
+    try {
+        return new ActiveXObject("Microsoft.XMLHTTP");
+    } catch (e) {}
+    try {
+        return new XMLHttpRequest();
+    } catch (e) {}
+    alert("XMLHttpRequest not supported")
+    return null
+}
+
+function doAutoRefresh() {
+    var req = Inint_AJAX();
+    //var req_cr = Inint_AJAX();
+    // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
+    req.open("POST", 'get/get_list_new_job.php?' + new Date().getTime(), true);
+    //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
+    // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
+    req.onreadystatechange = function() {
+        if (req.readyState == 4) {
+            if (req.status == 200) {
+                // รับค่ากลับมา และ แสดงผล
+                //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
+                document.getElementById("job_list").innerHTML = req.responseText;
+                // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
+                setTimeout("doAutoRefresh()", 3000);
             }
-        };
-        req.send(null);
+        }
     };
-    function doAutoRefresh_cr() {
-        var req_cr = Inint_AJAX();
-        // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-        req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
-        // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
-        req_cr.onreadystatechange = function() {
-            if (req_cr.readyState == 4) {
-                if (req_cr.status == 200) {
-                    // รับค่ากลับมา และ แสดงผล
-                    document.getElementById("list_grouping").innerHTML = req_cr.responseText;
-                    setTimeout("doAutoRefresh_cr()", 7000);
-                }
+    req.send(null);
+};
+
+function doAutoRefresh_cr() {
+    var req_cr = Inint_AJAX();
+    // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
+    req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
+    // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
+    req_cr.onreadystatechange = function() {
+        if (req_cr.readyState == 4) {
+            if (req_cr.status == 200) {
+                // รับค่ากลับมา และ แสดงผล
+                document.getElementById("list_grouping").innerHTML = req_cr.responseText;
+                setTimeout("doAutoRefresh_cr()", 7000);
             }
-        };
-        req_cr.send(null);
+        }
     };
+    req_cr.send(null);
+};
     </script>
     <script>
-    $(document).ready(function() {
-        $("#search_job").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#upload_list tr").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
+$(document).ready(function() {
+    $("#search_job").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#upload_list tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });
+});
     </script>
     <script>
-    tinymce.init({
-        selector: 'textarea#cr_description',
-        height: 380,
-        menubar: false,
-        plugins: [
-            'advlist autolink lists link image charmap print preview anchor',
-            'searchreplace visualblocks code fullscreen',
-            'insertdatetime media table paste code help wordcount'
-        ],
-        toolbar: 'bold italic backcolor | alignleft aligncenter ' +
-            'alignright alignjustify | bullist numlist outdent indent | ' +
-            'removeformat | help',
-        //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
-    });
+tinymce.init({
+    selector: 'textarea#cr_description',
+    height: 380,
+    menubar: false,
+    plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table paste code help wordcount'
+    ],
+    toolbar: 'bold italic backcolor | alignleft aligncenter ' +
+        'alignright alignjustify | bullist numlist outdent indent | ' +
+        'removeformat | help',
+    //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
+});
     </script>
     <script>
-    function allowDrop(ev) {
+function allowDrop(ev) {
     ev.preventDefault();
-    }
-    function drag_card_cr(ev) {
-        ev.dataTransfer.setData("card", ev.target.id);
-    }
-    function drop_card_cr(ev,new_status) {
+}
+
+function drag_card_cr(ev) {
+    ev.dataTransfer.setData("card", ev.target.id);
+}
+
+function drop_card_cr(ev, new_status) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("card");
     var id_card = document.getElementById(data).id;
@@ -1073,20 +1213,21 @@
     var id_name = "status";
     var id = id_ticket;
     var value_change = new_status;
-        if (id) {
-            $.post("action/action_update_cr_detail.php", {
-                    id: id,
-                    value_change: value_change,
-                    id_name: id_name
-                },
-                function(data) {
-                    alert(data);
+    if (id) {
+        $.post("action/action_update_cr_detail.php", {
+                id: id,
+                value_change: value_change,
+                id_name: id_name
+            },
+            function(data) {
+                alert(data);
                 // $('#call_update_complete').html(data);
-                    // document.getElementById('comment_box_cr').scrollBy(0, document.getElementById("call_ticket_comment_cr").offsetHeight);
-                });
-        }
+                // document.getElementById('comment_box_cr').scrollBy(0, document.getElementById("call_ticket_comment_cr").offsetHeight);
+            });
     }
+}
     </script>
+
     </html>
     <?php if( $_GET["fopenticket"]<>""){
     $_SESSION["fopenticket"]=$_GET["fopenticket"];
