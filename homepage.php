@@ -808,7 +808,7 @@
                                                     <div class="mb-3">
                                                         <label for="exampleFormControlInput1" class="form-label">To
                                                             user</label>
-                                                        <input type="email" multiple class="form-control" list="datalistOptions"
+                                                        <input type="text" multiple class="form-control" list="datalistOptions"
                                                             id="ms_target" name="ms_target"
                                                             placeholder="Type to search...">
                                                         <datalist id="datalistOptions">
