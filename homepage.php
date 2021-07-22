@@ -778,8 +778,8 @@
                                         <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
                                             data-bs-target="#offcanvasWithBackdrop"
                                             aria-controls="offcanvasWithBackdrop">Create new message</button>
-                                        <div class="offcanvas offcanvas-start" style="width: 80%;" tabindex="-1" id="offcanvasWithBackdrop"
-                                            aria-labelledby="offcanvasWithBackdropLabel">
+                                        <div class="offcanvas offcanvas-start" style="width: 80%;" tabindex="-1"
+                                            id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
                                             <div class="offcanvas-header">
                                                 <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Message box
                                                 </h5>
@@ -787,31 +787,48 @@
                                                     data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                             </div>
                                             <div class="offcanvas-body">
-                                                <div class="mb-3">
-                                                    <label for="exampleFormControlInput1"
-                                                        class="form-label">To user</label>
-                                                        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                                                <form class="row g-3"
+                                                    action="action/action_submit_add_message.php" method="POST"
+                                                    enctype="multipart/form-data">
+                                                    <div class="mb-3">
+                                                        <label for="exampleFormControlInput1" class="form-label">To
+                                                            user</label>
+                                                        <input class="form-control" list="datalistOptions"
+                                                            id="ms_target" name="ms_target"
+                                                            placeholder="Type to search...">
                                                         <datalist id="datalistOptions">
-                                                        <option value="San Francisco">
-                                                        <option value="New York">
-                                                        <option value="Seattle">
-                                                        <option value="Los Angeles">
-                                                        <option value="Chicago">
+                                                            <option value="San Francisco">
+                                                            <option value="New York">
+                                                            <option value="Seattle">
+                                                            <option value="Los Angeles">
+                                                            <option value="Chicago">
                                                         </datalist>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="exampleFormControlInput1"
-                                                        class="form-label">Title</label>
-                                                    <input type="email" class="form-control"
-                                                        id="exampleFormControlInput1" placeholder="name@example.com">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="exampleFormControlTextarea1"
-                                                        class="form-label">Detail</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1"
-                                                        rows="5"></textarea>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleFormControlInput1"
+                                                            class="form-label">Title</label>
+                                                        <input type="email" class="form-control" id="ms_title"
+                                                            name="ms_title" placeholder="name@example.com">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleFormControlTextarea1"
+                                                            class="form-label">Detail</label>
+                                                        <textarea class="form-control" id="ms_description"
+                                                            name="ms_description" rows="5"></textarea>
+
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleFormControlTextarea1"
+                                                            class="form-label">Multi file input</label>
+                                                        <input class="form-control form-control-sm" type="file" id="ms_attachment" name="ms_attachment[]" multiple="multiple">
+                                                        <small>ขนาดไฟล์ต้องไม่เกิน 2MB</small>
+
+                                                    </div>
                                                    
-                                                </div>
+                                                    <button type="submit" class="btn btn-primary btn-sm"
+                                                        style="width:100%">Submit</button>
+                                                    
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -1192,9 +1209,9 @@ tinymce.init({
     //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
 });
     </script>
-        <script>
+    <script>
 tinymce.init({
-    selector: 'textarea#ms_admin',
+    selector: 'textarea#ms_description',
     height: 380,
     menubar: false,
     plugins: [
