@@ -850,14 +850,14 @@
                                 <div class="row">
                                     <div class="col-2">
                                         <div class="list-group" id="list-tab" role="tablist">
-                                        <a class="list-group-item list-group-item-action active" id="list-important-list" data-bs-toggle="list" href="#list-important" role="tab" aria-controls="list-important">Important</a>
-                                        <a class="list-group-item list-group-item-action active" id="list-update-list" data-bs-toggle="list" href="#list-update" role="tab" aria-controls="list-update">Updated</a>
-                                        <a class="list-group-item list-group-item-action" id="list-send-list" data-bs-toggle="list" href="#list-send" role="tab" aria-controls="list-send">Send</a>
+                                        <a class="list-group-item list-group-item-action active" id="list-important-list" data-bs-toggle="list" href="#list-important" role="tab" aria-controls="list-important"><ion-icon name="star-outline"></ion-icon> Important</a>
+                                        <a class="list-group-item list-group-item-action" id="list-update-list" data-bs-toggle="list" href="#list-update" role="tab" aria-controls="list-update"><ion-icon name="notifications-outline"></ion-icon> Updated</a>
+                                        <a class="list-group-item list-group-item-action" id="list-send-list" data-bs-toggle="list" href="#list-send" role="tab" aria-controls="list-send"><ion-icon name="paper-plane-outline"></ion-icon> Send</a>
                                         </div>
                                     </div>
                                     <div class="col-10">
                                         <div class="tab-content" id="nav-tabContent">
-                                        <div class="tab-pane fade" id="list-important" role="tabpanel" aria-labelledby="list-important-list">
+                                        <div class="tab-pane fade show active" id="list-important" role="tabpanel" aria-labelledby="list-important-list">
                                         <table class="table table-hover table-borderless  "
                                                 style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
                                                 <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
@@ -873,7 +873,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="tab-pane fade show active" id="list-update" role="tabpanel" aria-labelledby="list-update-list">
+                                        <div class="tab-pane fade" id="list-update" role="tabpanel" aria-labelledby="list-update-list">
                                         
                                         </div>
                                         <div class="tab-pane fade" id="list-send" role="tabpanel" aria-labelledby="list-send-list">
