@@ -95,7 +95,12 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
           }else{
             $loop_in_null=false;
             if($loop_in_null==false){
-              $option_set .= '<option value=""></option>';
+              if(isset($option_set)){
+                $option_set .= '<option value=""></option>';
+              }else{
+                $option_set = '<option value=""></option>';
+              }
+           
               $loop_in_null=true;
             }
               if($row[$col] <> '' )
@@ -116,7 +121,7 @@ $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " .
 mysqli_query($con, "SET NAMES 'utf8' ");
 $query = "SELECT * FROM all_in_one_project.content_request where id=".$id." ORDER by id DESC";
 $result = mysqli_query($con, $query);
-$result_count = mysqli_query($con, $query_count);
+// $result_count = mysqli_query($con, $query_count);
    while($row = mysqli_fetch_array($result)) {
     $description = $row["description"];
     $description = htmlspecialchars_decode($description,ENT_NOQUOTES);
