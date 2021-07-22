@@ -35,7 +35,7 @@
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
         <div class="modal-content">
             <div id="callmodel_message_detail">
-</div>
+            </div>
 
         </div>
     </div>

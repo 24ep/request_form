@@ -232,13 +232,20 @@ if($_POST["from_post"] ==true ){
       if($_SESSION['status_filter']<>""){
         if($row["config_type"]=="parent"){
           if($sub_ticket<>"" and $sub_ticket<>null){
-            echo $ticket.$sub_ticket;
+            if (isset($sub_ticket)) {
+              echo $ticket.$sub_ticket;
+          }
+            
           }
         }else{
-          echo $ticket.$sub_ticket;
+          if (isset($sub_ticket)) {
+            echo $ticket.$sub_ticket;
+        }
         }
        }else{
-        echo $ticket.$sub_ticket;
+        if (isset($sub_ticket)) {
+          echo $ticket.$sub_ticket;
+      }
        }
        unset($ticket);
        unset($sub_ticket);
