@@ -16,7 +16,7 @@
         echo "<td style='width: 10%;' >".$important."</td>";
         echo "<td style='width: 15%;' >MS-".$row["id"]."</td>";
         echo "<td style='width: 60%;width: 60%;' >".$row["title"]."</td>";  
-        echo "<td style='width: 15%;'><button type='button' class='btn btn-warning btn-sm'>ตรวจสอบ</button></td>";
+        echo "<td style='width: 15%;'><button type='button' class='btn btn-warning btn-sm'><ion-icon name='mail-unread-outline'></ion-icon> ตรวจสอบ</button></td>";
         echo "</tr>";
     } 
 

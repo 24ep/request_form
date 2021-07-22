@@ -388,7 +388,7 @@
                     <?php if(strpos($_SESSION["username"],'poojaroonwit')!==false){?>
                     <a class="nav-link" id="v-pills-ms_admin-tab" data-toggle="pill" href="#v-pills-ms_admin" role="tab"
                         aria-controls="v-pills-ms_admin" onclick="updateURL('v-pills-ms_admin');" aria-selected="false">
-                        <ion-icon stle="color:white" name="grid-outline"></ion-icon> message admin
+                        <ion-icon name="mail-unread-outline"></ion-icon> Message admin
                     </a>
                     <?php }?>
                     <hr style="color: #eee!important;">
@@ -795,7 +795,7 @@
                                 <div class="row">
                                     <div class="col-2">
                                         <div class="list-group" id="list-tab" role="tablist">
-                                        <a class="btn btn-primary" style="margin-bottom: 10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"><ion-icon name="add-outline"></ion-icon>Create</a>
+                                        <a class="btn btn-dark" style="margin-bottom: 10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"><ion-icon name="add-outline"></ion-icon>Create</a>
                                         <a class="list-group-item list-group-item-action active" id="list-important-list" data-bs-toggle="list" href="#list-important" role="tab" aria-controls="list-important"><ion-icon name="star-outline"></ion-icon> Important</a>
                                         <a class="list-group-item list-group-item-action" id="list-update-list" data-bs-toggle="list" href="#list-update" role="tab" aria-controls="list-update"><ion-icon name="notifications-outline"></ion-icon> Updated</a>
                                         <a class="list-group-item list-group-item-action" id="list-send-list" data-bs-toggle="list" href="#list-send" role="tab" aria-controls="list-send"><ion-icon name="paper-plane-outline"></ion-icon> Send</a>
