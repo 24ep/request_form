@@ -235,10 +235,19 @@ if($_POST["from_post"] ==true ){
             echo $ticket.$sub_ticket;
           }
         }else{
-          echo $ticket.$sub_ticket;
+          if($sub_ticket<>"" and $sub_ticket<>null){
+            echo $ticket.$sub_ticket;
+          }else{
+            echo $ticket;
+          }
+          
         }
        }else{
-        echo $ticket.$sub_ticket;
+        if($sub_ticket<>"" and $sub_ticket<>null){
+          echo $ticket.$sub_ticket;
+        }else{
+          echo $ticket;
+        }
        }
        unset($ticket);
        unset($sub_ticket);
