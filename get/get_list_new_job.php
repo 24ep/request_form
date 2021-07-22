@@ -218,6 +218,7 @@ if(isset($_POST["from_post"] )){
         }else{
              //data row
         if(isset($sub_ticket)){$sub_ticket ="";}
+        if(!isset($tr_class)){$tr_class="";}
         $sub_ticket .= "<tr ".$tr_class.">";
         $sub_ticket .= "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></th>";
         $sub_ticket .= "<td></td>";
