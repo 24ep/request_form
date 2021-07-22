@@ -39,10 +39,25 @@
                 }
                 if($row[$col] <> '' )
                 {
+
                     if($select_option==$row[$col]){
-                        $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
+                        if($row[$col]=="username"){
+                            $op_label = $row["nickname"]." ".$row["firstname"]." (".$row["username"].") ";
+
+                        }else{
+                            $op_label = $row[$col];
+
+                        }
+                        $option_set .= '<option value="'.$row[$col].'" selected>'.$op_label.'</option>';
                     }else{
-                        $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
+                        if($row[$col]=="username"){
+                            $op_label = $row["nickname"]." ".$row["firstname"]." (".$row["username"].") ";
+
+                        }else{
+                            $op_label = $row[$col];
+
+                        }
+                        $option_set .= '<option value="'.$row[$col].'">'.$op_label.'</option>';
                     }
                 }
         }
