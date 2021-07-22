@@ -21,7 +21,7 @@ while($row = mysqli_fetch_array($result)) {
     <div class="modal-body" id="messagebody">
     '.$description.'
     </div>';
-    $sql_update_read = "UPDATE all_in_one_project.message_box SET readable = 1,read_date=CURRENT_TIMESTAMP where id=".$row['targe_ms_id'] ;
+    $sql_update_read = "UPDATE all_in_one_project.target_message_box SET readable = 1,read_date=CURRENT_TIMESTAMP where id=".$row['targe_ms_id'] ;
     $query_update_read = mysqli_query($con,$sql_update_read);
     if($query_update_read){
         echo '<script>
