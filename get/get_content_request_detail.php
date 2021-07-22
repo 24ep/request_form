@@ -12,7 +12,7 @@ label#label_file {
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <?php
 $id = $_POST['id'];
-$func = $_POST['func'];
+// $func = $_POST['func'];
 function get_attachment_cr($id){
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));

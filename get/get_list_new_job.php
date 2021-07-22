@@ -66,7 +66,7 @@ function role_user($request_username,$follow_up_by){
   }
   return $ticket_role;
 }
-if( $_GET["fopenticket"]<>""){
+if(isset($_GET["fopenticket"])){
   $_SESSION["fopenticket"]=$_GET["fopenticket"];
 }
 if(isset($_POST["from_post"] )){

@@ -974,11 +974,10 @@ function call_edit_add_new_modal(id, brand) {
     }
 }
 
-function cr_id_toggle(id, func) {
+function cr_id_toggle(id) {
     if (id) {
         $.post("get/get_content_request_detail.php", {
-            id: id,
-            func: func
+            id: id
         }, function(data) {
             $('#calloffcanvas_cr').html(data);
         });
