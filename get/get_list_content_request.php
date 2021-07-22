@@ -14,7 +14,7 @@ if( $_SESSION["user_cr_filter"]<>"" and $_SESSION["user_cr_filter"]<>"all_user")
   $cr_status_user = '';
 }
 if(isset($_POST["status"])){$_SESSION["status"]= $_POST["status"];}
-    if($_SESSION["status"]==""){
+    if(!isset($_SESSION["status"])){
       if($_SESSION["cr_filter_status"]==""){
          $cr_status = 'ticket.status = "Pending"'.$cr_status_user;
          $_SESSION["cr_filter_status"] = "Pending";
