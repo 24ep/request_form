@@ -154,7 +154,7 @@ if(isset($_POST["from_post"] )){
       $task_status = $status ;
       $subtask_sum = $row["sku"];
     }
-      if(isset($ticket)){$ticket="";}
+      if(!isset($ticket)){$ticket="";}
       $ticket .= "<tr ".$tr_class." >";
       $ticket .= "<th scope='row'>NS-".$row["id"]."</th>";
       $ticket .= "<td>".$row["department"]."</td>";
