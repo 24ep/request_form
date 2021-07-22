@@ -30,7 +30,7 @@ function get_attachment_cr($id){
       $pass = true;
     }
     $list_attchment.= '</ul>';
-    if(!isset($pass)){$pass==false}
+    if(!isset($pass)){$pass=false;}
     if($pass==true){
       return $list_attchment;
     }else{
