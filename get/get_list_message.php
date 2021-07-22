@@ -43,7 +43,7 @@
 <script>
 function message_get(id) {
     if (id) {
-        $.post("model/model_message_detail.php", {
+        $.post("modal/model_message_detail.php", {
                 id: id
             },
             function(data) {
