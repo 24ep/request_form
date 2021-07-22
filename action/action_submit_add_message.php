@@ -50,13 +50,15 @@
                   //add target
                   $target_usernames  = explode(",", $_POST["ms_target"]);
                   foreach($target_usernames  as $target_username){
-                    $sql = "INSERT INTO target_message_box (
+                    $sql_ms_target = "INSERT INTO target_message_box (
                         target_username,msid
                         )
                         VALUES (
                         '".$target_username."',".$last_id."
                         )";
+                    $query_target = mysqli_query($con,$sql_ms_target);
                   }
+
                   //create forder
                   $fullpath = '../../attachment/csg/'.$last_id."/";
                   mkdir($fullpath, 0777, true);
