@@ -155,6 +155,8 @@ if(isset($_POST["from_post"] )){
       $subtask_sum = $row["sku"];
     }
       if(!isset($ticket)){$ticket="";}
+      if(!isset($tr_class)){$tr_class="";}
+
       $ticket .= "<tr ".$tr_class." >";
       $ticket .= "<th scope='row'>NS-".$row["id"]."</th>";
       $ticket .= "<td>".$row["department"]."</td>";
@@ -215,6 +217,7 @@ if(isset($_POST["from_post"] )){
           }
         }else{
              //data row
+        if(isset($sub_ticket)){$sub_ticket ="";}
         $sub_ticket .= "<tr ".$tr_class.">";
         $sub_ticket .= "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></th>";
         $sub_ticket .= "<td></td>";
