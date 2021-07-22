@@ -30,6 +30,7 @@ function get_attachment_cr($id){
       $pass = true;
     }
     $list_attchment.= '</ul>';
+    if(!isset($pass)){$pass==false}
     if($pass==true){
       return $list_attchment;
     }else{
@@ -42,7 +43,8 @@ function get_image_cr($id){
   mysqli_query($con, "SET NAMES 'utf8' ");
   $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image=1 ORDER BY id ASC" or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
-  $list_image.= '<div class="row">';
+  if(isset($list_image)){$list_image.= '<div class="row">';}else{$list_image= '<div class="row">';}
+  
     while($row = mysqli_fetch_array($result)) {
       $herf = str_replace("../..",'https://cdsecommercecontent.ga',$row['file_path'].$row['file_name']);
       $list_image.=  ' <div class="col-md"><div class="thumbnail">
@@ -70,18 +72,28 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
               {
                 if($row[$col] <> '' ) {
                   if($store==$row[$col]){
-                    $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
+                    if(isset($option_set)){
+                      $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
+                    }else{
+                      $option_set = '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
+                    }
+                    
                     $duplicate_op = true;
                   }
                 }
               }
               if($row[$col] <> ''){
                 if($duplicate_op == false){
+                  if(isset($option_set)){
                   $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
+                  }else{
+                  $option_set = '<option value="'.$row[$col].'">'.$row[$col].'</option>';
+                  }
                 }
               }
             }
           }else{
+            $loop_in_null=false;
             if($loop_in_null==false){
               $option_set .= '<option value=""></option>';
               $loop_in_null=true;
@@ -117,7 +129,6 @@ $result_count = mysqli_query($con, $query_count);
     $cto_ref = $row["cto_ref"];
     $platform_issue = $row["platform_issue"];
     $brand = $row["brand"];
-    $request_type = $row["request_type"];
     $sku = $row["sku"];
     $note = $row["note"];
     $effective_date = $row["effective_date"];
@@ -209,12 +220,12 @@ $result_count = mysqli_query($con, $query_count);
         $cr_edit_status = "'cr_edit_status'";
         $cr_edit_case_officer = "'cr_edit_case_officer'";
         $cr_edit_ref_cto = "'cr_edit_cto_ref'";
-        $cr_edit_plathform_issue = "'cr_edit_plathform_issue'";
+        $cr_edit_platform_issue  = "'cr_edit_platform_issue '";
         $cr_edit_ticket_type = "'cr_edit_ticket_type'";
         $cr_edit_brand = "'cr_edit_brand'";
         $cr_edit_sku = "'cr_edit_sku'";
         $cr_edit_note = "'cr_edit_note'";
-        $cr_effective_date = "'cr_effective_date'";
+        $cr_edit_effective_date = "'cr_edit_effective_date'";
         $cr_edit_content_request_reson= "'cr_edit_content_request_reson'";
 echo "<script>console.log('".$_SESSION["department"]."');</script>";
         if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
