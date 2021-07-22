@@ -7,13 +7,13 @@ $query = "SELECT * FROM all_in_one_project.message_box
 where id = ".$id." ORDER BY id  DESC " or die("Error:" . mysqli_error());
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
-
+    $description = htmlspecialchars_decode($row["description"],ENT_NOQUOTES);
     echo '<div class="modal-header">
     <h5 class="modal-title" id="messagemodelLabel">'.$row["title"].'</h5>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body" id="messagebody">
-    '.htmlentities($row["description"]).'
+    '.$description.'
     </div>';
 }
 
