@@ -843,7 +843,10 @@
                                                 </form>
                                             </div>
                                         </div>
-                                        <div class="container-fluid" style="border-radius: 10px;width: 95%;">
+                                     
+                                    </div>
+                                </div>
+                                <div class="container-fluid" style="border-radius: 10px;width: 95%;">
                                             <table class="table table-hover table-borderless  "
                                                 style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
                                                 <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
@@ -859,8 +862,6 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
