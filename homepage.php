@@ -795,7 +795,7 @@
                                 <div class="row">
                                     <div class="col-2">
                                         <div class="list-group" id="list-tab" role="tablist">
-                                        <a class="list-group-item list-group-item-action" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"><ion-icon name="add-outline"></ion-icon>Create</a>
+                                        <a class="btn btn-primary" style="margin-bottom: 10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"><ion-icon name="add-outline"></ion-icon>Create</a>
                                         <a class="list-group-item list-group-item-action active" id="list-important-list" data-bs-toggle="list" href="#list-important" role="tab" aria-controls="list-important"><ion-icon name="star-outline"></ion-icon> Important</a>
                                         <a class="list-group-item list-group-item-action" id="list-update-list" data-bs-toggle="list" href="#list-update" role="tab" aria-controls="list-update"><ion-icon name="notifications-outline"></ion-icon> Updated</a>
                                         <a class="list-group-item list-group-item-action" id="list-send-list" data-bs-toggle="list" href="#list-send" role="tab" aria-controls="list-send"><ion-icon name="paper-plane-outline"></ion-icon> Send</a>
@@ -863,7 +863,7 @@
                                                         <input type="text" multiple class="form-control" list="datalistOptions"
                                                             id="ms_target" name="ms_target"
                                                             placeholder="Type to search...">
-                                                        <datalist id="datalistOptions">
+                                                        <datalist id="ms_target">
                                                          <option value="@everyone">everyone in content-service gate</option>
                                                           <?php echo $username_op;?>
                                                         </datalist>
