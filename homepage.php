@@ -778,7 +778,7 @@
                                         <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
                                             data-bs-target="#offcanvasWithBackdrop"
                                             aria-controls="offcanvasWithBackdrop">Create new message</button>
-                                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop"
+                                        <div class="offcanvas offcanvas-start" style="width: 80%;" tabindex="-1" id="offcanvasWithBackdrop"
                                             aria-labelledby="offcanvasWithBackdropLabel">
                                             <div class="offcanvas-header">
                                                 <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Message box
@@ -787,6 +787,18 @@
                                                     data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                             </div>
                                             <div class="offcanvas-body">
+                                                <div class="mb-3">
+                                                    <label for="exampleFormControlInput1"
+                                                        class="form-label">To user</label>
+                                                        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                                                        <datalist id="datalistOptions">
+                                                        <option value="San Francisco">
+                                                        <option value="New York">
+                                                        <option value="Seattle">
+                                                        <option value="Los Angeles">
+                                                        <option value="Chicago">
+                                                        </datalist>
+                                                </div>
                                                 <div class="mb-3">
                                                     <label for="exampleFormControlInput1"
                                                         class="form-label">Title</label>
@@ -798,21 +810,7 @@
                                                         class="form-label">Detail</label>
                                                     <textarea class="form-control" id="exampleFormControlTextarea1"
                                                         rows="5"></textarea>
-                                                    <div class="row mb-3">
-                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">To
-                                                            user</label>
-                                                        <div class="col-sm-10">
-                                                            <input class="form-control" list="datalistOptions"
-                                                                id="exampleDataList" placeholder="Type to search...">
-                                                            <datalist id="datalistOptions">
-                                                                <option value="San Francisco">
-                                                                <option value="New York">
-                                                                <option value="Seattle">
-                                                                <option value="Los Angeles">
-                                                                <option value="Chicago">
-                                                            </datalist>
-                                                        </div>
-                                                    </div>
+                                                   
                                                 </div>
                                             </div>
                                         </div>
@@ -1181,6 +1179,22 @@ $(document).ready(function() {
     <script>
 tinymce.init({
     selector: 'textarea#cr_description',
+    height: 380,
+    menubar: false,
+    plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table paste code help wordcount'
+    ],
+    toolbar: 'bold italic backcolor | alignleft aligncenter ' +
+        'alignright alignjustify | bullist numlist outdent indent | ' +
+        'removeformat | help',
+    //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
+});
+    </script>
+        <script>
+tinymce.init({
+    selector: 'textarea#ms_admin',
     height: 380,
     menubar: false,
     plugins: [
