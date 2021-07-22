@@ -819,7 +819,7 @@
                                                     <div class="mb-3">
                                                         <label for="exampleFormControlInput1"
                                                             class="form-label">Title</label>
-                                                        <input type="email" class="form-control" id="ms_title"
+                                                        <input type="text" class="form-control" id="ms_title"
                                                             name="ms_title" placeholder="">
                                                     </div>
                                                     <div class="mb-3">

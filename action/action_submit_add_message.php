@@ -54,7 +54,7 @@
                         target_username,msid
                         )
                         VALUES (
-                        ".$target_username.",".$last_id."
+                        '".$target_username."',".$last_id."
                         )";
                   }
                   //create forder
