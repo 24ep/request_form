@@ -19,6 +19,7 @@
       }else{
         $button_check = "<td style='width: 20%;'><button type='button' class='btn btn-light btn-sm' name='ms_bt_id_".$row["id"]."' id='ms_bt_id_".$row["id"]."' data-bs-toggle='modal 'onclick='message_get(".$row["id"].")'  data-bs-target='#messagemodel'><ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบแล้ว</button></td>";
         $st_font_color = "color: grey"; 
+        unset($st_font_color);
       }
         echo "<tr class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'>";
         echo "<td style='width: 10%;". $st_font_color."' >".$important."</td>";
