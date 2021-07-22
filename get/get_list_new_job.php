@@ -56,7 +56,7 @@ function badge_status($status){
 return $status;
 }
 function role_user($request_username,$follow_up_by){
-  session_start();
+  // session_start();
   if($_SESSION['username']==$request_username){
     $ticket_role = "Owner";
   }elseif($_SESSION['username']==$follow_up_by){
