@@ -41,7 +41,7 @@
                 {
 
                     if($select_option==$row[$col]){
-                        if($row[$col]=="username"){
+                        if($col=="username"){
                             $op_label = $row["nickname"]." ".$row["firstname"]." (".$row["username"].") ";
 
                         }else{
@@ -50,7 +50,7 @@
                         }
                         $option_set .= '<option value="'.$row[$col].'" selected>'.$op_label.'</option>';
                     }else{
-                        if($row[$col]=="username"){
+                        if($col=="username"){
                             $op_label = $row["nickname"]." ".$row["firstname"]." (".$row["username"].") ";
 
                         }else{
