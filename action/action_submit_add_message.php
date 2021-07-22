@@ -48,7 +48,7 @@
             if($query) {
                 $last_id = $con->insert_id;
                   //add target
-                  $target_usernames  = explode(" ", $_POST["ms_target"]);
+                  $target_usernames  = explode(",", $_POST["ms_target"]);
                   foreach($target_usernames  as $target_username){
                     $sql = "INSERT INTO target_message_box (
                         target_username,msid
