@@ -4,7 +4,7 @@ $id=$_POST["id"];
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
-$query = "SELECT message_box.id as target_ms_id,target.target_username as username,target.msid as msid,message_box.title as title,message_box.description as description 
+$query = "SELECT message_box.id as target_ms_id,target.target_username as username,target.msid as msid,target.id as trmsid,message_box.title as title,message_box.description as description 
   FROM target_message_box as target left join message_box as message_box on target.msid = message_box.id 
   where target.target_username = '".$_SESSION["username"]."' and target.msid = ".$id or die("Error:" . mysqli_error());
 $result = mysqli_query($con, $query);
@@ -17,7 +17,7 @@ while($row = mysqli_fetch_array($result)) {
     <div class="modal-body" id="messagebody">
     '.$description.'
     </div>';
-    $target_ms_id = $row['id'];
+    $target_ms_id = $row['trmsid'];
   
 }
 $sql_update_read = "UPDATE target_message_box SET readable = 1,read_date=CURRENT_TIMESTAMP where id=".$target_ms_id;
