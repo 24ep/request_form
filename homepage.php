@@ -812,11 +812,7 @@
                                                             id="ms_target" name="ms_target"
                                                             placeholder="Type to search...">
                                                         <datalist id="datalistOptions">
-                                                            <option value="San Francisco">
-                                                            <option value="New York">
-                                                            <option value="Seattle">
-                                                            <option value="Los Angeles">
-                                                            <option value="Chicago">
+                                                          <?php echo $username_op;?>
                                                         </datalist>
                                                     </div>
                                                     <div class="mb-3">
