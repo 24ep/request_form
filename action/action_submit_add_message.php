@@ -31,14 +31,7 @@
         }
     }
 }
-            foreach($_POST["ms_online_channel"] as $product_website)
-                {
-                    if($sum_product_website <> ""){
-                        $sum_product_website .= ", ".$product_website;
-                    }else{
-                        $sum_product_website .= $product_website;
-                    }
-                };
+       
         //calculate job number
         if($_POST["ms_title"]<>""){ $insert_head .= "title";$insert_value .= "'".$cr_title."'";}
         if($_POST["ms_description"]<>""){ $insert_head .= ",description";$insert_value .= ",'".$cr_description."'";}
@@ -54,6 +47,16 @@
             $query = mysqli_query($con,$sql);
             if($query) {
                 $last_id = $con->insert_id;
+                  //add target
+                  $target_usernames  = explode(" ", $_POST["ms_target"]);
+                  foreach($target_usernames  as $target_username){
+                    $sql = "INSERT INTO target_message_box (
+                        target_username,msid
+                        )
+                        VALUES (
+                        ".$target_username.",".$last_id."
+                        )";
+                  }
                   //create forder
                   $fullpath = '../../attachment/csg/'.$last_id."/";
                   mkdir($fullpath, 0777, true);

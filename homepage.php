@@ -812,6 +812,7 @@
                                                             id="ms_target" name="ms_target"
                                                             placeholder="Type to search...">
                                                         <datalist id="datalistOptions">
+                                                         <option value="@everyone">everyone in content-service gate</option>
                                                           <?php echo $username_op;?>
                                                         </datalist>
                                                     </div>
