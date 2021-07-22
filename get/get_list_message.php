@@ -10,7 +10,7 @@
       if($row["important"]==1){
         $important = '<ion-icon name="star"></ion-icon>';
       }else{
-        $important = "";
+        unset($important);
       }
         echo "<tr class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;>";
         echo "<td >".$important."</td>";
