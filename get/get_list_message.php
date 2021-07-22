@@ -15,8 +15,10 @@
 
       if($row["readable"]==0){
         $button_check = "<td style='width: 15%;'><button type='button' class='btn btn-danger btn-sm'><ion-icon name='mail-unread-outline'></ion-icon> ตรวจสอบ</button></td>";
+        unsent($st_font_color);
       }else{
         $button_check = "<td style='width: 15%;'><button type='button' class='btn btn-secondary btn-sm'><ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบ</button></td>";
+        $st_font_color = 'color = "grey"'; 
       }
         echo "<tr class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'>";
         echo "<td style='width: 10%;' >".$important."</td>";
