@@ -69,12 +69,14 @@ function role_user($request_username,$follow_up_by){
 if( $_GET["fopenticket"]<>""){
   $_SESSION["fopenticket"]=$_GET["fopenticket"];
 }
-if($_POST["from_post"] ==true ){
+if(isset($_POST["from_post"] )){
+  if($_POST["from_post"] ==true ){
   $_SESSION["user_filter"] = $_POST["user_filter"];
   $_SESSION["status_filter"] = $_POST["status_filter"];
   $_SESSION['pagenation'] = $_POST["pagenation_input"];
   $_SESSION['brand_filter'] = $_POST["brand_filter"];
-}
+}}
+
   $start_item =  ($_SESSION['pagenation'] -1 )* 30;
  if(strpos($_SESSION["page_view"],'Followup')!==false){
   if($_SESSION['user_filter']<>""){
@@ -111,7 +113,7 @@ if($_POST["from_post"] ==true ){
   $brand_filter ="1=1";
  }
  //set_query
- if($_SESSION['fopenticket']<>""){
+ if(isset($_SESSION['fopenticket'])){
   $query = "SELECT * FROM add_new_job where id =".$_SESSION['fopenticket']."  ORDER BY id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
   unset($_SESSION['fopenticket']);
  }else{
@@ -238,7 +240,7 @@ if($_POST["from_post"] ==true ){
           if(isset($sub_ticket)){
             echo $ticket.$sub_ticket;
           }else{
-            echo $ticket;
+            if(isset($ticket)){ echo $ticket;}
           }
           
         }
@@ -246,7 +248,8 @@ if($_POST["from_post"] ==true ){
         if(isset($sub_ticket)){
           echo $ticket.$sub_ticket;
         }else{
-          echo $ticket;
+          if(isset($ticket)){ echo $ticket;}
+         
         }
        }
        unset($ticket);
