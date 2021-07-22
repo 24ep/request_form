@@ -23,22 +23,22 @@
         echo "<tr class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'>";
         echo "<td style='width: 10%;". $st_font_color."' >".$important."</td>";
         echo "<td style='width: 15%;". $st_font_color."' >MS-".$row["id"]."</td>";
-        echo "<td style='width: 60%;width: 60%;". $st_font_color."' >".$row["title"]."</td>";  
+        echo "<td style='width: 60%;". $st_font_color."' >".$row["title"]."</td>";  
         echo $button_check;
         echo "</tr>";
     } 
 
   mysqli_close($con); 
   ?>
+
+<div class="modal fade" id="messagemodel" tabindex="-1" aria-labelledby="messagemodelLabel" aria-hidden="true">
 <script>
 function message_get(title, description) {
-
     document.getElementById("messagemodelLabel").innerHTML = title;
     document.getElementById("messagebody").innerHTML = description;
 
 }
 </script>
-<div class="modal fade" id="messagemodel" tabindex="-1" aria-labelledby="messagemodelLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
