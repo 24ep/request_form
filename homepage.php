@@ -847,7 +847,17 @@
                                     </div>
                                 </div>
                                 <div class="container-fluid" style="border-radius: 10px;width: 95%;">
-                                            <table class="table table-hover table-borderless  "
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="list-group" id="list-tab" role="tablist">
+                                        <a class="list-group-item list-group-item-action active" id="list-inbox-list" data-bs-toggle="list" href="#list-inbox" role="tab" aria-controls="list-inbox">Inbox</a>
+                                        <a class="list-group-item list-group-item-action" id="list-send-list" data-bs-toggle="list" href="#list-send" role="tab" aria-controls="list-send">Send</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="tab-content" id="nav-tabContent">
+                                        <div class="tab-pane fade show active" id="list-inbox" role="tabpanel" aria-labelledby="list-inbox-list">
+                                        <table class="table table-hover table-borderless  "
                                                 style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
                                                 <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
                                                     <tr>
@@ -861,6 +871,15 @@
                                                     <?php include('get/get_list_message.php'); ?>
                                                 </tbody>
                                             </table>
+
+
+                                        </div>
+                                        <div class="tab-pane fade" id="list-send" role="tabpanel" aria-labelledby="list-send-list">...</div>
+                                   
+                                        </div>
+                                    </div>
+                                    </div>
+                                        
                                         </div>
                             </div>
                         </div>

@@ -15,7 +15,7 @@
         echo "<tr class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'>";
         echo "<td style='width: 10%;' >".$important."</td>";
         echo "<td style='width: 15%;' >MS-".$row["id"]."</td>";
-        echo "<td style='width: 60%;' >".$row["title"]."</td>";  
+        echo "<td style='width: 60%;width: 60%;' >".$row["title"]."</td>";  
         echo "<td style='width: 15%;'><button type='button' class='btn btn-warning btn-sm'>ตรวจสอบ</button></td>";
         echo "</tr>";
     } 
