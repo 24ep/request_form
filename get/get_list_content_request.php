@@ -1,11 +1,11 @@
 <?php
 session_start();
-if($_POST["cr_search_input"]<> "" ){
+if(isset($_POST["cr_search_input"]) ){
   $_SESSION["cr_search_input"] = $_POST["cr_search_input"];
  }else{
    unset($_SESSION["cr_search_input"]);
 }
- if($_POST["user_cr_filter"]<>""){
+ if(isset($_POST["user_cr_filter"])){
   $_SESSION["user_cr_filter"]= $_POST["user_cr_filter"];
  }
 if( $_SESSION["user_cr_filter"]<>"" and $_SESSION["user_cr_filter"]<>"all_user"){
@@ -13,7 +13,7 @@ if( $_SESSION["user_cr_filter"]<>"" and $_SESSION["user_cr_filter"]<>"all_user")
 }else{
   $cr_status_user = '';
 }
-$_SESSION["status"]=$_POST["status"];
+if(isset($_POST["status"])){$_SESSION["status"]= $_POST["status"];}
     if($_SESSION["status"]==""){
       if($_SESSION["cr_filter_status"]==""){
          $cr_status = 'ticket.status = "Pending"'.$cr_status_user;
@@ -58,7 +58,7 @@ $_SESSION["status"]=$_POST["status"];
               $sort_code = 'DESC';
             }
     }
-    if($_SESSION["cr_search_input"]<>""){
+    if(isset($_SESSION["cr_search_input"])){
       $cr_status = '(( lower(ticket.title) like lower("%'.$_SESSION["cr_search_input"].'%") or lower(ticket.id) like lower("%'.$_SESSION["cr_search_input"].'%") or lower(ticket.id) like lower("%'.str_replace('CR-','',$_SESSION["cr_search_input"]).'%")  or lower(ticket.description) like lower("%'.$_SESSION["cr_search_input"].'%")))';
     }
    date_default_timezone_set("Asia/Bangkok");
@@ -82,7 +82,7 @@ $_SESSION["status"]=$_POST["status"];
    ORDER by ". $sort_by." ".$sort_code." ".$LIMIT;
    //echo "<script>console.log('".$query."');</script>";
    $result = mysqli_query($con, $query);
-   $result_count = mysqli_query($con, $query_count);
+  //  $result_count = mysqli_query($con, $query_count);
      while( $row = mysqli_fetch_array($result)) {
            $count_comment_cr = $row["count_comment"];
           $description  = htmlspecialchars_decode($row["description"],ENT_NOQUOTES);
