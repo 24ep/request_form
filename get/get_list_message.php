@@ -14,7 +14,7 @@
       }
 
       if($row["readable"]==0){
-        $button_check = "<td style='width: 15%;'><button type='button' class='btn btn-danger btn-sm' data-bs-toggle='modal' onclick='message_get(".$row["title"].",".$row["description"].")' data-bs-target='#messagemodel'><ion-icon name='mail-unread-outline'></ion-icon> ตรวจสอบ</button></td>";
+        $button_check = "<td style='width: 15%;'><button type='button' class='btn btn-danger btn-sm' data-bs-toggle='modal' onclick='message_get('".$row["title"]."','".$row["description"]."')' data-bs-target='#messagemodel'><ion-icon name='mail-unread-outline'></ion-icon> ตรวจสอบ</button></td>";
         unset($st_font_color);
       }else{
         $button_check = "<td style='width: 15%;'><button type='button' class='btn btn-secondary btn-sm' data-bs-toggle='modal' data-bs-target='#messagemodel'><ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบแล้ว</button></td>";
@@ -30,12 +30,19 @@
 
   mysqli_close($con); 
   ?>
+<script>
+function message_get(title, description) {
 
+    document.getElementById("messagemodelLabel").innerHTML = title;
+    document.getElementById("messagebody").innerHTML = description;
+
+}
+</script>
 <div class="modal fade" id="messagemodel" tabindex="-1" aria-labelledby="messagemodelLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="messagemodelLabel">title</h5>
+                <h5 class="modal-title" id="messagemodelLabel" >title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="messagebody">
@@ -45,14 +52,3 @@
         </div>
     </div>
 </div>
-
-<script>
-function message_get(title,description){
-
-    document.getElementById("messagemodelLabel").innerHTML = title;
-    document.getElementById("messagebody").innerHTML = description;
-
-}
-
-
-</script>
