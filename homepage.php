@@ -843,6 +843,22 @@
                                                 </form>
                                             </div>
                                         </div>
+                                        <div class="container-fluid" style="border-radius: 10px;width: 95%;">
+                                            <table class="table table-hover table-borderless  "
+                                                style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
+                                                <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
+                                                    <tr>
+                                                        <th scope="col"></th>
+                                                        <th scope="col">Message ID</th>
+                                                        <th scope="col">title</th>
+                                                        <th scope="col">check</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="">
+                                                    <?php include('get/get_list_message.php'); ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
