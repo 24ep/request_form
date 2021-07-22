@@ -6,7 +6,7 @@
   FROM all_in_one_project.target_message_box as target
   left join all_in_one_project.message_box as message_box on target.msid = message_box.id where target.target_username = ".$_SESSION["username"]." ORDER BY id DESC " or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query_tg);
- 
+  while($row = mysqli_fetch_array($result)) {
         echo "<tr>";
         echo "<th scope='row' style='background: #ededed;'>star</th>";
         echo "<td style='background: #ededed;'>".$row["id"]."</dh>";
