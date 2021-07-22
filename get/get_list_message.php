@@ -13,8 +13,8 @@
         $important = "";
       }
         echo "<tr class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;>";
-        echo "<th scope='row'>".$important."</th>";
-        echo "<td >".$row["id"]."</dh>";
+        echo "<td >".$important."</td>";
+        echo "<td >".$row["id"]."</td>";
         echo "<td >".$row["title"]."</td>";  
         echo "<td ><button type='button' class='btn btn-warning btn-sm'>ตรวจสอบ</button></td>";
         echo "</tr>";
