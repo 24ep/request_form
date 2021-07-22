@@ -21,9 +21,9 @@
         $st_font_color = "color: grey"; 
       }
         echo "<tr class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'>";
-        echo "<td style='width: 10%;".$st_font_color."' >".$important."</td>";
-        echo "<td style='width: 15%;".$st_font_color."' >MS-".$row["id"]."</td>";
-        echo "<td style='width: 60%;width: 60%;".$st_font_color."' >".$row["title"]."</td>";  
+        echo "<td style='width: 10%;' >".$important."</td>";
+        echo "<td style='width: 15%;' >MS-".$row["id"]."</td>";
+        echo "<td style='width: 60%;width: 60%;' >".$row["title"]."</td>";  
         echo $button_check;
         echo "</tr>";
     } 
