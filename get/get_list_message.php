@@ -14,16 +14,16 @@
       }
 
       if($row["readable"]==0){
-        $button_check = "<td style='width: 15%;'><button type='button' class='btn btn-danger btn-sm' data-bs-toggle='modal' onclick='message_get(".$row["id"].")' data-bs-target='#messagemodel'><ion-icon name='mail-unread-outline'></ion-icon> ตรวจสอบ</button></td>";
+        $button_check = "<td style='width: 20%;'><button type='button' class='btn btn-danger btn-sm' data-bs-toggle='modal' onclick='message_get(".$row["id"].")' data-bs-target='#messagemodel'><ion-icon name='mail-unread-outline'></ion-icon> ตรวจสอบ</button></td>";
         unset($st_font_color);
       }else{
-        $button_check = "<td style='width: 15%;'><button type='button' class='btn btn-secondary btn-sm' data-bs-toggle='modal 'onclick='message_get(".$row["id"].")'  data-bs-target='#messagemodel'><ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบแล้ว</button></td>";
+        $button_check = "<td style='width: 20%;'><button type='button' class='btn btn-secondary btn-sm' data-bs-toggle='modal 'onclick='message_get(".$row["id"].")'  data-bs-target='#messagemodel'><ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบแล้ว</button></td>";
         $st_font_color = "color: grey"; 
       }
         echo "<tr class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'>";
         echo "<td style='width: 10%;". $st_font_color."' >".$important."</td>";
         echo "<td style='width: 15%;". $st_font_color."' >MS-".$row["id"]."</td>";
-        echo "<td style='width: 60%;". $st_font_color."' >".$row["title"]."</td>";  
+        echo "<td style='width: 55%;". $st_font_color."' >".$row["title"]."</td>";  
         echo $button_check;
         echo "</tr>";
     } 
@@ -32,7 +32,7 @@
   ?>
 
 <div class="modal fade" id="messagemodel" tabindex="-1" aria-labelledby="messagemodelLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
         <div class="modal-content">
             <div id="callmodel_message_detail">
 </div>
