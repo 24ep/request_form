@@ -18,6 +18,7 @@ while($row = mysqli_fetch_array($result)) {
     '.$description.'
     <hr>';
     ?>
+    <div style="margin:20px">
     <ul class="list-group list-group-flush" style="background: fixed;">
         <div id="comment_box_ms">
                 <div id="call_ticket_comment_ms">
@@ -37,6 +38,7 @@ while($row = mysqli_fetch_array($result)) {
         <span id="file-chosen_ms"> </span>
     </div>
     <button type="button" class="btn btn-outline-primary btn-sm" onClick="comment_ms_id_with_file(<?php echo  $_POST['id']; ?>)">Add comment</button>
+    </div>
     <?php
     echo '</div>';
 $target_ms_id = $row['trmsid'];
