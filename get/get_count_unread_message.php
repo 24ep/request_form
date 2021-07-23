@@ -11,7 +11,7 @@ session_start();
     }
 
     $total_unread = get_badge_message_important();
-    if(isset($total_unread)){
+    if(isset($total_unread) or $total_unread =0){
         echo "<span class='badge bg-danger'>".$total_unread."</span>";
     }
 ?>
