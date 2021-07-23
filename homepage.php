@@ -10,7 +10,7 @@
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT count(*) as total FROM message_box where readable = 0" or die("Error:" . mysqli_error());
         $result = mysqli_query($con, $query);
-        $data = mysqli_fetch_assoc($result)
+        $data = mysqli_fetch_assoc($result)ว
         return $data['total'];
     
     }
