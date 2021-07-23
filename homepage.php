@@ -5,15 +5,7 @@
     }else{
     include('get/get_card_content_request.php'); 
     include_once('get/get_count_status.php');
-    function get_badge_message_important(){
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-        mysqli_query($con, "SET NAMES 'utf8' ");
-        $query = "SELECT count(*) as total FROM target_message_box where readable = 0 and target_username = '".$_SESSION["username"]."'" or die("Error:" . mysqli_error());
-        $result = mysqli_query($con, $query);
-        $data = mysqli_fetch_assoc($result);
-        return $data['total'];
-    
-    }
+
     function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
@@ -398,7 +390,7 @@
                     <?php if(strpos($_SESSION["username"],'poojaroonwit')!==false){?>
                     <a class="nav-link" id="v-pills-ms_admin-tab" data-toggle="pill" href="#v-pills-ms_admin" role="tab"
                         aria-controls="v-pills-ms_admin" onclick="updateURL('v-pills-ms_admin');" aria-selected="false">
-                        <ion-icon name="mail-unread-outline"></ion-icon> Update  <?php $total_unread = get_badge_message_important(); if(isset($total_unread)){echo "<span class='badge bg-danger'>".$total_unread."</span>";} ?>
+                        <ion-icon name="mail-unread-outline"></ion-icon> Update  <div id="total_unread_div"></div>
                     </a>
                     <?php }?>
                     <hr style="color: #eee!important;">
@@ -813,7 +805,7 @@
                                                 <a class="list-group-item list-group-item-action active"
                                                     id="list-important-list" data-bs-toggle="list"
                                                     href="#list-important" role="tab" aria-controls="list-important">
-                                                    <ion-icon name="star-outline"></ion-icon> Important <span class="badge bg-danger"><?php $total_unread = get_badge_message_important(); if(isset($total_unread)){echo "<span class='badge bg-danger'>".$total_unread."</span>";}  ?>
+                                                    <ion-icon name="star-outline"></ion-icon> Important <div id="total_unread_div"></div>
                                                 </a>
                                                 <a class="list-group-item list-group-item-action" id="list-update-list"
                                                     data-bs-toggle="list" href="#list-update" role="tab"
