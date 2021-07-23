@@ -805,7 +805,7 @@
                                                 <a class="list-group-item list-group-item-action active"
                                                     id="list-important-list" data-bs-toggle="list"
                                                     href="#list-important" role="tab" aria-controls="list-important">
-                                                    <ion-icon name="star-outline"></ion-icon> Important <div id="total_unread_div"></div>
+                                                    <ion-icon name="star-outline"></ion-icon> Important <div id="total_unread_div_in"></div>
                                                 </a>
                                                 <a class="list-group-item list-group-item-action" id="list-update-list"
                                                     data-bs-toggle="list" href="#list-update" role="tab"

@@ -60,6 +60,7 @@ function update_total_unread_div() {
             },
             function(data) {
                 $('#total_unread_div').html(data);
+                $('#total_unread_div_in').html(data);
                 
                 
             });
