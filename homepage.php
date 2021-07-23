@@ -841,7 +841,7 @@
                                                 </div>
                                                 <div class="tab-pane fade" id="list-update" role="tabpanel"
                                                     aria-labelledby="list-update-list">
-
+                                                    <?php include('get/get_list_message_log.php'); ?>
                                                 </div>
                                                 <div class="tab-pane fade" id="list-send" role="tabpanel"
                                                     aria-labelledby="list-send-list">
