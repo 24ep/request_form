@@ -16,9 +16,33 @@
         echo "<td style='width: 10%;' >".$important."</td>";
         echo "<td style='width: 15%;' >MS-".$row["id"]."</td>";
         echo "<td style='width: 60%;width: 60%;' >".$row["title"]."</td>";  
-        echo "<td style='width: 15%;'><button type='button' class='btn btn-primary btn-sm'><ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบ</button></td>";
+        echo "<td style='width: 15%;'><button type='button' class='btn btn-primary btn-sm' name='ms_bt_id_".$row["id"]."' id='ms_bt_id_".$row["id"]."' data-bs-toggle='modal' onclick='message_get(".$row["id"].")' data-bs-target='#messagemodel'><ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบ</button></td>";
         echo "</tr>";
     } 
 
   mysqli_close($con); 
   ?>
+
+<div class="modal fade" id="messagemodel" tabindex="-1" aria-labelledby="messagemodelLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div id="callmodel_message_detail">
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+function message_get(id) {
+    if (id) {
+        $.post("modal/model_message_detail.php", {
+                id: id
+            },
+            function(data) {
+                $('#callmodel_message_detail').html(data);
+                document.getElementById("ms_bt_id_"+id).innerHTML  = "<ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบแล้ว";
+                document.getElementById("ms_bt_id_"+id).className ="btn btn-light btn-sm";
+            });
+    }
+}
+</script>
