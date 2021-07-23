@@ -14,10 +14,10 @@
       }
 
       if($row["readable"]==0){
-        $button_check = "<td style='width: 20%;'><button type='button' class='btn btn-danger btn-sm' style='width: 100%;' name='ms_bt_id_".$row["id"]."' id='ms_bt_id_".$row["id"]."' data-bs-toggle='modal' onclick='message_get(".$row["id"].");update_total_unread_div()ว' data-bs-target='#messagemodel'><ion-icon name='mail-unread-outline'></ion-icon> ตรวจสอบ</button></td>";
+        $button_check = "<td style='width: 20%;'><button type='button' class='btn btn-danger btn-sm' style='width: 100%;' name='ms_bt_id_".$row["id"]."' id='ms_bt_id_".$row["id"]."' data-bs-toggle='modal' onclick='message_get(".$row["id"].");update_total_unread_div();' data-bs-target='#messagemodel'><ion-icon name='mail-unread-outline'></ion-icon> ตรวจสอบ</button></td>";
         $st_font_color = "color: #737df4";
       }else{
-        $button_check = "<td style='width: 20%;'><button type='button' class='btn btn-light btn-sm'  style='width: 100%;color: #c4c4c4;' name='ms_bt_id_".$row["id"]."' id='ms_bt_id_".$row["id"]."' data-bs-toggle='modal' onclick='message_get(".$row["id"].");update_total_unread_div()ว' data-bs-target='#messagemodel'><ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบแล้ว</button></td>";
+        $button_check = "<td style='width: 20%;'><button type='button' class='btn btn-light btn-sm'  style='width: 100%;color: #c4c4c4;' name='ms_bt_id_".$row["id"]."' id='ms_bt_id_".$row["id"]."' data-bs-toggle='modal' onclick='message_get(".$row["id"].");update_total_unread_div();' data-bs-target='#messagemodel'><ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบแล้ว</button></td>";
         $st_font_color = "color: grey"; 
         $st_font_color = "color: #c4c4c4";
       }
