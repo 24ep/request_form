@@ -23,10 +23,11 @@ while($row = mysqli_fetch_array($result)) {
 $sql_update_read = "UPDATE target_message_box SET readable = 1,read_date=CURRENT_TIMESTAMP where id=".$target_ms_id;
 $query_update_read = mysqli_query($con,$sql_update_read);
 if($query_update_read){
-    echo '<script>
-    document.getElementById("ms_bt_id_'.$id.'").innerHTML  = "ตรวจสอบแล้ว";
-    document.getElementById("ms_bt_id_'.$id.'").className ="btn btn-secondary btn-sm";
-    </script>';    
+    ?> <script>
+    document.getElementById("ms_bt_id_'.$id.'").innerHTML  = "<ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบแล้ว";
+    document.getElementById("ms_bt_id_'.$id.'").className ="btn btn-light btn-sm";
+    </script>';
+    <?php     
 }
 
 
