@@ -49,6 +49,27 @@ $query_update_read = mysqli_query($con,$sql_update_read);
 
 ?>
 <script>
+//other content
+var actualBtn = document.getElementById('actual-btn_ms');
+var fileChosen = document.getElementById('file-chosen_ms');
+var fileChosen_bt = document.getElementById('label_file_ms');
+actualBtn.addEventListener('change', function() {
+    // fileChosen.textContent = this.files[0].name
+    count_file = this.files.length;
+    var i;
+    var file_name;
+    for (i = 0; i < count_file; i++) {
+        if (i == 0) {
+            file_name = this.files[i].name;
+        } else {
+            file_name += " , " + this.files[i].name;
+        }
+    }
+    if (file_name == "undefined") {
+        fileChosen_bt.textContent = "";
+    }
+    fileChosen_bt.textContent = ' Selected file : ' + file_name;
+})
 function comment_ms_id_with_file(id) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input_ms").value;
