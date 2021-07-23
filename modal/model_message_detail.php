@@ -26,7 +26,7 @@ if($query_update_read){
     ?> <script>
     document.getElementById("ms_bt_id_'.$id.'").innerHTML  = "<ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบแล้ว";
     document.getElementById("ms_bt_id_'.$id.'").className ="btn btn-light btn-sm";
-    </script>';
+    </script>
     <?php     
 }
 
