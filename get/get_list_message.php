@@ -50,8 +50,7 @@ function message_get(id) {
             function(data) {
                 $('#callmodel_message_detail').html(data);
                 document.getElementById("ms_bt_id_"+id).innerHTML  = "<ion-icon name='mail-open-outline'></ion-icon> ตรวจสอบแล้ว";
-                document.getElementById("ms_bt_id_"+id).className ="btn btn-light btn-sm";
-                
+                document.getElementById("ms_bt_id_"+id).className = "btn btn-light btn-sm";              
             });
     }
 }
@@ -66,4 +65,5 @@ function update_total_unread_div() {
             });
     
 }
+update_total_unread_div();
 </script>
