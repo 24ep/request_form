@@ -5,6 +5,15 @@
     }else{
     include('get/get_card_content_request.php'); 
     include_once('get/get_count_status.php');
+    function get_badge_message_important(){
+        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+        mysqli_query($con, "SET NAMES 'utf8' ");
+        $query = "SELECT count(*) as total FROM message_box where readable = 0" or die("Error:" . mysqli_error());
+        $result = mysqli_query($con, $query);
+        $data = mysqli_fetch_assoc($result)
+        return $data['total'];
+    
+    }
     function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
@@ -65,6 +74,7 @@
         return $option_set;
         mysqli_close($con);
         }
+
         $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
         $username_op_cr = getoption_return_filter("username","account",$_SESSION["user_cr_filter"],"single","all_in_one_project");
         $page_view_op = getoption_return_filter("account_dept_team","option",$_SESSION["page_view"],"single","all_in_one_project");
@@ -388,7 +398,7 @@
                     <?php if(strpos($_SESSION["username"],'poojaroonwit')!==false){?>
                     <a class="nav-link" id="v-pills-ms_admin-tab" data-toggle="pill" href="#v-pills-ms_admin" role="tab"
                         aria-controls="v-pills-ms_admin" onclick="updateURL('v-pills-ms_admin');" aria-selected="false">
-                        <ion-icon name="mail-unread-outline"></ion-icon> Message admin
+                        <ion-icon name="mail-unread-outline"></ion-icon> Update <span class="badge bg-secondary"> <?php $total_unread = get_badge_message_important(); echo $total_unread; ?></span>
                     </a>
                     <?php }?>
                     <hr style="color: #eee!important;">
@@ -803,7 +813,7 @@
                                                 <a class="list-group-item list-group-item-action active"
                                                     id="list-important-list" data-bs-toggle="list"
                                                     href="#list-important" role="tab" aria-controls="list-important">
-                                                    <ion-icon name="star-outline"></ion-icon> Important
+                                                    <ion-icon name="star-outline"></ion-icon> Important <span class="badge bg-danger"><?php $total_unread = get_badge_message_important(); echo $total_unread; ?> </span>
                                                 </a>
                                                 <a class="list-group-item list-group-item-action" id="list-update-list"
                                                     data-bs-toggle="list" href="#list-update" role="tab"
@@ -813,7 +823,7 @@
                                                 <a class="list-group-item list-group-item-action" id="list-send-list"
                                                     data-bs-toggle="list" href="#list-send" role="tab"
                                                     aria-controls="list-send">
-                                                    <ion-icon name="paper-plane-outline"></ion-icon> Send
+                                                    <ion-icon name="paper-plane-outline"></ion-icon> Send 
                                                 </a>
                                             </div>
                                         </div>
