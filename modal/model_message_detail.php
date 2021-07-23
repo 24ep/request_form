@@ -16,15 +16,68 @@ while($row = mysqli_fetch_array($result)) {
     </div>
     <div class="modal-body" id="messagebody">
     '.$description.'
-    </div>';
-    $target_ms_id = $row['trmsid'];
-  
+    <hr>';
+    ?>
+    <ul class="list-group list-group-flush" style="background: fixed;">
+        <div id="comment_box_ms">
+                <div id="call_ticket_comment_ms">
+                    <?php include('../get/get_comment_ms.php'); ?>
+        </div>
+        </div>
+    </ul>
+    <small style="font-weight: bolder;color: #adb5bd;">
+            <ion-icon name="chatbubbles-outline"></ion-icon>Comment
+    </small>
+    <textarea id="comment_input_ms" style="margin-top:0px;margin-bottom:10px;font-size: 14px;" class="form-control" placeholder="Leave a comment here..." rows="4" style="height: 100px"></textarea>
+    <div class="mb-3">
+        <input type="file" id="actual-btn_ms" name="actual-btn_ms[]" multiple hidden />
+        <label id="label_file_ms" name="label_file_ms" for="actual-btn_ms">
+            <ion-icon name="attach-outline"></ion-icon>Attach file or image
+        </label>
+        <span id="file-chosen_ms"> </span>
+    </div>
+    <button type="button" class="btn btn-outline-primary btn-sm" onClick="comment_ms_id_with_file(<?php echo  $_POST['id']; ?>)">Add comment</button>
+    <?php
+    echo '</div>';
+$target_ms_id = $row['trmsid'];
+
 }
 $sql_update_read = "UPDATE target_message_box SET readable = 1,read_date=CURRENT_TIMESTAMP where id=".$target_ms_id;
 $query_update_read = mysqli_query($con,$sql_update_read);
-// if($query_update_read){
-  
-// }
+
 
 
 ?>
+<script>
+function comment_ms_id_with_file(id) {
+    var form_data = new FormData();
+    var comment = document.getElementById("comment_input_ms").value;
+    document.getElementById('comment_input_ms').value = ''; //clear value
+    // var files = document.getElementById('actual-btn').files;
+    var ins = document.getElementById('actual-btn_ms').files.length;
+    for (var x = 0; x < ins; x++) {
+        form_data.append("files[]", document.getElementById('actual-btn_ms').files[x]);
+    }
+    // form_data.append("files", files)              // Appending parameter named file with properties of file_field to form_data
+    form_data.append("comment", comment) // Adding extra parameters to form_data
+    form_data.append("id", id)
+    $.ajax({
+        url: "action/action_comment_ms.php",
+        dataType: 'text',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data, // Setting the data attribute of ajax with file_data
+        type: 'post',
+        success: function(data) {
+            $('#call_ticket_comment_ms').html(data);
+            document.getElementById('comment_box_ms').scrollBy(0, document.getElementById(
+                "call_ticket_comment_ms").offsetHeight);
+            document.getElementById('actual-btn_ms').value = ''; //clear value
+            fileChosen_bt.textContent = ' + Attach file or image';
+        }
+    });
+}
+
+
+</script>
