@@ -575,7 +575,7 @@
                                     </select> -->
 
                                     <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
-                                    <input class="form-control" list="datalistOptions" id="user_filter" onchange="filter_update();" placeholder="Type to search...">
+                                    <input value="<?php echo $_SESSION["user_filter"];?>" class="form-control form-control-sm" list="datalistOptions" id="user_filter" onchange="filter_update();" placeholder="Type to username...">
                                     <datalist id="datalistOptions">
                                       <?php echo $username_op;?>
                                     </datalist>
