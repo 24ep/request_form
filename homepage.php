@@ -390,7 +390,7 @@
                     <?php if(strpos($_SESSION["username"],'poojaroonwit')!==false){?>
                     <a class="nav-link" id="v-pills-ms_admin-tab" data-toggle="pill" href="#v-pills-ms_admin" role="tab"
                         aria-controls="v-pills-ms_admin" onclick="updateURL('v-pills-ms_admin');" aria-selected="false">
-                        <ion-icon name="mail-unread-outline"></ion-icon> Update  <div id="total_unread_div"></div>
+                        <ion-icon name="mail-unread-outline"></ion-icon> Update  <span id="total_unread_div"></span>
                     </a>
                     <?php }?>
                     <hr style="color: #eee!important;">
@@ -805,7 +805,7 @@
                                                 <a class="list-group-item list-group-item-action active"
                                                     id="list-important-list" data-bs-toggle="list"
                                                     href="#list-important" role="tab" aria-controls="list-important">
-                                                    <ion-icon name="star-outline"></ion-icon> Important <div id="total_unread_div_in"></div>
+                                                    <ion-icon name="star-outline"></ion-icon> Important <span id="total_unread_div_in"></span>
                                                 </a>
                                                 <a class="list-group-item list-group-item-action" id="list-update-list"
                                                     data-bs-toggle="list" href="#list-update" role="tab"
