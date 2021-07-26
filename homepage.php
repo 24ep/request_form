@@ -569,10 +569,16 @@
                             ?>
                             <div class="row align-items-center" style="margin:20px">
                                 <div class="col-auto">
-                                    <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
+                                    <!-- <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
                                     <select class="selection_filter" id="user_filter" onchange="filter_update();">
-                                        <?php echo $username_op;?>
-                                    </select>
+                                        <?php //echo $username_op;?>
+                                    </select> -->
+
+                                    <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
+                                    <input class="form-control" list="datalistOptions" id="user_filter" onchange="filter_update();" placeholder="Type to search...">
+                                    <datalist id="datalistOptions">
+                                      <?php echo $username_op;?>
+                                    </datalist>
                                 </div>
                                 <div class="col-auto">
                                     <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Status</label>
