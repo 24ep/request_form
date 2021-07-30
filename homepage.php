@@ -375,9 +375,9 @@
                         aria-selected="true">
                         <ion-icon style="color:white" name="newspaper-outline"></ion-icon>Homepage
                     </a>
-                    <a style="" class="nav-link " id="v-pills-noti-tab" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#notificationcanvas" aria-controls="offcanvasRight">
-                        <ion-icon style="color:white" name="mail-unread-outline"></ion-icon>Updated
+                    <a class="nav-link" id="v-pills-ms_admin-tab" data-toggle="pill" href="#v-pills-ms_admin" role="tab"
+                        aria-controls="v-pills-ms_admin" onclick="updateURL('v-pills-ms_admin');" aria-selected="false">
+                        <ion-icon name="mail-unread-outline"></ion-icon> Updated  <span id="total_unread_div"></span>
                     </a>
                     <a class="nav-link" id="v-pills-request_list-tab" data-toggle="pill" href="#v-pills-request_list"
                         role="tab" aria-controls="v-pills-request_list" onclick="updateURL('v-pills-request_list');"
@@ -394,12 +394,12 @@
                         <ion-icon stle="color:white" name="grid-outline"></ion-icon> Board
                     </a>
                     <?php }?>
-                    <?php if(strpos($_SESSION["username"],'poojaroonwit')!==false){?>
+                    <!-- <?php //if(strpos($_SESSION["username"],'poojaroonwit')!==false){?>
                     <a class="nav-link" id="v-pills-ms_admin-tab" data-toggle="pill" href="#v-pills-ms_admin" role="tab"
                         aria-controls="v-pills-ms_admin" onclick="updateURL('v-pills-ms_admin');" aria-selected="false">
                         <ion-icon name="mail-unread-outline"></ion-icon> Updated  <span id="total_unread_div"></span>
-                    </a>
-                    <?php }?>
+                    </a> -->
+                    <?php //}?>
                     <hr style="color: #eee!important;">
                     <ul class="list-unstyled ps-0">
                         <li class="mb-1">
