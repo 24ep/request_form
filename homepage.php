@@ -357,6 +357,13 @@
                 <?php include("get/get_log.php"); ?>
             </div>
         </div>
+        <nav class="navbar sticky-top navbar-danger bg-danger">
+        <marquee>
+            <span class="navbar-text" >
+                    แจ้งผู้ใช้งานทุกท่าน ระบบ Service-gate และ realtime report ที่เกี่ยวข้อง จะทำการปิดใช้งานชั่วคราว เพื่อปรับปรุงข้อมูลระบบ วันที่ 30/07/2021 เวลา 18:00 - 19:00 น. 
+            </span>
+        </marquee>
+        </nav>
         <div class="row " style="margin-bottom: 0px;--bs-gutter-x: 0rem;">
             <div class="col-2 list_bra window-full shadow">
                 <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
