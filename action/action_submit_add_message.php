@@ -65,7 +65,7 @@
                             $query_target = mysqli_query($con,$sql_ms_target);
                             //send to line
                             if($key<>"" and $key<>null){
-                                sent_line_noti("\n•❗ Announce\n----------------------------\nMS-".$last_id."\n$description".,$key);
+                                sent_line_noti("\n•❗ Announce\n----------------------------\nMS-".$last_id."\n$description",$key);
                             }
                         }
 
