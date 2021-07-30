@@ -15,9 +15,10 @@ session_start();
             where attribute_entity.attribute_code =  '".$attribute_code."' and attribute_option.function='".$function."' 
             ORDER BY option_id asc" or die("Error:" . mysqli_error());
             $result = mysqli_query($con, $query);
-            $option_set .= '<option value=""></option>';
-            while($row = mysqli_fetch_array($result)) {
+            
+            
                 if($select_type=="multi"){
+                    while($row = mysqli_fetch_array($result)) {
                     $array_default = explode(', ', $default_option);
                     foreach($array_default as $option)
                       {
@@ -28,17 +29,20 @@ session_start();
                         }
                         
                       }
+                    }
 
                 }else{
-                    
+                    $option_set .= '<option value=""></option>';
+                    while($row = mysqli_fetch_array($result)) {
                         if($default_option==$row["attribute_option"]){
                             $option_set .= '<option selected value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
                         }else{
                             $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
                         }
+                    }
                         
                 }
-            }
+            
             return $option_set;
             mysqli_close($con);
         }
@@ -223,9 +227,6 @@ session_start();
             }else{
                 echo $department_op;
             }
-            
-            
-            
             ?>
         </select>
     </div>
@@ -261,7 +262,14 @@ session_start();
         <label for="model" class="form-label">*Project Type</label>
         <select class="form-select form-select-sm" required aria-label="Default select example" id="project_type"
             name="project_type">
-            <?php echo $project_type_op; ?>
+            <?php 
+            if($_SESSION["username"] == 'poojaroonwit'){
+                $project_type_op_2 = get_option_return("project_type","New SKU","single","add_new");
+                echo $project_type_op_2;
+            }else{
+                echo $project_type_op;
+            }
+            ?>
         </select>
     </div>
     <?php
@@ -306,7 +314,14 @@ session_start();
     <div class="col-md-3">
         <label class="form-label">tags (new brand , Campaign)</label>
         <select multiple="multiple" class="multiple-select" id="tags[]" name="tags[]">
-            <?php echo $tags_op; ?>
+            <?php 
+            if($_SESSION["username"] == 'poojaroonwit'){
+                $tags_op_2 = get_option_return("tags","","multi","add_new");
+                echo $tags_op_2;
+            }else{
+                echo $tags_op;
+            }
+            ?>
         </select>
     </div>
     <div class="col-md-3">
