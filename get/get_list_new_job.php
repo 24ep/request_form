@@ -121,7 +121,7 @@ if(isset($_POST["from_post"] )){
          and (".$position_filter.")) and parent is null ORDER BY id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
  }
   date_default_timezone_set("Asia/Bangkok");
-  $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error());
   mysqli_query($con, "SET NAMES 'utf8' ");
   $result = mysqli_query($con, $query);
   echo '<script>console.log("'.htmlspecialchars(stripslashes(str_replace(array("\r", "\n"), '', var_export($query, true)))).'")</script>';
@@ -180,14 +180,14 @@ if(isset($_POST["from_post"] )){
       $subtask_count = $data_count['total'];
       $query_child = "SELECT * FROM add_new_job where parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error());
       date_default_timezone_set("Asia/Bangkok");
-      $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+      $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error());
       mysqli_query($con, "SET NAMES 'utf8' ");
       $result_child = mysqli_query($con, $query_child);
       $i = 1;
       while($row_child = mysqli_fetch_array($result_child)) {
           $ticket_role = role_user($row_child["request_username"],$row_child["follow_up_by"]);
           $status = badge_status($row_child['status']);
-          //imortant
+          //important
         if($i<$subtask_count){
           $th_class = "class='tree_lift'";
           $tr_class = "class='sub-ticket'";
