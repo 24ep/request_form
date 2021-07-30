@@ -8,11 +8,11 @@ session_start();
             attribute_option.attribute_id as attribute_id,
             attribute_option.attribute_option as attribute_option,
             attribute_option.function as function,
-            attribute_entity.attribute_code 
+            attribute_entity.attribute_code as attribute_code
             FROM content_service_gate.attribute_option as attribute_option
             left join content_service_gate.attribute_entity as attribute_entity
             on attribute_option.attribute_id = attribute_entity.attribute_id 
-            where attribute_code =  '".$attribute_code."' and function='".$function."' 
+            where attribute_entity.attribute_code =  '".$attribute_code."' and attribute_option.function='".$function."' 
             ORDER BY id asc" or die("Error:" . mysqli_error());
             $result = mysqli_query($con, $query);
             $option_set .= '<option value=""></option>';
