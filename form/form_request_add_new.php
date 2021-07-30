@@ -1,5 +1,39 @@
 <?php 
 session_start();
+        function get_option_return($attribute_code,$default_option,$select_type,$function){
+            $con= mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
+            mysqli_query($con, "SET NAMES 'utf8' ");
+            $query = "SELECT 
+            attribute_option.option_id as option_id,
+            attribute_option.attribute_id as attribute_id,
+            attribute_option.attribute_option as attribute_option,
+            attribute_option.function as function,
+            attribute_entity.attribute_code 
+            FROM content_service_gate.attribute_option as attribute_option
+            left join content_service_gate.attribute_entity as attribute_entity
+            on attribute_option.attribute_id = attribute_entity.attribute_id 
+            where attribute_code =  '".$attribute_id."' and function='".$function."' 
+            ORDER BY id asc" or die("Error:" . mysqli_error());
+            $result = mysqli_query($con, $query);
+            while($row = mysqli_fetch_array($result)) {
+                if($select_type=="multi"){
+                    $array_default = explode(', ', $default_option);
+                    $option_set .= '<option value=""></option>';
+                    foreach($array_default as $option)
+                      {
+                        if($option==$row["attribute_option"]){
+                            $option_set .= '<option selected value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
+                        }else{
+                            $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
+                        }
+                        
+                      }
+
+                }
+            }
+            return $option_set;
+            mysqli_close($con);
+        }
         function getoption_return_edit_job($col,$table,$select_option,$sorm,$database) {
             $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
@@ -145,6 +179,7 @@ session_start();
             $department_user = "HOME";
         }
         echo '<script>console.log("department '.$department_user.'");</script>';
+    //    $sub_department_op = getoption_return_edit_job("sub_department","option",$sub_department_user,"single","all_in_one_project");
        $department_op = getoption_return_edit_job("department","job_option_cms",$department_user,"single","u749625779_cdscontent");
        $production_type_op = getoption_return_edit_job("production_type","job_option_cms","","single","u749625779_cdscontent");
        $business_type_op = getoption_return_edit_job("itemmize_type","job_option_cms","","single","u749625779_cdscontent");
@@ -154,6 +189,8 @@ session_start();
        $product_website_op = getoption_return_edit_job("product_website","job_option_cms","CDS, RBS","multi","u749625779_cdscontent");
        $request_important_op = getoption_return_edit_job("request_important","option","Normal","single","all_in_one_project");
        $tags_op = getoption_return_edit_job("tags","option","","multi","all_in_one_project"); 
+
+       
 ?>
 <style>
 .ms-choice {
@@ -171,9 +208,26 @@ session_start();
         <label for="department" class="form-label">*Department</label>
         <select required class="form-select form-select-sm" aria-label="Default select example" id="department"
             name="department">
-            <?php echo $department_op; ?>
+            <?php 
+            if($_SESSION["username"] == 'poojaroonwit'){
+                $department_op_2 = get_option_return("department","","single","add_new");
+                echo $department_op;
+            }else{
+                echo $department_op;
+            }
+            
+            
+            
+            ?>
         </select>
     </div>
+    <!-- <div class="col-md-3">
+        <label for="department" class="form-label">*Sub Department</label>
+        <select required class="form-select form-select-sm" aria-label="Default select example" id="sub_department"
+            name="sub_department">
+            <?php echo //$sub_department_op; ?>
+        </select>
+    </div> -->
     <div class="col-md-3">
         <label for="inputAddress" class="form-label">*SKU</label>
         <input required type="number" class="form-control form-control-sm" id="sku" placeholder="จำนวน SKU ทั้งหมด"

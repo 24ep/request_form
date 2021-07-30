@@ -36,8 +36,21 @@
             }
         };
     //calculate job number
+//get department
+        // date_default_timezone_set("Asia/Bangkok");
+        // $con_map_sub_dept = mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
+        // mysqli_query($con_map_sub_dept, "SET NAMES 'utf8' ");
+        // $query_map_sub_dept = "SELECT * FROM mapping_dept_subdept where sub_department = '".$_POST["sub_department"]."'";
+        // $result_map_sub_dept =  mysqli_query($con, $query);
+        // while($row_map_sub_dept = mysqli_fetch_array($result_map_sub_dept)) {
+        //     $department_cal = $row_map_sub_dept["sub_department"];
+        // }
+
+
 if($_POST["brand"]<>""){ $insert_head .= "brand";$insert_value .= "'".str_replace("'","''",$_POST["brand"])."'";}
 if($_POST["department"]<>""){ $insert_head .= ",department";$insert_value .= ",'".$_POST["department"]."'";}
+// if($_POST["sub_department"]<>""){ $insert_head .= ",sub_department";$insert_value .= ",'".$_POST["sub_department"]."'";}
+// if($department_cal<>""){ $insert_head .= ",department";$insert_value .= ",'".$department_cal."'";}
 if($_POST["sku"]<>""){ $insert_head .= ",sku";$insert_value .= ",'".$_POST["sku"]."'";}
 if($_POST["production_type"]<>""){ $insert_head .= ",production_type";$insert_value .= ",'".$_POST["production_type"]."'";}
 if($_POST["business_type"]<>""){ $insert_head .= ",business_type";$insert_value .= ",'".$_POST["business_type"]."'";}
