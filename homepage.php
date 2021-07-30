@@ -404,8 +404,8 @@
             </div>
         </div>
         <nav class="navbar sticky-top navbar-danger bg-danger" >
-        <marquee style="padding-bottom: 100%;">
-            <span class="navbar-text" style="color:white;font-size: 20px;" >
+        <marquee >
+            <span class="navbar-text" style="color:white;" >
             <ion-icon name="megaphone-outline"></ion-icon>  แจ้งผู้ใช้งานทุกท่าน ระบบ Service-gate และ realtime report ที่เกี่ยวข้อง จะทำการปิดใช้งานชั่วคราว เพื่อปรับปรุงข้อมูลระบบ วันที่ 30/07/2021 เวลา 18:00 - 19:00 น. 
             </span>
         </marquee>
