@@ -123,6 +123,8 @@ $result = mysqli_query($con, $query);
         //check assign name
         if($follow_assign_name == "unassign"){
           $allow_edit = "";
+        }else{
+          $allow_edit = "disabled";
         }
       }else{
         $allow_edit = "disabled";
