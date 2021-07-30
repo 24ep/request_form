@@ -810,11 +810,13 @@
                                     <div class="row">
                                         <div class="col-2">
                                             <div class="list-group" id="list-tab" role="tablist">
+                                                 <?php if(strpos($_SESSION["department"],'Content Admin')!==false){?>
                                                 <a class="btn btn-dark" style="margin-bottom: 10px;" type="button"
                                                     data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop"
                                                     aria-controls="offcanvasWithBackdrop">
                                                     <ion-icon name="add-outline"></ion-icon>Create
                                                 </a>
+                                                <?php } ?>
                                                 <a class="list-group-item list-group-item-action active"
                                                     id="list-important-list" data-bs-toggle="list"
                                                     href="#list-important" role="tab" aria-controls="list-important">
