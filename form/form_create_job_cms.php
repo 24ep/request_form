@@ -52,12 +52,25 @@ function getoption_return_create_job($col,$table,$select_option,$sorm,$database)
        return $option_set;
        mysqli_close($con);
       }
+
+      if(strpos($tags,"Free Gift")!==false){
+        $df_type = "Free Gift";
+      }else{
+        $df_type = "Normal";
+      }
+      $s_fashion = array("MARKS AND SPENCER", "WOMEN", "MEN", "MUJI");
+      $s_product = array("BEAUTY", "HOME & KITCHEN", "MOBILES TABLETS & GADGETS", "SMALL APPLIANCE","SANRIO","TRAVEL & LUGGAGE","JEWELRY  WATCHES & ACCESSORIES","MOM KIDS & TOYS","AUTOMOTIVE & TOOLS","SPORTS & OUTDOORS","STATIONERY & OFFICE","COUPON");
+      if(in_array($sub_department,$s_fashion)!==false){
+        $df_psort = "Fashion";
+      }else{
+        $df_psort = "Product";
+      }
        $bu_op = getoption_return_create_job("bu","job_option_cms",$bu,"single","u749625779_cdscontent");
-       $transfer_type_op = getoption_return_create_job("transfer_type","job_option_cms","","single","u749625779_cdscontent");
+       $transfer_type_op = getoption_return_create_job("transfer_type","job_option_cms","Data and Photo","single","u749625779_cdscontent");
        $sub_department_op = getoption_return_create_job("sub_department","job_option_cms",$sub_department,"single","u749625779_cdscontent");
-       $product_sell_type_op = getoption_return_create_job("product_sell_type","job_option_cms","","single","u749625779_cdscontent");
-       $product_sorting_op = getoption_return_create_job("product_sorting","job_option_cms","","single","u749625779_cdscontent");
-       $job_status_filter_op = getoption_return_create_job("job_status_filter","job_option_cms","","single","u749625779_cdscontent");
+       $product_sell_type_op = getoption_return_create_job("product_sell_type","job_option_cms",$df_type,"single","u749625779_cdscontent");
+       $product_sorting_op = getoption_return_create_job("product_sorting","job_option_cms",$df_psort,"single","u749625779_cdscontent");
+       $job_status_filter_op = getoption_return_create_job("job_status_filter","job_option_cms","Continue","single","u749625779_cdscontent");
        $product_website_op = getoption_return_create_job("product_website","job_option_cms","","multi","u749625779_cdscontent");
        $department_op = getoption_return_create_job("department","job_option_cms",$department,"single","u749625779_cdscontent");
        $production_type_op = getoption_return_create_job("production_type","job_option_cms",$production_type,"single","u749625779_cdscontent");
@@ -99,7 +112,7 @@ function getoption_return_create_job($col,$table,$select_option,$sorm,$database)
               </div>
               <div class="col">
                     <label for="exampleInputEmail1">Transfer type</label>
-                      <select id="transfer_type_adj" name="transfer_type_adj" required  class="form-select form-select-sm">
+                      <select style="background: #ffe9b2" id="transfer_type_adj" name="transfer_type_adj" required  class="form-select form-select-sm">
                       <?php echo $transfer_type_op; ?>
                       </select>
               </div>
@@ -143,7 +156,7 @@ function getoption_return_create_job($col,$table,$select_option,$sorm,$database)
               </div>
               <div class="col">
                     <label for="exampleInputEmail1">Product sell Type</label>
-                      <select " class="form-select form-select-sm" id="product_sell_type_adj" required  name="product_sell_type_adj">
+                      <select style="background: #ffe9b2" class="form-select form-select-sm" id="product_sell_type_adj" required  name="product_sell_type_adj">
                       <?php echo $product_sell_type_op; ?>
                       </select>
               </div>
@@ -151,13 +164,13 @@ function getoption_return_create_job($col,$table,$select_option,$sorm,$database)
             <div class="row">
                    <div class="col-3">
                     <label for="exampleInputEmail1">Product sorting</label>
-                      <select  class="form-select form-select-sm" id="product_sorting_adj" required  name="product_sorting_adj">
+                      <select style="background: #ffe9b2" class="form-select form-select-sm" id="product_sorting_adj" required  name="product_sorting_adj">
                       <?php echo $product_sorting_op; ?>
                       </select>
               </div>
               <div class="col-3">
                     <label for="exampleInputEmail1">Job status filter</label>
-                      <select  class="form-select form-select-sm" id="job_status_filter_adj" required  name="job_status_filter_adj">
+                      <select  style="background: #ffe9b2" class="form-select form-select-sm" id="job_status_filter_adj" required  name="job_status_filter_adj">
                       <?php echo $job_status_filter_op; ?>
                       </select>
               </div>

@@ -180,9 +180,9 @@ if(isset($_POST["from_post"] )){
       $subtask_count = $data_count['total'];
       $query_child = "SELECT * FROM add_new_job where parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error());
       date_default_timezone_set("Asia/Bangkok");
-      $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-      mysqli_query($con, "SET NAMES 'utf8' ");
-      $result_child = mysqli_query($con, $query_child);
+      $con_get_list= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con_get_list));
+      mysqli_query($con_get_list, "SET NAMES 'utf8' ");
+      $result_child = mysqli_query($con_get_list, $query_child);
       $i = 1;
       while($row_child = mysqli_fetch_array($result_child)) {
           $ticket_role = role_user($row_child["request_username"],$row_child["follow_up_by"]);
