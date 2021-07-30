@@ -119,7 +119,7 @@ function getoption_return_create_job($col,$table,$select_option,$sorm,$database)
               </div>
               <div class="col">
                     <label for="exampleInputEmail1">Sub department</label>
-                      <select id="sub_department_adj"  name="sub_department_adj" required  class="form-select form-select-sm">
+                      <select style="background: #f1f1f1"  id="sub_department_adj"  name="sub_department_adj" required  class="form-select form-select-sm">
                       <?php echo $sub_department_op; ?>
                       </select>
               </div>

@@ -176,20 +176,20 @@ session_start();
                mysqli_close($con);
               }
        //get buyer department
-        if($department=="Buyer Beauty"){
-            $department_user = "BEAUTY";
-        }elseif($department=="Buyer Fashion"){
-            $department_user = "FASHION";
-        }
-        elseif($department=="Buyer  Home"){
-            $department_user = "HOME";
-        }
-        elseif($department=="Buyer Mom and Kids"){
-            $department_user = "MOM&KIDS";
-        }
-        elseif($department=="Content Admin"){
-            $department_user = "HOME";
-        }
+        // if($department=="Buyer Beauty"){
+        //     $department_user = "BEAUTY";
+        // }elseif($department=="Buyer Fashion"){
+        //     $department_user = "FASHION";
+        // }
+        // elseif($department=="Buyer  Home"){
+        //     $department_user = "HOME";
+        // }
+        // elseif($department=="Buyer Mom and Kids"){
+        //     $department_user = "MOM&KIDS";
+        // }
+        // elseif($department=="Content Admin"){
+        //     $department_user = "HOME";
+        // }
         // echo '<script>console.log("department '.$department_user.'");</script>';
     //    $sub_department_op = getoption_return_edit_job("sub_department","option",$sub_department_user,"single","all_in_one_project");
     //    $department_op = getoption_return_edit_job("department","job_option_cms",$department_user,"single","u749625779_cdscontent");

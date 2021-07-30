@@ -180,7 +180,7 @@ if(isset($_POST["from_post"] )){
       $subtask_count = $data_count['total'];
       $query_child = "SELECT * FROM add_new_job where parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error());
       date_default_timezone_set("Asia/Bangkok");
-      $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error());
+      $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
       mysqli_query($con, "SET NAMES 'utf8' ");
       $result_child = mysqli_query($con, $query_child);
       $i = 1;
