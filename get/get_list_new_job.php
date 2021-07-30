@@ -261,4 +261,6 @@ if(isset($_POST["from_post"] )){
        unset($sub_ticket);
        unset($status);
   }
+  mysqli_close($con);
+  mysqli_close($con_get_list);
   ?>
