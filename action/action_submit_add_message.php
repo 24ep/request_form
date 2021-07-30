@@ -38,7 +38,7 @@
         if($_SESSION["username"]<>""){ $insert_head .= ",create_by";$insert_value .= ",'".$_SESSION["username"]."'";}
         // $description = htmlspecialchars_decode($_POST["ms_description"],ENT_QUOTES);
         $description = htmlspecialchars_decode($_POST["ms_description"]);
-        $description  = strip_tags($description);
+        // $description  = strip_tags($description);
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
             $sql = "INSERT INTO message_box (
