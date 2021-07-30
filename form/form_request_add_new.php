@@ -29,6 +29,14 @@ session_start();
                         
                       }
 
+                }else{
+                    $option_set .= '<option value=""></option>';
+                        if($option==$row["attribute_option"]){
+                            $option_set .= '<option selected value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
+                        }else{
+                            $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
+                        }
+                        
                 }
             }
             return $option_set;
