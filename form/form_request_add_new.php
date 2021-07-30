@@ -31,7 +31,7 @@ session_start();
 
                 }else{
                     
-                        if($option==$row["attribute_option"]){
+                        if($default_option==$row["attribute_option"]){
                             $option_set .= '<option selected value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
                         }else{
                             $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
