@@ -15,10 +15,10 @@ session_start();
             where attribute_code =  '".$attribute_id."' and function='".$function."' 
             ORDER BY id asc" or die("Error:" . mysqli_error());
             $result = mysqli_query($con, $query);
+            $option_set .= '<option value=""></option>';
             while($row = mysqli_fetch_array($result)) {
                 if($select_type=="multi"){
                     $array_default = explode(', ', $default_option);
-                    $option_set .= '<option value=""></option>';
                     foreach($array_default as $option)
                       {
                         if($option==$row["attribute_option"]){
@@ -30,7 +30,7 @@ session_start();
                       }
 
                 }else{
-                    $option_set .= '<option value=""></option>';
+                    
                         if($option==$row["attribute_option"]){
                             $option_set .= '<option selected value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
                         }else{
