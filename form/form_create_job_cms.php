@@ -54,7 +54,7 @@ function getoption_return_create_job($col,$table,$select_option,$sorm,$database)
       }
        $bu_op = getoption_return_create_job("bu","job_option_cms",$bu,"single","u749625779_cdscontent");
        $transfer_type_op = getoption_return_create_job("transfer_type","job_option_cms","","single","u749625779_cdscontent");
-       $sub_department_op = getoption_return_create_job("sub_department","job_option_cms","","single","u749625779_cdscontent");
+       $sub_department_op = getoption_return_create_job("sub_department","job_option_cms",$sub_department,"single","u749625779_cdscontent");
        $product_sell_type_op = getoption_return_create_job("product_sell_type","job_option_cms","","single","u749625779_cdscontent");
        $product_sorting_op = getoption_return_create_job("product_sorting","job_option_cms","","single","u749625779_cdscontent");
        $job_status_filter_op = getoption_return_create_job("job_status_filter","job_option_cms","","single","u749625779_cdscontent");

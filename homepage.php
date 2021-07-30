@@ -67,10 +67,56 @@
         mysqli_close($con);
         }
 
+        function get_option_return_filter($attribute_code,$default_option,$select_type,$function){
+            $con= mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
+            mysqli_query($con, "SET NAMES 'utf8' ");
+            $query = "SELECT 
+            attribute_option.option_id as option_id,
+            attribute_option.attribute_id as attribute_id,
+            attribute_option.attribute_option as attribute_option,
+            attribute_option.function as function,
+            attribute_entity.attribute_code as attribute_code
+            FROM content_service_gate.attribute_option as attribute_option
+            left join content_service_gate.attribute_entity as attribute_entity
+            on attribute_option.attribute_id = attribute_entity.attribute_id 
+            where attribute_entity.attribute_code =  '".$attribute_code."' and attribute_option.function='".$function."' 
+            ORDER BY option_id asc" or die("Error:" . mysqli_error());
+            $result = mysqli_query($con, $query);
+            
+            
+                if($select_type=="multi"){
+                    while($row = mysqli_fetch_array($result)) {
+                    $array_default = explode(', ', $default_option);
+                    foreach($array_default as $option)
+                      {
+                        if($option==$row["attribute_option"]){
+                            $option_set .= '<option selected value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
+                        }else{
+                            $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
+                        }
+                        
+                      }
+                    }
+
+                }else{
+                    $option_set .= '<option value=""></option>';
+                    while($row = mysqli_fetch_array($result)) {
+                        if($default_option==$row["attribute_option"]){
+                            $option_set .= '<option selected value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
+                        }else{
+                            $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
+                        }
+                    }
+                        
+                }
+            
+            return $option_set;
+            mysqli_close($con);
+        }
+
         $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
         $username_op_cr = getoption_return_filter("username","account",$_SESSION["user_cr_filter"],"single","all_in_one_project");
-        $page_view_op = getoption_return_filter("account_dept_team","option",$_SESSION["page_view"],"single","all_in_one_project");
-        $request_new_status_op = getoption_return_filter("request_new_status","option",$_SESSION["status_filter"],"single","all_in_one_project");
+        $request_new_status_op = get_option_return("status",$_SESSION["status_filter"],"single","add_new");
         $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT * FROM account where username = '".$_SESSION['username']."' ORDER BY id DESC " or die("Error:" . mysqli_error());
