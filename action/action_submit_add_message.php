@@ -36,6 +36,7 @@
         if($_POST["ms_title"]<>""){ $insert_head .= "title";$insert_value .= "'".$cr_title."'";}
         if($_POST["ms_description"]<>""){ $insert_head .= ",description";$insert_value .= ",'".$cr_description."'";}
         if($_SESSION["username"]<>""){ $insert_head .= ",create_by";$insert_value .= ",'".$_SESSION["username"]."'";}
+        $description = htmlspecialchars_decode($_POST["ms_description"],ENT_NOQUOTES);
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
             $sql = "INSERT INTO message_box (
@@ -48,16 +49,51 @@
             if($query) {
                 $last_id = $con->insert_id;
                   //add target
-                  $target_usernames  = explode(",", $_POST["ms_target"]);
-                  foreach($target_usernames  as $target_username){
-                    $sql_ms_target = "INSERT INTO target_message_box (
-                        target_username,msid
-                        )
-                        VALUES (
-                        '".$target_username."',".$last_id."
-                        )";
-                    $query_target = mysqli_query($con,$sql_ms_target);
+                  if($_POST["ms_target"]=="everyone"){
+
+                    $query_get_all_user = "SELECT username FROM account where status = 'Enabled' and username = 'poojaroonwit'" or die("Error:" . mysqli_error());
+                    $result_get_all_user =  mysqli_query($con, $query_get_all_user);
+                        while($row_get_all_result = mysqli_fetch_array($result)) {
+                            $username = $row_get_all_result["username"];
+                            $key = $row_get_all_result["token_line"];
+                            $sql_ms_target = "INSERT INTO target_message_box (
+                                target_username,msid
+                                )
+                                VALUES (
+                                '".$$sername."',".$last_id."
+                                )";
+                            $query_target = mysqli_query($con,$sql_ms_target);
+                            //send to line
+                            if($key<>"" and $key<>null){
+                                sent_line_noti("\n•❗ Announce\n----------------------------\nMS-".$last_id."\n$description".,$key);
+                            }
+                        }
+
+                  }else{
+                    $target_usernames  = explode(",", $_POST["ms_target"]);
+                    foreach($target_usernames  as $target_username){
+                      $sql_ms_target = "INSERT INTO target_message_box (
+                          target_username,msid
+                          )
+                          VALUES (
+                          '".$target_username."',".$last_id."
+                          )";
+                      $query_target = mysqli_query($con,$sql_ms_target);
+                    //send to line
+                    $query_get_all_user = "SELECT username FROM account where status = 'Enabled' and username = '".$target_username."'" or die("Error:" . mysqli_error());
+                    $result_get_all_user =  mysqli_query($con, $query_get_all_user);
+                        while($row_get_all_result = mysqli_fetch_array($result)) {
+                            $username = $row_get_all_result["username"];
+                            $key = $row_get_all_result["token_line"];
+                            
+                        }
+                        if($key<>"" and $key<>null){
+                            sent_line_noti("\n•❗ Announce\n----------------------------\nMS-".$last_id."\n$description".,$key);
+                        }
+                      
+                    }
                   }
+                
 
                   //create forder
                   $fullpath = '../../attachment/csg/'.$last_id."/";
@@ -114,6 +150,10 @@
                     if($key<>"" and $key<>null){
                         sent_line_noti("\n• Created new request\n----------------------------\n• คุณได้ทำการส่ง message\n• Ticket ID : MS-".$last_id."\n".$title,$key);
                     }
+
+
+                //send to all user
+                
                 $result='<div class="alert alert-success">already create message !<strong> ID '.$last_id.'</strong></div>';
                 header( "location: /homepage.php?tab=v-pills-ms_admin");
             }else{
