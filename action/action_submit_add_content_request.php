@@ -62,7 +62,9 @@
                 $last_id = $con->insert_id;
                   //create forder
                   $fullpath = '../../attachment/csg/'.$last_id."/";
-                  mkdir($fullpath, 0777, true);
+                  if (!file_exists($fullpath)) {
+                    mkdir($fullpath, 0777, true);
+                  }
                   // upload image
                   foreach($_FILES['cr_attachment']['tmp_name'] as $key => $val){
                     $file_name = $_FILES['cr_attachment']['name'][$key];

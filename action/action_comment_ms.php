@@ -58,7 +58,9 @@ if($comment<>'' or $file_size <>0){
           //create forder
           $last_id = $con->insert_id;
           $fullpath = '../../attachment/csg/comment/ms/'.$last_id."/";
-          mkdir($fullpath, 0777, true);
+          if (!file_exists($fullpath)) {
+            mkdir($fullpath, 0777, true);
+          }
           // upload image
           foreach($_FILES['files']['tmp_name'] as $key => $val){
             $file_name = $_FILES['files']['name'][$key];
