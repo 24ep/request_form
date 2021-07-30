@@ -53,7 +53,7 @@
 
                     $query_get_all_user = "SELECT username FROM account where status = 'Enabled' and username = 'poojaroonwit'" or die("Error:" . mysqli_error());
                     $result_get_all_user =  mysqli_query($con, $query_get_all_user);
-                        while($row_get_all_result = mysqli_fetch_array($result)) {
+                        while($row_get_all_result = mysqli_fetch_array($result_get_all_user)) {
                             $username = $row_get_all_result["username"];
                             $key = $row_get_all_result["token_line"];
                             $sql_ms_target = "INSERT INTO target_message_box (
@@ -82,7 +82,7 @@
                     //send to line
                     $query_get_all_user = "SELECT username FROM account where status = 'Enabled' and username = '".$target_username."'" or die("Error:" . mysqli_error());
                     $result_get_all_user =  mysqli_query($con, $query_get_all_user);
-                        while($row_get_all_result = mysqli_fetch_array($result)) {
+                        while($row_get_all_result = mysqli_fetch_array($result_get_all_user)) {
                             $username = $row_get_all_result["username"];
                             $key = $row_get_all_result["token_line"];
                             
