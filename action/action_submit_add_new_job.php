@@ -41,9 +41,9 @@
         $con_map_sub_dept = mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
         mysqli_query($con_map_sub_dept, "SET NAMES 'utf8' ");
         $query_map_sub_dept = "SELECT * FROM mapping_dept_subdept where sub_department = '".$_POST["sub_department"]."'";
-        $result_map_sub_dept =  mysqli_query($con, $query);
+        $result_map_sub_dept =  mysqli_query($con_map_sub_dept, $query_map_sub_dept);
         while($row_map_sub_dept = mysqli_fetch_array($result_map_sub_dept)) {
-            $department_cal = $row_map_sub_dept["sub_department"];
+            $department_cal = $row_map_sub_dept["department"];
         }
 
 

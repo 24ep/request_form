@@ -236,7 +236,7 @@ session_start();
         </select>
     </div> -->
     <div class="col-md-3">
-        <label for="department" class="form-label">*Sub Department</label>
+        <label for="sub_department" class="form-label">*Sub Department</label>
         <select required class="form-select form-select-sm" aria-label="Default select example" id="sub_department"
             name="sub_department">
             <?php echo $sub_department_op; ?>
