@@ -391,15 +391,9 @@
                     <?php if(strpos($_SESSION["department"],'Admin')!==false){?>
                     <a class="nav-link" id="v-pills-cr_admin-tab" data-toggle="pill" href="#v-pills-cr_admin" role="tab"
                         aria-controls="v-pills-cr_admin" onclick="updateURL('v-pills-cr_admin');" aria-selected="false">
-                        <ion-icon stle="color:white" name="grid-outline"></ion-icon> Board
+                        <ion-icon stle="color:white" name="grid-outline"></ion-icon> CR Board
                     </a>
                     <?php }?>
-                    <!-- <?php //if(strpos($_SESSION["username"],'poojaroonwit')!==false){?>
-                    <a class="nav-link" id="v-pills-ms_admin-tab" data-toggle="pill" href="#v-pills-ms_admin" role="tab"
-                        aria-controls="v-pills-ms_admin" onclick="updateURL('v-pills-ms_admin');" aria-selected="false">
-                        <ion-icon name="mail-unread-outline"></ion-icon> Updated  <span id="total_unread_div"></span>
-                    </a> -->
-                    <?php //}?>
                     <hr style="color: #eee!important;">
                     <ul class="list-unstyled ps-0">
                         <li class="mb-1">
@@ -414,10 +408,6 @@
                                             href="https://datastudio.google.com/reporting/de4de45a-8427-4611-a1a7-669467dfbcfd"
                                             class="d-inline-flex align-items-center rounded link-light">Job Daily
                                             progress Report</a></li>
-                                    <!-- <li><a target="_Blank"
-                                            href="https://datastudio.google.com/u/1/reporting/f8c78679-77a2-40a5-93eb-f03783c9b84c/page/oao8B"
-                                            class="d-inline-flex align-items-center rounded link-light">ISSUE 
-                                            checking</a></li> -->
                                     <li><a target="_Blank" href=""
                                             class="d-inline-flex align-items-center rounded link-light">Product-Feed
                                             (สินค้าหน้าเว็บ 4 ชั่วโมงล่าสุด)</a></li>

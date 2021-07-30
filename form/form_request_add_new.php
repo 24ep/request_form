@@ -190,18 +190,28 @@ session_start();
         elseif($department=="Content Admin"){
             $department_user = "HOME";
         }
-        echo '<script>console.log("department '.$department_user.'");</script>';
+        // echo '<script>console.log("department '.$department_user.'");</script>';
     //    $sub_department_op = getoption_return_edit_job("sub_department","option",$sub_department_user,"single","all_in_one_project");
-       $department_op = getoption_return_edit_job("department","job_option_cms",$department_user,"single","u749625779_cdscontent");
-       $production_type_op = getoption_return_edit_job("production_type","job_option_cms","","single","u749625779_cdscontent");
-       $business_type_op = getoption_return_edit_job("itemmize_type","job_option_cms","","single","u749625779_cdscontent");
-       $project_type_op = getoption_return_edit_job("project_type","option","New SKU","single","all_in_one_project");
-       $store_op = getoption_return_edit_job("store","job_option_cms","","multi","u749625779_cdscontent");
-       $bu_op = getoption_return_edit_job("bu","job_option_cms","","single","u749625779_cdscontent");
-       $product_website_op = getoption_return_edit_job("product_website","job_option_cms","CDS, RBS","multi","u749625779_cdscontent");
-       $request_important_op = getoption_return_edit_job("request_important","option","Normal","single","all_in_one_project");
-       $tags_op = getoption_return_edit_job("tags","option","","multi","all_in_one_project"); 
-
+    //    $department_op = getoption_return_edit_job("department","job_option_cms",$department_user,"single","u749625779_cdscontent");
+    //    $production_type_op = getoption_return_edit_job("production_type","job_option_cms","","single","u749625779_cdscontent");
+    //    $business_type_op = getoption_return_edit_job("itemmize_type","job_option_cms","","single","u749625779_cdscontent");
+    //    $project_type_op = getoption_return_edit_job("project_type","option","New SKU","single","all_in_one_project");
+    //    $store_op = getoption_return_edit_job("store","job_option_cms","","multi","u749625779_cdscontent");
+    //    $bu_op = getoption_return_edit_job("bu","job_option_cms","","single","u749625779_cdscontent");
+    //    $product_website_op = getoption_return_edit_job("product_website","job_option_cms","CDS, RBS","multi","u749625779_cdscontent");
+    //    $request_important_op = getoption_return_edit_job("request_important","option","Normal","single","all_in_one_project");
+    //    $tags_op = getoption_return_edit_job("tags","option","","multi","all_in_one_project"); 
+       $project_type_op = get_option_return("project_type","New SKU","single","add_new");
+       $department_op = get_option_return("department",$department_user,"single","add_new");
+       $tags_op = get_option_return("tags","","multi","add_new");
+       $request_important_op = get_option_return("request_important","Normal","single","add_new");
+       $online_channel_op = get_option_return("online_channel","CDS","multi","add_new");
+       $bu_op = get_option_return("bu","CDS","single","add_new");
+       $store_op = get_option_return("stock_source","","multi","add_new");
+       $business_type_op = get_option_return("business_type","","single","add_new");
+       $production_type_op = get_option_return("production_type","","single","add_new");
+ //    $sub_department_op = get_option_return("sub_department","","single","add_new");
+       
        
 ?>
 <style>
@@ -221,12 +231,7 @@ session_start();
         <select required class="form-select form-select-sm" aria-label="Default select example" id="department"
             name="department">
             <?php 
-            if($_SESSION["username"] == 'poojaroonwit'){
-                $department_op_2 = get_option_return("department","","single","add_new");
-                echo $department_op_2;
-            }else{
                 echo $department_op;
-            }
             ?>
         </select>
     </div>
@@ -234,7 +239,7 @@ session_start();
         <label for="department" class="form-label">*Sub Department</label>
         <select required class="form-select form-select-sm" aria-label="Default select example" id="sub_department"
             name="sub_department">
-            <?php// echo //$sub_department_op; ?>
+            <?php// echo $sub_department_op; ?>
         </select>
     </div> -->
     <div class="col-md-3">
@@ -263,12 +268,7 @@ session_start();
         <select class="form-select form-select-sm" required aria-label="Default select example" id="project_type"
             name="project_type">
             <?php 
-            if($_SESSION["username"] == 'poojaroonwit'){
-                $project_type_op_2 = get_option_return("project_type","New SKU","single","add_new");
-                echo $project_type_op_2;
-            }else{
                 echo $project_type_op;
-            }
             ?>
         </select>
     </div>
@@ -314,14 +314,7 @@ session_start();
     <div class="col-md-3">
         <label class="form-label">tags (new brand , Campaign)</label>
         <select multiple="multiple" class="multiple-select" id="tags[]" name="tags[]">
-            <?php 
-            if($_SESSION["username"] == 'poojaroonwit'){
-                $tags_op_2 = get_option_return("tags","","multi","add_new");
-                echo $tags_op_2;
-            }else{
-                echo $tags_op;
-            }
-            ?>
+            <?php echo $tags_op;?>
         </select>
     </div>
     <div class="col-md-3">
@@ -339,7 +332,7 @@ session_start();
     <div class="col-md-3">
         <label for="online_channel" class="form-label">*Online Channel</label>
         <select required multiple="multiple" class="multiple-select" id="online_channel[]" name="online_channel[]">
-            <?php echo $product_website_op; ?>
+            <?php echo $online_channel_op; ?>
         </select>
     </div>
 </div>
