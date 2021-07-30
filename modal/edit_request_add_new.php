@@ -97,6 +97,7 @@ label#label_file_cme {
       $follow_assign_name = $row['follow_assign_name'];
       $follow_assign_date = $row['follow_assign_date'];
       $sub_department = $row['sub_department'];
+      
 
     //stamp color status
     if($row["status"]=="pending"){

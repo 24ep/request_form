@@ -112,9 +112,21 @@ $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
     //--
     if(strpos($_SESSION["department"],"Content")!==false){
-        $allow_edit = "";
+        if($row["allow_in_edit"]==1){
+          $allow_edit = "";
+        }else{
+          $allow_edit = "disabled";
+        }
+       
     }else{
+      if($row["allow_ex_edit"]==1){
+        //check assign name
+        if($follow_assign_name == "unassign"){
+          $allow_edit = "";
+        }
+      }else{
         $allow_edit = "disabled";
+      }
     }
     //---
     if($row["site_element"]=="number"){
