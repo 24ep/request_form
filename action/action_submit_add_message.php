@@ -61,7 +61,7 @@
                                 target_username,msid
                                 )
                                 VALUES (
-                                '".$$sername."',".$last_id."
+                                '".$username."',".$last_id."
                                 )";
                             $query_target = mysqli_query($con,$sql_ms_target);
                             //send to line
