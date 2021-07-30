@@ -121,7 +121,7 @@ if(isset($_POST["from_post"] )){
          and (".$position_filter.")) and parent is null ORDER BY id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
  }
   date_default_timezone_set("Asia/Bangkok");
-  $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error());
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error( $con));
   mysqli_query($con, "SET NAMES 'utf8' ");
   $result = mysqli_query($con, $query);
   echo '<script>console.log("'.htmlspecialchars(stripslashes(str_replace(array("\r", "\n"), '', var_export($query, true)))).'")</script>';
