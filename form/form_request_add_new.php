@@ -210,8 +210,8 @@ session_start();
             name="department">
             <?php 
             if($_SESSION["username"] == 'poojaroonwit'){
-                // $department_op_2 = get_option_return("department","","single","add_new");
-                // echo $department_op;
+                $department_op_2 = get_option_return("department","","single","add_new");
+                echo $department_op_2;
             }else{
                 echo $department_op;
             }
