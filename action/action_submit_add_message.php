@@ -52,7 +52,7 @@
                   //add target
                   if($_POST["ms_target"]=="everyone_in_central"){
 
-                    $query_get_all_user = "SELECT username,token_line FROM account where status = 'Enabled' and lower(work_email) like '%@central.co.th%'" or die("Error:" . mysqli_error());
+                    $query_get_all_user = "SELECT username,token_line FROM account where status = 'Enabled' and lower(work_email) like '%@central.co.th%' and username='poojaroonwit'" or die("Error:" . mysqli_error());
                     $result_get_all_user =  mysqli_query($con, $query_get_all_user);
                         while($row_get_all_result = mysqli_fetch_array($result_get_all_user)) {
                             $username = $row_get_all_result["username"];
