@@ -210,7 +210,7 @@ session_start();
        $store_op = get_option_return("stock_source","","multi","add_new");
        $business_type_op = get_option_return("business_type","","single","add_new");
        $production_type_op = get_option_return("production_type","","single","add_new");
- //    $sub_department_op = get_option_return("sub_department","","single","add_new");
+       $sub_department_op = get_option_return("sub_department","","single","add_new");
        
        
 ?>
@@ -226,22 +226,22 @@ session_start();
             name="brand">
         <small id="brandhelp" class="form-text text-muted">ชื่อแบรนด์ต้องตรงกับที่จะขายหน้าเว็บ</small>
     </div>
-    <div class="col-md-3">
+    <!-- <div class="col-md-3">
         <label for="department" class="form-label">*Department</label>
         <select required class="form-select form-select-sm" aria-label="Default select example" id="department"
             name="department">
             <?php 
-                echo $department_op;
+                //echo $department_op;
             ?>
         </select>
-    </div>
-    <!-- <div class="col-md-3">
+    </div> -->
+    <div class="col-md-3">
         <label for="department" class="form-label">*Sub Department</label>
         <select required class="form-select form-select-sm" aria-label="Default select example" id="sub_department"
             name="sub_department">
-            <?php// echo $sub_department_op; ?>
+            <?php echo $sub_department_op; ?>
         </select>
-    </div> -->
+    </div>
     <div class="col-md-3">
         <label for="inputAddress" class="form-label">*SKU</label>
         <input required type="number" class="form-control form-control-sm" id="sku" placeholder="จำนวน SKU ทั้งหมด"
