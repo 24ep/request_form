@@ -44,13 +44,28 @@ while($row = mysqli_fetch_array($result)) {
 $target_ms_id = $row['trmsid'];
 
 }
+
 $sql_update_read = "UPDATE target_message_box SET readable = 1,read_date=CURRENT_TIMESTAMP where id=".$target_ms_id;
 $query_update_read = mysqli_query($con,$sql_update_read);
 
 
 
+
 ?>
 <script>
+function update_total_unread_div_action() {
+   
+   $.post("get/get_count_unread_message.php", {
+       },
+       function(data) {
+           $('#total_unread_div').html(data);
+           $('#total_unread_div_in').html(data);
+           
+           
+       });
+
+}
+update_total_unread_div_action()
 //other content
 var actualBtn = document.getElementById('actual-btn_ms');
 var fileChosen = document.getElementById('file-chosen_ms');
