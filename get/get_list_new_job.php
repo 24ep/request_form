@@ -114,11 +114,11 @@ if(isset($_POST["from_post"] )){
  }
  //set_query
  if(isset($_SESSION['fopenticket'])){
-  $query = "SELECT * FROM add_new_job where id =".$_SESSION['fopenticket']."  ORDER BY id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
+  $query = "SELECT * FROM add_new_job where id =".$_SESSION['fopenticket']."  ORDER BY id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error($con));
   unset($_SESSION['fopenticket']);
  }else{
   $query = "SELECT * FROM add_new_job where ((".$status_filter.") and (".$brand_filter.")
-         and (".$position_filter.")) and parent is null ORDER BY id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
+         and (".$position_filter.")) and parent is null ORDER BY id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error($con));
  }
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -178,7 +178,7 @@ if(isset($_POST["from_post"] )){
       $result_count = mysqli_query($con, $query_count);
       $data_count=mysqli_fetch_assoc($result_count);
       $subtask_count = $data_count['total'];
-      $query_child = "SELECT * FROM add_new_job where parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error());
+      $query_child = "SELECT * FROM add_new_job where parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error($con));
       date_default_timezone_set("Asia/Bangkok");
       $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
       mysqli_query($con, "SET NAMES 'utf8' ");
