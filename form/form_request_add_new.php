@@ -1,39 +1,39 @@
 <?php 
 session_start();
-        function get_option_return($attribute_code,$default_option,$select_type,$function){
-            $con= mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
-            mysqli_query($con, "SET NAMES 'utf8' ");
-            $query = "SELECT 
-            attribute_option.option_id as option_id,
-            attribute_option.attribute_id as attribute_id,
-            attribute_option.attribute_option as attribute_option,
-            attribute_option.function as function,
-            attribute_entity.attribute_code 
-            FROM content_service_gate.attribute_option as attribute_option
-            left join content_service_gate.attribute_entity as attribute_entity
-            on attribute_option.attribute_id = attribute_entity.attribute_id 
-            where attribute_code =  '".$attribute_id."' and function='".$function."' 
-            ORDER BY id asc" or die("Error:" . mysqli_error());
-            $result = mysqli_query($con, $query);
-            while($row = mysqli_fetch_array($result)) {
-                if($select_type=="multi"){
-                    $array_default = explode(', ', $default_option);
-                    $option_set .= '<option value=""></option>';
-                    foreach($array_default as $option)
-                      {
-                        if($option==$row["attribute_option"]){
-                            $option_set .= '<option selected value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
-                        }else{
-                            $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
-                        }
+        // function get_option_return($attribute_code,$default_option,$select_type,$function){
+        //     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
+        //     mysqli_query($con, "SET NAMES 'utf8' ");
+        //     $query = "SELECT 
+        //     attribute_option.option_id as option_id,
+        //     attribute_option.attribute_id as attribute_id,
+        //     attribute_option.attribute_option as attribute_option,
+        //     attribute_option.function as function,
+        //     attribute_entity.attribute_code 
+        //     FROM content_service_gate.attribute_option as attribute_option
+        //     left join content_service_gate.attribute_entity as attribute_entity
+        //     on attribute_option.attribute_id = attribute_entity.attribute_id 
+        //     where attribute_code =  '".$attribute_id."' and function='".$function."' 
+        //     ORDER BY id asc" or die("Error:" . mysqli_error());
+        //     $result = mysqli_query($con, $query);
+        //     while($row = mysqli_fetch_array($result)) {
+        //         if($select_type=="multi"){
+        //             $array_default = explode(', ', $default_option);
+        //             $option_set .= '<option value=""></option>';
+        //             foreach($array_default as $option)
+        //               {
+        //                 if($option==$row["attribute_option"]){
+        //                     $option_set .= '<option selected value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
+        //                 }else{
+        //                     $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
+        //                 }
                         
-                      }
+        //               }
 
-                }
-            }
-            return $option_set;
-            mysqli_close($con);
-        }
+        //         }
+        //     }
+        //     return $option_set;
+        //     mysqli_close($con);
+        // }
         function getoption_return_edit_job($col,$table,$select_option,$sorm,$database) {
             $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
@@ -210,8 +210,8 @@ session_start();
             name="department">
             <?php 
             if($_SESSION["username"] == 'poojaroonwit'){
-                $department_op_2 = get_option_return("department","","single","add_new");
-                echo $department_op;
+                // $department_op_2 = get_option_return("department","","single","add_new");
+                // echo $department_op;
             }else{
                 echo $department_op;
             }
