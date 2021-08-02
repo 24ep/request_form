@@ -178,64 +178,69 @@ if(isset($_POST["from_post"] )){
       $result_count = mysqli_query($con, $query_count);
       $data_count=mysqli_fetch_assoc($result_count);
       $subtask_count = $data_count['total'];
-      $query_child = "SELECT * FROM add_new_job where parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error());
-      date_default_timezone_set("Asia/Bangkok");
-      $con_get_list= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con_get_list));
-      mysqli_query($con_get_list, "SET NAMES 'utf8' ");
-      $result_child = mysqli_query($con_get_list, $query_child);
-      $i = 1;
-      while($row_child = mysqli_fetch_array($result_child)) {
-          $ticket_role = role_user($row_child["request_username"],$row_child["follow_up_by"]);
-          $status = badge_status($row_child['status']);
-          //important
-        if($i<$subtask_count){
-          $th_class = "class='tree_lift'";
-          $tr_class = "class='sub-ticket'";
-        }else{
-          $th_class = "class='tree_lift_end'";
-          unset($tr_class);
-        }
-        //check status of brand ticket match with filter or not
-        if($_SESSION['status_filter']<>""){
-          if($row_child["status"]==$_SESSION['status_filter']){
-            //data row
-            $sub_ticket .= "<tr ".$tr_class.">";
-            $sub_ticket .= "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></th>";
-            $sub_ticket .= "<td></td>";
-            $sub_ticket .= "<td></td>";
-            $sub_ticket .= "<td>".$row_child["sku"]."</td>";
-            $sub_ticket .= "<td></td>";
-            $sub_ticket .= "<td></td>";
-            $sub_ticket .= "<td></td>";
-            $sub_ticket .= "<td></td>";
-            $sub_ticket .= "<td></td>";
-            $sub_ticket .= "<td  >".$status."</td>";
-            $sub_ticket .= "<td>". $ticket_role ."</td>";
-            $sub_ticket .= "<td>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
-            Detail </button></td>";
-            $i++;
+      if(isset($subtask_count) and $subtask_count <> 0 and $subtask_count <>null){
+        $query_child = "SELECT * FROM add_new_job where parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error());
+        date_default_timezone_set("Asia/Bangkok");
+        // $con_get_list= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con_get_list));
+        mysqli_query($con, "SET NAMES 'utf8' ");
+        $result_child = mysqli_query($con, $query_child);
+        $i = 1;
+        while($row_child = mysqli_fetch_array($result_child)) {
+            $ticket_role = role_user($row_child["request_username"],$row_child["follow_up_by"]);
+            $status = badge_status($row_child['status']);
+            //important
+          if($i<$subtask_count){
+            $th_class = "class='tree_lift'";
+            $tr_class = "class='sub-ticket'";
+          }else{
+            $th_class = "class='tree_lift_end'";
+            unset($tr_class);
           }
-        }else{
-             //data row
-        if(!isset($sub_ticket)){$sub_ticket ="";}
-        if(!isset($tr_class)){$tr_class="";}
-        $sub_ticket .= "<tr ".$tr_class.">";
-        $sub_ticket .= "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></th>";
-        $sub_ticket .= "<td></td>";
-        $sub_ticket .= "<td></td>";
-        $sub_ticket .= "<td>".$row_child["sku"]."</td>";
-        $sub_ticket .= "<td></td>";
-        $sub_ticket .= "<td></td>";
-        $sub_ticket .= "<td></td>";
-        $sub_ticket .= "<td></td>";
-        $sub_ticket .= "<td></td>";
-        $sub_ticket .= "<td  >".$status."</td>";
-        $sub_ticket .= "<td>". $ticket_role ."</td>";
-        $sub_ticket .= "<td>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
-         Detail </button></td>";
-        $i++;
+          //check status of brand ticket match with filter or not
+          if($_SESSION['status_filter']<>""){
+            if($row_child["status"]==$_SESSION['status_filter']){
+              //data row
+              $sub_ticket .= "<tr ".$tr_class.">";
+              $sub_ticket .= "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></th>";
+              $sub_ticket .= "<td></td>";
+              $sub_ticket .= "<td></td>";
+              $sub_ticket .= "<td>".$row_child["sku"]."</td>";
+              $sub_ticket .= "<td></td>";
+              $sub_ticket .= "<td></td>";
+              $sub_ticket .= "<td></td>";
+              $sub_ticket .= "<td></td>";
+              $sub_ticket .= "<td></td>";
+              $sub_ticket .= "<td  >".$status."</td>";
+              $sub_ticket .= "<td>". $ticket_role ."</td>";
+              $sub_ticket .= "<td>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+              Detail </button></td>";
+              $i++;
+            }
+          }else{
+               //data row
+          if(!isset($sub_ticket)){$sub_ticket ="";}
+          if(!isset($tr_class)){$tr_class="";}
+          $sub_ticket .= "<tr ".$tr_class.">";
+          $sub_ticket .= "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></th>";
+          $sub_ticket .= "<td></td>";
+          $sub_ticket .= "<td></td>";
+          $sub_ticket .= "<td>".$row_child["sku"]."</td>";
+          $sub_ticket .= "<td></td>";
+          $sub_ticket .= "<td></td>";
+          $sub_ticket .= "<td></td>";
+          $sub_ticket .= "<td></td>";
+          $sub_ticket .= "<td></td>";
+          $sub_ticket .= "<td  >".$status."</td>";
+          $sub_ticket .= "<td>". $ticket_role ."</td>";
+          $sub_ticket .= "<td>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+           Detail </button></td>";
+          $i++;
+          }
         }
+        mysqli_close($con_get_list);
+
       }
+
       if($_SESSION['status_filter']<>""){
         if($row["config_type"]=="parent"){
           if( isset($sub_ticket)){
@@ -262,5 +267,5 @@ if(isset($_POST["from_post"] )){
        unset($status);
   }
   mysqli_close($con);
-  mysqli_close($con_get_list);
+
   ?>
