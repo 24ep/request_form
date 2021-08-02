@@ -219,6 +219,7 @@ session_start();
     background: white;
 }
 </style>
+<ion-icon name="color-wand-outline"></ion-icon> สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ที่ Request detail จนกว่า ทาง Content-Traffic จะทำการ assign ticket นี้ให้กับทางผู้เกี่ยวข้อง
 <div class="row">
     <div class="col-md-3">
         <label for="Brand" class="form-label">*Brand</label>
