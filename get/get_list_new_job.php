@@ -201,9 +201,18 @@ if(isset($_POST["from_post"] )){
             if($row_child["status"]==$_SESSION['status_filter']){
               //data row
               if(isset($sub_ticket)){
-                $sub_ticket .= "<tr ".$tr_class.">";
+                if(isset($tr_class)){
+                  $sub_ticket .= "<tr ".$tr_class.">";
+                }else{
+                  $sub_ticket .= "<tr >";
+                }
+                
               }else{
-                $sub_ticket = "<tr ".$tr_class.">";
+                if(isset($tr_class)){
+                  $sub_ticket = "<tr ".$tr_class.">";
+                }else{
+                  $sub_ticket = "<tr >";
+                }
               }
               $sub_ticket .= "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></th>";
               $sub_ticket .= "<td></td>";
