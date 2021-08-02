@@ -237,7 +237,7 @@ if(isset($_POST["from_post"] )){
           $i++;
           }
         }
-        mysqli_close($con_get_list);
+    
 
       }
 
