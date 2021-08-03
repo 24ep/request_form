@@ -252,10 +252,14 @@ label#label_file_cme {
                         $allow_task_ticket = "disabled";
                         $help_start = "<small>someone has been start checking information</small>";
                     }else{unset($allow_task_ticket);unset($help_start);} 
-                    if($accepted_date<>"" and $accepted_date<>null){
+                    if($accepted_date<>"" and $accepted_date<>null ){
                         $allow_send_to_traffic = "disabled";
                         $help_traffic = "<small>someone has been send this ticket to traffic</small>";
-                    }else{unset($allow_send_to_traffic);unset($help_traffic);} 
+                    }
+                  
+                    else{
+                        unset($allow_send_to_traffic);unset($help_traffic);
+                    } 
                     if($cancel_resone<>"" and $cancel_resone<>null){
                         $allow_cancel = "disabled";
                         $allow_send_to_traffic = "disabled";
@@ -323,6 +327,9 @@ label#label_file_cme {
                                             </small>
                                         </div>
                                     </div>
+                <?php  if($start_checking_date=="" or $start_checking_date==null ){
+                       
+                    ?>
                                     <div class="card">
                                         <div class="card-body">
                                             <h6 class="card-title">2.Confirm send to traffic</h6>
@@ -341,6 +348,8 @@ label#label_file_cme {
                                             </small>
                                         </div>
                                     </div>
+                    <?php  
+                    } ?>
                                     <div class="card">
                                         <div class="card-body">
                                             <h6 class="card-title">Cancel ticket</h6>
