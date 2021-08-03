@@ -327,7 +327,7 @@ label#label_file_cme {
                                             </small>
                                         </div>
                                     </div>
-                <?php  if($start_checking_date<>"" or $start_checking_date<>null ){
+                <?php  if($start_checking_date<>"" and $start_checking_date<>null ){
                        
                     ?>
                                     <div class="card">
