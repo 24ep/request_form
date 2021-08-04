@@ -342,9 +342,9 @@ label#label_file_cme {
                                             </small>
                                         </div>
                                     </div>
-                <?php  if($start_checking_date<>"" and $start_checking_date<>null ){
-                       
-                    ?>
+                            <?php  if($start_checking_date<>"" and $start_checking_date<>null ){
+                                
+                                ?>
                                     <div class="card">
                                         <div class="card-body">
                                             <h6 class="card-title">2.Confirm send to traffic</h6>
@@ -390,9 +390,9 @@ label#label_file_cme {
                                         </div>
                                     </div>
 
-                                    <?php } ?>
+                                  
                                 </div>
-
+                                <?php } ?>
                             </div>
                             <div class="tab-pane fade" id="v-pills-tf_team" role="tabpanel"
                                 aria-labelledby="v-pills-tf_team-tab">
