@@ -409,7 +409,7 @@ label#label_file_cme {
                                             FROM account as account 
                                             left join add_new_job as new_job on account.username = new_job.follow_assign_name and new_job.status <> 'accepted' and  new_job.status <> 'cancel' and new_job.status <> 'none'
                                             group by account.username 
-                                            having account.department like '%follow%' and account.status = 'Enabled' " or die("Error:" . mysqli_error());
+                                            having (account.department like '%follow%' and account.status = 'Enabled') or account.username ='".$follow_assign_name."'" or die("Error:" . mysqli_error());
                                             $result = mysqli_query($con, $query);
                                             echo  '<option value="unassign">unassign</option>';
                                             while($row = mysqli_fetch_array($result)) {
