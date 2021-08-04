@@ -86,6 +86,9 @@ function get_comment($id){
         unset($list_image);
     }
 }
+if($status =='accepted'){
+    echo '<small style="text-align: center;">This ticket had beed accepted. if you have a comment content team also get notification but status will not change to waiting confirm</small>';
+}
 function get_bt_comment($id){
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
