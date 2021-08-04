@@ -312,10 +312,11 @@ label#label_file_cme {
 
                                 </div>
                                 </form>
-                                <hr>
+                              
                             <?php } ?>
 
-                        <?php if($config_type="task"){ ?>
+                        <?php if($config_type=="task"){ ?>
+                            <hr>
                                 <h6><strong>Main action Console</strong></h6>
                                 <small>Manage you ticket at here , please make sure your step before take action</small>
                                
