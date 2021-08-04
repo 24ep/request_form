@@ -98,6 +98,7 @@ label#label_file_cme {
       $follow_assign_date = $row['follow_assign_date'];
       $sub_department = $row['sub_department'];
       $parent = $row['parent'];
+      $config_type = $row['config_type'];
       
 
     //stamp color status
@@ -313,6 +314,8 @@ label#label_file_cme {
                                 </form>
                                 <hr>
                             <?php } ?>
+
+                        <?php if($config_type="task"){ ?>
                                 <h6><strong>Main action Console</strong></h6>
                                 <small>Manage you ticket at here , please make sure your step before take action</small>
                                
@@ -385,6 +388,8 @@ label#label_file_cme {
                                             </small>
                                         </div>
                                     </div>
+
+                                    <?php } ?>
                                 </div>
 
                             </div>
