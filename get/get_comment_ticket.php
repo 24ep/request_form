@@ -133,7 +133,7 @@ if($status =='accepted'){
     echo '<small style="text-align: center;color:#b7b5b5;">This ticket had been accepted. if you have a comment content team also get notification but status will not change to waiting confirm</small>';
 }
 echo '<script>
-    var elem = document.getElementById("over_comment");
-    elem.scrollTop = elem.scrollHeight;
-</script>';
+        var elem = document.getElementById("over_comment");
+        elem.scrollTop = elem.scrollHeight;
+    </script>';
 ?>

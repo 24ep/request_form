@@ -35,6 +35,7 @@ label.tree_label:hover {
 </style>
 <?php
 session_start();
+$con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error( $con));
 function badge_status($status){
   if($status=="pending"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
@@ -102,9 +103,15 @@ if(isset($_POST["from_post"] )){
  }else{
   $status_filter ="1=1";
  }
+
  if($_SESSION['brand_filter']<>""){
    if(is_numeric($_SESSION['brand_filter'])){
-    $brand_filter ="id = ".str_replace('NS-','',$_SESSION['brand_filter']);
+    $query_parent = "SELECT parent from all_in_one_project.add_new_job where id = ".$_SESSION['brand_filter'] or die("Error:" . mysqli_error());
+    $result = mysqli_query($con, $query_parent);
+    while($row = mysqli_fetch_array($result)) {
+      $brand_filter_id_lu = $row["parent"];
+    }
+    $brand_filter ="id = ".str_replace('NS-','',$_SESSION['brand_filter'])." or id =".$brand_filter_id_lu ;
    }else{
     $brand_filter ="brand like '%".$_SESSION['brand_filter']."%'";
    }
@@ -117,11 +124,11 @@ if(isset($_POST["from_post"] )){
   $query = "SELECT * FROM add_new_job where id =".$_SESSION['fopenticket']."  ORDER BY id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
   unset($_SESSION['fopenticket']);
  }else{
+  
   $query = "SELECT * FROM add_new_job where ((".$status_filter.") and (".$brand_filter.")
          and (".$position_filter.")) and parent is null ORDER BY id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
  }
   date_default_timezone_set("Asia/Bangkok");
-  $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error( $con));
   mysqli_query($con, "SET NAMES 'utf8' ");
   $result = mysqli_query($con, $query);
   echo '<script>console.log("'.htmlspecialchars(stripslashes(str_replace(array("\r", "\n"), '', var_export($query, true)))).'")</script>';
