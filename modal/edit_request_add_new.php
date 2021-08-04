@@ -252,7 +252,7 @@ label#label_file_cme {
                     <?php 
                     if($start_checking_date<>"" and $start_checking_date<>null){
                         $allow_task_ticket = "disabled";
-                        $help_start = "<small style='color:Red'><strong>".$follow_up_by."</strong> has been start checking information</small>";
+                        $help_start = "<small style='color:Red'><strong>".$follow_up_by."</strong> had been start checking information</small>";
                     } elseif($follow_assign_name=="unassign"){
                             $allow_task_ticket = "disabled";
                             $help_start = "<small style='color:Red'>this ticket is unassign</small>";}
@@ -262,7 +262,7 @@ label#label_file_cme {
                     }else{unset($allow_task_ticket);unset($help_start);} 
                     if($accepted_date<>"" and $accepted_date<>null ){
                         $allow_send_to_traffic = "disabled";
-                        $help_traffic = "<small style='color:Red'>someone has been send this ticket to traffic</small>";
+                        $help_traffic = "<small style='color:Red'>someone had been send this ticket to traffic</small>";
                     }
                   
                     else{
@@ -272,9 +272,9 @@ label#label_file_cme {
                         $allow_cancel = "disabled";
                         $allow_send_to_traffic = "disabled";
                         $allow_task_ticket = "disabled";
-                        $help_start = "<small style='color:Red'>someone has been cancel this ticket</small>";
-                        $help_traffic = "<small style='color:Red'>someone has been cancel this ticket</small>";
-                        $help_cancel = "<small style='color:Red'>someone has been cancel this ticket</small>";
+                        $help_start = "<small style='color:Red'>someone had been cancel this ticket</small>";
+                        $help_traffic = "<small style='color:Red'>someone had been cancel this ticket</small>";
+                        $help_cancel = "<small style='color:Red'>someone had been cancel this ticket</small>";
                     }
                         else{
                             unset($allow_cancel);
