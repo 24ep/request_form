@@ -112,7 +112,7 @@ function get_bt_comment($id){
                   <ion-icon style="margin:0px" name="attach-outline"></ion-icon>
               </label>
               <span id="file-chosen_cme" style="padding:0px"> </span></button>';
-        $bt_comment_type .='<button class="btn btn-outline-secondary" style="border-color: #ffc107;color:#ffc107;"   onClick="comment_ticket_id('.$id.','.$send_type.')" type="button" id="button-send">Send back data</button>';
+        $bt_comment_type .='<button class="btn btn-outline-secondary" style="border-color: #ffc107;color:#ffc107;" onClick="comment_ticket_id('.$id.','.$send_type.')" type="button" id="button-send">Send back data</button>';
    }else{
        $send_type = "'send_message'";
        $bt_comment_type ='
