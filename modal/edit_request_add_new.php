@@ -384,7 +384,7 @@ label#label_file_cme {
                             </div>
                             <div class="tab-pane fade" id="v-pills-tf_team" role="tabpanel"
                                 aria-labelledby="v-pills-tf_team-tab">
-                                <h6>Assign follow-up</h6>
+                                <h6><strong>Assign follow-up</strong></h6>
                                 <form class="row g-3">
                                     <!-- <div class="col-auto">
                                         <label for="staticEmail2" class="">follow-up name</label>
@@ -427,9 +427,10 @@ label#label_file_cme {
                                         <button type="button" onclick="action_assign_follow(<?php echo  $_POST['id']; ?>)" class="btn btn-primary mb-3">Assign to NS-<?php echo $id;?></button>
                                     </div>
                                 </form>
-                                <hr>
+                               
                                 <?php if($status == 'waiting traffic'){ ?>
-                                <h5>Create Writer & Studio - 24ep</h5>
+                                    <hr>
+                                <h6><strong>Create Writer & Studio - 24ep</strong></h6>
                                 <form action="action/action_create_job_cms.php" method="POST" target="_blank">
                                     <input type="hidden" id="id_adj" name="id_adj" value="<?php echo  $_POST['id']; ?>">
                                     <?php include('../form/form_create_job_cms.php')?>
