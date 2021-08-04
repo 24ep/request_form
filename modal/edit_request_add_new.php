@@ -97,6 +97,7 @@ label#label_file_cme {
       $follow_assign_name = $row['follow_assign_name'];
       $follow_assign_date = $row['follow_assign_date'];
       $sub_department = $row['sub_department'];
+      $parent = $row['parent'];
       
 
     //stamp color status
@@ -275,6 +276,9 @@ label#label_file_cme {
 
                     
                     ?>
+                    <?php if(!isset($parent) or $status <> 'accepted'){
+
+                    ?>
                             <h6><strong>Create Sub Ticket</strong></h6>
                                 <small>Generate new sub-ticket and convert ticket from buyer to parent ticket</small>
                             <form>
@@ -302,6 +306,7 @@ label#label_file_cme {
                                 </div>
                                 </form>
                                 <hr>
+                            <?php } ?>
                                 <h6><strong>Main action Console</strong></h6>
                                 <small>Manage you ticket at here , please make sure your step before take action</small>
                                
@@ -381,9 +386,9 @@ label#label_file_cme {
                                 aria-labelledby="v-pills-tf_team-tab">
                                 <h6>Assign follow-up</h6>
                                 <form class="row g-3">
-                                    <div class="col-auto">
+                                    <!-- <div class="col-auto">
                                         <label for="staticEmail2" class="">follow-up name</label>
-                                    </div>
+                                    </div> -->
                                     <div class="col-auto">
                                         <select class="form-select" id="op_follow_assign_name" name="op_follow_assign_name" aria-label="Default select example">
                                         <?php
@@ -419,14 +424,17 @@ label#label_file_cme {
                                       
                                    
                                     <div class="col-auto">
-                                        <button type="button" onclick="action_assign_follow(<?php echo  $_POST['id']; ?>)" class="btn btn-primary mb-3">Update</button>
+                                        <button type="button" onclick="action_assign_follow(<?php echo  $_POST['id']; ?>)" class="btn btn-primary mb-3">Assign to NS-<?php echo $id;?></button>
                                     </div>
                                 </form>
                                 <hr>
+                                <?php if($status == 'waiting traffic'){ ?>
+                                <h5>Create Writer & Studio - 24ep</h5>
                                 <form action="action/action_create_job_cms.php" method="POST" target="_blank">
                                     <input type="hidden" id="id_adj" name="id_adj" value="<?php echo  $_POST['id']; ?>">
                                     <?php include('../form/form_create_job_cms.php')?>
                                 </form>
+                                <?php } ?>
                             </div>
                             <div class="tab-pane fade" id="v-pills-internal_note" role="tabpanel"
                                 aria-labelledby="v-pills-internal_note-tab">
