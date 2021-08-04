@@ -27,7 +27,7 @@
             if($key<>"" and $key<>null){
                 sent_line_noti("\n• Updated  NS-".$id." [ ".$brand." ".$sku." SKUs ]\n----------------------------\n• ตรวจสอบข้อมูลเรียบร้อย งานถูกส่งต่อไปที่ Traffic แล้ว",$key);
             }
-        insert_log("send to traffic > accepted_date = ".date("Y-m-d H:i:s")." \n status = accepted" ,"add_new_job",$id);
+        insert_log("send to traffic > accepted_date = ".date("Y-m-d H:i:s")." \n status = waiting traffic" ,"add_new_job",$id);
         echo date("Y-m-d H:i:s");
 	}else{
         insert_log("send to traffic faild >".$con->error ,"add_new_job",$id);
