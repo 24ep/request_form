@@ -252,7 +252,7 @@ label#label_file_cme {
                     if($start_checking_date<>"" and $start_checking_date<>null){
                         $allow_task_ticket = "disabled";
                         $help_start = "<small style='color:Red'><strong>".$follow_up_by."</strong> has been start checking information</small>";
-                    }elseif($follow_assign_name <> $_SESSION["USERNAME"]){
+                    }elseif($follow_assign_name <> $_SESSION["username"]){
                         $allow_task_ticket = "disabled";
                         $help_start = "<small style='color:Red'>Only ".$follow_assign_name."(assignee) can start checking information</small>";
                     }else{unset($allow_task_ticket);unset($help_start);} 
