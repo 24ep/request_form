@@ -111,7 +111,12 @@ if(isset($_POST["from_post"] )){
     while($row = mysqli_fetch_array($result)) {
       $brand_filter_id_lu = $row["parent"];
     }
-    $brand_filter ="id = ".str_replace('NS-','',$_SESSION['brand_filter'])." or id =".$brand_filter_id_lu ;
+    if(isset($brand_filter_id_lu)){
+      $brand_filter ="id = ".str_replace('NS-','',$_SESSION['brand_filter'])." or id =".$brand_filter_id_lu ;
+    }else{
+      $brand_filter ="id = ".str_replace('NS-','',$_SESSION['brand_filter']);
+    }
+    
    }else{
     $brand_filter ="brand like '%".$_SESSION['brand_filter']."%'";
    }
