@@ -324,9 +324,9 @@ label#label_file_cme {
                                     <div class="card">
                                         <div class="card-body">
                                             <h6 class="card-title">1.Checking information</h6>
-                                            <p class="card-text">Press this button first for take a job,the system will
+                                            <small >Press this button first for take a job,the system will
                                                 show your contact on detail of ticket and notification to requester
-                                                ticket</p>
+                                                ticket</small>
                                             
                                             <button onclick="start_checking(<?php echo $id; ?>);" type="button"
                                                 class="btn btn-primary btn-sm" <?php echo $allow_task_ticket; ?>
@@ -348,9 +348,18 @@ label#label_file_cme {
                                     <div class="card">
                                         <div class="card-body">
                                             <h6 class="card-title">2.Confirm send to traffic</h6>
-                                            <p class="card-text">Press this button when you completed information for
+                                            <small>Press this button when you completed information for
                                                 those SKUs,the system will change status of ticket to 'waiting traffic
-                                            </p>
+                                            </small>
+
+                                            <?php  if($_SESSION['username']=='poojaroonwit'){?>
+                                            <div class="form-floating">
+                                                <textarea class="form-control" id="sku_accepted" name="sku_accepted"  placeholder="Leave a comment here" placeholder="CDS3466644\nCDS23443356\nCDS23445356" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                <label for="floatingTextarea2">SKU list</label>
+                                            </div>
+                                            <?php } ?>
+
+
                                             <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
                                                 class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?> 
                                                 style="width: 100%;">Sent to
@@ -368,9 +377,9 @@ label#label_file_cme {
                                     <div class="card">
                                         <div class="card-body">
                                             <h6 class="card-title">Cancel ticket</h6>
-                                            <p class="card-text">Press this button when you want ... or requester
+                                            <small >Press this button when you want ... or requester
                                                 request to cancel this ticket,please make sure you have a reason for
-                                                take this action </p>
+                                                take this action </small>
 
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="resone_cancel" <?php $allow_cancel; ?> 
