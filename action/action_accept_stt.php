@@ -23,7 +23,7 @@
         $sku_list = implode(',',$sku_list_array);
 
         $sql = "INSERT INTO sku_list (
-            sku,create_by,csg_id
+            sku,create_by,csg_id )
         VALUES 
             ".$sku_list.";";
 
