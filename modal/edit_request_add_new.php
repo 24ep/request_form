@@ -354,7 +354,7 @@ label#label_file_cme {
 
                                             <div >
                                             <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted">SKU list</label>
-                                                <textarea required style="font-size:12px" class="form-control" id="sku_accepted" name="sku_accepted"  placeholder="CDS3466644&#10;CDS2443356&#10;CDS2487356" rows="5" style="height: 100px"></textarea>
+                                                <textarea  style="font-size:12px" class="form-control" id="sku_accepted" name="sku_accepted"  placeholder="CDS3466644&#10;CDS2443356&#10;CDS2487356" rows="5" style="height: 100px"></textarea>
                                                 
                                             </div>
                                           
