@@ -22,12 +22,12 @@
 
         $sku_list = implode(',',$sku_list_array);
 
-        $sql = "INSERT INTO sku_list (
+        $sql_sku = "INSERT INTO sku_list (
             sku,create_by,csg_id )
         VALUES 
             ".$sku_list.";";
 
-        $query = mysqli_query($con,$sql);
+        $query_sku = mysqli_query($con,$sql_sku);
 
         //get key
         
