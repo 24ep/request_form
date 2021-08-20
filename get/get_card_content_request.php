@@ -41,7 +41,7 @@ function get_card($status){
     echo    '
     <div class="card" id="card_cr_'.$row["id"].'" style="margin-top:15px;'.$border.'" draggable="true" ondragstart="drag_card_cr(event)">
         <div class="card-body shadow" >
-            <h5 class="card-title" style="font-size:15px"><strong style="color:red">CR-'.$row["id"].'</strong> '.$row["title"].'</h5>
+            <h6 class="card-title" style="font-size:14px"><strong style="color:red">CR-'.$row["id"].'</strong> '.$row["title"].'</h6>
             <p class="card-text" style="color:gray;font-size:13px"  data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].','.$comment.')">'.$description.'</p>
             <ion-icon name="chatbubbles-outline" class="icon_ocv"></ion-icon> 
             <small style="color: #adb5bd;font-size:12px;">'.$count_comment_cr.' Comment <br><strong>'.$row["case_officer"].'</strong> </small>
