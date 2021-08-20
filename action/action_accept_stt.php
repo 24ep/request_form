@@ -18,7 +18,10 @@
         $sku_accepted_array = explode("\n", $sku_accepted);
         $sku_list_array = array();
         foreach ( $sku_accepted_array as $sku ) {
-            array_push($sku_list_array,"('".$sku."','".$_SESSION['username'] ."',".$id.")");
+            if($sku <> '' and $sku <> null){
+                array_push($sku_list_array,"('".trim($sku," ")."','".$_SESSION['username'] ."',".$id.")");
+            }
+            
         }
         print_r ($sku_list_array);
 
