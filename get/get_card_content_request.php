@@ -31,15 +31,15 @@ function get_card($status){
         $border =   'border-color: transparent;border-left:solid 5px red';
         // $border =  'border-color: #ffc7cc;background: #ffc7cc;color: red;';
       }elseif ($row["piority"]=="High"){
-          $border =   'border-color: transparent;border-left:solid 5px  #ffd967';
+          $border =   'border-color: transparent;border-left:solid 5px  #ffd967;min-height:50px';
           // $border =   'border-color: #ffd967;background: #ffd967;color: #795b00;';
       }elseif($row["piority"]=="Medium"){
-          $border =   'border-color: transparent;';
+          $border =   'border-color: transparent;min-height:50px';
       }else{
-          $border =   'border-color: transparent;';
+          $border =   'border-color: transparent;min-height:50px';
       }
     echo    '
-    <div class="card" id="card_cr_'.$row["id"].'" style="margin-top:10px;'.$border.'" draggable="true" ondragstart="drag_card_cr(event)">
+    <div class="card" id="card_cr_'.$row["id"].'" style="margin-top:15px;'.$border.'" draggable="true" ondragstart="drag_card_cr(event)">
         <div class="card-body shadow" >
             <h5 class="card-title" style="font-size:15px"><strong style="color:red">CR-'.$row["id"].'</strong> '.$row["title"].'</h5>
             <p class="card-text" style="color:gray;font-size:13px"  data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].','.$comment.')">'.$description.'</p>
