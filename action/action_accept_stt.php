@@ -14,7 +14,7 @@
         date_default_timezone_set("Asia/Bangkok");
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 
-        $sku_accepted_array = explode("\n", $sku_accepted_array);
+        $sku_accepted_array = explode("\n", $sku_accepted);
         $sku_list_array = array();
         foreach ($sku as $sku_accepted_array) {
             array_push($sku_list_array,"('".$sku ."','".$_SESSION['username'] ."',".$id .")");
