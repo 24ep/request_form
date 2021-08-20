@@ -360,7 +360,7 @@
         }
 
         .col-board {
-            border-right: 1px #f0f2fc87 solid;
+            border-right: 1px #dee2e6 solid;
         }
 
         .cr_title {
