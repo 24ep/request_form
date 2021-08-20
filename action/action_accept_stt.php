@@ -27,6 +27,7 @@
         VALUES 
             ".$sku_list.";";
 
+        echo $sql_sku;
         $query_sku = mysqli_query($con,$sql_sku);
 
         //get key
