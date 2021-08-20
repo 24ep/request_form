@@ -1042,10 +1042,12 @@ function start_checking(id) {
     }
 }
 
-function accepted_stt(id) {
+function accepted_stt(id,) {
     if (id) {
+        sku_accepted = document.getElementById('sku_accepted').value;
         $.post("action/action_accept_stt.php", {
-            id: id
+            id: id,
+            sku_accepted:sku_accepted
         }, function(data) {
             $('#accept_checking_resault').html(data);
         });

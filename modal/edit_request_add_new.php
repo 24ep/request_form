@@ -352,13 +352,12 @@ label#label_file_cme {
                                                 those SKUs,the system will change status of ticket to 'waiting traffic
                                             </small>
 
-                                            <?php  if($_SESSION['username']=='poojaroonwit'){?>
                                             <div >
                                             <label for="sku_accepted">SKU list</label>
                                                 <textarea style="font-size:12px" class="form-control" id="sku_accepted" name="sku_accepted"  placeholder="CDS3466644&#10;CDS2443356&#10;CDS2487356" rows="5" style="height: 100px"></textarea>
                                                 
                                             </div>
-                                            <?php } ?>
+                                          
 
 
                                             <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
