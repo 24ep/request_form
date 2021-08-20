@@ -354,7 +354,7 @@ label#label_file_cme {
 
                                             <?php  if($_SESSION['username']=='poojaroonwit'){?>
                                             <div class="form-floating">
-                                                <textarea class="form-control" id="sku_accepted" name="sku_accepted"  placeholder="Leave a comment here" placeholder="CDS3466644\nCDS23443356\nCDS23445356" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                <textarea class="form-control" id="sku_accepted" name="sku_accepted"  placeholder="CDS3466644\nCDS23443356\nCDS23445356" rows="3" style="height: 100px"></textarea>
                                                 <label for="floatingTextarea2">SKU list</label>
                                             </div>
                                             <?php } ?>
@@ -362,7 +362,7 @@ label#label_file_cme {
 
                                             <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
                                                 class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?> 
-                                                style="width: 100%;">Sent to
+                                                style="width: 100%;margin-top:5px">Sent to
                                                 Traffic</button>
                                                 <?php echo $help_traffic; ?>
                                         </div>
@@ -388,7 +388,7 @@ label#label_file_cme {
                                             </div>
                                             <button onclick="cancel_stt(<?php echo $id; ?>);" type="button"
                                                 class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?> 
-                                                style="width: 100%;;margin-top:5px">Cancel
+                                                style="width: 100%;margin-top:5px">Cancel
                                             </button>
                                             <?php echo $help_cancel; ?>
                                         </div>
