@@ -355,7 +355,7 @@ label#label_file_cme {
                                             <?php  if($_SESSION['username']=='poojaroonwit'){?>
                                             <div >
                                             <label for="sku_accepted">SKU list</label>
-                                                <textarea class="form-control" id="sku_accepted" name="sku_accepted"  placeholder="CDS3466644\nCDS23443356\nCDS23445356" rows="3" style="height: 100px"></textarea>
+                                                <textarea class="form-control" id="sku_accepted" name="sku_accepted"  placeholder="CDS3466644 \r\n CDS23443356 \r\n CDS23445356" rows="3" style="height: 100px"></textarea>
                                                 
                                             </div>
                                             <?php } ?>
