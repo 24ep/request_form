@@ -1045,6 +1045,7 @@ function start_checking(id) {
 function accepted_stt(id,) {
     if (id) {
         sku_accepted = document.getElementById('sku_accepted').value;
+        alert(sku_accepted);
         $.post("action/action_accept_stt.php", {
             id: id,
             sku_accepted:sku_accepted
