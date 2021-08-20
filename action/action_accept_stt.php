@@ -6,7 +6,7 @@
     date_default_timezone_set("Asia/Bangkok");
     $id = $_POST["id"];
     $sku_accepted = $_POST['sku_accepted'];
-    echo $sku_accepted;
+    
     $sql = "UPDATE add_new_job SET accepted_date = CURRENT_TIMESTAMP , status = 'waiting traffic'  WHERE id=".$id;
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
@@ -20,15 +20,15 @@
         foreach ( $sku_accepted_array as $sku ) {
             array_push($sku_list_array,"('".$sku."','".$_SESSION['username'] ."',".$id.")");
         }
-        
+        print_r ($sku_list_array);
 
         $sku_list = implode(',',$sku_list_array);
-
+        echo $sku_list;
         $sql_sku = "INSERT INTO sku_list (
             sku,create_by,csg_id )
         VALUES 
             ".$sku_list.";";
-
+echo $sql_sku;
         
         $query_sku = mysqli_query($con,$sql_sku);
 
