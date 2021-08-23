@@ -67,6 +67,17 @@ $send_type= $_POST["send_type"];
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
   }
+  //accept
+  if(strpos($comment,"#accepted")!==false){
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+    mysqli_query($con, "SET NAMES 'utf8' ");
+    $comment_to_nmi =str_replace('#accepted','',$comment);
+    $sql = "UPDATE add_new_job SET 
+    accepted_date = CURRENT_TIMESTAMP,
+    status = 'accepted'  WHERE id=".$id;
+    $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
+    $query = mysqli_query($con,$sql);
+  }
   //repy_back
   if($send_type=="send_back_data"){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
