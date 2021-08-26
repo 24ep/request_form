@@ -48,6 +48,8 @@
 $insrt_head .= "job_type";
 $insrt_value .= "'New'";
 if($job_number_laset<>""){ $insrt_head .= ",job_number";$insrt_value .= ",'".$job_number_laset."'";}
+// if($_POST["content_assign_name_adj"]<>""){ $insrt_head .= ",content_assign_name";$insrt_value .= ",'".$_POST["content_assign_name_adj"]."'";}
+// if($_POST["content_assign_date_adj"]<>""){ $insrt_head .= ",content_assign_date";$insrt_value .= ",'".$_POST["content_assign_date_adj"]."'";}
 if($_POST["department_adj"]<>""){ $insrt_head .= ",department";$insrt_value .= ",'".$_POST["department_adj"]."'";}
 if($_POST["sub_department_adj"]<>""){ $insrt_head .= ",sub_department";$insrt_value .= ",'".$_POST["sub_department_adj"]."'";}
 if($_POST["brand_adj"]<>""){ $insrt_head .= ",brand";$insrt_value .= ",'".str_replace("'","''",$_POST["brand_adj"])."'";}
