@@ -227,21 +227,21 @@ function getoption_return_create_job($col,$table,$select_option,$sorm,$database)
         </select>
     </div>
 </div>
-<!-- <div class="row">
+<div class="row">
   <div class="col-3">
         <label for="exampleInputEmail1">Content Writer assign name</label>
         <select style="background: #ffe9b2" class="form-select form-select-sm" id="content_assign_name_adj" 
             name="content_assign_name_adj">
-            <?php //echo $content_nickname_op; ?>
+            <?php echo $content_nickname_op; ?>
         </select>
   </div>
   <div class="col-3">
         <label for="exampleInputEmail1">Content Writer assign date</label>
         <input style="background: #ffe9b2" type="datetime-local" class="form-control form-control-sm"
-            value="<?php //echo date("Y-m-d H:i:s"); ?>"  placeholder="yyyy-MM-dd"
+            value="<?php echo date("Y-m-d H:i:s"); ?>"  placeholder="yyyy-MM-dd"
             id="content_assign_date_adj" name="content_assign_date_adj">
   </div>
-</div> -->
+</div>
 <div class="row" style="padding-top: 10px;">
     <div class="col">
         <label for="inputState">Traffic Remark</label>
