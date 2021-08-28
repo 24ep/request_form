@@ -442,6 +442,7 @@ label#label_file_cme {
                                 <div class="row g-3">
                                     <div class="col-4">
                                         <label for="staticEmail2">Start checking</label>
+                                        <small>ลงบันทึกเวลาที่เริ่มตรวจสอบ ticket นี้</small>
                                     </div>
                                     <div class="col-4">
                                         <?php
@@ -487,8 +488,7 @@ label#label_file_cme {
                                 <div class="row g-3">
                                     <div class="col-4">
                                         <label for="staticEmail2">cancel ticket</label>
-                                        <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted">
-                                                    ระบุ สาเหตุ ที่ cancel</label>
+                                <small> กรุณาระบุสาเหตุที่ต้องการยกเลิก ticket นี้ให้ชัดเจน</small>
                                                 <input type="text" class="form-control" id="resone_cancel"
                                                     <?php $allow_cancel; ?> name="resone_cancel" value="">
                                     </div>
