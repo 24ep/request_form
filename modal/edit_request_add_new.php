@@ -173,15 +173,15 @@ label#label_file_cme {
                             <hr>
                             <a class="nav-link inpo" id="v-pills-itemize-tab" data-toggle="pill" href="#v-pills-itemize"
                                 role="tab" aria-controls="v-pills-itemize" aria-selected="false">
-                                <ion-icon name="sparkles-outline"></ion-icon>Itemize
+                                <ion-icon name="sparkles-outline"></ion-icon>Itemize stage
                             </a>
                             <a class="nav-link inpo" id="v-pills-fu_team-tab" data-toggle="pill" href="#v-pills-fu_team"
                                 role="tab" aria-controls="v-pills-fu_team" aria-selected="false">
-                                <ion-icon name="sparkles-outline"></ion-icon>follow-up team
+                                <ion-icon name="sparkles-outline"></ion-icon>follow-up stage
                             </a>
                             <a class="nav-link inpo" id="v-pills-tf_team-tab" data-toggle="pill" href="#v-pills-tf_team"
                                 role="tab" aria-controls="v-pills-tf_team" aria-selected="false">
-                                <ion-icon name="trail-sign-outline"></ion-icon>traffic team
+                                <ion-icon name="trail-sign-outline"></ion-icon>traffic stage
                             </a>
                             <a class="nav-link inpo" id="v-pills-sku-tab" data-toggle="pill" href="#v-pills-sku"
                                 role="tab" aria-controls="v-pills-sku" aria-selected="false">
