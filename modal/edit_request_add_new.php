@@ -227,9 +227,11 @@ label#label_file_cme {
                             <div class="tab-pane fade" id="v-pills-request_detail" role="tabpanel"
                                 aria-labelledby="v-pills-request_detail-tab">
                                 <div class="container" style="padding: 20px!important;">
-                                <div class="alert alert-primary" role="alert">
-                                <ion-icon name="color-wand-outline"></ion-icon>   สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ จนกว่า ทาง Content-Traffic จะทำการ assign ticket นี้ให้กับทางผู้เกี่ยวข้อง
-                                </div>
+                                    <div class="alert alert-primary" role="alert">
+                                        <ion-icon name="color-wand-outline"></ion-icon>
+                                        สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ จนกว่า ทาง Content-Traffic จะทำการ assign
+                                        ticket นี้ให้กับทางผู้เกี่ยวข้อง
+                                    </div>
                                     <?php include('../form/form_request_edit_new.php')?>
 
                                 </div>
@@ -249,7 +251,7 @@ label#label_file_cme {
                         </p>
                         </div>';
                     }?>
-                    <?php 
+                                <?php 
                     if($start_checking_date<>"" and $start_checking_date<>null){
                         $allow_task_ticket = "disabled";
                         $help_start = "<small style='color:Red'><strong>".$follow_up_by."</strong> had been start checking information</small>";
@@ -283,66 +285,68 @@ label#label_file_cme {
 
                     
                     ?>
-                    <?php if(!isset($parent) or $status <> 'accepted'){
+                                <?php if(!isset($parent) or $status <> 'accepted'){
 
                     ?>
-                            <h6><strong>Create Sub Ticket</strong></h6>
+                                <h6><strong>Create Sub Ticket</strong></h6>
                                 <small>Generate new sub-ticket and convert ticket from buyer to parent ticket</small>
-                            <form>
-                                <div class="row mb-1" style="margin-top:10px">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">SKU</label>
-                                    <div class="col-sm-7">
-                                        <input type="text" class="form-control form-control-sm" id="sku_task_set"
-                                            name="sku_task_set" placeholder="10,40,23,45,45" required>
-                                    </div>
-                                    <div class="col-sm-3" >
-                                        <button type="button" id="bt_create_task" onclick="split_to_subtask(<?php echo $id; ?>);"
-                                            class="btn btn-outline-primary btn-sm">
-                                            <ion-icon name="color-wand-outline"></ion-icon>Create Sub-ticket
-                                        </button>
-                                    </div>
-                                    <div id="emailHelp" class="form-text">
-                                        <strong>Does it work ?</strong>
-                                        <ul>
-                                            <li>Fll separate number of SKUs you want to create sub-ticket</li>
-                                            <li>Additional data will be copy from parent ticket</li>
-                                            <li>Parent sku do not calculate on report</li>
-                                        </ul>
-                                    </div>
+                                <form>
+                                    <div class="row mb-1" style="margin-top:10px">
+                                        <label for="inputEmail3" class="col-sm-2 col-form-label">SKU</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control form-control-sm" id="sku_task_set"
+                                                name="sku_task_set" placeholder="10,40,23,45,45" required>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <button type="button" id="bt_create_task"
+                                                onclick="split_to_subtask(<?php echo $id; ?>);"
+                                                class="btn btn-outline-primary btn-sm">
+                                                <ion-icon name="color-wand-outline"></ion-icon>Create Sub-ticket
+                                            </button>
+                                        </div>
+                                        <div id="emailHelp" class="form-text">
+                                            <strong>Does it work ?</strong>
+                                            <ul>
+                                                <li>Fll separate number of SKUs you want to create sub-ticket</li>
+                                                <li>Additional data will be copy from parent ticket</li>
+                                                <li>Parent sku do not calculate on report</li>
+                                            </ul>
+                                        </div>
 
-                                </div>
+                                    </div>
                                 </form>
-                              
-                            <?php } ?>
 
-                        <?php if($config_type=="task"){ ?>
-                            <hr>
+                                <?php } ?>
+
+                                <?php if($config_type=="task"){ ?>
+                                <hr>
                                 <h6><strong>Main action Console</strong></h6>
                                 <small>Manage you ticket at here , please make sure your step before take action</small>
-                               
+
                                 <div class="card-group" style="margin-top:10px">
                                     <div class="card">
                                         <div class="card-body">
                                             <h6 class="card-title">1.Checking information</h6>
-                                            <small >Press this button first for take a job,the system will
+                                            <small>Press this button first for take a job,the system will
                                                 show your contact on detail of ticket and notification to requester
                                                 ticket</small>
-                                            
+
                                             <button onclick="start_checking(<?php echo $id; ?>);" type="button"
                                                 class="btn btn-primary btn-sm" <?php echo $allow_task_ticket; ?>
                                                 style="width: 100%;">Start
                                                 Checking</button>
                                             <?php echo $help_start; ?>
-                                                
+
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted">
-                                                <div id="start_checking_resault">Latest : <?php echo $start_checking_date;?> 
+                                                <div id="start_checking_resault">Latest :
+                                                    <?php echo $start_checking_date;?>
                                                 </div>
                                             </small>
                                         </div>
                                     </div>
-                            <?php  if($start_checking_date<>"" and $start_checking_date<>null ){
+                                    <?php  if($start_checking_date<>"" and $start_checking_date<>null ){
                                 
                                 ?>
                                     <div class="card">
@@ -352,78 +356,92 @@ label#label_file_cme {
                                                 those SKUs,the system will change status of ticket to 'waiting traffic
                                             </small>
 
-                                            <div >
-                                            <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted">SKU list (Copy 1 column จาก excel วางตามด้าานล่าง)</label>
-                                                <textarea  style="font-size:12px" class="form-control" id="sku_accepted" name="sku_accepted"  placeholder="CDS3466644&#10;CDS2443356&#10;CDS2487356" rows="5" style="height: 100px"></textarea>
-                                                
+                                            <div>
+                                                <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted">SKU
+                                                    list (Copy 1 column จาก excel วางตามด้าานล่าง)</label>
+                                                <textarea style="font-size:12px" class="form-control" id="sku_accepted"
+                                                    name="sku_accepted"
+                                                    placeholder="CDS3466644&#10;CDS2443356&#10;CDS2487356" rows="5"
+                                                    style="height: 100px"></textarea>
+
                                             </div>
-                                          
+
 
 
                                             <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
-                                                class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?> 
+                                                class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?>
                                                 style="width: 100%;margin-top:5px">Sent to
                                                 Traffic</button>
-                                                <?php echo $help_traffic; ?>
+                                            <?php echo $help_traffic; ?>
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted">
-                                                <div id="accept_checking_resault">Latest : <?php echo $accepted_date;?></div>
+                                                <div id="accept_checking_resault">Latest : <?php echo $accepted_date;?>
+                                                </div>
                                             </small>
                                         </div>
                                     </div>
-                    <?php  
+                                    <?php  
                     } ?>
                                     <div class="card">
                                         <div class="card-body">
                                             <h6 class="card-title">Cancel ticket</h6>
-                                            <small >Press this button when you want ... or requester
+                                            <small>Press this button when you want ... or requester
                                                 request to cancel this ticket,please make sure you have a reason for
                                                 take this action </small>
 
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="resone_cancel" <?php $allow_cancel; ?> 
-                                                    name="resone_cancel" value="">
+                                                <input type="text" class="form-control" id="resone_cancel"
+                                                    <?php $allow_cancel; ?> name="resone_cancel" value="">
                                                 <label for="floatingInputGrid">Reason</label>
                                             </div>
                                             <button onclick="cancel_stt(<?php echo $id; ?>);" type="button"
-                                                class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?> 
+                                                class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
                                                 style="width: 100%;margin-top:5px">Cancel
                                             </button>
                                             <?php echo $help_cancel; ?>
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted">
-                                                <div id="cancel_checking_resault">Latest : <?php echo $cancel_resone;?></div>
+                                                <div id="cancel_checking_resault">Latest : <?php echo $cancel_resone;?>
+                                                </div>
                                             </small>
                                         </div>
                                     </div>
 
-                                
 
-                                  
+
+
                                 </div>
                                 <?php } ?>
                                 <hr>
-                                <div class="row g-3">
+                                <div class="row g-2">
                                     <div class="col-auto">
                                         <label for="staticEmail2">Start checking</label>
                                     </div>
+
                                     <div class="col-auto">
-                                            <div id="start_checking_resault">Latest : <?php echo $start_checking_date;?> 
-                                                </div>
-                                    </div>
-                                    <div class="col-auto">
-                                    <button onclick="start_checking(<?php echo $id; ?>);" type="button"
-                                                class="btn btn-primary btn-sm" <?php echo $allow_task_ticket; ?>
-                                                style="width: 100%;">Start
-                                                Checking</button>
+                                        <?php
+                                            if($start_checking_date == null){
+                                                echo ' <button onclick="start_checking('.$id.');"
+                                        type="button"
+                                        class="btn btn-primary btn-sm" '.$allow_task_ticket.'
+                                        style="width: 100%;">Start</button>';
+
+                                        }else{
+                                        echo ' <button onclick="start_checking('.$id.');" type="button"
+                                            class="btn btn-primary btn-sm" '.$allow_task_ticket.'
+                                            style="width: 100%;">'.$start_checking_date.'</button>';
+                                        }
+                                        ?>
+
                                     </div>
                                     <div class="col-auto">
                                         <?php echo $help_start; ?>
                                     </div>
-                                   
+
                                 </div>
+                               
                             </div>
                             <div class="tab-pane fade" id="v-pills-tf_team" role="tabpanel"
                                 aria-labelledby="v-pills-tf_team-tab">
@@ -433,8 +451,9 @@ label#label_file_cme {
                                         <label for="staticEmail2" class="">follow-up name</label>
                                     </div> -->
                                     <div class="col-auto">
-                                        <select class="form-select" id="op_follow_assign_name" name="op_follow_assign_name" aria-label="Default select example">
-                                        <?php
+                                        <select class="form-select" id="op_follow_assign_name"
+                                            name="op_follow_assign_name" aria-label="Default select example">
+                                            <?php
                                             $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
                                             $query = "SELECT account.username as username,account.nickname as nickname,account.department as department,account.status as status ,sum(new_job.sku) as backlog_sku 
                                             FROM account as account 
@@ -460,19 +479,21 @@ label#label_file_cme {
                                             mysqli_close($con);
 
                                         ?>
-                                
+
                                         </select>
                                     </div>
-                                    
-                                      
-                                   
+
+
+
                                     <div class="col-auto">
-                                        <button type="button" onclick="action_assign_follow(<?php echo  $_POST['id']; ?>)" class="btn btn-primary mb-3">Assign to NS-<?php echo $id;?></button>
+                                        <button type="button"
+                                            onclick="action_assign_follow(<?php echo  $_POST['id']; ?>)"
+                                            class="btn btn-primary mb-3">Assign to NS-<?php echo $id;?></button>
                                     </div>
                                 </form>
-                               
+
                                 <?php if($status == 'waiting traffic'){ ?>
-                                    <hr>
+                                <hr>
                                 <h6><strong>Create Writer & Studio - 24ep</strong></h6>
                                 <form action="action/action_create_job_cms.php" method="POST" target="_blank">
                                     <input type="hidden" id="id_adj" name="id_adj" value="<?php echo  $_POST['id']; ?>">
@@ -505,7 +526,7 @@ label#label_file_cme {
                                 <button type="button" class="btn btn-outline-primary btn-sm"
                                     onClick="comment_ins_id_with_file(<?php echo  $_POST['id']; ?>)">Add
                                     comment</button>
-                              
+
                             </div>
                         </div>
                     </div>
@@ -680,27 +701,30 @@ function comment_cme_id_with_file(id, send_type) {
 
 function split_to_subtask(id) {
     var sku_task_set = document.getElementById("sku_task_set").value;
-     document.getElementById('bt_create_task').innerHTML  = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Loading...';
-    
-   
+    document.getElementById('bt_create_task').innerHTML =
+        '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Loading...';
+
+
     if (id) {
         $.post("action/action_ns_create_subtask.php", {
                 id: id,
                 sku_task_set: sku_task_set
             },
             function(data) {
-            
+
                 $('#call_subtask').html(data);
-                
+
                 // alert("Created new sub ticket");
             });
-            document.getElementById('sku_task_set').value = ''; //clear value
-            document.getElementById('bt_create_task').innerHTML  = '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
+        document.getElementById('sku_task_set').value = ''; //clear value
+        document.getElementById('bt_create_task').innerHTML =
+            '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
     }
 }
+
 function action_assign_follow(id) {
     var op_follow_assign_name = document.getElementById("op_follow_assign_name").value;
-    
+
     if (id) {
         $.post("action/action_assign_follow.php", {
                 id: id,
@@ -710,9 +734,8 @@ function action_assign_follow(id) {
                 // $('#call_subtask').html(data);       
                 // alert("Assigned !");
             });
-            alert("Assigned !");
- 
+        alert("Assigned !");
+
     }
 }
-
 </script>
