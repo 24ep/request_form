@@ -323,7 +323,7 @@ label#label_file_cme {
                                 <h6><strong>Main action Console</strong></h6>
                                 <small>Manage you ticket at here , please make sure your step before take action</small>
 
-                                <div class="card-group" style="margin-top:10px">
+                                <!-- <div class="card-group" style="margin-top:10px"> -->
                                     <!-- <div class="card">
                                         <div class="card-body">
                                             <h6 class="card-title">1.Checking information</h6>
@@ -383,7 +383,7 @@ label#label_file_cme {
                                     </div>
                                     <?php  
                     //} ?> -->
-                                    <div class="card">
+                                    <!-- <div class="card">
                                         <div class="card-body">
                                             <h6 class="card-title">Cancel ticket</h6>
                                             <small>Press this button when you want ... or requester
@@ -392,35 +392,35 @@ label#label_file_cme {
 
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="resone_cancel"
-                                                    <?php $allow_cancel; ?> name="resone_cancel" value="">
+                                                    <?php //$allow_cancel; ?> name="resone_cancel" value="">
                                                 <label for="floatingInputGrid">Reason</label>
                                             </div>
-                                            <button onclick="cancel_stt(<?php echo $id; ?>);" type="button"
-                                                class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
+                                            <button onclick="cancel_stt(<?php //echo $id; ?>);" type="button"
+                                                class="btn btn-danger btn-sm" <?php //echo $allow_cancel; ?>
                                                 style="width: 100%;margin-top:5px">Cancel
                                             </button>
-                                            <?php echo $help_cancel; ?>
+                                            <?php //echo $help_cancel; ?>
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted">
-                                                <div id="cancel_checking_resault">Latest : <?php echo $cancel_resone;?>
+                                                <div id="cancel_checking_resault">Latest : <?php //echo $cancel_resone;?>
                                                 </div>
                                             </small>
                                         </div>
-                                    </div>
+                                    </div> -->
 
 
 
 
-                                </div>
-                                <?php } ?>
+                                <!-- </div>
+                              
                                 <!-- start -->
                                 <hr> 
                                 <div class="row g-3">
-                                    <div class="col-auto">
+                                    <div class="col-4">
                                         <label for="staticEmail2">Start checking</label>
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col-4">
                                         <?php
                                            echo ' <button onclick="start_checking('.$id.');"
                                            type="button"
@@ -428,7 +428,7 @@ label#label_file_cme {
                                            style="width: 100%;">Start</button>';
                                         ?>
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col-4">
                                         <?php echo $help_start." ".$start_checking_date; ?>
                                     </div>
                                 </div>
@@ -436,11 +436,9 @@ label#label_file_cme {
                                 <?php  if($start_checking_date<>"" and $start_checking_date<>null ){?>
                                 <hr>
                                 <div class="row g-3">
-                                    <div class="col-auto">
+                                    <div class="col-4">
                                         <label for="staticEmail2">accept to open job</label>
-                                    </div>
-                                    <div class="col-auto">
-                                            <div>
+                                        <div>
                                                 <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted">SKU
                                                     list (Copy 1 column จาก excel วางตามด้านล่าง)</label>
                                                 <textarea style="font-size:12px" class="form-control" id="sku_accepted"
@@ -450,16 +448,40 @@ label#label_file_cme {
 
                                             </div>
                                     </div>
-                                    <div class="col-auto">
+                                   
+                                    <div class="col-4">
                                      <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
                                                 class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?>
                                                 style="width: 100%;margin-top:5px">accept</button>
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col-4">
                                         <?php echo $help_accept." ".$accepted_date; ?>
                                     </div>
                                 </div>
                                 <?php } ?>
+                                <!-- cancel -->
+                              
+                                <hr>
+                                <div class="row g-3">
+                                    <div class="col-4">
+                                        <label for="staticEmail2">cancel ticket</label>
+                                        <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted">
+                                                    ระบุ สาเหตุ ที่ cancel</label>
+                                                <input type="text" class="form-control" id="resone_cancel"
+                                                    <?php $allow_cancel; ?> name="resone_cancel" value="">
+                                    </div>
+                                   
+                                    <div class="col-auto">
+                                    <button onclick="cancel_stt(<?php echo $id; ?>);" type="button"
+                                                class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
+                                                style="width: 100%;margin-top:5px">Cancel
+                                            </button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <?php echo $help_cancel." ".$cancel_resone; ?>
+                                    </div>
+                                </div>
+                                <?php } ?> 
                             </div>
                             <div class="tab-pane fade" id="v-pills-tf_team" role="tabpanel"
                                 aria-labelledby="v-pills-tf_team-tab">
