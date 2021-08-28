@@ -30,7 +30,11 @@
         $sql_sku = "INSERT INTO sku_list (
             sku,create_by,csg_id )
         VALUES 
-            ".$sku_list.";";
+            ".$sku_list."
+            ON DUPLICATE KEY UPDATE
+            csg_id = new.csg_id,
+            create_by = new.create_by
+            ;";
 echo $sql_sku;
         
         $query_sku = mysqli_query($con,$sql_sku);

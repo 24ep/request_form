@@ -183,6 +183,10 @@ label#label_file_cme {
                                 role="tab" aria-controls="v-pills-tf_team" aria-selected="false">
                                 <ion-icon name="trail-sign-outline"></ion-icon>traffic team
                             </a>
+                            <a class="nav-link inpo" id="v-pills-sku-tab" data-toggle="pill" href="#v-pills-sku"
+                                role="tab" aria-controls="v-pills-sku" aria-selected="false">
+                                <ion-icon name="trail-sign-outline"></ion-icon>SKU list
+                            </a>
                             <a class="nav-link inpo" id="v-pills-internal_note-tab" data-toggle="pill"
                                 href="#v-pills-internal_note" role="tab" aria-controls="v-pills-internal_note"
                                 aria-selected="false">
@@ -396,6 +400,11 @@ label#label_file_cme {
                                     </div>
                                 </div>
                                 <?php } ?> 
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-sku" role="tabpanel"
+                                aria-labelledby="v-pills-sku-tab">
+                                <?php include("get_list_sku_ticket.php") ?>
+
                             </div>
                             <div class="tab-pane fade" id="v-pills-itemize" role="tabpanel"
                                 aria-labelledby="v-pills-itemize-tab">
