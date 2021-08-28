@@ -324,28 +324,28 @@ label#label_file_cme {
                                 <small>Manage you ticket at here , please make sure your step before take action</small>
 
                                 <div class="card-group" style="margin-top:10px">
-                                    <div class="card">
+                                    <!-- <div class="card">
                                         <div class="card-body">
                                             <h6 class="card-title">1.Checking information</h6>
                                             <small>Press this button first for take a job,the system will
                                                 show your contact on detail of ticket and notification to requester
                                                 ticket</small>
 
-                                            <button onclick="start_checking(<?php echo $id; ?>);" type="button"
-                                                class="btn btn-primary btn-sm" <?php echo $allow_task_ticket; ?>
+                                            <button onclick="start_checking(<?php //echo $id; ?>);" type="button"
+                                                class="btn btn-primary btn-sm" <?php /echo $allow_task_ticket; ?>
                                                 style="width: 100%;">Start
                                                 Checking</button>
-                                            <?php echo $help_start; ?>
+                                            <?php //echo $help_start; ?>
 
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted">
                                                 <div id="start_checking_resault">Latest :
-                                                    <?php echo $start_checking_date;?>
+                                                    <?php// echo $start_checking_date;?>
                                                 </div>
                                             </small>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <?php  if($start_checking_date<>"" and $start_checking_date<>null ){
                                 
                                 ?>
@@ -414,32 +414,49 @@ label#label_file_cme {
 
                                 </div>
                                 <?php } ?>
-                                <hr>
-                                <div class="row g-2">
+                                <!-- start -->
+                                <hr> 
+                                <div class="row g-3">
                                     <div class="col-auto">
                                         <label for="staticEmail2">Start checking</label>
                                     </div>
-
                                     <div class="col-auto">
                                         <?php
-                                            if($start_checking_date == null){
-                                                echo ' <button onclick="start_checking('.$id.');"
-                                        type="button"
-                                        class="btn btn-primary btn-sm" '.$allow_task_ticket.'
-                                        style="width: 100%;">Start</button>';
-
-                                        }else{
-                                        echo ' <button onclick="start_checking('.$id.');" type="button"
-                                            class="btn btn-primary btn-sm" '.$allow_task_ticket.'
-                                            style="width: 100%;">'.$start_checking_date.'</button>';
-                                        }
+                                           echo ' <button onclick="start_checking('.$id.');"
+                                           type="button"
+                                           class="btn btn-primary btn-sm" '.$allow_task_ticket.'
+                                           style="width: 100%;">Start</button>';
                                         ?>
-
                                     </div>
                                     <div class="col-auto">
-                                        <?php echo $help_start; ?>
+                                        <?php echo $help_start.$start_checking_date ?>
                                     </div>
+                                </div>
+                                <!-- accepted -->
+                                <hr>
+                                <div class="row g-3">
+                                    <div class="col-auto">
+                                        <label for="staticEmail2">accept to open job</label>
+                                    </div>
+                                    <div class="col-auto">
+                                            <div>
+                                                <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted">SKU
+                                                    list (Copy 1 column จาก excel วางตามด้าานล่าง)</label>
+                                                <textarea style="font-size:12px" class="form-control" id="sku_accepted"
+                                                    name="sku_accepted"
+                                                    placeholder="CDS3466644&#10;CDS2443356&#10;CDS2487356" rows="5"
+                                                    style="height: 100px"></textarea>
 
+                                            </div>
+                                    </div>
+                                    <div class="col-auto">
+                                     <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
+                                                class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?>
+                                                style="width: 100%;margin-top:5px">accept</button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <?php echo $help_accept." ".$accepted_date ?>
+                                    </div>
                                 </div>
                                
                             </div>
