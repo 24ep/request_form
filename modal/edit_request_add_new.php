@@ -429,7 +429,7 @@ label#label_file_cme {
                                         ?>
                                     </div>
                                     <div class="col-auto">
-                                        <?php echo $help_start.$start_checking_date ?>
+                                        <?php echo $help_start.$start_checking_date; ?>
                                     </div>
                                 </div>
                                 <!-- accepted -->
@@ -455,7 +455,7 @@ label#label_file_cme {
                                                 style="width: 100%;margin-top:5px">accept</button>
                                     </div>
                                     <div class="col-auto">
-                                        <?php echo $help_accept." ".$accepted_date ?>
+                                        <?php echo $help_accept." ".$accepted_date; ?>
                                     </div>
                                 </div>
                                
