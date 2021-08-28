@@ -399,9 +399,31 @@ label#label_file_cme {
                                         </div>
                                     </div>
 
+                                
+
                                   
                                 </div>
                                 <?php } ?>
+                                <hr>
+                                <div class="row g-3">
+                                    <div class="col-auto">
+                                        <label for="staticEmail2">Start checking</label>
+                                    </div>
+                                    <div class="col-auto">
+                                            <div id="start_checking_resault">Latest : <?php echo $start_checking_date;?> 
+                                                </div>
+                                    </div>
+                                    <div class="col-auto">
+                                    <button onclick="start_checking(<?php echo $id; ?>);" type="button"
+                                                class="btn btn-primary btn-sm" <?php echo $allow_task_ticket; ?>
+                                                style="width: 100%;">Start
+                                                Checking</button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <?php echo $help_start; ?>
+                                    </div>
+                                   
+                                </div>
                             </div>
                             <div class="tab-pane fade" id="v-pills-tf_team" role="tabpanel"
                                 aria-labelledby="v-pills-tf_team-tab">
@@ -483,6 +505,7 @@ label#label_file_cme {
                                 <button type="button" class="btn btn-outline-primary btn-sm"
                                     onClick="comment_ins_id_with_file(<?php echo  $_POST['id']; ?>)">Add
                                     comment</button>
+                              
                             </div>
                         </div>
                     </div>
