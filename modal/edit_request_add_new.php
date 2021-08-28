@@ -439,11 +439,10 @@ label#label_file_cme {
                                     <div class="col-4">
                                         <label for="staticEmail2">accept to open job</label>
                                         <div>
-                                                <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted">SKU
-                                                    list (Copy 1 column จาก excel วางตามด้านล่าง)</label>
+                                                <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted"></label>
                                                 <textarea style="font-size:12px" class="form-control" id="sku_accepted"
                                                     name="sku_accepted"
-                                                    placeholder="CDS3466644&#10;CDS2443356&#10;CDS2487356" rows="5"
+                                                    placeholder="Copy 1 column จาก excel วางตามตัวอย่างด้านล่าง&#10;&#10;CDS3466644&#10;CDS2443356&#10;CDS2487356" rows="5"
                                                     style="height: 100px"></textarea>
 
                                             </div>
@@ -471,13 +470,13 @@ label#label_file_cme {
                                                     <?php $allow_cancel; ?> name="resone_cancel" value="">
                                     </div>
                                    
-                                    <div class="col-auto">
+                                    <div class="col-4">
                                     <button onclick="cancel_stt(<?php echo $id; ?>);" type="button"
                                                 class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
                                                 style="width: 100%;margin-top:5px">Cancel
                                             </button>
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col-4">
                                         <?php echo $help_cancel." ".$cancel_resone; ?>
                                     </div>
                                 </div>
