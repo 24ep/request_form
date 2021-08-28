@@ -413,6 +413,27 @@ label#label_file_cme {
 
 
                                 <!-- </div>
+                                <!-- Itemmize send email stamp -->
+                                <hr> 
+                                <div class="row g-3">
+                                    <div class="col-4">
+                                        <label for="staticEmail2">Itemize send email stamp</label>
+                                        <small>ลงบันทึกส่งอีเมลติดตาม (ระบุ tag ticket id บนอีเมลทุกครั้ง)</small>
+                                        <input class="form-control" type="text" id="itemize_subject_email" placeholder="subject email" aria-label="default input example">
+
+                                    </div>
+                                    <div class="col-4">
+                                        <?php
+                                           echo ' <button onclick="itemize_send_mail_stamp('.$id.');"
+                                           type="button"
+                                           class="btn btn-primary btn-sm"
+                                           style="width: 100%;">Save</button>';
+                                        ?>
+                                    </div>
+                                    <div class="col-4">
+                                        <?php echo $help_start." ".$start_checking_date; ?>
+                                    </div>
+                                </div>
                               
                                 <!-- start -->
                                 <hr> 
@@ -689,6 +710,22 @@ function comment_cr_id(id) {
             });
     }
 }
+
+function itemize_send_mail_stamp(id) {
+    var comment = "[stamp_send_mail]";
+    if (id) {
+        $.post("action/action_comment_ins.php", {
+                id: id,
+                comment: comment
+            },
+            function(data) {
+                $('#call_ticket_comment_ins').html(data);
+                document.getElementById('comment_box_ins').scrollBy(0, document.getElementById(
+                    "call_ticket_comment_ins").offsetHeight);
+            });
+    }
+}
+
 
 function comment_ticket_id(id, send_type) {
     var comment = document.getElementById("comment_input").value;
