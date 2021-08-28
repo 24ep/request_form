@@ -29,7 +29,7 @@ $subject_mail =$_POST["subject_mail"];
       $query = mysqli_query($con,$sql_update);
 
       if($query){
-          echo 'success !';
+          echo '<strong style="color:green">Success !</strong>';
       }else{
         echo 'Error: ' . $sql . '<hr>' . $con->error.'';
       }
