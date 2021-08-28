@@ -99,6 +99,7 @@ label#label_file_cme {
       $sub_department = $row['sub_department'];
       $parent = $row['parent'];
       $config_type = $row['config_type'];
+      $subject_mail = $row['subject_mail'];
       
 
     //stamp color status
