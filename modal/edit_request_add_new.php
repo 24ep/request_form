@@ -403,7 +403,7 @@ label#label_file_cme {
                             </div>
                             <div class="tab-pane fade" id="v-pills-sku" role="tabpanel"
                                 aria-labelledby="v-pills-sku-tab">
-                                <?php include('../get/get_list_sku_ticket.php?id='.$id); ?>
+                                <?php include('../get/get_list_sku_ticket.php'); ?>
 
                             </div>
                             <div class="tab-pane fade" id="v-pills-itemize" role="tabpanel"
