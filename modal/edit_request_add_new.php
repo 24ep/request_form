@@ -431,7 +431,9 @@ label#label_file_cme {
                                         ?>
                                     </div>
                                     <div class="col-4">
-                                        <?php echo $help_start." ".$start_checking_date; ?>
+                                        <div id ="itemize_stamp_respond">
+                                             <?php echo "<small>Itemize only !</small>" ?>
+                                        </div>
                                     </div>
                                 </div>
                               
@@ -713,15 +715,15 @@ function comment_cr_id(id) {
 
 function itemize_send_mail_stamp(id) {
     var comment = "[stamp_send_mail]";
+    var subject_mail = document.getElementById("itemize_subject_email").value;
     if (id) {
-        $.post("action/action_comment_ins.php", {
+        $.post("action/action_stamp_send_mail_itemize.php", {
                 id: id,
-                comment: comment
+                comment: comment,
+                subject_mail:subject_mail
             },
             function(data) {
-                $('#call_ticket_comment_ins').html(data);
-                document.getElementById('comment_box_ins').scrollBy(0, document.getElementById(
-                    "call_ticket_comment_ins").offsetHeight);
+                $('#itemize_stamp_respond').html(data);
             });
     }
 }

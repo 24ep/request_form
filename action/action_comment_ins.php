@@ -126,4 +126,5 @@ if($comment<>'' or $file_size <>0){
               }
          }
       }
+      mysqli_close($con);
 ?>
