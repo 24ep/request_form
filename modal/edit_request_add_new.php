@@ -171,6 +171,10 @@ label#label_file_cme {
                             </a>
                             <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                             <hr>
+                            <a class="nav-link inpo" id="v-pills-itemize-tab" data-toggle="pill" href="#v-pills-itemize"
+                                role="tab" aria-controls="v-pills-itemize" aria-selected="false">
+                                <ion-icon name="sparkles-outline"></ion-icon>Itemize
+                            </a>
                             <a class="nav-link inpo" id="v-pills-fu_team-tab" data-toggle="pill" href="#v-pills-fu_team"
                                 role="tab" aria-controls="v-pills-fu_team" aria-selected="false">
                                 <ion-icon name="sparkles-outline"></ion-icon>follow-up team
@@ -323,120 +327,7 @@ label#label_file_cme {
                                 <hr>
                                 <h6><strong>Main action Console</strong></h6>
                                 <small>Manage you ticket at here , please make sure your step before take action</small>
-
-                                <!-- <div class="card-group" style="margin-top:10px"> -->
-                                    <!-- <div class="card">
-                                        <div class="card-body">
-                                            <h6 class="card-title">1.Checking information</h6>
-                                            <small>Press this button first for take a job,the system will
-                                                show your contact on detail of ticket and notification to requester
-                                                ticket</small>
-
-                                            <button onclick="start_checking(<?php //echo $id; ?>);" type="button"
-                                                class="btn btn-primary btn-sm" <?php //echo $allow_task_ticket; ?>
-                                                style="width: 100%;">Start
-                                                Checking</button>
-                                            <?php //echo $help_start; ?>
-
-                                        </div>
-                                        <div class="card-footer">
-                                            <small class="text-muted">
-                                                <div id="start_checking_resault">Latest :
-                                                    <?php// echo $start_checking_date;?>
-                                                </div>
-                                            </small>
-                                        </div>
-                                    </div> -->
-                                    <!-- <?php  //if($start_checking_date<>"" and $start_checking_date<>null ){
-                                
-                                ?>
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h6 class="card-title">2.Confirm send to traffic</h6>
-                                            <small>Press this button when you completed information for
-                                                those SKUs,the system will change status of ticket to 'waiting traffic
-                                            </small>
-
-                                            <div>
-                                                <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted">SKU
-                                                    list (Copy 1 column จาก excel วางตามด้าานล่าง)</label>
-                                                <textarea style="font-size:12px" class="form-control" id="sku_accepted"
-                                                    name="sku_accepted"
-                                                    placeholder="CDS3466644&#10;CDS2443356&#10;CDS2487356" rows="5"
-                                                    style="height: 100px"></textarea>
-
-                                            </div>
-
-
-
-                                            <button onclick="accepted_stt(<?php //echo $id; ?>);" type="button"
-                                                class="btn btn-success  btn-sm" <?php //echo $allow_send_to_traffic; ?>
-                                                style="width: 100%;margin-top:5px">Sent to
-                                                Traffic</button>
-                                            <?php //echo $help_traffic; ?>
-                                        </div>
-                                        <div class="card-footer">
-                                            <small class="text-muted">
-                                                <div id="accept_checking_resault">Latest : <?php //echo $accepted_date;?>
-                                                </div>
-                                            </small>
-                                        </div>
-                                    </div>
-                                    <?php  
-                    //} ?> -->
-                                    <!-- <div class="card">
-                                        <div class="card-body">
-                                            <h6 class="card-title">Cancel ticket</h6>
-                                            <small>Press this button when you want ... or requester
-                                                request to cancel this ticket,please make sure you have a reason for
-                                                take this action </small>
-
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control" id="resone_cancel"
-                                                    <?php //$allow_cancel; ?> name="resone_cancel" value="">
-                                                <label for="floatingInputGrid">Reason</label>
-                                            </div>
-                                            <button onclick="cancel_stt(<?php //echo $id; ?>);" type="button"
-                                                class="btn btn-danger btn-sm" <?php //echo $allow_cancel; ?>
-                                                style="width: 100%;margin-top:5px">Cancel
-                                            </button>
-                                            <?php //echo $help_cancel; ?>
-                                        </div>
-                                        <div class="card-footer">
-                                            <small class="text-muted">
-                                                <div id="cancel_checking_resault">Latest : <?php //echo $cancel_resone;?>
-                                                </div>
-                                            </small>
-                                        </div>
-                                    </div> -->
-
-
-
-
-                                <!-- </div>
-                                <!-- Itemmize send email stamp -->
-                                <hr> 
-                                <div class="row g-3">
-                                    <div class="col-4">
-                                        <label for="staticEmail2">Itemize send email stamp</label>
-                                        <small>ลงบันทึกส่งอีเมลติดตาม (ระบุ tag ticket id บนอีเมลทุกครั้ง)</small>
-                                        <input class="form-control" type="text" id="itemize_subject_email" placeholder="subject email" aria-label="default input example">
-
-                                    </div>
-                                    <div class="col-4">
-                                        <?php
-                                           echo ' <button onclick="itemize_send_mail_stamp('.$id.');"
-                                           type="button"
-                                           class="btn btn-primary btn-sm"
-                                           style="width: 100%;">Save</button>';
-                                        ?>
-                                    </div>
-                                    <div class="col-4">
-                                        <div id ="itemize_stamp_respond">
-                                             <?php echo "<small>Itemize only !</small>" ?>
-                                        </div>
-                                    </div>
-                                </div>
+                           
                               
                                 <!-- start -->
                                 <hr> 
@@ -505,6 +396,33 @@ label#label_file_cme {
                                     </div>
                                 </div>
                                 <?php } ?> 
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-itemize" role="tabpanel"
+                                aria-labelledby="v-pills-itemize-tab">
+
+                                    <!-- Itemmize send email stamp -->
+                                    <div class="row g-3">
+                                    <div class="col-4">
+                                        <label for="staticEmail2">Itemize send email stamp</label>
+                                        <small>ลงบันทึกส่งอีเมลติดตาม (ระบุ tag ticket id บนอีเมลทุกครั้ง)</small>
+                                        <input class="form-control" type="text" id="itemize_subject_email" placeholder="subject email" aria-label="default input example">
+
+                                    </div>
+                                    <div class="col-4">
+                                        <?php
+                                           echo ' <button onclick="itemize_send_mail_stamp('.$id.');"
+                                           type="button"
+                                           class="btn btn-primary btn-sm"
+                                           style="width: 100%;">Save</button>';
+                                        ?>
+                                    </div>
+                                    <div class="col-4">
+                                        <div id ="itemize_stamp_respond">
+                                             <?php echo "<small>Itemize only !</small>" ?>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="tab-pane fade" id="v-pills-tf_team" role="tabpanel"
                                 aria-labelledby="v-pills-tf_team-tab">
