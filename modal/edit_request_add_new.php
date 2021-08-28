@@ -326,11 +326,11 @@ label#label_file_cme {
                                 <?php if($config_type=="task"){ ?>
                                 <hr>
                                 <h6><strong>Main action Console</strong></h6>
-                                <small>Manage you ticket at here , please make sure your step before take action</small>
+                                <small>จัดการงานของคุณที่นี่ ! โปรดตรวจสอบข้อมูล และทำให้แน่ใจก่อนกดปุ่มใดๆ</small>
                            
                               
                                 <!-- start -->
-                                <hr> 
+                            
                                 <div class="row g-3">
                                     <div class="col-4">
                                         <label for="staticEmail2">Start checking</label>
