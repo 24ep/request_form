@@ -10,6 +10,7 @@ $dt_formate = $dt->format('Y-m-d H:i:s');
 $nickname = $_SESSION["username"];
 $send_type= $_POST["send_type"];
 $subject_mail =$_POST["subject_mail"];
+include('action_insert_log.php');
   //add comment
   	$sql = "INSERT INTO comment (
       ticket_id,
@@ -33,7 +34,9 @@ $subject_mail =$_POST["subject_mail"];
       }else{
         echo 'Error: ' . $sql . '<hr>' . $con->error.'';
       }
-
+      insert_log("Stamp send email itemmize\n","New Job",$id);
       mysqli_close($con);
+
+      
 
 ?>
