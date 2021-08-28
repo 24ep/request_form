@@ -332,7 +332,7 @@ label#label_file_cme {
                                                 ticket</small>
 
                                             <button onclick="start_checking(<?php //echo $id; ?>);" type="button"
-                                                class="btn btn-primary btn-sm" <?php /echo $allow_task_ticket; ?>
+                                                class="btn btn-primary btn-sm" <?php //echo $allow_task_ticket; ?>
                                                 style="width: 100%;">Start
                                                 Checking</button>
                                             <?php //echo $help_start; ?>
@@ -346,7 +346,7 @@ label#label_file_cme {
                                             </small>
                                         </div>
                                     </div> -->
-                                    <?php  if($start_checking_date<>"" and $start_checking_date<>null ){
+                                    <!-- <?php  //if($start_checking_date<>"" and $start_checking_date<>null ){
                                 
                                 ?>
                                     <div class="card">
@@ -368,21 +368,21 @@ label#label_file_cme {
 
 
 
-                                            <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
-                                                class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?>
+                                            <button onclick="accepted_stt(<?php //echo $id; ?>);" type="button"
+                                                class="btn btn-success  btn-sm" <?php //echo $allow_send_to_traffic; ?>
                                                 style="width: 100%;margin-top:5px">Sent to
                                                 Traffic</button>
-                                            <?php echo $help_traffic; ?>
+                                            <?php //echo $help_traffic; ?>
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted">
-                                                <div id="accept_checking_resault">Latest : <?php echo $accepted_date;?>
+                                                <div id="accept_checking_resault">Latest : <?php //echo $accepted_date;?>
                                                 </div>
                                             </small>
                                         </div>
                                     </div>
                                     <?php  
-                    } ?>
+                    //} ?> -->
                                     <div class="card">
                                         <div class="card-body">
                                             <h6 class="card-title">Cancel ticket</h6>
@@ -429,10 +429,11 @@ label#label_file_cme {
                                         ?>
                                     </div>
                                     <div class="col-auto">
-                                        <?php echo $help_start.$start_checking_date; ?>
+                                        <?php echo $help_start." ".$start_checking_date; ?>
                                     </div>
                                 </div>
                                 <!-- accepted -->
+                                <?php  if($start_checking_date<>"" and $start_checking_date<>null ){?>
                                 <hr>
                                 <div class="row g-3">
                                     <div class="col-auto">
@@ -441,7 +442,7 @@ label#label_file_cme {
                                     <div class="col-auto">
                                             <div>
                                                 <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted">SKU
-                                                    list (Copy 1 column จาก excel วางตามด้าานล่าง)</label>
+                                                    list (Copy 1 column จาก excel วางตามด้านล่าง)</label>
                                                 <textarea style="font-size:12px" class="form-control" id="sku_accepted"
                                                     name="sku_accepted"
                                                     placeholder="CDS3466644&#10;CDS2443356&#10;CDS2487356" rows="5"
@@ -458,7 +459,7 @@ label#label_file_cme {
                                         <?php echo $help_accept." ".$accepted_date; ?>
                                     </div>
                                 </div>
-                               
+                                <?php } ?>
                             </div>
                             <div class="tab-pane fade" id="v-pills-tf_team" role="tabpanel"
                                 aria-labelledby="v-pills-tf_team-tab">
