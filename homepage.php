@@ -1099,6 +1099,7 @@ function itm_confirm_cancel(id, status_change) {
             alert("ไม่ตรงกัน ลองใหม่อีกครั้ง");
         }
     }
+}
 
     function filter_cr_ticket(status) {
         document.getElementById('cr_search_input').value = '';
