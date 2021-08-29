@@ -485,13 +485,13 @@ label#label_file_cme {
                                     <div class="col-4">
                                         <button
                                             onclick="itm_just_status_need_updated_contact(<?php echo $id; ?>,'need to update contact');"
-                                            type="button" class="btn btn-waring btn-sm" <?php echo $allow_cancel; ?>
+                                            type="button" class="btn btn-warning btn-sm" <?php echo $allow_cancel; ?>
                                             style="width: 100%;margin-top:5px">Need to update contact
                                         </button>
                                         <button
                                             onclick="itm_just_status_updated_contact(<?php echo $id; ?>,$contact_buyer,$contact_vender);"
                                             type="button" class="btn btn-success btn-sm" <?php echo $allow_cancel; ?>
-                                            style="width: 100%;margin-top:5px">get back contact - change to Pending
+                                            style="width: 100%;margin-top:5px">get contact - change to Pending
                                         </button>
                                     </div>
                                     <div class="col-4">
@@ -663,9 +663,10 @@ actualBtn.addEventListener('change', function() {
     fileChosen_bt.textContent = ' Selected file : ' + file_name;
 })
 function itm_just_status_updated_contact(id,contact_buyer,contact_vender){
-
-    let contact_vender_new = prompt("new contact vender:",contact_vender)
-    let contact_buyer_new = prompt("new contact buyer:",contact_buyer)
+var contact_buyer = contact_buyer;
+var contact_vender = contact_vender;
+    let contact_vender_new = prompt("new contact vender:",contact_vender);
+    let contact_buyer_new = prompt("new contact buyer:",contact_buyer);
     if (id) {
 
         $.post("action/action_itm_need_update_contact.php", {

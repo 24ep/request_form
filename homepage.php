@@ -1035,7 +1035,7 @@ function cr_id_toggle(id) {
 }
 
 function start_checking(id) {
-    ;
+    
     if (id) {
         $.post("action/action_start_checking.php", {
             id: id
