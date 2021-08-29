@@ -486,7 +486,7 @@ label#label_file_cme {
                                             style="width: 100%;margin-top:5px">Need to update contact
                                         </button>
                                         <button
-                                            onclick="itm_just_status_updated_contact(<?php echo $id; ?>);"
+                                            onclick="itm_just_status_updated_contact(<?php echo $id; ?>,'<?php echo $contact_vender; ?>','<?php echo $contact_buyer; ?>');"
                                             type="button" class="btn btn-success btn-sm" <?php echo $allow_cancel; ?>
                                             style="width: 100%;margin-top:5px">get contact - change to Pending
                                         </button>
@@ -705,21 +705,7 @@ function comment_cr_id(id) {
             });
     }
 }
-function itm_just_status_updated_contact(id){
-    let contact_vender_new = prompt("new contact vender:",'<?php echo $contact_vender;?>');
-    let contact_buyer_new = prompt("new contact buyer:",'<?php echo $contact_buyer;?>');
-    if (id) {
-        
-        $.post("action/action_itm_need_update_contact.php", {
-            id: id,
-            contact_buyer: contact_buyer_new,
-            contact_vender:contact_vender_new
-        }, function(data) {
-            $('#contact_update').html(data);
-        });
-    }
 
-}
 function itemize_send_mail_stamp(id) {
     var comment = "[stamp_send_mail]";
     var subject_mail = document.getElementById("itemize_subject_email").value;
