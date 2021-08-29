@@ -414,8 +414,8 @@ label#label_file_cme {
                                     <div class="col-4">
                                         <h6><strong>Itemize send email stamp</strong></h6>
                                         <small>ลงบันทึกส่งอีเมลติดตาม (ระบุ tag ticket id บนอีเมลทุกครั้ง)</small>
-                                        <input class="form-control" type="text" id="itemize_subject_email"
-                                            placeholder="subject email" aria-label="default input example">
+                                        <!-- <input class="form-control" type="text" id="itemize_subject_email"
+                                            placeholder="subject email" aria-label="default input example"> -->
                                     </div>
                                     <div class="col-4">
                                         <?php
@@ -736,17 +736,22 @@ function comment_cr_id(id) {
 }
 
 function itemize_send_mail_stamp(id) {
-    var comment = "[stamp_send_mail]";
-    var subject_mail = document.getElementById("itemize_subject_email").value;
-    if (id) {
-        $.post("action/action_stamp_send_mail_itemize.php", {
-                id: id,
-                comment: comment,
-                subject_mail: subject_mail
-            },
-            function(data) {
-                $('#itemize_stamp_respond').html(data);
-            });
+    let subject_mail = prompt("ระบุ subject mail",<?php echo $subject_mail; ?>);
+    if (subject_mail == null || subject_mail == "") {
+        alert("user cancel prompt");
+    } else {
+        var comment = "[stamp_send_mail]";
+        // var subject_mail = document.getElementById("itemize_subject_email").value;
+        if (id) {
+            $.post("action/action_stamp_send_mail_itemize.php", {
+                    id: id,
+                    comment: comment,
+                    subject_mail: subject_mail
+                },
+                function(data) {
+                    $('#itemize_stamp_respond').html(data);
+                });
+        }
     }
 }
 function itm_just_status_need_updated_contact(id) {
