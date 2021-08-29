@@ -1059,7 +1059,7 @@ function accepted_stt(id,) {
     }
 }
 
-function cancel_stt(id) {
+function cancel_stt(id,status_change) {
     if (id) {
         resone_cancel = document.getElementById('resone_cancel').value;
         $.post("action/action_cancel_stt.php", {
@@ -1067,6 +1067,20 @@ function cancel_stt(id) {
             resone_cancel: resone_cancel
         }, function(data) {
             $('#cancel_checking_resault').html(data);
+        });
+    }
+}
+
+function itm_confirm_cancel(id,status_change) {
+ 
+    if (id) {
+        resone_cancel = document.getElementById('itm_reason_cancel').value;
+        $.post("action/action_cancel_stt.php", {
+            id: id,
+            resone_cancel: resone_cancel,
+            status_change:status_change
+        }, function(data) {
+            $('#cancel_checking_result').html(data);
         });
     }
 }

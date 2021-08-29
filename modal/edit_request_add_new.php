@@ -384,13 +384,13 @@ label#label_file_cme {
                                 <div class="row g-3">
                                     <div class="col-4">
                                         <label for="staticEmail2">cancel ticket</label>
-                                <small> กรุณาระบุสาเหตุที่ต้องการยกเลิก ticket นี้ให้ชัดเจน</small>
+                                    <small> กรุณาระบุสาเหตุที่ต้องการยกเลิก ticket นี้ให้ชัดเจน</small>
                                                 <input type="text" class="form-control" id="resone_cancel"
                                                     <?php $allow_cancel; ?> name="resone_cancel" value="">
                                     </div>
                                    
                                     <div class="col-4">
-                                    <button onclick="cancel_stt(<?php echo $id; ?>);" type="button"
+                                    <button onclick="cancel_stt(<?php echo $id; ?>,'cancel');" type="button"
                                                 class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
                                                 style="width: 100%;margin-top:5px">Cancel
                                             </button>
@@ -409,8 +409,8 @@ label#label_file_cme {
                             <div class="tab-pane fade" id="v-pills-itemize" role="tabpanel"
                                 aria-labelledby="v-pills-itemize-tab">
 
-                                    <!-- Itemmize send email stamp -->
-                                    <div class="row g-3">
+                                    <!-- Itemize send email stamp -->
+                                 <div class="row g-3">
                                     <div class="col-4">
                                         <label for="staticEmail2">Itemize send email stamp</label>
                                         <small>ลงบันทึกส่งอีเมลติดตาม (ระบุ tag ticket id บนอีเมลทุกครั้ง)</small>
@@ -431,7 +431,36 @@ label#label_file_cme {
                                         </div>
                                     </div>
                                 </div>
-
+                            <hr>
+                            <!-- cancel confirm not for sale -->
+                            <div class="row g-3">
+                                    <div class="col-4">
+                                        <label for="staticEmail2">Cancel ticket</label>
+                                    <small> กรุณาระบุสาเหตุที่ต้องการยกเลิก ticket นี้ให้ชัดเจน</small>
+                                                <input type="text" class="form-control" id="itm_reason_cancel"
+                                                    <?php $allow_cancel; ?> name="resone_cancel" value="">
+                                    </div>
+                                   
+                                    <div class="col-4">
+                                            <button onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - confirm not for sale');" type="button"
+                                                class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
+                                                style="width: 100%;margin-top:5px">Cancel - Confirm not for sale
+                                            </button>
+                                            <button onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - confirm to be new sku');" type="button"
+                                                class="btn btn-dark btn-sm" <?php echo $allow_cancel; ?>
+                                                style="width: 100%;margin-top:5px">Cancel - Confirm to be new sku
+                                            </button>
+                                            <button onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - already content');" type="button"
+                                                class="btn btn-success btn-sm" <?php echo $allow_cancel; ?>
+                                                style="width: 100%;margin-top:5px">Cancel - Confirm already content
+                                            </button>
+                                    </div>
+                                    <div class="col-4">
+                                        <div id="cancel_checking_result">
+                                            <?php echo $help_cancel." ".$cancel_resone; ?>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane fade" id="v-pills-tf_team" role="tabpanel"
                                 aria-labelledby="v-pills-tf_team-tab">

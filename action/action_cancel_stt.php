@@ -6,7 +6,8 @@
     date_default_timezone_set("Asia/Bangkok");
     $id = $_POST["id"];
     $resone_cancel = $_POST["resone_cancel"];
-    $sql = "UPDATE add_new_job SET cancel_resone = '".$_SESSION["username"]." has ".$resone_cancel.date("Y-m-d H:i:s")."' , status = 'cancel'  WHERE id=".$id;
+    $status_change = = $_POST["status_change"];
+    $sql = "UPDATE add_new_job SET cancel_resone = '".$_SESSION["username"]." has ".$resone_cancel.date("Y-m-d H:i:s")."' , status = '".$status_change."'  WHERE id=".$id;
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
 	if($query) {
