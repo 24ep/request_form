@@ -383,7 +383,7 @@ label#label_file_cme {
                                 <hr>
                                 <div class="row g-3">
                                     <div class="col-4">
-                                        <label for="staticEmail2">cancel ticket</label>
+                                        <label for="staticEmail2">cancel ticket</label><br>
                                     <small> กรุณาระบุสาเหตุที่ต้องการยกเลิก ticket นี้ให้ชัดเจน</small>
                                                 <input type="text" class="form-control" id="resone_cancel"
                                                     <?php $allow_cancel; ?> name="resone_cancel" value="">
