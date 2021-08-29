@@ -502,7 +502,8 @@ label#label_file_cme {
                                             <textarea class="form-control" placeholder="Leave a comment here" id="new_contact_buyer" style="height: 100px"><?php echo $contact_buyer; ?></textarea>
                                             <label for="floatingTextarea2">Contact buyer</label>
                                             </div>
-                                            <div class="form-floating">
+                                            
+                                            <div class="form-floating" style="margin-top:10px">
                                             <textarea class="form-control" placeholder="Leave a comment here" id="new_contact_vender" style="height: 100px"><?php echo $contact_vender; ?></textarea>
                                             <label for="floatingTextarea2">Contact vender</label>
                                             </div>
