@@ -470,12 +470,11 @@ label#label_file_cme {
                                 </div>
                                 <hr>
                                 <!-- cancel confirm not for sale -->
+                                <?php if($status<>"need to update contact"){ ?>
                                 <div class="row g-3">
                                     <div class="col-4">
                                         <h6><strong>Need to update contact</strong></h6>
                                         <small>ใช้ในในกรณีที่ข้อมูลติดต่อร้านค้าหรือจัดซื้อผิด</small>
-
-                                   
 
                                     </div>
 
@@ -494,6 +493,7 @@ label#label_file_cme {
                                     </div>
                                 </div>
                                 <hr>
+                                <?php } ?>
                                 <!-- Get new contact -->
                                 <?php if($status=="need to update contact"){ ?>
                                 <div class="row g-3">
