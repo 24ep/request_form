@@ -736,7 +736,7 @@ function comment_cr_id(id) {
 }
 
 function itemize_send_mail_stamp(id) {
-    let subject_mail = prompt("ระบุ subject mail",'<?php echo $subject_mail; ?>'');
+    let subject_mail = prompt("ระบุ subject mail",'<?php echo $subject_mail; ?>');
     if (subject_mail == null || subject_mail == "") {
         alert("user cancel prompt");
     } else {
