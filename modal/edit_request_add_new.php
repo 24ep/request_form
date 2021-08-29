@@ -659,23 +659,7 @@ actualBtn.addEventListener('change', function() {
     }
     fileChosen_bt.textContent = ' Selected file : ' + file_name;
 })
-function itm_just_status_updated_contact(id){
-    let contact_vender_new = prompt("new contact vender:",'<?php echo $contact_vender;?>');
-    let contact_buyer_new = prompt("new contact buyer:",'<?php echo $contact_buyer;?>');
-    if (id) {
-        
-        $.post("action/action_itm_need_update_contact.php", {
-            id: id,
-            contact_buyer: contact_buyer_new,
-            contact_vender:contact_vender_new
-        }, function(data) {
-            $('#contact_update').html(data);
-        });
-    }
 
-
-
-}
 function comment_ins_id_with_file(id) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input_ins").value;
@@ -721,7 +705,23 @@ function comment_cr_id(id) {
             });
     }
 }
+function itm_just_status_updated_contact(id){
+    let contact_vender_new = prompt("new contact vender:",'<?php echo $contact_vender;?>');
+    let contact_buyer_new = prompt("new contact buyer:",'<?php echo $contact_buyer;?>');
+    if (id) {
+        
+        $.post("action/action_itm_need_update_contact.php", {
+            id: id,
+            contact_buyer: contact_buyer_new,
+            contact_vender:contact_vender_new
+        }, function(data) {
+            $('#contact_update').html(data);
+        });
+    }
 
+
+
+}
 function itemize_send_mail_stamp(id) {
     var comment = "[stamp_send_mail]";
     var subject_mail = document.getElementById("itemize_subject_email").value;
