@@ -1113,21 +1113,7 @@ function itm_confirm_cancel(id, status_change) {
             });
         }
     }
-    function itm_just_status_updated_contact(id){
-    let contact_vender_new = prompt("new contact vender:",'<?php echo $contact_vender;?>');
-    let contact_buyer_new = prompt("new contact buyer:",'<?php echo $contact_buyer;?>');
-    if (id) {
-        
-        $.post("action/action_itm_need_update_contact.php", {
-            id: id,
-            contact_buyer: contact_buyer_new,
-            contact_vender:contact_vender_new
-        }, function(data) {
-            $('#contact_update').html(data);
-        });
-    }
 
-}
     function search_cr_ticket() {
         var cr_search_input = document.getElementById("cr_search_input").value
         var user_cr_filter = document.getElementById("user_cr_filter").value
