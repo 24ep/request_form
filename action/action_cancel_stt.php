@@ -7,7 +7,7 @@
     $id = $_POST["id"];
     $resone_cancel = $_POST["resone_cancel"];
     $status_change = = $_POST["status_change"];
-    $sql = "UPDATE add_new_job SET cancel_resone = '".$_SESSION["username"]." has ".$resone_cancel.date("Y-m-d H:i:s")."' , status = '".$status_change."'  WHERE id=".$id;
+    $sql = "UPDATE add_new_job SET cancel_resone = '".$_SESSION["username"]." had been".$resone_cancel.date("Y-m-d H:i:s")."' , status = '".$status_change."'  WHERE id=".$id;
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
 	if($query) {
@@ -27,12 +27,12 @@
                 //echo '<script>alert("'.$key.'");</script>';
             }
             if($key<>"" and $key<>null){
-                sent_line_noti("\n• Cancel  NS-".$id." [ ".$brand." ".$sku." SKUs ]",$key);
+                sent_line_noti("\n• '".$status_change."'  NS-".$id." [ ".$brand." ".$sku." SKUs ]",$key);
             }
-        insert_log("Cancel Ticket = ".date("Y-m-d H:i:s")." \n status = cancel" ,"add_new_job",$id);
+        insert_log("'".$status_change."' Ticket = ".date("Y-m-d H:i:s")." \n status = '".$status_change."'" ,"add_new_job",$id);
         echo date("Y-m-d H:i:s");
 	}else{
-        insert_log("Cancel Ticket faild >".$con->error ,"add_new_job",$id);
+        insert_log("'".$status_change."' Ticket faild >".$con->error ,"add_new_job",$id);
         echo 'Error: ' . $sql . '<br>' . $con->error.'';
     }
     mysqli_close($con);

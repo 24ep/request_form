@@ -337,8 +337,8 @@ label#label_file_cme {
                             
                                 <div class="row g-3">
                                     <div class="col-4">
-                                        <label for="staticEmail2">Start checking</label>
-                                        <small>ลงบันทึกเวลาที่เริ่มตรวจสอบ ticket นี้</small>
+                                        <h6><strong>Start checking information/linesheet</strong></h6>
+                                        <small>ลงบันทึกเวลาที่เริ่มตรวจสอบ information/linesheet/duplicate sku</small>
                                     </div>
                                     <div class="col-4">
                                         <?php
@@ -357,7 +357,8 @@ label#label_file_cme {
                                 <hr>
                                 <div class="row g-3">
                                     <div class="col-4">
-                                        <label for="staticEmail2">accept to open job</label>
+                                    <h6><strong>Accept</strong></h6>
+                                        <small>ลงบันทึกยืนยันตรวจสอบข้อมูลเรียบร้อย พร้อมเปิด job สำหรับ writer </small>
                                         <div>
                                                 <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted"></label>
                                                 <textarea style="font-size:12px" class="form-control" id="sku_accepted"
@@ -383,8 +384,8 @@ label#label_file_cme {
                                 <hr>
                                 <div class="row g-3">
                                     <div class="col-4">
-                                        <label for="staticEmail2">cancel ticket</label><br>
-                                    <small> กรุณาระบุสาเหตุที่ต้องการยกเลิก ticket นี้ให้ชัดเจน</small>
+                                    <h6><strong>Cancel ticket</strong></h6>
+                                        <small>ทำการยกเลิก ticket นี้ โปรดระบุเหตุผลให้ชัดเจน</small>
                                                 <input type="text" class="form-control" id="resone_cancel"
                                                     <?php $allow_cancel; ?> name="resone_cancel" value="">
                                     </div>
@@ -412,10 +413,9 @@ label#label_file_cme {
                                     <!-- Itemize send email stamp -->
                                  <div class="row g-3">
                                     <div class="col-4">
-                                        <label for="staticEmail2">Itemize send email stamp</label>
+                                        <h6><strong>Itemize send email stamp</strong></h6>
                                         <small>ลงบันทึกส่งอีเมลติดตาม (ระบุ tag ticket id บนอีเมลทุกครั้ง)</small>
                                         <input class="form-control" type="text" id="itemize_subject_email" placeholder="subject email" aria-label="default input example">
-
                                     </div>
                                     <div class="col-4">
                                         <?php
@@ -435,10 +435,12 @@ label#label_file_cme {
                             <!-- cancel confirm not for sale -->
                             <div class="row g-3">
                                     <div class="col-4">
-                                        <label for="staticEmail2">Cancel ticket</label>
-                                    <small> กรุณาระบุสาเหตุที่ต้องการยกเลิก ticket นี้ให้ชัดเจน</small>
+                                    <h6><strong>Cancel ticket</strong></h6>
+                                    <small>ระบุข้อความยืนยันจากร้านค้าหรือจัดซื้อ และเลือกสถานะที่ต้องการเปลี่ยน</small>
+                        
                                                 <input type="text" class="form-control" id="itm_reason_cancel"
-                                                    <?php $allow_cancel; ?> name="resone_cancel" value="">
+                                                <?php $allow_cancel; ?> name="resone_cancel" placeholder="เหตุผลจากร้านค้า" value="">
+                            
                                     </div>
                                    
                                     <div class="col-4">
