@@ -485,7 +485,7 @@ label#label_file_cme {
                                     <div class="col-4">
                                         <button
                                             onclick="itm_just_status_need_updated_contact(<?php echo $id; ?>,'need to update contact');"
-                                            type="button" class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
+                                            type="button" class="btn btn-waring btn-sm" <?php echo $allow_cancel; ?>
                                             style="width: 100%;margin-top:5px">Need to update contact
                                         </button>
                                         <button
@@ -664,8 +664,8 @@ actualBtn.addEventListener('change', function() {
 })
 function itm_just_status_updated_contact(id,contact_buyer,contact_vender){
 
-    var contact_vender_new = prompt("new contact vender:",contact_vender)
-    var contact_buyer_new = prompt("new contact buyer:",contact_buyer)
+    let contact_vender_new = prompt("new contact vender:",contact_vender)
+    let contact_buyer_new = prompt("new contact buyer:",contact_buyer)
     if (id) {
 
         $.post("action/action_itm_need_update_contact.php", {
