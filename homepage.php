@@ -403,7 +403,7 @@
                 <?php include("get/get_log.php"); ?>
             </div>
         </div>
-       
+
         <div class="row " style="margin-bottom: 0px;--bs-gutter-x: 0rem;">
             <div class="col-2 list_bra window-full shadow">
                 <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -417,7 +417,7 @@
                     </a>
                     <a class="nav-link" id="v-pills-ms_admin-tab" data-toggle="pill" href="#v-pills-ms_admin" role="tab"
                         aria-controls="v-pills-ms_admin" onclick="updateURL('v-pills-ms_admin');" aria-selected="false">
-                        <ion-icon name="mail-unread-outline"></ion-icon> Updated  <span id="total_unread_div"></span>
+                        <ion-icon name="mail-unread-outline"></ion-icon> Updated <span id="total_unread_div"></span>
                     </a>
                     <a class="nav-link" id="v-pills-request_list-tab" data-toggle="pill" href="#v-pills-request_list"
                         role="tab" aria-controls="v-pills-request_list" onclick="updateURL('v-pills-request_list');"
@@ -612,9 +612,11 @@
                                     </select> -->
 
                                     <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
-                                    <input value="<?php echo $_SESSION["user_filter"];?>" class="selection_filter" list="datalistOptionsuser" id="user_filter" onchange="filter_update();" placeholder="Type to username...">
+                                    <input value="<?php echo $_SESSION["user_filter"];?>" class="selection_filter"
+                                        list="datalistOptionsuser" id="user_filter" onchange="filter_update();"
+                                        placeholder="Type to username...">
                                     <datalist id="datalistOptionsuser">
-                                      <?php echo $username_op;?>
+                                        <?php echo $username_op;?>
                                     </datalist>
                                 </div>
                                 <div class="col-auto">
@@ -840,7 +842,7 @@
                                     <div class="row">
                                         <div class="col-2">
                                             <div class="list-group" id="list-tab" role="tablist">
-                                                 <?php if(strpos($_SESSION["department"],'Content Admin')!==false){?>
+                                                <?php if(strpos($_SESSION["department"],'Content Admin')!==false){?>
                                                 <a class="btn btn-dark" style="margin-bottom: 10px;" type="button"
                                                     data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop"
                                                     aria-controls="offcanvasWithBackdrop">
@@ -850,7 +852,8 @@
                                                 <a class="list-group-item list-group-item-action active"
                                                     id="list-important-list" data-bs-toggle="list"
                                                     href="#list-important" role="tab" aria-controls="list-important">
-                                                    <ion-icon name="star-outline"></ion-icon> Important <span id="total_unread_div_in"></span>
+                                                    <ion-icon name="star-outline"></ion-icon> Important <span
+                                                        id="total_unread_div_in"></span>
                                                 </a>
                                                 <a class="list-group-item list-group-item-action" id="list-update-list"
                                                     data-bs-toggle="list" href="#list-update" role="tab"
@@ -860,7 +863,7 @@
                                                 <a class="list-group-item list-group-item-action" id="list-send-list"
                                                     data-bs-toggle="list" href="#list-send" role="tab"
                                                     aria-controls="list-send">
-                                                    <ion-icon name="paper-plane-outline"></ion-icon> Send 
+                                                    <ion-icon name="paper-plane-outline"></ion-icon> Send
                                                 </a>
                                             </div>
                                         </div>
@@ -909,7 +912,7 @@
                                                         </tbody>
                                                     </table>
                                                     <!-- Modal -->
-                                                  
+
                                                 </div>
 
 
@@ -1042,84 +1045,85 @@ function start_checking(id) {
     }
 }
 
-function accepted_stt(id,) {
+function accepted_stt(id, ) {
     if (id) {
         sku_accepted = document.getElementById('sku_accepted').value;
-        if(sku_accepted==null){
+        if (sku_accepted == null) {
             alert("กรุณาระบ sku ที่ accept (ตัดซ้ำ ตัด cancel ออกแล้ว)")
-        }else{
+        } else {
             $.post("action/action_accept_stt.php", {
-            id: id,
-            sku_accepted:sku_accepted
-        }, function(data) {
-            $('#accept_checking_resault').html(data);
-        });
+                id: id,
+                sku_accepted: sku_accepted
+            }, function(data) {
+                $('#accept_checking_resault').html(data);
+            });
         }
-    
+
     }
 }
 
-function cancel_stt(id,status_change) {
-  
-    let message = prompt("พิมพ์ "+ status_change + " อีกครั้งเพื่อยืนยัน", "");
+function cancel_stt(id, status_change) {
+    resone_cancel = document.getElementById('resone_cancel').value;
+
+    if (id) {
+
+        $.post("action/action_cancel_stt.php", {
+            id: id,
+            resone_cancel: resone_cancel
+        }, function(data) {
+            $('#cancel_checking_resault').html(data);
+        });
+    }
+
+
+
+}
+
+function itm_confirm_cancel(id, status_change) {
+    let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
     if (message == null || message == "") {
         alert("user cancel prompt");
     } else {
-        if(message==status_change){
-                if (id) {
-                resone_cancel = document.getElementById('resone_cancel').value;
+        if (message == status_change) {
+            if (id) {
+                resone_cancel = document.getElementById('itm_reason_cancel').value;
                 $.post("action/action_cancel_stt.php", {
                     id: id,
-                    resone_cancel: resone_cancel
+                    resone_cancel: resone_cancel,
+                    status_change: status_change
                 }, function(data) {
-                    $('#cancel_checking_resault').html(data);
+                    $('#cancel_checking_result').html(data);
                 });
             }
-        }else{
-            alert("ไม่ตรงกันลองใหม่อีกคั้ง");
+        } else {
+            alert("ไม่ตรงกัน ลองใหม่อีกครั้ง");
         }
     }
-   
-}
 
-function itm_confirm_cancel(id,status_change) {
- 
-    if (id) {
-        resone_cancel = document.getElementById('itm_reason_cancel').value;
-        $.post("action/action_cancel_stt.php", {
-            id: id,
-            resone_cancel: resone_cancel,
-            status_change:status_change
-        }, function(data) {
-            $('#cancel_checking_result').html(data);
-        });
+    function filter_cr_ticket(status) {
+        document.getElementById('cr_search_input').value = '';
+        var update = true;
+        if (status) {
+            $.post("get/get_list_content_request.php", {
+                status: status,
+                update: update
+            }, function(data) {
+                $('#list_grouping').html(data);
+            });
+        }
     }
-}
 
-function filter_cr_ticket(status) {
-    document.getElementById('cr_search_input').value = '';
-    var update = true;
-    if (status) {
+    function search_cr_ticket() {
+        var cr_search_input = document.getElementById("cr_search_input").value
+        var user_cr_filter = document.getElementById("user_cr_filter").value
+        // if (cr_search_input) {
         $.post("get/get_list_content_request.php", {
-            status: status,
-            update: update
+            cr_search_input: cr_search_input,
+            user_cr_filter: user_cr_filter
         }, function(data) {
             $('#list_grouping').html(data);
         });
     }
-}
-
-function search_cr_ticket() {
-    var cr_search_input = document.getElementById("cr_search_input").value
-    var user_cr_filter = document.getElementById("user_cr_filter").value
-    // if (cr_search_input) {
-    $.post("get/get_list_content_request.php", {
-        cr_search_input: cr_search_input,
-        user_cr_filter: user_cr_filter
-    }, function(data) {
-        $('#list_grouping').html(data);
-    });
-}
     </script>
     <script type="text/javascript">
 function select_current_tab(selecttab) {
