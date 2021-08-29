@@ -7,7 +7,7 @@
     $id = $_POST["id"];
     $resone_cancel = $_POST["resone_cancel"];
     $status_change = $_POST["status_change"];
-    $sql = "UPDATE add_new_job SET cancel_resone = '".$_SESSION["username"]." had been".$resone_cancel.date("Y-m-d H:i:s")."' , status = '".$status_change."'  WHERE id=".$id;
+    $sql = "UPDATE add_new_job SET cancel_resone = '".$_SESSION["username"]." had been "$status_change." sine of ".$resone_cancel." ".date("Y-m-d H:i:s")."' , status = '".$status_change."',cancel_date = CURRENT_TIMESTAMP  WHERE id=".$id;
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
 	if($query) {
