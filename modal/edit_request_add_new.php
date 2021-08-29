@@ -473,12 +473,9 @@ label#label_file_cme {
                                 <div class="row g-3">
                                     <div class="col-4">
                                         <h6><strong>Need to update contact</strong></h6>
-                                        <small>ระบุข้อความยืนยันจากร้านค้าหรือจัดซื้อ
-                                            และเลือกสถานะที่ต้องการเปลี่ยน</small>
+                                        <small>ใช้ในในกรณีที่ข้อมูลติดต่อร้านค้าหรือจัดซื้อผิด</small>
 
-                                        <input type="text" class="form-control" id="itm_reason_cancel"
-                                            <?php $allow_cancel; ?> name="resone_cancel" placeholder="เหตุผลจากร้านค้า"
-                                            value="">
+                                   
 
                                     </div>
 
@@ -489,7 +486,7 @@ label#label_file_cme {
                                             style="width: 100%;margin-top:5px">Need to update contact
                                         </button>
                                         <button
-                                            onclick="itm_just_status_updated_contact(<?php echo $id; ?>,$contact_buyer,$contact_vender);"
+                                            onclick="itm_just_status_updated_contact(<?php echo $id; ?>,<?php echo $contact_buyer;?>,<?php echo $contact_vender;?>);"
                                             type="button" class="btn btn-success btn-sm" <?php echo $allow_cancel; ?>
                                             style="width: 100%;margin-top:5px">get contact - change to Pending
                                         </button>
