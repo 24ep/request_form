@@ -494,7 +494,8 @@ label#label_file_cme {
                                     </div>
                                 </div>
                                 <hr>
-                                <!-- cancel confirm not for sale -->
+                                <!-- Get new contact -->
+                                <?php if($status=="need to update contact"){ ?>
                                 <div class="row g-3">
                                     <div class="col-4">
                                         <h6><strong>Get new contact</strong></h6>
@@ -524,6 +525,7 @@ label#label_file_cme {
                                         </div> -->
                                     </div>
                                 </div>
+                                <?php } ?>
                             </div>
                             <div class="tab-pane fade" id="v-pills-tf_team" role="tabpanel"
                                 aria-labelledby="v-pills-tf_team-tab">
