@@ -1117,7 +1117,7 @@ function itm_confirm_cancel(id, status_change) {
     if (id) {
         new_contact_vender = document.getElementById('itm_new_contact_vender').value;
         new_contact_buyer = document.getElementById('itm_new_contact_buyer').value;
-        $.post("action/action_itm_need_update_contact.php", {
+        $.post("action/action_itm_updated_contact_status", {
             id: id,
             contact_buyer: new_contact_buyer,
             contact_vender:new_contact_vender

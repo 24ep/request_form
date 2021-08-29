@@ -481,15 +481,16 @@ label#label_file_cme {
 
                                     <div class="col-4">
                                         <button
-                                            onclick="itm_just_status_need_updated_contact(<?php echo $id; ?>,'need to update contact');"
+                                            onclick="itm_just_status_need_updated_contact(<?php echo $id; ?>);"
+                                        
                                             type="button" class="btn btn-warning btn-sm" <?php echo $allow_cancel; ?>
                                             style="width: 100%;margin-top:5px">Need to update contact
                                         </button>
                                     </div>
                                     <div class="col-4">
-                                        <!-- <div id="cancel_checking_result">
-                                            <?php// echo $help_cancel." ".$cancel_resone; ?>
-                                        </div> -->
+                                        <div id="itemize_need_to_update_respond">
+                                            <?php echo $help_cancel." ".$cancel_resone; ?>
+                                        </div>
                                     </div>
                                 </div>
                                 <hr>
@@ -746,6 +747,19 @@ function itemize_send_mail_stamp(id) {
             });
     }
 }
+function itm_just_status_need_updated_contact(id) {
+
+    if (id) {
+        $.post("action/action_itm_need_update_contact.php", {
+                id: id
+            },
+            function(data) {
+                $('#itemize_need_to_update_respond').html(data);
+            });
+    }
+}
+
+
 
 
 function comment_ticket_id(id, send_type) {
