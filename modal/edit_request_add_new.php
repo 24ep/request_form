@@ -329,11 +329,11 @@ label#label_file_cme {
 
                                 <?php if($config_type=="task"){ ?>
                                 <hr>
-                                
-                           
-                              
+
+
+
                                 <!-- start -->
-                            
+
                                 <div class="row g-3">
                                     <div class="col-4">
                                         <h6><strong>Start checking</strong></h6>
@@ -356,22 +356,22 @@ label#label_file_cme {
                                 <hr>
                                 <div class="row g-3">
                                     <div class="col-4">
-                                    <h6><strong>Accept</strong></h6>
+                                        <h6><strong>Accept</strong></h6>
                                         <small>ลงบันทึกยืนยันตรวจสอบข้อมูลเรียบร้อย พร้อมเปิด job สำหรับ writer </small>
                                         <div>
-                                                <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted"></label>
-                                                <textarea style="font-size:12px" class="form-control" id="sku_accepted"
-                                                    name="sku_accepted"
-                                                    placeholder="Copy 1 column จาก excel วางตามตัวอย่างด้านล่าง&#10;&#10;CDS3466644&#10;CDS2443356&#10;CDS2487356" rows="5"
-                                                    style="height: 100px"></textarea>
+                                            <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted"></label>
+                                            <textarea style="font-size:12px" class="form-control" id="sku_accepted"
+                                                name="sku_accepted"
+                                                placeholder="Copy 1 column จาก excel วางตามตัวอย่างด้านล่าง&#10;&#10;CDS3466644&#10;CDS2443356&#10;CDS2487356"
+                                                rows="5" style="height: 100px"></textarea>
 
-                                            </div>
+                                        </div>
                                     </div>
-                                   
+
                                     <div class="col-4">
-                                     <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
-                                                class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?>
-                                                style="width: 100%;margin-top:5px">accept</button>
+                                        <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
+                                            class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?>
+                                            style="width: 100%;margin-top:5px">accept</button>
                                     </div>
                                     <div class="col-4">
                                         <?php echo $help_accept." ".$accepted_date; ?>
@@ -379,27 +379,27 @@ label#label_file_cme {
                                 </div>
                                 <?php } ?>
                                 <!-- cancel -->
-                              
+
                                 <hr>
                                 <div class="row g-3">
                                     <div class="col-4">
-                                    <h6><strong>Cancel ticket</strong></h6>
+                                        <h6><strong>Cancel ticket</strong></h6>
                                         <small>ทำการยกเลิก ticket นี้ โปรดระบุเหตุผลให้ชัดเจน</small>
-                                                <input type="text" class="form-control" id="resone_cancel"
-                                                    <?php $allow_cancel; ?> name="resone_cancel" value="">
+                                        <input type="text" class="form-control" id="resone_cancel"
+                                            <?php $allow_cancel; ?> name="resone_cancel" value="">
                                     </div>
-                                   
+
                                     <div class="col-4">
-                                    <button onclick="cancel_stt(<?php echo $id; ?>,'cancel');" type="button"
-                                                class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
-                                                style="width: 100%;margin-top:5px">Cancel
-                                            </button>
+                                        <button onclick="cancel_stt(<?php echo $id; ?>,'cancel');" type="button"
+                                            class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
+                                            style="width: 100%;margin-top:5px">Cancel
+                                        </button>
                                     </div>
                                     <div class="col-4">
                                         <?php echo $help_cancel." ".$cancel_resone; ?>
                                     </div>
                                 </div>
-                                <?php } ?> 
+                                <?php } ?>
                             </div>
                             <div class="tab-pane fade" id="v-pills-sku" role="tabpanel"
                                 aria-labelledby="v-pills-sku-tab">
@@ -409,12 +409,13 @@ label#label_file_cme {
                             <div class="tab-pane fade" id="v-pills-itemize" role="tabpanel"
                                 aria-labelledby="v-pills-itemize-tab">
 
-                                    <!-- Itemize send email stamp -->
-                                 <div class="row g-3">
+                                <!-- Itemize send email stamp -->
+                                <div class="row g-3">
                                     <div class="col-4">
                                         <h6><strong>Itemize send email stamp</strong></h6>
                                         <small>ลงบันทึกส่งอีเมลติดตาม (ระบุ tag ticket id บนอีเมลทุกครั้ง)</small>
-                                        <input class="form-control" type="text" id="itemize_subject_email" placeholder="subject email" aria-label="default input example">
+                                        <input class="form-control" type="text" id="itemize_subject_email"
+                                            placeholder="subject email" aria-label="default input example">
                                     </div>
                                     <div class="col-4">
                                         <?php
@@ -425,41 +426,78 @@ label#label_file_cme {
                                         ?>
                                     </div>
                                     <div class="col-4">
-                                        <div id ="itemize_stamp_respond">
-                                             <?php echo "<small>Itemize only !</small>" ?>
+                                        <div id="itemize_stamp_respond">
+                                            <?php echo "<small>Itemize only !</small>" ?>
                                         </div>
                                     </div>
                                 </div>
-                            <hr>
-                            <!-- cancel confirm not for sale -->
-                            <div class="row g-3">
+                                <hr>
+                                <!-- cancel confirm not for sale -->
+                                <div class="row g-3">
                                     <div class="col-4">
-                                    <h6><strong>Cancel ticket</strong></h6>
-                                    <small>ระบุข้อความยืนยันจากร้านค้าหรือจัดซื้อ และเลือกสถานะที่ต้องการเปลี่ยน</small>
-                        
-                                                <input type="text" class="form-control" id="itm_reason_cancel"
-                                                <?php $allow_cancel; ?> name="resone_cancel" placeholder="เหตุผลจากร้านค้า" value="">
-                            
+                                        <h6><strong>Cancel ticket</strong></h6>
+                                        <small>ระบุข้อความยืนยันจากร้านค้าหรือจัดซื้อ
+                                            และเลือกสถานะที่ต้องการเปลี่ยน</small>
+
+                                        <input type="text" class="form-control" id="itm_reason_cancel"
+                                            <?php $allow_cancel; ?> name="resone_cancel" placeholder="เหตุผลจากร้านค้า"
+                                            value="">
+
                                     </div>
-                                   
+
                                     <div class="col-4">
-                                            <button onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - confirm not for sale');" type="button"
-                                                class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
-                                                style="width: 100%;margin-top:5px">Cancel - Confirm not for sale
-                                            </button>
-                                            <button onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - confirm to be new sku');" type="button"
-                                                class="btn btn-dark btn-sm" <?php echo $allow_cancel; ?>
-                                                style="width: 100%;margin-top:5px">Cancel - Confirm to be new sku
-                                            </button>
-                                            <button onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - already content');" type="button"
-                                                class="btn btn-success btn-sm" <?php echo $allow_cancel; ?>
-                                                style="width: 100%;margin-top:5px">Cancel - Confirm already content
-                                            </button>
+                                        <button
+                                            onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - confirm not for sale');"
+                                            type="button" class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
+                                            style="width: 100%;margin-top:5px">Cancel - Confirm not for sale
+                                        </button>
+                                        <button
+                                            onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - confirm to be new sku');"
+                                            type="button" class="btn btn-dark btn-sm" <?php echo $allow_cancel; ?>
+                                            style="width: 100%;margin-top:5px">Cancel - Confirm to be new sku
+                                        </button>
+                                        <button
+                                            onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - already content');"
+                                            type="button" class="btn btn-success btn-sm" <?php echo $allow_cancel; ?>
+                                            style="width: 100%;margin-top:5px">Cancel - Confirm already content
+                                        </button>
                                     </div>
                                     <div class="col-4">
                                         <div id="cancel_checking_result">
                                             <?php echo $help_cancel." ".$cancel_resone; ?>
                                         </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <!-- cancel confirm not for sale -->
+                                <div class="row g-3">
+                                    <div class="col-4">
+                                        <h6><strong>Need to update contact</strong></h6>
+                                        <small>ระบุข้อความยืนยันจากร้านค้าหรือจัดซื้อ
+                                            และเลือกสถานะที่ต้องการเปลี่ยน</small>
+
+                                        <input type="text" class="form-control" id="itm_reason_cancel"
+                                            <?php $allow_cancel; ?> name="resone_cancel" placeholder="เหตุผลจากร้านค้า"
+                                            value="">
+
+                                    </div>
+
+                                    <div class="col-4">
+                                        <button
+                                            onclick="itm_just_status_need_updated_contact(<?php echo $id; ?>,'need to update contact');"
+                                            type="button" class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
+                                            style="width: 100%;margin-top:5px">Need to update contact
+                                        </button>
+                                        <button
+                                            onclick="itm_just_status_updated_contact(<?php echo $id; ?>,$contact_buyer,$contact_vender);"
+                                            type="button" class="btn btn-success btn-sm" <?php echo $allow_cancel; ?>
+                                            style="width: 100%;margin-top:5px">get back contact - change to Pending
+                                        </button>
+                                    </div>
+                                    <div class="col-4">
+                                        <!-- <div id="cancel_checking_result">
+                                            <?php// echo $help_cancel." ".$cancel_resone; ?>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -624,7 +662,24 @@ actualBtn.addEventListener('change', function() {
     }
     fileChosen_bt.textContent = ' Selected file : ' + file_name;
 })
+function itm_just_status_updated_contact(id,contact_buyer,contact_vender){
 
+    var contact_vender_new = prompt("new contact vender:",contact_vender)
+    var contact_buyer_new = prompt("new contact buyer:",contact_buyer)
+    if (id) {
+
+        $.post("action/action_itm_need_update_contact.php", {
+            id: id,
+            contact_buyer: contact_buyer_new,
+            contact_vender:contact_vender_new
+        }, function(data) {
+            $('#contact_update').html(data);
+        });
+    }
+
+
+
+}
 function comment_ins_id_with_file(id) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input_ins").value;
@@ -678,7 +733,7 @@ function itemize_send_mail_stamp(id) {
         $.post("action/action_stamp_send_mail_itemize.php", {
                 id: id,
                 comment: comment,
-                subject_mail:subject_mail
+                subject_mail: subject_mail
             },
             function(data) {
                 $('#itemize_stamp_respond').html(data);
