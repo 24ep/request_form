@@ -1045,7 +1045,7 @@ function start_checking(id) {
     }
 }
 
-function accepted_stt(id, ) {
+function accepted_stt(id ) {
     if (id) {
         sku_accepted = document.getElementById('sku_accepted').value;
         if (sku_accepted == null) {
