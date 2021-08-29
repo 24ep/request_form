@@ -329,15 +329,14 @@ label#label_file_cme {
 
                                 <?php if($config_type=="task"){ ?>
                                 <hr>
-                                <h6><strong>Main action Console</strong></h6>
-                                <small>จัดการงานของคุณที่นี่ ! โปรดตรวจสอบข้อมูล และทำให้แน่ใจก่อนกดปุ่มใดๆ</small>
+                                
                            
                               
                                 <!-- start -->
                             
                                 <div class="row g-3">
                                     <div class="col-4">
-                                        <h6><strong>Start checking information/linesheet</strong></h6>
+                                        <h6><strong>Start checking</strong></h6>
                                         <small>ลงบันทึกเวลาที่เริ่มตรวจสอบ information/linesheet/duplicate sku</small>
                                     </div>
                                     <div class="col-4">

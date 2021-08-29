@@ -1060,15 +1060,27 @@ function accepted_stt(id,) {
 }
 
 function cancel_stt(id,status_change) {
-    if (id) {
-        resone_cancel = document.getElementById('resone_cancel').value;
-        $.post("action/action_cancel_stt.php", {
-            id: id,
-            resone_cancel: resone_cancel
-        }, function(data) {
-            $('#cancel_checking_resault').html(data);
-        });
+  
+    let message = prompt("พิมพ์ "+ status_change + " อีกครั้งเพื่อยืนยัน", "");
+    if (person == null || person == "") {
+        alert("user cancel prompt");
+    } else {
+        if(message==status_change){
+                if (id) {
+                resone_cancel = document.getElementById('resone_cancel').value;
+                $.post("action/action_cancel_stt.php", {
+                    id: id,
+                    resone_cancel: resone_cancel
+                }, function(data) {
+                    $('#cancel_checking_resault').html(data);
+                });
+            }
+        }else{
+            alert("ไม่ตรงกันลองใหม่อีกคั้ง");
+        }
     }
+    document.getElementById("demo").innerHTML = confirm_input;
+   
 }
 
 function itm_confirm_cancel(id,status_change) {
