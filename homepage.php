@@ -1062,7 +1062,7 @@ function accepted_stt(id,) {
 function cancel_stt(id,status_change) {
   
     let message = prompt("พิมพ์ "+ status_change + " อีกครั้งเพื่อยืนยัน", "");
-    if (person == null || person == "") {
+    if (message == null || message == "") {
         alert("user cancel prompt");
     } else {
         if(message==status_change){
