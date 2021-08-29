@@ -1079,7 +1079,6 @@ function cancel_stt(id,status_change) {
             alert("ไม่ตรงกันลองใหม่อีกคั้ง");
         }
     }
-    document.getElementById("demo").innerHTML = confirm_input;
    
 }
 
