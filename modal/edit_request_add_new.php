@@ -485,8 +485,33 @@ label#label_file_cme {
                                             type="button" class="btn btn-warning btn-sm" <?php echo $allow_cancel; ?>
                                             style="width: 100%;margin-top:5px">Need to update contact
                                         </button>
+                                    </div>
+                                    <div class="col-4">
+                                        <!-- <div id="cancel_checking_result">
+                                            <?php// echo $help_cancel." ".$cancel_resone; ?>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <hr>
+                                <!-- cancel confirm not for sale -->
+                                <div class="row g-3">
+                                    <div class="col-4">
+                                        <h6><strong>Get new contact</strong></h6>
+                                        <small>ได้รับ contact ใหม่เปลี่ยน status เป็น pending</small>
+                                            <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Leave a comment here" id="new_contact_buyer" style="height: 100px"><?php echo $contact_buyer; ?></textarea>
+                                            <label for="floatingTextarea2">Contact buyer</label>
+                                            </div>
+                                            <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Leave a comment here" id="new_contact_vender" style="height: 100px"><?php echo $contact_vender; ?></textarea>
+                                            <label for="floatingTextarea2">Contact vender</label>
+                                            </div>
+                                    </div>
+
+                                    <div class="col-4">
+                                       
                                         <button
-                                            onclick="itm_just_status_updated_contact(<?php echo $id; ?>,'<?php echo $contact_vender; ?>','<?php echo $contact_buyer; ?>');"
+                                            onclick="itm_just_status_updated_contact(<?php echo $id; ?>);"
                                             type="button" class="btn btn-success btn-sm" <?php echo $allow_cancel; ?>
                                             style="width: 100%;margin-top:5px">get contact - change to Pending
                                         </button>

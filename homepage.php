@@ -1113,15 +1113,14 @@ function itm_confirm_cancel(id, status_change) {
             });
         }
     }
-    function itm_just_status_updated_contact(id,contact_vender,contact_buyer){
-    let contact_vender_new = prompt("new contact vender:",contact_vender);
-    let contact_buyer_new = prompt("new contact buyer:",contact_buyer);
+    function itm_just_status_updated_contact(id){
     if (id) {
-        
+        new_contact_vender = document.getElementById('itm_new_contact_vender').value;
+        new_contact_buyer = document.getElementById('itm_new_contact_buyer').value;
         $.post("action/action_itm_need_update_contact.php", {
             id: id,
-            contact_buyer: contact_buyer_new,
-            contact_vender:contact_vender_new
+            contact_buyer: new_contact_buyer,
+            contact_vender:new_contact_vender
         }, function(data) {
             $('#contact_update').html(data);
         });
