@@ -1114,9 +1114,10 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
     function itm_just_status_updated_contact(id){
+       var new_contact_vender = document.getElementById('new_contact_vender').value;
+       var new_contact_buyer = document.getElementById('new_contact_buyer').value;
     if (id) {
-        new_contact_vender = document.getElementById('new_contact_vender').value;
-        new_contact_buyer = document.getElementById('new_contact_buyer').value;
+       
         $.post("action/action_itm_updated_contact_status.php", {
             id: id,
             contact_buyer: new_contact_buyer,
