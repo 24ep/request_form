@@ -37,7 +37,7 @@
         echo "<td style='background: #ededed;'>".$row["file_name"]."</dh>";
         echo "<td style='background: #ededed;'>".$row["file_owner"]."</td>";  
         echo "<td style='background: #ededed;'>".$row["ticket_id"]."</td>";
-        echo "<td style='background: #ededed;'><a target='_Blank' href='".$row["ticket_path"]."'>download</a></td>";
+        echo "<td style='background: #ededed;'><a target='_Blank' href='".$row["ticket_path"]."' download>download</a></td>";
         echo "</tr>";
         $pass = true;
     } 
