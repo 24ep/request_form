@@ -16,7 +16,7 @@
   FROM all_in_one_project.attachment as att
   left join u749625779_cdscontent.job_cms as js
   on att.ticket_id = js.csg_request_new_id 
-  where create_date like '%".$_GET['create_date']."%' and ticket_type = '".$_GET['ticket_type']."'  ORDER BY job_number DESC" or die("Error:" . mysqli_error());
+  where create_date like '%".$_GET['create_date']."%' and ticket_type = '".$_GET['ticket_type']."'  ORDER BY js.job_number DESC" or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
     echo 
     "<table class='table table-bordered'>
@@ -32,13 +32,14 @@
     </thead>
      <tbody>";
      while($row = mysqli_fetch_array($result)) {
+        $herf = str_replace("../..",'https://cdsecommercecontent.ga',$row['file_path'].$row['file_name']);
         echo "<tr>";
         echo "<th scope='row' style='background: #ededed;'>".$row["job_number"]."</th>";
         echo "<td style='background: #ededed;'>".$row["file_name"]."</dh>";
         echo "<td style='background: #ededed;'>".$row["file_owner"]."</td>";  
         echo "<td style='background: #ededed;'>".$row["ticket_id"]."</td>";
         echo "<td style='background: #ededed;'>".$row["create_date"]."</td>";
-        echo "<td style='background: #ededed;'><a target='_Blank' href='".$row["file_path"].$row["file_name"]."' download='".$row["job_number"]." ".$row["file_name"]."'>download</a></td>";
+        echo "<td style='background: #ededed;'><a target='_Blank' href='".$herf."' download='".$row["job_number"]." ".$row["file_name"]."'>download</a></td>";
         echo "</tr>";
         $pass = true;
     } 
