@@ -31,6 +31,7 @@
     echo  "</tr>
     </thead>
      <tbody>";
+     while($row = mysqli_fetch_array($result)) {
         echo "<tr>";
         echo "<th scope='row' style='background: #ededed;'>".$row["job_number"]."</th>";
         echo "<td style='background: #ededed;'>".$row["file_name"]."</dh>";
