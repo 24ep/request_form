@@ -13,7 +13,8 @@
   att.ticket_type as ticket_type,
   att.create_date as create_date,
   js.job_number as job_number,
-  cm.ticket_id as csg_id
+  cm.ticket_id as csg_id,
+  cm.comment as comment
   FROM all_in_one_project.attachment as att
   left join all_in_one_project.comment as cm
   on cm.id = att.ticket_id 
@@ -31,7 +32,8 @@
     echo "<th>comment_id</th>";
     echo "<th>ns_id</th>";
     echo "<th>file_id</th>";
-    echo "<th>create date</th>";  
+    echo "<th>create date</th>"; 
+    echo "<th>comment</th>"; 
     echo "<th>download</th>";
     echo  "</tr>
     </thead>
@@ -48,6 +50,7 @@
         echo "<td style='background: #ededed;'>".$row["csg_id"]."</td>";
         echo "<td style='background: #ededed;'>".$row["id"]."</td>";
         echo "<td style='background: #ededed;'>".$row["create_date"]."</td>";
+        echo "<td style='background: #ededed;'>".$row["comment"]."</td>";
         echo "<td style='background: #ededed;'><a href='".$herf."' download='".$row["job_number"]." ".$row["file_name"]."'>download</a></td>";
         echo "</tr>";
         $pass = true;
