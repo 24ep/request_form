@@ -16,7 +16,7 @@
   FROM all_in_one_project.attachment as att
   left join u749625779_cdscontent.job_cms as js
   on att.ticket_id = js.csg_request_new_id 
-  where create_date like '".$_GET['create_date']."' and ticket_type = '".$_GET['ticket_type']."'  ORDER BY job_number DESC" or die("Error:" . mysqli_error());
+  where create_date like '%".$_GET['create_date']."%' and ticket_type = '".$_GET['ticket_type']."'  ORDER BY job_number DESC" or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
     echo 
     "<table class='table table-bordered'>
