@@ -28,7 +28,8 @@
     echo "<th scope='row'>job number</th>";  
     echo "<th>file name</th>";
     echo "<th>file owner</th>";
-    echo "<th>ticket_id</th>";
+    echo "<th>comment_id</th>";
+    echo "<th>ns_id</th>";
     echo "<th>create date</th>";  
     echo "<th>download</th>";
     echo  "</tr>
@@ -43,6 +44,7 @@
         echo "<td style='background: #ededed;'>".$row["file_name"]."</dh>";
         echo "<td style='background: #ededed;'>".$row["file_owner"]."</td>";  
         echo "<td style='background: #ededed;'>".$row["ticket_id"]."</td>";
+        echo "<td style='background: #ededed;'>".$row["csg_id"]."</td>";
         echo "<td style='background: #ededed;'>".$row["create_date"]."</td>";
         echo "<td style='background: #ededed;'><a href='".$herf."' download='".$row["job_number"]." ".$row["file_name"]."'>download</a></td>";
         echo "</tr>";
