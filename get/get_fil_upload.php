@@ -7,16 +7,19 @@
   att.file_path as file_path,
   att.file_size as file_size,
   att.file_type as file_type,
-  att.is_image as is_image,
+  att.is_image as file_type,
   att.file_owner as file_owner,
   att.ticket_id as ticket_id,
   att.ticket_type as ticket_type,
   att.create_date as create_date,
-  js.job_number as job_number
+  js.job_number as job_number,
+  cm.ticket_id as csg_id
   FROM all_in_one_project.attachment as att
+  left join all_in_one_project.comment as cm
+  on cm.id = att.ticket_id 
   left join u749625779_cdscontent.job_cms as js
-  on att.ticket_id = js.csg_request_new_id 
-  where create_date like '%".$_GET['create_date']."%' and ticket_type = '".$_GET['ticket_type']."'  ORDER BY js.job_number DESC" or die("Error:" . mysqli_error());
+  on cm.ticket_id = js.csg_request_new_id 
+  where att.create_date like '%".$_GET['create_date']."%' and att.ticket_type = '".$_GET['ticket_type']."'  ORDER BY js.job_number DESC" or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
     echo 
     "<table class='table table-bordered'>
