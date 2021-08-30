@@ -7,7 +7,7 @@
     $id = $_POST["id"];
     $new_contact_vender = $_POST["new_contact_vender"];
     $new_contact_buyer = $_POST["new_contact_buyer"];
-    $sql = "UPDATE add_new_job SET status = pending,contact_buyer = '".$new_contact_buyer."',contact_vender = '".$new_contact_vender."' WHERE id=".$id;
+    $sql = "UPDATE add_new_job SET status = 'pending',contact_buyer = '".$new_contact_buyer."',contact_vender = '".$new_contact_vender."' WHERE id=".$id;
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
 	if($query) {
