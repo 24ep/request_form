@@ -725,8 +725,8 @@ function itm_just_status_updated_contact(id){
        
         $.post("action/action_itm_updated_contact_status.php", {
             id: id,
-            contact_buyer: new_contact_buyer,
-            contact_vender:new_contact_vender
+            new_contact_buyer: new_contact_buyer,
+            new_contact_vender:new_contact_vender
         }, function(data) {
             $('#contact_update').html(data);
         });
