@@ -470,7 +470,7 @@ label#label_file_cme {
                                 </div>
                                 <hr>
                                 <!-- cancel confirm not for sale -->
-                                <?php if($status<>"need to update contact"){ ?>
+                                <?php if($status<>"need update contact"){ ?>
                                 <div class="row g-3">
                                     <div class="col-4">
                                         <h6><strong>Need to update contact</strong></h6>
@@ -495,7 +495,7 @@ label#label_file_cme {
                                 <hr>
                                 <?php } ?>
                                 <!-- Get new contact -->
-                                <?php if($status=="need to update contact"){ ?>
+                                <?php if($status=="need update contact"){ ?>
                                 <div class="row g-3">
                                     <div class="col-4">
                                         <h6><strong>Get new contact</strong></h6>
