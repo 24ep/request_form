@@ -718,7 +718,21 @@ function comment_ins_id_with_file(id) {
         }
     });
 }
+function itm_just_status_updated_contact(id){
+       var new_contact_vender = document.getElementById('new_contact_vender').value;
+       var new_contact_buyer = document.getElementById('new_contact_buyer').value;
+    if (id) {
+       
+        $.post("action/action_itm_updated_contact_status.php", {
+            id: id,
+            contact_buyer: new_contact_buyer,
+            contact_vender:new_contact_vender
+        }, function(data) {
+            $('#contact_update').html(data);
+        });
+    }
 
+}
 function comment_cr_id(id) {
     var comment = document.getElementById("comment_input_cr").value;
     document.getElementById('comment_input_cr').value = ''; //clear value
