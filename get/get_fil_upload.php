@@ -7,7 +7,7 @@
   att.file_path as file_path,
   att.file_size as file_size,
   att.file_type as file_type,
-  att.is_image as file_type,
+  att.is_image as is_image,
   att.file_owner as file_owner,
   att.ticket_id as ticket_id,
   att.ticket_type as ticket_type,
@@ -37,7 +37,7 @@
         echo "<td style='background: #ededed;'>".$row["file_name"]."</dh>";
         echo "<td style='background: #ededed;'>".$row["file_owner"]."</td>";  
         echo "<td style='background: #ededed;'>".$row["ticket_id"]."</td>";
-        echo "<td style='background: #ededed;'><a target='_Blank' href='".$row["ticket_path"]."' download>download</a></td>";
+        echo "<td style='background: #ededed;'><a target='_Blank' href='".$row["file_path"]."' download>download</a></td>";
         echo "</tr>";
         $pass = true;
     } 
