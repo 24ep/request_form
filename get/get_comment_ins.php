@@ -39,4 +39,5 @@ function get_comment_ins($id){
       }
   }
   get_comment_ins($id);
+  mysqli_close($con);
 ?>

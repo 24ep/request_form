@@ -43,4 +43,5 @@ function get_comment_cr($id){
       }
   }
   get_comment_cr($id);
+  mysqli_close($con);
 ?>
