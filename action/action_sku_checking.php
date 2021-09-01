@@ -17,7 +17,8 @@
         $result = mysqli_query($con, $query);
         $sku_item_check = " ";
         while($row = mysqli_fetch_array($result)) {
-            $sku_item_check .= $row["sku"]." > ".$row["csg_id"]."\n";
+     
+            $sku_item_check .= "<tr>td>".$row["sku"]."</td><td>".$row["csg_id"]."</td></tr>";
 
         }
 
@@ -29,9 +30,19 @@
         }else{
             echo '<div class="alert alert-danger" role="alert">
             ตรวจจพบ sku ด้านล่าง ซ้ำในฐานข้องมูลของ <strong>SERVICE-GATE\n
-            เมื่อยืนยัน accept ระบบจะเปลี่ยน ให้ sku เหล่านั้นเป็น sku ของ ticket ที่กด accept</strong>\n';
+            เมื่อยืนยัน accept ระบบจะเปลี่ยน ให้ sku เหล่านั้นเป็น sku ของ ticket ที่กด accept</strong>\n
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">sku</th>
+                <th scope="col">csg_id</th>
+                </tr>
+            </thead>
+            <tbody>';
             echo $sku_item_check;
-            echo '</div>';
+            echo ' </tbody>
+            </table>
+            </div>';
         }
         echo '<strong>ปล.การตรวจสอบกับฐานข้อมูล MDC ยังทำไม่เสร็จ</strong>';
         
