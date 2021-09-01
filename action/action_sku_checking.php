@@ -25,12 +25,11 @@
             
             echo '<div class="alert alert-success" role="alert">
                         ตรวจไม่พบ sku ที่ซ้ำบนระบบ service-gate
-                  </div>'
+                  </div>';
         }else{
             echo '<div class="alert alert-danger" role="alert">
             ตรวจจพบ sku ด้านล่าง ซ้ำในฐานข้องมูลของ <strong>SERVICE-GATE\n
-            เมื่อยืนยัน accept ระบบจะเปลี่ยน ให้ sku เหล่านั้นเป็น sku ของ ticket ที่กด accept</strong>\n
-            ';
+            เมื่อยืนยัน accept ระบบจะเปลี่ยน ให้ sku เหล่านั้นเป็น sku ของ ticket ที่กด accept</strong>\n';
             echo $sku_item_check;
             echo '</div>';
         }
