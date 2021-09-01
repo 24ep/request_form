@@ -183,12 +183,12 @@ label#label_file_cme {
                                 role="tab" aria-controls="v-pills-tf_team" aria-selected="false">
                                 <ion-icon name="trail-sign-outline"></ion-icon>traffic stage
                             </a>
-                            <?php if($_SESSION['username']=='poojaroonwit'){ ?>
+                        
                             <a class="nav-link inpo" id="v-pills-sku-checking-tab" data-toggle="pill" href="#v-pills-sku-checking"
                                 role="tab" aria-controls="v-pills-sku-checking" aria-selected="false">
                                 <ion-icon name="trail-sign-outline"></ion-icon>SKU Checking
                             </a>
-                            <?php } ?>
+                        
                             <a class="nav-link inpo" id="v-pills-sku-tab" data-toggle="pill" href="#v-pills-sku"
                                 role="tab" aria-controls="v-pills-sku" aria-selected="false">
                                 <ion-icon name="trail-sign-outline"></ion-icon>SKU list
