@@ -1064,12 +1064,14 @@ function accepted_stt(id ) {
 
 function cancel_stt(id, status_change) {
     resone_cancel = document.getElementById('resone_cancel').value;
+    status_change = 'cancel';
 
     if (id) {
 
         $.post("action/action_cancel_stt.php", {
             id: id,
-            resone_cancel: resone_cancel
+            resone_cancel: resone_cancel,
+            status_change: status_change
         }, function(data) {
             $('#cancel_checking_resault').html(data);
         });
