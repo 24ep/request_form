@@ -19,11 +19,11 @@
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
   $query = "SELECT file.job_number , job_cms.brand , job_cms.sku ,file.id, file.file_name, file.file_path, file.create_at,  file.remark,  file.file_owner ,
-  CONCAT("",job_cms.job_number," ",job_cms.brand," ",job_cms.sku," SKU ___",file_name) as name_download
+  REPLACE(CONCAT("",job_cms.job_number," ",job_cms.brand," ",job_cms.sku," SKU ___",file_name), "'", "");  as name_download
   FROM u749625779_cdscontent.file_manage as file
   left join u749625779_cdscontent.job_cms as job_cms
   on job_cms.job_number = file.job_number
-  where file.create_at like '%".$_GET['create_date']."%' and file.file_type in ('Buyerfile')ORDER BY job_number ASC" or die("Error:" . mysqli_error());
+  where file.create_at like '%".$_GET['create_date']."%' and file.file_type in ('Buyerfile') ORDER BY job_number ASC" or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
     echo 
     "<table class='table table-bordered'>
