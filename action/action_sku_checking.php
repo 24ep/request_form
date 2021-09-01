@@ -29,7 +29,7 @@
                   </div>';
         }else{
             echo '<div class="alert alert-danger" role="alert">
-            ตรวจจพบ sku ด้านล่าง ซ้ำในฐานข้องมูลของ <strong>SERVICE-GATE\n
+            ตรวจจพบ sku ด้านล่าง ซ้ำในฐานข้องมูลของ <strong>SERVICE-GATE<br>
             เมื่อยืนยัน accept ระบบจะเปลี่ยน ให้ sku เหล่านั้นเป็น sku ของ ticket ที่กด accept</strong>\n
             <table class="table">
             <thead>
