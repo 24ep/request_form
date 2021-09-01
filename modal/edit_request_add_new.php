@@ -257,11 +257,11 @@ label#label_file_cme {
 
                                 <div class="row">
                                     <div class="col-6">
-                                            <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted"></label>
+                                            <label style="margin-top:5px;margin-bottom:5px" for="sku_checking">sku checking</label>
                                             <textarea style="font-size:12px" onchange="sku_checking()" class="form-control" id="sku_checking"
                                                 name="sku_accepted"
                                                 placeholder="ตรวจสอบ sku ตามตัวอย่างด้านล่าง วางตามตัวอย่างด้านล่าง&#10;&#10;CDS3466644&#10;CDS2443356&#10;CDS2487356"
-                                                rows="20" style="height: 100px">
+                                                rows="20" style="height: 300px">
                                             </textarea>
                                     </div>
                                     <div class="col-6">
