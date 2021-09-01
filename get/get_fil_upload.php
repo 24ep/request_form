@@ -18,9 +18,12 @@
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
-  $query = "SELECT job_number , id, file_name, file_path, create_at,  remark,  file_owner
+  $query = "SELECT file.job_number , job_cms.brand , job_cms.sku ,file.id, file.file_name, file.file_path, file.create_at,  file.remark,  file.file_owner ,
+  CONCAT("",job_cms.job_number," ",job_cms.brand," ",job_cms.sku," SKU ___",file_name) as name_download
   FROM u749625779_cdscontent.file_manage as file
-  where create_at like '%".$_GET['create_date']."%' and file_type in ('Buyerfile')  ORDER BY job_number ASC" or die("Error:" . mysqli_error());
+  left join u749625779_cdscontent.job_cms as job_cms
+  on job_cms.job_number = file.job_number
+  where file.create_at like '%".$_GET['create_date']."%' and file.file_type in ('Buyerfile')ORDER BY job_number ASC" or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
     echo 
     "<table class='table table-bordered'>
@@ -49,7 +52,7 @@
         echo "<td style='background: #ededed;'>".$row["id"]."</td>";
         echo "<td style='background: #ededed;'>".$row["create_at"]."</td>";
         echo "<td style='background: #ededed;'>".$row["remark"]."</td>";
-        echo "<td style='background: #ededed;'><a href='".$herf."' download='".$row["job_number"]." ".$row["file_name"]."'>download</a></td>";
+        echo "<td style='background: #ededed;'><a href='".$herf."' download='".$row["name_download"]."'>download</a></td>";
         echo "</tr>";
         $pass = true;
     } 
