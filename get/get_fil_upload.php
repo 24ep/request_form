@@ -38,7 +38,7 @@
     </thead>
      <tbody>";
      while($row = mysqli_fetch_array($result)) {
-        $herf = str_replace("../..",'https://cdsecommercecontent.ga',$row['file_path'].$row['file_name']);
+        $herf = str_replace("../",'https://cdsecommercecontent.ga',$row['file_path'].$row['file_name']);
         // $herf = str_replace(".xlsm",$herf);
         // $herf = str_replace(".xlsx",$herf);
         echo "<tr>";
@@ -47,7 +47,7 @@
         echo "<td style='background: #ededed;'>".$row["file_owner"]."</td>";  
         echo "<td style='background: #ededed;'>".$row["job_cms_id"]."</td>";
         echo "<td style='background: #ededed;'>".$row["id"]."</td>";
-        echo "<td style='background: #ededed;'>".$row["create_date"]."</td>";
+        echo "<td style='background: #ededed;'>".$row["create_at"]."</td>";
         echo "<td style='background: #ededed;'>".$row["remark"]."</td>";
         echo "<td style='background: #ededed;'><a href='".$herf."' download='".$row["job_number"]." ".$row["file_name"]."'>download</a></td>";
         echo "</tr>";
