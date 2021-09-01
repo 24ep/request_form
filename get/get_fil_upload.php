@@ -43,7 +43,8 @@
         $herf = str_replace("../",'https://cdsecommercecontent.ga/',$row['file_path'].$row['file_name']);
         // $herf = str_replace(".xlsm",$herf);
         // $herf = str_replace(".xlsx",$herf);
-        $name_download = $row["job_number"]." ".str_replace("'",$row["brand"])." ".$row["sku"]." SKU ____".$row['file_name'];
+        $brand = str_replace("'",$row["brand"]);
+        $name_download = $row["job_number"]." ".$brand." ".$row["sku"]." SKU ____".$row['file_name'];
         echo "<tr>";
         echo "<th scope='row' style='background: #ededed;'>".$row["job_number"]."</th>";
         echo "<td style='background: #ededed;'>".$row["file_name"]."</dh>";
