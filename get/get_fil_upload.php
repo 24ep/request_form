@@ -2,25 +2,9 @@
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
-  $query = "SELECT att.id as id,
-  att.file_name as file_name,
-  att.file_path as file_path,
-  att.file_size as file_size,
-  att.file_type as file_type,
-  att.is_image as file_type,
-  att.file_owner as file_owner,
-  att.ticket_id as ticket_id,
-  att.ticket_type as ticket_type,
-  att.create_date as create_date,
-  js.job_number as job_number,
-  cm.ticket_id as csg_id,
-  cm.comment as comment
-  FROM all_in_one_project.attachment as att
-  left join all_in_one_project.comment as cm
-  on cm.id = att.ticket_id 
-  left join u749625779_cdscontent.job_cms as js
-  on cm.ticket_id = js.csg_request_new_id 
-  where att.create_date like '%".$_GET['create_date']."%' and att.ticket_type = '".$_GET['ticket_type']."' and js.job_number is not null  ORDER BY js.job_number DESC, att.ticket_id DESC" or die("Error:" . mysqli_error());
+  $query = "SELECT job_number , id, file_name, file_path, create_at,  remark,  file_owner
+  FROM u749625779_cdscontent.file_manage as file
+  where create_at like '%".$_GET['create_date']."%' and file_type in ('Buyerfile')  ORDER BY job_number DESC" or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
     echo 
     "<table class='table table-bordered'>
@@ -29,11 +13,10 @@
     echo "<th scope='row'>job number</th>";  
     echo "<th>file name</th>";
     echo "<th>file owner</th>";
-    echo "<th>comment_id</th>";
-    echo "<th>ns_id</th>";
+    echo "<th>job_cms_id</th>";
     echo "<th>file_id</th>";
     echo "<th>create date</th>"; 
-    echo "<th>comment</th>"; 
+    echo "<th>Remark</th>"; 
     echo "<th>download</th>";
     echo  "</tr>
     </thead>
@@ -46,11 +29,10 @@
         echo "<th scope='row' style='background: #ededed;'>".$row["job_number"]."</th>";
         echo "<td style='background: #ededed;'>".$row["file_name"]."</dh>";
         echo "<td style='background: #ededed;'>".$row["file_owner"]."</td>";  
-        echo "<td style='background: #ededed;'>".$row["ticket_id"]."</td>";
-        echo "<td style='background: #ededed;'>".$row["csg_id"]."</td>";
+        echo "<td style='background: #ededed;'>".$row["job_cms_id"]."</td>";
         echo "<td style='background: #ededed;'>".$row["id"]."</td>";
         echo "<td style='background: #ededed;'>".$row["create_date"]."</td>";
-        echo "<td style='background: #ededed;'>".$row["comment"]."</td>";
+        echo "<td style='background: #ededed;'>".$row["remark"]."</td>";
         echo "<td style='background: #ededed;'><a href='".$herf."' download='".$row["job_number"]." ".$row["file_name"]."'>download</a></td>";
         echo "</tr>";
         $pass = true;
