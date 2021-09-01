@@ -183,6 +183,12 @@ label#label_file_cme {
                                 role="tab" aria-controls="v-pills-tf_team" aria-selected="false">
                                 <ion-icon name="trail-sign-outline"></ion-icon>traffic stage
                             </a>
+                            <?php if($_SESSION['username']=='poojaroonwit'){ ?>
+                            <a class="nav-link inpo" id="v-pills-sku-checking-tab" data-toggle="pill" href="#v-pills-sku-checking"
+                                role="tab" aria-controls="v-pills-sku-checking" aria-selected="false">
+                                <ion-icon name="trail-sign-outline"></ion-icon>SKU Checking
+                            </a>
+                            <?php } ?>
                             <a class="nav-link inpo" id="v-pills-sku-tab" data-toggle="pill" href="#v-pills-sku"
                                 role="tab" aria-controls="v-pills-sku" aria-selected="false">
                                 <ion-icon name="trail-sign-outline"></ion-icon>SKU list
@@ -192,6 +198,7 @@ label#label_file_cme {
                                 aria-selected="false">
                                 <ion-icon name="chatbox-ellipses-outline"></ion-icon>Internal note
                             </a>
+
                             <?php }?>
                         </div>
                     </div>
@@ -245,8 +252,30 @@ label#label_file_cme {
 
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="v-pills-log" role="tabpanel"
-                                aria-labelledby="v-pills-log-tab">...</div>
+                            <div class="tab-pane fade" id="v-pills-sku-checking" role="tabpanel"
+                                aria-labelledby="v-pills-sku-checking-tab">
+
+                                <div class="row">
+                                    <div class="col-6">
+                                            <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted"></label>
+                                            <textarea style="font-size:12px" onchange="sku_checking()" class="form-control" id="sku_checking"
+                                                name="sku_accepted"
+                                                placeholder="ตรวจสอบ sku ตามตัวอย่างด้านล่าง วางตามตัวอย่างด้านล่าง&#10;&#10;CDS3466644&#10;CDS2443356&#10;CDS2487356"
+                                                rows="20" style="height: 100px">
+                                            </textarea>
+                                    </div>
+                                    <div class="col-6">
+                                            <div id="sku_checking_result">
+                                            </div>
+
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                            </div>
                             <div class="tab-pane fade" id="v-pills-fu_team" role="tabpanel"
                                 aria-labelledby="v-pills-fu_team-tab">
 
@@ -479,9 +508,7 @@ label#label_file_cme {
                                     </div>
 
                                     <div class="col-4">
-                                        <button
-                                            onclick="itm_just_status_need_updated_contact(<?php echo $id; ?>);"
-                                        
+                                        <button onclick="itm_just_status_need_updated_contact(<?php echo $id; ?>);"
                                             type="button" class="btn btn-warning btn-sm" <?php echo $allow_cancel; ?>
                                             style="width: 100%;margin-top:5px">Need to update contact
                                         </button>
@@ -500,21 +527,24 @@ label#label_file_cme {
                                     <div class="col-4">
                                         <h6><strong>Get new contact</strong></h6>
                                         <small>ได้รับ contact ใหม่เปลี่ยน status เป็น pending</small>
-                                            <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a comment here" id="new_contact_buyer" style="height: 100px"><?php echo $contact_buyer; ?></textarea>
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Leave a comment here"
+                                                id="new_contact_buyer"
+                                                style="height: 100px"><?php echo $contact_buyer; ?></textarea>
                                             <label for="floatingTextarea2">Contact buyer</label>
-                                            </div>
-                                            
-                                            <div class="form-floating" style="margin-top:10px">
-                                            <textarea class="form-control" placeholder="Leave a comment here" id="new_contact_vender" style="height: 100px"><?php echo $contact_vender; ?></textarea>
+                                        </div>
+
+                                        <div class="form-floating" style="margin-top:10px">
+                                            <textarea class="form-control" placeholder="Leave a comment here"
+                                                id="new_contact_vender"
+                                                style="height: 100px"><?php echo $contact_vender; ?></textarea>
                                             <label for="floatingTextarea2">Contact vender</label>
-                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="col-4">
-                                       
-                                        <button
-                                            onclick="itm_just_status_updated_contact(<?php echo $id; ?>);"
+
+                                        <button onclick="itm_just_status_updated_contact(<?php echo $id; ?>);"
                                             type="button" class="btn btn-success btn-sm" <?php echo $allow_cancel; ?>
                                             style="width: 100%;margin-top:5px">get contact - change to Pending
                                         </button>
@@ -718,21 +748,23 @@ function comment_ins_id_with_file(id) {
         }
     });
 }
-function itm_just_status_updated_contact(id){
-       var new_contact_vender = document.getElementById('new_contact_vender').value;
-       var new_contact_buyer = document.getElementById('new_contact_buyer').value;
+
+function itm_just_status_updated_contact(id) {
+    var new_contact_vender = document.getElementById('new_contact_vender').value;
+    var new_contact_buyer = document.getElementById('new_contact_buyer').value;
     if (id) {
-       
+
         $.post("action/action_itm_updated_contact_status.php", {
             id: id,
             new_contact_buyer: new_contact_buyer,
-            new_contact_vender:new_contact_vender
+            new_contact_vender: new_contact_vender
         }, function(data) {
             $('#contact_update').html(data);
         });
     }
 
 }
+
 function comment_cr_id(id) {
     var comment = document.getElementById("comment_input_cr").value;
     document.getElementById('comment_input_cr').value = ''; //clear value
@@ -750,7 +782,7 @@ function comment_cr_id(id) {
 }
 
 function itemize_send_mail_stamp(id) {
-    let subject_mail = prompt("ระบุ subject mail",'<?php echo $subject_mail; ?>');
+    let subject_mail = prompt("ระบุ subject mail", '<?php echo $subject_mail; ?>');
     if (subject_mail == null || subject_mail == "") {
         alert("user cancel prompt");
     } else {
@@ -768,6 +800,7 @@ function itemize_send_mail_stamp(id) {
         }
     }
 }
+
 function itm_just_status_need_updated_contact(id) {
 
     if (id) {
@@ -780,6 +813,18 @@ function itm_just_status_need_updated_contact(id) {
     }
 }
 
+function sku_checking() {
+    // sku_checking_result
+    var sku_list = document.getElementById("sku_checking").value;
+if (id) {
+    $.post("action/action_sku_checking.php", {
+        sku_list: sku_list
+        },
+        function(data) {
+            $('#sku_checking_result').html(data);
+        });
+}
+}
 
 
 

@@ -26,18 +26,19 @@
         print_r ($sku_list_array);
 
         $sku_list = implode(',',$sku_list_array);
-        echo $sku_list;
+      
         $sql_sku = "INSERT INTO sku_list (
             sku,create_by,csg_id )
         VALUES 
             ".$sku_list."
             ON DUPLICATE KEY UPDATE
-            csg_id = new.csg_id,
-            create_by = new.create_by
+            csg_id = VALUES(csg_id),
+            create_by = (create_by)
             ;";
-echo $sql_sku;
+    
         
         $query_sku = mysqli_query($con,$sql_sku);
+        
 
         //get key
         
