@@ -33,7 +33,7 @@
             ".$sku_list."
             ON DUPLICATE KEY UPDATE
             csg_id = VALUES(csg_id),
-            create_by = (create_by)
+            create_by = VALUES(create_by)
             ;";
     
         
