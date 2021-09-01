@@ -19,7 +19,7 @@
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
   $query = "SELECT file.job_number , job_cms.brand , job_cms.sku ,file.id, file.file_name, file.file_path, file.create_at,  file.remark,  file.file_owner ,
-  REPLACE(CONCAT("",job_cms.job_number," ",job_cms.brand," ",job_cms.sku," SKU ___",file_name), "'", "");  as name_download
+  CONCAT("",job_cms.job_number," ",job_cms.brand," ",job_cms.sku," SKU ___",file_name) as name_download
   FROM u749625779_cdscontent.file_manage as file
   left join u749625779_cdscontent.job_cms as job_cms
   on job_cms.job_number = file.job_number
@@ -44,6 +44,7 @@
         $herf = str_replace("../",'https://cdsecommercecontent.ga/',$row['file_path'].$row['file_name']);
         // $herf = str_replace(".xlsm",$herf);
         // $herf = str_replace(".xlsx",$herf);
+        $name_download = str_replace("'",$row["name_download"]);
         echo "<tr>";
         echo "<th scope='row' style='background: #ededed;'>".$row["job_number"]."</th>";
         echo "<td style='background: #ededed;'>".$row["file_name"]."</dh>";
@@ -52,7 +53,7 @@
         echo "<td style='background: #ededed;'>".$row["id"]."</td>";
         echo "<td style='background: #ededed;'>".$row["create_at"]."</td>";
         echo "<td style='background: #ededed;'>".$row["remark"]."</td>";
-        echo "<td style='background: #ededed;'><a href='".$herf."' download='".$row["name_download"]."'>download</a></td>";
+        echo "<td style='background: #ededed;'><a href='".$herf."' download='".$name_download."'>download</a></td>";
         echo "</tr>";
         $pass = true;
     } 
