@@ -20,7 +20,7 @@
   mysqli_query($con, "SET NAMES 'utf8' ");
   $query = "SELECT job_number , id, file_name, file_path, create_at,  remark,  file_owner
   FROM u749625779_cdscontent.file_manage as file
-  where create_at like '%".$_GET['create_date']."%' and file_type in ('Buyerfile')  ORDER BY job_number DESC" or die("Error:" . mysqli_error());
+  where create_at like '%".$_GET['create_date']."%' and file_type in ('Buyerfile')  ORDER BY job_number ASC" or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
     echo 
     "<table class='table table-bordered'>
