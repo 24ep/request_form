@@ -45,7 +45,10 @@
             </div>';
         }
         echo '<strong>ปล.การตรวจสอบกับฐานข้อมูล MDC ยังทำไม่เสร็จ</strong>';
-        
+        echo '<hr>';
 
+        // $get_atena_checking = escapeshellcmd("action_sku_checking_mdc_atena.py $sku_list ");
+        // $resultAsString = shell_exec($command);
+        // echo $resultAsString;
 
 ?>
