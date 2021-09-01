@@ -18,7 +18,7 @@
         $sku_item_check = " ";
         while($row = mysqli_fetch_array($result)) {
      
-            $sku_item_check .= "<tr>td>".$row["sku"]."</td><td>".$row["csg_id"]."</td></tr>";
+            $sku_item_check .= "<tr><td>".$row["sku"]."</td><td>".$row["csg_id"]."</td></tr>";
 
         }
 
