@@ -816,7 +816,7 @@ function itm_just_status_need_updated_contact(id) {
 function sku_checking() {
     // sku_checking_result
     var sku_list = document.getElementById("sku_checking").value;
-if (id) {
+if (sku_list) {
     $.post("action/action_sku_checking.php", {
         sku_list: sku_list
         },
