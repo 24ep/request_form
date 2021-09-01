@@ -1,7 +1,9 @@
 <?php
   $sku_list= $_POST['sku_list'];
   trim($sku_list," ");
-
+  date_default_timezone_set("Asia/Bangkok");
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+  mysqli_query($con, "SET NAMES 'utf8' ");
   $sku_list_ex = explode("\n", $sku_list);
   $sku_list_array = array();
     foreach ( $sku_list_ex as $sku ) {
@@ -15,7 +17,7 @@
         $result = mysqli_query($con, $query);
         $sku_item_check = " ";
         while($row = mysqli_fetch_array($result)) {
-            $sku_item_check .= $row["sku"]." > ".$row["csg_id"]ว
+            $sku_item_check .= $row["sku"]." > ".$row["csg_id"];
 
         }
 
@@ -26,7 +28,7 @@
             เมื่อยืนยัน accept ระบบจะเปลี่ยน ให้ sku เหล่านั้นเป็น sku ของ ticket ที่กด accept</strong>&#10';
             echo $sku_item_check;
         }
-        echo 'ปล.การตรวจสอบกับฐานข้อมูล MDC ยังทำไม่เสร็จ'
+        echo 'ปล.การตรวจสอบกับฐานข้อมูล MDC ยังทำไม่เสร็จ';
         
 
 
