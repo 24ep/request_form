@@ -38,7 +38,7 @@
     </thead>
      <tbody>";
      while($row = mysqli_fetch_array($result)) {
-        $herf = str_replace("../",'https://cdsecommercecontent.ga',$row['file_path'].$row['file_name']);
+        $herf = str_replace("../",'https://cdsecommercecontent.ga/',$row['file_path'].$row['file_name']);
         // $herf = str_replace(".xlsm",$herf);
         // $herf = str_replace(".xlsx",$herf);
         echo "<tr>";
