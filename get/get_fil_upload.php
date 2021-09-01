@@ -40,7 +40,7 @@
     </thead>
      <tbody>";
      while($row = mysqli_fetch_array($result)) {
-        $herf = $row['file_path'].$row['file_name']);
+        $herf = $row['file_path'].$row['file_name'];
         // $herf = str_replace(".xlsm",$herf);
         // $herf = str_replace(".xlsx",$herf);
         $brand = str_replace("'",$row["brand"]);
