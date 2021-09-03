@@ -299,6 +299,15 @@ label#label_file_cme {
                                                 name="sku_accepted"
                                                 placeholder="ตรวจสอบ sku ตามตัวอย่างด้านล่าง วางตามตัวอย่างด้านล่าง&#10;&#10;CDS3466644&#10;CDS2443356&#10;CDS2487356"
                                                 rows="20" style="height: 300px"></textarea>
+                                            
+
+                                <div class="form-floating">
+                                <select class="form-select" id="be_status_on_change" aria-label="Floating label select example">
+                                    <option selected value="cancel">ให้ยกเลิก ticket นั้น (ปรับสถานะเป็น cancel)</option>
+                                    <option value="keep">ให้คงสถานะเดิมไว้</option>
+                                </select>
+                                <label for="floatingSelect">สถานะ ticket เดิมในกรณีที่เป็น sku ที่มีอยู่แล้ว</label>
+                                </div>
                                             <button type="button" style="margin-top:10px" onclick="force_sync_with_ticket(<?php echo $_POST['id']; ?>)" class="btn btn-danger">ยืนยัน เชื่อมต่อ sku ด้านบนกับ ticket NS- <?php echo $_POST["id"];?></button>
                                     </div>
                                     <div class="col-6">
@@ -865,10 +874,12 @@ function sku_checking() {
 
 function force_sync_with_ticket(id){
     var sku_change = document.getElementById("sku_checking").value;
+    var be_status_on_change = document.getElementById("be_status_on_change").value;
     if(sku_change) {
         $.post("action/action_force_change_csg_id_of_sku.php", {
             id:id,
-            sku_change: sku_change
+            sku_change: sku_change,
+            be_status_on_change:be_status_on_change
             },
             function(data) {
                 $('#sku_checking_result').html(data);
