@@ -26,7 +26,7 @@
             }
             
         }
-        // $sku_just_array = array_unique($sku_just_array);
+        // cancel old ticket
         $sku_just =  implode(',',$sku_just_array);
         $query_dulp_sku = "SELECT * FROM sku_list where sku in (".$sku_just .") ORDER BY id DESC " or die("Error:" . mysqli_error());
         $result_dulp_sku = mysqli_query($con, $query_dulp_sku);
@@ -39,8 +39,9 @@
         $sql_cancel_old = $sql = "UPDATE add_new_job SET cancel_resone = '".$_SESSION["username"]." had been cancel sine of move sku to ticket NS-".$id." ".date("Y-m-d H:i:s")."' , status = 'cancel',cancel_date = CURRENT_TIMESTAMP  WHERE id in (".$sku_csg_ticket_id_nc_text .")";
         $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
         $query_cancel_old = mysqli_query($con,$sql_cancel_old);
+        // end cancel old ticket
 
-        print_r ($sku_list_array);
+        // print_r ($sku_list_array);
 
         $sku_list = implode(',',$sku_list_array);
         
