@@ -313,6 +313,9 @@ label#label_file_cme {
                                     <div class="col-6">
                                             <div id="sku_checking_result">
                                             </div>
+                                            <div id="sku_checking_result">
+                                            </div>
+                                            sku_checking_result_force
 
                                     </div>
                                 </div>
@@ -882,7 +885,7 @@ function force_sync_with_ticket(id){
             be_status_on_change:be_status_on_change
             },
             function(data) {
-                $('#sku_checking_result').html(data);
+                $('#sku_checking_result_force').html(data);
             });
     }
 }
