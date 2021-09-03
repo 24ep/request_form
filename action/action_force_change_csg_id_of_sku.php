@@ -19,7 +19,7 @@
         if($_POST["be_status_on_change"]=="cancel"){
             // cancel old ticket
             $sku_just =  implode(',',$sku_just_array);
-            $query_dulp_sku = "SELECT * FROM sku_list where sku in (".$sku_just .") ORDER BY id DESC " or die("Error:" . mysqli_error());
+            $query_dulp_sku = "SELECT * FROM sku_list where sku in (".$sku_just.") ORDER BY id DESC " or die("Error:" . mysqli_error());
             $result_dulp_sku = mysqli_query($con, $query_dulp_sku);
             $sku_csg_ticket_id_nc = array();
             while($row_dulp_sku = mysqli_fetch_array($result_dulp_sku)) {
@@ -46,6 +46,8 @@
         $query_sku = mysqli_query($con,$sql_sku);
         if($query_sku){
             echo 'success !';
+        }else{
+            echo 'Error: ' . $sql . '<br>' . $con->error.'';
         }
         unsent($sku_list_array);
         unsent($sku_just_array);
