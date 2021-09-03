@@ -18,7 +18,7 @@
             
         }
         print_r($sku_list_array);
-        $sku_list = implode(',',$sku_list_array);
+        $sku_list_text = implode(',',$sku_list_array);
         if($_POST["be_status_on_change"]=="cancel"){
             // cancel old ticket
             $sku_just =  implode(',',$sku_just_array);
@@ -39,7 +39,7 @@
         $sql_sku = "INSERT INTO sku_list (
             sku,create_by,csg_id )
              VALUES 
-            ".$sku_list."
+            ".$sku_list_text."
             ON DUPLICATE KEY UPDATE
             csg_id = VALUES(csg_id),
             create_by = VALUES(create_by)
