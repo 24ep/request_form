@@ -865,7 +865,7 @@ function sku_checking() {
 
 function force_sync_with_ticket(id){
     var sku_change = document.getElementById("sku_checking").value;
-    if(sku_list) {
+    if(sku_change) {
         $.post("action/action_force_change_csg_id_of_sku.php", {
             id:id,
             sku_change: sku_change
