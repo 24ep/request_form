@@ -47,7 +47,7 @@
         if($query_sku){
             echo 'success !';
         }else{
-            echo 'Error: ' . $sql . '<br>' . $con->error.'';
+            echo 'Error: ' . $sql_sku . '<br>' . $con->error.'';
         }
         unsent($sku_list_array);
         unsent($sku_just_array);
