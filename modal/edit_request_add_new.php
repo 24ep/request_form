@@ -863,11 +863,12 @@ function sku_checking() {
     }
 }
 
-function force_sync_with_ticket(){
-    var sku_list = document.getElementById("sku_checking").value;
+function force_sync_with_ticket(id){
+    var sku_change = document.getElementById("sku_checking").value;
     if(sku_list) {
         $.post("action/action_force_change_csg_id_of_sku.php", {
-            sku_list: sku_list
+            id:id,
+            sku_change: sku_change
             },
             function(data) {
                 $('#sku_checking_result').html(data);
