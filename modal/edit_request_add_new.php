@@ -101,7 +101,7 @@ label#label_file_cme {
             FROM add_new_job as anj 
             left join all_in_one_project.account as ac 
             on ac.username = anj.follow_assign_name
-            where id = ".$_POST['id']." ORDER BY id DESC " or die("Error:" . mysqli_error());
+            where ac.id = ".$_POST['id']." ORDER BY ac.id DESC " or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
       $id = $row['id'];
