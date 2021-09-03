@@ -17,15 +17,33 @@
 
         $sku_accepted_array = explode("\n", $sku_accepted);
         $sku_list_array = array();
+        $sku_just_array = array();
         foreach ( $sku_accepted_array as $sku ) {
             if($sku <> '' and $sku <> null){
                 array_push($sku_list_array,"('".trim($sku," ")."','".$_SESSION['username'] ."',".$id.")");
+                array_push($sku_just_array,"'".trim($sku," ")."'");
+                
             }
             
         }
+        // $sku_just_array = array_unique($sku_just_array);
+        $sku_just =  implode(',',$sku_just_array);
+        $query_dulp_sku = "SELECT * FROM sku_list where sku in (".$sku_just .") ORDER BY id DESC " or die("Error:" . mysqli_error());
+        $result_dulp_sku = mysqli_query($con, $query_dulp_sku);
+        $sku_csg_ticket_id_nc = array();
+        while($row_dulp_sku = mysqli_fetch_array($result_dulp_sku)) {
+            array_push($sku_csg_ticket_id_nc,$row_dulp_sku["csg_id"]);
+        }
+        $sku_csg_ticket_id_nc = array_unique($sku_csg_ticket_id_nc);
+        $sku_csg_ticket_id_nc_text =  implode(',',$sku_csg_ticket_id_nc);
+        $sql_cancel_old = $sql = "UPDATE add_new_job SET cancel_resone = '".$_SESSION["username"]." had been cancel sine of move sku to ticket NS-".$id." ".date("Y-m-d H:i:s")."' , status = 'cancel',cancel_date = CURRENT_TIMESTAMP  WHERE id in (".$sku_csg_ticket_id_nc_text .")";
+        $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
+        $query_cancel_old = mysqli_query($con,$sql_cancel_old);
+
         print_r ($sku_list_array);
 
         $sku_list = implode(',',$sku_list_array);
+        
       
         $sql_sku = "INSERT INTO sku_list (
             sku,create_by,csg_id )
