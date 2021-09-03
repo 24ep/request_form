@@ -70,7 +70,7 @@ function getoption_return_create_job($col,$table,$select_option,$sorm,$database)
        $sub_department_op = getoption_return_create_job("sub_department","job_option_cms",$sub_department,"single","u749625779_cdscontent");
        $product_sell_type_op = getoption_return_create_job("product_sell_type","job_option_cms",$df_type,"single","u749625779_cdscontent");
        $product_sorting_op = getoption_return_create_job("product_sorting","job_option_cms",$df_psort,"single","u749625779_cdscontent");
-       $job_status_filter_op = getoption_return_create_job("job_status_filter","job_option_cms","Wait data and image","single","u749625779_cdscontent");
+       $job_status_filter_op = getoption_return_create_job("job_status_filter","job_option_cms","Wait image","single","u749625779_cdscontent");
        $product_website_op = getoption_return_create_job("product_website","job_option_cms","","multi","u749625779_cdscontent");
        $department_op = getoption_return_create_job("department","job_option_cms",$department,"single","u749625779_cdscontent");
        $production_type_op = getoption_return_create_job("production_type","job_option_cms",$production_type,"single","u749625779_cdscontent");
@@ -78,7 +78,7 @@ function getoption_return_create_job($col,$table,$select_option,$sorm,$database)
        $project_type_op = getoption_return_create_job("itemmize_type","job_option_cms",$project_type,"multi","u749625779_cdscontent");
        $store_op = getoption_return_create_job("store","job_option_cms",$stock_source,"multi","u749625779_cdscontent");
        $product_website_op = getoption_return_create_job("product_website","job_option_cms",$online_channel,"multi","u749625779_cdscontent");
-       $content_nickname_op = getoption_return_create_job("nickname","user_cms",$follow_assign_name,"single","u749625779_cdscontent");
+       $content_nickname_op = getoption_return_create_job("nickname","user_cms",$follow_assign_nickname,"single","u749625779_cdscontent");
   ?>
 <!-- Extra large modal -->
 <style>

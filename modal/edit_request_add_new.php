@@ -63,7 +63,45 @@ label#label_file_cme {
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
-  $query = "SELECT * FROM add_new_job where id = ".$_POST['id']." ORDER BY id DESC " or die("Error:" . mysqli_error());
+  $query = "SELECT 
+            anj.id as id,
+            anj.brand as brand,
+            anj.request_username as request_username,
+            anj.create_date as create_date,
+            anj.update_date as update_date,
+            anj.brand as brand,
+            anj.production_type as production_type,
+            anj.business_type as business_type,
+            anj.project_type as project_type,
+            anj.stock_source as stock_source,
+            anj.contact_buyer as contact_buyer,
+            anj.contact_vender as contact_vender,
+            anj.launch_date as launch_date,
+            anj.link_info as link_info,
+            anj.remark as remark,
+            anj.department as department,
+            anj.sku as sku,
+            anj.status as status,
+            anj.start_checking_date as start_checking_date,
+            anj.accepted_date as accepted_date,
+            anj.cancel_resone as cancel_resone,
+            anj.need_more_info_date as need_more_info_date,
+            anj.follow_up_by as follow_up_by,
+            anj.bu as bu,
+            anj.tags as tags,
+            anj.online_channel as online_channel,
+            anj.request_important as request_important,
+            anj.follow_assign_name as follow_assign_name,
+            anj.follow_assign_date as follow_assign_date,
+            anj.sub_department as sub_department,
+            anj.parent as parent,
+            anj.config_type as config_type,
+            anj.subject_mail as subject_mail,
+            ac.nickname as follow_assign_nickname
+            FROM add_new_job as anj 
+            left join all_in_one_project.account as ac 
+            on ac.username = anj.follow_assign_name
+            where id = ".$_POST['id']." ORDER BY id DESC " or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
       $id = $row['id'];
@@ -100,6 +138,7 @@ label#label_file_cme {
       $parent = $row['parent'];
       $config_type = $row['config_type'];
       $subject_mail = $row['subject_mail'];
+      $follow_assign_nickname = $row['follow_assign_nickname'];
       
 
     //stamp color status
