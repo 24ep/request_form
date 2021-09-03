@@ -44,6 +44,7 @@
     
         
         $query_sku = mysqli_query($con,$sql_sku);
+        echo $sku_list;
         if($query_sku){
             echo 'success !';
         }else{
