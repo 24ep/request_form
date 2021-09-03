@@ -299,7 +299,7 @@ label#label_file_cme {
                                                 name="sku_accepted"
                                                 placeholder="ตรวจสอบ sku ตามตัวอย่างด้านล่าง วางตามตัวอย่างด้านล่าง&#10;&#10;CDS3466644&#10;CDS2443356&#10;CDS2487356"
                                                 rows="20" style="height: 300px"></textarea>
-                                            <button type="button" onclick="force_sync_with_ticket(<?php echo $_POST['id']; ?>)" class="btn btn-danger">ยืนยัน เชื่อมต่อ sku ด้านบนกับ ticket NS- <?php echo $_POST["id"];?></button>
+                                            <button type="button" style="margin-top:10px" onclick="force_sync_with_ticket(<?php echo $_POST['id']; ?>)" class="btn btn-danger">ยืนยัน เชื่อมต่อ sku ด้านบนกับ ticket NS- <?php echo $_POST["id"];?></button>
                                     </div>
                                     <div class="col-6">
                                             <div id="sku_checking_result">
