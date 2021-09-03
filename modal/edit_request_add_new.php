@@ -298,8 +298,7 @@ label#label_file_cme {
                                             <textarea style="font-size:12px" oninput="sku_checking()" class="form-control" id="sku_checking"
                                                 name="sku_accepted"
                                                 placeholder="ตรวจสอบ sku ตามตัวอย่างด้านล่าง วางตามตัวอย่างด้านล่าง&#10;&#10;CDS3466644&#10;CDS2443356&#10;CDS2487356"
-                                                rows="20" style="height: 300px">
-                                            </textarea>
+                                                rows="20" style="height: 300px"></textarea>
                                             <button type="button" onclick="force_sync_with_ticket(<?php echo $_POST['id']; ?>)" class="btn btn-danger">ยืนยัน เชื่อมต่อ sku ด้านบนกับ ticket NS- <?php echo $_POST["id"];?></button>
                                     </div>
                                     <div class="col-6">
