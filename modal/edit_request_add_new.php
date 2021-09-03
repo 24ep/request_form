@@ -298,7 +298,9 @@ label#label_file_cme {
                                             <textarea style="font-size:12px" oninput="sku_checking()" class="form-control" id="sku_checking"
                                                 name="sku_accepted"
                                                 placeholder="ตรวจสอบ sku ตามตัวอย่างด้านล่าง วางตามตัวอย่างด้านล่าง&#10;&#10;CDS3466644&#10;CDS2443356&#10;CDS2487356"
-                                                rows="20" style="height: 300px"></textarea>
+                                                rows="20" style="height: 300px">
+                                            </textarea>
+                                            <button type="button" onclick="force_sync_with_ticket(<?php echo $_POST['id']; ?>)" class="btn btn-danger">ยืนยัน เชื่อมต่อ sku ด้านบนกับ ticket NS- <?php echo $_POST["id"];?></button>
                                     </div>
                                     <div class="col-6">
                                             <div id="sku_checking_result">
@@ -852,16 +854,27 @@ function itm_just_status_need_updated_contact(id) {
 function sku_checking() {
     // sku_checking_result
     var sku_list = document.getElementById("sku_checking").value;
-if (sku_list) {
-    $.post("action/action_sku_checking.php", {
-        sku_list: sku_list
-        },
-        function(data) {
-            $('#sku_checking_result').html(data);
-        });
-}
+    if (sku_list) {
+        $.post("action/action_sku_checking.php", {
+            sku_list: sku_list
+            },
+            function(data) {
+                $('#sku_checking_result').html(data);
+            });
+    }
 }
 
+function force_sync_with_ticket(){
+    var sku_list = document.getElementById("sku_checking").value;
+    if(sku_list) {
+        $.post("action/action_force_change_csg_id_of_sku.php", {
+            sku_list: sku_list
+            },
+            function(data) {
+                $('#sku_checking_result').html(data);
+            });
+    }
+}
 
 
 function comment_ticket_id(id, send_type) {
