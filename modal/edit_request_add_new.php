@@ -301,21 +301,23 @@ label#label_file_cme {
                                                 rows="20" style="height: 300px"></textarea>
                                             
 
-                                <div class="form-floating">
-                                <select class="form-select" id="be_status_on_change" aria-label="Floating label select example">
+                                <div class="form-floating"  style="margin-top:10px" >
+                                <select class="form-select" style="margin-top:10px" id="be_status_on_change" aria-label="Floating label select example">
                                     <option selected value="cancel">ให้ยกเลิก ticket นั้น (ปรับสถานะเป็น cancel)</option>
                                     <option value="keep">ให้คงสถานะเดิมไว้</option>
                                 </select>
                                 <label for="floatingSelect">สถานะ ticket เดิมในกรณีที่เป็น sku ที่มีอยู่แล้ว</label>
                                 </div>
                                             <button type="button" style="margin-top:10px" onclick="force_sync_with_ticket(<?php echo $_POST['id']; ?>)" class="btn btn-danger">ยืนยัน เชื่อมต่อ sku ด้านบนกับ ticket NS- <?php echo $_POST["id"];?></button>
+                                            <small>ในกรณี ย้าย sku จาก ตัวแม่ "ให้เลือก คงสถานะเดิมไว้"</small>
                                     </div>
                                     <div class="col-6">
                                             <div id="sku_checking_result">
                                             </div>
-                                            <div id="sku_checking_result">
+                                            
+                                            <div id="sku_checking_result_force">
                                             </div>
-                                            sku_checking_result_force
+                                            
 
                                     </div>
                                 </div>
