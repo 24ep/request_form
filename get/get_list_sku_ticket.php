@@ -22,7 +22,7 @@
         echo "<td style='background: #ededed;'>".$row["status"]."</dh>";
         echo "<td style='background: #ededed;'>".$row["create_by"]."</td>";  
         echo "<td style='background: #ededed;'>".$row["create_date"]."</td>";
-        echo "<td style='background: #ededed;'>".$row["update_date"]."</td>";
+        echo "<td style='background: #ededed;'>".$row["updated_date"]."</td>";
         echo "</tr>";
         $pass = true;
     } 
