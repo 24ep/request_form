@@ -10,7 +10,7 @@
             <tr>";
     echo "<th scope='row'>sku</th></th>";  
     echo "<th>status</th>";
-    echo "<th>create_by</th>";
+    echo "<th>update_by</th>";
     echo "<th>create_date</th>";  
     echo "<th>update_date</th>";
     echo  "</tr>
