@@ -26,7 +26,7 @@ include('action_insert_log.php');
       )";
       $query = mysqli_query($con,$sql);
 
-      $sql_update = "UPDATE add_new_job SET subject_mail = '".$subject_mail."',status ='send mail - waiting brand confirm to sale' WHERE id=".$id;
+      $sql_update = "UPDATE add_new_job SET subject_mail = '".$subject_mail."',status ='send mail - waiting brand confirm data' WHERE id=".$id;
       $query = mysqli_query($con,$sql_update);
 
       if($query){
