@@ -18,23 +18,29 @@
         sl.csg_id as csg_id, 
         case when itm.id is not null then 'in itm list'
         else '' end as check_itm_list,
+        count_sku.count_sku as sku_tied_with_ticket,
         anj.status as status
         FROM all_in_one_project.sku_list as sl 
         left join all_in_one_project.itm_datalake itm
         on sl.sku = itm.pid 
         left join all_in_one_project.add_new_job anj 
         on sl.csg_id = anj.id 
+        left join (select csg_id,count(sku) as count_sku from all_in_one_project.sku_list group by csg_id) as count_sku
+        on sl.csg_id = anj.id  
         where sl.sku in (".$sku_list .") ORDER BY sl.id DESC " or die("Error:" . mysqli_error());
         $result = mysqli_query($con, $query);
         $sku_item_check = " ";
+        $i=0;
         while($row = mysqli_fetch_array($result)) {
      
             $sku_item_check .= "<tr>
             <td>".$row["sku"]."</td>
             <td>".$row["csg_id"]."</td>
             <td>".$row["status"]."</td>
+            <td>".$row["sku_tied_with_ticket"]."</td>
             <td>".$row["check_itm_list"]."</td>
             </tr>";
+            $i++;
 
         }
 
@@ -45,7 +51,7 @@
                   </div>';
         }else{
             echo '<div class="alert alert-danger" role="alert">
-            ตรวจจพบ sku ด้านล่าง ซ้ำในฐานข้องมูลของ <strong>SERVICE-GATE<br>
+            ตรวจจพบ sku ด้านล่าง ซ้ำในฐานข้องมูลของ <strong>SERVICE-GATE จำนวน '.$i.' sku <br>
             เมื่อยืนยัน accept ระบบจะเปลี่ยน ให้ sku เหล่านั้นเป็น sku ของ ticket ที่กด accept</strong>\n
             <table class="table">
             <thead>
@@ -53,6 +59,7 @@
                 <th scope="col">sku</th>
                 <th scope="col">csg_id</th>
                 <th scope="col">status</th>
+                <th scope="col">sku tied with ticket</th>
                 <th scope="col">check itemize list</th>
                 </tr>
             </thead>
