@@ -19,11 +19,11 @@
         case when itm.id is not null then 'in itm list'
         else '' end as check_itm_list,
         anj.status as status
-        FROM sku_list as sl 
-        left join itm_datalake itm
+        FROM all_in_one_project.sku_list as sl 
+        left join all_in_one_project.itm_datalake itm
         on sl.sku = itm.pid 
-        left join add_new_job anj 
-        on sl.csg_id = anj.id sl.where sku in (".$sku_list .") ORDER BY id DESC " or die("Error:" . mysqli_error());
+        left join all_in_one_project.add_new_job anj 
+        on sl.csg_id = anj.id where sl.sku in (".$sku_list .") ORDER BY id DESC " or die("Error:" . mysqli_error());
         $result = mysqli_query($con, $query);
         $sku_item_check = " ";
         while($row = mysqli_fetch_array($result)) {
