@@ -26,7 +26,7 @@
         left join all_in_one_project.add_new_job anj 
         on sl.csg_id = anj.id 
         left join (select csg_id,count(sku) as count_sku from all_in_one_project.sku_list group by csg_id) as count_sku
-        on sl.csg_id = anj.id  
+        on sl.csg_id = count_sku.csg_id  
         where sl.sku in (".$sku_list .") ORDER BY sl.id DESC " or die("Error:" . mysqli_error());
         $result = mysqli_query($con, $query);
         $sku_item_check = " ";
