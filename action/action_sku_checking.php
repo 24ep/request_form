@@ -13,12 +13,27 @@
     }
         $sku_list = implode(',',$sku_list_array);
     
-        $query = "SELECT * FROM sku_list where sku in (".$sku_list .") ORDER BY id DESC " or die("Error:" . mysqli_error());
+        $query = "SELECT 
+        sl.sku as sku,
+        sl.csg_id as csg_id, 
+        case when itm.id is not null then 'in itm list'
+        else '' end as check_itm_list,
+        anj.status as status
+        FROM sku_list as sl 
+        left join itm_datalake itm
+        on sl.sku = itm.pid 
+        left join add_new_job anj 
+        on sl.csg_id = anj.id sl.where sku in (".$sku_list .") ORDER BY id DESC " or die("Error:" . mysqli_error());
         $result = mysqli_query($con, $query);
         $sku_item_check = " ";
         while($row = mysqli_fetch_array($result)) {
      
-            $sku_item_check .= "<tr><td>".$row["sku"]."</td><td>".$row["csg_id"]."</td></tr>";
+            $sku_item_check .= "<tr>
+            <td>".$row["sku"]."</td>
+            <td>".$row["csg_id"]."</td>
+            <td>".$row["status"]."</td>
+            <td>".$row["check_itm_list"]."</td>
+            </tr>";
 
         }
 
@@ -36,6 +51,8 @@
                 <tr>
                 <th scope="col">sku</th>
                 <th scope="col">csg_id</th>
+                <th scope="col">status</th>
+                <th scope="col">check itemize list</th>
                 </tr>
             </thead>
             <tbody>';
