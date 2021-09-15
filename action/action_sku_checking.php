@@ -23,7 +23,8 @@
         left join all_in_one_project.itm_datalake itm
         on sl.sku = itm.pid 
         left join all_in_one_project.add_new_job anj 
-        on sl.csg_id = anj.id where sl.sku in (".$sku_list .") ORDER BY id DESC " or die("Error:" . mysqli_error());
+        on sl.csg_id = anj.id 
+        where sl.sku in (".$sku_list .") ORDER BY sl.id DESC " or die("Error:" . mysqli_error());
         $result = mysqli_query($con, $query);
         $sku_item_check = " ";
         while($row = mysqli_fetch_array($result)) {
