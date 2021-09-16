@@ -416,10 +416,10 @@ label#label_file_cme {
                                 <hr>
 
                                 <?php if($brand_info_link<>'' or !isset($brand_info_link)){
-                                    // echo '<div class="alert alert-info" role="alert">
-                                    //             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                                    //             สินค้าแบรนด์ '.$brand.' มี Guideline พิเศษของแบรนด์ '.$brand.' เอง กรุณาตรวจสอบ <a href="'.$brand_info_link.'" target="_Blank">Click here</a> !
-                                    //       </div>';
+                                    echo '<div class="alert alert-info" role="alert">
+                                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                                สินค้าแบรนด์ '.$brand.' มี Guideline พิเศษของแบรนด์ '.$brand.' เอง กรุณาตรวจสอบ <a href="'.$brand_info_link.'" target="_Blank">Click here</a> !
+                                          </div>';
                                 }?>
 
                                 <!-- start -->
