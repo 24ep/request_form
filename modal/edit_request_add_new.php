@@ -101,8 +101,6 @@ label#label_file_cme {
             FROM all_in_one_project.add_new_job as anj 
             left join all_in_one_project.account as ac 
             on ac.username = anj.follow_assign_name
-            left join all_in_one_project.brand_information as brand_info
-            on brand_info.brand = anj.brand
             where anj.id = ".$_POST['id']." ORDER BY anj.id DESC " or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
@@ -415,7 +413,12 @@ label#label_file_cme {
                                 <?php if($config_type=="task"){ ?>
                                 <hr>
 
-                            
+                                <?php if($brand_info_link<>'' or !isset($brand_info_link)){
+                                    // echo '<div class="alert alert-info" role="alert">
+                                    //             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                    //             สินค้าแบรนด์ '.$brand.' มี Guideline พิเศษของแบรนด์ '.$brand.' เอง กรุณาตรวจสอบ <a href="'.$brand_info_link.'" target="_Blank">Click here</a> !
+                                    //       </div>';
+                                }?>
 
                                 <!-- start -->
 
