@@ -96,10 +96,13 @@ label#label_file_cme {
             anj.parent as parent,
             anj.config_type as config_type,
             anj.subject_mail as subject_mail,
-            ac.nickname as follow_assign_nickname
+            ac.nickname as follow_assign_nickname,
+            brand_info.link as brand_info_link
             FROM all_in_one_project.add_new_job as anj 
             left join all_in_one_project.account as ac 
             on ac.username = anj.follow_assign_name
+            left join all_in_one_project.brand_information as brand_info
+            on brand_info.brand = anj.brand
             where anj.id = ".$_POST['id']." ORDER BY anj.id DESC " or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
@@ -137,6 +140,7 @@ label#label_file_cme {
       $config_type = $row['config_type'];
       $subject_mail = $row['subject_mail'];
       $follow_assign_nickname = $row['follow_assign_nickname'];
+      $brand_info_link = $row['brand_info_link'];
       
 
     //stamp color status
@@ -230,6 +234,7 @@ label#label_file_cme {
                                 role="tab" aria-controls="v-pills-sku" aria-selected="false">
                                 <ion-icon name="trail-sign-outline"></ion-icon>SKU list
                             </a>
+                            
                             <a class="nav-link inpo" id="v-pills-internal_note-tab" data-toggle="pill"
                                 href="#v-pills-internal_note" role="tab" aria-controls="v-pills-internal_note"
                                 aria-selected="false">
@@ -410,7 +415,12 @@ label#label_file_cme {
                                 <?php if($config_type=="task"){ ?>
                                 <hr>
 
-
+                                <?php if($brand_info_link<>'' or !isset($brand_info_link)){
+                                    echo '<div class="alert alert-info" role="alert">
+                                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                                สินค้าแบรนด์ '.$brand.' มี Guideline พิเศษของแบรนด์ '.$brand.' เอง กรุณาตรวจสอบ <a href="'.$brand_info_link.'" target="_Blank">Click here</a> !
+                                          </div>';
+                                }?>
 
                                 <!-- start -->
 
