@@ -19,7 +19,7 @@ $day_time = $say_hi.$time;
   $massage_line = "\nContent request status\n";
   while($row = mysqli_fetch_array($result)) {
     
-    $massage_line .= "• ".$row["status"]." ".$row["sku"]." SKUs (".$row["ticket"]." Ticket)"."\n";
+    $massage_line .= "• ".$row["status"]." ".number_format($row["sku"])." SKUs"."\n";
   } 
   $massage_line .= "---\nดูเพิ่มเติม https://datastudio.google.com/u/0/reporting/0a77f199-2334-4601-a865-70dfcdf28ec6/page/RenVC";
   
