@@ -13,7 +13,7 @@ $day_time = $say_hi.$time;
    $day_num = date("d");
    $current_day = date("Y-m-d");
 
-   $query_cr = "SELECT status,sum(sku) as sku,count(id) as ticket FROM all_in_one_project.content_request  group by status ' ORDER BY id DESC" or die("Error:" . mysqli_error());
+   $query_cr = "SELECT status,sum(sku) as sku,count(id) as ticket FROM all_in_one_project.content_request  group by status ORDER BY id DESC" or die("Error:" . mysqli_error());
   // loop old
   $result =  mysqli_query($con, $query_cr);
   $massage_line = "\n😗Content request status\n";
