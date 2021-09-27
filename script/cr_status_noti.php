@@ -2,6 +2,8 @@
 //0YGrwiJuSNzYEv3cmjCDXhZ6ebxDjZyGhMl2Uo9EUTV กรุปแดง
 //HWq46fbTgIlTqSCzaR5s14erVTVHINBdLV0y1yutoA1 ของ bos
 //WvreGIJLhmAU7Wen98wX95WgbJGskBz6sspukf3D34A studio
+//Ihu1IrOXu1ksLVXRGLCtskznHKeTRl3AHQyd5XhIWKi content request
+//5qS2f2Tk1fLs9kA0bufqSRhDNu8vXEN6IneVplz5P6N support
 date_default_timezone_set("Asia/Bangkok");
 $say_hi = date("h");
 $day  = date("l");
@@ -39,28 +41,28 @@ $day_time = $say_hi.$time;
      CURLOPT_POSTFIELDS => 'message='.$massage_line.$massage_line_new  ,
      CURLOPT_HTTPHEADER => array(
        'Content-Type: application/x-www-form-urlencoded',
-       'Authorization: Bearer HWq46fbTgIlTqSCzaR5s14erVTVHINBdLV0y1yutoA1'
+       'Authorization: Bearer Ihu1IrOXu1ksLVXRGLCtskznHKeTRl3AHQyd5XhIWKi'
      ),
    ));
    $response = curl_exec($curl); 
    curl_close($curl);
-   //studio
-//    $curl = curl_init();
-//    curl_setopt_array($curl, array(
-//      CURLOPT_URL => 'https://notify-api.line.me/api/notify',
-//      CURLOPT_RETURNTRANSFER => true,
-//      CURLOPT_ENCODING => '',
-//      CURLOPT_MAXREDIRS => 10,
-//      CURLOPT_TIMEOUT => 0,
-//      CURLOPT_FOLLOWLOCATION => true,
-//      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-//      CURLOPT_CUSTOMREQUEST => 'POST',
-//      CURLOPT_POSTFIELDS => 'message='.$massage_line.$massage_line_new  ,
-//      CURLOPT_HTTPHEADER => array(
-//        'Content-Type: application/x-www-form-urlencoded',
-//        'Authorization: Bearer WvreGIJLhmAU7Wen98wX95WgbJGskBz6sspukf3D34A'
-//      ),
-//    ));
+   //support
+   $curl = curl_init();
+   curl_setopt_array($curl, array(
+     CURLOPT_URL => 'https://notify-api.line.me/api/notify',
+     CURLOPT_RETURNTRANSFER => true,
+     CURLOPT_ENCODING => '',
+     CURLOPT_MAXREDIRS => 10,
+     CURLOPT_TIMEOUT => 0,
+     CURLOPT_FOLLOWLOCATION => true,
+     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+     CURLOPT_CUSTOMREQUEST => 'POST',
+     CURLOPT_POSTFIELDS => 'message='.$massage_line.$massage_line_new  ,
+     CURLOPT_HTTPHEADER => array(
+       'Content-Type: application/x-www-form-urlencoded',
+       'Authorization: Bearer 5qS2f2Tk1fLs9kA0bufqSRhDNu8vXEN6IneVplz5P6N'
+     ),
+   ));
    $response = curl_exec($curl);
    curl_close($curl);
   //  echo $response;
