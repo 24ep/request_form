@@ -16,12 +16,12 @@ $day_time = $say_hi.$time;
    $query_cr = "SELECT status,sum(sku) as sku,count(id) as ticket FROM all_in_one_project.content_request  group by status ORDER BY id DESC" or die("Error:" . mysqli_error());
   // loop old
   $result =  mysqli_query($con, $query_cr);
-  $massage_line = "\n😗Content request status\n";
+  $massage_line = "\nContent request status\n";
   while($row = mysqli_fetch_array($result)) {
     
-    $massage_line .= $row["status"]." ".$row["sku"]." SKUs (".$row["ticket"]." Ticket)"."\n";
+    $massage_line .= "• ".$row["status"]." ".$row["sku"]." SKUs (".$row["ticket"]." Ticket)"."\n";
   } 
-  $massage_line .= "ดูเพิ่มเติม https://datastudio.google.com/u/0/reporting/0a77f199-2334-4601-a865-70dfcdf28ec6/page/RenVC";
+  $massage_line .= "---\nดูเพิ่มเติม https://datastudio.google.com/u/0/reporting/0a77f199-2334-4601-a865-70dfcdf28ec6/page/RenVC";
   
    mysqli_close($con);
    // line noti api
