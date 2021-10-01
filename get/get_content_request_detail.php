@@ -292,8 +292,8 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             <div class="mb-3">
             <div class="mb-3">
             <label for="exampleDataList" class="form-label">Request by</label>
-              <input class="form-control form-control-sm" list="datalistOptions"  onchange="update_cr_detail('.$id.','.$cr_edit_request_by.')" id="cr_edit_request_by" name="cr_edit_request_by" placeholder="Type to search..." value="'.$request_by.'">
-              <datalist id="datalistOptions">
+              <input class="form-control form-control-sm" list="datalistOptionsrequestby"  onchange="update_cr_detail('.$id.','.$cr_edit_request_by.')" id="cr_edit_request_by" name="cr_edit_request_by" placeholder="Type to search..." value="'.$request_by.'">
+              <datalist id="datalistOptionsrequestby">
               '.$username_op.'
               </datalist>
               </div>
