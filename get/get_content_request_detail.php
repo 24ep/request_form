@@ -232,6 +232,8 @@ $result = mysqli_query($con, $query);
         $cr_edit_note = "'cr_edit_note'";
         $cr_edit_effective_date = "'cr_edit_effective_date'";
         $cr_edit_content_request_reson= "'cr_edit_content_request_reson'";
+        $cr_edit_request_by= "'cr_edit_request_by'";
+        
 echo "<script>console.log('".$_SESSION["department"]."');</script>";
         if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
             echo '<select class="form-select form-select-lg mt-2" id="cr_edit_status" name="cr_edit_status" onchange="update_cr_detail('.$id.','.$cr_edit_status.')" style="border: 0px;font-weight: bold;" aria-label=".form-select-lg example">
@@ -285,6 +287,14 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
               <input class="form-control form-control-sm" list="datalistOptions"  onchange="update_cr_detail('.$id.','.$cr_edit_content_request_reson.')" id="cr_edit_content_request_reson" name="cr_edit_content_request_reson" placeholder="Type to search..." value="'.$content_request_reson.'">
               <datalist id="datalistOptions">
               '.$content_request_reson_op.'
+              </datalist>
+              </div>
+            <div class="mb-3">
+            <div class="mb-3">
+            <label for="exampleDataList" class="form-label">Request by</label>
+              <input class="form-control form-control-sm" list="datalistOptions"  onchange="update_cr_detail('.$id.','.$cr_edit_request_by.')" id="cr_edit_request_by" name="cr_edit_request_by" placeholder="Type to search..." value="'.$request_by.'">
+              <datalist id="datalistOptions">
+              '.$username_op.'
               </datalist>
               </div>
             <div class="mb-3">
