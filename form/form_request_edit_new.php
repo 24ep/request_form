@@ -2,6 +2,11 @@
 <?php
 $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
 function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
+  if($site_element=='datetime-local'){
+    $current_value = str_replace(" ","T",$current_value);
+  }else{
+    $current_value = $current_value;
+  }
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
     <div class="col-3 fw-bold">'.$att_name.'</div>
