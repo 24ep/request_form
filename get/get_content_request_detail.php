@@ -417,11 +417,19 @@ function comment_cr_id(id) {
     }
 }
 
-function add_cr_list() {
+function add_cr_list(id) {
   
-    var list_box = document.getElementById("checklist_box").lastChild;
-    var cln = list_box.cloneNode(true);
-    document.getElementById("checklist_box").appendChild(cln);
+  if (id) {
+        $.post("action/action_create_checklist_cr.php", {
+                id: id
+            },
+            function(data) {
+              alert("created !");
+                // $('#call_ticket_comment_cr').html(data);
+                // document.getElementById('comment_box_cr').scrollBy(0, document.getElementById(
+                //     "call_ticket_comment_cr").offsetHeight);
+            });
+    }
    
 }
 
