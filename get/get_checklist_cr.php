@@ -1,5 +1,5 @@
 <?php
-   $ticket_id = $_POST["id"];
+   $ticket_id = $_GET["id"];
    date_default_timezone_set("Asia/Bangkok");
    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
    mysqli_query($con, "SET NAMES 'utf8' ");
@@ -8,11 +8,11 @@
    $result_count = mysqli_query($con, $query_count);
 
      while($row = mysqli_fetch_array($result)) {
-        
-       ?>
+        echo '
+      
        <li class="mb-3 row" id="checklist_cr">
                 <div class="col-2" style="padding: 3px;">
-                  <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" value="<?php echo $row['case_officer']; ?>" aria-label=".form-control-sm example">
+                  <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" value="'.$row['case_officer'].'" aria-label=".form-control-sm example">
                 </div>
                 <div class="col" style="padding: 3px;">
                   <select class="form-select form-select-sm" aria-label="Default select example">
@@ -42,7 +42,7 @@
                    <ion-icon name="trash-outline"></ion-icon>
                 </div>
           </li>
-          <?php
+          ';
     } 
 
   mysqli_close($con);
