@@ -6,11 +6,16 @@ function return_s_select_box_cl_cr($current_value,$attr_id){
       WHERE attribute_id = ".$attr_id." and function = 'cl_content_request' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
       $result_op = mysqli_query($con, $query_op);
       while($option = mysqli_fetch_array($result_op)) {
-      if($option["attribute_option"]==$current_value){
-          $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
-        }else{
-          $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
-        }
+      if($option["attribute_option"]==""){
+            $option_element .= "<option selected value=''>""</option>";
+       }else{
+        if($option["attribute_option"]==$current_value){
+            $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+          }else{
+            $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+          }
+       }
+     
       }
     return $option_element;
   }
