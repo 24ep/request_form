@@ -263,39 +263,8 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                 <button class="btn btn-primary btn-sm" onclick="add_cr_list(<?php echo $id; ?>)" ><ion-icon name="add-outline"></ion-icon> Add</button>
               </div>
               <ul id="checklist_box">
-              <li class="mb-3 row" id="checklist_cr">
-                <div class="col-2" style="padding: 3px;">
-                  <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">
-                </div>
-                <div class="col" style="padding: 3px;">
-                  <select class="form-select form-select-sm" aria-label="Default select example">
-                    <option selected>status</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-                <div class="col" style="padding: 3px;">
-                  <select class="form-select form-select-sm" aria-label="Default select example">
-                    <option selected>update type</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-                <div class="col" style="padding: 3px;">
-                  <select class="form-select form-select-sm" aria-label="Default select example">
-                    <option selected>update due reason</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-                <div class="col-1" style="padding: 3px;">
-                   <ion-icon name="trash-outline"></ion-icon>
-                </div>
-          </li>
-          </ul>
+               <?php     include('../get/get_checklist_cr.php'); ?>
+              </ul>
          
             
 
@@ -426,6 +395,7 @@ function add_cr_list(id) {
             },
             function(data) {
               alert("created !");
+              $('#checklist_box').html(data);
                 // $('#call_ticket_comment_cr').html(data);
                 // document.getElementById('comment_box_cr').scrollBy(0, document.getElementById(
                 //     "call_ticket_comment_cr").offsetHeight);

@@ -13,5 +13,5 @@ session_start();
     )";
 	$query = mysqli_query($con,$sql);
     mysqli_close($con);
-
+    include('../get/get_checklist_cr.php');
 ?>
