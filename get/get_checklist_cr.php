@@ -97,7 +97,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                 <div class="col" style="padding: 3px;">
                   <select id="cl_edit_update_type_'.$row["id"].'" name="cl_edit_update_type_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_update_type.')" class="form-select form-select-sm" aria-label="Default select example">
                   ';    
-                  $op_update_type = return_s_select_box_cl_cr($row["update_type"],"74")
+                  $op_update_type = return_s_select_box_cl_cr($row["update_type"],"74");
                   echo $op_update_type;
                   echo'
                   </select>
@@ -105,7 +105,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                 <div class="col" style="padding: 3px;">
                   <select id="cl_edit_update_due_reason_'.$row["id"].'" name="cl_edit_update_due_reason_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_update_due_reason.')" class="form-select form-select-sm" aria-label="Default select example">
                   ';    
-                  $op_update_due_reason = return_s_select_box_cl_cr($row["update_due_reason"],"73")
+                  $op_update_due_reason = return_s_select_box_cl_cr($row["update_due_reason"],"73");
                   echo $op_update_due_reason;
                   echo'
                   </select>
