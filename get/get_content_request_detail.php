@@ -403,7 +403,7 @@ function add_cr_list(id) {
    
 }
 function remove_cr_list(list_id,ticket_id) {
-        if (id) {
+        if (list_id) {
               $.post("action/action_remove_checklist_cr.php", {
                       list_id: list_id,
                       ticket_id:ticket_id
