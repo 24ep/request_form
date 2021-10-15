@@ -418,10 +418,11 @@ function comment_cr_id(id) {
 }
 
 function add_cr_list(id) {
-  
+  var sku = document.getElementById("cr_edit_sku").value;
   if (id) {
         $.post("action/action_create_checklist_cr.php", {
-                id: id
+                id: id,
+                sku:sku
             },
             function(data) {
               alert("created !");
