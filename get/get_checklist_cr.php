@@ -1,4 +1,18 @@
 <?php
+function return_s_select_box_cl_cr($current_value,$attr_id){
+    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
+      $query_op = "SELECT * FROM content_service_gate.attribute_option
+      WHERE attribute_id = ".$attr_id." and function = 'cl_content_request' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
+      $result_op = mysqli_query($con, $query_op);
+      while($option = mysqli_fetch_array($result_op)) {
+      if($option["attribute_option"]==$current_value){
+          $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+        }else{
+          $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+        }
+      }
+    return $option_element;
+  }
 function getoption_return_edit_job($col,$table,$select_option,$sorm) {
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
@@ -55,6 +69,8 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
    $cl_edit_case_officer = "'cl_edit_case_officer'";
    $cl_edit_status = "'cl_edit_status'";
    $cl_edit_sku = "'cl_edit_sku'";
+   $cl_edit_update_due_reason= "'cl_edit_update_due_reason'";.
+   $cl_edit_update_type= "'cl_edit_update_type'";
      while($row = mysqli_fetch_array($result)) {
         echo '
       
@@ -79,19 +95,19 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                   </select>
                 </div>
                 <div class="col" style="padding: 3px;">
-                  <select class="form-select form-select-sm" aria-label="Default select example">
-                    <option selected>update type</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                  <select id="cl_edit_update_type_'.$row["id"].'" name="cl_edit_update_type_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_update_type.')" class="form-select form-select-sm" aria-label="Default select example">
+                  ';    
+                  $op_update_type = return_s_select_box_cl_cr($row["update_type"],"74")
+                  echo $op_update_type;
+                  echo'
                   </select>
                 </div>
                 <div class="col" style="padding: 3px;">
-                  <select class="form-select form-select-sm" aria-label="Default select example">
-                    <option selected>update due reason</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                  <select id="cl_edit_update_due_reason_'.$row["id"].'" name="cl_edit_update_due_reason_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_update_due_reason.')" class="form-select form-select-sm" aria-label="Default select example">
+                  ';    
+                  $op_update_due_reason = return_s_select_box_cl_cr($row["update_due_reason"],"73")
+                  echo $op_update_due_reason;
+                  echo'
                   </select>
                 </div>
                 <div class="col-1" style="padding: 3px;">
