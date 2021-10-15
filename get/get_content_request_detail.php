@@ -420,7 +420,7 @@ function comment_cr_id(id) {
 function add_cr_list() {
   
     var list_box = document.getElementById("checklist_box").lastChild;
-    var cln = itm.cloneNode(true);
+    var cln = list_box.cloneNode(true);
     document.getElementById("checklist_box").appendChild(cln);
    
 }
