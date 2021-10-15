@@ -465,7 +465,7 @@ function update_cr_detail(id, id_name) {
 }
 function update_cl_detail(id, id_name) {
     var id_name = id_name;
-    var value_change = document.getElementById(id_name).value;
+    var value_change = document.getElementById(id_name+'_'+id).value;
     if (id) {
         $.post("action/action_update_checklist_cr.php", {
                 id: id,
