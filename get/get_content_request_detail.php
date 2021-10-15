@@ -258,8 +258,8 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             // ---check list
           if($_SESSION['username']=='poojaroonwit'){
             ?>
-            <div id="list_cr_box">   
-              <div id="list_cr">        
+            <div id="checklist_cr_box">   
+              <div id="checklist_cr">        
               <div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">
                 <button class="btn btn-primary btn-sm" onclick="add_cr_list()" ><ion-icon name="add-outline"></ion-icon> Add</button>
               </div>
@@ -419,8 +419,8 @@ function comment_cr_id(id) {
 
 function add_cr_list() {
   
-    var new_list = document.getElementById("list_cr")
-    var list_box = document.getElementById("list_cr_box")
+    var new_list = document.getElementById("checklist_cr")
+    var list_box = document.getElementById("checklist_cr_box")
     list_box.innerHTML += "<p>CONTENTS</p>";
    
 }
