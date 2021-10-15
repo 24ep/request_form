@@ -259,7 +259,38 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
           if($_SESSION['username']=='poojaroonwit'){
             ?>
               <div class="d-grid gap-1 d-md-flex justify-content-md-end">
-                <button class="btn btn-primary" type="button"><ion-icon name="add-outline"></ion-icon> Add</button>
+                <button class="btn btn-primary btn-sm" type="button"><ion-icon name="add-outline"></ion-icon> Add</button>
+              </div>
+
+              <div class="mb-3 row">
+                <div class="col">
+                  <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">
+                </div>
+                <div class="col">
+                  <select class="form-select form-select-sm" aria-label="Default select example">
+                    <option selected>status</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <select class="form-select form-select-sm" aria-label="Default select example">
+                    <option selected>update type</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <select class="form-select form-select-sm" aria-label="Default select example">
+                    <option selected>update due reason</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+                <ion-icon name="trash-outline"></ion-icon>
               </div>
 
 
