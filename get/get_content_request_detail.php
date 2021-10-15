@@ -258,13 +258,12 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             // ---check list
           if($_SESSION['username']=='poojaroonwit'){
             ?>
-            <div id="checklist_cr_box">   
-              <div id="checklist_cr">        
+    
               <div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">
                 <button class="btn btn-primary btn-sm" onclick="add_cr_list()" ><ion-icon name="add-outline"></ion-icon> Add</button>
               </div>
-
-              <div class="mb-3 row">
+              <ul id="checklist_box">
+              <li class="mb-3 row" id="checklist_cr">
                 <div class="col-2" style="padding: 3px;">
                   <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">
                 </div>
@@ -295,9 +294,10 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                 <div class="col-1" style="padding: 3px;">
                    <ion-icon name="trash-outline"></ion-icon>
                 </div>
-              </div>
-              </div>
-              </div>
+          </li>
+          </ul>
+         
+            
 
 
             <?php
@@ -419,9 +419,9 @@ function comment_cr_id(id) {
 
 function add_cr_list() {
   
-    var new_list = document.getElementById("checklist_cr")
-    var list_box = document.getElementById("checklist_cr_box")
-    list_box.innerHTML += "<p>CONTENTS</p>";
+    var list_box = document.getElementById("checklist_box").lastChild;
+    var cln = itm.cloneNode(true);
+    document.getElementById("checklist_box").appendChild(cln);
    
 }
 
