@@ -258,12 +258,12 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             // ---check list
           if($_SESSION['username']=='poojaroonwit'){
             ?>
-              <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+              <div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">
                 <button class="btn btn-primary btn-sm" type="button"><ion-icon name="add-outline"></ion-icon> Add</button>
               </div>
 
               <div class="mb-3 row">
-                <div class="col">
+                <div class="col-2" style="padding: 3px;">
                   <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">
                 </div>
                 <div class="col" style="padding: 3px;">
@@ -290,7 +290,9 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                     <option value="3">Three</option>
                   </select>
                 </div>
-                <ion-icon name="trash-outline"></ion-icon>
+                <div class="col" style="padding: 3px;">
+                   <ion-icon name="trash-outline"></ion-icon>
+                </div>
               </div>
 
 
