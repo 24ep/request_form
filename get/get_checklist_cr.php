@@ -7,7 +7,7 @@ function return_s_select_box_cl_cr($current_value,$attr_id){
       $result_op = mysqli_query($con, $query_op);
       while($option = mysqli_fetch_array($result_op)) {
       if($option["attribute_option"]==""){
-            $option_element .= "<option selected value=''>""</option>";
+            $option_element .= "<option selected value=''></option>";
        }else{
         if($option["attribute_option"]==$current_value){
             $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
