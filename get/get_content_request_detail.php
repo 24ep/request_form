@@ -266,7 +266,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                 <div class="col">
                   <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">
                 </div>
-                <div class="col">
+                <div class="col" style="padding: 3px;">
                   <select class="form-select form-select-sm" aria-label="Default select example">
                     <option selected>status</option>
                     <option value="1">One</option>
@@ -274,7 +274,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                     <option value="3">Three</option>
                   </select>
                 </div>
-                <div class="col">
+                <div class="col" style="padding: 3px;">
                   <select class="form-select form-select-sm" aria-label="Default select example">
                     <option selected>update type</option>
                     <option value="1">One</option>
@@ -282,7 +282,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                     <option value="3">Three</option>
                   </select>
                 </div>
-                <div class="col">
+                <div class="col" style="padding: 3px;">
                   <select class="form-select form-select-sm" aria-label="Default select example">
                     <option selected>update due reason</option>
                     <option value="1">One</option>
