@@ -421,8 +421,7 @@ function add_cr_list() {
     var node = document.createElement("DIV");
     var new_list = document.getElementById("list_cr")
     var list_box = document.getElementById("list_cr_box")
-    node.appendChild(list_box);
-    document.getElementById("list_box").appendChild(node);
+    list_box.innerHTML += new_list;
    
 }
 
