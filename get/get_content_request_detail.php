@@ -402,10 +402,11 @@ function add_cr_list(id) {
     }
    
 }
-function remove_cr_list(id) {
+function remove_cr_list(list_id,ticket_id) {
         if (id) {
               $.post("action/action_remove_checklist_cr.php", {
-                      id: id
+                      list_id: list_id,
+                      ticket_id:ticket_id
                   },
                   function(data) {
                     $('#checklist_box').html(data);
