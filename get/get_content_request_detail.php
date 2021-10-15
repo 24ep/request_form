@@ -420,7 +420,7 @@ function comment_cr_id(id) {
 function add_cr_list() {
     var new_list = document.getElementById("list_cr")
     var list_box = document.getElementById("list_cr_box")
-    list_box.body.appendChild(new_list); 
+    list_box.appendChild(new_list); 
    
 }
 
