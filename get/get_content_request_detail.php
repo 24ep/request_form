@@ -394,7 +394,6 @@ function add_cr_list(id) {
                 sku:sku
             },
             function(data) {
-              alert("created !");
               $('#checklist_box').html(data);
                 // $('#call_ticket_comment_cr').html(data);
                 // document.getElementById('comment_box_cr').scrollBy(0, document.getElementById(
@@ -403,6 +402,21 @@ function add_cr_list(id) {
     }
    
 }
+function remove_cr_list(id) {
+        var sku = document.getElementById("cr_edit_sku").value;
+        if (id) {
+              $.post("action/action_remove_checklist_cr.php", {
+                      id: id
+                  },
+                  function(data) {
+                    $('#checklist_box').html(data);
+                      // $('#call_ticket_comment_cr').html(data);
+                      // document.getElementById('comment_box_cr').scrollBy(0, document.getElementById(
+                      //     "call_ticket_comment_cr").offsetHeight);
+                  });
+          }
+         
+      }
 
 function comment_cr_id_with_file(id) {
     var form_data = new FormData();
