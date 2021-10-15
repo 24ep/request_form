@@ -1,6 +1,6 @@
 <?php
 function getoption_return_edit_job($col,$table,$select_option,$sorm) {
-    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","u749625779_cdscontent") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $query = "SELECT * FROM $table ORDER BY $col asc" or die("Error:" . mysqli_error());
     $result = mysqli_query($con, $query);
