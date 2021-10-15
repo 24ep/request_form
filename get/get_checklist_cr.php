@@ -12,7 +12,15 @@
       
        <li class="mb-3 row" id="checklist_cr">
                 <div class="col-2" style="padding: 3px;">
-                  <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" value="'.$row['case_officer'].'" aria-label=".form-control-sm example">
+                    <select class="form-select form-select-sm" aria-label="Default select example">
+                        <option selected>username</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col-2" style="padding: 3px;">
+                  <input class="form-control form-control-sm" type="number" placeholder="sku" value="'.$row['sku'].'" aria-label=".form-control-sm example">
                 </div>
                 <div class="col" style="padding: 3px;">
                   <select class="form-select form-select-sm" aria-label="Default select example">
