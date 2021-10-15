@@ -1,5 +1,6 @@
 <?php
 function return_s_select_box_cl_cr($current_value,$attr_id){
+    session_start();
     $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
       $query_op = "SELECT * FROM content_service_gate.attribute_option
       WHERE attribute_id = ".$attr_id." and function = 'cl_content_request' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
