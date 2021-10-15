@@ -263,7 +263,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                 <button class="btn btn-primary btn-sm" onclick="add_cr_list(<?php echo $id; ?>)" ><ion-icon name="add-outline"></ion-icon> Add</button>
               </div>
               <ul id="checklist_box">
-               <?php     include('../get/get_checklist_cr.php?id='.$id); ?>
+               <?php     include('http://content-service-gate.cdsecommercecontent.ga/get/get_checklist_cr.php?id='.$id); ?>
               </ul>
          
             
