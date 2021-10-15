@@ -253,7 +253,23 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             <div class="row">
               <div class="col" style=" padding-left: 25px;">'.$case_name."Tell : ".$office_tell.'</div>
             </div>
-            <hr>
+            <hr>';
+            // end contact
+            // ---check list
+          if($_SESSION['username']=='poojaroonwit'){
+            ?>
+              <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+                <button class="btn btn-primary" type="button"><ion-icon name="add-outline"></ion-icon> Add</button>
+              </div>
+
+
+            <?php
+
+          }
+            echo '<hr>';
+            // ---- end check list
+            // start detail
+            echo '
             <ul class="list-group">
             <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">ref cto</div><div class="col-6">
             <input class="form-control form-control-sm" id="cr_edit_cto_ref" name="cr_edit_cto_ref" onchange="update_cr_detail('.$id.','.$cr_edit_ref_cto.')" type="text" style="border: 0px;" placeholder="Default input" aria-label="default input example" value="'.$cto_ref.'"> 
