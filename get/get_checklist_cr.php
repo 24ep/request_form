@@ -39,7 +39,7 @@
                   </select>
                 </div>
                 <div class="col-1" style="padding: 3px;">
-                   <button><ion-icon name="trash-outline" onclick="remove_cr_list('.$ticket_id.')"></ion-icon></button>
+                   <button  style="background: transparent;border: 0px;" onclick="remove_cr_list('.$ticket_id.')" ><ion-icon name="trash-outline"></ion-icon></button>
                 </div>
           </li>
           ';
