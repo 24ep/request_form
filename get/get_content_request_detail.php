@@ -463,6 +463,21 @@ function update_cr_detail(id, id_name) {
             });
     }
 }
+function update_cl_detail(id, id_name) {
+    var id_name = id_name;
+    var value_change = document.getElementById(id_name).value;
+    if (id) {
+        $.post("action/action_update_checklist_cr.php", {
+                id: id,
+                value_change: value_change,
+                id_name: id_name
+            },
+            function(data) {
+                // $('#call_update_complete').html(data);
+                // document.getElementById('comment_box_cr').scrollBy(0, document.getElementById("call_ticket_comment_cr").offsetHeight);
+            });
+    }
+}
 </script>
 <script>
 var elements = document.getElementsByClassName('window-full');
