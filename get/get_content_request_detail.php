@@ -258,8 +258,10 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             // ---check list
           if($_SESSION['username']=='poojaroonwit'){
             ?>
+            <div id="list_cr_box">   
+              <div id="list_cr">        
               <div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">
-                <button class="btn btn-primary btn-sm" type="button"><ion-icon name="add-outline"></ion-icon> Add</button>
+                <button class="btn btn-primary btn-sm" onclick="add_cr_list()" type="button"><ion-icon name="add-outline"></ion-icon> Add</button>
               </div>
 
               <div class="mb-3 row">
@@ -290,9 +292,11 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                     <option value="3">Three</option>
                   </select>
                 </div>
-                <div class="col" style="padding: 3px;">
+                <div class="col-1" style="padding: 3px;">
                    <ion-icon name="trash-outline"></ion-icon>
                 </div>
+              </div>
+              </div>
               </div>
 
 
@@ -411,6 +415,13 @@ function comment_cr_id(id) {
                     "call_ticket_comment_cr").offsetHeight);
             });
     }
+}
+
+function add_cr_list() {
+    var new_list = document.getElementById("list_cr")
+    var list_box = document.getElementById("list_cr_box")
+    list_box.body.appendChild(new_list); 
+   
 }
 
 function comment_cr_id_with_file(id) {
