@@ -52,13 +52,13 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
    $query = "SELECT * FROM all_in_one_project.checklist_of_content_request where ticket_id =".$ticket_id;
    $result = mysqli_query($con, $query);
    $result_count = mysqli_query($con, $query_count);
-   $cr_edit_case_officer = "'cr_edit_case_officer'";
+   $cl_edit_case_officer = "'cl_edit_case_officer'";
      while($row = mysqli_fetch_array($result)) {
         echo '
       
        <li class="mb-3 row" id="checklist_cr">
                 <div class="col-2" style="padding: 3px;">
-                    <select id="cr_edit_case_officer" name="cr_edit_case_officer" onchange="update_cl_detail('.$row["id"].','.$cr_edit_sku.')" class="form-select form-select-sm" aria-label="Default select example">
+                    <select id="cl_edit_case_officer" name="cl_edit_case_officer" onchange="update_cl_detail('.$row["id"].','.$cl_edit_sku.')" class="form-select form-select-sm" aria-label="Default select example">
                         ';
                         $op_username_cl = getoption_return_edit_job("username","account", $row["case_officer"],"single");
                         echo $op_username_cl;

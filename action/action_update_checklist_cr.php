@@ -2,7 +2,7 @@
  $id = $_POST['id'];
  $value_change = $_POST['value_change'];
  $value_name = $_POST['id_name'];
- $value_name =  str_replace("cr_edit_","",$value_name);
+ $value_name =  str_replace("cl_edit_","",$value_name);
  include('action_add_participant.php');
 session_start();
     include("connect.php");
@@ -27,7 +27,7 @@ session_start();
         insert_log("update ticket \n ".$value_name." = ".$value_change ,"cl_content_request",$_POST['id']);
         echo '<script>alert("Update Ticket ID CR-'.$_POST['id'].'")</script>';
 	}else{
-        insert_log("update ticket faild".$con->error ,"content_request",$id);
+        insert_log("update ticket fails".$con->error ,"content_request",$id);
         echo '<script>alert("Error: ' . $sql . '\n\n' . $con->error.'")</script>';
     }
     mysqli_close($con);
