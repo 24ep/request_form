@@ -53,12 +53,14 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
    $result = mysqli_query($con, $query);
    $result_count = mysqli_query($con, $query_count);
    $cl_edit_case_officer = "'cl_edit_case_officer'";
+   $cl_edit_status = "'cl_edit_status'";
+   $cl_edit_sku = "'cl_edit_sku'";
      while($row = mysqli_fetch_array($result)) {
         echo '
       
        <li class="mb-3 row" id="checklist_cr">
                 <div class="col-2" style="padding: 3px;">
-                    <select id="cl_edit_case_officer" name="cl_edit_case_officer" onchange="update_cl_detail('.$row["id"].','.$cl_edit_sku.')" class="form-select form-select-sm" aria-label="Default select example">
+                    <select id="cl_edit_case_officer" name="cl_edit_case_officer" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">
                         ';
                         $op_username_cl = getoption_return_edit_job("username","account", $row["case_officer"],"single");
                         echo $op_username_cl;
@@ -66,10 +68,10 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                     </select>
                 </div>
                 <div class="col-2" style="padding: 3px;">
-                  <input class="form-control form-control-sm" type="number" placeholder="sku" value="'.$row['sku'].'" aria-label=".form-control-sm example">
+                  <input id="cl_edit_sku" name="cl_edit_sku" onchange="update_cl_detail('.$row["id"].','.$cl_edit_sku.')" class="form-control form-control-sm" type="number" placeholder="sku" value="'.$row['sku'].'" aria-label=".form-control-sm example">
                 </div>
                 <div class="col" style="padding: 3px;">
-                  <select class="form-select form-select-sm" aria-label="Default select example">
+                  <select id="cl_edit_status" name="cl_edit_status" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">
                         ';
                         $op_status_cl = getoption_return_edit_job("content_request_status","option", $row["status"],"single");
                         echo $op_status_cl;
