@@ -260,7 +260,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             ?>
     
               <div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">
-                <button class="btn btn-primary btn-sm" onclick="add_cr_list()" ><ion-icon name="add-outline"></ion-icon> Add</button>
+                <button class="btn btn-primary btn-sm" onclick="add_cr_list(<?php echo $id; ?>)" ><ion-icon name="add-outline"></ion-icon> Add</button>
               </div>
               <ul id="checklist_box">
               <li class="mb-3 row" id="checklist_cr">
