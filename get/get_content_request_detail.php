@@ -421,7 +421,7 @@ function add_cr_list() {
   
     var new_list = document.getElementById("list_cr")
     var list_box = document.getElementById("list_cr_box")
-    list_box.innerHTML += new_list;
+    list_box.innerHTML += "<p>CONTENTS</p>";
    
 }
 
