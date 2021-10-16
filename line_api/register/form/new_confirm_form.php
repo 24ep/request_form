@@ -28,7 +28,7 @@
   </style>
 </head>
 <body>
-<div class="container-sm">
+<div class="container-sm" style="margin-top:5px">
   <small style="font-size: 12px;color: #a1a1a1;">เก็บข้อมูลเพื่อความความสะดวกในการประสานงาน คุณยังสามารถแก้ไขข้อมูลดังกล่าวได้ภายหลัง</small>
   <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
   <hr>
@@ -70,7 +70,6 @@
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         // document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
         // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
-
         document.getElementById("displayName").value =  profile.displayName;
         // document.getElementById("displayName_show").innerHTML =  profile.displayName;
       }).catch(err => console.error(err));
