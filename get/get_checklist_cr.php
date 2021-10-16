@@ -9,15 +9,11 @@ function return_s_select_box_cl_cr($current_value,$attr_id){
         $option_element = "<option selected value=''></option>";
       }
       while($option = mysqli_fetch_array($result_op)) {
-      
         if($option["attribute_option"]==$current_value){
             $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
           }else{
             $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
           }
-          
-       
-     
       }
     return $option_element;
   }
@@ -66,7 +62,6 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
        return $option_set;
        mysqli_close($con);
       }
-  
    $ticket_id = $_GET["id"];
    date_default_timezone_set("Asia/Bangkok");
    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
@@ -81,7 +76,6 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
    $cl_edit_update_type= "'cl_edit_update_type'";
      while($row = mysqli_fetch_array($result)) {
         echo '
-      
        <li class="mb-3 row" id="checklist_cr">
                 <div class="col-2" style="padding: 3px;">
                     <select id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">
@@ -124,6 +118,5 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
           </li>
           ';
     } 
-    
   mysqli_close($con);
   ?>
