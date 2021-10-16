@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
   <title>Content Service Gate | Profile</title>
   <style>
-    #pictureUrl { display: block; margin: 0 auto }
+    /* #pictureUrl { } */
     body{
       font-family: 'Prompt', sans-serif;
     }
@@ -26,10 +26,11 @@
 <body>
 <div class="container-sm">
   <p><strong>Register</strong></p>
-  <small style="font-size: 10px;color: #a1a1a1;">เก็บข้อมูลความความสะดวกในการประสานงาน คุณยังสามารถแก้ไขข้อมูลดังกล่าวได้ภายหลัง</small>
-  <p id="userId" style="font-size: 12px;color: #a1a1a1;"></p>
+  <small style="font-size: 102x;color: #a1a1a1;">เก็บข้อมูลเพื่อความความสะดวกในการประสานงาน คุณยังสามารถแก้ไขข้อมูลดังกล่าวได้ภายหลัง</small>
+  <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
   <hr>
   <img id="pictureUrl" class="rounded-circle shadow p-1 mb-3 bg-body" width="30%"  alt="image-profile">
+  <strong id="displayName_show" style="margin-left: 20px;font-size: 35;"></strong>
   <!-- <img id="pictureUrl" width="25%"> -->
   <!-- <p id="displayName"></p> -->
   <!-- <p id="statusMessage"></p>
@@ -39,7 +40,7 @@
 
   <div class="form-floating mb-3">
     <input type="text" class="form-control form-control-sm" id="displayName" placeholder="name@example.com">
-    <label for="floatingInput">ชื่อ</label>
+    <label for="floatingInput">ชื่อที่ใช้ติดต่อ</label>
   </div>
   <div class="form-floating mb-3">
     <input type="text" class="form-control form-control-sm" id="displayName" placeholder="name@example.com">
@@ -68,6 +69,7 @@
         // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
 
         document.getElementById("displayName").value =  profile.displayName;
+        document.getElementById("displayName_show").value =  profile.displayName;
       }).catch(err => console.error(err));
     }
     liff.init({ liffId: "1656539537-YZJQ28wR" }, () => {
