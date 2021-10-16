@@ -112,12 +112,13 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
   <p id="getDecodedIDToken"></p> -->
         <!-- confirm input -->
         <div class="d-grid gap-2">
+        <input type="hidden" id="userId_value" placeholder="Type to search...">
         <label for="exampleDataList" class="form-label">Username</label>
             <input class="form-control" list="username_list" id="username" placeholder="Type to search...">
             <datalist id="username_list">
                 <?php echo  $username_op; ?>
             </datalist>
-        <button class="btn btn-success"type="button"><ion-icon name="checkmark-done-outline"></ion-icon>ยืนยัน</button>
+        <button class="btn btn-success" onclick="account_update_user_id()" type="button"><ion-icon name="checkmark-done-outline"></ion-icon>ยืนยัน</button>
         </div>
     </div>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
@@ -126,6 +127,7 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
         liff.getProfile().then(profile => {
             // document.getElementById("pictureUrl").src = profile.pictureUrl;
             document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
+            document.getElementById("userId_value").innerHTML =  profile.userId;
             // document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
             // document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
             // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
@@ -155,14 +157,13 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
 
 </html>
 <script>
-function account_update_user_id(user_id) {
+function account_update_user_id() {
     var username = document.getElementById("username").value;
-    var attribute_update_value = user_id;
+    var attribute_update_value = document.getElementById("userId_value").value;
     var attribute_update_name = "line_user_id";
         $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/update_account_detail.php", {
             username: username,
             attribute_update_value: attribute_update_value,
-            from_post: from_post,
             attribute_update_name: attribute_update_name
         }, function(data) {
             $('#body').html(data);
