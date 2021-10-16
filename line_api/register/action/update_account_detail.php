@@ -12,13 +12,12 @@
 	if($query) {
         echo '<div style="  height: 200px;
         width: 400px;
-        background: black;
         position: fixed;
         top: 50%;
         left: 50%;
+        text-align: center;
         margin-top: -100px;
-        color:green;
-        margin-left: -200px;"><h6><strong><ion-icon name="checkmark-circle-outline"></ion-icon>Success ! </strong></h6><hr>คุณสามารถปิดหน้าต่างนี้เพื่อส่งเริ่มส่งข้อความ</div>';
+        margin-left: -200px;"><h6><strong><ion-icon name="checkmark-circle-outline"></ion-icon>Success ! </strong></h6><p>คุณสามารถปิดหน้าต่างนี้เพื่อส่งเริ่มส่งข้อความ</p></div>';
 	}else{
         echo '<script>alert("Error: ' . $sql . '\n\n' . $con->error.'")</script>';
     }
