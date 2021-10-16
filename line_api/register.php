@@ -13,35 +13,41 @@
     body{
       font-family: 'Prompt', sans-serif;
     }
+    .form-label {
+    margin-bottom: .5rem;
+    font-weight: 600;
+    font-size: smaller;
+    }
   </style>
 </head>
 <body>
-  <img id="pictureUrl" class="rounded-circle shadow p-3 mb-5 bg-body" width="30%"  alt="image-profile">
+<div class="container-sm">
+  <img id="pictureUrl" class="rounded-circle shadow p-1 mb-3 bg-body" width="25%"  alt="image-profile">
   <!-- <img id="pictureUrl" width="25%"> -->
   <!-- <p id="displayName"></p> -->
   <!-- <p id="statusMessage"></p>
   <p id="getDecodedIDToken"></p> -->
 <!-- confirm input -->
-<div class="container-sm">
-<p id="userId"></p>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Name</label>
-    <input type="email" class="form-control" id="displayName" placeholder="" value="">
+
+<p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="displayName" placeholder="name@example.com">
+    <label for="floatingInput">ชื่อ</label>
   </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Tell</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="เบอร์ทรศัพท์ที่สามารถติดต่อได้" value="">
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="displayName" placeholder="name@example.com">
+    <label for="floatingInput">เบอร์ทรศัพท์ที่สามารถติดต่อได้</label>
   </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Department</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="displayName" placeholder="name@example.com">
+    <label for="floatingInput">แผนก</label>
   </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Service gate User (ถ้ามี)</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="" value="">
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="displayName" placeholder="name@example.com">
+    <label for="floatingInput">username service gate (ถ้ามีโปรดระบุ)</label>
   </div>
   <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">Confirm</button>
+  <button class="btn btn-primary" type="button">ยืนยัน</button>
 </div>
 </div>
   <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
