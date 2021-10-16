@@ -38,19 +38,19 @@
 
 
   <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="displayName" placeholder="name@example.com">
+    <input type="text" class="form-control form-control-sm" id="displayName" placeholder="name@example.com">
     <label for="floatingInput">ชื่อ</label>
   </div>
   <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="displayName" placeholder="name@example.com">
+    <input type="text" class="form-control form-control-sm" id="displayName" placeholder="name@example.com">
     <label for="floatingInput">เบอร์โทรศัพท์ที่สามารถติดต่อได้</label>
   </div>
   <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="displayName" placeholder="name@example.com">
+    <input type="text" class="form-control form-control-sm" id="displayName" placeholder="name@example.com">
     <label for="floatingInput">แผนก</label>
   </div>
   <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="displayName" placeholder="name@example.com">
+    <input type="text" class="form-control form-control-sm" id="displayName" placeholder="name@example.com">
     <label for="floatingInput">username service gate (ถ้ามีโปรดระบุ)</label>
   </div>
   <div class="d-grid gap-2">
