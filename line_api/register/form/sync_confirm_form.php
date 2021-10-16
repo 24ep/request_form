@@ -113,8 +113,8 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
         <!-- confirm input -->
         <div class="d-grid gap-2">
         <label for="exampleDataList" class="form-label">Username</label>
-            <input class="form-control" list="datalistOptions" id="username" placeholder="Type to search...">
-            <datalist id="username">
+            <input class="form-control" list="username_list" id="username" placeholder="Type to search...">
+            <datalist id="username_list">
                 <?php echo  $username_op; ?>
             </datalist>
         <button class="btn btn-success" type="button">ยืนยัน</button>
