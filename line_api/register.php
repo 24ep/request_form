@@ -29,7 +29,7 @@
   <small style="font-size: 102x;color: #a1a1a1;">เก็บข้อมูลเพื่อความความสะดวกในการประสานงาน คุณยังสามารถแก้ไขข้อมูลดังกล่าวได้ภายหลัง</small>
   <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
   <hr>
-  <img id="pictureUrl" class="rounded-circle shadow p-1 mb-3 bg-body" width="30%"  alt="image-profile">
+  <img id="pictureUrl" class="rounded-circle shadow p-1 mb-3 bg-body" width="15%"  alt="image-profile">
   <strong id="displayName_show" style="margin-left: 20px;font-size: 35;"></strong>
   <!-- <img id="pictureUrl" width="25%"> -->
   <!-- <p id="displayName"></p> -->
@@ -69,7 +69,7 @@
         // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
 
         document.getElementById("displayName").value =  profile.displayName;
-        document.getElementById("displayName_show").value =  profile.displayName;
+        document.getElementById("displayName_show").innerHTML =  profile.displayName;
       }).catch(err => console.error(err));
     }
     liff.init({ liffId: "1656539537-YZJQ28wR" }, () => {
