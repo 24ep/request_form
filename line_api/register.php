@@ -25,8 +25,10 @@
 </head>
 <body>
 <div class="container-sm">
-  <strong>Register</strong>
-  <small>เก็บข้อมูลความความสะดวกในการประสานงาน คุณยังสามารถแก้ไขข้อมูลดังกล่าวได้ภายหลัง</small>
+  <p><strong>Register</strong></p>
+  <small style="font-size: 10px;color: #a1a1a1;">เก็บข้อมูลความความสะดวกในการประสานงาน คุณยังสามารถแก้ไขข้อมูลดังกล่าวได้ภายหลัง</small>
+  <p id="userId" style="font-size: 12px;color: #a1a1a1;"></p>
+  <hr>
   <img id="pictureUrl" class="rounded-circle shadow p-1 mb-3 bg-body" width="30%"  alt="image-profile">
   <!-- <img id="pictureUrl" width="25%"> -->
   <!-- <p id="displayName"></p> -->
@@ -34,7 +36,7 @@
   <p id="getDecodedIDToken"></p> -->
 <!-- confirm input -->
 
-<p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
+
   <div class="form-floating mb-3">
     <input type="text" class="form-control" id="displayName" placeholder="name@example.com">
     <label for="floatingInput">ชื่อ</label>
