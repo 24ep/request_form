@@ -25,7 +25,7 @@
         document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
       }).catch(err => console.error(err));
     }
-    liff.init({ liffId: "1656539537-5VDlbWqK" }, () => {
+    liff.init({ liffId: "1656539537-YZJQ28wR" }, () => {
       if (liff.isLoggedIn()) {
         runApp()
       } else {
