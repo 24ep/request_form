@@ -99,7 +99,7 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
     </style>
 </head>
 
-<body>
+<body id="body">
     <div class="container-sm" style="margin-top:5px">
         <!-- <small style="font-size: 12px;color: #a1a1a1;">เก็บข้อมูลเพื่อความความสะดวกในการประสานงาน คุณยังสามารถแก้ไขข้อมูลดังกล่าวได้ภายหลัง</small> -->
         <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
@@ -117,7 +117,7 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
             <datalist id="username_list">
                 <?php echo  $username_op; ?>
             </datalist>
-        <button class="btn btn-success" type="button">ยืนยัน</button>
+        <button class="btn btn-success"type="button"><ion-icon name="checkmark-done-outline"></ion-icon>ยืนยัน</button>
         </div>
     </div>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
@@ -146,6 +146,27 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
 </body>
 
 </html>
+<script>
+function account_update_user_id(user_id) {
+    var username = document.getElementById("username").value;
+    var attribute_update_value = user_id;
+    var attribute_update_name = "line_user_id";
+        $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/update_account_detail.php", {
+            username: username,
+            attribute_update_value: attribute_update_value,
+            from_post: from_post,
+            attribute_update_name: attribute_update_name
+        }, function(data) {
+            $('#body').html(data);
+        });
+    
+}
+</script>
