@@ -18,12 +18,12 @@
 <body>
   <img id="pictureUrl" class="rounded-circle shadow p-3 mb-5 bg-body" width="30%"  alt="image-profile">
   <!-- <img id="pictureUrl" width="25%"> -->
-  <p id="userId"></p>
   <!-- <p id="displayName"></p> -->
   <!-- <p id="statusMessage"></p>
   <p id="getDecodedIDToken"></p> -->
 <!-- confirm input -->
-<div class="container-md">
+<div class="container-sm">
+<p id="userId"></p>
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Name</label>
     <input type="email" class="form-control" id="displayName" placeholder="" value="">
