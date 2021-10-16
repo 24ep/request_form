@@ -22,14 +22,13 @@
     font-weight: 600;
     }
     .form-floating {
-    font-size: x-small;
+      font-size: small;;
     font-weight: 600;
 }
   </style>
 </head>
 <body>
 <div class="container-sm">
-  <p><strong>Register</strong></p>
   <small style="font-size: 12px;color: #a1a1a1;">เก็บข้อมูลเพื่อความความสะดวกในการประสานงาน คุณยังสามารถแก้ไขข้อมูลดังกล่าวได้ภายหลัง</small>
   <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
   <hr>
