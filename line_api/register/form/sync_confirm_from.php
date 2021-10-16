@@ -104,7 +104,7 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
         <!-- <small style="font-size: 12px;color: #a1a1a1;">เก็บข้อมูลเพื่อความความสะดวกในการประสานงาน คุณยังสามารถแก้ไขข้อมูลดังกล่าวได้ภายหลัง</small> -->
         <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
         <hr>
-        <img id="pictureUrl" class="rounded-circle shadow p-1 mb-3 bg-body" width="15%" alt="image-profile">
+        <!-- <img id="pictureUrl" class="rounded-circle shadow p-1 mb-3 bg-body" width="15%" alt="image-profile"> -->
         <!-- <strong id="displayName_show" style="margin-left: 20px;font-size: 35;"></strong> -->
         <!-- <img id="pictureUrl" width="25%"> -->
         <!-- <p id="displayName"></p> -->
