@@ -3,10 +3,10 @@
  $attribute_update_name = $_POST['attribute_update_name'];
  $attribute_update_value = $_POST['attribute_update_value'];
  session_start();
-    $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     date_default_timezone_set("Asia/Bangkok");
-    $sql = "UPDATE account SET ".$attribute_update_name." = '".$attribute_update_value."'  WHERE username=".$username;
+    $sql = "UPDATE account SET ".$attribute_update_name." = '".$attribute_update_value."'  WHERE username='".$username."'";
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
 	if($query) {
