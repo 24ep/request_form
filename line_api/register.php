@@ -18,11 +18,16 @@
     font-weight: 600;
     font-size: smaller;
     }
+    .form-floating>.form-control {
+    font-weight: 600;
+    }
   </style>
 </head>
 <body>
 <div class="container-sm">
-  <img id="pictureUrl" class="rounded-circle shadow p-1 mb-3 bg-body" width="25%"  alt="image-profile">
+  <strong>Register</strong>
+  <small>เก็บข้อมูลความความสะดวกในการประสานงาน คุณยังสามารถแก้ไขข้อมูลดังกล่าวได้ภายหลัง</small>
+  <img id="pictureUrl" class="rounded-circle shadow p-1 mb-3 bg-body" width="30%"  alt="image-profile">
   <!-- <img id="pictureUrl" width="25%"> -->
   <!-- <p id="displayName"></p> -->
   <!-- <p id="statusMessage"></p>
@@ -36,7 +41,7 @@
   </div>
   <div class="form-floating mb-3">
     <input type="text" class="form-control" id="displayName" placeholder="name@example.com">
-    <label for="floatingInput">เบอร์ทรศัพท์ที่สามารถติดต่อได้</label>
+    <label for="floatingInput">เบอร์โทรศัพท์ที่สามารถติดต่อได้</label>
   </div>
   <div class="form-floating mb-3">
     <input type="text" class="form-control" id="displayName" placeholder="name@example.com">
