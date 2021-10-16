@@ -60,7 +60,7 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
     mysqli_close($con);
     }
 
-    $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
+    $username_op = getoption_return_filter("username","account","","single","all_in_one_project");
 
 ?>
 
@@ -112,7 +112,7 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
   <p id="getDecodedIDToken"></p> -->
         <!-- confirm input -->
         <div class="d-grid gap-2">
-        <label for="exampleDataList" class="form-label">Datalist example</label>
+        <label for="exampleDataList" class="form-label">Username</label>
             <input class="form-control" list="datalistOptions" id="username" placeholder="Type to search...">
             <datalist id="username">
                 <?php echo  $username_op; ?>
