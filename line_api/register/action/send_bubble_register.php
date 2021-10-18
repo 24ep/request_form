@@ -2,6 +2,14 @@
 
 
 function bb_register($id ,$user_id,$username,$tell,$department,$header){
+  echo '<script> console.log("'.$id.'");</script> ';
+  echo '<script> console.log("'.$user_id.'");</script> ';
+  echo '<script> console.log("'.$username.'");</script> ';
+  echo '<script> console.log("'.$tell.'");</script> ';
+  echo '<script> console.log("'.$department.'");</script> ';
+  echo '<script> console.log("'.$header.'");</script> ';
+
+
 $curl = curl_init();
  
 curl_setopt_array($curl, array(
