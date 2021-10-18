@@ -1,11 +1,7 @@
 <?php
-$id = $_GET["id"];
-$user_id = $_GET["user_id"];
-$username = $_GET["username"];
-$tell = $_GET["tell"];
-$department = $_GET["dept"];
-$header = $_GET["header"];
 
+
+function bb_register($id ,$user_id,$username,$tell,$department,$header){
 $curl = curl_init();
  
 curl_setopt_array($curl, array(
@@ -164,7 +160,8 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 
 curl_close($curl);
-echo $response;
+// echo $response;
 echo '<script> console.log("'.$response.'");</script> ';
+}
 
 ?>
