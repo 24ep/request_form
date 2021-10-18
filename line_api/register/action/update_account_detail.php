@@ -11,6 +11,14 @@
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
 	if($query) {
+        $sql_gb = "SELECT * from  all_in_one_project.account WHERE username='".$username."'";
+        $query_gb  = mysqli_query($con,$sq_gb);
+        while($row = mysqli_fetch_array($query_gb)) {
+            $id = $row["id"];
+            $tell = $row["office_tell"];
+            $dept = $row["department"];
+
+        }
         echo '<div style="  height: 200px;
         width: 400px;
         position: fixed;
@@ -19,6 +27,8 @@
         text-align: center;
         margin-top: -100px;
         margin-left: -200px;"><h6><strong><ion-icon name="checkmark-circle-outline"></ion-icon>Success ! </strong></h6><p>คุณสามารถปิดหน้าต่างนี้เพื่อส่งเริ่มส่งข้อความ</p></div>';
+        include("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/send_bubble_register.php");
+        bubble_register($id ,$username,$tell,$dept,"Connected !");
 	}else{
         echo '<script>alert("Error: ' . $sql . '\n\n' . $con->error.'")</script>';
     }
