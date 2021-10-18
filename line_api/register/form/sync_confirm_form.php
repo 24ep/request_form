@@ -113,7 +113,7 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
         <!-- confirm input -->
         <div class="d-grid gap-2">
         <input type="hidden" id="userId_value" placeholder="Type to search...">
-        <input type="hidden" id="displayName" placeholder="Type to search...">
+        <input type="hidden" id="pictureUrl" placeholder="Type to search...">
         
         <label for="exampleDataList" class="form-label">Username</label>
             <input class="form-control" list="username_list" id="username" placeholder="Type to search...">
