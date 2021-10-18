@@ -27,8 +27,7 @@
         text-align: center;
         margin-top: -100px;
         margin-left: -200px;"><h6><strong><ion-icon name="checkmark-circle-outline"></ion-icon>Success ! </strong></h6><p>คุณสามารถปิดหน้าต่างนี้เพื่อส่งเริ่มส่งข้อความ</p></div>';
-        include("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/send_bubble_register.php");
-        bubble_register($id ,$username,$tell,$dept,"Connected !");
+        include("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/send_bubble_register.php?user_id=".$attribute_update_value."&id=".$id."&username=".$username."&tell=".$tell."&dept=".$dept."&header=Connected !");
 	}else{
         echo '<script>alert("Error: ' . $sql . '\n\n' . $con->error.'")</script>';
     }

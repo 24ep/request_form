@@ -1,6 +1,11 @@
 <?php
+$id = $_GET["id"];
+$user_id = $_GET["user_id"];.
+$username = $_GET["username"];
+$tell = $_GET["tell"];
+$department = $_GET["dept"];
+$header = $_GET["header"];
 
-function bubble_register($id,$username,$tell,$department,$header){
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -160,5 +165,5 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 // echo $response;
-}
+
 ?>
