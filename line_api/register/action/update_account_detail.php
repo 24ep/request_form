@@ -18,6 +18,13 @@
             $tell = $row["office_tell"];
             $dept = $row["department"];
 
+            if($tell==""){
+                $tell = "-";
+            }
+            if($dept==""){
+                $dept = "-";
+            }
+
         }
         include("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/send_bubble_register.php?user_id=".$attribute_update_value."&id=".$id."&username=".$username."&tell=".$tell."&dept=".$dept."&header=Connected !");
         echo '<div style="  height: 200px;
