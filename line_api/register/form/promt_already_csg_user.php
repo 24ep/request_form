@@ -46,8 +46,8 @@
   <p id="getDecodedIDToken"></p> -->
         <!-- confirm input -->
         <div class="d-grid gap-2">
-            <a class="btn btn-dark" href="new_confirm_form.php" type="button">ยังไม่เคยมี user content-service-gate</a>
-            <a class="btn btn-dark" href="sync_confirm_form.php" type="button">มี user อยู่แล้ว</a>
+            <a class="btn btn-dark" href="new_confirm_form.php" type="button">ยังไม่เคยมี Account content-service-gate</a>
+            <a class="btn btn-dark" href="sync_confirm_form.php" type="button">มี Account อยู่แล้ว</a>
         </div>
     </div>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>

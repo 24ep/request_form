@@ -54,7 +54,7 @@
     <label for="floatingInput">แผนก</label>
   </div>
   <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">ยืนยัน</button>
+  <button class="btn btn-primary" onclick="account_create()" type="button">ยืนยัน</button>
 </div>
 </div>
   <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
@@ -63,10 +63,10 @@
       liff.getProfile().then(profile => {
         document.getElementById("pictureUrl").src = profile.pictureUrl;
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
-        document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
+        // document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         // document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
         // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
-        document.getElementById("displayName").value =  profile.displayName;
+        document.getElementById("username_create").value =  profile.displayName;
         // document.getElementById("displayName_show").innerHTML =  profile.displayName;
       }).catch(err => console.error(err));
     }
