@@ -32,7 +32,7 @@
             $dept = "-";
         }
     
-        bb_register($id ,$attribute_update_value,$username,$tell,$dept,"Connected !")
+        bb_register($id ,$attribute_update_value,$username,$tell,$dept,"Connected !");
         echo '<div style="  height: 200px;
         width: 400px;
         position: fixed;

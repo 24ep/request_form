@@ -26,7 +26,7 @@
         $lasted_id = $con->insert_id;
         $sql_uu = "UPDATE account SET username  = '".$lasted_id."_".$username."'  WHERE id='".$lasted_id."'";
         $query_uu = mysqli_query($con,$sql_uu);
-        bb_register($lasted_id ,$user_id,$lasted_id."_".$username,$tell,$dept,"Register success !")
+        bb_register($lasted_id ,$user_id,$lasted_id."_".$username,$tell,$dept,"Register success !");
         echo '<div style="  height: 200px;
         width: 400px;
         position: fixed;
