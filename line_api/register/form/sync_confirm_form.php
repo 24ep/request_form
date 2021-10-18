@@ -163,13 +163,13 @@ function account_update_user_id() {
     var username = document.getElementById("username").value;
     var attribute_update_value = document.getElementById("userId_value").value;
     var attribute_update_name = "line_user_id";
-    var displayName = document.getElementById("displayName").value;
+    var pictureUrl = document.getElementById("pictureUrl").value;
 
         $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/update_account_detail.php", {
             username: username,
             attribute_update_value: attribute_update_value,
             attribute_update_name: attribute_update_name,
-            displayName:displayName
+            pictureUrl:pictureUrl
             
         }, function(data) {
             $('#body').html(data);
