@@ -7,7 +7,7 @@ $department = $_GET["dept"];
 $header = $_GET["header"];
 
 $curl = curl_init();
-
+ 
 curl_setopt_array($curl, array(
   CURLOPT_URL => 'https://api.line.me/v2/bot/message/push',
   CURLOPT_RETURNTRANSFER => true,
