@@ -3,7 +3,7 @@
  $attribute_update_name = $_POST['attribute_update_name'];
  $attribute_update_value = $_POST['attribute_update_value'];
  $pictureUrl = $_POST['pictureUrl'];
-//  include("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/send_bubble_register.php");
+ include("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/send_bubble_register.php");
  session_start();
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
