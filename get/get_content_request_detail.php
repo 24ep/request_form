@@ -233,23 +233,8 @@ $result = mysqli_query($con, $query);
         $cr_edit_effective_date = "'cr_edit_effective_date'";
         $cr_edit_content_request_reson= "'cr_edit_content_request_reson'";
         $cr_edit_request_by= "'cr_edit_request_by'";
-           if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
-            ?>
+     
          
-              <div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">
-                <button class="btn btn-primary btn-sm" onclick="add_cr_list(<?php echo $id; ?>)" ><ion-icon name="add-outline"></ion-icon> Add</button>
-              </div>
-             <?php 
-           }
-            ?>
-              <ul id="checklist_box" style="padding: 5px;">
-               <?php     include('http://content-service-gate.cdsecommercecontent.ga/get/get_checklist_cr.php?id='.$id); ?>
-              </ul>
-         
-            
-
-
-            <?php
         
 echo "<script>console.log('".$_SESSION["department"]."');</script>";
         if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
@@ -273,7 +258,20 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             <hr>';
             // end contact
             // ---check list
-      
+             ?>
+         
+              <div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">
+                <button class="btn btn-primary btn-sm" onclick="add_cr_list(<?php echo $id; ?>)" ><ion-icon name="add-outline"></ion-icon> Add</button>
+              </div>
+           
+              <ul id="checklist_box" style="padding: 5px;">
+               <?php     include('http://content-service-gate.cdsecommercecontent.ga/get/get_checklist_cr.php?id='.$id); ?>
+              </ul>
+         
+            
+
+
+             <?php
 
         
             echo '<hr>';
@@ -330,6 +328,15 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             </div>';
         }else{
            echo '<h4 style="margin:10px">'.$status.'</h4>'; 
+               ?>
+              <ul id="checklist_box" style="padding: 5px;">
+               <?php     include('http://content-service-gate.cdsecommercecontent.ga/get/get_checklist_cr.php?id='.$id); ?>
+              </ul>
+         
+            
+
+
+            <?php
            echo '  
            <hr>
            <ul class="list-group">
