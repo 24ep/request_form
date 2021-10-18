@@ -101,7 +101,7 @@
     var tell = document.getElementById("tell_create").value;
     var dept = document.getElementById("dept_create").value;
     var user_id = document.getElementById("userId_value").value;
-    var user_id = document.getElementById("pictureUrl").value;
+    var pictureUrl = document.getElementById("pictureUrl").value;
         $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/create_action_csg.php", {
             username: username,
             tell: tell,
