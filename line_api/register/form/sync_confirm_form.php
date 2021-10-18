@@ -133,7 +133,7 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
             // document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
             // document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
             // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
-            // document.getElementById("pictureUrl").value = profile.pictureUrl;
+            document.getElementById("pictureUrl").value = profile.pictureUrl;
             // document.getElementById("displayName_show").innerHTML =  profile.displayName;
         }).catch(err => console.error(err));
     }
@@ -163,13 +163,13 @@ function account_update_user_id() {
     var username = document.getElementById("username").value;
     var attribute_update_value = document.getElementById("userId_value").value;
     var attribute_update_name = "line_user_id";
-    // var pictureUrl = document.getElementById("pictureUrl").value;
+    var pictureUrl = document.getElementById("pictureUrl").value;
 
         $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/update_account_detail.php", {
             username: username,
             attribute_update_value: attribute_update_value,
-            attribute_update_name: attribute_update_name
-            // pictureUrl:pictureUrl
+            attribute_update_name: attribute_update_name,
+            pictureUrl:pictureUrl
             
         }, function(data) {
             $('#body').html(data);

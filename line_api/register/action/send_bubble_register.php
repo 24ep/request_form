@@ -1,6 +1,6 @@
 <?php
 
-function bubble_register(id,username,tell,department,header){
+function bubble_register($id,$username,$tell,$department,$header){
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
