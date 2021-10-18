@@ -265,7 +265,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                     <strong>Task list</strong>
                 </div>
                 <div class="col"><div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">
-                            <button class="btn btn-primary btn-sm" onclick="add_cr_list(1742)"><ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon> ADD TASK</button>
+                            <button class="btn btn-primary btn-sm" onclick="add_cr_list(<?php echo $id; ?>)"><ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon> ADD TASK</button>
                 </div>
 
             </div></div>
