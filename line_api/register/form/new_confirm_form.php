@@ -27,7 +27,7 @@
 }
   </style>
 </head>
-<body>
+<body id="body">
 <div class="container-sm" style="margin-top:5px">
   <small style="font-size: 12px;color: #a1a1a1;">เก็บข้อมูลเพื่อความความสะดวกในการประสานงาน คุณยังสามารถแก้ไขข้อมูลดังกล่าวได้ภายหลัง</small>
   <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
@@ -40,22 +40,18 @@
   <p id="getDecodedIDToken"></p> -->
 <!-- confirm input -->
 
-
+  <input type="hidden" id="userId_value" placeholder="Type to search...">
   <div class="form-floating mb-2">
-    <input type="text" class="form-control form-control-sm" id="displayName" placeholder="name@example.com">
+    <input type="text" class="form-control form-control-sm" id="username_create" placeholder="name@example.com">
     <label for="floatingInput">ชื่อที่ใช้ติดต่อ</label>
   </div>
   <div class="form-floating mb-2">
-    <input type="text" class="form-control form-control-sm" id="displayName" placeholder="name@example.com">
+    <input type="text" class="form-control form-control-sm" id="tell_create" placeholder="name@example.com">
     <label for="floatingInput">เบอร์โทรศัพท์ที่สามารถติดต่อได้</label>
   </div>
   <div class="form-floating mb-2">
-    <input type="text" class="form-control form-control-sm" id="displayName" placeholder="name@example.com">
+    <input type="text" class="form-control form-control-sm" id="dept_create" placeholder="name@example.com">
     <label for="floatingInput">แผนก</label>
-  </div>
-  <div class="form-floating mb-2">
-    <input type="text" class="form-control form-control-sm" id="displayName" placeholder="name@example.com">
-    <label for="floatingInput">username service gate (ถ้ามีโปรดระบุ)</label>
   </div>
   <div class="d-grid gap-2">
   <button class="btn btn-primary" type="button">ยืนยัน</button>
@@ -81,7 +77,24 @@
         liff.login();
       }
     }, err => console.error(err.code, error.message));
+
+    function account_create() {
+    var username = document.getElementById("username_create").value;
+    var tell = document.getElementById("tell_create").value;
+    var dept = document.getElementById("dept_create").value;
+    var user_id = document.getElementById("userId_value").value;
+        $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/create_action_csg.php", {
+            username: username,
+            tell: tell,
+            dept: dept,
+            user_id: user_id
+        }, function(data) {
+            $('#body').html(data);
+        });
+    
+  }
   </script>
+  
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

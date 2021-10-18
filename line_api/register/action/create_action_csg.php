@@ -2,11 +2,20 @@
  $username = $_POST['name'];
  $tell = $_POST['tell'];
  $dept = $_POST['dept'];
+ $user_id = $_POST['user_id'];
  session_start();
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     date_default_timezone_set("Asia/Bangkok");
-    $sql = "insert into account SET ".$attribute_update_name." = '".$attribute_update_value."'  WHERE username='".$username."'";
+    $sql = "insert into account (nickname,username,password,department,office_tell,register_type,line_user_id) values (
+     '".$username."',
+     '".$username."',
+     '378af2140b1f3aa30a6c5790454fab97',  
+     '".$dept."',
+     '".$tell."',
+     'line_login',
+     '".$user_id."'
+    )";
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
 	if($query) {
