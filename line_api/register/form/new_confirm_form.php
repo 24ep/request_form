@@ -71,7 +71,7 @@
       liff.getProfile().then(profile => {
         document.getElementById("pictureUrl").src = profile.pictureUrl;
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
-        document.getElementById("userId_value").innerHTML = '<b>UserId:</b> ' + profile.userId;
+        document.getElementById("userId_value").innerHTML = profile.userId;
         // document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         // document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
         // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
