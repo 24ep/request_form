@@ -71,10 +71,12 @@
       liff.getProfile().then(profile => {
         document.getElementById("pictureUrl").src = profile.pictureUrl;
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
+        document.getElementById("userId_value").innerHTML = '<b>UserId:</b> ' + profile.userId;
         // document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         // document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
         // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
         document.getElementById("username_create").value =  profile.displayName;
+        
         // document.getElementById("displayName_show").innerHTML =  profile.displayName;
       }).catch(err => console.error(err));
     }
@@ -86,7 +88,14 @@
       }
     }, err => console.error(err.code, error.message));
 
-    function account_create() {
+
+  </script>
+  
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
+<script>
+ function account_create() {
     var username = document.getElementById("username_create").value;
     var tell = document.getElementById("tell_create").value;
     var dept = document.getElementById("dept_create").value;
@@ -101,8 +110,4 @@
         });
     
   }
-  </script>
-  
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
-</html>
+</script>
