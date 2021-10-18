@@ -164,6 +164,6 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 
 curl_close($curl);
-//  echo $response;
+echo '<script> console.log("'.$response.'");</script> ';
 
 ?>
