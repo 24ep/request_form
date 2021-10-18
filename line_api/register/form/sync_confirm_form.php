@@ -113,6 +113,8 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
         <!-- confirm input -->
         <div class="d-grid gap-2">
         <input type="hidden" id="userId_value" placeholder="Type to search...">
+        <input type="hidden" id="displayName" placeholder="Type to search...">
+        
         <label for="exampleDataList" class="form-label">Username</label>
             <input class="form-control" list="username_list" id="username" placeholder="Type to search...">
             <datalist id="username_list">
@@ -131,7 +133,7 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
             // document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
             // document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
             // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
-            // document.getElementById("displayName").value = profile.displayName;
+            document.getElementById("displayName").value = profile.displayName;
             // document.getElementById("displayName_show").innerHTML =  profile.displayName;
         }).catch(err => console.error(err));
     }
@@ -161,10 +163,14 @@ function account_update_user_id() {
     var username = document.getElementById("username").value;
     var attribute_update_value = document.getElementById("userId_value").value;
     var attribute_update_name = "line_user_id";
+    var displayName = document.getElementById("displayName").value;
+
         $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/update_account_detail.php", {
             username: username,
             attribute_update_value: attribute_update_value,
-            attribute_update_name: attribute_update_name
+            attribute_update_name: attribute_update_name,
+            displayName:displayName
+            
         }, function(data) {
             $('#body').html(data);
         });

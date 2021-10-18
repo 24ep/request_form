@@ -41,6 +41,7 @@
 <!-- confirm input -->
 
   <input type="hidden" id="userId_value" placeholder="Type to search...">
+  <input type="hidden" id="pictureUrl" placeholder="Type to search...">
   <div class="form-floating mb-2">
     <input type="text" class="form-control form-control-sm" id="username_create" placeholder="name@example.com">
     <label for="floatingInput">ชื่อที่ใช้ติดต่อ</label>
@@ -100,11 +101,13 @@
     var tell = document.getElementById("tell_create").value;
     var dept = document.getElementById("dept_create").value;
     var user_id = document.getElementById("userId_value").value;
+    var user_id = document.getElementById("pictureUrl").value;
         $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/create_action_csg.php", {
             username: username,
             tell: tell,
             dept: dept,
-            user_id: user_id
+            user_id: user_id,
+            pictureUrl:pictureUrl
         }, function(data) {
             $('#body').html(data);
         });

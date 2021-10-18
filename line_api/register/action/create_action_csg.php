@@ -3,11 +3,12 @@
  $tell = $_POST['tell'];
  $dept = $_POST['dept'];
  $user_id = $_POST['user_id'];
+ $pictureUrl = $_POST['pictureUrl'];
  session_start();
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     date_default_timezone_set("Asia/Bangkok");
-    $sql = "INSERT INTO account (firstname,nickname,username,password,department,office_tell,register_type,line_user_id) values (
+    $sql = "INSERT INTO account (firstname,nickname,username,password,department,office_tell,register_type,line_user_id,profile_url) values (
     '".$username."',
      '".$username."',
      '".$username."',
@@ -15,7 +16,8 @@
      '".$dept."',
      '".$tell."',
      'line_login',
-     '".$user_id."'
+     '".$user_id."',
+     '".$pictureUrl."'
     )";
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
