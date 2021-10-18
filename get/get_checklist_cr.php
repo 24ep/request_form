@@ -103,7 +103,9 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                   echo $op_update_type;
                   echo'
                   </select>
-                </div>
+                </div>';
+                if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
+                  echo'
                 <div class="col" style="padding: 3px;">
                   <select id="cl_edit_update_due_reason_'.$row["id"].'" name="cl_edit_update_due_reason_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_update_due_reason.')" class="form-select form-select-sm" aria-label="Default select example">
                   ';    
@@ -115,6 +117,9 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                 <div class="col-1" style="padding: 3px;">
                    <button  style="background: transparent;border: 0px;" onclick="remove_cr_list('.$row['id'].','.$ticket_id.')" ><ion-icon name="trash-outline"></ion-icon></button>
                 </div>
+                ';
+                }
+         echo'
           </li>
           ';
     } 
