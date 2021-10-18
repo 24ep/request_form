@@ -1,6 +1,6 @@
 <?php
 $id = $_GET["id"];
-$user_id = $_GET["user_id"];.
+$user_id = $_GET["user_id"];
 $username = $_GET["username"];
 $tell = $_GET["tell"];
 $department = $_GET["dept"];
@@ -164,6 +164,6 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 
 curl_close($curl);
- echo $response;
+//  echo $response;
 
 ?>
