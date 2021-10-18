@@ -11,7 +11,7 @@
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
 	if($query) {
-        $sql_gb = "SELECT * from  all_in_one_project.account WHERE username='".$username."'";
+        $sql_gb = "SELECT * from  account WHERE username='".$username."'";
         $query_gb  = mysqli_query($con,$sql_gb);
         while($row = mysqli_fetch_array($query_gb)) {
             $id = $row["id"];
