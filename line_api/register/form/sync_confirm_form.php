@@ -133,7 +133,7 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
             // document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
             // document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
             // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
-            document.getElementById("displayName").value = profile.displayName;
+            document.getElementById("pictureUrl").value = profile.pictureUrl;
             // document.getElementById("displayName_show").innerHTML =  profile.displayName;
         }).catch(err => console.error(err));
     }
