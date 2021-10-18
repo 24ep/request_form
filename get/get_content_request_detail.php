@@ -260,9 +260,15 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             // ---check list
              ?>
          
-              <div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">
-                <button class="btn btn-primary btn-sm" onclick="add_cr_list(<?php echo $id; ?>)" ><ion-icon name="add-outline"></ion-icon> ADD TASK</button>
-              </div>
+             <div class="row">
+                <div class="col">
+                    <strong>Task list</strong>
+                </div>
+                <div class="col"><div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">
+                            <button class="btn btn-primary btn-sm" onclick="add_cr_list(1742)"><ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon> ADD TASK</button>
+                </div>
+
+            </div></div>
            
               <ul id="checklist_box" style="padding: 5px;">
                <?php     include('http://content-service-gate.cdsecommercecontent.ga/get/get_checklist_cr.php?id='.$id); ?>
