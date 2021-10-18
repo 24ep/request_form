@@ -20,7 +20,7 @@
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
 	if($query) {
-        $lasted_id = mysql_insert_id();
+        $lasted_id = $con->insert_id;
         $sql_uu = "UPDATE account SET username  = '".$lasted_id."_".$username."'  WHERE id='".$lasted_id."'";
         $query_uu = mysqli_query($con,$sql_uu);
 
