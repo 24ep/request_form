@@ -43,7 +43,7 @@
 
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">กรอกรายละเอียดของปัญหา</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" row="5" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
         <div class="mb-3">
             <label for="formFile" class="form-label">แนบ รูปภาพ หรือ ไฟล์</label>

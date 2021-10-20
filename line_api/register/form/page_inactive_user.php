@@ -54,7 +54,7 @@
         <ion-icon name="alert-circle-outline"></ion-icon>คุณยังไม่เคยลงทะเบียน !
             </strong></h6>
         <p>กรุณาลงทะเบียนสำหรับใช้งานในครั้งแรงที่ปุ่มด้านล่างนี้</p>
-        <a href="https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/promt_already_user.php" class="btn btn-dark">ลงทะเบียน</a>
+        <a href="https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/promt_already_csg_user.php" class="btn btn-dark">ลงทะเบียน</a>
     </div>
 
 </body>
