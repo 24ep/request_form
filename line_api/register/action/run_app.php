@@ -58,7 +58,7 @@
                 // $('#body').html(data);
                 var response = data;
                 if(response=="active"){
-                    location.href = 'https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/conent_request_form.php';
+                    location.href = 'https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/content_request_form.php';
                 }else{
                     location.href = 'https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/page_inactive_user.php';
                 }
