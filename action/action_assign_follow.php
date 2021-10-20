@@ -22,6 +22,7 @@
               $brand = $row["brand"];
               $sku = $row["sku"];
               $request_username = $row["request_username"];
+              $parent = $row["parent"];
 
           }
           $sent_to = explode(",",$participant);
@@ -38,6 +39,7 @@
           }
       }
        add_participant($_POST['id'],"add_new_job");
+       add_participant($parent,"add_new_job");
         insert_log("send to traffic > accepted_date = ".date("Y-m-d H:i:s")." \n status = accepted" ,"add_new_job",$id);
         // echo date("Y-m-d H:i:s");
 	}else{
