@@ -47,9 +47,9 @@
             // document.getElementById("displayName").value = profile.displayName;
             // document.getElementById("displayName_show").innerHTML =  profile.displayName;
             // send var -----------------------
-            var pictureUrl = document.getElementById("pictureUrl").value;
-            var userId = document.getElementById("userId").value;
-            var displayName = document.getElementById("displayName").value;
+            var pictureUrl = profile.pictureUrl;
+            var userId = profile.userId;
+            var displayName = profile.displayName;
             $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/check_active_user.php", {
                 pictureUrl: pictureUrl,
                 userId: userId,
@@ -77,3 +77,4 @@
     }, err => console.error(err.code, error.message));
     </script>
     </body>
+    </html>
