@@ -81,7 +81,7 @@
         // document.getElementById("displayName_show").innerHTML =  profile.displayName;
       }).catch(err => console.error(err));
     }
-    liff.init({ liffId: "1656539537-YZJQ28wR" }, () => {
+    liff.init({ liffId: "1656539537-AvYwK6yR" }, () => {
       if (liff.isLoggedIn()) {
         runApp()
       } else {
