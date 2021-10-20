@@ -17,12 +17,12 @@
     padding-top: 23px;
 }
 .tree_lift {
-    left: 75px;
+    left: 0px;
     position: relative;
     border-left: 2px solid #6c757d;
 }
 .tree_lift_end {
-    left: 75px;
+    left: 0px;
     position: relative;
     border-left: 2px solid transparent;
 }
