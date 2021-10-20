@@ -37,20 +37,31 @@
 
 <body>
     <div class="container-sm" style="margin-top:5px">
-        <!-- <small style="font-size: 12px;color: #a1a1a1;">เก็บข้อมูลเพื่อความความสะดวกในการประสานงาน คุณยังสามารถแก้ไขข้อมูลดังกล่าวได้ภายหลัง</small> -->
         <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
         <hr>
-        <!-- <img id="pictureUrl" class="rounded-circle shadow p-1 mb-3 bg-body" width="15%" alt="image-profile"> -->
-        <!-- <strong id="displayName_show" style="margin-left: 20px;font-size: 35;"></strong> -->
-        <!-- <img id="pictureUrl" width="25%"> -->
-        <!-- <p id="displayName"></p> -->
-        <!-- <p id="statusMessage"></p>
-  <p id="getDecodedIDToken"></p> -->
-        <!-- confirm input -->
-        <div class="d-grid gap-2">
-            <a class="btn btn-dark" href="new_confirm_form.php" type="button">ยังไม่เคยมี Account content-service-gate</a>
-            <a class="btn btn-dark" href="sync_confirm_form.php" type="button">มี Account อยู่แล้ว</a>
+        <!-- form start ---------------- -->
+
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">กรอกรายละเอียดของปัญหา</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">แนบ รูปภาพ หรือ ไฟล์</label>
+            <input class="form-control" type="file" id="formFile">
+        </div>
+        <div class="form-floating">
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <option selected>ปกติ</option>
+                <option value="1">ด่วน</option>
+                <option value="3">ต้องการดำเนินการเดี่ยวนี้</option>
+            </select>
+        <label for="floatingSelect">Priority</label>
+        </div>
+        <div class="d-grid gap-1">
+            <button class="btn btn-primary" type="button">Send</button>
+        </div>
+
+        <!-- form end ---------------- -->
     </div>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
     <script>
