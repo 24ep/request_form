@@ -40,10 +40,10 @@
         <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
         <hr>
         <!-- form start ---------------- -->
-        <h2 style="font-size:30px" for="exampleFormControlTextarea1" class="form-label">แจ้งข้อมูลของสินค้าและปัญหาที่พบ</h2>
+        <h2 style="font-size:28px" for="exampleFormControlTextarea1" class="form-label" placeholder="ใส่รายละเอียดของปัญหาให้ครบถ้วน">แจ้งข้อมูลของสินค้าและปัญหาที่พบ</h2>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">กรอกรายละเอียดของปัญหา</label>
-            <textarea class="form-control" rows="10" id="exampleFormControlTextarea1"></textarea>
+            <textarea class="form-control" rows="8" id="exampleFormControlTextarea1"></textarea>
         </div>
         <div class="mb-3">
             <label for="formFile" class="form-label">แนบไฟล์ excel (ถ้ามี)</label>
@@ -55,17 +55,19 @@
                 <img src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg"/>
             </label>
             <input type="file" id="file-input" name="image" accept="image/*" capture="environment">
+            <input type="file" id="file-input" name="image" accept="image/*" capture=>
+            
         </div>
+        <div class="mb-3">
         <div class="form-floating">
+            <label for="floatingSelect">Priority</label>
             <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
                 <option selected>ปกติ</option>
                 <option value="1">ด่วน</option>
                 <option value="3">ต้องการดำเนินการเดี่ยวนี้</option>
             </select>
-            <div class="mb-3">
-        <label for="floatingSelect">Priority</label>
         </div>
-        </div>
+       
         <div class="mb-3">
         <div class="d-grid gap-1">
             <button class="btn btn-primary" type="button">Send</button>
