@@ -40,14 +40,17 @@
         <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
         <hr>
         <!-- form start ---------------- -->
-
+        <h5 for="exampleFormControlTextarea1" class="form-label">แจ้งข้อมูลของสินค้าและปัญหาที่พบ</h5>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">กรอกรายละเอียดของปัญหา</label>
-            <textarea class="form-control" row="5" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" row=5 id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
         <div class="mb-3">
             <label for="formFile" class="form-label">แนบ รูปภาพ หรือ ไฟล์</label>
             <input class="form-control" type="file" id="formFile">
+        </div>
+        <div class="mb-3">
+            <input type="file" accept="image/*;capture=camera">
         </div>
         <div class="form-floating">
             <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
