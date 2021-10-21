@@ -52,7 +52,9 @@
         <div class="mb-3">
         <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์</label>
             <label for="file-input">
-                <img src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg"/>
+                <div class="d-grid gap-1">
+                    <button class="btn btn-dark" type="button">ถ่ายภาพหรือแนบไฟล์</button>
+                </div>
             </label>
             <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์ 1</label>
             <input type="file" id="file-input" name="image" accept="image/*" multiple capture="environment">
