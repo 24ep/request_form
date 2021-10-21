@@ -40,15 +40,15 @@
         <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
         <hr>
         <!-- form start ---------------- -->
-        <h2 style="font-size:28px" for="exampleFormControlTextarea1" class="form-label" placeholder="ใส่รายละเอียดของปัญหาให้ครบถ้วน">แจ้งข้อมูลของสินค้าและปัญหาที่พบ</h2>
+        <h2 style="font-size:28px" for="exampleFormControlTextarea1" class="form-label" >แจ้งข้อมูลของสินค้าและปัญหาที่พบ</h2>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">กรอกรายละเอียดของปัญหา</label>
-            <textarea class="form-control" rows="8" id="exampleFormControlTextarea1"></textarea>
+            <textarea class="form-control" rows="8" placeholder="ใส่รายละเอียดของปัญหาให้ครบถ้วน" id="exampleFormControlTextarea1"></textarea>
         </div>
-        <div class="mb-3">
+        <!-- <div class="mb-3">
             <label for="formFile" class="form-label">แนบไฟล์ excel (ถ้ามี)</label>
             <input class="form-control" type="file" id="formFile">
-        </div>
+        </div> -->
         <div class="mb-3">
         <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์</label>
             <label for="file-input">
@@ -68,6 +68,7 @@
                 <option value="1">ด่วน</option>
                 <option value="3">ต้องการดำเนินการเดี่ยวนี้</option>
             </select>
+        </div>
         </div>
        
         <div class="mb-3">
