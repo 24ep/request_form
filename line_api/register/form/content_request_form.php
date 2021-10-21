@@ -57,7 +57,7 @@
             <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์ 1</label>
             <input type="file" id="file-input" name="image" accept="image/*" capture="environment">
             <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์ 2</label>
-            <input type="file" id="file-input" name="image"  capture=>
+            <input type="file" id="file-input" name="image"  capture>
             
         </div>
         <div class="mb-3">
