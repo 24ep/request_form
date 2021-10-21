@@ -50,12 +50,13 @@
             <input class="form-control" type="file" id="formFile">
         </div> -->
         <div class="mb-3">
-        <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์</label>
+        <div class="d-grid gap-1">
             <label for="file-input">
-                <div class="d-grid gap-1">
+               
                     <span class="btn btn-dark" >ถ่ายภาพหรือแนบไฟล์</span>
-                </div>
+                
             </label>
+            </div>
             <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์ 1</label>
             <input type="file" id="file-input" name="image" accept="image/*" multiple capture="environment">
             <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์ 2</label>
