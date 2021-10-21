@@ -54,8 +54,10 @@
             <label for="file-input">
                 <img src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg"/>
             </label>
+            <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์ 1</label>
             <input type="file" id="file-input" name="image" accept="image/*" capture="environment">
-            <input type="file" id="file-input" name="image" accept="image/*" capture=>
+            <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์ 2</label>
+            <input type="file" id="file-input" name="image"  capture=>
             
         </div>
         <div class="mb-3">
