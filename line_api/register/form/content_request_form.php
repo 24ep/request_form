@@ -40,17 +40,17 @@
         <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
         <hr>
         <!-- form start ---------------- -->
-        <h5 for="exampleFormControlTextarea1" class="form-label">แจ้งข้อมูลของสินค้าและปัญหาที่พบ</h5>
+        <h2 for="exampleFormControlTextarea1" class="form-label">แจ้งข้อมูลของสินค้าและปัญหาที่พบ</h2>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">กรอกรายละเอียดของปัญหา</label>
-            <textarea class="form-control" row=5 id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" row=10 id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
         <div class="mb-3">
             <label for="formFile" class="form-label">แนบ รูปภาพ หรือ ไฟล์</label>
             <input class="form-control" type="file" id="formFile">
         </div>
         <div class="mb-3">
-            <input type="file" accept="image/*;capture=camera">
+        <input type="file" name="image" accept="image/*" capture="environment">
         </div>
         <div class="form-floating">
             <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
@@ -60,8 +60,10 @@
             </select>
         <label for="floatingSelect">Priority</label>
         </div>
+        <div class="mb-3">
         <div class="d-grid gap-1">
             <button class="btn btn-primary" type="button">Send</button>
+        </div>
         </div>
 
         <!-- form end ---------------- -->
