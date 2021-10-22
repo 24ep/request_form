@@ -1,26 +1,3 @@
-<?php
-
-//Detect special conditions devices
-$iPod    = strpos($_SERVER['HTTP_USER_AGENT'],"iPod");
-$iPhone  = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
-$iPad    = strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
-$Android = strpos($_SERVER['HTTP_USER_AGENT'],"Android");
-$webOS   = strpos($_SERVER['HTTP_USER_AGENT'],"webOS");
-
-//do something with this information
-if( $iPod || $iPhone ){
-    $input_file = '<input type="file" accept="image/*">';
-}else if($iPad){
-    
-    $input_file = '<input type="file" accept="image/*">';
-}else if($Android){
-    $input_file = '<input type="file" id="file-input" name="image"  multiple >';
-    
-}else if($webOS){
-    $input_file = '<input type="file" id="file-input" name="image"  multiple >';
-    
-}
-?>
 
 <html>
 
@@ -78,6 +55,32 @@ if( $iPod || $iPhone ){
             </label>
             </div>
             <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์ </label>
+            <?php
+
+            //Detect special conditions devices
+            $iPod    = strpos($_SERVER['HTTP_USER_AGENT'],"iPod");
+            $iPhone  = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
+            $iPad    = strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
+            $Android = strpos($_SERVER['HTTP_USER_AGENT'],"Android");
+            $webOS   = strpos($_SERVER['HTTP_USER_AGENT'],"webOS");
+            echo $_SERVER['HTTP_USER_AGENT'];
+            //do something with this information
+            if( $iPod || $iPhone ){
+                $input_file = '<input type="file" accept="image/*">';
+               
+                
+            }else if($iPad){
+                
+                $input_file = '<input type="file" accept="image/*">';
+            }else if($Android){
+                $input_file = '<input type="file" id="file-input" name="image"  multiple >';
+                
+            }else if($webOS){
+                $input_file = '<input type="file" id="file-input" name="image"  multiple >';
+                
+            }
+            ?>
+
             <?php echo $input_file; ?>
           
             
