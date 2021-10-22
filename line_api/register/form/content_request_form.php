@@ -9,15 +9,16 @@ $webOS   = stripos($_SERVER['HTTP_USER_AGENT'],"webOS");
 
 //do something with this information
 if( $iPod || $iPhone ){
-    $input_file = '<input type="file" id="file-input" name="image"  multiple >';
+    $input_file = '<input type="file" accept="image/*">';
 }else if($iPad){
-    $input_file = '<input type="file" id="file-input" name="image"  multiple >';
+    
+    $input_file = '<input type="file" accept="image/*">';
 }else if($Android){
+    $input_file = '<input type="file" id="file-input" name="image"  multiple >';
     
-    $input_file = '<input type="file" accept="image/*">';
 }else if($webOS){
+    $input_file = '<input type="file" id="file-input" name="image"  multiple >';
     
-    $input_file = '<input type="file" accept="image/*">';
 }
 ?>
 
