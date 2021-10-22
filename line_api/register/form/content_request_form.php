@@ -1,4 +1,25 @@
+<?php
 
+//Detect special conditions devices
+$iPod    = stripos($_SERVER['HTTP_USER_AGENT'],"iPod");
+$iPhone  = stripos($_SERVER['HTTP_USER_AGENT'],"iPhone");
+$iPad    = stripos($_SERVER['HTTP_USER_AGENT'],"iPad");
+$Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android");
+$webOS   = stripos($_SERVER['HTTP_USER_AGENT'],"webOS");
+
+//do something with this information
+if( $iPod || $iPhone ){
+    $input_file = '<input type="file" id="file-input" name="image"  multiple >';
+}else if($iPad){
+    $input_file = '<input type="file" id="file-input" name="image"  multiple >';
+}else if($Android){
+    
+    $input_file = '<input type="file" accept="image/*">';
+}else if($webOS){
+    
+    $input_file = '<input type="file" accept="image/*">';
+}
+?>
 
 <html>
 
@@ -55,12 +76,10 @@
                     <span class="btn btn-outline-primary" ><ion-icon name="camera-outline"></ion-icon> ถ่ายภาพ </span>
             </label>
             </div>
-            <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์ 1</label>
-            <input type="file" id="file-input_camera" name="image" accept="image/*" multiple capture="environment">
-            <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์ 2</label>
-            <input type="file" accept="image/*">
-            <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์ 2</label>
-            <input type="file" id="file-input" name="image"  multiple >
+            <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์ </label>
+            <?php echo $input_file; ?>
+          
+            
             
         </div>
         <div class="mb-3">
