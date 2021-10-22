@@ -66,17 +66,17 @@
             echo $_SERVER['HTTP_USER_AGENT'];
             //do something with this information
             if( $iPod || $iPhone ){
-                $input_file = '<input type="file" accept="image/*">';
+                $input_file = '<input type="file" multiple >';
                
                 
             }else if($iPad){
                 
-                $input_file = '<input type="file" accept="image/*">';
+                $input_file = '<input type="file" multiple >';
             }else if($Android){
-                $input_file = '<input type="file" id="file-input" name="image"  multiple >';
+                $input_file = '<input type="file" id="file-input" name="image"  multiple capture>';
                 
             }else if($webOS){
-                $input_file = '<input type="file" id="file-input" name="image"  multiple >';
+                $input_file = '<input type="file" id="file-input" name="image"  multiple capture>';
                 
             }
             ?>
