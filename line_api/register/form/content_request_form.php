@@ -53,9 +53,17 @@
         </div> -->
         <div class="mb-3">
         <div class="d-grid gap-1" >
-            <label for="file-input_camera" style="width:100%"> 
-                    <span class="btn btn-outline-primary" ><ion-icon name="camera-outline"></ion-icon> ถ่ายภาพ หรือ เลือกไฟล์ </span>
-            </label>
+            <!-- <label for="file-input_camera" style="width:100%"> 
+                    <span class="btn btn-outline-primary" style="width:100%" ><ion-icon name="camera-outline"></ion-icon> ถ่ายภาพ หรือ เลือกไฟล์ </span>
+            </label> -->
+
+            <input type="file" id="actual-btn_meq" name="actual-btn_meq[]" multiple hidden />
+                <label class="btn btn-outline-primary" style="width:100%" id="label_file_meq" name="label_file_meq" for="actual-btn_meq">
+                    <ion-icon name="camera-outline"></ion-icon>
+                </label>
+            <span id="file-chosen_meq"> </span>
+
+
             </div>
             <?php
 
@@ -138,3 +146,26 @@
 </body>
 
 </html>
+<script>
+var actualBtn_meq = document.getElementById('actual-btn_meq');
+var fileChosen_meq = document.getElementById('file-chosen_meq');
+var fileChosen_bt_meq = document.getElementById('label_file_meq');
+actualBtn_meq.addEventListener('change', function() {
+    // fileChosen.textContent = this.files[0].name
+    count_file_meq = this.files.length;
+    var i_meq;
+    var file_name_meq;
+    for (i_meq = 0; i_meq < count_file_meq; i_meq++) {
+        if (i_meq == 0) {
+            file_name_meq = this.files[i_meq].name;
+        } else {
+            file_name_meq += " , " + this.files[i_meq].name;
+        }
+    }
+    if (file_name_meq == "undefined") {
+        fileChosen_bt_meq.textContent = "";
+    }
+    fileChosen_bt_meq.textContent = count_file_meq + " Files";
+})
+
+</script>
