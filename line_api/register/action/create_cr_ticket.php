@@ -58,7 +58,7 @@ date_default_timezone_set("Asia/Bangkok");
         if($_POST["detail_request"]<>""){ $insert_head .= ",description";$insert_value .= ",'".$cr_description."'";}
          $insert_head .= ",sku";$insert_value .= ",1";
         if($_POST["priority"]<>""){ $insert_head .= ",piority";$insert_value .= ",'".$_POST["priority"]."'";}
-         $insert_head .= ",online_chanel";$insert_value .= ",CDS";
+         $insert_head .= ",online_chanel";$insert_value .= ",'CDS'";
         if($username<>""){ $insert_head .= ",request_by";$insert_value .= ",'".$username."'";}
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
