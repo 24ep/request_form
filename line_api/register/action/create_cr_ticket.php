@@ -100,7 +100,7 @@ date_default_timezone_set("Asia/Bangkok");
                             '".$file_size."',
                             '".$file_type."',
                             '".$is_image."',
-                            '".$$username."',
+                            '".$username."',
                             '".$last_id."',
                             'content_request'
                             )";
