@@ -111,7 +111,7 @@
        
         <div class="mb-3">
         <div class="d-grid gap-1">
-            <button class="btn btn-primary" type="button">Send</button>
+            <button class="btn btn-primary" onclick="create_ticket()" type="button">Send</button>
         </div>
         </div>
         
