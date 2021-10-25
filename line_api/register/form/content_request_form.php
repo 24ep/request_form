@@ -31,6 +31,9 @@
         ;
         font-weight: 600;
     }
+    input[type="file"] {
+    display: none;
+}
     </style>
 </head>
 
@@ -54,7 +57,6 @@
                     <span class="btn btn-outline-primary" ><ion-icon name="camera-outline"></ion-icon> ถ่ายภาพ </span>
             </label>
             </div>
-            <label for="formFile" class="form-label">ถ่ายภาพ หรือ เลือกไฟล์ </label>
             <?php
 
             //Detect special conditions devices
@@ -73,10 +75,10 @@
                 
                 $input_file = '<input type="file" multiple >';
             }else if($Android){
-                $input_file = '<input type="file" id="file-input" name="image"  multiple capture>';
+                $input_file = '<input type="file" id="file-input_camera" name="image"  multiple capture>';
                 
             }else if($webOS){
-                $input_file = '<input type="file" id="file-input" name="image"  multiple capture>';
+                $input_file = '<input type="file" id="file-input_camera" name="image"  multiple capture>';
                 
             }
             ?>
