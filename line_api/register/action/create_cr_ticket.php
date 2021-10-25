@@ -130,8 +130,9 @@ date_default_timezone_set("Asia/Bangkok");
                 //     }
                 // $result='<div class="alert alert-success">already create content_request !<strong> ID '.$last_id.'</strong></div>';
                 // header( "location: /homepage.php?tab=v-pills-cr&result_cr=".$result);
+                echo 'Success !';
             }else{
-                echo '<div class="alert alert-danger">Error: ' . $sql . '<hr>' . $con->error.'</div>';
+                echo 'Error: ' . $sql . '<hr>' . $con->error;
             }
             mysqli_close($con);
    // header( "location: https://cdsecommercecontent.ga/powerappsp/job_manage.php");

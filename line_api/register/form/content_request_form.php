@@ -200,7 +200,7 @@ function create_ticket(){
             //     "call_ticket_comment").offsetHeight);
             // document.getElementById('actual-btn_cme').value = ''; //clear value
             // fileChosen_bt_cme.innerHTML = '<ion-icon style="margin:0px" name="attach-outline"></ion-icon>';
-            alert("Success !");
+            alert(data);
         }
     });
 
