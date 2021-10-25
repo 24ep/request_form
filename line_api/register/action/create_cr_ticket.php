@@ -1,7 +1,7 @@
 
    
 <?php
-
+session_start();
 $userId = $_POST["userId"];
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
@@ -12,6 +12,7 @@ date_default_timezone_set("Asia/Bangkok");
     while($row = mysqli_fetch_array($query_gb)) {
         $username = $row["username"];
     }
+    $_SESSION["username"] = $username ;
 
   function is_image($path)
   {
