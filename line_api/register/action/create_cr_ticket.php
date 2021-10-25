@@ -1,7 +1,29 @@
 
    
 <?php
-session_start();
+function add_participant($id,$table,$username){
+        date_default_timezone_set("Asia/Bangkok");
+        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+        mysqli_query($con, "SET NAMES 'utf8' ");
+        $query = "SELECT  * FROM ".$table."  WHERE id = ".$id
+        or die("Error:" . mysqli_error());
+        $result =  mysqli_query($con, $query);
+            while($row = mysqli_fetch_array($result)) {
+                $participant = $row["participant"];
+               // echo "<script>alert('".$id."')</script>";
+        }
+        if($participant==null or $participant==""){
+                $sql = "UPDATE ".$table." SET participant = '".$username."'  WHERE id=".$id;
+                $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
+                $query = mysqli_query($con,$sql);
+        }else{
+                if(strpos($participant,$username)===false){
+                 $sql = "UPDATE ".$table." SET participant = CONCAT(participant,',','".$username."')   WHERE id=".$id;
+                 $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
+                 $query = mysqli_query($con,$sql);
+                }
+        }
+}
 $userId = $_POST["userId"];
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
@@ -12,7 +34,7 @@ date_default_timezone_set("Asia/Bangkok");
     while($row = mysqli_fetch_array($query_gb)) {
         $username = $row["username"];
     }
-    $_SESSION["username"] = $username ;
+    // $_SESSION["username"] = $username ;
 
   function is_image($path)
   {
@@ -24,9 +46,9 @@ date_default_timezone_set("Asia/Bangkok");
       }
       return false;
   }
- session_start();
- include('https://content-service-gate.cdsecommercecontent.ga/action/action_send_line_api.php');
- include('https://content-service-gate.cdsecommercecontent.ga/action/action_add_participant.php');
+
+//  include('https://content-service-gate.cdsecommercecontent.ga/action/action_send_line_api.php');
+//  include('https://content-service-gate.cdsecommercecontent.ga/action/action_add_participant.php');
  $cr_title = "[Line OA Create Channel] ".$username;
  $cr_description = htmlspecialchars($_POST["detail_request"], ENT_QUOTES);
 //check size file
@@ -111,7 +133,7 @@ date_default_timezone_set("Asia/Bangkok");
                             }
                         }
                     }
-                 add_participant($last_id,"content_request");
+                 add_participant($last_id,"content_request",$username);
                 //get key
                 // date_default_timezone_set("Asia/Bangkok");
                 // $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
