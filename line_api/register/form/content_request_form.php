@@ -46,6 +46,7 @@
         <h2 style="font-size:28px" for="exampleFormControlTextarea1" class="form-label" >แจ้งข้อมูลของสินค้าและปัญหาที่พบ</h2>
         <div class="mb-3">
             <!-- <label for="exampleFormControlTextarea1" class="form-label">กรอกรายละเอียดของปัญหา</label> -->
+            <input type="hidden" id="userId_value" placeholder="Type to search...">
             <textarea class="form-control" id="detail_request" name="detail_request" rows="8" placeholder="ใส่รายละเอียดของปัญหาให้ครบถ้วน" ></textarea>
         </div>
         <!-- <div class="mb-3">
@@ -128,6 +129,8 @@
             // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
             // document.getElementById("displayName").value = profile.displayName;
             // document.getElementById("displayName_show").innerHTML =  profile.displayName;
+            document.getElementById("userId_value").value = profile.userId;
+            
         }).catch(err => console.error(err));
     }
     liff.init({
@@ -176,6 +179,7 @@ function create_ticket(){
     var form_data = new FormData();
     var detail_request = document.getElementById("detail_request").value;
     var priority = document.getElementById("priority").value;
+    var userId = document.getElementById("userId_value").value;
     document.getElementById('detail_request').value = ''; //clear value
     // var files = document.getElementById('actual-btn').files;
     var meq = document.getElementById('actual-btn_meq').files.length;
@@ -185,6 +189,7 @@ function create_ticket(){
     // form_data.append("files", files)              // Appending parameter named file with properties of file_field to form_data
     form_data.append("detail_request", detail_request) // Adding extra parameters to form_data
     form_data.append("priority", priority)
+    form_data.append("priority", userId)
     
     $.ajax({
         url: "https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/create_cr_ticket.php",

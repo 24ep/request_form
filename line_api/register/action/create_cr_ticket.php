@@ -71,7 +71,8 @@ date_default_timezone_set("Asia/Bangkok");
             if($query) {
                 $last_id = $con->insert_id;
                   //create forder
-                  $fullpath = '../../../attachment/csg/'.$last_id."/";
+                  $fullpath = '../../../../attachment/csg/'.$last_id."/";
+                  $fullpath_getting = '../../attachment/csg/'.$last_id."/";
                   if (!file_exists($fullpath)) {
                     mkdir($fullpath, 0777, true);
                   }
@@ -96,7 +97,7 @@ date_default_timezone_set("Asia/Bangkok");
                             )       
                             VALUES(
                             '".$file_name."',
-                            '".$fullpath."',
+                            '".$fullpath_getting."',
                             '".$file_size."',
                             '".$file_type."',
                             '".$is_image."',
