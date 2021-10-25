@@ -189,7 +189,7 @@ function create_ticket(){
     // form_data.append("files", files)              // Appending parameter named file with properties of file_field to form_data
     form_data.append("detail_request", detail_request) // Adding extra parameters to form_data
     form_data.append("priority", priority)
-    form_data.append("priority", userId)
+    form_data.append("userId", userId)
     
     $.ajax({
         url: "https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/create_cr_ticket.php",
