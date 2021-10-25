@@ -26,7 +26,7 @@ date_default_timezone_set("Asia/Bangkok");
  session_start();
  include('https://content-service-gate.cdsecommercecontent.ga/action/action_send_line_api.php');
  include('https://content-service-gate.cdsecommercecontent.ga/action/action_add_participant.php');
- $cr_title = "[Line OA Create Channel]";
+ $cr_title = "[Line OA Create Channel] ".$username;
  $cr_description = htmlspecialchars($_POST["detail_request"], ENT_QUOTES);
 //check size file
     //action upload file
