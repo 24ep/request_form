@@ -72,17 +72,17 @@
             // echo $_SERVER['HTTP_USER_AGENT'];
             //do something with this information
             if( $iPod || $iPhone ){
-                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple hidden >';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" hidden >';
                
                 
             }else if($iPad){
                 
-                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple hidden>';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" hidden>';
             }else if($Android){
-                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple capture hidden>';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" capture hidden>';
                 
             }else if($webOS){
-                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple capture hidden>';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" capture hidden>';
                 
             }
             ?>
