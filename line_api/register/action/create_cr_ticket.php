@@ -153,7 +153,7 @@ date_default_timezone_set("Asia/Bangkok");
                 //     }
                 // $result='<div class="alert alert-success">already create content_request !<strong> ID '.$last_id.'</strong></div>';
                 // header( "location: /homepage.php?tab=v-pills-cr&result_cr=".$result);
-                echo 'Success !';
+                echo 'Success ! ทางทีมได้รับข้อความของคุณแล้ว จะรีบดำเนินการให้เร็วที่สุด รายละเอียดเพิ่มเติมสามารถใช้ช่องแชทปกติได้เลยครับ';
             }else{
                 echo 'Error: ' . $sql . '<hr>' . $con->error;
             }
