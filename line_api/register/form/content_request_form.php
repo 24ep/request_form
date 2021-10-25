@@ -31,9 +31,9 @@
         ;
         font-weight: 600;
     }
-    input[type="file"] {
+    /* input[type="file"] {
     display: none;
-}
+} */
     </style>
 </head>
 
@@ -57,11 +57,7 @@
                     <span class="btn btn-outline-primary" style="width:100%" ><ion-icon name="camera-outline"></ion-icon> ถ่ายภาพ หรือ เลือกไฟล์ </span>
             </label> -->
 
-            <input type="file" id="actual-btn_meq" name="actual-btn_meq[]" multiple hidden />
-                <label class="btn btn-outline-primary" style="width:100%" id="label_file_meq" name="label_file_meq" for="actual-btn_meq">
-                    <ion-icon name="camera-outline"></ion-icon> ถ่ายภาพ หรือ เลือกไฟล์
-                </label>
-            <span id="file-chosen_meq"> </span>
+            
 
 
             </div>
@@ -76,23 +72,27 @@
             // echo $_SERVER['HTTP_USER_AGENT'];
             //do something with this information
             if( $iPod || $iPhone ){
-                $input_file = '<input type="file" multiple >';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple hidden >';
                
                 
             }else if($iPad){
                 
-                $input_file = '<input type="file" multiple >';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple hidden>';
             }else if($Android){
-                $input_file = '<input type="file" id="file-input_camera" name="image"  multiple capture>';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple capture hidden>';
                 
             }else if($webOS){
-                $input_file = '<input type="file" id="file-input_camera" name="image"  multiple capture>';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple capture hidden>';
                 
             }
             ?>
 
             <?php echo $input_file; ?>
-          
+            <!-- <input type="file" id="actual-btn_meq" name="actual-btn_meq[]" multiple hidden /> -->
+                <label class="btn btn-outline-primary" style="width:100%" id="label_file_meq" name="label_file_meq" for="actual-btn_meq">
+                    <ion-icon name="camera-outline"></ion-icon> ถ่ายภาพ หรือ เลือกไฟล์
+                </label>
+            <span id="file-chosen_meq"> </span>
             
             
         </div>
