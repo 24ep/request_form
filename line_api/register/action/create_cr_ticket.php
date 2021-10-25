@@ -54,12 +54,12 @@ date_default_timezone_set("Asia/Bangkok");
             //         }
             //     };
         //calculate job number
-        if($_POST["cr_title"]<>""){ $insert_head .= "title";$insert_value .= "'".$cr_title."'";}
-        if($_POST["cr_description"]<>""){ $insert_head .= ",description";$insert_value .= ",'".$cr_description."'";}
-        if($_POST["cr_sku"]<>""){ $insert_head .= ",sku";$insert_value .= ",1";}
-        if($_POST["cr_piority"]<>""){ $insert_head .= ",piority";$insert_value .= ",'".$_POST["piority"]."'";}
-        if($_POST["cr_online_chanel"]<>""){ $insert_head .= ",online_chanel";$insert_value .= ",CDS";}
-        if($_SESSION["username"]<>""){ $insert_head .= ",request_by";$insert_value .= ",'".$username."'";}
+        if($cr_title <>""){ $insert_head .= "title";$insert_value .= "'".$cr_title."'";}
+        if($_POST["detail_request"]<>""){ $insert_head .= ",description";$insert_value .= ",'".$cr_description."'";}
+         $insert_head .= ",sku";$insert_value .= ",1";
+        if($_POST["priority"]<>""){ $insert_head .= ",piority";$insert_value .= ",'".$_POST["priority"]."'";}
+         $insert_head .= ",online_chanel";$insert_value .= ",CDS";
+        if($username<>""){ $insert_head .= ",request_by";$insert_value .= ",'".$username."'";}
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
             $sql = "INSERT INTO content_request (
