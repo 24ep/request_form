@@ -84,6 +84,8 @@
             }else if($webOS){
                 $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" capture hidden>';
                 
+            }else{
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" capture hidden>';
             }
             ?>
 
