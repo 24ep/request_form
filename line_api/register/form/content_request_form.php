@@ -39,6 +39,7 @@
 
 <body>
     <div class="container-sm" style="margin-top:5px">
+    <form method="post" action="upload-page.php" enctype="multipart/form-data">
         <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
         <hr>
         <!-- form start ---------------- -->
@@ -57,10 +58,9 @@
                     <span class="btn btn-outline-primary" style="width:100%" ><ion-icon name="camera-outline"></ion-icon> ถ่ายภาพ หรือ เลือกไฟล์ </span>
             </label> -->
 
-            
-
 
             </div>
+
             <?php
 
             //Detect special conditions devices
@@ -77,22 +77,22 @@
                 
             }else if($iPad){
                 
-                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" hidden>';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="" hidden>';
             }else if($Android){
-                // $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" capture hidden>';
-                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" hidden>';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="" capture hidden>';
+                
             }else if($webOS){
-                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" capture hidden>';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="" capture hidden>';
                 
             }else{
-                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" capture hidden>';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="" capture hidden>';
             }
             ?>
 
             <?php echo $input_file; ?>
             <!-- <input type="file" id="actual-btn_meq" name="actual-btn_meq[]" multiple hidden /> -->
                 <label class="btn btn-outline-primary" style="width:100%" id="label_file_meq" name="label_file_meq" for="actual-btn_meq">
-                    <ion-icon name="camera-outline"></ion-icon> ถ่ายภาพ หรือ เลือกไฟล์
+                    <ion-icon name="camera-outline"></ion-icon> เพิ่มรูปภาพ
                 </label>
             <span id="file-chosen_meq"> </span>
             
@@ -114,7 +114,7 @@
             <button class="btn btn-primary" type="button">Send</button>
         </div>
         </div>
-
+        </form>
         <!-- form end ---------------- -->
     </div>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
