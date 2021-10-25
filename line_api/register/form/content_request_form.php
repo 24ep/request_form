@@ -59,7 +59,7 @@
 
             <input type="file" id="actual-btn_meq" name="actual-btn_meq[]" multiple hidden />
                 <label class="btn btn-outline-primary" style="width:100%" id="label_file_meq" name="label_file_meq" for="actual-btn_meq">
-                    <ion-icon name="camera-outline"></ion-icon>
+                    <ion-icon name="camera-outline"></ion-icon> ถ่ายภาพ หรือ เลือกไฟล์
                 </label>
             <span id="file-chosen_meq"> </span>
 
@@ -163,9 +163,10 @@ actualBtn_meq.addEventListener('change', function() {
         }
     }
     if (file_name_meq == "undefined") {
-        fileChosen_bt_meq.textContent = "";
+        fileChosen_bt_meq.textContent = "ถ่ายภาพ หรือ เลือกไฟล์";
     }
-    fileChosen_bt_meq.textContent = count_file_meq + " Files";
+    fileChosen_bt_meq.textContent = count_file_meq + " ไฟล์ : " + file_name_meq;
+    fileChosen_bt_meq.textContent = count_file_meq + " ไฟล์ : " + file_name_meq;
 })
 
 </script>
