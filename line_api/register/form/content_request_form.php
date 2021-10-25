@@ -77,12 +77,12 @@
                 
             }else if($iPad){
                 
-                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" hidden>';
+                $input_file = '<input type="file[]" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" hidden>';
             }else if($Android){
-                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" capture hidden>';
+                $input_file = '<input type="file[]" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" capture hidden>';
                 
             }else if($webOS){
-                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" capture hidden>';
+                $input_file = '<input type="file[]" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="multiple" capture hidden>';
                 
             }
             ?>
