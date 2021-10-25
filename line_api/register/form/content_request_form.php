@@ -184,7 +184,6 @@ function create_ticket(){
     }
     // form_data.append("files", files)              // Appending parameter named file with properties of file_field to form_data
     form_data.append("detail_request", detail_request) // Adding extra parameters to form_data
-    form_data.append("id", id)
     form_data.append("priority", priority)
     
     $.ajax({
