@@ -39,14 +39,14 @@
 
 <body>
     <div class="container-sm" style="margin-top:5px">
-    <form method="post" action="upload-page.php" enctype="multipart/form-data">
+
         <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
         <hr>
         <!-- form start ---------------- -->
         <h2 style="font-size:28px" for="exampleFormControlTextarea1" class="form-label" >แจ้งข้อมูลของสินค้าและปัญหาที่พบ</h2>
         <div class="mb-3">
             <!-- <label for="exampleFormControlTextarea1" class="form-label">กรอกรายละเอียดของปัญหา</label> -->
-            <textarea class="form-control" rows="8" placeholder="ใส่รายละเอียดของปัญหาให้ครบถ้วน" id="exampleFormControlTextarea1"></textarea>
+            <textarea class="form-control" id="detail_request" name="detail_request" rows="8" placeholder="ใส่รายละเอียดของปัญหาให้ครบถ้วน" ></textarea>
         </div>
         <!-- <div class="mb-3">
             <label for="formFile" class="form-label">แนบไฟล์ excel (ถ้ามี)</label>
@@ -77,22 +77,22 @@
                 
             }else if($iPad){
                 
-                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="" hidden>';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple hidden>';
             }else if($Android){
-                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="" capture hidden>';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple capture hidden>';
                 
             }else if($webOS){
-                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="" capture hidden>';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple capture hidden>';
                 
             }else{
-                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple="" capture hidden>';
+                $input_file = '<input type="file" id="actual-btn_meq" name="actual-btn_meq[]"  multiple capture hidden>';
             }
             ?>
 
             <?php echo $input_file; ?>
             <!-- <input type="file" id="actual-btn_meq" name="actual-btn_meq[]" multiple hidden /> -->
                 <label class="btn btn-outline-primary" style="width:100%" id="label_file_meq" name="label_file_meq" for="actual-btn_meq">
-                    <ion-icon name="camera-outline"></ion-icon> เพิ่มรูปภาพ
+                    <ion-icon name="camera-outline"></ion-icon> เพิ่มรูปภาพ หรือไฟล์
                 </label>
             <span id="file-chosen_meq"> </span>
             
@@ -100,8 +100,8 @@
         </div>
         <div class="mb-3">
         <div class="form-floating">
-            <label for="floatingSelect">Priority</label>
-            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+            <label for="priority">Priority</label>
+            <select class="form-select" id="priority" aria-label="Floating label select example">
                 <option selected>ปกติ</option>
                 <option value="1">ด่วน</option>
                 <option value="3">ต้องการดำเนินการเดี่ยวนี้</option>
@@ -114,7 +114,7 @@
             <button class="btn btn-primary" type="button">Send</button>
         </div>
         </div>
-        </form>
+        
         <!-- form end ---------------- -->
     </div>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
@@ -170,5 +170,43 @@ actualBtn_meq.addEventListener('change', function() {
     fileChosen_bt_meq.textContent = count_file_meq + " ไฟล์ : " + file_name_meq;
     fileChosen_bt_meq.textContent = count_file_meq + " ไฟล์ : " + file_name_meq;
 })
+
+function create_ticket(){
+
+    var form_data = new FormData();
+    var detail_request = document.getElementById("detail_request").value;
+    var priority = document.getElementById("priority").value;
+    document.getElementById('detail_request').value = ''; //clear value
+    // var files = document.getElementById('actual-btn').files;
+    var meq = document.getElementById('actual-btn_meq').files.length;
+    for (var i = 0; i < meq; i++) {
+        form_data.append("files_meq[]", document.getElementById('actual-btn_meq').files[i]);
+    }
+    // form_data.append("files", files)              // Appending parameter named file with properties of file_field to form_data
+    form_data.append("detail_request", detail_request) // Adding extra parameters to form_data
+    form_data.append("id", id)
+    form_data.append("priority", priority)
+    
+    $.ajax({
+        url: "action/create_cr_ticket.php",
+        dataType: 'text',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data, // Setting the data attribute of ajax with file_data
+        type: 'post',
+        success: function(data) {
+            // $('#call_ticket_comment').html(data);
+            // document.getElementById('comment_box').scrollBy(0, document.getElementById(
+            //     "call_ticket_comment").offsetHeight);
+            // document.getElementById('actual-btn_cme').value = ''; //clear value
+            // fileChosen_bt_cme.innerHTML = '<ion-icon style="margin:0px" name="attach-outline"></ion-icon>';
+            alert("Success !");
+        }
+    });
+
+
+
+}
 
 </script>
