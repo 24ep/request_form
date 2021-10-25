@@ -44,7 +44,7 @@
         <!-- form start ---------------- -->
         <h2 style="font-size:28px" for="exampleFormControlTextarea1" class="form-label" >แจ้งข้อมูลของสินค้าและปัญหาที่พบ</h2>
         <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">กรอกรายละเอียดของปัญหา</label>
+            <!-- <label for="exampleFormControlTextarea1" class="form-label">กรอกรายละเอียดของปัญหา</label> -->
             <textarea class="form-control" rows="8" placeholder="ใส่รายละเอียดของปัญหาให้ครบถ้วน" id="exampleFormControlTextarea1"></textarea>
         </div>
         <!-- <div class="mb-3">
@@ -53,8 +53,8 @@
         </div> -->
         <div class="mb-3">
         <div class="d-grid gap-1" >
-            <label for="file-input_camera">
-                    <span class="btn btn-outline-primary" ><ion-icon name="camera-outline"></ion-icon> ถ่ายภาพ </span>
+            <label for="file-input_camera" style="width:100%"> 
+                    <span class="btn btn-outline-primary" ><ion-icon name="camera-outline"></ion-icon> ถ่ายภาพ หรือ เลือกไฟล์ </span>
             </label>
             </div>
             <?php
@@ -65,7 +65,7 @@
             $iPad    = strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
             $Android = strpos($_SERVER['HTTP_USER_AGENT'],"Android");
             $webOS   = strpos($_SERVER['HTTP_USER_AGENT'],"webOS");
-            echo $_SERVER['HTTP_USER_AGENT'];
+            // echo $_SERVER['HTTP_USER_AGENT'];
             //do something with this information
             if( $iPod || $iPhone ){
                 $input_file = '<input type="file" multiple >';
