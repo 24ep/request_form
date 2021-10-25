@@ -187,7 +187,7 @@ function create_ticket(){
     form_data.append("priority", priority)
     
     $.ajax({
-        url: "action/create_cr_ticket.php",
+        url: "https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/create_cr_ticket.php",
         dataType: 'text',
         cache: false,
         contentType: false,
