@@ -1,6 +1,186 @@
 
    
 <?php
+function bb_confirm_ticket($id ,$user_id,$detail,$priority,$image_path,$date_create){
+
+
+    $curl = curl_init();
+     
+    curl_setopt_array($curl, array(
+      CURLOPT_URL => 'https://api.line.me/v2/bot/message/push',
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => '',
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 0,
+      CURLOPT_FOLLOWLOCATION => true,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => 'POST',
+      CURLOPT_POSTFIELDS =>'
+       { "to": "'.$user_id.'",
+        "messages":[
+                        {
+                        "type": "flex",
+                        "altText": "Register Success !",
+                        "sender": {
+                            "name": "CSG-BOT",
+                            "iconUrl": "https://line.me/conyprof"
+                        },
+                         "contents": {
+                            "type": "bubble",
+                            "hero": {
+                              "type": "image",
+                              "url": "'.$image_path.'",
+                              "size": "full",
+                              "aspectRatio": "20:13",
+                              "aspectMode": "cover",
+                              "action": {
+                                "type": "uri",
+                                "label": "Action",
+                                "uri": "https://linecorp.com/"
+                              }
+                            },
+                            "body": {
+                              "type": "box",
+                              "layout": "vertical",
+                              "spacing": "md",
+                              "contents": [
+                                {
+                                  "type": "text",
+                                  "text": "CONFIRM TICKET",
+                                  "weight": "bold",
+                                  "size": "md",
+                                  "gravity": "center",
+                                  "wrap": true,
+                                  "contents": []
+                                },
+                                {
+                                  "type": "text",
+                                  "text": "CR-'.$id .'",
+                                  "weight": "bold",
+                                  "size": "xl",
+                                  "color": "#A90C0CFF",
+                                  "contents": []
+                                },
+                                {
+                                  "type": "box",
+                                  "layout": "vertical",
+                                  "spacing": "sm",
+                                  "margin": "lg",
+                                  "contents": [
+                                    {
+                                      "type": "box",
+                                      "layout": "baseline",
+                                      "spacing": "sm",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "Date",
+                                          "size": "sm",
+                                          "color": "#AAAAAA",
+                                          "flex": 1,
+                                          "contents": []
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": "'.$date_create.'",
+                                          "size": "sm",
+                                          "color": "#666666",
+                                          "flex": 4,
+                                          "wrap": true,
+                                          "contents": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "baseline",
+                                      "spacing": "sm",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "Detail",
+                                          "size": "sm",
+                                          "color": "#AAAAAA",
+                                          "flex": 1,
+                                          "contents": []
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": "'.$detail.'",
+                                          "size": "sm",
+                                          "color": "#666666",
+                                          "flex": 4,
+                                          "wrap": true,
+                                          "contents": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "baseline",
+                                      "spacing": "sm",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "Priority",
+                                          "size": "sm",
+                                          "color": "#AAAAAA",
+                                          "flex": 1,
+                                          "contents": []
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": "'.$priority.'",
+                                          "size": "sm",
+                                          "color": "#666666",
+                                          "flex": 4,
+                                          "wrap": true,
+                                          "contents": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "footer": {
+                              "type": "box",
+                              "layout": "horizontal",
+                              "flex": 1,
+                              "spacing": "xxl",
+                              "margin": "xxl",
+                              "contents": [
+                                {
+                                  "type": "button",
+                                  "action": {
+                                    "type": "uri",
+                                    "label": "Ticket",
+                                    "uri": "https://linecorp.com"
+                                  },
+                                  "height": "sm",
+                                  "style": "secondary"
+                                }
+                              ]
+                            }
+                          }
+                         
+                        }
+                ]
+        }',
+      CURLOPT_HTTPHEADER => array(
+        'Content-Type: application/json',
+        'Authorization: Bearer J/R5foEYEGdmDL85DJBMdlMfOos7JOKVlqzd4VOE3nXpT8OtSoc6On+3wNH4bZ6GU+4riP4v562ixfwVUwWdDmHae3qbVBxKUMrKcgoBFbGkrpX+QttoamNeNodqY5aXN3hXijql94zqPLAW7d+JgQdB04t89/1O/w1cDnyilFU='
+      ),
+    ));
+    
+    $response = curl_exec($curl);
+    
+    
+    // echo $response;
+    echo '<script> console.log("'.$response.'");</script> ';
+    curl_close($curl);
+    }
+
 function add_participant($id,$table,$username){
         date_default_timezone_set("Asia/Bangkok");
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -134,6 +314,7 @@ date_default_timezone_set("Asia/Bangkok");
                         }
                     }
                  add_participant($last_id,"content_request",$username);
+                 bb_confirm_ticket($last_id ,$userId,$_POST["detail_request"],$_POST["priority"],"https://content-service-gate.cdsecommercecontent.ga/".$fullpath_getting.$file_name, date("Y-m-d h:i:sa"))
                 //get key
                 // date_default_timezone_set("Asia/Bangkok");
                 // $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
