@@ -1,3 +1,20 @@
+<?php
+
+$userId = "<script>document.writeln(user_id_line);</script>";
+$con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+mysqli_query($con, "SET NAMES 'utf8' ");
+date_default_timezone_set("Asia/Bangkok");
+    $sql_gb = "SELECT ac.username,ar.description,ar.title.ar.status from account as ac left join content_request as cr on ac.username=cr.request_by WHERE line_user_id ='".$userId."'";
+    $query_gb  = mysqli_query($con,$sql_gb);
+    while($row = mysqli_fetch_array($query_gb)) {
+        $list_cr  .=   '<li class="list-group-item">'.$row["title"].' | '.$row["status"]..'</li>';
+    }
+
+    
+?>
+
+
+
 
 <html>
 
@@ -51,8 +68,10 @@
       </button>
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      <div class="accordion-body" style="padding:0px"> 
+      <ul class="list-group list-group-flush">
+        <?php echo  $list_cr;?>
+      </ul>
       </div>
     </div>
   </div>
@@ -84,6 +103,7 @@
             // document.getElementById("displayName").value = profile.displayName;
             // document.getElementById("displayName_show").innerHTML =  profile.displayName;
             document.getElementById("userId_value").value = profile.userId;
+            var user_id_line = profile.userId;
             
         }).catch(err => console.error(err));
     }
