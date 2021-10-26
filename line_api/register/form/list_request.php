@@ -49,7 +49,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        <strong style="color:blue"><ion-icon style="font-size: 25px;margin-top:10px;" name="time-outline"></ion-icon>รายการที่อยู่ระหว่างดำเนินการ</strong>
+        <strong style="color:blue"> name="time-outline"></ion-icon>รายการที่อยู่ระหว่างดำเนินการ</strong>
       </button>
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -63,7 +63,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingThree">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-      <strong style="color:blue"><ion-icon style="font-size: 25px;margin-top:10px;" name="checkmark-circle-outline"></ion-icon> รายการที่ดำเนินการเสร็จสิ้น 50 อันดับล่าสุด</strong>
+      <strong style="color:blue"> name="checkmark-circle-outline"></ion-icon> รายการที่ดำเนินการเสร็จสิ้น 50 อันดับล่าสุด</strong>
       </button>
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
