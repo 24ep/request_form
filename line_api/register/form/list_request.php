@@ -63,12 +63,14 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingThree">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-      <strong style="color:blue"> name="checkmark-circle-outline"></ion-icon> รายการที่ดำเนินการเสร็จสิ้น 50 อันดับล่าสุด</strong>
+      <strong style="color:blue"> รายการที่ดำเนินการเสร็จสิ้น 50 อันดับล่าสุด</strong>
       </button>
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-      <div id="get_list_request_c"></div>
+      <div class="accordion-body" style="padding:0px">
+      <ul class="list-group list-group-flush">
+        <div id="get_list_request_c"></div>
+      </ul>
       </div>
     </div>
   </div>
