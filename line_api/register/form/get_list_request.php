@@ -8,13 +8,18 @@ date_default_timezone_set("Asia/Bangkok");
     on ac.username=cr.request_by WHERE line_user_id ='".$userId."'";
     $query_gb  = mysqli_query($con,$sql_gb);
     while($row = mysqli_fetch_array($query_gb)) {
-        $list_cr  .=   '<li class="list-group-item">
-        <span><strong style="color:red"> CR-'.$row["id"].'</strong><span style="
+        $list_cr  .=   '<li class="list-group-item">\
+        <div class="col-10">
+        <span><strong style="color:red"> CR-'.$row["id"].'</strong> | <span style="
         background: bisque;
-        padding: 0px 10px 0px 10px;
+        padding: 0px 5px 0px 5px;
         font-weight:600
     "> '.$row["status"].'</span></span>
-        <br><small style="color:#b8aeae:font-size:11px">create : '.$row["create_date"].'</small>
+        <br><small style="color:#b8aeae:font-size:11px">Created : '.$row["create_date"].'</small>
+        </div>
+        <div class="col-2">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
         </li>';
     }
 echo $list_cr;
