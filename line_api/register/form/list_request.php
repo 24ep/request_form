@@ -87,7 +87,7 @@
             // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
             // document.getElementById("displayName").value = profile.displayName;
             // document.getElementById("displayName_show").innerHTML =  profile.displayName;
-            document.getElementById("userId_value").value = profile.userId;
+            // document.getElementById("userId_value").value = profile.userId;
             var userId = profile.userId;
             $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/get_list_request.php", {
 
