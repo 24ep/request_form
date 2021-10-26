@@ -1,5 +1,31 @@
+<script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
+    <script>
+    function runApp() {
+        liff.getProfile().then(profile => {
+            // document.getElementById("pictureUrl").src = profile.pictureUrl;
+            document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
+            // document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
+            // document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
+            // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
+            // document.getElementById("displayName").value = profile.displayName;
+            // document.getElementById("displayName_show").innerHTML =  profile.displayName;
+            document.getElementById("userId_value").value = profile.userId;
+            var user_id_line = profile.userId;
+            
+        }).catch(err => console.error(err));
+    }
+    liff.init({
+        liffId: "1656539537-DJnLPQ0j"
+    }, () => {
+        if (liff.isLoggedIn()) {
+            runApp()
+        } else {
+            liff.login();
+        }
+    }, err => console.error(err.code, error.message));
+    </script>
 <?php
-
+echo "<script>document.writeln(user_id_line);</script>";
 $userId = "<script>document.writeln(user_id_line);</script>";
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
@@ -93,32 +119,7 @@ date_default_timezone_set("Asia/Bangkok");
         
         <!-- form end ---------------- -->
     </div>
-    <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
-    <script>
-    function runApp() {
-        liff.getProfile().then(profile => {
-            // document.getElementById("pictureUrl").src = profile.pictureUrl;
-            document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
-            // document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
-            // document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
-            // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
-            // document.getElementById("displayName").value = profile.displayName;
-            // document.getElementById("displayName_show").innerHTML =  profile.displayName;
-            document.getElementById("userId_value").value = profile.userId;
-            var user_id_line = profile.userId;
-            
-        }).catch(err => console.error(err));
-    }
-    liff.init({
-        liffId: "1656539537-DJnLPQ0j"
-    }, () => {
-        if (liff.isLoggedIn()) {
-            runApp()
-        } else {
-            liff.login();
-        }
-    }, err => console.error(err.code, error.message));
-    </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
