@@ -21,7 +21,7 @@ date_default_timezone_set("Asia/Bangkok");
         }elseif($row["status"]=='Waiting CTO'){
             $icon_status = "bug-outline";
             
-        }elseif($row["status"]=='Waiting CTO'){
+        }elseif($row["status"]=='Close'){
             $icon_status = "checkmark-outline";
         }else{
             $icon_status = "chevron-forward-outline";
