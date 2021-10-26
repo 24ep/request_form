@@ -3,7 +3,6 @@
 <?php
 function bb_confirm_ticket($id ,$user_id,$detail,$priority,$image_path,$date_create){
 
-
     $curl = curl_init();
      
     curl_setopt_array($curl, array(
@@ -20,7 +19,7 @@ function bb_confirm_ticket($id ,$user_id,$detail,$priority,$image_path,$date_cre
         "messages":[
                         {
                         "type": "flex",
-                        "altText": "Register Success !",
+                        "altText": "Confirm ticket !",
                         "sender": {
                             "name": "CSG-BOT",
                             "iconUrl": "https://line.me/conyprof"
@@ -177,7 +176,7 @@ function bb_confirm_ticket($id ,$user_id,$detail,$priority,$image_path,$date_cre
     
     
     // echo $response;
-    echo '<script> console.log("'.$response.'");</script> ';
+    // echo '<script> console.log("'.$response.'");</script> ';
     curl_close($curl);
     }
 
@@ -314,7 +313,7 @@ date_default_timezone_set("Asia/Bangkok");
                         }
                     }
                  add_participant($last_id,"content_request",$username);
-                 bb_confirm_ticket($last_id ,$userId,$_POST["detail_request"],$_POST["priority"],"https://content-service-gate.cdsecommercecontent.ga/".$fullpath_getting.$file_name, date("Y-m-d h:i:sa"));
+                 bb_confirm_ticket($last_id ,$userId,$_POST["detail_request"],$_POST["priority"],"https://content-service-gate.cdsecommercecontent.ga/attachment/csg/".$last_id."/".$file_name, date("Y-m-d h:i:sa"));
                 //get key
                 // date_default_timezone_set("Asia/Bangkok");
                 // $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
