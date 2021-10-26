@@ -55,7 +55,7 @@
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body" style="padding:0px"> 
       <ul class="list-group list-group-flush">
-        <div id="get_list_request"></div>
+        <div id="get_list_request_p"></div>
       </ul>
       </div>
     </div>
@@ -68,7 +68,7 @@
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      <div id="get_list_request_c"></div>
       </div>
     </div>
   </div>
@@ -89,12 +89,24 @@
             // document.getElementById("displayName_show").innerHTML =  profile.displayName;
             // document.getElementById("userId_value").value = profile.userId;
             var userId = profile.userId;
+            var additional_condition_p = " and cr.status <> 'close'"; 
+            var additional_condition_c = " and cr.status = 'close' limit 50"; 
             $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/get_list_request.php", {
 
-                userId: userId
+                userId: userId,
+                additional_condition:additional_condition_p
             }, function(data) {
-                 $('#get_list_request').html(data);
+                 $('#get_list_request_p').html(data);
                
+            });
+
+            $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/get_list_request.php", {
+
+            userId: userId,
+            additional_condition:additional_condition_c
+            }, function(data) {
+            $('#get_list_request_c').html(data);
+
             });
             
         }).catch(err => console.error(err));
