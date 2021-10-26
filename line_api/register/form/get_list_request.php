@@ -27,8 +27,8 @@ date_default_timezone_set("Asia/Bangkok");
 
 
         $list_cr  .=   '<li class="list-group-item"><div class="row">
-        <div class="col-1">
-        <ion-icon style="font-size: 25px;margin-top:10px;margin-right:15px" name="'.$icon_status.'"></ion-icon>
+        <div class="col-1" style="margin-right:5px">
+        <ion-icon style="font-size: 25px;margin-top:10px;" name="'.$icon_status.'"></ion-icon>
         </div>
         <div class="col-9">
         <span><strong style="color:red"> CR-'.$row["id"].'</strong> | <span style="
