@@ -38,8 +38,8 @@ date_default_timezone_set("Asia/Bangkok");
     "> '.$row["status"].'</span></span>
         <br><small style="color:#b8aeae:font-size:11px">Created : '.$row["create_date"].'</small>
         </div>
-        <div class="col-2">
-            <ion-icon style="font-size: 30px;margin-top:10px" name="chevron-forward-outline"></ion-icon>
+        <div class="col-2" style="margin-left:-10px">
+            <ion-icon style="font-size: 30px;margin-top:5px" name="chevron-forward-outline"></ion-icon>
         </div>
         </div>
         </li>';
