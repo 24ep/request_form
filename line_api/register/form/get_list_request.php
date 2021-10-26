@@ -20,10 +20,12 @@ date_default_timezone_set("Asia/Bangkok");
             $icon_status = "stopwatch-outline";
         }elseif($row["status"]=='Waiting CTO'){
             $icon_status = "bug-outline";
+            
+        }elseif($row["status"]=='Waiting CTO'){
+            $icon_status = "checkmark-outline";
         }else{
             $icon_status = "chevron-forward-outline";
         }
-        
 
 
         $list_cr  .=   '<li class="list-group-item"><div class="row">
