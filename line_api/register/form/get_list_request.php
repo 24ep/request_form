@@ -9,8 +9,11 @@ date_default_timezone_set("Asia/Bangkok");
     $query_gb  = mysqli_query($con,$sql_gb);
     while($row = mysqli_fetch_array($query_gb)) {
         $list_cr  .=   '<li class="list-group-item"><div class="row">
-        <div class="col-10">
-        <span><ion-icon name="ticket-outline"></ion-icon><strong style="color:red"> CR-'.$row["id"].'</strong> | <span style="
+        <div class="col-2">
+        <ion-icon style="font-size: 20px;" name="ticket-outline"></ion-icon>
+        </div>
+        <div class="col-8">
+        <span><strong style="color:red"> CR-'.$row["id"].'</strong> | <span style="
         background: bisque;
         padding: 0px 10px 0px 10px;
         font-weight:600
@@ -18,7 +21,7 @@ date_default_timezone_set("Asia/Bangkok");
         <br><small style="color:#b8aeae:font-size:11px">Created : '.$row["create_date"].'</small>
         </div>
         <div class="col-2">
-        <ion-icon name="chevron-forward-outline"></ion-icon>
+            <ion-icon style="font-size: 40px;" name="chevron-forward-outline"></ion-icon>
         </div>
         </div>
         </li>';
