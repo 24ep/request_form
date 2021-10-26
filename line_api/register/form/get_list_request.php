@@ -11,7 +11,7 @@ date_default_timezone_set("Asia/Bangkok");
     while($row = mysqli_fetch_array($query_gb)) {
 
         if($row["status"]=='Pending'){
-            $icon_status = "chevron-forward-outline";
+            $icon_status = "ticket-outline";
         }elseif($row["status"]=='Inprogress'){
             $icon_status = "reload-circle-outline";
         }elseif($row["status"]=='Waiting Buyer'){
@@ -28,7 +28,7 @@ date_default_timezone_set("Asia/Bangkok");
 
         $list_cr  .=   '<li class="list-group-item"><div class="row">
         <div class="col-1">
-        <ion-icon style="font-size: 25px;margin-top:10px;margin-right:10px" name="ticket-outline"></ion-icon>
+        <ion-icon style="font-size: 25px;margin-top:10px;margin-right:15px" name="'.$icon_status.'"></ion-icon>
         </div>
         <div class="col-9">
         <span><strong style="color:red"> CR-'.$row["id"].'</strong> | <span style="
@@ -39,7 +39,7 @@ date_default_timezone_set("Asia/Bangkok");
         <br><small style="color:#b8aeae:font-size:11px">Created : '.$row["create_date"].'</small>
         </div>
         <div class="col-2">
-            <ion-icon style="font-size: 30px;margin-top:10px" name="'.$icon_status.'"></ion-icon>
+            <ion-icon style="font-size: 30px;margin-top:10px" name="chevron-forward-outline"></ion-icon>
         </div>
         </div>
         </li>';
