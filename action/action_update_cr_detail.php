@@ -1,4 +1,83 @@
 <?php
+function bb_confirm_ticket($id ,$user_id,$detail,$status){
+
+    $curl = curl_init();
+     
+    curl_setopt_array($curl, array(
+      CURLOPT_URL => 'https://api.line.me/v2/bot/message/push',
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => '',
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 0,
+      CURLOPT_FOLLOWLOCATION => true,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => 'POST',
+      CURLOPT_POSTFIELDS =>'
+       { "to": "'.$user_id.'",
+        "messages":[
+                        {
+                        "type": "flex",
+                        "altText": "Confirm ticket !",
+                        "sender": {
+                            "name": "CSG-BOT",
+                            "iconUrl": "https://cdsecommercecontent.ga/img/csg_ico.png"
+                        },
+                         "contents": {
+                            "type": "bubble",
+                            "direction": "ltr",
+                            "body": {
+                              "type": "box",
+                              "layout": "vertical",
+                              "contents": [
+                                {
+                                  "type": "text",
+                                  "text": "CR-'.$id.'",
+                                  "weight": "bold",
+                                  "size": "xl",
+                                  "color": "#C53600FF",
+                                  "margin": "sm",
+                                  "contents": []
+                                },
+                                {
+                                  "type": "text",
+                                  "text": "'.$detail.'",
+                                  "color": "#949494FF",
+                                  "contents": []
+                                },
+                                {
+                                  "type": "separator",
+                                  "margin": "md"
+                                },
+                                {
+                                  "type": "box",
+                                  "layout": "horizontal",
+                                  "spacing": "lg",
+                                  "margin": "lg",
+                                  "contents": [
+                                    {
+                                      "type": "text",
+                                      "text": "อัพเดตสถานะ",
+                                      "contents": []
+                                    },
+                                    {
+                                      "type": "text",
+                                      "text": "'.$status.'",
+                                      "color": "#4BCA44FF",
+                                      "contents": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          }
+                        }
+                ]
+        }',
+      CURLOPT_HTTPHEADER => array(
+        'Content-Type: application/json',
+        'Authorization: Bearer J/R5foEYEGdmDL85DJBMdlMfOos7JOKVlqzd4VOE3nXpT8OtSoc6On+3wNH4bZ6GU+4riP4v562ixfwVUwWdDmHae3qbVBxKUMrKcgoBFbGkrpX+QttoamNeNodqY5aXN3hXijql94zqPLAW7d+JgQdB04t89/1O/w1cDnyilFU='
+      ),
+    ));
  $id = $_POST['id'];
  $value_change = $_POST['value_change'];
  $value_name = $_POST['id_name'];
@@ -43,9 +122,15 @@ session_start();
           $result =  mysqli_query($con, $query);
               while($row = mysqli_fetch_array($result)) {
                   $key = $row["token_line"];
+                  $line_user_id = $row["line_user_id"];
+                  $request_by = $row["request_by"];
               }
               if($key<>"" and $key<>null){
                 sent_line_noti("\nCR-".$id." ".$topic."  \n----------------------------\n".$_SESSION["nickname"]." changed ".$value_name." to ".$value_change,$key);
+              }
+              if($line_user_id <>"" and $line_user_id <>null and $sent_to_username == $request_by and $value_name = "status" ){
+                $pre_detail_request =  substr($_POST["description"],0,80);
+                bb_confirm_ticket($id ,$line_user_id,$pre_detail_request,$value_change);
               }
          }
       }
