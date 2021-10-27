@@ -38,8 +38,8 @@ date_default_timezone_set("Asia/Bangkok");
         padding: 0px 10px 0px 10px;
         font-weight:600
     "> '.$row["status"].'</span></span><br>
-        <span style="font-size:10px">'.$pre_detail_request.'...<span>
-        <br><small style="color:#b8aeae:font-size:10px">create date : '.$row["create_date"].'</small>
+        <span style="font-size:11px">'.$pre_detail_request.'...<span>
+        <br><small style="color:#b8aeae:font-size:11px">create date : '.$row["create_date"].'</small>
         </div >
         <div class="col-2" style="margin-left:-10px">
         <a href="https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/content_request_detail.php?id='.$row["id"].'">
