@@ -47,7 +47,7 @@ $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project
 mysqli_query($con, "SET NAMES 'utf8' ");
 date_default_timezone_set("Asia/Bangkok");
     $sql = "SELECT id,status,description,create_date,update_date from content_request 
-    WHERE id='".$ticket_id;
+    WHERE id=".$ticket_id;
     $query  = mysqli_query($con,$sql);
     while($row = mysqli_fetch_array($query)) {
         $ticket_status = $row["status"];
@@ -64,8 +64,8 @@ date_default_timezone_set("Asia/Bangkok");
         <h5><strong>CR-<?php echo $ticket_id; ?></strong></h5><br>
         <h6><strong><?php echo $ticket_status; ?></strong></h6><br>
         <p><?php echo $ticket_detail; ?></p>
-        <small>Create date: <?php echo $create_date; ?></small>
-        <small>Update date: <?php echo $update_date; ?></small>
+        <small>Create date: <?php echo $create_date; ?></small><br>
+        <small>Update date: <?php echo $update_date; ?></small><br>
         <!-- form end ---------------- -->
     </div>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
