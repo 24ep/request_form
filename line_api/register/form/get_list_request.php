@@ -27,7 +27,7 @@ date_default_timezone_set("Asia/Bangkok");
             $icon_status = "chevron-forward-outline";
         }
 
-        $pre_detail_request =  substr($row["description"],0,50);
+        $pre_detail_request =  substr($row["description"],0,45);
         $list_cr  .=   '<li class="list-group-item"><div class="row">
         <div class="col-1" style="margin-right:5px">
         <ion-icon style="font-size: 25px;margin-top:10px;" name="'.$icon_status.'"></ion-icon>
