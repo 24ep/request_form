@@ -58,41 +58,93 @@ date_default_timezone_set("Asia/Bangkok");
 
 
 ?>
-        <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
-        <hr>
+        <!-- <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
+        <hr> -->
         <!-- form start ---------------- -->
-        <h5><strong>CR-<?php echo $ticket_id; ?></strong></h5><br>
-        <h6><strong><?php echo $ticket_status; ?></strong></h6><br>
+        <h5><strong>CR-<?php echo $ticket_id; ?></strong></h5>
+        <h6><strong><?php echo $ticket_status; ?></strong></h6>
         <p><?php echo $ticket_detail; ?></p>
         <small>Create date: <?php echo $create_date; ?></small><br>
         <small>Update date: <?php echo $update_date; ?></small><br>
+
+        <?php
+        function get_attachment_cr($id){
+            date_default_timezone_set("Asia/Bangkok");
+            $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+            mysqli_query($con, "SET NAMES 'utf8' ");
+            $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image<>1 ORDER BY id ASC" or die("Error:" . mysqli_error());
+            $result = mysqli_query($con, $query);
+            $list_attchment .=  '<small style="display:block;margin-bottom:3px"><strong style="color:gray">Attchment</strong></small>
+            <ul class="list-group ">';
+              while($row = mysqli_fetch_array($result)) {
+                $herf = str_replace("../..",'https://cdsecommercecontent.ga',$row['file_path'].$row['file_name']);
+                $list_attchment.=  ' <li class="list-group-item d-flex justify-content-between align-items-left">
+                <div><ion-icon name="document-attach-outline"></ion-icon>'.$row["file_name"].'</div>
+                <a href="'.$herf.'" download="'.$row['file_name'].'"><ion-icon name="cloud-download-outline" style="color:blue"></ion-icon></a>
+                </li>';
+                $pass = true;
+              }
+              $list_attchment.= '</ul>';
+              if(!isset($pass)){$pass=false;}
+              if($pass==true){
+                return $list_attchment;
+              }else{
+                return '<small><strong style="color:gray">No attachment</strong></small>';
+              }
+          }
+        function get_image_cr($id){
+            date_default_timezone_set("Asia/Bangkok");
+            $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+            mysqli_query($con, "SET NAMES 'utf8' ");
+            $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image=1 ORDER BY id ASC" or die("Error:" . mysqli_error());
+            $result = mysqli_query($con, $query);
+            if(isset($list_image)){$list_image.= '<div class="row">';}else{$list_image= '<div class="row">';}
+            
+            while($row = mysqli_fetch_array($result)) {
+                $herf = str_replace("../..",'https://cdsecommercecontent.ga',$row['file_path'].$row['file_name']);
+                $list_image.=  ' <div class="col-md"><div class="thumbnail">
+                <a href="'.$herf .'" target="_blank">
+                <figure class="figure">
+                <img src="'.$herf .'" class="img-thumbnail img-fluid" alt="'.$row["file_name"].'  " style="object-fit:cover;width:180px;height:180px;">
+                <figcaption class="figure-caption text-end">'.$row["file_name"].'</figcaption></a></div></div>';
+            }
+            $list_image.= '</div>';
+                return $list_image;
+        }
+        $list_attachment = get_attachment_cr($ticket_idid);
+        $img =  get_image_cr($ticket_id);
+        echo $list_attachment;
+        echo $img;
+        
+
+        ?>
         <!-- form end ---------------- -->
     </div>
-    <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
+    <!-- <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script> -->
     <script>
-    function runApp() {
-        liff.getProfile().then(profile => {
-            // document.getElementById("pictureUrl").src = profile.pictureUrl;
-            document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
-            // document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
-            // document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
-            // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
-            // document.getElementById("displayName").value = profile.displayName;
-            // document.getElementById("displayName_show").innerHTML =  profile.displayName;
-            // document.getElementById("userId_value").value = profile.userId;
+    // function runApp() {
+    //     liff.getProfile().then(profile => {
+    //         // document.getElementById("pictureUrl").src = profile.pictureUrl;
+    //         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
+    //         // document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
+    //         // document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
+    //         // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
+    //         // document.getElementById("displayName").value = profile.displayName;
+    //         // document.getElementById("displayName_show").innerHTML =  profile.displayName;
+    //         // document.getElementById("userId_value").value = profile.userId;
             
-        }).catch(err => console.error(err));
-    }
-    liff.init({
-        liffId: "1656539537-Qa43dpkM"
-    }, () => {
-        if (liff.isLoggedIn()) {
-            runApp()
-        } else {
-            liff.login();
-        }
-    }, err => console.error(err.code, error.message));
-    </script>
+    //     }).catch(err => console.error(err));
+    // }
+    // liff.init({
+    //     liffId: "1656539537-Qa43dpkM"
+    // }, () => {
+    //     if (liff.isLoggedIn()) {
+    //         runApp()
+    //     } else {
+    //         liff.login();
+    //     }
+    // }, err => console.error(err.code, error.message));
+     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
