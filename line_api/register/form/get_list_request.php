@@ -27,7 +27,7 @@ date_default_timezone_set("Asia/Bangkok");
             $icon_status = "chevron-forward-outline";
         }
 
-
+        $pre_detail_request =  substr($row["description"],0,50);
         $list_cr  .=   '<li class="list-group-item"><div class="row">
         <div class="col-1" style="margin-right:5px">
         <ion-icon style="font-size: 25px;margin-top:10px;" name="'.$icon_status.'"></ion-icon>
@@ -38,7 +38,8 @@ date_default_timezone_set("Asia/Bangkok");
         padding: 0px 10px 0px 10px;
         font-weight:600
     "> '.$row["status"].'</span></span>
-        <br><small style="color:#b8aeae:font-size:11px">Created : '.$row["create_date"].'</small>
+        <span>'.$pre_detail_request.'...<span>
+        <br><small style="color:#b8aeae:font-size:10px">create : '.$row["create_date"].'</small>
         </div>
         <div class="col-2" style="margin-left:-10px">
         <a href="https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/content_request_detail.php?id='.$row["id"].'">
