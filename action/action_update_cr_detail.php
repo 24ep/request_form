@@ -78,6 +78,8 @@ function bb_confirm_ticket($id ,$user_id,$detail,$status){
         'Authorization: Bearer J/R5foEYEGdmDL85DJBMdlMfOos7JOKVlqzd4VOE3nXpT8OtSoc6On+3wNH4bZ6GU+4riP4v562ixfwVUwWdDmHae3qbVBxKUMrKcgoBFbGkrpX+QttoamNeNodqY5aXN3hXijql94zqPLAW7d+JgQdB04t89/1O/w1cDnyilFU='
       ),
     ));
+
+}
  $id = $_POST['id'];
  $value_change = $_POST['value_change'];
  $value_name = $_POST['id_name'];
