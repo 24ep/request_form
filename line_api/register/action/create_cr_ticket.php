@@ -22,7 +22,7 @@ function bb_confirm_ticket($id ,$user_id,$detail,$priority,$image_path,$date_cre
                         "altText": "Confirm ticket !",
                         "sender": {
                             "name": "CSG-BOT",
-                            "iconUrl": "http://cdsecommercecontent.ga/img/csg_ico.png"
+                            "iconUrl": "https://cdsecommercecontent.ga/img/csg_ico.png"
                         },
                          "contents": {
                             "type": "bubble",
@@ -35,7 +35,7 @@ function bb_confirm_ticket($id ,$user_id,$detail,$priority,$image_path,$date_cre
                               "action": {
                                 "type": "uri",
                                 "label": "Action",
-                                "uri": "http://content-service-gate.cdsecommercecontent.ga/line_api/register/form/content_request_detail.php?id='.$id.'"
+                                "uri": "https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/content_request_detail.php?id='.$id.'"
                               }
                             },
                             "body": {
@@ -154,7 +154,7 @@ function bb_confirm_ticket($id ,$user_id,$detail,$priority,$image_path,$date_cre
                                   "action": {
                                     "type": "uri",
                                     "label": "Ticket",
-                                    "uri": "http://content-service-gate.cdsecommercecontent.ga/line_api/register/form/content_request_detail.php?id='.$id.'"
+                                    "uri": "https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/content_request_detail.php?id='.$id.'"
                                   },
                                   "height": "sm",
                                   "style": "secondary"
