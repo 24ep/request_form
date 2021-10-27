@@ -312,7 +312,7 @@ date_default_timezone_set("Asia/Bangkok");
                             }
                         }
                     }
-                  $pre_detail_request =  substr($_POST["detail_request"],0,50);
+                  $pre_detail_request =  substr($_POST["detail_request"],0,150);
                  add_participant($last_id,"content_request",$username);
                  bb_confirm_ticket($last_id ,$userId,$pre_detail_request."...",$_POST["priority"],"https://cdsecommercecontent.ga/attachment/csg/".$last_id."/".$file_name, date("Y-m-d h:i:sa"));
                 //get key
