@@ -41,7 +41,9 @@ date_default_timezone_set("Asia/Bangkok");
         <br><small style="color:#b8aeae:font-size:11px">Created : '.$row["create_date"].'</small>
         </div>
         <div class="col-2" style="margin-left:-10px">
+        <a href="http://content-service-gate.cdsecommercecontent.ga/line_api/register/form/content_request_detail.php?id='.$row["id"].'">
             <ion-icon style="font-size: 30px;margin-top:5px" name="chevron-forward-outline"></ion-icon>
+            </a>
         </div>
         </div>
         </li>';
