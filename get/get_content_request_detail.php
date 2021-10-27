@@ -167,7 +167,8 @@ $result = mysqli_query($con, $query);
       
       if($row['line_user_id']<> null and $row['line_user_id']<> "" ){
         if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
-          $request_by_contact = $request_by." | ".$row['firstname']." ".$row['lastname']." ( ".$request_by_nickname." ) | ".$row['work_email']."<a type='button' href='https://chat.line.biz/Ubc7faf107145495bd45be106915c5ecd/chat/".$row['line_user_id']."' style='background:#00B900;color:white;border-radius:10px'class='btn btn-outline-success'>Chat with ".$row['nickname']."</a>";
+          $request_by_contact = $request_by." | ".$row['firstname']." ".$row['lastname']." ( ".$request_by_nickname." ) | ".$row['work_email'];
+          // $request_by_contact = $request_by." | ".$row['firstname']." ".$row['lastname']." ( ".$request_by_nickname." ) | ".$row['work_email']."<a type='button' href='https://chat.line.biz/Ubc7faf107145495bd45be106915c5ecd/chat/".$row['line_user_id']."' style='background:#00B900;color:white;border-radius:10px'class='btn btn-outline-success'>Chat with ".$row['nickname']."</a>";
         }else{
           $request_by_contact = $request_by." | ".$row['firstname']." ".$row['lastname']." ( ".$request_by_nickname." ) | ".$row['work_email'];
         }

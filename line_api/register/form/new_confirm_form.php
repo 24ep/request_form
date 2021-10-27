@@ -75,7 +75,7 @@
         document.getElementById("userId_value").value = profile.userId;
         // document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         // document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
-        // document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
+        document.getElementById("tell_create").innerHTML = liff.getDecodedIDToken().phone_number;
         document.getElementById("username_create").value =  profile.displayName;
         
         // document.getElementById("displayName_show").innerHTML =  profile.displayName;
