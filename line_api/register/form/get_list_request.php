@@ -16,7 +16,7 @@ date_default_timezone_set("Asia/Bangkok");
             $icon_status = "reload-circle-outline";
         }elseif($row["status"]=='Waiting Buyer'){
             $icon_status = "warning-outline";
-        }elseif($row["status"]=='Waiting Exclusion'){
+        }elseif($row["status"]=='Waiting Execution'){
             $icon_status = "stopwatch-outline";
         }elseif($row["status"]=='Waiting CTO'){
             $icon_status = "bug-outline";
