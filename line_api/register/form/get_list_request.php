@@ -33,14 +33,14 @@ date_default_timezone_set("Asia/Bangkok");
         <ion-icon style="font-size: 25px;margin-top:10px;" name="'.$icon_status.'"></ion-icon>
         </div>
         <div class="col-9">
-        <span><strong style="color:red"> CR-'.$row["id"].'</strong> | <span style="
+        <span style="font-size:13px"><strong style="color:red"> CR-'.$row["id"].'</strong> | <span style="
         background: bisque;
         padding: 0px 10px 0px 10px;
         font-weight:600
     "> '.$row["status"].'</span></span>
-        <span>'.$pre_detail_request.'...<span>
-        <br><small style="color:#b8aeae:font-size:10px">create : '.$row["create_date"].'</small>
-        </div>
+        <span style="font-size:9px">'.$pre_detail_request.'...<span>
+        <br><small style="color:#b8aeae:font-size:8px">create : '.$row["create_date"].'</small>
+        </div >
         <div class="col-2" style="margin-left:-10px">
         <a href="https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/content_request_detail.php?id='.$row["id"].'">
             <ion-icon style="font-size: 30px;margin-top:5px" name="chevron-forward-outline"></ion-icon>
