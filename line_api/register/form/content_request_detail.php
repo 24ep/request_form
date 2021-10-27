@@ -111,7 +111,7 @@ date_default_timezone_set("Asia/Bangkok");
             $list_image.= '</div>';
                 return $list_image;
         }
-        $list_attachment = get_attachment_cr($ticket_idid);
+        $list_attachment = get_attachment_cr($ticket_id);
         $img =  get_image_cr($ticket_id);
         echo $list_attachment;
         echo $img;
