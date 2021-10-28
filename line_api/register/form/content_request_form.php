@@ -16,6 +16,7 @@
     /* #pictureUrl { } */
     body {
         font-family: 'Prompt', sans-serif;
+        background:#f9fafb;
     }
 
     .form-label {
