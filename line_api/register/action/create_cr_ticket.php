@@ -314,7 +314,12 @@ date_default_timezone_set("Asia/Bangkok");
                     }
                   $pre_detail_request =  substr($_POST["detail_request"],0,80);
                  add_participant($last_id,"content_request",$username);
-                 bb_confirm_ticket($last_id ,$userId,$pre_detail_request."...",$_POST["priority"],"https://cdsecommercecontent.ga/attachment/csg/".$last_id."/".$file_name, date("Y-m-d h:i:sa"));
+                 if($file_name==""){
+                  bb_confirm_ticket($last_id ,$userId,$pre_detail_request."...",$_POST["priority"],"https://cdsecommercecontent.ga/img/defa.png", date("Y-m-d h:i:sa"));
+                 }else{
+                  bb_confirm_ticket($last_id ,$userId,$pre_detail_request."...",$_POST["priority"],"https://cdsecommercecontent.ga/attachment/csg/".$last_id."/".$file_name, date("Y-m-d h:i:sa"));
+                 }
+                 
                 //get key
                 // date_default_timezone_set("Asia/Bangkok");
                 // $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
