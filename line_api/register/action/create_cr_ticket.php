@@ -22,7 +22,7 @@ function bb_confirm_ticket($id ,$user_id,$detail,$priority,$image_path,$date_cre
                         "altText": "Confirm ticket !",
                         "sender": {
                             "name": "Auto respond",
-                            "iconUrl": "https://cdsecommercecontent.ga/img/defa.png"
+                            "iconUrl": "https://cdsecommercecontent.ga/img/ico.png"
                         },
                          "contents": {
                             "type": "bubble",
@@ -315,7 +315,7 @@ date_default_timezone_set("Asia/Bangkok");
                   $pre_detail_request =  substr($_POST["detail_request"],0,80);
                  add_participant($last_id,"content_request",$username);
                  if($file_name==""){
-                  bb_confirm_ticket($last_id ,$userId,$pre_detail_request."...",$_POST["priority"],"https://cdsecommercecontent.ga/img/defa.png", date("Y-m-d h:i:sa"));
+                  bb_confirm_ticket($last_id ,$userId,$pre_detail_request."...",$_POST["priority"],"https://cdsecommercecontent.ga/img/defac.png", date("Y-m-d h:i:sa"));
                  }else{
                   bb_confirm_ticket($last_id ,$userId,$pre_detail_request."...",$_POST["priority"],"https://cdsecommercecontent.ga/attachment/csg/".$last_id."/".$file_name, date("Y-m-d h:i:sa"));
                  }
