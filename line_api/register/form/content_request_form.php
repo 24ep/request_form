@@ -115,6 +115,9 @@
         <div class="mb-3">
         <div class="d-grid gap-1">
             <button class="btn btn-primary" id="send" onclick="create_ticket()" type="button">Send</button>
+            <button class="btn btn-primary" id="spinner" disabled type="button"> 
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...</button>
         </div>
         </div>
         
@@ -177,7 +180,8 @@ actualBtn_meq.addEventListener('change', function() {
 })
 
 function create_ticket(){
-
+    document.getElementById("send").style.display = "none";
+    document.getElementById("spinner").style.display = "block";
     var form_data = new FormData();
     var detail_request = document.getElementById("detail_request").value;
     var priority = document.getElementById("priority").value;
@@ -208,6 +212,7 @@ function create_ticket(){
             // document.getElementById('actual-btn_cme').value = ''; //clear value
             // fileChosen_bt_cme.innerHTML = '<ion-icon style="margin:0px" name="attach-outline"></ion-icon>';
             alert(data);
+            window.close();
         }
     });
 
@@ -215,16 +220,7 @@ function create_ticket(){
 
 }
 
-$(document).ready(function() {
-$("#send").click(function() {
-// disable button
-$(this).prop("disabled", true);
-// add spinner to button
-$(this).html(
-'<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Loading...'
-);
-});
-});
+
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
