@@ -39,7 +39,7 @@
     </style>
 </head>
 
-<body>
+<body >
     <div class="container-sm" style="margin-top:5px">
 
         <p id="userId" style="font-size: 10px;color: #a1a1a1;"></p>
@@ -115,7 +115,7 @@
         <div class="mb-3">
         <div class="d-grid gap-1">
             <button class="btn btn-primary" id="send" onclick="create_ticket()" type="button">Send</button>
-            <button class="btn btn-primary" id="spinner" disabled type="button"> 
+            <button class="btn btn-primary" style="display:none" id="spinner" disabled type="button"> 
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             Loading...</button>
         </div>
