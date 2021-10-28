@@ -114,7 +114,7 @@
        
         <div class="mb-3">
         <div class="d-grid gap-1">
-            <button class="btn btn-primary" onclick="create_ticket()" type="button">Send</button>
+            <button class="btn btn-primary" id="send" onclick="create_ticket()" type="button">Send</button>
         </div>
         </div>
         
@@ -214,6 +214,17 @@ function create_ticket(){
 
 
 }
+
+$(document).ready(function() {
+$("#send").click(function() {
+// disable button
+$(this).prop("disabled", true);
+// add spinner to button
+$(this).html(
+'<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Loading...'
+);
+});
+});
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
