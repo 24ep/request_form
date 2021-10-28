@@ -212,7 +212,7 @@ function create_ticket(){
             // document.getElementById('actual-btn_cme').value = ''; //clear value
             // fileChosen_bt_cme.innerHTML = '<ion-icon style="margin:0px" name="attach-outline"></ion-icon>';
             alert(data);
-            window.close();
+            liff.closeWindow();
         }
     });
 

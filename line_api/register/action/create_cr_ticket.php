@@ -21,7 +21,7 @@ function bb_confirm_ticket($id ,$user_id,$detail,$priority,$image_path,$date_cre
                         "type": "flex",
                         "altText": "Confirm ticket !",
                         "sender": {
-                            "name": "CSG-BOT",
+                            "name": "Auto respond",
                             "iconUrl": "https://cdsecommercecontent.ga/img/csg_ico.png"
                         },
                          "contents": {
