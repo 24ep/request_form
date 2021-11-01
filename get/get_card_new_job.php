@@ -19,7 +19,7 @@ function get_card_new_job($status,$username){
      while($row = mysqli_fetch_array($result)) {
       $border =   'border-color: transparent;';
 
-      if($row["config_type"]=="parent" and $row["parent"]==""){
+      if($row["config_type"]=="parent" ){
           //count sub ticket
           $query_count="SELECT count(*) as total from add_new_job where follow_assign_name = '".$username."' and ".$status."  and parent = ".$row["id"];
           $result_count = mysqli_query($con, $query_count);
