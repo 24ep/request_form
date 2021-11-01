@@ -53,9 +53,12 @@ function get_card_new_job($status,$username){
           $date_diff_ld = (  strtotime($row_child["launch_date"])-strtotime($current_day)) /  ( 60 * 60 * 24 );
           $date_diff_ld_f = number_format($date_diff_ld);
                  $text_ld = 'อีก '.$date_diff_ld_f.' วัน launch date นะ เลื่อนไหม ?';
-               if($date_diff_ld<6 and $row_child["launch_date"]<>""){
+               if($date_diff_ld<6 and $date_diff_ld>=0 and $row_child["launch_date"]<>""){
                     $badge_ld = '<span class="badge bg-warning text-dark">'. $text_ld.'</span>';
-                  }else{
+                }elseif($date_diff_ld<0){
+                  $text_ld = 'เลย launch date มา '.$date_diff_ld_f.' วันแล้วนะ เลื่อนไหม';
+                  $badge_ld = '<span class="badge bg-danger text-light">'. $text_ld.'</span>';
+                }else{
                     $badge_ld = "";
                   }
                  
@@ -97,7 +100,10 @@ function get_card_new_job($status,$username){
                  $text_ld = 'อีก '.$date_diff_ld_f.' วัน launch date นะ เลื่อนไหม ?';
                if($date_diff_ld<6 and $row_child["launch_date"]<>""){
                     $badge_ld = '<span class="badge bg-warning text-dark">'. $text_ld.'</span>';
-                  }else{
+                  }elseif($date_diff_ld<0){
+                  $text_ld = 'เลย launch date มา '.$date_diff_ld_f.' วันแล้วนะ เลื่อนไหม';
+                  $badge_ld = '<span class="badge bg-danger text-light">'. $text_ld.'</span>';
+                }else{
                     $badge_ld = "";
                   }
                   echo    '
@@ -144,7 +150,10 @@ function get_card_new_job($status,$username){
                  $text_ld = 'อีก '.$date_diff_ld_f.' วัน launch date นะ เลื่อนไหม ?';
                if($date_diff_ld<6 and $row["launch_date"]<>""){
                     $badge_ld = '<span class="badge bg-warning text-dark">'. $text_ld.'</span>';
-                  }else{
+                   }elseif($date_diff_ld<0){
+                  $text_ld = 'เลย launch date มา '.$date_diff_ld_f.' วันแล้วนะ เลื่อนไหม';
+                  $badge_ld = '<span class="badge bg-danger text-light">'. $text_ld.'</span>';
+                }else{
                     $badge_ld = "";
                   }
         echo    '
