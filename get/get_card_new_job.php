@@ -21,7 +21,7 @@ function get_card_new_job($status,$username){
 
       if($row["config_type"]=="parent" ){
           //count sub ticket
-          $query_count="SELECT count(*) as total from add_new_job where follow_assign_name = '".$username."' and ".$status."  and parent = ".$row["id"];
+          $query_count="SELECT count(*) as total from all_in_one_project.add_new_job where follow_assign_name = '".$username."' and ".$status."  and parent = ".$row["id"];
           $result_count = mysqli_query($con, $query_count);
           $data_count=mysqli_fetch_assoc($result_count);
           $subtask_count = $data_count['total'];
