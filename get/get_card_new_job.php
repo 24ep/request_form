@@ -40,7 +40,7 @@ function get_card_new_job($status,$username){
                     $launch_date=$row_child["launch_date"];
                   }
                          $current_day = date('Y-m-d');
-                 $date_diff = (strtotime($current_day) - strtotime($row_child["update_date"])) /  ( 60 * 60 * 24 );
+                 $date_diff = (strtotime($current_day) - strtotime($row_child["update_date"])) ;
                  $date_diff_f = number_format($date_diff);
                  $text_launch_date = 'อัพเดตล่าสุดเมื่อ '.$date_diff_f.' วันที่แล้ว';
                   if( $date_diff>2){
@@ -48,7 +48,7 @@ function get_card_new_job($status,$username){
                   }else{
                     $badge_update = "";
                   }
-          $date_diff_ld = (strtotime($current_day) - strtotime($row_child["launch_date"])) /  ( 60 * 60 * 24 );
+          $date_diff_ld = (strtotime($current_day) - strtotime($row_child["launch_date"])) ;
           $date_diff_ld_f = number_format($date_diff_ld);
                  $text_ld = 'อีก '.$date_diff_ld_f.' วัน launch date นะ เลื่อนไหม ?';
                if($date_diff_ld<4 and $row_child["launch_date"]<>""){
@@ -80,7 +80,7 @@ function get_card_new_job($status,$username){
                     $launch_date=$row_child["launch_date"];
                   }
                                    $current_day = date('Y-m-d');
-                 $date_diff = (strtotime($current_day) - strtotime($row_child["update_date"])) /  ( 60 * 60 * 24 );
+                 $date_diff = (strtotime($current_day) - strtotime($row_child["update_date"])) ;
                  $date_diff_f = number_format($date_diff);
                  $text_launch_date = 'อัพเดตล่าสุดเมื่อ '.$date_diff_f.' วันที่แล้ว';
                   if( $date_diff>2){
@@ -88,7 +88,7 @@ function get_card_new_job($status,$username){
                   }else{
                     $badge_update = "";
                   }
-          $date_diff_ld = (strtotime($current_day) - strtotime($row_child["launch_date"])) /  ( 60 * 60 * 24 );
+          $date_diff_ld = (strtotime($current_day) - strtotime($row_child["launch_date"]));
           $date_diff_ld_f = number_format($date_diff_ld);
                  $text_ld = 'อีก '.$date_diff_ld_f.' วัน launch date นะ เลื่อนไหม ?';
                if($date_diff_ld<4 and $row_child["launch_date"]<>""){
@@ -126,7 +126,7 @@ function get_card_new_job($status,$username){
           $launch_date=$row["launch_date"];
         }
                           $current_day = date('Y-m-d');
-                 $date_diff = (strtotime($current_day) - strtotime($row_child["update_date"])) /  ( 60 * 60 * 24 );
+                 $date_diff = (strtotime($current_day) - strtotime($row_child["update_date"]));
                  $date_diff_f = number_format($date_diff);
                  $text_launch_date = 'อัพเดตล่าสุดเมื่อ '.$date_diff_f.' วันที่แล้ว';
                   if( $date_diff>2){
@@ -134,7 +134,7 @@ function get_card_new_job($status,$username){
                   }else{
                     $badge_update = "";
                   }
-          $date_diff_ld = (strtotime($current_day) - strtotime($row_child["launch_date"])) /  ( 60 * 60 * 24 );
+          $date_diff_ld = (strtotime($current_day) - strtotime($row_child["launch_date"])) ;
           $date_diff_ld_f = number_format($date_diff_ld);
                  $text_ld = 'อีก '.$date_diff_ld_f.' วัน launch date นะ เลื่อนไหม ?';
                if($date_diff_ld<4 and $row_child["launch_date"]<>""){
