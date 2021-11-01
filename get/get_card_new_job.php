@@ -12,30 +12,91 @@ function get_card_new_job($status,$username){
   }else{
     $sort = 'launch_date ASC';
   }
-  $query = "SELECT * FROM all_in_one_project.add_new_job  where follow_assign_name = '".$username."' and ".$status." ORDER by ".$sort." ".$limit ;
+  $query = "SELECT * FROM all_in_one_project.add_new_job  ORDER by ".$sort." ".$limit ;
   echo '<script>console.log("'.$query.'")</script>';
   $result = mysqli_query($con, $query);
   $result_count = mysqli_query($con, $query_count);
      while($row = mysqli_fetch_array($result)) {
       $border =   'border-color: transparent;';
-      if($row["launch_date"]==""){
-        $launch_date="no launch date";
+
+      if($row["config_type"]=="parent" and $row["parent"]==""){
+          //count sub ticket
+          $query_count="SELECT count(*) as total from add_new_job where follow_assign_name = '".$username."' and ".$status."  and parent = ".$row["id"];
+          $result_count = mysqli_query($con, $query_count);
+          $data_count=mysqli_fetch_assoc($result_count);
+          $subtask_count = $data_count['total'];
+          if(isset($subtask_count) and $subtask_count <> 0 and $subtask_count <>null){
+            echo '  <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')" style="margin-top:15px;'.$border.'">';
+              $query_child = "SELECT * FROM all_in_one_project.add_new_job  where parent = ".$row['id']." ORDER by ".$sort." ".$limit ;
+              $result_child  = mysqli_query($con, $query_child);
+              while($row_child = mysqli_fetch_array($result_child)) {
+                if($row_child["follow_assign_name"]==$username and strpos($status,$row_child["follow_assign_name"]) ){
+                  if($row_child["launch_date"]==""){
+                    $launch_date="no launch date";
+                  }else{
+                    $launch_date=$row_child["launch_date"];
+                  }
+                  echo    '
+                  <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')" style="margin-top:15px;'.$border.'">
+                      <div data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')"  class="card-body shadow" >
+                          <h6 class="card-title" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')"  style="font-size:14px"><strong style="color:red">NS-'.$row_child["id"].'</strong> '.$row_child["brand"].' '.$row_child["sku"].' SKUs </h6>
+                          <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')" >
+                            <div class="col-3">status : </div>
+                            <div class="col-9">'.$row_child["status"].' </div>
+                          </div>
+                          <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')"  >
+                            <div class="col-3">launch  : </div>
+                            <div class="col-9">'. $launch_date.' </div>
+                          </div>
+                      </div>
+                  </div>   
+                  ';
+                }else{
+               
+                  echo    '
+                  <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')" style="margin-top:15px;background:#e3e3e3;color:#c6c6c6'.$border.'">
+                      <div data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')"  class="card-body shadow" >
+                          <h6 class="card-title" style="color:#c6c6c6" ata-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')"  style="font-size:14px"><strong style="color:#c6c6c6">NS-'.$row_child["id"].'</strong> '.$row_child["brand"].' '.$row_child["sku"].' SKUs </h6>
+                          <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')" >
+                            <div class="col-3">status : </div>
+                            <div class="col-9">'.$row["status"].' </div>
+                          </div>
+                          <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')"  >
+                            <div class="col-3">launch  : </div>
+                            <div class="col-9">'. $launch_date.' </div>
+                          </div>
+                      </div>
+                  </div>   
+                  ';
+                }
+
+              }
+            echo '<div>';
+          }
+   
+      }else{
+        if($row["launch_date"]==""){
+          $launch_date="no launch date";
+        }else{
+          $launch_date=$row["launch_date"];
+        }
+        echo    '
+        <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')" style="margin-top:15px;'.$border.'">
+            <div data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')"  class="card-body shadow" >
+                <h6 class="card-title" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')"  style="font-size:14px"><strong style="color:red">NS-'.$row["id"].'</strong> '.$row["brand"].' '.$row["sku"].' SKUs </h6>
+                <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')" >
+                  <div class="col-3">status : </div>
+                  <div class="col-9">'.$row["status"].' </div>
+                </div>
+                <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')"  >
+                  <div class="col-3">launch  : </div>
+                  <div class="col-9">'. $launch_date.' </div>
+                </div>
+            </div>
+        </div>   
+        ';
       }
-    echo    '
-    <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')" style="margin-top:15px;'.$border.'">
-        <div data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')"  class="card-body shadow" >
-            <h6 class="card-title" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')"  style="font-size:14px"><strong style="color:red">NS-'.$row["id"].'</strong> '.$row["brand"].' '.$row["sku"].' SKUs </h6>
-            <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')" >
-              <div class="col-3">status : </div>
-              <div class="col-9">'.$row["status"].' </div>
-            </div>
-            <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px"data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')"  >
-              <div class="col-3">launch  : </div>
-              <div class="col-9">'. $launch_date.' </div>
-            </div>
-        </div>
-    </div>   
-    ';
+  
     } 
   mysqli_close($con);
 }
