@@ -847,23 +847,23 @@
                                     <div class="row">
                                         <div class="col col-board window-full col" id="col_pending">
                                             <small style="margin-bottom:5px"><strong>Unassign</strong></small>
-                                            <?php echo get_card_new_job("status = 'unassign'");?>
+                                            <?php echo get_card_new_job("status = 'unassign'",$_GET["username"]);?>
                                         </div>
                                         <div class="col col-board window-full col" id="pending">
                                             <small style="margin-bottom:5px"><strong>Pending + Waiting Confirm</strong></small>
-                                            <?php echo get_card_new_job("status = 'pending' or status = 'waiting confirm'");?>
+                                            <?php echo get_card_new_job("status = 'pending' or status = 'waiting confirm'",$_GET["username"]);?>
                                         </div>
                                         <div class="col col-board window-full col" id="checking">
                                             <small style="margin-bottom:5px"><strong>Checking</strong></small>
-                                            <?php echo get_card_new_job("status = 'checking'");?>
+                                            <?php echo get_card_new_job("status = 'checking'",$_GET["username"]);?>
                                         </div>
                                         <div class="col col-board window-full col" id="waiting">
                                             <small style="margin-bottom:5px"><strong>Waiting + Send mail</strong></small>
-                                            <?php echo get_card_new_job("status = 'waiting buyer' or status = 'waiting data' or status = 'waiting image' or status like '%mail%'");?>
+                                            <?php echo get_card_new_job("status = 'waiting buyer' or status = 'waiting data' or status = 'waiting image' or status like '%mail%'",$_GET["username"]);?>
                                         </div>
                                         <div class="col col-board window-full col" id="more">
                                             <small style="margin-bottom:5px"><strong>Confirm to be new sku + need update contact</strong></small>
-                                            <?php echo get_card_new_job("status = 'confirm to be new sku' or status = 'need update contact'");?>
+                                            <?php echo get_card_new_job("status = 'confirm to be new sku' or status = 'need update contact'",$_GET["username"]);?>
                                         </div>
                                     </div>
                                 </div>

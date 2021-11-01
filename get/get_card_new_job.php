@@ -1,5 +1,8 @@
 <?php
-function get_card_new_job($status){
+function get_card_new_job($status,$username){
+  if($username==""){
+      $username==$_SESSION["username"];
+  }
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
@@ -9,7 +12,7 @@ function get_card_new_job($status){
   }else{
     $sort = 'id ASC';
   }
-  $query = "SELECT * FROM all_in_one_project.add_new_job  where follow_assign_name = ".$_SESSION["username"]." and ".$status." ORDER by ".$sort." ".$limit ;
+  $query = "SELECT * FROM all_in_one_project.add_new_job  where follow_assign_name = ".$username." and ".$status." ORDER by ".$sort." ".$limit ;
   $result = mysqli_query($con, $query);
   $result_count = mysqli_query($con, $query_count);
      while($row = mysqli_fetch_array($result)) {
