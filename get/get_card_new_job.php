@@ -39,10 +39,15 @@ function get_card_new_job($status,$username){
                   }else{
                     $launch_date=$row_child["launch_date"];
                   }
+                 $current_day = date('Y-m-d');
+                 $date_diff = (strtotime($row_child["update_date"]) - strtotime($current_day))/  ( 60 * 60 * 24 );
+                 $text_launch_date = 'อัพเดตล่าสุดเมื่อ '.$date_diff.' วันที่แล้ว';
+                 $badge_update = '<span class="badge bg-warning text-dark">'. $text_launch_date.'</span>';
                   echo    '
                   <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')" style="margin-top:15px;'.$border.'">
                       <div data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')"  class="card-body shadow" >
                           <h6 class="card-title" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')"  style="font-size:14px"><strong style="color:red">NS-'.$row_child["id"].'</strong> '.$row_child["brand"].' '.$row_child["sku"].' SKUs </h6>
+                          '.$badge_update.'
                           <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px;" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')" >
                             <div class="col-3">status : </div>
                             <div class="col-9">'.$row_child["status"].' </div>
