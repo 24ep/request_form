@@ -33,7 +33,7 @@ function get_card_new_job($status,$username){
             $query_child = "SELECT * FROM all_in_one_project.add_new_job  where parent = ".$row['id']." ORDER by ".$sort." ".$limit ;
               $result_child  = mysqli_query($con, $query_child);
               while($row_child = mysqli_fetch_array($result_child)) {
-                if($row_child["follow_assign_name"]==$username and (strpos($status,$row_child["status"])==TRUE or strpos($status,$row_child["status"])>0) ){
+                if($row_child["follow_assign_name"]==$username and strpos($status,$row_child["status"])!==FALSE  ){
                   if($row_child["launch_date"]==""){
                     $launch_date="no launch date";
                   }else{
