@@ -116,4 +116,16 @@ function count_add_new_card($status,$username){
   $subtask_count = $data_count['total'];
   echo $subtask_count;
 }
+function sum_add_new_card($status,$username){
+  if($username==''){
+    $username=$_SESSION["username"];
+}
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+  mysqli_query($con, "SET NAMES 'utf8' ");
+  $query_count="SELECT sum(sku) as total from all_in_one_project.add_new_job where follow_assign_name = '".$username."' and ".$status;
+  $result_count = mysqli_query($con, $query_count);
+  $data_count=mysqli_fetch_assoc($result_count);
+  $subtask_count = $data_count['total'];
+  echo $subtask_count;
+}
   ?>
