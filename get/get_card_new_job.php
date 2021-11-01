@@ -46,7 +46,7 @@ function get_card_new_job($status,$username){
                   
                  $text_launch_date = 'อัพเดตล่าสุดเมื่อ '.$date_diff_f.' วันที่แล้ว';
                   if( $date_diff>2){
-                    $badge_update = '<span class="badge bg-secondary text-dark">'. $text_launch_date.'</span>';
+                    $badge_update = '<span class="badge bg-secondary text-dark" style="background-color: #e9ebed!important;">'. $text_launch_date.'</span>';
                   }else{
                     $badge_update = "";
                   }
@@ -88,7 +88,7 @@ function get_card_new_job($status,$username){
                   
                  $text_launch_date = 'อัพเดตล่าสุดเมื่อ '.$date_diff_f.' วันที่แล้ว';
                   if( $date_diff>2){
-                    $badge_update = '<span class="badge bg-secondary text-dark">'. $text_launch_date.'</span>';
+                    $badge_update = '<span class="badge bg-secondary text-dark" style="background-color: #e9ebed!important;">'. $text_launch_date.'</span>';
                   }else{
                     $badge_update = "";
                   }
@@ -135,7 +135,7 @@ function get_card_new_job($status,$username){
                   
                  $text_launch_date = 'อัพเดตล่าสุดเมื่อ '.$date_diff_f.' วันที่แล้ว';
                   if( $date_diff>2){
-                    $badge_update = '<span class="badge bg-secondary text-dark">'. $text_launch_date.'</span>';
+                    $badge_update = '<span class="badge bg-secondary text-dark" style="background-color: #e9ebed!important;">'. $text_launch_date.'</span>';
                   }else{
                     $badge_update = "";
                   }
