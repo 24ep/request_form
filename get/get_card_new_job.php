@@ -60,11 +60,11 @@ function get_card_new_job($status,$username){
                   <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')" style="margin-top:15px;background:#e3e3e3;color:#c6c6c6;'.$border.'">
                       <div data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')"  class="card-body shadow" >
                           <h6 class="card-title" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')"  style="font-size:14px;color:#c6c6c6;"><strong style="color:#c6c6c6">NS-'.$row_child["id"].'</strong> '.$row_child["brand"].' '.$row_child["sku"].' SKUs </h6>
-                          <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')" >
+                          <div class="row" style="margin-bottom:3px;margin-top:3px;color:#c6c6c6;font-size:12px" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')" >
                             <div class="col-3">status : </div>
                             <div class="col-9">'.$row_child["status"].' </div>
                           </div>
-                          <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')"  >
+                          <div class="row" style="margin-bottom:3px;margin-top:3px;color:#c6c6c6;font-size:12px" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')"  >
                             <div class="col-3">launch  : </div>
                             <div class="col-9">'. $launch_date.' </div>
                           </div>
