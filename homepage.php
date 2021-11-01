@@ -849,6 +849,7 @@
                     
                                         <div class="col col-board window-full col" id="pending">
                                             <small style="margin-bottom:5px"><strong>Pending + Waiting Confirm</strong></small>
+                                           <span class="badge bg-secondary"><?php echo count_add_new_card("(status = 'pending' or status = 'waiting confirm')",$_GET["username"]); ?></span> 
                                             <?php echo get_card_new_job("(status = 'pending' or status = 'waiting confirm')",$_GET["username"]);?>
                                         </div>
                                         <div class="col col-board window-full col" id="checking">
