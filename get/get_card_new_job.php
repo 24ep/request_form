@@ -25,7 +25,7 @@ function get_card_new_job($status,$username){
           $result_count = mysqli_query($con, $query_count);
           $data_count=mysqli_fetch_assoc($result_count);
           $subtask_count = $data_count['total'];
-          echo '<script>console.log("s-'.$subtask_count."p-".$row["id"];.'")</script>';
+          echo '<script>console.log("s-'.$subtask_count."p-".$row["id"].'")</script>';
           if(isset($subtask_count) and $subtask_count <> 0 and $subtask_count <>null){
             echo '<script>console.log("s-pass")</script>';
             echo '  <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')" style="margin-top:15px;'.$border.'">';
