@@ -15,7 +15,7 @@ function get_card_new_job($status,$username){
   $query = "SELECT * FROM all_in_one_project.add_new_job  where (".$status." and follow_assign_name = '".$username."') or status = 'none' ORDER by ".$sort." ".$limit ;
   echo '<script>console.log("'.$query.'")</script>';
   $result = mysqli_query($con, $query);
-  $result_count = mysqli_query($con, $query_count);
+  // $result_count = mysqli_query($con, $query_count);
      while($row = mysqli_fetch_array($result)) {
       $border =   'border-color: transparent;';
 
@@ -25,7 +25,9 @@ function get_card_new_job($status,$username){
           $result_count = mysqli_query($con, $query_count);
           $data_count=mysqli_fetch_assoc($result_count);
           $subtask_count = $data_count['total'];
+          echo '<script>console.log("s-'.$subtask_count.'")</script>';
           if(isset($subtask_count) and $subtask_count <> 0 and $subtask_count <>null){
+            echo '<script>console.log("s-pass")</script>';
             echo '  <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')" style="margin-top:15px;'.$border.'">';
             echo ' <h6 class="card-title" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')"  style="font-size:14px"><strong style="color:red">NS-'.$row["id"].'</strong> '.$row["brand"].' '.$row["sku"].' SKUs </h6>';  
             $query_child = "SELECT * FROM all_in_one_project.add_new_job  where parent = ".$row['id']." ORDER by ".$sort." ".$limit ;
