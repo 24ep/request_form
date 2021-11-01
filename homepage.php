@@ -434,14 +434,15 @@
                         aria-controls="v-pills-cr_admin" onclick="updateURL('v-pills-cr_admin');" aria-selected="false">
                         <ion-icon style="color:white" name="grid-outline"></ion-icon> CR Board
                     </a>
-                    <?php }?>
-                    
-                    <?php if(strpos($_SESSION["username"],'poojaroonwit')!==false){?>
-                    <a class="nav-link" id="v-pills-fl_board-tab" data-toggle="pill" href="#v-pills-fl_board" role="tab"
+                     <a class="nav-link" id="v-pills-fl_board-tab" data-toggle="pill" href="#v-pills-fl_board" role="tab"
                         aria-controls="v-pills-fl_board" onclick="updateURL('v-pills-fl_board');" aria-selected="false">
                         <ion-icon style="color:white" name="grid-outline"></ion-icon> Follow-up Board
                     </a>
                     <?php }?>
+                    
+                    
+                   
+              
                     <hr style="color: #eee!important;">
                     <ul class="list-unstyled ps-0">
                         <li class="mb-1">
