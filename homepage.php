@@ -851,7 +851,7 @@
                                         </div>
                                         <div class="col col-board window-full col-2" id="pending">
                                             <small style="margin-bottom:5px"><strong>Pending + Waiting Confirm</strong></small>
-                                            <?php echo get_cget_card_new_jobard("status = 'pending' or status = 'waiting confirm'");?>
+                                            <?php echo get_card_new_job("status = 'pending' or status = 'waiting confirm'");?>
                                         </div>
                                         <div class="col col-board window-full col-2" id="checking">
                                             <small style="margin-bottom:5px"><strong>Checking</strong></small>
