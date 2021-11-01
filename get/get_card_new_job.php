@@ -27,7 +27,8 @@ function get_card_new_job($status,$username){
           $subtask_count = $data_count['total'];
           if(isset($subtask_count) and $subtask_count <> 0 and $subtask_count <>null){
             echo '  <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')" style="margin-top:15px;'.$border.'">';
-              $query_child = "SELECT * FROM all_in_one_project.add_new_job  where parent = ".$row['id']." ORDER by ".$sort." ".$limit ;
+            echo ' <h6 class="card-title" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')"  style="font-size:14px"><strong style="color:red">NS-'.$row["id"].'</strong> '.$row["brand"].' '.$row["sku"].' SKUs </h6>';  
+            $query_child = "SELECT * FROM all_in_one_project.add_new_job  where parent = ".$row['id']." ORDER by ".$sort." ".$limit ;
               $result_child  = mysqli_query($con, $query_child);
               while($row_child = mysqli_fetch_array($result_child)) {
                 if($row_child["follow_assign_name"]==$username and strpos($status,$row_child["follow_assign_name"]) ){
@@ -100,5 +101,17 @@ function get_card_new_job($status,$username){
   
     } 
   mysqli_close($con);
+}
+function count_add_new_card($status,$username){
+  if($username==''){
+    $username=$_SESSION["username"];
+}
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+  mysqli_query($con, "SET NAMES 'utf8' ");
+  $query_count="SELECT count(*) as total from add_new_job where follow_assign_name = '".$username."' and ".$status;
+  $result_count = mysqli_query($con, $query_count);
+  $data_count=mysqli_fetch_assoc($result_count);
+  $subtask_count = $data_count['total'];
+  echo $subtask_count;
 }
   ?>
