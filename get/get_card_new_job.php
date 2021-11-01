@@ -40,8 +40,10 @@ function get_card_new_job($status,$username){
                     $launch_date=$row_child["launch_date"];
                   }
                          $current_day = date('Y-m-d');
-                 $date_diff = (strtotime($current_day) - strtotime($row_child["update_date"])) /  ( 60 * 60 * 24 );
+                  $up_date = date('Y-m-d', $row_child["update_date"]); 
+                 $date_diff = (strtotime($current_day) - strtotime($up_date )) /  ( 60 * 60 * 24 );
                  $date_diff_f = number_format($date_diff);
+                  
                  $text_launch_date = 'อัพเดตล่าสุดเมื่อ '.$date_diff_f.' วันที่แล้ว';
                   if( $date_diff>2){
                     $badge_update = '<span class="badge bg-secondary text-dark">'. $text_launch_date.'</span>';
@@ -79,9 +81,11 @@ function get_card_new_job($status,$username){
                   }else{
                     $launch_date=$row_child["launch_date"];
                   }
-                                   $current_day = date('Y-m-d');
-                 $date_diff = (strtotime($current_day) - strtotime($row_child["update_date"])) /  ( 60 * 60 * 24 );
+                                  $current_day = date('Y-m-d');
+                  $up_date = date('Y-m-d', $row_child["update_date"]); 
+                 $date_diff = (strtotime($current_day) - strtotime($up_date )) /  ( 60 * 60 * 24 );
                  $date_diff_f = number_format($date_diff);
+                  
                  $text_launch_date = 'อัพเดตล่าสุดเมื่อ '.$date_diff_f.' วันที่แล้ว';
                   if( $date_diff>2){
                     $badge_update = '<span class="badge bg-secondary text-dark">'. $text_launch_date.'</span>';
@@ -125,9 +129,11 @@ function get_card_new_job($status,$username){
         }else{
           $launch_date=$row["launch_date"];
         }
-             $current_day = date('Y-m-d');
-                 $date_diff = (strtotime($current_day) - strtotime($row_child["update_date"])) /  ( 60 * 60 * 24 );
+               $current_day = date('Y-m-d');
+                  $up_date = date('Y-m-d', $row_child["update_date"]); 
+                 $date_diff = (strtotime($current_day) - strtotime($up_date )) /  ( 60 * 60 * 24 );
                  $date_diff_f = number_format($date_diff);
+                  
                  $text_launch_date = 'อัพเดตล่าสุดเมื่อ '.$date_diff_f.' วันที่แล้ว';
                   if( $date_diff>2){
                     $badge_update = '<span class="badge bg-secondary text-dark">'. $text_launch_date.'</span>';
