@@ -436,7 +436,7 @@
                     </a>
                      <a class="nav-link" id="v-pills-fl_board-tab" data-toggle="pill" href="#v-pills-fl_board" role="tab"
                         aria-controls="v-pills-fl_board" onclick="updateURL('v-pills-fl_board');" aria-selected="false">
-                        <ion-icon style="color:white" name="grid-outline"></ion-icon> Follow-up Board <span class="badge rounded-pill bg-danger">New</span
+                        <ion-icon style="color:white" name="grid-outline"></ion-icon> Follow-up Board <span class="badge rounded-pill bg-danger">New</span>
                     </a>
                     <?php }?>
                     
