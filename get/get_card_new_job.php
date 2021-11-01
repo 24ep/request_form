@@ -22,14 +22,14 @@ function get_card_new_job($status,$username){
         $launch_date="no launch date";
       }
     echo    '
-    <div onclick="call_edit_add_new_modal('.$row['id'].')" style="margin-top:15px;'.$border.'">
-        <div class="body shadow" >
-            <h6 class="title" onclick="call_edit_add_new_modal('.$row['id'].')" style="font-size:14px"><strong style="color:red">NS-'.$row["id"].'</strong> '.$row["brand"].' '.$row["sku"].' SKUs </h6>
-            <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px" onclick="call_edit_add_new_modal('.$row['id'].')">
+    <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')" style="margin-top:15px;'.$border.'">
+        <div data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')"  class="card-body shadow" >
+            <h6 class="card-title" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')"  style="font-size:14px"><strong style="color:red">NS-'.$row["id"].'</strong> '.$row["brand"].' '.$row["sku"].' SKUs </h6>
+            <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')" >
               <div class="col-3">status : </div>
               <div class="col-9">'.$row["status"].' </div>
             </div>
-            <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px" onclick="call_edit_add_new_modal('.$row['id'].')" >
+            <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px"data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')"  >
               <div class="col-3">launch  : </div>
               <div class="col-9">'. $launch_date.' </div>
             </div>
