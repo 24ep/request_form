@@ -28,12 +28,12 @@ function get_card_new_job($status,$username){
           echo '<script>console.log("s-'.$subtask_count."p-".$row["id"].'")</script>';
           if(isset($subtask_count) and $subtask_count <> 0 and $subtask_count <>null){
             echo '<script>console.log("s-pass")</script>';
-            echo '  <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')" style="margin-top:15px;background:#d0cfcf;padding:5px;'.$border.'">';
-            echo ' <h6 class="card-title" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')"  style="font-size:14px"><strong style="color:red">NS-'.$row["id"].'</strong> '.$row["brand"].' '.$row["sku"].' SKUs </h6>';  
+            echo '  <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')" style="margin-top:15px;background:#c6c6c6;padding:5px;'.$border.'">';
+            echo ' <h6 class="card-title" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')"  style="font-size:14px"><strong style="color:red;margin-bottom:0px">NS-'.$row["id"].'</strong> '.$row["brand"].' '.$row["sku"].' SKUs </h6>';  
             $query_child = "SELECT * FROM all_in_one_project.add_new_job  where parent = ".$row['id']." ORDER by ".$sort." ".$limit ;
               $result_child  = mysqli_query($con, $query_child);
               while($row_child = mysqli_fetch_array($result_child)) {
-                if($row_child["follow_assign_name"]==$username and strpos($status,$row_child["status"]) ){
+                if($row_child["follow_assign_name"]==$username and (strpos($status,$row_child["status"])==TRUE or strpos($status,$row_child["status"])>0) ){
                   if($row_child["launch_date"]==""){
                     $launch_date="no launch date";
                   }else{
