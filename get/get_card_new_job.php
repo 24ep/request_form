@@ -40,8 +40,8 @@ function get_card_new_job($status,$username){
                     $launch_date=$row_child["launch_date"];
                   }
                          $current_day = date('Y-m-d');
-                  $up_date = date('Y-m-d', $row_child["update_date"]); 
-                 $date_diff = (strtotime($current_day) - strtotime($up_date )) /  ( 60 * 60 * 24 );
+                  $up_date = date('Y-m-d', strtotime($row_child["update_date"])); 
+                 $date_diff = (strtotime($current_day) - strtotime($up_date)) /  ( 60 * 60 * 24 );
                  $date_diff_f = number_format($date_diff);
                   
                  $text_launch_date = 'อัพเดตล่าสุดเมื่อ '.$date_diff_f.' วันที่แล้ว';
@@ -81,9 +81,9 @@ function get_card_new_job($status,$username){
                   }else{
                     $launch_date=$row_child["launch_date"];
                   }
-                                  $current_day = date('Y-m-d');
-                  $up_date = date('Y-m-d', $row_child["update_date"]); 
-                 $date_diff = (strtotime($current_day) - strtotime($up_date )) /  ( 60 * 60 * 24 );
+                                   $current_day = date('Y-m-d');
+                  $up_date = date('Y-m-d', strtotime($row_child["update_date"])); 
+                 $date_diff = (strtotime($current_day) - strtotime($up_date)) /  ( 60 * 60 * 24 );
                  $date_diff_f = number_format($date_diff);
                   
                  $text_launch_date = 'อัพเดตล่าสุดเมื่อ '.$date_diff_f.' วันที่แล้ว';
@@ -100,7 +100,6 @@ function get_card_new_job($status,$username){
                   }else{
                     $badge_ld = "";
                   }
-                 
                   echo    '
                   <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')" style="margin-top:15px;background:#e3e3e3;color:#c6c6c6;'.$border.'">
                       <div data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')"  class="card-body shadow" >
@@ -129,9 +128,9 @@ function get_card_new_job($status,$username){
         }else{
           $launch_date=$row["launch_date"];
         }
-               $current_day = date('Y-m-d');
-                  $up_date = date('Y-m-d', $row_child["update_date"]); 
-                 $date_diff = (strtotime($current_day) - strtotime($up_date )) /  ( 60 * 60 * 24 );
+                 $current_day = date('Y-m-d');
+                  $up_date = date('Y-m-d', strtotime($row_child["update_date"])); 
+                 $date_diff = (strtotime($current_day) - strtotime($up_date)) /  ( 60 * 60 * 24 );
                  $date_diff_f = number_format($date_diff);
                   
                  $text_launch_date = 'อัพเดตล่าสุดเมื่อ '.$date_diff_f.' วันที่แล้ว';
