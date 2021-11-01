@@ -39,7 +39,7 @@ function get_card_new_job($status,$username){
                   }else{
                     $launch_date=$row_child["launch_date"];
                   }
-                         $current_day = date('Y-m-d');
+                        $current_day = date('Y-m-d');
                   $up_date = date('Y-m-d', strtotime($row_child["update_date"])); 
                  $date_diff = (strtotime($current_day) - strtotime($up_date)) /  ( 60 * 60 * 24 );
                  $date_diff_f = number_format($date_diff);
@@ -81,7 +81,7 @@ function get_card_new_job($status,$username){
                   }else{
                     $launch_date=$row_child["launch_date"];
                   }
-                                   $current_day = date('Y-m-d');
+                       $current_day = date('Y-m-d');
                   $up_date = date('Y-m-d', strtotime($row_child["update_date"])); 
                  $date_diff = (strtotime($current_day) - strtotime($up_date)) /  ( 60 * 60 * 24 );
                  $date_diff_f = number_format($date_diff);
@@ -129,7 +129,7 @@ function get_card_new_job($status,$username){
           $launch_date=$row["launch_date"];
         }
                  $current_day = date('Y-m-d');
-                  $up_date = date('Y-m-d', strtotime($row_child["update_date"])); 
+                  $up_date = date('Y-m-d', strtotime($row["update_date"])); 
                  $date_diff = (strtotime($current_day) - strtotime($up_date)) /  ( 60 * 60 * 24 );
                  $date_diff_f = number_format($date_diff);
                   
@@ -139,10 +139,10 @@ function get_card_new_job($status,$username){
                   }else{
                     $badge_update = "";
                   }
-          $date_diff_ld = (strtotime($current_day) - strtotime($row_child["launch_date"])) /  ( 60 * 60 * 24 );
+          $date_diff_ld = (strtotime($current_day) - strtotime($row["launch_date"])) /  ( 60 * 60 * 24 );
           $date_diff_ld_f = number_format($date_diff_ld);
                  $text_ld = 'อีก '.$date_diff_ld_f.' วัน launch date นะ เลื่อนไหม ?';
-               if($date_diff_ld<4 and $row_child["launch_date"]<>""){
+               if($date_diff_ld<4 and $row["launch_date"]<>""){
                     $badge_ld = '<span class="badge bg-warning text-dark">'. $text_ld.'</span>';
                   }else{
                     $badge_ld = "";
