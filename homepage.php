@@ -845,10 +845,7 @@
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
                                     <div class="row">
-                                        <div class="col col-board window-full col" id="col_pending">
-                                            <small style="margin-bottom:5px"><strong>Unassign</strong></small>
-                                            <?php echo get_card_new_job("status = 'unassign'",$_GET["username"]);?>
-                                        </div>
+                    
                                         <div class="col col-board window-full col" id="pending">
                                             <small style="margin-bottom:5px"><strong>Pending + Waiting Confirm</strong></small>
                                             <?php echo get_card_new_job("status = 'pending' or status = 'waiting confirm'",$_GET["username"]);?>

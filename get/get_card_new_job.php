@@ -22,7 +22,7 @@ function get_card_new_job($status,$username){
         $launch_date="no launch date";
       }
     echo    '
-    <div class="" id="card_fl_'.$row["id"].'" onclick="call_edit_add_new_modal('.$row['id'].')" style="margin-top:15px;'.$border.'">
+    <div onclick="call_edit_add_new_modal('.$row['id'].')" style="margin-top:15px;'.$border.'">
         <div class="card-body shadow" >
             <h6 class="card-title" onclick="call_edit_add_new_modal('.$row['id'].')" style="font-size:14px"><strong style="color:red">NS-'.$row["id"].'</strong> '.$row["brand"].' '.$row["sku"].' SKUs </h6>
             <div class="row" style="margin-bottom:3px;margin-top:3px;color:gray;font-size:12px" onclick="call_edit_add_new_modal('.$row['id'].')">
