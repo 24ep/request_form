@@ -519,7 +519,7 @@ label#label_file_cme {
                                     </div>
                                     <div class="col-4">
                                         <div id="itemize_stamp_respond">
-                                            <?php echo "<small>Itemize only !</small>" ?>
+                                       
                                         </div>
                                     </div>
                                 </div>
