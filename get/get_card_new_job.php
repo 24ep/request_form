@@ -126,6 +126,11 @@ function sum_add_new_card($status,$username){
   $result_count = mysqli_query($con, $query_count);
   $data_count=mysqli_fetch_assoc($result_count);
   $subtask_count = $data_count['total'];
-  echo $subtask_count;
+  if($subtask_count>0){
+    echo number_format($subtask_count);
+  }else{
+    echo 0;
+  }
+  
 }
   ?>
