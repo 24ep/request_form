@@ -12,7 +12,7 @@ function get_card_new_job($status,$username){
   }else{
     $sort = 'id ASC';
   }
-  $query = "SELECT * FROM all_in_one_project.add_new_job  where follow_assign_name = ".$username." and ".$status." ORDER by ".$sort." ".$limit ;
+  $query = "SELECT * FROM all_in_one_project.add_new_job  where follow_assign_name = '".$username."' and ".$status." ORDER by ".$sort." ".$limit ;
   $result = mysqli_query($con, $query);
   $result_count = mysqli_query($con, $query_count);
      while($row = mysqli_fetch_array($result)) {
