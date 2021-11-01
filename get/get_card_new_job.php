@@ -12,7 +12,7 @@ function get_card_new_job($status,$username){
   }else{
     $sort = 'launch_date ASC';
   }
-  $query = "SELECT * FROM all_in_one_project.add_new_job  where status not in ('accepted','cancel','cancel - confirm not for sale','cancel - already content') ORDER by ".$sort." ".$limit ;
+  $query = "SELECT * FROM all_in_one_project.add_new_job  where (".$status." and follow_assign_name = '".$username."') or status = 'none' ORDER by ".$sort." ".$limit ;
   echo '<script>console.log("'.$query.'")</script>';
   $result = mysqli_query($con, $query);
   $result_count = mysqli_query($con, $query_count);
@@ -80,6 +80,7 @@ function get_card_new_job($status,$username){
         }else{
           $launch_date=$row["launch_date"];
         }
+        
         echo    '
         <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')" style="margin-top:15px;'.$border.'">
             <div data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row['id'].')"  class="card-body shadow" >
