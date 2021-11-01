@@ -1281,6 +1281,56 @@ function select_current_tab(selecttab) {
             .classList
             .remove('show');
     }
+    else if (selecttab == "v-pills-fl_board") {
+        document
+            .getElementById("v-pills-dashboard-tab")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-cr-tab")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-fl_board-tab")
+            .classList
+            .add('active');
+        document
+            .getElementById("v-pills-request_list-tab")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-dashboard")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-cr")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-fl_board")
+            .classList
+            .add('active');
+        document
+            .getElementById("v-pills-request_list")
+            .classList
+            .remove('active');
+        document
+            .getElementById("v-pills-dashboard")
+            .classList
+            .remove('show');
+        document
+            .getElementById("v-pills-cr")
+            .classList
+            .remove('show');
+        document
+            .getElementById("v-pills-request_list")
+            .classList
+            .remove('show');
+        document
+            .getElementById("v-pills-fl_board")
+            .classList
+            .add('show');
+    }
 }
 
 function open_ticket_detail(id) {
