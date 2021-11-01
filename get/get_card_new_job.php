@@ -50,7 +50,7 @@ function get_card_new_job($status,$username){
                   }else{
                     $badge_update = "";
                   }
-          $date_diff_ld = (strtotime($current_day) - strtotime($row_child["launch_date"])) /  ( 60 * 60 * 24 );
+          $date_diff_ld = (  strtotime($row_child["launch_date"])-strtotime($current_day)) /  ( 60 * 60 * 24 );
           $date_diff_ld_f = number_format($date_diff_ld);
                  $text_ld = 'อีก '.$date_diff_ld_f.' วัน launch date นะ เลื่อนไหม ?';
                if($date_diff_ld<4 and $row_child["launch_date"]<>""){
@@ -92,7 +92,7 @@ function get_card_new_job($status,$username){
                   }else{
                     $badge_update = "";
                   }
-          $date_diff_ld = (strtotime($current_day) - strtotime($row_child["launch_date"])) /  ( 60 * 60 * 24 );
+          $date_diff_ld = (strtotime($row_child["launch_date"])-strtotime($current_day)) /  ( 60 * 60 * 24 );
           $date_diff_ld_f = number_format($date_diff_ld);
                  $text_ld = 'อีก '.$date_diff_ld_f.' วัน launch date นะ เลื่อนไหม ?';
                if($date_diff_ld<4 and $row_child["launch_date"]<>""){
@@ -139,7 +139,7 @@ function get_card_new_job($status,$username){
                   }else{
                     $badge_update = "";
                   }
-          $date_diff_ld = (strtotime($current_day) - strtotime($row["launch_date"])) /  ( 60 * 60 * 24 );
+          $date_diff_ld = (strtotime($row["launch_date"])-strtotime($current_day)) /  ( 60 * 60 * 24 );
           $date_diff_ld_f = number_format($date_diff_ld);
                  $text_ld = 'อีก '.$date_diff_ld_f.' วัน launch date นะ เลื่อนไหม ?';
                if($date_diff_ld<4 and $row["launch_date"]<>""){
