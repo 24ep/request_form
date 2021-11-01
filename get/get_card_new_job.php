@@ -12,7 +12,7 @@ function get_card_new_job($status,$username){
   }else{
     $sort = 'launch_date ASC';
   }
-  $query = "SELECT * FROM all_in_one_project.add_new_job  ORDER by ".$sort." ".$limit ;
+  $query = "SELECT * FROM all_in_one_project.add_new_job  where status not in ('accepted','cancel','cancel - confirm not for sale','cancel - already content') ORDER by ".$sort." ".$limit ;
   echo '<script>console.log("'.$query.'")</script>';
   $result = mysqli_query($con, $query);
   $result_count = mysqli_query($con, $query_count);
