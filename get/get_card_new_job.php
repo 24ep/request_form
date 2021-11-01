@@ -18,14 +18,14 @@ function get_card_new_job($status,$username){
      while($row = mysqli_fetch_array($result)) {
       $border =   'border-color: transparent;';
     echo    '
-    <div class="card" id="card_fl_'.$row["id"].'" style="margin-top:15px;'.$border.'">
+    <div class="card" id="card_fl_'.$row["id"].'" onclick="call_edit_add_new_modal('.$row['id'].')" style="margin-top:15px;'.$border.'">
         <div class="card-body shadow" >
-            <h6 class="card-title" style="font-size:14px"><strong style="color:red">NS-'.$row["id"].'</strong> '.$row["brand"].' '.$row["sku"].' SKUs </h6>
-            <div class="row">
+            <h6 class="card-title" onclick="call_edit_add_new_modal('.$row['id'].')" style="font-size:14px"><strong style="color:red">NS-'.$row["id"].'</strong> '.$row["brand"].' '.$row["sku"].' SKUs </h6>
+            <div class="row" onclick="call_edit_add_new_modal('.$row['id'].')">
               <div class="col" style="color:gray;font-size:12px" >status : </div>
               <div class="col">'.$row["status"].' </div>
             </div>
-            <div class="row" style="color:gray;font-size:12px">
+            <div class="row" onclick="call_edit_add_new_modal('.$row['id'].')" style="color:gray;font-size:12px">
               <div class="col">launch  : </div>
               <div class="col">'.$row["launch_date"].' </div>
             </div>
