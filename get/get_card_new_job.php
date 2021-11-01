@@ -23,12 +23,12 @@ function get_card_new_job($status,$username){
         <div class="card-body shadow" >
             <h6 class="card-title" onclick="call_edit_add_new_modal('.$row['id'].')" style="font-size:14px"><strong style="color:red">NS-'.$row["id"].'</strong> '.$row["brand"].' '.$row["sku"].' SKUs </h6>
             <div class="row" style="margin-bottom:3px;margin-top:3px" onclick="call_edit_add_new_modal('.$row['id'].')">
-              <div class="col-2" style="color:gray;font-size:12px" >status : </div>
-              <div class="col-10">'.$row["status"].' </div>
+              <div class="col-3" style="color:gray;font-size:12px" >status : </div>
+              <div class="col-9">'.$row["status"].' </div>
             </div>
             <div class="row" style="margin-bottom:3px;margin-top:3px" onclick="call_edit_add_new_modal('.$row['id'].')" style="color:gray;font-size:12px">
-              <div class="col-2">launch  : </div>
-              <div class="col-10">'.$row["launch_date"].' </div>
+              <div class="col-3">launch  : </div>
+              <div class="col-9">'.$row["launch_date"].' </div>
             </div>
         </div>
     </div>   
