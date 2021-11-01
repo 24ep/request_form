@@ -4,6 +4,7 @@
         Header("Location: login_page.php");
     }else{
     include('get/get_card_content_request.php'); 
+    include('get/get_card_new_job.php'); 
     include_once('get/get_count_status.php');
 
     function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
@@ -431,7 +432,14 @@
                     <?php if(strpos($_SESSION["department"],'Admin')!==false){?>
                     <a class="nav-link" id="v-pills-cr_admin-tab" data-toggle="pill" href="#v-pills-cr_admin" role="tab"
                         aria-controls="v-pills-cr_admin" onclick="updateURL('v-pills-cr_admin');" aria-selected="false">
-                        <ion-icon stle="color:white" name="grid-outline"></ion-icon> CR Board
+                        <ion-icon style="color:white" name="grid-outline"></ion-icon> CR Board
+                    </a>
+                    <?php }?>
+                    
+                    <?php if(strpos($_SESSION["username"],'poojaroonwit')!==false){?>
+                    <a class="nav-link" id="v-pills-fl_board-tab" data-toggle="pill" href="#v-pills-fl_board" role="tab"
+                        aria-controls="v-pills-fl_board" onclick="updateURL('v-pills-fl_board');" aria-selected="false">
+                        <ion-icon style="color:white" name="grid-outline"></ion-icon> Follow-up Board
                     </a>
                     <?php }?>
                     <hr style="color: #eee!important;">
@@ -825,6 +833,37 @@
                                             ondrop="drop_card_cr(event,'Close')" ondragover="allowDrop(event)">
                                             <small style="margin-bottom:5px"><strong>Close (latest 5)</strong></small>
                                             <?php echo get_card("Close");?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-fl_board" role="tabpanel"
+                        aria-labelledby="v-pills-fl_board-tab">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="row align-items-center" style="padding:20px">
+                                <div class="container ">
+                                    <div class="row">
+                                        <div class="col col-board window-full col-2" id="col_pending">
+                                            <small style="margin-bottom:5px"><strong>Unassign</strong></small>
+                                            <?php echo get_card_new_job("status = 'unassign'");?>
+                                        </div>
+                                        <div class="col col-board window-full col-2" id="pending">
+                                            <small style="margin-bottom:5px"><strong>Pending + Waiting Confirm</strong></small>
+                                            <?php echo get_cget_card_new_jobard("status = 'pending' or status = 'waiting confirm'");?>
+                                        </div>
+                                        <div class="col col-board window-full col-2" id="checking">
+                                            <small style="margin-bottom:5px"><strong>Checking</strong></small>
+                                            <?php echo get_card_new_job("status = 'checking'");?>
+                                        </div>
+                                        <div class="col col-board window-full col-2" id="waiting">
+                                            <small style="margin-bottom:5px"><strong>Waiting + Send mail</strong></small>
+                                            <?php echo get_card_new_job("status = 'waiting buyer' or status = 'waiting data' or status = 'waiting image' or status like '%mail%'");?>
+                                        </div>
+                                        <div class="col col-board window-full col-2" id="col_wait_cto">
+                                            <small style="margin-bottom:5px"><strong>Confirm to be new sku + need update contact</strong></small>
+                                            <?php echo get_card_new_job("status = 'confirm to be new sku' or status = 'need update contact'");?>
                                         </div>
                                     </div>
                                 </div>
