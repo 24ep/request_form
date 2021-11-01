@@ -845,23 +845,23 @@
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
                                     <div class="row">
-                                        <div class="col col-board window-full col-2" id="col_pending">
+                                        <div class="col col-board window-full col" id="col_pending">
                                             <small style="margin-bottom:5px"><strong>Unassign</strong></small>
                                             <?php echo get_card_new_job("status = 'unassign'");?>
                                         </div>
-                                        <div class="col col-board window-full col-2" id="pending">
+                                        <div class="col col-board window-full col" id="pending">
                                             <small style="margin-bottom:5px"><strong>Pending + Waiting Confirm</strong></small>
                                             <?php echo get_card_new_job("status = 'pending' or status = 'waiting confirm'");?>
                                         </div>
-                                        <div class="col col-board window-full col-2" id="checking">
+                                        <div class="col col-board window-full col" id="checking">
                                             <small style="margin-bottom:5px"><strong>Checking</strong></small>
                                             <?php echo get_card_new_job("status = 'checking'");?>
                                         </div>
-                                        <div class="col col-board window-full col-2" id="waiting">
+                                        <div class="col col-board window-full col" id="waiting">
                                             <small style="margin-bottom:5px"><strong>Waiting + Send mail</strong></small>
                                             <?php echo get_card_new_job("status = 'waiting buyer' or status = 'waiting data' or status = 'waiting image' or status like '%mail%'");?>
                                         </div>
-                                        <div class="col col-board window-full col-2" id="col_wait_cto">
+                                        <div class="col col-board window-full col" id="more">
                                             <small style="margin-bottom:5px"><strong>Confirm to be new sku + need update contact</strong></small>
                                             <?php echo get_card_new_job("status = 'confirm to be new sku' or status = 'need update contact'");?>
                                         </div>
