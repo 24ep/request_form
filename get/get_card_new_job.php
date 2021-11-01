@@ -55,7 +55,11 @@ function get_card_new_job($status,$username){
                   </div>   
                   ';
                 }else{
-               
+                  if($row_child["launch_date"]==""){
+                    $launch_date="no launch date";
+                  }else{
+                    $launch_date=$row_child["launch_date"];
+                  }
                   echo    '
                   <div class="card" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')" style="margin-top:15px;background:#e3e3e3;color:#c6c6c6;'.$border.'">
                       <div data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row_child['id'].')"  class="card-body shadow" >
