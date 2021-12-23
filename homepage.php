@@ -378,6 +378,14 @@
     </head>
 
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();">
+        
+        <nav class="navbar sticky-top navbar-danger bg-danger">
+          <marquee>
+           <span class="navbar-text" >
+                แจ้งปิดรับการส่งสร้างสินค้าใหม่ สำหรับปี 2021 ตั้งแต่วันที่ 24 ธันวาคม 2021 - 4 มกราคม 2022 , สำหรับ content request ยังสามารถส่งได้ตามปกติ หากมีข้อสงสัย สามารถสอบถามได้จากน้อง content follow-up และ studio ได้เลยครับ
+          </span>
+          </marquee>
+         </nav>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140386041-2"></script>
         <script>
