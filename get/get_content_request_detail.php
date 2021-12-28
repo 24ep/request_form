@@ -103,10 +103,10 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
            
               $loop_in_null=true;
             }
-              if($row[$col] <> '' )
+              if($row[$col] <> '' and  $row[$col] <> null)
               {
                   if($select_option==$row[$col]){
-                    $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
+                       $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
                   }else{
                       $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
                   }
@@ -228,7 +228,7 @@ $result = mysqli_query($con, $query);
         echo'
         <div class="col-5" >
         <div style="margin-left: 10px;margin-right: 10px;">
-        <small style="display:block;font-size: xxx-large;"><strong style="color:gray">Ticket Status</strong></small>
+        <small style="display:block;"><strong style="color:gray">Ticket Status</strong></small>
         ';
         $cr_edit_status = "'cr_edit_status'";
         $cr_edit_case_officer = "'cr_edit_case_officer'";
@@ -246,7 +246,7 @@ $result = mysqli_query($con, $query);
         
 echo "<script>console.log('".$_SESSION["department"]."');</script>";
         if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
-            echo '<select class="form-select form-select-lg mt-2" id="cr_edit_status" name="cr_edit_status" onchange="update_cr_detail('.$id.','.$cr_edit_status.')" style="border: 0px;font-weight: bold;" aria-label=".form-select-lg example">
+            echo '<select class="form-select form-select-lg mt-2" id="cr_edit_status" name="cr_edit_status" onchange="update_cr_detail('.$id.','.$cr_edit_status.')" style="border: 0px;font-weight: bold;font-size: xxx-large;" aria-label=".form-select-lg example">
             '.$cr_op.'
             </select>';
             echo '
