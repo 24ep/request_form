@@ -75,7 +75,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
    $cl_edit_sku = "'cl_edit_sku'";
    $cl_edit_update_due_reason= "'cl_edit_update_due_reason'";
    $cl_edit_update_type= "'cl_edit_update_type'";
-    if(emptry($result)){
+    if(empty($result)){
       echo '<div>no have sub task avalible for now</div>';
     }
      while($row = mysqli_fetch_array($result)) {
