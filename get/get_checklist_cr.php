@@ -75,6 +75,9 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
    $cl_edit_sku = "'cl_edit_sku'";
    $cl_edit_update_due_reason= "'cl_edit_update_due_reason'";
    $cl_edit_update_type= "'cl_edit_update_type'";
+    if(isset($result))){
+      echo '<div>no have sub task avalible for now</div>';
+    }
      while($row = mysqli_fetch_array($result)) {
         echo '
        <li class="mb-3 row" id="checklist_cr">
@@ -106,7 +109,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                   </select>
                 </div>';
         
-                if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
+                if(strpos($_SESSION["department"],"Content")!==false){
                   echo'
                 <div class="col" style="padding: 3px;">
                   <select id="cl_edit_update_due_reason_'.$row["id"].'" name="cl_edit_update_due_reason_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_update_due_reason.')" class="form-select form-select-sm" aria-label="Default select example">
