@@ -254,16 +254,22 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             </select>';
             echo '
             <hr>
-            <div class="row">
-              <div class="col" style=" padding-left: 25px;">Ticket Owner</div>
-              <div class="col">
+            <div class="row" >
+              <div class="col" style=" padding-left: 25px;    text-align-last: left;"><strong>Ticket Owner</strong></div>|
+              <div class="col" style=" padding-left: 25px;    text-align-last: right;">>
               <select class="form-select form-select-sm"  id="cr_edit_case_officer" name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')"  style="border: 0px;font-weight: bold;" aria-label=".form-select-lg example">
               '.$username_op.'
               </select>
               </div>
             </div>';
             echo '
-            <div class="row">
+            <div class="row" style="background: #2eff9f;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    margin-top: 0px;
+    text-align: center;
+    font-weight: 900;">
               <div class="col" style=" padding-left: 25px;">'.$case_name."Tell : ".$office_tell.'</div>
             </div>
             <hr>';
@@ -283,13 +289,13 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             </div></div>
               
               <ul id="checklist_box" style="padding: 5px;">
-                <li class="mb-3 row">
-                    <div class="col-2" style="padding:3px;"> <strong>assinee</strong></div>
-                    <div class="col-2" style="padding:3px;"> <strong>total sku</strong></div>
-                    <div class="col-2" style="padding:3px;"> <strong>status</strong></div>
-                    <div class="col-2" style="padding:3px;"> <strong>type</strong></div>
-                    <div class="col-2" style="padding:3px;"> <strong>Reason</strong></div>
-                    <div class="col-2" style="padding:3px;"> <strong>Remove</strong></div>
+                <li class="mb-1 row">
+                    <div class="col-2" style="padding:3px;"> <strong>Assinee</strong></div>
+                    <div class="col-2" style="padding:3px;"> <strong>Total SKUs</strong></div>
+                    <div class="col" style="padding:3px;"> <strong>Status</strong></div>
+                    <div class="col" style="padding:3px;"> <strong>Type</strong></div>
+                    <div class="col" style="padding:3px;"> <strong>Reason</strong></div>
+                    <div class="col-1" style="padding:3px;"> <strong>Remove</strong></div>
                 </li>
                <?php     include('http://content-service-gate.cdsecommercecontent.ga/get/get_checklist_cr.php?id='.$id); ?>
               </ul>
