@@ -370,8 +370,13 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             <textarea id="cr_edit_note" name="cr_edit_note" onchange="update_cr_detail('.$id.','.$cr_edit_note.')"  class="form-control"  rows="5">'.$note.'</textarea>
             </div>';
         }else{
-           echo '<h4 style="margin:10px;padding-left: 0.6rem;font-size: xxx-large;">'.$status.'</h4>'; 
+           echo '<h4 style="font-weight: 900;padding-left: 0rem;font-size: xxx-large;">'.$status.'</h4>'; 
                ?>
+                 <hr>
+                <div class="col">
+                <strong>Task list</strong><br>
+                <small>Sub task of ticket (for staff)</small>
+                </div>
               <ul id="checklist_box" style="padding: 5px;">
                    <li class="mb-1 row">
                     <div class="col-2" style="padding:3px;"> <strong>Assinee</strong></div>
