@@ -283,13 +283,13 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             </div></div>
               
               <ul id="checklist_box" style="padding: 5px;">
-                <li calss="ms-3 row">
-                    <div class="col-2" style="3"> <strong>assinee</strong></div>
-                    <div class="col-2" style="3"> <strong>total sku</strong></div>
-                    <div class="col-2" style="3"> <strong>status</strong></div>
-                    <div class="col-2" style="3"> <strong>type</strong></div>
-                    <div class="col-2" style="3"> <strong>Reason</strong></div>
-                    <div class="col-2" style="3"> <strong>Remove</strong></div>
+                <li calss="mb-3 row">
+                    <div class="col-2" style="padding:3px;"> <strong>assinee</strong></div>
+                    <div class="col-2" style="padding:3px;"> <strong>total sku</strong></div>
+                    <div class="col-2" style="padding:3px;"> <strong>status</strong></div>
+                    <div class="col-2" style="padding:3px;"> <strong>type</strong></div>
+                    <div class="col-2" style="padding:3px;"> <strong>Reason</strong></div>
+                    <div class="col-2" style="padding:3px;"> <strong>Remove</strong></div>
                 </li>
                <?php     include('http://content-service-gate.cdsecommercecontent.ga/get/get_checklist_cr.php?id='.$id); ?>
               </ul>
