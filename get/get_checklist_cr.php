@@ -1,6 +1,6 @@
 <?php
   session_start();
-$department==$_GET["department"];
+$department=$_GET["department"];
 function return_s_select_box_cl_cr($current_value,$attr_id){
     session_start();
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
