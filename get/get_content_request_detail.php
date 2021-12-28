@@ -108,7 +108,7 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
                   if($select_option==$row[$col]){
                        $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
                   }else{
-                      $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
+                     // $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
                   }
               }
       }
