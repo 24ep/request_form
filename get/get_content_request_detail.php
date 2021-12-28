@@ -178,10 +178,7 @@ $result = mysqli_query($con, $query);
       }
       // $office_tell = $row['office_tell'];
     }
-    if($case_nickname==""){
-      $case_nickname = "in queue";
-      $office_tell  = "in queue";
-    }
+  
     echo ' 
     <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -256,23 +253,37 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             <hr>
             <div class="row" >
               <div class="col" style=" padding-left: 25px;    text-align-last: left;"><strong>Ticket Owner</strong></div>|
-              <div class="col" style=" padding-left: 25px;    text-align-last: right;">>
+              <div class="col" style=" padding-left: 25px;    text-align-last: right;">
               <select class="form-select form-select-sm"  id="cr_edit_case_officer" name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')"  style="border: 0px;font-weight: bold;" aria-label=".form-select-lg example">
               '.$username_op.'
               </select>
               </div>
             </div>';
-            echo '
-            <div class="row" style="background: #2eff9f;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 5px;
-    margin-top: 0px;
-    text-align: center;
-    font-weight: 900;">
-              <div class="col" style=" padding-left: 25px;">'.$case_name."Tell : ".$office_tell.'</div>
-            </div>
-            <hr>';
+            if($case_name==null and $office_tell == null){
+             echo '
+                <div class="row" style="background: #d8ede4;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border-radius: 5px;
+                    margin-top: 0px;
+                    text-align: center;
+                    font-weight: 900;">
+                  <div class="col" style=" padding-left: 25px;">this ticket still in queue</div>
+                </div>';
+            }
+           else{
+                echo '
+                <div class="row" style="background: #2eff9f;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border-radius: 5px;
+                    margin-top: 0px;
+                    text-align: center;
+                    font-weight: 900;">
+                  <div class="col" style=" padding-left: 25px;">'.$case_name." Tell : ".$office_tell.'</div>
+                </div>';
+           }
+            echo '<hr>';
             // end contact
             // ---check list
              ?>
