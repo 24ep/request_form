@@ -67,7 +67,6 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
             if($col=="store" or $col=="itemmize_type" or $col=="product_website"){
               $array_store = explode(', ', $select_option);
               $duplicate_op = false;
-              $loop_in_null = false;
               foreach($array_store as $store)
               {
                 if($row[$col] <> '' ) {
@@ -93,10 +92,12 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
               }
             }
           }else{
-            $loop_in_null=false;
-            if($loop_in_null==false){
+      
+            if($loop_in_null<>true){
               if(isset($option_set)){
                 $option_set .= '<option value=""></option>';
+              }else{
+                $option_set = '<option value=""></option>';
               }
            
               $loop_in_null=true;
