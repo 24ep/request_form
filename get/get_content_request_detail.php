@@ -273,15 +273,24 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
          
              <div class="row">
                 <div class="col">
-                    <strong>Task list</strong>
+                    <strong>Task list</strong><br>
+                    <small>Create a task for record action of ticket</small>
                 </div>
                 <div class="col"><div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">
-                            <button class="btn btn-primary btn-sm" onclick="add_cr_list(<?php echo $id; ?>)"><ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon> ADD TASK</button>
+                 <button class="btn btn-primary btn-sm" onclick="add_cr_list(<?php echo $id; ?>)"><ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon> ADD TASK</button>
                 </div>
 
             </div></div>
-           
+              
               <ul id="checklist_box" style="padding: 5px;">
+                <li calss="ms-3 row">
+                    <div class="col-2" style="3"> <strong>assinee</strong></div>
+                    <div class="col-2" style="3"> <strong>total sku</strong></div>
+                    <div class="col-2" style="3"> <strong>status</strong></div>
+                    <div class="col-2" style="3"> <strong>type</strong></div>
+                    <div class="col-2" style="3"> <strong>Reason</strong></div>
+                    <div class="col-2" style="3"> <strong>Remove</strong></div>
+                </li>
                <?php     include('http://content-service-gate.cdsecommercecontent.ga/get/get_checklist_cr.php?id='.$id); ?>
               </ul>
          
