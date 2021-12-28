@@ -71,7 +71,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
    $query_count = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where ticket_id =".$ticket_id;
    $result = mysqli_query($con, $query);
    $result_count = mysqli_query($con, $query_count);
-    $count_id=mysql_fetch_assoc($result_count);
+    $count_id=mysqli_fetch_assoc($result_count);
     $count_id_fr=$count_id['count_id'];
    $cl_edit_case_officer = "'cl_edit_case_officer'";
    $cl_edit_status = "'cl_edit_status'";
