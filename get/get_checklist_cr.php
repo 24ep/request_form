@@ -1,5 +1,6 @@
 <?php
   session_start();
+$department==$_GET["department"];
 function return_s_select_box_cl_cr($current_value,$attr_id){
     session_start();
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
@@ -85,7 +86,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
     border-radius: 5px;">
     no have sub task avalible for now</div>';
     }else{
-    if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==''){
+    if(strpos($department,"Content")!==false or $department==''){
       echo '<li class="mb-1 row">
       <div class="col-2" style="padding:3px;"> <strong>Assinee</strong></div>
       <div class="col-2" style="padding:3px;"> <strong>Total SKUs</strong></div>
@@ -138,7 +139,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                   </select>
                 </div>';
         
-                if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]=='' ){
+                if(strpos($department,"Content")!==false or $department=='' ){
                   echo'
                 <div class="col" style="padding: 3px;">
                   <select id="cl_edit_update_due_reason_'.$row["id"].'" name="cl_edit_update_due_reason_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_update_due_reason.')" class="form-select form-select-sm" aria-label="Default select example">
