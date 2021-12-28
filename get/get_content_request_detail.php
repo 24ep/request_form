@@ -245,14 +245,14 @@ $result = mysqli_query($con, $query);
         
 echo "<script>console.log('".$_SESSION["department"]."');</script>";
         if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
-            echo '<select class="form-select form-select-lg mt-2" id="cr_edit_status" name="cr_edit_status" onchange="update_cr_detail('.$id.','.$cr_edit_status.')" style="border: 0px;font-weight: bold;font-size: xxx-large;" aria-label=".form-select-lg example">
+            echo '<select class="form-select form-select-lg mt-2" id="cr_edit_status" name="cr_edit_status" onchange="update_cr_detail('.$id.','.$cr_edit_status.')" style="border: 0px;font-weight: bold;padding-left: 0.6rem;font-size: xxx-large;" aria-label=".form-select-lg example">
             '.$cr_op.'
             </select>';
             echo '
-            <hr>
+      
             <div class="row" >
-              <div class="col" style=" padding-left: 25px;    text-align-last: left;"><strong>Ticket Owner</strong></div>|
-              <div class="col" style=" padding-left: 25px;    text-align-last: right;">
+              <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>Ticket Owner</strong></div>|
+              <div class="col" style=" padding-left: 25px;text-align-last: right;">
               <select class="form-select form-select-sm"  id="cr_edit_case_officer" name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')"  style="border: 0px;font-weight: bold;" aria-label=".form-select-lg example">
               '.$username_op.'
               </select>
@@ -266,7 +266,8 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                     border-radius: 5px;
                     margin-top: 0px;
                     text-align: center;
-                    font-weight: 900;">
+                    font-weight: 900;
+                    margin: 10px;">
                   <div class="col" style=" padding-left: 25px;">this ticket still in queue</div>
                 </div>';
             }
@@ -278,7 +279,8 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                     border-radius: 5px;
                     margin-top: 0px;
                     text-align: center;
-                    font-weight: 900;">
+                    font-weight: 900;
+                    margin: 10px;">
                   <div class="col" style=" padding-left: 25px;">'.$case_name." Tell : ".$office_tell.'</div>
                 </div>';
            }
