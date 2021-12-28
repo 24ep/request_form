@@ -383,8 +383,6 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                     <div class="col-2" style="padding:3px;"> <strong>Total SKUs</strong></div>
                     <div class="col" style="padding:3px;"> <strong>Status</strong></div>
                     <div class="col" style="padding:3px;"> <strong>Type</strong></div>
-                    <div class="col" style="padding:3px;"> <strong>Reason</strong></div>
-                    <div class="col-1" style="padding:3px;"> <strong>Remove</strong></div>
                 </li>
                <?php     include('http://content-service-gate.cdsecommercecontent.ga/get/get_checklist_cr.php?id='.$id); ?>
               </ul>
