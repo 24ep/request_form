@@ -78,7 +78,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
    $cl_edit_sku = "'cl_edit_sku'";
    $cl_edit_update_due_reason= "'cl_edit_update_due_reason'";
    $cl_edit_update_type= "'cl_edit_update_type'";
-    if(  $count_id_f == 0 or  $count_id_f == null or  $count_id_f =='' ){
+    if(  $count_id_fr == 0 or  $count_id_fr == null or  $count_id_fr =='' ){
       echo '<div style="    text-align-last: center;
     color: #bbbbbb;
     border: solid #bbbbbb 1px;
