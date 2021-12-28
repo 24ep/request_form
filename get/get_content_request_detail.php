@@ -231,7 +231,7 @@ $result = mysqli_query($con, $query);
         echo'
         <div class="col-5" >
         <div style="margin-left: 10px;margin-right: 10px;">
-        <small style="display:block"><strong style="color:gray">Ticket Status</strong></small>
+        <small style="display:block;font-size: xxx-large;"><strong style="color:gray">Ticket Status</strong></small>
         ';
         $cr_edit_status = "'cr_edit_status'";
         $cr_edit_case_officer = "'cr_edit_case_officer'";
