@@ -283,7 +283,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             </div></div>
               
               <ul id="checklist_box" style="padding: 5px;">
-                <li calss="mb-3 row">
+                <li class="mb-3 row">
                     <div class="col-2" style="padding:3px;"> <strong>assinee</strong></div>
                     <div class="col-2" style="padding:3px;"> <strong>total sku</strong></div>
                     <div class="col-2" style="padding:3px;"> <strong>status</strong></div>
