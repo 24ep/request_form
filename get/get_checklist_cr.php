@@ -68,6 +68,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
    mysqli_query($con, "SET NAMES 'utf8' ");
    $query = "SELECT * FROM all_in_one_project.checklist_of_content_request where ticket_id =".$ticket_id;
+   $query_count = "SELECT count(id) FROM all_in_one_project.checklist_of_content_request where ticket_id =".$ticket_id;
    $result = mysqli_query($con, $query);
    $result_count = mysqli_query($con, $query_count);
    $cl_edit_case_officer = "'cl_edit_case_officer'";
