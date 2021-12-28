@@ -68,15 +68,17 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
    mysqli_query($con, "SET NAMES 'utf8' ");
    $query = "SELECT * FROM all_in_one_project.checklist_of_content_request where ticket_id =".$ticket_id;
-   $query_count = "SELECT count(id) FROM all_in_one_project.checklist_of_content_request where ticket_id =".$ticket_id;
+   $query_count = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where ticket_id =".$ticket_id;
    $result = mysqli_query($con, $query);
    $result_count = mysqli_query($con, $query_count);
+    $count_id=mysql_fetch_assoc($result_count);
+    $count_id_fr=$count_id['count_id'];
    $cl_edit_case_officer = "'cl_edit_case_officer'";
    $cl_edit_status = "'cl_edit_status'";
    $cl_edit_sku = "'cl_edit_sku'";
    $cl_edit_update_due_reason= "'cl_edit_update_due_reason'";
    $cl_edit_update_type= "'cl_edit_update_type'";
-    if( $result_count == 0 or $result_count == null or $result_count =='' ){
+    if(  $count_id_f == 0 or  $count_id_f == null or  $count_id_f =='' ){
       echo '<div style="    text-align-last: center;
     color: #bbbbbb;
     border: solid #bbbbbb 1px;
