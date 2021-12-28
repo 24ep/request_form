@@ -197,7 +197,7 @@ $result = mysqli_query($con, $query);
         <div class="offcanvas-body"  > 
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="position: fixed;right: 40px;" aria-label="Close"></button>
         <div class="row  window-full overflow-auto">
-        <div class="col-8" style="border-right:1px solid  #ebedef;">
+        <div class="col-7" style="border-right:1px solid  #ebedef;">
         <div style="color:gray;margin-bottom:15px;margin-top:10px;font-size:13px">
         <span>Create by '.$request_by_contact.'</span>   
         <span>'.$create_date.'</span>      
@@ -229,7 +229,7 @@ $result = mysqli_query($con, $query);
       // }
        echo ' <button type="button" class="btn btn-outline-primary btn-sm" onClick="comment_cr_id_with_file('.$id.')"  >Add comment</button></div>';
         echo'
-        <div class="col-4" >
+        <div class="col-5" >
         <div style="margin-left: 10px;margin-right: 10px;">
         <small style="display:block"><strong style="color:gray">Ticket Status</strong></small>
         ';
@@ -255,7 +255,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             echo '
             <hr>
             <div class="row">
-              <div class="col" style=" padding-left: 25px;">assign to </div>
+              <div class="col" style=" padding-left: 25px;">Ticket Owner</div>
               <div class="col">
               <select class="form-select form-select-sm"  id="cr_edit_case_officer" name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')"  style="border: 0px;font-weight: bold;" aria-label=".form-select-lg example">
               '.$username_op.'
