@@ -318,10 +318,11 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
 
              <?php
 
-        
+      if($ticket_template<>"PJ"){
             echo '<hr>';
             // ---- end check list
             // start detail
+
             echo '
             <ul class="list-group">
             <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">ref cto</div><div class="col-6">
@@ -347,8 +348,11 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             <input class="form-control form-control-sm" id="cr_edit_effective_date" name="cr_edit_effective_date" onchange="update_cr_detail('.$id.','.$cr_edit_effective_date.')" type="datetime-local" style="border: 0px;" placeholder="" aria-label="default input example" value="'.$effective_date_edit.'"> 
             </div></li>
             </ul>
-            <br>
-            '.$list_attachment.'
+            <br>';
+      }
+            echo $list_attachment;
+            if($ticket_template<>"PJ"){
+            echo '
             <br>
             <small style="display:block"><strong style="color:gray">Internal</strong></small>
             <div class="mb-3">
@@ -370,6 +374,8 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             <label for="exampleFormControlTextarea1" class="form-label">Internal note</label>
             <textarea id="cr_edit_note" name="cr_edit_note" onchange="update_cr_detail('.$id.','.$cr_edit_note.')"  class="form-control"  rows="5">'.$note.'</textarea>
             </div>';
+            }
+      
         }else{
            echo '<h4 style="font-weight: 900;padding-left: 0rem;font-size: xxx-large;">'.$status.'</h4>'; 
                ?>
