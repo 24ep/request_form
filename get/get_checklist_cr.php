@@ -111,6 +111,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
     no have sub task avalible for now</div>';
     }else{
     if(strpos($department,"Content")!==false or $department==''){
+      if($row['ticket_template']=='CR'){
       echo '<li class="mb-1 row">
       <div class="col-2" style="padding:3px;"> <strong>Assinee</strong></div>
       <div class="col-2" style="padding:3px;"> <strong>Total SKUs</strong></div>
@@ -128,59 +129,62 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
    
       </li>';
       }
+    }
     
     }
 
     $i=1;
      while($row = mysqli_fetch_array($result)) {
-        echo '
-       <li class="mb-3 row" id="checklist_cr">
-                <div class="col-2" style="padding: 3px;">
-                    <select id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">
-                        ';
-                        $op_username_cl = getoption_return_edit_job("username","account", $row["case_officer"],"single");
-                        echo $op_username_cl;
-                        echo'
-                    </select>
-                </div>
-                <div class="col-2" style="padding: 3px;">
-                  <input id="cl_edit_sku_'.$row["id"].'" name="cl_edit_sku_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_sku.')" class="form-control form-control-sm" type="number" placeholder="sku" value="'.$row['sku'].'" aria-label=".form-control-sm example">
-                </div>
-                <div class="col" style="padding: 3px;">
-                  <select id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">
-                        ';
-                        $op_status_cl = getoption_return_edit_job("content_request_status","option", $row["status"],"single");
-                        echo $op_status_cl;
-                        echo'
-                  </select>
-                </div>
-                <div class="col" style="padding: 3px;">
-                  <select id="cl_edit_update_type_'.$row["id"].'" name="cl_edit_update_type_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_update_type.')" class="form-select form-select-sm" aria-label="Default select example">
-                  ';    
-                  $op_update_type = return_s_select_box_cl_cr($row["update_type"],"74");
-                  echo $op_update_type;
+                    if($row['ticket_template']=='CR'){
+                  echo '
+                <li class="mb-3 row" id="checklist_cr">
+                          <div class="col-2" style="padding: 3px;">
+                              <select id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">
+                                  ';
+                                  $op_username_cl = getoption_return_edit_job("username","account", $row["case_officer"],"single");
+                                  echo $op_username_cl;
+                                  echo'
+                              </select>
+                          </div>
+                          <div class="col-2" style="padding: 3px;">
+                            <input id="cl_edit_sku_'.$row["id"].'" name="cl_edit_sku_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_sku.')" class="form-control form-control-sm" type="number" placeholder="sku" value="'.$row['sku'].'" aria-label=".form-control-sm example">
+                          </div>
+                          <div class="col" style="padding: 3px;">
+                            <select id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">
+                                  ';
+                                  $op_status_cl = getoption_return_edit_job("content_request_status","option", $row["status"],"single");
+                                  echo $op_status_cl;
+                                  echo'
+                            </select>
+                          </div>
+                          <div class="col" style="padding: 3px;">
+                            <select id="cl_edit_update_type_'.$row["id"].'" name="cl_edit_update_type_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_update_type.')" class="form-select form-select-sm" aria-label="Default select example">
+                            ';    
+                            $op_update_type = return_s_select_box_cl_cr($row["update_type"],"74");
+                            echo $op_update_type;
+                            echo'
+                            </select>
+                          </div>';
+                  
+                          if(strpos($department,"Content")!==false or $department=='' ){
+                            echo'
+                          <div class="col" style="padding: 3px;">
+                            <select id="cl_edit_update_due_reason_'.$row["id"].'" name="cl_edit_update_due_reason_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_update_due_reason.')" class="form-select form-select-sm" aria-label="Default select example">
+                            ';    
+                            $op_update_due_reason = return_s_select_box_cl_cr($row["update_due_reason"],"73");
+                            echo $op_update_due_reason;
+                            echo'
+                            </select>
+                          </div>
+                          <div class="col-1" style="padding: 3px;">
+                            <button  style="background: transparent;border: 0px;" onclick="remove_cr_list('.$row['id'].','.$ticket_id.')" ><ion-icon name="trash-outline"></ion-icon></button>
+                          </div>
+                          ';
+                          }
                   echo'
-                  </select>
-                </div>';
-        
-                if(strpos($department,"Content")!==false or $department=='' ){
-                  echo'
-                <div class="col" style="padding: 3px;">
-                  <select id="cl_edit_update_due_reason_'.$row["id"].'" name="cl_edit_update_due_reason_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_update_due_reason.')" class="form-select form-select-sm" aria-label="Default select example">
-                  ';    
-                  $op_update_due_reason = return_s_select_box_cl_cr($row["update_due_reason"],"73");
-                  echo $op_update_due_reason;
-                  echo'
-                  </select>
-                </div>
-                <div class="col-1" style="padding: 3px;">
-                   <button  style="background: transparent;border: 0px;" onclick="remove_cr_list('.$row['id'].','.$ticket_id.')" ><ion-icon name="trash-outline"></ion-icon></button>
-                </div>
-                ';
-                }
-         echo'
-          </li>
-          ';
+                    </li>
+                    ';
+              }
 
           //card for project
           
