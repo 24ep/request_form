@@ -68,7 +68,27 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
    date_default_timezone_set("Asia/Bangkok");
    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
    mysqli_query($con, "SET NAMES 'utf8' ");
-   $query = "SELECT * FROM all_in_one_project.checklist_of_content_request where ticket_id =".$ticket_id;
+   $query = "
+    SELECT 
+    cl.id,
+    cl.case_officer, 
+    cl.inprogress_date,
+    cl.complete_date,
+    cl.status,
+    cl.update_due_reason,
+    cl.update_type,
+    cl.sku,
+    cl.ticket_id,
+    cl.create_date,
+    cl.update_date,
+    cl.description,
+    cl.est_start_date,
+    cl.est_due_date,
+    cr.ticket_template
+    FROM all_in_one_project.checklist_of_content_request as cl
+    left join all_in_one_project.content_request as cr
+    on cl.ticket_id = cr.id    
+    where ticket_id =".$ticket_id;
    $query_count = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where ticket_id =".$ticket_id;
    $result = mysqli_query($con, $query);
    $result_count = mysqli_query($con, $query_count);
@@ -161,6 +181,11 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
           //card for project
           
  //----------------
+                if($ticket_template=='PJ'){
+
+
+
+                }
           echo '
           <div class="card text-dark bg-light mb-3" >
             <div class="card-body">
@@ -169,7 +194,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                 Some quick example text to build on the card title and make up the bulk of the cards content.
               </p>
             </div>
-            <div class="card-footer bg-transparent border-success" style="border-color: transparent!important;">
+            <div class="card-footer bg-transparent border-success" style="border-color: #dfd9d9!important">
                 <div class="row">
                     
                     <div class="col">
@@ -207,7 +232,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
             echo '
                     <div class="col">
                       <div class="col">
-                        <div class="row">
+                        <div class="row" style="margin-bottom: 5px;">
                           <div class="col-4">
                             <span>Est.Start</span>
                           </div>
