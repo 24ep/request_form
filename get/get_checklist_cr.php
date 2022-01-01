@@ -212,14 +212,14 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                   echo '
                   <div class="card text-dark bg-light mb-3 shadow-sm" style="border-color: transparent;padding-left: 10px;padding-right: 10px;background-color: #e9ecef!important;" >
                     <div class="card-body" style="padding-bottom: 0px">
-                      <div class="row">
+                      <div class="row" style="margin-bottom: 5px;>
                       <label for="inputPassword" class="col-sm-2 col-form-label">N0 '.$i.'</label>
                       <div class="col-sm-9">
                     
                           <textarea placeholder="input task '.$i.' here ." style="border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description" name="cl_edit_description" rows="1"></textarea>
                        
                       </div>
-                      <div class="col-sm-1">
+                      <div class="col-sm-1" style="align-self: center;">
                         <button  style="background: transparent;border: 0px;" onclick="remove_cr_list('.$row['id'].','.$ticket_id.')" ><ion-icon name="trash-outline"></ion-icon></button>
                       </div>
                       </div>
