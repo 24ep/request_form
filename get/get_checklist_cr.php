@@ -164,7 +164,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
           echo '
           <div class="card text-dark bg-light mb-3"  style="border-color: transparent!important;">
             <div class="card-body">
-              <h5 class="card-title">N0 1.</h5>
+              <h6 class="card-title">N0 1.</h6>
               <p class="card-text">
                 Some quick example text to build on the card title and make up the bulk of the cards content.
               </p>
@@ -209,10 +209,10 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                       <div class="col">
                         <div class="row">
                           <div class="col-4">
-                            <span>Est. Start date</span>
+                            <span>Est.Start</span>
                           </div>
                           <div class="col-8">
-                            <input class="form-control" type="date" placeholder="Default input" aria-label="default input example">
+                            <input class="form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
                           </div>
                         </div>
                       </div>
@@ -220,10 +220,10 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                     <div class="col">
                       <div class="row">
                         <div class="col-4">
-                          <span>Est. Due date</span>
+                          <span>Est.Due</span>
                         </div>
-                        <div class="col-12">
-                          <input class="form-control" type="date" placeholder="Default input" aria-label="default input example">
+                        <div class="col-8">
+                          <input class="form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
                         </div>
                       </div>
                     </div>
