@@ -145,14 +145,15 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
     }
 
     $i=1;
-    if($row['ticket_template']=='PJ' and $count_id_fr<>0){
-    echo '
-    <div class="progress shadow-sm" style="margin-bottom:10px">
-      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="background: #17b717;width: '.$percent_progress.'%;" aria-valuenow="'.$percent_progress.'" aria-valuemin="0" aria-valuemax="100">Progress '.$percent_progress.'%</div>
-    </div>
-    ';
-    }
+   
      while($row = mysqli_fetch_array($result)) {
+      if($row['ticket_template']=='PJ' and $count_id_fr<>0 and $i = 1){
+        echo '
+        <div class="progress shadow-sm" style="margin-bottom:10px">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="background: #17b717;width: '.$percent_progress.'%;" aria-valuenow="'.$percent_progress.'" aria-valuemin="0" aria-valuemax="100">Progress '.$percent_progress.'%</div>
+        </div>
+        ';
+        }
                     if($row['ticket_template']=='CR'){
                   echo '
                 <li class="mb-3 row" id="checklist_cr">
