@@ -157,6 +157,39 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
          echo'
           </li>
           ';
+
+          //card for project
+          
+
+          echo '
+          <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">N0 1.</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the cards content.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-success">
+              <select id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">
+              ';
+              $op_username_cl = getoption_return_edit_job("username","account", $row["case_officer"],"single");
+              echo $op_username_cl;
+              echo'
+              </select>
+              <select id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">
+              ';
+              $op_status_cl = getoption_return_edit_job("content_request_status","option", $row["status"],"single");
+              echo $op_status_cl;
+              echo'
+        </select>
+            </div>
+          </div>
+          
+          ';
+
+
+
+
     } 
   mysqli_close($con);
   ?>
