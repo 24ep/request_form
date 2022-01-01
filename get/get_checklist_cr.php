@@ -146,7 +146,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
     $i=1;
     echo '
     <div class="progress shadow-sm">
-      <div class="progress-bar progress-bar-striped progress-bar-animated" style="background: #17b717;" role="progressbar" style="width: '.$percent_progress.'%;" aria-valuenow="'.$percent_progress.'" aria-valuemin="0" aria-valuemax="100">'.$percent_progress.'%</div>
+      <div class="progress-bar progress-bar-striped progress-bar-animated" style="background: #17b717;" role="progressbar" style="width: '.$percent_progress.'%;" aria-valuenow="'.$percent_progress.'" aria-valuemin="0" aria-valuemax="100">Progress '.$percent_progress.'%</div>
     </div>
     ';
      while($row = mysqli_fetch_array($result)) {
