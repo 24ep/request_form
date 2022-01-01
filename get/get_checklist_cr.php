@@ -162,7 +162,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
           
  //----------------
           echo '
-          <div class="card text-dark bg-light mb-3"  style="border-color: transparent!important;">
+          <div class="card text-dark bg-light mb-3" >
             <div class="card-body">
               <h6 class="card-title">N0 1.</h6>
               <p class="card-text">
@@ -212,7 +212,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                             <span>Est.Start</span>
                           </div>
                           <div class="col-8">
-                            <input class="form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
+                            <input class="form-control form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
                           </div>
                         </div>
                       </div>
@@ -223,7 +223,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                           <span>Est.Due</span>
                         </div>
                         <div class="col-8">
-                          <input class="form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
+                          <input class="form-control form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
                         </div>
                       </div>
                     </div>
