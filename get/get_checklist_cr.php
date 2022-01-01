@@ -193,7 +193,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                 if($row['ticket_template']=='PJ'){
 
                   echo '
-                  <div class="card text-dark bg-light mb-3" >
+                  <div class="card text-dark bg-light mb-3 shadow-sm" style="border-color: transparent;padding-left: 15px;padding-right: 15px;background-color: #e9ecef!important;" >
                     <div class="card-body">
                       <h6 class="card-title">N0 '.$i.'.</h6>
                       <p class="card-text">
@@ -205,7 +205,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                             
                             <div class="col">
                                 <div class="col">
-                                  <div class="row">
+                                  <div class="row" style="margin-bottom: 5px;">
                                     <div class="col-4">
                                       <span>Assignee</span>
                                     </div>
