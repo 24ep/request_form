@@ -100,7 +100,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
     $count_id_fr_complete=$count_id_complete['count_id'];
 
     //cal progress
-      $percent_progress = ($count_id_fr_complete/$query_count)*100;
+      $percent_progress = ($count_id_fr_complete/$count_id_fr)*100;
 
     //--
    $cl_edit_case_officer = "'cl_edit_case_officer'";
@@ -145,8 +145,8 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
 
     $i=1;
     echo '
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" style="width: '.$percent_progress.'%;" aria-valuenow="'.$percent_progress.'" aria-valuemin="0" aria-valuemax="100">25%</div>
+    <div class="progress shadow-sm">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" style="background: #17b717;" role="progressbar" style="width: '.$percent_progress.'%;" aria-valuenow="'.$percent_progress.'" aria-valuemin="0" aria-valuemax="100">'.$percent_progress.'%</div>
     </div>
     ';
      while($row = mysqli_fetch_array($result)) {
