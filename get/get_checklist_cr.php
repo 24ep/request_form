@@ -99,6 +99,10 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
    $cl_edit_sku = "'cl_edit_sku'";
    $cl_edit_update_due_reason= "'cl_edit_update_due_reason'";
    $cl_edit_update_type= "'cl_edit_update_type'";
+   $cl_edit_est_start_date= "'cl_edit_est_start_date'";
+   $cl_edit_est_due_date= "'cl_edit_est_due_date'";
+   $cl_edit_description= "'cl_edit_description'";
+   
     if(  $count_id_fr == 0 or  $count_id_fr == null or  $count_id_fr =='' ){
       echo '<div style="    text-align-last: center;
     color: #bbbbbb;
@@ -127,7 +131,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
     
     }
 
-
+    $i=1;
      while($row = mysqli_fetch_array($result)) {
         echo '
        <li class="mb-3 row" id="checklist_cr">
@@ -181,88 +185,88 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
           //card for project
           
  //----------------
-                if($ticket_template=='PJ'){
+                if($row['ticket_template']=='PJ'){
 
-
-
-                }
-          echo '
-          <div class="card text-dark bg-light mb-3" >
-            <div class="card-body">
-              <h6 class="card-title">N0 1.</h6>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the cards content.
-              </p>
-            </div>
-            <div class="card-footer bg-transparent border-success" style="border-color: #dfd9d9!important">
-                <div class="row">
-                    
-                    <div class="col">
-                        <div class="col">
-                          <div class="row">
-                            <div class="col-4">
-                              <span>Assignee</span>
-                            </div>
-                            <div class="col-8">
-                              <select style="border-color: transparent;"  id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">';
-                                $op_username_cl = getoption_return_edit_job("username","account", $row["case_officer"],"single");
-                                echo $op_username_cl;
-                                echo'
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                    
-                      <div class="col">
+                  echo '
+                  <div class="card text-dark bg-light mb-3" >
+                    <div class="card-body">
+                      <h6 class="card-title">N0 '.$i.'.</h6>
+                      <p class="card-text">
+                        <textarea style="border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description" name="cl_edit_description" rows="2"></textarea>
+                      </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-success" style="border-color: #dfd9d9!important">
                         <div class="row">
-                          <div class="col-4">
-                            <span>Status</span>
+                            
+                            <div class="col">
+                                <div class="col">
+                                  <div class="row">
+                                    <div class="col-4">
+                                      <span>Assignee</span>
+                                    </div>
+                                    <div class="col-8">
+                                      <select style="border-color: transparent;"  id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">';
+                                        $op_username_cl = getoption_return_edit_job("username","account", $row["case_officer"],"single");
+                                        echo $op_username_cl;
+                                        echo'
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                              <div class="col">
+                                <div class="row">
+                                  <div class="col-4">
+                                    <span>Status</span>
+                                  </div>
+                                  <div class="col-8">
+                                    <select style="border-color: transparent;" id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">';
+                                      $op_status_cl = getoption_return_edit_job("content_request_status","option", $row["status"],"single");
+                                      echo $op_status_cl;
+                                      echo'
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>';
+                  //----------------
+                    echo '
+                            <div class="col">
+                              <div class="col">
+                                <div class="row" style="margin-bottom: 5px;">
+                                  <div class="col-4">
+                                    <span>Est.Start</span>
+                                  </div>
+                                  <div class="col-8">
+                                    <input value="'.$row["est_start_date"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_est_start_date.')" id="cl_edit_est_start_date_'.$row["id"].'" name="cl_edit_est_start_date_'.$row["id"].'" style="border-color: transparent;"  class="form-control form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
+                                  </div>
+                                </div>
+                              </div>
+                          
+                            <div class="col">
+                              <div class="row">
+                                <div class="col-4">
+                                  <span>Est.Due</span>
+                                </div>
+                                <div class="col-8">
+                                  <input value="'.$row["est_due_date"].'" style="border-color: transparent;" onchange="update_cl_detail('.$row["id"].','.$cl_edit_est_due_date.')"  id="cl_edit_est_due_date_'.$row["id"].'" name="cl_edit_est_due_date_'.$row["id"].'" class="form-control form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                          <div class="col-8">
-                            <select style="border-color: transparent;" id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">';
-                              $op_status_cl = getoption_return_edit_job("content_request_status","option", $row["status"],"single");
-                              echo $op_status_cl;
-                              echo'
-                            </select>
-                          </div>
+        
                         </div>
-                      </div>
-                    </div>';
-          //----------------
-            echo '
-                    <div class="col">
-                      <div class="col">
-                        <div class="row" style="margin-bottom: 5px;">
-                          <div class="col-4">
-                            <span>Est.Start</span>
-                          </div>
-                          <div class="col-8">
-                            <input style="border-color: transparent;"  class="form-control form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
-                          </div>
-                        </div>
-                      </div>
-                  
-                    <div class="col">
-                      <div class="row">
-                        <div class="col-4">
-                          <span>Est.Due</span>
-                        </div>
-                        <div class="col-8">
-                          <input style="border-color: transparent;"  class="form-control form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
-                        </div>
-                      </div>
                     </div>
                   </div>
+                  
+                  ';
+        
 
-                </div>
-            </div>
-          </div>
+                }
           
-          ';
 
 
-
-
+          $i++;
     } 
   mysqli_close($con);
   ?>
