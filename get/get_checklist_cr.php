@@ -179,7 +179,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                               <span>Assignee</span>
                             </div>
                             <div class="col-8">
-                              <select id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">';
+                              <select style="border-color: transparent;"  id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">';
                                 $op_username_cl = getoption_return_edit_job("username","account", $row["case_officer"],"single");
                                 echo $op_username_cl;
                                 echo'
@@ -194,7 +194,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                             <span>Status</span>
                           </div>
                           <div class="col-8">
-                            <select id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">';
+                            <select style="border-color: transparent;" id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">';
                               $op_status_cl = getoption_return_edit_job("content_request_status","option", $row["status"],"single");
                               echo $op_status_cl;
                               echo'
@@ -212,7 +212,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                             <span>Est.Start</span>
                           </div>
                           <div class="col-8">
-                            <input class="form-control form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
+                            <input style="border-color: transparent;"  class="form-control form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
                           </div>
                         </div>
                       </div>
@@ -223,7 +223,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                           <span>Est.Due</span>
                         </div>
                         <div class="col-8">
-                          <input class="form-control form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
+                          <input style="border-color: transparent;"  class="form-control form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
                         </div>
                       </div>
                     </div>
