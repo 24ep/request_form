@@ -212,7 +212,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                   echo '
                   <div class="card text-dark bg-light mb-3 shadow-sm" style="border-color: transparent;padding-left: 10px;padding-right: 10px;background-color: #e9ecef!important;" >
                     <div class="card-body" style="padding-bottom: 0px">
-                      <div class="row" style="margin-bottom: 5px;>
+                      <div class="row" style="margin-bottom: 5px;">
                       <label for="inputPassword" class="col-sm-2 col-form-label">N0 '.$i.'</label>
                       <div class="col-sm-9">
                     
