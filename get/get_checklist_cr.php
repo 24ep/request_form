@@ -175,6 +175,40 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                     <div class="col">
                       <span>col 1</span>
                         <div class="col">
+                          <div class="row">
+                            <div class="col">
+                              <span>Assignee</span>
+                            </div>
+                            <div class="col">
+                              <select id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">';
+                                $op_username_cl = getoption_return_edit_job("username","account", $row["case_officer"],"single");
+                                echo $op_username_cl;
+                                echo'
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                    
+                      <div class="col">
+                        <div class="row">
+                          <div class="col">
+                            <span>Assignee</span>
+                          </div>
+                          <div class="col">
+                            <select id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">';
+                              $op_status_cl = getoption_return_edit_job("content_request_status","option", $row["status"],"single");
+                              echo $op_status_cl;
+                              echo'
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                    <span>col 1</span>
+                      <div class="col">
+                        <div class="row">
                           <div class="col">
                             <span>Assignee</span>
                           </div>
@@ -186,8 +220,10 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                             </select>
                           </div>
                         </div>
-                    
-                      <div class="col">
+                      </div>
+                  
+                    <div class="col">
+                      <div class="row">
                         <div class="col">
                           <span>Assignee</span>
                         </div>
@@ -198,34 +234,6 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                             echo'
                           </select>
                         </div>
-                      </div>
-                    </div>
-
-                    <div class="col">
-                    <span>col 2</span>
-                      <div class="col">
-                        <div class="col">
-                          <span>Assignee</span>
-                        </div>
-                        <div class="col">
-                          <select id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">';
-                            $op_username_cl = getoption_return_edit_job("username","account", $row["case_officer"],"single");
-                            echo $op_username_cl;
-                            echo'
-                          </select>
-                        </div>
-                      </div>
-                  
-                    <div class="col">
-                      <div class="col">
-                        <span>Assignee</span>
-                      </div>
-                      <div class="col">
-                        <select id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">';
-                          $op_status_cl = getoption_return_edit_job("content_request_status","option", $row["status"],"single");
-                          echo $op_status_cl;
-                          echo'
-                        </select>
                       </div>
                     </div>
                   </div>
