@@ -214,7 +214,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                     <div class="card-body" style="padding-bottom: 0px">
                       <div class="row">
                       <label for="inputPassword" class="col-sm-2 col-form-label">N0 '.$i.'</label>
-                      <div class="col-sm-10">
+                      <div class="col-sm-9">
                     
                           <textarea placeholder="input task '.$i.' here ." style="border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description" name="cl_edit_description" rows="1"></textarea>
                        
