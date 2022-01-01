@@ -193,12 +193,17 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                 if($row['ticket_template']=='PJ'){
 
                   echo '
-                  <div class="card text-dark bg-light mb-3 shadow-sm" style="border-color: transparent;padding-left: 15px;padding-right: 15px;background-color: #e9ecef!important;" >
+                  <div class="card text-dark bg-light mb-3 shadow-sm" style="border-color: transparent;padding-left: 10px;padding-right: 10px;background-color: #e9ecef!important;" >
                     <div class="card-body">
+                      <div class="mb-3 row">
+                      <label for="inputPassword" class="col-sm-2 col-form-label">N0 '.$i.'</label>
+                      <div class="col-sm-10">
+                    
+                          <textarea placeholder="input task '.$i.' here ." style="border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description" name="cl_edit_description" rows="1"></textarea>
+                       
+                      </div>
+                      </div>
                       
-                      <p class="card-text">
-                      <h6 class="card-title">N0 '.$i.'.</h6> <textarea placeholder="input task '.$i.' here ." style="border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description" name="cl_edit_description" rows="1"></textarea>
-                      </p>
                     </div>
                     <div class="card-footer bg-transparent border-success" style="border-color: #dfd9d9!important">
                         <div class="row" style="margin-bottom: 5px;">
