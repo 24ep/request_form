@@ -1,4 +1,5 @@
 <?php 
+  session_start();
         function getoption_cr($col,$table,$select_option,$sorm,$database) {
             $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
@@ -98,7 +99,7 @@
             <?php echo $product_website_op; ?>
         </select>
     </div>
-    <?php if(strpos($department,"Content")!==false or $department==''){ ?>
+    <?php if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==''){ ?>
     <div class="form-group col-md-3">
         <label for="cr_ticket_template" class="form-label">ticket template</label>
         <select id="cr_ticket_template" name="cr_ticket_template" class="form-select form-select-sm">
