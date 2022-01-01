@@ -258,32 +258,33 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
               </select>
               </div>
             </div>';
-            if($case_name==null and $office_tell == null){
-             echo '
-                <div class="row" style="background: #d8ede4;
-                    padding-top: 10px;
-                    padding-bottom: 10px;
-                    border-radius: 5px;
-                    margin-top: 0px;
-                    text-align: center;
-                    font-weight: 900;
-                    margin: 10px;">
-                  <div class="col" style=" padding-left: 25px;">this ticket still in queue</div>
-                </div>';
-            }
-           else{
-                echo '
-                <div class="row" style="background: #2eff9f;
-                    padding-top: 10px;
-                    padding-bottom: 10px;
-                    border-radius: 5px;
-                    margin-top: 0px;
-                    text-align: center;
-                    font-weight: 900;
-                    margin: 10px;">
-                  <div class="col" style=" padding-left: 25px;">'.$case_name." Tell : ".$office_tell.'</div>
-                </div>';
-           }
+
+          //   if($case_name==null and $office_tell == null){
+          //    echo '
+          //       <div class="row" style="background: #d8ede4;
+          //           padding-top: 10px;
+          //           padding-bottom: 10px;
+          //           border-radius: 5px;
+          //           margin-top: 0px;
+          //           text-align: center;
+          //           font-weight: 900;
+          //           margin: 10px;">
+          //         <div class="col" style=" padding-left: 25px;">this ticket still in queue</div>
+          //       </div>';
+          //   }
+          //  else{
+          //       echo '
+          //       <div class="row" style="background: #2eff9f;
+          //           padding-top: 10px;
+          //           padding-bottom: 10px;
+          //           border-radius: 5px;
+          //           margin-top: 0px;
+          //           text-align: center;
+          //           font-weight: 900;
+          //           margin: 10px;">
+          //         <div class="col" style=" padding-left: 25px;">'.$case_name." Tell : ".$office_tell.'</div>
+          //       </div>';
+          //  }
             echo '<hr>';
             // end contact
             // ---check list
