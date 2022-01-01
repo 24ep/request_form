@@ -111,7 +111,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
     no have sub task avalible for now</div>';
     }else{
       if($row['ticket_template']=='CR'){
-      if(strpos($department,"Content")!==false or $department==''){
+      if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==''){
       
       echo '<li class="mb-1 row">
       <div class="col-2" style="padding:3px;"> <strong>Assinee</strong></div>
