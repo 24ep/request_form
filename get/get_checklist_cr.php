@@ -197,11 +197,11 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                     <div class="card-body">
                       <h6 class="card-title">N0 '.$i.'.</h6>
                       <p class="card-text">
-                        <textarea style="border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description" name="cl_edit_description" rows="2"></textarea>
+                        <textarea style="border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description" name="cl_edit_description" rows="1"></textarea>
                       </p>
                     </div>
                     <div class="card-footer bg-transparent border-success" style="border-color: #dfd9d9!important">
-                        <div class="row">
+                        <div class="row" style="margin-bottom: 5px;">
                             
                             <div class="col">
                                 <div class="col">
@@ -220,7 +220,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                                 </div>
                             
                               <div class="col">
-                                <div class="row">
+                                <div class="row" style="margin-bottom: 5px;">
                                   <div class="col-4">
                                     <span>Status</span>
                                   </div>
@@ -249,7 +249,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                               </div>
                           
                             <div class="col">
-                              <div class="row">
+                              <div class="row" style="margin-bottom: 5px;">
                                 <div class="col-4">
                                   <span>Est.Due</span>
                                 </div>
