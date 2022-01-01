@@ -90,10 +90,19 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
     on cl.ticket_id = cr.id    
     where ticket_id =".$ticket_id;
    $query_count = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where ticket_id =".$ticket_id;
+   $query_count_complete = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where status = 'Close' and  ticket_id =".$ticket_id;
    $result = mysqli_query($con, $query);
    $result_count = mysqli_query($con, $query_count);
+   $result_count_complete = mysqli_query($con, $query_count_complete);
     $count_id=mysqli_fetch_assoc($result_count);
+    $count_id_complete=mysqli_fetch_assoc($result_count_complete);
     $count_id_fr=$count_id['count_id'];
+    $count_id_fr_complete=$count_id_complete['count_id'];
+
+    //cal progress
+      $percent_progress = ($count_id_fr_complete/$query_count)*100;
+
+    //--
    $cl_edit_case_officer = "'cl_edit_case_officer'";
    $cl_edit_status = "'cl_edit_status'";
    $cl_edit_sku = "'cl_edit_sku'";
@@ -135,6 +144,11 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
     }
 
     $i=1;
+    echo '
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: '.$percent_progress.'%;" aria-valuenow="'.$percent_progress.'" aria-valuemin="0" aria-valuemax="100">25%</div>
+    </div>
+    ';
      while($row = mysqli_fetch_array($result)) {
                     if($row['ticket_template']=='CR'){
                   echo '
