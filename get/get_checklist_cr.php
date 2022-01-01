@@ -219,6 +219,9 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                           <textarea placeholder="input task '.$i.' here ." style="border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description" name="cl_edit_description" rows="1"></textarea>
                        
                       </div>
+                      <div class="col-sm-1">
+                        <button  style="background: transparent;border: 0px;" onclick="remove_cr_list('.$row['id'].','.$ticket_id.')" ><ion-icon name="trash-outline"></ion-icon></button>
+                      </div>
                       </div>
                       
                     </div>
