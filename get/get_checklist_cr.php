@@ -111,8 +111,8 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
     no have sub task avalible for now</div>';
     }else{
       if($row['ticket_template']=='CR'){
-        if(strpos($department,"Content")!==false or $department==''){
-      
+    if(strpos($department,"Content")!==false or $department==''){
+   
       echo '<li class="mb-1 row">
       <div class="col-2" style="padding:3px;"> <strong>Assinee</strong></div>
       <div class="col-2" style="padding:3px;"> <strong>Total SKUs</strong></div>
@@ -130,7 +130,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
    
       </li>';
       }
-    
+    }
     
     }
 
