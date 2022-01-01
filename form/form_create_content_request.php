@@ -98,6 +98,15 @@
             <?php echo $product_website_op; ?>
         </select>
     </div>
+    <?php if(strpos($department,"Content")!==false or $department==''){ ?>
+    <div class="form-group col-md-3">
+        <label for="cr_ticket_template" class="form-label">ticket template</label>
+        <select id="cr_ticket_template" name="cr_ticket_template" class="form-select form-select-sm">
+           <option selected>CR</option>
+           <option>PJ</option>
+        </select>
+    </div>
+    <?php } ?>
   </div>
   <hr>
   <div class="row">

@@ -43,6 +43,7 @@
         if($_POST["cr_title"]<>""){ $insert_head .= "title";$insert_value .= "'".$cr_title."'";}
         if($_POST["cr_description"]<>""){ $insert_head .= ",description";$insert_value .= ",'".$cr_description."'";}
         if($_POST["cr_sku"]<>""){ $insert_head .= ",sku";$insert_value .= ",'".$_POST["cr_sku"]."'";}
+        if($_POST["cr_ticket_template"]<>""){ $insert_head .= "ticket_template";$insert_value .= "'".$cr_ticket_template."'";}
         if($_POST["cr_ticket_type"]<>""){ $insert_head .= ",ticket_type";$insert_value .= ",'".$_POST["cr_issue_type"]."'";}
         if($_POST["cr_piority"]<>""){ $insert_head .= ",piority";$insert_value .= ",'".$_POST["cr_piority"]."'";}
         if($_POST["cr_online_chanel"]<>""){ $insert_head .= ",online_chanel";$insert_value .= ",'".$_POST["cr_online_chanel"]."'";}
