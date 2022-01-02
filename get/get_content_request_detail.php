@@ -353,11 +353,11 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             echo $list_attachment;
             if($ticket_template<>"PJ"){
             echo '
-            <br>
+            <hr>
             <small style="display:block"><strong style="color:gray">Internal</strong></small>
             <div class="mb-3 row">
-            <label for="exampleDataList" class="col-sm-2 col-form-label">Update reason</label>
-            <div class="col-sm-10">
+            <label for="exampleDataList" class="col-sm-3 col-form-label">Update reason</label>
+            <div class="col-sm-9">
             <input class="form-control form-control-sm" list="datalistOptions"  onchange="update_cr_detail('.$id.','.$cr_edit_content_request_reson.')" id="cr_edit_content_request_reson" name="cr_edit_content_request_reson" placeholder="Type to search..." value="'.$content_request_reson.'">
               <datalist id="datalistOptions">
               '.$content_request_reson_op.'
@@ -365,8 +365,8 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
               </div>
             </div>
             <div class="mb-3 row">
-            <label for="exampleDataList" class="col-sm-2 col-form-label">Request by</label>
-            <div class="col-sm-10">
+            <label for="exampleDataList" class="col-sm-3 col-form-label">Request by</label>
+            <div class="col-sm-9">
             <input class="form-control form-control-sm" list="datalistOptionsrequestby"  onchange="update_cr_detail('.$id.','.$cr_edit_request_by.')" id="cr_edit_request_by" name="cr_edit_request_by" placeholder="Type to search..." value="'.$request_by.'">
               <datalist id="datalistOptionsrequestby">
               '.$username_op.'
