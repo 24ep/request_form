@@ -2,7 +2,7 @@
 session_start();
 $ticket_template = $_GET["ticket_template"];
 function get_ts_list($ticket_template){
-    $ts_filter = "ticket_template = ".$ticket_template;
+    $ts_filter = "ticket_template = '".$ticket_template."'";
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
