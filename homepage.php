@@ -864,7 +864,7 @@
                         </div>
                     </div>
                     <!-- ts console -->
-                    <div class="tab-pane fade" id="v-pills-ts_admin" role="tabpanel"
+                    <div class="tab-pane fade"  style="background-color: #f7f7f7;" id="v-pills-ts_admin" role="tabpanel"
                         aria-labelledby="v-pills-ts_admin-tab">
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">

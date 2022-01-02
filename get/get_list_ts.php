@@ -30,12 +30,21 @@ session_start();
             $count_comment_cr = $row["count_comment"];
 
             ?>
-            <li class="row shadow-sm rounded md-3">
-                <div class="col">
-                    <?php echo "CR-".$row["id"]." ".$row["title"]; ?>
+            <li class="row shadow-sm rounded md-3 p-2 bg-white">
+                <div class="col-6">
+                    <?php echo $row["ticket_template"]." ".$row["id"]." ".$row["title"]; ?>
                 </div>
-                <div class="col">
+                <div class="col-1">
                     <?php echo $row["status"]; ?>
+                </div>
+                <div class="col-1">
+                    <?php echo $row["case_officer"]; ?>
+                </div>
+                <div class="col-1">
+                    <?php echo $row["status"]; ?>
+                </div>
+                <div class="col-1">
+                    <?php echo "detail" ?>
                 </div>
             </li>
             <?php
