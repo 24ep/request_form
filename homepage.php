@@ -871,7 +871,7 @@
                                 <div class="container ">
                                <!-- console bra -->
                                <!-- project -->
-                               <small>Project<small>
+                               <small>Project</small>
                                <?php include('get/get_list_ts.php?ticket_template=TS')?>
                                <!-- support task -->
                                     <!-- unassign -->
@@ -879,7 +879,7 @@
                                     <!-- another -->
                                <!-- Content request -->
                                <hr>
-                               <small>Content Request<small>
+                               <small>Content Request</small>
                                <?php include('get/get_list_ts.php?ticket_template=CR')?>
                                     <!-- unassign -->
                                     <!-- self -->
