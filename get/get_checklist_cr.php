@@ -136,19 +136,19 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
             if(strpos($department,"Content")!==false or $department==''){
            
               echo '<li class="mb-1 row">
-              <div class="col-2" style="padding:3px;"> <strong>Assinee</strong></div>
-              <div class="col-2" style="padding:3px;"> <strong>Total SKUs</strong></div>
-              <div class="col" style="padding:3px;"> <strong>Status</strong></div>
-              <div class="col" style="padding:3px;"> <strong>Type</strong></div>
-              <div class="col" style="padding:3px;"> <strong>Reson</strong></div>
-              <div class="col-1" style="padding:3px;"> <strong>Remove</strong></div>
+              <div class="col-2 text-center" style="padding:3px;"> <strong>Assignee</strong></div>
+              <div class="col-2 text-center" style="padding:3px;"> <strong>Total SKUs</strong></div>
+              <div class="col text-center" style="padding:3px;"> <strong>Status</strong></div>
+              <div class="col text-center" style="padding:3px;"> <strong>Type</strong></div>
+              <div class="col text-center" style="padding:3px;"> <strong>Reason</strong></div>
+              <div class="col-1 text-center" style="padding:3px;"> <strong>Remove</strong></div>
               </li>';
               }else{
                 echo '<li class="mb-1 row">
-              <div class="col-2" style="padding:3px;"> <strong>Assinee</strong></div>
-              <div class="col-2" style="padding:3px;"> <strong>Total SKUs</strong></div>
-              <div class="col" style="padding:3px;"> <strong>Status</strong></div>
-              <div class="col" style="padding:3px;"> <strong>Type</strong></div>
+              <div class="col-2 text-center" style="padding:3px;"> <strong>Assignee</strong></div>
+              <div class="col-2 text-center" style="padding:3px;"> <strong>Total SKUs</strong></div>
+              <div class="col text-center" style="padding:3px;"> <strong>Status</strong></div>
+              <div class="col text-center" style="padding:3px;"> <strong>Type</strong></div>
            
               </li>';
               }
