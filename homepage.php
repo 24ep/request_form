@@ -414,7 +414,14 @@
         </div>
 
         <div class="row " style="margin-bottom: 0px;--bs-gutter-x: 0rem;">
-            <div class="col-2 list_bra window-full shadow">
+        <?php 
+         if(strpos($_SESSION["department"],'Content Admin')!==false){
+            $nev_avg = "background: #212121;";
+         }
+            
+            
+        ?>
+            <div class="col-2 list_bra window-full shadow" style="<?php echo  $nev_avg; ?>">
                 <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a class="navbar-brand" href="#" style="margin: 15px;">Content <small
                             style="color: #dc3545;">Service
@@ -437,10 +444,15 @@
                         aria-controls="v-pills-cr" onclick="updateURL('v-pills-cr');" aria-selected="false">
                         <ion-icon style="color:white" name="ticket-outline"></ion-icon>Content Request
                     </a>
+                    <hr>
                     <?php if(strpos($_SESSION["department"],'Admin')!==false){?>
                     <a class="nav-link" id="v-pills-cr_admin-tab" data-toggle="pill" href="#v-pills-cr_admin" role="tab"
                         aria-controls="v-pills-cr_admin" onclick="updateURL('v-pills-cr_admin');" aria-selected="false">
                         <ion-icon style="color:white" name="grid-outline"></ion-icon> CR Board
+                    </a>
+                    <a class="nav-link" id="v-pills-ts_admin-tab" data-toggle="pill" href="#v-pills-ts_admin" role="tab"
+                        aria-controls="v-pills-ts_admin" onclick="updateURL('v-pills-ts_admin');" aria-selected="false">
+                        <ion-icon style="color:white" name="grid-outline"></ion-icon> TS Console
                     </a>
                     
                    
@@ -448,7 +460,7 @@
                        <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                           <a class="nav-link" id="v-pills-fl_board-tab" data-toggle="pill" href="#v-pills-fl_board" role="tab"
                             aria-controls="v-pills-fl_board" onclick="updateURL('v-pills-fl_board');" aria-selected="false">
-                            <ion-icon style="color:white" name="grid-outline"></ion-icon> Follow-up Board <span class="badge rounded-pill bg-danger">New</span>
+                            <ion-icon style="color:white" name="grid-outline"></ion-icon> Follow-up Board
                             </a>
                         <?php }?>
                     
@@ -851,6 +863,32 @@
                             </div>
                         </div>
                     </div>
+                    <!-- ts console -->
+                    <div class="tab-pane fade" id="v-pills-ts_admin" role="tabpanel"
+                        aria-labelledby="v-pills-ts_admin-tab">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="row align-items-center" style="padding:20px">
+                                <div class="container ">
+                               <!-- console bra -->
+                               <!-- project -->
+                               <small>Project<small>
+                               <?php include('get/get_list_ts.php?ticket_type=TS')?>
+                               <!-- support task -->
+                                    <!-- unassign -->
+                                    <!-- self -->
+                                    <!-- another -->
+                               <!-- Content request -->
+                               <small>Content Request<small>
+                               <?php include('get/get_list_ts.php?ticket_type=CR')?>
+                                    <!-- unassign -->
+                                    <!-- self -->
+                                    <!-- another -->
+                               
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                         <!-- ts console -->
                     <div class="tab-pane fade" id="v-pills-fl_board" role="tabpanel"
                         aria-labelledby="v-pills-fl_board-tab">
                         <div class="tab-content" id="myTabContent">
