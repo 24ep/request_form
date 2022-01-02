@@ -1,7 +1,8 @@
 <?php
 session_start();
 $ticket_template = $_GET["ticket_template"];
-function get_ts_list($ticket_template){
+
+    echo "<ul >";
     $ts_filter = "ticket_template = '".$ticket_template."'";
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
@@ -41,11 +42,10 @@ function get_ts_list($ticket_template){
             <?php
      
      } 
+     echo "</ul>";
    mysqli_close($con);
 }
 
-echo "<ul >";
-    get_ts_list($ticket_template);
-echo "</ul>";
+
   
   ?>
