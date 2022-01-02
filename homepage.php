@@ -873,7 +873,7 @@
                                <!-- console bra -->
                                <!-- project -->
                                <small>Project</small>
-                               <?php list_ts("PJ"); ?>
+                               <?php list_ts("ticket_template = 'PJ'"); ?>
                                <!-- support task -->
                                     <!-- unassign -->
                                     <!-- self -->
@@ -882,13 +882,13 @@
                                <hr>
                                <small>Content Request</small>
                                <div class="row">
-                                   <div class="col">
+                                   <div class="col border-0 border-end">
                                        <small>Your Assignment</small>
-                                       <?php list_ts("ticket_template = 'CR' and participant like ".$_GET["username"]); ?>
+                                       <?php list_ts("ticket_template = 'CR' and participant like '".$_GET["username"]."'"); ?>
                                    </div>
                                    <div class="col">
                                        <small>Unassign</small>
-                                       <?php list_ts("ticket_template = 'CR' and case_officer is"); ?>
+                                       <?php list_ts("ticket_template = 'CR' and case_officer is null"); ?>
                                    </div>
                                 </div>
                               
