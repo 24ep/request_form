@@ -81,25 +81,25 @@ if(isset($_POST["from_post"] )){
   $start_item =  ($_SESSION['pagenation'] -1 )* 30;
  if(strpos($_SESSION["page_view"],'Followup')!==false){
   if($_SESSION['user_filter']<>""){
-    $position_filter = "participant like '%,".$_SESSION["user_filter"]."' or  participant like '".$_SESSION["user_filter"].",%' or  participant = '".$_SESSION["user_filter"]."' or  participant like '%,".$_SESSION["user_filter"].",%'";
+    $position_filter = "anj.participant like '%,".$_SESSION["user_filter"]."' or  anj.participant like '".$_SESSION["user_filter"].",%' or  anj.participant = '".$_SESSION["user_filter"]."' or  anj.participant like '%,".$_SESSION["user_filter"].",%'";
    }else{
-    $position_filter = "(follow_up_by ='' or follow_up_by is null)";
+    $position_filter = "(anj.follow_up_by ='' or anj.follow_up_by is null)";
    }
  }elseif(strpos($_SESSION["page_view"],'Buyer')!==false){
   if($_SESSION['user_filter']<>""){
-    $position_filter = "participant like '%,".$_SESSION["user_filter"]."' or  participant like '".$_SESSION["user_filter"].",%' or  participant = '".$_SESSION["user_filter"]."' or  participant like '%,".$_SESSION["user_filter"].",%'";
+    $position_filter = "anj.participant like '%,".$_SESSION["user_filter"]."' or  anj.participant like '".$_SESSION["user_filter"].",%' or  anj.participant = '".$_SESSION["user_filter"]."' or  anj.participant like '%,".$_SESSION["user_filter"].",%'";
    }else{
-    $position_filter ="(request_username ='' or request_username is null)";
+    $position_filter ="(anj.request_username ='' or anj.request_username is null)";
    }
  }else{
   if($_SESSION['user_filter']<>""){
-    $position_filter = "participant like '%,".$_SESSION["user_filter"]."' or  participant like '".$_SESSION["user_filter"].",%' or  participant = '".$_SESSION["user_filter"]."' or  participant like '%,".$_SESSION["user_filter"].",%'";
+    $position_filter = "anj.participant like '%,".$_SESSION["user_filter"]."' or  anj.participant like '".$_SESSION["user_filter"].",%' or  anj.participant = '".$_SESSION["user_filter"]."' or  anj.participant like '%,".$_SESSION["user_filter"].",%'";
    }else{
     $position_filter ="1=1";
    }
  }
  if($_SESSION['status_filter']<>""){
-  $status_filter ="status like '%".$_SESSION['status_filter']."%' or status = 'none'";
+  $status_filter ="anj.status like '%".$_SESSION['status_filter']."%' or anj.status = 'none'";
  }else{
   $status_filter ="1=1";
  }
@@ -126,12 +126,66 @@ if(isset($_POST["from_post"] )){
  }
  //set_query
  if(isset($_SESSION['fopenticket'])){
-  $query = "SELECT * FROM add_new_job where id =".$_SESSION['fopenticket']."  ORDER BY id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
+  $query = "SELECT 
+  anj.id,
+  anj.brand,
+  anj.department,
+  anj.sku,
+  anj.production_type,
+  anj.project_type,
+  anj.business_type,
+  anj.launch_date,
+  anj.request_username,
+  anj.status, 
+  anj.online_channel,
+  anj.bu,
+  anj.request_important,
+  anj.tags,
+  anj.participant,
+  anj.config_type,
+  anj.parent,
+  anj.sub_department, 
+  anj.trigger_status, 
+  anj.job_cms_data_sync,
+  jc.job_number,
+  jc.job_status_filter,
+  jc.approved_by,
+  jc.approved_editing_status 
+  FROM all_in_one_project.add_new_job as anj
+  left join u749625779_cdscontent.job_cms as jc 
+  on anj.id = jc.csg_request_new_id  where anj.id =".$_SESSION['fopenticket']."  ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
   unset($_SESSION['fopenticket']);
  }else{
   
-  $query = "SELECT * FROM add_new_job where ((".$status_filter.") and (".$brand_filter.")
-         and (".$position_filter.")) and parent is null ORDER BY id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
+  $query = "SELECT 
+  anj.id,
+  anj.brand,
+  anj.department,
+  anj.sku,
+  anj.production_type,
+  anj.project_type,
+  anj.business_type,
+  anj.launch_date,
+  anj.request_username,
+  anj.status, 
+  anj.online_channel,
+  anj.bu,
+  anj.request_important,
+  anj.tags,
+  anj.participant,
+  anj.config_type,
+  anj.parent,
+  anj.sub_department, 
+  anj.trigger_status, 
+  anj.job_cms_data_sync,
+  jc.job_number,
+  jc.job_status_filter,
+  jc.approved_by,
+  jc.approved_editing_status 
+  FROM all_in_one_project.add_new_job as anj
+  left join u749625779_cdscontent.job_cms as jc 
+  on anj.id = jc.csg_request_new_id  where ((".$status_filter.") and (".$brand_filter.")
+         and (".$position_filter.")) and anj.parent is null ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
  }
   date_default_timezone_set("Asia/Bangkok");
   mysqli_query($con, "SET NAMES 'utf8' ");
@@ -139,7 +193,18 @@ if(isset($_POST["from_post"] )){
   // echo '<script>console.log("'.htmlspecialchars(stripslashes(str_replace(array("\r", "\n"), '', var_export($query, true)))).'")</script>';
   while($row = mysqli_fetch_array($result)) {
     $ticket_role = role_user($row["request_username"],$row["follow_up_by"]);
-    $status = badge_status($row['status']);
+    
+    if($row['status']=="accepted" and $row['job_status_filter'] == "Continue" and $row['approved_editing_status'] <> "approved"){
+      $status==badge_status("On-Process");
+    }elseif($row['status']=="accepted" and $row['job_status_filter'] == "Continue" and $row['approved_editing_status'] == "approved"){
+      $status==badge_status("Approved");
+    }elseif($row['status']=="accepted" and $row['job_status_filter'] <> "Continue" ){
+      $status==badge_status($row['job_status_filter']);
+    }else{
+      $status =badge_status($row['status']);
+    }
+    
+    // $status = badge_status($row['status']);
     //important badge
     if($row['request_important']=="Urgent"){
       $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row['request_important'].'</span>';
