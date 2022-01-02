@@ -21,11 +21,9 @@ function get_ts_list($ticket_template){
     LEFT JOIN all_in_one_project.comment as comment
     ON ticket.id = comment.ticket_id 
     where ".$ts_filter." 
-    GROUP BY ticket.id
-    ORDER by ". $sort_by." ".$sort_code." ".$LIMIT;
+    GROUP BY ticket.id";
     //echo "<script>console.log('".$query."');</script>";
     $result = mysqli_query($con, $query);
-   //  $result_count = mysqli_query($con, $query_count);
    
       while( $row = mysqli_fetch_array($result)) {
             $count_comment_cr = $row["count_comment"];

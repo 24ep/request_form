@@ -878,6 +878,7 @@
                                     <!-- self -->
                                     <!-- another -->
                                <!-- Content request -->
+                               <hr>
                                <small>Content Request<small>
                                <?php include('get/get_list_ts.php?ticket_type=CR')?>
                                     <!-- unassign -->
