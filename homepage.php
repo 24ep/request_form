@@ -869,10 +869,11 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
+                                <?php include('get/get_list_ts.php')?>
                                <!-- console bra -->
                                <!-- project -->
                                <small>Project</small>
-                               <?php include('get/get_list_ts.php?ticket_template=TS')?>
+                               <?php list_ts("PJ"); ?>
                                <!-- support task -->
                                     <!-- unassign -->
                                     <!-- self -->
@@ -880,7 +881,8 @@
                                <!-- Content request -->
                                <hr>
                                <small>Content Request</small>
-                               <?php include('get/get_list_ts.php?ticket_template=CR')?>
+                               <?php list_ts("CR"); ?>
+                            
                                     <!-- unassign -->
                                     <!-- self -->
                                     <!-- another -->

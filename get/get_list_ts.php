@@ -1,7 +1,6 @@
 <?php
 session_start();
-$ticket_template = $_GET["ticket_template"];
-
+    function list_ts($ticket_template ){
     echo "<ul >";
     $ts_filter = "ticket_template = '".$ticket_template."'";
     date_default_timezone_set("Asia/Bangkok");
@@ -44,6 +43,7 @@ $ticket_template = $_GET["ticket_template"];
      } 
      echo "</ul>";
    mysqli_close($con);
+    }
 
 
 
