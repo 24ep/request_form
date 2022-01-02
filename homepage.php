@@ -881,7 +881,17 @@
                                <!-- Content request -->
                                <hr>
                                <small>Content Request</small>
-                               <?php list_ts("CR"); ?>
+                               <div class="row">
+                                   <div class="col">
+                                       <small>Your Assignment</small>
+                                       <?php list_ts("ticket_template = 'CR' and participant like ".$_GET["username"]); ?>
+                                   </div>
+                                   <div class="col">
+                                       <small>Unassign</small>
+                                       <?php list_ts("ticket_template = 'CR' and case_officer is null");
+                                   </div>
+                                </div>
+                              
                             
                                     <!-- unassign -->
                                     <!-- self -->

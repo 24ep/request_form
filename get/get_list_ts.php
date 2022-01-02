@@ -1,8 +1,8 @@
 <?php
 session_start();
-    function list_ts($ticket_template ){
-    echo "<ul >";
-    $ts_filter = "ticket_template = '".$ticket_template."'";
+    function list_ts($filter ){
+    
+    $ts_filter = $filter;
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
@@ -25,7 +25,8 @@ session_start();
     LIMIT 100";
     //echo "<script>console.log('".$query."');</script>";
     $result = mysqli_query($con, $query);
-   
+
+    echo "<ul >";
       while( $row = mysqli_fetch_array($result)) {
             $count_comment_cr = $row["count_comment"];
 
@@ -34,16 +35,13 @@ session_start();
                 <div class="col-6">
                     <?php echo $row["ticket_template"]." ".$row["id"]." ".$row["title"]; ?>
                 </div>
-                <div class="col-1">
+                <div class="col-2">
                     <?php echo $row["status"]; ?>
                 </div>
-                <div class="col-1">
-                    <?php echo $row["case_officer"]; ?>
+                <div class="col-2">
+                    <?php echo $row["piority"]; ?>
                 </div>
-                <div class="col-1">
-                    <?php echo $row["status"]; ?>
-                </div>
-                <div class="col-1">
+                <div class="col-2">
                     <?php echo "detail" ?>
                 </div>
             </li>
