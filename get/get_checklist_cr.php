@@ -119,29 +119,6 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
     border: solid #bbbbbb 1px;
     border-radius: 5px;">
     no have sub task avalible for now</div>';
-    }else{
-      if($row['ticket_template']=='CR'){
-    if(strpos($department,"Content")!==false or $department==''){
-   
-      echo '<li class="mb-1 row">
-      <div class="col-2" style="padding:3px;"> <strong>Assinee</strong></div>
-      <div class="col-2" style="padding:3px;"> <strong>Total SKUs</strong></div>
-      <div class="col" style="padding:3px;"> <strong>Status</strong></div>
-      <div class="col" style="padding:3px;"> <strong>Type</strong></div>
-      <div class="col" style="padding:3px;"> <strong>Reson</strong></div>
-      <div class="col-1" style="padding:3px;"> <strong>Remove</strong></div>
-      </li>';
-      }else{
-        echo '<li class="mb-1 row">
-      <div class="col-2" style="padding:3px;"> <strong>Assinee</strong></div>
-      <div class="col-2" style="padding:3px;"> <strong>Total SKUs</strong></div>
-      <div class="col" style="padding:3px;"> <strong>Status</strong></div>
-      <div class="col" style="padding:3px;"> <strong>Type</strong></div>
-   
-      </li>';
-      }
-    }
-    
     }
 
     $i=1;
@@ -154,6 +131,29 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
         </div>
         ';
         }
+     
+          if($row['ticket_template']=='CR' and $i = 1){
+            if(strpos($department,"Content")!==false or $department==''){
+           
+              echo '<li class="mb-1 row">
+              <div class="col-2" style="padding:3px;"> <strong>Assinee</strong></div>
+              <div class="col-2" style="padding:3px;"> <strong>Total SKUs</strong></div>
+              <div class="col" style="padding:3px;"> <strong>Status</strong></div>
+              <div class="col" style="padding:3px;"> <strong>Type</strong></div>
+              <div class="col" style="padding:3px;"> <strong>Reson</strong></div>
+              <div class="col-1" style="padding:3px;"> <strong>Remove</strong></div>
+              </li>';
+              }else{
+                echo '<li class="mb-1 row">
+              <div class="col-2" style="padding:3px;"> <strong>Assinee</strong></div>
+              <div class="col-2" style="padding:3px;"> <strong>Total SKUs</strong></div>
+              <div class="col" style="padding:3px;"> <strong>Status</strong></div>
+              <div class="col" style="padding:3px;"> <strong>Type</strong></div>
+           
+              </li>';
+              }
+            }
+        
                     if($row['ticket_template']=='CR'){
                   echo '
                 <li class="mb-3 row" id="checklist_cr">
@@ -195,7 +195,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                             echo'
                             </select>
                           </div>
-                          <div class="col-1" style="padding: 3px;">
+                          <div class="col-1" style="padding: 3px;text-align: center;align-self: center;">
                             <button  style="background: transparent;border: 0px;" onclick="remove_cr_list('.$row['id'].','.$ticket_id.')" ><ion-icon name="trash-outline"></ion-icon></button>
                           </div>
                           ';

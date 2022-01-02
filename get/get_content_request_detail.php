@@ -193,7 +193,7 @@ $result = mysqli_query($con, $query);
         <div id="call_update_complete"></div>
         <div class="offcanvas-body"  style="padding:0px"> 
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="position: fixed;right: 40px;top: 15px;" aria-label="Close"></button>
-        <div class="row  window-full overflow-auto" style="margin-bottom: 0px;padding-left:20px">
+        <div class="row window-full overflow-auto" style="margin-bottom: 0px;padding-left:20px">
         <div class="col-7" style="border-right:1px solid  #ebedef;padding: 1rem 1rem;">
         <div style="color:gray;margin-bottom:15px;margin-top:10px;font-size:13px">
         <span>Create by '.$request_by_contact.'</span>   

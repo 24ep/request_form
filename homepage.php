@@ -1038,7 +1038,7 @@
                         </div>
                     </div>
                     <!-- offcanvas detail cr -->
-                    <div class="offcanvas offcanvas-start overflow-auto" tabindex="-1" id="detail_cr" style="width:100%"
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="detail_cr" style="width:100%"
                         aria-labelledby="offcanvasExampleLabel">
                         <div id="calloffcanvas_cr">
                         </div>
