@@ -44,7 +44,7 @@ $ticket_template = $_GET["ticket_template"];
      } 
      echo "</ul>";
    mysqli_close($con);
-}
+
 
 
   
