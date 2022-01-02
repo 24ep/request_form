@@ -46,7 +46,7 @@
                mysqli_close($con);
               }
        //$department_op = getoption_cr("department","job_option_cms",$department,"single","u749625779_cdscontent");
-       $product_website_op = getoption_cr("product_website","job_option_cms","CDS, RBS","multi","u749625779_cdscontent");
+       $product_website_op = getoption_cr("product_website","job_option_cms","CDS","multi","u749625779_cdscontent");
        $cr_important_op = getoption_cr("cr_important","option","Low","single","all_in_one_project");
        $cr_issue_type_op = getoption_cr("issue_type","option","","single","all_in_one_project");
        $cr_product_category_op = getoption_cr("product_category","option","","single","all_in_one_project");
