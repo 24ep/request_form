@@ -191,10 +191,10 @@ $result = mysqli_query($con, $query);
       </div>
     </div>
         <div id="call_update_complete"></div>
-        <div class="offcanvas-body"  > 
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="position: fixed;right: 40px;" aria-label="Close"></button>
-        <div class="row  window-full overflow-auto">
-        <div class="col-7" style="border-right:1px solid  #ebedef;">
+        <div class="offcanvas-body"  style="padding:0px"> 
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="position: fixed;right: 40px;top: 15px;" aria-label="Close"></button>
+        <div class="row  window-full overflow-auto" style="margin-bottom: 0px;padding-left:20px">
+        <div class="col-7" style="border-right:1px solid  #ebedef;padding: 1rem 1rem;">
         <div style="color:gray;margin-bottom:15px;margin-top:10px;font-size:13px">
         <span>Create by '.$request_by_contact.'</span>   
         <span>'.$create_date.'</span>      
@@ -231,7 +231,7 @@ $result = mysqli_query($con, $query);
       }
        echo ' <button type="button" class="btn btn-outline-primary btn-sm" onClick="comment_cr_id_with_file('.$id.')"  >Add comment</button></div>';
         echo'
-        <div class="col-5" >
+        <div class="col-5" style="padding:1rem 1rem;background: #f7f7f7;">
         <div style="margin-left: 10px;margin-right: 10px;">
         <small style="display:block;"><strong style="color:gray">'.$sj.' Status</strong></small>
         ';
@@ -251,7 +251,7 @@ $result = mysqli_query($con, $query);
         
 echo "<script>console.log('".$_SESSION["department"]."');</script>";
         if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
-            echo '<select class="form-select form-select-lg mt-2" id="cr_edit_status" name="cr_edit_status" onchange="update_cr_detail('.$id.','.$cr_edit_status.')" style="border: 0px;font-weight: bold;padding-left: 0.6rem;font-size: xxx-large;" aria-label=".form-select-lg example">
+            echo '<select class="form-select form-select-lg mt-2" id="cr_edit_status" name="cr_edit_status" onchange="update_cr_detail('.$id.','.$cr_edit_status.')" style="border: 0px;font-weight: bold;padding-left: 0.6rem;font-size: xxx-large;background: transparent;" aria-label=".form-select-lg example">
             '.$cr_op.'
             </select>';
             
@@ -260,7 +260,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             <div class="row" >
               <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>'.$sj.' Owner</strong></div>|
               <div class="col" style=" padding-left: 25px;text-align-last: right;">
-              <select class="form-select form-select-sm"  id="cr_edit_case_officer" name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')"  style="border: 0px;font-weight: bold;" aria-label=".form-select-lg example">
+              <select class="form-select form-select-sm"  id="cr_edit_case_officer" name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')"  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
               '.$username_op.'
               </select>
               </div>
