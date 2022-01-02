@@ -29,20 +29,24 @@ session_start();
     echo "<ul >";
       while( $row = mysqli_fetch_array($result)) {
             $count_comment_cr = $row["count_comment"];
-
+            if($row['piority']=="Urgent"){
+                $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row['request_important'].'</span>';
+              }else{
+                $ri_style = '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">'.$row['request_important'].'</span>';
+              }
             ?>
             <li class="row shadow-sm rounded md-3 p-2 bg-white">
                 <div class="col-6">
                     <?php echo $row["ticket_template"]." ".$row["id"]." ".$row["title"]; ?>
                 </div>
                 <div class="col-2">
-                    <?php echo $row["status"]; ?>
+                <button type="button" class="btn btn-outline-dark"> <?php echo $row["status"]; ?></button>    
                 </div>
                 <div class="col-2">
-                    <?php echo $row["piority"]; ?>
+                    <?php echo $ri_style; ?>
                 </div>
                 <div class="col-2">
-                    <?php echo "detail" ?>
+                        <ion-icon name="grid-outline"></ion-icon>
                 </div>
             </li>
             <?php
