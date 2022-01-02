@@ -136,7 +136,7 @@ if(isset($_POST["from_post"] )){
   date_default_timezone_set("Asia/Bangkok");
   mysqli_query($con, "SET NAMES 'utf8' ");
   $result = mysqli_query($con, $query);
-  echo '<script>console.log("'.htmlspecialchars(stripslashes(str_replace(array("\r", "\n"), '', var_export($query, true)))).'")</script>';
+  // echo '<script>console.log("'.htmlspecialchars(stripslashes(str_replace(array("\r", "\n"), '', var_export($query, true)))).'")</script>';
   while($row = mysqli_fetch_array($result)) {
     $ticket_role = role_user($row["request_username"],$row["follow_up_by"]);
     $status = badge_status($row['status']);

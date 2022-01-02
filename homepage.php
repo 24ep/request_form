@@ -872,7 +872,7 @@
                                <!-- console bra -->
                                <!-- project -->
                                <small>Project<small>
-                               <?php include('get/get_list_ts.php?ticket_type=TS')?>
+                               <?php include('get/get_list_ts.php?ticket_template=TS')?>
                                <!-- support task -->
                                     <!-- unassign -->
                                     <!-- self -->
@@ -880,7 +880,7 @@
                                <!-- Content request -->
                                <hr>
                                <small>Content Request<small>
-                               <?php include('get/get_list_ts.php?ticket_type=CR')?>
+                               <?php include('get/get_list_ts.php?ticket_template=CR')?>
                                     <!-- unassign -->
                                     <!-- self -->
                                     <!-- another -->
