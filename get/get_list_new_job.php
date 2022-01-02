@@ -41,7 +41,7 @@ function badge_status($status){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
   }elseif($status=="checking"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ffff7e;color:#997300;border:#ffff7e">checking</button>';
-  }elseif($status=="accepted"){
+  }elseif($status=="accepted" or $status=="Approved"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #7befb2;color:#115636;border:#115636">accepted</button>';
   }elseif($status=="waiting confirm"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #499CF7;color:#093f8e;border:#499CF7">waiting confirm</button>';
@@ -195,11 +195,11 @@ if(isset($_POST["from_post"] )){
     $ticket_role = role_user($row["request_username"],$row["follow_up_by"]);
     
     if($row['status']=="accepted" and $row['job_status_filter'] == "Continue" and $row['approved_editing_status'] <> "approved"){
-      $status==badge_status("On-Process");
+      $status=badge_status("On-Process");
     }elseif($row['status']=="accepted" and $row['job_status_filter'] == "Continue" and $row['approved_editing_status'] == "approved"){
-      $status==badge_status("Approved");
+      $status=badge_status("Approved");
     }elseif($row['status']=="accepted" and $row['job_status_filter'] <> "Continue" ){
-      $status==badge_status($row['job_status_filter']);
+      $status=badge_status($row['job_status_filter']);
     }else{
       $status =badge_status($row['status']);
     }
@@ -266,13 +266,13 @@ if(isset($_POST["from_post"] )){
             $ticket_role = role_user($row_child["request_username"],$row_child["follow_up_by"]);
             // $status = badge_status($row_child['status']);
             if($row_child['status']=="accepted" and $row_child['job_status_filter'] == "Continue" and $row_child['approved_editing_status'] <> "approved"){
-              $status==badge_status("On-Process");
+              $status=badge_status("On-Process");
             }elseif($row_child['status']=="accepted" and $row_child['job_status_filter'] == "Continue" and $row_child['approved_editing_status'] == "approved"){
-              $status==badge_status("Approved");
+              $status=badge_status("Approved");
             }elseif($row_child['status']=="accepted" and $row_child['job_status_filter'] <> "Continue" ){
-              $status==badge_status($row_child['job_status_filter']);
+              $status=badge_status($row_child['job_status_filter']);
             }else{
-              $status =badge_status($row_child['status']);
+              $status=badge_status($row_child['status']);
             }
             //important
           if($i<$subtask_count){
