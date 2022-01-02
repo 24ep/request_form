@@ -251,7 +251,7 @@ $result = mysqli_query($con, $query);
         
 echo "<script>console.log('".$_SESSION["department"]."');</script>";
         if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
-            echo '<select class="form-select form-select-lg mt-2" id="cr_edit_status" name="cr_edit_status" onchange="update_cr_detail('.$id.','.$cr_edit_status.')" style="border: 0px;font-weight: bold;padding-left: 0.6rem;font-size: xxx-large;background: transparent;" aria-label=".form-select-lg example">
+            echo '<select class="form-select form-select-lg mt-2" id="cr_edit_status" name="cr_edit_status" onchange="update_cr_detail('.$id.','.$cr_edit_status.')" style="border: 0px;font-weight: bold;padding-left: 0.6rem;font-size: xxx-large;background-color: transparent;" aria-label=".form-select-lg example">
             '.$cr_op.'
             </select>';
             
@@ -355,21 +355,24 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             echo '
             <br>
             <small style="display:block"><strong style="color:gray">Internal</strong></small>
-            <div class="mb-3">
-            <label for="exampleDataList" class="form-label">Update resone</label>
-              <input class="form-control form-control-sm" list="datalistOptions"  onchange="update_cr_detail('.$id.','.$cr_edit_content_request_reson.')" id="cr_edit_content_request_reson" name="cr_edit_content_request_reson" placeholder="Type to search..." value="'.$content_request_reson.'">
+            <div class="mb-3 row">
+            <label for="exampleDataList" class="col-sm-2 col-form-label">Update reason</label>
+            <div class="col-sm-10">
+            <input class="form-control form-control-sm" list="datalistOptions"  onchange="update_cr_detail('.$id.','.$cr_edit_content_request_reson.')" id="cr_edit_content_request_reson" name="cr_edit_content_request_reson" placeholder="Type to search..." value="'.$content_request_reson.'">
               <datalist id="datalistOptions">
               '.$content_request_reson_op.'
               </datalist>
               </div>
-            <div class="mb-3">
-            <div class="mb-3">
-            <label for="exampleDataList" class="form-label">Request by</label>
-              <input class="form-control form-control-sm" list="datalistOptionsrequestby"  onchange="update_cr_detail('.$id.','.$cr_edit_request_by.')" id="cr_edit_request_by" name="cr_edit_request_by" placeholder="Type to search..." value="'.$request_by.'">
+            </div>
+            <div class="mb-3 row">
+            <label for="exampleDataList" class="col-sm-2 col-form-label">Request by</label>
+            <div class="col-sm-10">
+            <input class="form-control form-control-sm" list="datalistOptionsrequestby"  onchange="update_cr_detail('.$id.','.$cr_edit_request_by.')" id="cr_edit_request_by" name="cr_edit_request_by" placeholder="Type to search..." value="'.$request_by.'">
               <datalist id="datalistOptionsrequestby">
               '.$username_op.'
               </datalist>
-              </div>
+            </div>
+            </div>
             <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Internal note</label>
             <textarea id="cr_edit_note" name="cr_edit_note" onchange="update_cr_detail('.$id.','.$cr_edit_note.')"  class="form-control"  rows="5">'.$note.'</textarea>
@@ -377,7 +380,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             }
       
         }else{
-           echo '<h4 style="font-weight: 900;padding-left: 0rem;font-size: xxx-large;">'.$status.'</h4>'; 
+           echo '<h4 style="font-weight: 900;padding-left: 0rem;font-size: xxx-large;background-color: transparent;">'.$status.'</h4>'; 
                ?>
                  <hr>
                 <div class="col">
