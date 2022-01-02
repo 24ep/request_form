@@ -21,7 +21,8 @@ function get_ts_list($ticket_template){
     LEFT JOIN all_in_one_project.comment as comment
     ON ticket.id = comment.ticket_id 
     where ".$ts_filter." 
-    GROUP BY ticket.id";
+    GROUP BY ticket.id
+    LIMIT 100";
     //echo "<script>console.log('".$query."');</script>";
     $result = mysqli_query($con, $query);
    
