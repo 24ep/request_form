@@ -176,8 +176,13 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                                   echo'
                             </select>
                           </div>
+                          ';
+                          if(strpos($department,"Content")!==false or $department=='' ){
+                            $er= "border-end";
+                          }
+                          echo '
                           <div class="col" style="padding: 3px;">
-                            <select id="cl_edit_update_type_'.$row["id"].'" name="cl_edit_update_type_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_update_type.')" class="form-select form-select-sm rounded-0 border-0 border-end text-center" aria-label="Default select example">
+                            <select id="cl_edit_update_type_'.$row["id"].'" name="cl_edit_update_type_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_update_type.')" class="form-select form-select-sm rounded-0 border-0 '.$er.' text-center" aria-label="Default select example">
                             ';    
                             $op_update_type = return_s_select_box_cl_cr($row["update_type"],"74");
                             echo $op_update_type;

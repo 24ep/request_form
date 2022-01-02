@@ -398,15 +398,15 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             <?php
            echo '  
            <hr>
-           <ul class="list-group">
-           <li class="list-group-item" style="display: inline-flex;border: 0px;background: aliceblue;"><div class="col-6 fw-bold ">assign</div><div class="col-6">'.$case_officer.'</div></li>
-           <li class="list-group-item" style="display: inline-flex;border: 0px;background: aliceblue;"><div class="col-6 fw-bold ">name</div><div class="col-6">'.$case_name.'</div></li>
-           <li class="list-group-item" style="display: inline-flex;border: 0px;background: aliceblue;"><div class="col-6 fw-bold ">office tell</div><div class="col-6">'.$office_tell.'</div></li>
-           <li class="list-group-item" style="display: inline-flex;border: 0px;background: aliceblue;"><div class="col-6 fw-bold ">ref cto</div><div class="col-6">'.$cto_ref.'</div></li>
-           <li class="list-group-item" style="display: inline-flex;border: 0px;background: aliceblue;"><div class="col-6 fw-bold ">website</div><div class="col-6">'.$platform_issue.'</div></li>
-           <li class="list-group-item" style="display: inline-flex;border: 0px;background: aliceblue;"><div class="col-6 fw-bold ">type</div><div class="col-6">'.$type.'</div></li>
-           <li class="list-group-item" style="display: inline-flex;border: 0px;background: aliceblue;"><div class="col-6 fw-bold ">sku</div><div class="col-6">'.$sku.'</div></li>
-           <li class="list-group-item" style="display: inline-flex;border: 0px;background: aliceblue;"><div class="col-6 fw-bold ">effective_date</div><div class="col-6">'.$effective_date.'</div></li>
+           <ul class="list-group list-group shadow-sm border-0 rounded bg-white">
+           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">assign</div><div class="col-6">'.$case_officer.'</div></li>
+           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">name</div><div class="col-6">'.$case_name.'</div></li>
+           <li class="list-group-item border-0 border-bottom "  style="display: inline-flex;;"><div class="col-6 fw-bold ">office tell</div><div class="col-6">'.$office_tell.'</div></li>
+           <li class="list-group-item border-0 border-bottom " style="display: inline-flex;"><div class="col-6 fw-bold ">ref cto</div><div class="col-6">'.$cto_ref.'</div></li>
+           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">website</div><div class="col-6">'.$platform_issue.'</div></li>
+           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">type</div><div class="col-6">'.$type.'</div></li>
+           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">sku</div><div class="col-6">'.$sku.'</div></li>
+           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">effective_date</div><div class="col-6">'.$effective_date.'</div></li>
            </ul>
            <br>
            '.$list_attachment.'
