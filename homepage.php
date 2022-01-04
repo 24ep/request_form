@@ -917,7 +917,7 @@
                                 </div>
                                <!-- support task -->
                                <hr>
-                               <span class="row"><strong><ion-icon name="business-outline"></ion-icon> Data & Application Support</strong></span>
+                               <span class="row"><strong><ion-icon name="server-outline"></ion-icon> Data & Application Support</strong></span>
 
                                <div class="row">
                                    <div class="col border-0 border-end">
