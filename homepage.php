@@ -874,7 +874,7 @@
                                 <?php include('get/get_list_ts.php')?>
                                <!-- console bra -->
                                <!-- project -->
-                               <small>Project</small>
+                               <small class="row m-3">Project</small>
                                <?php list_ts("ticket_template = 'PJ'"); ?>
                                <!-- support task -->
                                     <!-- unassign -->
@@ -885,11 +885,11 @@
                                <small>Content Request</small>
                                <div class="row">
                                    <div class="col border-0 border-end">
-                                       <small>Your Assignment</small>
+                                       <small class="row m-3">Your Assignment</small>
                                        <?php list_ts("ticket_template = 'CR' and participant like '".$_GET["username"]."'"); ?>
                                    </div>
                                    <div class="col">
-                                       <small>Unassign</small>
+                                       <small class="row m-3">Unassign</small>
                                        <?php list_ts("ticket_template = 'CR' and case_officer = 'unassign' and status <> 'Close'"); ?>
                                    </div>
                                 </div>

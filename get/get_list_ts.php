@@ -51,20 +51,24 @@ return $status;
       while( $row = mysqli_fetch_array($result)) {
             $count_comment_cr = $row["count_comment"];
             if($row['piority']=="Urgent"){
-                $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row['piority'].'</span>';
-              }else{
-                $ri_style = '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">'.$row['piority'].'</span>';
+                $ri_style = "border-left: #dc3545 solid 15px;";
+              }elseif($row['piority']=="High"){
+                $ri_style = "border-left: #f396bf solid 15px;";
+              }elseif($row['piority']=="Medium"){
+                $ri_style = "border-left: #f396bf solid 15px;";
+              }elseif($row['piority']=="low"){
+                $ri_style = "border-left: #ccc solid 15px;";
               }
             ?>
-            <li class="row shadow-sm rounded md-3 p-2 bg-white">
-                <div class="col-6" style="align-self: center;">
-                    <?php echo $row["ticket_template"]."-".$row["id"]." ".$row["title"]; echo $ri_style;  ?>
+            <li class="row shadow-sm rounded md-3 p-2 bg-white" style="<?php echo  $ri_style ?> ">
+                <div class="col-8" style="align-self: center;">
+                    <?php echo $row["ticket_template"]."-".$row["id"]." ".$row["title"]; ?>
                 </div>
-                <div class="col-2">
+                <div class="col-3">
                 <?php echo badge_status_cr($row["status"]); ?>    
                 </div>
           
-                <div class="col-2" style="align-self: center;">
+                <div class="col-1" style="align-self: center;">
                         <ion-icon name="grid-outline"></ion-icon>
                 </div>
             </li>
