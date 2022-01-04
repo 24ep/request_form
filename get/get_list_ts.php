@@ -103,7 +103,7 @@ return $status;
               
                $percent_progress = ($count_id_fr_complete/$count_id_fr)*100;
             ?>
-              <li class="row shadow-sm rounded md-3 p-2 bg-white" style="<?php echo  $ri_style ?> " data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row['id']; ?>)">
+              <li class="row shadow-sm rounded m-3 p-2 bg-white" style="<?php echo  $ri_style ?> " data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row['id']; ?>)">
                 <div class="col-6" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
                     <?php echo "<strong>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
                 </div>

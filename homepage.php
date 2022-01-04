@@ -554,7 +554,8 @@
                     <?php echo $_SESSION["username"]; ?></button>
             </div>
             <div class="col-10 window-full overflow-auto" style="background:#f9fafb">
-                <div class="tab-content" id="v-pills-tabContent" style="margin-top:15px">
+                <div class="tab-content" id="v-pills-tabContent" > 
+                    <!-- style="margin-top:15px" -->
                     <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel"
                         aria-labelledby="v-pills-dashboard-tab">
                         <div class="container overflow-auto" style="padding:0px 20px 0px 20px">
@@ -883,7 +884,7 @@
                                <!-- Content request -->
                                <hr>
                                <span class="row"><strong>Content Request</strong></span>
-                               
+
                                <div class="row">
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
