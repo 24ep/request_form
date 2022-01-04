@@ -39,9 +39,9 @@ $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project
 function badge_status($status){
   if($status=="pending"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
-  }elseif($status=="checking"){
+  }elseif($status=="checking"  or $status=="on-process"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ffff7e;color:#997300;border:#ffff7e">checking</button>';
-  }elseif($status=="accepted" or $status=="Approved"){
+  }elseif($status=="accepted" or $status=="approved"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #7befb2;color:#115636;border:#115636">accepted</button>';
   }elseif($status=="waiting confirm"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #499CF7;color:#093f8e;border:#499CF7">waiting confirm</button>';
