@@ -112,13 +112,13 @@ if(isset($_POST["from_post"] )){
       $brand_filter_id_lu = $row["parent"];
     }
     if(isset($brand_filter_id_lu)){
-      $brand_filter ="id = ".str_replace('NS-','',$_SESSION['brand_filter'])." or id =".$brand_filter_id_lu ;
+      $brand_filter =" anj.id = ".str_replace('NS-','',$_SESSION['brand_filter'])." or  anj.id =".$brand_filter_id_lu ;
     }else{
-      $brand_filter ="id = ".str_replace('NS-','',$_SESSION['brand_filter']);
+      $brand_filter =" anj.id = ".str_replace('NS-','',$_SESSION['brand_filter']);
     }
     
    }else{
-    $brand_filter ="brand like '%".$_SESSION['brand_filter']."%'";
+    $brand_filter =" anj.brand like '%".$_SESSION['brand_filter']."%'";
    }
   
  }else{
