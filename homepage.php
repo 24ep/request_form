@@ -894,14 +894,14 @@
     <div class="input-group input-group-sm mb-3">
       <span class="input-group-text" id="basic-addon1"><ion-icon style="vertical-align: middle;" name="terminal-outline"></ion-icon>Query Search</span>
       <input list="qlistoption" style="width: 75%;"type="text" class="form-control" 
-      onchange="run_ts_command('PJ');run_ts_command('CR');run_ts_command('DT');"
+      onchange="run_ts_command('PJ','task');run_ts_command('CR','ticket');run_ts_command('DT','ticket');"
        id="ts_command"
         name="ts_command"
          placeholder="Your task will display follow your command .."
           aria-label="Username"
            aria-describedby="basic-addon1" value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%' and ticket.status <> 'Close'">
      <span class="input-group-text">Limit</span>
-  <input type="number" max="999" onchange="run_ts_command('PJ');run_ts_command('CR');run_ts_command('DT');" min="1" class="form-control" id="ts_command_limit" name="ts_command_limit" placeholder="Server" value="100" aria-label="Server">
+  <input type="number" max="999" onchange="run_ts_command('PJ','level');run_ts_command('CR','ticket');run_ts_command('DT','ticket');" min="1" class="form-control" id="ts_command_limit" name="ts_command_limit" placeholder="Server" value="100" aria-label="Server">
         </div>
     <datalist id="qlistoption">
         <option value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%' and ticket.status <> 'Close'">
@@ -921,12 +921,12 @@
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your tasks assignment (task of project)</small>
                                        <div id="list_pj_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and  ticket_template = 'PJ'",500); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and  ticket_template = 'PJ'",500,'task'); ?>
                                        </div>
                                    </div>
                                    <div class="col">
                                        <small class="row m-3">All project</small>
-                                       <?php list_ts("ticket_template = 'PJ' and status <> 'Close'",500 ); ?>
+                                       <?php list_ts("ticket_template = 'PJ' and status <> 'Close'",500,'ticket' ); ?>
                                    </div>
                                 </div>
                                <!-- support task -->
@@ -937,12 +937,12 @@
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
                                        <div id="list_da_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and ticket_template = 'DT'",500); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and ticket_template = 'DT'",500,'ticket'); ?>
                                        </div>
                                    </div>
                                    <div class="col">
                                        <small class="row m-3">Unassign</small>
-                                       <?php list_ts("ticket_template = 'DT' and case_officer = 'unassign' and status <> 'Close'",500); ?>
+                                       <?php list_ts("ticket_template = 'DT' and case_officer = 'unassign' and status <> 'Close'",500,'ticket'); ?>
                                    </div>
                                 </div>
                                  
@@ -954,12 +954,12 @@
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
                                        <div id="list_cr_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and  ticket_template = 'CR'",500); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and  ticket_template = 'CR'",500,'ticket'); ?>
                                        </div>
                                    </div>
                                    <div class="col">
                                        <small class="row m-3">Unassign</small>
-                                       <?php list_ts("ticket_template = 'CR' and case_officer = 'unassign' and status <> 'Close'",500); ?>
+                                       <?php list_ts("ticket_template = 'CR' and case_officer = 'unassign' and status <> 'Close'",500,'ticket'); ?>
                                    </div>
                                 </div>
                               
@@ -1306,15 +1306,17 @@ function itm_confirm_cancel(id, status_change) {
         });
     }
 
-    function run_ts_command(type){
+    function run_ts_command(type,ts_level){
         var ts_command_input = document.getElementById("ts_command").value;
         var ts_command_limit = document.getElementById("ts_command_limit").value;
         var summary_filter = ts_command_input + " and ticket_template = '" + type + "'";
+        var ts_level = ts_level;
     
 
         $.post("get/get_list_ts.php", {
             summary_filter: summary_filter,
-            ts_command_limit:ts_command_limit
+            ts_command_limit:ts_command_limit,
+            ts_level:ts_level
         }, function(data) {
             if(type=="PJ"){
                 $('#list_pj_task').html(data);
