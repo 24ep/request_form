@@ -886,10 +886,10 @@
         name="ts_command"
          placeholder="Your task will display follow your command .."
           aria-label="Username"
-           aria-describedby="basic-addon1" value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
+           aria-describedby="basic-addon1" value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%' and status <> 'Close'">
     </div>
     <datalist id="qlistoption">
-        <option value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
+        <option value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%' and status <> 'Close'">
         <option value="ticket.title like  '%grouping%'">
         <option value="ticket.id = 3009">
         <option value="ticket.status = 'Pending'">
