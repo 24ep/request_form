@@ -62,7 +62,7 @@ return $status;
   
      
       $i=1;
-        while( $row_task = mysqli_fetch_array($result)) {
+        while( $row_task = mysqli_fetch_array($result_task)) {
           $ri_style = "border-left: #ccc solid 15px;";
 
           if($i==1){
