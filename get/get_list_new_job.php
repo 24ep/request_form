@@ -146,10 +146,8 @@ if(isset($_POST["from_post"] )){
   anj.parent,
   anj.sub_department, 
   anj.trigger_status, 
-  anj.job_cms_data_sync,
   jc.job_number,
   jc.job_status_filter,
-  jc.approved_by,
   jc.approved_editing_status 
   FROM all_in_one_project.add_new_job as anj
   left join u749625779_cdscontent.job_cms as jc 
@@ -177,10 +175,8 @@ if(isset($_POST["from_post"] )){
   anj.parent,
   anj.sub_department, 
   anj.trigger_status, 
-  anj.job_cms_data_sync,
   jc.job_number,
   jc.job_status_filter,
-  jc.approved_by,
   jc.approved_editing_status 
   FROM all_in_one_project.add_new_job as anj
   left join u749625779_cdscontent.job_cms as jc 
