@@ -48,7 +48,8 @@ return $status;
     //echo "<script>console.log('".$query."');</script>";
     $result = mysqli_query($con, $query);
 
-    echo "<ul style='width: 98%;'>";
+    echo "<ul >";
+    $i=1;
       while( $row = mysqli_fetch_array($result)) {
             $count_comment_cr = $row["count_comment"];
             if($row['piority']=="Urgent"){
@@ -76,10 +77,10 @@ return $status;
           
             </li>
             <?php
-            $i=1;
+            
              }elseif($row['ticket_template']=="PJ"){
 
-              if( $i==1){
+              if($i==1){
                 echo '<li class="mb-1 row">
                 <div class="col-6 text-center" style="padding:3px;"> <strong>Project name</strong></div>
                 <div class="col-2 text-center" style="padding:3px;"> <strong>Owner</strong></div>
