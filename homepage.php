@@ -876,7 +876,17 @@
                                <!-- console bra -->
                                <!-- project -->
                                <span class="row"><strong>Project</strong></span>
-                               <?php list_ts("ticket_template = 'PJ'"); ?>
+                               
+                               <div class="row">
+                                   <div class="col border-0 border-end">
+                                       <small class="row m-3">Your tasks assignment</small>
+                                       
+                                   </div>
+                                   <div class="col">
+                                       <small class="row m-3">All project</small>
+                                       <?php list_ts("ticket_template = 'PJ'"); ?>
+                                   </div>
+                                </div>
                                <!-- support task -->
                                     <!-- unassign -->
                                     <!-- self -->
