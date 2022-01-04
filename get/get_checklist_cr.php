@@ -84,7 +84,8 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
     cl.description,
     cl.est_start_date,
     cl.est_due_date,
-    cr.ticket_template
+    cr.ticket_template,
+    cl.description
     FROM all_in_one_project.checklist_of_content_request as cl
     left join all_in_one_project.content_request as cr
     on cl.ticket_id = cr.id    
@@ -223,7 +224,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                       <label for="inputPassword" class="col-sm-2 col-form-label">No. '.$i.'</label>
                       <div class="col-sm-9">
                     
-                          <textarea placeholder="input detail of task  '.$i.' here ." style="border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description_'.$row["id"].'" name="cl_edit_description_'.$row["id"].'" rows="1"></textarea>
+                          <textarea placeholder="input detail of task  '.$i.' here ." style="border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description_'.$row["id"].'" name="cl_edit_description_'.$row["id"].'" rows="1">'.$row["description"].'</textarea>
                        
                       </div>
                       <div class="col-sm-1" style="align-self: center;">
