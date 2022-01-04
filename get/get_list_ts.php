@@ -84,14 +84,14 @@ return $status;
               <div class="col text-center" style="padding:3px;"> <strong>Duration due date</strong></div>
               </li>';
 
-               $query_count = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where ticket_id =".$row['id'];
-               $query_count_complete = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where status = 'Close' and  ticket_id =".$row['id'];
-               $result_count = mysqli_query($con, $query_count);
-               $result_count_complete = mysqli_query($con, $query_count_complete);
-               $count_id=mysqli_fetch_assoc($result_count);
-               $count_id_complete=mysqli_fetch_assoc($result_count_complete);
-               $count_id_fr=$count_id['count_id'];
-               $count_id_fr_complete=$count_id_complete['count_id'];
+              //  $query_count = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where ticket_id =".$row['id'];
+              //  $query_count_complete = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where status = 'Close' and  ticket_id =".$row['id'];
+              //  $result_count = mysqli_query($con, $query_count);
+              //  $result_count_complete = mysqli_query($con, $query_count_complete);
+              //  $count_id=mysqli_fetch_assoc($result_count);
+              //  $count_id_complete=mysqli_fetch_assoc($result_count_complete);
+              //  $count_id_fr=$count_id['count_id'];
+              //  $count_id_fr_complete=$count_id_complete['count_id'];
            
                //cal progress
               
