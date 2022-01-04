@@ -873,6 +873,28 @@
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
                                 <?php include('get/get_list_ts.php')?>
+                            <!-- nav bar -->
+                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                <div class="container-fluid">
+                                    <a class="navbar-brand" href="#">Navbar</a>
+                                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                    <div class="navbar-nav row">
+                                    
+                                        <div class="col-6">
+                                            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Search</label>
+                                            <input value="username = '<?php echo $_SESSION["user_filter"];?>'" class="form-control form-control-sm"
+                                               id="ts_query" 
+                                                placeholder="query search...">
+                                          
+                                        </div>
+                                        
+                                    </div>
+                                    </div>
+                                </div>
+                                </nav>
                                <!-- console bra -->
                                <!-- project -->
                                <span class="row"><strong>Project</strong></span>
