@@ -23,7 +23,7 @@ return $status;
 }
 
     function list_ts($filter,$ts_command_limit,$level ){
-      echo "<ul style='width: 95%;'>";
+    
       $i=1;
         //-------------subtask for project-----------------
 
@@ -33,6 +33,7 @@ return $status;
       mysqli_query($con, "SET NAMES 'utf8' ");
       //--
       if($level=="task"){
+        echo "<ul style='width: 95%;'>";
         $sts_filter = str_replace("ticket.case_officer","task.case_officer",$ts_filter);
         $sts_filter = str_replace("ticket.participant","task.case_officer",$sts_filter);
         $sts_filter = str_replace("ticket.status","task.status",$sts_filter);
