@@ -34,6 +34,7 @@ return $status;
       //--
       if($level=="task"){
         $sts_filter = str_replace("ticket.case_officer","task.case_officer",$ts_filter);
+        $sts_filter = str_replace("ticket.participant","task.case_officer",$ts_filter);
       $sts_filter = str_replace("ticket.status","task.status",$ts_filter);
       $query_task = "SELECT 
       task.id,
@@ -87,7 +88,7 @@ return $status;
                 <?php
 
 
-
+$i++;
 
         }
 
@@ -214,12 +215,11 @@ return $status;
                 <?php
     
                  }
+                 $i++;
                 
       }
       
         //------------------------------
-    
-             $i++;
      } 
     
      echo "</ul>";
