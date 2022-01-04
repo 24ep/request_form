@@ -85,8 +85,7 @@ return $status;
               </li>';
 
                $query_count = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where ticket_id =".$row['id'];
-               $query_count_complete = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where status = 'Close' and  ticket_id =".$row['id'];;
-               $result = mysqli_query($con, $query);
+               $query_count_complete = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where status = 'Close' and  ticket_id =".$row['id'];
                $result_count = mysqli_query($con, $query_count);
                $result_count_complete = mysqli_query($con, $query_count_complete);
                $count_id=mysqli_fetch_assoc($result_count);
@@ -112,7 +111,7 @@ return $status;
                      aria-valuenow="<?php echo $percent_progress ;?>"
                      aria-valuemin="0" 
                      aria-valuemax="100">
-                    <?php echo $percent_progress ;?>% (<?php echo $count_id_fr_complete ;?>/<?php echo $count_id_fr ;?>
+                    <?php echo $percent_progress ;?>% (<?php echo $count_id_fr_complete ;?>/<?php echo $count_id_fr ;?>)
                 </div> 
                 <div class="col-2" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id']?>) " style="align-self: center;">
                     <?php echo "12 Days"; ?>
