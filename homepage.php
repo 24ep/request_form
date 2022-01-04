@@ -876,7 +876,8 @@
                             <!-- nav bar -->
                             
                             <nav class="navbar navbar-light bg-light">
-  <form class="style=width:100%">
+  <form style="width:100%">
+      
     <div class="input-group-sm mb-3">
       <span class="input-group-text" id="basic-addon1">Query search</span>
       <input list="qlistoption" type="text" class="form-control" 
