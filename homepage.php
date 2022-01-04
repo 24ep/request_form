@@ -876,9 +876,9 @@
                             <!-- nav bar -->
 
 
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand">Tasks Management</a>
+<nav class="navbar">
+  <div class="container-fluid p-0">
+    <a class="navbar-brand"></a>
     <form class="d-flex">
     <button class="btn btn-primary btn-sm " style="margin-left:10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
     <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated" aria-label="add outline"></ion-icon>
@@ -888,7 +888,7 @@
   </div>
 </nav>
 
-                            <nav class="navbar navbar-light bg-light">
+ <nav class="navbar">
   <form style="width:100%">
 
     <div class="input-group input-group-sm mb-3">
