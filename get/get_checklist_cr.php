@@ -223,7 +223,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                       <label for="inputPassword" class="col-sm-2 col-form-label">No. '.$i.'</label>
                       <div class="col-sm-9">
                     
-                          <textarea placeholder="input detail of task  '.$i.' here ." style="border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description" name="cl_edit_description" rows="1"></textarea>
+                          <textarea placeholder="input detail of task  '.$i.' here ." style="border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description_'.$row["id"].'" name="cl_edit_description_'.$row["id"].'" rows="1"></textarea>
                        
                       </div>
                       <div class="col-sm-1" style="align-self: center;">
