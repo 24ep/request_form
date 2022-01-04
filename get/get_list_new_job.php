@@ -39,7 +39,7 @@ $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project
 function badge_status($status){
   if($status=="pending"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
-  }elseif($status=="checking"  or $status=="on-process"){
+  }elseif($status=="checking"  or $status=="on-production"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ffff7e;color:#997300;border:#ffff7e">'.$status.'</button>';
   }elseif($status=="accepted" or $status=="approved"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #7befb2;color:#115636;border:#115636">'.$status.'</button>';
@@ -193,7 +193,7 @@ if(isset($_POST["from_post"] )){
     $ticket_role = role_user($row["request_username"],$row["follow_up_by"]);
     
     if($row['status']=="accepted" and $row['trigger_status'] <> "approved"){
-      $status=badge_status("on-process");
+      $status=badge_status("on-production");
     }elseif($row['status']=="accepted" and $row['trigger_status'] == "approved"){
       $status=badge_status("approved");
     }else{
@@ -263,7 +263,7 @@ if(isset($_POST["from_post"] )){
             // $status = badge_status($row_child['status']);
                 
           if($row_child['status']=="accepted" and $row_child['trigger_status'] <> "approved"){
-            $status=badge_status("on-process");
+            $status=badge_status("on-production");
           }elseif($row_child['status']=="accepted" and $row_child['trigger_status'] == "approved"){
             $status=badge_status("approved");
           }else{
