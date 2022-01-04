@@ -875,13 +875,14 @@
                                 <?php include('get/get_list_ts.php')?>
                             <!-- nav bar -->
                             
-                                        <div class="row">
-                                            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Search</label>
-                                            <input value="username = '<?php echo $_SESSION["user_filter"];?>'" class="form-control form-control-sm"
-                                               id="ts_query" 
-                                                placeholder="query search...">
-                                          
-                                        </div>
+                            <nav class="navbar navbar-light bg-light">
+  <form class="container-fluid">
+    <div class="input-group">
+      <span class="input-group-text" id="basic-addon1">Query search</span>
+      <input type="text" class="form-control" id="ts_command" name="ts_command" placeholder="Your task will display follow your command .." aria-label="Username" aria-describedby="basic-addon1" value="username = '<?php echo $_SESSION["username"] ?>'">
+    </div>
+  </form>
+</nav>
                                      
                                <!-- console bra -->
                                <!-- project -->
