@@ -97,14 +97,14 @@ return $status;
               
                  $percent_progress = ($count_id_fr_complete/$count_id_fr)*100;
             ?>
-              <li class="row shadow-sm rounded md-3 p-2 bg-white" style="<?php echo  $ri_style ?> " data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row['id'] ?>)">
-                <div class="col-6" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id']?>) " style="align-self: center;">
+              <li class="row shadow-sm rounded md-3 p-2 bg-white" style="<?php echo  $ri_style ?> " data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row['id']; ?>)">
+                <div class="col-6" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
                     <?php echo "<strong>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
                 </div>
-                <div class="col-2" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id']?>) " style="align-self: center;">
+                <div class="col-2" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
                     <?php echo $row["case_officer"]; ?>
                 </div>
-                <div class="col-2" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row['id'] ?>)" style="align-self: center;">
+                <div class="col-2" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row['id'] ;?>)" style="align-self: center;">
                 <div class="progress-bar progress-bar-striped progress-bar-animated" 
                      role="progressbar"
                      style="background: #17b717;width: 100%;"
@@ -113,7 +113,7 @@ return $status;
                      aria-valuemax="100">
                     <?php echo $percent_progress ;?>% (<?php echo $count_id_fr_complete ;?>/<?php echo $count_id_fr ;?>)
                 </div> 
-                <div class="col-2" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id']?>) " style="align-self: center;">
+                <div class="col-2" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
                     <?php echo "12 Days"; ?>
                 </div>
                 </div>
