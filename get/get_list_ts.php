@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-function badge_status_cr($status,$ts_command_limit){
+function badge_status_cr($status){
   if($status=="Pending"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
   }elseif( $status=="Inprogress"){
@@ -44,8 +44,7 @@ return $status;
     LEFT JOIN all_in_one_project.comment as comment
     ON ticket.id = comment.ticket_id 
     where ".$ts_filter." 
-    GROUP BY ticket.id limit ".$ts_command_limit
-    ;
+    GROUP BY ticket.id limit ".$ts_command_limit;
     //echo "<script>console.log('".$query."');</script>";
     $result = mysqli_query($con, $query);
 
