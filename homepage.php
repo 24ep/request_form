@@ -999,7 +999,7 @@ function get_server_cpu_usage(){
 
                    <!-- -- -->
 
-                   <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
+                   <!-- <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination pagination-sm">
                                             <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1"
@@ -1019,7 +1019,7 @@ function get_server_cpu_usage(){
                                                             action="action/action_submit_add_content_request.php"
                                                             method="POST" enctype="multipart/form-data">
                                                             <div id="add_new_cr_result"></div>
-                                                            <?php include('form/form_create_content_request.php')?>
+                                                            <?php //include('form/form_create_content_request.php')?>
                                                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                                                 <button type="submit" class="btn btn-primary btn-sm"
                                                                     style="width:100%">Submit</button>
@@ -1032,7 +1032,7 @@ function get_server_cpu_usage(){
                                     </div>
                                     </ul>
                                 </nav>
-                            </div>
+                            </div> -->
 
                         <!-- -- -->
                         
