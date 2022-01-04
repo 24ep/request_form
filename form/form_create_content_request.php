@@ -105,6 +105,7 @@
         <select id="cr_ticket_template" name="cr_ticket_template" class="form-select form-select-sm">
            <option value="CR" selected>Content Request</option>
            <option value="PJ">Project</option>
+           <option value="DD">Data and Development</option>
         </select>
     </div>
 
