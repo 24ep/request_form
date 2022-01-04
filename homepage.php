@@ -945,7 +945,7 @@ function get_server_cpu_usage(){
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your tasks assignment (task of project)</small>
                                        <div id="list_pj_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and  ticket.ticket_template = 'PJ'",500,'task'); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status <> 'Close' and  ticket.ticket_template = 'PJ'",500,'task'); ?>
                                        </div>
                                    </div>
                                    <div class="col">
@@ -961,7 +961,7 @@ function get_server_cpu_usage(){
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
                                        <div id="list_da_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and ticket.ticket_template = 'DT'",500,'ticket'); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status <> 'Close' and ticket.ticket_template = 'DT'",500,'ticket'); ?>
                                        </div>
                                    </div>
                                    <div class="col">
@@ -978,7 +978,7 @@ function get_server_cpu_usage(){
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
                                        <div id="list_cr_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and  ticket.ticket_template = 'CR'",500,'ticket'); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status <> 'Close' and  ticket.ticket_template = 'CR'",500,'ticket'); ?>
                                        </div>
                                    </div>
                                    <div class="col">
