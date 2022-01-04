@@ -996,7 +996,10 @@ function get_server_cpu_usage(){
                                 </div>
                             </div>
                         </div>
-                        <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
+
+                   <!-- -- -->
+
+                   <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination pagination-sm">
                                             <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1"
@@ -1005,7 +1008,7 @@ function get_server_cpu_usage(){
                                                     <h5 class="offcanvas-title" id="offcanvasExampleLabel"
                                                         style="padding-left:50px;font-weight: bold;">
                                                         <ion-icon style="margin-right:10px" name="add-circle-outline">
-                                                        </ion-icon>Ticket Creation
+                                                        </ion-icon>Request Creation
                                                     </h5>
                                                     <button type="button" class="btn-close btn-close-white text-reset"
                                                         data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -1030,6 +1033,9 @@ function get_server_cpu_usage(){
                                     </ul>
                                 </nav>
                             </div>
+
+                        <!-- -- -->
+                        
                     </div>
                          <!-- ts console -->
                     <div class="tab-pane fade" id="v-pills-fl_board" role="tabpanel"
