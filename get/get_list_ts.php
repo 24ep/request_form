@@ -76,14 +76,18 @@ return $status;
           
             </li>
             <?php
+            $i=1;
              }elseif($row['ticket_template']=="PJ"){
 
-              echo '<li class="mb-1 row">
-              <div class="col-6 text-center" style="padding:3px;"> <strong>Project name</strong></div>
-              <div class="col-2 text-center" style="padding:3px;"> <strong>Owner</strong></div>
-              <div class="col-2 text-center" style="padding:3px;"> <strong>Progress</strong></div>
-              <div class="col-2 text-center" style="padding:3px;"> <strong>Due date</strong></div>
-              </li>';
+              if( $i==1){
+                echo '<li class="mb-1 row">
+                <div class="col-6 text-center" style="padding:3px;"> <strong>Project name</strong></div>
+                <div class="col-2 text-center" style="padding:3px;"> <strong>Owner</strong></div>
+                <div class="col-2 text-center" style="padding:3px;"> <strong>Progress</strong></div>
+                <div class="col-2 text-center" style="padding:3px;"> <strong>Due date</strong></div>
+                </li>';
+              }
+            
 
                $query_count = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where ticket_id =".$row['id'];
                $query_count_complete = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where status = 'Close' and  ticket_id =".$row['id'];
@@ -124,7 +128,7 @@ return $status;
 
 
             <?php
-
+$i++;
              }
      
      } 
