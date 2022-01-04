@@ -887,13 +887,13 @@ function get_server_memory_usage(){
     $mem = array_merge($mem);
     $memory_usage = $mem[2]/$mem[1]*100;
 
-    return $memory_usage;
+    return round($memory_usage);
 }
 
 function get_server_cpu_usage(){
 
     $load = sys_getloadavg();
-    return $load[0];
+    return round($load[0]);
 
 }
 
@@ -902,8 +902,9 @@ function get_server_cpu_usage(){
   <div class="container-fluid p-0">
     <a class="navbar-brand"></a>
     <form class="d-flex">
-        <?php $memory_usage = get_server_memory_usage(); 
-        echo "memory usage : ".$memory_usage; ?>
+        <?php $memory_usage = get_server_memory_usage();
+        $CPU_usage = get_server_cpu_usage() ;
+        echo "<small>CPU usage ".$CPU_usage."% | memory usage : ".$memory_usage."%</small>"; ?>
     <button class="btn btn-primary btn-sm " style="margin-left:10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
     <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated" aria-label="add outline"></ion-icon>
         New Ticket
