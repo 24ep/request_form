@@ -139,6 +139,7 @@ $result = mysqli_query($con, $query);
     $effective_date = $row["effective_date"];
     $effective_date_edit =  str_replace(' ','T',$row["effective_date"]);
     $content_request_reson = $row["content_request_reson"];
+    $ticket_template =$row["ticket_template"];
     if($case_officer=="" or $case_officer==null){
         $assign = '<div style="margin-bottom:15px">Unassign</div>';
     }else{
@@ -303,7 +304,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                     <small>Create a task for record action of ticket</small>
                 </div>
                 <div class="col"><div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">
-                 <button class="btn btn-primary btn-sm" onclick="add_cr_list(<?php echo $id; ?>)"><ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon> ADD TASK</button>
+                 <button class="btn btn-primary btn-sm" onclick="add_cr_list(<?php echo $id; ?>,'<?php echo $ticket_template; ?>')"><ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon> ADD TASK</button>
                 </div>
 
             </div></div>
@@ -456,8 +457,13 @@ function comment_cr_id(id) {
     }
 }
 
-function add_cr_list(id) {
-  var sku = document.getElementById("cr_edit_sku").value;
+function add_cr_list(id,ticket_template) {
+  if(ticket_template=="CR"){
+    var sku = document.getElementById("cr_edit_sku").value;
+  }else{
+    var sku = 0;
+  }
+  
   if (id) {
         $.post("action/action_create_checklist_cr.php", {
                 id: id,
