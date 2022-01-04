@@ -126,62 +126,64 @@ if(isset($_POST["from_post"] )){
  }
  //set_query
  if(isset($_SESSION['fopenticket'])){
-  $query = "SELECT 
-  anj.id,
-  anj.brand,
-  anj.department,
-  anj.sku,
-  anj.production_type,
-  anj.project_type,
-  anj.business_type,
-  anj.launch_date,
-  anj.request_username,
-  anj.status, 
-  anj.online_channel,
-  anj.bu,
-  anj.request_important,
-  anj.tags,
-  anj.participant,
-  anj.config_type,
-  anj.parent,
-  anj.sub_department, 
-  anj.trigger_status, 
-  jc.job_number,
-  jc.job_status_filter,
-  jc.approved_editing_status 
-  FROM all_in_one_project.add_new_job as anj
-  left join u749625779_cdscontent.job_cms as jc 
-  on anj.id = jc.csg_request_new_id  where anj.id =".$_SESSION['fopenticket']."  ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
+  $query = "SELECT * FROM add_new_job as anj where anj.id =".$_SESSION['fopenticket']."  ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
+  // $query = "SELECT 
+  // anj.id,
+  // anj.brand,
+  // anj.department,
+  // anj.sku,
+  // anj.production_type,
+  // anj.project_type,
+  // anj.business_type,
+  // anj.launch_date,
+  // anj.request_username,
+  // anj.status, 
+  // anj.online_channel,
+  // anj.bu,
+  // anj.request_important,
+  // anj.tags,
+  // anj.participant,
+  // anj.config_type,
+  // anj.parent,
+  // anj.sub_department, 
+  // anj.trigger_status, 
+  // jc.job_number,
+  // jc.job_status_filter,
+  // jc.approved_editing_status 
+  // FROM all_in_one_project.add_new_job as anj
+  // left join u749625779_cdscontent.job_cms as jc 
+  // on anj.id = jc.csg_request_new_id  where anj.id =".$_SESSION['fopenticket']."  ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
   unset($_SESSION['fopenticket']);
  }else{
-  
-  $query = "SELECT 
-  anj.id,
-  anj.brand,
-  anj.department,
-  anj.sku,
-  anj.production_type,
-  anj.project_type,
-  anj.business_type,
-  anj.launch_date,
-  anj.request_username,
-  anj.status, 
-  anj.online_channel,
-  anj.bu,
-  anj.request_important,
-  anj.tags,
-  anj.participant,
-  anj.config_type,
-  anj.parent,
-  anj.sub_department, 
-  anj.trigger_status, 
-  jc.job_number,
-  jc.job_status_filter,
-  jc.approved_editing_status 
-  FROM all_in_one_project.add_new_job as anj
-  left join u749625779_cdscontent.job_cms as jc 
-  on anj.id = jc.csg_request_new_id  where ((".$status_filter.") and (".$brand_filter.")
+  $query = "SELECT * FROM add_new_job as anj where ((".$status_filter.") and (".$brand_filter.")
          and (".$position_filter.")) and anj.parent is null ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
+  // $query = "SELECT 
+  // anj.id,
+  // anj.brand,
+  // anj.department,
+  // anj.sku,
+  // anj.production_type,
+  // anj.project_type,
+  // anj.business_type,
+  // anj.launch_date,
+  // anj.request_username,
+  // anj.status, 
+  // anj.online_channel,
+  // anj.bu,
+  // anj.request_important,
+  // anj.tags,
+  // anj.participant,
+  // anj.config_type,
+  // anj.parent,
+  // anj.sub_department, 
+  // anj.trigger_status, 
+  // jc.job_number,
+  // jc.job_status_filter,
+  // jc.approved_editing_status 
+  // FROM all_in_one_project.add_new_job as anj
+  // left join u749625779_cdscontent.job_cms as jc 
+  // on anj.id = jc.csg_request_new_id  where ((".$status_filter.") and (".$brand_filter.")
+  //        and (".$position_filter.")) and anj.parent is null ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error());
  }
   date_default_timezone_set("Asia/Bangkok");
   mysqli_query($con, "SET NAMES 'utf8' ");
