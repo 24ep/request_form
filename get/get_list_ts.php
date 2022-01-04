@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-function badge_status_cr($status){
+function badge_status_cr($status,$ts_command_limit){
   if($status=="Pending"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
   }elseif( $status=="Inprogress"){
@@ -22,7 +22,7 @@ function badge_status_cr($status){
 return $status;
 }
 
-    function list_ts($filter ){
+    function list_ts($filter,$ts_command_limit ){
     
     $ts_filter = $filter;
     date_default_timezone_set("Asia/Bangkok");
@@ -44,7 +44,8 @@ return $status;
     LEFT JOIN all_in_one_project.comment as comment
     ON ticket.id = comment.ticket_id 
     where ".$ts_filter." 
-    GROUP BY ticket.id;
+    GROUP BY ticket.id limit ".$ts_command_limit
+    ;
     //echo "<script>console.log('".$query."');</script>";
     $result = mysqli_query($con, $query);
 
@@ -142,9 +143,10 @@ return $status;
    mysqli_close($con);
     }
   $filter =$_POST["summary_filter"];
+  $ts_command_limit = $_POST["ts_command_limit"];
   echo '<script>console.log("'.$filter.'");</script>';
     if($filter<>""){
-      list_ts($filter );
+      list_ts($filter,$ts_command_limit);
     }
 
 
