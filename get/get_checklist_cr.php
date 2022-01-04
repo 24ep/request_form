@@ -122,6 +122,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
     }
 
     $i=1;
+
    
      while($row = mysqli_fetch_array($result)) {
       if($row['ticket_template']=='PJ' and $count_id_fr<>0 and $i = 1){
@@ -132,7 +133,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
         ';
         }
      
-          if($row['ticket_template']=='CR' and $i = 1){
+          if($row['ticket_template']=='CR' and $i == 1){
             if(strpos($department,"Content")!==false or $department==''){
            
               echo '<li class="mb-1 row">
