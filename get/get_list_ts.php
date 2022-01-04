@@ -132,9 +132,9 @@ return $status;
 
              }
             
-     
+             $i++;
      } 
-     $i++;
+    
      echo "</ul>";
    mysqli_close($con);
     }
