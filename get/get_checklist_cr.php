@@ -128,7 +128,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
      while($row = mysqli_fetch_array($result)) {
       if($row['ticket_template']=='PJ' and $count_id_fr<>0 and $i == 1){
         echo '
-        <div class="progress shadow-sm" style="margin-bottom:10px">
+        <div class="progress shadow-sm progress-bar-striped progress-bar-animated" style="margin-bottom:10px">
           <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="background: #17b717;width: '.$percent_progress.'%;" aria-valuenow="'.$percent_progress.'" aria-valuemin="0" aria-valuemax="100">Progress '.$percent_progress.'%</div>
         </div>
         ';
