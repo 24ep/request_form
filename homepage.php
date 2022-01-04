@@ -895,6 +895,7 @@
         </div>
     <datalist id="qlistoption">
         <option value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%' and ticket.status <> 'Close'">
+        <option value="ticket.case_officer like  '%<?php echo $_SESSION["username"]; ?>%' and ticket.status <> 'Close'">
         <option value="ticket.title like  '%grouping%'">
         <option value="ticket.id = 3009">
         <option value="ticket.status = 'Pending'">
