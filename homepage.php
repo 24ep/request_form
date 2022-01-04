@@ -879,7 +879,7 @@
   <form class="container-fluid container-md">
     <div class="input-group">
       <span class="input-group-text" id="basic-addon1">Query search</span>
-      <input type="text" class="form-control" onchange="run_ts_command('PJ');run_ts_command('CR');run_ts_command('DA');" id="ts_command" name="ts_command" placeholder="Your task will display follow your command .." aria-label="Username" aria-describedby="basic-addon1" value="participant like  '%<?php echo $_SESSION["username"] ?>%'">
+      <input type="text" class="form-control" onchange="run_ts_command('PJ');run_ts_command('CR');run_ts_command('DA');" id="ts_command" name="ts_command" placeholder="Your task will display follow your command .." aria-label="Username" aria-describedby="basic-addon1" value="participant like  '%<?php echo $_SESSION["username"]; ?>%'">
     </div>
   </form>
 </nav>
@@ -1277,25 +1277,25 @@ function itm_confirm_cancel(id, status_change) {
         });
     }
 
-    // function run_ts_command(type){
-    //     var ts_command_input = document.getElementById("ts_command").value;
-    //     var summary_filter = ts_command_input + " and ticket_template = '" + type + "'";
+    function run_ts_command(type){
+        var ts_command_input = document.getElementById("ts_command").value;
+        var summary_filter = ts_command_input + " and ticket_template = '" + type + "'";
 
 
-    //     $.post("get/get_list_ts.php", {
-    //         summary_filter: summary_filter
-    //     }, function(data) {
-    //         if(type=="PJ"){
-    //             $('#list_pj_task').html(data);
-    //         }else if(type=="CR"){
-    //             $('#list_cr_task').html(data);
-    //         }else if(type=="DA"){
-    //             $('#list_da_task').html(data);
-    //         }
+        $.post("get/get_list_ts.php", {
+            summary_filter: summary_filter
+        }, function(data) {
+            if(type=="PJ"){
+                $('#list_pj_task').html(data);
+            }else if(type=="CR"){
+                $('#list_cr_task').html(data);
+            }else if(type=="DA"){
+                $('#list_da_task').html(data);
+            }
          
-    //     });
+        });
     
-    // }
+    }
     </script>
     <script type="text/javascript">
 function select_current_tab(selecttab) {
