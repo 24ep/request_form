@@ -909,7 +909,11 @@
                                
                                <div class="row">
                                    <div class="col border-0 border-end">
-                                       <small class="row m-3">Your tasks assignment</small>
+                                       <!-- <small class="row m-3">Your tasks assignment (task of project)</small> -->
+                                       <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                        <label class="form-check-label" for="flexSwitchCheckDefault">check for display tasks level</label>
+                                       </div>
                                        <div id="list_pj_task">
                                          <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and  ticket_template = 'PJ'",500); ?>
                                        </div>
