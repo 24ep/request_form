@@ -37,6 +37,7 @@ return $status;
     ticket.ticket_template as ticket_template,
     comment.ticket_type as ticket_type,
     ticket.participant as ticket_participant,
+    ticket.case_officer as case_officer,
     sum(case when comment.ticket_type='content_request' then 1 else 0 end) as count_comment 
     FROM all_in_one_project.content_request as ticket
     LEFT JOIN all_in_one_project.comment as comment
@@ -78,10 +79,10 @@ return $status;
              }elseif($row['ticket_template']=="PJ"){
 
               echo '<li class="mb-1 row">
-              <div class="col-2 text-center" style="padding:3px;"> <strong>Project name</strong></div>
+              <div class="col-6 text-center" style="padding:3px;"> <strong>Project name</strong></div>
               <div class="col-2 text-center" style="padding:3px;"> <strong>Owner</strong></div>
-              <div class="col text-center" style="padding:3px;"> <strong>Progress</strong></div>
-              <div class="col text-center" style="padding:3px;"> <strong>Duration due date</strong></div>
+              <div class="col-2 text-center" style="padding:3px;"> <strong>Progress</strong></div>
+              <div class="col-2 text-center" style="padding:3px;"> <strong>Due date</strong></div>
               </li>';
 
                $query_count = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where ticket_id =".$row['id'];
