@@ -44,8 +44,7 @@ return $status;
     LEFT JOIN all_in_one_project.comment as comment
     ON ticket.id = comment.ticket_id 
     where ".$ts_filter." 
-    GROUP BY ticket.id
-    LIMIT 100";
+    GROUP BY ticket.id;
     //echo "<script>console.log('".$query."');</script>";
     $result = mysqli_query($con, $query);
 
