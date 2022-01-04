@@ -888,9 +888,20 @@
                                    </div>
                                 </div>
                                <!-- support task -->
-                                    <!-- unassign -->
-                                    <!-- self -->
-                                    <!-- another -->
+                               <hr>
+                               <span class="row"><strong>Data & Application Support</strong></span>
+
+                               <div class="row">
+                                   <div class="col border-0 border-end">
+                                       <small class="row m-3">Your Assignment</small>
+                                       <?php list_ts("ticket_template = 'DA' and participant like '".$_GET["username"]."'"); ?>
+                                   </div>
+                                   <div class="col">
+                                       <small class="row m-3">Unassign</small>
+                                       <?php list_ts("ticket_template = 'DA' and case_officer = 'unassign' and status <> 'Close'"); ?>
+                                   </div>
+                                </div>
+                                 
                                <!-- Content request -->
                                <hr>
                                <span class="row"><strong>Content Request</strong></span>
