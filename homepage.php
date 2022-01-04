@@ -876,10 +876,10 @@
                             <!-- nav bar -->
                             
                             <nav class="navbar navbar-light bg-light">
-  <form class="container-fluid">
+  <form class="container-fluid container-md">
     <div class="input-group">
       <span class="input-group-text" id="basic-addon1">Query search</span>
-      <input type="text" class="form-control" id="ts_command" name="ts_command" placeholder="Your task will display follow your command .." aria-label="Username" aria-describedby="basic-addon1" value="username = '<?php echo $_SESSION["username"] ?>'">
+      <input type="text" class="form-control" onchange="run_ts_command('PJ');run_ts_command('CR');run_ts_command('DA');" id="ts_command" name="ts_command" placeholder="Your task will display follow your command .." aria-label="Username" aria-describedby="basic-addon1" value="participant like  '%<?php echo $_SESSION["username"] ?>%'">
     </div>
   </form>
 </nav>
@@ -891,11 +891,13 @@
                                <div class="row">
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your tasks assignment</small>
-                                       
+                                       <div id="list_pj_task">
+                                         <?php list_ts("ticket_template = 'PJ'"); ?>
+                                       </div>
                                    </div>
                                    <div class="col">
                                        <small class="row m-3">All project</small>
-                                       <?php list_ts("ticket_template = 'PJ'"); ?>
+                                       <?php list_ts("ticket_template = 'PJ' and status <> 'Close'" ); ?>
                                    </div>
                                 </div>
                                <!-- support task -->
@@ -905,7 +907,9 @@
                                <div class="row">
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
-                                       <?php list_ts("ticket_template = 'DA' and participant like '".$_GET["username"]."'"); ?>
+                                       <div id="list_da_task">
+                                         <?php list_ts("ticket_template = 'DA'"); ?>
+                                       </div>
                                    </div>
                                    <div class="col">
                                        <small class="row m-3">Unassign</small>
@@ -920,7 +924,9 @@
                                <div class="row">
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
-                                       <?php list_ts("ticket_template = 'CR' and participant like '".$_GET["username"]."'"); ?>
+                                       <div id="list_cr_task">
+                                         <?php list_ts("ticket_template = 'CR'"); ?>
+                                       </div>
                                    </div>
                                    <div class="col">
                                        <small class="row m-3">Unassign</small>
@@ -1269,6 +1275,26 @@ function itm_confirm_cancel(id, status_change) {
         }, function(data) {
             $('#list_grouping').html(data);
         });
+    }
+
+    function run_ts_command(type){
+        var ts_command_input = document.getElementById("ts_command").value;
+        var summary_filter = ts_command_input + " and ticket_template = '" + type + "'";
+
+
+        $.post("get/get_list_ts.php", {
+            summary_filter: summary_filter
+        }, function(data) {
+            if(type=="PJ"){
+                $('#list_pj_task').html(data);
+            }else if(type=="CR"){
+                $('#list_cr_task').html(data);
+            }else if(type=="DA"){
+                $('#list_da_task').html(data);
+            }
+         
+        });
+    
     }
     </script>
     <script type="text/javascript">

@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 function badge_status_cr($status){
   if($status=="Pending"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
@@ -85,7 +86,7 @@ return $status;
                 <div class="col-6 text-center" style="padding:3px;"> <strong>Project name</strong></div>
                 <div class="col-2 text-center" style="padding:3px;"> <strong>Owner</strong></div>
                 <div class="col-2 text-center" style="padding:3px;"> <strong>Progress</strong></div>
-                <div class="col-2 text-center" style="padding:3px;"> <strong>Due date</strong></div>
+              
                 </li>';
               }
             
@@ -108,11 +109,11 @@ return $status;
                     <?php echo "<strong>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
                 </div>
 
-                <div class="col-2 text-center " data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
+                <div class="col-3 text-center " data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
                     <?php echo $row["case_officer"]; ?>
                 </div>
 
-                <div class="col-2 text-center" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row['id'];?>)" style="align-self: center;">
+                <div class="col-3 text-center" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row['id'];?>)" style="align-self: center;">
                   <div class="progress-bar rounded progress-bar-striped progress-bar-animated" 
                       role="progressbar"
                       style="background: #17b717;width: 100%;"
@@ -123,9 +124,7 @@ return $status;
                   </div> 
                 </div> 
 
-                <div class="col-2 text-center" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
-                    <?php echo "12 Days"; ?>
-                </div>
+                
           
           
             </li>
@@ -140,6 +139,10 @@ return $status;
     
      echo "</ul>";
    mysqli_close($con);
+    }
+  $filter =$_POST["summary_filter"];
+    if($filter<>""){
+      list_ts($filter )
     }
 
 
