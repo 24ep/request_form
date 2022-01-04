@@ -904,7 +904,7 @@
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your tasks assignment</small>
                                        <div id="list_pj_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"];."%' and  ticket_template = 'PJ'"); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and  ticket_template = 'PJ'"); ?>
                                        </div>
                                    </div>
                                    <div class="col">
@@ -920,7 +920,7 @@
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
                                        <div id="list_da_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"];."%' and ticket_template = 'DT'"); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and ticket_template = 'DT'"); ?>
                                        </div>
                                    </div>
                                    <div class="col">
@@ -937,7 +937,7 @@
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
                                        <div id="list_cr_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"];."%' and  ticket_template = 'CR'"); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and  ticket_template = 'CR'"); ?>
                                        </div>
                                    </div>
                                    <div class="col">
