@@ -879,7 +879,7 @@
   <form style="width:100%">
       
     <div class="input-group input-group-sm mb-3">
-      <span class="input-group-text" id="basic-addon1">Query search</span>
+      <span class="input-group-text" id="basic-addon1"><ion-icon name="terminal-outline"></ion-icon>Query search</span>
       <input list="qlistoption" type="text" class="form-control" 
       onchange="run_ts_command('PJ');run_ts_command('CR');run_ts_command('DT');"
        id="ts_command"
@@ -901,7 +901,7 @@
                                      
                                <!-- console bra -->
                                <!-- project -->
-                               <span class="row"><strong>Project</strong></span>
+                               <span class="row"><strong><ion-icon name="business-outline"></ion-icon>Project</strong></span>
                                
                                <div class="row">
                                    <div class="col border-0 border-end">
@@ -917,7 +917,7 @@
                                 </div>
                                <!-- support task -->
                                <hr>
-                               <span class="row"><strong>Data & Application Support</strong></span>
+                               <span class="row"><strong><ion-icon name="business-outline"></ion-icon> Data & Application Support</strong></span>
 
                                <div class="row">
                                    <div class="col border-0 border-end">
@@ -934,7 +934,7 @@
                                  
                                <!-- Content request -->
                                <hr>
-                               <span class="row"><strong>Content Request</strong></span>
+                               <span class="row"><strong><ion-icon name="layers-outline"></ion-icon>Content Request</strong></span>
 
                                <div class="row">
                                    <div class="col border-0 border-end">
