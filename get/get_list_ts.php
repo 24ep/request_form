@@ -68,22 +68,24 @@ return $status;
           if($i==1){
             echo '<li class="mb-1 row">
             <div class="col-6 " style="padding:3px;"> <strong>Task name</strong></div>
-            <div class="col-3 text-center" style="padding:3px;"> <strong>Status</strong></div>
             <div class="col-3 text-center" style="padding:3px;"> <strong>Project</strong></div>
+            <div class="col-3 text-center" style="padding:3px;"> <strong>Status</strong></div>
+            
           
             </li>';
           }
 ?>
                <li class="row shadow-sm rounded md-3 p-2 bg-white" style="<?php echo  $ri_style ?> " data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row['ticket_id'] ?>)">
-                    <div class="col-6" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row_task['ticket_id'];?>) " style="align-self: center;">
+                    <div class="col-6 border-0 border-end" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row_task['ticket_id'];?>) " style="align-self: center;">
                         <?php echo $row_task["description"]; ?>
                     </div>
-                    <div class="col-3" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row_task['ticket_id']; ?>)" style="align-self: center;">
+                    <div class="col-3 text-center" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row_task['ticket_id']; ?>)" style="align-self: center;">
+                    <?php echo $row_task["title"]; ?>    
+                    </div>
+                    <div class="col-3 text-center" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row_task['ticket_id']; ?>)" style="align-self: center;">
                         <?php echo badge_status_cr($row_task["status"]); ?>    
                     </div>
-                    <div class="col-3" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row_task['ticket_id']; ?>)" style="align-self: center;">
-                        <?php echo $row_task["title"]; ?>    
-                    </div>
+                    
               
                 </li>
                 <?php

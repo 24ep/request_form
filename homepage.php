@@ -921,12 +921,12 @@
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your tasks assignment (task of project)</small>
                                        <div id="list_pj_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and  ticket_template = 'PJ'",500,'task'); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and  ticket.ticket_template = 'PJ'",500,'task'); ?>
                                        </div>
                                    </div>
                                    <div class="col">
                                        <small class="row m-3">All project</small>
-                                       <?php list_ts("ticket_template = 'PJ' and status <> 'Close'",500,'ticket' ); ?>
+                                       <?php list_ts("ticket.ticket_template = 'PJ' and ticket.status <> 'Close'",500,'ticket' ); ?>
                                    </div>
                                 </div>
                                <!-- support task -->
@@ -937,12 +937,12 @@
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
                                        <div id="list_da_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and ticket_template = 'DT'",500,'ticket'); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and ticket.ticket_template = 'DT'",500,'ticket'); ?>
                                        </div>
                                    </div>
                                    <div class="col">
                                        <small class="row m-3">Unassign</small>
-                                       <?php list_ts("ticket_template = 'DT' and case_officer = 'unassign' and status <> 'Close'",500,'ticket'); ?>
+                                       <?php list_ts("ticket.ticket_template = 'DT' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",500,'ticket'); ?>
                                    </div>
                                 </div>
                                  
@@ -954,12 +954,12 @@
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
                                        <div id="list_cr_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and  ticket_template = 'CR'",500,'ticket'); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and  ticket.ticket_template = 'CR'",500,'ticket'); ?>
                                        </div>
                                    </div>
                                    <div class="col">
                                        <small class="row m-3">Unassign</small>
-                                       <?php list_ts("ticket_template = 'CR' and case_officer = 'unassign' and status <> 'Close'",500,'ticket'); ?>
+                                       <?php list_ts("ticket.ticket_template = 'CR' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",500,'ticket'); ?>
                                    </div>
                                 </div>
                               
