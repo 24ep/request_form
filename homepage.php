@@ -890,7 +890,7 @@
                                    </div>
                                    <div class="col">
                                        <small>Unassign</small>
-                                       <?php list_ts("ticket_template = 'CR' and case_officer = 'unassign'"); ?>
+                                       <?php list_ts("ticket_template = 'CR' and case_officer = 'unassign' and status <> 'Close'"); ?>
                                    </div>
                                 </div>
                               
