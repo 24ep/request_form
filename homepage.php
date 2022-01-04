@@ -626,6 +626,8 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php include('get/get_list_message_log.php'); ?>
+                            <hr>
                             <?php include('get/get_list_job_cms_dashboard.php'); ?>
                         </div>
                     </div>
@@ -962,11 +964,11 @@
                                                     <ion-icon name="star-outline"></ion-icon> Important <span
                                                         id="total_unread_div_in"></span>
                                                 </a>
-                                                <a class="list-group-item list-group-item-action" id="list-update-list"
+                                                <!-- <a class="list-group-item list-group-item-action" id="list-update-list"
                                                     data-bs-toggle="list" href="#list-update" role="tab"
                                                     aria-controls="list-update">
                                                     <ion-icon name="notifications-outline"></ion-icon> Updated
-                                                </a>
+                                                </a> -->
                                                 <a class="list-group-item list-group-item-action" id="list-send-list"
                                                     data-bs-toggle="list" href="#list-send" role="tab"
                                                     aria-controls="list-send">
@@ -996,10 +998,10 @@
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                                <div class="tab-pane fade" id="list-update" role="tabpanel"
+                                                <!-- <div class="tab-pane fade" id="list-update" role="tabpanel"
                                                     aria-labelledby="list-update-list">
-                                                    <?php include('get/get_list_message_log.php'); ?>
-                                                </div>
+                                                    <?php// include('get/get_list_message_log.php'); ?>
+                                                </div> -->
                                                 <div class="tab-pane fade" id="list-send" role="tabpanel"
                                                     aria-labelledby="list-send-list">
                                                     <table class="table table-hover table-borderless  "
