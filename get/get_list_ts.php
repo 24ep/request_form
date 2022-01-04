@@ -59,17 +59,72 @@ return $status;
               }elseif($row['piority']=="low"){
                 $ri_style = "border-left: #ccc solid 15px;";
               }
+
+              if($row['ticket_template']=="CR"){
+              
+             
             ?>
+            
             <li class="row shadow-sm rounded md-3 p-2 bg-white" style="<?php echo  $ri_style ?> " data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row['id'] ?>)">
                 <div class="col-9" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id']?>) " style="align-self: center;">
                     <?php echo "<strong>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
                 </div>
                 <div class="col-3" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row['id'] ?>)" style="align-self: center;">
-                <?php echo badge_status_cr($row["status"]); ?>    
+                    <?php echo badge_status_cr($row["status"]); ?>    
                 </div>
           
             </li>
             <?php
+             }elseif($row['ticket_template']=="PJ"){
+
+              echo '<li class="mb-1 row">
+              <div class="col-2 text-center" style="padding:3px;"> <strong>Project name</strong></div>
+              <div class="col-2 text-center" style="padding:3px;"> <strong>Owner</strong></div>
+              <div class="col text-center" style="padding:3px;"> <strong>Progress</strong></div>
+              <div class="col text-center" style="padding:3px;"> <strong>Duration due date</strong></div>
+              </li>';
+
+               $query_count = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where ticket_id =".$row['id'];
+               $query_count_complete = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where status = 'Close' and  ticket_id =".$row['id'];;
+               $result = mysqli_query($con, $query);
+               $result_count = mysqli_query($con, $query_count);
+               $result_count_complete = mysqli_query($con, $query_count_complete);
+               $count_id=mysqli_fetch_assoc($result_count);
+               $count_id_complete=mysqli_fetch_assoc($result_count_complete);
+               $count_id_fr=$count_id['count_id'];
+               $count_id_fr_complete=$count_id_complete['count_id'];
+           
+               //cal progress
+              
+                 $percent_progress = ($count_id_fr_complete/$count_id_fr)*100;
+            ?>
+              <li class="row shadow-sm rounded md-3 p-2 bg-white" style="<?php echo  $ri_style ?> " data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row['id'] ?>)">
+                <div class="col-6" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id']?>) " style="align-self: center;">
+                    <?php echo "<strong>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
+                </div>
+                <div class="col-2" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id']?>) " style="align-self: center;">
+                    <?php echo $row["case_officer"]; ?>
+                </div>
+                <div class="col-2" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row['id'] ?>)" style="align-self: center;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                     role="progressbar"
+                     style="background: #17b717;width: 100%;"
+                     aria-valuenow="<?php echo $percent_progress ;?>"
+                     aria-valuemin="0" 
+                     aria-valuemax="100">
+                    <?php echo $percent_progress ;?>% (<?php echo $count_id_fr_complete ;?>/<?php echo $count_id_fr ;?>
+                </div> 
+                <div class="col-2" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id']?>) " style="align-self: center;">
+                    <?php echo "12 Days"; ?>
+                </div>
+                </div>
+          
+            </li>
+
+
+            <?php
+
+             }
      
      } 
      echo "</ul>";
