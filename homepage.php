@@ -874,16 +874,19 @@
                                 <div class="container ">
                                 <?php include('get/get_list_ts.php')?>
                             <!-- nav bar -->
-                            <div class="hstack gap-3">
-  <div class="bg-light border">Task Management</div>
-  <div class="bg-light border ms-auto">Refresh</div>
-  <div class="vr"></div>
-  <div class="bg-light border">    
-      <button class="btn btn-primary btn-sm " style="margin-left:10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
+
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Tasks Management</a>
+    <form class="d-flex">
+    <button class="btn btn-primary btn-sm " style="margin-left:10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
     <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated" aria-label="add outline"></ion-icon>
         New Ticket
-    </button></div>
-</div>
+    </button>
+    </form>
+  </div>
+</nav>
 
                             <nav class="navbar navbar-light bg-light">
   <form style="width:100%">
