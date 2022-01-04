@@ -200,7 +200,7 @@ $i++;
                     </div>
     
                     <div class="col-3 text-center" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row['id'];?>)" style="align-self: center;">
-                    <div class="progress shadow-sm progress-bar-striped progress-bar-animated" style="margin-bottom:10px">
+                  
                     <div class="progress-bar rounded progress-bar-striped progress-bar-animated" 
                           role="progressbar"
                           style="background-color: #17b717;width: <?php echo $percent_progress ;?>%;padding: .25rem .5rem;"
@@ -209,7 +209,7 @@ $i++;
                           aria-valuemax="100">
                           <?php echo $percent_progress ;?>% (<?php echo $count_id_fr_complete ;?>/<?php echo $count_id_fr ;?>)
                       </div> 
-                      </div>
+                   
                     </div> 
     
                     
