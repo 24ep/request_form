@@ -879,7 +879,14 @@
   <form class="container-fluid container-md">
     <div class="input-group">
       <span class="input-group-text" id="basic-addon1">Query search</span>
-      <input type="text" class="form-control" onchange="run_ts_command('PJ');run_ts_command('CR');run_ts_command('DA');" id="ts_command" name="ts_command" placeholder="Your task will display follow your command .." aria-label="Username" aria-describedby="basic-addon1" value="participant like  '%<?php echo $_SESSION["username"]; ?>%'">
+      <!-- <input type="text" class="form-control" 
+      onchange="run_ts_command('PJ');run_ts_command('CR');run_ts_command('DA');"
+       id="ts_command"
+        name="ts_command"
+         placeholder="Your task will display follow your command .."
+          aria-label="Username"
+           aria-describedby="basic-addon1"
+            value="participant like  '%<?php //echo $_SESSION["username"]; ?>%'"> -->
     </div>
   </form>
 </nav>
