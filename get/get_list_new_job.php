@@ -190,17 +190,17 @@ if(isset($_POST["from_post"] )){
   while($row = mysqli_fetch_array($result)) {
     $ticket_role = role_user($row["request_username"],$row["follow_up_by"]);
     
-    if($row['status']=="accepted" and $row['job_status_filter'] == "Continue" and $row['approved_editing_status'] <> "approved"){
-      $status=badge_status("On-Process");
-    }elseif($row['status']=="accepted" and $row['job_status_filter'] == "Continue" and $row['approved_editing_status'] == "approved"){
-      $status=badge_status("Approved");
-    }elseif($row['status']=="accepted" and $row['job_status_filter'] <> "Continue" ){
-      $status=badge_status($row['job_status_filter']);
-    }else{
-      $status =badge_status($row['status']);
-    }
+    // if($row['status']=="accepted" and $row['job_status_filter'] == "Continue" and $row['approved_editing_status'] <> "approved"){
+    //   $status=badge_status("On-Process");
+    // }elseif($row['status']=="accepted" and $row['job_status_filter'] == "Continue" and $row['approved_editing_status'] == "approved"){
+    //   $status=badge_status("Approved");
+    // }elseif($row['status']=="accepted" and $row['job_status_filter'] <> "Continue" ){
+    //   $status=badge_status($row['job_status_filter']);
+    // }else{
+    //   $status =badge_status($row['status']);
+    // }
     
-    // $status = badge_status($row['status']);
+    $status = badge_status($row['status']);
     //important badge
     if($row['request_important']=="Urgent"){
       $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row['request_important'].'</span>';
@@ -260,16 +260,16 @@ if(isset($_POST["from_post"] )){
         $i = 1;
         while($row_child = mysqli_fetch_array($result_child)) {
             $ticket_role = role_user($row_child["request_username"],$row_child["follow_up_by"]);
-            // $status = badge_status($row_child['status']);
-            if($row_child['status']=="accepted" and $row_child['job_status_filter'] == "Continue" and $row_child['approved_editing_status'] <> "approved"){
-              $status=badge_status("On-Process");
-            }elseif($row_child['status']=="accepted" and $row_child['job_status_filter'] == "Continue" and $row_child['approved_editing_status'] == "approved"){
-              $status=badge_status("Approved");
-            }elseif($row_child['status']=="accepted" and $row_child['job_status_filter'] <> "Continue" ){
-              $status=badge_status($row_child['job_status_filter']);
-            }else{
-              $status=badge_status($row_child['status']);
-            }
+            $status = badge_status($row_child['status']);
+            // if($row_child['status']=="accepted" and $row_child['job_status_filter'] == "Continue" and $row_child['approved_editing_status'] <> "approved"){
+            //   $status=badge_status("On-Process");
+            // }elseif($row_child['status']=="accepted" and $row_child['job_status_filter'] == "Continue" and $row_child['approved_editing_status'] == "approved"){
+            //   $status=badge_status("Approved");
+            // }elseif($row_child['status']=="accepted" and $row_child['job_status_filter'] <> "Continue" ){
+            //   $status=badge_status($row_child['job_status_filter']);
+            // }else{
+            //   $status=badge_status($row_child['status']);
+            // }
             //important
           if($i<$subtask_count){
             $th_class = "class='tree_lift'";
