@@ -874,13 +874,20 @@
                                 <div class="container ">
                                 <?php include('get/get_list_ts.php')?>
                             <!-- nav bar -->
-                            
-                            <nav class="navbar navbar-light bg-light">
-  <form style="width:100%">
-    <button class="btn btn-primary " style="margin-left:10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
+                            <div class="hstack gap-3">
+  <div class="bg-light border">Task Management</div>
+  <div class="bg-light border ms-auto">Refresh</div>
+  <div class="vr"></div>
+  <div class="bg-light border">    
+      <button class="btn btn-primary btn-sm " style="margin-left:10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
     <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated" aria-label="add outline"></ion-icon>
         New Ticket
-    </button>
+    </button></div>
+</div>
+
+                            <nav class="navbar navbar-light bg-light">
+  <form style="width:100%">
+
     <div class="input-group input-group-sm mb-3">
       <span class="input-group-text" id="basic-addon1"><ion-icon style="vertical-align: middle;" name="terminal-outline"></ion-icon>Query Search</span>
       <input list="qlistoption" style="width: 75%;"type="text" class="form-control" 
@@ -909,11 +916,7 @@
                                
                                <div class="row">
                                    <div class="col border-0 border-end">
-                                       <!-- <small class="row m-3">Your tasks assignment (task of project)</small> -->
-                                       <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                                        <label class="form-check-label" for="flexSwitchCheckDefault">check for display tasks level</label>
-                                       </div>
+                                       <small class="row m-3">Your tasks assignment (task of project)</small>
                                        <div id="list_pj_task">
                                          <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%' and  ticket_template = 'PJ'",500); ?>
                                        </div>
