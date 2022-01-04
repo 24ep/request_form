@@ -889,7 +889,6 @@ function get_server_memory_usage(){
 
     return $memory_usage;
 }
-This function will return the Server CPU Usage:
 
 function get_server_cpu_usage(){
 
