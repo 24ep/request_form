@@ -141,6 +141,7 @@ return $status;
    mysqli_close($con);
     }
   $filter =$_POST["summary_filter"];
+  echo "<script>console.log('".$filter."');</script>";
     if($filter<>""){
       list_ts($filter );
     }
