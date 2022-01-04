@@ -142,7 +142,7 @@ return $status;
     }
   $filter =$_POST["summary_filter"];
     if($filter<>""){
-      list_ts($filter )
+      list_ts($filter );
     }
 
 
