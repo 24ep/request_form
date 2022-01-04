@@ -81,7 +81,7 @@ return $status;
             </li>
             <?php
             
-             }elseif($row['ticket_template']=="PJ"){
+             }elseif($row['ticket_template']=="PJ" or  $row['ticket_template']=="DT" ){
 
               if($i==1){
                 echo '<li class="mb-1 row">

@@ -105,7 +105,7 @@
         <select id="cr_ticket_template" name="cr_ticket_template" class="form-select form-select-sm">
            <option value="CR" selected>Content Request</option>
            <option value="PJ">Project</option>
-           <option value="DA">Data and Task Support (CSG)</option>
+           <option value="DT">Data and Task Support (CSG)</option>
         </select>
     </div>
 

@@ -876,17 +876,23 @@
                             <!-- nav bar -->
                             
                             <nav class="navbar navbar-light bg-light">
-  <form class="container-fluid container-md">
-    <div class="input-group">
+  <form class="style=width:100%">
+    <div class="input-group-sm mb-3">
       <span class="input-group-text" id="basic-addon1">Query search</span>
-      <input type="text" class="form-control" 
-      onchange="run_ts_command('PJ');run_ts_command('CR');run_ts_command('DA');"
+      <input list="qlistoption" type="text" class="form-control" 
+      onchange="run_ts_command('PJ');run_ts_command('CR');run_ts_command('DT');"
        id="ts_command"
         name="ts_command"
          placeholder="Your task will display follow your command .."
           aria-label="Username"
            aria-describedby="basic-addon1" value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
     </div>
+    <datalist id="qlistoption">
+        <option value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
+        <option value="ticket.title like  '%grouping%'">
+        <option value="ticket.id = 3009">
+        <option value="ticket.status = 'Pending'">
+    </datalist>
   </form>
 </nav>
                                      
@@ -898,7 +904,7 @@
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your tasks assignment</small>
                                        <div id="list_pj_task">
-                                         <?php list_ts("ticket_template = 'PJ'"); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"];."%' and  ticket_template = 'PJ'"); ?>
                                        </div>
                                    </div>
                                    <div class="col">
@@ -914,12 +920,12 @@
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
                                        <div id="list_da_task">
-                                         <?php list_ts("ticket_template = 'DA'"); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"];."%' and ticket_template = 'DT'"); ?>
                                        </div>
                                    </div>
                                    <div class="col">
                                        <small class="row m-3">Unassign</small>
-                                       <?php list_ts("ticket_template = 'DA' and case_officer = 'unassign' and status <> 'Close'"); ?>
+                                       <?php list_ts("ticket_template = 'DT' and case_officer = 'unassign' and status <> 'Close'"); ?>
                                    </div>
                                 </div>
                                  
@@ -931,7 +937,7 @@
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
                                        <div id="list_cr_task">
-                                         <?php list_ts("ticket_template = 'CR'"); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"];."%' and  ticket_template = 'CR'"); ?>
                                        </div>
                                    </div>
                                    <div class="col">
@@ -1295,7 +1301,7 @@ function itm_confirm_cancel(id, status_change) {
                 $('#list_pj_task').html(data);
             }else if(type=="CR"){
                 $('#list_cr_task').html(data);
-            }else if(type=="DA"){
+            }else if(type=="DT"){
                 $('#list_da_task').html(data);
             }
          
