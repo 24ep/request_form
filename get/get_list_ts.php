@@ -114,7 +114,7 @@ return $status;
                   <div class="progress-bar progress-bar-striped progress-bar-animated" 
                       role="progressbar"
                       style="background: #17b717;width: 100%;"
-                      aria-valuenow="<?phpecho $percent_progress ;?>"
+                      aria-valuenow="<?php echo $percent_progress ;?>"
                       aria-valuemin="0" 
                       aria-valuemax="100">
                       <?php echo $percent_progress ;?>% (<?php echo $count_id_fr_complete ;?>/<?php echo $count_id_fr ;?>)
