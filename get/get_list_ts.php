@@ -37,7 +37,7 @@ return $status;
     ticket.status as status,
     ticket.ticket_template as ticket_template,
     comment.ticket_type as ticket_type,
-    ticket.participant as ticket_participant,
+    ticket.participant as participant,
     ticket.case_officer as case_officer,
     sum(case when comment.ticket_type='content_request' then 1 else 0 end) as count_comment 
     FROM all_in_one_project.content_request as ticket
@@ -49,7 +49,7 @@ return $status;
     //echo "<script>console.log('".$query."');</script>";
     $result = mysqli_query($con, $query);
 
-    echo "<ul >";
+    echo "<ul style='width: 95%;'>";
     $i=1;
       while( $row = mysqli_fetch_array($result)) {
             $count_comment_cr = $row["count_comment"];
@@ -60,6 +60,8 @@ return $status;
               }elseif($row['piority']=="Medium"){
                 $ri_style = "border-left: #f396bf solid 15px;";
               }elseif($row['piority']=="low"){
+                $ri_style = "border-left: #ccc solid 15px;";
+              }else{
                 $ri_style = "border-left: #ccc solid 15px;";
               }
 
