@@ -1,5 +1,26 @@
 <?php
 session_start();
+function badge_status_cr($status){
+  if($status=="Pending"){
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
+  }elseif( $status=="Inprogress"){
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ff9a59;color:white;border:#ff9a59">on-production</button>';
+  }elseif($status=="Close" or $status=="approved"){
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #7befb2;color:#115636;border:#115636">'.$status.'</button>';
+  }elseif($status=="Waiting CTO"){
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #499CF7;color:#093f8e;border:#499CF7">waiting confirm</button>';
+  }elseif($status=="waiting Execution"){
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting image</button>';
+  }elseif($status=="waiting Buyer"){
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting data</button>';
+  }elseif($status=="In-review"){
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ea79f7;color:#6a2e71;border:#ea79f7">waiting traffic</button>';
+  }else{
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">'.$status.'</button>';
+  }
+return $status;
+}
+
     function list_ts($filter ){
     
     $ts_filter = $filter;
@@ -30,9 +51,9 @@ session_start();
       while( $row = mysqli_fetch_array($result)) {
             $count_comment_cr = $row["count_comment"];
             if($row['piority']=="Urgent"){
-                $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row['request_important'].'</span>';
+                $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row['piority'].'</span>';
               }else{
-                $ri_style = '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">'.$row['request_important'].'</span>';
+                $ri_style = '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">'.$row['piority'].'</span>';
               }
             ?>
             <li class="row shadow-sm rounded md-3 p-2 bg-white">
@@ -40,7 +61,7 @@ session_start();
                     <?php echo $row["ticket_template"]." ".$row["id"]." ".$row["title"]; ?>
                 </div>
                 <div class="col-2">
-                <button type="button" class="btn btn-outline-dark"> <?php echo $row["status"]; ?></button>    
+                <?php echo badge_status_cr($row["status"]); ?>    
                 </div>
                 <div class="col-2">
                     <?php echo $ri_style; ?>
