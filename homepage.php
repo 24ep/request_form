@@ -877,10 +877,13 @@
                             
                             <nav class="navbar navbar-light bg-light">
   <form style="width:100%">
-      
+    <button class="btn btn-primary " style="margin-left:10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
+    <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated" aria-label="add outline"></ion-icon>
+        New Ticket
+    </button>
     <div class="input-group input-group-sm mb-3">
-      <span class="input-group-text" id="basic-addon1"><ion-icon name="terminal-outline"></ion-icon>Query search</span>
-      <input list="qlistoption" type="text" class="form-control" 
+      <span class="input-group-text" id="basic-addon1"><ion-icon style="vertical-align: middle;" name="terminal-outline"></ion-icon>Query Search</span>
+      <input list="qlistoption" style="width: 75%;"type="text" class="form-control" 
       onchange="run_ts_command('PJ');run_ts_command('CR');run_ts_command('DT');"
        id="ts_command"
         name="ts_command"
@@ -888,7 +891,7 @@
           aria-label="Username"
            aria-describedby="basic-addon1" value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%' and ticket.status <> 'Close'">
      <span class="input-group-text">Limit</span>
-  <input type="number" max="999" min="1" class="form-control" id="ts_command_limit" name="ts_command_limit" placeholder="Server" value="100" aria-label="Server">
+  <input type="number" max="999" onchange="run_ts_command('PJ');run_ts_command('CR');run_ts_command('DT');" min="1" class="form-control" id="ts_command_limit" name="ts_command_limit" placeholder="Server" value="100" aria-label="Server">
         </div>
     <datalist id="qlistoption">
         <option value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%' and ticket.status <> 'Close'">
@@ -901,7 +904,7 @@
                                      
                                <!-- console bra -->
                                <!-- project -->
-                               <span class="row"><strong><ion-icon name="business-outline"></ion-icon>Project</strong></span>
+                               <span class="row"><strong><ion-icon name="business-outline" style="vertical-align: middle;" ></ion-icon>Project</strong></span>
                                
                                <div class="row">
                                    <div class="col border-0 border-end">
@@ -917,7 +920,7 @@
                                 </div>
                                <!-- support task -->
                                <hr>
-                               <span class="row"><strong><ion-icon name="server-outline"></ion-icon> Data & Application Support</strong></span>
+                               <span class="row"><strong><ion-icon name="server-outline" style="vertical-align: middle;" ></ion-icon> Data & Application Support</strong></span>
 
                                <div class="row">
                                    <div class="col border-0 border-end">
@@ -934,7 +937,7 @@
                                  
                                <!-- Content request -->
                                <hr>
-                               <span class="row"><strong><ion-icon name="layers-outline"></ion-icon>Content Request</strong></span>
+                               <span class="row"><strong><ion-icon name="layers-outline" style="vertical-align: middle;" ></ion-icon>Content Request</strong></span>
 
                                <div class="row">
                                    <div class="col border-0 border-end">

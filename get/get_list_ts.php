@@ -69,8 +69,8 @@ return $status;
               
                 if($i==1){
                   echo '<li class="mb-1 row">
-                  <div class="col-9 text-center" style="padding:3px;"> <strong>Project name</strong></div>
-                  <div class="col-3 text-center" style="padding:3px;"> <strong>status</strong></div>
+                  <div class="col-9 " style="padding:3px;"> <strong>Project name</strong></div>
+                  <div class="col-3 " style="padding:3px;"> <strong>status</strong></div>
                 
                 
                   </li>';
@@ -93,7 +93,7 @@ return $status;
 
               if($i==1){
                 echo '<li class="mb-1 row">
-                <div class="col-6 text-center" style="padding:3px;"> <strong>Project name</strong></div>
+                <div class="col-6 " style="padding:3px;"> <strong>Project name</strong></div>
                 <div class="col-3 text-center" style="padding:3px;"> <strong>Owner</strong></div>
                 <div class="col-3 text-center" style="padding:3px;"> <strong>Progress</strong></div>
               
