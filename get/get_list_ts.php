@@ -61,16 +61,13 @@ return $status;
               }
             ?>
             <li class="row shadow-sm rounded md-3 p-2 bg-white" style="<?php echo  $ri_style ?> ">
-                <div class="col-8" style="align-self: center;">
+                <div class="col-9" style="align-self: center;">
                     <?php echo $row["ticket_template"]."-".$row["id"]." ".$row["title"]; ?>
                 </div>
                 <div class="col-3">
                 <?php echo badge_status_cr($row["status"]); ?>    
                 </div>
           
-                <div class="col-1" style="align-self: center;">
-                        <ion-icon name="grid-outline"></ion-icon>
-                </div>
             </li>
             <?php
      
