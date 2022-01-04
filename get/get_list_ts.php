@@ -60,11 +60,11 @@ return $status;
                 $ri_style = "border-left: #ccc solid 15px;";
               }
             ?>
-            <li class="row shadow-sm rounded md-3 p-2 bg-white" style="<?php echo  $ri_style ?> ">
-                <div class="col-9" style="align-self: center;">
-                    <?php echo $row["ticket_template"]."-".$row["id"]." ".$row["title"]; ?>
+            <li class="row shadow-sm rounded md-3 p-2 bg-white" style="<?php echo  $ri_style ?> " data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].','.$comment.')">
+                <div class="col-9" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].','.$comment.')" style="align-self: center;">
+                    <?php echo "<strong>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
                 </div>
-                <div class="col-3">
+                <div class="col-3" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].','.$comment.')" style="align-self: center;">
                 <?php echo badge_status_cr($row["status"]); ?>    
                 </div>
           

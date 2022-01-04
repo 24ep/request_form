@@ -874,7 +874,7 @@
                                 <?php include('get/get_list_ts.php')?>
                                <!-- console bra -->
                                <!-- project -->
-                               <small class="row m-3">Project</small>
+                               <small class="row m-3"><strong>Project</strong></small>
                                <?php list_ts("ticket_template = 'PJ'"); ?>
                                <!-- support task -->
                                     <!-- unassign -->
@@ -882,7 +882,7 @@
                                     <!-- another -->
                                <!-- Content request -->
                                <hr>
-                               <small>Content Request</small>
+                               <small class="row m-3"><strong>Content Request</strong></small>
                                <div class="row">
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
