@@ -11,7 +11,7 @@ function badge_status_cr($status){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #499CF7;color:#093f8e;border:#499CF7">Waiting CTO</button>';
   }elseif($status=="Waiting Execution"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">Waiting Execution</button>';
-  }elseif($status=="waiting Buyer"){
+  }elseif($status=="Waiting Buyer"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting buyer</button>';
   }elseif($status=="In-review"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ea79f7;color:#6a2e71;border:#ea79f7">In-review"</button>';
