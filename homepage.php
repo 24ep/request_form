@@ -818,11 +818,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                </div>
+                                        </div>
+                                    </div>
+                                    </ul>
+                                </nav>
                             </div>
-                            </ul>
-                            </nav>
-                        </div>
                     </div>
                     <div class="tab-pane fade" id="v-pills-cr_admin" role="tabpanel"
                         aria-labelledby="v-pills-cr_admin-tab">
@@ -996,6 +996,40 @@ function get_server_cpu_usage(){
                                 </div>
                             </div>
                         </div>
+                        <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination pagination-sm">
+                                            <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1"
+                                                id="content_request_canvas" aria-labelledby="offcanvasExampleLabel">
+                                                <div class="offcanvas-header" style="    background: #313131;color: white;">
+                                                    <h5 class="offcanvas-title" id="offcanvasExampleLabel"
+                                                        style="padding-left:50px;font-weight: bold;">
+                                                        <ion-icon style="margin-right:10px" name="add-circle-outline">
+                                                        </ion-icon>Ticket Creation
+                                                    </h5>
+                                                    <button type="button" class="btn-close btn-close-white text-reset"
+                                                        data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                                </div>
+                                                <div class="offcanvas-body" style="background-color: #fcfbf9;">
+                                                    <div class="container-md" style="padding:0px 50px 50px 50px;">
+                                                        <form class="row g-3"
+                                                            action="action/action_submit_add_content_request.php"
+                                                            method="POST" enctype="multipart/form-data">
+                                                            <div id="add_new_cr_result"></div>
+                                                            <?php include('form/form_create_content_request.php')?>
+                                                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                                <button type="submit" class="btn btn-primary btn-sm"
+                                                                    style="width:100%">Submit</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </ul>
+                                </nav>
+                            </div>
                     </div>
                          <!-- ts console -->
                     <div class="tab-pane fade" id="v-pills-fl_board" role="tabpanel"
