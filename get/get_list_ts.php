@@ -58,7 +58,7 @@ return $status;
             ?>
             <li class="row shadow-sm rounded md-3 p-2 bg-white">
                 <div class="col-6">
-                    <?php echo $row["ticket_template"]." ".$row["id"]." ".$row["title"]; ?>
+                    <?php echo $row["ticket_template"]."-".$row["id"]." ".$row["title"]; ?>
                 </div>
                 <div class="col-2">
                 <?php echo badge_status_cr($row["status"]); ?>    
