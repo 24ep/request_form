@@ -138,7 +138,7 @@ $i++;
                     $ri_style = "border-left: #ccc solid 15px;";
                   }
     
-                  if($row['ticket_template']=="CR"){
+                  if($row['ticket_template']=="CR" or  $row['ticket_template']=="DT" ){
                   
                     if($i==1){
                       echo '<li class="mb-1 row">
@@ -162,7 +162,7 @@ $i++;
                 </li>
                 <?php
                 
-                 }elseif($row['ticket_template']=="PJ" or  $row['ticket_template']=="DT" ){
+                 }elseif($row['ticket_template']=="PJ" ){
     
                   if($i==1){
                     echo '<li class="mb-1 row">
@@ -187,7 +187,18 @@ $i++;
                   
                    $percent_progress = ($count_id_fr_complete/$count_id_fr)*100;
                 
-                   
+                   if($percent_progress >0 and $percent_progress < 50){
+                     $bsc_progress = "#ffc107";
+                     
+                   }elseif($percent_progress >=50 and $percent_progress < 100){
+                    $bsc_progress = "#778719";
+
+                   }elseif($percent_progress = 100){
+                    $bsc_progress = "#198754";
+
+                   }else{
+                    $bsc_progress = "rgb(13 110 253 / 25%);"
+                   }
                   
                 ?>
                   <li class="row shadow-sm rounded md-3 p-2 bg-white" style="<?php echo  $ri_style ?> " data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"  onclick="cr_id_toggle(<?php echo $row['id']; ?>)">
@@ -203,7 +214,7 @@ $i++;
                   
                     <div class="progress-bar rounded progress-bar-striped progress-bar-animated" 
                           role="progressbar"
-                          style="background-color: #17b717;width: <?php echo $percent_progress ;?>%;padding: .25rem .5rem;"
+                          style="background-color: <?php echo $bsc_progress ;?>;width: <?php echo $percent_progress ;?>%;padding: .25rem .5rem;"
                           aria-valuenow="<?php echo $percent_progress ;?>"
                           aria-valuemin="0" 
                           aria-valuemax="100">
