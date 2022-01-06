@@ -193,11 +193,11 @@ $i++;
                    }elseif($percent_progress >=50 and $percent_progress < 100){
                     $bsc_progress = "#778719";
 
-                   }elseif($percent_progress = 100){
+                   }elseif($percent_progress == 100){
                     $bsc_progress = "#198754";
 
                    }else{
-                    $bsc_progress = "rgb(13 110 253 / 25%);"
+                    $bsc_progress = "rgb(13 110 253 / 25%);";
                    }
                   
                 ?>
