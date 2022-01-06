@@ -16,7 +16,7 @@
    on log_data.action_data_id = new_job.id
    left join all_in_one_project.content_request as cr
    on log_data.action_data_id = cr.id
-   where ((new_job.participant like '%".$_SESSION["username"]."%' and (action_table = 'add_new_job' or action_table = 'job_cms')) or ( cr.participant like '%".$_SESSION["username"]."%'and action_table = 'content_request')) and log_data.action_by <> '".$_SESSION["username"]."' order by log_data.id DESC limit 50 ";
+   where ((new_job.participant like '%".$_SESSION["username"]."%' and (action_table = 'add_new_job' or action_table = 'job_cms')) or ( cr.participant like '%".$_SESSION["username"]."%'and action_table = 'content_request')) and log_data.action_by <> '".$_SESSION["username"]."' order by log_data.id DESC limit 25 ";
    //echo "<script>console.log('".$query."');</script>";
    $result = mysqli_query($con, $query);
    $result_count = mysqli_query($con, $query_count);

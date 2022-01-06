@@ -628,8 +628,8 @@
                                 </div>
                             </div>
                             <?php include('get/get_list_message_log.php'); ?>
-                            <hr>
-                            <?php include('get/get_list_job_cms_dashboard.php'); ?>
+                            <!-- <hr>
+                            <?php //include('get/get_list_job_cms_dashboard.php'); ?> -->
                         </div>
                     </div>
                     <div class="tab-pane fade" id="v-pills-request_list" role="tabpanel"
