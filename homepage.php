@@ -3,9 +3,9 @@
     if (!$_SESSION["login_csg"]){ 
         Header("Location: /login_page.php");
     }else{
-    include('/get/get_card_content_request.php'); 
-    include('/get/get_card_new_job.php'); 
-    include_once('/get/get_count_status.php');
+    include('get/get_card_content_request.php'); 
+    include('get/get_card_new_job.php'); 
+    include_once('base/get/get_count_status.php');
 
     function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
