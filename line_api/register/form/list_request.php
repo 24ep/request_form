@@ -93,7 +93,7 @@
             var userId = profile.userId;
             var additional_condition_p = " and cr.status <> 'close'"; 
             var additional_condition_c = " and cr.status = 'close' limit 50"; 
-            $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/get_list_request.php", {
+            $.post("https://content-service-gate.cdse-commercecontent.com/base/line_api/register/form/get_list_request.php", {
 
                 userId: userId,
                 additional_condition:additional_condition_p
@@ -102,7 +102,7 @@
                
             });
 
-            $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/get_list_request.php", {
+            $.post("https://content-service-gate.cdse-commercecontent.com/base/line_api/register/form/get_list_request.php", {
 
             userId: userId,
             additional_condition:additional_condition_c

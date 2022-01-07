@@ -110,11 +110,11 @@ mysqli_query($con, "SET NAMES 'utf8' ");
         add_participant($_POST["id_adj"],"add_new_job");
         insert_log("create new job_cms ".$job_number_laset." id ".$last_id,"job_cms",$_POST["id_adj"]);
         $result='<div class="alert alert-success">already create new job !</div>';
-        header( "location: https://cdsecommercecontent.ga/powerappsp/job_manage.php?result=".$result);
+        header( "location: https://cdse-commercecontent.com/base/job_manage.php?result=".$result);
 	}else{
         $result='<div class="alert alert-danger">Error: ' . $sql . '<hr>' . $con->error.'</div>';
         echo $result;
     }
     mysqli_close($con);
-   // header( "location: https://cdsecommercecontent.ga/powerappsp/job_manage.php");
+   // header( "location: https://cdse-commercecontent.com/powerappsp/job_manage.php");
 ?>

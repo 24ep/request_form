@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    <link rel="icon" type="image/ocp" href="https://cdsecommercecontent.ga/powerappsp/images/24ico.ico" />
+    <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/powerappsp/images/24ico.ico" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
     <!-- google font Quicksand -->

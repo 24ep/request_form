@@ -12,7 +12,7 @@ function get_comment($id){
         $query_attach = "SELECT * FROM attachment WHERE ticket_type = 'cme_comment' and ticket_id = ".$row['id']." ORDER BY id ASC" or die("Error:" . mysqli_error());
         $result_attach = mysqli_query($con, $query_attach);
         while($row_attach = mysqli_fetch_array($result_attach)) {
-            $herf = str_replace("../..",'https://cdse-commercecontent.com',$row_attach['file_path'].$row_attach['file_name']);
+            $herf = str_replace("../..",'../..',$row_attach['file_path'].$row_attach['file_name']);
             if($row_attach['is_image']==1){
                 $list_image .= '<a target= "_blank" href="'.$herf.'"><img src="'.$row_attach['file_path'].$row_attach['file_name'].'"  class="img-thumbnail" alt="'.$row_attach['file_name'].'" style="object-fit:cover;width:180px;height:180px;margin-right:5px"></a>';
             }else{

@@ -57,7 +57,7 @@ if($comment<>'' or $file_size <>0){
       $query = mysqli_query($con,$sql);
           //create forder
           $last_id = $con->insert_id;
-          $fullpath = '../attachment/csg/comment/ms/'.$last_id."/";
+          $fullpath = '../../attachment/csg/comment/ms/'.$last_id."/";
           if (!file_exists($fullpath)) {
             mkdir($fullpath, 0777, true);
           }
@@ -98,7 +98,7 @@ if($comment<>'' or $file_size <>0){
       add_participant($id,"add_new_job");
       insert_log("New message box comment \n".$comment,"New Job",$id);
 }
-  include('../get/get_comment_ms.php');
+  include('../base/get/get_comment_ms.php');
   mysqli_close($con);
    //send to line
    date_default_timezone_set("Asia/Bangkok");

@@ -22,7 +22,7 @@ while($row = mysqli_fetch_array($result)) {
     <ul class="list-group list-group-flush" style="background: fixed;">
         <div id="comment_box_ms">
                 <div id="call_ticket_comment_ms">
-                    <?php include('../get/get_comment_ms.php'); ?>
+                    <?php include('../base/get/get_comment_ms.php'); ?>
         </div>
         </div>
     </ul>
@@ -55,7 +55,7 @@ $query_update_read = mysqli_query($con,$sql_update_read);
 <script>
 function update_total_unread_div_action() {
    
-   $.post("get/get_count_unread_message.php", {
+   $.post("base/get/get_count_unread_message.php", {
        },
        function(data) {
            $('#total_unread_div').html(data);
@@ -100,7 +100,7 @@ function comment_ms_id_with_file(id) {
     form_data.append("comment", comment) // Adding extra parameters to form_data
     form_data.append("id", id)
     $.ajax({
-        url: "action/action_comment_ms.php",
+        url: "base/action/action_comment_ms.php",
         dataType: 'text',
         cache: false,
         contentType: false,

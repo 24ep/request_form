@@ -99,10 +99,10 @@ mysqli_query($con, "SET NAMES 'utf8' ");
                 sent_line_noti("\n• Created new request [ ".$brand." ".$sku." SKUs ]\n----------------------------\n• คุณได้ทำกาส่ง request ขอเปิด job\n• Ticket ID : NS-".$last_id." [ ".$brand." ".$sku." SKUs ]\n• Store : ".$stock_source,$key);
             }
         $result='<div class="alert alert-success">already create Request !<strong> ID '.$last_id.'</strong></div>';
-        header( "location: /homepage.php?tab=v-pills-request_list&result=".$result);
+        header( "Location: base/homepage.php?tab=v-pills-request_list&result=".$result);
 	}else{
         echo '<div class="alert alert-danger">Error: ' . $sql . '<hr>' . $con->error.'</div>';
     }
     mysqli_close($con);
-   // header( "location: https://cdsecommercecontent.ga/powerappsp/job_manage.php");
+   // header( "location: https://cdse-commercecontent.com/powerappsp/job_manage.php");
 ?>

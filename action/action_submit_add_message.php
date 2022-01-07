@@ -26,7 +26,7 @@
             if (($file_size > 2097152 or $file_size ==0) and $file_name <> ""  ) { 
                 $result = '<div class="alert alert-danger">ขนาดไฟล์ต้องไม่เกิน 2MB โปรดทำใฟล์เล็กลง หรือแชร์เป็น link เพื่อเข้าถึงไฟล์</div>';
                 echo '<script>alert("ขนาดไฟล์ต้องไม่เกิน 2MB โปรดทำใฟล์เล็กลง หรือแชร์เป็น link เพื่อเข้าถึงไฟล์")</script>';
-                header( "location: /homepage.php?tab=v-pills-cr&result_cr=".$result);
+                header( "Location: base/homepage.php?tab=v-pills-cr&result_cr=".$result);
                 exit();
         }
     }
@@ -159,10 +159,10 @@
                 //send to all user
                 
                 $result='<div class="alert alert-success">already create message !<strong> ID '.$last_id.'</strong></div>';
-                header( "location: /homepage.php?tab=v-pills-ms_admin");
+                header( "Location: base/homepage.php?tab=v-pills-ms_admin");
             }else{
                 echo '<div class="alert alert-danger">Error: ' . $sql . '<hr>' . $con->error.'</div>';
             }
             mysqli_close($con);
-   // header( "location: https://cdsecommercecontent.ga/powerappsp/job_manage.php");
+   // header( "location: https://cdse-commercecontent.com/powerappsp/job_manage.php");
 ?>

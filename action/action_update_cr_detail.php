@@ -20,7 +20,7 @@ function bb_confirm_ticket($id ,$user_id,$detail,$status){
                         "altText": "Confirm ticket !",
                         "sender": {
                             "name": "CSG-BOT",
-                            "iconUrl": "https://cdsecommercecontent.ga/img/csg_ico.png"
+                            "iconUrl": "https://cdse-commercecontent.com/img/csg_ico.png"
                         },
                          "contents": {
                             "type": "bubble",

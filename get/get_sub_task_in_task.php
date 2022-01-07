@@ -38,7 +38,7 @@
     if($row["firstname"]==""){
       $subtask .='
         <tr >
-              <td ><a href="https://content-service-gate.cdsecommercecontent.ga/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'">
+              <td ><a href="https://content-service-gate.cdse-commercecontent.com/base/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'">
                NS-'.$row["parent"].'-'.$i.' ('.$row["id"].')</a></td>
               <td >'. $row["sku"].'</td>
               <td >'. $status .'</td>
@@ -50,7 +50,7 @@
     }else{
       $subtask .='
         <tr >
-              <td ><a href="https://content-service-gate.cdsecommercecontent.ga/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'">
+              <td ><a href="https://content-service-gate.cdse-commercecontent.com/base/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'">
                NS-'.$row["parent"].'-'.$i.' ('.$row["id"].')</a></td>
               <td>'. $row["sku"].'</td>
               <td >'.$status.'</td>

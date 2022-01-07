@@ -8,5 +8,5 @@ session_start();
 	$sql = "DELETE FROM checklist_of_content_request WHERE id = ".$list_id ;
 	$query = mysqli_query($con,$sql);
     mysqli_close($con);
-    include('http://content-service-gate.cdsecommercecontent.ga/get/get_checklist_cr.php?id='.$ticket_id);
+    include('http://content-service-gate.cdse-commercecontent.com/base/get/get_checklist_cr.php?id='.$ticket_id);
 ?>

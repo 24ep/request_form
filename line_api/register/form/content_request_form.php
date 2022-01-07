@@ -199,7 +199,7 @@ function create_ticket(){
     form_data.append("userId", userId)
     
     $.ajax({
-        url: "https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/create_cr_ticket.php",
+        url: "https://content-service-gate.cdse-commercecontent.com/base/line_api/register/action/create_cr_ticket.php",
         dataType: 'text',
         cache: false,
         contentType: false,

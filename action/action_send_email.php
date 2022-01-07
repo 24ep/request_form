@@ -165,7 +165,7 @@ function send_email($title,description){
                         <td align="left" style="padding:0;Margin:0;padding-bottom:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, "helvetica neue", arial, verdana, sans-serif;line-height:15px;color:#666666;font-size:10px">This email was send automatic from system, please do not reply this email.&nbsp;</p></td> 
                        </tr> 
                        <tr style="border-collapse:collapse"> 
-                        <td align="left" style="padding:0;Margin:0;padding-bottom:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, "helvetica neue", arial, verdana, sans-serif;line-height:12px;color:#666666;font-size:10px"><strong>You received this message because you subscribe to notification events for the <span style="color:#B22222">Participant of ticket </span>saved search.</strong><br>content-service-gate.cdsecommercecontent.ga&nbsp;| 2021-06-21</p></td> 
+                        <td align="left" style="padding:0;Margin:0;padding-bottom:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, "helvetica neue", arial, verdana, sans-serif;line-height:12px;color:#666666;font-size:10px"><strong>You received this message because you subscribe to notification events for the <span style="color:#B22222">Participant of ticket </span>saved search.</strong><br>content-service-gate.cdse-commercecontent.com&nbsp;| 2021-06-21</p></td> 
                        </tr> 
                        <tr style="border-collapse:collapse"> 
                         <td align="left" style="padding:0;Margin:0;padding-bottom:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:helvetica, "helvetica neue", arial, verdana, sans-serif;line-height:15px;color:#666666;font-size:10px">www.central.co.th | www.robinson.co.th</p></td> 
@@ -207,7 +207,7 @@ function send_email($title,description){
   $headers = "MIME-Version: 1.0" . "\r\n";
   $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
   // More headers
-  $headers .= 'From: automation@content-service-gate.cdsecommercecontent.ga' . "\r\n";
+  $headers .= 'From: automation@content-service-gate.cdse-commercecontent.com' . "\r\n";
   $headers .= 'Cc: poojaroonwit@central.co.th' . "\r\n";
   mail($to,$subject,$message,$headers);
 }

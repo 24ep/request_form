@@ -22,7 +22,7 @@ function bb_confirm_ticket($id ,$user_id,$detail,$priority,$image_path,$date_cre
                         "altText": "Confirm ticket !",
                         "sender": {
                             "name": "Auto respond",
-                            "iconUrl": "https://cdsecommercecontent.ga/img/ico.png"
+                            "iconUrl": "https://cdse-commercecontent.com/img/ico.png"
                         },
                          "contents": {
                             "type": "bubble",
@@ -35,7 +35,7 @@ function bb_confirm_ticket($id ,$user_id,$detail,$priority,$image_path,$date_cre
                               "action": {
                                 "type": "uri",
                                 "label": "Action",
-                                "uri": "https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/content_request_detail.php?id='.$id.'"
+                                "uri": "https://content-service-gate.cdse-commercecontent.com/base/line_api/register/form/content_request_detail.php?id='.$id.'"
                               }
                             },
                             "body": {
@@ -154,7 +154,7 @@ function bb_confirm_ticket($id ,$user_id,$detail,$priority,$image_path,$date_cre
                                   "action": {
                                     "type": "uri",
                                     "label": "Ticket",
-                                    "uri": "https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/content_request_detail.php?id='.$id.'"
+                                    "uri": "https://content-service-gate.cdse-commercecontent.com/base/line_api/register/form/content_request_detail.php?id='.$id.'"
                                   },
                                   "height": "sm",
                                   "style": "secondary"
@@ -226,8 +226,8 @@ date_default_timezone_set("Asia/Bangkok");
       return false;
   }
 
-//  include('https://content-service-gate.cdsecommercecontent.ga/action/action_send_line_api.php');
-//  include('https://content-service-gate.cdsecommercecontent.ga/action/action_add_participant.php');
+//  include('https://content-service-gate.cdse-commercecontent.com/base/action/action_send_line_api.php');
+//  include('https://content-service-gate.cdse-commercecontent.com/base/action/action_add_participant.php');
  $cr_title = "[Line OA Create Channel] ".$username;
  $cr_description = htmlspecialchars($_POST["detail_request"], ENT_QUOTES);
 //check size file
@@ -242,7 +242,7 @@ date_default_timezone_set("Asia/Bangkok");
             if (($file_size > 2097152 or $file_size ==0) and $file_name <> ""  ) { 
                 $result = '<div class="alert alert-danger">ขนาดไฟล์ต้องไม่เกิน 2MB โปรดทำใฟล์เล็กลง หรือแชร์เป็น link เพื่อเข้าถึงไฟล์</div>';
                 echo '<script>alert("ขนาดไฟล์ต้องไม่เกิน 2MB โปรดทำใฟล์เล็กลง หรือแชร์เป็น link เพื่อเข้าถึงไฟล์")</script>';
-                header( "location: /homepage.php?tab=v-pills-cr&result_cr=".$result);
+                header( "Location: base/homepage.php?tab=v-pills-cr&result_cr=".$result);
                 exit();
         }
     }
@@ -315,9 +315,9 @@ date_default_timezone_set("Asia/Bangkok");
                   $pre_detail_request =  substr($_POST["detail_request"],0,80);
                  add_participant($last_id,"content_request",$username);
                  if($file_name==""){
-                  bb_confirm_ticket($last_id ,$userId,$pre_detail_request."...",$_POST["priority"],"https://cdsecommercecontent.ga/img/defac.png", date("Y-m-d h:i:sa"));
+                  bb_confirm_ticket($last_id ,$userId,$pre_detail_request."...",$_POST["priority"],"https://cdse-commercecontent.com/img/defac.png", date("Y-m-d h:i:sa"));
                  }else{
-                  bb_confirm_ticket($last_id ,$userId,$pre_detail_request."...",$_POST["priority"],"https://cdsecommercecontent.ga/attachment/csg/".$last_id."/".$file_name, date("Y-m-d h:i:sa"));
+                  bb_confirm_ticket($last_id ,$userId,$pre_detail_request."...",$_POST["priority"],"https://cdse-commercecontent.com/attachment/csg/".$last_id."/".$file_name, date("Y-m-d h:i:sa"));
                  }
                  
                 //get key
@@ -339,11 +339,11 @@ date_default_timezone_set("Asia/Bangkok");
                 //     }
                 
                 // $result='<div class="alert alert-success">already create content_request !<strong> ID '.$last_id.'</strong></div>';
-                // header( "location: /homepage.php?tab=v-pills-cr&result_cr=".$result);
+                // header( "Location: base/homepage.php?tab=v-pills-cr&result_cr=".$result);
                 echo 'Success ! ทางทีมได้รับข้อความของคุณแล้ว จะรีบดำเนินการให้เร็วที่สุด รายละเอียดเพิ่มเติมสามารถใช้ช่องแชทปกติได้เลยครับ';
             }else{
                 echo 'Error: ' . $sql . '<hr>' . $con->error;
             }
             mysqli_close($con);
-   // header( "location: https://cdsecommercecontent.ga/powerappsp/job_manage.php");
+   // header( "location: https://cdse-commercecontent.com/powerappsp/job_manage.php");
 ?>

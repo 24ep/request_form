@@ -188,7 +188,7 @@ label#label_file_cme {
         <div class="col-9" style="border-right: solid 1px #f0eaea;padding-right:0px;height: 85%;">
             <div class="modal-header">
                 <h5 class="modal-title" id="edit_add_new_title">
-                    <?php echo "<strong><span style='color:red'>NS</span>-".$_POST["id"]."</strong> ".$brand." ".$sku." SKU ". $dp_tags . "<a style='font-size:10px;margin-left:10px' target='_Blank' href='https://content-service-gate.cdsecommercecontent.ga/get/get_ns_log_by_id.php?id=".$_POST["id"]."&action_table=add_new_job&action_data=csg'><small><ion-icon name='time-outline'></ion-icon>Changed log</small></a>"; ?>
+                    <?php echo "<strong><span style='color:red'>NS</span>-".$_POST["id"]."</strong> ".$brand." ".$sku." SKU ". $dp_tags . "<a style='font-size:10px;margin-left:10px' target='_Blank' href='https://content-service-gate.cdse-commercecontent.com/base/get/get_ns_log_by_id.php?id=".$_POST["id"]."&action_table=add_new_job&action_data=csg'><small><ion-icon name='time-outline'></ion-icon>Changed log</small></a>"; ?>
                 </h5>
                 <button type="button" class="btn btn-light btn-sm" <?php echo $status_style; ?>>
                     <?php  echo $status; ?></button>
@@ -267,7 +267,7 @@ label#label_file_cme {
 
 
                                         <div id="call_subtask">
-                                            <?php include('../get/get_sub_task_in_task.php'); ?>
+                                            <?php include('../base/get/get_sub_task_in_task.php'); ?>
                                         </div>
 
                                     </div>
@@ -276,7 +276,7 @@ label#label_file_cme {
                                 <h6><strong>Writer & Studio Job</strong></h6>
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <?php include('../get/get_list_job_cms.php'); ?>
+                                        <?php include('../base/get/get_list_job_cms.php'); ?>
                                     </div>
                                 </div>
 
@@ -290,7 +290,7 @@ label#label_file_cme {
                                         สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ จนกว่า ทาง Content-Traffic จะทำการ assign
                                         ticket นี้ให้กับทางผู้เกี่ยวข้อง
                                     </div>
-                                    <?php include('../form/form_request_edit_new.php')?>
+                                    <?php include('../base/form/form_request_edit_new.php')?>
 
                                 </div>
                             </div>
@@ -495,7 +495,7 @@ label#label_file_cme {
                             </div>
                             <div class="tab-pane fade" id="v-pills-sku" role="tabpanel"
                                 aria-labelledby="v-pills-sku-tab">
-                                <?php include('../get/get_list_sku_ticket.php'); ?>
+                                <?php include('../base/get/get_list_sku_ticket.php'); ?>
 
                             </div>
                             <div class="tab-pane fade" id="v-pills-itemize" role="tabpanel"
@@ -672,9 +672,9 @@ label#label_file_cme {
                                 <?php if($status == 'waiting traffic'){ ?>
                                 <hr>
                                 <h6><strong>Create Writer & Studio - 24ep</strong></h6>
-                                <form action="action/action_create_job_cms.php" method="POST" target="_blank">
+                                <form action="base/action/action_create_job_cms.php" method="POST" target="_blank">
                                     <input type="hidden" id="id_adj" name="id_adj" value="<?php echo  $_POST['id']; ?>">
-                                    <?php include('../form/form_create_job_cms.php')?>
+                                    <?php include('../base/form/form_create_job_cms.php')?>
                                 </form>
                                 <?php } ?>
                             </div>
@@ -683,7 +683,7 @@ label#label_file_cme {
                                 <ul class="list-group list-group-flush" style="background: fixed;">
                                     <div id="comment_box_ins">
                                         <div id="call_ticket_comment_ins">
-                                            <?php include('../get/get_comment_ins.php'); ?>
+                                            <?php include('../base/get/get_comment_ins.php'); ?>
                                         </div>
                                     </div>
                                 </ul>
@@ -712,7 +712,7 @@ label#label_file_cme {
             </div>
             <div class="modal-footer" style="height: 50px;position: absolute;bottom: 15px;width: inherit;">
                 <small style="color:gray;position: absolute;left: 10px;">Request by : <a
-                        href="action/action_show_user_info.php?username=<?php echo $request_username; ?>"
+                        href="base/action/action_show_user_info.php?username=<?php echo $request_username; ?>"
                         target="_blank" class="text-warning stretched-link"><?php echo $request_username; ?></a> |
                     create date :
                     <?php echo $create_date; ?> | update date : <?php echo $update_date; ?></small>
@@ -727,7 +727,7 @@ label#label_file_cme {
             <div class="modal-body" style="height: 85%;padding-top: 0px;padding-right: 0px;" id="over_comment">
                 <div class=" overflow-auto" id="comment_box" style="height: auto;margin-bottom: 0px;margin-top: 0px;">
                     <div id="call_ticket_comment">
-                        <?php   include('../get/get_comment_ticket.php');?>
+                        <?php   include('../base/get/get_comment_ticket.php');?>
                     </div>
                 </div>
             </div>
@@ -795,7 +795,7 @@ function comment_ins_id_with_file(id) {
     form_data.append("comment", comment) // Adding extra parameters to form_data
     form_data.append("id", id)
     $.ajax({
-        url: "action/action_comment_ins.php",
+        url: "base/action/action_comment_ins.php",
         dataType: 'text',
         cache: false,
         contentType: false,
@@ -817,7 +817,7 @@ function itm_just_status_updated_contact(id) {
     var new_contact_buyer = document.getElementById('new_contact_buyer').value;
     if (id) {
 
-        $.post("action/action_itm_updated_contact_status.php", {
+        $.post("base/action/action_itm_updated_contact_status.php", {
             id: id,
             new_contact_buyer: new_contact_buyer,
             new_contact_vender: new_contact_vender
@@ -832,7 +832,7 @@ function comment_cr_id(id) {
     var comment = document.getElementById("comment_input_cr").value;
     document.getElementById('comment_input_cr').value = ''; //clear value
     if (id) {
-        $.post("action/action_comment_cr.php", {
+        $.post("base/action/action_comment_cr.php", {
                 id: id,
                 comment: comment
             },
@@ -852,7 +852,7 @@ function itemize_send_mail_stamp(id) {
         var comment = "[stamp_send_mail]";
         // var subject_mail = document.getElementById("itemize_subject_email").value;
         if (id) {
-            $.post("action/action_stamp_send_mail_itemize.php", {
+            $.post("base/action/action_stamp_send_mail_itemize.php", {
                     id: id,
                     comment: comment,
                     subject_mail: subject_mail
@@ -867,7 +867,7 @@ function itemize_send_mail_stamp(id) {
 function itm_just_status_need_updated_contact(id) {
 
     if (id) {
-        $.post("action/action_itm_need_update_contact.php", {
+        $.post("base/action/action_itm_need_update_contact.php", {
                 id: id
             },
             function(data) {
@@ -880,7 +880,7 @@ function sku_checking() {
     // sku_checking_result
     var sku_list = document.getElementById("sku_checking").value;
     if (sku_list) {
-        $.post("action/action_sku_checking.php", {
+        $.post("base/action/action_sku_checking.php", {
             sku_list: sku_list
             },
             function(data) {
@@ -893,7 +893,7 @@ function force_sync_with_ticket(id){
     var sku_change = document.getElementById("sku_checking").value;
     var be_status_on_change = document.getElementById("be_status_on_change").value;
     if(sku_change) {
-        $.post("action/action_force_change_csg_id_of_sku.php", {
+        $.post("base/action/action_force_change_csg_id_of_sku.php", {
             id:id,
             sku_change: sku_change,
             be_status_on_change:be_status_on_change
@@ -909,7 +909,7 @@ function comment_ticket_id(id, send_type) {
     var comment = document.getElementById("comment_input").value;
     document.getElementById('comment_input').value = ''; //clear value
     if (id) {
-        $.post("action/action_comment_re_add_new.php", {
+        $.post("base/action/action_comment_re_add_new.php", {
                 id: id,
                 send_type: send_type,
                 comment: comment
@@ -936,7 +936,7 @@ function comment_cme_id_with_file(id, send_type) {
     form_data.append("id", id)
     form_data.append("send_type", send_type)
     $.ajax({
-        url: "action/action_comment_re_add_new.php",
+        url: "base/action/action_comment_re_add_new.php",
         dataType: 'text',
         cache: false,
         contentType: false,
@@ -960,7 +960,7 @@ function split_to_subtask(id) {
 
 
     if (id) {
-        $.post("action/action_ns_create_subtask.php", {
+        $.post("base/action/action_ns_create_subtask.php", {
                 id: id,
                 sku_task_set: sku_task_set
             },
@@ -980,7 +980,7 @@ function action_assign_follow(id) {
     var op_follow_assign_name = document.getElementById("op_follow_assign_name").value;
 
     if (id) {
-        $.post("action/action_assign_follow.php", {
+        $.post("base/action/action_assign_follow.php", {
                 id: id,
                 op_follow_assign_name: op_follow_assign_name
             },

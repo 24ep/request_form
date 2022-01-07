@@ -1,3 +1,3 @@
-# request_form model
+# base model
 content-service-gate
  

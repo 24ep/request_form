@@ -32,7 +32,7 @@ $send_type= $_POST["send_type"];
           if (($file_size > 2097152 or $file_size ==0) and $file_name <> ""  ) { 
               $result = '<div class="alert alert-danger">ขนาดไฟล์ต้องไม่เกิน 2MB โปรดทำใฟล์เล็กลง หรือแชร์เป็น link เพื่อเข้าถึงไฟล์</div>';
               echo '<script>alert("ขนาดไฟล์ต้องไม่เกิน 2MB โปรดทำใฟล์เล็กลง หรือแชร์เป็น link เพื่อเข้าถึงไฟล์")</script>';
-              header( "location: /homepage.php?tab=v-pills-cr&result_cr=".$result);
+              header( "Location: base/homepage.php?tab=v-pills-cr&result_cr=".$result);
               exit();
       }
   }
@@ -119,7 +119,7 @@ if($comment<>'' or $file_size <>0){
       if($query) {
         $last_id = $con->insert_id;
         //create forder
-        $fullpath = '../attachment/csg/comment/cme/'.$last_id."/";
+        $fullpath = '../../attachment/csg/comment/cme/'.$last_id."/";
         if (!file_exists($fullpath)) {
           mkdir($fullpath, 0777, true);
         }
@@ -160,7 +160,7 @@ if($comment<>'' or $file_size <>0){
       }
       add_participant($id,"add_new_job");
 }
-  include('../get/get_comment_ticket.php');
+  include('../base/get/get_comment_ticket.php');
    mysqli_close($con);
    //send to line
    date_default_timezone_set("Asia/Bangkok");

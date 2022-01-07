@@ -353,11 +353,11 @@ function Auth(type_action) {
                 URL += '&scope=notify';
                 URL += '&state=' + firstname + ',' + lastname + ',' + nickname + ',' + username + ',' + password + ',' +
                     department + ',' + workemail + ',' + office_tell;
-                URL += '&redirect_uri=https://content-service-gate.cdsecommercecontent.ga/action/action_register_account.php';
+                URL += '&redirect_uri=https://content-service-gate.cdse-commercecontent.com/base/action/action_register_account.php';
                 window.location.href = URL;
             } else {
                 window.location.href =
-                    'https://content-service-gate.cdsecommercecontent.ga/action/action_register_account.php?state=' +
+                    'https://content-service-gate.cdse-commercecontent.com/base/action/action_register_account.php?state=' +
                     firstname + ',' + lastname + ',' + nickname + ',' + username + ',' + password + ',' + department +
                     ',' + workemail + ',' + office_tell;
             }

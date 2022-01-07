@@ -50,7 +50,7 @@
             var pictureUrl = profile.pictureUrl;
             var userId = profile.userId;
             var displayName = profile.displayName;
-            $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/check_active_user.php", {
+            $.post("https://content-service-gate.cdse-commercecontent.com/base/line_api/register/action/check_active_user.php", {
                 pictureUrl: pictureUrl,
                 userId: userId,
                 displayName: displayName
@@ -58,9 +58,9 @@
                 // $('#body').html(data);
                 var response = data;
                 if(response=="active"){
-                    location.href = 'https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/content_request_form.php';
+                    location.href = 'https://content-service-gate.cdse-commercecontent.com/base/line_api/register/form/content_base.php';
                 }else{
-                    location.href = 'https://content-service-gate.cdsecommercecontent.ga/line_api/register/form/page_inactive_user.php';
+                    location.href = 'https://content-service-gate.cdse-commercecontent.com/base/line_api/register/form/page_inactive_user.php';
                 }
             });
         

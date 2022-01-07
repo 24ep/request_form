@@ -47,5 +47,5 @@
         // echo 'Error: ' . $sql . '<br>' . $con->error.'';
     }
     mysqli_close($con);
-    //header( "location: https://cdsecommercecontent.ga/request_form/homepage.php");
+    //header( "location: https://cdse-commercecontent.com/base/homepage.php");
     ?>

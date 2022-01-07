@@ -158,7 +158,7 @@ function account_update_user_id() {
     var attribute_update_name = "line_user_id";
     var pictureUrl = document.getElementById("pictureUrl").value;
 
-        $.post("https://content-service-gate.cdsecommercecontent.ga/line_api/register/action/update_account_detail.php", {
+        $.post("https://content-service-gate.cdse-commercecontent.com/line_api/register/action/update_account_detail.php", {
             username: username,
             attribute_update_value: attribute_update_value,
             attribute_update_name: attribute_update_name,
