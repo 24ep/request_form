@@ -104,5 +104,5 @@ mysqli_query($con, "SET NAMES 'utf8' ");
         echo '<div class="alert alert-danger">Error: ' . $sql . '<hr>' . $con->error.'</div>';
     }
     mysqli_close($con);
-   // header( "location: https://cdse-commercecontent.com/powerappsp/job_manage.php");
+   // header( "location: https://cdse-commercecontent.com/base/job_manage.php");
 ?>

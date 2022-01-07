@@ -345,5 +345,5 @@ date_default_timezone_set("Asia/Bangkok");
                 echo 'Error: ' . $sql . '<hr>' . $con->error;
             }
             mysqli_close($con);
-   // header( "location: https://cdse-commercecontent.com/powerappsp/job_manage.php");
+   // header( "location: https://cdse-commercecontent.com/base/job_manage.php");
 ?>

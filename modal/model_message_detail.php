@@ -55,7 +55,7 @@ $query_update_read = mysqli_query($con,$sql_update_read);
 <script>
 function update_total_unread_div_action() {
    
-   $.post("base/get/get_count_unread_message.php", {
+   $.post("get/get_count_unread_message.php", {
        },
        function(data) {
            $('#total_unread_div').html(data);
@@ -100,7 +100,7 @@ function comment_ms_id_with_file(id) {
     form_data.append("comment", comment) // Adding extra parameters to form_data
     form_data.append("id", id)
     $.ajax({
-        url: "base/action/action_comment_ms.php",
+        url: "action/action_comment_ms.php",
         dataType: 'text',
         cache: false,
         contentType: false,

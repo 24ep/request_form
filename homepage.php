@@ -140,7 +140,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-        <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/powerappsp/images/24ico.ico" />
+        <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
         <!-- google font Quicksand -->
@@ -409,7 +409,7 @@
                     aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <?php include("base/get/get_log.php"); ?>
+                <?php include("get/get_log.php"); ?>
             </div>
         </div>
 
@@ -541,7 +541,7 @@
                                     <li><a target="_Blank" href=""
                                             class="d-inline-flex align-items-center rounded link-light">Setting</a>
                                     </li>
-                                    <li><a href="base/action/action_logout.php"
+                                    <li><a href="action/action_logout.php"
                                             class="d-inline-flex align-items-center rounded link-light">Logout</a></li>
 
                                 </ul>
@@ -708,7 +708,7 @@
                                                 <div class="offcanvas-body">
                                                     <div class="container-md" style="padding:0px 80px 0px 80px;">
                                                         <form class="row g-3"
-                                                            action="base/action/action_submit_add_new_job.php" method="POST">
+                                                            action="action/action_submit_add_new_job.php" method="POST">
                                                             <div id="add_new_job_result"></div>
                                                             <?php include('form/form_request_add_new.php')?>
                                                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -806,7 +806,7 @@
                                                 <div class="offcanvas-body" style="background-color: #fcfbf9;">
                                                     <div class="container-md" style="padding:0px 50px 50px 50px;">
                                                         <form class="row g-3"
-                                                            action="base/action/action_submit_add_content_request.php"
+                                                            action="action/action_submit_add_content_request.php"
                                                             method="POST" enctype="multipart/form-data">
                                                             <div id="add_new_cr_result"></div>
                                                             <?php include('form/form_create_content_request.php')?>
@@ -1016,7 +1016,7 @@ function get_server_cpu_usage(){
                                                 <div class="offcanvas-body" style="background-color: #fcfbf9;">
                                                     <div class="container-md" style="padding:0px 50px 50px 50px;">
                                                         <form class="row g-3"
-                                                            action="base/action/action_submit_add_content_request.php"
+                                                            action="action/action_submit_add_content_request.php"
                                                             method="POST" enctype="multipart/form-data">
                                                             <div id="add_new_cr_result"></div>
                                                             <?php //include('form/form_create_content_request.php')?>
@@ -1173,7 +1173,7 @@ function get_server_cpu_usage(){
                                                         data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                                 </div>
                                                 <div class="offcanvas-body">
-                                                    <form class="row g-3" action="base/action/action_submit_add_message.php"
+                                                    <form class="row g-3" action="action/action_submit_add_message.php"
                                                         method="POST" enctype="multipart/form-data">
                                                         <div class="mb-3">
                                                             <label for="exampleFormControlInput1" class="form-label">To
@@ -1269,7 +1269,7 @@ function call_edit_add_new_modal(id, brand) {
 
 function cr_id_toggle(id) {
     if (id) {
-        $.post("base/get/get_content_request_detail.php", {
+        $.post("get/get_content_request_detail.php", {
             id: id
         }, function(data) {
             $('#calloffcanvas_cr').html(data);
@@ -1280,7 +1280,7 @@ function cr_id_toggle(id) {
 function start_checking(id) {
     
     if (id) {
-        $.post("base/action/action_start_checking.php", {
+        $.post("action/action_start_checking.php", {
             id: id
         }, function(data) {
             $('#start_checking_resault').html(data);
@@ -1294,7 +1294,7 @@ function accepted_stt(id ) {
         if (sku_accepted == null) {
             alert("กรุณาระบ sku ที่ accept (ตัดซ้ำ ตัด cancel ออกแล้ว)")
         } else {
-            $.post("base/action/action_accept_stt.php", {
+            $.post("action/action_accept_stt.php", {
                 id: id,
                 sku_accepted: sku_accepted
             }, function(data) {
@@ -1311,7 +1311,7 @@ function cancel_stt(id, status_change) {
 
     if (id) {
 
-        $.post("base/action/action_cancel_stt.php", {
+        $.post("action/action_cancel_stt.php", {
             id: id,
             resone_cancel: resone_cancel,
             status_change: status_change
@@ -1332,7 +1332,7 @@ function itm_confirm_cancel(id, status_change) {
         if (message == status_change) {
             if (id) {
                 resone_cancel = document.getElementById('itm_reason_cancel').value;
-                $.post("base/action/action_cancel_stt.php", {
+                $.post("action/action_cancel_stt.php", {
                     id: id,
                     resone_cancel: resone_cancel,
                     status_change: status_change
@@ -1350,7 +1350,7 @@ function itm_confirm_cancel(id, status_change) {
         document.getElementById('cr_search_input').value = '';
         var update = true;
         if (status) {
-            $.post("base/get/get_list_content_request.php", {
+            $.post("get/get_list_content_request.php", {
                 status: status,
                 update: update
             }, function(data) {
@@ -1363,7 +1363,7 @@ function itm_confirm_cancel(id, status_change) {
         var cr_search_input = document.getElementById("cr_search_input").value
         var user_cr_filter = document.getElementById("user_cr_filter").value
         // if (cr_search_input) {
-        $.post("base/get/get_list_content_request.php", {
+        $.post("get/get_list_content_request.php", {
             cr_search_input: cr_search_input,
             user_cr_filter: user_cr_filter
         }, function(data) {
@@ -1378,7 +1378,7 @@ function itm_confirm_cancel(id, status_change) {
         var ts_level = ts_level;
     
 
-        $.post("base/get/get_list_ts.php", {
+        $.post("get/get_list_ts.php", {
             summary_filter: summary_filter,
             ts_command_limit:ts_command_limit,
             ts_level:ts_level
@@ -1584,7 +1584,7 @@ function filter_update(be) {
     var brand_filter = document.getElementById("brand_filter").value
     var from_post = true;
     if (from_post) {
-        $.post("base/get/get_list_new_job.php", {
+        $.post("get/get_list_new_job.php", {
             user_filter: user_filter,
             status_filter: status_filter,
             from_post: from_post,
@@ -1595,7 +1595,7 @@ function filter_update(be) {
         });
     }
     if (from_post) {
-        $.post("base/get/get_total_page_nj.php", {
+        $.post("get/get_total_page_nj.php", {
             user_filter: user_filter,
             status_filter: status_filter,
             from_post: from_post,
@@ -1742,7 +1742,7 @@ function drop_card_cr(ev, new_status) {
     var id = id_ticket;
     var value_change = new_status;
     if (id) {
-        $.post("base/action/action_update_cr_detail.php", {
+        $.post("action/action_update_cr_detail.php", {
                 id: id,
                 value_change: value_change,
                 id_name: id_name

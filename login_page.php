@@ -4,7 +4,7 @@
         <title>Content and Studio - Login</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
-        <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/powerappsp/images/24ico.ico" />
+        <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" />
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -77,7 +77,7 @@
                 <h2 class="header_form">
                     <strong>Login</strong>
                 </h2>
-                <form action="base/action/action_login.php" method="POST">
+                <form action="action/action_login.php" method="POST">
                     <div class="form-group">
                         <div class="form-floating">
                             <input

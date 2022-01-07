@@ -162,7 +162,7 @@ function update_ns_detail(id, id_name) {
     var id_name = id_name;
     var value_change = document.getElementById(id_name).value;
     if (id) {
-        $.post("base/action/action_update_ns_detail.php", {
+        $.post("action/action_update_ns_detail.php", {
                 id: id,
                 value_change: value_change,
                 id_name: id_name
