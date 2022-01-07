@@ -160,7 +160,7 @@ if($comment<>'' or $file_size <>0){
       }
       add_participant($id,"add_new_job");
 }
-  include('get/get_comment_ticket.php');
+  include('../get/get_comment_ticket.php');
    mysqli_close($con);
    //send to line
    date_default_timezone_set("Asia/Bangkok");
