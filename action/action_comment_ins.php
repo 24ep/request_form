@@ -100,7 +100,7 @@ if($comment<>'' or $file_size <>0){
       add_participant($id,"add_new_job");
       insert_log("New internal comment \n".$comment,"New Job",$id);
 }
-  include('../base/get/get_comment_ins.php');
+  include('../get/get_comment_ins.php');
   mysqli_close($con);
    //send to line
    date_default_timezone_set("Asia/Bangkok");

@@ -267,7 +267,7 @@ label#label_file_cme {
 
 
                                         <div id="call_subtask">
-                                            <?php include('../base/get/get_sub_task_in_task.php'); ?>
+                                            <?php include('../get/get_sub_task_in_task.php'); ?>
                                         </div>
 
                                     </div>
@@ -276,7 +276,7 @@ label#label_file_cme {
                                 <h6><strong>Writer & Studio Job</strong></h6>
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <?php include('../base/get/get_list_job_cms.php'); ?>
+                                        <?php include('../get/get_list_job_cms.php'); ?>
                                     </div>
                                 </div>
 
@@ -290,7 +290,7 @@ label#label_file_cme {
                                         สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ จนกว่า ทาง Content-Traffic จะทำการ assign
                                         ticket นี้ให้กับทางผู้เกี่ยวข้อง
                                     </div>
-                                    <?php include('../base/form/form_request_edit_new.php')?>
+                                    <?php include('../form/form_request_edit_new.php')?>
 
                                 </div>
                             </div>
@@ -495,7 +495,7 @@ label#label_file_cme {
                             </div>
                             <div class="tab-pane fade" id="v-pills-sku" role="tabpanel"
                                 aria-labelledby="v-pills-sku-tab">
-                                <?php include('../base/get/get_list_sku_ticket.php'); ?>
+                                <?php include('../get/get_list_sku_ticket.php'); ?>
 
                             </div>
                             <div class="tab-pane fade" id="v-pills-itemize" role="tabpanel"
@@ -674,7 +674,7 @@ label#label_file_cme {
                                 <h6><strong>Create Writer & Studio - 24ep</strong></h6>
                                 <form action="action/action_create_job_cms.php" method="POST" target="_blank">
                                     <input type="hidden" id="id_adj" name="id_adj" value="<?php echo  $_POST['id']; ?>">
-                                    <?php include('../base/form/form_create_job_cms.php')?>
+                                    <?php include('../form/form_create_job_cms.php')?>
                                 </form>
                                 <?php } ?>
                             </div>
@@ -683,7 +683,7 @@ label#label_file_cme {
                                 <ul class="list-group list-group-flush" style="background: fixed;">
                                     <div id="comment_box_ins">
                                         <div id="call_ticket_comment_ins">
-                                            <?php include('../base/get/get_comment_ins.php'); ?>
+                                            <?php include('../get/get_comment_ins.php'); ?>
                                         </div>
                                     </div>
                                 </ul>
@@ -727,7 +727,7 @@ label#label_file_cme {
             <div class="modal-body" style="height: 85%;padding-top: 0px;padding-right: 0px;" id="over_comment">
                 <div class=" overflow-auto" id="comment_box" style="height: auto;margin-bottom: 0px;margin-top: 0px;">
                     <div id="call_ticket_comment">
-                        <?php   include('../base/get/get_comment_ticket.php');?>
+                        <?php   include('../get/get_comment_ticket.php');?>
                     </div>
                 </div>
             </div>

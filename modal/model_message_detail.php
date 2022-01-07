@@ -22,7 +22,7 @@ while($row = mysqli_fetch_array($result)) {
     <ul class="list-group list-group-flush" style="background: fixed;">
         <div id="comment_box_ms">
                 <div id="call_ticket_comment_ms">
-                    <?php include('../base/get/get_comment_ms.php'); ?>
+                    <?php include('../get/get_comment_ms.php'); ?>
         </div>
         </div>
     </ul>
