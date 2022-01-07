@@ -166,7 +166,7 @@ if((mysqli_fetch_array($result) === null)){
 
                           $replyerror =  'already register ! please login';
 
-                          header("Location:base/login_page.php?username=".$username."&respone=".$replyerror);
+                          header("Location:login_page.php?username=".$username."&respone=".$replyerror);
 
 
 
@@ -174,7 +174,7 @@ if((mysqli_fetch_array($result) === null)){
 
                 	      $replyerror =   $con->error;
 
-                          header("Location:base/login_page.php?username=".$username."&respone=".$replyerror);
+                          header("Location:login_page.php?username=".$username."&respone=".$replyerror);
 
                                        
 
@@ -196,7 +196,7 @@ exit();
 
    
 
-    header("Location: base/signup_page.php?reply=username นี้มีบนระบบแล้ว กรุณาใช้ชื่ออื่น&firstname=".$firstname."&lastname=".$lastname."&nickname=".$username."&password=".$password."&workemail=".$workemail);
+    header("Location: signup_page.php?reply=username นี้มีบนระบบแล้ว กรุณาใช้ชื่ออื่น&firstname=".$firstname."&lastname=".$lastname."&nickname=".$username."&password=".$password."&workemail=".$workemail);
 
 
 

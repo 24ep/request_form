@@ -99,7 +99,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
                 sent_line_noti("\n• Created new request [ ".$brand." ".$sku." SKUs ]\n----------------------------\n• คุณได้ทำกาส่ง request ขอเปิด job\n• Ticket ID : NS-".$last_id." [ ".$brand." ".$sku." SKUs ]\n• Store : ".$stock_source,$key);
             }
         $result='<div class="alert alert-success">already create Request !<strong> ID '.$last_id.'</strong></div>';
-        header( "Location: base/homepage.php?tab=v-pills-request_list&result=".$result);
+        header( "Location: homepage.php?tab=v-pills-request_list&result=".$result);
 	}else{
         echo '<div class="alert alert-danger">Error: ' . $sql . '<hr>' . $con->error.'</div>';
     }

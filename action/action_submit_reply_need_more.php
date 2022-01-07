@@ -24,7 +24,7 @@
 
 	if($query) {
 
-        header( "Location: base/homepage.php?tab=v-pills-request_list");
+        header( "Location: homepage.php?tab=v-pills-request_list");
 
 	}else{
 
