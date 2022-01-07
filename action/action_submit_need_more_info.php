@@ -38,7 +38,7 @@ cdse-commercecontent.com
 
 	if($query) {
 
-        header( "Location: homepage.php?tab=v-pills-request_list");
+        header( "Location: /homepage.php?tab=v-pills-request_list");
 
 	}else{
 

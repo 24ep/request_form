@@ -196,7 +196,7 @@ exit();
 
    
 
-    header("Location: signup_page.php?reply=username นี้มีบนระบบแล้ว กรุณาใช้ชื่ออื่น&firstname=".$firstname."&lastname=".$lastname."&nickname=".$username."&password=".$password."&workemail=".$workemail);
+    header("Location: /signup_page.php?reply=username นี้มีบนระบบแล้ว กรุณาใช้ชื่ออื่น&firstname=".$firstname."&lastname=".$lastname."&nickname=".$username."&password=".$password."&workemail=".$workemail);
 
 
 
