@@ -22,7 +22,7 @@ function get_attachment_cr($id){
   $list_attchment .=  '<small style="display:block;margin-bottom:3px"><strong style="color:gray">Attchment</strong></small>
   <ul class="list-group ">';
     while($row = mysqli_fetch_array($result)) {
-      $herf = str_replace("../..",'https://cdsecommercecontent.ga',$row['file_path'].$row['file_name']);
+      $herf = str_replace("../..",'https://cdse-commercecontent.com',$row['file_path'].$row['file_name']);
       $list_attchment.=  ' <li class="list-group-item d-flex justify-content-between align-items-left">
       <div><ion-icon name="document-attach-outline"></ion-icon>'.$row["file_name"].'</div>
       <a href="'.$herf.'" download="'.$row['file_name'].'"><ion-icon name="cloud-download-outline" style="color:blue"></ion-icon></a>
@@ -46,7 +46,7 @@ function get_image_cr($id){
   if(isset($list_image)){$list_image.= '<div class="row">';}else{$list_image= '<div class="row">';}
   
     while($row = mysqli_fetch_array($result)) {
-      $herf = str_replace("../..",'https://cdsecommercecontent.ga',$row['file_path'].$row['file_name']);
+      $herf = str_replace("../..",'https://cdse-commercecontent.com',$row['file_path'].$row['file_name']);
       $list_image.=  ' <div class="col-md"><div class="thumbnail">
       <a href="'.$herf .'" target="_blank">
       <figure class="figure">
@@ -311,7 +311,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
               
               <ul id="checklist_box" style="padding: 5px;">
             
-               <?php     include('http://content-service-gate.cdsecommercecontent.ga/get/get_checklist_cr.php?id='.$id.'&department='.$_SESSION["department"]); ?>
+               <?php     include('get/get_checklist_cr.php?id='.$id.'&department='.$_SESSION["department"]); ?>
               </ul>
          
             
@@ -390,7 +390,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                 </div>
               <ul id="checklist_box" style="padding: 5px;">
                   
-               <?php     include('http://content-service-gate.cdsecommercecontent.ga/get/get_checklist_cr.php?id='.$id.'&department='.$_SESSION["department"]); ?>
+               <?php     include('get/get_checklist_cr.php?id='.$id.'&department='.$_SESSION["department"]); ?>
               </ul>
          
             
