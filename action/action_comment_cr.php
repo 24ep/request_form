@@ -58,7 +58,7 @@ if($comment<>'' or $file_size <>0){
       $query = mysqli_query($con,$sql);
           //create forder
           $last_id = $con->insert_id;
-          $fullpath = '../../attachment/csg/comment/cr/'.$last_id."/";
+          $fullpath = '../attachment/csg/comment/cr/'.$last_id."/";
           if (!file_exists($fullpath)) {
             mkdir($fullpath, 0777, true);
           }
