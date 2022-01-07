@@ -311,7 +311,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
               
               <ul id="checklist_box" style="padding: 5px;">
             
-               <?php     include('get/get_checklist_cr.php?id='.$id.'&department='.$_SESSION["department"]); ?>
+               <?php     include('../get/get_checklist_cr.php?id='.$id.'&department='.$_SESSION["department"]); ?>
               </ul>
          
             
@@ -390,7 +390,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                 </div>
               <ul id="checklist_box" style="padding: 5px;">
                   
-               <?php     include('get/get_checklist_cr.php?id='.$id.'&department='.$_SESSION["department"]); ?>
+               <?php     include('../get/get_checklist_cr.php?id='.$id.'&department='.$_SESSION["department"]); ?>
               </ul>
          
             
