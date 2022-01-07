@@ -1646,7 +1646,7 @@ function doAutoRefresh() {
     var req = Inint_AJAX();
     //var req_cr = Inint_AJAX();
     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-    req.open("POST", 'base/get/get_list_new_job.php?' + new Date().getTime(), true);
+    req.open("POST", 'get/get_list_new_job.php?' + new Date().getTime(), true);
     //req_cr.open("POST", 'base/get/get_list_content_request.php?' + new Date().getTime(), true);
     // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
     req.onreadystatechange = function() {
@@ -1666,7 +1666,7 @@ function doAutoRefresh() {
 function doAutoRefresh_cr() {
     var req_cr = Inint_AJAX();
     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-    req_cr.open("POST", 'base/get/get_list_content_request.php?' + new Date().getTime(), true);
+    req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
     // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
     req_cr.onreadystatechange = function() {
         if (req_cr.readyState == 4) {
