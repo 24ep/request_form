@@ -119,7 +119,7 @@ if($comment<>'' or $file_size <>0){
       if($query) {
         $last_id = $con->insert_id;
         //create forder
-        $fullpath = '../../attachment/csg/comment/cme/'.$last_id."/";
+        $fullpath = '../attachment/csg/comment/cme/'.$last_id."/";
         if (!file_exists($fullpath)) {
           mkdir($fullpath, 0777, true);
         }
