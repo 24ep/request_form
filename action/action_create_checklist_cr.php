@@ -13,5 +13,5 @@ session_start();
     )";
 	$query = mysqli_query($con,$sql);
     mysqli_close($con);
-    include('http://content-service-gate.cdsำ-commercecontent.com/get/get_checklist_cr.php?id='.$ticket_id);
+    include('http://content-service-gate.cdse-commercecontent.com/get/get_checklist_cr.php?id='.$ticket_id);
 ?>
