@@ -37,6 +37,6 @@ if((mysqli_fetch_array($result) === null)){
     $_SESSION["request_status"] = "pending";
     $request_by = $_SESSION["username"];
     insert_log("login success | username ".$username,"account",0);
-    header("Location: /homepage?");
+    header("Location: /?");
 }
 ?>
