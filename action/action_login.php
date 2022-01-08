@@ -13,7 +13,7 @@ $query = "SELECT * FROM account WHERE username = '".$username."' and password = 
 $result =  mysqli_query($con, $query);
 if((mysqli_fetch_array($result) === null)){
     insert_log("login faild | username ".$username." | pass ".$password,"account",0);
-    header("Location: /login_page.php?respone=username หรือ password ไม่ถูกต้อง&code=".$password_encode);
+    header("Location: ?respone=username หรือ password ไม่ถูกต้อง&code=".$password_encode);
 }else{
     $query = "SELECT * FROM account WHERE username = '".$username."' and password = '".$password_encode."'"or die("Error:" . mysqli_error());
     $result =  mysqli_query($con, $query);
