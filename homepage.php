@@ -785,7 +785,7 @@
                                     </div>
                                     <ul class="list-group list-group shadow " style="margin-top:15px">
                                         <div id="list_grouping">
-                                            <?php include('get/get_list_content_request.php'); ?>
+                                            <?php //include('get/get_list_content_request.php'); ?>
                                         </div>
                                     </ul>
                                 </div>
