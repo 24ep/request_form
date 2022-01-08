@@ -445,7 +445,7 @@ function comment_cr_id(id) {
     var comment = document.getElementById("comment_input_cr").value;
     document.getElementById('comment_input_cr').value = ''; //clear value
     if (id) {
-        $.post("action/action_comment_cr.php", {
+        $.post("base/action/action_comment_cr.php", {
                 id: id,
                 comment: comment
             },
@@ -465,7 +465,7 @@ function add_cr_list(id,ticket_template) {
   }
   
   if (id) {
-        $.post("action/action_create_checklist_cr.php", {
+        $.post("base/action/action_create_checklist_cr.php", {
                 id: id,
                 sku:sku
             },
@@ -480,7 +480,7 @@ function add_cr_list(id,ticket_template) {
 }
 function remove_cr_list(list_id,ticket_id) {
         if (list_id) {
-              $.post("action/action_remove_checklist_cr.php", {
+              $.post("base/action/action_remove_checklist_cr.php", {
                       list_id: list_id,
                       ticket_id:ticket_id
                   },
@@ -507,7 +507,7 @@ function comment_cr_id_with_file(id) {
     form_data.append("comment", comment) // Adding extra parameters to form_data
     form_data.append("id", id)
     $.ajax({
-        url: "action/action_comment_cr.php",
+        url: "base/action/action_comment_cr.php",
         dataType: 'text',
         cache: false,
         contentType: false,
@@ -528,7 +528,7 @@ function update_cr_detail(id, id_name) {
     var id_name = id_name;
     var value_change = document.getElementById(id_name).value;
     if (id) {
-        $.post("action/action_update_cr_detail.php", {
+        $.post("base/action/action_update_cr_detail.php", {
                 id: id,
                 value_change: value_change,
                 id_name: id_name
@@ -543,7 +543,7 @@ function update_cl_detail(id, id_name) {
     var id_name = id_name;
     var value_change = document.getElementById(id_name+'_'+id).value;
     if (id) {
-        $.post("action/action_update_checklist_cr.php", {
+        $.post("base/action/action_update_checklist_cr.php", {
                 id: id,
                 value_change: value_change,
                 id_name: id_name
