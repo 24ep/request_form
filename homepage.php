@@ -1078,7 +1078,7 @@ function get_server_cpu_usage(){
                         aria-labelledby="v-pills-ms_admin-tab">
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
-                                <!-- <div class="container ">
+                               <div class="container ">
                                     
                                 </div> -->
                                 <!-- <div class="container-fluid" style="border-radius: 10px;width: 95%;">
@@ -1223,7 +1223,7 @@ function get_server_cpu_usage(){
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                     <!-- offcanvas detail cr -->
                     <div class="offcanvas offcanvas-start" tabindex="-1" id="detail_cr" style="width:100%"
                         aria-labelledby="offcanvasExampleLabel">
