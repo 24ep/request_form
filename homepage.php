@@ -1,7 +1,7 @@
     <?php
     session_start();
     if (!$_SESSION["login_csg"]){ 
-        Header("Location: /login_page.php");
+        Header("Location: base/login_page.php");
     }else{
     include('get/get_card_content_request.php'); 
     include('get/get_card_new_job.php'); 
