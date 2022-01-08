@@ -1259,7 +1259,7 @@ $(function() {
     <script>
 function call_edit_add_new_modal(id, brand) {
     if (id) {
-        $.post("modal/edit_request_add_new.php", {
+        $.post("base/modal/edit_request_add_new.php", {
             id: id
         }, function(data) {
             $('#callmodal_request_add_new').html(data);
@@ -1269,7 +1269,7 @@ function call_edit_add_new_modal(id, brand) {
 
 function cr_id_toggle(id) {
     if (id) {
-        $.post("get/get_content_request_detail.php", {
+        $.post("base/get/get_content_request_detail.php", {
             id: id
         }, function(data) {
             $('#calloffcanvas_cr').html(data);
@@ -1280,7 +1280,7 @@ function cr_id_toggle(id) {
 function start_checking(id) {
     
     if (id) {
-        $.post("action/action_start_checking.php", {
+        $.post("base/action/action_start_checking.php", {
             id: id
         }, function(data) {
             $('#start_checking_resault').html(data);
@@ -1294,7 +1294,7 @@ function accepted_stt(id ) {
         if (sku_accepted == null) {
             alert("กรุณาระบ sku ที่ accept (ตัดซ้ำ ตัด cancel ออกแล้ว)")
         } else {
-            $.post("action/action_accept_stt.php", {
+            $.post("base/action/action_accept_stt.php", {
                 id: id,
                 sku_accepted: sku_accepted
             }, function(data) {
@@ -1311,7 +1311,7 @@ function cancel_stt(id, status_change) {
 
     if (id) {
 
-        $.post("action/action_cancel_stt.php", {
+        $.post("base/action/action_cancel_stt.php", {
             id: id,
             resone_cancel: resone_cancel,
             status_change: status_change
@@ -1332,7 +1332,7 @@ function itm_confirm_cancel(id, status_change) {
         if (message == status_change) {
             if (id) {
                 resone_cancel = document.getElementById('itm_reason_cancel').value;
-                $.post("action/action_cancel_stt.php", {
+                $.post("base/action/action_cancel_stt.php", {
                     id: id,
                     resone_cancel: resone_cancel,
                     status_change: status_change
@@ -1350,7 +1350,7 @@ function itm_confirm_cancel(id, status_change) {
         document.getElementById('cr_search_input').value = '';
         var update = true;
         if (status) {
-            $.post("get/get_list_content_request.php", {
+            $.post("base/get/get_list_content_request.php", {
                 status: status,
                 update: update
             }, function(data) {
@@ -1363,7 +1363,7 @@ function itm_confirm_cancel(id, status_change) {
         var cr_search_input = document.getElementById("cr_search_input").value
         var user_cr_filter = document.getElementById("user_cr_filter").value
         // if (cr_search_input) {
-        $.post("get/get_list_content_request.php", {
+        $.post("base/get/get_list_content_request.php", {
             cr_search_input: cr_search_input,
             user_cr_filter: user_cr_filter
         }, function(data) {
@@ -1378,7 +1378,7 @@ function itm_confirm_cancel(id, status_change) {
         var ts_level = ts_level;
     
 
-        $.post("get/get_list_ts.php", {
+        $.post("base/get/get_list_ts.php", {
             summary_filter: summary_filter,
             ts_command_limit:ts_command_limit,
             ts_level:ts_level
@@ -1584,7 +1584,7 @@ function filter_update(be) {
     var brand_filter = document.getElementById("brand_filter").value
     var from_post = true;
     if (from_post) {
-        $.post("get/get_list_new_job.php", {
+        $.post("base/get/get_list_new_job.php", {
             user_filter: user_filter,
             status_filter: status_filter,
             from_post: from_post,
@@ -1595,7 +1595,7 @@ function filter_update(be) {
         });
     }
     if (from_post) {
-        $.post("get/get_total_page_nj.php", {
+        $.post("base/get/get_total_page_nj.php", {
             user_filter: user_filter,
             status_filter: status_filter,
             from_post: from_post,
@@ -1742,7 +1742,7 @@ function drop_card_cr(ev, new_status) {
     var id = id_ticket;
     var value_change = new_status;
     if (id) {
-        $.post("action/action_update_cr_detail.php", {
+        $.post("base/action/action_update_cr_detail.php", {
                 id: id,
                 value_change: value_change,
                 id_name: id_name
