@@ -209,12 +209,12 @@
         <div class=text-center>
             <button type="submit" class="btn btn-dark" style="width:100%;margin-bottom:15px"
                 onclick="Auth('submit');">Confirm</button>
-            <a href="login_page.php" style="text-align: center!important;">Already have an account? - login</a>
+            <a href="login_page" style="text-align: center!important;">Already have an account? - login</a>
         </div>
     </div>
     </div>
     <div class="container" style="text-align:center">
-        <a href="signup_page.php" style="font-size:10px">Copyright @ Central Department Store - Digital Content</a>
+        <a href="signup_page" style="font-size:10px">Copyright @ Central Department Store - Digital Content</a>
     </div>
 </body>
 <!-- bootsrap js -->
