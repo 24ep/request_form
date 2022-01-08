@@ -744,7 +744,7 @@
                                     </tr>
                                 </thead>
                                 <tbody id="job_list">
-                                    <?php include('get/get_list_new_job.php'); ?>
+                                    <?php //include('get/get_list_new_job.php'); ?>
                                 </tbody>
                             </table>
                         </div>
