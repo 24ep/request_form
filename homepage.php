@@ -6,7 +6,6 @@
     include('get/get_card_content_request.php'); 
     include('get/get_card_new_job.php'); 
     include_once('get/get_count_status.php');
-
     function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
@@ -41,23 +40,18 @@
                 }
                 if($row[$col] <> '' )
                 {
-
                     if($select_option==$row[$col]){
                         if($col=="username"){
                             $op_label = $row["nickname"]." ".$row["firstname"]." (".$row["username"].") ";
-
                         }else{
                             $op_label = $row[$col];
-
                         }
                         $option_set .= '<option value="'.$row[$col].'" selected>'.$op_label.'</option>';
                     }else{
                         if($col=="username"){
                             $op_label = $row["nickname"]." ".$row["firstname"]." (".$row["username"].") ";
-
                         }else{
                             $op_label = $row[$col];
-
                         }
                         $option_set .= '<option value="'.$row[$col].'">'.$op_label.'</option>';
                     }
@@ -67,7 +61,6 @@
         return $option_set;
         mysqli_close($con);
         }
-
         function get_option_return_filter($attribute_code,$default_option,$select_type,$function){
             $con= mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
@@ -83,8 +76,6 @@
             where attribute_entity.attribute_code =  '".$attribute_code."' and attribute_option.function='".$function."' 
             ORDER BY option_id asc" or die("Error:" . mysqli_error());
             $result = mysqli_query($con, $query);
-            
-            
                 if($select_type=="multi"){
                     while($row = mysqli_fetch_array($result)) {
                     $array_default = explode(', ', $default_option);
@@ -95,10 +86,8 @@
                         }else{
                             $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
                         }
-                        
                       }
                     }
-
                 }else{
                     $option_set .= '<option value=""></option>';
                     while($row = mysqli_fetch_array($result)) {
@@ -108,13 +97,10 @@
                             $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
                         }
                     }
-                        
                 }
-            
             return $option_set;
             mysqli_close($con);
         }
-
         $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
         $username_op_cr = getoption_return_filter("username","account",$_SESSION["user_cr_filter"],"single","all_in_one_project");
         $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
@@ -133,7 +119,6 @@
     ?>
     <!DOCTYPE html>
     <html lang="en">
-
     <head>
         <title>Content and Studio - Homepage</title>
         <!-- Required meta tags -->
@@ -143,11 +128,6 @@
         <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
-        <!-- google font Quicksand -->
-        <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> <link
-            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap"
-            rel="stylesheet"> -->
-        <!-- end google font -->
         <!-- Bootstrap css -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -169,44 +149,36 @@
             font-family: 'Prompt', sans-serif !important;
             font-size: 14px;
         }
-
         a {
             color: gray;
             text-decoration: auto;
         }
-
         a:hover {
             color: black;
             text-decoration: auto;
             font-weight: bold;
         }
-
         label {
             font-weight: 800 !important;
         }
-
         .row {
             margin-bottom: 15px;
         }
-
         .multiple-select,
         .multiple-select_adj,
         .multiple-select_edit {
             width: 100%;
         }
-
         .header_form {
             text-align: center;
             margin-bottom: 50px;
             margin-top: 50px;
         }
-
         .container-sm {
             max-width: 500px;
             margin-top: 8%;
             padding: 10px !important 50px !important 100px !important !important;
         }
-
         .list_bra .nav-pills .nav-link.active,
         .list_bra .nav-pills .show .nav-link {
             color: white;
@@ -215,45 +187,37 @@
             background-color: #f0f2fc87;
             font-weight: bolder;
         }
-
         /* .nav-link{
             color: white;
         } */
         .list_bra .nav-pills .nav-link {
             color: white !important;
         }
-
         .list_bra .nav-link:hover {
             color: white !important;
             width: 100%;
             s font-weight: bolder;
         }
-
         .list_bra .nav-link.active:hover {
             color: #ffff !important;
         }
-
         .nav-pills .nav-link.active,
         .nav-pills .show .nav-link {
             background-color: #f0f2fc87;
             color: white !important;
             width: 100%;
         }
-
         .navbar-brand {
             margin-left: 10px;
             margin-right: 10px;
             font-weight: 1000;
         }
-
         .navbar-brand {
             color: #ffff !important;
         }
-
         .navbar-brand:hover {
             color: #ffff !important;
         }
-
         .list_bra {
             padding-right: 0;
             /* background: rgba(236, 236, 236, 1); */
@@ -262,33 +226,27 @@
             background-image: url('image/11.jpg');
             color: black;
         }
-
         .my-1 {
             margin-top: 1rem !important;
             margin-bottom: 1rem !important;
         }
-
         .selection_filter {
             width: 150px;
             border: transparent;
             /* border-bottom:1px gray; */
             /* border-bottom-style: dotted; */
         }
-
         .selection_filter:active {
             border: transparent !important;
         }
-
         .selection_filter:focus {
             border: transparent !important;
             border-style: none;
         }
-
         ion-icon {
             font-size: 20px;
             margin: -0.2rem;
         }
-
         .link-light {
             color: white;
             padding: 0.2rem;
@@ -298,39 +256,32 @@
             font-size: 14px;
             font-family: 'Prompt', sans-serif !important;
         }
-
         .link-light:hover {
             color: white;
             background-color: #dbdbdb38;
             width: 100%;
             border-radius: 0px !important;
         }
-
         .link-light:focus {
             color: white;
             background-color: #dbdbdb38;
             width: 100%;
             border-radius: 0px !important;
         }
-
         .btn-check:focus+.btn,
         .btn:focus {
             box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 0%)
         }
-
         .total_count_dashboard {
             text-align: center;
             font-size: 70px;
         }
-
         .unit_count_dashboard {
             text-align: center;
         }
-
         ion-icon {
             margin-right: 5px;
         }
-
         .task_detial {
             color: #6c757d;
             ;
@@ -341,33 +292,27 @@
             padding-bottom: 3px;
             padding-top: 3px;
         }
-
         .icon_bar_tootle {
             margin-left: 20px;
             margin-right: 50px;
             font-size: 13px;
         }
-
         .icon_ocv {
             margin-right: 0px !important;
             font-size: 14px;
             color: gray;
         }
-
         .ticket_relate {
             border-color: white;
             padding: 0px;
             padding-bottom: 5px
         }
-
         .col-board {
             border-right: 1px #dee2e6 solid;
         }
-
         .cr_title {
             margin-bottom: 10px;
         }
-
         .status_cr_list {
             margin-right: 5px;
             margin-left: 10px;
@@ -376,9 +321,7 @@
         }
         </style>
     </head>
-
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();">
-        
 <!--         <nav class="navbar sticky-top navbar-danger bg-danger">
           <marquee>
            <span class="navbar-text" style="color:white" >
@@ -390,7 +333,6 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140386041-2"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -412,14 +354,11 @@
                 <?php include("get/get_log.php"); ?>
             </div>
         </div>
-
         <div class="row " style="margin-bottom: 0px;--bs-gutter-x: 0rem;">
         <?php 
          if(strpos($_SESSION["department"],'Content Admin')!==false){
             $nev_avg = "background: #212121;";
          }
-            
-            
         ?>
             <div class="col-2 list_bra window-full shadow" style="<?php echo  $nev_avg; ?>">
                 <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -454,8 +393,6 @@
                         aria-controls="v-pills-ts_admin" onclick="updateURL('v-pills-ts_admin');" aria-selected="false">
                         <ion-icon style="color:white" name="grid-outline"></ion-icon> TS Console
                     </a>
-                    
-                   
                     <?php }?>
                        <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                           <a class="nav-link" id="v-pills-fl_board-tab" data-toggle="pill" href="#v-pills-fl_board" role="tab"
@@ -463,9 +400,6 @@
                             <ion-icon style="color:white" name="grid-outline"></ion-icon> Follow-up Board
                             </a>
                         <?php }?>
-                    
-                   
-              
                     <hr style="color: #eee!important;">
                     <ul class="list-unstyled ps-0">
                         <li class="mb-1">
@@ -543,7 +477,6 @@
                                     </li>
                                     <li><a href="base/action/action_logout.php"
                                             class="d-inline-flex align-items-center rounded link-light">Logout</a></li>
-
                                 </ul>
                             </div>
                         </li>
@@ -645,7 +578,6 @@
                                     <select class="selection_filter" id="user_filter" onchange="filter_update();">
                                         <?php //echo $username_op;?>
                                     </select> -->
-
                                     <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
                                     <input value="<?php echo $_SESSION["user_filter"];?>" class="selection_filter"
                                         list="datalistOptionsuser" id="user_filter" onchange="filter_update();"
@@ -874,11 +806,8 @@
                                 <div class="container ">
                                 <?php include('get/get_list_ts.php')?>
                             <!-- nav bar -->
-
 <?php
-
 function get_server_memory_usage(){
-
     $free = shell_exec('free');
     $free = (string)trim($free);
     $free_arr = explode("\n", $free);
@@ -886,17 +815,12 @@ function get_server_memory_usage(){
     $mem = array_filter($mem);
     $mem = array_merge($mem);
     $memory_usage = $mem[2]/$mem[1]*100;
-
     return round($memory_usage);
 }
-
 function get_server_cpu_usage(){
-
     $load = sys_getloadavg();
     return round($load[0]);
-
 }
-
 ?>
 <nav class="navbar">
   <div class="container-fluid p-0">
@@ -912,10 +836,8 @@ function get_server_cpu_usage(){
     </form>
   </div>
 </nav>
-
  <nav class="navbar">
   <form style="width:100%">
-
     <div class="input-group input-group-sm mb-3">
       <span class="input-group-text" id="basic-addon1"><ion-icon style="vertical-align: middle;" name="terminal-outline"></ion-icon>Query Search</span>
       <input list="qlistoption" style="width: 75%;"type="text" class="form-control" 
@@ -937,11 +859,9 @@ function get_server_cpu_usage(){
     </datalist>
   </form>
 </nav>
-                                     
                                <!-- console bra -->
                                <!-- project -->
                                <span class="row"><strong><ion-icon name="business-outline" style="vertical-align: middle;" ></ion-icon>Project</strong></span>
-                               
                                <div class="row">
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your tasks assignment (task of project)</small>
@@ -957,7 +877,6 @@ function get_server_cpu_usage(){
                                <!-- support task -->
                                <hr>
                                <span class="row"><strong><ion-icon name="server-outline" style="vertical-align: middle;" ></ion-icon> Data & Application Support</strong></span>
-
                                <div class="row">
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
@@ -970,11 +889,9 @@ function get_server_cpu_usage(){
                                        <?php list_ts("ticket.ticket_template = 'DT' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",500,'ticket'); ?>
                                    </div>
                                 </div>
-                                 
                                <!-- Content request -->
                                <hr>
                                <span class="row"><strong><ion-icon name="layers-outline" style="vertical-align: middle;" ></ion-icon>Content Request</strong></span>
-
                                <div class="row">
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
@@ -987,18 +904,13 @@ function get_server_cpu_usage(){
                                        <?php list_ts("ticket.ticket_template = 'CR' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",500,'ticket'); ?>
                                    </div>
                                 </div>
-                              
-                            
                                     <!-- unassign -->
                                     <!-- self -->
                                     <!-- another -->
-                               
                                 </div>
                             </div>
                         </div>
-
                    <!-- -- -->
-
                    <!-- <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination pagination-sm">
@@ -1033,9 +945,7 @@ function get_server_cpu_usage(){
                                     </ul>
                                 </nav>
                             </div> -->
-
                         <!-- -- -->
-                        
                     </div>
                          <!-- ts console -->
                     <div class="tab-pane fade" id="v-pills-fl_board" role="tabpanel"
@@ -1044,7 +954,6 @@ function get_server_cpu_usage(){
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
                                     <div class="row">
-                    
                                         <div class="col col-board window-full col" id="pending">
                                             <small style="margin-bottom:5px"><strong>Pending + Waiting Confirm</strong></small>
                                            <span class="badge bg-secondary"><?php echo count_add_new_card("(status = 'pending' or status = 'waiting confirm')",$_GET["username"]); ?> Ticket</span>
@@ -1079,7 +988,6 @@ function get_server_cpu_usage(){
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                <div class="container ">
-                                    
                                 </div> -->
                                 <!-- <div class="container-fluid" style="border-radius: 10px;width: 95%;">
                                     <div class="row">
@@ -1110,7 +1018,6 @@ function get_server_cpu_usage(){
                                                 </a>
                                             </div>
                                         </div> -->
-
                                         <!-- <div class="col-10">
                                             <div class="tab-content" id="nav-tabContent">
                                                 <div class="tab-pane fade show active" id="list-important"
@@ -1155,14 +1062,10 @@ function get_server_cpu_usage(){
                                                         </tbody>
                                                     </table>
                                                     Modal
-
                                                 </div>
-
-
                                             </div>
                                         </div>
                                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-
                                             <div class="offcanvas offcanvas-start" style="width: 80%;" tabindex="-1"
                                                 id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
                                                 <div class="offcanvas-header">
@@ -1198,7 +1101,6 @@ function get_server_cpu_usage(){
                                                                 class="form-label">Detail</label>
                                                             <textarea class="form-control" id="ms_description"
                                                                 name="ms_description" rows="5"></textarea>
-
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="exampleFormControlTextarea1"
@@ -1207,19 +1109,14 @@ function get_server_cpu_usage(){
                                                                 id="ms_attachment" name="ms_attachment[]"
                                                                 multiple="multiple">
                                                             <small>ขนาดไฟล์ต้องไม่เกิน 2MB</small>
-
                                                         </div>
-
                                                         <button type="submit" class="btn btn-primary btn-sm"
                                                             style="width:100%">Submit</button>
-
                                                     </form>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -1266,7 +1163,6 @@ function call_edit_add_new_modal(id, brand) {
         });
     }
 }
-
 function cr_id_toggle(id) {
     if (id) {
         $.post("base/get/get_content_request_detail.php", {
@@ -1276,9 +1172,7 @@ function cr_id_toggle(id) {
         });
     }
 }
-
 function start_checking(id) {
-    
     if (id) {
         $.post("base/action/action_start_checking.php", {
             id: id
@@ -1287,7 +1181,6 @@ function start_checking(id) {
         });
     }
 }
-
 function accepted_stt(id ) {
     if (id) {
         sku_accepted = document.getElementById('sku_accepted').value;
@@ -1301,16 +1194,12 @@ function accepted_stt(id ) {
                 $('#accept_checking_resault').html(data);
             });
         }
-
     }
 }
-
 function cancel_stt(id, status_change) {
     resone_cancel = document.getElementById('resone_cancel').value;
     status_change = 'cancel';
-
     if (id) {
-
         $.post("base/action/action_cancel_stt.php", {
             id: id,
             resone_cancel: resone_cancel,
@@ -1319,11 +1208,7 @@ function cancel_stt(id, status_change) {
             $('#cancel_checking_resault').html(data);
         });
     }
-
-
-
 }
-
 function itm_confirm_cancel(id, status_change) {
     let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
     if (message == null || message == "") {
@@ -1345,7 +1230,6 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
-
     function filter_cr_ticket(status) {
         document.getElementById('cr_search_input').value = '';
         var update = true;
@@ -1358,7 +1242,6 @@ function itm_confirm_cancel(id, status_change) {
             });
         }
     }
-  
     function search_cr_ticket() {
         var cr_search_input = document.getElementById("cr_search_input").value
         var user_cr_filter = document.getElementById("user_cr_filter").value
@@ -1370,14 +1253,11 @@ function itm_confirm_cancel(id, status_change) {
             $('#list_grouping').html(data);
         });
     }
-
     function run_ts_command(type,ts_level){
         var ts_command_input = document.getElementById("ts_command").value;
         var ts_command_limit = document.getElementById("ts_command_limit").value;
         var summary_filter = ts_command_input + " and ticket_template = '" + type + "'";
         var ts_level = ts_level;
-    
-
         $.post("base/get/get_list_ts.php", {
             summary_filter: summary_filter,
             ts_command_limit:ts_command_limit,
@@ -1390,9 +1270,7 @@ function itm_confirm_cancel(id, status_change) {
             }else if(type=="DT"){
                 $('#list_da_task').html(data);
             }
-         
         });
-    
     }
     </script>
     <script type="text/javascript">
@@ -1560,11 +1438,9 @@ function select_current_tab(selecttab) {
             .add('show');
     }
 }
-
 function open_ticket_detail(id) {
     document.getElementById("ns_ticket_" + id).click();
 }
-
 function updateURL(pill) {
     if (history.pushState) {
         var newurl = window.location.protocol + "//" + window.location.host +
@@ -1576,7 +1452,6 @@ function updateURL(pill) {
             }, '', newurl);
     }
 }
-
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value
@@ -1615,7 +1490,6 @@ function filter_update(be) {
 var elements = document.getElementsByClassName('window-full');
 var windowheight = window.innerHeight + "px";
 fullheight(elements);
-
 function fullheight(elements) {
     for (let el in elements) {
         if (elements.hasOwnProperty(el)) {
@@ -1641,7 +1515,6 @@ function Inint_AJAX() {
     alert("XMLHttpRequest not supported")
     return null
 }
-
 function doAutoRefresh() {
     var req = Inint_AJAX();
     //var req_cr = Inint_AJAX();
@@ -1662,7 +1535,6 @@ function doAutoRefresh() {
     };
     req.send(null);
 };
-
 function doAutoRefresh_cr() {
     var req_cr = Inint_AJAX();
     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
@@ -1726,11 +1598,9 @@ tinymce.init({
 function allowDrop(ev) {
     ev.preventDefault();
 }
-
 function drag_card_cr(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
-
 function drop_card_cr(ev, new_status) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("card");
@@ -1755,7 +1625,6 @@ function drop_card_cr(ev, new_status) {
     }
 }
     </script>
-
     </html>
     <?php if( $_GET["fopenticket"]<>""){
     $_SESSION["fopenticket"]=$_GET["fopenticket"];
