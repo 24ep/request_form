@@ -541,7 +541,7 @@
                                     <li><a target="_Blank" href=""
                                             class="d-inline-flex align-items-center rounded link-light">Setting</a>
                                     </li>
-                                    <li><a href="action/action_logout.php"
+                                    <li><a href="action_logout"
                                             class="d-inline-flex align-items-center rounded link-light">Logout</a></li>
 
                                 </ul>
