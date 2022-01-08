@@ -35,7 +35,7 @@
 <script>
 function message_send_get(id) {
     if (id) {
-        $.post("modal/model_message_detail.php", {
+        $.post("base/modal/model_message_detail.php", {
                 id: id
             },
             function(data) {

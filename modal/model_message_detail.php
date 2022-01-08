@@ -55,7 +55,7 @@ $query_update_read = mysqli_query($con,$sql_update_read);
 <script>
 function update_total_unread_div_action() {
    
-   $.post("get/get_count_unread_message.php", {
+   $.post("base/get/get_count_unread_message.php", {
        },
        function(data) {
            $('#total_unread_div').html(data);
