@@ -53,20 +53,20 @@
     <body>
   
     <?php 
-                                if($_GET["respone"]<>""){
-                                    if($_GET["respone"]=="already register ! please login"){
+                                if($_GET["respond"]<>""){
+                                    if($_GET["respond"]=="already register ! please login"){
                                         echo "<div class='alert alert-success' role='alert'>
                                     <ion-icon name='checkmark-done-circle-outline' style='border-radius: 0px;;margin-right: 10px;
                                     font-size: 25px;
                                     position: absolute;'>
-                                    </ion-icon><strong style='padding-left: 30px;'>".$_GET["respone"]."</strong>
+                                    </ion-icon><strong style='padding-left: 30px;'>".$_GET["respond"]."</strong>
                                     </div>";
                                     }else{
                                         echo "<div class='alert alert-danger' role='alert'>
                                         <ion-icon name='alert-circle-outline' style='border-radius: 0px;;margin-right: 10px;
                                         font-size: 25px;
                                         position: absolute;'>
-                                        </ion-icon><strong style='padding-left: 30px;'>".$_GET["respone"]."</strong>
+                                        </ion-icon><strong style='padding-left: 30px;'>".$_GET["respond"]."</strong>
                                         </div>";
                                     }
                                 }
