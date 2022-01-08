@@ -77,7 +77,7 @@
                 <h2 class="header_form">
                     <strong>Login</strong>
                 </h2>
-                <form action="action/action_login.php" method="POST">
+                <form action="action_login" method="POST">
                     <div class="form-group">
                         <div class="form-floating">
                             <input
@@ -102,14 +102,14 @@
                     </div>
                     <div class="text-center">
                         <button type="submit" id="login_bt" class="btn btn-dark" style="width:100%;margin-bottom:20px;margin-top:20px">Login</button>
-                        <a href="signup_page.php" style="text-align: center!important;">Don't have an account - Sign up</a>
+                        <a href="signup" style="text-align: center!important;">Don't have an account - Sign up</a>
                     </div>
                     </form>
             </div>
             </div>
         </div>
     <div class="container" style="text-align:center">
-        <a href="signup_page.php" style="font-size:10px">Copyright @ Central Department Store - Digital Content</a>
+        <a href="signup" style="font-size:10px">Copyright @ Central Department Store - Digital Content</a>
     </div>
 </body>
 <!-- bootsrap js -->
