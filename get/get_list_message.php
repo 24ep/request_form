@@ -44,7 +44,7 @@
 <script>
 function message_get(id) {
     if (id) {
-        $.post("base/modal/model_message_detail.php", {
+        $.post("modal/model_message_detail.php", {
                 id: id
             },
             function(data) {
@@ -56,7 +56,7 @@ function message_get(id) {
 }
 function update_total_unread_div() {
    
-        $.post("base/get/get_count_unread_message.php", {
+        $.post("get/get_count_unread_message.php", {
             },
             function(data) {
                 $('#total_unread_div').html(data);
