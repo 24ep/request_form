@@ -4,7 +4,9 @@
         $_SESSION["nickname"]="Bos";
         $_SESSION["department"]="Content Admin";
         $_SESSION["page_view"]="";
-    
+            
+        $_SESSION["db_username"] = "cdse_admin";
+        $_SESSION["db_password"] = "@aA417528639";
         $_SESSION["cr_status_filter"] ="Pending";
         $_SESSION['login_csg']=true;
         $_SESSION['pagenation'] = 1;
