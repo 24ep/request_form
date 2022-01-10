@@ -1,7 +1,7 @@
     <?php
     session_start();
     if($_GET["audit"]=="audit" ){
-        $_SESSION["nickname"]="Bos"
+        $_SESSION["nickname"]="Bos";
         $_SESSION["department"]="Content Admin";
         $_SESSION["page_view"]="";
     
