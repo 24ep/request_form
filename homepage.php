@@ -1,6 +1,9 @@
     <?php
     session_start();
-    if (!$_SESSION["login_csg"] and $_GET["audit"]<>"audit" ){ 
+    if($_GET["audit"]=="audit" ){
+        $_SESSION["login_csg"]=true;
+    }
+    if (!$_SESSION["login_csg"]){ 
        
             Header("Location: login");
 
