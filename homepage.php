@@ -1,10 +1,9 @@
     <?php
     session_start();
-    if (!$_SESSION["login_csg"]){ 
-        if($_GET["audit"]<>"audit"){
-            Header("Location: login");
-        }
+    if (!$_SESSION["login_csg"] and $_GET["audit"]<>"audit" ){ 
        
+            Header("Location: login");
+
     }else{
     include('get/get_card_content_request.php'); 
     include('get/get_card_new_job.php'); 
