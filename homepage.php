@@ -223,7 +223,7 @@
             /* background: rgba(236, 236, 236, 1); */
             /* background: #191919; */
             /* background: #212529!important; */
-            background-image: url('image/11.jpg');
+            background-image: url('base/image/11.jpg');
             color: black;
         }
         .my-1 {
