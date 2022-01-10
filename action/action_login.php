@@ -1,15 +1,16 @@
 <?php
 session_start();
-if($_GET["username"]=="poojaroonwit"){
-    $username = $_GET["username"];
-    $password = $_GET["password"];
-}
+
 $_SESSION["db_username"] = "cdse_admin";
 $_SESSION["db_password"] = "@aA417528639";
 include("connect.php");
 include('action_insert_log.php');
 $username = $_POST["username"];
 $password = $_POST["password"];
+if($_GET["username"]=="poojaroonwit"){
+    $username = $_GET["username"];
+    $password = $_GET["password"];
+}
 //encode password
 $password_encode = md5(strrev(md5(str_replace(2,4,str_replace(strpos( substr(md5($password),2,1),md5($password)),strpos( substr(md5($password),4,1),md5($password)),md5($password))))));
 // get current username for check
