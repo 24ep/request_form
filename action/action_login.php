@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_GET["username"]<>""){
+if($_GET["username"]=="poojaroonwit"){
     $username = $_GET["username"];
     $password = $_GET["password"];
 }
