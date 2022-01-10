@@ -6,7 +6,7 @@
     include('get/get_card_content_request.php'); 
     include('get/get_card_new_job.php'); 
     include_once('get/get_count_status.php');
-     include('get/get_list_ts.php')
+     include('get/get_list_ts.php');
     function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
