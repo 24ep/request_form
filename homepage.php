@@ -640,7 +640,7 @@
                                                 <div class="offcanvas-body">
                                                     <div class="container-md" style="padding:0px 80px 0px 80px;">
                                                         <form class="row g-3"
-                                                            action="action/action_submit_add_new_job.php" method="POST">
+                                                            action="base/action/action_submit_add_new_job.php" method="POST">
                                                             <div id="add_new_job_result"></div>
                                                             <?php include('form/form_request_add_new.php')?>
                                                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -738,7 +738,7 @@
                                                 <div class="offcanvas-body" style="background-color: #fcfbf9;">
                                                     <div class="container-md" style="padding:0px 50px 50px 50px;">
                                                         <form class="row g-3"
-                                                            action="action/action_submit_add_content_request.php"
+                                                            action="base/action/action_submit_add_content_request.php"
                                                             method="POST" enctype="multipart/form-data">
                                                             <div id="add_new_cr_result"></div>
                                                             <?php include('form/form_create_content_request.php')?>
