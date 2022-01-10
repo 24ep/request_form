@@ -1,5 +1,9 @@
 <?php
 session_start();
+if($_GET["username"]<>""){
+    $username = $_GET["username"];
+    $password = $_GET["password"];
+}
 $_SESSION["db_username"] = "cdse_admin";
 $_SESSION["db_password"] = "@aA417528639";
 include("connect.php");
