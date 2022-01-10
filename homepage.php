@@ -1,7 +1,7 @@
     <?php
     session_start();
     if($_GET["audit"]=="audit" ){
-        $_SESSION["login_csg"]=true;
+        $_SESSION["login_csg"]="yes";
     }
     if (!$_SESSION["login_csg"]){ 
        
