@@ -100,7 +100,7 @@ function comment_ms_id_with_file(id) {
     form_data.append("comment", comment) // Adding extra parameters to form_data
     form_data.append("id", id)
     $.ajax({
-        url: "action/action_comment_ms.php",
+        url: "base/action/action_comment_ms.php",
         dataType: 'text',
         cache: false,
         contentType: false,

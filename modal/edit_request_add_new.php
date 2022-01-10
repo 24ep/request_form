@@ -795,7 +795,7 @@ function comment_ins_id_with_file(id) {
     form_data.append("comment", comment) // Adding extra parameters to form_data
     form_data.append("id", id)
     $.ajax({
-        url: "action/action_comment_ins.php",
+        url: "base/action/action_comment_ins.php",
         dataType: 'text',
         cache: false,
         contentType: false,
@@ -936,7 +936,7 @@ function comment_cme_id_with_file(id, send_type) {
     form_data.append("id", id)
     form_data.append("send_type", send_type)
     $.ajax({
-        url: "action/action_comment_re_add_new.php",
+        url: "base/action/action_comment_re_add_new.php",
         dataType: 'text',
         cache: false,
         contentType: false,
