@@ -1,7 +1,20 @@
     <?php
     session_start();
     if($_GET["audit"]=="audit" ){
-        $_SESSION["login_csg"]="yes";
+        $_SESSION["nickname"]="Bos"
+        $_SESSION["department"]="Content Admin";
+        $_SESSION["page_view"]="";
+    
+        $_SESSION["cr_status_filter"] ="Pending";
+        $_SESSION['login_csg']=true;
+        $_SESSION['pagenation'] = 1;
+        $_SESSION["user_filter"] = "poojaroonwit";
+        $internal_role = array("Content Admin", "Content Traffic", "Content Followup", "Content Studio Traffic");
+        $_SESSION["user_cr_filter"] = "all_user";
+        $_SESSION["username"] = "poojaroonwit";
+        $_SESSION["request_by_filter"] = "poojaroonwit";
+        $_SESSION["request_status"] = "pending";
+        $request_by ="poojaroonwit";
     }
     if (!$_SESSION["login_csg"]){ 
        
