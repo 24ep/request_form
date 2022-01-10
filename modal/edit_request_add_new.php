@@ -672,7 +672,7 @@ label#label_file_cme {
                                 <?php if($status == 'waiting traffic'){ ?>
                                 <hr>
                                 <h6><strong>Create Writer & Studio - 24ep</strong></h6>
-                                <form action="action/action_create_job_cms.php" method="POST" target="_blank">
+                                <form action="base/action/action_create_job_cms.php" method="POST" target="_blank">
                                     <input type="hidden" id="id_adj" name="id_adj" value="<?php echo  $_POST['id']; ?>">
                                     <?php include('../form/form_create_job_cms.php')?>
                                 </form>
