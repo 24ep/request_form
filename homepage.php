@@ -6,6 +6,7 @@
     include('get/get_card_content_request.php'); 
     include('get/get_card_new_job.php'); 
     include_once('get/get_count_status.php');
+     include('get/get_list_ts.php')
     function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
@@ -685,6 +686,7 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="margin:20px">
                                 <div class="container " style="max-width: 1240px;">
+
                                     <?php echo $_GET["result_cr"]; ?>
                                     <div class="btn-group">
                                         <button onclick="filter_cr_ticket('Pending')" class="btn btn-secondary"
@@ -719,6 +721,11 @@
                                         <div id="list_grouping">
                                             <?php //include('get/get_list_content_request.php'); ?>
                                         </div>
+
+                                        <?php if($_SESSION["username"]=="poojaroonwit"){
+                                                list_ts("ticket.ticket_template = 'CR'and ticket.status <> 'Close'",500,'ticket');
+                                        } 
+                                         ?>
                                     </ul>
                                 </div>
                                 <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
@@ -804,7 +811,7 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
-                                <?php include('get/get_list_ts.php')?>
+                                <?php //include('get/get_list_ts.php')?>
                             <!-- nav bar -->
 <?php
 function get_server_memory_usage(){
