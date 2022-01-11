@@ -881,7 +881,7 @@ function get_server_cpu_usage(){
         name="ts_command"
          placeholder="Your task will display follow your command .."
           aria-label="Username"
-           aria-describedby="basic-addon1" value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%' and ticket.status <> 'Close'">
+           aria-describedby="basic-addon1" value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%'">
      <span class="input-group-text">Limit</span>
   <input type="number" max="999" onchange="run_ts_command('PJ','level','all');
                 run_ts_command('CR','ticket','inprogress');
@@ -893,8 +893,8 @@ function get_server_cpu_usage(){
                 min="1" class="form-control" id="ts_command_limit" name="ts_command_limit" placeholder="Server" value="100" aria-label="Server">
         </div>
     <datalist id="qlistoption">
-        <option value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%' and ticket.status <> 'Close'">
-        <option value="ticket.case_officer like  '%<?php echo $_SESSION["username"]; ?>%' and ticket.status <> 'Close'">
+        <option value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
+        <option value="ticket.case_officer like  '%<?php echo $_SESSION["username"]; ?>%'">
         <option value="ticket.title like  '%grouping%'">
         <option value="ticket.id = 3009">
         <option value="ticket.status = 'Pending'">
