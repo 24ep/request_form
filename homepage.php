@@ -1316,7 +1316,7 @@ function itm_confirm_cancel(id, status_change) {
         if(cr_status=="all"){
             var summary_filter = ts_command_input + " and ticket_template = '" + type + "'";
         }else{
-            var summary_filter = ts_command_input + " and ticket_template = '" + type + "' and  status = '"+ status+"'";
+            var summary_filter = ts_command_input + " and ticket_template = '" + type + "' and  status = '"+ cr_status+"'";
         }
        
         var ts_level = ts_level;
