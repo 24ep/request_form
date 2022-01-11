@@ -165,7 +165,9 @@
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+           
+       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
         <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
         <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
         <script> $(function() {$(".multiple-select").multipleSelect()});</script>
