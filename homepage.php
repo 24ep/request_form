@@ -1350,18 +1350,9 @@ function itm_confirm_cancel(id, status_change) {
     <script type="text/javascript">
 function select_current_tab(selecttab) {
     if (selecttab == "v-pills-dashboard") {
-        document
-            .getElementById("v-pills-dashboard-tab")
-            .classList
-            .add('active');
-        document
-            .getElementById("v-pills-request_list-tab")
-            .classList
-            .remove('active');
-        document
-            .getElementById("v-pills-cr-tab")
-            .classList
-            .remove('active');
+        document.getElementById("v-pills-dashboard-tab").classList.add('active');
+        document.getElementById("v-pills-request_list-tab").classList.remove('active');
+        document.getElementById("v-pills-cr-tab").classList.remove('active');
         document
             .getElementById("v-pills-dashboard")
             .classList
