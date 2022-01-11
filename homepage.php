@@ -874,6 +874,7 @@ function get_server_cpu_usage(){
                 run_ts_command('CR','ticket','Waiting Execution');
                 run_ts_command('CR','ticket','Waiting CTO');
                 run_ts_command('CR','ticket','Waiting Buyer');
+                run_ts_command('CR','ticket','Close');
                 run_ts_command('DT','ticket','all');   
                 "
        id="ts_command"
@@ -887,6 +888,7 @@ function get_server_cpu_usage(){
                 run_ts_command('CR','ticket','Waiting Execution');
                 run_ts_command('CR','ticket','Waiting CTO');
                 run_ts_command('CR','ticket','Waiting Buyer');
+                run_ts_command('CR','ticket','Close');
                 run_ts_command('DT','ticket','all');" 
                 min="1" class="form-control" id="ts_command_limit" name="ts_command_limit" placeholder="Server" value="100" aria-label="Server">
         </div>
@@ -906,7 +908,7 @@ function get_server_cpu_usage(){
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your tasks assignment (task of project)</small>
                                        <div id="list_pj_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status <> 'Close' and  ticket.ticket_template = 'PJ'",500,'task'); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status <> 'Close' and  ticket.ticket_template = 'PJ'",100,'task'); ?>
                                        </div>
                                    </div>
                                    <div class="col">
@@ -921,12 +923,12 @@ function get_server_cpu_usage(){
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
                                        <div id="list_da_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status <> 'Close' and ticket.ticket_template = 'DT'",500,'ticket'); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status <> 'Close' and ticket.ticket_template = 'DT'",100,'ticket'); ?>
                                        </div>
                                    </div>
                                    <div class="col">
                                        <small class="row m-3">Unassign</small>
-                                       <?php list_ts("ticket.ticket_template = 'DT' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",500,'ticket'); ?>
+                                       <?php list_ts("ticket.ticket_template = 'DT' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
                                    </div>
                                 </div>
                                <!-- Content request -->
@@ -937,24 +939,28 @@ function get_server_cpu_usage(){
                                        <small class="row m-3">Your Assignment</small>
                                        <small class="row m-3">inprogress</small><hr>
                                        <div id="list_cr_task_inprogress">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Inprogress' and  ticket.ticket_template = 'CR'",500,'ticket'); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Inprogress' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
                                        </div>
                                        <small class="row m-3">Waiting Execution</small><hr>
                                        <div id="list_cr_task_we">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting Execution' and  ticket.ticket_template = 'CR'",500,'ticket'); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting Execution' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
                                        </div>
                                        <small class="row m-3">Waiting CTO</small><hr>
                                        <div id="list_cr_task_wcto">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting CTO' and  ticket.ticket_template = 'CR'",500,'ticket'); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting CTO' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
                                        </div>
                                        <small class="row m-3">Waiting Buyer</small><hr>
                                        <div id="list_cr_task_wb">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting Buyer' and  ticket.ticket_template = 'CR'",500,'ticket'); ?>
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting Buyer' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+                                       </div>
+                                       <small class="row m-3">Close</small><hr>
+                                       <div id="list_cr_task_wb">
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Close' and  ticket.ticket_template = 'CR'",5,'ticket'); ?>
                                        </div>
                                    </div>
                                    <div class="col">
                                        <small class="row m-3">Unassign</small>
-                                       <?php list_ts("ticket.ticket_template = 'CR' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",500,'ticket'); ?>
+                                       <?php list_ts("ticket.ticket_template = 'CR' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
                                    </div>
                                 </div>
                                     <!-- unassign -->
@@ -1330,7 +1336,10 @@ function itm_confirm_cancel(id, status_change) {
                     $('#list_cr_task_wcto').html(data);
                 }else if(cr_status=="Waiting Buyer"){
                     $('#list_cr_task_wb').html(data);
+                }else if(cr_status=="Close"){
+                    $('#list_cr_task_close').html(data);
                 }
+
                 
             }else if(type=="DT"){
                 $('#list_da_task').html(data);
