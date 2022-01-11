@@ -923,8 +923,21 @@ function get_server_cpu_usage(){
                                <div class="row">
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
-                                       <div id="list_cr_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status <> 'Close' and  ticket.ticket_template = 'CR'",500,'ticket'); ?>
+                                       <small class="row m-3">inprogress</small><hr>
+                                       <div id="list_cr_task_inprogress">
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Inprogress' and  ticket.ticket_template = 'CR'",500,'ticket'); ?>
+                                       </div>
+                                       <small class="row m-3">Waiting Execution</small><hr>
+                                       <div id="list_cr_task_we">
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting Execution' and  ticket.ticket_template = 'CR'",500,'ticket'); ?>
+                                       </div>
+                                       <small class="row m-3">Waiting CTO</small><hr>
+                                       <div id="list_cr_task_wc">
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting CTO' and  ticket.ticket_template = 'CR'",500,'ticket'); ?>
+                                       </div>
+                                       <small class="row m-3">Waiting Buyer</small><hr>
+                                       <div id="list_cr_task_wb">
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting Buyer' and  ticket.ticket_template = 'CR'",500,'ticket'); ?>
                                        </div>
                                    </div>
                                    <div class="col">
