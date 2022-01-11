@@ -849,73 +849,73 @@
                                 <div class="container ">
                                 <?php //include('get/get_list_ts.php')?>
                             <!-- nav bar -->
-<?php
-function get_server_memory_usage(){
-    $free = shell_exec('free');
-    $free = (string)trim($free);
-    $free_arr = explode("\n", $free);
-    $mem = explode(" ", $free_arr[1]);
-    $mem = array_filter($mem);
-    $mem = array_merge($mem);
-    $memory_usage = $mem[2]/$mem[1]*100;
-    return round($memory_usage);
-}
-function get_server_cpu_usage(){
-    $load = sys_getloadavg();
-    return round($load[0]);
-}
-?>
-<nav class="navbar">
-  <div class="container-fluid p-0">
-    <a class="navbar-brand"></a>
-    <form class="d-flex">
-        <?php $memory_usage = get_server_memory_usage();
-        $CPU_usage = get_server_cpu_usage() ;
-        echo "<small>CPU usage ".$CPU_usage."% | memory usage : ".$memory_usage."%</small>"; ?>
-    <button class="btn btn-primary btn-sm " style="margin-left:10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
-    <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated" aria-label="add outline"></ion-icon>
-        New Ticket
-    </button>
-    </form>
-  </div>
-</nav>
- <nav class="navbar">
-  <form style="width:100%">
-    <div class="input-group input-group-sm mb-3">
-      <span class="input-group-text" id="basic-addon1"><ion-icon style="vertical-align: middle;" name="terminal-outline"></ion-icon>Query Search</span>
-      <input list="qlistoption" style="width: 75%;"type="text" class="form-control" 
-      onchange="run_ts_command('PJ','task','all');
-                run_ts_command('CR','ticket','inprogress');
-                run_ts_command('CR','ticket','Waiting Execution');
-                run_ts_command('CR','ticket','Waiting CTO');
-                run_ts_command('CR','ticket','Waiting Buyer');
-                run_ts_command('CR','ticket','Close');
-                run_ts_command('DT','ticket','all');   
-                "
-       id="ts_command"
-        name="ts_command"
-         placeholder="Your task will display follow your command .."
-          aria-label="Username"
-           aria-describedby="basic-addon1" value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%'">
-     <span class="input-group-text">Limit</span>
-  <input type="number" max="999" onchange="run_ts_command('PJ','level','all');
-                run_ts_command('CR','ticket','inprogress');
-                run_ts_command('CR','ticket','Waiting Execution');
-                run_ts_command('CR','ticket','Waiting CTO');
-                run_ts_command('CR','ticket','Waiting Buyer');
-                run_ts_command('CR','ticket','Close');
-                run_ts_command('DT','ticket','all');" 
-                min="1" class="form-control" id="ts_command_limit" name="ts_command_limit" placeholder="Server" value="100" aria-label="Server">
-        </div>
-    <datalist id="qlistoption">
-        <option value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
-        <option value="ticket.case_officer like  '%<?php echo $_SESSION["username"]; ?>%'">
-        <option value="ticket.title like  '%grouping%'">
-        <option value="ticket.id = 3009">
-        <option value="ticket.status = 'Pending'">
-    </datalist>
-  </form>
-</nav>
+                                    <?php
+                                    function get_server_memory_usage(){
+                                        $free = shell_exec('free');
+                                        $free = (string)trim($free);
+                                        $free_arr = explode("\n", $free);
+                                        $mem = explode(" ", $free_arr[1]);
+                                        $mem = array_filter($mem);
+                                        $mem = array_merge($mem);
+                                        $memory_usage = $mem[2]/$mem[1]*100;
+                                        return round($memory_usage);
+                                    }
+                                    function get_server_cpu_usage(){
+                                        $load = sys_getloadavg();
+                                        return round($load[0]);
+                                    }
+                                    ?>
+                                <nav class="navbar">
+                                <div class="container-fluid p-0">
+                                    <a class="navbar-brand"></a>
+                                    <form class="d-flex">
+                                        <?php $memory_usage = get_server_memory_usage();
+                                        $CPU_usage = get_server_cpu_usage() ;
+                                        echo "<small>CPU usage ".$CPU_usage."% | memory usage : ".$memory_usage."%</small>"; ?>
+                                    <button class="btn btn-primary btn-sm " style="margin-left:10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
+                                    <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated" aria-label="add outline"></ion-icon>
+                                        New Ticket
+                                    </button>
+                                    </form>
+                                </div>
+                                </nav>
+                                <nav class="navbar">
+                                <form style="width:100%">
+                                    <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="basic-addon1"><ion-icon style="vertical-align: middle;" name="terminal-outline"></ion-icon>Query Search</span>
+                                    <input list="qlistoption" style="width: 75%;"type="text" class="form-control" 
+                                    onchange="run_ts_command('PJ','task','all');
+                                                run_ts_command('CR','ticket','inprogress');
+                                                run_ts_command('CR','ticket','Waiting Execution');
+                                                run_ts_command('CR','ticket','Waiting CTO');
+                                                run_ts_command('CR','ticket','Waiting Buyer');
+                                                run_ts_command('CR','ticket','Close');
+                                                run_ts_command('DT','ticket','all');   
+                                                "
+                                    id="ts_command"
+                                        name="ts_command"
+                                        placeholder="Your task will display follow your command .."
+                                        aria-label="Username"
+                                        aria-describedby="basic-addon1" value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%'">
+                                    <span class="input-group-text">Limit</span>
+                                <input type="number" max="999" onchange="run_ts_command('PJ','level','all');
+                                                run_ts_command('CR','ticket','inprogress');
+                                                run_ts_command('CR','ticket','Waiting Execution');
+                                                run_ts_command('CR','ticket','Waiting CTO');
+                                                run_ts_command('CR','ticket','Waiting Buyer');
+                                                run_ts_command('CR','ticket','Close');
+                                                run_ts_command('DT','ticket','all');" 
+                                                min="1" class="form-control" id="ts_command_limit" name="ts_command_limit" placeholder="Server" value="100" aria-label="Server">
+                                        </div>
+                                    <datalist id="qlistoption">
+                                        <option value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
+                                        <option value="ticket.case_officer like  '%<?php echo $_SESSION["username"]; ?>%'">
+                                        <option value="ticket.title like  '%grouping%'">
+                                        <option value="ticket.id = 3009">
+                                        <option value="ticket.status = 'Pending'">
+                                    </datalist>
+                                </form>
+                                </nav>
                                <!-- console bra -->
                                <!-- project -->
                                <span class="row"><strong><ion-icon name="business-outline" style="vertical-align: middle;" ></ion-icon>Project</strong></span>
@@ -1021,7 +1021,7 @@ function get_server_cpu_usage(){
                             </div> -->
                         <!-- -- -->
                     </div>
-                         <!-- ts console -->
+                         <!-- fl console -->
                     <div class="tab-pane fade" id="v-pills-fl_board" role="tabpanel"
                         aria-labelledby="v-pills-fl_board-tab">
                         <div class="tab-content" id="myTabContent">
@@ -1208,7 +1208,7 @@ function get_server_cpu_usage(){
         </div>
         </div>
     </body>
-    
+
     <script>
         var elements = document.getElementsByClassName('window-full');
         var windowheight = window.innerHeight + "px";
