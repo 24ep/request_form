@@ -743,9 +743,9 @@
                                             <?php //include('get/get_list_content_request.php'); ?>
                                         </div>
 
-                                        <?php if($_SESSION["username"]=="poojaroonwit"){
-                                                list_ts("ticket.ticket_template = 'CR'and ticket.status <> 'Close'",500,'ticket');
-                                        } 
+                                        <?php //if($_SESSION["username"]=="poojaroonwit"){
+                                                //list_ts("ticket.ticket_template = 'CR'and ticket.status <> 'Close'",500,'ticket');
+                                        //} 
                                          ?>
                                     </ul>
                                 </div>
