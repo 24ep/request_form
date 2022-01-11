@@ -869,14 +869,26 @@ function get_server_cpu_usage(){
     <div class="input-group input-group-sm mb-3">
       <span class="input-group-text" id="basic-addon1"><ion-icon style="vertical-align: middle;" name="terminal-outline"></ion-icon>Query Search</span>
       <input list="qlistoption" style="width: 75%;"type="text" class="form-control" 
-      onchange="run_ts_command('PJ','task');run_ts_command('CR','ticket');run_ts_command('DT','ticket');"
+      onchange="run_ts_command('PJ','task','all');
+                run_ts_command('CR','ticket','inprogress');
+                run_ts_command('CR','ticket','Waiting Execution');
+                run_ts_command('CR','ticket','Waiting CTO');
+                run_ts_command('CR','ticket','Waiting Buyer');
+                run_ts_command('DT','ticket','all');   
+                "
        id="ts_command"
         name="ts_command"
          placeholder="Your task will display follow your command .."
           aria-label="Username"
            aria-describedby="basic-addon1" value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%' and ticket.status <> 'Close'">
      <span class="input-group-text">Limit</span>
-  <input type="number" max="999" onchange="run_ts_command('PJ','level');run_ts_command('CR','ticket');run_ts_command('DT','ticket');" min="1" class="form-control" id="ts_command_limit" name="ts_command_limit" placeholder="Server" value="100" aria-label="Server">
+  <input type="number" max="999" onchange="run_ts_command('PJ','level','all');
+                run_ts_command('CR','ticket','inprogress');
+                run_ts_command('CR','ticket','Waiting Execution');
+                run_ts_command('CR','ticket','Waiting CTO');
+                run_ts_command('CR','ticket','Waiting Buyer');
+                run_ts_command('DT','ticket','all');" 
+                min="1" class="form-control" id="ts_command_limit" name="ts_command_limit" placeholder="Server" value="100" aria-label="Server">
         </div>
     <datalist id="qlistoption">
         <option value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%' and ticket.status <> 'Close'">
@@ -932,7 +944,7 @@ function get_server_cpu_usage(){
                                          <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting Execution' and  ticket.ticket_template = 'CR'",500,'ticket'); ?>
                                        </div>
                                        <small class="row m-3">Waiting CTO</small><hr>
-                                       <div id="list_cr_task_wc">
+                                       <div id="list_cr_task_wcto">
                                          <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting CTO' and  ticket.ticket_template = 'CR'",500,'ticket'); ?>
                                        </div>
                                        <small class="row m-3">Waiting Buyer</small><hr>
@@ -1292,10 +1304,15 @@ function itm_confirm_cancel(id, status_change) {
             $('#list_grouping').html(data);
         });
     }
-    function run_ts_command(type,ts_level){
+    function run_ts_command(type,ts_level,cr_status){
         var ts_command_input = document.getElementById("ts_command").value;
         var ts_command_limit = document.getElementById("ts_command_limit").value;
-        var summary_filter = ts_command_input + " and ticket_template = '" + type + "'";
+        if(cr_status=="all"){
+            var summary_filter = ts_command_input + " and ticket_template = '" + type + "'";
+        }else{
+            var summary_filter = ts_command_input + " and ticket_template = '" + type + "' and  status = '"+ status+"'";
+        }
+       
         var ts_level = ts_level;
         $.post("base/get/get_list_ts.php", {
             summary_filter: summary_filter,
@@ -1305,7 +1322,16 @@ function itm_confirm_cancel(id, status_change) {
             if(type=="PJ"){
                 $('#list_pj_task').html(data);
             }else if(type=="CR"){
-                $('#list_cr_task').html(data);
+                if(cr_status=="inprogress"){
+                    $('#list_cr_task_inprogress').html(data);
+                }else if(cr_status=="Waiting Excution"){
+                    $('#list_cr_task_we').html(data);
+                }else if(cr_status=="Waiting CTO"){
+                    $('#list_cr_task_wcto').html(data);
+                }else if(cr_status=="Waiting Buyer"){
+                    $('#list_cr_task_wb').html(data);
+                }
+                
             }else if(type=="DT"){
                 $('#list_da_task').html(data);
             }
