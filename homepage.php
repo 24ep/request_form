@@ -407,10 +407,10 @@
                     </a>
                     <hr>
                     <?php if(strpos($_SESSION["department"],'Admin')!==false){?>
-                    <a class="nav-link" id="v-pills-cr_admin-tab" data-toggle="pill" href="#v-pills-cr_admin" role="tab"
+                    <!-- <a class="nav-link" id="v-pills-cr_admin-tab" data-toggle="pill" href="#v-pills-cr_admin" role="tab"
                         aria-controls="v-pills-cr_admin" onclick="updateURL('v-pills-cr_admin');" aria-selected="false">
                         <ion-icon style="color:white" name="grid-outline"></ion-icon> CR Board
-                    </a>
+                    </a> -->
                     <a class="nav-link" id="v-pills-ts_admin-tab" data-toggle="pill" href="#v-pills-ts_admin" role="tab"
                         aria-controls="v-pills-ts_admin" onclick="updateURL('v-pills-ts_admin');" aria-selected="false">
                         <ion-icon style="color:white" name="grid-outline"></ion-icon> TS Console
@@ -784,7 +784,7 @@
                                 </nav>
                             </div>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-cr_admin" role="tabpanel"
+                    <!-- <div class="tab-pane fade" id="v-pills-cr_admin" role="tabpanel"
                         aria-labelledby="v-pills-cr_admin-tab">
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
@@ -793,39 +793,39 @@
                                         <div class="col col-board window-full col-2" id="col_pending"
                                             ondrop="drop_card_cr(event,'Pending')" ondragover="allowDrop(event)">
                                             <small style="margin-bottom:5px"><strong>Pending</strong></small>
-                                            <?php echo get_card("Pending");?>
+                                            <?php //echo get_card("Pending");?>
                                         </div>
                                         <div class="col col-board window-full col-2" id="col_inprogress"
                                             ondrop="drop_card_cr(event,'Inprogress')" ondragover="allowDrop(event)">
                                             <small style="margin-bottom:5px"><strong>Inprogress</strong></small>
-                                            <?php echo get_card("Inprogress");?>
+                                            <?php //echo get_card("Inprogress");?>
                                         </div>
                                         <div class="col col-board window-full col-2" id="col_waiting_user"
                                             ondrop="drop_card_cr(event,'Waiting Buyer')" ondragover="allowDrop(event)">
                                             <small style="margin-bottom:5px"><strong>Waiting Buyer</strong></small>
-                                            <?php echo get_card("Waiting Buyer");?>
+                                            <?php //echo get_card("Waiting Buyer");?>
                                         </div>
                                         <div class="col col-board window-full col-2" id="col_wait_excution"
                                             ondrop="drop_card_cr(event,'Waiting Excution')"
                                             ondragover="allowDrop(event)">
                                             <small style="margin-bottom:5px"><strong>Waiting Execution</strong></small>
-                                            <?php echo get_card("Waiting Execution");?>
+                                            <?php //echo get_card("Waiting Execution");?>
                                         </div>
                                         <div class="col col-board window-full col-2" id="col_wait_cto"
                                             ondrop="drop_card_cr(event,'Waiting CTO')" ondragover="allowDrop(event)">
                                             <small style="margin-bottom:5px"><strong>Waiting CTO</strong></small>
-                                            <?php echo get_card("Waiting CTO");?>
+                                            <?php //echo get_card("Waiting CTO");?>
                                         </div>
                                         <div class="col col-board window-full col-2" id="col_close_cancel"
                                             ondrop="drop_card_cr(event,'Close')" ondragover="allowDrop(event)">
                                             <small style="margin-bottom:5px"><strong>Close (latest 5)</strong></small>
-                                            <?php echo get_card("Close");?>
+                                            <?php //echo get_card("Close");?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- ts console -->
                     <div class="tab-pane fade"  style="background-color: #f7f7f7;" id="v-pills-ts_admin" role="tabpanel"
                         aria-labelledby="v-pills-ts_admin-tab">
