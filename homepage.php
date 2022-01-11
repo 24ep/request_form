@@ -953,7 +953,7 @@ function get_server_cpu_usage(){
                                        <div id="list_cr_task_wb">
                                          <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting Buyer' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
                                        </div>
-                                       <small class="row m-3">Close</small><hr>
+                                       <small class="row m-3">Close [lastest 5 ticket]</small><hr>
                                        <div id="list_cr_task_wb">
                                          <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Close' and  ticket.ticket_template = 'CR'",5,'ticket'); ?>
                                        </div>
