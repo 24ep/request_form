@@ -140,14 +140,14 @@ $i++;
     
                   if($row['ticket_template']=="CR" or  $row['ticket_template']=="DT" ){
                   
-                    if($i==1){
-                      echo '<li class="mb-1 row">
-                      <div class="col-9 " style="padding:3px;"> <strong>Request name</strong></div>
-                      <div class="col-3 " style="padding:3px;"> <strong>status</strong></div>
+                    // if($i==1){
+                    //   // echo '<li class="mb-1 row">
+                    //   // <div class="col-9 " style="padding:3px;"> <strong>Request name</strong></div>
+                    //   // <div class="col-3 " style="padding:3px;"> <strong>status</strong></div>
                     
                     
-                      </li>';
-                    }
+                    //   // </li>';
+                    // }
                 ?>
     
                 
