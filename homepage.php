@@ -413,7 +413,7 @@
                     </a> -->
                     <a class="nav-link" id="v-pills-ts_admin-tab" data-toggle="pill" href="#v-pills-ts_admin" role="tab"
                         aria-controls="v-pills-ts_admin" onclick="updateURL('v-pills-ts_admin');" aria-selected="false">
-                        <ion-icon style="color:white" name="grid-outline"></ion-icon> TS Console
+                        <ion-icon style="color:white" name="grid-outline"></ion-icon> Request Console
                     </a>
                     <?php }?>
                        <?php if(strpos($_SESSION["department"],'Content')!==false){?>
