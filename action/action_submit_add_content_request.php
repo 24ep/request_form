@@ -119,7 +119,7 @@
                         sent_line_noti("\n• Created new request\n----------------------------\n• คุณได้ทำการส่ง Content Request\n• Ticket ID : CR-".$last_id."\n".$title,$key);
                     }
                 $result='<div class="alert alert-success">already create content_request !<strong> ID '.$last_id.'</strong></div>';
-                header( "Location: /homepage.php?tab=v-pills-cr&result_cr=".$result);
+                header( "Location: /?tab=v-pills-cr&result_cr=".$result);
             }else{
                 echo '<div class="alert alert-danger">Error: ' . $sql . '<hr>' . $con->error.'</div>';
             }
