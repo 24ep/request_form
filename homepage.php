@@ -1208,7 +1208,22 @@ function get_server_cpu_usage(){
         </div>
         </div>
     </body>
-      
+    
+    <script>
+        var elements = document.getElementsByClassName('window-full');
+        var windowheight = window.innerHeight + "px";
+        fullheight(elements);
+        function fullheight(elements) {
+            for (let el in elements) {
+                if (elements.hasOwnProperty(el)) {
+                    elements[el].style.height = windowheight;
+                }
+            }
+        }
+        window.onresize = function(event) {
+            fullheight(elements);
+        }
+    </script>
 
    
     <!-- end bootsrap js -->
@@ -1553,21 +1568,7 @@ function filter_update(be) {
                 $tab_select = $_GET["tab"];
                 echo '<script>select_current_tab("'.$tab_select.'");</script>';
                 ?>
-    <script>
-var elements = document.getElementsByClassName('window-full');
-var windowheight = window.innerHeight + "px";
-fullheight(elements);
-function fullheight(elements) {
-    for (let el in elements) {
-        if (elements.hasOwnProperty(el)) {
-            elements[el].style.height = windowheight;
-        }
-    }
-}
-window.onresize = function(event) {
-    fullheight(elements);
-}
-    </script>
+
     <script>
 function Inint_AJAX() {
     try {
