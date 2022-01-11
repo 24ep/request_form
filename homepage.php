@@ -1030,26 +1030,26 @@
                                     <div class="row">
                                         <div class="col col-board col" id="pending">
                                             <small style="margin-bottom:5px"><strong>Pending + Waiting Confirm</strong></small>
-                                            <span class="badge bg-secondary"><?php echo count_add_new_card("(status = 'pending' or status = 'waiting confirm')",$_GET["username"]); ?> Ticket</span>
-                                            <span class="badge bg-danger"><?php echo sum_add_new_card("(status = 'pending' or status = 'waiting confirm')",$_GET["username"]); ?> SKUs</span> 
+                                            <span class="badge bg-secondary"><?php //echo count_add_new_card("(status = 'pending' or status = 'waiting confirm')",$_GET["username"]); ?> Ticket</span>
+                                            <span class="badge bg-danger"><?php //echo sum_add_new_card("(status = 'pending' or status = 'waiting confirm')",$_GET["username"]); ?> SKUs</span> 
                                             <?php echo get_card_new_job("(status = 'pending' or status = 'waiting confirm')",$_GET["username"]);?>
                                         </div>
                                         <div class="col col-board col" id="checking">
                                             <small style="margin-bottom:5px"><strong>Checking</strong></small>
-                                             <span class="badge bg-secondary"><?php echo count_add_new_card("(status = 'checking')",$_GET["username"]); ?> Ticket</span> 
-                                            <span class="badge bg-danger"><?php echo sum_add_new_card("(status = 'checking')",$_GET["username"]); ?> SKUs</span> 
+                                             <span class="badge bg-secondary"><?php //echo count_add_new_card("(status = 'checking')",$_GET["username"]); ?> Ticket</span> 
+                                            <span class="badge bg-danger"><?php //echo sum_add_new_card("(status = 'checking')",$_GET["username"]); ?> SKUs</span> 
                                             <?php echo get_card_new_job("(status = 'checking')",$_GET["username"]);?>
                                         </div>
                                         <div class="col col-board col" id="waiting">
                                             <small style="margin-bottom:5px"><strong>Waiting + Send mail</strong></small>
-                                                   <span class="badge bg-secondary"><?php echo count_add_new_card("(status = 'waiting buyer' or status = 'waiting data' or status = 'waiting image' or status like '%send mail - waiting brand confirm data%')",$_GET["username"]); ?> Ticket</span> 
-                                              <span class="badge bg-danger"><?php echo sum_add_new_card("(status = 'waiting buyer' or status = 'waiting data' or status = 'waiting image' or status like '%send mail - waiting brand confirm data%')",$_GET["username"]); ?> SKUs</span> 
+                                                   <span class="badge bg-secondary"><?php //echo count_add_new_card("(status = 'waiting buyer' or status = 'waiting data' or status = 'waiting image' or status like '%send mail - waiting brand confirm data%')",$_GET["username"]); ?> Ticket</span> 
+                                              <span class="badge bg-danger"><?php //echo sum_add_new_card("(status = 'waiting buyer' or status = 'waiting data' or status = 'waiting image' or status like '%send mail - waiting brand confirm data%')",$_GET["username"]); ?> SKUs</span> 
                                             <?php echo get_card_new_job("(status = 'waiting buyer' or status = 'waiting data' or status = 'waiting image' or status like '%send mail - waiting brand confirm data%')",$_GET["username"]);?>
                                         </div>
                                         <div class="col col-board col" id="more">
                                             <small style="margin-bottom:5px"><strong>Confirm to be new sku + need update contact</strong></small>
-                                                  <span class="badge bg-secondary"><?php echo count_add_new_card("(status = 'cancel - confirm to be new sku' or status = 'need update contact')",$_GET["username"]); ?> Ticket</span>
-                                            <span class="badge bg-danger"><?php echo sum_add_new_card("(status = 'cancel - confirm to be new sku' or status = 'need update contact')",$_GET["username"]); ?> SKUs</span> 
+                                            <span class="badge bg-secondary"><?php //echo count_add_new_card("(status = 'cancel - confirm to be new sku' or status = 'need update contact')",$_GET["username"]); ?> Ticket</span>
+                                            <span class="badge bg-danger"><?php //echo sum_add_new_card("(status = 'cancel - confirm to be new sku' or status = 'need update contact')",$_GET["username"]); ?> SKUs</span> 
                                             <?php echo get_card_new_job("(status = 'cancel - confirm to be new sku' or status = 'need update contact')",$_GET["username"]);?>
                                         </div>
                                     </div>
