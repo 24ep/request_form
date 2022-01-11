@@ -885,6 +885,7 @@
                                     <span class="input-group-text" id="basic-addon1"><ion-icon style="vertical-align: middle;" name="terminal-outline"></ion-icon>Query Search</span>
                                     <input list="qlistoption" style="width: 75%;"type="text" class="form-control" 
                                     onchange="run_ts_command('PJ','task','all');
+                                                run_ts_command('CR','ticket','Pending');
                                                 run_ts_command('CR','ticket','inprogress');
                                                 run_ts_command('CR','ticket','Waiting Execution');
                                                 run_ts_command('CR','ticket','Waiting CTO');
@@ -899,6 +900,7 @@
                                         aria-describedby="basic-addon1" value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%'">
                                     <span class="input-group-text">Limit</span>
                                 <input type="number" max="999" onchange="run_ts_command('PJ','level','all');
+                                               run_ts_command('CR','ticket','Pending');
                                                 run_ts_command('CR','ticket','inprogress');
                                                 run_ts_command('CR','ticket','Waiting Execution');
                                                 run_ts_command('CR','ticket','Waiting CTO');
@@ -952,6 +954,10 @@
                                <div class="row">
                                    <div class="col border-0 border-end">
                                        <small class="row m-3">Your Assignment</small>
+                                       <small class="row m-3">Pending</small><hr>
+                                       <div id="list_cr_task_pending">
+                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Pending' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+                                       </div>
                                        <small class="row m-3">inprogress</small><hr>
                                        <div id="list_cr_task_inprogress">
                                          <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Inprogress' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
@@ -1355,6 +1361,8 @@ function itm_confirm_cancel(id, status_change) {
                     $('#list_cr_task_wb').html(data);
                 }else if(cr_status=="Close"){
                     $('#list_cr_task_close').html(data);
+                }else if(cr_status=="Pending"){
+                    $('#list_cr_task_pending').html(data);
                 }
 
                 
