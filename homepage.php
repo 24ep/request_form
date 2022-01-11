@@ -23,7 +23,7 @@
             Header("Location: login");
 
     }else{
-    include('get/get_card_content_request.php'); 
+    // include('get/get_card_content_request.php'); 
     include('get/get_card_new_job.php'); 
     include_once('get/get_count_status.php');
     include('get/get_list_ts.php');
