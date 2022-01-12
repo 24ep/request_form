@@ -42,9 +42,7 @@ if($_POST["cb_cr"]<>""){
     $_SESSION["cb_cr"] = true;
   }
 }
-echo '<script>console.log("'.$_SESSION["cb_pj"] .'");</script>';
-echo '<script>console.log("'.$_SESSION["cb_da"] .'");</script>';
-echo '<script>console.log("'.$_SESSION["cb_cr"] .'");</script>';
+
 $filter = $_SESSION["ts_query_input"];
 
 
@@ -263,7 +261,11 @@ $i++;
     //   list_ts($filter,$ts_command_limit,$ts_level);
     // }
   ?>
-
+<?php
+echo '<script>console.log("'.$_SESSION["cb_pj"] .'");</script>';
+echo '<script>console.log("'.$_SESSION["cb_da"] .'");</script>';
+echo '<script>console.log("'.$_SESSION["cb_cr"] .'");</script>';
+?>
 
             <!-- project -->
             
