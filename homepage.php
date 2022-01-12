@@ -885,13 +885,13 @@
                                             <form class="d-flex">
                                             <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
                                                 <input type="checkbox" class="btn-check" id="cb_pj" autocomplete="off">
-                                                <label class="btn btn-outline-primary" for="cb_pj">Project</label>
+                                                <label class="btn btn-sm btn-outline-primary" for="cb_pj">Project</label>
 
                                                 <input type="checkbox" class="btn-check" id="cb_da" autocomplete="off">
-                                                <label class="btn btn-outline-primary" for="cb_da">Data & App-sup</label>
+                                                <label class="btn btn-sm btn-outline-primary" for="cb_da">Data & App-sup</label>
 
                                                 <input type="checkbox" class="btn-check" id="cb_cr" autocomplete="off">
-                                                <label class="btn btn-outline-primary" for="cb_cr">Content Request</label>
+                                                <label class="btn btn-sm btn-outline-primary" for="cb_cr">Content Request</label>
                                             </div>
                                                 <button class="btn btn-primary btn-sm " style="margin-left:10px;"
                                                     type="button" data-bs-toggle="offcanvas"
@@ -1243,12 +1243,21 @@ function search_cr_ticket() {
 function run_ts_command(ts_level) {
     var ts_command_input = document.getElementById("ts_command").value;
     var ts_command_limit = document.getElementById("ts_command_limit").value;
+
+    var cb_pj = document.getElementById("cb_pj");
+    var cb_da = document.getElementById("cb_da");
+    var cb_cr = document.getElementById("cb_cr");
+
     var summary_filter = ts_command_input;
     var ts_level = ts_level;
+    
     $.post("base/get/get_list_ts.php", {
         summary_filter: summary_filter,
         ts_command_limit: ts_command_limit,
-        ts_level: ts_level
+        ts_level: ts_level,
+        cb_pj:cb_pj,
+        cb_da:cb_da,
+        cb_cr:cb_cr
     }, function(data) {
         $('#get_ts_admin_console').html(data);
     });

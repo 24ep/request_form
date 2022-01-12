@@ -241,7 +241,11 @@ $i++;
 
 
             <!-- project -->
-    
+          <?php if($_POST["cb_pj"]==true){?>
+            <span class="row"><strong>
+            <ion-icon  name="rocket-outline" style="vertical-align: middle;"></ion-icon>
+                  Data & Application Support
+              </strong></span>
           <div class="row">
               <div class="col border-0 border-end">
                   <small class="row m-3">Your tasks assignment (task of project)</small>
@@ -254,12 +258,14 @@ $i++;
                   <small class="row m-3">All project</small>
                   <?php list_ts("ticket.ticket_template = 'PJ' and ticket.status <> 'Close'",500,'ticket' ); ?>
               </div>
-          </div>
+          </div>  <hr>
+          <?php }?>
        <!-- end project -->
     
-      <hr>
+    
     
           <!-- support task -->
+          <?php if($_POST["cb_da"]==true){?>
           <span class="row"><strong>
                   <ion-icon name="server-outline" style="vertical-align: middle;"></ion-icon>
                   Data & Application Support
@@ -275,10 +281,11 @@ $i++;
                   <small class="row m-3">Unassign</small>
                   <?php list_ts("ticket.ticket_template = 'DT' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
               </div>
-          </div>
-          <hr>
+          </div> <hr>
+          <?php }?>
+         
           <!-- Content request -->
-       
+          <?php if($_POST["cb_cr"]==true){?>
           <span class="row"><strong>
                   <ion-icon name="layers-outline" style="vertical-align: middle;"></ion-icon>
                   Content Request
@@ -325,3 +332,4 @@ $i++;
               </div>
           </div>
 </div>
+<?php }?>
