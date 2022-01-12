@@ -4,7 +4,6 @@ if($_POST["summary_filter"]<>"" and $_POST["summary_filter"]<>null ){
   $_SESSION["ts_query_input"] = $_POST["summary_filter"];
 }
 
-
 if($_SESSION["ts_query_input"]=="" or $_SESSION["ts_query_input"] == null ){
   $_SESSION["ts_query_input"] = "ticket.participant like  '%".$_SESSION["username"]."%'";
 }
@@ -20,6 +19,7 @@ if($_POST["ts_level"]<>""){
 }else{
   $ts_level = "ticket";
 }
+
 $filter = $_SESSION["ts_query_input"];
 echo '<script>console.log("'.$_SESSION["ts_query_input"] .'");</script>';
 
@@ -255,24 +255,7 @@ $i++;
                                     //     return round($load[0]);
                                     // }
                                     ?>
-<nav class="navbar">
-    <div class="container-fluid p-0">
-        <a class="navbar-brand"></a>
-        <form class="d-flex">
-            <?php 
-            // $memory_usage = get_server_memory_usage();
-            // $CPU_usage = get_server_cpu_usage();
-            // echo "<small  style='align-self: center;'>CPU usage ".$CPU_usage."% | memory usage : ".$memory_usage."%</small>"; ?>
-            <button class="btn btn-primary btn-sm " style="margin-left:10px;" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
-                <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated"
-                    aria-label="add outline">
-                </ion-icon>
-                New Ticket
-            </button>
-        </form>
-    </div>
-</nav>
+
 
 <!-- console bra -->
 <!-- project -->

@@ -4,7 +4,6 @@
         $_SESSION["nickname"]="Bos";
         $_SESSION["department"]="Content Admin";
         $_SESSION["page_view"]="";
-            
         $_SESSION["db_username"] = "cdse_admin";
         $_SESSION["db_password"] = "@aA417528639";
         $_SESSION["cr_status_filter"] ="Pending";
@@ -19,13 +18,10 @@
         $request_by ="poojaroonwit";
     }
     if (!$_SESSION["login_csg"]){ 
-       
             Header("Location: login");
-
     }else{
     // include('get/get_card_content_request.php'); 
     include_once('get/get_count_status.php');
-
     function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
@@ -139,7 +135,6 @@
     ?>
     <!DOCTYPE html>
     <html lang="en">
-
     <head>
         <title>Content and Studio - Homepage</title>
         <!-- Required meta tags -->
@@ -165,9 +160,7 @@
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
         <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
         <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
         <script>
@@ -190,44 +183,36 @@
             font-family: 'Prompt', sans-serif !important;
             font-size: 14px;
         }
-
         a {
             color: gray;
             text-decoration: auto;
         }
-
         a:hover {
             color: black;
             text-decoration: auto;
             font-weight: bold;
         }
-
         label {
             font-weight: 800 !important;
         }
-
         .row {
             margin-bottom: 15px;
         }
-
         .multiple-select,
         .multiple-select_adj,
         .multiple-select_edit {
             width: 100%;
         }
-
         .header_form {
             text-align: center;
             margin-bottom: 50px;
             margin-top: 50px;
         }
-
         .container-sm {
             max-width: 500px;
             margin-top: 8%;
             padding: 10px !important 50px !important 100px !important !important;
         }
-
         .list_bra .nav-pills .nav-link.active,
         .list_bra .nav-pills .show .nav-link {
             color: white;
@@ -236,45 +221,37 @@
             background-color: #f0f2fc87;
             font-weight: bolder;
         }
-
         /* .nav-link{
             color: white;
         } */
         .list_bra .nav-pills .nav-link {
             color: white !important;
         }
-
         .list_bra .nav-link:hover {
             color: white !important;
             width: 100%;
             s font-weight: bolder;
         }
-
         .list_bra .nav-link.active:hover {
             color: #ffff !important;
         }
-
         .nav-pills .nav-link.active,
         .nav-pills .show .nav-link {
             background-color: #f0f2fc87;
             color: white !important;
             width: 100%;
         }
-
         .navbar-brand {
             margin-left: 10px;
             margin-right: 10px;
             font-weight: 1000;
         }
-
         .navbar-brand {
             color: #ffff !important;
         }
-
         .navbar-brand:hover {
             color: #ffff !important;
         }
-
         .list_bra {
             padding-right: 0;
             /* background: rgba(236, 236, 236, 1); */
@@ -283,33 +260,27 @@
             background-image: url('base/image/11.jpg');
             color: black;
         }
-
         .my-1 {
             margin-top: 1rem !important;
             margin-bottom: 1rem !important;
         }
-
         .selection_filter {
             width: 150px;
             border: transparent;
             /* border-bottom:1px gray; */
             /* border-bottom-style: dotted; */
         }
-
         .selection_filter:active {
             border: transparent !important;
         }
-
         .selection_filter:focus {
             border: transparent !important;
             border-style: none;
         }
-
         ion-icon {
             font-size: 20px;
             margin: -0.2rem;
         }
-
         .link-light {
             color: white;
             padding: 0.2rem;
@@ -319,39 +290,32 @@
             font-size: 14px;
             font-family: 'Prompt', sans-serif !important;
         }
-
         .link-light:hover {
             color: white;
             background-color: #dbdbdb38;
             width: 100%;
             border-radius: 0px !important;
         }
-
         .link-light:focus {
             color: white;
             background-color: #dbdbdb38;
             width: 100%;
             border-radius: 0px !important;
         }
-
         .btn-check:focus+.btn,
         .btn:focus {
             box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 0%)
         }
-
         .total_count_dashboard {
             text-align: center;
             font-size: 70px;
         }
-
         .unit_count_dashboard {
             text-align: center;
         }
-
         ion-icon {
             margin-right: 5px;
         }
-
         .task_detial {
             color: #6c757d;
             ;
@@ -362,33 +326,27 @@
             padding-bottom: 3px;
             padding-top: 3px;
         }
-
         .icon_bar_tootle {
             margin-left: 20px;
             margin-right: 50px;
             font-size: 13px;
         }
-
         .icon_ocv {
             margin-right: 0px !important;
             font-size: 14px;
             color: gray;
         }
-
         .ticket_relate {
             border-color: white;
             padding: 0px;
             padding-bottom: 5px
         }
-
         .col-board {
             border-right: 1px #dee2e6 solid;
         }
-
         .cr_title {
             margin-bottom: 10px;
         }
-
         .status_cr_list {
             margin-right: 5px;
             margin-left: 10px;
@@ -397,7 +355,6 @@
         }
         </style>
     </head>
-
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();doAutoRefresh_can();">
         <!--         <nav class="navbar sticky-top navbar-danger bg-danger">
           <marquee>
@@ -410,7 +367,6 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140386041-2"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -764,7 +720,6 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="margin:20px">
                                 <div class="container " style="max-width: 1240px;">
-
                                     <?php echo $_GET["result_cr"]; ?>
                                     <div class="btn-group">
                                         <button onclick="filter_cr_ticket('Pending')" class="btn btn-secondary"
@@ -799,7 +754,6 @@
                                         <div id="list_grouping">
                                             <?php //include('get/get_list_content_request.php'); ?>
                                         </div>
-
                                         <?php //if($_SESSION["username"]=="poojaroonwit"){
                                                 //list_ts("ticket.ticket_template = 'CR'and ticket.status <> 'Close'",500,'ticket');
                                         //} 
@@ -836,10 +790,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                </div>
-                            </div>
-                            </ul>
-                            </nav>
+                                        </div>
+                                    </div>
+                                    </ul>
+                                    </nav>
                         </div>
                     </div>
                     <!-- <div class="tab-pane fade" id="v-pills-cr_admin" role="tabpanel"
@@ -898,15 +852,16 @@
                                                     </ion-icon>Query Search
                                                 </span>
                                                 <input list="qlistoption" style="width: 75%;" type="text"
-                                                    class="form-control" onchange="run_ts_command('task');" id="ts_command" name="ts_command"
+                                                    class="form-control" onchange="run_ts_command('task');"
+                                                    id="ts_command" name="ts_command"
                                                     placeholder="Your task will display follow your command .."
                                                     aria-label="Username" aria-describedby="basic-addon1"
                                                     value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%'">
                                                 <span class="input-group-text">Limit</span>
                                                 <input type="number" max="999" onchange="run_ts_command('task');"
-                                                 min="1" class="form-control"
-                                                    id="ts_command_limit" name="ts_command_limit" placeholder="Server"
-                                                    value="100" aria-label="Server">
+                                                    min="1" class="form-control" id="ts_command_limit"
+                                                    name="ts_command_limit" placeholder="Server" value="100"
+                                                    aria-label="Server">
                                             </div>
                                             <datalist id="qlistoption">
                                                 <option
@@ -919,6 +874,26 @@
                                             </datalist>
                                         </form>
                                     </nav>
+                                    <nav class="navbar">
+                                        <div class="container-fluid p-0">
+                                            <a class="navbar-brand"></a>
+                                            <form class="d-flex">
+                                                <?php 
+                                                // $memory_usage = get_server_memory_usage();
+                                                // $CPU_usage = get_server_cpu_usage();
+                                                // echo "<small  style='align-self: center;'>CPU usage ".$CPU_usage."% | memory usage : ".$memory_usage."%</small>"; ?>
+                                                <button class="btn btn-primary btn-sm " style="margin-left:10px;"
+                                                    type="button" data-bs-toggle="offcanvas"
+                                                    data-bs-target="#ts_request_canvas"
+                                                    aria-controls="offcanvasExample">
+                                                    <ion-icon size="small" name="add-outline" role="img"
+                                                        class="md icon-small hydrated" aria-label="add outline">
+                                                    </ion-icon>
+                                                    New Ticket
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </nav>
                                     <div id="get_ts_admin_console">
                                         <?php include('get/get_list_ts.php'); ?>
                                     </div>
@@ -926,11 +901,11 @@
                             </div>
                         </div>
                         <!-- -- -->
-                        <!-- <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
+                        <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination pagination-sm">
                                             <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1"
-                                                id="content_request_canvas" aria-labelledby="offcanvasExampleLabel">
+                                                id="ts_request_canvas" aria-labelledby="offcanvasExampleLabel">
                                                 <div class="offcanvas-header" style="    background: #313131;color: white;">
                                                     <h5 class="offcanvas-title" id="offcanvasExampleLabel"
                                                         style="padding-left:50px;font-weight: bold;">
@@ -946,7 +921,7 @@
                                                             action="action/action_submit_add_content_request.php"
                                                             method="POST" enctype="multipart/form-data">
                                                             <div id="add_new_cr_result"></div>
-                                                            <?php //include('form/form_create_content_request.php')?>
+                                                            <?php include('form/form_create_content_request.php')?>
                                                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                                                 <button type="submit" class="btn btn-primary btn-sm"
                                                                     style="width:100%">Submit</button>
@@ -959,7 +934,7 @@
                                     </div>
                                     </ul>
                                 </nav>
-                            </div> -->
+                            </div>
                         <!-- -- -->
                     </div>
                     <!-- fl console -->
@@ -972,7 +947,6 @@
                                     <div id="get_card_add_new">
                                         <?php //include('get/get_card_new_job.php'); ?>
                                     </div>
-
                                     <!-- get card -->
                                 </div>
                             </div>
@@ -1129,12 +1103,10 @@
         </div>
         </div>
     </body>
-
     <script>
 var elements = document.getElementsByClassName('window-full');
 var windowheight = window.innerHeight + "px";
 fullheight(elements);
-
 function fullheight(elements) {
     for (let el in elements) {
         if (elements.hasOwnProperty(el)) {
@@ -1146,8 +1118,6 @@ window.onresize = function(event) {
     fullheight(elements);
 }
     </script>
-
-
     <!-- end bootsrap js -->
     <script>
 function call_edit_add_new_modal(id, brand) {
@@ -1159,7 +1129,6 @@ function call_edit_add_new_modal(id, brand) {
         });
     }
 }
-
 function cr_id_toggle(id) {
     if (id) {
         $.post("base/get/get_content_request_detail.php", {
@@ -1169,7 +1138,6 @@ function cr_id_toggle(id) {
         });
     }
 }
-
 function start_checking(id) {
     if (id) {
         $.post("base/action/action_start_checking.php", {
@@ -1179,7 +1147,6 @@ function start_checking(id) {
         });
     }
 }
-
 function accepted_stt(id) {
     if (id) {
         sku_accepted = document.getElementById('sku_accepted').value;
@@ -1195,7 +1162,6 @@ function accepted_stt(id) {
         }
     }
 }
-
 function cancel_stt(id, status_change) {
     resone_cancel = document.getElementById('resone_cancel').value;
     status_change = 'cancel';
@@ -1209,7 +1175,6 @@ function cancel_stt(id, status_change) {
         });
     }
 }
-
 function itm_confirm_cancel(id, status_change) {
     let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
     if (message == null || message == "") {
@@ -1231,7 +1196,6 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
-
 function filter_cr_ticket(status) {
     document.getElementById('cr_search_input').value = '';
     var update = true;
@@ -1244,7 +1208,6 @@ function filter_cr_ticket(status) {
         });
     }
 }
-
 function search_cr_ticket() {
     var cr_search_input = document.getElementById("cr_search_input").value
     var user_cr_filter = document.getElementById("user_cr_filter").value
@@ -1256,7 +1219,6 @@ function search_cr_ticket() {
         $('#list_grouping').html(data);
     });
 }
-
 function run_ts_command(ts_level) {
     var ts_command_input = document.getElementById("ts_command").value;
     var ts_command_limit = document.getElementById("ts_command_limit").value;
@@ -1268,7 +1230,6 @@ function run_ts_command(ts_level) {
         ts_level: ts_level
     }, function(data) {
         $('#get_ts_admin_console').html(data);
-        
     });
 }
     </script>
@@ -1427,11 +1388,9 @@ function select_current_tab(selecttab) {
             .add('show');
     }
 }
-
 function open_ticket_detail(id) {
     document.getElementById("ns_ticket_" + id).click();
 }
-
 function updateURL(pill) {
     if (history.pushState) {
         var newurl = window.location.protocol + "//" + window.location.host +
@@ -1443,7 +1402,6 @@ function updateURL(pill) {
             }, '', newurl);
     }
 }
-
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value
@@ -1478,7 +1436,6 @@ function filter_update(be) {
                 $tab_select = $_GET["tab"];
                 echo '<script>select_current_tab("'.$tab_select.'");</script>';
                 ?>
-
     <script>
 function Inint_AJAX() {
     try {
@@ -1493,7 +1450,6 @@ function Inint_AJAX() {
     alert("XMLHttpRequest not supported")
     return null
 }
-
 function doAutoRefresh() {
     var req = Inint_AJAX();
     //var req_cr = Inint_AJAX();
@@ -1514,7 +1470,6 @@ function doAutoRefresh() {
     };
     req.send(null);
 };
-
 function doAutoRefresh_ts_admin() {
     var req_ts = Inint_AJAX();
     //var req_cr = Inint_AJAX();
@@ -1534,7 +1489,6 @@ function doAutoRefresh_ts_admin() {
     };
     req_ts.send(null);
 };
-
 function doAutoRefresh_cr() {
     var req_cr = Inint_AJAX();
     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
@@ -1551,7 +1505,6 @@ function doAutoRefresh_cr() {
     };
     req_cr.send(null);
 };
-
 function doAutoRefresh_can() {
     var req_can = Inint_AJAX();
     //var req_cr = Inint_AJAX();
@@ -1618,11 +1571,9 @@ tinymce.init({
 function allowDrop(ev) {
     ev.preventDefault();
 }
-
 function drag_card_cr(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
-
 function drop_card_cr(ev, new_status) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("card");
@@ -1647,7 +1598,6 @@ function drop_card_cr(ev, new_status) {
     }
 }
     </script>
-
     </html>
     <?php if( $_GET["fopenticket"]<>""){
     $_SESSION["fopenticket"]=$_GET["fopenticket"];
