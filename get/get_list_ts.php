@@ -19,20 +19,27 @@ if($_POST["ts_level"]<>""){
 }else{
   $ts_level = "ticket";
 }
+
 if($_POST["cb_pj"]<>""){
   $_SESSION["cb_pj"] = $_POST["cb_pj"];
 }else{
-  $_SESSION["cb_pj"] = true;
-}
+  if($_SESSION["cb_pj"]==""){
+    $_SESSION["cb_pj"] = true;
+  }
 if($_POST["cb_da"]<>""){
   $_SESSION["cb_da"] = $_POST["cb_da"];
 }else{
-  $_SESSION["cb_da"] = true;
+  if($_SESSION["cb_da"]==""){
+    $_SESSION["cb_da"] = true;
+  }
+ 
 }
 if($_POST["cb_cr"]<>""){
   $_SESSION["cb_cr"] = $_POST["cb_cr"];
 }else{
-  $_SESSION["cb_cr"] = true;
+  if($_SESSION["cb_cr"]==""){
+    $_SESSION["cb_cr"] = true;
+  }
 }
 
 $filter = $_SESSION["ts_query_input"];
