@@ -24,7 +24,6 @@
 
     }else{
     // include('get/get_card_content_request.php'); 
-    include('get/get_card_new_job.php'); 
     include_once('get/get_count_status.php');
     include('get/get_list_ts.php');
     function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
@@ -140,6 +139,7 @@
     ?>
     <!DOCTYPE html>
     <html lang="en">
+
     <head>
         <title>Content and Studio - Homepage</title>
         <!-- Required meta tags -->
@@ -165,12 +165,16 @@
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-           
-       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
         <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
         <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
-        <script> $(function() {$(".multiple-select").multipleSelect()});</script>
+        <script>
+        $(function() {
+            $(".multiple-select").multipleSelect()
+        });
+        </script>
         <!-- bootstrap js -->
         <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -186,36 +190,44 @@
             font-family: 'Prompt', sans-serif !important;
             font-size: 14px;
         }
+
         a {
             color: gray;
             text-decoration: auto;
         }
+
         a:hover {
             color: black;
             text-decoration: auto;
             font-weight: bold;
         }
+
         label {
             font-weight: 800 !important;
         }
+
         .row {
             margin-bottom: 15px;
         }
+
         .multiple-select,
         .multiple-select_adj,
         .multiple-select_edit {
             width: 100%;
         }
+
         .header_form {
             text-align: center;
             margin-bottom: 50px;
             margin-top: 50px;
         }
+
         .container-sm {
             max-width: 500px;
             margin-top: 8%;
             padding: 10px !important 50px !important 100px !important !important;
         }
+
         .list_bra .nav-pills .nav-link.active,
         .list_bra .nav-pills .show .nav-link {
             color: white;
@@ -224,37 +236,45 @@
             background-color: #f0f2fc87;
             font-weight: bolder;
         }
+
         /* .nav-link{
             color: white;
         } */
         .list_bra .nav-pills .nav-link {
             color: white !important;
         }
+
         .list_bra .nav-link:hover {
             color: white !important;
             width: 100%;
             s font-weight: bolder;
         }
+
         .list_bra .nav-link.active:hover {
             color: #ffff !important;
         }
+
         .nav-pills .nav-link.active,
         .nav-pills .show .nav-link {
             background-color: #f0f2fc87;
             color: white !important;
             width: 100%;
         }
+
         .navbar-brand {
             margin-left: 10px;
             margin-right: 10px;
             font-weight: 1000;
         }
+
         .navbar-brand {
             color: #ffff !important;
         }
+
         .navbar-brand:hover {
             color: #ffff !important;
         }
+
         .list_bra {
             padding-right: 0;
             /* background: rgba(236, 236, 236, 1); */
@@ -263,27 +283,33 @@
             background-image: url('base/image/11.jpg');
             color: black;
         }
+
         .my-1 {
             margin-top: 1rem !important;
             margin-bottom: 1rem !important;
         }
+
         .selection_filter {
             width: 150px;
             border: transparent;
             /* border-bottom:1px gray; */
             /* border-bottom-style: dotted; */
         }
+
         .selection_filter:active {
             border: transparent !important;
         }
+
         .selection_filter:focus {
             border: transparent !important;
             border-style: none;
         }
+
         ion-icon {
             font-size: 20px;
             margin: -0.2rem;
         }
+
         .link-light {
             color: white;
             padding: 0.2rem;
@@ -293,32 +319,39 @@
             font-size: 14px;
             font-family: 'Prompt', sans-serif !important;
         }
+
         .link-light:hover {
             color: white;
             background-color: #dbdbdb38;
             width: 100%;
             border-radius: 0px !important;
         }
+
         .link-light:focus {
             color: white;
             background-color: #dbdbdb38;
             width: 100%;
             border-radius: 0px !important;
         }
+
         .btn-check:focus+.btn,
         .btn:focus {
             box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 0%)
         }
+
         .total_count_dashboard {
             text-align: center;
             font-size: 70px;
         }
+
         .unit_count_dashboard {
             text-align: center;
         }
+
         ion-icon {
             margin-right: 5px;
         }
+
         .task_detial {
             color: #6c757d;
             ;
@@ -329,27 +362,33 @@
             padding-bottom: 3px;
             padding-top: 3px;
         }
+
         .icon_bar_tootle {
             margin-left: 20px;
             margin-right: 50px;
             font-size: 13px;
         }
+
         .icon_ocv {
             margin-right: 0px !important;
             font-size: 14px;
             color: gray;
         }
+
         .ticket_relate {
             border-color: white;
             padding: 0px;
             padding-bottom: 5px
         }
+
         .col-board {
             border-right: 1px #dee2e6 solid;
         }
+
         .cr_title {
             margin-bottom: 10px;
         }
+
         .status_cr_list {
             margin-right: 5px;
             margin-left: 10px;
@@ -358,8 +397,9 @@
         }
         </style>
     </head>
-    <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();">
-<!--         <nav class="navbar sticky-top navbar-danger bg-danger">
+
+    <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_can();">
+        <!--         <nav class="navbar sticky-top navbar-danger bg-danger">
           <marquee>
            <span class="navbar-text" style="color:white" >
                 แจ้งปิดรับการส่งสร้างสินค้าใหม่ สำหรับปี 2021 ตั้งแต่วันที่ 24 ธันวาคม 2021 - 4 มกราคม 2022 , สำหรับ content request ยังสามารถส่งได้ตามปกติ หากมีข้อสงสัย สามารถสอบถามได้จากน้อง content follow-up และ studio ได้เลยครับ
@@ -370,6 +410,7 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140386041-2"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -392,7 +433,7 @@
             </div>
         </div>
         <div class="row " style="margin-bottom: 0px;--bs-gutter-x: 0rem;">
-        <?php 
+            <?php 
          if(strpos($_SESSION["department"],'Content Admin')!==false){
             $nev_avg = "background: #212121;";
          }
@@ -431,12 +472,12 @@
                         <ion-icon style="color:white" name="grid-outline"></ion-icon> Request Console
                     </a>
                     <?php }?>
-                       <?php if(strpos($_SESSION["department"],'Content')!==false){?>
-                          <a class="nav-link" id="v-pills-fl_board-tab" data-toggle="pill" href="#v-pills-fl_board" role="tab"
-                            aria-controls="v-pills-fl_board" onclick="updateURL('v-pills-fl_board');" aria-selected="false">
-                            <ion-icon style="color:white" name="grid-outline"></ion-icon> Follow-up Board
-                            </a>
-                        <?php }?>
+                    <?php if(strpos($_SESSION["department"],'Content')!==false){?>
+                    <a class="nav-link" id="v-pills-fl_board-tab" data-toggle="pill" href="#v-pills-fl_board" role="tab"
+                        aria-controls="v-pills-fl_board" onclick="updateURL('v-pills-fl_board');" aria-selected="false">
+                        <ion-icon style="color:white" name="grid-outline"></ion-icon> Follow-up Board
+                    </a>
+                    <?php }?>
                     <hr style="color: #eee!important;">
                     <ul class="list-unstyled ps-0">
                         <li class="mb-1">
@@ -524,7 +565,7 @@
                     <?php echo $_SESSION["username"]; ?></button>
             </div>
             <div class="col-10 window-full overflow-auto" style="background:#f9fafb">
-                <div class="tab-content" id="v-pills-tabContent" > 
+                <div class="tab-content" id="v-pills-tabContent">
                     <!-- style="margin-top:15px" -->
                     <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel"
                         aria-labelledby="v-pills-dashboard-tab">
@@ -677,7 +718,8 @@
                                                 <div class="offcanvas-body">
                                                     <div class="container-md" style="padding:0px 80px 0px 80px;">
                                                         <form class="row g-3"
-                                                            action="base/action/action_submit_add_new_job.php" method="POST">
+                                                            action="base/action/action_submit_add_new_job.php"
+                                                            method="POST">
                                                             <div id="add_new_job_result"></div>
                                                             <?php include('form/form_request_add_new.php')?>
                                                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -769,7 +811,8 @@
                                         <ul class="pagination pagination-sm">
                                             <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1"
                                                 id="content_request_canvas" aria-labelledby="offcanvasExampleLabel">
-                                                <div class="offcanvas-header" style="    background: #313131;color: white;">
+                                                <div class="offcanvas-header"
+                                                    style="    background: #313131;color: white;">
                                                     <h5 class="offcanvas-title" id="offcanvasExampleLabel"
                                                         style="padding-left:50px;font-weight: bold;">
                                                         <ion-icon style="margin-right:10px" name="add-circle-outline">
@@ -793,11 +836,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    </ul>
-                                </nav>
+                                </div>
                             </div>
+                            </ul>
+                            </nav>
+                        </div>
                     </div>
                     <!-- <div class="tab-pane fade" id="v-pills-cr_admin" role="tabpanel"
                         aria-labelledby="v-pills-cr_admin-tab">
@@ -842,13 +885,13 @@
                         </div>
                     </div> -->
                     <!-- ts console -->
-                    <div class="tab-pane fade"  style="background-color: #f7f7f7;" id="v-pills-ts_admin" role="tabpanel"
+                    <div class="tab-pane fade" style="background-color: #f7f7f7;" id="v-pills-ts_admin" role="tabpanel"
                         aria-labelledby="v-pills-ts_admin-tab">
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
-                                <?php //include('get/get_list_ts.php')?>
-                            <!-- nav bar -->
+                                    <?php //include('get/get_list_ts.php')?>
+                                    <!-- nav bar -->
                                     <?php
                                     function get_server_memory_usage(){
                                         $free = shell_exec('free');
@@ -865,26 +908,34 @@
                                         return round($load[0]);
                                     }
                                     ?>
-                                <nav class="navbar">
-                                <div class="container-fluid p-0">
-                                    <a class="navbar-brand"></a>
-                                    <form class="d-flex">
-                                        <?php $memory_usage = get_server_memory_usage();
+                                    <nav class="navbar">
+                                        <div class="container-fluid p-0">
+                                            <a class="navbar-brand"></a>
+                                            <form class="d-flex">
+                                                <?php $memory_usage = get_server_memory_usage();
                                         $CPU_usage = get_server_cpu_usage() ;
                                         echo "<small>CPU usage ".$CPU_usage."% | memory usage : ".$memory_usage."%</small>"; ?>
-                                    <button class="btn btn-primary btn-sm " style="margin-left:10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
-                                    <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated" aria-label="add outline"></ion-icon>
-                                        New Ticket
-                                    </button>
-                                    </form>
-                                </div>
-                                </nav>
-                                <nav class="navbar">
-                                <form style="width:100%">
-                                    <div class="input-group input-group-sm mb-3">
-                                    <span class="input-group-text" id="basic-addon1"><ion-icon style="vertical-align: middle;" name="terminal-outline"></ion-icon>Query Search</span>
-                                    <input list="qlistoption" style="width: 75%;"type="text" class="form-control" 
-                                    onchange="run_ts_command('PJ','task','all');
+                                                <button class="btn btn-primary btn-sm " style="margin-left:10px;"
+                                                    type="button" data-bs-toggle="offcanvas"
+                                                    data-bs-target="#content_request_canvas"
+                                                    aria-controls="offcanvasExample">
+                                                    <ion-icon size="small" name="add-outline" role="img"
+                                                        class="md icon-small hydrated" aria-label="add outline">
+                                                    </ion-icon>
+                                                    New Ticket
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </nav>
+                                    <nav class="navbar">
+                                        <form style="width:100%">
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                    <ion-icon style="vertical-align: middle;" name="terminal-outline">
+                                                    </ion-icon>Query Search
+                                                </span>
+                                                <input list="qlistoption" style="width: 75%;" type="text"
+                                                    class="form-control" onchange="run_ts_command('PJ','task','all');
                                                 run_ts_command('CR','ticket','Pending');
                                                 run_ts_command('CR','ticket','inprogress');
                                                 run_ts_command('CR','ticket','Waiting Execution');
@@ -892,106 +943,122 @@
                                                 run_ts_command('CR','ticket','Waiting Buyer');
                                                 run_ts_command('CR','ticket','Close');
                                                 run_ts_command('DT','ticket','all');   
-                                                "
-                                    id="ts_command"
-                                        name="ts_command"
-                                        placeholder="Your task will display follow your command .."
-                                        aria-label="Username"
-                                        aria-describedby="basic-addon1" value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%'">
-                                    <span class="input-group-text">Limit</span>
-                                <input type="number" max="999" onchange="run_ts_command('PJ','level','all');
+                                                " id="ts_command" name="ts_command"
+                                                    placeholder="Your task will display follow your command .."
+                                                    aria-label="Username" aria-describedby="basic-addon1"
+                                                    value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%'">
+                                                <span class="input-group-text">Limit</span>
+                                                <input type="number" max="999" onchange="run_ts_command('PJ','level','all');
                                                run_ts_command('CR','ticket','Pending');
                                                 run_ts_command('CR','ticket','inprogress');
                                                 run_ts_command('CR','ticket','Waiting Execution');
                                                 run_ts_command('CR','ticket','Waiting CTO');
                                                 run_ts_command('CR','ticket','Waiting Buyer');
                                                 run_ts_command('CR','ticket','Close');
-                                                run_ts_command('DT','ticket','all');" 
-                                                min="1" class="form-control" id="ts_command_limit" name="ts_command_limit" placeholder="Server" value="100" aria-label="Server">
+                                                run_ts_command('DT','ticket','all');" min="1" class="form-control"
+                                                    id="ts_command_limit" name="ts_command_limit" placeholder="Server"
+                                                    value="100" aria-label="Server">
+                                            </div>
+                                            <datalist id="qlistoption">
+                                                <option
+                                                    value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
+                                                <option
+                                                    value="ticket.case_officer like  '%<?php echo $_SESSION["username"]; ?>%'">
+                                                <option value="ticket.title like  '%grouping%'">
+                                                <option value="ticket.id = 3009">
+                                                <option value="ticket.status = 'Pending'">
+                                            </datalist>
+                                        </form>
+                                    </nav>
+                                    <!-- console bra -->
+                                    <!-- project -->
+                                    <span class="row"><strong>
+                                            <ion-icon name="business-outline" style="vertical-align: middle;">
+                                            </ion-icon>Project
+                                        </strong></span>
+                                    <div class="row">
+                                        <div class="col border-0 border-end">
+                                            <small class="row m-3">Your tasks assignment (task of project)</small>
+                                            <div id="list_pj_task">
+                                                <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status <> 'Close' and  ticket.ticket_template = 'PJ'",100,'task'); ?>
+                                            </div>
                                         </div>
-                                    <datalist id="qlistoption">
-                                        <option value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
-                                        <option value="ticket.case_officer like  '%<?php echo $_SESSION["username"]; ?>%'">
-                                        <option value="ticket.title like  '%grouping%'">
-                                        <option value="ticket.id = 3009">
-                                        <option value="ticket.status = 'Pending'">
-                                    </datalist>
-                                </form>
-                                </nav>
-                               <!-- console bra -->
-                               <!-- project -->
-                               <span class="row"><strong><ion-icon name="business-outline" style="vertical-align: middle;" ></ion-icon>Project</strong></span>
-                               <div class="row">
-                                   <div class="col border-0 border-end">
-                                       <small class="row m-3">Your tasks assignment (task of project)</small>
-                                       <div id="list_pj_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status <> 'Close' and  ticket.ticket_template = 'PJ'",100,'task'); ?>
-                                       </div>
-                                   </div>
-                                   <div class="col">
-                                       <small class="row m-3">All project</small>
-                                       <?php list_ts("ticket.ticket_template = 'PJ' and ticket.status <> 'Close'",500,'ticket' ); ?>
-                                   </div>
-                                </div>
-                               <!-- support task -->
-                               <hr>
-                               <span class="row"><strong><ion-icon name="server-outline" style="vertical-align: middle;" ></ion-icon> Data & Application Support</strong></span>
-                               <div class="row">
-                                   <div class="col border-0 border-end">
-                                       <small class="row m-3">Your Assignment</small>
-                                       <div id="list_da_task">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status <> 'Close' and ticket.ticket_template = 'DT'",100,'ticket'); ?>
-                                       </div>
-                                   </div>
-                                   <div class="col">
-                                       <small class="row m-3">Unassign</small>
-                                       <?php list_ts("ticket.ticket_template = 'DT' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
-                                   </div>
-                                </div>
-                               <!-- Content request -->
-                               <hr>
-                               <span class="row"><strong><ion-icon name="layers-outline" style="vertical-align: middle;" ></ion-icon>Content Request</strong></span>
-                               <div class="row">
-                                   <div class="col border-0 border-end">
-                                       <small class="row m-3">Your Assignment</small>
-                                       <small class="row m-3">Pending</small><hr>
-                                       <div id="list_cr_task_pending">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Pending' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
-                                       </div>
-                                       <small class="row m-3">inprogress</small><hr>
-                                       <div id="list_cr_task_inprogress">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Inprogress' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
-                                       </div>
-                                       <small class="row m-3">Waiting Execution</small><hr>
-                                       <div id="list_cr_task_we">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting Execution' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
-                                       </div>
-                                       <small class="row m-3">Waiting CTO</small><hr>
-                                       <div id="list_cr_task_wcto">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting CTO' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
-                                       </div>
-                                       <small class="row m-3">Waiting Buyer</small><hr>
-                                       <div id="list_cr_task_wb">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting Buyer' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
-                                       </div>
-                                       <small class="row m-3">Close [lastest 5 ticket]</small><hr>
-                                       <div id="list_cr_task_wb">
-                                         <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Close' and  ticket.ticket_template = 'CR'",5,'ticket'); ?>
-                                       </div>
-                                   </div>
-                                   <div class="col">
-                                       <small class="row m-3">Unassign</small>
-                                       <?php list_ts("ticket.ticket_template = 'CR' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
-                                   </div>
-                                </div>
+                                        <div class="col">
+                                            <small class="row m-3">All project</small>
+                                            <?php list_ts("ticket.ticket_template = 'PJ' and ticket.status <> 'Close'",500,'ticket' ); ?>
+                                        </div>
+                                    </div>
+                                    <!-- support task -->
+                                    <hr>
+                                    <span class="row"><strong>
+                                            <ion-icon name="server-outline" style="vertical-align: middle;"></ion-icon>
+                                            Data & Application Support
+                                        </strong></span>
+                                    <div class="row">
+                                        <div class="col border-0 border-end">
+                                            <small class="row m-3">Your Assignment</small>
+                                            <div id="list_da_task">
+                                                <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status <> 'Close' and ticket.ticket_template = 'DT'",100,'ticket'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <small class="row m-3">Unassign</small>
+                                            <?php list_ts("ticket.ticket_template = 'DT' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
+                                        </div>
+                                    </div>
+                                    <!-- Content request -->
+                                    <hr>
+                                    <span class="row"><strong>
+                                            <ion-icon name="layers-outline" style="vertical-align: middle;"></ion-icon>
+                                            Content Request
+                                        </strong></span>
+                                    <div class="row">
+                                        <div class="col border-0 border-end">
+                                            <small class="row m-3">Your Assignment</small>
+                                            <small class="row m-3">Pending</small>
+                                            <hr>
+                                            <div id="list_cr_task_pending">
+                                                <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Pending' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+                                            </div>
+                                            <small class="row m-3">inprogress</small>
+                                            <hr>
+                                            <div id="list_cr_task_inprogress">
+                                                <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Inprogress' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+                                            </div>
+                                            <small class="row m-3">Waiting Execution</small>
+                                            <hr>
+                                            <div id="list_cr_task_we">
+                                                <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting Execution' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+                                            </div>
+                                            <small class="row m-3">Waiting CTO</small>
+                                            <hr>
+                                            <div id="list_cr_task_wcto">
+                                                <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting CTO' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+                                            </div>
+                                            <small class="row m-3">Waiting Buyer</small>
+                                            <hr>
+                                            <div id="list_cr_task_wb">
+                                                <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Waiting Buyer' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+                                            </div>
+                                            <small class="row m-3">Close [lastest 5 ticket]</small>
+                                            <hr>
+                                            <div id="list_cr_task_wb">
+                                                <?php list_ts("ticket.participant like '%".$_SESSION["username"]."%'  and ticket.status = 'Close' and  ticket.ticket_template = 'CR'",5,'ticket'); ?>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <small class="row m-3">Unassign</small>
+                                            <?php list_ts("ticket.ticket_template = 'CR' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
+                                        </div>
+                                    </div>
                                     <!-- unassign -->
                                     <!-- self -->
                                     <!-- another -->
                                 </div>
                             </div>
                         </div>
-                   <!-- -- -->
-                   <!-- <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
+                        <!-- -- -->
+                        <!-- <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination pagination-sm">
                                             <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1"
@@ -1027,38 +1094,18 @@
                             </div> -->
                         <!-- -- -->
                     </div>
-                         <!-- fl console -->
+                    <!-- fl console -->
                     <div class="tab-pane fade" id="v-pills-fl_board" role="tabpanel"
                         aria-labelledby="v-pills-fl_board-tab">
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
-                                    <div class="row">
-                                        <div class="col col-board col" id="pending">
-                                            <small style="margin-bottom:5px"><strong>Pending + Waiting Confirm</strong></small>
-                                            <span class="badge bg-secondary"><?php echo count_add_new_card("(status = 'pending' or status = 'waiting confirm')",$_GET["username"]); ?> Ticket</span>
-                                            <span class="badge bg-danger"><?php echo sum_add_new_card("(status = 'pending' or status = 'waiting confirm')",$_GET["username"]); ?> SKUs</span> 
-                                            <?php echo get_card_new_job("(status = 'pending' or status = 'waiting confirm')",$_GET["username"]);?>
-                                        </div>
-                                        <div class="col col-board col" id="checking">
-                                            <small style="margin-bottom:5px"><strong>Checking</strong></small>
-                                             <span class="badge bg-secondary"><?php echo count_add_new_card("(status = 'checking')",$_GET["username"]); ?> Ticket</span> 
-                                            <span class="badge bg-danger"><?php echo sum_add_new_card("(status = 'checking')",$_GET["username"]); ?> SKUs</span> 
-                                            <?php echo get_card_new_job("(status = 'checking')",$_GET["username"]);?>
-                                        </div>
-                                        <div class="col col-board col" id="waiting">
-                                            <small style="margin-bottom:5px"><strong>Waiting + Send mail</strong></small>
-                                                   <span class="badge bg-secondary"><?php echo count_add_new_card("(status = 'waiting buyer' or status = 'waiting data' or status = 'waiting image' or status like '%send mail - waiting brand confirm data%')",$_GET["username"]); ?> Ticket</span> 
-                                              <span class="badge bg-danger"><?php echo sum_add_new_card("(status = 'waiting buyer' or status = 'waiting data' or status = 'waiting image' or status like '%send mail - waiting brand confirm data%')",$_GET["username"]); ?> SKUs</span> 
-                                            <?php echo get_card_new_job("(status = 'waiting buyer' or status = 'waiting data' or status = 'waiting image' or status like '%send mail - waiting brand confirm data%')",$_GET["username"]);?>
-                                        </div>
-                                        <div class="col col-board col" id="more">
-                                            <small style="margin-bottom:5px"><strong>Confirm to be new sku + need update contact</strong></small>
-                                            <span class="badge bg-secondary"><?php echo count_add_new_card("(status = 'cancel - confirm to be new sku' or status = 'need update contact')",$_GET["username"]); ?> Ticket</span>
-                                            <span class="badge bg-danger"><?php echo sum_add_new_card("(status = 'cancel - confirm to be new sku' or status = 'need update contact')",$_GET["username"]); ?> SKUs</span> 
-                                            <?php echo get_card_new_job("(status = 'cancel - confirm to be new sku' or status = 'need update contact')",$_GET["username"]);?>
-                                        </div>
+                                    <!-- get card -->
+                                    <div id="card_add_new">
+                                        <?php //include('get/get_card_new_job.php'); ?> 
                                     </div>
+                                      
+                                    <!-- get card -->
                                 </div>
                             </div>
                         </div>
@@ -1069,7 +1116,7 @@
                             <div class="row align-items-center" style="padding:20px">
                                <div class="container ">
                                 </div> -->
-                                <!-- <div class="container-fluid" style="border-radius: 10px;width: 95%;">
+                    <!-- <div class="container-fluid" style="border-radius: 10px;width: 95%;">
                                     <div class="row">
                                         <div class="col-2">
                                             <div class="list-group" id="list-tab" role="tablist">
@@ -1086,19 +1133,19 @@
                                                     <ion-icon name="star-outline"></ion-icon> Important <span
                                                         id="total_unread_div_in"></span>
                                                 </a> -->
-                                                <!-- <a class="list-group-item list-group-item-action" id="list-update-list"
+                    <!-- <a class="list-group-item list-group-item-action" id="list-update-list"
                                                     data-bs-toggle="list" href="#list-update" role="tab"
                                                     aria-controls="list-update">
                                                     <ion-icon name="notifications-outline"></ion-icon> Updated
                                                 </a> -->
-                                                <!-- <a class="list-group-item list-group-item-action" id="list-send-list"
+                    <!-- <a class="list-group-item list-group-item-action" id="list-send-list"
                                                     data-bs-toggle="list" href="#list-send" role="tab"
                                                     aria-controls="list-send">
                                                     <ion-icon name="paper-plane-outline"></ion-icon> Send
                                                 </a>
                                             </div>
                                         </div> -->
-                                        <!-- <div class="col-10">
+                    <!-- <div class="col-10">
                                             <div class="tab-content" id="nav-tabContent">
                                                 <div class="tab-pane fade show active" id="list-important"
                                                     role="tabpanel" aria-labelledby="list-important-list">
@@ -1118,12 +1165,12 @@
                                                             <?php //include('get/get_list_message.php'); ?>
                                                         </tbody>
                                                     </table>
-                                                </div> --> 
-                                                <!-- <div class="tab-pane fade" id="list-update" role="tabpanel"
+                                                </div> -->
+                    <!-- <div class="tab-pane fade" id="list-update" role="tabpanel"
                                                     aria-labelledby="list-update-list">
                                                     <?php// include('get/get_list_message_log.php'); ?>
                                                 </div> -->
-                                                <!-- <div class="tab-pane fade" id="list-send" role="tabpanel"
+                    <!-- <div class="tab-pane fade" id="list-send" role="tabpanel"
                                                     aria-labelledby="list-send-list">
                                                     <table class="table table-hover table-borderless  "
                                                         style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
@@ -1216,22 +1263,23 @@
     </body>
 
     <script>
-        var elements = document.getElementsByClassName('window-full');
-        var windowheight = window.innerHeight + "px";
-        fullheight(elements);
-        function fullheight(elements) {
-            for (let el in elements) {
-                if (elements.hasOwnProperty(el)) {
-                    elements[el].style.height = windowheight;
-                }
-            }
+var elements = document.getElementsByClassName('window-full');
+var windowheight = window.innerHeight + "px";
+fullheight(elements);
+
+function fullheight(elements) {
+    for (let el in elements) {
+        if (elements.hasOwnProperty(el)) {
+            elements[el].style.height = windowheight;
         }
-        window.onresize = function(event) {
-            fullheight(elements);
-        }
+    }
+}
+window.onresize = function(event) {
+    fullheight(elements);
+}
     </script>
 
-   
+
     <!-- end bootsrap js -->
     <script>
 function call_edit_add_new_modal(id, brand) {
@@ -1243,6 +1291,7 @@ function call_edit_add_new_modal(id, brand) {
         });
     }
 }
+
 function cr_id_toggle(id) {
     if (id) {
         $.post("base/get/get_content_request_detail.php", {
@@ -1252,6 +1301,7 @@ function cr_id_toggle(id) {
         });
     }
 }
+
 function start_checking(id) {
     if (id) {
         $.post("base/action/action_start_checking.php", {
@@ -1261,7 +1311,8 @@ function start_checking(id) {
         });
     }
 }
-function accepted_stt(id ) {
+
+function accepted_stt(id) {
     if (id) {
         sku_accepted = document.getElementById('sku_accepted').value;
         if (sku_accepted == null) {
@@ -1276,6 +1327,7 @@ function accepted_stt(id ) {
         }
     }
 }
+
 function cancel_stt(id, status_change) {
     resone_cancel = document.getElementById('resone_cancel').value;
     status_change = 'cancel';
@@ -1289,6 +1341,7 @@ function cancel_stt(id, status_change) {
         });
     }
 }
+
 function itm_confirm_cancel(id, status_change) {
     let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
     if (message == null || message == "") {
@@ -1310,67 +1363,71 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
-    function filter_cr_ticket(status) {
-        document.getElementById('cr_search_input').value = '';
-        var update = true;
-        if (status) {
-            $.post("base/get/get_list_content_request.php", {
-                status: status,
-                update: update
-            }, function(data) {
-                $('#list_grouping').html(data);
-            });
-        }
-    }
-    function search_cr_ticket() {
-        var cr_search_input = document.getElementById("cr_search_input").value
-        var user_cr_filter = document.getElementById("user_cr_filter").value
-        // if (cr_search_input) {
+
+function filter_cr_ticket(status) {
+    document.getElementById('cr_search_input').value = '';
+    var update = true;
+    if (status) {
         $.post("base/get/get_list_content_request.php", {
-            cr_search_input: cr_search_input,
-            user_cr_filter: user_cr_filter
+            status: status,
+            update: update
         }, function(data) {
             $('#list_grouping').html(data);
         });
     }
-    function run_ts_command(type,ts_level,cr_status){
-        var ts_command_input = document.getElementById("ts_command").value;
-        var ts_command_limit = document.getElementById("ts_command_limit").value;
-        if(cr_status=="all"){
-            var summary_filter = ts_command_input + " and ticket_template = '" + type + "'";
-        }else{
-            var summary_filter = ts_command_input + " and ticket_template = '" + type + "' and  status = '"+ cr_status+"'";
-        }
-       
-        var ts_level = ts_level;
-        $.post("base/get/get_list_ts.php", {
-            summary_filter: summary_filter,
-            ts_command_limit:ts_command_limit,
-            ts_level:ts_level
-        }, function(data) {
-            if(type=="PJ"){
-                $('#list_pj_task').html(data);
-            }else if(type=="CR"){
-                if(cr_status=="inprogress"){
-                    $('#list_cr_task_inprogress').html(data);
-                }else if(cr_status=="Waiting Excution"){
-                    $('#list_cr_task_we').html(data);
-                }else if(cr_status=="Waiting CTO"){
-                    $('#list_cr_task_wcto').html(data);
-                }else if(cr_status=="Waiting Buyer"){
-                    $('#list_cr_task_wb').html(data);
-                }else if(cr_status=="Close"){
-                    $('#list_cr_task_close').html(data);
-                }else if(cr_status=="Pending"){
-                    $('#list_cr_task_pending').html(data);
-                }
+}
 
-                
-            }else if(type=="DT"){
-                $('#list_da_task').html(data);
-            }
-        });
+function search_cr_ticket() {
+    var cr_search_input = document.getElementById("cr_search_input").value
+    var user_cr_filter = document.getElementById("user_cr_filter").value
+    // if (cr_search_input) {
+    $.post("base/get/get_list_content_request.php", {
+        cr_search_input: cr_search_input,
+        user_cr_filter: user_cr_filter
+    }, function(data) {
+        $('#list_grouping').html(data);
+    });
+}
+
+function run_ts_command(type, ts_level, cr_status) {
+    var ts_command_input = document.getElementById("ts_command").value;
+    var ts_command_limit = document.getElementById("ts_command_limit").value;
+    if (cr_status == "all") {
+        var summary_filter = ts_command_input + " and ticket_template = '" + type + "'";
+    } else {
+        var summary_filter = ts_command_input + " and ticket_template = '" + type + "' and  status = '" + cr_status +
+            "'";
     }
+
+    var ts_level = ts_level;
+    $.post("base/get/get_list_ts.php", {
+        summary_filter: summary_filter,
+        ts_command_limit: ts_command_limit,
+        ts_level: ts_level
+    }, function(data) {
+        if (type == "PJ") {
+            $('#list_pj_task').html(data);
+        } else if (type == "CR") {
+            if (cr_status == "inprogress") {
+                $('#list_cr_task_inprogress').html(data);
+            } else if (cr_status == "Waiting Excution") {
+                $('#list_cr_task_we').html(data);
+            } else if (cr_status == "Waiting CTO") {
+                $('#list_cr_task_wcto').html(data);
+            } else if (cr_status == "Waiting Buyer") {
+                $('#list_cr_task_wb').html(data);
+            } else if (cr_status == "Close") {
+                $('#list_cr_task_close').html(data);
+            } else if (cr_status == "Pending") {
+                $('#list_cr_task_pending').html(data);
+            }
+
+
+        } else if (type == "DT") {
+            $('#list_da_task').html(data);
+        }
+    });
+}
     </script>
     <script type="text/javascript">
 function select_current_tab(selecttab) {
@@ -1476,8 +1533,7 @@ function select_current_tab(selecttab) {
             .getElementById("v-pills-request_list")
             .classList
             .remove('show');
-    }
-    else if (selecttab == "v-pills-fl_board") {
+    } else if (selecttab == "v-pills-fl_board") {
         document
             .getElementById("v-pills-dashboard-tab")
             .classList
@@ -1528,9 +1584,11 @@ function select_current_tab(selecttab) {
             .add('show');
     }
 }
+
 function open_ticket_detail(id) {
     document.getElementById("ns_ticket_" + id).click();
 }
+
 function updateURL(pill) {
     if (history.pushState) {
         var newurl = window.location.protocol + "//" + window.location.host +
@@ -1542,6 +1600,7 @@ function updateURL(pill) {
             }, '', newurl);
     }
 }
+
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value
@@ -1591,6 +1650,7 @@ function Inint_AJAX() {
     alert("XMLHttpRequest not supported")
     return null
 }
+
 function doAutoRefresh() {
     var req = Inint_AJAX();
     //var req_cr = Inint_AJAX();
@@ -1611,6 +1671,28 @@ function doAutoRefresh() {
     };
     req.send(null);
 };
+
+function doAutoRefresh_can() {
+    var req = Inint_AJAX();
+    //var req_cr = Inint_AJAX();
+    // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
+    req.open("POST", 'base/get/get_card_new_job.php?' + new Date().getTime(), true);
+    //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
+    // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
+    req.onreadystatechange = function() {
+        if (req.readyState == 4) {
+            if (req.status == 200) {
+                // รับค่ากลับมา และ แสดงผล
+                //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
+                document.getElementById("get_card_add_new").innerHTML = req.responseText;
+                // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
+                setTimeout("doAutoRefresh()", 5000);
+            }
+        }
+    };
+    req.send(null);
+};
+
 function doAutoRefresh_cr() {
     var req_cr = Inint_AJAX();
     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
@@ -1674,9 +1756,11 @@ tinymce.init({
 function allowDrop(ev) {
     ev.preventDefault();
 }
+
 function drag_card_cr(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
+
 function drop_card_cr(ev, new_status) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("card");
@@ -1701,6 +1785,7 @@ function drop_card_cr(ev, new_status) {
     }
 }
     </script>
+
     </html>
     <?php if( $_GET["fopenticket"]<>""){
     $_SESSION["fopenticket"]=$_GET["fopenticket"];
