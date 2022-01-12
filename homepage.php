@@ -1262,10 +1262,9 @@ function run_ts_command(type, ts_level, cr_status) {
     var ts_command_input = document.getElementById("ts_command").value;
     var ts_command_limit = document.getElementById("ts_command_limit").value;
     if (cr_status == "all") {
-        var summary_filter = ts_command_input + " and ticket_template = '" + type + "'";
+        var summary_filter = ts_command_input;
     } else {
-        var summary_filter = ts_command_input + " and ticket_template = '" + type + "' and  status = '" + cr_status +
-            "'";
+        var summary_filter = ts_command_input;
     }
 
     var ts_level = ts_level;
