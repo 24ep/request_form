@@ -269,7 +269,9 @@ echo '<script>console.log("'.$_SESSION["cb_cr"] .'");</script>';
 
             <!-- project -->
             
-          <?php if($_SESSION["cb_pj"]=="true"){?>
+          <?php if($_SESSION["cb_pj"]=="true"){
+            echo '<script>console.log("'.$_SESSION["cb_pj"] .'");</script>';
+            ?>
             <span class="row"><strong>
             <ion-icon  name="rocket-outline" style="vertical-align: middle;"></ion-icon>
                   Project
