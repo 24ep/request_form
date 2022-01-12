@@ -241,7 +241,7 @@ $i++;
         <form class="d-flex">
             <?php $memory_usage = get_server_memory_usage();
                                         $CPU_usage = get_server_cpu_usage() ;
-                                        echo "<small>CPU usage ".$CPU_usage."% | memory usage : ".$memory_usage."%</small>"; ?>
+                                        echo "<small  style='align-self: center;'>CPU usage ".$CPU_usage."% | memory usage : ".$memory_usage."%</small>"; ?>
             <button class="btn btn-primary btn-sm " style="margin-left:10px;" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
                 <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated"
