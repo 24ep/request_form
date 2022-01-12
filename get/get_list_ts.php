@@ -238,106 +238,103 @@ $i++;
     //   list_ts($filter,$ts_command_limit,$ts_level);
     // }
   ?>
-<!-- nav bar -->
-<?php
-                                    // function get_server_memory_usage(){
-                                    //     $free = shell_exec('free');
-                                    //     $free = (string)trim($free);
-                                    //     $free_arr = explode("\n", $free);
-                                    //     $mem = explode(" ", $free_arr[1]);
-                                    //     $mem = array_filter($mem);
-                                    //     $mem = array_merge($mem);
-                                    //     $memory_usage = $mem[2]/$mem[1]*100;
-                                    //     return round($memory_usage);
-                                    // }
-                                    // function get_server_cpu_usage(){
-                                    //     $load = sys_getloadavg();
-                                    //     return round($load[0]);
-                                    // }
-                                    ?>
 
-
-<!-- console bra -->
-<!-- project -->
-<span class="row"><strong>
-        <ion-icon name="business-outline" style="vertical-align: middle;">
-        </ion-icon>Project
-    </strong></span>
-<div class="row">
-    <div class="col border-0 border-end">
-        <small class="row m-3">Your tasks assignment (task of project)</small>
-        <div id="list_pj_task">
-            <?php list_ts($_SESSION["ts_query_input"]."  and ticket.status <> 'Close' and  ticket.ticket_template = 'PJ'",100,'task'); ?>
-            
-        </div>
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Project
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+            <!-- project -->
+            <span class="row"><strong>
+                  <ion-icon name="business-outline" style="vertical-align: middle;">
+                  </ion-icon>Project
+              </strong></span>
+          <div class="row">
+              <div class="col border-0 border-end">
+                  <small class="row m-3">Your tasks assignment (task of project)</small>
+                  <div id="list_pj_task">
+                      <?php list_ts($_SESSION["ts_query_input"]."  and ticket.status <> 'Close' and  ticket.ticket_template = 'PJ'",100,'task'); ?>
+                      
+                  </div>
+              </div>
+              <div class="col">
+                  <small class="row m-3">All project</small>
+                  <?php list_ts("ticket.ticket_template = 'PJ' and ticket.status <> 'Close'",500,'ticket' ); ?>
+              </div>
+          </div>
+       <!-- end project -->
+    
     </div>
-    <div class="col">
-        <small class="row m-3">All project</small>
-        <?php list_ts("ticket.ticket_template = 'PJ' and ticket.status <> 'Close'",500,'ticket' ); ?>
     </div>
-</div>
-<!-- support task -->
-<hr>
-<span class="row"><strong>
-        <ion-icon name="server-outline" style="vertical-align: middle;"></ion-icon>
-        Data & Application Support
-    </strong></span>
-<div class="row">
-    <div class="col border-0 border-end">
-        <small class="row m-3">Your Assignment</small>
-        <div id="list_da_task">
-            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status <> 'Close' and ticket.ticket_template = 'DT'",100,'ticket'); ?>
-        </div>
-    </div>
-    <div class="col">
-        <small class="row m-3">Unassign</small>
-        <?php list_ts("ticket.ticket_template = 'DT' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
-    </div>
-</div>
-<!-- Content request -->
-<hr>
-<span class="row"><strong>
-        <ion-icon name="layers-outline" style="vertical-align: middle;"></ion-icon>
-        Content Request
-    </strong></span>
-<div class="row">
-    <div class="col border-0 border-end">
-        <small class="row m-3">Your Assignment</small>
-        <small class="row m-3">Pending</small>
-        <hr>
-        <div id="list_cr_task_pending">
-            <?php list_ts($_SESSION["ts_query_input"]." and ticket.status = 'Pending' and  ticket.ticket_template = 'CR'",100,'ticket');
-            echo '<script>console.log("'.$_SESSION["ts_query_input"].' ");</script>';
-            ?>
-        </div>
-        <small class="row m-3">inprogress</small>
-        <hr>
-        <div id="list_cr_task_inprogress">
-            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Inprogress' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
-        </div>
-        <small class="row m-3">Waiting Execution</small>
-        <hr>
-        <div id="list_cr_task_we">
-            <?php list_ts($_SESSION["ts_query_input"]."  and ticket.status = 'Waiting Execution' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
-        </div>
-        <small class="row m-3">Waiting CTO</small>
-        <hr>
-        <div id="list_cr_task_wcto">
-            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Waiting CTO' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
-        </div>
-        <small class="row m-3">Waiting Buyer</small>
-        <hr>
-        <div id="list_cr_task_wb">
-            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Waiting Buyer' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
-        </div>
-        <small class="row m-3">Close [lastest 5 ticket]</small>
-        <hr>
-        <div id="list_cr_task_wb">
-            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Close' and  ticket.ticket_template = 'CR'",5,'ticket'); ?>
-        </div>
-    </div>
-    <div class="col">
-        <small class="row m-3">Unassign</small>
-        <?php list_ts("ticket.ticket_template = 'CR' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
-    </div>
+  </div>
+    
+          <!-- support task -->
+          <hr>
+          <span class="row"><strong>
+                  <ion-icon name="server-outline" style="vertical-align: middle;"></ion-icon>
+                  Data & Application Support
+              </strong></span>
+          <div class="row">
+              <div class="col border-0 border-end">
+                  <small class="row m-3">Your Assignment</small>
+                  <div id="list_da_task">
+                      <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status <> 'Close' and ticket.ticket_template = 'DT'",100,'ticket'); ?>
+                  </div>
+              </div>
+              <div class="col">
+                  <small class="row m-3">Unassign</small>
+                  <?php list_ts("ticket.ticket_template = 'DT' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
+              </div>
+          </div>
+          <!-- Content request -->
+          <hr>
+          <span class="row"><strong>
+                  <ion-icon name="layers-outline" style="vertical-align: middle;"></ion-icon>
+                  Content Request
+              </strong></span>
+          <div class="row">
+              <div class="col border-0 border-end">
+                  <small class="row m-3">Your Assignment</small>
+                  <small class="row m-3">Pending</small>
+                  <hr>
+                  <div id="list_cr_task_pending">
+                      <?php list_ts($_SESSION["ts_query_input"]." and ticket.status = 'Pending' and  ticket.ticket_template = 'CR'",100,'ticket');
+                      echo '<script>console.log("'.$_SESSION["ts_query_input"].' ");</script>';
+                      ?>
+                  </div>
+                  <small class="row m-3">inprogress</small>
+                  <hr>
+                  <div id="list_cr_task_inprogress">
+                      <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Inprogress' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+                  </div>
+                  <small class="row m-3">Waiting Execution</small>
+                  <hr>
+                  <div id="list_cr_task_we">
+                      <?php list_ts($_SESSION["ts_query_input"]."  and ticket.status = 'Waiting Execution' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+                  </div>
+                  <small class="row m-3">Waiting CTO</small>
+                  <hr>
+                  <div id="list_cr_task_wcto">
+                      <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Waiting CTO' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+                  </div>
+                  <small class="row m-3">Waiting Buyer</small>
+                  <hr>
+                  <div id="list_cr_task_wb">
+                      <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Waiting Buyer' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+                  </div>
+                  <small class="row m-3">Close [lastest 5 ticket]</small>
+                  <hr>
+                  <div id="list_cr_task_wb">
+                      <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Close' and  ticket.ticket_template = 'CR'",5,'ticket'); ?>
+                  </div>
+              </div>
+              <div class="col">
+                  <small class="row m-3">Unassign</small>
+                  <?php list_ts("ticket.ticket_template = 'CR' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
+              </div>
+          </div>
 </div>

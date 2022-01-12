@@ -793,10 +793,7 @@
                                         <div id="list_grouping">
                                             <?php //include('get/get_list_content_request.php'); ?>
                                         </div>
-                                        <?php //if($_SESSION["username"]=="poojaroonwit"){
-                                                        //list_ts("ticket.ticket_template = 'CR'and ticket.status <> 'Close'",500,'ticket');
-                                                //} 
-                                                ?>
+                                   
                                     </ul>
                                 </div>
                             </div>
@@ -886,10 +883,6 @@
                                         <div class="container-fluid p-0">
                                             <a class="navbar-brand"></a>
                                             <form class="d-flex">
-                                                <?php 
-                                                // $memory_usage = get_server_memory_usage();
-                                                // $CPU_usage = get_server_cpu_usage();
-                                                // echo "<small  style='align-self: center;'>CPU usage ".$CPU_usage."% | memory usage : ".$memory_usage."%</small>"; ?>
                                                 <button class="btn btn-primary btn-sm " style="margin-left:10px;"
                                                     type="button" data-bs-toggle="offcanvas"
                                                     data-bs-target="#content_request_canvas"
