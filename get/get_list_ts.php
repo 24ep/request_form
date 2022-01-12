@@ -212,6 +212,9 @@ $i++;
    mysqli_close($con);
     }
   $_SESSION["ts_query_input"] = $_POST["summary_filter"];
+  if($_SESSION["ts_query_input"]=="" or $_SESSION["ts_query_input"] == null or isset($_SESSION["ts_query_input"])){
+    $_SESSION["ts_query_input"] == "ticket.participant like  '%".$_SESSION["username"]."%'";
+  }
   $ts_command_limit = $_POST["ts_command_limit"];
   $ts_level = $_POST["ts_level"];
   $filter = $_SESSION["ts_query_input"];
