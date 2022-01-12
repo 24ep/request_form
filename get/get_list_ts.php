@@ -19,9 +19,9 @@ if($_POST["ts_level"]<>""){
 }else{
   $ts_level = "ticket";
 }
-echo '<script>console.log("'.$_POST["cb_pj"] .'");</script>';
-echo '<script>console.log("'.$_POST["cb_da"] .'");</script>';
-echo '<script>console.log("'.$_POST["cb_cr"] .'");</script>';
+echo '<script>console.log("'.$_SESSION["cb_pj"] .'");</script>';
+echo '<script>console.log("'.$_SESSION["cb_da"] .'");</script>';
+echo '<script>console.log("'.$_SESSION["cb_cr"] .'");</script>';
 if($_POST["cb_pj"]<>""){
   $_SESSION["cb_pj"] = $_POST["cb_pj"];
 }else{
