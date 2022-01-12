@@ -59,7 +59,7 @@ return $status;
       left join all_in_one_project.content_request as ticket
       on task.ticket_id = ticket.id    
       where ".$sts_filter."
-      order by id ".$sort_de_status." 
+      order by task.id ".$sort_de_status." 
       limit ".$ts_command_limit;
       
       //echo "<script>console.log('".$query."');</script>";
