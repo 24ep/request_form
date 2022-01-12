@@ -1673,24 +1673,24 @@ function doAutoRefresh() {
 };
 
 function doAutoRefresh_can() {
-    var req = Inint_AJAX();
+    var req_can = Inint_AJAX();
     //var req_cr = Inint_AJAX();
     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-    req.open("POST", 'base/get/get_card_new_job.php?' + new Date().getTime(), true);
+    req_can.open("POST", 'base/get/get_card_new_job.php?' + new Date().getTime(), true);
     //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
     // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
-    req.onreadystatechange = function() {
-        if (req.readyState == 4) {
-            if (req.status == 200) {
+    req_can.onreadystatechange = function() {
+        if (req_can.readyState == 4) {
+            if (req_can.status == 200) {
                 // รับค่ากลับมา และ แสดงผล
                 //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
-                document.getElementById("get_card_add_new").innerHTML = req.responseText;
+                document.getElementById("get_card_add_new").innerHTML = req_can.responseText;
                 // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
                 setTimeout("doAutoRefresh_can()", 2000);
             }
         }
     };
-    req.send(null);
+    req_can.send(null);
 };
 
 function doAutoRefresh_cr() {
