@@ -850,7 +850,7 @@
                                                 // echo "<small  style='align-self: center;'>CPU usage ".$CPU_usage."% | memory usage : ".$memory_usage."%</small>"; ?>
                                                 <button class="btn btn-primary btn-sm " style="margin-left:10px;"
                                                     type="button" data-bs-toggle="offcanvas"
-                                                    data-bs-target="#ts_request_canvas"
+                                                    data-bs-target="#content_request_canvas"
                                                     aria-controls="offcanvasExample">
                                                     <ion-icon size="small" name="add-outline" role="img"
                                                         class="md icon-small hydrated" aria-label="add outline">
