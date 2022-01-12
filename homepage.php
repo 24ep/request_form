@@ -135,6 +135,7 @@
     ?>
     <!DOCTYPE html>
     <html lang="en">
+
     <head>
         <title>Content and Studio - Homepage</title>
         <!-- Required meta tags -->
@@ -183,36 +184,44 @@
             font-family: 'Prompt', sans-serif !important;
             font-size: 14px;
         }
+
         a {
             color: gray;
             text-decoration: auto;
         }
+
         a:hover {
             color: black;
             text-decoration: auto;
             font-weight: bold;
         }
+
         label {
             font-weight: 800 !important;
         }
+
         .row {
             margin-bottom: 15px;
         }
+
         .multiple-select,
         .multiple-select_adj,
         .multiple-select_edit {
             width: 100%;
         }
+
         .header_form {
             text-align: center;
             margin-bottom: 50px;
             margin-top: 50px;
         }
+
         .container-sm {
             max-width: 500px;
             margin-top: 8%;
             padding: 10px !important 50px !important 100px !important !important;
         }
+
         .list_bra .nav-pills .nav-link.active,
         .list_bra .nav-pills .show .nav-link {
             color: white;
@@ -221,37 +230,45 @@
             background-color: #f0f2fc87;
             font-weight: bolder;
         }
+
         /* .nav-link{
             color: white;
         } */
         .list_bra .nav-pills .nav-link {
             color: white !important;
         }
+
         .list_bra .nav-link:hover {
             color: white !important;
             width: 100%;
             s font-weight: bolder;
         }
+
         .list_bra .nav-link.active:hover {
             color: #ffff !important;
         }
+
         .nav-pills .nav-link.active,
         .nav-pills .show .nav-link {
             background-color: #f0f2fc87;
             color: white !important;
             width: 100%;
         }
+
         .navbar-brand {
             margin-left: 10px;
             margin-right: 10px;
             font-weight: 1000;
         }
+
         .navbar-brand {
             color: #ffff !important;
         }
+
         .navbar-brand:hover {
             color: #ffff !important;
         }
+
         .list_bra {
             padding-right: 0;
             /* background: rgba(236, 236, 236, 1); */
@@ -260,27 +277,33 @@
             background-image: url('base/image/11.jpg');
             color: black;
         }
+
         .my-1 {
             margin-top: 1rem !important;
             margin-bottom: 1rem !important;
         }
+
         .selection_filter {
             width: 150px;
             border: transparent;
             /* border-bottom:1px gray; */
             /* border-bottom-style: dotted; */
         }
+
         .selection_filter:active {
             border: transparent !important;
         }
+
         .selection_filter:focus {
             border: transparent !important;
             border-style: none;
         }
+
         ion-icon {
             font-size: 20px;
             margin: -0.2rem;
         }
+
         .link-light {
             color: white;
             padding: 0.2rem;
@@ -290,32 +313,39 @@
             font-size: 14px;
             font-family: 'Prompt', sans-serif !important;
         }
+
         .link-light:hover {
             color: white;
             background-color: #dbdbdb38;
             width: 100%;
             border-radius: 0px !important;
         }
+
         .link-light:focus {
             color: white;
             background-color: #dbdbdb38;
             width: 100%;
             border-radius: 0px !important;
         }
+
         .btn-check:focus+.btn,
         .btn:focus {
             box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 0%)
         }
+
         .total_count_dashboard {
             text-align: center;
             font-size: 70px;
         }
+
         .unit_count_dashboard {
             text-align: center;
         }
+
         ion-icon {
             margin-right: 5px;
         }
+
         .task_detial {
             color: #6c757d;
             ;
@@ -326,27 +356,33 @@
             padding-bottom: 3px;
             padding-top: 3px;
         }
+
         .icon_bar_tootle {
             margin-left: 20px;
             margin-right: 50px;
             font-size: 13px;
         }
+
         .icon_ocv {
             margin-right: 0px !important;
             font-size: 14px;
             color: gray;
         }
+
         .ticket_relate {
             border-color: white;
             padding: 0px;
             padding-bottom: 5px
         }
+
         .col-board {
             border-right: 1px #dee2e6 solid;
         }
+
         .cr_title {
             margin-bottom: 10px;
         }
+
         .status_cr_list {
             margin-right: 5px;
             margin-left: 10px;
@@ -355,6 +391,7 @@
         }
         </style>
     </head>
+
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();doAutoRefresh_can();">
         <!--         <nav class="navbar sticky-top navbar-danger bg-danger">
           <marquee>
@@ -367,6 +404,7 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140386041-2"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -750,17 +788,20 @@
                                             type="search" placeholder="Search.." aria-label="Search" spellcheck="false"
                                             data-ms-editor="true">
                                     </div>
+
                                     <ul class="list-group list-group shadow " style="margin-top:15px">
                                         <div id="list_grouping">
                                             <?php //include('get/get_list_content_request.php'); ?>
                                         </div>
                                         <?php //if($_SESSION["username"]=="poojaroonwit"){
-                                                //list_ts("ticket.ticket_template = 'CR'and ticket.status <> 'Close'",500,'ticket');
-                                        //} 
-                                         ?>
+                                                        //list_ts("ticket.ticket_template = 'CR'and ticket.status <> 'Close'",500,'ticket');
+                                                //} 
+                                                ?>
                                     </ul>
                                 </div>
+                            </div>
                             <!-- ffff -->
+                        </div>
                     </div>
                     <!-- <div class="tab-pane fade" id="v-pills-cr_admin" role="tabpanel"
                         aria-labelledby="v-pills-cr_admin-tab">
@@ -866,7 +907,7 @@
                                 </div>
                             </div>
                         </div>
-                    
+
                     </div>
                     <!-- fl console -->
                     <div class="tab-pane fade" id="v-pills-fl_board" role="tabpanel"
@@ -1029,42 +1070,42 @@
                     </div>
                     <!-- offcanvas create -->
                     <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination pagination-sm">
-                                            <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1"
-                                                id="content_request_canvas" aria-labelledby="offcanvasExampleLabel">
-                                                <div class="offcanvas-header"
-                                                    style="    background: #313131;color: white;">
-                                                    <h5 class="offcanvas-title" id="offcanvasExampleLabel"
-                                                        style="padding-left:50px;font-weight: bold;">
-                                                        <ion-icon style="margin-right:10px" name="add-circle-outline">
-                                                        </ion-icon>Request Creation
-                                                    </h5>
-                                                    <button type="button" class="btn-close btn-close-white text-reset"
-                                                        data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination pagination-sm">
+                                <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1"
+                                    id="content_request_canvas" aria-labelledby="offcanvasExampleLabel">
+                                    <div class="offcanvas-header" style="    background: #313131;color: white;">
+                                        <h5 class="offcanvas-title" id="offcanvasExampleLabel"
+                                            style="padding-left:50px;font-weight: bold;">
+                                            <ion-icon style="margin-right:10px" name="add-circle-outline">
+                                            </ion-icon>Request Creation
+                                        </h5>
+                                        <button type="button" class="btn-close btn-close-white text-reset"
+                                            data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body" style="background-color: #fcfbf9;">
+                                        <div class="container-md" style="padding:0px 50px 50px 50px;">
+                                            <form class="row g-3"
+                                                action="base/action/action_submit_add_content_request.php" method="POST"
+                                                enctype="multipart/form-data">
+                                                <div id="add_new_cr_result"><
                                                 </div>
-                                                <div class="offcanvas-body" style="background-color: #fcfbf9;">
-                                                    <div class="container-md" style="padding:0px 50px 50px 50px;">
-                                                        <form class="row g-3"
-                                                            action="base/action/action_submit_add_content_request.php"
-                                                            method="POST" enctype="multipart/form-data">
-                                                            <div id="add_new_cr_result"></div>
-                                                            <?php include_once('form/form_create_content_request.php')?>
-                                                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                                                <button type="submit" class="btn btn-primary btn-sm"
-                                                                    style="width:100%">Submit</button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
+                                                <?php include_once('form/form_create_content_request.php')?>
+                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                    <button type="submit" class="btn btn-primary btn-sm"
+                                                        style="width:100%">Submit</button>
                                                 </div>
-                                            </div>
+                                            </form>
                                         </div>
                                     </div>
-                                    </ul>
-                                    </nav>
-                        </div>
-                </div>
-            </div>
+                                </div>
+                
+                            </ul>
+                        </nav>
+                    </div>
+            <!-- offcanvas create -->
+        </div>
+        </div>
         </div>
         </div>
         </div>
@@ -1074,6 +1115,7 @@
 var elements = document.getElementsByClassName('window-full');
 var windowheight = window.innerHeight + "px";
 fullheight(elements);
+
 function fullheight(elements) {
     for (let el in elements) {
         if (elements.hasOwnProperty(el)) {
@@ -1096,6 +1138,7 @@ function call_edit_add_new_modal(id, brand) {
         });
     }
 }
+
 function cr_id_toggle(id) {
     if (id) {
         $.post("base/get/get_content_request_detail.php", {
@@ -1105,6 +1148,7 @@ function cr_id_toggle(id) {
         });
     }
 }
+
 function start_checking(id) {
     if (id) {
         $.post("base/action/action_start_checking.php", {
@@ -1114,6 +1158,7 @@ function start_checking(id) {
         });
     }
 }
+
 function accepted_stt(id) {
     if (id) {
         sku_accepted = document.getElementById('sku_accepted').value;
@@ -1129,6 +1174,7 @@ function accepted_stt(id) {
         }
     }
 }
+
 function cancel_stt(id, status_change) {
     resone_cancel = document.getElementById('resone_cancel').value;
     status_change = 'cancel';
@@ -1142,6 +1188,7 @@ function cancel_stt(id, status_change) {
         });
     }
 }
+
 function itm_confirm_cancel(id, status_change) {
     let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
     if (message == null || message == "") {
@@ -1163,6 +1210,7 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
+
 function filter_cr_ticket(status) {
     document.getElementById('cr_search_input').value = '';
     var update = true;
@@ -1175,6 +1223,7 @@ function filter_cr_ticket(status) {
         });
     }
 }
+
 function search_cr_ticket() {
     var cr_search_input = document.getElementById("cr_search_input").value
     var user_cr_filter = document.getElementById("user_cr_filter").value
@@ -1186,6 +1235,7 @@ function search_cr_ticket() {
         $('#list_grouping').html(data);
     });
 }
+
 function run_ts_command(ts_level) {
     var ts_command_input = document.getElementById("ts_command").value;
     var ts_command_limit = document.getElementById("ts_command_limit").value;
@@ -1355,9 +1405,11 @@ function select_current_tab(selecttab) {
             .add('show');
     }
 }
+
 function open_ticket_detail(id) {
     document.getElementById("ns_ticket_" + id).click();
 }
+
 function updateURL(pill) {
     if (history.pushState) {
         var newurl = window.location.protocol + "//" + window.location.host +
@@ -1369,6 +1421,7 @@ function updateURL(pill) {
             }, '', newurl);
     }
 }
+
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value
@@ -1417,6 +1470,7 @@ function Inint_AJAX() {
     alert("XMLHttpRequest not supported")
     return null
 }
+
 function doAutoRefresh() {
     var req = Inint_AJAX();
     //var req_cr = Inint_AJAX();
@@ -1437,6 +1491,7 @@ function doAutoRefresh() {
     };
     req.send(null);
 };
+
 function doAutoRefresh_ts_admin() {
     var req_ts = Inint_AJAX();
     //var req_cr = Inint_AJAX();
@@ -1456,6 +1511,7 @@ function doAutoRefresh_ts_admin() {
     };
     req_ts.send(null);
 };
+
 function doAutoRefresh_cr() {
     var req_cr = Inint_AJAX();
     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
@@ -1472,6 +1528,7 @@ function doAutoRefresh_cr() {
     };
     req_cr.send(null);
 };
+
 function doAutoRefresh_can() {
     var req_can = Inint_AJAX();
     //var req_cr = Inint_AJAX();
@@ -1538,9 +1595,11 @@ tinymce.init({
 function allowDrop(ev) {
     ev.preventDefault();
 }
+
 function drag_card_cr(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
+
 function drop_card_cr(ev, new_status) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("card");
@@ -1565,6 +1624,7 @@ function drop_card_cr(ev, new_status) {
     }
 }
     </script>
+
     </html>
     <?php if( $_GET["fopenticket"]<>""){
     $_SESSION["fopenticket"]=$_GET["fopenticket"];
