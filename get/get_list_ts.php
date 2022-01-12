@@ -118,8 +118,7 @@ $i++;
         LEFT JOIN all_in_one_project.comment as comment
         ON ticket.id = comment.ticket_id 
         where ".$ts_filter." 
-        order by task.id ".$sort_de_status."  
-        GROUP BY ticket.id limit ".$ts_command_limit;
+        GROUP BY ticket.id order by task.id ".$sort_de_status."   limit ".$ts_command_limit;
         //echo "<script>console.log('".$query."');</script>";
         $result = mysqli_query($con, $query);
         echo "<ul style='width: 95%;'>";
