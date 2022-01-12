@@ -239,18 +239,7 @@ $i++;
     // }
   ?>
 
-<div class="accordion accordion-flush" id="accordionFlushExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingOne">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-      <span class="row"><strong>
-                  <ion-icon name="business-outline" style="vertical-align: middle;">
-                  </ion-icon>Project
-       </strong></span>
-      </button>
-    </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body" style="background: #f7f7f7;">
+
             <!-- project -->
     
           <div class="row">
@@ -268,12 +257,9 @@ $i++;
           </div>
        <!-- end project -->
     
-    </div>
-    </div>
-  </div>
+      <hr>
     
           <!-- support task -->
-          <hr>
           <span class="row"><strong>
                   <ion-icon name="server-outline" style="vertical-align: middle;"></ion-icon>
                   Data & Application Support
@@ -290,8 +276,9 @@ $i++;
                   <?php list_ts("ticket.ticket_template = 'DT' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
               </div>
           </div>
-          <!-- Content request -->
           <hr>
+          <!-- Content request -->
+       
           <span class="row"><strong>
                   <ion-icon name="layers-outline" style="vertical-align: middle;"></ion-icon>
                   Content Request
