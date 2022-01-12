@@ -57,9 +57,10 @@ return $status;
       FROM all_in_one_project.checklist_of_content_request as task
       left join all_in_one_project.content_request as ticket
       on task.ticket_id = ticket.id    
-      where ".$sts_filter." 
-      limit ".$ts_command_limit."
-      order br id ".$sort_de_status;
+      where ".$sts_filter."
+      order by id ".$sort_de_status." 
+      limit ".$ts_command_limit;
+      
       //echo "<script>console.log('".$query."');</script>";
       $result_task = mysqli_query($con, $query_task);
       $i=1;
