@@ -212,7 +212,7 @@ $i++;
    mysqli_close($con);
     }
   $_SESSION["ts_query_input"] = $_POST["summary_filter"];
-  if($_SESSION["ts_query_input"]=="" or $_SESSION["ts_query_input"] == null )){
+  if($_SESSION["ts_query_input"]=="" or $_SESSION["ts_query_input"] == null ){
     $_SESSION["ts_query_input"] = "ticket.participant like  '%".$_SESSION["username"]."%'";
   }
 
