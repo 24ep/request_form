@@ -398,7 +398,7 @@
         </style>
     </head>
 
-    <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_can();doAutoRefresh_ts_admin();">
+    <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();doAutoRefresh_can();">
         <!--         <nav class="navbar sticky-top navbar-danger bg-danger">
           <marquee>
            <span class="navbar-text" style="color:white" >
