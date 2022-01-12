@@ -241,7 +241,7 @@ $i++;
 
 
             <!-- project -->
-          <?php if($_POST["cb_pj"]==true $_POST["cb_pj"]==""){?>
+          <?php if($_POST["cb_pj"]==true or $_POST["cb_pj"]==""){?>
             <span class="row"><strong>
             <ion-icon  name="rocket-outline" style="vertical-align: middle;"></ion-icon>
                   Data & Application Support
