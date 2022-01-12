@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 function badge_status_cr($status){
   if($status=="Pending"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
@@ -210,9 +211,10 @@ $i++;
      echo "</ul>";
    mysqli_close($con);
     }
-  $filter =$_POST["summary_filter"];
+  $_SESSION["ts_query_input"] = $_POST["summary_filter"];
   $ts_command_limit = $_POST["ts_command_limit"];
   $ts_level = $_POST["ts_level"];
+  $filter = $_SESSION["ts_query_input"];
   echo '<script>console.log("'.$filter.'");</script>';
     if($filter<>""){
       list_ts($filter,$ts_command_limit,$ts_level);
