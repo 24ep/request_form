@@ -898,7 +898,9 @@
                                                     </ion-icon>Query Search
                                                 </span>
                                                 <input list="qlistoption" style="width: 75%;" type="text"
-                                                    class="form-control" onchange="run_ts_command('PJ','task','all');
+                                                    class="form-control" 
+                                                onchange="
+                                                run_ts_command('PJ','task','all');
                                                 run_ts_command('CR','ticket','Pending');
                                                 run_ts_command('CR','ticket','inprogress');
                                                 run_ts_command('CR','ticket','Waiting Execution');
@@ -1287,27 +1289,29 @@ function run_ts_command(type, ts_level, cr_status) {
         ts_command_limit: ts_command_limit,
         ts_level: ts_level
     }, function(data) {
-        if (type == "PJ") {
-            $('#list_pj_task').html(data);
-        } else if (type == "CR") {
-            if (cr_status == "inprogress") {
-                $('#list_cr_task_inprogress').html(data);
-            } else if (cr_status == "Waiting Excution") {
-                $('#list_cr_task_we').html(data);
-            } else if (cr_status == "Waiting CTO") {
-                $('#list_cr_task_wcto').html(data);
-            } else if (cr_status == "Waiting Buyer") {
-                $('#list_cr_task_wb').html(data);
-            } else if (cr_status == "Close") {
-                $('#list_cr_task_close').html(data);
-            } else if (cr_status == "Pending") {
-                $('#list_cr_task_pending').html(data);
-            }
+        $('#get_ts_admin_console').html(data);
+        
+        // if (type == "PJ") {
+        //     $('#list_pj_task').html(data);
+        // } else if (type == "CR") {
+        //     if (cr_status == "inprogress") {
+        //         $('#list_cr_task_inprogress').html(data);
+        //     } else if (cr_status == "Waiting Excution") {
+        //         $('#list_cr_task_we').html(data);
+        //     } else if (cr_status == "Waiting CTO") {
+        //         $('#list_cr_task_wcto').html(data);
+        //     } else if (cr_status == "Waiting Buyer") {
+        //         $('#list_cr_task_wb').html(data);
+        //     } else if (cr_status == "Close") {
+        //         $('#list_cr_task_close').html(data);
+        //     } else if (cr_status == "Pending") {
+        //         $('#list_cr_task_pending').html(data);
+        //     }
 
 
-        } else if (type == "DT") {
-            $('#list_da_task').html(data);
-        }
+        // } else if (type == "DT") {
+        //     $('#list_da_task').html(data);
+        // }
     });
 }
     </script>
