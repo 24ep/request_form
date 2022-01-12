@@ -1101,7 +1101,7 @@
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
                                     <!-- get card -->
-                                    <div id="card_add_new">
+                                    <div id="get_card_add_new">
                                         <?php //include('get/get_card_new_job.php'); ?> 
                                     </div>
                                       
