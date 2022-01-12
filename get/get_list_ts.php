@@ -19,6 +19,15 @@ if($_POST["ts_level"]<>""){
 }else{
   $ts_level = "ticket";
 }
+if($_POST["cb_pj"]<>""){
+  $_SESSION["cb_pj"] = $_POST["cb_pj"];
+}
+if($_POST["cb_da"]<>""){
+  $_SESSION["cb_da"] = $_POST["cb_da"];
+}
+if($_POST["cb_cr"]<>""){
+  $_SESSION["cb_cr"] = $_POST["cb_cr"];
+}
 
 $filter = $_SESSION["ts_query_input"];
 echo '<script>console.log("'.$_SESSION["ts_query_input"] .'");</script>';
@@ -241,6 +250,7 @@ $i++;
 
 
             <!-- project -->
+            
           <?php if($_POST["cb_pj"]==true or $_POST["cb_pj"]==""){?>
             <span class="row"><strong>
             <ion-icon  name="rocket-outline" style="vertical-align: middle;"></ion-icon>
