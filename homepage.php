@@ -883,6 +883,16 @@
                                         <div class="container-fluid p-0">
                                             <a class="navbar-brand"></a>
                                             <form class="d-flex">
+                                            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                                                <input type="checkbox" class="btn-check" id="cb_pj" autocomplete="off">
+                                                <label class="btn btn-outline-primary" for="cb_pj">Project</label>
+
+                                                <input type="checkbox" class="btn-check" id="cb_da" autocomplete="off">
+                                                <label class="btn btn-outline-primary" for="cb_da">Data & App-sup</label>
+
+                                                <input type="checkbox" class="btn-check" id="cb_cr" autocomplete="off">
+                                                <label class="btn btn-outline-primary" for="cb_cr">Content Request</label>
+                                            </div>
                                                 <button class="btn btn-primary btn-sm " style="margin-left:10px;"
                                                     type="button" data-bs-toggle="offcanvas"
                                                     data-bs-target="#content_request_canvas"
