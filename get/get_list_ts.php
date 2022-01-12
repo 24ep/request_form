@@ -253,45 +253,7 @@ $i++;
         </form>
     </div>
 </nav>
-<nav class="navbar">
-    <form style="width:100%">
-        <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="basic-addon1">
-                <ion-icon style="vertical-align: middle;" name="terminal-outline">
-                </ion-icon>Query Search
-            </span>
-            <input list="qlistoption" style="width: 75%;" type="text" class="form-control" onchange="run_ts_command('PJ','task','all');
-                                                run_ts_command('CR','ticket','Pending');
-                                                run_ts_command('CR','ticket','inprogress');
-                                                run_ts_command('CR','ticket','Waiting Execution');
-                                                run_ts_command('CR','ticket','Waiting CTO');
-                                                run_ts_command('CR','ticket','Waiting Buyer');
-                                                run_ts_command('CR','ticket','Close');
-                                                run_ts_command('DT','ticket','all');   
-                                                " id="ts_command" name="ts_command"
-                placeholder="Your task will display follow your command .." aria-label="Username"
-                aria-describedby="basic-addon1"
-                value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%'">
-            <span class="input-group-text">Limit</span>
-            <input type="number" max="999" onchange="run_ts_command('PJ','level','all');
-                                                run_ts_command('CR','ticket','Pending');
-                                                run_ts_command('CR','ticket','inprogress');
-                                                run_ts_command('CR','ticket','Waiting Execution');
-                                                run_ts_command('CR','ticket','Waiting CTO');
-                                                run_ts_command('CR','ticket','Waiting Buyer');
-                                                run_ts_command('CR','ticket','Close');
-                                                run_ts_command('DT','ticket','all');" min="1" class="form-control"
-                id="ts_command_limit" name="ts_command_limit" placeholder="Server" value="100" aria-label="Server">
-        </div>
-        <datalist id="qlistoption">
-            <option value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
-            <option value="ticket.case_officer like  '%<?php echo $_SESSION["username"]; ?>%'">
-            <option value="ticket.title like  '%grouping%'">
-            <option value="ticket.id = 3009">
-            <option value="ticket.status = 'Pending'">
-        </datalist>
-    </form>
-</nav>
+
 <!-- console bra -->
 <!-- project -->
 <span class="row"><strong>
