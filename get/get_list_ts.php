@@ -21,6 +21,11 @@ function badge_status_cr($status){
 return $status;
 }
     function list_ts($filter,$ts_command_limit,$level ){
+      if(strpos($filter,"= 'Close'")!==false){
+        $sort_de_status=="DESC";
+      }else{
+        $sort_de_status=="ASC";
+      }
       $i=1;
         //-------------subtask for project-----------------
       $ts_filter = $filter;
@@ -53,7 +58,8 @@ return $status;
       left join all_in_one_project.content_request as ticket
       on task.ticket_id = ticket.id    
       where ".$sts_filter." 
-      limit ".$ts_command_limit;
+      limit ".$ts_command_limit."
+      order br id".$sort_de_status;
       //echo "<script>console.log('".$query."');</script>";
       $result_task = mysqli_query($con, $query_task);
       $i=1;
@@ -266,7 +272,7 @@ $i++;
                 value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%'">
             <span class="input-group-text">Limit</span>
             <input type="number" max="999" onchange="run_ts_command('PJ','level','all');
-                                               run_ts_command('CR','ticket','Pending');
+                                                run_ts_command('CR','ticket','Pending');
                                                 run_ts_command('CR','ticket','inprogress');
                                                 run_ts_command('CR','ticket','Waiting Execution');
                                                 run_ts_command('CR','ticket','Waiting CTO');
