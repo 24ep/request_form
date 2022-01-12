@@ -19,7 +19,9 @@ if($_POST["ts_level"]<>""){
 }else{
   $ts_level = "ticket";
 }
-
+echo '<script>console.log("'.$_SESSION["cb_pj"] .'");</script>';
+echo '<script>console.log("'.$_SESSION["cb_da"] .'");</script>';
+echo '<script>console.log("'.$_SESSION["cb_cr"] .'");</script>';
 if($_POST["cb_pj"]<>""){
   $_SESSION["cb_pj"] = $_POST["cb_pj"];
 }else{
@@ -44,7 +46,7 @@ if($_POST["cb_cr"]<>""){
 }
 
 $filter = $_SESSION["ts_query_input"];
-echo '<script>console.log("'.$_SESSION["ts_query_input"] .'");</script>';
+
 
 function badge_status_cr($status){
   if($status=="Pending"){
