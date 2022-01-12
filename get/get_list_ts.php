@@ -240,29 +240,29 @@ $i++;
   ?>
 <!-- nav bar -->
 <?php
-                                    function get_server_memory_usage(){
-                                        $free = shell_exec('free');
-                                        $free = (string)trim($free);
-                                        $free_arr = explode("\n", $free);
-                                        $mem = explode(" ", $free_arr[1]);
-                                        $mem = array_filter($mem);
-                                        $mem = array_merge($mem);
-                                        $memory_usage = $mem[2]/$mem[1]*100;
-                                        return round($memory_usage);
-                                    }
-                                    function get_server_cpu_usage(){
-                                        $load = sys_getloadavg();
-                                        return round($load[0]);
-                                    }
+                                    // function get_server_memory_usage(){
+                                    //     $free = shell_exec('free');
+                                    //     $free = (string)trim($free);
+                                    //     $free_arr = explode("\n", $free);
+                                    //     $mem = explode(" ", $free_arr[1]);
+                                    //     $mem = array_filter($mem);
+                                    //     $mem = array_merge($mem);
+                                    //     $memory_usage = $mem[2]/$mem[1]*100;
+                                    //     return round($memory_usage);
+                                    // }
+                                    // function get_server_cpu_usage(){
+                                    //     $load = sys_getloadavg();
+                                    //     return round($load[0]);
+                                    // }
                                     ?>
 <nav class="navbar">
     <div class="container-fluid p-0">
         <a class="navbar-brand"></a>
         <form class="d-flex">
             <?php 
-            $memory_usage = get_server_memory_usage();
-            $CPU_usage = get_server_cpu_usage();
-            echo "<small  style='align-self: center;'>CPU usage ".$CPU_usage."% | memory usage : ".$memory_usage."%</small>"; ?>
+            // $memory_usage = get_server_memory_usage();
+            // $CPU_usage = get_server_cpu_usage();
+            // echo "<small  style='align-self: center;'>CPU usage ".$CPU_usage."% | memory usage : ".$memory_usage."%</small>"; ?>
             <button class="btn btn-primary btn-sm " style="margin-left:10px;" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
                 <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated"
