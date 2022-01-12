@@ -243,16 +243,16 @@ $i++;
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingOne">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        Project
+      <span class="row"><strong>
+                  <ion-icon name="business-outline" style="vertical-align: middle;">
+                  </ion-icon>Project
+       </strong></span>
       </button>
     </h2>
     <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
+      <div class="accordion-body" style="background: #f7f7f7;">
             <!-- project -->
-            <span class="row"><strong>
-                  <ion-icon name="business-outline" style="vertical-align: middle;">
-                  </ion-icon>Project
-              </strong></span>
+    
           <div class="row">
               <div class="col border-0 border-end">
                   <small class="row m-3">Your tasks assignment (task of project)</small>
