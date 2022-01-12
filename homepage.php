@@ -901,7 +901,7 @@
                             </div>
                         </div>
                         <!-- -- -->
-                        <!-- <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
+                        <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination pagination-sm">
                                             <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1"
@@ -934,7 +934,7 @@
                                     </div>
                                     </ul>
                                 </nav>
-                            </div> -->
+                            </div>
                         <!-- -- -->
                     </div>
                     <!-- fl console -->
