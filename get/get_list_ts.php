@@ -241,7 +241,7 @@ $i++;
 
 
             <!-- project -->
-          <?php if($_POST["cb_pj"]==true){?>
+          <?php if($_POST["cb_pj"]==true $_POST["cb_pj"]==""){?>
             <span class="row"><strong>
             <ion-icon  name="rocket-outline" style="vertical-align: middle;"></ion-icon>
                   Data & Application Support
@@ -265,7 +265,7 @@ $i++;
     
     
           <!-- support task -->
-          <?php if($_POST["cb_da"]==true){?>
+          <?php if($_POST["cb_da"]==true or $_POST["cb_da"]==""){?>
           <span class="row"><strong>
                   <ion-icon name="server-outline" style="vertical-align: middle;"></ion-icon>
                   Data & Application Support
@@ -285,7 +285,7 @@ $i++;
           <?php }?>
          
           <!-- Content request -->
-          <?php if($_POST["cb_cr"]==true){?>
+          <?php if($_POST["cb_cr"]==true or $_POST["cb_cr"]==""){?>
           <span class="row"><strong>
                   <ion-icon name="layers-outline" style="vertical-align: middle;"></ion-icon>
                   Content Request
