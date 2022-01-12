@@ -59,7 +59,7 @@ return $status;
       on task.ticket_id = ticket.id    
       where ".$sts_filter." 
       limit ".$ts_command_limit."
-      order br id".$sort_de_status;
+      order br id ".$sort_de_status;
       //echo "<script>console.log('".$query."');</script>";
       $result_task = mysqli_query($con, $query_task);
       $i=1;
