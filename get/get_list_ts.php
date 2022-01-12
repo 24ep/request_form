@@ -23,9 +23,9 @@ return $status;
 }
     function list_ts($filter,$ts_command_limit,$level ){
       if(strpos($filter,"= 'Close'")!==false){
-        $sort_de_status="DESC";
+        $sort_de_status=" DESC ";
       }else{
-        $sort_de_status="ASC";
+        $sort_de_status=" ASC ";
       }
       $i=1;
         //-------------subtask for project-----------------
@@ -59,7 +59,7 @@ return $status;
       left join all_in_one_project.content_request as ticket
       on task.ticket_id = ticket.id    
       where ".$sts_filter."
-      order by task.id ".$sort_de_status." 
+      order by task.id ".$sort_de_status."  
       limit ".$ts_command_limit;
       
       //echo "<script>console.log('".$query."');</script>";
