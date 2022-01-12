@@ -1510,7 +1510,41 @@ function doAutoRefresh() {
     };
     req.send(null);
 };
-
+function doAutoRefresh_ts_admin() {
+    var req_ts = Inint_AJAX();
+    //var req_cr = Inint_AJAX();
+    // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
+    req_ts.open("POST", 'base/get/get_list_ts.php?' + new Date().getTime(), true);
+    //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
+    req_ts.onreadystatechange = function() {
+        if (req_ts.readyState == 4) {
+            if (req_ts.status == 200) {
+                // รับค่ากลับมา และ แสดงผล
+                //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
+                document.getElementById("get_ts_admin_console").innerHTML = req_ts.responseText;
+                // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
+                setTimeout("doAutoRefresh_can()", 5000);
+            }
+        }
+    };
+    req_ts.send(null);
+};
+function doAutoRefresh_cr() {
+    var req_cr = Inint_AJAX();
+    // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
+    req_cr.open("POST", 'base/get/get_list_content_request.php?' + new Date().getTime(), true);
+    // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
+    req_cr.onreadystatechange = function() {
+        if (req_cr.readyState == 4) {
+            if (req_cr.status == 200) {
+                // รับค่ากลับมา และ แสดงผล
+                document.getElementById("list_grouping").innerHTML = req_cr.responseText;
+                setTimeout("doAutoRefresh_cr()", 7000);
+            }
+        }
+    };
+    req_cr.send(null);
+};
 function doAutoRefresh_can() {
     var req_can = Inint_AJAX();
     //var req_cr = Inint_AJAX();
@@ -1531,42 +1565,8 @@ function doAutoRefresh_can() {
     req_can.send(null);
 };
 
-function doAutoRefresh_ts_admin() {
-    var req_ts = Inint_AJAX();
-    //var req_cr = Inint_AJAX();
-    // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-    req_ts.open("POST", 'base/get/get_list_ts.php?' + new Date().getTime(), true);
-    //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
-    req_ts.onreadystatechange = function() {
-        if (req_ts.readyState == 4) {
-            if (req_ts.status == 200) {
-                // รับค่ากลับมา และ แสดงผล
-                //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
-                document.getElementById("get_ts_admin_console").innerHTML = req_ts.responseText;
-                // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
-                setTimeout("doAutoRefresh_can()", 5000);
-            }
-        }
-    };
-    req_ts.send(null);
-};
 
-function doAutoRefresh_cr() {
-    var req_cr = Inint_AJAX();
-    // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-    req_cr.open("POST", 'base/get/get_list_content_request.php?' + new Date().getTime(), true);
-    // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
-    req_cr.onreadystatechange = function() {
-        if (req_cr.readyState == 4) {
-            if (req_cr.status == 200) {
-                // รับค่ากลับมา และ แสดงผล
-                document.getElementById("list_grouping").innerHTML = req_cr.responseText;
-                setTimeout("doAutoRefresh_cr()", 7000);
-            }
-        }
-    };
-    req_cr.send(null);
-};
+
     </script>
     <script>
 $(document).ready(function() {
