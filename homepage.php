@@ -1244,9 +1244,9 @@ function run_ts_command(ts_level) {
     var ts_command_input = document.getElementById("ts_command").value;
     var ts_command_limit = document.getElementById("ts_command_limit").value;
 
-    var cb_pj = document.getElementById("cb_pj");
-    var cb_da = document.getElementById("cb_da");
-    var cb_cr = document.getElementById("cb_cr");
+    var cb_pj = document.getElementById("cb_pj").checked;
+    var cb_da = document.getElementById("cb_da").checked;
+    var cb_cr = document.getElementById("cb_cr").checked;
 
     var summary_filter = ts_command_input;
     var ts_level = ts_level;
