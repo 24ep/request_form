@@ -898,12 +898,12 @@
                                                     </ion-icon>Query Search
                                                 </span>
                                                 <input list="qlistoption" style="width: 75%;" type="text"
-                                                    class="form-control" onchange="run_ts_command('PJ','task','all');" id="ts_command" name="ts_command"
+                                                    class="form-control" onchange="run_ts_command('task');" id="ts_command" name="ts_command"
                                                     placeholder="Your task will display follow your command .."
                                                     aria-label="Username" aria-describedby="basic-addon1"
                                                     value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%'">
                                                 <span class="input-group-text">Limit</span>
-                                                <input type="number" max="999" onchange="run_ts_command('PJ','task','all');"
+                                                <input type="number" max="999" onchange="run_ts_command('task');"
                                                  min="1" class="form-control"
                                                     id="ts_command_limit" name="ts_command_limit" placeholder="Server"
                                                     value="100" aria-label="Server">
@@ -1257,7 +1257,7 @@ function search_cr_ticket() {
     });
 }
 
-function run_ts_command(type, ts_level, cr_status) {
+function run_ts_command(ts_level) {
     var ts_command_input = document.getElementById("ts_command").value;
     var ts_command_limit = document.getElementById("ts_command_limit").value;
     var summary_filter = ts_command_input;
@@ -1269,27 +1269,6 @@ function run_ts_command(type, ts_level, cr_status) {
     }, function(data) {
         $('#get_ts_admin_console').html(data);
         
-        // if (type == "PJ") {
-        //     $('#list_pj_task').html(data);
-        // } else if (type == "CR") {
-        //     if (cr_status == "inprogress") {
-        //         $('#list_cr_task_inprogress').html(data);
-        //     } else if (cr_status == "Waiting Excution") {
-        //         $('#list_cr_task_we').html(data);
-        //     } else if (cr_status == "Waiting CTO") {
-        //         $('#list_cr_task_wcto').html(data);
-        //     } else if (cr_status == "Waiting Buyer") {
-        //         $('#list_cr_task_wb').html(data);
-        //     } else if (cr_status == "Close") {
-        //         $('#list_cr_task_close').html(data);
-        //     } else if (cr_status == "Pending") {
-        //         $('#list_cr_task_pending').html(data);
-        //     }
-
-
-        // } else if (type == "DT") {
-        //     $('#list_da_task').html(data);
-        // }
     });
 }
     </script>
