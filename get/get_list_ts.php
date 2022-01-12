@@ -228,7 +228,7 @@ $i++;
     $ts_level = "ticket";
   }
   $filter = $_SESSION["ts_query_input"];
-  echo '<script>console.log("'.$filter.'");</script>';
+  echo '<script>console.log("'.$_SESSION["ts_query_input"] .'");</script>';
     if($filter<>""){
       list_ts($filter,$ts_command_limit,$ts_level);
     }
@@ -280,6 +280,7 @@ $i++;
         <small class="row m-3">Your tasks assignment (task of project)</small>
         <div id="list_pj_task">
             <?php list_ts($_SESSION["ts_query_input"]."  and ticket.status <> 'Close' and  ticket.ticket_template = 'PJ'",100,'task'); ?>
+            
         </div>
     </div>
     <div class="col">
@@ -317,7 +318,9 @@ $i++;
         <small class="row m-3">Pending</small>
         <hr>
         <div id="list_cr_task_pending">
-            <?php list_ts($_SESSION["ts_query_input"]." and ticket.status = 'Pending' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+            <?php list_ts($_SESSION["ts_query_input"]." and ticket.status = 'Pending' and  ticket.ticket_template = 'CR'",100,'ticket');
+            echo '<script>console.log("'.$_SESSION["ts_query_input"].' ");</script>';
+            ?>
         </div>
         <small class="row m-3">inprogress</small>
         <hr>
