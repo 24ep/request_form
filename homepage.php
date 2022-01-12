@@ -1261,9 +1261,6 @@ function run_ts_command(type, ts_level, cr_status) {
     var ts_command_input = document.getElementById("ts_command").value;
     var ts_command_limit = document.getElementById("ts_command_limit").value;
     var summary_filter = ts_command_input;
- 
-    
-
     var ts_level = ts_level;
     $.post("base/get/get_list_ts.php", {
         summary_filter: summary_filter,
@@ -1552,7 +1549,7 @@ function doAutoRefresh_ts_admin() {
                 //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
                 document.getElementById("get_ts_admin_console").innerHTML = req_ts.responseText;
                 // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
-                setTimeout("doAutoRefresh_ts_admin()", 2000);
+                setTimeout("doAutoRefresh_ts_admin()", 5000);
             }
         }
     };

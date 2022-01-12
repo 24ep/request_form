@@ -118,7 +118,7 @@ $i++;
         LEFT JOIN all_in_one_project.comment as comment
         ON ticket.id = comment.ticket_id 
         where ".$ts_filter." 
-        GROUP BY ticket.id order by ticket.id ".$sort_de_status."   limit ".$ts_command_limit;
+        GROUP BY ticket.id order by ticket.id ".$sort_de_status."  limit ".$ts_command_limit;
         //echo "<script>console.log('".$query."');</script>";
         $result = mysqli_query($con, $query);
         echo "<ul style='width: 95%;'>";
@@ -212,6 +212,7 @@ $i++;
    mysqli_close($con);
     }
   $_SESSION["ts_query_input"] = $_POST["summary_filter"];
+  
   if($_SESSION["ts_query_input"]=="" or $_SESSION["ts_query_input"] == null ){
     $_SESSION["ts_query_input"] = "ticket.participant like  '%".$_SESSION["username"]."%'";
   }
