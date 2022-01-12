@@ -22,7 +22,7 @@ function badge_status_cr($status){
 return $status;
 }
     function list_ts($filter,$ts_command_limit,$level ){
-      if(strpos($filter,"= 'Close'")!==false){
+      if(strpos($filter,"ticket.status = 'Close'")!==false){
         $sort_de_status=" DESC ";
       }else{
         $sort_de_status=" ASC ";
