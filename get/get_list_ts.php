@@ -21,12 +21,18 @@ if($_POST["ts_level"]<>""){
 }
 if($_POST["cb_pj"]<>""){
   $_SESSION["cb_pj"] = $_POST["cb_pj"];
+}else{
+  $_SESSION["cb_pj"] = true;
 }
 if($_POST["cb_da"]<>""){
   $_SESSION["cb_da"] = $_POST["cb_da"];
+}else{
+  $_SESSION["cb_da"] = true;
 }
 if($_POST["cb_cr"]<>""){
   $_SESSION["cb_cr"] = $_POST["cb_cr"];
+}else{
+  $_SESSION["cb_cr"] = true;
 }
 
 $filter = $_SESSION["ts_query_input"];
@@ -251,7 +257,7 @@ $i++;
 
             <!-- project -->
             
-          <?php if($_POST["cb_pj"]==true or $_POST["cb_pj"]==""){?>
+          <?php if($_SESSION["cb_pj"]==true){?>
             <span class="row"><strong>
             <ion-icon  name="rocket-outline" style="vertical-align: middle;"></ion-icon>
                   Project
@@ -275,7 +281,7 @@ $i++;
     
     
           <!-- support task -->
-          <?php if($_POST["cb_da"]==true or $_POST["cb_da"]==""){?>
+          <?php if($_SESSION["cb_da"]==true){?>
           <span class="row"><strong>
                   <ion-icon name="server-outline" style="vertical-align: middle;"></ion-icon>
                   Data & Application Support
@@ -295,7 +301,7 @@ $i++;
           <?php }?>
          
           <!-- Content request -->
-          <?php if($_POST["cb_cr"]==true or $_POST["cb_cr"]==""){?>
+          <?php if($_SESSION["cb_cr"]==true){?>
           <span class="row"><strong>
                   <ion-icon name="layers-outline" style="vertical-align: middle;"></ion-icon>
                   Content Request
