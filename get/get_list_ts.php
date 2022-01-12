@@ -26,6 +26,7 @@ if($_POST["cb_pj"]<>""){
   if($_SESSION["cb_pj"]==""){
     $_SESSION["cb_pj"] = true;
   }
+}
 if($_POST["cb_da"]<>""){
   $_SESSION["cb_da"] = $_POST["cb_da"];
 }else{
