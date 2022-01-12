@@ -890,7 +890,9 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
-                                    <?php include('get/get_list_ts.php'); ?>
+                                    <div id="get_ts_admin_console">
+                                        <?php include('get/get_list_ts.php'); ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1527,6 +1529,26 @@ function doAutoRefresh_can() {
         }
     };
     req_can.send(null);
+};
+
+function doAutoRefresh_ts_admin() {
+    var req_ts = Inint_AJAX();
+    //var req_cr = Inint_AJAX();
+    // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
+    req_ts.open("POST", 'base/get/get_list_ts.php?' + new Date().getTime(), true);
+    //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
+    req_ts.onreadystatechange = function() {
+        if (req_ts.readyState == 4) {
+            if (req_ts.status == 200) {
+                // รับค่ากลับมา และ แสดงผล
+                //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
+                document.getElementById("get_ts_admin_console").innerHTML = req_ts.responseText;
+                // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
+                setTimeout("doAutoRefresh_can()", 5000);
+            }
+        }
+    };
+    req_ts.send(null);
 };
 
 function doAutoRefresh_cr() {
