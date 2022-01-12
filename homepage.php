@@ -1678,7 +1678,6 @@ function doAutoRefresh_can() {
     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
     req_can.open("POST", 'base/get/get_card_new_job.php?' + new Date().getTime(), true);
     //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
-    // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
     req_can.onreadystatechange = function() {
         if (req_can.readyState == 4) {
             if (req_can.status == 200) {
@@ -1686,7 +1685,7 @@ function doAutoRefresh_can() {
                 //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
                 document.getElementById("get_card_add_new").innerHTML = req_can.responseText;
                 // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
-                setTimeout("doAutoRefresh_can()", 10000);
+                setTimeout("doAutoRefresh_can()", 5000);
             }
         }
     };

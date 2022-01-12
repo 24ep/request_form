@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 function get_card_new_job($status,$username){
   if($username==''){
       $username=$_SESSION["username"];
