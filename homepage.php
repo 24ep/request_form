@@ -899,28 +899,13 @@
                                                 </span>
                                                 <input list="qlistoption" style="width: 75%;" type="text"
                                                     class="form-control" 
-                                                onchange="
-                                                run_ts_command('PJ','task','all');
-                                                run_ts_command('CR','ticket','Pending');
-                                                run_ts_command('CR','ticket','inprogress');
-                                                run_ts_command('CR','ticket','Waiting Execution');
-                                                run_ts_command('CR','ticket','Waiting CTO');
-                                                run_ts_command('CR','ticket','Waiting Buyer');
-                                                run_ts_command('CR','ticket','Close');
-                                                run_ts_command('DT','ticket','all');   
-                                                " id="ts_command" name="ts_command"
+                                                onchange="run_ts_command('PJ','task','all');" id="ts_command" name="ts_command"
                                                     placeholder="Your task will display follow your command .."
                                                     aria-label="Username" aria-describedby="basic-addon1"
                                                     value="ticket.participant like  '%<?php echo $_SESSION["username"];  ?>%'">
                                                 <span class="input-group-text">Limit</span>
-                                                <input type="number" max="999" onchange="run_ts_command('PJ','level','all');
-                                                run_ts_command('CR','ticket','Pending');
-                                                run_ts_command('CR','ticket','inprogress');
-                                                run_ts_command('CR','ticket','Waiting Execution');
-                                                run_ts_command('CR','ticket','Waiting CTO');
-                                                run_ts_command('CR','ticket','Waiting Buyer');
-                                                run_ts_command('CR','ticket','Close');
-                                                run_ts_command('DT','ticket','all');" min="1" class="form-control"
+                                                <input type="number" max="999" onchange="run_ts_command('PJ','task','all');"
+                                                 min="1" class="form-control"
                                                     id="ts_command_limit" name="ts_command_limit" placeholder="Server"
                                                     value="100" aria-label="Server">
                                             </div>
