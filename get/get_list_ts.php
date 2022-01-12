@@ -229,9 +229,9 @@ $i++;
   }
   $filter = $_SESSION["ts_query_input"];
   echo '<script>console.log("'.$_SESSION["ts_query_input"] .'");</script>';
-    if($filter<>""){
-      list_ts($filter,$ts_command_limit,$ts_level);
-    }
+    // if($filter<>""){
+    //   list_ts($filter,$ts_command_limit,$ts_level);
+    // }
   ?>
 <!-- nav bar -->
 <?php
