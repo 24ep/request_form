@@ -1,5 +1,25 @@
 <?php
 session_start();
+    
+$_SESSION["ts_query_input"] = $_POST["summary_filter"];
+
+if($_SESSION["ts_query_input"]=="" or $_SESSION["ts_query_input"] == null ){
+  $_SESSION["ts_query_input"] = "ticket.participant like  '%".$_SESSION["username"]."%'";
+}
+
+if($_POST["ts_command_limit"]<>""){
+  $ts_command_limit = $_POST["ts_command_limit"];
+}else{
+  $ts_command_limit=100;
+}
+
+if($_POST["ts_level"]<>""){
+  $ts_level = $_POST["ts_level"];
+}else{
+  $ts_level = "ticket";
+}
+$filter = $_SESSION["ts_query_input"];
+echo '<script>console.log("'.$_SESSION["ts_query_input"] .'");</script>';
 
 function badge_status_cr($status){
   if($status=="Pending"){
@@ -211,25 +231,7 @@ $i++;
      echo "</ul>";
    mysqli_close($con);
     }
-  $_SESSION["ts_query_input"] = $_POST["summary_filter"];
-  
-  if($_SESSION["ts_query_input"]=="" or $_SESSION["ts_query_input"] == null ){
-    $_SESSION["ts_query_input"] = "ticket.participant like  '%".$_SESSION["username"]."%'";
-  }
 
-  if($_POST["ts_command_limit"]<>""){
-    $ts_command_limit = $_POST["ts_command_limit"];
-  }else{
-    $ts_command_limit=100;
-  }
- 
-  if($_POST["ts_level"]<>""){
-    $ts_level = $_POST["ts_level"];
-  }else{
-    $ts_level = "ticket";
-  }
-  $filter = $_SESSION["ts_query_input"];
-  echo '<script>console.log("'.$_SESSION["ts_query_input"] .'");</script>';
     // if($filter<>""){
     //   list_ts($filter,$ts_command_limit,$ts_level);
     // }
