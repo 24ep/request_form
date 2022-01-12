@@ -23,9 +23,9 @@ return $status;
 }
     function list_ts($filter,$ts_command_limit,$level ){
       if(strpos($filter,"= 'Close'")!==false){
-        $sort_de_status=="DESC";
+        $sort_de_status="DESC";
       }else{
-        $sort_de_status=="ASC";
+        $sort_de_status="ASC";
       }
       $i=1;
         //-------------subtask for project-----------------
