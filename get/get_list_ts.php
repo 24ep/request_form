@@ -24,14 +24,14 @@ if($_POST["cb_pj"]<>""){
   $_SESSION["cb_pj"] = $_POST["cb_pj"];
 }else{
   if($_SESSION["cb_pj"]==""){
-    $_SESSION["cb_pj"] = true;
+    $_SESSION["cb_pj"] = "true";
   }
 }
 if($_POST["cb_da"]<>""){
   $_SESSION["cb_da"] = $_POST["cb_da"];
 }else{
   if($_SESSION["cb_da"]==""){
-    $_SESSION["cb_da"] = true;
+    $_SESSION["cb_da"] = "true";
   }
  
 }
@@ -39,7 +39,7 @@ if($_POST["cb_cr"]<>""){
   $_SESSION["cb_cr"] = $_POST["cb_cr"];
 }else{
   if($_SESSION["cb_cr"]==""){
-    $_SESSION["cb_cr"] = true;
+    $_SESSION["cb_cr"] = "true";
   }
 }
 
@@ -269,7 +269,7 @@ echo '<script>console.log("'.$_SESSION["cb_cr"] .'");</script>';
 
             <!-- project -->
             
-          <?php if($_SESSION["cb_pj"]==true){?>
+          <?php if($_SESSION["cb_pj"]=="true"){?>
             <span class="row"><strong>
             <ion-icon  name="rocket-outline" style="vertical-align: middle;"></ion-icon>
                   Project
@@ -293,7 +293,7 @@ echo '<script>console.log("'.$_SESSION["cb_cr"] .'");</script>';
     
     
           <!-- support task -->
-          <?php if($_SESSION["cb_da"]==true){?>
+          <?php if($_SESSION["cb_da"]=="true"){?>
           <span class="row"><strong>
                   <ion-icon name="server-outline" style="vertical-align: middle;"></ion-icon>
                   Data & Application Support
@@ -313,7 +313,7 @@ echo '<script>console.log("'.$_SESSION["cb_cr"] .'");</script>';
           <?php }?>
          
           <!-- Content request -->
-          <?php if($_SESSION["cb_cr"]==true){?>
+          <?php if($_SESSION["cb_cr"]=="true"){?>
           <span class="row"><strong>
                   <ion-icon name="layers-outline" style="vertical-align: middle;"></ion-icon>
                   Content Request
