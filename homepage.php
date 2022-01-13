@@ -495,6 +495,11 @@
             background-color: #0f0f0f;
             border-color: #0f0f0f;
         }
+        .col-7 {
+            flex: 0 0 auto;
+            width: 58.3333333333%;
+            border-right: 1px solid #191919;
+        }
             <?php
         }
         ?>
