@@ -185,6 +185,7 @@
         body {
             font-family: 'Prompt', sans-serif !important;
             font-size: 14px;
+            background-color: #f6f6f6;
         }
         a {
             color: gray;
