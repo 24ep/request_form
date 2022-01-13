@@ -138,7 +138,6 @@
     ?>
     <!DOCTYPE html>
     <html lang="en">
-
     <head>
         <title>Content and Studio - Homepage</title>
         <!-- Required meta tags -->
@@ -183,52 +182,40 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
         </script>
         <style>
-             
-        
-                body {
+        body {
             font-family: 'Prompt', sans-serif !important;
             font-size: 14px;
-
-            
         }
-
         a {
             color: gray;
             text-decoration: auto;
         }
-
         a:hover {
             color: black;
             text-decoration: auto;
             font-weight: bold;
         }
-
         label {
             font-weight: 800 !important;
         }
-
         .row {
             margin-bottom: 15px;
         }
-
         .multiple-select,
         .multiple-select_adj,
         .multiple-select_edit {
             width: 100%;
         }
-
         .header_form {
             text-align: center;
             margin-bottom: 50px;
             margin-top: 50px;
         }
-
         .container-sm {
             max-width: 500px;
             margin-top: 8%;
             padding: 10px !important 50px !important 100px !important !important;
         }
-
         .list_bra .nav-pills .nav-link.active,
         .list_bra .nav-pills .show .nav-link {
             color: white;
@@ -237,45 +224,37 @@
             background-color: #f0f2fc87;
             font-weight: bolder;
         }
-
         /* .nav-link{
             color: white;
         } */
         .list_bra .nav-pills .nav-link {
             color: white !important;
         }
-
         .list_bra .nav-link:hover {
             color: white !important;
             width: 100%;
             s font-weight: bolder;
         }
-
         .list_bra .nav-link.active:hover {
             color: #ffff !important;
         }
-
         .nav-pills .nav-link.active,
         .nav-pills .show .nav-link {
             background-color: #f0f2fc87;
             color: white !important;
             width: 100%;
         }
-
         .navbar-brand {
             margin-left: 10px;
             margin-right: 10px;
             font-weight: 1000;
         }
-
         .navbar-brand {
             color: #ffff !important;
         }
-
         .navbar-brand:hover {
             color: #ffff !important;
         }
-
         .list_bra {
             padding-right: 0;
             /* background: rgba(236, 236, 236, 1); */
@@ -284,33 +263,27 @@
             background-image: url('base/image/11.jpg');
             color: black;
         }
-
         .my-1 {
             margin-top: 1rem !important;
             margin-bottom: 1rem !important;
         }
-
         .selection_filter {
             width: 150px;
             border: transparent;
             /* border-bottom:1px gray; */
             /* border-bottom-style: dotted; */
         }
-
         .selection_filter:active {
             border: transparent !important;
         }
-
         .selection_filter:focus {
             border: transparent !important;
             border-style: none;
         }
-
         ion-icon {
             font-size: 20px;
             margin: -0.2rem;
         }
-
         .link-light {
             color: white;
             padding: 0.2rem;
@@ -320,39 +293,32 @@
             font-size: 14px;
             font-family: 'Prompt', sans-serif !important;
         }
-
         .link-light:hover {
             color: white;
             background-color: #dbdbdb38;
             width: 100%;
             border-radius: 0px !important;
         }
-
         .link-light:focus {
             color: white;
             background-color: #dbdbdb38;
             width: 100%;
             border-radius: 0px !important;
         }
-
         .btn-check:focus+.btn,
         .btn:focus {
             box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 0%)
         }
-
         .total_count_dashboard {
             text-align: center;
             font-size: 70px;
         }
-
         .unit_count_dashboard {
             text-align: center;
         }
-
         ion-icon {
             margin-right: 5px;
         }
-
         .task_detial {
             color: #6c757d;
             ;
@@ -363,157 +329,152 @@
             padding-bottom: 3px;
             padding-top: 3px;
         }
-
         .icon_bar_tootle {
             margin-left: 20px;
             margin-right: 50px;
             font-size: 13px;
         }
-
         .icon_ocv {
             margin-right: 0px !important;
             font-size: 14px;
             color: gray;
         }
-
         .ticket_relate {
             border-color: white;
             padding: 0px;
             padding-bottom: 5px
         }
-
         .col-board {
             border-right: 1px #dee2e6 solid;
         }
-
         .cr_title {
             margin-bottom: 10px;
         }
-
         .status_cr_list {
             margin-right: 5px;
             margin-left: 10px;
             color: #d8d8d887;
             font-size: 30px;
         }
-        <?php if($_SESSION["ui_them"]=="Black"){?>
-                body {
-                    font-family: 'Prompt', sans-serif !important;
-                    font-size: 14px;
-                    background-color: #1e1e1e!important;
-                    color:white!important;
-                }
-                tr.sub-ticket.shadow-sm.p-3.mb-5.bg-body {
-                    background-color: #171515!important;
-                    color: white;
-                    border-bottom: 1px solid #272727!important;
-                }
-                tr.shadow-sm.p-3.mb-5 {
-                    background-color: #171515!important;
-                    color: white;
-                    border-bottom: 1px solid #272727!important;
-                }
-                tr.sub-ticket {
-                    color: white;
-                }
-                tr {
-                    color: white;
-                }
-                .btn-primary {
-                    color: #fff;
-                    background-color: #1a1a1a;
-                    border-color: #134a9a;
-                }
-                input {
-                    background-color: #0f0f0f!important;
-                    border: 0px solid!important;
-                    color: white!important;
-                }
-                textarea {
-                    background-color: #0f0f0f!important;
-                    border: 0px solid!important;
-                    color: white!important;
-                }
-                select#status_filter {
-                    background-color: #414141;
-                
-                    border: 0px solid;
-                    color: white;
-                    border-radius: 3px;
-                }
-                select#be_status_on_change {
-                    background-color: #0f0f0f;
-                    color: #b32121;
-                }
-                .offcanvas-body {
-                    background-color: #181818;
-                    color: white;
-                }
-                a:hover {
-                    color: #dc3545;
-                    text-decoration: auto;
-                    font-weight: bold;
-                }
-                .nav-pills .nav-link.active, .nav-pills .show .nav-link {
-                    background-color: #dc3545!important;
-                    color: #fcfcfc!important;
-                    width: 100%;
-                }
-                li.list-group-item {
-                    background-color: #1f1f1f!important;
-                    color: white;
-                    border: solid 1px #171717;
-                }
-                .alert-success {
-                    color: #1ac570;
-                    background-color: #1c3128;
-                    border-color: #07512f;
-                }
-                .form-select{
-                    color: #e9ecef;
-                    background-color: #0f0f0f;
-                }
-                li.row.shadow-sm.rounded.md-3.p-2.bg-white {
-                    background-color: #494949!important;
-                }
-                span#basic-addon1 {
-                    background-color: #1d1d1d;
-                    color: white;
-                }
-                .table-hover>tbody>tr:hover {
-                        color: #b80f0f;
-                    }
-                .card.text-dark.bg-light.mb-3 {
-                    background-color: #1e1e1e!important;
-                    color: white!important;
-                    margin-top: 20px!important;
-                    border: 1px solid transparent!important;
-                    align-items: center;
-                }
-                .card.text-white.bg-dark.mb-3 {
-                    background-color: #1e1e1e!important;
-                    color: white!important;
-                    margin-top: 20px!important;
-                    border: 1px solid transparent!important;
-                    align-items: center;
-                }
-                table.table.table-hover {
-                    border-bottom: 1px solid #282727;
-                }
-                .border-end {
-                    border-right: 1px solid #2c2c2c!important;
-                }
-                hr {
-                    background-color: #4f4f4f;
-                }
-                .col-5 {
-                    background-color: #121212!important;
-                }
-                
-                <?php }?>
+        <?php if($_SESSION["ui_them"]=="Black") {
+            ?>
+            body {
+                font-family: 'Prompt', sans-serif !important;
+                font-size: 14px;
+                background-color: #1e1e1e !important;
+                color: white !important;
+            }
+            tr.sub-ticket.shadow-sm.p-3.mb-5.bg-body {
+                background-color: #171515 !important;
+                color: white;
+                border-bottom: 1px solid #272727 !important;
+            }
+            tr.shadow-sm.p-3.mb-5 {
+                background-color: #171515 !important;
+                color: white;
+                border-bottom: 1px solid #272727 !important;
+            }
+            tr.sub-ticket {
+                color: white;
+            }
+            tr {
+                color: white;
+            }
+            .btn-primary {
+                color: #fff;
+                background-color: #1a1a1a;
+                border-color: #134a9a;
+            }
+            input {
+                background-color: #0f0f0f !important;
+                border: 0px solid !important;
+                color: white !important;
+            }
+            textarea {
+                background-color: #0f0f0f !important;
+                border: 0px solid !important;
+                color: white !important;
+            }
+            select#status_filter {
+                background-color: #414141;
+                border: 0px solid;
+                color: white;
+                border-radius: 3px;
+            }
+            select#be_status_on_change {
+                background-color: #0f0f0f;
+                color: #b32121;
+            }
+            .offcanvas-body {
+                background-color: #181818;
+                color: white;
+            }
+            a:hover {
+                color: #dc3545;
+                text-decoration: auto;
+                font-weight: bold;
+            }
+            .nav-pills .nav-link.active,
+            .nav-pills .show .nav-link {
+                background-color: #dc3545 !important;
+                color: #fcfcfc !important;
+                width: 100%;
+            }
+            li.list-group-item {
+                background-color: #1f1f1f !important;
+                color: white;
+                border: solid 1px #171717;
+            }
+            .alert-success {
+                color: #1ac570;
+                background-color: #1c3128;
+                border-color: #07512f;
+            }
+            .form-select {
+                color: #e9ecef;
+                background-color: #0f0f0f;
+            }
+            li.row.shadow-sm.rounded.md-3.p-2.bg-white {
+                background-color: #494949 !important;
+            }
+            span#basic-addon1 {
+                background-color: #1d1d1d;
+                color: white;
+            }
+            .table-hover>tbody>tr:hover {
+                color: #b80f0f;
+            }
+            .card.text-dark.bg-light.mb-3 {
+                background-color: #1e1e1e !important;
+                color: white !important;
+                margin-top: 20px !important;
+                border: 1px solid transparent !important;
+                align-items: center;
+            }
+            .card.text-white.bg-dark.mb-3 {
+                background-color: #1e1e1e !important;
+                color: white !important;
+                margin-top: 20px !important;
+                border: 1px solid transparent !important;
+                align-items: center;
+            }
+            table.table.table-hover {
+                border-bottom: 1px solid #282727;
+            }
+            .border-end {
+                border-right: 1px solid #2c2c2c !important;
+            }
+            hr {
+                background-color: #4f4f4f;
+            }
+            .col-5 {
+                background-color: #121212 !important;
+            }
+            <?php
+        }
+        ?>
         </style>
     </head>
-
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();doAutoRefresh_can();">
         <!--         <nav class="navbar sticky-top navbar-danger bg-danger">
           <marquee>
@@ -526,7 +487,6 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140386041-2"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -545,8 +505,7 @@
                     aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-            <?php include("get/get_log.php"); ?>
-           
+                <?php include("get/get_log.php"); ?>
             </div>
         </div>
         <div class="row " style="margin-bottom: 0px;--bs-gutter-x: 0rem;">
@@ -681,7 +640,7 @@
                     style="margin: 0px 20px 0px 20px;bottom: 30px;width: 13%;position: absolute;">
                     <?php echo $_SESSION["username"]; ?></button>
             </div>
-            <div class="col-10 window-full overflow-auto" style="background:#f9fafb">
+            <div class="col-10 window-full overflow-auto" >
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- style="margin-top:15px" -->
                     <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel"
@@ -919,19 +878,16 @@
                                             type="search" placeholder="Search.." aria-label="Search" spellcheck="false"
                                             data-ms-editor="true">
                                     </div>
-
                                     <ul class="list-group list-group shadow " style="margin-top:15px">
                                         <div id="list_grouping">
                                             <?php //include('get/get_list_content_request.php'); ?>
                                         </div>
-                                   
                                     </ul>
                                 </div>
                             </div>
                             <!-- ffff -->
                         </div>
-                     </div>
-                    
+                    </div>
                     <!-- <div class="tab-pane fade" id="v-pills-cr_admin" role="tabpanel"
                         aria-labelledby="v-pills-cr_admin-tab">
                         <div class="tab-content" id="myTabContent">
@@ -980,13 +936,13 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
-                                   
                                     <nav class="navbar">
                                         <div class="container-fluid p-0">
                                             <a class="navbar-brand"></a>
                                             <form class="d-flex">
-                                            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                                                <?php 
+                                                <div class="btn-group" role="group"
+                                                    aria-label="Basic checkbox toggle button group">
+                                                    <?php 
                                                 if( $_SESSION["cb_pj"]=="true"){
                                                     $cb_pj_check == "checked";
                                                 }else{
@@ -1002,17 +958,23 @@
                                                 }else{
                                                     $cb_pj_check == "";
                                                 }
-
                                                 ?>
-                                                <input type="checkbox" class="btn-check" onclick="run_ts_command('task');" id="cb_pj" autocomplete="off" checked>
-                                                <label class="btn btn-sm btn-outline-primary" for="cb_pj">Project</label>
-
-                                                <input type="checkbox" class="btn-check" onclick="run_ts_command('task');" id="cb_da" autocomplete="off" checked>
-                                                <label class="btn btn-sm btn-outline-primary" for="cb_da">Data & App-sup</label>
-
-                                                <input type="checkbox" class="btn-check" onclick="run_ts_command('task');" id="cb_cr" autocomplete="off" checked>
-                                                <label class="btn btn-sm btn-outline-primary" for="cb_cr">Content Request</label>
-                                            </div>
+                                                    <input type="checkbox" class="btn-check"
+                                                        onclick="run_ts_command('task');" id="cb_pj" autocomplete="off"
+                                                        checked>
+                                                    <label class="btn btn-sm btn-outline-primary"
+                                                        for="cb_pj">Project</label>
+                                                    <input type="checkbox" class="btn-check"
+                                                        onclick="run_ts_command('task');" id="cb_da" autocomplete="off"
+                                                        checked>
+                                                    <label class="btn btn-sm btn-outline-primary" for="cb_da">Data &
+                                                        App-sup</label>
+                                                    <input type="checkbox" class="btn-check"
+                                                        onclick="run_ts_command('task');" id="cb_cr" autocomplete="off"
+                                                        checked>
+                                                    <label class="btn btn-sm btn-outline-primary" for="cb_cr">Content
+                                                        Request</label>
+                                                </div>
                                                 <button class="btn btn-primary btn-sm " style="margin-left:10px;"
                                                     type="button" data-bs-toggle="offcanvas"
                                                     data-bs-target="#content_request_canvas"
@@ -1068,9 +1030,7 @@
                                 </div>
                             </div>
                         </div>
-
-                </div>
-                   
+                    </div>
                     <!-- fl console -->
                     <div class="tab-pane fade" id="v-pills-fl_board" role="tabpanel"
                         aria-labelledby="v-pills-fl_board-tab">
@@ -1261,13 +1221,12 @@
                                         </div>
                                     </div>
                                 </div>
-                
                             </ul>
                         </nav>
                     </div>
-            <!-- offcanvas create -->
-        </div>
-        </div>
+                    <!-- offcanvas create -->
+                </div>
+            </div>
         </div>
         </div>
         </div>
@@ -1277,7 +1236,6 @@
 var elements = document.getElementsByClassName('window-full');
 var windowheight = window.innerHeight + "px";
 fullheight(elements);
-
 function fullheight(elements) {
     for (let el in elements) {
         if (elements.hasOwnProperty(el)) {
@@ -1300,7 +1258,6 @@ function call_edit_add_new_modal(id, brand) {
         });
     }
 }
-
 function cr_id_toggle(id) {
     if (id) {
         $.post("base/get/get_content_request_detail.php", {
@@ -1310,7 +1267,6 @@ function cr_id_toggle(id) {
         });
     }
 }
-
 function start_checking(id) {
     if (id) {
         $.post("base/action/action_start_checking.php", {
@@ -1320,7 +1276,6 @@ function start_checking(id) {
         });
     }
 }
-
 function accepted_stt(id) {
     if (id) {
         sku_accepted = document.getElementById('sku_accepted').value;
@@ -1336,7 +1291,6 @@ function accepted_stt(id) {
         }
     }
 }
-
 function cancel_stt(id, status_change) {
     resone_cancel = document.getElementById('resone_cancel').value;
     status_change = 'cancel';
@@ -1350,7 +1304,6 @@ function cancel_stt(id, status_change) {
         });
     }
 }
-
 function itm_confirm_cancel(id, status_change) {
     let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
     if (message == null || message == "") {
@@ -1372,7 +1325,6 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
-
 function filter_cr_ticket(status) {
     document.getElementById('cr_search_input').value = '';
     var update = true;
@@ -1385,7 +1337,6 @@ function filter_cr_ticket(status) {
         });
     }
 }
-
 function search_cr_ticket() {
     var cr_search_input = document.getElementById("cr_search_input").value
     var user_cr_filter = document.getElementById("user_cr_filter").value
@@ -1397,25 +1348,21 @@ function search_cr_ticket() {
         $('#list_grouping').html(data);
     });
 }
-
 function run_ts_command(ts_level) {
     var ts_command_input = document.getElementById("ts_command").value;
     var ts_command_limit = document.getElementById("ts_command_limit").value;
-
     var cb_pj = document.getElementById("cb_pj").checked;
     var cb_da = document.getElementById("cb_da").checked;
     var cb_cr = document.getElementById("cb_cr").checked;
-
     var summary_filter = ts_command_input;
     var ts_level = ts_level;
-    
     $.post("base/get/get_list_ts.php", {
         summary_filter: summary_filter,
         ts_command_limit: ts_command_limit,
         ts_level: ts_level,
-        cb_pj:cb_pj,
-        cb_da:cb_da,
-        cb_cr:cb_cr
+        cb_pj: cb_pj,
+        cb_da: cb_da,
+        cb_cr: cb_cr
     }, function(data) {
         $('#get_ts_admin_console').html(data);
     });
@@ -1576,11 +1523,9 @@ function select_current_tab(selecttab) {
             .add('show');
     }
 }
-
 function open_ticket_detail(id) {
     document.getElementById("ns_ticket_" + id).click();
 }
-
 function updateURL(pill) {
     if (history.pushState) {
         var newurl = window.location.protocol + "//" + window.location.host +
@@ -1592,7 +1537,6 @@ function updateURL(pill) {
             }, '', newurl);
     }
 }
-
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value
@@ -1641,7 +1585,6 @@ function Inint_AJAX() {
     alert("XMLHttpRequest not supported")
     return null
 }
-
 function doAutoRefresh() {
     var req = Inint_AJAX();
     //var req_cr = Inint_AJAX();
@@ -1662,7 +1605,6 @@ function doAutoRefresh() {
     };
     req.send(null);
 };
-
 function doAutoRefresh_ts_admin() {
     var req_ts = Inint_AJAX();
     //var req_cr = Inint_AJAX();
@@ -1682,7 +1624,6 @@ function doAutoRefresh_ts_admin() {
     };
     req_ts.send(null);
 };
-
 function doAutoRefresh_cr() {
     var req_cr = Inint_AJAX();
     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
@@ -1699,7 +1640,6 @@ function doAutoRefresh_cr() {
     };
     req_cr.send(null);
 };
-
 function doAutoRefresh_can() {
     var req_can = Inint_AJAX();
     //var req_cr = Inint_AJAX();
@@ -1766,11 +1706,9 @@ tinymce.init({
 function allowDrop(ev) {
     ev.preventDefault();
 }
-
 function drag_card_cr(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
-
 function drop_card_cr(ev, new_status) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("card");
@@ -1795,7 +1733,6 @@ function drop_card_cr(ev, new_status) {
     }
 }
     </script>
-
     </html>
     <?php if( $_GET["fopenticket"]<>""){
     $_SESSION["fopenticket"]=$_GET["fopenticket"];
