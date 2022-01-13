@@ -128,7 +128,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
      while($row = mysqli_fetch_array($result)) {
       if($row['ticket_template']=='PJ' and $count_id_fr<>0 and $i == 1){
         echo '
-        <div class="progress shadow-sm progress-bar-striped progress-bar-animated" style="margin-bottom:10px">
+        <div class="load_cr_dt progress shadow-sm progress-bar-striped progress-bar-animated" style="margin-bottom:10px">
           <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="background-color: #17b717;width: '.$percent_progress.'%;" aria-valuenow="'.$percent_progress.'" aria-valuemin="0" aria-valuemax="100">Progress '.$percent_progress.'%</div>
         </div>
         ';
@@ -218,13 +218,13 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                 if($row['ticket_template']=='PJ'){
 
                   echo '
-                  <div class="card text-dark bg-light mb-3 shadow-sm" style="border-color: transparent;padding-left: 10px;padding-right: 10px;background-color: #ffffff!important;" >
+                  <div class="card text-dark bg-light mb-3 shadow-sm" style="border-color: transparent;padding-left: 10px;padding-right: 10px;background-color: #ffffff;" >
                     <div class="card-body" style="padding-bottom: 0px">
                       <div class="row" style="margin-bottom: 5px;">
                       <label for="inputPassword" class="col-sm-2 col-form-label">No. '.$i.'</label>
                       <div class="col-sm-9">
                     
-                          <textarea placeholder="input detail of task  '.$i.' here ." style="border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description_'.$row["id"].'" name="cl_edit_description_'.$row["id"].'" rows="1">'.$row["description"].'</textarea>
+                          <textarea placeholder="input detail of task  '.$i.' here ." style="border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description_'.$row["id"].'" name="cl_edit_description_'.$row["id"].'" rows="2">'.$row["description"].'</textarea>
                        
                       </div>
                       <div class="col-sm-1" style="align-self: center;">

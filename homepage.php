@@ -356,6 +356,12 @@
             color: #d8d8d887;
             font-size: 30px;
         }
+        .des_cr{
+            padding:20px;
+            border-radius: 10px;
+            background: #f9f9f9;
+            margin-bottom: 10px;
+        }
         <?php if($_SESSION["ui_them"]=="Black") {
             ?>
             body {
@@ -406,7 +412,7 @@
                 color: #b32121;
             }
             .offcanvas-body {
-                background-color: #181818;
+                background-color: #181818!important;
                 color: white;
             }
             a:hover {
@@ -433,9 +439,10 @@
             .form-select {
                 color: #e9ecef;
                 background-color: #0f0f0f;
+                border-color: #0f0f0f;
             }
             li.row.shadow-sm.rounded.md-3.p-2.bg-white {
-                background-color: #494949 !important;
+                background-color: #0f0f0f !important;
             }
             span#basic-addon1 {
                 background-color: #1d1d1d;
@@ -470,6 +477,23 @@
             .col-5 {
                 background-color: #121212 !important;
             }
+            .des_cr{
+            padding:20px;
+            border-radius: 10px;
+            background: #0e0e0e;
+            margin-bottom: 10px;
+            
+        }
+        .load_cr_dt {
+            background-color: #212121;
+        }
+        .card-body{
+            align-self: normal;
+        }
+        button.ms-choice {
+            background-color: #0f0f0f;
+            border-color: #0f0f0f;
+        }
             <?php
         }
         ?>

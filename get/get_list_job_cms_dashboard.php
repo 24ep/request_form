@@ -5,11 +5,11 @@
   $query = "SELECT * FROM u749625779_cdscontent.job_cms as job 
   left join all_in_one_project.add_new_job as request 
   ON job.csg_request_new_id = request.id
-  WHERE job.approved_editing_status <> 'approved' and request.request_username = '".$_SESSION['username']."' ";
+  WHERE job.approved_editing_status <> 'approved' and job.job_status_filter <> 'cancel'  and request.request_username = '".$_SESSION['username']."' ";
 $query_count = "SELECT count(*)  as total FROM u749625779_cdscontent.job_cms as job 
 left join all_in_one_project.add_new_job as request 
 ON job.csg_request_new_id = request.id
-WHERE job.approved_editing_status <> 'approved' and request.request_username = '".$_SESSION['username']."' ";
+WHERE job.approved_editing_status <> 'approved' and job.job_status_filter <> 'cancel' and request.request_username = '".$_SESSION['username']."' ";
   $result = mysqli_query($con, $query);
   $result_count = mysqli_query($con, $query_count);
   $data=mysqli_fetch_assoc($result_count);
@@ -20,8 +20,7 @@ WHERE job.approved_editing_status <> 'approved' and request.request_username = '
     "<table class='table  table-hover'>
         <thead style='background: transparent;border: transparent;'>
             <tr style='background: transparent;border: transparent;'>";
-    echo "<th scope='row'>job number</th>";  
-    echo "<th>job type</th>";
+    echo "<th scope='row'>job number</th>"; 
     echo "<th>Brand</th>";
     echo "<th>SKU</th>";
     echo "<th>traffic</th>";  
@@ -44,7 +43,7 @@ WHERE job.approved_editing_status <> 'approved' and request.request_username = '
       ,$row["shoots_complete_date"]);
         echo "<tr>";
         echo "<th scope='row'>".$row["job_number"]."</th>";
-        echo "<td>".$row["job_type"]."</dh>";  
+; 
         echo "<td>".$row["brand"]."</td>";
         echo "<td>".$row["sku"]."</td>";
         echo "<td>".$row["traffic"]."</td>";
