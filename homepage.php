@@ -400,8 +400,8 @@
                 body {
                     font-family: 'Prompt', sans-serif !important;
                     font-size: 14px;
-                    background-color: #1e1e1e;
-                    color:white;
+                    background-color: #1e1e1e!important;
+                    color:white!important;
                 }
                 tr.sub-ticket.shadow-sm.p-3.mb-5.bg-body {
                     background-color: #171515!important;
