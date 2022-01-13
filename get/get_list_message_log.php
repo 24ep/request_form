@@ -20,7 +20,7 @@
    //echo "<script>console.log('".$query."');</script>";
    $result = mysqli_query($con, $query);
    $result_count = mysqli_query($con, $query_count);
-   echo "<h6>Latest Update</h6>";
+   echo "<h6>Latest Update</h6><hr>";
 echo '<div class="list-group">';
      while($row = mysqli_fetch_array($result)) {
         if($row["action_table"]=="add_new_job" or $row["action_table"]=="job_cms"){

@@ -739,10 +739,10 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-9" style="border-right: 1px solid #efecec;">
+                                <div class="col-8" style="border-right: 1px solid #efecec;">
                                     <?php include("get/get_list_job_cms_dashboard.php"); ?>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-4">
                                     <?php include("get/get_list_message_log.php"); ?>
                                 </div>
                             </div>
