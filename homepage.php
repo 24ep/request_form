@@ -423,7 +423,14 @@
                     aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <?php include("get/get_log.php"); ?>
+                <div class="row">
+                    <div class="col-9">
+                        <?php include("get/get_list_job_cms.php"); ?>
+                    </div>
+                    <div class="col-3">
+                        <?php include("get/get_log.php"); ?>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row " style="margin-bottom: 0px;--bs-gutter-x: 0rem;">
