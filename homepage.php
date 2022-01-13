@@ -425,7 +425,7 @@
             <div class="offcanvas-body">
                 <div class="row">
                     <div class="col-9">
-                        <?php include("get/get_list_job_cms.php"); ?>
+                        <?php include("get/get_list_job_cms_dashboard.php"); ?>
                     </div>
                     <div class="col-3">
                         <?php include("get/get_log.php"); ?>
