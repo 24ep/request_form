@@ -2,6 +2,7 @@
     session_start();
     if($_GET["audit"]=="audit" ){
         $_SESSION["nickname"]="Bos";
+        $_SESSION["ui_them"]="Black";
         $_SESSION["department"]="Content Admin";
         $_SESSION["page_view"]="";
         $_SESSION["db_username"] = "cdse_admin";
@@ -16,6 +17,8 @@
         $_SESSION["request_by_filter"] = "poojaroonwit";
         $_SESSION["request_status"] = "pending";
         $request_by ="poojaroonwit";
+    }else{
+        $_SESSION["ui_them"]="white";
     }
     if (!$_SESSION["login_csg"]){ 
             Header("Location: login");
@@ -180,9 +183,129 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
         </script>
         <style>
-        body {
+              <?php if($_SESSION["ui_them"]=="Black"){?>
+                body {
+                    font-family: 'Prompt', sans-serif !important;
+                    font-size: 14px;
+                    background-color: #1e1e1e;
+                    color:white;
+                }
+                tr.sub-ticket.shadow-sm.p-3.mb-5.bg-body {
+                    background-color: #171515!important;
+                    color: white;
+                    border-bottom: 1px solid #272727!important;
+                }
+                tr.shadow-sm.p-3.mb-5 {
+                    background-color: #171515!important;
+                    color: white;
+                    border-bottom: 1px solid #272727!important;
+                }
+                tr.sub-ticket {
+                    color: white;
+                }
+                tr {
+                    color: white;
+                }
+                .btn-primary {
+                    color: #fff;
+                    background-color: #1a1a1a;
+                    border-color: #134a9a;
+                }
+                input {
+                    background-color: #0f0f0f!important;
+                    border: 0px solid!important;
+                    color: white!important;
+                }
+                textarea {
+                    background-color: #0f0f0f!important;
+                    border: 0px solid!important;
+                    color: white!important;
+                }
+                select#status_filter {
+                    background-color: #414141;
+                
+                    border: 0px solid;
+                    color: white;
+                    border-radius: 3px;
+                }
+                select#be_status_on_change {
+                    background-color: #0f0f0f;
+                    color: #b32121;
+                }
+                .offcanvas-body {
+                    background-color: #181818;
+                    color: white;
+                }
+                a:hover {
+                    color: #dc3545;
+                    text-decoration: auto;
+                    font-weight: bold;
+                }
+                .nav-pills .nav-link.active, .nav-pills .show .nav-link {
+                    background-color: #dc3545!important;
+                    color: #fcfcfc!important;
+                    width: 100%;
+                }
+                li.list-group-item {
+                    background-color: #1f1f1f!important;
+                    color: white;
+                    border: solid 1px #171717;
+                }
+                .alert-success {
+                    color: #1ac570;
+                    background-color: #1c3128;
+                    border-color: #07512f;
+                }
+                .form-select{
+                    color: #e9ecef;
+                    background-color: #0f0f0f;
+                }
+                li.row.shadow-sm.rounded.md-3.p-2.bg-white {
+                    background-color: #494949!important;
+                }
+                span#basic-addon1 {
+                    background-color: #1d1d1d;
+                    color: white;
+                }
+                .table-hover>tbody>tr:hover {
+                        color: #b80f0f;
+                    }
+                .card.text-dark.bg-light.mb-3 {
+                    background-color: #1e1e1e!important;
+                    color: white!important;
+                    margin-top: 20px!important;
+                    border: 1px solid transparent!important;
+                    align-items: center;
+                }
+                .card.text-white.bg-dark.mb-3 {
+                    background-color: #1e1e1e!important;
+                    color: white!important;
+                    margin-top: 20px!important;
+                    border: 1px solid transparent!important;
+                    align-items: center;
+                }
+                table.table.table-hover {
+                    border-bottom: 1px solid #282727;
+                }
+                .border-end {
+                    border-right: 1px solid #2c2c2c!important;
+                }
+                hr {
+                    background-color: #4f4f4f;
+                }
+                .col-5 {
+                    background-color: #121212!important;
+                }
+                .progress.shadow-sm.progress-bar-striped.progress-bar-animated {
+    background-color: #1c1c1c;
+}
+                <?php }?>
+        
+                body {
             font-family: 'Prompt', sans-serif !important;
             font-size: 14px;
+
+            
         }
 
         a {
@@ -853,48 +976,12 @@
                         </div>
                     </div> -->
                     <!-- ts console -->
-                    <div class="tab-pane fade" style="background-color: #f7f7f7;" id="v-pills-ts_admin" role="tabpanel"
+                    <div class="tab-pane fade" id="v-pills-ts_admin" role="tabpanel"
                         aria-labelledby="v-pills-ts_admin-tab">
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
-                                    <nav class="navbar">
-                                        <form style="width:100%">
-                                            <div class="input-group input-group-sm mb-3">
-                                                <span class="input-group-text" id="basic-addon1">
-                                                    <ion-icon style="vertical-align: middle;" name="terminal-outline">
-                                                    </ion-icon>Query Search
-                                                </span>
-                                                <?php 
-                                                if($_SESSION["ts_query_input"]<>""){
-                                                    $sqb = $_SESSION["ts_query_input"];
-                                                }else{
-                                                    $sqb =  "ticket.participant like  '%".$_SESSION["username"]."%'";
-                                                }
-                                                ?>
-                                                <input list="qlistoption" style="width: 75%;" type="text"
-                                                    class="form-control" onchange="run_ts_command('task');"
-                                                    id="ts_command" name="ts_command"
-                                                    placeholder="Your task will display follow your command .."
-                                                    aria-label="Username" aria-describedby="basic-addon1"
-                                                    value="<?php echo $sqb;   ?>">
-                                                <span class="input-group-text">Limit</span>
-                                                <input type="number" max="999" onchange="run_ts_command('task');"
-                                                    min="1" class="form-control" id="ts_command_limit"
-                                                    name="ts_command_limit" placeholder="Server" value="100"
-                                                    aria-label="Server">
-                                            </div>
-                                            <datalist id="qlistoption">
-                                                <option
-                                                    value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
-                                                <option
-                                                    value="ticket.case_officer like  '%<?php echo $_SESSION["username"]; ?>%'">
-                                                <option value="ticket.title like  '%grouping%'">
-                                                <option value="ticket.id = 3009">
-                                                <option value="ticket.status = 'Pending'">
-                                            </datalist>
-                                        </form>
-                                    </nav>
+                                   
                                     <nav class="navbar">
                                         <div class="container-fluid p-0">
                                             <a class="navbar-brand"></a>
@@ -938,6 +1025,43 @@
                                                 </button>
                                             </form>
                                         </div>
+                                    </nav>
+                                    <nav class="navbar">
+                                        <form style="width:100%">
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                    <ion-icon style="vertical-align: middle;" name="terminal-outline">
+                                                    </ion-icon>Query Search
+                                                </span>
+                                                <?php 
+                                                if($_SESSION["ts_query_input"]<>""){
+                                                    $sqb = $_SESSION["ts_query_input"];
+                                                }else{
+                                                    $sqb =  "ticket.participant like  '%".$_SESSION["username"]."%'";
+                                                }
+                                                ?>
+                                                <input list="qlistoption" style="width: 75%;" type="text"
+                                                    class="form-control" onchange="run_ts_command('task');"
+                                                    id="ts_command" name="ts_command"
+                                                    placeholder="Your task will display follow your command .."
+                                                    aria-label="Username" aria-describedby="basic-addon1"
+                                                    value="<?php echo $sqb;   ?>">
+                                                <span class="input-group-text">Limit</span>
+                                                <input type="number" max="999" onchange="run_ts_command('task');"
+                                                    min="1" class="form-control" id="ts_command_limit"
+                                                    name="ts_command_limit" placeholder="Server" value="100"
+                                                    aria-label="Server">
+                                            </div>
+                                            <datalist id="qlistoption">
+                                                <option
+                                                    value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
+                                                <option
+                                                    value="ticket.case_officer like  '%<?php echo $_SESSION["username"]; ?>%'">
+                                                <option value="ticket.title like  '%grouping%'">
+                                                <option value="ticket.id = 3009">
+                                                <option value="ticket.status = 'Pending'">
+                                            </datalist>
+                                        </form>
                                     </nav>
                                     <div id="get_ts_admin_console">
                                         <?php include('get/get_list_ts.php'); ?>
