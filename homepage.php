@@ -938,6 +938,7 @@
                         </div>
 
                     </div>
+                    </div>
                     <!-- fl console -->
                     <div class="tab-pane fade" id="v-pills-fl_board" role="tabpanel"
                         aria-labelledby="v-pills-fl_board-tab">
