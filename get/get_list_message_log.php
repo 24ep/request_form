@@ -20,6 +20,7 @@
    //echo "<script>console.log('".$query."');</script>";
    $result = mysqli_query($con, $query);
    $result_count = mysqli_query($con, $query_count);
+   echo "<h6>Latest Update</h6>";
 echo '<div class="list-group">';
      while($row = mysqli_fetch_array($result)) {
         if($row["action_table"]=="add_new_job" or $row["action_table"]=="job_cms"){
@@ -27,9 +28,8 @@ echo '<div class="list-group">';
         }elseif($row["action_table"]=="content_request"){
             $label_id = "<span style='color:red'>CR-".$row["action_data_id"]."</span> ".$row["cr_title"];
         }
-           echo 
-        '
-           <div class="d-flex w-100 justify-content-between">
+        echo 
+        '<div class="d-flex w-100 justify-content-between">
              <h5 class="mb-1" style="font-size:15px"><strong>'. $label_id.'</strong></h5>
              <small>'.$row["action_date"].'</small>
            </div>

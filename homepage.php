@@ -634,7 +634,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-9">
+                                <div class="col-9" style="border-right: 1px solid #efecec;">
                                     <?php include("get/get_list_job_cms_dashboard.php"); ?>
                                 </div>
                                 <div class="col-3">
@@ -1127,7 +1127,7 @@
                                             <form class="row g-3"
                                                 action="base/action/action_submit_add_content_request.php" method="POST"
                                                 enctype="multipart/form-data">
-                                                <div id="add_new_cr_result"><
+                                                <div id="add_new_cr_result">
                                                 </div>
                                                 <?php include_once('form/form_create_content_request.php')?>
                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
