@@ -868,7 +868,7 @@
                                                     id="ts_command" name="ts_command"
                                                     placeholder="Your task will display follow your command .."
                                                     aria-label="Username" aria-describedby="basic-addon1"
-                                                    value=<?php echo $sqb;   ?>>
+                                                    value="<?php echo $sqb;   ?>">
                                                 <span class="input-group-text">Limit</span>
                                                 <input type="number" max="999" onchange="run_ts_command('task');"
                                                     min="1" class="form-control" id="ts_command_limit"
