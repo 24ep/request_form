@@ -423,14 +423,8 @@
                     aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <div class="row">
-                    <div class="col-9">
-                        <?php include("get/get_list_job_cms_dashboard.php"); ?>
-                    </div>
-                    <div class="col-3">
-                        <?php include("get/get_log.php"); ?>
-                    </div>
-                </div>
+            <?php include("get/get_log.php"); ?>
+           
             </div>
         </div>
         <div class="row " style="margin-bottom: 0px;--bs-gutter-x: 0rem;">
@@ -639,7 +633,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php include('get/get_list_message_log.php'); ?>
+                            <div class="row">
+                                <div class="col-9">
+                                    <?php include("get/get_list_job_cms_dashboard.php"); ?>
+                                </div>
+                                <div class="col-3">
+                                    <?php include("get/get_list_message_log.php"); ?>
+                                </div>
+                            </div>
+                            <?php //include('get/get_list_message_log.php'); ?>
                             <!-- <hr>
                             <?php //include('get/get_list_job_cms_dashboard.php'); ?> -->
                         </div>
