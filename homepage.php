@@ -500,6 +500,11 @@
             width: 58.3333333333%;
             border-right: 1px solid #191919;
         }
+        .col-8 {
+            flex: 0 0 auto;
+            width: 66.6666666667%;
+            border-right: 1px solid #2f2d2d;
+        }
             <?php
         }
         ?>
