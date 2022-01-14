@@ -26,10 +26,11 @@ if((mysqli_fetch_array($result) === null)){
         $_SESSION["nickname"]=$row["nickname"];
         $_SESSION["department"]=$row["department"];
         $_SESSION["page_view"]="";
+        $_SESSION['pf_theme']=$row["pf_theme"];
     }
     $_SESSION["cr_status_filter"] ="Pending";
     $_SESSION['login_csg']=true;
-    $_SESSION['pf_theme']=$row["pf_theme"];
+ 
     $_SESSION['pagenation'] = 1;
     $_SESSION["user_filter"] = $username;
     $internal_role = array("Content Admin", "Content Traffic", "Content Followup", "Content Studio Traffic");
