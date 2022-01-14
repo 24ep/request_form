@@ -2,7 +2,7 @@
     session_start();
     if($_GET["audit"]=="audit" ){
         $_SESSION["nickname"]="Bos";
-        $_SESSION["ui_them"]="Black";
+        $_SESSION["pf_theme"]="Dark";
         $_SESSION["department"]="Content Admin";
         $_SESSION["page_view"]="";
         $_SESSION["db_username"] = "cdse_admin";
@@ -17,8 +17,6 @@
         $_SESSION["request_by_filter"] = "poojaroonwit";
         $_SESSION["request_status"] = "pending";
         $request_by ="poojaroonwit";
-    }else{
-        $_SESSION["ui_them"]="white";
     }
     if (!$_SESSION["login_csg"]){ 
             Header("Location: login");
@@ -363,7 +361,7 @@
             background: #f9f9f9;
             margin-bottom: 10px;
         }
-        <?php if($_SESSION["ui_them"]=="Black") {
+        <?php if($_SESSION["pf_theme"]=="Dark") {
             ?>
             body {
                 font-family: 'Prompt', sans-serif !important;
