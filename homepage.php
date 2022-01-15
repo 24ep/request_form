@@ -503,6 +503,11 @@
             width: 66.6666666667%;
             border-right: 1px solid #2f2d2d;
         }
+        .col-2.list_bra.window-full.shadow {
+            background-color: transparent!important;
+            padding: 30px;
+            box-shadow: none!important;
+        }
             <?php
         }
         ?>
