@@ -1691,7 +1691,7 @@ function doAutoRefresh_can() {
                 //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
                 document.getElementById("get_card_add_new").innerHTML = req_can.responseText;
                 // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
-                setTimeout("doAutoRefresh_can()", 20000);
+                setTimeout("doAutoRefresh_can()", 50000);
             }
         }
     };
