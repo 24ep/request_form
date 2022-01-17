@@ -1683,7 +1683,6 @@ function doAutoRefresh_cr() {
 //     //var req_cr = Inint_AJAX();
 //     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
 //     req_can.open("POST", 'base/get/get_card_new_job.php?' + new Date().getTime(), true);
-//     //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
 //     req_can.onreadystatechange = function() {
 //         if (req_can.readyState == 4) {
 //             if (req_can.status == 200) {
