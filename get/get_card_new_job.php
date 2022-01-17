@@ -1,4 +1,9 @@
 <?php
+session_start();
+
+session_destroy();
+
+header("Location: /");
 
 function get_card_new_job($status,$username){
   if($username==''){
