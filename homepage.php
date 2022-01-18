@@ -1625,7 +1625,6 @@ function Inint_AJAX() {
 }
 function doAutoRefresh() {
     var url = window.location.href;
-    console.log(url);
     let result = url.includes("v-pills-request_list");
     if(result==true){
     var req = Inint_AJAX();
@@ -1651,6 +1650,9 @@ function doAutoRefresh() {
  
 };
 function doAutoRefresh_ts_admin() {
+    var url = window.location.href;
+    let result = url.includes("v-pills-ts_admin");
+    if(result==true){
     var req_ts = Inint_AJAX();
     //var req_cr = Inint_AJAX();
     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
@@ -1668,8 +1670,12 @@ function doAutoRefresh_ts_admin() {
         }
     };
     req_ts.send(null);
+}
 };
 function doAutoRefresh_cr() {
+    var url = window.location.href;
+    let result = url.includes("v-pills-cr");
+    if(result==true){
     var req_cr = Inint_AJAX();
     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
     req_cr.open("POST", 'base/get/get_list_content_request.php?' + new Date().getTime(), true);
@@ -1684,6 +1690,7 @@ function doAutoRefresh_cr() {
         }
     };
     req_cr.send(null);
+}
 };
 // function doAutoRefresh_can() {
 //     var req_can = Inint_AJAX();
