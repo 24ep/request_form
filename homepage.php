@@ -1624,6 +1624,10 @@ function Inint_AJAX() {
     return null
 }
 function doAutoRefresh() {
+    var url = window.location.href;
+    console.log(url);
+    let result = url.includes("v-pills-request_list");
+    if(result==true){
     var req = Inint_AJAX();
     //var req_cr = Inint_AJAX();
     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
@@ -1642,6 +1646,9 @@ function doAutoRefresh() {
         }
     };
     req.send(null);
+
+    }
+ 
 };
 function doAutoRefresh_ts_admin() {
     var req_ts = Inint_AJAX();
