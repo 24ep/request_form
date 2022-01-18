@@ -1640,7 +1640,7 @@ function doAutoRefresh() {
                 //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
                 document.getElementById("job_list").innerHTML = req.responseText;
                 // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
-                setTimeout("doAutoRefresh()", 6000);
+                setTimeout("doAutoRefresh()", 5000);
             }
         }
     };
@@ -1685,7 +1685,7 @@ function doAutoRefresh_cr() {
             if (req_cr.status == 200) {
                 // รับค่ากลับมา และ แสดงผล
                 document.getElementById("list_grouping").innerHTML = req_cr.responseText;
-                setTimeout("doAutoRefresh_cr()", 7000);
+                setTimeout("doAutoRefresh_cr()", 5000);
             }
         }
     };
