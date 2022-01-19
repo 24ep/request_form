@@ -877,7 +877,7 @@
                                     </tr>
                                 </thead>
                                 <tbody id="job_list">
-                                    <?php //include('get/get_list_new_job.php'); ?>
+                                    <?php include('get/get_list_new_job.php'); ?>
                                 </tbody>
                             </table>
                         </div>
@@ -918,7 +918,7 @@
                                     </div>
                                     <ul class="list-group list-group shadow " style="margin-top:15px">
                                         <div id="list_grouping">
-                                            <?php //include('get/get_list_content_request.php'); ?>
+                                            <?php include('get/get_list_content_request.php'); ?>
                                         </div>
                                     </ul>
                                 </div>
