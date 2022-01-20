@@ -1036,7 +1036,7 @@
                                                 if($_SESSION["ts_query_input"]<>""){
                                                     $sqb = $_SESSION["ts_query_input"];
                                                 }else{
-                                                    $sqb =  "ticket.participant like  '%".$_SESSION["username"]."%'";
+                                                    $sqb =  "(ticket.participant like  '%".$_SESSION["username"]."%' or ticket.case_officer like  '%".$_SESSION["username"]."%' )";
                                                 }
                                                 ?>
                                                 <input list="qlistoption" style="width: 75%;" type="text"
@@ -1052,10 +1052,9 @@
                                                     aria-label="Server">
                                             </div>
                                             <datalist id="qlistoption">
-                                                <option
-                                                    value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
-                                                <option
-                                                    value="ticket.case_officer like  '%<?php echo $_SESSION["username"]; ?>%'">
+                                                <option value="(ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%' or ticket.case_officer like '%<?php echo $_SESSION["username"]; ?>%')">
+                                                <option value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
+                                                <option value="ticket.case_officer like '%<?php echo $_SESSION["username"]; ?>%'">
                                                 <option value="ticket.title like  '%grouping%'">
                                                 <option value="ticket.id = 3009">
                                                 <option value="ticket.status = 'Pending'">
