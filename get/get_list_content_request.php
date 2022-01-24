@@ -71,6 +71,7 @@ if(isset($_POST["status"])){$_SESSION["status"]= $_POST["status"];}
    ticket.request_by as request_by,
    ticket.create_date as create_date,
    ticket.status as status,
+   ticket.ticket_template as ticket_template,
    comment.ticket_type as ticket_type,
    ticket.participant as ticket_participant,
    sum(case when comment.ticket_type='content_request' then 1 else 0 end) as count_comment 
@@ -98,7 +99,7 @@ if(isset($_POST["status"])){$_SESSION["status"]= $_POST["status"];}
           }
     echo    '<li class="list-group-item d-flex justify-content-between align-items-start" style="font-size:16px;display: block!important;"   >
                             <div style="margin-left: 10px;margin-top:0px;" >
-                                <div class="fw-bold" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].')"><strong style="color:red;">CR-'.$row["id"].'</strong> '.$row["title"]. $badge .'<div class="float-end status_cr_list">'.$row['status'].'</div></div>
+                                <div class="fw-bold" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].')"><strong style="color:red;">'.$row["ticket_template"].'-'.$row["id"].'</strong> '.$row["title"]. $badge .'<div class="float-end status_cr_list">'.$row['status'].'</div></div>
                                 <div data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].')" style="color:gray;font-size:13px;margin-right:20px;margin-bottom:5px">'.$description.'</div>
                                 <!--<ion-icon name="chatbubbles-outline" class="icon_ocv"></ion-icon> -->
                                 <small style="color: #adb5bd;font-size:12px;">'.$count_comment_cr.' Comment <strong>'.$row["request_by"].'</strong> '.$row['create_date'].'</small>     

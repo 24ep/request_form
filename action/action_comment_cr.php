@@ -111,6 +111,7 @@ if($comment<>'' or $file_size <>0){
    $result =  mysqli_query($con, $query);
        while($row = mysqli_fetch_array($result)) {
            $participant = $row["participant"];
+           $ticket_template = $row["ticket_template"];
        }
        $sent_to = explode(",",$participant);
        foreach ($sent_to as $sent_to_username) {
@@ -121,7 +122,7 @@ if($comment<>'' or $file_size <>0){
                   $key = $row["token_line"];
               }
               if($key<>"" and $key<>null){
-                sent_line_noti("\nCR-".$id." [ ".$brand." ".$sku." SKUs ]\n----------------------------\n".$_SESSION["nickname"]." has comment : \n".$comment,$key);
+                sent_line_noti("\n".$ticket_template."-".$id." [ ".$brand." ".$sku." SKUs ]\n----------------------------\n".$_SESSION["nickname"]." has comment : \n".$comment,$key);
               }
          }
       }
