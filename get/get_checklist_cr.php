@@ -225,7 +225,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                       <div class="col-sm-6" style="width: 56%;">
                     
                           <textarea placeholder="input detail of task  '.$i.' here ." style="font-size: unset;
-                          border-color: transparent;border-bottom: 1px solid #d8d8d8;border-radius: 0px;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description_'.$row["id"].'" name="cl_edit_description_'.$row["id"].'" rows="auto">'.$row["description"].'</textarea>
+                          border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description_'.$row["id"].'" name="cl_edit_description_'.$row["id"].'" rows="auto">'.$row["description"].'</textarea>
                        
                       </div>
                       <div class="col-sm-2" style="align-self: center;padding: 2px;">
