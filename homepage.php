@@ -1839,8 +1839,10 @@ function drop_card_cr(ev, new_status) {
         return new bootstrap.Offcanvas(offcanvasEl)
         })
         </script>';
-     
-        echo '<script>cr_id_toggle('.$_GET["cr_open"].');</script>';
+        echo '<script>document.getElementById("cr_search_input").value ='.$_GET["cr_open"].'</script>';
+       
+        // document.getElementById("ns_ticket_" + id).click();
+        // echo '<script>cr_id_toggle('.$_GET["cr_open"].');</script>';
         }
     
     } ?>
