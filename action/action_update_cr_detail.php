@@ -142,7 +142,7 @@ session_start();
         insert_log("update ticket \n ".$value_name." = ".$value_change ,"content_request",$_POST['id']);
         echo '<script>
          alert("Update Ticket ID CR-'.$_POST['id'].'");
-         var toastLiveExample = document.getElementById("liveToast");
+         var toastLiveExample = document.getElementById("liveToast_cr");
          var toast = new bootstrap.Toast(toastLiveExample);
          toast.show();</script>';
 	}else{
