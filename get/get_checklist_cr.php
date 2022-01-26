@@ -233,7 +233,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                       </div>
                       
                     </div>
-                    <div class="card-footer bg-transparent border-success" style="border-color: #dfd9d9!important">
+                    <div class="card-footer bg-transparent border-success" >
                         <div class="row" style="margin-bottom: 5px;">
                             
                          
@@ -261,7 +261,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                                   <span>Status</span>
                                 </div>
                                 <div class="col-8">
-                                  <select id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">';
+                                  <select  id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">';
                                     $op_status_cl = getoption_return_edit_job("content_request_status","option", $row["status"],"single");
                                     echo $op_status_cl;
                                     echo'
