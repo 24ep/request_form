@@ -258,7 +258,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                             echo '
                             <div class="col">
                               <div class="row" style="margin-bottom: 5px;">
-                                <div class="col-4" style="align-self: center;font-weight: 600;text-align-last: center;">
+                                <div class="col-4" style="align-self: center;font-weight: 600;">
                                   <span>Status</span>
                                 </div>
                                 <div class="col-8">
