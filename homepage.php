@@ -1833,16 +1833,16 @@ function drop_card_cr(ev, new_status) {
     echo '<script>open_ticket_detail('.$_GET["fopenticket"].');</script>';
     }
     if( $_GET["cr_open"]<>""){
-        echo '<script>
-        event.stopPropagation()
-        var detail_cr = document.getElementById("detail_cr")
-        var bsOffcanvas = new bootstrap.Offcanvas(detail_cr)
-        bsOffcanvas.show()
-        </script>';
+      
         // echo '<script>document.getElementById("cr_search_input").value ='.$_GET["cr_open"].'</script>';
        
         // document.getElementById("ns_ticket_" + id).click();
         echo '<script>cr_id_toggle('.$_GET["cr_open"].');</script>';
+        echo '<script>
+        var detail_cr = document.getElementById("detail_cr")
+        var bsOffcanvas = new bootstrap.Offcanvas(detail_cr)
+        bsOffcanvas.show()
+        </script>';
         }
     
     } ?>
