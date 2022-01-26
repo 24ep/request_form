@@ -515,7 +515,7 @@
     </head>
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
     <!-- toast -->
-         <div class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+         <div class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute;">
             <div class="d-flex">
                     <div id="toast" class="toast-body">
                         Hello, world! This is a toast message.
@@ -1761,7 +1761,12 @@ tinymce.init({
         'removeformat | help',
     //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
 });
+var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+var toastList = toastElList.map(function (toastEl) {
+  return new bootstrap.Toast(toastEl, option)
+})
     </script>
+
     <script>
 function allowDrop(ev) {
     ev.preventDefault();
