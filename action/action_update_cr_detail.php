@@ -143,7 +143,7 @@ session_start();
         echo '<script>
          alert("Update Ticket ID CR-'.$_POST['id'].'");
          var toast = new bootstrap.Toast(toastLiveExample);
-         var toastLiveExample = document.getElementById('liveToast')
+         var toastLiveExample = document.getElementById("liveToast")
          toast.show();</script>';
 	}else{
         insert_log("update ticket faild".$con->error ,"content_request",$id);
