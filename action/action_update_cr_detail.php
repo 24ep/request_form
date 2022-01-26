@@ -142,7 +142,7 @@ session_start();
         add_participant($_POST['id'],"content_request");
         insert_log("update ticket \n ".$value_name." = ".$value_change ,"content_request",$_POST['id']);
         echo '<script>
-         document.getElementById("toast_ms").innerHTML =  "<ion-icon name="checkmark-done-outline"></ion-icon>Update Ticket ID '.$ticket_template.'-'.$_POST['id'].'";
+         document.getElementById("toast_ms").innerHTML =  "Updated Ticket ID '.$ticket_template.'-'.$_POST['id'].'";
          var toastLiveExample = document.getElementById("liveToast_cr");
          var toast = new bootstrap.Toast(toastLiveExample);
          toast.show();</script>';
