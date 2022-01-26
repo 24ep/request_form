@@ -1761,9 +1761,15 @@ tinymce.init({
   contextmenu: 'link bold italic | quicklink h2 h3 blockquote ',
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
  });
-
-
     </script>
+
+<script type="text/javascript">
+  tinymce.init({
+    selector: '#des_cr_inline',
+    inline: true
+  });
+  </script>
+
     <script>
 tinymce.init({
     selector: 'textarea#ms_description',
@@ -1779,6 +1785,7 @@ tinymce.init({
         'removeformat | help',
     //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
 });
+
 
     </script>
 <script>

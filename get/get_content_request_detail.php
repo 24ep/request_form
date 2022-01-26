@@ -212,7 +212,7 @@ $result = mysqli_query($con, $query);
         <span>'.$create_date.'</span>      
         </div>
         <h5 style="font-weight: 800;"><strong style="color:red;">CR-'.$id .'</strong> '.$title.'</h5>
-        <div class="des_cr" >'.$description.'</div>
+        <div class="des_cr" id="des_cr_inline" >'.$description.'</div>
         '.$list_image.'
         <hr style="margin-bottom:5px;color: #dee2e6;">
         <small style="font-weight: bolder;color: #adb5bd;">Comment</small>
