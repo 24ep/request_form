@@ -1761,10 +1761,7 @@ tinymce.init({
         'removeformat | help',
     //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
 });
-var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-var toastList = toastElList.map(function (toastEl) {
-  return new bootstrap.Toast(toastEl, option)
-})
+
     </script>
 
     <script>
