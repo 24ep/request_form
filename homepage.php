@@ -1834,15 +1834,14 @@ function drop_card_cr(ev, new_status) {
     }
     if( $_GET["cr_open"]<>""){
         echo '<script>
-        var offcanvasElementList = [].slice.call(document.querySelectorAll(".offcanvas"))
-        var offcanvasList = offcanvasElementList.map(function (offcanvasEl) {
-        return new bootstrap.Offcanvas(offcanvasEl)
-        })
+        event.stopPropagation()
+        var bsOffcanvas = new bootstrap.Offcanvas(#detail_cr)
+        bsOffcanvas.show()
         </script>';
-        echo '<script>document.getElementById("cr_search_input").value ='.$_GET["cr_open"].'</script>';
+        // echo '<script>document.getElementById("cr_search_input").value ='.$_GET["cr_open"].'</script>';
        
         // document.getElementById("ns_ticket_" + id).click();
-        // echo '<script>cr_id_toggle('.$_GET["cr_open"].');</script>';
+        echo '<script>cr_id_toggle('.$_GET["cr_open"].');</script>';
         }
     
     } ?>
