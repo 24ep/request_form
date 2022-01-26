@@ -224,7 +224,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                       <label for="inputPassword" class="col-sm-2 col-form-label">No. '.$i.'</label>
                       <div class="col-sm-9">
                     
-                          <textarea placeholder="input detail of task  '.$i.' here ." style="border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description_'.$row["id"].'" name="cl_edit_description_'.$row["id"].'" rows="2">'.$row["description"].'</textarea>
+                          <textarea placeholder="input detail of task  '.$i.' here ." style="font-size: unset;border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description_'.$row["id"].'" name="cl_edit_description_'.$row["id"].'" rows="1">'.$row["description"].'</textarea>
                        
                       </div>
                       <div class="col-sm-1" style="align-self: center;">
@@ -239,11 +239,11 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                          
                                 <div class="col">
                                   <div class="row" style="margin-bottom: 5px;">
-                                    <div class="col-4">
-                                      <span style="align-self: center;">Assignee</span>
+                                    <div class="col-4" style="align-self: center;font-weight: 600;" >
+                                      <span >Assignee</span>
                                     </div>
                                     <div class="col-8">
-                                      <select style="border-color: transparent;"  id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">';
+                                      <select  id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">';
                                         $op_username_cl = getoption_return_edit_job("username","account", $row["case_officer"],"single");
                                         echo $op_username_cl;
                                         echo'
@@ -257,11 +257,11 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                             echo '
                             <div class="col">
                               <div class="row" style="margin-bottom: 5px;">
-                                <div class="col-4">
-                                  <span style="align-self: center;">Status</span>
+                                <div class="col-4" style="align-self: center;font-weight: 600;>
+                                  <span>Status</span>
                                 </div>
                                 <div class="col-8">
-                                  <select style="border-color: transparent;" id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">';
+                                  <select id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">';
                                     $op_status_cl = getoption_return_edit_job("content_request_status","option", $row["status"],"single");
                                     echo $op_status_cl;
                                     echo'
