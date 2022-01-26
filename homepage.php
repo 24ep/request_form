@@ -1748,7 +1748,7 @@ $(document).ready(function() {
 
 tinymce.init({
   selector: 'textarea#cr_description',
-  plugins: 'print preview paste importcss searchreplace table autolink autosave save directionality code visualblocks visualchars fullscreen link template codesample charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount textpattern noneditable help charmap quickbars emoticons',
+  plugins: 'print preview paste importcss searchreplace table autolink autosave save directionality code visualblocks visualchars fullscreen link template codesample charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount textpattern noneditable help charmap  emoticons',
   imagetools_cors_hosts: ['picsum.photos'],
   menubar: 'file edit view insert format tools table help',
   toolbar: 'bold italic underline strikethrough | forecolor backcolor removeformat | table code | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist  | pagebreak | charmap emoticons | fullscreen  preview  print | link anchor codesample | ltr rtl',
@@ -1756,10 +1756,9 @@ tinymce.init({
   template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
   template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
   height: 600,
-  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote code ',
   noneditable_noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
-  contextmenu: 'link',
+  contextmenu: 'link bold italic | quicklink h2 h3 blockquote code',
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
  });
 
