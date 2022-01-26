@@ -221,11 +221,11 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                   <div class="card text-dark bg-light mb-3 shadow-sm" style="border-color: transparent;padding-left: 10px;padding-right: 10px;background-color: #ffffff!important;" >
                     <div class="card-body" style="padding-bottom: 0px">
                       <div class="row" style="margin-bottom: 5px;">
-                      <label for="inputPassword" class="col-sm-1 col-form-label" style="flex-basis: fit-content;padding: 2px;">'.$i.'</label>
-                      <div class="col-sm-6">
+                      <label for="inputPassword" class="col-sm-1 col-form-label" style="flex-basis: fit-content;padding: 2px;place-self: center;">'.$i.'</label>
+                      <div class="col-sm-6" style="width: 56%;">
                     
                           <textarea placeholder="input detail of task  '.$i.' here ." style="font-size: unset;
-                          border-color: transparent;border-bottom: 1px solid #d8d8d8;border-radius: 0px;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description_'.$row["id"].'" name="cl_edit_description_'.$row["id"].'" rows="1">'.$row["description"].'</textarea>
+                          border-color: transparent;border-bottom: 1px solid #d8d8d8;border-radius: 0px;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description_'.$row["id"].'" name="cl_edit_description_'.$row["id"].'" rows="auto">'.$row["description"].'</textarea>
                        
                       </div>
                       <div class="col-sm-2" style="align-self: center;padding: 2px;">
