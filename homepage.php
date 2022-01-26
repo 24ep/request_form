@@ -1751,15 +1751,15 @@ tinymce.init({
   plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
   imagetools_cors_hosts: ['picsum.photos'],
   menubar: 'file edit view insert format tools table help',
-  toolbar: 'bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview  print | link anchor codesample | ltr rtl',
+  toolbar: 'bold italic underline strikethrough | table code| fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview  print | link anchor codesample | ltr rtl',
   toolbar_sticky: true,
   template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
   template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
   height: 600,
-  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote ',
   noneditable_noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
-  contextmenu: 'link image imagetools table',
+  contextmenu: 'link',
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
  });
 
