@@ -268,6 +268,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                                   </select>
                                 </div>
                               </div>
+                            </div>
                             </div>';
                   //----------------
                   //   echo '
@@ -297,7 +298,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
         
                   //       </div>
                   //   </div>
-                  // </div>
+                  // 
                   
                   // ';
         
