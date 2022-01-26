@@ -1835,7 +1835,8 @@ function drop_card_cr(ev, new_status) {
     if( $_GET["cr_open"]<>""){
         echo '<script>
         event.stopPropagation()
-        var bsOffcanvas = new bootstrap.Offcanvas(#detail_cr)
+        var detail_cr = document.getElementById("detail_cr")
+        var bsOffcanvas = new bootstrap.Offcanvas(detail_cr)
         bsOffcanvas.show()
         </script>';
         // echo '<script>document.getElementById("cr_search_input").value ='.$_GET["cr_open"].'</script>';
