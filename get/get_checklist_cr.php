@@ -221,14 +221,14 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                   <div class="card text-dark bg-light mb-3 shadow-sm" style="border-color: transparent;padding-left: 10px;padding-right: 10px;background-color: #ffffff!important;" >
                     <div class="card-body" style="padding-bottom: 0px">
                       <div class="row" style="margin-bottom: 5px;">
-                      <label for="inputPassword" class="col-sm-1 col-form-label" style="flex-basis: fit-content;">'.$i.'</label>
+                      <label for="inputPassword" class="col-sm-1 col-form-label" style="flex-basis: fit-content;padding: 2px;">'.$i.'</label>
                       <div class="col-sm-6">
                     
                           <textarea placeholder="input detail of task  '.$i.' here ." style="font-size: unset;
                           border-color: transparent;border-bottom: 1px solid #d8d8d8;border-radius: 0px;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description_'.$row["id"].'" name="cl_edit_description_'.$row["id"].'" rows="1">'.$row["description"].'</textarea>
                        
                       </div>
-                      <div class="col-sm-2" style="align-self: center;">
+                      <div class="col-sm-2" style="align-self: center;padding: 2px;">
                       
                                     
                                       <select  id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">';
@@ -238,56 +238,20 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                                       </select>
                                  
                       </div>
-                      <div class="col-sm-2" style="align-self: center;">
+                      <div class="col-sm-2" style="align-self: center;padding: 2px;">
                                       <select  id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">';
                                       $op_status_cl = getoption_return_edit_job("content_request_status","option", $row["status"],"single");
                                       echo $op_status_cl;
                                       echo'
                                     </select>
                     </div>
-                      <div class="col-sm-1" style="align-self: center;">
+                      <div class="col-sm-1" style="align-self: center;padding: 2px;">
                         <button  style="background: transparent;border: 0px;" onclick="remove_cr_list('.$row['id'].','.$ticket_id.')" ><ion-icon name="trash-outline"></ion-icon></button>
                       </div>
                       </div>
                       
                     </div>
-                    <div class="card-footer bg-transparent border-transparent" style="border: 0px;" >
-                        <div class="row" style="margin-bottom: 5px;">
-                            
-                         
-                                <div class="col">
-                                  <div class="row" style="margin-bottom: 5px;">
-                                    <div class="col-4" style="align-self: center;font-weight: 600;" >
-                                      <span >Assignee</span>
-                                    </div>
-                                    <div class="col-8">
-                                      <select  id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">';
-                                        $op_username_cl = getoption_return_edit_job("username","account", $row["case_officer"],"single");
-                                        echo $op_username_cl;
-                                        echo'
-                                      </select>
-                                    </div>
-                                  </div>
-                                </div>';
-                            
-                       
-
-                            echo '
-                            <div class="col">
-                              <div class="row" style="margin-bottom: 5px;">
-                                <div class="col-4" style="align-self: center;font-weight: 600;">
-                                  <span>Status</span>
-                                </div>
-                                <div class="col-8">
-                                  <select  id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">';
-                                    $op_status_cl = getoption_return_edit_job("content_request_status","option", $row["status"],"single");
-                                    echo $op_status_cl;
-                                    echo'
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-                            </div></div>  </div>';
+                    </div>';
                   //----------------
                   //   echo '
                   //           <div class="col">
