@@ -233,7 +233,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                       </div>
                       
                     </div>
-                    <div class="card-footer bg-transparent border-success" >
+                    <div class="card-footer bg-transparent border-transparent" >
                         <div class="row" style="margin-bottom: 5px;">
                             
                          
@@ -257,7 +257,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                             echo '
                             <div class="col">
                               <div class="row" style="margin-bottom: 5px;">
-                                <div class="col-4" style="align-self: center;font-weight: 600;>
+                                <div class="col-4" style="align-self: center;font-weight: 600;">
                                   <span>Status</span>
                                 </div>
                                 <div class="col-8">
