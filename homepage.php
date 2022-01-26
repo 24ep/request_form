@@ -1759,7 +1759,8 @@ tinymce.init({
   noneditable_noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
   contextmenu: 'link bold italic | quicklink h2 h3 blockquote ',
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+  inline: true
  });
 
  tinymce.init({
