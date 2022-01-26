@@ -161,7 +161,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
            
                   echo '<li class="mb-1 row">
                 <div class="col-1 text-center" style="padding:1px;"> </div>
-                <div class="col-6 text-center" style="padding:2px;"> <strong>Task</strong></div>
+                <div class="col-6 text-center" style="padding:6px;"> <strong>Task</strong></div>
                 <div class="col-2 text-center" style="padding:2px;"> <strong>Assignee</strong></div>
                 <div class="col-2 text-center" style="padding:2px;"> <strong>Status</strong></div>
                 <div class="col-1 text-center" style="padding:1px;"> </div>
