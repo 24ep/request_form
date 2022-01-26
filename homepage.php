@@ -1803,8 +1803,8 @@ tinymce.init({
   noneditable_noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
   contextmenu: 'link image imagetools table',
-  skin: useDarkMode ? 'oxide-dark' : 'oxide',
-  content_css: useDarkMode ? 'dark' : 'default',
+  skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : 'oxide'),
+  content_css: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default')
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
  });
 
