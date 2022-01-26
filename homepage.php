@@ -1834,7 +1834,7 @@ function drop_card_cr(ev, new_status) {
     }
     if( $_GET["cr_open"]<>""){
         echo '<script>
-        var offcanvasElementList = [].slice.call(document.querySelectorAll('.offcanvas'))
+        var offcanvasElementList = [].slice.call(document.querySelectorAll(".offcanvas"))
         var offcanvasList = offcanvasElementList.map(function (offcanvasEl) {
         return new bootstrap.Offcanvas(offcanvasEl)
         })
