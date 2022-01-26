@@ -9,12 +9,7 @@ label#label_file {
     font-weight: 600 !important;
 }
 </style>
-<script>
-  var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-  var toastList = toastElList.map(function (toastEl) {
-  return new bootstrap.Toast(toastEl, option)
-})
-</script>
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <?php
 $id = $_POST['id'];

@@ -1763,7 +1763,12 @@ tinymce.init({
 });
 
     </script>
-
+<script>
+  var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+  var toastList = toastElList.map(function (toastEl) {
+  return new bootstrap.Toast(toastEl, option)
+})
+</script>
     <script>
 function allowDrop(ev) {
     ev.preventDefault();
