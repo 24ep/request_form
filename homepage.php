@@ -1833,14 +1833,14 @@ function drop_card_cr(ev, new_status) {
     echo '<script>open_ticket_detail('.$_GET["fopenticket"].');</script>';
     }
     if( $_GET["cr_open"]<>""){
-        // echo '<script>
-        // var offcanvasElementList = [].slice.call(document.querySelectorAll(".offcanvas"))
-        // var offcanvasList = offcanvasElementList.map(function (offcanvasEl) {
-        // return new bootstrap.Offcanvas(offcanvasEl)
-        // })
-        // </script>';
-     echo '<button type="button" class="btn-close" data-bs-dismiss="offcanvas" onclick="cr_id_toggle('.$_GET["cr_open"].')" data-bs-target="#detail_cr" aria-label="Close"></button>';
-      
+        echo '<script>
+        var offcanvasElementList = [].slice.call(document.querySelectorAll(".offcanvas"))
+        var offcanvasList = offcanvasElementList.map(function (offcanvasEl) {
+        return new bootstrap.Offcanvas(offcanvasEl)
+        })
+        </script>';
+     
+        echo '<script>cr_id_toggle('.$_GET["cr_open"].');</script>';
         }
     
     } ?>
