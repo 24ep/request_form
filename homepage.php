@@ -1831,7 +1831,7 @@ function drop_card_cr(ev, new_status) {
     // $_SESSION["fopenticket"]=$_GET["fopenticket"];
     // echo '<script>open_ticket_detail('.$_GET["fopenticket"].');</script>';
     echo '<script>call_edit_add_new_modal('.$_GET["fopenticket"].');</script>';
-    }} ?>
+    } ?>
     <?php if( $_GET["cr_open"]<>""){
-    echo '<script>cr_id_toggle('.$_GET["cr_open"].');</script>';
-    }} ?>
+    echo '<script>cr_id_toggle('.$_GET["cr_open"].')</script>';
+    } ?>
