@@ -116,6 +116,7 @@ session_start();
        while($row = mysqli_fetch_array($result)) {
            $participant = $row["participant"];
            $topic = $row["title"];
+           $ticket_template = $row["ticket_template"];
        }
        $sent_to = explode(",",$participant);
        foreach ($sent_to as $sent_to_username) {
@@ -141,7 +142,7 @@ session_start();
         add_participant($_POST['id'],"content_request");
         insert_log("update ticket \n ".$value_name." = ".$value_change ,"content_request",$_POST['id']);
         echo '<script>
-         alert("Update Ticket ID CR-'.$_POST['id'].'");
+         document.getElementById("toast_ms").innerHTML =  "Update Ticket ID '.$ticket_template.'-'.$_POST['id'].'";
          var toastLiveExample = document.getElementById("liveToast_cr");
          var toast = new bootstrap.Toast(toastLiveExample);
          toast.show();</script>';
