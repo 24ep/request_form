@@ -197,14 +197,12 @@ $result = mysqli_query($con, $query);
         <div class="row window-full overflow-auto" style="margin-bottom: 0px;padding-left:20px">
         <div class="col-7" style="border-right:1px solid  #ebedef;padding: 1rem 1rem;">
 
-          <div class="toast align-items-center text-white bg-primary border-0 top-0 end-0"  role="alert" aria-live="polite" aria-atomic="true" data-bs-delay="10000" style="z-index: 11">
-          <div role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast align-items-center text-white bg-primary border-0 top-0 end-0" role="alert" aria-atomic="true" data-bs-autohide="false" aria-live="assertive" id="liveToast_cr" style="z-index: 11">
             <div class="d-flex">
               <div class="toast-body" id="toast">
                 Hello, world! This is a toast message.
               </div>
               <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
             </div>
           </div>
 
