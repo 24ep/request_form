@@ -218,7 +218,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                 if($row['ticket_template']=='PJ'){
 
                   echo '
-                  <div class="card text-dark bg-light mb-3 shadow-sm" style="border-color: transparent;padding-left: 10px;padding-right: 10px;background-color: #ffffff;" >
+                  <div class="card text-dark bg-light mb-3 shadow-sm" style="border-color: transparent;padding-left: 10px;padding-right: 10px;background-color: #ffffff!important;" >
                     <div class="card-body" style="padding-bottom: 0px">
                       <div class="row" style="margin-bottom: 5px;">
                       <label for="inputPassword" class="col-sm-2 col-form-label">No. '.$i.'</label>
