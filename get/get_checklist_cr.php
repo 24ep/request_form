@@ -119,7 +119,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
     color: #bbbbbb;
     border: solid #bbbbbb 1px;
     border-radius: 5px;">
-    no have sub task avalible for now</div>';
+    no have sub task available for now</div>';
     }
 
     $i=1;
