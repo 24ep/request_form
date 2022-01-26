@@ -155,6 +155,21 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
               </li>';
               }
             }
+            if($row['ticket_template']=='PJ' and $i == 1){
+            
+        
+           
+                  echo '<li class="mb-1 row">
+                <div class="col-1 text-center" style="padding:3px;"> </div>
+                <div class="col-6 text-center" style="padding:3px;"> <strong>Task</strong></div>
+                <div class="col-2 text-center" style="padding:3px;"> <strong>Assignee</strong></div>
+                <div class="col-2 text-center" style="padding:3px;"> <strong>Status</strong></div>
+                <div class="col-1 text-center" style="padding:3px;"> </div>
+             
+                </li>';
+                
+              }
+            
         
                     if($row['ticket_template']=='CR'){
                   echo '
@@ -216,6 +231,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
           
  //----------------
                 if($row['ticket_template']=='PJ'){
+                  
 
                   echo '
                   <div class="card text-dark bg-light mb-3 shadow-sm" style="border-color: transparent;padding-left: 10px;padding-right: 10px;background-color: #ffffff!important;" >
