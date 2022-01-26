@@ -197,7 +197,7 @@ $result = mysqli_query($con, $query);
         <div class="row window-full overflow-auto" style="margin-bottom: 0px;padding-left:20px">
         <div class="col-7" style="border-right:1px solid  #ebedef;padding: 1rem 1rem;">
 
-          <div class="text-white bg-success toast align-items-center top-5 start-50 translate-middle-x fade hide" role="alert" aria-atomic="true" data-bs-delay="10000" aria-live="assertive" id="liveToast_cr" style="position: absolute; top: 0; right: 0;margin-top:10px;margin-right:10px">
+          <div class="text-white bg-success toast align-items-center top-5 start-50 translate-middle-x fade hide" role="alert" aria-atomic="true" data-bs-delay="2000" aria-live="assertive" id="liveToast_cr" style="position: absolute; top: 0; right: 0;margin-top:10px;margin-right:10px">
             <div class="d-flex">
               <div class="toast-body" id="toast_ms">
                 Hello, world! This is a toast message.
