@@ -1790,7 +1790,7 @@ var emailHeaderConfig = {
 };
 
 var emailBodyConfig = {
-  selector: '#des_cr_inline',
+  selector: '.des_cr',
   menubar: false,
   inline: true,
   plugins: [
