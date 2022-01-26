@@ -1761,59 +1761,30 @@ tinymce.init({
   contextmenu: 'link bold italic | quicklink h2 h3 blockquote ',
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
  });
+
+ tinymce.init({
+  selector: 'div#des_cr_inline',
+  plugins: 'print preview paste importcss searchreplace table autolink autosave save directionality lists code visualblocks visualchars fullscreen link template codesample charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist  wordcount textpattern noneditable help charmap  emoticons',
+  imagetools_cors_hosts: ['picsum.photos'],
+  menubar: 'file edit view insert format tools table help',
+  toolbar: 'bold italic underline strikethrough | forecolor backcolor removeformat | table code | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | pagebreak | charmap emoticons | fullscreen  preview  print | link anchor codesample | ltr rtl',
+  toolbar_sticky: true,
+  template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
+  template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
+  height: 600,
+  noneditable_noneditable_class: 'mceNonEditable',
+  toolbar_mode: 'sliding',
+  contextmenu: 'link bold italic | quicklink h2 h3 blockquote ',
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+  inline: true
+ });
     </script>
- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
 <script type="text/javascript">
-    
   tinymce.init({
     selector: '#des_cr_inline',
     inline: true
   });
-
-  
-var emailHeaderConfig = {
-  selector: '.tinymce-heading',
-  menubar: false,
-  inline: true,
-  plugins: [
-    'lists',
-    'powerpaste',
-    'autolink'
-  ],
-  toolbar: 'undo redo | bold italic underline',
-  valid_elements: 'strong,em,span[style],a[href]',
-  valid_styles: {
-    '*': 'font-size,font-family,color,text-decoration,text-align'
-  },
-  powerpaste_word_import: 'clean',
-  powerpaste_html_import: 'clean',
-};
-
-var emailBodyConfig = {
-  selector: '.des_cr',
-  menubar: false,
-  inline: true,
-  plugins: [
-    'link',
-    'lists',
-    'powerpaste',
-    'autolink',
-    'tinymcespellchecker'
-  ],
-  toolbar: [
-    'undo redo | bold italic underline | fontselect fontsizeselect',
-    'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent'
-  ],
-  valid_elements: 'p[style],strong,em,span[style],a[href],ul,ol,li',
-  valid_styles: {
-    '*': 'font-size,font-family,color,text-decoration,text-align'
-  },
-  powerpaste_word_import: 'clean',
-  powerpaste_html_import: 'clean',
-};
-
-tinymce.init(emailHeaderConfig);
-tinymce.init(emailBodyConfig);
   </script>
 
     <script>
