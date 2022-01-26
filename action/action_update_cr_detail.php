@@ -140,7 +140,11 @@ session_start();
     }
         add_participant($_POST['id'],"content_request");
         insert_log("update ticket \n ".$value_name." = ".$value_change ,"content_request",$_POST['id']);
-        echo '<script>alert("Update Ticket ID CR-'.$_POST['id'].'");toast.show();</script>';
+        echo '<script>
+         alert("Update Ticket ID CR-'.$_POST['id'].'");
+         var toast = new bootstrap.Toast(toastLiveExample);
+         var toastLiveExample = document.getElementById('liveToast')
+         toast.show();</script>';
 	}else{
         insert_log("update ticket faild".$con->error ,"content_request",$id);
         echo '<script>alert("Error: ' . $sql . '\n\n' . $con->error.'")</script>';

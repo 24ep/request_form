@@ -515,14 +515,14 @@
     </head>
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
     <!-- toast -->
-         <div class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute;">
+            <div class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" id="liveToast" aria-atomic="true" style="z-index: 11">
             <div class="d-flex">
-                    <div id="toast" class="toast-body">
-                        Hello, world! This is a toast message.
-                    </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+              <div class="toast-body" id="toast">
+                Hello, world! This is a toast message.
+              </div>
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
-        </div>
+          </div>
     <!-- toast -->
         <!--         <nav class="navbar sticky-top navbar-danger bg-danger">
           <marquee>
