@@ -269,7 +269,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                                 </div>
                               </div>
                             </div>
-                            </div></div>';
+                            </div></div>  </div>';
                   //----------------
                   //   echo '
                   //           <div class="col">
