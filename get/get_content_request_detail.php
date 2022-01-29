@@ -14,6 +14,24 @@ label#label_file {
 <?php
 $id = $_POST['id'];
 // $func = $_POST['func'];
+function return_option_edit_cr($current_value,$attr_id){
+  session_start();
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+    $query_op = "SELECT * FROM content_service_gate.attribute_option
+    WHERE attribute_id = ".$attr_id." and function = 'content_request' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
+    $result_op = mysqli_query($con, $query_op);
+    if($current_value==""){
+      $option_element = "<option selected value=''></option>";
+    }
+    while($option = mysqli_fetch_array($result_op)) {
+      if($option["attribute_option"]==$current_value){
+          $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+        }else{
+          $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+        }
+    }
+  return $option_element;
+}
 function get_attachment_cr($id){
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -94,7 +112,7 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
             }
           }else{
        
-            
+
             if($loop_in_null<>true){
               if(isset($option_set)){
                 $option_set .= '<option value=""></option>';
@@ -147,7 +165,8 @@ $result = mysqli_query($con, $query);
     }else{
         $assign = '<div style="margin-bottom:15px">assign to '.$case_officer.'</div>';
     }
-    $cr_op = getoption_return_edit_cr("content_request_status","option",$status,"single","all_in_one_project");
+    // $cr_op = getoption_return_edit_cr("content_request_status","option",$status,"single","all_in_one_project");
+    $cr_op = return_option_edit_cr($status,"38")
     $username_op = getoption_return_edit_cr("username","account",$case_officer,"single","all_in_one_project");
     $type_op = getoption_return_edit_cr("issue_type","option",$ticket_type,"single","all_in_one_project");
     $content_request_reson_op = getoption_return_edit_cr("content_request_reson","option",$content_request_reson,"single","all_in_one_project");
