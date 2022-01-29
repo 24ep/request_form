@@ -50,6 +50,7 @@
 if($_POST["brand"]<>""){ $insert_head .= "brand";$insert_value .= "'".str_replace("'","''",$_POST["brand"])."'";}
 // if($_POST["department"]<>""){ $insert_head .= ",department";$insert_value .= ",'".$_POST["department"]."'";}
 if($_POST["sub_department"]<>""){ $insert_head .= ",sub_department";$insert_value .= ",'".$_POST["sub_department"]."'";}
+if($_POST["web_cate"]<>""){ $insert_head .= ",web_cate";$insert_value .= ",'".$_POST["web_cate"]."'";}
 if($department_cal<>""){ $insert_head .= ",department";$insert_value .= ",'".$department_cal."'";}
 if($_POST["sku"]<>""){ $insert_head .= ",sku";$insert_value .= ",'".$_POST["sku"]."'";}
 if($_POST["production_type"]<>""){ $insert_head .= ",production_type";$insert_value .= ",'".$_POST["production_type"]."'";}

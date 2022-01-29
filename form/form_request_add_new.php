@@ -211,6 +211,7 @@ session_start();
        $business_type_op = get_option_return("business_type","","single","add_new");
        $production_type_op = get_option_return("production_type","","single","add_new");
        $sub_department_op = get_option_return("sub_department","","single","add_new");
+       $web_cate_op = get_option_return("web_cate","","single","add_new");
        
        
 ?>
@@ -243,6 +244,13 @@ session_start();
         <select required class="form-select form-select-sm" aria-label="Default select example" id="sub_department"
             name="sub_department">
             <?php echo $sub_department_op; ?>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <label for="web_cate" class="form-label">*Web Cate</label>
+        <select required class="form-select form-select-sm" aria-label="Default select example" id="web_cate"
+            name="web_cate">
+            <?php echo $web_cate_op; ?>
         </select>
     </div>
     <div class="col-md-3">
