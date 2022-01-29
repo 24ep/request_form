@@ -4,7 +4,7 @@
     session_start();
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
       $query_op = "SELECT * FROM content_service_gate.attribute_option
-      WHERE attribute_id = ".$attr_id." and function = 'cl_content_request' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
+      WHERE attribute_id = ".$attr_id." and function = 'content_request' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
       $result_op = mysqli_query($con, $query_op);
       if($current_value==""){
         $option_element = "<option selected value=''></option>";
