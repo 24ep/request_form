@@ -166,7 +166,7 @@ $result = mysqli_query($con, $query);
         $assign = '<div style="margin-bottom:15px">assign to '.$case_officer.'</div>';
     }
     // $cr_op = getoption_return_edit_cr("content_request_status","option",$status,"single","all_in_one_project");
-    $cr_op = return_option_edit_cr($status,"38")
+    $cr_op = return_option_edit_cr($status,"38");
     $username_op = getoption_return_edit_cr("username","account",$case_officer,"single","all_in_one_project");
     $type_op = getoption_return_edit_cr("issue_type","option",$ticket_type,"single","all_in_one_project");
     $content_request_reson_op = getoption_return_edit_cr("content_request_reson","option",$content_request_reson,"single","all_in_one_project");
