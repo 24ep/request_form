@@ -46,7 +46,7 @@
         if($_POST["cr_ticket_template"]<>""){ $insert_head .= ",ticket_template";$insert_value .= ",'".$_POST["cr_ticket_template"]."'";}
         if($_POST["cr_ticket_type"]<>""){ $insert_head .= ",ticket_type";$insert_value .= ",'".$_POST["cr_issue_type"]."'";}
         if($_POST["cr_piority"]<>""){ $insert_head .= ",piority";$insert_value .= ",'".$_POST["cr_piority"]."'";}
-        if($_POST["cr_online_chanel"]<>""){ $insert_head .= ",online_chanel";$insert_value .= ",'".$_POST["cr_online_chanel"]."'";}
+        // if($_POST["cr_online_chanel"]<>""){ $insert_head .= ",online_chanel";$insert_value .= ",'".$_POST["cr_online_chanel"]."'";}
         if($_POST["cr_effective_date"]<>""){ $insert_head .= ",effective_date";$insert_value .= ",'".$_POST["cr_effective_date"]."'";}
         if($_SESSION["username"]<>""){ $insert_head .= ",request_by";$insert_value .= ",'".$_SESSION["username"]."'";}
         if($sum_product_website<>""){ $insert_head .= ",platform_issue";$insert_value .= ",'".$sum_product_website."'";}
