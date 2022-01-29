@@ -93,7 +93,8 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
               }
             }
           }else{
-      
+       
+            
             if($loop_in_null<>true){
               if(isset($option_set)){
                 $option_set .= '<option value=""></option>';

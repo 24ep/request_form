@@ -1,5 +1,23 @@
 <?php 
   session_start();
+  function return_option_create_cr($current_value,$attr_id){
+    session_start();
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+      $query_op = "SELECT * FROM content_service_gate.attribute_option
+      WHERE attribute_id = ".$attr_id." and function = 'cl_content_request' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
+      $result_op = mysqli_query($con, $query_op);
+      if($current_value==""){
+        $option_element = "<option selected value=''></option>";
+      }
+      while($option = mysqli_fetch_array($result_op)) {
+        if($option["attribute_option"]==$current_value){
+            $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+          }else{
+            $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+          }
+      }
+    return $option_element;
+  }
         function getoption_cr($col,$table,$select_option,$sorm,$database) {
             $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
@@ -48,8 +66,10 @@
        //$department_op = getoption_cr("department","job_option_cms",$department,"single","u749625779_cdscontent");
        $product_website_op = getoption_cr("product_website","job_option_cms","CDS","multi","u749625779_cdscontent");
        $cr_important_op = getoption_cr("cr_important","option","Low","single","all_in_one_project");
-       $cr_issue_type_op = getoption_cr("issue_type","option","","single","all_in_one_project");
+      //  $cr_issue_type_op = getoption_cr("issue_type","option","","single","all_in_one_project");
        $cr_product_category_op = getoption_cr("product_category","option","","single","all_in_one_project");
+
+       $cr_issue_type_op = return_s_select_box_cl_cr("","39");
 ?>
   <div class="row">
     <div class="form-group">
