@@ -246,19 +246,19 @@ session_start();
             <?php echo $sub_department_op; ?>
         </select>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
         <label for="web_cate" class="form-label">*Web Cate</label>
         <select required class="form-select form-select-sm" aria-label="Default select example" id="web_cate"
             name="web_cate">
             <?php echo $web_cate_op; ?>
         </select>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
         <label for="inputAddress" class="form-label">*SKU</label>
         <input required type="number" class="form-control form-control-sm" id="sku" placeholder="จำนวน SKU ทั้งหมด"
             name="sku" required min="1" max="99999">
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
         <label for="photo" class="form-label">*Production type</label>
         <select class="form-select form-select-sm" required aria-label="Default select example" id="production_type"
             name="production_type">
