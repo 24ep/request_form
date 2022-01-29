@@ -97,7 +97,8 @@ label#label_file_cme {
             anj.config_type as config_type,
             anj.subject_mail as subject_mail,
             ac.nickname as follow_assign_nickname,
-            brand_info.link as brand_info_link
+            brand_info.link as brand_info_link,
+            anj.web_cate as web_cate
             FROM all_in_one_project.add_new_job as anj 
             left join all_in_one_project.account as ac 
             on ac.username = anj.follow_assign_name
@@ -141,6 +142,7 @@ label#label_file_cme {
       $subject_mail = $row['subject_mail'];
       $follow_assign_nickname = $row['follow_assign_nickname'];
       $brand_info_link = $row['brand_info_link'];
+      $web_cate = $row['web_cate'];
       
 
     //stamp color status
