@@ -189,7 +189,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                             <select id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm rounded-0 border-0 border-end text-center" aria-label="Default select example">
                                   ';
                                   // $op_status_cl = getoption_return_edit_job("content_request_status","option", $row["status"],"single");
-                                  $op_status_cl =  =return_s_select_box_cl_cr($row["status"],"38");
+                                  $op_status_cl =return_s_select_box_cl_cr($row["status"],"38");
                                   echo $op_status_cl;
                                   echo'
                             </select>
