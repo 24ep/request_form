@@ -1674,7 +1674,7 @@ function doAutoRefresh_ts_admin() {
                 //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
                 document.getElementById("get_ts_admin_console").innerHTML = req_ts.responseText;
                 // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
-                setTimeout("doAutoRefresh_ts_admin()", 5000);
+                setTimeout("doAutoRefresh_ts_admin()", 1000);
             }
         }
     };
