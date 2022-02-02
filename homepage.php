@@ -542,6 +542,14 @@
         .nav-link.active{
             color:white;
         }
+        button.btn.btn-toggle.align-items-center.rounded.collapsed {
+            color: black!important;
+            font-weight: 700;
+        }
+        button.btn.btn-toggle.align-items-center.rounded {
+            color: black!important;
+            font-weight: 300;
+        }
 
 <?php
         }
