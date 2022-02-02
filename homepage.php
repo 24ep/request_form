@@ -361,6 +361,43 @@
             background: #f9f9f9;
             margin-bottom: 10px;
         }
+/* add new style  */
+     
+.tree_label {
+    padding-left: 15px;
+    color: gray;
+}
+.tree_label:after {
+    position: absolute;
+    top: 0em;
+    left: -2px;
+    display: table-column-group;
+    height: 10px;
+    width: 20px;
+    border-bottom: 2px solid #727476;
+    border-left: 2px solid #727476;
+    border-radius: 0 0 0 .4em;
+    content: '';
+    padding-top: 23px;
+}
+.tree_lift {
+    left: 0px;
+    position: relative;
+    border-left: 2px solid #6c757d;
+}
+.tree_lift_end {
+    left: 0px;
+    position: relative;
+    border-left: 2px solid transparent;
+}
+.sub-ticket {
+    border: 0px solid transparent
+}
+label.tree_label:hover {
+    color: #666;
+}
+
+/* end add new style  */
         <?php if($_SESSION["pf_theme"]=="Dark") {
             ?>
             body {
