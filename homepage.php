@@ -539,6 +539,9 @@
         ion-icon:hover{
             color: #dc3545; 
         }
+        .nav-link.active{
+            color:white;
+        }
 
 <?php
         }
