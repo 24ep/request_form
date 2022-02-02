@@ -550,6 +550,15 @@
             color: black!important;
             font-weight: 300;
         }
+        .link-light {
+        color: black;
+        padding: 0.2rem;
+        padding-left: 40px;
+        font-weight: 400;
+        line-height: 1.5;
+        font-size: 14px;
+        font-family: 'Prompt', sans-serif !important;
+    }
 
 <?php
         }
