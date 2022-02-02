@@ -534,7 +534,7 @@
 
         }
         ion-icon{
-            color: black!important; 
+            color: black; 
         }
         ion-icon:hover{
             color: #dc3545; 
