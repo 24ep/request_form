@@ -730,7 +730,7 @@
                     <!-- style="margin-top:15px" -->
                     <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel"
                         aria-labelledby="v-pills-dashboard-tab">
-                        <div class="container overflow-auto" style="padding:0px 20px 0px 20px">
+                        <div class="container overflow-auto" style="padding:20px 20px 0px 20px">
                             <?php echo $_GET["result"]; ?>
                             <div class="card-group">
                                 <div class="card text-dark bg-light mb-3"
