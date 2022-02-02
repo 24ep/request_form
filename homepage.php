@@ -690,7 +690,7 @@
                         <ion-icon style="color:white" name="grid-outline"></ion-icon> Follow-up Board
                     </a>
                     <?php }?>
-                    <hr style="color: #eee!important;">
+                    <hr>
                     <ul class="list-unstyled ps-0">
                         <li class="mb-1">
                             <button style="color:#eee;padding:8px 16px;font-size:14px"
@@ -805,7 +805,7 @@
                                             <?php
                                                 $count_checking =  count_status($_SESSION['username'],'checking');
                                                 echo $count_checking;
-                                                ?>
+                                             ?>
                                         </div>
                                         <div class="unit_count_dashboard">Ticket</div>
                                     </div>
@@ -950,8 +950,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                </div>
-                                </ul>
+                                        </div>
+                                    </ul>
                                 </nav>
                             </div>
                         </div>
