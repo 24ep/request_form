@@ -1,6 +1,4 @@
-<style>
 
-</style>
 <?php
 session_start();
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error( $con));
