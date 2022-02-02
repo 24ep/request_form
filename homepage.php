@@ -511,8 +511,24 @@
             box-shadow: none!important;
         }
             <?php
-        }
+        }elseif($_SESSION["pf_theme"]=="Light Modern"){
         ?>
+        .col-2.list_bra.window-full.shadow {
+            background-color: transparent!important;
+            padding: 30px;
+            box-shadow: none!important;
+        }
+        .nav-pills .nav-link.active,
+        .nav-pills .show .nav-link {
+            background-color: #dc3545 !important;
+            color: #fcfcfc !important;
+            width: 100%;
+        }
+
+<?php
+        }
+
+?>
 /* add test */
     .tree_label {
         padding-left: 15px;
