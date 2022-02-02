@@ -524,6 +524,21 @@
             color: #fcfcfc !important;
             width: 100%;
         }
+        .list_bra .nav-pills .nav-link {
+            color: #212529 !important;
+            font-weight: 700;
+            }
+        .nav-.list_bra .nav-link:hover{
+            color: #dc3545 !important;
+            font-weight: bolder;
+
+        }
+        ion-icon{
+            color: black; 
+        }
+        ion-icon:hover{
+            color: #dc3545; 
+        }
 
 <?php
         }
