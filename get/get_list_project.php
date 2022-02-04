@@ -19,7 +19,7 @@
                 </span>
           
                 <div class="card-body" style="border: solid 3px #0dcaf0;border-radius: 10px!important;">
-                    <h5 class="card-title">'.$row["project_name"].'</h5>
+                    <h6 class="card-title">'.$row["prefix"]." | ".$row["project_name"].'</h6>
                     <span class="card-text">Owner : '.$row["owner"].'.</span>
                 </div>
             </div>
