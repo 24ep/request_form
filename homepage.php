@@ -136,6 +136,7 @@
     ?>
     <!DOCTYPE html>
     <html lang="en">
+
     <head>
         <title>Content and Studio - Homepage</title>
         <!-- Required meta tags -->
@@ -185,36 +186,44 @@
             font-size: 14px;
             background-color: #f6f6f6;
         }
+
         a {
             color: gray;
             text-decoration: auto;
         }
+
         a:hover {
             color: black;
             text-decoration: auto;
             font-weight: bold;
         }
+
         label {
             font-weight: 800 !important;
         }
+
         .row {
             margin-bottom: 15px;
         }
+
         .multiple-select,
         .multiple-select_adj,
         .multiple-select_edit {
             width: 100%;
         }
+
         .header_form {
             text-align: center;
             margin-bottom: 50px;
             margin-top: 50px;
         }
+
         .container-sm {
             max-width: 500px;
             margin-top: 8%;
             padding: 10px !important 50px !important 100px !important !important;
         }
+
         .list_bra .nav-pills .nav-link.active,
         .list_bra .nav-pills .show .nav-link {
             color: white;
@@ -223,37 +232,45 @@
             background-color: #f0f2fc87;
             font-weight: bolder;
         }
+
         /* .nav-link{
             color: white;
         } */
         .list_bra .nav-pills .nav-link {
             color: white !important;
         }
+
         .list_bra .nav-link:hover {
             color: white !important;
             width: 100%;
             s font-weight: bolder;
         }
+
         .list_bra .nav-link.active:hover {
             color: #ffff !important;
         }
+
         .nav-pills .nav-link.active,
         .nav-pills .show .nav-link {
             background-color: #f0f2fc87;
             color: white !important;
             width: 100%;
         }
+
         .navbar-brand {
             margin-left: 10px;
             margin-right: 10px;
             font-weight: 1000;
         }
+
         .navbar-brand {
             color: #ffff !important;
         }
+
         .navbar-brand:hover {
             color: #ffff !important;
         }
+
         .list_bra {
             padding-right: 0;
             /* background: rgba(236, 236, 236, 1); */
@@ -262,27 +279,33 @@
             background-image: url('base/image/11.jpg');
             color: black;
         }
+
         .my-1 {
             margin-top: 1rem !important;
             margin-bottom: 1rem !important;
         }
+
         .selection_filter {
             width: 150px;
             border: transparent;
             /* border-bottom:1px gray; */
             /* border-bottom-style: dotted; */
         }
+
         .selection_filter:active {
             border: transparent !important;
         }
+
         .selection_filter:focus {
             border: transparent !important;
             border-style: none;
         }
+
         ion-icon {
             font-size: 20px;
             margin: -0.2rem;
         }
+
         .link-light {
             color: white;
             padding: 0.2rem;
@@ -292,32 +315,39 @@
             font-size: 14px;
             font-family: 'Prompt', sans-serif !important;
         }
+
         .link-light:hover {
             color: white;
             background-color: #dbdbdb38;
             width: 100%;
             border-radius: 0px !important;
         }
+
         .link-light:focus {
             color: white;
             background-color: #dbdbdb38;
             width: 100%;
             border-radius: 0px !important;
         }
+
         .btn-check:focus+.btn,
         .btn:focus {
             box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 0%)
         }
+
         .total_count_dashboard {
             text-align: center;
             font-size: 70px;
         }
+
         .unit_count_dashboard {
             text-align: center;
         }
+
         ion-icon {
             margin-right: 5px;
         }
+
         .task_detial {
             color: #6c757d;
             ;
@@ -328,130 +358,154 @@
             padding-bottom: 3px;
             padding-top: 3px;
         }
+
         .icon_bar_tootle {
             margin-left: 20px;
             margin-right: 50px;
             font-size: 13px;
         }
+
         .icon_ocv {
             margin-right: 0px !important;
             font-size: 14px;
             color: gray;
         }
+
         .ticket_relate {
             border-color: white;
             padding: 0px;
             padding-bottom: 5px
         }
+
         .col-board {
             border-right: 1px #dee2e6 solid;
         }
+
         .cr_title {
             margin-bottom: 10px;
         }
+
         .status_cr_list {
             margin-right: 5px;
             margin-left: 10px;
             color: #d8d8d887;
             font-size: 30px;
         }
-        .des_cr{
-            padding:20px;
+
+        .des_cr {
+            padding: 20px;
             border-radius: 10px;
             background: #f9f9f9;
             margin-bottom: 10px;
         }
 
-   
         <?php if($_SESSION["pf_theme"]=="Dark") {
-            ?>
-            body {
+            ?>body {
                 font-family: 'Prompt', sans-serif !important;
                 font-size: 14px;
                 background-color: #1e1e1e !important;
                 color: white !important;
             }
+
             tr.sub-ticket.shadow-sm.p-3.mb-5.bg-body {
                 background-color: #171515 !important;
                 color: white;
                 border-bottom: 1px solid #272727 !important;
             }
+
             tr.shadow-sm.p-3.mb-5 {
                 background-color: #171515 !important;
                 color: white;
                 border-bottom: 1px solid #272727 !important;
             }
+
             tr.sub-ticket {
                 color: white;
             }
+
             tr {
                 color: white;
             }
+
             .btn-primary {
                 color: #fff;
                 background-color: #1a1a1a;
                 border-color: #134a9a;
             }
+
             input {
                 background-color: #0f0f0f !important;
                 border: 0px solid !important;
                 color: white !important;
             }
+
             textarea {
                 background-color: #0f0f0f !important;
                 border: 0px solid !important;
                 color: white !important;
             }
+
             select#status_filter {
                 background-color: #414141;
                 border: 0px solid;
                 color: white;
                 border-radius: 3px;
             }
+
             select#be_status_on_change {
                 background-color: #0f0f0f;
                 color: #b32121;
             }
+
             .offcanvas-body {
-                background-color: #181818!important;
+                background-color: #181818 !important;
                 color: white;
             }
+
             a:hover {
                 color: #dc3545;
                 text-decoration: auto;
                 font-weight: bold;
             }
+
             .nav-pills .nav-link.active,
             .nav-pills .show .nav-link {
                 background-color: #dc3545 !important;
                 color: #fcfcfc !important;
                 width: 100%;
             }
+
             li.list-group-item {
                 background-color: #1f1f1f !important;
                 color: white;
                 border: solid 1px #171717;
             }
+
             .alert-success {
                 color: #1ac570;
                 background-color: #1c3128;
                 border-color: #07512f;
             }
+
             .form-select {
                 color: #e9ecef;
                 background-color: #0f0f0f;
                 border-color: #0f0f0f;
             }
+
             li.row.shadow-sm.rounded.md-3.p-2.bg-white {
                 background-color: #0f0f0f !important;
             }
+
             span#basic-addon1 {
                 background-color: #1d1d1d;
                 color: white;
             }
+
             .table-hover>tbody>tr:hover {
                 color: #b80f0f;
             }
+
             .card.text-dark.bg-light.mb-3 {
                 background-color: #1e1e1e !important;
                 color: white !important;
@@ -459,6 +513,7 @@
                 border: 1px solid transparent !important;
                 align-items: center;
             }
+
             .card.text-white.bg-dark.mb-3 {
                 background-color: #1e1e1e !important;
                 color: white !important;
@@ -466,150 +521,180 @@
                 border: 1px solid transparent !important;
                 align-items: center;
             }
+
             table.table.table-hover {
                 border-bottom: 1px solid #282727;
             }
+
             .border-end {
                 border-right: 1px solid #2c2c2c !important;
             }
+
             hr {
                 background-color: #4f4f4f;
             }
+
             .col-5 {
                 background-color: #121212 !important;
             }
-            .des_cr{
-            padding:20px;
-            border-radius: 10px;
-            background: #0e0e0e;
-            margin-bottom: 10px;
-            
-        }
-        .load_cr_dt {
-            background-color: #212121;
-        }
-        .card-body{
-            align-self: normal;
-        }
-        button.ms-choice {
-            background-color: #0f0f0f;
-            border-color: #0f0f0f;
-        }
-        .col-7 {
-            flex: 0 0 auto;
-            width: 58.3333333333%;
-            border-right: 1px solid #191919;
-        }
-        .col-8 {
-            flex: 0 0 auto;
-            width: 66.6666666667%;
-            border-right: 1px solid #2f2d2d;
-        }
-        .col-2.list_bra.window-full.shadow {
-            background-color: transparent!important;
-            padding: 30px;
-            box-shadow: none!important;
-        }
-            <?php
-        }elseif($_SESSION["pf_theme"]=="Light Modern"){
-        ?>
-        .col-2.list_bra.window-full.shadow {
-            background-color: transparent!important;
-            padding: 30px;
-            box-shadow: none!important;
-        }
-        .nav-pills .nav-link.active,
-        .nav-pills .show .nav-link {
-            background-color: #dc3545 !important;
-            color: #fcfcfc !important;
-            width: 100%;
-        }
-        .list_bra .nav-pills .nav-link {
-            color: #212529 !important;
-            font-weight: 700;
+
+            .des_cr {
+                padding: 20px;
+                border-radius: 10px;
+                background: #0e0e0e;
+                margin-bottom: 10px;
             }
-        .nav-.list_bra .nav-link:hover{
-            color: #dc3545 !important;
-            font-weight: bolder;
 
-        }
-        ion-icon{
-            color: black!important; 
-        }
-        ion-icon:hover{
-            color: #dc3545; 
-        }
-        .nav-link.active{
-            color:white;
-        }
-        button.btn.btn-toggle.align-items-center.rounded.collapsed {
-            color: black!important;
-            font-weight: 700;
-        }
-        button.btn.btn-toggle.align-items-center.rounded {
-            color: black!important;
-            font-weight: 300;
-        }
-        .link-light {
-        color: black;
-        padding: 0.2rem;
-        padding-left: 40px;
-        font-weight: 400;
-        line-height: 1.5;
-        font-size: 14px;
-        font-family: 'Prompt', sans-serif !important;
-    }
-        .hr_nav_bra{
-        width:80%
-         }
-        .logo_badge{
-            color:black!important;
+            .load_cr_dt {
+                background-color: #212121;
+            }
+
+            .card-body {
+                align-self: normal;
+            }
+
+            button.ms-choice {
+                background-color: #0f0f0f;
+                border-color: #0f0f0f;
+            }
+
+            .col-7 {
+                flex: 0 0 auto;
+                width: 58.3333333333%;
+                border-right: 1px solid #191919;
+            }
+
+            .col-8 {
+                flex: 0 0 auto;
+                width: 66.6666666667%;
+                border-right: 1px solid #2f2d2d;
+            }
+
+            .col-2.list_bra.window-full.shadow {
+                background-color: transparent !important;
+                padding: 30px;
+                box-shadow: none !important;
+            }
+
+            <?php
         }
 
-<?php
+        elseif($_SESSION["pf_theme"]=="Light Modern") {
+            ?>.col-2.list_bra.window-full.shadow {
+                background-color: transparent !important;
+                padding: 30px;
+                box-shadow: none !important;
+            }
+
+            .nav-pills .nav-link.active,
+            .nav-pills .show .nav-link {
+                background-color: #dc3545 !important;
+                color: #fcfcfc !important;
+                width: 100%;
+            }
+
+            .list_bra .nav-pills .nav-link {
+                color: #212529 !important;
+                font-weight: 700;
+            }
+
+            .nav-.list_bra .nav-link:hover {
+                color: #dc3545 !important;
+                font-weight: bolder;
+            }
+
+            ion-icon {
+                color: black !important;
+            }
+
+            ion-icon:hover {
+                color: #dc3545;
+            }
+
+            .nav-link.active {
+                color: white;
+            }
+
+            button.btn.btn-toggle.align-items-center.rounded.collapsed {
+                color: black !important;
+                font-weight: 700;
+            }
+
+            button.btn.btn-toggle.align-items-center.rounded {
+                color: black !important;
+                font-weight: 300;
+            }
+
+            .link-light {
+                color: black;
+                padding: 0.2rem;
+                padding-left: 40px;
+                font-weight: 400;
+                line-height: 1.5;
+                font-size: 14px;
+                font-family: 'Prompt', sans-serif !important;
+            }
+
+            .hr_nav_bra {
+                width: 80%
+            }
+
+            .logo_badge {
+                color: black !important;
+            }
+
+            <?php
         }
 
-?>
-/* add test */
-    .tree_label {
-        padding-left: 15px;
-        color: gray;
-    }
-    .tree_label:after {
-        position: absolute;
-        top: 0em;
-        left: -2px;
-        display: table-column-group;
-        height: 10px;
-        width: 20px;
-        border-bottom: 2px solid #727476;
-        border-left: 2px solid #727476;
-        border-radius: 0 0 0 .4em;
-        content: '';
-        padding-top: 23px;
-    }
-    .tree_lift {
-        left: 0px;
-        position: relative;
-        border-left: 2px solid #6c757d;
-    }
-    .tree_lift_end {
-        left: 0px;
-        position: relative;
-        border-left: 2px solid transparent;
-    }
-    .sub-ticket {
-        border: 0px solid transparent
-    }
-    label.tree_label:hover {
-        color: #666;
-    }
-    /* add test */
+        ?>
+
+        /* add test */
+        .tree_label {
+            padding-left: 15px;
+            color: gray;
+        }
+
+        .tree_label:after {
+            position: absolute;
+            top: 0em;
+            left: -2px;
+            display: table-column-group;
+            height: 10px;
+            width: 20px;
+            border-bottom: 2px solid #727476;
+            border-left: 2px solid #727476;
+            border-radius: 0 0 0 .4em;
+            content: '';
+            padding-top: 23px;
+        }
+
+        .tree_lift {
+            left: 0px;
+            position: relative;
+            border-left: 2px solid #6c757d;
+        }
+
+        .tree_lift_end {
+            left: 0px;
+            position: relative;
+            border-left: 2px solid transparent;
+        }
+
+        .sub-ticket {
+            border: 0px solid transparent
+        }
+
+        label.tree_label:hover {
+            color: #666;
+        }
+
+        /* add test */
         </style>
     </head>
+
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
-    <!-- toast -->
-    <!-- <div class="toast align-items-center text-white bg-primary border-0 top-0 end-0" role="alert" data-bs-autohide="true" aria-atomic="true" data-bs-delay="10000" aria-live="assertive" id="liveToast_cr" style="z-index: 11">
+        <!-- toast -->
+        <!-- <div class="toast align-items-center text-white bg-primary border-0 top-0 end-0" role="alert" data-bs-autohide="true" aria-atomic="true" data-bs-delay="10000" aria-live="assertive" id="liveToast_cr" style="z-index: 11">
             <div class="d-flex">
               <div class="toast-body" id="toast">
                 Hello, world! This is a toast message.
@@ -617,7 +702,7 @@
               <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
           </div> -->
-    <!-- toast -->
+        <!-- toast -->
         <!--         <nav class="navbar sticky-top navbar-danger bg-danger">
           <marquee>
            <span class="navbar-text" style="color:white" >
@@ -629,6 +714,7 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140386041-2"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -658,8 +744,8 @@
         ?>
             <div class="col-2 list_bra window-full shadow" style="<?php echo  $nev_avg; ?>">
                 <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a id="logo_badge" style="color:black" class="navbar-brand" href="#" style="margin: 15px;">Content <small
-                            style="color: #dc3545;">Service Gate</small></a>
+                    <a id="logo_badge" style="color:black" class="navbar-brand" href="#" style="margin: 15px;">Content
+                        <small style="color: #dc3545;">Service Gate</small></a>
                     <a class="nav-link active" id="v-pills-dashboard-tab" data-toggle="pill" href="#v-pills-dashboard"
                         role="tab" aria-controls="v-pills-dashboard" onclick="updateURL('v-pills-dashboard');"
                         aria-selected="true">
@@ -781,7 +867,7 @@
                     style="margin: 0px 20px 0px 20px;bottom: 30px;width: 13%;position: absolute;">
                     <?php echo $_SESSION["username"]; ?></button>
             </div>
-            <div class="col-10 window-full overflow-auto" >
+            <div class="col-10 window-full overflow-auto">
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- style="margin-top:15px" -->
                     <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel"
@@ -955,8 +1041,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </ul>
+                                </div>
+                                </ul>
                                 </nav>
                             </div>
                         </div>
@@ -1155,9 +1241,12 @@
                                                     aria-label="Server">
                                             </div>
                                             <datalist id="qlistoption">
-                                                <option value="(ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%' or ticket.case_officer like '%<?php echo $_SESSION["username"]; ?>%')">
-                                                <option value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
-                                                <option value="ticket.case_officer like '%<?php echo $_SESSION["username"]; ?>%'">
+                                                <option
+                                                    value="(ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%' or ticket.case_officer like '%<?php echo $_SESSION["username"]; ?>%')">
+                                                <option
+                                                    value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
+                                                <option
+                                                    value="ticket.case_officer like '%<?php echo $_SESSION["username"]; ?>%'">
                                                 <option value="ticket.title like  '%grouping%'">
                                                 <option value="ticket.id = 3009">
                                                 <option value="ticket.status = 'Pending'">
@@ -1376,6 +1465,7 @@
 var elements = document.getElementsByClassName('window-full');
 var windowheight = window.innerHeight + "px";
 fullheight(elements);
+
 function fullheight(elements) {
     for (let el in elements) {
         if (elements.hasOwnProperty(el)) {
@@ -1398,6 +1488,7 @@ function call_edit_add_new_modal(id, brand) {
         });
     }
 }
+
 function cr_id_toggle(id) {
     if (id) {
         $.post("base/get/get_content_request_detail.php", {
@@ -1407,6 +1498,7 @@ function cr_id_toggle(id) {
         });
     }
 }
+
 function start_checking(id) {
     if (id) {
         $.post("base/action/action_start_checking.php", {
@@ -1416,6 +1508,7 @@ function start_checking(id) {
         });
     }
 }
+
 function accepted_stt(id) {
     if (id) {
         sku_accepted = document.getElementById('sku_accepted').value;
@@ -1431,6 +1524,7 @@ function accepted_stt(id) {
         }
     }
 }
+
 function cancel_stt(id, status_change) {
     resone_cancel = document.getElementById('resone_cancel').value;
     status_change = 'cancel';
@@ -1444,6 +1538,7 @@ function cancel_stt(id, status_change) {
         });
     }
 }
+
 function itm_confirm_cancel(id, status_change) {
     let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
     if (message == null || message == "") {
@@ -1465,6 +1560,7 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
+
 function filter_cr_ticket(status) {
     document.getElementById('cr_search_input').value = '';
     var update = true;
@@ -1477,6 +1573,7 @@ function filter_cr_ticket(status) {
         });
     }
 }
+
 function search_cr_ticket() {
     var cr_search_input = document.getElementById("cr_search_input").value
     var user_cr_filter = document.getElementById("user_cr_filter").value
@@ -1488,6 +1585,7 @@ function search_cr_ticket() {
         $('#list_grouping').html(data);
     });
 }
+
 function run_ts_command(ts_level) {
     var ts_command_input = document.getElementById("ts_command").value;
     var ts_command_limit = document.getElementById("ts_command_limit").value;
@@ -1663,9 +1761,11 @@ function select_current_tab(selecttab) {
             .add('show');
     }
 }
+
 function open_ticket_detail(id) {
     document.getElementById("ns_ticket_" + id).click();
 }
+
 function updateURL(pill) {
     if (history.pushState) {
         var newurl = window.location.protocol + "//" + window.location.host +
@@ -1677,6 +1777,7 @@ function updateURL(pill) {
             }, '', newurl);
     }
 }
+
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value
@@ -1725,74 +1826,75 @@ function Inint_AJAX() {
     alert("XMLHttpRequest not supported")
     return null
 }
+
 function doAutoRefresh() {
     var url = window.location.href;
     let result = url.includes("v-pills-request_list");
-    if(result==true){
-    var req = Inint_AJAX();
-    //var req_cr = Inint_AJAX();
-    // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-    req.open("POST", 'base/get/get_list_new_job.php?' + new Date().getTime(), true);
-    //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
-    // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
-    req.onreadystatechange = function() {
-        if (req.readyState == 4) {
-            if (req.status == 200) {
-                // รับค่ากลับมา และ แสดงผล
-                //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
-                document.getElementById("job_list").innerHTML = req.responseText;
-                // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
-                setTimeout("doAutoRefresh()", 5000);
+    if (result == true) {
+        var req = Inint_AJAX();
+        //var req_cr = Inint_AJAX();
+        // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
+        req.open("POST", 'base/get/get_list_new_job.php?' + new Date().getTime(), true);
+        //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
+        // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
+        req.onreadystatechange = function() {
+            if (req.readyState == 4) {
+                if (req.status == 200) {
+                    // รับค่ากลับมา และ แสดงผล
+                    //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
+                    document.getElementById("job_list").innerHTML = req.responseText;
+                    // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
+                    setTimeout("doAutoRefresh()", 5000);
+                }
             }
-        }
-    };
-    req.send(null);
-
+        };
+        req.send(null);
     }
- 
 };
+
 function doAutoRefresh_ts_admin() {
     var url = window.location.href;
     let result = url.includes("v-pills-ts_admin");
-    if(result==true){
-    var req_ts = Inint_AJAX();
-    //var req_cr = Inint_AJAX();
-    // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-    req_ts.open("POST", 'base/get/get_list_ts.php?' + new Date().getTime(), true);
-    //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
-    req_ts.onreadystatechange = function() {
-        if (req_ts.readyState == 4) {
-            if (req_ts.status == 200) {
-                // รับค่ากลับมา และ แสดงผล
-                //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
-                document.getElementById("get_ts_admin_console").innerHTML = req_ts.responseText;
-                // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
-                setTimeout("doAutoRefresh_ts_admin()", 1000);
+    if (result == true) {
+        var req_ts = Inint_AJAX();
+        //var req_cr = Inint_AJAX();
+        // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
+        req_ts.open("POST", 'base/get/get_list_ts.php?' + new Date().getTime(), true);
+        //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
+        req_ts.onreadystatechange = function() {
+            if (req_ts.readyState == 4) {
+                if (req_ts.status == 200) {
+                    // รับค่ากลับมา และ แสดงผล
+                    //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
+                    document.getElementById("get_ts_admin_console").innerHTML = req_ts.responseText;
+                    // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
+                    setTimeout("doAutoRefresh_ts_admin()", 1000);
+                }
             }
-        }
-    };
-    req_ts.send(null);
-}
+        };
+        req_ts.send(null);
+    }
 };
+
 function doAutoRefresh_cr() {
     var url = window.location.href;
     let result = url.includes("v-pills-cr");
-    if(result==true){
-    var req_cr = Inint_AJAX();
-    // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-    req_cr.open("POST", 'base/get/get_list_content_request.php?' + new Date().getTime(), true);
-    // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
-    req_cr.onreadystatechange = function() {
-        if (req_cr.readyState == 4) {
-            if (req_cr.status == 200) {
-                // รับค่ากลับมา และ แสดงผล
-                document.getElementById("list_grouping").innerHTML = req_cr.responseText;
-                setTimeout("doAutoRefresh_cr()", 5000);
+    if (result == true) {
+        var req_cr = Inint_AJAX();
+        // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
+        req_cr.open("POST", 'base/get/get_list_content_request.php?' + new Date().getTime(), true);
+        // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
+        req_cr.onreadystatechange = function() {
+            if (req_cr.readyState == 4) {
+                if (req_cr.status == 200) {
+                    // รับค่ากลับมา และ แสดงผล
+                    document.getElementById("list_grouping").innerHTML = req_cr.responseText;
+                    setTimeout("doAutoRefresh_cr()", 5000);
+                }
             }
-        }
-    };
-    req_cr.send(null);
-}
+        };
+        req_cr.send(null);
+    }
 };
 // function doAutoRefresh_can() {
 //     var req_can = Inint_AJAX();
@@ -1838,33 +1940,28 @@ $(document).ready(function() {
 //         'removeformat | help',
 //     //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
 // });
-
 tinymce.init({
-  selector: 'textarea#cr_description',
-  plugins: 'print preview paste importcss searchreplace table autolink autosave save directionality lists code visualblocks visualchars fullscreen link template codesample charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist  wordcount textpattern noneditable help charmap  emoticons',
-  imagetools_cors_hosts: ['picsum.photos'],
-  menubar: 'file edit view insert format tools table help',
-  toolbar: 'bold italic underline strikethrough | forecolor backcolor removeformat | table code | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | pagebreak | charmap emoticons | fullscreen  preview  print | link anchor codesample | ltr rtl',
-  toolbar_sticky: true,
-  template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
-  template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
-  height: 600,
-  noneditable_noneditable_class: 'mceNonEditable',
-  toolbar_mode: 'sliding',
-  contextmenu: 'link bold italic | quicklink h2 h3 blockquote ',
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
- });
-
-
+    selector: 'textarea#cr_description',
+    plugins: 'print preview paste importcss searchreplace table autolink autosave save directionality lists code visualblocks visualchars fullscreen link template codesample charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist  wordcount textpattern noneditable help charmap  emoticons',
+    imagetools_cors_hosts: ['picsum.photos'],
+    menubar: 'file edit view insert format tools table help',
+    toolbar: 'bold italic underline strikethrough | forecolor backcolor removeformat | table code | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | pagebreak | charmap emoticons | fullscreen  preview  print | link anchor codesample | ltr rtl',
+    toolbar_sticky: true,
+    template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
+    template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
+    height: 600,
+    noneditable_noneditable_class: 'mceNonEditable',
+    toolbar_mode: 'sliding',
+    contextmenu: 'link bold italic | quicklink h2 h3 blockquote ',
+    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+});
     </script>
-
-<script type="text/javascript">
-  tinymce.init({
+    <script type="text/javascript">
+tinymce.init({
     selector: '#des_cr_inline',
     inline: true
-  });
-  </script>
-
+});
+    </script>
     <script>
 tinymce.init({
     selector: 'textarea#ms_description',
@@ -1880,22 +1977,22 @@ tinymce.init({
         'removeformat | help',
     //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
 });
-
-
     </script>
-<script>
+    <script>
 //   var toastElList = [].slice.call(document.querySelectorAll('.toast'))
 //   var toastList = toastElList.map(function (toastEl) {
 //   return new bootstrap.Toast(toastEl, option)
 // })
-</script>
+    </script>
     <script>
 function allowDrop(ev) {
     ev.preventDefault();
 }
+
 function drag_card_cr(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
+
 function drop_card_cr(ev, new_status) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("card");
@@ -1920,15 +2017,14 @@ function drop_card_cr(ev, new_status) {
     }
 }
     </script>
+
     </html>
     <?php if( $_GET["fopenticket"]<>""){
     $_SESSION["fopenticket"]=$_GET["fopenticket"];
     echo '<script>open_ticket_detail('.$_GET["fopenticket"].');</script>';
     }
     if( $_GET["cr_open"]<>""){
-      
         // echo '<script>document.getElementById("cr_search_input").value ='.$_GET["cr_open"].'</script>';
-       
         // document.getElementById("ns_ticket_" + id).click();
         echo '<script>cr_id_toggle('.$_GET["cr_open"].');</script>';
         echo '<script>
@@ -1937,5 +2033,4 @@ function drop_card_cr(ev, new_status) {
         bsOffcanvas.show()
         </script>';
         }
-    
     } ?>
