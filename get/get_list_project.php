@@ -11,6 +11,9 @@
          echo ' 
          <div class="col-sm-6">
             <div class="card">
+            <span class="position-absolute top-0 start-0 translate-middle p-2 bg-danger border border-light rounded-circle">
+            <span class="visually-hidden">New alerts</span>
+          </span>
             <div class="card-body">
                 <h5 class="card-title">'.$row["project_name"].'</h5>
                 <span class="card-text">Owner : '.$row["owner"].'.</span>
