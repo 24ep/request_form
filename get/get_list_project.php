@@ -7,18 +7,18 @@
   $query = "SELECT * FROM project_bucket where status = 'Open'" or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
   
- ?><div class="overflow-auto">
+ ?><div class="overflow-auto" style="padding: 10px;">
  <div class="card-group" style="width: max-content;"><?php
      while($row = mysqli_fetch_array($result)) {
          echo ' 
     
          
-            <div class="card">
+            <div class="card" style="margin: 10px;border-radius: 10px!important;">
                 <span class="position-absolute top-0 start-0 translate-middle p-2 bg-info border border-light rounded-circle" style="background:#0dcaf0;">
                 <span class="visually-hidden">New alerts</span>
                 </span>
           
-                <div class="card-body" style="border: solid 2px #0dcaf0;">
+                <div class="card-body" style="border: solid 3px #0dcaf0;border-radius: 10px!important;">
                     <h5 class="card-title">'.$row["project_name"].'</h5>
                     <span class="card-text">Owner : '.$row["owner"].'.</span>
                 </div>
