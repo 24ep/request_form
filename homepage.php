@@ -1256,7 +1256,7 @@
                                         </form>
                                     </nav>
                                     <?php if(strpos($_SESSION["username"],'poojaroonwit')!==false){ 
-                                        include('get/get_list_project.pho');
+                                        include('get/get_list_project.php');
                                     } ?>
                                     <div id="get_ts_admin_console">
                                         <?php include('get/get_list_ts.php'); ?>
