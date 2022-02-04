@@ -640,10 +640,9 @@
                 width: 80%
             }
 
-         
-            
+
             .navbar-brand {
-                color: ##6c757d !important;
+                color: #6c757d !important;
             }
 
             <?php
