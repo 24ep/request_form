@@ -777,12 +777,12 @@
                         <ion-icon style="color:white" name="grid-outline"></ion-icon> Request Console
                     </a>
                     <?php }?>
-                    <?php if(strpos($_SESSION["department"],'Content')!==false){?>
+                    <!-- <?php// if(strpos($_SESSION["department"],'Content')!==false){?>
                     <a class="nav-link" id="v-pills-fl_board-tab" data-toggle="pill" href="#v-pills-fl_board" role="tab"
                         aria-controls="v-pills-fl_board" onclick="updateURL('v-pills-fl_board');" aria-selected="false">
                         <ion-icon style="color:white" name="grid-outline"></ion-icon> Follow-up Board
                     </a>
-                    <?php }?>
+                    <?php// }?> -->
                     <hr class="hr_nav_bra">
                     <ul class="list-unstyled ps-0">
                         <li class="mb-1">
