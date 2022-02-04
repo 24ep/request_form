@@ -639,9 +639,10 @@
                 width: 80%
             }
 
-            .logo_badge {
-                color: black !important;
-            }
+         
+            
+            .navbar-brand {
+                color: ##6c757d !important;
 
             <?php
         }
