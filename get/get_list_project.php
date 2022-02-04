@@ -6,7 +6,9 @@
   mysqli_query($con, "SET NAMES 'utf8' ");
   $query = "SELECT * FROM project_bucket where status = 'Open'" or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
- ?><div  class="card-group overflow-auto" style=""><?php
+  
+ ?><div class="overflow-auto">
+ <div class="card-group" style="width: max-content;"><?php
      while($row = mysqli_fetch_array($result)) {
          echo ' 
     
@@ -26,6 +28,6 @@
 
      }
   mysqli_close($con);
-  ?></div> <?php
+  ?></div></div><?php
 
 ?>
