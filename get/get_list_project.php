@@ -10,11 +10,12 @@
      while($row = mysqli_fetch_array($result)) {
          echo ' 
          <div class="col-sm-6">
+         <span class="position-absolute top-0 start-0 translate-middle p-2 bg-info border border-light rounded-circle" style="background:#0dcaf0;">
+         <span class="visually-hidden">New alerts</span>
             <div class="card">
-            <span class="position-absolute top-0 start-0 translate-middle p-2 bg-danger border border-light rounded-circle">
-            <span class="visually-hidden">New alerts</span>
+         
           </span>
-            <div class="card-body">
+            <div class="card-body" style="border: solid 2px #0dcaf0;">
                 <h5 class="card-title">'.$row["project_name"].'</h5>
                 <span class="card-text">Owner : '.$row["owner"].'.</span>
             </div>
