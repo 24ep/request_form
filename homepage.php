@@ -559,9 +559,12 @@
         font-size: 14px;
         font-family: 'Prompt', sans-serif !important;
     }
-            .hr_nav_bra{
-            wwidth:80%
-            }
+        .hr_nav_bra{
+        width:80%
+         }
+        .logo_badge{
+            color:black!important;
+        }
 
 <?php
         }
@@ -655,7 +658,7 @@
         ?>
             <div class="col-2 list_bra window-full shadow" style="<?php echo  $nev_avg; ?>">
                 <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a style="color:black" class="navbar-brand" href="#" style="margin: 15px;">Content<small
+                    <a id="logo_badge" style="color:black" class="navbar-brand" href="#" style="margin: 15px;">Content <small
                             style="color: #dc3545;">Service Gate</small></a>
                     <a class="nav-link active" id="v-pills-dashboard-tab" data-toggle="pill" href="#v-pills-dashboard"
                         role="tab" aria-controls="v-pills-dashboard" onclick="updateURL('v-pills-dashboard');"
