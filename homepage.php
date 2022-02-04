@@ -643,6 +643,7 @@
             
             .navbar-brand {
                 color: ##6c757d !important;
+            }
 
             <?php
         }
