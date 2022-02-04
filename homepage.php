@@ -655,9 +655,8 @@
         ?>
             <div class="col-2 list_bra window-full shadow" style="<?php echo  $nev_avg; ?>">
                 <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="navbar-brand" href="#" style="margin: 15px;">Content <small
-                            style="color: #dc3545;">Service
-                            Gate</small></a>
+                    <a style="color:black" class="navbar-brand" href="#" style="margin: 15px;">Content<small
+                            style="color: #dc3545;">Service Gate</small></a>
                     <a class="nav-link active" id="v-pills-dashboard-tab" data-toggle="pill" href="#v-pills-dashboard"
                         role="tab" aria-controls="v-pills-dashboard" onclick="updateURL('v-pills-dashboard');"
                         aria-selected="true">
