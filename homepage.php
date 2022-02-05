@@ -1595,7 +1595,6 @@ function get_project_model(id) {
     if (id) {
         $.post("base/get/get_project_model.php", {
             id: id
-        
         }, function(data) {
             $('#project_model').html(data);
         });
