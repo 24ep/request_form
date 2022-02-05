@@ -28,8 +28,9 @@
             <div class="card" style="margin: 10px;border-radius: 10px!important;">
                 <div class="card-body" '.$sticky_style.'>
                     <h6 class="card-title" style="weight:900">'.$row["prefix"]." | ".$row["project_name"].'</h6>
-                    <span class="card-text">Owner : '.$row["owner"].'.</span>
-                    <ion-icon name="file-tray-stacked-outline"></ion-icon> '.$count_ticket.' Ticket
+                    <span><ion-icon name="file-tray-stacked-outline"></ion-icon> '.$count_ticket.' Ticket</span>
+                    <span><ion-icon name="person-outline"></ion-icon> '.$row["owner"].'.</span>
+                    <span><ion-icon name="people-outline"></ion-icon> '.$row["owner"].'.</span>
                 </div>
             </div>
           
