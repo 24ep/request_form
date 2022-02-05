@@ -23,7 +23,7 @@ while($row = mysqli_fetch_array($result)) {
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-        <small>Description<small>
+        <small><ion-icon name="reader-outline"></ion-icon> Description<small>
         <p>'.$row["description"].'</p>
         </div>';
 
