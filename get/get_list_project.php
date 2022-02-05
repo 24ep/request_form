@@ -39,9 +39,9 @@
             <div class="card shadow-sm" style="margin: 10px;border-radius: 10px!important;">
             '.$count_nc_style.'
                 <div class="card-body" '.$sticky_style.'>
-                    <h6 class="card-title" style="font-weight:900;margin-bottom:10px"><span style="color:red">'.$row["prefix"]."</span> | ".$row["project_name"].'</h6>
-                    <div style="margin:5px"><ion-icon name="file-tray-stacked-outline"></ion-icon> '.$count_ticket.' Tickets</div>
-                    <div style="margin:5px"><ion-icon name="people-outline"></ion-icon> '.$row["owner"].'.</div>
+                    <h6 class="card-title" style="font-weight:900;margin-bottom:15px"><span style="color:red">'.$row["prefix"]."</span> | ".$row["project_name"].'</h6>
+                    <div style="margin:5px;font-size: 14px;color: #6b6b6b!important;"><ion-icon name="file-tray-stacked-outline" style="font-size: 18px;color: #6b6b6b!important;"></ion-icon> '.$count_ticket.' Tickets</div>
+                    <div style="margin:5px;font-size: 14px;color: #6b6b6b!important;"><ion-icon name="people-outline" style="font-size: 18px;color: #6b6b6b!important;"></ion-icon> '.$row["owner"].'.</div>
                 </div>
             </div>
           
