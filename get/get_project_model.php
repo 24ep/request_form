@@ -25,14 +25,14 @@ while($row = mysqli_fetch_array($result)) {
         <div class="modal-body">
             <div class="row">
                 <div class="col-9">
-                    <small><ion-icon name="people-outline"></ion-icon> Project Owner & Participant<small>
+                    <small><ion-icon name="people-outline"></ion-icon> Project Owner & Participant</small>
                     <hr>
-                    <small><ion-icon name="reader-outline"></ion-icon> Description<small>
+                    <small><ion-icon name="reader-outline"></ion-icon> Description</small>
                     <p>'.$row["description"].'</p>
                     <hr>
-                    <small><ion-icon name="document-attach-outline"></ion-icon> Attachments<small>
+                    <small><ion-icon name="document-attach-outline"></ion-icon> Attachments</small>
                     <hr>
-                    <small><ion-icon name="file-tray-stacked-outline"></ion-icon> Task<small>
+                    <small><ion-icon name="file-tray-stacked-outline"></ion-icon> Task</small>
                 </div>
                 <div class="col-3">
                 <small>status</small>
