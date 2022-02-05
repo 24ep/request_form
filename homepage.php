@@ -698,10 +698,10 @@
 
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
         <!-- Modal -->
-        <div class="modal fade" id="project_model" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+        <div class="modal fade modal-lg modal-dialog-scrollable" id="project_model" tabindex="-1" aria-labelledby="project_modelLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div id="project_model">
+                    <div id="return_project_model">
                     </div>
                 </div>
             </div>
@@ -1596,7 +1596,7 @@ function get_project_model(id) {
         $.post("base/get/get_project_model.php", {
             id: id
         }, function(data) {
-            $('#project_model').html(data);
+            $('#return_project_model').html(data);
         });
     }
 }
