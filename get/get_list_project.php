@@ -25,7 +25,7 @@
        if($row["sticky"]==1){
         $sticky_style= 'style="border: solid 3px #75dfa5c7;border-radius: 10px!important;margin: 10px;"';
        }else{
-        $sticky_style= 'style="margin: 10px;"';
+        $sticky_style= 'style="border-radius: 10px!important;margin: 10px;"';
        }
 
        //count comment
