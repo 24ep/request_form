@@ -4,7 +4,7 @@
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
-  $query = "SELECT pb.project_name,
+  $query = "SELECT pb.id,pb.project_name,
   pb.description,
   pb.owner,
   pb.sticky,
@@ -46,15 +46,17 @@
        }
 
          echo ' 
-            <div class="card shadow-sm" style="margin: 10px;border-radius: 10px!important;">
-            '.$count_nc_style.'
-                <div class="card-body" '.$sticky_style.'>
-                    <h6 class="card-title" style="font-weight:900;margin-bottom:15px"><span style="color:red">'.$row["prefix"]."</span> | ".$row["project_name"].'</h6>
-                    <div style="margin:5px;font-size: 14px;color: #6b6b6b!important;"><ion-icon name="file-tray-stacked-outline" style="font-size: 18px;color: #6b6b6b!important;"></ion-icon> '.$count_ticket.' Tickets</div>
-                    <div style="margin:5px;font-size: 14px;color: #6b6b6b!important;"><ion-icon name="people-outline" style="font-size: 18px;color: #6b6b6b!important;"></ion-icon> 
-                    <img src="'.$row["profile_url"].'" class="rounded-circle" alt="...">'.$row["owner"].'.</div>
-                </div>
-            </div>
+            <button type="button"  onclick="get_project_model('.$row["id"].')" data-bs-toggle="modal" data-bs-target="#project_model">
+              <div class="card shadow-sm" style="margin: 10px;border-radius: 10px!important;">
+              '.$count_nc_style.'
+                  <div class="card-body" '.$sticky_style.'>
+                      <h6 class="card-title" style="font-weight:900;margin-bottom:15px"><span style="color:red">'.$row["prefix"]."</span> | ".$row["project_name"].'</h6>
+                      <div style="margin:5px;font-size: 14px;color: #6b6b6b!important;"><ion-icon name="file-tray-stacked-outline" style="font-size: 18px;color: #6b6b6b!important;"></ion-icon> '.$count_ticket.' Tickets</div>
+                      <div style="margin:5px;font-size: 14px;color: #6b6b6b!important;"><ion-icon name="people-outline" style="font-size: 18px;color: #6b6b6b!important;"></ion-icon> 
+                      <img src="'.$row["profile_url"].'" class="rounded-circle" alt="...">'.$row["owner"].'.</div>
+                  </div>
+              </div>
+            </button>
           
        ';
 
