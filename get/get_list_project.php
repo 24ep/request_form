@@ -23,9 +23,9 @@
        
        // sticky project
        if($row["sticky"]==1){
-        $sticky_style= 'style="border: solid 3px #75dfa5c7;border-radius: 10px!important;margin: 10px;"';
+        $sticky_style= 'style="border: solid 3px #75dfa5c7;border-radius: 10px!important;margin: 10px;height: 100%;"';
        }else{
-        $sticky_style= 'style="border-radius: 10px!important;margin: 10px;"';
+        $sticky_style= 'style="border-radius: 10px!important;margin: 10px;height: 100%;"';
        }
 
        //count comment
