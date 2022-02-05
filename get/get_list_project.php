@@ -35,8 +35,8 @@
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">'.$count_nc.'<span class="visually-hidden">unread messages</span></span>
                 <div class="card-body" '.$sticky_style.'>
                     <h6 class="card-title" style="font-weight:900;margin-bottom:10px"><span style="color:red">'.$row["prefix"]."</span> | ".$row["project_name"].'</h6>
-                    <div ><ion-icon name="file-tray-stacked-outline"></ion-icon> '.$count_ticket.' Tickets</div>
-                    <div ><ion-icon name="people-outline"></ion-icon> '.$row["owner"].'.</div>
+                    <div style="margin:5px"><ion-icon name="file-tray-stacked-outline"></ion-icon> '.$count_ticket.' Tickets</div>
+                    <div style="margin:5px"><ion-icon name="people-outline"></ion-icon> '.$row["owner"].'.</div>
                 </div>
             </div>
           
