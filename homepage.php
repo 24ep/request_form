@@ -693,18 +693,22 @@
         /* add test */
 
         /* width */
-
         </style>
     </head>
 
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
-    <!-- Modal -->
+        <!-- Modal -->
         <div class="modal fade" id="project_model" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-           <div id="project_model"></div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div id="project_model">
+                            
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
         </div>
         <!-- toast -->
         <!-- <div class="toast align-items-center text-white bg-primary border-0 top-0 end-0" role="alert" data-bs-autohide="true" aria-atomic="true" data-bs-delay="10000" aria-live="assertive" id="liveToast_cr" style="z-index: 11">
@@ -1591,7 +1595,7 @@ function filter_cr_ticket(status) {
 }
 
 function get_project_model(id) {
-   
+
     if (id) {
         $.post("base/get/get_project_model.php", {
             id: id

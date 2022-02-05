@@ -17,11 +17,7 @@ where pb.id=".$_POST["id"] or die("Error:" . mysqli_error());
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
 
-    echo '
-    
-        <div class="modal-body">
-        '.$row["project_name"].'
-        </div>';
+    echo $row["project_name"];
 
 }
 
