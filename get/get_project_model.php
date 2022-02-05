@@ -23,8 +23,20 @@ while($row = mysqli_fetch_array($result)) {
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-        <small><ion-icon name="reader-outline"></ion-icon> Description<small>
-        <p>'.$row["description"].'</p>
+            <div class="row">
+                <div class="col-9">
+                    <small><ion-icon name="people-outline"></ion-icon> Project Owner & Participant<small>
+                    <hr>
+                    <small><ion-icon name="reader-outline"></ion-icon> Description<small>
+                    <p>'.$row["description"].'</p>
+                    <hr>
+                    <small><ion-icon name="document-attach-outline"></ion-icon> Attachments<small>
+                    <hr>
+                    <small><ion-icon name="file-tray-stacked-outline"></ion-icon> Task<small>
+                </div>
+                <div class="col-3">
+                </div>
+            </div>
         </div>';
 
 }
