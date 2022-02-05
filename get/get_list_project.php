@@ -4,7 +4,7 @@
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
-  $query = "SELECT * FROM project_bucket where status = 'Open'" or die("Error:" . mysqli_error());
+  $query = "SELECT * FROM project_bucket where status = 'Open' order by sticky DESC" or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
   
  ?><div class="overflow-auto slide" style="padding: 10px;margin-bottom:10px">
