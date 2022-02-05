@@ -697,21 +697,7 @@
     </head>
 
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
-        <!-- Modal -->
-        <div class="modal fade" id="project_model" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    
-                 
-                        
-                        <div id="project_model">
-
-                        </div>
-                    
-                </div>
-
-            </div>
-        </div>
+  
         <!-- toast -->
         <!-- <div class="toast align-items-center text-white bg-primary border-0 top-0 end-0" role="alert" data-bs-autohide="true" aria-atomic="true" data-bs-delay="10000" aria-live="assertive" id="liveToast_cr" style="z-index: 11">
             <div class="d-flex">
@@ -1481,6 +1467,19 @@
         </div>
         </div>
         </div>
+        </div>
+              <!-- Modal -->
+              <div class="modal-dialog modal-dialog-scrollable modal-lg" id="project_model" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+ 
+                        <div id="project_model">
+
+                        </div>
+                    
+                </div>
+
+            </div>
         </div>
     </body>
     <script>
