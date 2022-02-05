@@ -22,10 +22,17 @@
       $result_in=mysqli_query($con,$sql);
       $data=mysqli_fetch_assoc($result_in);
       $count_ticket = $data['total'];
+
+       //assign and status not close
+       $sql="SELECT count(*) as total from content_request where ticket_template = '".$row["prefix"]."' and case_officer='".$_SESSION["username"]."' and status<>'Close'";
+       $result_in=mysqli_query($con,$sql);
+       $data=mysqli_fetch_assoc($result_in);
+       $count_ticket = $data['total'];
     
 
          echo ' 
             <div class="card" style="margin: 10px;border-radius: 10px!important;">
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">+99 <span class="visually-hidden">unread messages</span></span>
                 <div class="card-body" '.$sticky_style.'>
                     <h6 class="card-title" style="weight:900">'.$row["prefix"]." | ".$row["project_name"].'</h6>
                     <span><ion-icon name="file-tray-stacked-outline"></ion-icon> '.$count_ticket.' Ticket</span>
