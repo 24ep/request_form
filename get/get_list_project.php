@@ -12,6 +12,8 @@
      while($row = mysqli_fetch_array($result)) {
        if($row["sticky"]==1){
         $sticky_style= 'style="border: solid 3px #75dfa5c7;border-radius: 10px!important;"';
+       }else{
+         unset($sticky_style);
        }
          echo ' 
             <div class="card" style="margin: 10px;border-radius: 10px!important;">
