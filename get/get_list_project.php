@@ -7,7 +7,7 @@
   $query = "SELECT * FROM project_bucket where status = 'Open'" or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
   
- ?><div class="overflow-auto" style="padding: 10px;margin-bottom:10px">
+ ?><div class="overflow-auto slide" style="padding: 10px;margin-bottom:10px">
  <div class="card-group" style="width: max-content;"><?php
      while($row = mysqli_fetch_array($result)) {
        if($row["sticky"]==1){
@@ -28,7 +28,9 @@
      }
   mysqli_close($con);
   ?>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
@@ -36,8 +38,6 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div>
-  
 </div><?php
 
 ?>
