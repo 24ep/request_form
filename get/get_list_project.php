@@ -28,11 +28,16 @@
        $result_nc=mysqli_query($con,$sql);
        $data_nc=mysqli_fetch_assoc($result_nc);
        $count_nc = $data_nc['total'];
+       if($count_nc>0){
+          $count_nc_style='<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">'.$count_nc.'<span class="visually-hidden">unread messages</span></span>';
+       }else{
+         unset($count_nc_style);
+       }
     
 
          echo ' 
             <div class="card shadow-sm" style="margin: 10px;border-radius: 10px!important;">
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">'.$count_nc.'<span class="visually-hidden">unread messages</span></span>
+            '.$count_nc_style.'
                 <div class="card-body" '.$sticky_style.'>
                     <h6 class="card-title" style="font-weight:900;margin-bottom:10px"><span style="color:red">'.$row["prefix"]."</span> | ".$row["project_name"].'</h6>
                     <div style="margin:5px"><ion-icon name="file-tray-stacked-outline"></ion-icon> '.$count_ticket.' Tickets</div>
