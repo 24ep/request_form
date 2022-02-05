@@ -10,16 +10,26 @@
  ?><div class="overflow-auto slide" style="padding: 10px;margin-bottom:10px">
  <div class="card-group" style="width: max-content;"><?php
      while($row = mysqli_fetch_array($result)) {
+       // sticky project
        if($row["sticky"]==1){
         $sticky_style= 'style="border: solid 3px #75dfa5c7;border-radius: 10px!important;"';
        }else{
          unset($sticky_style);
        }
+
+       //count comment
+      $sql="SELECT count(*) as total from content_request where ticket_template = '".$row["prefix"]."'";
+      $result_in=mysqli_query($con,$sql);
+      $data=mysqli_fetch_assoc($result_in);
+      $count_ticket = $data['total'];
+    
+
          echo ' 
             <div class="card" style="margin: 10px;border-radius: 10px!important;">
                 <div class="card-body" '.$sticky_style.'>
-                    <h6 class="card-title">'.$row["prefix"]." | ".$row["project_name"].'</h6>
+                    <h6 class="card-title" style="weight:900">'.$row["prefix"]." | ".$row["project_name"].'</h6>
                     <span class="card-text">Owner : '.$row["owner"].'.</span>
+                    <ion-icon name="file-tray-stacked-outline"></ion-icon> '.$count_ticket.' Ticket
                 </div>
             </div>
           
