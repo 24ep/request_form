@@ -18,7 +18,7 @@ $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
 
     echo '
-        <div class="modal-header" style="border-color: transparent;">
+        <div class="modal-header" style="border-color: transparent;background: #f3f3f3;">
             <h5 class="modal-title" id="exampleModalLabel">'.$row["project_name"].'</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -35,6 +35,11 @@ while($row = mysqli_fetch_array($result)) {
                     <small><ion-icon name="file-tray-stacked-outline"></ion-icon> Task<small>
                 </div>
                 <div class="col-3">
+                <small>status</small>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected value="Open">Open</option>
+                        <option value="Close">Close</option>
+                    </select>
                 </div>
             </div>
         </div>';
