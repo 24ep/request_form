@@ -46,8 +46,12 @@ while($row = mysqli_fetch_array($result)) {
                 </div>
             </div>
         </div>';
+
+
         echo '
+        <div class="container-md">
         <hr><small><ion-icon name="file-tray-stacked-outline"></ion-icon> Task</small>
+        </div>
         ';
 
 }
