@@ -148,7 +148,7 @@ while($row_status = mysqli_fetch_array($result_status)) {
 }
 
 echo '<small class="row m-3">Assigned to other</small>';
-  list_ts("(ticket.case_officer <> '".$_SESSION["username"]."') and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status <> 'Close'",$limit ,'ticket');
+  list_ts("(ticket.case_officer <> '".$_SESSION["username"]."') and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status <> 'Close'",100 ,'ticket');
   echo '<hr>';
 
 echo '
