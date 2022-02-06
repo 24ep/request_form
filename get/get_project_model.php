@@ -69,7 +69,7 @@ while($row = mysqli_fetch_array($result)) {
                     $result_att = mysqli_query($con, $query_att);
                     while($row_att = mysqli_fetch_array($result_att)) {
                         if($row_att["is_image"]<>1){
-                            $file_type = substr($str,strpos($str,".")+1);
+                            $file_type = substr($row_att["file_name"],strpos($row_att["file_name"],".")+1);
                             $badge_att = '<div class="d-inline p-2 bg-secondary text-white">'.$file_type.'</div>';
                         }
                         else{
