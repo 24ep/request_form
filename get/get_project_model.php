@@ -31,13 +31,9 @@ while($row = mysqli_fetch_array($result)) {
                     <p>'.$row["description"].'</p>
                     <hr>
                     <small><ion-icon name="document-attach-outline"></ion-icon> Attachments</small>
-                    <hr>
-                    <small><ion-icon name="file-tray-stacked-outline"></ion-icon> Task</small>
                     ';
                     ?>
-                    
-                    
-                    <?php
+<?php
                     echo '
                 </div>
                 <div class="col-3">
@@ -50,6 +46,9 @@ while($row = mysqli_fetch_array($result)) {
                 </div>
             </div>
         </div>';
+        echo '
+        <hr><small><ion-icon name="file-tray-stacked-outline"></ion-icon> Task</small>
+        ';
 
 }
 
