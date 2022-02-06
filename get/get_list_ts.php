@@ -88,10 +88,14 @@ return $status;
 
                   if($row['ticket_template']=="CR" ){
                     $ico_ts ='ticket-outline';
-                    $ico_ts_bg = '#0d6efd';
+                    $ico_ts_bg = '#0d6efd!important';
                   }elseif($row['ticket_template']=="DT" ){
                     $ico_ts ='terminal-outline';
-                    $ico_ts_bg = '#000000';
+                    $ico_ts_bg = '#000000!important';
+                  }else{
+                    $ico_ts ='ticket-outline';
+                    $ico_ts_bg = '#b7b7b7!important';
+                    
                   }
                   
                 
