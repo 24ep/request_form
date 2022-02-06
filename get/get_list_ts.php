@@ -123,7 +123,6 @@ return $status;
 
 
 
-if($_SESSION["username"]=="poojaroonwit"){
 date_default_timezone_set("Asia/Bangkok");
 $con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
@@ -155,6 +154,6 @@ echo '
 </div>
 ';
 
-}
+
 
 ?>
