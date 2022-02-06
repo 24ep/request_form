@@ -40,9 +40,9 @@
       unset($project_participants);
       while($row_participant = mysqli_fetch_array($result_participant)) {
         if($project_participants==""){
-          $project_participants .= ' <img width="30px" height="30px" src="base/image/user_profile/'.$row_participant["case_officer"].'.jpg" class="rounded-circle" alt="'.$row_participant["case_officer"].'">';
+          $project_participants .= ' <img data-bs-toggle="tooltip" data-bs-placement="top" title="'.$row_participant["case_officer"].'" width="30px" height="30px" src="base/image/user_profile/'.$row_participant["case_officer"].'.jpg" class="rounded-circle" alt="'.$row_participant["case_officer"].'">';
         }else{
-          $project_participants .= ' <img width="30px" style="margin-left: -20px;" height="30px" src="base/image/user_profile/'.$row_participant["case_officer"].'.jpg" class="rounded-circle" alt="'.$row_participant["case_officer"].'">';
+          $project_participants .= ' <img  data-bs-toggle="tooltip" data-bs-placement="top" title="'.$row_participant["case_officer"].'" width="30px" style="margin-left: -20px;" height="30px" src="base/image/user_profile/'.$row_participant["case_officer"].'.jpg" class="rounded-circle" alt="'.$row_participant["case_officer"].'">';
         }
         
       }
@@ -81,7 +81,7 @@
                       <h6 class="card-title" style="font-weight:900;margin-bottom:15px;color:'.$row["color_project"].'"><span>'.$row["prefix"]."</span> | ".$row["project_name"].'</h6>
                       <div style="margin:5px;font-size: 14px;color: #6b6b6b!important;"><ion-icon name="file-tray-stacked-outline" style="font-size: 18px;color: #6b6b6b!important;"></ion-icon> '.$count_ticket.' Tickets</div>
                       <div style="margin:5px;font-size: 14px;color: #6b6b6b!important;"><ion-icon name="people-outline" style="font-size: 18px;color: #6b6b6b!important;"></ion-icon> 
-                      <img width="30px" height="30px" src="base/image/user_profile/'.$row["owner"].'.jpg" class="rounded-circle" alt="'.$row["owner"].'"> | '.$project_participants.'</div>
+                      <img  data-bs-toggle="tooltip" data-bs-placement="top" title="'.$row["owner"].'"  width="30px" height="30px" src="base/image/user_profile/'.$row["owner"].'.jpg" class="rounded-circle" alt="'.$row["owner"].'"> | '.$project_participants.'</div>
                       
                   </div>
                   </button>

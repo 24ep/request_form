@@ -44,9 +44,9 @@ while($row = mysqli_fetch_array($result)) {
       unset($project_participants);
       while($row_participant = mysqli_fetch_array($result_participant)) {
         if($project_participants==""){
-            $project_participants .= ' <img width="40px"  data-bs-toggle="tooltip" data-bs-placement="top" title="'.$row_participant["case_officer"].'" height="40px" src="base/image/user_profile/'.$row_participant["case_officer"].'.jpg" class="rounded-circle" alt="'.$row_participant["case_officer"].'">';
+            $project_participants .= ' <img width="35px"  data-bs-toggle="tooltip" data-bs-placement="top" title="'.$row_participant["case_officer"].'" height="35px" src="base/image/user_profile/'.$row_participant["case_officer"].'.jpg" class="rounded-circle" alt="'.$row_participant["case_officer"].'">';
           }else{
-            $project_participants .= ' <img width="40px" style="margin-left: -20px;" height="40px" src="base/image/user_profile/'.$row_participant["case_officer"].'.jpg" class="rounded-circle" alt="'.$row_participant["case_officer"].'">';
+            $project_participants .= ' <img width="35px" data-bs-toggle="tooltip" data-bs-placement="top" title="'.$row_participant["case_officer"].'" style="margin-left: -20px;" height="35px" src="base/image/user_profile/'.$row_participant["case_officer"].'.jpg" class="rounded-circle" alt="'.$row_participant["case_officer"].'">';
           }
       }
       
@@ -60,7 +60,7 @@ while($row = mysqli_fetch_array($result)) {
                 <div class="col-8">
                     <small><ion-icon name="people-outline"></ion-icon> Project Owner & Participant</small>
                     <div>
-                    <img width="40px" height="40px" src="base/image/user_profile/'.$row["owner"].'.jpg" class="rounded-circle" alt="'.$row["owner"].'">
+                    <img data-bs-toggle="tooltip" data-bs-placement="top" title="'.$row["owner"].'" width="35px" height="35px" src="base/image/user_profile/'.$row["owner"].'.jpg" class="rounded-circle" alt="'.$row["owner"].'">
                     |
                     '.$project_participants.'
                     </div>
