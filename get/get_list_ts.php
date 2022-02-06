@@ -153,7 +153,7 @@ echo '
         '; 
       
         
-        list_ts("ticket.case_officer = 'unassign' and ticket.status <> 'Close'",500,'ticket');
+        list_ts("ticket.case_officer = 'unassign' and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].") and ticket.status <> 'Close'",500,'ticket');
    echo' </div>
 </div>
 ';
