@@ -1188,6 +1188,15 @@
                                                     type="button" data-bs-toggle="offcanvas"
                                                     data-bs-target="#content_request_canvas"
                                                     aria-controls="offcanvasExample">
+                                                    <ion-icon size="small" name="file-tray-stacked-outline" role="img"
+                                                        class="md icon-small hydrated" aria-label="add outline">
+                                                    </ion-icon>
+                                                    project sticky
+                                                </button>
+                                                <button class="btn btn-primary btn-sm " style="margin-left:10px;"
+                                                    type="button" data-bs-toggle="offcanvas"
+                                                    data-bs-target="#content_request_canvas"
+                                                    aria-controls="offcanvasExample">
                                                     <ion-icon size="small" name="add-outline" role="img"
                                                         class="md icon-small hydrated" aria-label="add outline">
                                                     </ion-icon>
