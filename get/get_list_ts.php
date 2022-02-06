@@ -94,7 +94,7 @@ return $status;
                     $ico_ts_bg = '#36a2ff!important';
                   }else{
                     $ico_ts ='ticket-outline';
-                    $ico_ts_bg = '##000000!important';
+                    $ico_ts_bg = '#000000!important';
                     
                   }
                   
