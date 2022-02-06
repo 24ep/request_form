@@ -18,6 +18,22 @@
       }
     return $option_element;
   }
+  function project_bucket(){
+            $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+            mysqli_query($con, "SET NAMES 'utf8' ");
+            $query = "SELECT * FROM project_bucket ORDER BY id asc" or die("Error:" . mysqli_error());
+            $result = mysqli_query($con, $query);
+            while($row = mysqli_fetch_array($result)) {
+              if($row["prefix"]=="CR"){
+                $option .=  "<option selected value='".$row["prefix"]."'>".$row["project_name"]."</option>";
+              }else{
+                $option .=  "<option value='".$row["prefix"]."'>".$row["project_name"]."</option>";
+              }
+              
+            }
+            return $option;
+
+  }
         function getoption_cr($col,$table,$select_option,$sorm,$database) {
             $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
@@ -69,6 +85,7 @@
       //  $cr_issue_type_op = getoption_cr("issue_type","option","","single","all_in_one_project");
       //  $cr_product_category_op = getoption_cr("product_category","option","","single","all_in_one_project");
 
+       $project_bucket = project_bucket();
        $cr_issue_type_op = return_option_create_cr("","39");
 ?>
   <div class="row">
@@ -123,9 +140,7 @@
     <div class="form-group col-md-3">
         <label for="cr_ticket_template" class="form-label">ticket template</label>
         <select id="cr_ticket_template" name="cr_ticket_template" class="form-select form-select-sm">
-           <option value="CR" selected>Content Request</option>
-           <option value="PJ">Project</option>
-           <option value="DT">Data and Task Support (CSG)</option>
+           <?php  echo $project_bucket; ?>
         </select>
     </div>
 
