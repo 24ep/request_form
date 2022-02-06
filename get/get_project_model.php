@@ -70,7 +70,7 @@ while($row = mysqli_fetch_array($result)) {
                     while($row_att = mysqli_fetch_array($result_att)) {
                         $image = str_replace("../..","../..",$row_att['file_path'].$row_att['file_name']);
                         echo '
-                        <div class="card">
+                        <div class="card" style="margin:10px">
                             <div class="card-body">
 
                             <div class="d-flex">
@@ -82,8 +82,8 @@ while($row = mysqli_fetch_array($result)) {
                                     <p class="card-text">
                                     '.$row_att["comment"].'
                                     </p>
-                                    <small>Ticket no : '.$row_att["ticket_id"].' </small>
-                                    <small> Download </small>
+                                    <div>Ticket no : '.$row_att["ticket_id"].' </div>
+                                    <div> Download </div>
                                 </div>
                             </div>
 
