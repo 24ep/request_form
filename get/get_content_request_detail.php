@@ -243,7 +243,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <span>Create by '.$request_by_contact.'</span>   
         <span>'.$create_date.'</span>      
         </div>
-        <span class="badge rounded-pill bg-primary" style="background-color:'.$color_project.'!important;margin-bottom:5px;padding:8px">'.$project_name.'</span>
+        <span class="badge bg-primary" style="background-color:'.$color_project.'!important;margin-bottom:15px;padding:8px 15px;">'.$project_name.'</span>
         <h5 style="font-weight: 800;"><strong style="color:'.$color_project.'!important;">'.$ticket_template.'-'.$id .'</strong> '.$title.'</h5>
         <form method="post">
         <div class="des_cr" id="des_cr_inline" >'.$description.'</div></form>
