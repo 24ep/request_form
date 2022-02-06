@@ -87,10 +87,10 @@ while($row = mysqli_fetch_array($result)) {
                         }
                         else{
                             $image = str_replace("../..","../..",$row_att['file_path'].$row_att['file_name']);
-                            $badge_att = '<img src="'.$image.'" alt="..." width="100px" height="100px" class="rounded mx-auto d-block img-fluid">';
+                            $badge_att = '<a href="'.$image.'" target="_Blank"><img src="'.$image.'" alt="..." width="100px" height="100px" class="rounded mx-auto d-block img-fluid"></>';
                         }
 
-                       
+                        $href = str_replace("../..","../..",$row_att['file_path'].$row_att['file_name']);
                         echo '
                         <div class="card" style="margin:10px">
                             <div class="card-body">
@@ -100,7 +100,7 @@ while($row = mysqli_fetch_array($result)) {
                                     '.$badge_att.'
                                 </div>
                                 <div class="flex-grow-1 ms-3">
-                                    <h6 class="card-title" style="font-weight:700">'.$row_att["file_name"].'</h6>
+                                    <h6 class="card-title" style="font-weight:700"><a href="'.$href.'" target="_Blank">'.$row_att["file_name"].'</a></h6>
                                     <p class="card-text">
                                     '.$row_att["comment"].'
                                     </p>
