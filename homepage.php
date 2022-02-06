@@ -1430,7 +1430,7 @@
                             <div style="margin-bottom:10px">
                                 Select project you wnt to see , this option will show only project are not close
                             </div>
-                            <select class="form-select" size="25" multiple aria-label="multiple select example">
+                            <select class="form-select" size="25" id="project_sticky" onclick="update_project_sticky();" multiple aria-label="multiple select example">
 
                                 <?php
                                
