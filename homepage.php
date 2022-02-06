@@ -1814,7 +1814,6 @@ function updateURL(pill) {
     }
 }
 function update_project_sticky(){
-    var selected = [];
     for (var option of document.getElementById('project_sticky').options)
     {
         if (option.selected) {
