@@ -182,12 +182,7 @@ $i++;
                     $ri_style = "border-left: #ccc solid 15px;";
                   }
                   if($row['ticket_template']=="CR" or  $row['ticket_template']=="DT" ){
-                    // if($i==1){
-                    //   // echo '<li class="mb-1 row">
-                    //   // <div class="col-9 " style="padding:3px;"> <strong>Request name</strong></div>
-                    //   // <div class="col-3 " style="padding:3px;"> <strong>status</strong></div>
-                    //   // </li>';
-                    // }
+                
                 ?>
 <li class="row shadow-sm rounded md-3 p-2 bg-white" style="<?php echo  $ri_style ?> " data-bs-toggle="offcanvas"
     data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id'] ?>)">
@@ -210,36 +205,7 @@ $i++;
    mysqli_close($con);
     }
 
-    // if($filter<>""){
-    //   list_ts($filter,$ts_command_limit,$ts_level);
-    // }
-  ?>
-<?php
-// echo '<script>console.log("'.$_SESSION["cb_pj"] .'");</script>';
-// echo '<script>console.log("'.$_SESSION["cb_da"] .'");</script>';
-// echo '<script>console.log("'.$_SESSION["cb_cr"] .'");</script>';
-?>
 
-<!-- support task -->
-<?php //if($_SESSION["cb_da"]=="true"){?>
-<!-- <span class="row"><strong>
-        <ion-icon name="server-outline" style="vertical-align: middle;"></ion-icon>
-        Data & Application Support
-    </strong></span>
-<div class="row">
-    <div class="col border-0 border-end">
-        <small class="row m-3">Your Assignment</small>
-        <div id="list_da_task">
-            <?php //list_ts($_SESSION["ts_query_input"]."   and ticket.status <> 'Close' and ticket.ticket_template = 'DT'",100,'ticket'); ?>
-        </div>
-    </div>
-    <div class="col">
-        <small class="row m-3">Unassign</small>
-        <?php //list_ts("ticket.ticket_template = 'DT' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
-    </div>
-</div>
-<hr> -->
-<?php //}?>
 
 
 <?php
@@ -278,51 +244,3 @@ echo '
 }
 
 ?>
-
-<!-- Content request -->
-<!-- <span class="row"><strong>
-        <ion-icon name="layers-outline" style="vertical-align: middle;"></ion-icon>
-        Task
-    </strong></span>
-<div class="row">
-    <div class="col border-0 border-end">
-        <small class="row m-3">Your Assignment</small>
-        <small class="row m-3">Pending</small>
-        <hr>
-        <div id="list_cr_task_pending">
-            <?php //list_ts($_SESSION["ts_query_input"]." and ticket.status = 'Pending' and  ticket.ticket_template in ('CR')",100,'ticket');
-                      //echo '<script>console.log("'.$_SESSION["ts_query_input"].' ");</script>';
-                      ?>
-        </div>
-        <small class="row m-3">inprogress</small>
-        <hr>
-        <div id="list_cr_task_inprogress">
-            <?php //list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Inprogress' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
-        </div>
-        <small class="row m-3">Waiting Execution</small>
-        <hr>
-        <div id="list_cr_task_we">
-            <?php //list_ts($_SESSION["ts_query_input"]."  and ticket.status = 'Waiting Execution' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
-        </div>
-        <small class="row m-3">Waiting CTO</small>
-        <hr>
-        <div id="list_cr_task_wcto">
-            <?php //list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Waiting CTO' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
-        </div>
-        <small class="row m-3">Waiting Buyer</small>
-        <hr>
-        <div id="list_cr_task_wb">
-            <?php //list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Waiting Buyer' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
-        </div>
-        <small class="row m-3">Close [lastest 5 ticket]</small>
-        <hr>
-        <div id="list_cr_task_wb">
-            <?php //list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Close' and  ticket.ticket_template in ('CR')",5,'ticket'); ?>
-        </div>
-    </div>
-    <div class="col">
-        <small class="row m-3">Unassign</small>
-        <?php //list_ts("ticket.ticket_template in ('CR') and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
-    </div>
-</div> -->
-
