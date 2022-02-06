@@ -52,6 +52,37 @@ while($row = mysqli_fetch_array($result)) {
                     <hr>
                     <small><ion-icon name="document-attach-outline"></ion-icon> Attachments</small>
                     ';
+
+                    $query_att = "SELECT  att.id, att.file_name, att.file_path, att.is_image, att.file_owner,
+                    att.ticket_id, att.ticket_type , cr.ticket_template ,
+                    CASE 
+                    when att.ticket_type='cr_content_request' then cm.comment
+                    else 'Ticket file'
+                    end as comment
+                    FROM all_in_one_project.attachment as att
+                    left join all_in_one_project.content_request cr 
+                    on cr.id = att.ticket_id 
+                    left join all_in_one_project.comment cm 
+                    on cm.ticket_id = att.ticket_id 
+                    where cr.ticket_template = '".$row["prefix"]."'
+                    limit 20";
+                    $result_att = mysqli_query($con, $query_att);
+                    while($row_att = mysqli_fetch_array($result_att)) {
+                        echo '
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">'.$row_att["file_name"].'</h5>
+                                <p class="card-text">
+                                '.$row_att["comment"].'
+                                </p>
+                                <small>Ticket no : '.$row_att["ticket_id"].' <small>
+                                <small> Download <small>
+                                
+                            </div>
+                        </div>
+                        ';
+                    }
+
                     ?>
 <?php
                     echo '
