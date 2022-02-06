@@ -39,7 +39,7 @@
       $result_participant = mysqli_query($con, $query_participant);
       unset($project_participants);
       while($row_participant = mysqli_fetch_array($result_participant)) {
-        $project_participants .= ' <img width="30px" height="30px" src="base/image/user_profile/'.$row_participant["case_officer"].'.jpg" class="rounded-circle img-fluid" alt="'.$row_participant["case_officer"].'"></div>';
+        $project_participants .= ' <img width="30px" height="30px" src="base/image/user_profile/'.$row_participant["case_officer"].'.jpg" class="rounded-circle img-fluid" alt="'.$row_participant["case_officer"].'">';
       }
        
        // sticky project
