@@ -68,15 +68,26 @@ while($row = mysqli_fetch_array($result)) {
                     limit 20";
                     $result_att = mysqli_query($con, $query_att);
                     while($row_att = mysqli_fetch_array($result_att)) {
+                        $image = str_replace("../..","../..",$row_att['file_path'].$row_att['file_name']);
                         echo '
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">'.$row_att["file_name"].'</h5>
-                                <p class="card-text">
-                                '.$row_att["comment"].'
-                                </p>
-                                <small>Ticket no : '.$row_att["ticket_id"].' </small>
-                                <small> Download </small>
+
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <img src="'.$image.'" alt="...">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="card-title">'.$row_att["file_name"].'</h5>
+                                    <p class="card-text">
+                                    '.$row_att["comment"].'
+                                    </p>
+                                    <small>Ticket no : '.$row_att["ticket_id"].' </small>
+                                    <small> Download </small>
+                                </div>
+                            </div>
+
+                                
                                 
                             </div>
                         </div>
