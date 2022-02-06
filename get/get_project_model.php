@@ -128,6 +128,8 @@ while($row = mysqli_fetch_array($result)) {
                         <option selected value="Open">Open</option>
                         <option value="Close">Close</option>
                     </select>
+                <small>Project color</small>
+                    <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
                 </div>
             </div>
         </div>';
