@@ -65,7 +65,7 @@ while($row = mysqli_fetch_array($result)) {
                     left join all_in_one_project.comment cm 
                     on cm.ticket_id = att.ticket_id  and att.ticket_type = 'cr_content_request'
                     where cr.ticket_template = '".$row["prefix"]."'
-                    limit 20";
+                    order by att.create_date DESC limit 20";
                     $result_att = mysqli_query($con, $query_att);
                     while($row_att = mysqli_fetch_array($result_att)) {
                         $image = str_replace("../..","../..",$row_att['file_path'].$row_att['file_name']);
