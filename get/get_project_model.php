@@ -69,12 +69,13 @@ while($row = mysqli_fetch_array($result)) {
                     $result_att = mysqli_query($con, $query_att);
                     while($row_att = mysqli_fetch_array($result_att)) {
                         if($row_att["is_image"]<>1){
+                            $file_type = substr($row_att["file_name"],strpos($row_att["file_name"],".")+1);
                             if($file_type=='xlsx'){
                                $background_color = '#0f6f24a1'; 
                             }else{
                                 $background_color = '#000000a1';
                             }
-                            $file_type = substr($row_att["file_name"],strpos($row_att["file_name"],".")+1);
+                         
                             $badge_att = '<div style="width:100px;height: 100px;
                             background-color: '.$background_color.';
                             text-align: center;
