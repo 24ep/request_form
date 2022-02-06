@@ -1,13 +1,13 @@
 <?php
   session_start();
-  if($_POST["project_sticky"]<>""){
-    $_SESSION["project_sticky"] = $_POST["project_sticky"];
+  if($_POST["prefix_project_sticky"]<>""){
+    $_SESSION["prefix_project_sticky"] = $_POST["project_sticky"];
   }else{
-    if($_SESSION["project_sticky"]==""){
-      $_SESSION["project_sticky"] = "'CR','DT'";
+    if($_SESSION["prefix_project_sticky"]==""){
+      $_SESSION["prefix_project_sticky"] = "'CR','DT'";
       
     }else{
-      $_SESSION["project_sticky"] = $_SESSION["project_sticky"];
+      $_SESSION["prefix_project_sticky"] = $_SESSION["prefix_project_sticky"];
     }
   }
  
@@ -25,7 +25,7 @@
   FROM all_in_one_project.project_bucket as pb 
   left join all_in_one_project.account as ac
   on pb.owner = ac.username 
-  where pb.prefix in (".$_SESSION['project_sticky'].") order by pb.sticky DESC" or die("Error:" . mysqli_error());
+  where pb.prefix in (".$_SESSION['prefix_project_sticky'].") order by pb.sticky DESC" or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
   
  ?><div class="overflow-auto slide" style="padding: 10px;margin-bottom:10px">
