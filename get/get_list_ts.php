@@ -262,7 +262,14 @@ echo '
 </div>
     <div class="col">
         <small class="row m-3">Unassign</small>
-        '; list_ts("ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket');
+        '; 
+        if($row_status["attribute_option"]=="Close"){
+          $limit=5;
+        }else(
+          $limit = $ts_command_limit;
+        )
+        
+        list_ts("ticket.case_officer = 'unassign' and ticket.status <> 'Close'",$limit,'ticket');
    echo' </div>
 </div>
 ';
