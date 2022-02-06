@@ -699,8 +699,8 @@
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
         <!-- Modal -->
         <div class="modal fade " id="project_model" tabindex="-1" aria-labelledby="project_modelLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content" style="border-radius: 3%;">
+            <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" style="border-radius: 3%;">
+                <div class="modal-content" >
                     <div id="return_project_model">
                     </div>
                 </div>
