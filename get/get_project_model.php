@@ -47,7 +47,7 @@ while($row = mysqli_fetch_array($result)) {
             <div class="row" style="margin:5px">
                 <div class="col-8">
                     <small><ion-icon name="people-outline"></ion-icon> Project Owner & Participant</small>
-                    <img width="50px" height="50px" src="base/image/user_profile/'.$row["owner"].'.jpg" class="rounded-circle img-fluid" alt="'.$row["owner"].'"></div>
+                    <img width="40px" height="40px" src="base/image/user_profile/'.$row["owner"].'.jpg" class="rounded-circle img-fluid" alt="'.$row["owner"].'"></div>
                     <hr>
                     <small><ion-icon name="reader-outline"></ion-icon> Description</small>
                     <p>'.$row["description"].'</p>
