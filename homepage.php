@@ -700,7 +700,7 @@
         <!-- Modal -->
         <div class="modal fade  modal-dialog-scrollable" id="project_model" tabindex="-1" aria-labelledby="project_modelLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
+                <div class="modal-content" style="border-radius: 3%;">
                     <div id="return_project_model">
                     </div>
                 </div>

@@ -64,11 +64,11 @@ while($row = mysqli_fetch_array($result)) {
         $result_task = mysqli_query($con, $query_task);
         while($row_task = mysqli_fetch_array($result_task)) {
             echo '<tr>';
-            echo '<td>'.$row_task["id"].'</td>';
-            echo '<td>'.$row_task["title"].'</td>';
-            echo '<td style="text-align: -webkit-center;">'.$row_task["status"].'</td>';
-            echo '<td style="text-align: -webkit-center;">'.$row_task["case_officer"].'</td>';
-            echo '<td style="text-align: -webkit-center;"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></td>';
+            echo '<td style="padding:20px">'.$row_task["id"].'</td>';
+            echo '<td style="padding:20px">'.$row_task["title"].'</td>';
+            echo '<td style="text-align: -webkit-center;padding:20px">'.$row_task["status"].'</td>';
+            echo '<td style="text-align: -webkit-center;padding:20px">'.$row_task["case_officer"].'</td>';
+            echo '<td style="text-align: -webkit-center;padding:20px"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></td>';
             echo '</tr>';
         }
 
