@@ -50,21 +50,22 @@ while($row = mysqli_fetch_array($result)) {
         echo'
         <table class="table">
         <thead class="table-light">
-            <th>Task</th>
-            <th>status</th>
-            <th>Owner</th>
-            <th>Action</th>
+            <th style="width: 50%;text-align: -webkit-center;">Task</th>
+            <th style="text-align: -webkit-center;">status</th>
+            <th style="text-align: -webkit-center;">Owner</th>
+            <th style="text-align: -webkit-center;">Action</th>
         </thead>
         <tbody>';
 
-        $query_task = "SELECT title,status,case_officer,id from all_in_ine_project.content_request where status <> 'Close'";
+        $query_task = "SELECT title,status,case_officer,id from all_in_one_project.content_request where status <> 'Close' and ticket_template='".$row["prefix"]."'";
         $result_task = mysqli_query($con, $query_task);
         while($row_task = mysqli_fetch_array($result_task)) {
             echo '<td>'.$row_task["title"].'</td>';
-            echo '<td>'.$row_task["status"].'</td>';
-            echo '<td>'.$row_task["case_officer"].'</td>';
-            echo '<td><ion-icon name="ellipsis-horizontal-outline"></ion-icon></td>';
+            echo '<td style="text-align: -webkit-center;">'.$row_task["status"].'</td>';
+            echo '<td style="text-align: -webkit-center;">'.$row_task["case_officer"].'</td>';
+            echo '<td style="text-align: -webkit-center;"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></td>';
         }
+
         echo '
         </tbody>
         </table>
