@@ -86,16 +86,16 @@ return $status;
                   }
 
 
-                  if($row['ticket_template']=="CR" ){
-                    $ico_ts ='ticket-outline';
-                    $ico_ts_bg = '#dc3545!important';
-                  }elseif($row['ticket_template']=="DT" ){
-                    $ico_ts ='terminal-outline';
-                    $ico_ts_bg = '#36a2ff!important';
-                  }else{
-                    $ico_ts ='ticket-outline';
-                    $ico_ts_bg = '#000000!important';
-                    
+                  date_default_timezone_set("Asia/Bangkok");
+                  $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+                  mysqli_query($con_project, "SET NAMES 'utf8' ");
+                  $query_project = "SELECT *
+                  FROM all_in_one_project.project_bucket 
+                  where prefix='".$ticket_template."'" or die("Error:" . mysqli_error());
+                  $result_project = mysqli_query($con_project, $query_project);
+                  while($row_project = mysqli_fetch_array($result_project)) {
+                    $color_project = $row_project["color_project"];
+                    $project_name = $row_project["project_name"];
                   }
                   
                 
@@ -107,7 +107,7 @@ return $status;
     <div class="col-9" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
         onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
         <!-- <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary" style="<?php //echo $ico_ts_bg; ?>;left: -8px!important;"><ion-icon name="<?php //echo $ico_ts; ?>" style="margin: 0px;color: white!important;"></ion-icon> <span class="visually-hidden">unread messages</span></span> -->
-        <?php echo "<strong style='color: ".$ico_ts_bg.";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
+        <?php echo "<strong style='color: ".$color_project.";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
     </div>
     <div class="col-3" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
         onclick="cr_id_toggle(<?php echo $row['id']; ?>)" style="align-self: center;">
