@@ -1244,9 +1244,12 @@
                                             </datalist>
                                         </form>
                                     </nav>
+                                    <div id="project_bucket">
                                     <?php //if(strpos($_SESSION["username"],'poojaroonwit')!==false){ 
+                                       
                                         include('get/get_list_project.php');
                                     // } ?>
+                                     </div>
                                     <div id="get_ts_admin_console">
                                         <?php include('get/get_list_ts.php'); ?>
                                     </div>
@@ -1436,7 +1439,7 @@
                                     $query = "SELECT * FROM project_bucket ORDER BY id asc" or die("Error:" . mysqli_error());
                                     $result = mysqli_query($con, $query);
                                     while($row = mysqli_fetch_array($result)) {
-                                        if($row["prefix"]=="CR"){
+                                        if($row["sticky"]==1){
                                             echo  "<option selected value='".$row["prefix"]."'>".$row["project_name"]."</option>";
                                         }else{
                                             echo "<option value='".$row["prefix"]."'>".$row["project_name"]."</option>";
@@ -1809,6 +1812,30 @@ function updateURL(pill) {
                 path: newurl
             }, '', newurl);
     }
+}
+function update_project_sticky(){
+    var selected = [];
+    for (var option of document.getElementById('project_sticky').options)
+    {
+        if (option.selected) {
+            if(prefix_project_sticky==""){
+                prefix_project_sticky =    "'"+option.value+"'";
+            }else{
+                prefix_project_sticky =  prefix_project_sticky + ",'"+option.value+"'";
+            }
+            
+            // selected.push(option.value);
+        }
+    }
+    
+        $.post("base/get/get_list_project.php", {
+            prefix_project_sticky: prefix_project_sticky
+        
+        }, function(data) {
+            $('#project_bucket').html(data);
+        });
+    
+
 }
 
 function filter_update(be) {

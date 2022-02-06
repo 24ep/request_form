@@ -1,5 +1,16 @@
 <?php
-
+  session_start();
+  if($_POST["project_sticky"]<>""){
+    $_SESSION["project_sticky"] = $_POST["project_sticky"];
+  }else{
+    if($_SESSION["project_sticky"]==""){
+      $_SESSION["project_sticky"] = "CR,DT";
+      
+    }else{
+      $_SESSION["project_sticky"] = $_SESSION["project_sticky"];
+    }
+  }
+ 
 
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -14,7 +25,7 @@
   FROM all_in_one_project.project_bucket as pb 
   left join all_in_one_project.account as ac
   on pb.owner = ac.username 
-  where pb.status = 'Open' order by pb.sticky DESC" or die("Error:" . mysqli_error());
+  where pb.prefix in (".$_SESSION['project_sticky'].") order by pb.sticky DESC" or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
   
  ?><div class="overflow-auto slide" style="padding: 10px;margin-bottom:10px">
