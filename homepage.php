@@ -1444,7 +1444,7 @@
 
                                     while($row = mysqli_fetch_array($result)) {
 
-                                        if(strpos($_SESSION["prefix_project_sticky"],$row['prefix'])===true){
+                                        if(strpos($_SESSION["prefix_project_sticky"],$row['prefix'])!==false){
                                             echo  "<option selected value='".$row["prefix"]."'>".$row["project_name"]."</option>";
                                         }else{
                                             echo "<option value='".$row["prefix"]."'>".$row["project_name"]."</option>";
