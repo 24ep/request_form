@@ -1438,8 +1438,13 @@
                                     mysqli_query($con, "SET NAMES 'utf8' ");
                                     $query = "SELECT * FROM project_bucket where status <> 'Close' ORDER BY id asc" or die("Error:" . mysqli_error());
                                     $result = mysqli_query($con, $query);
+                                    if($_SESSION["prefix_project_sticky"]==""){
+                                        $_SESSION["prefix_project_sticky"] = "'CR','DT'";
+                                    }
+
                                     while($row = mysqli_fetch_array($result)) {
-                                        if($row["sticky"]==1){
+
+                                        if(strpos($_SESSION["prefix_project_sticky"],$row['prefix'])===true){
                                             echo  "<option selected value='".$row["prefix"]."'>".$row["project_name"]."</option>";
                                         }else{
                                             echo "<option value='".$row["prefix"]."'>".$row["project_name"]."</option>";
