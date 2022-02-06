@@ -265,9 +265,9 @@ echo '
         '; 
         if($row_status["attribute_option"]=="Close"){
           $limit=5;
-        }else(
+        }else{
           $limit = $ts_command_limit;
-        )
+        }
         
         list_ts("ticket.case_officer = 'unassign' and ticket.status <> 'Close'",$limit,'ticket');
    echo' </div>
