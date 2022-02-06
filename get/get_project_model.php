@@ -56,7 +56,7 @@ while($row = mysqli_fetch_array($result)) {
                 <div class="col-8">
                     <small><ion-icon name="people-outline"></ion-icon> Project Owner & Participant</small>
                     <div>
-                    <img width="40px" height="40px" src="base/image/user_profile/'.$row["owner"].'.jpg" class="rounded-circle img-fluid" alt="'.$row["owner"].'">
+                    <img width="40px" height="40px" src="base/image/user_profile/'.$row["owner"].'.jpg" class="rounded-circle" alt="'.$row["owner"].'">
                     |
                     '.$project_participants.'
                     </div>
