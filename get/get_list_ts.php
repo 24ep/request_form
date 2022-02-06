@@ -201,54 +201,6 @@ $i++;
     </div>
 </li>
 <?php
-                 }elseif($row['ticket_template']=="PJ" ){
-                  if($i==1){
-                    echo '<li class="mb-1 row">
-                    <div class="col-6 " style="padding:3px;"> <strong>Project name</strong></div>
-                    <div class="col-3 text-center" style="padding:3px;"> <strong>Owner</strong></div>
-                    <div class="col-3 text-center" style="padding:3px;"> <strong>Progress</strong></div>
-                    </li>';
-                  }
-                   $query_count = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where ticket_id =".$row['id'];
-                   $query_count_complete = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where status = 'Close' and  ticket_id =".$row['id'];
-                   $result_count = mysqli_query($con, $query_count);
-                   $result_count_complete = mysqli_query($con, $query_count_complete);
-                   $count_id=mysqli_fetch_assoc($result_count);
-                   $count_id_complete=mysqli_fetch_assoc($result_count_complete);
-                   $count_id_fr=$count_id['count_id'];
-                   $count_id_fr_complete=$count_id_complete['count_id'];
-                  //  cal progress
-                   $percent_progress = ($count_id_fr_complete/$count_id_fr)*100;
-                   if($percent_progress >0 and $percent_progress < 50){
-                     $bsc_progress = "#ffc107";
-                   }elseif($percent_progress >=50 and $percent_progress < 100){
-                    $bsc_progress = "#778719";
-                   }elseif($percent_progress == 100){
-                    $bsc_progress = "#198754";
-                   }else{
-                    $bsc_progress = "rgb(13 110 253 / 25%);";
-                   }
-                ?>
-<li class="row shadow-sm rounded md-3 p-2 bg-white" style="<?php echo  $ri_style ?> " data-bs-toggle="offcanvas"
-    data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id']; ?>)">
-    <div class="col-6" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
-        onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
-        <?php echo "<strong>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
-    </div>
-    <div class="col-3 text-center " data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
-        aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
-        <?php echo $row["case_officer"]; ?>
-    </div>
-    <div class="col-3 text-center" data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
-        aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id'];?>)" style="align-self: center;">
-        <div class="progress-bar rounded progress-bar-striped progress-bar-animated" role="progressbar"
-            style="background-color: <?php echo $bsc_progress ;?>;width: <?php echo $percent_progress ;?>%;padding: .25rem .5rem;"
-            aria-valuenow="<?php echo $percent_progress ;?>" aria-valuemin="0" aria-valuemax="100">
-            <?php echo $percent_progress ;?>% (<?php echo $count_id_fr_complete ;?>/<?php echo $count_id_fr ;?>)
-        </div>
-    </div>
-</li>
-<?php
                  }
                  $i++;
       }
@@ -267,37 +219,6 @@ $i++;
 // echo '<script>console.log("'.$_SESSION["cb_da"] .'");</script>';
 // echo '<script>console.log("'.$_SESSION["cb_cr"] .'");</script>';
 ?>
-
-
-            
-
-<!-- project -->
-
-<?php if($_SESSION["cb_pj"]=="true"){
-          
-            ?>
-<span class="row"><strong>
-        <ion-icon name="rocket-outline" style="vertical-align: middle;"></ion-icon>
-        Project
-    </strong></span>
-<div class="row">
-    <div class="col border-0 border-end">
-        <small class="row m-3">Your tasks assignment (task of project)</small>
-        <div id="list_pj_task">
-            <?php list_ts($_SESSION["ts_query_input"]."  and ticket.status <> 'Close' and  ticket.ticket_template = 'PJ'",100,'task'); ?>
-
-        </div>
-    </div>
-    <div class="col">
-        <small class="row m-3">All project</small>
-        <?php list_ts("ticket.ticket_template = 'PJ' and ticket.status <> 'Close'",500,'ticket' ); ?>
-    </div>
-</div>
-<hr>
-<?php }?>
-<!-- end project -->
-
-
 
 <!-- support task -->
 <?php if($_SESSION["cb_da"]=="true"){?>
