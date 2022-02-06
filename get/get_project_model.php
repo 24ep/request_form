@@ -68,14 +68,23 @@ while($row = mysqli_fetch_array($result)) {
                     order by att.create_date DESC limit 20";
                     $result_att = mysqli_query($con, $query_att);
                     while($row_att = mysqli_fetch_array($result_att)) {
-                        $image = str_replace("../..","../..",$row_att['file_path'].$row_att['file_name']);
+                        if($row_att["is_image"]<>1){
+                            $file_type = substr($str,strpos($str,".")+1);
+                            $badge_att = '<div class="d-inline p-2 bg-secondary text-white">'.$file_type.'</div>';
+                        }
+                        else{
+                            $image = str_replace("../..","../..",$row_att['file_path'].$row_att['file_name']);
+                            $badge_att = '<img src="'.$image.'" alt="..." width="100px" height="100px" class="rounded mx-auto d-block img-fluid">';
+                        }
+
+                       
                         echo '
                         <div class="card" style="margin:10px">
                             <div class="card-body">
 
                             <div class="d-flex">
                                 <div class="flex-shrink-0">
-                                    <img src="'.$image.'" alt="..." width="100px" height="100px" class="rounded mx-auto d-block img-fluid">
+                                    '.$badge_att.'
                                 </div>
                                 <div class="flex-grow-1 ms-3">
                                     <h6 class="card-title" style="font-weight:700">'.$row_att["file_name"].'</h6>
