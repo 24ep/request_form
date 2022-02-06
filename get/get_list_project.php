@@ -35,7 +35,7 @@
     <div class="card-group" style="width: max-content;"><?php
      while($row = mysqli_fetch_array($result)) {
 
-      $query_participant = "select case_officer from all_in_one_project.content_request where ticket_template = '".$row["prefix"]."' group by case_officer";
+      $query_participant = "select case_officer from all_in_one_project.content_request where ticket_template = '".$row["prefix"]."' and case_officer<>'unassign' and case_officer is not null and case_officer<>'' group by case_officer";
       $result_participant = mysqli_query($con, $query_participant);
       unset($project_participants);
       while($row_participant = mysqli_fetch_array($result_participant)) {
