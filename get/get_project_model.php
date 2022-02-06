@@ -75,8 +75,8 @@ while($row = mysqli_fetch_array($result)) {
                                 <p class="card-text">
                                 '.$row_att["comment"].'
                                 </p>
-                                <small>Ticket no : '.$row_att["ticket_id"].' <small>
-                                <small> Download <small>
+                                <small>Ticket no : '.$row_att["ticket_id"].' </small>
+                                <small> Download </small>
                                 
                             </div>
                         </div>
