@@ -70,7 +70,14 @@ while($row = mysqli_fetch_array($result)) {
                     while($row_att = mysqli_fetch_array($result_att)) {
                         if($row_att["is_image"]<>1){
                             $file_type = substr($row_att["file_name"],strpos($row_att["file_name"],".")+1);
-                            $badge_att = '<div class="d-inline p-2 bg-secondary text-white">'.$file_type.'</div>';
+                            $badge_att = '<div style="weight:100px;height: 100px;
+                            background-color: #c5c5c5;
+                            text-align: center;
+                            padding-top: 35%;
+                            font-size: x-large;
+                            font-weight: 900;
+                            color: white;
+                            text-transform: uppercase;">'.$file_type.'</div>';
                         }
                         else{
                             $image = str_replace("../..","../..",$row_att['file_path'].$row_att['file_name']);
