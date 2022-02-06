@@ -38,6 +38,14 @@ on pb.owner = ac.username
 where pb.id=".$_POST["id"] or die("Error:" . mysqli_error());
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
+
+    $query_participant = "select case_officer from all_in_one_project.content_request where ticket_template = '".$row["prefix"]."' and case_officer<>'unassign' and case_officer is not null and case_officer<>'' and case_officer<>'".$row["owner"]."' group by case_officer";
+      $result_participant = mysqli_query($con, $query_participant);
+      unset($project_participants);
+      while($row_participant = mysqli_fetch_array($result_participant)) {
+        $project_participants .= ' <img width="30px" height="30px" src="base/image/user_profile/'.$row_participant["case_officer"].'.jpg" class="rounded-circle" alt="'.$row_participant["case_officer"].'">';
+      }
+      
     echo '
         <div class="modal-header" style="border-color: transparent;background: #f3f3f3;">
             <h5 class="modal-title" id="exampleModalLabel">'.$row["project_name"].'</h5>
@@ -47,7 +55,11 @@ while($row = mysqli_fetch_array($result)) {
             <div class="row" style="margin:5px">
                 <div class="col-8">
                     <small><ion-icon name="people-outline"></ion-icon> Project Owner & Participant</small>
-                    <img width="40px" height="40px" src="base/image/user_profile/'.$row["owner"].'.jpg" class="rounded-circle img-fluid" alt="'.$row["owner"].'"></div>
+                    <div>
+                    <img width="40px" height="40px" src="base/image/user_profile/'.$row["owner"].'.jpg" class="rounded-circle img-fluid" alt="'.$row["owner"].'">
+                    |
+                    '.$project_participants.'
+                    </div>
                     <hr>
                     <small><ion-icon name="reader-outline"></ion-icon> Description</small>
                     <p>'.$row["description"].'</p>
