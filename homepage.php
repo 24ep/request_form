@@ -1245,11 +1245,11 @@
                                         </form>
                                     </nav>
                                     <div id="project_bucket">
-                                    <?php //if(strpos($_SESSION["username"],'poojaroonwit')!==false){ 
+                                        <?php //if(strpos($_SESSION["username"],'poojaroonwit')!==false){ 
                                        
                                         include('get/get_list_project.php');
                                     // } ?>
-                                     </div>
+                                    </div>
                                     <div id="get_ts_admin_console">
                                         <?php include('get/get_list_ts.php'); ?>
                                     </div>
@@ -1430,7 +1430,9 @@
                             <div style="margin-bottom:10px">
                                 Select project you wnt to see , this option will show only project are not close
                             </div>
-                            <select class="form-select" style="border: 0px;margin-top: 30px;" size="25" id="project_sticky_mse" onclick="update_project_sticky();run_ts_command('task');" multiple aria-label="multiple select example">
+                            <select class="form-select" style="border: 0px;margin-top: 30px;" size="25"
+                                id="project_sticky_mse" onclick="update_project_sticky();run_ts_command('task');"
+                                multiple aria-label="multiple select example">
 
                                 <?php
                                
@@ -1452,7 +1454,7 @@
                                     }
                                 
                                 ?>
-                            
+
                             </select>
                         </div>
                     </div>
@@ -1818,28 +1820,28 @@ function updateURL(pill) {
             }, '', newurl);
     }
 }
-function update_project_sticky(){
+
+function update_project_sticky() {
     var prefix_project_sticky = "";
-    for (var option of document.getElementById('project_sticky_mse').options)
-    {
+    for (var option of document.getElementById('project_sticky_mse').options) {
         if (option.selected) {
-            if(prefix_project_sticky==""){
-                prefix_project_sticky =    "'"+option.value+"'";
-            }else{
-                prefix_project_sticky =  prefix_project_sticky + ",'"+option.value+"'";
+            if (prefix_project_sticky == "") {
+                prefix_project_sticky = "'" + option.value + "'";
+            } else {
+                prefix_project_sticky = prefix_project_sticky + ",'" + option.value + "'";
             }
-            
+
             // selected.push(option.value);
         }
     }
-    
-        $.post("base/get/get_list_project.php", {
-            prefix_project_sticky: prefix_project_sticky
-        
-        }, function(data) {
-            $('#project_bucket').html(data);
-        });
-    
+
+    $.post("base/get/get_list_project.php", {
+        prefix_project_sticky: prefix_project_sticky
+
+    }, function(data) {
+        $('#project_bucket').html(data);
+    });
+
 
 }
 
@@ -2099,3 +2101,10 @@ function drop_card_cr(ev, new_status) {
         </script>';
         }
     } ?>
+
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
