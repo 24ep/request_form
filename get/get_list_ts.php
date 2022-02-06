@@ -254,8 +254,13 @@ echo '<div class="row">
 <div class="col border-0 border-end">
     <small class="row m-3">Your Assignment</small>';
 while($row_status = mysqli_fetch_array($result_status)) {
+  if($row_status["attribute_option"]=="Close"){
+    $limit=5;
+  }else{
+    $limit = $ts_command_limit;
+  }
   echo '<small class="row m-3">'.$row_status["attribute_option"].'</small>';
-  list_ts($_SESSION["ts_query_input"]." and ticket.status = '".$row_status["attribute_option"]."'",100,'ticket');
+  list_ts($_SESSION["ts_query_input"]." and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
   echo '<hr>';
 }
 echo '
@@ -263,13 +268,9 @@ echo '
     <div class="col">
         <small class="row m-3">Unassign</small>
         '; 
-        if($row_status["attribute_option"]=="Close"){
-          $limit=5;
-        }else{
-          $limit = $ts_command_limit;
-        }
+      
         
-        list_ts("ticket.case_officer = 'unassign' and ticket.status <> 'Close'",$limit,'ticket');
+        list_ts("ticket.case_officer = 'unassign' and ticket.status <> 'Close'",500,'ticket');
    echo' </div>
 </div>
 ';
@@ -279,7 +280,7 @@ echo '
 ?>
 
 <!-- Content request -->
-<span class="row"><strong>
+<!-- <span class="row"><strong>
         <ion-icon name="layers-outline" style="vertical-align: middle;"></ion-icon>
         Task
     </strong></span>
@@ -289,39 +290,39 @@ echo '
         <small class="row m-3">Pending</small>
         <hr>
         <div id="list_cr_task_pending">
-            <?php list_ts($_SESSION["ts_query_input"]." and ticket.status = 'Pending' and  ticket.ticket_template in ('CR')",100,'ticket');
-                      echo '<script>console.log("'.$_SESSION["ts_query_input"].' ");</script>';
+            <?php //list_ts($_SESSION["ts_query_input"]." and ticket.status = 'Pending' and  ticket.ticket_template in ('CR')",100,'ticket');
+                      //echo '<script>console.log("'.$_SESSION["ts_query_input"].' ");</script>';
                       ?>
         </div>
         <small class="row m-3">inprogress</small>
         <hr>
         <div id="list_cr_task_inprogress">
-            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Inprogress' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
+            <?php //list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Inprogress' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
         </div>
         <small class="row m-3">Waiting Execution</small>
         <hr>
         <div id="list_cr_task_we">
-            <?php list_ts($_SESSION["ts_query_input"]."  and ticket.status = 'Waiting Execution' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
+            <?php //list_ts($_SESSION["ts_query_input"]."  and ticket.status = 'Waiting Execution' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
         </div>
         <small class="row m-3">Waiting CTO</small>
         <hr>
         <div id="list_cr_task_wcto">
-            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Waiting CTO' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
+            <?php //list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Waiting CTO' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
         </div>
         <small class="row m-3">Waiting Buyer</small>
         <hr>
         <div id="list_cr_task_wb">
-            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Waiting Buyer' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
+            <?php //list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Waiting Buyer' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
         </div>
         <small class="row m-3">Close [lastest 5 ticket]</small>
         <hr>
         <div id="list_cr_task_wb">
-            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Close' and  ticket.ticket_template in ('CR')",5,'ticket'); ?>
+            <?php //list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Close' and  ticket.ticket_template in ('CR')",5,'ticket'); ?>
         </div>
     </div>
     <div class="col">
         <small class="row m-3">Unassign</small>
-        <?php list_ts("ticket.ticket_template in ('CR') and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
+        <?php //list_ts("ticket.ticket_template in ('CR') and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
     </div>
-</div>
+</div> -->
 
