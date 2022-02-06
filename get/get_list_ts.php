@@ -262,7 +262,7 @@ echo '
 </div>
     <div class="col">
         <small class="row m-3">Unassign</small>
-        ';<?php list_ts("ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
+        '; list_ts("ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket');
    echo' </div>
 </div>
 ';
