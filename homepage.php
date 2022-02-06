@@ -1430,7 +1430,7 @@
                             <div style="margin-bottom:10px">
                                 Select project you wnt to see , this option will show only project are not close
                             </div>
-                            <select class="form-select" size="25" id="project_sticky" onclick="update_project_sticky();" multiple aria-label="multiple select example">
+                            <select class="form-select" size="25" id="project_sticky_mse" onclick="update_project_sticky();" multiple aria-label="multiple select example">
 
                                 <?php
                                
@@ -1814,7 +1814,7 @@ function updateURL(pill) {
     }
 }
 function update_project_sticky(){
-    for (var option of document.getElementById('project_sticky').options)
+    for (var option of document.getElementById('project_sticky_mse').options)
     {
         if (option.selected) {
             if(prefix_project_sticky==""){
