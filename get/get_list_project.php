@@ -76,8 +76,8 @@
                       <h6 class="card-title" style="font-weight:900;margin-bottom:15px;color:'.$row["color_project"].'"><span>'.$row["prefix"]."</span> | ".$row["project_name"].'</h6>
                       <div style="margin:5px;font-size: 14px;color: #6b6b6b!important;"><ion-icon name="file-tray-stacked-outline" style="font-size: 18px;color: #6b6b6b!important;"></ion-icon> '.$count_ticket.' Tickets</div>
                       <div style="margin:5px;font-size: 14px;color: #6b6b6b!important;"><ion-icon name="people-outline" style="font-size: 18px;color: #6b6b6b!important;"></ion-icon> 
-                      <img width="30px" height="30px" src="base/image/user_profile/'.$row["owner"].'.jpg" class="rounded-circle img-fluid" alt="'.$row["owner"].'"></div> | 
-                      '.$project_participants.'
+                      <img width="30px" height="30px" src="base/image/user_profile/'.$row["owner"].'.jpg" class="rounded-circle img-fluid" alt="'.$row["owner"].'"> | '.$project_participants.'</div>
+                      
                   </div>
                   </button>
               </div>
