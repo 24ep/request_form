@@ -44,7 +44,7 @@ while($row = mysqli_fetch_array($result)) {
       unset($project_participants);
       while($row_participant = mysqli_fetch_array($result_participant)) {
         if($project_participants==""){
-            $project_participants .= ' <img width="30px" height="30px" src="base/image/user_profile/'.$row_participant["case_officer"].'.jpg" class="rounded-circle" alt="'.$row_participant["case_officer"].'">';
+            $project_participants .= ' <img width="30px"  data-bs-toggle="tooltip" data-bs-placement="top" title="'.$row_participant["case_officer"].'" height="30px" src="base/image/user_profile/'.$row_participant["case_officer"].'.jpg" class="rounded-circle" alt="'.$row_participant["case_officer"].'">';
           }else{
             $project_participants .= ' <img width="30px" style="margin-left: -20px;" height="30px" src="base/image/user_profile/'.$row_participant["case_officer"].'.jpg" class="rounded-circle" alt="'.$row_participant["case_officer"].'">';
           }
