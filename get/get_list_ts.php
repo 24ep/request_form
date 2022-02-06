@@ -221,8 +221,8 @@ $i++;
 ?>
 
 <!-- support task -->
-<?php if($_SESSION["cb_da"]=="true"){?>
-<span class="row"><strong>
+<?php //if($_SESSION["cb_da"]=="true"){?>
+<!-- <span class="row"><strong>
         <ion-icon name="server-outline" style="vertical-align: middle;"></ion-icon>
         Data & Application Support
     </strong></span>
@@ -230,22 +230,40 @@ $i++;
     <div class="col border-0 border-end">
         <small class="row m-3">Your Assignment</small>
         <div id="list_da_task">
-            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status <> 'Close' and ticket.ticket_template = 'DT'",100,'ticket'); ?>
+            <?php //list_ts($_SESSION["ts_query_input"]."   and ticket.status <> 'Close' and ticket.ticket_template = 'DT'",100,'ticket'); ?>
         </div>
     </div>
     <div class="col">
         <small class="row m-3">Unassign</small>
-        <?php list_ts("ticket.ticket_template = 'DT' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
+        <?php //list_ts("ticket.ticket_template = 'DT' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
     </div>
 </div>
-<hr>
-<?php }?>
+<hr> -->
+<?php //}?>
+
+
+<?php
+if($_SESSION["username"]=="poojaroonwit"){
+date_default_timezone_set("Asia/Bangkok");
+$con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+mysqli_query($con, "SET NAMES 'utf8' ");
+$query_status = "SELECT * FROM content_service_gate.attribute_option 
+where attribute_id= 38" or die("Error:" . mysqli_error());
+$result_status = mysqli_query($con_status, $query_status);
+while($row_status = mysqli_fetch_array($result_status)) {
+  echo '<small class="row m-3">'.$row_status["attribute_option"].'</small>';
+  list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Inprogress' and  ticket.ticket_template in ('CR')",100,'ticket');
+  echo '<hr>';
+}
+
+}
+
+?>
 
 <!-- Content request -->
-<?php if($_SESSION["cb_cr"]=="true"){?>
 <span class="row"><strong>
         <ion-icon name="layers-outline" style="vertical-align: middle;"></ion-icon>
-        Content Request
+        Task
     </strong></span>
 <div class="row">
     <div class="col border-0 border-end">
@@ -253,40 +271,39 @@ $i++;
         <small class="row m-3">Pending</small>
         <hr>
         <div id="list_cr_task_pending">
-            <?php list_ts($_SESSION["ts_query_input"]." and ticket.status = 'Pending' and  ticket.ticket_template = 'CR'",100,'ticket');
+            <?php list_ts($_SESSION["ts_query_input"]." and ticket.status = 'Pending' and  ticket.ticket_template in ('CR')",100,'ticket');
                       echo '<script>console.log("'.$_SESSION["ts_query_input"].' ");</script>';
                       ?>
         </div>
         <small class="row m-3">inprogress</small>
         <hr>
         <div id="list_cr_task_inprogress">
-            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Inprogress' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Inprogress' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
         </div>
         <small class="row m-3">Waiting Execution</small>
         <hr>
         <div id="list_cr_task_we">
-            <?php list_ts($_SESSION["ts_query_input"]."  and ticket.status = 'Waiting Execution' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+            <?php list_ts($_SESSION["ts_query_input"]."  and ticket.status = 'Waiting Execution' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
         </div>
         <small class="row m-3">Waiting CTO</small>
         <hr>
         <div id="list_cr_task_wcto">
-            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Waiting CTO' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Waiting CTO' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
         </div>
         <small class="row m-3">Waiting Buyer</small>
         <hr>
         <div id="list_cr_task_wb">
-            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Waiting Buyer' and  ticket.ticket_template = 'CR'",100,'ticket'); ?>
+            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Waiting Buyer' and  ticket.ticket_template in ('CR')",100,'ticket'); ?>
         </div>
         <small class="row m-3">Close [lastest 5 ticket]</small>
         <hr>
         <div id="list_cr_task_wb">
-            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Close' and  ticket.ticket_template = 'CR'",5,'ticket'); ?>
+            <?php list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Close' and  ticket.ticket_template in ('CR')",5,'ticket'); ?>
         </div>
     </div>
     <div class="col">
         <small class="row m-3">Unassign</small>
-        <?php list_ts("ticket.ticket_template = 'CR' and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
+        <?php list_ts("ticket.ticket_template in ('CR') and ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
     </div>
 </div>
 
-<?php }?>
