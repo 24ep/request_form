@@ -51,9 +51,9 @@ while($row = mysqli_fetch_array($result)) {
         <table class="table">
         <thead class="table-light">
             <th style="width: 50%;text-align: -webkit-center;">Task</th>
-            <th style="text-align: -webkit-center;">status</th>
-            <th style="text-align: -webkit-center;">Owner</th>
-            <th style="text-align: -webkit-center;">Action</th>
+            <th style="text-align: -webkit-center;border:0px">status</th>
+            <th style="text-align: -webkit-center;border:0px">Owner</th>
+            <th style="text-align: -webkit-center;border:0px">Action</th>
         </thead>
         <tbody>';
 
