@@ -16,15 +16,14 @@ on pb.owner = ac.username
 where pb.id=".$_POST["id"] or die("Error:" . mysqli_error());
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
-
     echo '
         <div class="modal-header" style="border-color: transparent;background: #f3f3f3;">
             <h5 class="modal-title" id="exampleModalLabel">'.$row["project_name"].'</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <div class="row">
-                <div class="col-9">
+            <div class="row" style="margin:5px">
+                <div class="col-8">
                     <small><ion-icon name="people-outline"></ion-icon> Project Owner & Participant</small>
                     <hr>
                     <small><ion-icon name="reader-outline"></ion-icon> Description</small>
@@ -36,7 +35,7 @@ while($row = mysqli_fetch_array($result)) {
 <?php
                     echo '
                 </div>
-                <div class="col-3">
+                <div class="col-4">
                 <small>status</small>
                     <select class="form-select" style="border: 0px;background-color: #f5f5f5;"
                     aria-label="Default select example">
@@ -48,14 +47,38 @@ while($row = mysqli_fetch_array($result)) {
         </div>';
 
 
+        echo'
+        <table class="table">
+        <thead class="table-light">
+            <th>Task</th>
+            <th>status</th>
+            <th>Owner</th>
+            <th>Action</th>
+        </thead>
+        <tbody>';
+
+        $query_task = "SELECT title,status,case_officer,id from all_in_ine_project.content_request where status <> 'Close'";
+        $result_task = mysqli_query($con, $query_task);
+        while($row_task = mysqli_fetch_array($result_task)) {
+            echo '<td>'.$row_task["title"].'</td>';
+            echo '<td>'.$row_task["status"].'</td>';
+            echo '<td>'.$row_task["case_officer"].'</td>';
+            echo '<td><ion-icon name="ellipsis-horizontal-outline"></ion-icon></td>';
+        }
         echo '
-        <div class="modal-header" style="border-color: transparent;background: #f3f3f3;">
-            <ion-icon name="file-tray-stacked-outline"></ion-icon><h5 class="modal-title" id="exampleModalLabel">Task</h5>
-        </div>
-        <div class="container-sm">
-          
-        </div>
+        </tbody>
+        </table>
         ';
+
+        // echo '
+        // <div class="modal-header" style="border-color: transparent;background: #f3f3f3;">
+            
+        //     <h5 class="modal-title" id="exampleModalLabel"><ion-icon name="file-tray-stacked-outline"></ion-icon> Task</h5>
+        // </div>
+        // <div class="container-sm">
+          
+        // </div>
+        // ';
 
 }
 
