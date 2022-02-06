@@ -698,9 +698,10 @@
 
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
         <!-- Modal -->
-        <div class="modal fade " id="project_model" tabindex="-1" aria-labelledby="project_modelLabel" aria-hidden="true">
+        <div class="modal fade " id="project_model" tabindex="-1" aria-labelledby="project_modelLabel"
+            aria-hidden="true">
             <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" style="border-radius: 3%;">
-                <div class="modal-content" >
+                <div class="modal-content">
                     <div id="return_project_model">
                     </div>
                 </div>
@@ -1182,12 +1183,11 @@
                                             <form class="d-flex">
                                                 <div class="btn-group" role="group"
                                                     aria-label="Basic checkbox toggle button group">
-                                               
+
                                                 </div>
                                                 <button class="btn btn-primary btn-sm " style="margin-left:10px;"
                                                     type="button" data-bs-toggle="offcanvas"
-                                                    data-bs-target="#content_request_canvas"
-                                                    aria-controls="offcanvasExample">
+                                                    data-bs-target="#project_sticky" aria-controls="project_sticky">
                                                     <ion-icon size="small" name="file-tray-stacked-outline" role="img"
                                                         class="md icon-small hydrated" aria-label="add outline">
                                                     </ion-icon>
@@ -1411,6 +1411,29 @@
                     <div class="offcanvas offcanvas-start" tabindex="0" id="detail_cr" style="width:100%"
                         aria-labelledby="offcanvasExampleLabel">
                         <div id="calloffcanvas_cr">
+                        </div>
+                    </div>
+
+                    <!-- offcanvas project sticky cr -->
+
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="project_sticky"
+                        aria-labelledby="offcanvasExampleLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div>
+                                Some text as placeholder. In real life you can have the elements you have chosen. Like,
+                                text, images, lists, etc.
+                            </div>
+                            <select class="form-select" multiple aria-label="multiple select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
                         </div>
                     </div>
                     <!-- offcanvas create -->
