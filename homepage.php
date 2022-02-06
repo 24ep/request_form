@@ -1424,15 +1424,27 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
-                            <div>
-                                Some text as placeholder. In real life you can have the elements you have chosen. Like,
-                                text, images, lists, etc.
+                            <div style="margin-bottom:10px">
+                                Select project you wnt to see , this option will show only project are not close
                             </div>
                             <select class="form-select" multiple aria-label="multiple select example">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+
+                                <?php
+                               
+                                    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+                                    mysqli_query($con, "SET NAMES 'utf8' ");
+                                    $query = "SELECT * FROM project_bucket ORDER BY id asc" or die("Error:" . mysqli_error());
+                                    $result = mysqli_query($con, $query);
+                                    while($row = mysqli_fetch_array($result)) {
+                                        if($row["prefix"]=="CR"){
+                                            echo  "<option selected value='".$row["prefix"]."'>".$row["project_name"]."</option>";
+                                        }else{
+                                            echo "<option value='".$row["prefix"]."'>".$row["project_name"]."</option>";
+                                        }
+                                    }
+                                
+                                ?>
+                            
                             </select>
                         </div>
                     </div>
