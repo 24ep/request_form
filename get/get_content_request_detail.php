@@ -202,6 +202,17 @@ $result = mysqli_query($con, $query);
       // $office_tell = $row['office_tell'];
     }
   
+    date_default_timezone_set("Asia/Bangkok");
+$con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+mysqli_query($con_project, "SET NAMES 'utf8' ");
+$query_project = "SELECT *
+FROM all_in_one_project.project_bucket 
+where prefix='".$ticket_template."'" or die("Error:" . mysqli_error());
+$result_project = mysqli_query($con_project, $query_project);
+while($row_project = mysqli_fetch_array($result_project)) {
+  $color_project = $row_project["color_project"];
+  $project_name = $row_project["project_name"];
+}
     echo ' 
     <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -232,7 +243,8 @@ $result = mysqli_query($con, $query);
         <span>Create by '.$request_by_contact.'</span>   
         <span>'.$create_date.'</span>      
         </div>
-        <h5 style="font-weight: 800;"><strong style="color:red;">CR-'.$id .'</strong> '.$title.'</h5>
+        <span class="badge rounded-pill bg-primary" style="color:'.$color_project.'">project_name</span>
+        <h5 style="font-weight: 800;"><strong style="color:'.$color_project.';">'.$ticket_template.'-'.$id .'</strong> '.$title.'</h5>
         <form method="post">
         <div class="des_cr" id="des_cr_inline" >'.$description.'</div></form>
         '.$list_image.'
