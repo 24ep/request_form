@@ -4,7 +4,7 @@
     $_SESSION["project_sticky"] = $_POST["project_sticky"];
   }else{
     if($_SESSION["project_sticky"]==""){
-      $_SESSION["project_sticky"] = "CR,DT";
+      $_SESSION["project_sticky"] = "'CR','DT'";
       
     }else{
       $_SESSION["project_sticky"] = $_SESSION["project_sticky"];
