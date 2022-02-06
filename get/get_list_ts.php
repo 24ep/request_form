@@ -143,7 +143,7 @@ while($row_status = mysqli_fetch_array($result_status)) {
     $limit = $ts_command_limit;
   }
   echo '<small class="row m-3">'.$row_status["attribute_option"].'</small>';
-  list_ts($_SESSION["ts_query_input"]." and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
+  list_ts("(".$_SESSION["ts_query_input"].") and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
   echo '<hr>';
 }
 echo '
