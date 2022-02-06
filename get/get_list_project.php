@@ -21,7 +21,7 @@
   pb.sticky,
   pb.status,
   pb.prefix,
-  pb.color_project
+  pb.color_project,
   ac.profile_url
   FROM all_in_one_project.project_bucket as pb 
   left join all_in_one_project.account as ac
