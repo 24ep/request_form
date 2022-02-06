@@ -68,7 +68,9 @@ while($row = mysqli_fetch_array($result)) {
             echo '<td style="padding:20px">'.$row_task["title"].'</td>';
             echo '<td style="text-align: -webkit-center;padding:20px">'.$row_task["status"].'</td>';
             echo '<td style="text-align: -webkit-center;padding:20px">'.$row_task["case_officer"].'</td>';
-            echo '<td style="text-align: -webkit-center;padding:20px"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></td>';
+            echo '<td style="text-align: -webkit-center;padding:20px">
+            <ion-icon name="ellipsis-horizontal-outline" data-bs-toggle="offcanvas"
+            data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row_task['id'].')"></ion-icon></td>';
             echo '</tr>';
         }
 
