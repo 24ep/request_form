@@ -49,8 +49,11 @@ while($row = mysqli_fetch_array($result)) {
 
 
         echo '
-        <div class="container-md">
-        <hr><small><ion-icon name="file-tray-stacked-outline"></ion-icon> Task</small>
+        <div class="modal-header" style="border-color: transparent;background: #f3f3f3;">
+            <ion-icon name="file-tray-stacked-outline"></ion-icon><h5 class="modal-title" id="exampleModalLabel">Task</h5>
+        </div>
+        <div class="container-sm">
+          
         </div>
         ';
 
