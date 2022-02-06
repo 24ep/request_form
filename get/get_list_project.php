@@ -56,13 +56,24 @@
          unset($count_nc_style);
        }
 
+       if($row['prefix']=="CR" ){
+        $ico_ts ='ticket-outline';
+        $ico_ts_bg = '#dc3545!important';
+      }elseif($row['prefix']=="DT" ){
+        $ico_ts ='terminal-outline';
+        $ico_ts_bg = '#36a2ff!important';
+      }else{
+        $ico_ts ='ticket-outline';
+        $ico_ts_bg = '#000000!important';
+        
+      }
          echo ' 
             
               <div class="card shadow-sm" '.$sticky_style.'>
               <button type="button" class="btn btn-sm" style="text-align: initial;" onclick="get_project_model('.$row["id"].')" data-bs-toggle="modal" data-bs-target="#project_model">
               '.$count_nc_style.'
                   <div class="card-body" >
-                      <h6 class="card-title" style="font-weight:900;margin-bottom:15px"><span style="color:red">'.$row["prefix"]."</span> | ".$row["project_name"].'</h6>
+                      <h6 class="card-title" style="font-weight:900;margin-bottom:15px;color:'.$ico_ts_bg.'"><span>'.$row["prefix"]."</span> | ".$row["project_name"].'</h6>
                       <div style="margin:5px;font-size: 14px;color: #6b6b6b!important;"><ion-icon name="file-tray-stacked-outline" style="font-size: 18px;color: #6b6b6b!important;"></ion-icon> '.$count_ticket.' Tickets</div>
                       <div style="margin:5px;font-size: 14px;color: #6b6b6b!important;"><ion-icon name="people-outline" style="font-size: 18px;color: #6b6b6b!important;"></ion-icon> 
                       <img src="'.$row["profile_url"].'" class="rounded-circle" alt="...">'.$row["owner"].'.</div>
