@@ -14,34 +14,6 @@ if($_POST["ts_command_limit"]<>""){
   $ts_command_limit=100;
 }
 
-if($_POST["ts_level"]<>""){
-  $ts_level = $_POST["ts_level"];
-}else{
-  $ts_level = "ticket";
-}
-
-if($_POST["cb_pj"]<>""){
-  $_SESSION["cb_pj"] = $_POST["cb_pj"];
-}else{
-  if($_SESSION["cb_pj"]==""){
-    $_SESSION["cb_pj"] = "true";
-  }
-}
-if($_POST["cb_da"]<>""){
-  $_SESSION["cb_da"] = $_POST["cb_da"];
-}else{
-  if($_SESSION["cb_da"]==""){
-    $_SESSION["cb_da"] = "true";
-  }
- 
-}
-if($_POST["cb_cr"]<>""){
-  $_SESSION["cb_cr"] = $_POST["cb_cr"];
-}else{
-  if($_SESSION["cb_cr"]==""){
-    $_SESSION["cb_cr"] = "true";
-  }
-}
 
 $filter = $_SESSION["ts_query_input"];
 

@@ -1182,38 +1182,7 @@
                                             <form class="d-flex">
                                                 <div class="btn-group" role="group"
                                                     aria-label="Basic checkbox toggle button group">
-                                                    <?php 
-                                                if( $_SESSION["cb_pj"]=="true"){
-                                                    $cb_pj_check == "checked";
-                                                }else{
-                                                    $cb_pj_check == "";
-                                                }
-                                                if( $_SESSION["cb_da"]=="true"){
-                                                    $cb_pj_check == "checked";
-                                                }else{
-                                                    $cb_pj_check == "";
-                                                }
-                                                if( $_SESSION["cb_cr"]=="true"){
-                                                    $cb_pj_check == "checked";
-                                                }else{
-                                                    $cb_pj_check == "";
-                                                }
-                                                ?>
-                                                    <input type="checkbox" class="btn-check"
-                                                        onclick="run_ts_command('task');" id="cb_pj" autocomplete="off"
-                                                        checked>
-                                                    <label class="btn btn-sm btn-outline-primary"
-                                                        for="cb_pj">Project</label>
-                                                    <input type="checkbox" class="btn-check"
-                                                        onclick="run_ts_command('task');" id="cb_da" autocomplete="off"
-                                                        checked>
-                                                    <label class="btn btn-sm btn-outline-primary" for="cb_da">Data &
-                                                        App-sup</label>
-                                                    <input type="checkbox" class="btn-check"
-                                                        onclick="run_ts_command('task');" id="cb_cr" autocomplete="off"
-                                                        checked>
-                                                    <label class="btn btn-sm btn-outline-primary" for="cb_cr">Content
-                                                        Request</label>
+                                               
                                                 </div>
                                                 <button class="btn btn-primary btn-sm " style="margin-left:10px;"
                                                     type="button" data-bs-toggle="offcanvas"
