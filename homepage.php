@@ -1216,7 +1216,7 @@
                                                 if($_SESSION["ts_query_input"]<>""){
                                                     $sqb = $_SESSION["ts_query_input"];
                                                 }else{
-                                                    $sqb =  "(ticket.participant like  '%".$_SESSION["username"]."%' or ticket.case_officer like  '%".$_SESSION["username"]."%' )";
+                                                    $sqb =  "ticket.case_officer like  '%".$_SESSION["username"]."%' ";
                                                 }
                                                 ?>
                                                 <input list="qlistoption" style="width: 75%;" type="text"
