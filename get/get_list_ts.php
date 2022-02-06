@@ -138,7 +138,7 @@ echo '<div class="row">
     <small class="row m-3">Your Assignment</small>';
 while($row_status = mysqli_fetch_array($result_status)) {
   if($row_status["attribute_option"]=="Close" or $row_status["attribute_option"]=="Cancel"){
-    $limit=5;
+    $limit=3;
   }else{
     $limit = $ts_command_limit;
   }
@@ -148,7 +148,7 @@ while($row_status = mysqli_fetch_array($result_status)) {
 }
 
 echo '<small class="row m-3">Assigned to other</small>';
-  list_ts("(ticket.case_officer <> '".$_SESSION["username"]."') and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status <> 'Close'",100 ,'ticket');
+  list_ts("(ticket.case_officer <> '".$_SESSION["username"]."' and ticket.case_officer <> 'unassign'  ) and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status <> 'Close'",500 ,'ticket');
   echo '<hr>';
 
 echo '
