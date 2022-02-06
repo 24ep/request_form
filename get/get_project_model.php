@@ -75,7 +75,7 @@ while($row = mysqli_fetch_array($result)) {
 
                             <div class="d-flex">
                                 <div class="flex-shrink-0">
-                                    <img src="'.$image.'" alt="..." width="150px" height="150px" class="rounded mx-auto d-block img-fluid">
+                                    <img src="'.$image.'" alt="..." width="100px" height="100px" class="rounded mx-auto d-block img-fluid">
                                 </div>
                                 <div class="flex-grow-1 ms-3">
                                     <h5 class="card-title">'.$row_att["file_name"].'</h5>
