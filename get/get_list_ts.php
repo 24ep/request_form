@@ -124,6 +124,9 @@ return $status;
 <li class="row shadow-sm rounded md-3 p-2 bg-white" style="<?php echo  $ri_style ?> " data-bs-toggle="offcanvas"
     data-bs-target="#detail_cr" aria-controls="offcanvasExample"
     onclick="cr_id_toggle(<?php echo $row['ticket_id'] ?>)">
+    <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"><ion-icon name="ticket-outline"></ion-icon> <span class="visually-hidden">unread messages</span></span>
+</button>
+
     <div class="col-6 border-0 border-end" data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
         aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row_task['ticket_id'];?>) "
         style="align-self: center;">
