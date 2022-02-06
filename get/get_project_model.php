@@ -30,6 +30,7 @@ pb.owner,
 pb.sticky,
 pb.status,
 pb.prefix,
+pb.color_project,
 ac.profile_url
 FROM all_in_one_project.project_bucket as pb 
 left join all_in_one_project.account as ac
@@ -128,8 +129,10 @@ while($row = mysqli_fetch_array($result)) {
                         <option selected value="Open">Open</option>
                         <option value="Close">Close</option>
                     </select>
+                <small>Prefix</small>
+                <input class="form-control" disabled type="text" value="'.$row["prefix"].'" placeholder="Default input" aria-label="default input example">
                 <small>Project color</small>
-                    <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+                    <input type="color" class="form-control form-control-color" id="exampleColorInput" value="'.$row["color_project"].'" title="Choose your color">
                 </div>
             </div>
         </div>';
