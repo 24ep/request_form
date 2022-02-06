@@ -250,11 +250,22 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 $query_status = "SELECT * FROM content_service_gate.attribute_option 
 where attribute_id= 38" or die("Error:" . mysqli_error());
 $result_status = mysqli_query($con_status, $query_status);
+echo '<div class="row">
+<div class="col border-0 border-end">
+    <small class="row m-3">Your Assignment</small>';
 while($row_status = mysqli_fetch_array($result_status)) {
   echo '<small class="row m-3">'.$row_status["attribute_option"].'</small>';
-  list_ts($_SESSION["ts_query_input"]."   and ticket.status = 'Inprogress' and  ticket.ticket_template in ('CR')",100,'ticket');
+  list_ts($_SESSION["ts_query_input"]." and ticket.status = '".$row_status["attribute_option"]."'",100,'ticket');
   echo '<hr>';
 }
+echo '
+</div>
+    <div class="col">
+        <small class="row m-3">Unassign</small>
+        ';<?php list_ts("ticket.case_officer = 'unassign' and ticket.status <> 'Close'",100,'ticket'); ?>
+   echo' </div>
+</div>
+';
 
 }
 
