@@ -1,7 +1,7 @@
 <?php
   session_start();
   if($_POST["prefix_project_sticky"]<>""){
-    $_SESSION["prefix_project_sticky"] = $_POST["project_sticky"];
+    $_SESSION["prefix_project_sticky"] = $_POST["prefix_project_sticky"];
   }else{
     if($_SESSION["prefix_project_sticky"]==""){
       $_SESSION["prefix_project_sticky"] = "'CR','DT'";
