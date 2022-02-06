@@ -50,20 +50,24 @@ while($row = mysqli_fetch_array($result)) {
         echo'
         <table class="table">
         <thead class="table-light">
+        <tr>
             <th style="width: 50%;text-align: -webkit-center;">Task</th>
             <th style="text-align: -webkit-center;border:0px">status</th>
             <th style="text-align: -webkit-center;border:0px">Owner</th>
             <th style="text-align: -webkit-center;border:0px">Action</th>
+        </tr>
         </thead>
         <tbody>';
 
         $query_task = "SELECT title,status,case_officer,id from all_in_one_project.content_request where status <> 'Close' and ticket_template='".$row["prefix"]."'";
         $result_task = mysqli_query($con, $query_task);
         while($row_task = mysqli_fetch_array($result_task)) {
+            echo '<tr>';
             echo '<td>'.$row_task["title"].'</td>';
             echo '<td style="text-align: -webkit-center;">'.$row_task["status"].'</td>';
             echo '<td style="text-align: -webkit-center;">'.$row_task["case_officer"].'</td>';
             echo '<td style="text-align: -webkit-center;"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></td>';
+            echo '</tr>';
         }
 
         echo '
