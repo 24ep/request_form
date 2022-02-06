@@ -51,7 +51,8 @@ while($row = mysqli_fetch_array($result)) {
         <table class="table">
         <thead class="table-light">
         <tr>
-            <th style="width: 50%;text-align: -webkit-center;">Task</th>
+            <th style="text-align: -webkit-center;border:0px">ID</th>
+            <th style="width: 50%;text-align: -webkit-center;border:0px">Task</th>
             <th style="text-align: -webkit-center;border:0px">status</th>
             <th style="text-align: -webkit-center;border:0px">Owner</th>
             <th style="text-align: -webkit-center;border:0px">Action</th>
@@ -63,6 +64,7 @@ while($row = mysqli_fetch_array($result)) {
         $result_task = mysqli_query($con, $query_task);
         while($row_task = mysqli_fetch_array($result_task)) {
             echo '<tr>';
+            echo '<td>'.$row_task["id"].'</td>';
             echo '<td>'.$row_task["title"].'</td>';
             echo '<td style="text-align: -webkit-center;">'.$row_task["status"].'</td>';
             echo '<td style="text-align: -webkit-center;">'.$row_task["case_officer"].'</td>';
