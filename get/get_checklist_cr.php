@@ -171,7 +171,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
               }
             
         
-                    if($row['ticket_template']=='CR'){
+                    if($row['ticket_template']=='CR' or $row['ticket_template']=='NPS'){
                   echo '
                 <li class="mb-3 row shadow-sm bg-white rounded" id="checklist_cr" style="">
                           <div class="col-2" style="padding: 3px;">
@@ -231,7 +231,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
           //card for project
           
  //----------------
-                if($row['ticket_template']=='PJ'){
+                if($row['ticket_template']=='DT' or  $row['ticket_template']=='DP'){
                   
 
                   echo '
