@@ -120,9 +120,9 @@ while($row = mysqli_fetch_array($result)) {
                                 <div class="flex-grow-1 ms-3">
                                     <h6 class="card-title" style="font-weight:700"><a href="'.$href.'" target="_Blank">'.$row_att["file_name"].'</a></h6>
                                     <p class="card-text">
-                                    '.$row_att["comment"].'
+                                    '.$row_att["ticket_template"].'-'.$row_att["ticket_id"].' '.$row_att["title"].'
                                     </p>
-                                    <div><small>'.$row_att["ticket_template"].'-'.$row_att["ticket_id"].' '.$row_att["title"].' </small></div>
+                               
                                     <div><small>Create : '.$row_att["create_date"].' </small></div>
                                     
                                 </div>
