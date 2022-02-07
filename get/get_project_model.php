@@ -72,7 +72,7 @@ while($row = mysqli_fetch_array($result)) {
                     ';
 
                     $query_att = "SELECT  att.id, att.file_name, att.file_path, att.is_image, att.file_owner,
-                    att.ticket_id, att.ticket_type , cr.ticket_template , att.create_date,
+                    att.ticket_id, att.ticket_type , cr.ticket_template , att.create_date, cr.title ,
                     CASE 
                     when att.ticket_type='cr_content_request' then cm.comment
                     else 'Ticket file'
@@ -122,7 +122,7 @@ while($row = mysqli_fetch_array($result)) {
                                     <p class="card-text">
                                     '.$row_att["comment"].'
                                     </p>
-                                    <div><small>Ticket no : '.$row_att["ticket_id"].' </small></div>
+                                    <div><small>'.$row_att["ticket_template"].'-'.$row_att["ticket_id"].' '.$row_att["title"].' </small></div>
                                     <div><small>Create : '.$row_att["create_date"].' </small></div>
                                     
                                 </div>
