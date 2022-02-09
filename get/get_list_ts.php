@@ -138,7 +138,7 @@ echo '<div class="row">
     <small class="row m-3">Your Assignment</small>';
 while($row_status = mysqli_fetch_array($result_status)) {
   if($row_status["attribute_option"]=="Close" or $row_status["attribute_option"]=="Cancel"){
-    $limit=3;
+    $limit=1;
   }else{
     $limit = $ts_command_limit;
   }
