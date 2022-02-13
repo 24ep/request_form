@@ -29,7 +29,7 @@
         echo "<th scope='row' style='background: #ededed;'>".$row["sku"]."</th>";
        echo "<td style='background: #ededed;'>".$row["jda"]."</td>"; 
        echo "<td style='background: #ededed;'>".$row["sbc"]."</td>"; 
-       echo "<td style='background: #ededed;'>".$row["deoartment"]."</td>"; 
+       echo "<td style='background: #ededed;'>".$row["department"]."</td>"; 
        echo "<td style='background: #ededed;'>".$row["sub_department"]."</td>"; 
         echo "<td style='background: #ededed;'>".$row["product_name"]."</td>"; 
        echo "<td style='background: #ededed;'>".$row["catalogue"]."</td>"; 
