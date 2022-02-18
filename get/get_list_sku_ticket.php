@@ -13,12 +13,12 @@ if($_POST['id']<>""){
   $query = "SELECT sl.sku,sl.create_by,sl.create_date,itm.jda,itm.sbc,itm.department,itm.sub_department,itm.product_name,itm.catalogue,itm.vendor,itm.vendornm,itm.retail 
   FROM sku_list as sl left join itm_datalake as itm on itm.pid = sl.sku   where sl.csg_id = ".$id." ORDER BY sl.id DESC " or die("Error:" . mysqli_error());
   $result = mysqli_query($con, $query);
-  if($_SESSION["username"]="poojaroonwit"){
     echo 
     "<p>
-    <a href='#' id='download_link' class='btn btn-sm btn-primary' onClick='javascript:ExcelReport();''>Export</a></p>";
+    <a href='#' id='download_link' class='btn btn-sm btn-primary' onClick='javascript:ExcelReport();''>Export</a>
+    </p>";
 
-  }
+  
    
     echo "<table class='table table-bordered' id='sku_list_export'>
         <thead>
