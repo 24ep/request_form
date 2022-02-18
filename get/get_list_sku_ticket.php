@@ -23,7 +23,7 @@ if($_POST['id']<>""){
   if($_SESSION["username"]="poojaroonwit"){
     echo 
     '<p>
-						<a href="https://content-service-gate.cdse-commercecontent.com/base/get/get_list_sku_ticket.php?act=excel&id='.$id.'" class="btn btn-primary"> Export->Excel </a>
+						<a href="base/get/get_list_sku_ticket.php?act=excel&id='.$id.'" class="btn btn-primary"> Export->Excel </a>
 		</p>';
   }
    
