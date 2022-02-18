@@ -16,7 +16,7 @@ if($_POST['id']<>""){
   if($_SESSION["username"]="poojaroonwit"){
     echo 
     "<p>
-    <a href='#' id='download_link' onClick='javascript:ExcelReport();''>Export</a></p>";
+    <a href='#' id='download_link' class='btn btn-sm btn-primary' onClick='javascript:ExcelReport();''>Export</a></p>";
 
   }
    
