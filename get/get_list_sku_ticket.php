@@ -1,24 +1,5 @@
 <?php
-if(isset($_GET['act'])){
-	if($_GET['act']== 'excel'){
-		// header("Content-Type: application/xls");
-		// header("Content-Disposition: attachment; filename=export.xlsx");
-		// header("Pragma: no-cache");
-		// header("Expires: 0");
-    $file = "export ns-".$_GET['id'].".xlsx";
-    header('Content-Description: File Transfer');
-    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment; filename='.basename($file));
-    header('Content-Transfer-Encoding: binary');
-    header('Expires: 0');
-    header('Cache-Control: must-revalidate');
-    header('Pragma: public');
-    header('Content-Length: ' . filesize($file));
-    ob_clean();
-    flush();
-    readfile($file);
-	}
-}
+
 if($_GET['id']<>""){
 $id = $_GET['id'];
 }
@@ -34,12 +15,12 @@ if($_POST['id']<>""){
   $result = mysqli_query($con, $query);
   if($_SESSION["username"]="poojaroonwit"){
     echo 
-    '<p>
-						<a href="base/get/get_list_sku_ticket.php?act=excel&id='.$id.'" class="btn btn-primary"> Export->Excel </a>
-		</p>';
+    "<p>
+    <a href='#' id='download_link' onClick='javascript:ExcelReport();''>Export</a></p>";
+
   }
    
-    echo "<table class='table table-bordered'>
+    echo "<table class='table table-bordered' id='sku_list_export'>
         <thead>
             <tr>";
     echo "<th scope='row'>sku</th></th>";  
@@ -83,3 +64,19 @@ if($_POST['id']<>""){
   </table>";
   mysqli_close($con);
   ?>
+
+  <!-- เรียกใช้ javascript สำหรับ export ไฟล์ excel  -->
+<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"  ></script>
+<script src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"  ></script>
+
+<script>
+function ExcelReport()//function สำหรับสร้าง ไฟล์ excel จากตาราง
+{
+    var sheet_name="excel_sheet";/* กำหหนดชื่อ sheet ให้กับ excel โดยต้องไม่เกิน 31 ตัวอักษร */
+    var elt = document.getElementById('sku_list_export');/*กำหนดสร้างไฟล์ excel จาก table element ที่มี id ชื่อว่า myTable*/
+
+    /*------สร้างไฟล์ excel------*/
+    var wb = XLSX.utils.table_to_book(elt, {sheet: sheet_name});
+    XLSX.writeFile(wb,'export.xlsx');//Download ไฟล์ excel จากตาราง html โดยใช้ชื่อว่า report.xlsx
+}
+</script>
