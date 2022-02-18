@@ -5,7 +5,7 @@ if(isset($_GET['act'])){
 		// header("Content-Disposition: attachment; filename=export.xlsx");
 		// header("Pragma: no-cache");
 		// header("Expires: 0");
-    $file = "export_NS_".$_GET['id']."xlsx";
+    $file = "export ns-".$_GET['id'].".xlsx";
     header('Content-disposition: attachment; filename='.$file);
     header('Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     header('Content-Length: ' . filesize($file));
