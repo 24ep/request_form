@@ -1,10 +1,17 @@
 <?php
 if(isset($_GET['act'])){
 	if($_GET['act']== 'excel'){
-		header("Content-Type: application/xls");
-		header("Content-Disposition: attachment; filename=export.xlsx");
-		header("Pragma: no-cache");
-		header("Expires: 0");
+		// header("Content-Type: application/xls");
+		// header("Content-Disposition: attachment; filename=export.xlsx");
+		// header("Pragma: no-cache");
+		// header("Expires: 0");
+    $file = "export_NS_".$_GET['id']."xlsx";
+    header('Content-disposition: attachment; filename='.$file);
+    header('Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    header('Content-Length: ' . filesize($file));
+    header('Content-Transfer-Encoding: binary');
+    header('Cache-Control: must-revalidate');
+    header('Pragma: public');
 	}
 }
 if($_GET['id']<>""){
