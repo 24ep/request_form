@@ -1,7 +1,7 @@
 <?php
 if(isset($_GET['act'])){
 	if($_GET['act']== 'excel'){
-		header("Content-Type: application/xlsx");
+		header("Content-Type: application/xls");
 		header("Content-Disposition: attachment; filename=export.xlsx");
 		header("Pragma: no-cache");
 		header("Expires: 0");
