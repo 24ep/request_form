@@ -16,7 +16,7 @@ foreach ($array_number_subtask as $number_of_sku) {
     online_channel,bu,request_important,tags,participant,subject_mail,sub_department)
     SELECT brand,department,sku,production_type,project_type,business_type,link_info,launch_date,stock_source,contact_buyer,
     contact_vender,remark,request_username,new_brand,
-    online_channel,bu,request_important,tags,participant,subject_mail,sub_department FROM add_new_job WHERE id=".$id ;
+    online_channel,bu,request_important,tags,participant,subject_mail,sub_department,web_cate,request_date FROM add_new_job WHERE id=".$id ;
 	$query = mysqli_query($con,$sql);
 	if($query) {
         $last_id = $con->insert_id;
