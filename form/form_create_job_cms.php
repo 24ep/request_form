@@ -216,7 +216,7 @@ function getoption_return_create_job($col,$table,$select_option,$sorm,$database)
     <div class="col-3">
         <label for="exampleInputEmail1">Receive Ticket date</label>
         <input style="background: #f1f1f1" type="datetime-local" class="form-control form-control-sm"
-            value="<?php echo str_replace(" ","T",$create_date); ?>" required placeholder="yyyy-MM-dd"
+            value="<?php echo str_replace(" ","T",$request_date); ?>" required placeholder="yyyy-MM-dd"
             id="recive_mail_date_adj" name="recive_mail_date_adj">
     </div>
     <div class="col-3">
