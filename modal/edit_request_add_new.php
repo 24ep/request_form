@@ -68,6 +68,7 @@ label#label_file_cme {
             anj.brand as brand,
             anj.request_username as request_username,
             anj.create_date as create_date,
+            anj.request_date as request_date,
             anj.update_date as update_date,
             anj.production_type as production_type,
             anj.business_type as business_type,
@@ -111,6 +112,7 @@ label#label_file_cme {
       $brand = $row['brand'];
       $request_username = $row['request_username'];
       $create_date = $row['create_date'];
+      $request_date= $row['request_date'];
       $update_date = $row['update_date'];
       $production_type = $row['production_type'];
       $business_type = $row['business_type'];
