@@ -156,7 +156,7 @@ return $status;
         GROUP BY ticket.id order by ticket.id ".$sort_de_status."  limit ".$ts_command_limit;
         //echo "<script>console.log('".$query."');</script>";
         $result = mysqli_query($con, $query);
-        echo "<ul style='width: 95%;'>";
+        echo "<ul style='width: 95%;padding: 15px;'>";
           while( $row = mysqli_fetch_array($result)) {
                 $count_comment_cr = $row["count_comment"];
                 if($row['piority']=="Urgent"){
