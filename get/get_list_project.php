@@ -4,7 +4,16 @@
     $_SESSION["prefix_project_sticky"] = $_POST["prefix_project_sticky"];
   }else{
     if($_SESSION["prefix_project_sticky"]==""){
-      $_SESSION["prefix_project_sticky"] = "'CR','DT'";
+        // $_SESSION["prefix_project_sticky"] = "'CR','DT'";
+        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+        mysqli_query($con, "SET NAMES 'utf8' ");
+        $query_default = "SELECT * FROM project_bucket where status <> 'Close' and default = 1 ORDER BY id asc" or die("Error:" . mysqli_error());
+        $result_de = mysqli_query($con, $query_default);
+        $_SESSION["prefix_project_sticky"]="'OO'";
+        while($row_de = mysqli_fetch_array($result_de)) {
+            $_SESSION["prefix_project_sticky"] .= ",'".$row_de["prefix"]."'";
+        }
+    
       
     }else{
       $_SESSION["prefix_project_sticky"] = $_SESSION["prefix_project_sticky"];
