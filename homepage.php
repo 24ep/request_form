@@ -760,13 +760,15 @@
            <?php 
            if($_SESSION["pf_theme"]<>"Light Modern") {
            include('nev_bra.php');
+           $full_col = "col-10 ";
          
            }else{
             include('nev_bra_modern.php');
+            $full_col = "";
            }
            ?>
              
-            <div class="col-10 window-full overflow-auto">
+            <div class="<?php echo  $full_col;?> window-full overflow-auto">
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- style="margin-top:15px" -->
                     <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel"

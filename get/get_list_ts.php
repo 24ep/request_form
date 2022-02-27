@@ -250,7 +250,7 @@ echo '
 //----------------- new
 
 
-echo '<div class="container">
+echo '<div >
 <div class="row">';
    
 //------
