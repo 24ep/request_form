@@ -1265,7 +1265,13 @@
                                     $query = "SELECT * FROM project_bucket where status <> 'Close' ORDER BY id asc" or die("Error:" . mysqli_error());
                                     $result = mysqli_query($con, $query);
                                     if($_SESSION["prefix_project_sticky"]==""){
-                                        $_SESSION["prefix_project_sticky"] = "'CR','DT'";
+                                        // $_SESSION["prefix_project_sticky"] = "'CR','DT'";
+                                        $query_default = "SELECT * FROM project_bucket where status <> 'Close' and default = 1 ORDER BY id asc" or die("Error:" . mysqli_error());
+                                        $result_de = mysqli_query($con, $query_default);
+                                        $_SESSION["prefix_project_sticky"]=="'OO'";
+                                        while($row_de = mysqli_fetch_array($result_de)) {
+                                            $_SESSION["prefix_project_sticky"] .= ",'".$row_de["prefix"]."'";
+                                        }
                                     }
 
                                     while($row = mysqli_fetch_array($result)) {
