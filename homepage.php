@@ -1171,7 +1171,10 @@
                         aria-labelledby="v-pills-fl_board-tab">
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
-                                <div class="container ">
+                                <div class="container " tyle="
+    text-align: center;
+    margin-top: 25%;
+">
                                     <!-- get card -->
                                     <div id="get_card_add_new">
                                         <?php //include('get/get_card_new_job.php'); ?>
@@ -1201,7 +1204,10 @@
                         aria-labelledby="v-pills-setting-tab">
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
-                                <div class="container ">
+                                <div class="container " tyle="
+    text-align: center;
+    margin-top: 25%;
+">
                                     <!-- get card -->
                                     <ion-icon name="time-outline"></ion-icon>
                                     <h3>Coming soon</h3>
@@ -1215,7 +1221,10 @@
                         aria-labelledby="v-pills-link-tab">
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
-                                <div class="container ">
+                                <div class="container " tyle="
+    text-align: center;
+    margin-top: 25%;
+">
                                     <!-- get card -->
                                     <ion-icon name="time-outline"></ion-icon>
                                     <h3>Coming soon</h3>
