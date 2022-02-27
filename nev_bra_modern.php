@@ -37,15 +37,15 @@
                     </a>
                     <?php// }?> -->
                     <hr class="hr_nav_bra">
-                      <a disabled data-bs-toggle="tooltip" data-bs-placement="right" title="Account (disabled)"   
-                      class="nav-link" id="v-pills-ts_admin-tab" data-toggle="pill" href="#v-pills-ts_admin" role="tab"
-                        aria-controls="v-pills-ts_admin" onclick="updateURL('v-pills-ts_admin');" aria-selected="false">
+                      <a disabled data-bs-toggle="tooltip" data-bs-placement="right" title="user"   
+                      class="nav-link" id="v-pills-user-tab" data-toggle="pill" href="#v-pills-user" role="tab"
+                        aria-controls="v-pills-user" onclick="updateURL('v-pills-user');" aria-selected="false">
                
                         <ion-icon style="color:white"  name="person-outline"></ion-icon>
                     </a>
-                    <a  disabled data-bs-toggle="tooltip" data-bs-placement="right" title="setting (disabled)"   
-                    class="nav-link" id="v-pills-ts_admin-tab" data-toggle="pill" href="#v-pills-ts_admin" role="tab"
-                        aria-controls="v-pills-ts_admin" onclick="updateURL('v-pills-ts_admin');" aria-selected="false">
+                    <a  disabled data-bs-toggle="tooltip" data-bs-placement="right" title="Setting"   
+                    class="nav-link" id="v-pills-setting-tab" data-toggle="pill" href="#v-pills-setting" role="tab"
+                        aria-controls="v-pills-setting" onclick="updateURL('v-pills-setting');" aria-selected="false">
                       
                         <ion-icon style="color:white"  name="settings-outline"></ion-icon>
                     

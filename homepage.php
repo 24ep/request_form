@@ -1181,144 +1181,37 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="tab-pane fade" id="v-pills-ms_admin" role="tabpanel"
-                        aria-labelledby="v-pills-ms_admin-tab">
+                       <!-- user -->
+                       <div class="tab-pane fade" id="v-pills-user" role="tabpanel"
+                        aria-labelledby="v-pills-user-tab">
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
-                               <div class="container ">
-                                </div> -->
-                    <!-- <div class="container-fluid" style="border-radius: 10px;width: 95%;">
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <div class="list-group" id="list-tab" role="tablist">
-                                                <?php //if(strpos($_SESSION["department"],'Content Admin')!==false){?>
-                                                <a class="btn btn-dark" style="margin-bottom: 10px;" type="button"
-                                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop"
-                                                    aria-controls="offcanvasWithBackdrop">
-                                                    <ion-icon name="add-outline"></ion-icon>Create
-                                                </a>
-                                                <?php// } ?>
-                                                <a class="list-group-item list-group-item-action active"
-                                                    id="list-important-list" data-bs-toggle="list"
-                                                    href="#list-important" role="tab" aria-controls="list-important">
-                                                    <ion-icon name="star-outline"></ion-icon> Important <span
-                                                        id="total_unread_div_in"></span>
-                                                </a> -->
-                    <!-- <a class="list-group-item list-group-item-action" id="list-update-list"
-                                                    data-bs-toggle="list" href="#list-update" role="tab"
-                                                    aria-controls="list-update">
-                                                    <ion-icon name="notifications-outline"></ion-icon> Updated
-                                                </a> -->
-                    <!-- <a class="list-group-item list-group-item-action" id="list-send-list"
-                                                    data-bs-toggle="list" href="#list-send" role="tab"
-                                                    aria-controls="list-send">
-                                                    <ion-icon name="paper-plane-outline"></ion-icon> Send
-                                                </a>
-                                            </div>
-                                        </div> -->
-                    <!-- <div class="col-10">
-                                            <div class="tab-content" id="nav-tabContent">
-                                                <div class="tab-pane fade show active" id="list-important"
-                                                    role="tabpanel" aria-labelledby="list-important-list">
-                                                    <table class="table table-hover table-borderless  "
-                                                        style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
-                                                        <thead
-                                                            style="background-color: rgba(0, 0, 0, 0);color: #908e8e;"
-                                                            class="fixed">
-                                                            <tr>
-                                                                <th scope="col">Important</th>
-                                                                <th scope="col">Message ID</th>
-                                                                <th scope="col">title</th>
-                                                                <th scope="col">check</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody id="">
-                                                            <?php //include('get/get_list_message.php'); ?>
-                                                        </tbody>
-                                                    </table>
-                                                </div> -->
-                    <!-- <div class="tab-pane fade" id="list-update" role="tabpanel"
-                                                    aria-labelledby="list-update-list">
-                                                    <?php// include('get/get_list_message_log.php'); ?>
-                                                </div> -->
-                    <!-- <div class="tab-pane fade" id="list-send" role="tabpanel"
-                                                    aria-labelledby="list-send-list">
-                                                    <table class="table table-hover table-borderless  "
-                                                        style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
-                                                        <thead
-                                                            style="background-color: rgba(0, 0, 0, 0);color: #908e8e;"
-                                                            class="fixed">
-                                                            <tr>
-                                                                <th scope="col">Important</th>
-                                                                <th scope="col">Message ID</th>
-                                                                <th scope="col">title</th>
-                                                                <th scope="col">check</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody id="">
-                                                            <?php //include('get/get_list_send_message.php'); ?>
-                                                        </tbody>
-                                                    </table>
-                                                    Modal
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                            <div class="offcanvas offcanvas-start" style="width: 80%;" tabindex="-1"
-                                                id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
-                                                <div class="offcanvas-header">
-                                                    <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Message
-                                                        box
-                                                    </h5>
-                                                    <button type="button" class="btn-close text-reset"
-                                                        data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                                </div>
-                                                <div class="offcanvas-body">
-                                                    <form class="row g-3" action="action/action_submit_add_message.php"
-                                                        method="POST" enctype="multipart/form-data">
-                                                        <div class="mb-3">
-                                                            <label for="exampleFormControlInput1" class="form-label">To
-                                                                user</label>
-                                                            <input type="text" multiple class="form-control"
-                                                                list="datalistOptions" id="ms_target" name="ms_target"
-                                                                placeholder="Type to search...">
-                                                            <datalist id="ms_target">
-                                                                <option value="@everyone">everyone in content-service
-                                                                    gate</option>
-                                                                <?php //echo $username_op;?>
-                                                            </datalist>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="exampleFormControlInput1"
-                                                                class="form-label">Title</label>
-                                                            <input type="text" class="form-control" id="ms_title"
-                                                                name="ms_title" placeholder="">
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="exampleFormControlTextarea1"
-                                                                class="form-label">Detail</label>
-                                                            <textarea class="form-control" id="ms_description"
-                                                                name="ms_description" rows="5"></textarea>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="exampleFormControlTextarea1"
-                                                                class="form-label">Multi file input</label>
-                                                            <input class="form-control form-control-sm" type="file"
-                                                                id="ms_attachment" name="ms_attachment[]"
-                                                                multiple="multiple">
-                                                            <small>ขนาดไฟล์ต้องไม่เกิน 2MB</small>
-                                                        </div>
-                                                        <button type="submit" class="btn btn-primary btn-sm"
-                                                            style="width:100%">Submit</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="container ">
+                                    <!-- get card -->
+                                    <ion-icon name="time-outline"></ion-icon>
+                                    <h3>Coming soon</h3>
+                                    <!-- get card -->
                                 </div>
                             </div>
                         </div>
-                    </div>-->
+                    </div>
+
+                       <!-- user -->
+                       <div class="tab-pane fade" id="v-pills-setting" role="tabpanel"
+                        aria-labelledby="v-pills-setting-tab">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="row align-items-center" style="padding:20px">
+                                <div class="container ">
+                                    <!-- get card -->
+                                    <ion-icon name="time-outline"></ion-icon>
+                                    <h3>Coming soon</h3>
+                                    <!-- get card -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                  
                     <!-- offcanvas detail cr -->
                     <div class="offcanvas offcanvas-start" tabindex="0" id="detail_cr" style="width:100%"
                         aria-labelledby="offcanvasExampleLabel">
