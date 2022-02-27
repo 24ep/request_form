@@ -178,9 +178,6 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 $query_status = "SELECT * FROM content_service_gate.attribute_option 
 where attribute_id= 38" or die("Error:" . mysqli_error());
 $result_status = mysqli_query($con_status, $query_status);
-echo '<div class="row">
-<div class="col border-0 border-end">
-<small class="row m-3">Your Assignment</small>';
 while($row_status = mysqli_fetch_array($result_status)) {
 if($row_status["attribute_option"]=="Close" or $row_status["attribute_option"]=="Cancel"){
 $limit=1;
