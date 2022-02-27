@@ -774,7 +774,7 @@
            }else{
             include('nev_bra_modern.php');
             $full_col = "";
-            $sty_col = "padding: 20px;";
+            $sty_col = "padding: 20px;padding-left:80px";
           
            }
            ?>
@@ -868,7 +868,7 @@
                     </div>
                     <div class="tab-pane fade" id="v-pills-request_list" role="tabpanel"
                         aria-labelledby="v-pills-request_list-tab">
-                        <div  style="margin-left: 80px;">
+                        <div>
                         <div class="tab-content" id="myTabContent">
                             <?php if($_GET["result"]<>""){
                                     echo $_GET["result"];
