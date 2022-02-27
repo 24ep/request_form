@@ -280,7 +280,7 @@ where attribute_id= 38 and attribute_option not in ('cancel','routine work','mon
 $result_status = mysqli_query($con_status, $query_status);
 while($row_status = mysqli_fetch_array($result_status)) {
 $limit = $ts_command_limit;
-echo' <div class="col">
+echo' <div class="col" style="border-left: 1px solid #e3e2e2;">
 <small class="row m-3">'.$row_status["attribute_option"].'</small>';
 list_ts_non_status("(".$_SESSION["ts_query_input"].") and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
 echo '</div>';
