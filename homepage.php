@@ -1210,7 +1210,20 @@
                             </div>
                         </div>
                     </div>
-                  
+                   <!-- web -->
+                   <div class="tab-pane fade" id="v-pills-link" role="tabpanel"
+                        aria-labelledby="v-pills-link-tab">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="row align-items-center" style="padding:20px">
+                                <div class="container ">
+                                    <!-- get card -->
+                                    <ion-icon name="time-outline"></ion-icon>
+                                    <h3>Coming soon</h3>
+                                    <!-- get card -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                   
                     <!-- offcanvas detail cr -->
                     <div class="offcanvas offcanvas-start" tabindex="0" id="detail_cr" style="width:100%"

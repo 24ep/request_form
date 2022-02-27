@@ -58,9 +58,9 @@
                     
                     </a>
                     <hr class="hr_nav_bra">
-                    <a  disabled data-bs-toggle="tooltip" data-bs-placement="right" title="Quick link (disabled)"   
-                    class="nav-link" id="v-pills-ts_admin-tab" data-toggle="pill" href="#v-pills-ts_admin" role="tab"
-                        aria-controls="v-pills-ts_admin" aria-selected="false">
+                    <a  disabled data-bs-toggle="tooltip" data-bs-placement="right" title="Quick link"   
+                    class="nav-link" id="v-pills-link-tab" data-toggle="pill" href="#v-pills-link" role="tab"
+                        aria-controls="v-pills-link" aria-selected="false">
                        
                         <ion-icon style="color:white"  name="earth-outline"></ion-icon>
                       
