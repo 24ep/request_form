@@ -50,7 +50,7 @@
                         <ion-icon style="color:white"  name="settings-outline"></ion-icon>
                     
                     </a>
-                    <a data-bs-toggle="tooltip" data-bs-placement="right" title="Logout"   
+                    <a data-bs-toggle="tooltip" data-bs-placement="right" title="Logout"   class="nav-link"
                      href="base/action/action_logout.php"  >
                        
                         <ion-icon style="color:white"  name="log-out-outline"></ion-icon>
