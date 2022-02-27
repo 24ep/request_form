@@ -51,8 +51,7 @@
                     
                     </a>
                     <a data-bs-toggle="tooltip" data-bs-placement="right" title="Logout"   
-                    class="nav-link" id="v-pills-ts_admin-tab" data-toggle="pill" href="#v-pills-ts_admin" role="tab"
-                        aria-controls="v-pills-ts_admin" href="base/action/action_logout.php"  aria-selected="false">
+                     href="base/action/action_logout.php"  >
                        
                         <ion-icon style="color:white"  name="log-out-outline"></ion-icon>
                   

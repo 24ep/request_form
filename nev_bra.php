@@ -109,7 +109,7 @@
                                             class="d-inline-flex align-items-center rounded link-light">Setting</a>
                                     </li>
                                     <li><a href="base/action/action_logout.php"
-                                            class="d-inline-flex align-items-center rounded link-light">Logout</a></li>
+                                    class="d-inline-flex align-items-center rounded link-light">Logout</a></li>
                                 </ul>
                             </div>
                         </li>
