@@ -101,20 +101,20 @@ return $status;
                 
                 
                 ?>
-        <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative" style="<?php echo  $ri_style ?> " data-bs-toggle="offcanvas"
-            data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id'] ?>)">
-            
-            <div class="col-9" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
-                onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
-                <!-- <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary" style="<?php //echo $ico_ts_bg; ?>;left: -8px!important;"><ion-icon name="<?php //echo $ico_ts; ?>" style="margin: 0px;color: white!important;"></ion-icon> <span class="visually-hidden">unread messages</span></span> -->
-                <?php echo "<strong style='color: ".$color_project.";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
-            </div>
-            <div class="col-3" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
-                onclick="cr_id_toggle(<?php echo $row['id']; ?>)" style="align-self: center;">
-                <?php echo badge_status_cr($row["status"]); ?>
-            </div>
-            
-        </li>
+      <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative" style="<?php echo  $ri_style ?> " data-bs-toggle="offcanvas"
+          data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id'] ?>)">
+          
+          <div class="col-9" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
+              onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
+              <!-- <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary" style="<?php //echo $ico_ts_bg; ?>;left: -8px!important;"><ion-icon name="<?php //echo $ico_ts; ?>" style="margin: 0px;color: white!important;"></ion-icon> <span class="visually-hidden">unread messages</span></span> -->
+              <?php echo "<strong style='color: ".$color_project.";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
+          </div>
+          <div class="col-3" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
+              onclick="cr_id_toggle(<?php echo $row['id']; ?>)" style="align-self: center;">
+              <?php echo badge_status_cr($row["status"]); ?>
+          </div>
+          
+      </li>
 <?php
                  
                  $i++;
@@ -125,69 +125,68 @@ return $status;
    mysqli_close($con);
     }
 
-  }
-  function list_ts_non_status($filter,$ts_command_limit,$level ){
-    if(strpos($filter,"ticket.status = 'Close'")!==false){
-      $sort_de_status=" DESC ";
-    }else{
-      $sort_de_status=" ASC ";
-    }
-    $i=1;
-    //--
-      $ts_filter = $filter;
-      date_default_timezone_set("Asia/Bangkok");
-      $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-      mysqli_query($con, "SET NAMES 'utf8' ");
-      $query = "SELECT ticket.id as id,
-      ticket.title as title,
-      ticket.description as description,
-      ticket.piority as piority,
-      ticket.request_by as request_by,
-      ticket.create_date as create_date,
-      ticket.status as status,
-      ticket.ticket_template as ticket_template,
-      comment.ticket_type as ticket_type,
-      ticket.participant as participant,
-      ticket.case_officer as case_officer,
-      sum(case when comment.ticket_type='content_request' then 1 else 0 end) as count_comment 
-      FROM all_in_one_project.content_request as ticket
-      LEFT JOIN all_in_one_project.comment as comment
-      ON ticket.id = comment.ticket_id 
-      where ".$ts_filter." 
-      GROUP BY ticket.id order by ticket.id ".$sort_de_status."  limit ".$ts_command_limit;
-      //echo "<script>console.log('".$query."');</script>";
-      $result = mysqli_query($con, $query);
-      echo "<ul style='width: 95%;'>";
-        while( $row = mysqli_fetch_array($result)) {
-              $count_comment_cr = $row["count_comment"];
-              if($row['piority']=="Urgent"){
-                  $ri_style = "border-left: #dc3545 solid 15px;";
-                }elseif($row['piority']=="High"){
-                  $ri_style = "border-left: #f396bf solid 15px;";
-                }elseif($row['piority']=="Medium"){
-                  $ri_style = "border-left: #f396bf solid 15px;";
-                }elseif($row['piority']=="low"){
-                  $ri_style = "border-left: #ccc solid 15px;";
-                }else{
-                  $ri_style = "border-left: #ccc solid 15px;";
-                }
+    function list_ts_non_status($filter,$ts_command_limit,$level ){
+      if(strpos($filter,"ticket.status = 'Close'")!==false){
+        $sort_de_status=" DESC ";
+      }else{
+        $sort_de_status=" ASC ";
+      }
+      $i=1;
+      //--
+        $ts_filter = $filter;
+        date_default_timezone_set("Asia/Bangkok");
+        $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+        mysqli_query($con, "SET NAMES 'utf8' ");
+        $query = "SELECT ticket.id as id,
+        ticket.title as title,
+        ticket.description as description,
+        ticket.piority as piority,
+        ticket.request_by as request_by,
+        ticket.create_date as create_date,
+        ticket.status as status,
+        ticket.ticket_template as ticket_template,
+        comment.ticket_type as ticket_type,
+        ticket.participant as participant,
+        ticket.case_officer as case_officer,
+        sum(case when comment.ticket_type='content_request' then 1 else 0 end) as count_comment 
+        FROM all_in_one_project.content_request as ticket
+        LEFT JOIN all_in_one_project.comment as comment
+        ON ticket.id = comment.ticket_id 
+        where ".$ts_filter." 
+        GROUP BY ticket.id order by ticket.id ".$sort_de_status."  limit ".$ts_command_limit;
+        //echo "<script>console.log('".$query."');</script>";
+        $result = mysqli_query($con, $query);
+        echo "<ul style='width: 95%;'>";
+          while( $row = mysqli_fetch_array($result)) {
+                $count_comment_cr = $row["count_comment"];
+                if($row['piority']=="Urgent"){
+                    $ri_style = "border-left: #dc3545 solid 15px;";
+                  }elseif($row['piority']=="High"){
+                    $ri_style = "border-left: #f396bf solid 15px;";
+                  }elseif($row['piority']=="Medium"){
+                    $ri_style = "border-left: #f396bf solid 15px;";
+                  }elseif($row['piority']=="low"){
+                    $ri_style = "border-left: #ccc solid 15px;";
+                  }else{
+                    $ri_style = "border-left: #ccc solid 15px;";
+                  }
 
 
-                date_default_timezone_set("Asia/Bangkok");
-                $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-                mysqli_query($con_project, "SET NAMES 'utf8' ");
-                $query_project = "SELECT *
-                FROM all_in_one_project.project_bucket 
-                where prefix='".$row["ticket_template"]."'" or die("Error:" . mysqli_error());
-                $result_project = mysqli_query($con_project, $query_project);
-                while($row_project = mysqli_fetch_array($result_project)) {
-                  $color_project = $row_project["color_project"];
-                  $project_name = $row_project["project_name"];
-                }
+                  date_default_timezone_set("Asia/Bangkok");
+                  $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+                  mysqli_query($con_project, "SET NAMES 'utf8' ");
+                  $query_project = "SELECT *
+                  FROM all_in_one_project.project_bucket 
+                  where prefix='".$row["ticket_template"]."'" or die("Error:" . mysqli_error());
+                  $result_project = mysqli_query($con_project, $query_project);
+                  while($row_project = mysqli_fetch_array($result_project)) {
+                    $color_project = $row_project["color_project"];
+                    $project_name = $row_project["project_name"];
+                  }
+                  
                 
-              
-              
-              ?>
+                
+                ?>
       <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative" style="<?php echo  $ri_style ?> " data-bs-toggle="offcanvas"
           data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle(<?php echo $row['id'] ?>)">
           
@@ -196,16 +195,18 @@ return $status;
               <!-- <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary" style="<?php //echo $ico_ts_bg; ?>;left: -8px!important;"><ion-icon name="<?php //echo $ico_ts; ?>" style="margin: 0px;color: white!important;"></ion-icon> <span class="visually-hidden">unread messages</span></span> -->
               <?php echo "<strong style='color: ".$color_project.";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
           </div>
+     
+          
       </li>
 <?php
-               
-               $i++;
+                 
+                 $i++;
+      }
+        //------------------------------
+     
+     echo "</ul>";
+   mysqli_close($con);
     }
-      //------------------------------
-   
-   echo "</ul>";
- mysqli_close($con);
-  }
 
 
 
