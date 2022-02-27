@@ -176,7 +176,7 @@ date_default_timezone_set("Asia/Bangkok");
 $con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 $query_status = "SELECT * FROM content_service_gate.attribute_option 
-where attribute_id= 38" or die("Error:" . mysqli_error());
+where attribute_id= 38 and attribute_option <>'cancel'" or die("Error:" . mysqli_error());
 $result_status = mysqli_query($con_status, $query_status);
 while($row_status = mysqli_fetch_array($result_status)) {
 if($row_status["attribute_option"]=="Close" or $row_status["attribute_option"]=="Cancel"){
