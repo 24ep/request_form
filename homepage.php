@@ -1253,11 +1253,9 @@
                                     <div id="get_ts_admin_console">
 
                                         <?php 
-                                        if($_SESSION["username"]<>'poojaroonwit'){
+                                       
                                             include('get/get_list_ts.php');
-                                        }else{
-                                            include('get/get_board_ts.php');
-                                        }
+                                   
                                          ?>
                                     </div>
                                 </div>

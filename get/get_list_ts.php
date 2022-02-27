@@ -126,7 +126,7 @@ return $status;
 
 
 
-
+    if($_SESSION["username"]<>'poojaroonwit'){
 date_default_timezone_set("Asia/Bangkok");
 $con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
@@ -162,7 +162,56 @@ echo '
    echo' </div>
 </div>
 ';
+    }else{
+//----------------- new
+
+
+echo '<div class="container">
+<div class="row">';
+   
 
 
 
+date_default_timezone_set("Asia/Bangkok");
+$con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+mysqli_query($con, "SET NAMES 'utf8' ");
+$query_status = "SELECT * FROM content_service_gate.attribute_option 
+where attribute_id= 38" or die("Error:" . mysqli_error());
+$result_status = mysqli_query($con_status, $query_status);
+echo '<div class="row">
+<div class="col border-0 border-end">
+<small class="row m-3">Your Assignment</small>';
+while($row_status = mysqli_fetch_array($result_status)) {
+if($row_status["attribute_option"]=="Close" or $row_status["attribute_option"]=="Cancel"){
+$limit=1;
+}else{
+$limit = $ts_command_limit;
+}
+echo' <div class="col">
+<small class="row m-3">'.$row_status["attribute_option"].'</small>';
+list_ts("(".$_SESSION["ts_query_input"].") and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
+echo '</div>';
+}
+
+// echo '<small class="row m-3">Assigned to other</small>';
+//   list_ts("(ticket.case_officer <> '".$_SESSION["username"]."' and ticket.case_officer <> 'unassign'  ) and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status <> 'Close'",500 ,'ticket');
+//   echo '<hr>';
+
+echo '
+</div>
+<div class="col">
+    <small class="row m-3">Unassign</small>
+    '; 
+  
+    
+    list_ts("ticket.case_officer = 'unassign' and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].") and ticket.status <> 'Close'",500,'ticket');
+echo' </div>
+</div>
+';
+
+
+echo '</div>
+</div>';
+//------------- new
+    }
 ?>
