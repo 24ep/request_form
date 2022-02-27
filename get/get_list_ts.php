@@ -179,13 +179,13 @@ echo' </div>
 ';
 //-------
 //------
-echo '
-<div class="col">
-    <small class="row m-3">Routine work & Monitor</small>
-    '; 
-    list_ts("ticket.ticket_status in ('routine work','monitor') and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].") and ticket.status <> 'Close'",500,'ticket');
-echo' </div>
-';
+// echo '
+// <div class="col">
+//     <small class="row m-3">Routine work & Monitor</small>
+//     '; 
+//     list_ts("ticket.ticket_status in ('routine work','monitor') and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].") and ticket.status <> 'Close'",500,'ticket');
+// echo' </div>
+// ';
 //-------
 
 date_default_timezone_set("Asia/Bangkok");
