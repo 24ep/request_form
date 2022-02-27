@@ -868,6 +868,7 @@
                     </div>
                     <div class="tab-pane fade" id="v-pills-request_list" role="tabpanel"
                         aria-labelledby="v-pills-request_list-tab">
+                        <div  style="margin-left: 80px;">
                         <div class="tab-content" id="myTabContent">
                             <?php if($_GET["result"]<>""){
                                     echo $_GET["result"];
@@ -959,7 +960,7 @@
                             </div>
                         </div>
                         <!-- <div class="container-fluid" style="border-radius: 10px;width: 95%;"> -->
-                            <div class="container">
+                           
                             <table class="table table-hover table-borderless  "
                                 style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
                                 <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
