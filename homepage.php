@@ -644,6 +644,14 @@
             .navbar-brand {
                 color: #6c757d !important;
             }
+            .list_bra .nav-pills .nav-link.active, .list_bra .nav-pills .show .nav-link {
+    color: white;
+    /* background-color: white; */
+    border-radius: unset;
+    background-color: #f0f2fc87;
+    font-weight: bolder;
+    border-radius: 70px;
+}
 
             <?php
         }
@@ -950,7 +958,8 @@
                                 </nav>
                             </div>
                         </div>
-                        <div class="container-fluid" style="border-radius: 10px;width: 95%;">
+                        <!-- <div class="container-fluid" style="border-radius: 10px;width: 95%;"> -->
+                            <div class="container">
                             <table class="table table-hover table-borderless  "
                                 style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
                                 <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
