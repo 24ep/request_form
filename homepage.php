@@ -760,11 +760,12 @@
            <?php 
            if($_SESSION["pf_theme"]<>"Light Modern") {
            include('nev_bra.php');
+         
            }else{
             include('nev_bra_modern.php');
            }
            ?>
-            
+             
             <div class="col-10 window-full overflow-auto">
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- style="margin-top:15px" -->
