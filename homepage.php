@@ -654,7 +654,7 @@
     border-radius: unset;
     background-color: #f8f9faed!important;
     font-weight: bolder;
-    border-radius: 70px;
+    border-radius: 5px;
 }
 
             <?php
