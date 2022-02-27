@@ -198,15 +198,11 @@ echo '</div>';
 //   echo '<hr>';
 
 echo '
-</div>
 <div class="col">
     <small class="row m-3">Unassign</small>
     '; 
-  
-    
     list_ts("ticket.case_officer = 'unassign' and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].") and ticket.status <> 'Close'",500,'ticket');
 echo' </div>
-</div>
 ';
 
 
