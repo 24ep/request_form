@@ -640,7 +640,11 @@
                 width: 80%
             }
 
-
+            .hydrated {
+    visibility: inherit;
+    margin: 0px;
+    vertical-align: middle;
+}
             .navbar-brand {
                 color: #6c757d !important;
             }
@@ -648,7 +652,7 @@
     color: white;
     /* background-color: white; */
     border-radius: unset;
-    background-color: #f0f2fc87;
+    background-color: #f8f9faed!important;
     font-weight: bolder;
     border-radius: 70px;
 }
