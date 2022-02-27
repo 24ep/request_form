@@ -169,21 +169,33 @@ echo '
 echo '<div class="container">
 <div class="row">';
    
-
-
+//------
+echo '
+<div class="col">
+    <small class="row m-3">Unassign</small>
+    '; 
+    list_ts("ticket.case_officer = 'unassign' and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].") and ticket.status <> 'Close'",500,'ticket');
+echo' </div>
+';
+//-------
+//------
+echo '
+<div class="col">
+    <small class="row m-3">Routine work & Monitor</small>
+    '; 
+    list_ts("ticket.ticket_status in ('routine work','monitor') and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].") and ticket.status <> 'Close'",500,'ticket');
+echo' </div>
+';
+//-------
 
 date_default_timezone_set("Asia/Bangkok");
 $con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 $query_status = "SELECT * FROM content_service_gate.attribute_option 
-where attribute_id= 38 and attribute_option <>'cancel'" or die("Error:" . mysqli_error());
+where attribute_id= 38 and attribute_option not in ('cancel','routine work','monitor','close')" or die("Error:" . mysqli_error());
 $result_status = mysqli_query($con_status, $query_status);
 while($row_status = mysqli_fetch_array($result_status)) {
-if($row_status["attribute_option"]=="Close" or $row_status["attribute_option"]=="Cancel"){
-$limit=1;
-}else{
 $limit = $ts_command_limit;
-}
 echo' <div class="col">
 <small class="row m-3">'.$row_status["attribute_option"].'</small>';
 list_ts("(".$_SESSION["ts_query_input"].") and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
@@ -194,13 +206,7 @@ echo '</div>';
 //   list_ts("(ticket.case_officer <> '".$_SESSION["username"]."' and ticket.case_officer <> 'unassign'  ) and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status <> 'Close'",500 ,'ticket');
 //   echo '<hr>';
 
-echo '
-<div class="col">
-    <small class="row m-3">Unassign</small>
-    '; 
-    list_ts("ticket.case_officer = 'unassign' and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].") and ticket.status <> 'Close'",500,'ticket');
-echo' </div>
-';
+
 
 
 echo '</div>
