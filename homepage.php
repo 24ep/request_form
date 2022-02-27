@@ -868,7 +868,7 @@
                     </div>
                     <div class="tab-pane fade" id="v-pills-request_list" role="tabpanel"
                         aria-labelledby="v-pills-request_list-tab">
-                        <div>
+                        <div style="    margin-left: 30px;">
                         <div class="tab-content" id="myTabContent">
                             <?php if($_GET["result"]<>""){
                                     echo $_GET["result"];
