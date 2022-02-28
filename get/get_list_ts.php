@@ -284,7 +284,7 @@ $result_status = mysqli_query($con_status, $query_status);
       $i=0;
 while($row_status = mysqli_fetch_array($result_status)) {
 $limit = $ts_command_limit;
-  if($i==1){
+  if($i==0){
     echo' <div class="col" id="col_'.$row_status["attribute_option"].'" ondrop="drop_card_cr(event,'.$row_status["attribute_option"].')" ondragover="allowDrop(event)" >
     <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
     list_ts_non_status("(".$_SESSION["ts_query_input"].") and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
