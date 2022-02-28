@@ -281,12 +281,21 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 $query_status = "SELECT * FROM content_service_gate.attribute_option 
 where attribute_id= 38 and attribute_option not in ('cancel','routine work','monitor','close')" or die("Error:" . mysqli_error());
 $result_status = mysqli_query($con_status, $query_status);
+      $i=0;
 while($row_status = mysqli_fetch_array($result_status)) {
 $limit = $ts_command_limit;
-echo' <div class="col" style="border-left: 1px solid #e3e2e2;" id="col_'.$row_status["attribute_option"].'" ondrop="drop_card_cr(event,'.$row_status["attribute_option"].')" ondragover="allowDrop(event)" >
-<small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
-list_ts_non_status("(".$_SESSION["ts_query_input"].") and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
-echo '</div>';
+  if($i=1){
+    echo' <div class="col" id="col_'.$row_status["attribute_option"].'" ondrop="drop_card_cr(event,'.$row_status["attribute_option"].')" ondragover="allowDrop(event)" >
+    <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
+    list_ts_non_status("(".$_SESSION["ts_query_input"].") and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
+    echo '</div>';
+  }else{
+    echo' <div class="col" style="border-left: 1px solid #e3e2e2;" id="col_'.$row_status["attribute_option"].'" ondrop="drop_card_cr(event,'.$row_status["attribute_option"].')" ondragover="allowDrop(event)" >
+    <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
+    list_ts_non_status("(".$_SESSION["ts_query_input"].") and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
+    echo '</div>';
+  }
+
 }
 
 // echo '<small class="row m-3">Assigned to other</small>';
