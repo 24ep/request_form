@@ -257,13 +257,13 @@ echo '<div >
 <div class="row">';
    
 //------
-echo '
-<div class="col">
-    <small class="row m-3" style="font-weight: 900;">Unassign</small>
-    '; 
-    list_ts_non_status("ticket.case_officer = 'unassign' and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].") and ticket.status <> 'Close'",500,'ticket');
-echo' </div>
-';
+// echo '
+// <div class="col">
+//     <small class="row m-3" style="font-weight: 900;">Unassign</small>
+//     '; 
+//     list_ts_non_status("ticket.case_officer = 'unassign' and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].") and ticket.status <> 'Close'",500,'ticket');
+// echo' </div>
+// ';
 //-------
 //------
 // echo '
@@ -285,7 +285,7 @@ while($row_status = mysqli_fetch_array($result_status)) {
 $limit = $ts_command_limit;
 echo' <div class="col" style="border-left: 1px solid #e3e2e2;" id="col_'.$row_status["attribute_option"].'" ondrop="drop_card_cr(event,'.$row_status["attribute_option"].')" ondragover="allowDrop(event)" >
 <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
-list_ts_non_status("(".$_SESSION["ts_query_input"].") and ticket.case_officer <> 'unassign' and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
+list_ts_non_status("(".$_SESSION["ts_query_input"].") and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
 echo '</div>';
 }
 
