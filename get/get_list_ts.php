@@ -127,9 +127,9 @@ return $status;
 
     function list_ts_non_status($filter,$ts_command_limit,$level ){
       if(strpos($filter,"ticket.status = 'Close'")!==false){
-        $sort_de_status=" DESC ";
+        $sort_de_status="ticket.id DESC ";
       }else{
-        $sort_de_status=" ASC ";
+        $sort_de_status="ticket.case_officer ASC ";
       }
       $i=1;
       //--
@@ -153,7 +153,7 @@ return $status;
         LEFT JOIN all_in_one_project.comment as comment
         ON ticket.id = comment.ticket_id 
         where ".$ts_filter." 
-        GROUP BY ticket.id order by ticket.id ".$sort_de_status."  limit ".$ts_command_limit;
+        GROUP BY ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
         //echo "<script>console.log('".$query."');</script>";
         $result = mysqli_query($con, $query);
         echo "<ul style='width: 95%;padding: 15px;'>";
