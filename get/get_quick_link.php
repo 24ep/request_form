@@ -24,7 +24,7 @@ unset($list_detail);
 }
 
 
-    
+mysqli_close($con);
 ?>
 
 <div class="d-flex align-items-start">
