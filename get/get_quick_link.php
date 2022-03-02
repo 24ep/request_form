@@ -13,8 +13,8 @@ $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     $list_detail .= '
     <div class="card" style="    margin: 10px;
-    position: fixed;
-    width: 80%;">
+    position: inherit;
+    min-width: 600px;">
         <div class="card-body">
         <a href="'.$row["link"].'" target="_blank" ><h5>'.$row["label"].'</h5></a>
                 '.$row["description"].'
