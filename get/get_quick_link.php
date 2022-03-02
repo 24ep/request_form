@@ -11,7 +11,7 @@ $query = "SELECT * from quick_link where bucket = '".$row_bk["bucket"]."'" or di
 $result = mysqli_query($con, $query);
 
 while($row = mysqli_fetch_array($result)) {
-    $list_detail = .'
+    $list_detail .= '
     <div class="card">
         <div class="card-body">
         <a href="'.$row["link"].'" target="_blank" ><h5 class="card-header">'.$row["label"].'</h5></a>
@@ -19,6 +19,7 @@ while($row = mysqli_fetch_array($result)) {
             </div>
         </div>';
 }
+
 $bk_detail .= '<div class="tab-pane fade" id="v-pills-'.$row_bk["bucket"].'" role="tabpanel" aria-labelledby="v-pills-'.$row_bk["bucket"].'-tab">'.$list_detail.'</div>';
 unset($list_detail);
 }
