@@ -1227,7 +1227,7 @@
                                             margin-top: 25%;
                                         ">
                                     <!-- get card -->
-                                    <?php include("get_quick_link.php"); ?>
+                                    <?php include("get_get_quick_link.php"); ?>
                                     <!-- get card -->
                                 </div>
                             </div>
