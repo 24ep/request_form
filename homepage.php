@@ -641,21 +641,24 @@
             }
 
             .hydrated {
-    visibility: inherit;
-    margin: 0px;
-    vertical-align: middle;
-}
+                visibility: inherit;
+                margin: 0px;
+                vertical-align: middle;
+            }
+
             .navbar-brand {
                 color: #6c757d !important;
             }
-            .list_bra .nav-pills .nav-link.active, .list_bra .nav-pills .show .nav-link {
-    color: white;
-    /* background-color: white; */
-    border-radius: unset;
-    background-color: #f8f9faed!important;
-    font-weight: bolder;
-    border-radius: 5px;
-}
+
+            .list_bra .nav-pills .nav-link.active,
+            .list_bra .nav-pills .show .nav-link {
+                color: white;
+                /* background-color: white; */
+                border-radius: unset;
+                background-color: #f8f9faed !important;
+                font-weight: bolder;
+                border-radius: 5px;
+            }
 
             <?php
         }
@@ -768,8 +771,8 @@
             $nev_avg = "background: #212121;";
          }
         ?>
-        <!-- start nav normal -->
-           <?php 
+            <!-- start nav normal -->
+            <?php 
            if($_SESSION["pf_theme"]<>"Light Modern") {
            include('nev_bra.php');
            $full_col = "col-10 ";
@@ -782,7 +785,7 @@
           
            }
            ?>
-             
+
             <div class="<?php echo  $full_col;?> window-full overflow-auto" style="<?php echo  $sty_col;?>">
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- style="margin-top:15px" -->
@@ -873,98 +876,100 @@
                     <div class="tab-pane fade" id="v-pills-request_list" role="tabpanel"
                         aria-labelledby="v-pills-request_list-tab">
                         <div style="    margin-left: 30px;">
-                        <div class="tab-content" id="myTabContent">
-                            <?php if($_GET["result"]<>""){
+                            <div class="tab-content" id="myTabContent">
+                                <?php if($_GET["result"]<>""){
                                     echo $_GET["result"];
                                 }
                             ?>
-                            <div class="row align-items-center" style="margin:20px">
-                                <div class="col-auto">
-                                    <!-- <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
+                                <div class="row align-items-center" style="margin:20px">
+                                    <div class="col-auto">
+                                        <!-- <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
                                     <select class="selection_filter" id="user_filter" onchange="filter_update();">
                                         <?php //echo $username_op;?>
                                     </select> -->
-                                    <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
-                                    <input value="<?php echo $_SESSION["user_filter"];?>" class="selection_filter"
-                                        list="datalistOptionsuser" id="user_filter" onchange="filter_update();"
-                                        placeholder="Type to username...">
-                                    <datalist id="datalistOptionsuser">
-                                        <?php echo $username_op;?>
-                                    </datalist>
-                                </div>
-                                <div class="col-auto">
-                                    <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Status</label>
-                                    <select class="selection_filter" id="status_filter" onchange="filter_update();">
-                                        <?php echo $request_new_status_op;?>
-                                    </select>
-                                </div>
-                                <div class="col-auto">
-                                    <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Brand or ID</label>
-                                    <input type="text" class="selection_filter"
-                                        style="border-bottom: 1px #e0e0e0;border-style: double;" id="brand_filter"
-                                        onchange="filter_update();">
-                                </div>
-                                <div class="col-auto">
-                                    <h5>|</h5>
-                                </div>
-                                <div class="col-auto">
-                                    <label class="mr-sm-2 sr-only" for="inlineFormInput">Page</label>
-                                    <input type="number" class="selection_filter"
-                                        style="width: 40px;border-bottom: 1px #e0e0e0;border-style: double;"
-                                        id="pagenation_input" min=1
-                                        <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
-                                        value="<?php echo $_SESSION["pagenation"];?>" onchange="filter_update();"
-                                        placeholder="">
-                                </div>
-                                <div class="col-auto">
-                                    <div id="total_page_nj"></div>
-                                </div>
-                                <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end"> -->
-                                <div class="col-auto">
-                                    <button class="btn btn-primary btn-sm" style="margin-left:10px" type="button"
-                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-                                        aria-controls="offcanvasExample">
-                                        <ion-icon size="small" name="add-outline"></ion-icon>
-                                        New Request
-                                    </button>
-                                </div>
-                                <!-- </div> -->
-                                <div class="col-auto" style="right: 20px;position: absolute;margin-top: 15px;">
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination pagination-sm">
-                                            <div class="offcanvas offcanvas-start" style="width:90%" tabindex="-1"
-                                                id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                                                <div class="offcanvas-header">
-                                                    <h5 class="offcanvas-title" id="offcanvasExampleLabel"
-                                                        style="padding-left:50px">
-                                                        <ion-icon style="margin-right:10px" name="add-circle-outline">
-                                                        </ion-icon>Request add new job
-                                                    </h5>
-                                                    <button type="button" class="btn-close text-reset"
-                                                        data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                                </div>
-                                                <div class="offcanvas-body">
-                                                    <div class="container-md" style="padding:0px 80px 0px 80px;">
-                                                        <form class="row g-3"
-                                                            action="base/action/action_submit_add_new_job.php"
-                                                            method="POST">
-                                                            <div id="add_new_job_result"></div>
-                                                            <?php include('form/form_request_add_new.php')?>
-                                                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                                                <button type="submit"
-                                                                    class="btn btn-dark btn-sm">Submit</button>
-                                                            </div>
-                                                        </form>
+                                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
+                                        <input value="<?php echo $_SESSION["user_filter"];?>" class="selection_filter"
+                                            list="datalistOptionsuser" id="user_filter" onchange="filter_update();"
+                                            placeholder="Type to username...">
+                                        <datalist id="datalistOptionsuser">
+                                            <?php echo $username_op;?>
+                                        </datalist>
+                                    </div>
+                                    <div class="col-auto">
+                                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Status</label>
+                                        <select class="selection_filter" id="status_filter" onchange="filter_update();">
+                                            <?php echo $request_new_status_op;?>
+                                        </select>
+                                    </div>
+                                    <div class="col-auto">
+                                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Brand or ID</label>
+                                        <input type="text" class="selection_filter"
+                                            style="border-bottom: 1px #e0e0e0;border-style: double;" id="brand_filter"
+                                            onchange="filter_update();">
+                                    </div>
+                                    <div class="col-auto">
+                                        <h5>|</h5>
+                                    </div>
+                                    <div class="col-auto">
+                                        <label class="mr-sm-2 sr-only" for="inlineFormInput">Page</label>
+                                        <input type="number" class="selection_filter"
+                                            style="width: 40px;border-bottom: 1px #e0e0e0;border-style: double;"
+                                            id="pagenation_input" min=1
+                                            <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
+                                            value="<?php echo $_SESSION["pagenation"];?>" onchange="filter_update();"
+                                            placeholder="">
+                                    </div>
+                                    <div class="col-auto">
+                                        <div id="total_page_nj"></div>
+                                    </div>
+                                    <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end"> -->
+                                    <div class="col-auto">
+                                        <button class="btn btn-primary btn-sm" style="margin-left:10px" type="button"
+                                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                                            aria-controls="offcanvasExample">
+                                            <ion-icon size="small" name="add-outline"></ion-icon>
+                                            New Request
+                                        </button>
+                                    </div>
+                                    <!-- </div> -->
+                                    <div class="col-auto" style="right: 20px;position: absolute;margin-top: 15px;">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination pagination-sm">
+                                                <div class="offcanvas offcanvas-start" style="width:90%" tabindex="-1"
+                                                    id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                                                    <div class="offcanvas-header">
+                                                        <h5 class="offcanvas-title" id="offcanvasExampleLabel"
+                                                            style="padding-left:50px">
+                                                            <ion-icon style="margin-right:10px"
+                                                                name="add-circle-outline">
+                                                            </ion-icon>Request add new job
+                                                        </h5>
+                                                        <button type="button" class="btn-close text-reset"
+                                                            data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="offcanvas-body">
+                                                        <div class="container-md" style="padding:0px 80px 0px 80px;">
+                                                            <form class="row g-3"
+                                                                action="base/action/action_submit_add_new_job.php"
+                                                                method="POST">
+                                                                <div id="add_new_job_result"></div>
+                                                                <?php include('form/form_request_add_new.php')?>
+                                                                <div
+                                                                    class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                                    <button type="submit"
+                                                                        class="btn btn-dark btn-sm">Submit</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                    </div>
+                                    </ul>
+                                    </nav>
                                 </div>
-                                </ul>
-                                </nav>
                             </div>
-                        </div>
-                        <!-- <div class="container-fluid" style="border-radius: 10px;width: 95%;"> -->
-                           
+                            <!-- <div class="container-fluid" style="border-radius: 10px;width: 95%;"> -->
+
                             <table class="table table-hover table-borderless  "
                                 style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
                                 <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
@@ -1157,9 +1162,7 @@
                                     <div id="get_ts_admin_console">
 
                                         <?php 
-                                       
                                             include('get/get_list_ts.php');
-                                   
                                          ?>
                                     </div>
                                 </div>
@@ -1172,9 +1175,9 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container " tyle="
-    text-align: center;
-    margin-top: 25%;
-">
+                                            text-align: center;
+                                            margin-top: 25%;
+                                        ">
                                     <!-- get card -->
                                     <div id="get_card_add_new">
                                         <?php //include('get/get_card_new_job.php'); ?>
@@ -1184,9 +1187,8 @@
                             </div>
                         </div>
                     </div>
-                       <!-- user -->
-                       <div class="tab-pane fade" id="v-pills-user" role="tabpanel"
-                        aria-labelledby="v-pills-user-tab">
+                    <!-- user -->
+                    <div class="tab-pane fade" id="v-pills-user" role="tabpanel" aria-labelledby="v-pills-user-tab">
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
@@ -1199,15 +1201,15 @@
                         </div>
                     </div>
 
-                       <!-- user -->
-                       <div class="tab-pane fade" id="v-pills-setting" role="tabpanel"
+                    <!-- user -->
+                    <div class="tab-pane fade" id="v-pills-setting" role="tabpanel"
                         aria-labelledby="v-pills-setting-tab">
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container " tyle="
-    text-align: center;
-    margin-top: 25%;
-">
+                                        text-align: center;
+                                        margin-top: 25%;
+                                    ">
                                     <!-- get card -->
                                     <ion-icon name="time-outline"></ion-icon>
                                     <h3>Coming soon</h3>
@@ -1216,24 +1218,22 @@
                             </div>
                         </div>
                     </div>
-                   <!-- web -->
-                   <div class="tab-pane fade" id="v-pills-link" role="tabpanel"
-                        aria-labelledby="v-pills-link-tab">
+                    <!-- web -->
+                    <div class="tab-pane fade" id="v-pills-link" role="tabpanel" aria-labelledby="v-pills-link-tab">
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container " tyle="
-    text-align: center;
-    margin-top: 25%;
-">
+                                            text-align: center;
+                                            margin-top: 25%;
+                                        ">
                                     <!-- get card -->
-                                    <ion-icon name="time-outline"></ion-icon>
-                                    <h3>Coming soon</h3>
+                                    <?php include("get_quick_link.php"); ?>
                                     <!-- get card -->
                                 </div>
                             </div>
                         </div>
                     </div>
-                  
+
                     <!-- offcanvas detail cr -->
                     <div class="offcanvas offcanvas-start" tabindex="0" id="detail_cr" style="width:100%"
                         aria-labelledby="offcanvasExampleLabel">
@@ -1933,8 +1933,8 @@ function drop_card_cr(ev, new_status) {
     } ?>
 
     <script>
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+})
     </script>
