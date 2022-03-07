@@ -7,12 +7,12 @@
  
  while($row_account = mysqli_fetch_array($result)) {
     $value_account .= '<tr>';
-    $value_account.= '<td>$row["'.$row_account["id"].'"]</td>';
-    $value_account.= '<td>$row["'.$row_account["username"].'"]</td>';
-    $value_account.= '<td>$row["'.$row_account["work_email"].'"]</td>';
-    $value_account.= '<td>$row["'.$row_account["status"].'"]</td>';
-    $value_account.= '<td>$row["'.$row_account["department"].'"]</td>';
-    $value_account.= '<td>$row["'.$row_account["register_type"].'"]</td>';
+    $value_account.= '<td>'.$row_account["id"].'</td>';
+    $value_account.= '<td>'.$row_account["username"].'</td>';
+    $value_account.= '<td>'.$row_account["work_email"].'</td>';
+    $value_account.= '<td>'.$row_account["status"].'</td>';
+    $value_account.= '<td>'.$row_account["department"].'</td>';
+    $value_account.= '<td>'.$row_account["register_type"].'</td>';
     $value_account.= '<td>IP : 45.55.55.4 T : 14 Feb 2022 12:10 PM</td>';
     $value_account.= '<td><ion-icon name="ellipsis-vertical-outline"></ion-icon></td>';
     $value_account .= '</tr>';
