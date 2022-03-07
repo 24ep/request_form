@@ -1,21 +1,21 @@
 <?php
-function get_page_account(){
+
  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
  mysqli_query($con, "SET NAMES 'utf8' ");
- $query = "SELECT * FROM all_in_one_project.account" or die("Error:" . mysqli_error());
- $result = mysqli_query($con, $query);
+ $query_account = "SELECT * FROM all_in_one_project.account" or die("Error:" . mysqli_error());
+ $result_account = mysqli_query($con, $query);
  
- while($row = mysqli_fetch_array($result)) {
-    $value .= '<tr>';
-    $value.= '<td>$row["'.$row["id"].'"]</td>';
-    $value.= '<td>$row["'.$row["username"].'"]</td>';
-    $value.= '<td>$row["'.$row["work_email"].'"]</td>';
-    $value.= '<td>$row["'.$row["status"].'"]</td>';
-    $value.= '<td>$row["'.$row["department"].'"]</td>';
-    $value.= '<td>$row["'.$row["register_type"].'"]</td>';
-    $value.= '<td>IP : 45.55.55.4 T : 14 Feb 2022 12:10 PM</td>';
-    $value.= '<td><ion-icon name="ellipsis-vertical-outline"></ion-icon></td>';
-    $value .= '</tr>';
+ while($row_account = mysqli_fetch_array($result)) {
+    $value_account .= '<tr>';
+    $value_account.= '<td>$row["'.$row_account["id"].'"]</td>';
+    $value_account.= '<td>$row["'.$row_account["username"].'"]</td>';
+    $value_account.= '<td>$row["'.$row_account["work_email"].'"]</td>';
+    $value_account.= '<td>$row["'.$row_account["status"].'"]</td>';
+    $value_account.= '<td>$row["'.$row_account["department"].'"]</td>';
+    $value_account.= '<td>$row["'.$row_account["register_type"].'"]</td>';
+    $value_account.= '<td>IP : 45.55.55.4 T : 14 Feb 2022 12:10 PM</td>';
+    $value_account.= '<td><ion-icon name="ellipsis-vertical-outline"></ion-icon></td>';
+    $value_account .= '</tr>';
 }
 
 
@@ -35,9 +35,9 @@ $table = '<table class="table table-borderless">
     </tr>
   </thead>
   <tbody>
-    '.$value.'
+    '.$value_account.'
   </tbody>
 </table>';
-return $table;
-}
+echo $table;
+
 ?>
