@@ -1,16 +1,17 @@
 <?php
 function get_page_account(){
+ $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
  $query_account = "SELECT * FROM all_in_one_project.account" or die("Error:" . mysqli_error());
  $result_account = mysqli_query($con, $query_account);
  
  while($row_account = mysqli_fetch_array($result_account)) {
-    $value_account .= '<tr>';
-    $value_account.= '<td>'.$row_account["id"].'</td>';
-    $value_account.= '<td>'.$row_account["username"].'</td>';
-    $value_account.= '<td>'.$row_account["status"].'</td>';
-    $value_account.= '<td>'.$row_account["department"].'</td>';
-    $value_account.= '<td>'.$row_account["register_type"].'</td>';
-    $value_account.= '<td><ion-icon name="ellipsis-vertical-outline"></ion-icon></td>';
+    $value_account .='<tr>';
+    $value_account .= '<td>'.$row_account["id"].'</td>';
+    $value_account .= '<td>'.$row_account["username"].'</td>';
+    $value_account .= '<td>'.$row_account["status"].'</td>';
+    $value_account .= '<td>'.$row_account["department"].'</td>';
+    $value_account .= '<td>'.$row_account["register_type"].'</td>';
+    $value_account .= '<td><ion-icon name="ellipsis-vertical-outline"></ion-icon></td>';
     $value_account .= '</tr>';
 }
 
