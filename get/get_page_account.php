@@ -18,7 +18,7 @@ function get_page_account(){
 
 ?>
 <?php
- $table =  '<table class="table table-borderless">
+ $table =  '<table class="table  table table-bordered">
 <thead>
     <tr>
       <th scope="col">Account ID</th>
