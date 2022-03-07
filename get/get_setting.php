@@ -1,7 +1,7 @@
 <?php
  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
  mysqli_query($con, "SET NAMES 'utf8' ");
- $query = "SELECT value FROM content_service_gate.setting_menu" or die("Error:" . mysqli_error());
+ $query = "SELECT value,icon FROM content_service_gate.setting_menu" or die("Error:" . mysqli_error());
  $result = mysqli_query($con, $query);
  while($row = mysqli_fetch_array($result)) {
     $value.= '<button style="text-align: left;font-weight: 600;" class="nav-link" id="v-pills-setting_'.$row["value"].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-setting_'.$row["value"].'" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><ion-icon name="'.$row["icon"].'"></ion-icon>'.$row["value"].'</button>';
