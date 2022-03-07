@@ -1211,8 +1211,7 @@
                                         margin-top: 25%;
                                     ">
                                     <!-- get card -->
-                                    <ion-icon name="time-outline"></ion-icon>
-                                    <h3>Coming soon</h3>
+                                    <?php include("get/get_setting.php"); ?>
                                     <!-- get card -->
                                 </div>
                             </div>

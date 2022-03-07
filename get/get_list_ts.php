@@ -129,7 +129,7 @@ return $status;
       if(strpos($filter,"ticket.status = 'Close'")!==false){
         $sort_de_status="ticket.id DESC ";
       }else{
-        $sort_de_status="ticket.case_officer ASC ";
+        $sort_de_status="ticket.case_officer ASC, ticket.id ASC ";
       }
       $i=1;
       //--
