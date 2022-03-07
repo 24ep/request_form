@@ -17,7 +17,7 @@ function get_page_account(){
 
 ?>
 <?php
-return  '<table class="table table-borderless">
+ $table =  '<table class="table table-borderless">
 <thead>
     <tr>
       <th scope="col">Account ID</th>
@@ -32,5 +32,7 @@ return  '<table class="table table-borderless">
     '.$value_account.'
   </tbody>
 </table>';
+
+return $table;
 }
 ?>
