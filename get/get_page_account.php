@@ -1,5 +1,5 @@
 <?php
-function get_page_account(){
+
  $query_account = "SELECT * FROM all_in_one_project.account" or die("Error:" . mysqli_error());
  $result_account = mysqli_query($con, $query_account);
  
@@ -32,5 +32,5 @@ return  '<table class="table table-borderless">
     '.$value_account.'
   </tbody>
 </table>';
-}
+
 ?>
