@@ -2,7 +2,7 @@
 function get_page_account(){
  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
  mysqli_query($con, "SET NAMES 'utf8' ");
- $query = "SELECT value,icon FROM all_in_one_project.account" or die("Error:" . mysqli_error());
+ $query = "SELECT * FROM all_in_one_project.account" or die("Error:" . mysqli_error());
  $result = mysqli_query($con, $query);
  
  while($row = mysqli_fetch_array($result)) {
@@ -21,7 +21,7 @@ function get_page_account(){
 
 ?>
 <?php
-echo '<table class="table table-borderless">
+$table = '<table class="table table-borderless">
 <thead>
     <tr>
       <th scope="col">Account ID</th>
@@ -38,5 +38,6 @@ echo '<table class="table table-borderless">
     '.$value.'
   </tbody>
 </table>';
+return $table;
 }
 ?>
