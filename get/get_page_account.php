@@ -3,7 +3,9 @@
  mysqli_query($con, "SET NAMES 'utf8' ");
  $query = "SELECT value,icon FROM all_in_one_project.account" or die("Error:" . mysqli_error());
  $result = mysqli_query($con, $query);
+ 
  while($row = mysqli_fetch_array($result)) {
+    $value .= '<tr>';
     $value.= '<td>$row["'.$row["id"].'"]</td>';
     $value.= '<td>$row["'.$row["username"].'"]</td>';
     $value.= '<td>$row["'.$row["work_email"].'"]</td>';
@@ -12,7 +14,9 @@
     $value.= '<td>$row["'.$row["register_type"].'"]</td>';
     $value.= '<td>IP : 45.55.55.4 T : 14 Feb 2022 12:10 PM</td>';
     $value.= '<td><ion-icon name="ellipsis-vertical-outline"></ion-icon></td>';
+    $value .= '</tr>';
 }
+
 
 ?>
 
@@ -30,11 +34,6 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
+    <?php echo $value; ?>
   </tbody>
 </table>
