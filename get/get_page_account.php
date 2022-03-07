@@ -11,7 +11,6 @@
     $value_account.= '<td>'.$row_account["status"].'</td>';
     $value_account.= '<td>'.$row_account["department"].'</td>';
     $value_account.= '<td>'.$row_account["register_type"].'</td>';
-    $value_account.= '<td>IP : 45.55.55.4 T : 14 Feb 2022 12:10 PM</td>';
     $value_account.= '<td><ion-icon name="ellipsis-vertical-outline"></ion-icon></td>';
     $value_account .= '</tr>';
 }
@@ -28,7 +27,6 @@ $table = '<table class="table table-borderless">
       <th scope="col">status</th>
       <th scope="col">Department</th>
       <th scope="col">Register type</th>
-      <th scope="col">Last login</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
