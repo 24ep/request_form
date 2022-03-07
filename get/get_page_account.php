@@ -7,7 +7,6 @@
     $value_account .= '<tr>';
     $value_account.= '<td>'.$row_account["id"].'</td>';
     $value_account.= '<td>'.$row_account["username"].'</td>';
-    $value_account.= '<td>'.$row_account["work_email"].'</td>';
     $value_account.= '<td>'.$row_account["status"].'</td>';
     $value_account.= '<td>'.$row_account["department"].'</td>';
     $value_account.= '<td>'.$row_account["register_type"].'</td>';
@@ -23,7 +22,6 @@ $table = '<table class="table table-borderless">
     <tr>
       <th scope="col">Account ID</th>
       <th scope="col">Username</th>
-      <th scope="col">Mail</th>
       <th scope="col">status</th>
       <th scope="col">Department</th>
       <th scope="col">Register type</th>
