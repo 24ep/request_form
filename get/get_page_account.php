@@ -3,7 +3,7 @@
  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
  mysqli_query($con, "SET NAMES 'utf8' ");
  $query_account = "SELECT * FROM all_in_one_project.account" or die("Error:" . mysqli_error());
- $result_account = mysqli_query($con, $query);
+ $result_account = mysqli_query($con, $query_account);
  
  while($row_account = mysqli_fetch_array($result)) {
     $value_account .= '<tr>';
