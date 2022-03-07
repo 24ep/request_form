@@ -17,7 +17,7 @@
 
 ?>
 <?php
-$table = '<table class="table table-borderless">
+echo  '<table class="table table-borderless">
 <thead>
     <tr>
       <th scope="col">Account ID</th>
@@ -32,6 +32,5 @@ $table = '<table class="table table-borderless">
     '.$value_account.'
   </tbody>
 </table>';
-echo $table;
 
 ?>
