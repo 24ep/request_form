@@ -5,7 +5,7 @@
  $query_account = "SELECT * FROM all_in_one_project.account" or die("Error:" . mysqli_error());
  $result_account = mysqli_query($con, $query_account);
  
- while($row_account = mysqli_fetch_array($result)) {
+ while($row_account = mysqli_fetch_array($result_account)) {
     $value_account .= '<tr>';
     $value_account.= '<td>'.$row_account["id"].'</td>';
     $value_account.= '<td>'.$row_account["username"].'</td>';
