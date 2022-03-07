@@ -9,14 +9,13 @@
     $detail.= '<div class="tab-pane fade" id="v-pills-setting_'.$row["code"].'" role="tabpanel" aria-labelledby="v-pills-setting_'.$row["code"].'-tab">
     <h3>'.$row["value"].'</h3>';
     if($row["code"]=="account"){
-        $detail.= include("get_page_".$row["code"].".php");
+        $detail .= include("get_page_".$row["code"].".php");
     }
     
-        //  if($row["code"]=="account"){
-        //     include("get_page_account.php");
-        //    get_page_account();
-        //     $detail.= get_page_account();
-        //  }
+         if($row["code"]=="account"){
+            include("get_page_account.php");
+            $detail.= get_page_account();
+         }
     $detail.='</div>';
 }
 
