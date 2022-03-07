@@ -4,8 +4,8 @@
  $query = "SELECT value,icon FROM content_service_gate.setting_menu" or die("Error:" . mysqli_error());
  $result = mysqli_query($con, $query);
  while($row = mysqli_fetch_array($result)) {
-    $value.= '<button style="text-align: left;font-weight: 600;" class="nav-link" id="v-pills-setting_'.$row["value"].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-setting_'.$row["value"].'" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><ion-icon style="margin-right: 8px" name="'.$row["icon"].'"></ion-icon>'.$row["value"].'</button>';
-    $detail.= '<div class="tab-pane fade" id="v-pills-setting_'.$row["value"].'" role="tabpanel" aria-labelledby="v-pills-setting_'.$row["value"].'-tab">Coming Soon</div>';
+    $value.= '<button style="text-align: left;font-weight: 600;" class="nav-link" id="v-pills-setting_'.$row["code"].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-setting_'.$row["code"].'" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><ion-icon style="margin-right: 8px" name="'.$row["icon"].'"></ion-icon>'.$row["value"].'</button>';
+    $detail.= '<div class="tab-pane fade" id="v-pills-setting_'.$row["code"].'" role="tabpanel" aria-labelledby="v-pills-setting_'.$row["code"].'-tab">Coming Soon</div>';
 }
 
 ?>
