@@ -1172,7 +1172,7 @@
                     <!-- fl console -->
                     <div class="tab-pane fade" id="v-pills-fl_board" role="tabpanel"
                         aria-labelledby="v-pills-fl_board-tab">
-                        <div class="tab-content" id="myTabContent">
+                        <div class="tab-content" style="width:80%" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container " tyle="
                                             text-align: center;
