@@ -869,9 +869,10 @@ label#label_file_cme {
                                     </div>
 
                             </div>
-                            <?php } ?>
+                            
                             <!-- new cp -->
                         </div>
+                        <?php } ?>
                     </div>
                     <?php echo $need_more_respone;?>
                 </div>
