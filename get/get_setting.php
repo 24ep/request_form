@@ -24,7 +24,7 @@
   <div class="nav flex-column nav-pills me-3" id="v-pills-tab" style="border-right: solid #ccc 1px;padding: 10px;" role="tablist" aria-orientation="vertical">
     <?php  echo  $value; ?>
   </div>
-  <div class="tab-content" id="v-pills-tabContent">
+  <div class="tab-content" style="width:80%" id="v-pills-tabContent">
     <?php  echo  $detail; ?>
   </div>
 </div>
