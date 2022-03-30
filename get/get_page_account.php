@@ -1,4 +1,7 @@
 <?php
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
 function get_page_account(){
  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
  $query_account = "SELECT * FROM all_in_one_project.account" or die("Error:" . mysqli_error());
@@ -18,7 +21,7 @@ function get_page_account(){
 
 ?>
 <?php
- $table =  '<table class="table  table table-bordered">
+ $table =  '<table class="table id="st_account_tb"  name="st_account_tb" table table-bordered">
 <thead>
     <tr>
       <th scope="col">Account ID</th>
@@ -35,5 +38,8 @@ function get_page_account(){
 </table>';
 
 return $table;
+$(document).ready( function () {
+  $('#st_account_tb').DataTable();
+} );
 }
 ?>
