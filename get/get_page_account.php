@@ -22,7 +22,7 @@ function get_page_account(){
 
 ?>
 <?php
- $table =  '<table class="table display" id="st_account_tb"  name="st_account_tb" table table-bordered">
+ $table =  '<table class="table" id="st_account_tb"  name="st_account_tb" table table-bordered">
 <thead>
     <tr>
       <th scope="col">Account ID</th>
