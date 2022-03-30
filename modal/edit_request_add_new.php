@@ -867,9 +867,9 @@ label#label_file_cme {
                                             style="width: 100%;margin-top:5px">get contact - change to Pending
                                         </button>
                                     </div>
-                                    <?php } ?>
+                                    
                             </div>
-                            
+                            <?php } ?>
                             <!-- new cp -->
                         </div>
                       
