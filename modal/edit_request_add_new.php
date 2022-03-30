@@ -719,7 +719,7 @@ label#label_file_cme {
                             </div>
                             <!-- new cp -->
                                 <?php if($_SESSION["username"]=="poojaroonwit"){
-                                        include('../get/get_internal_console.php');
+                                        include('../get/get_internal_console_nj.php');
                                 }
                                 ?>
                                 <!-- new cp -->
