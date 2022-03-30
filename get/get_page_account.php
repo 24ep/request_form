@@ -1,6 +1,7 @@
-<?php
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+<?php
 
 function get_page_account(){
  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
@@ -38,8 +39,12 @@ function get_page_account(){
 </table>';
 
 return $table;
-$(document).ready( function () {
+
+?>
+
+<script>
+  $(document).ready( function () {
   $('#st_account_tb').DataTable();
 } );
 }
-?>
+</script>
