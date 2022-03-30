@@ -1,6 +1,6 @@
   <!-- new cp -->
 
-  <div class="tab-pane fade" id="v-pills-internal_note" role="tabpanel" aria-labelledby="v-pills-internal_note-tab">
+  <div class="tab-pane fade" id="v-pills-cp" role="tabpanel" aria-labelledby="v-pills-cp-tab">
 
       <!-- assign -->
 
@@ -13,23 +13,23 @@
                   aria-label="Default select example">
                   <?php
                       $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-                    $query = "SELECT account.username as username,account.nickname as nickname,account.department as department,account.status as status ,sum(new_job.sku) as backlog_sku 
-                                            FROM account as account 
+                    $query = "SELECT account.username as username,account.nickname as nickname,account.department as department,account.status as status ,sum(new_job.sku) as backlog_sku
+                                            FROM account as account
                                             left join add_new_job as new_job on account.username = new_job.follow_assign_name and new_job.status <> 'accepted' and  new_job.status like '%cancel%' and new_job.status <> 'none'
-                                            group by account.username 
+                                            group by account.username
                                             having (account.department like '%Content%' and account.status = 'Enabled') or account.username ='".$follow_assign_name."'" or die("Error:" . mysqli_error());
                                             $result = mysqli_query($con, $query);
                                             echo  '<option value="unassign">unassign</option>';
                                             while($row = mysqli_fetch_array($result)) {
                                                 if($row["backlog_sku"]==null){$backlog_sku = 0;}else{$backlog_sku = $row["backlog_sku"];}
-                                               
+
                                                 if($row["username"]==$follow_assign_name){
                                                         echo  '<option selected value="'.$row["username"].'">'.$row["nickname"].' - '.$backlog_sku.'</option>';
                                                 }else{
-                                                    
+
                                                     echo  '<option value="'.$row["username"].'">'.$row["nickname"].' - '.$backlog_sku.'</option>';
                                                 }
-                                    
+
                                             }
                                             mysqli_close($con);
                                         ?>
@@ -149,3 +149,4 @@
           </div>
 
       </div>
+      <?php } ?>
