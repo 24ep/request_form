@@ -57,13 +57,13 @@ label#label_file_cme {
 }
 </style>
 <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-<?php 
+<?php
   session_start();
   $nickname = $_SESSION["nickname"];
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
-  $query = "SELECT 
+  $query = "SELECT
             anj.id as id,
             anj.brand as brand,
             anj.request_username as request_username,
@@ -100,8 +100,8 @@ label#label_file_cme {
             ac.nickname as follow_assign_nickname,
             brand_info.link as brand_info_link,
             anj.web_cate as web_cate
-            FROM all_in_one_project.add_new_job as anj 
-            left join all_in_one_project.account as ac 
+            FROM all_in_one_project.add_new_job as anj
+            left join all_in_one_project.account as ac
             on ac.username = anj.follow_assign_name
             left join all_in_one_project.brand_information as brand_info
             on brand_info.brand = anj.brand
@@ -145,7 +145,7 @@ label#label_file_cme {
       $follow_assign_nickname = $row['follow_assign_nickname'];
       $brand_info_link = $row['brand_info_link'];
       $web_cate = $row['web_cate'];
-      
+
 
     //stamp color status
     if($row["status"]=="pending"){
@@ -174,7 +174,7 @@ label#label_file_cme {
     $office_tell = $row['office_tell'];
     $work_email = $row['work_email'];
   }
-  
+
   mysqli_close($con);
   if($request_important=="Urgent"){
     $dp_tags .= '<span class="badge rounded-pill bg-danger" style="margin-left:10px">'.$request_important.'</span>';
@@ -228,26 +228,26 @@ label#label_file_cme {
                                 role="tab" aria-controls="v-pills-tf_team" aria-selected="false">
                                 <ion-icon name="trail-sign-outline"></ion-icon>traffic stage
                             </a>
-                        
-                            <a class="nav-link inpo" id="v-pills-sku-checking-tab" data-toggle="pill" href="#v-pills-sku-checking"
-                                role="tab" aria-controls="v-pills-sku-checking" aria-selected="false">
+
+                            <a class="nav-link inpo" id="v-pills-sku-checking-tab" data-toggle="pill"
+                                href="#v-pills-sku-checking" role="tab" aria-controls="v-pills-sku-checking"
+                                aria-selected="false">
                                 <ion-icon name="trail-sign-outline"></ion-icon>SKU Checking
                             </a>
-                        
+
                             <a class="nav-link inpo" id="v-pills-sku-tab" data-toggle="pill" href="#v-pills-sku"
                                 role="tab" aria-controls="v-pills-sku" aria-selected="false">
                                 <ion-icon name="trail-sign-outline"></ion-icon>SKU list
                             </a>
-                            
+
                             <a class="nav-link inpo" id="v-pills-internal_note-tab" data-toggle="pill"
                                 href="#v-pills-internal_note" role="tab" aria-controls="v-pills-internal_note"
                                 aria-selected="false">
                                 <ion-icon name="chatbox-ellipses-outline"></ion-icon>Internal note
                             </a>
 
-                            <a class="nav-link inpo" id="v-pills-cp-tab" data-toggle="pill"
-                                href="#v-pills-cp" role="tab" aria-controls="v-pills-cp"
-                                aria-selected="false">
+                            <a class="nav-link inpo" id="v-pills-cp-tab" data-toggle="pill" href="#v-pills-cp"
+                                role="tab" aria-controls="v-pills-cp" aria-selected="false">
                                 <ion-icon name="chatbox-ellipses-outline"></ion-icon>New control panel
                             </a>
 
@@ -255,7 +255,7 @@ label#label_file_cme {
                         </div>
                     </div>
                     <div class="col-10" style="height: 85%;">
-                        <?php 
+                        <?php
             if(strpos(strtolower ($status),"waiting data",0)!== false or strpos(strtolower ($status),"wait image",0)!== false ){
                 echo '<div class="alert alert-danger" style="border-radius: 0px;"role="alert">
                         <ion-icon name="alert-circle-outline"></ion-icon>
@@ -309,38 +309,45 @@ label#label_file_cme {
 
                                 <div class="row">
                                     <div class="col-6">
-                                            <label style="margin-top:5px;margin-bottom:5px" for="sku_checking">sku checking</label>
-                                            <textarea style="font-size:12px" oninput="sku_checking()" class="form-control" id="sku_checking"
-                                                name="sku_accepted"
-                                                placeholder="ตรวจสอบ sku ตามตัวอย่างด้านล่าง วางตามตัวอย่างด้านล่าง&#10;&#10;CDS3466644&#10;CDS2443356&#10;CDS2487356"
-                                                rows="20" style="height: 300px"></textarea>
-                                            
+                                        <label style="margin-top:5px;margin-bottom:5px" for="sku_checking">sku
+                                            checking</label>
+                                        <textarea style="font-size:12px" oninput="sku_checking()" class="form-control"
+                                            id="sku_checking" name="sku_accepted"
+                                            placeholder="ตรวจสอบ sku ตามตัวอย่างด้านล่าง วางตามตัวอย่างด้านล่าง&#10;&#10;CDS3466644&#10;CDS2443356&#10;CDS2487356"
+                                            rows="20" style="height: 300px"></textarea>
 
-                                <div class="form-floating"  style="margin-top:10px" >
-                                <select class="form-select" style="margin-top:10px" id="be_status_on_change" aria-label="Floating label select example">
-                                    <option selected value="cancel">ให้ยกเลิก ticket นั้น (ปรับสถานะเป็น cancel)</option>
-                                    <option value="keep">ให้คงสถานะเดิมไว้</option>
-                                </select>
-                                <label for="floatingSelect">สถานะ ticket เดิมในกรณีที่เป็น sku ที่มีอยู่แล้ว</label>
-                                </div>
-                                            <button type="button" style="margin-top:10px" onclick="force_sync_with_ticket(<?php echo $_POST['id']; ?>)" class="btn btn-danger">ยืนยัน เชื่อมต่อ sku ด้านบนกับ ticket NS- <?php echo $_POST["id"];?></button>
-                                            <small>ในกรณี ย้าย sku จาก ตัวแม่ "ให้เลือก คงสถานะเดิมไว้"</small>
+
+                                        <div class="form-floating" style="margin-top:10px">
+                                            <select class="form-select" style="margin-top:10px" id="be_status_on_change"
+                                                aria-label="Floating label select example">
+                                                <option selected value="cancel">ให้ยกเลิก ticket นั้น (ปรับสถานะเป็น
+                                                    cancel)</option>
+                                                <option value="keep">ให้คงสถานะเดิมไว้</option>
+                                            </select>
+                                            <label for="floatingSelect">สถานะ ticket เดิมในกรณีที่เป็น sku
+                                                ที่มีอยู่แล้ว</label>
+                                        </div>
+                                        <button type="button" style="margin-top:10px"
+                                            onclick="force_sync_with_ticket(<?php echo $_POST['id']; ?>)"
+                                            class="btn btn-danger">ยืนยัน เชื่อมต่อ sku ด้านบนกับ ticket NS-
+                                            <?php echo $_POST["id"];?></button>
+                                        <small>ในกรณี ย้าย sku จาก ตัวแม่ "ให้เลือก คงสถานะเดิมไว้"</small>
                                     </div>
                                     <div class="col-6">
-                                            <div id="sku_checking_result">
-                                            </div>
-                                            
-                                            <div id="sku_checking_result_force">
-                                            </div>
-                                            
+                                        <div id="sku_checking_result">
+                                        </div>
+
+                                        <div id="sku_checking_result_force">
+                                        </div>
+
 
                                     </div>
                                 </div>
-                                
-                                
-                                
-                                
-                                
+
+
+
+
+
                             </div>
                             <div class="tab-pane fade" id="v-pills-fu_team" role="tabpanel"
                                 aria-labelledby="v-pills-fu_team-tab">
@@ -348,14 +355,14 @@ label#label_file_cme {
                                 <?php if(strpos($status,"review")!==false){
                         echo '<div class="alert alert-warning" style="border-radius: 0px;" role="alert">
                         <h6 class="alert-heading" style="margin:0px">
-                        <strong>Need more infomation</strong> 
+                        <strong>Need more infomation</strong>
                         </h6><small style="color: gray;">Last reply date : '.$need_more_info_date.'</small>
                         <p style="font-size:14px;margin-top:10px">
                             '.$need_more_info_note.'
                         </p>
                         </div>';
                     }?>
-                                <?php 
+                                <?php
                     if($start_checking_date<>"" and $start_checking_date<>null){
                         $allow_task_ticket = "disabled";
                         $help_start = "<small style='color:Red'><strong>".$follow_up_by."</strong> had been start checking information</small>";
@@ -365,15 +372,15 @@ label#label_file_cme {
                     elseif($follow_assign_name <> $_SESSION["username"]){
                         $allow_task_ticket = "disabled";
                         $help_start = "<small style='color:Red'>Only ".$follow_assign_name."(assignee) can start checking information</small>";
-                    }else{unset($allow_task_ticket);unset($help_start);} 
+                    }else{unset($allow_task_ticket);unset($help_start);}
                     if($accepted_date<>"" and $accepted_date<>null ){
                         $allow_send_to_traffic = "disabled";
                         $help_traffic = "<small style='color:Red'>someone had been send this ticket to traffic</small>";
                     }
-                  
+
                     else{
                         unset($allow_send_to_traffic);unset($help_traffic);
-                    } 
+                    }
                     if($cancel_resone<>"" and $cancel_resone<>null){
                         $allow_cancel = "disabled";
                         $allow_send_to_traffic = "disabled";
@@ -385,9 +392,9 @@ label#label_file_cme {
                         else{
                             unset($allow_cancel);
                             unset($help_cancel);
-                        } 
+                        }
 
-                    
+
                     ?>
                                 <?php if(!isset($parent) or $status <> 'accepted'){
 
@@ -529,7 +536,7 @@ label#label_file_cme {
                                     </div>
                                     <div class="col-4">
                                         <div id="itemize_stamp_respond">
-                                       
+
                                         </div>
                                     </div>
                                 </div>
@@ -543,7 +550,7 @@ label#label_file_cme {
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
                                             <option value="3">Three</option>
-                                            </select>
+                                        </select>
                                         <small>ระบุข้อความยืนยันจากร้านค้าหรือจัดซื้อ
                                             และเลือกสถานะที่ต้องการเปลี่ยน</small>
 
@@ -637,26 +644,26 @@ label#label_file_cme {
                                             name="op_follow_assign_name" aria-label="Default select example">
                                             <?php
                                             $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-                                            $query = "SELECT account.username as username,account.nickname as nickname,account.department as department,account.status as status ,sum(new_job.sku) as backlog_sku 
-                                            FROM account as account 
+                                            $query = "SELECT account.username as username,account.nickname as nickname,account.department as department,account.status as status ,sum(new_job.sku) as backlog_sku
+                                            FROM account as account
                                             left join add_new_job as new_job on account.username = new_job.follow_assign_name and new_job.status <> 'accepted' and  new_job.status like '%cancel%' and new_job.status <> 'none'
-                                            group by account.username 
+                                            group by account.username
                                             having (account.department like '%Content%' and account.status = 'Enabled') or account.username ='".$follow_assign_name."'" or die("Error:" . mysqli_error());
                                             $result = mysqli_query($con, $query);
                                             echo  '<option value="unassign">unassign</option>';
                                             while($row = mysqli_fetch_array($result)) {
                                                 if($row["backlog_sku"]==null){$backlog_sku = 0;}else{$backlog_sku = $row["backlog_sku"];}
-                                               
+
                                                 if($row["username"]==$follow_assign_name){
-                                                  
+
                                                         echo  '<option selected value="'.$row["username"].'">'.$row["nickname"].' - '.$backlog_sku.'</option>';
-                                                    
-                                        
+
+
                                                 }else{
-                                                    
+
                                                     echo  '<option value="'.$row["username"].'">'.$row["nickname"].' - '.$backlog_sku.'</option>';
                                                 }
-                                        
+
                                             }
                                             mysqli_close($con);
 
@@ -710,294 +717,302 @@ label#label_file_cme {
                                     comment</button>
 
                             </div>
-                          
                             <!-- new cp -->
+                                <?php if($_SESSION["username"]=="poojaroonwit"){
+                                        include('../get/get_internal_console.php');
+                                }
+
+                                ?>
+                                <!-- new cp -->
+                            </div>
+
                         </div>
-                      
-                    </div>
-                    <?php echo $need_more_respone;?>
-                </div>
-            </div>
-            <div class="modal-footer" style="height: 50px;position: absolute;bottom: 15px;width: inherit;">
-                <small style="color:gray;position: absolute;left: 10px;">Request by : <a
-                        href="action/action_show_user_info.php?username=<?php echo $request_username; ?>"
-                        target="_blank" class="text-warning stretched-link"><?php echo $request_username; ?></a> |
-                    create date :
-                    <?php echo $create_date; ?> | update date : <?php echo $update_date; ?></small>
-            </div>
-        </div>
-        <div class="col-3" style="padding-left:0px">
-            <div class="modal-header">
-                <h5 class="modal-title">
-                    <ion-icon name="chatbubbles-outline"></ion-icon>Comment
-                </h5>
-            </div>
-            <div class="modal-body" style="height: 85%;padding-top: 0px;padding-right: 0px;" id="over_comment">
-                <div class=" overflow-auto" id="comment_box" style="height: auto;margin-bottom: 0px;margin-top: 0px;">
-                    <div id="call_ticket_comment">
-                        <?php   include('../get/get_comment_ticket.php');?>
+                        <?php echo $need_more_respone;?>
                     </div>
                 </div>
+                <div class="modal-footer" style="height: 50px;position: absolute;bottom: 15px;width: inherit;">
+                    <small style="color:gray;position: absolute;left: 10px;">Request by : <a
+                            href="action/action_show_user_info.php?username=<?php echo $request_username; ?>"
+                            target="_blank" class="text-warning stretched-link"><?php echo $request_username; ?></a> |
+                        create date :
+                        <?php echo $create_date; ?> | update date : <?php echo $update_date; ?></small>
+                </div>
             </div>
-            <div class="modal-footer" style="height: 50px;position: absolute;bottom: 15px;width: inherit;">
-                <div class="input-group input-group-sm mb-3">
-                    <?php echo  $bt_comment_type;?>
+            <div class="col-3" style="padding-left:0px">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>Comment
+                    </h5>
+                </div>
+                <div class="modal-body" style="height: 85%;padding-top: 0px;padding-right: 0px;" id="over_comment">
+                    <div class=" overflow-auto" id="comment_box"
+                        style="height: auto;margin-bottom: 0px;margin-top: 0px;">
+                        <div id="call_ticket_comment">
+                            <?php   include('../get/get_comment_ticket.php');?>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="height: 50px;position: absolute;bottom: 15px;width: inherit;">
+                    <div class="input-group input-group-sm mb-3">
+                        <?php echo  $bt_comment_type;?>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<script>
-var actualBtn_cme = document.getElementById('actual-btn_cme');
-var fileChosen_cme = document.getElementById('file-chosen_cme');
-var fileChosen_bt_cme = document.getElementById('label_file_cme');
-actualBtn_cme.addEventListener('change', function() {
-    // fileChosen.textContent = this.files[0].name
-    count_file_cme = this.files.length;
-    var i_cme;
-    var file_name_cme;
-    for (i_cme = 0; i_cme < count_file_cme; i_cme++) {
-        if (i_cme == 0) {
-            file_name_cme = this.files[i_cme].name;
-        } else {
-            file_name_cme += " , " + this.files[i_cme].name;
+    <script>
+    var actualBtn_cme = document.getElementById('actual-btn_cme');
+    var fileChosen_cme = document.getElementById('file-chosen_cme');
+    var fileChosen_bt_cme = document.getElementById('label_file_cme');
+    actualBtn_cme.addEventListener('change', function() {
+        // fileChosen.textContent = this.files[0].name
+        count_file_cme = this.files.length;
+        var i_cme;
+        var file_name_cme;
+        for (i_cme = 0; i_cme < count_file_cme; i_cme++) {
+            if (i_cme == 0) {
+                file_name_cme = this.files[i_cme].name;
+            } else {
+                file_name_cme += " , " + this.files[i_cme].name;
+            }
         }
-    }
-    if (file_name_cme == "undefined") {
-        fileChosen_bt_cme.textContent = "";
-    }
-    fileChosen_bt_cme.textContent = count_file_cme + " Files";
-})
-//other content
-var actualBtn = document.getElementById('actual-btn_ins');
-var fileChosen = document.getElementById('file-chosen_ins');
-var fileChosen_bt = document.getElementById('label_file_ins');
-actualBtn.addEventListener('change', function() {
-    // fileChosen.textContent = this.files[0].name
-    count_file = this.files.length;
-    var i;
-    var file_name;
-    for (i = 0; i < count_file; i++) {
-        if (i == 0) {
-            file_name = this.files[i].name;
-        } else {
-            file_name += " , " + this.files[i].name;
+        if (file_name_cme == "undefined") {
+            fileChosen_bt_cme.textContent = "";
         }
-    }
-    if (file_name == "undefined") {
-        fileChosen_bt.textContent = "";
-    }
-    fileChosen_bt.textContent = ' Selected file : ' + file_name;
-})
-
-function comment_ins_id_with_file(id) {
-    var form_data = new FormData();
-    var comment = document.getElementById("comment_input_ins").value;
-    document.getElementById('comment_input_ins').value = ''; //clear value
-    // var files = document.getElementById('actual-btn').files;
-    var ins = document.getElementById('actual-btn_ins').files.length;
-    for (var x = 0; x < ins; x++) {
-        form_data.append("files[]", document.getElementById('actual-btn_ins').files[x]);
-    }
-    // form_data.append("files", files)              // Appending parameter named file with properties of file_field to form_data
-    form_data.append("comment", comment) // Adding extra parameters to form_data
-    form_data.append("id", id)
-    $.ajax({
-        url: "base/action/action_comment_ins.php",
-        dataType: 'text',
-        cache: false,
-        contentType: false,
-        processData: false,
-        data: form_data, // Setting the data attribute of ajax with file_data
-        type: 'post',
-        success: function(data) {
-            $('#call_ticket_comment_ins').html(data);
-            document.getElementById('comment_box_ins').scrollBy(0, document.getElementById(
-                "call_ticket_comment_ins").offsetHeight);
-            document.getElementById('actual-btn_ins').value = ''; //clear value
-            fileChosen_bt.textContent = ' + Attach file or image';
+        fileChosen_bt_cme.textContent = count_file_cme + " Files";
+    })
+    //other content
+    var actualBtn = document.getElementById('actual-btn_ins');
+    var fileChosen = document.getElementById('file-chosen_ins');
+    var fileChosen_bt = document.getElementById('label_file_ins');
+    actualBtn.addEventListener('change', function() {
+        // fileChosen.textContent = this.files[0].name
+        count_file = this.files.length;
+        var i;
+        var file_name;
+        for (i = 0; i < count_file; i++) {
+            if (i == 0) {
+                file_name = this.files[i].name;
+            } else {
+                file_name += " , " + this.files[i].name;
+            }
         }
-    });
-}
+        if (file_name == "undefined") {
+            fileChosen_bt.textContent = "";
+        }
+        fileChosen_bt.textContent = ' Selected file : ' + file_name;
+    })
 
-function itm_just_status_updated_contact(id) {
-    var new_contact_vender = document.getElementById('new_contact_vender').value;
-    var new_contact_buyer = document.getElementById('new_contact_buyer').value;
-    if (id) {
-
-        $.post("base/action/action_itm_updated_contact_status.php", {
-            id: id,
-            new_contact_buyer: new_contact_buyer,
-            new_contact_vender: new_contact_vender
-        }, function(data) {
-            $('#contact_update').html(data);
+    function comment_ins_id_with_file(id) {
+        var form_data = new FormData();
+        var comment = document.getElementById("comment_input_ins").value;
+        document.getElementById('comment_input_ins').value = ''; //clear value
+        // var files = document.getElementById('actual-btn').files;
+        var ins = document.getElementById('actual-btn_ins').files.length;
+        for (var x = 0; x < ins; x++) {
+            form_data.append("files[]", document.getElementById('actual-btn_ins').files[x]);
+        }
+        // form_data.append("files", files)              // Appending parameter named file with properties of file_field to form_data
+        form_data.append("comment", comment) // Adding extra parameters to form_data
+        form_data.append("id", id)
+        $.ajax({
+            url: "base/action/action_comment_ins.php",
+            dataType: 'text',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data, // Setting the data attribute of ajax with file_data
+            type: 'post',
+            success: function(data) {
+                $('#call_ticket_comment_ins').html(data);
+                document.getElementById('comment_box_ins').scrollBy(0, document.getElementById(
+                    "call_ticket_comment_ins").offsetHeight);
+                document.getElementById('actual-btn_ins').value = ''; //clear value
+                fileChosen_bt.textContent = ' + Attach file or image';
+            }
         });
     }
 
-}
-
-function comment_cr_id(id) {
-    var comment = document.getElementById("comment_input_cr").value;
-    document.getElementById('comment_input_cr').value = ''; //clear value
-    if (id) {
-        $.post("base/action/action_comment_cr.php", {
-                id: id,
-                comment: comment
-            },
-            function(data) {
-                $('#call_ticket_comment_cr').html(data);
-                document.getElementById('comment_box_cr').scrollBy(0, document.getElementById(
-                    "call_ticket_comment_cr").offsetHeight);
-            });
-    }
-}
-
-function itemize_send_mail_stamp(id) {
-    let subject_mail = prompt("ระบุ subject mail", '<?php echo $subject_mail; ?>');
-    if (subject_mail == null || subject_mail == "") {
-        alert("user cancel prompt");
-    } else {
-        var comment = "[stamp_send_mail]";
-        // var subject_mail = document.getElementById("itemize_subject_email").value;
+    function itm_just_status_updated_contact(id) {
+        var new_contact_vender = document.getElementById('new_contact_vender').value;
+        var new_contact_buyer = document.getElementById('new_contact_buyer').value;
         if (id) {
-            $.post("base/action/action_stamp_send_mail_itemize.php", {
+
+            $.post("base/action/action_itm_updated_contact_status.php", {
+                id: id,
+                new_contact_buyer: new_contact_buyer,
+                new_contact_vender: new_contact_vender
+            }, function(data) {
+                $('#contact_update').html(data);
+            });
+        }
+
+    }
+
+    function comment_cr_id(id) {
+        var comment = document.getElementById("comment_input_cr").value;
+        document.getElementById('comment_input_cr').value = ''; //clear value
+        if (id) {
+            $.post("base/action/action_comment_cr.php", {
                     id: id,
-                    comment: comment,
-                    subject_mail: subject_mail
+                    comment: comment
                 },
                 function(data) {
-                    $('#itemize_stamp_respond').html(data);
+                    $('#call_ticket_comment_cr').html(data);
+                    document.getElementById('comment_box_cr').scrollBy(0, document.getElementById(
+                        "call_ticket_comment_cr").offsetHeight);
                 });
         }
     }
-}
 
-function itm_just_status_need_updated_contact(id) {
-
-    if (id) {
-        $.post("base/action/action_itm_need_update_contact.php", {
-                id: id
-            },
-            function(data) {
-                $('#itemize_need_to_update_respond').html(data);
-            });
-    }
-}
-
-function sku_checking() {
-    // sku_checking_result
-    var sku_list = document.getElementById("sku_checking").value;
-    if (sku_list) {
-        $.post("base/action/action_sku_checking.php", {
-            sku_list: sku_list
-            },
-            function(data) {
-                $('#sku_checking_result').html(data);
-            });
-    }
-}
-
-function force_sync_with_ticket(id){
-    var sku_change = document.getElementById("sku_checking").value;
-    var be_status_on_change = document.getElementById("be_status_on_change").value;
-    if(sku_change) {
-        $.post("base/action/action_force_change_csg_id_of_sku.php", {
-            id:id,
-            sku_change: sku_change,
-            be_status_on_change:be_status_on_change
-            },
-            function(data) {
-                $('#sku_checking_result_force').html(data);
-            });
-    }
-}
-
-
-function comment_ticket_id(id, send_type) {
-    var comment = document.getElementById("comment_input").value;
-    document.getElementById('comment_input').value = ''; //clear value
-    if (id) {
-        $.post("base/action/action_comment_re_add_new.php", {
-                id: id,
-                send_type: send_type,
-                comment: comment
-            },
-            function(data) {
-                $('#call_ticket_comment').html(data);
-                document.getElementById('comment_box').scrollBy(0, document.getElementById("call_ticket_comment")
-                    .offsetHeight);
-            });
-    }
-}
-
-function comment_cme_id_with_file(id, send_type) {
-    var form_data = new FormData();
-    var comment = document.getElementById("comment_input").value;
-    document.getElementById('comment_input').value = ''; //clear value
-    // var files = document.getElementById('actual-btn').files;
-    var cme = document.getElementById('actual-btn_cme').files.length;
-    for (var i = 0; i < cme; i++) {
-        form_data.append("files_cme[]", document.getElementById('actual-btn_cme').files[i]);
-    }
-    // form_data.append("files", files)              // Appending parameter named file with properties of file_field to form_data
-    form_data.append("comment", comment) // Adding extra parameters to form_data
-    form_data.append("id", id)
-    form_data.append("send_type", send_type)
-    $.ajax({
-        url: "base/action/action_comment_re_add_new.php",
-        dataType: 'text',
-        cache: false,
-        contentType: false,
-        processData: false,
-        data: form_data, // Setting the data attribute of ajax with file_data
-        type: 'post',
-        success: function(data) {
-            $('#call_ticket_comment').html(data);
-            document.getElementById('comment_box').scrollBy(0, document.getElementById(
-                "call_ticket_comment").offsetHeight);
-            document.getElementById('actual-btn_cme').value = ''; //clear value
-            fileChosen_bt_cme.innerHTML = '<ion-icon style="margin:0px" name="attach-outline"></ion-icon>';
+    function itemize_send_mail_stamp(id) {
+        let subject_mail = prompt("ระบุ subject mail", '<?php echo $subject_mail; ?>');
+        if (subject_mail == null || subject_mail == "") {
+            alert("user cancel prompt");
+        } else {
+            var comment = "[stamp_send_mail]";
+            // var subject_mail = document.getElementById("itemize_subject_email").value;
+            if (id) {
+                $.post("base/action/action_stamp_send_mail_itemize.php", {
+                        id: id,
+                        comment: comment,
+                        subject_mail: subject_mail
+                    },
+                    function(data) {
+                        $('#itemize_stamp_respond').html(data);
+                    });
+            }
         }
-    });
-}
+    }
 
-function split_to_subtask(id) {
-    var sku_task_set = document.getElementById("sku_task_set").value;
-    document.getElementById('bt_create_task').innerHTML =
-        '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Loading...';
+    function itm_just_status_need_updated_contact(id) {
+
+        if (id) {
+            $.post("base/action/action_itm_need_update_contact.php", {
+                    id: id
+                },
+                function(data) {
+                    $('#itemize_need_to_update_respond').html(data);
+                });
+        }
+    }
+
+    function sku_checking() {
+        // sku_checking_result
+        var sku_list = document.getElementById("sku_checking").value;
+        if (sku_list) {
+            $.post("base/action/action_sku_checking.php", {
+                    sku_list: sku_list
+                },
+                function(data) {
+                    $('#sku_checking_result').html(data);
+                });
+        }
+    }
+
+    function force_sync_with_ticket(id) {
+        var sku_change = document.getElementById("sku_checking").value;
+        var be_status_on_change = document.getElementById("be_status_on_change").value;
+        if (sku_change) {
+            $.post("base/action/action_force_change_csg_id_of_sku.php", {
+                    id: id,
+                    sku_change: sku_change,
+                    be_status_on_change: be_status_on_change
+                },
+                function(data) {
+                    $('#sku_checking_result_force').html(data);
+                });
+        }
+    }
 
 
-    if (id) {
-        $.post("base/action/action_ns_create_subtask.php", {
-                id: id,
-                sku_task_set: sku_task_set
-            },
-            function(data) {
+    function comment_ticket_id(id, send_type) {
+        var comment = document.getElementById("comment_input").value;
+        document.getElementById('comment_input').value = ''; //clear value
+        if (id) {
+            $.post("base/action/action_comment_re_add_new.php", {
+                    id: id,
+                    send_type: send_type,
+                    comment: comment
+                },
+                function(data) {
+                    $('#call_ticket_comment').html(data);
+                    document.getElementById('comment_box').scrollBy(0, document.getElementById(
+                            "call_ticket_comment")
+                        .offsetHeight);
+                });
+        }
+    }
 
-                $('#call_subtask').html(data);
+    function comment_cme_id_with_file(id, send_type) {
+        var form_data = new FormData();
+        var comment = document.getElementById("comment_input").value;
+        document.getElementById('comment_input').value = ''; //clear value
+        // var files = document.getElementById('actual-btn').files;
+        var cme = document.getElementById('actual-btn_cme').files.length;
+        for (var i = 0; i < cme; i++) {
+            form_data.append("files_cme[]", document.getElementById('actual-btn_cme').files[i]);
+        }
+        // form_data.append("files", files)              // Appending parameter named file with properties of file_field to form_data
+        form_data.append("comment", comment) // Adding extra parameters to form_data
+        form_data.append("id", id)
+        form_data.append("send_type", send_type)
+        $.ajax({
+            url: "base/action/action_comment_re_add_new.php",
+            dataType: 'text',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data, // Setting the data attribute of ajax with file_data
+            type: 'post',
+            success: function(data) {
+                $('#call_ticket_comment').html(data);
+                document.getElementById('comment_box').scrollBy(0, document.getElementById(
+                    "call_ticket_comment").offsetHeight);
+                document.getElementById('actual-btn_cme').value = ''; //clear value
+                fileChosen_bt_cme.innerHTML =
+                    '<ion-icon style="margin:0px" name="attach-outline"></ion-icon>';
+            }
+        });
+    }
 
-                // alert("Created new sub ticket");
-            });
-        document.getElementById('sku_task_set').value = ''; //clear value
+    function split_to_subtask(id) {
+        var sku_task_set = document.getElementById("sku_task_set").value;
         document.getElementById('bt_create_task').innerHTML =
-            '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
+            '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Loading...';
+
+
+        if (id) {
+            $.post("base/action/action_ns_create_subtask.php", {
+                    id: id,
+                    sku_task_set: sku_task_set
+                },
+                function(data) {
+
+                    $('#call_subtask').html(data);
+
+                    // alert("Created new sub ticket");
+                });
+            document.getElementById('sku_task_set').value = ''; //clear value
+            document.getElementById('bt_create_task').innerHTML =
+                '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
+        }
     }
-}
 
-function action_assign_follow(id) {
-    var op_follow_assign_name = document.getElementById("op_follow_assign_name").value;
+    function action_assign_follow(id) {
+        var op_follow_assign_name = document.getElementById("op_follow_assign_name").value;
 
-    if (id) {
-        $.post("base/action/action_assign_follow.php", {
-                id: id,
-                op_follow_assign_name: op_follow_assign_name
-            },
-            function(data) {
-                // $('#call_subtask').html(data);       
-                // alert("Assigned !");
-            });
-        alert("Assigned !");
+        if (id) {
+            $.post("base/action/action_assign_follow.php", {
+                    id: id,
+                    op_follow_assign_name: op_follow_assign_name
+                },
+                function(data) {
+                    // $('#call_subtask').html(data);
+                    // alert("Assigned !");
+                });
+            alert("Assigned !");
 
+        }
     }
-}
-</script>
+    </script>
