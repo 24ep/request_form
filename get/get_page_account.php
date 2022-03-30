@@ -15,7 +15,7 @@ function get_page_account(){
    }else{
     $status ='<span class="badge rounded-pill bg-secondary">Disabled</span>';
    }
-    $value_account .='<tr style="text-align-last: center;">';
+    $value_account .='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
     $value_account .= '<td>'.$row_account["id"].'</td>';
     $value_account .= '<td>'.$row_account["username"].'</td>';
     $value_account .= '<td>'.$status.'</td>';
