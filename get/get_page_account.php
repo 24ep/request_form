@@ -39,12 +39,12 @@ function get_page_account(){
 </table>';
 
 return $table;
-
+}
 ?>
 
 <script>
   $(document).ready( function () {
   $('#st_account_tb').DataTable();
 } );
-}
+
 </script>
