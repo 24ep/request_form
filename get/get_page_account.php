@@ -15,7 +15,7 @@ function get_page_account(){
     $value_account .= '<td>'.$row_account["status"].'</td>';
     $value_account .= '<td>'.$row_account["department"].'</td>';
     $value_account .= '<td>'.$row_account["register_type"].'</td>';
-    $value_account .= '<td><ion-icon name="ellipsis-vertical-outline"></ion-icon></td>';
+    $value_account .= '<td><button type="button" class="btn btn-link"><ion-icon name="ellipsis-vertical-outline"></ion-icon></button></td>';
     $value_account .= '</tr>';
 }
 
