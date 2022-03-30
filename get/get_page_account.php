@@ -9,10 +9,16 @@ function get_page_account(){
  $result_account = mysqli_query($con, $query_account);
  
  while($row_account = mysqli_fetch_array($result_account)) {
+   if($row_account["status"]=="Enabled"){
+    $status ='<span class="badge rounded-pill bg-success">Enabled</span>';
+
+   }else{
+    $status ='<span class="badge rounded-pill bg-secondary">Disabled</span>';
+   }
     $value_account .='<tr style="text-align-last: center;">';
     $value_account .= '<td>'.$row_account["id"].'</td>';
     $value_account .= '<td>'.$row_account["username"].'</td>';
-    $value_account .= '<td>'.$row_account["status"].'</td>';
+    $value_account .= '<td>'.$status.'</td>';
     $value_account .= '<td>'.$row_account["department"].'</td>';
     $value_account .= '<td>'.$row_account["register_type"].'</td>';
     $value_account .= '<td><button type="button" class="btn btn-dark btn-sm">More detail</button></td>';
