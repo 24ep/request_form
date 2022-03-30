@@ -28,9 +28,9 @@ function get_page_account(){
 
 ?>
 <?php
- $table =  '<table class="table table-bordered" id="st_account_tb"  name="st_account_tb" table table-bordered">
+ $table =  '<table class="table" id="st_account_tb"  name="st_account_tb" table table-bordered">
 <thead>
-    <tr style="text-align-last: center;">
+    <tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
       <th scope="col">Account ID</th>
       <th scope="col">Username</th>
       <th scope="col">status</th>
