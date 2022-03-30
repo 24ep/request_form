@@ -9,13 +9,13 @@ function get_page_account(){
  $result_account = mysqli_query($con, $query_account);
  
  while($row_account = mysqli_fetch_array($result_account)) {
-    $value_account .='<tr>';
+    $value_account .='<tr style="text-align-last: center;">';
     $value_account .= '<td>'.$row_account["id"].'</td>';
     $value_account .= '<td>'.$row_account["username"].'</td>';
     $value_account .= '<td>'.$row_account["status"].'</td>';
     $value_account .= '<td>'.$row_account["department"].'</td>';
     $value_account .= '<td>'.$row_account["register_type"].'</td>';
-    $value_account .= '<td><button type="button" class="btn btn-dark btn-sm"><ion-icon name="ellipsis-vertical-outline"></ion-icon>Edit</button></td>';
+    $value_account .= '<td><button type="button" class="btn btn-dark btn-sm">More detail</button></td>';
     $value_account .= '</tr>';
 }
 
@@ -24,7 +24,7 @@ function get_page_account(){
 <?php
  $table =  '<table class="table table-bordered" id="st_account_tb"  name="st_account_tb" table table-bordered">
 <thead>
-    <tr>
+    <tr style="text-align-last: center;">
       <th scope="col">Account ID</th>
       <th scope="col">Username</th>
       <th scope="col">status</th>
