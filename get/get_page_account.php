@@ -44,16 +44,7 @@ return $table;
 
 <script>
   $(document).ready( function () {
-  $('#st_account_tb').DataTable({
-    dom: 'Bfrtip',
-    lengthMenu: [
-        [ 50, 100, 200, -1 ],
-        [ '50 rows', '100 rows', '200 rows', 'Show all' ]
-    ],
-    buttons: [
-        'pageLength'
-    ]
-} );
+  $('#st_account_tb').DataTable();
 
 } );
 
