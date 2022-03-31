@@ -543,34 +543,35 @@ label#label_file_cme {
                                 <hr>
                                 <!-- cancel confirm not for sale -->
                                 <div class="row g-3">
-                                    <div class="col-4">
-                                        <h6><strong>Cancel ticket</strong></h6>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                        <small>ระบุข้อความยืนยันจากร้านค้าหรือจัดซื้อ
-                                            และเลือกสถานะที่ต้องการเปลี่ยน</small>
+                                <div class="col-4">
+                                    <h6><strong>Cancel ticket</strong></h6>
+                                    <small>ระบุข้อความยืนยันจากร้านค้าหรือจัดซื้อ
+                                        และเลือกสถานะที่ต้องการเปลี่ยน</small>
 
-                                        <input type="text" class="form-control" id="itm_reason_cancel"
-                                            <?php $allow_cancel; ?> name="resone_cancel" placeholder="เหตุผลจากร้านค้า"
-                                            value="">
+                                    <input type="text" class="form-control" id="itm_reason_cancel" <?php $allow_cancel; ?>
+                                        name="resone_cancel" placeholder="เหตุผลจากร้านค้า" value="">
 
-                                    </div>
+                                </div>
 
-                                    <div class="col-4">
-                                        <button onclick="cancel_stt(<?php echo $id; ?>,'cancel');" type="button"
-                                            class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
-                                            style="width: 100%;margin-top:5px">Cancel
-                                        </button>
+                                <div class="col-4">
+                                    <button onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - confirm not for sale');" type="button"
+                                        class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel -
+                                        Confirm not for sale
+                                    </button>
+                                    <button onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - confirm to be new sku');" type="button"
+                                        class="btn btn-dark btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel -
+                                        Confirm to be new sku
+                                    </button>
+                                    <button onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - already content');" type="button"
+                                        class="btn btn-success btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel
+                                        - Confirm already content
+                                    </button>
+                                </div>
+                                <div class="col-4">
+                                    <div id="cancel_checking_result">
+                                        <?php echo $help_cancel." ".$cancel_resone; ?>
                                     </div>
-                                    <div class="col-4">
-                                        <div id="cancel_checking_result">
-                                            <?php echo $help_cancel." ".$cancel_resone; ?>
-                                        </div>
-                                    </div>
+                                </div>
                                 </div>
                                 <hr>
                                 <!-- cancel confirm not for sale -->
