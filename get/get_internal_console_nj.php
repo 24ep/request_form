@@ -47,7 +47,6 @@
           <div class="col-4">
               <h6><strong>Itemize send email stamp</strong></h6>
               <small>ลงบันทึกส่งอีเมลติดตาม (ระบุ tag ticket id บนอีเมลทุกครั้ง)</small>
-
           </div>
           <div class="col-4">
               <?php
