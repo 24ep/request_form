@@ -216,23 +216,16 @@ label#label_file_cme {
                             </a>
                             <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                             <hr>
-                            <a class="nav-link inpo" id="v-pills-itemize-tab" data-toggle="pill" href="#v-pills-itemize"
-                                role="tab" aria-controls="v-pills-itemize" aria-selected="false">
-                                <ion-icon name="sparkles-outline"></ion-icon>Itemize stage
+                            <a class="nav-link inpo" id="v-pills-cp-tab" data-toggle="pill" href="#v-pills-cp"
+                                role="tab" aria-controls="v-pills-cp" aria-selected="false">
+                                <ion-icon name="chatbox-ellipses-outline"></ion-icon>Control panel
                             </a>
-                            <a class="nav-link inpo" id="v-pills-fu_team-tab" data-toggle="pill" href="#v-pills-fu_team"
-                                role="tab" aria-controls="v-pills-fu_team" aria-selected="false">
-                                <ion-icon name="sparkles-outline"></ion-icon>follow-up stage
-                            </a>
-                            <a class="nav-link inpo" id="v-pills-tf_team-tab" data-toggle="pill" href="#v-pills-tf_team"
-                                role="tab" aria-controls="v-pills-tf_team" aria-selected="false">
-                                <ion-icon name="trail-sign-outline"></ion-icon>traffic stage
-                            </a>
+                      
 
                             <a class="nav-link inpo" id="v-pills-sku-checking-tab" data-toggle="pill"
                                 href="#v-pills-sku-checking" role="tab" aria-controls="v-pills-sku-checking"
                                 aria-selected="false">
-                                <ion-icon name="trail-sign-outline"></ion-icon>SKU Checking
+                                <ion-icon name="trail-sign-outline"></ion-icon>SKU Checking tools
                             </a>
 
                             <a class="nav-link inpo" id="v-pills-sku-tab" data-toggle="pill" href="#v-pills-sku"
@@ -245,12 +238,6 @@ label#label_file_cme {
                                 aria-selected="false">
                                 <ion-icon name="chatbox-ellipses-outline"></ion-icon>Internal note
                             </a>
-
-                            <a class="nav-link inpo" id="v-pills-cp-tab" data-toggle="pill" href="#v-pills-cp"
-                                role="tab" aria-controls="v-pills-cp" aria-selected="false">
-                                <ion-icon name="chatbox-ellipses-outline"></ion-icon>New control panel
-                            </a>
-
                             <?php }?>
                         </div>
                     </div>
@@ -353,348 +340,14 @@ label#label_file_cme {
 
 
                             </div>
-                            <div class="tab-pane fade" id="v-pills-fu_team" role="tabpanel"
-                                aria-labelledby="v-pills-fu_team-tab">
-
-                    <?php if(strpos($status,"review")!==false){
-                        echo '<div class="alert alert-warning" style="border-radius: 0px;" role="alert">
-                        <h6 class="alert-heading" style="margin:0px">
-                        <strong>Need more infomation</strong>
-                        </h6><small style="color: gray;">Last reply date : '.$need_more_info_date.'</small>
-                        <p style="font-size:14px;margin-top:10px">
-                            '.$need_more_info_note.'
-                        </p>
-                        </div>';
-                    }?>
-                                <?php
-                    if($start_checking_date<>"" and $start_checking_date<>null){
-                        $allow_task_ticket = "disabled";
-                        $help_start = "<small style='color:Red'><strong>".$follow_up_by."</strong> had been start checking information</small>";
-                    } elseif($follow_assign_name=="unassign"){
-                            $allow_task_ticket = "disabled";
-                            $help_start = "<small style='color:Red'>this ticket is unassign</small>";}
-                    elseif($follow_assign_name <> $_SESSION["username"]){
-                        $allow_task_ticket = "disabled";
-                        $help_start = "<small style='color:Red'>Only ".$follow_assign_name."(assignee) can start checking information</small>";
-                    }else{unset($allow_task_ticket);unset($help_start);}
-                    if($accepted_date<>"" and $accepted_date<>null ){
-                        $allow_send_to_traffic = "disabled";
-                        $help_traffic = "<small style='color:Red'>someone had been send this ticket to traffic</small>";
-                    }
-
-                    else{
-                        unset($allow_send_to_traffic);unset($help_traffic);
-                    }
-                    if($cancel_resone<>"" and $cancel_resone<>null){
-                        $allow_cancel = "disabled";
-                        $allow_send_to_traffic = "disabled";
-                        $allow_task_ticket = "disabled";
-                        $help_start = "<small style='color:Red'>someone had been cancel this ticket</small>";
-                        $help_traffic = "<small style='color:Red'>someone had been cancel this ticket</small>";
-                        $help_cancel = "<small style='color:Red'>someone had been cancel this ticket</small>";
-                    }
-                        else{
-                            unset($allow_cancel);
-                            unset($help_cancel);
-                        }
-
-
-                    ?>
-                                <?php if(!isset($parent) or $status <> 'accepted'){
-
-                    ?>
-                                <h6><strong>Create Sub Ticket</strong></h6>
-                                <small>Generate new sub-ticket and convert ticket from buyer to parent ticket</small>
-                                <form>
-                                    <div class="row mb-1" style="margin-top:10px">
-                                        <label for="inputEmail3" class="col-sm-2 col-form-label">SKU</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control form-control-sm" id="sku_task_set"
-                                                name="sku_task_set" placeholder="10,40,23,45,45" required>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <button type="button" id="bt_create_task"
-                                                onclick="split_to_subtask(<?php echo $id; ?>);"
-                                                class="btn btn-outline-primary btn-sm">
-                                                <ion-icon name="color-wand-outline"></ion-icon>Create Sub-ticket
-                                            </button>
-                                        </div>
-                                        <div id="emailHelp" class="form-text">
-                                            <strong>Does it work ?</strong>
-                                            <ul>
-                                                <li>Fll separate number of SKUs you want to create sub-ticket</li>
-                                                <li>Additional data will be copy from parent ticket</li>
-                                                <li>Parent sku do not calculate on report</li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </form>
-
-                                <?php } ?>
-
-                                <?php if($config_type=="task"){ ?>
-                                <hr>
-
-                                <?php if($brand_info_link<>'' or isset($brand_info_link)){
-                                    echo '<div class="alert alert-info" role="alert">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
-                                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                                  </svg>
-                                                สินค้าแบรนด์ '.$brand.' มี Guideline พิเศษของแบรนด์ '.$brand.' เอง กรุณาตรวจสอบ </strong><a style="color:red" href="'.$brand_info_link.'" target="_Blank"><strong>Click here</strong></a> !
-                                          </div>';
-                                }?>
-
-                                <!-- start -->
-
-                                <div class="row g-3">
-                                    <div class="col-4">
-                                        <h6><strong>Start checking</strong></h6>
-                                        <small>ลงบันทึกเวลาที่เริ่มตรวจสอบ information/linesheet/duplicate sku</small>
-                                    </div>
-                                    <div class="col-4">
-                                        <?php
-                                           echo ' <button onclick="start_checking('.$id.');"
-                                           type="button"
-                                           class="btn btn-primary btn-sm" '.$allow_task_ticket.'
-                                           style="width: 100%;">Start</button>';
-                                        ?>
-                                    </div>
-                                    <div class="col-4">
-                                        <?php echo $help_start." ".$start_checking_date; ?>
-                                    </div>
-                                </div>
-                                <!-- accepted -->
-                                <?php  if($start_checking_date<>"" and $start_checking_date<>null ){?>
-                                <hr>
-                                <div class="row g-3">
-                                    <div class="col-4">
-                                        <h6><strong>Accept</strong></h6>
-                                        <small>ลงบันทึกยืนยันตรวจสอบข้อมูลเรียบร้อย พร้อมเปิด job สำหรับ writer </small>
-                                        <div>
-                                            <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted"></label>
-                                            <textarea style="font-size:12px" class="form-control" id="sku_accepted"
-                                                name="sku_accepted"
-                                                placeholder="Copy 1 column จาก excel วางตามตัวอย่างด้านล่าง&#10;&#10;CDS3466644&#10;CDS2443356&#10;CDS2487356"
-                                                rows="5" style="height: 100px"></textarea>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-4">
-                                        <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
-                                            class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?>
-                                            style="width: 100%;margin-top:5px">accept</button>
-                                    </div>
-                                    <div class="col-4">
-                                        <?php echo $help_accept." ".$accepted_date; ?>
-                                    </div>
-                                </div>
-                                <?php } ?>
-                                <!-- cancel -->
-
-                                <hr>
-                                <div class="row g-3">
-                                    <div class="col-4">
-                                        <h6><strong>Cancel ticket</strong></h6>
-                                        <small>ทำการยกเลิก ticket นี้ โปรดระบุเหตุผลให้ชัดเจน</small>
-                                        <input type="text" class="form-control" id="resone_cancel"
-                                            <?php $allow_cancel; ?> name="resone_cancel" value="">
-                                    </div>
-
-                                    <div class="col-4">
-                                        <button onclick="cancel_stt(<?php echo $id; ?>,'cancel');" type="button"
-                                            class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
-                                            style="width: 100%;margin-top:5px">Cancel
-                                        </button>
-                                    </div>
-                                    <div class="col-4">
-                                        <?php echo $help_cancel." ".$cancel_resone; ?>
-                                    </div>
-                                </div>
-                                <?php } ?>
-                            </div>
+                           
                             <div class="tab-pane fade" id="v-pills-sku" role="tabpanel"
                                 aria-labelledby="v-pills-sku-tab">
                                 <?php include('../get/get_list_sku_ticket.php'); ?>
 
                             </div>
-                            <div class="tab-pane fade" id="v-pills-itemize" role="tabpanel"
-                                aria-labelledby="v-pills-itemize-tab">
-
-                                <!-- Itemize send email stamp -->
-                                <div class="row g-3">
-                                    <div class="col-4">
-                                        <h6><strong>Itemize send email stamp</strong></h6>
-                                        <small>ลงบันทึกส่งอีเมลติดตาม (ระบุ tag ticket id บนอีเมลทุกครั้ง)</small>
-                                        <!-- <input class="form-control" type="text" id="itemize_subject_email"
-                                            placeholder="subject email" aria-label="default input example"> -->
-                                    </div>
-                                    <div class="col-4">
-                                        <?php
-                                           echo ' <button onclick="itemize_send_mail_stamp('.$id.');"
-                                           type="button"
-                                           class="btn btn-primary btn-sm"
-                                           style="width: 100%;">Save</button>';
-                                        ?>
-                                    </div>
-                                    <div class="col-4">
-                                        <div id="itemize_stamp_respond">
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <!-- cancel confirm not for sale -->
-                                <div class="row g-3">
-                                <div class="col-4">
-                                    <h6><strong>Cancel ticket</strong></h6>
-                                    <small>ระบุข้อความยืนยันจากร้านค้าหรือจัดซื้อ
-                                        และเลือกสถานะที่ต้องการเปลี่ยน</small>
-
-                                    <input type="text" class="form-control" id="itm_reason_cancel" <?php $allow_cancel; ?>
-                                        name="resone_cancel" placeholder="เหตุผลจากร้านค้า" value="">
-
-                                </div>
-
-                                <div class="col-4">
-                                    <button onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - confirm not for sale');" type="button"
-                                        class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel -
-                                        Confirm not for sale
-                                    </button>
-                                    <button onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - confirm to be new sku');" type="button"
-                                        class="btn btn-dark btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel -
-                                        Confirm to be new sku
-                                    </button>
-                                    <button onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - already content');" type="button"
-                                        class="btn btn-success btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel
-                                        - Confirm already content
-                                    </button>
-                                </div>
-                                <div class="col-4">
-                                    <div id="cancel_checking_result">
-                                        <?php echo $help_cancel." ".$cancel_resone; ?>
-                                    </div>
-                                </div>
-                                </div>
-                                <hr>
-                                <!-- cancel confirm not for sale -->
-                                <?php if($status<>"need update contact"){ ?>
-                                <div class="row g-3">
-                                    <div class="col-4">
-                                        <h6><strong>Need to update contact</strong></h6>
-                                        <small>ใช้ในในกรณีที่ข้อมูลติดต่อร้านค้าหรือจัดซื้อผิด</small>
-
-                                    </div>
-
-                                    <div class="col-4">
-                                        <button onclick="itm_just_status_need_updated_contact(<?php echo $id; ?>);"
-                                            type="button" class="btn btn-warning btn-sm" <?php echo $allow_cancel; ?>
-                                            style="width: 100%;margin-top:5px">Need to update contact
-                                        </button>
-                                    </div>
-                                    <div class="col-4">
-                                        <div id="itemize_need_to_update_respond">
-                                            <?php echo $help_cancel." ".$cancel_resone; ?>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <?php } ?>
-                                <!-- Get new contact -->
-                                <?php if($status=="need update contact"){ ?>
-                                <div class="row g-3">
-                                    <div class="col-4">
-                                        <h6><strong>Get new contact</strong></h6>
-                                        <small>ได้รับ contact ใหม่เปลี่ยน status เป็น pending</small>
-                                        <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a comment here"
-                                                id="new_contact_buyer"
-                                                style="height: 100px"><?php echo $contact_buyer; ?></textarea>
-                                            <label for="floatingTextarea2">Contact buyer</label>
-                                        </div>
-
-                                        <div class="form-floating" style="margin-top:10px">
-                                            <textarea class="form-control" placeholder="Leave a comment here"
-                                                id="new_contact_vender"
-                                                style="height: 100px"><?php echo $contact_vender; ?></textarea>
-                                            <label for="floatingTextarea2">Contact vender</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-4">
-
-                                        <button onclick="itm_just_status_updated_contact(<?php echo $id; ?>);"
-                                            type="button" class="btn btn-success btn-sm" <?php echo $allow_cancel; ?>
-                                            style="width: 100%;margin-top:5px">get contact - change to Pending
-                                        </button>
-                                    </div>
-                                    <div class="col-4">
-                                        <!-- <div id="cancel_checking_result">
-                                            <?php// echo $help_cancel." ".$cancel_resone; ?>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <?php } ?>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-tf_team" role="tabpanel"
-                                aria-labelledby="v-pills-tf_team-tab">
-                                <h6><strong>Assign follow-up</strong></h6>
-                                <form class="row g-3">
-                                    <!-- <div class="col-auto">
-                                        <label for="staticEmail2" class="">follow-up name</label>
-                                    </div> -->
-                                    <div class="col-auto">
-                                        <select class="form-select" id="op_follow_assign_name"
-                                            name="op_follow_assign_name" aria-label="Default select example">
-                                            <?php
-                                            $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-                                            $query = "SELECT account.username as username,account.nickname as nickname,account.department as department,account.status as status ,sum(new_job.sku) as backlog_sku
-                                            FROM account as account
-                                            left join add_new_job as new_job on account.username = new_job.follow_assign_name and new_job.status <> 'accepted' and  new_job.status like '%cancel%' and new_job.status <> 'none'
-                                            group by account.username
-                                            having (account.department like '%Content%' and account.status = 'Enabled') or account.username ='".$follow_assign_name."'" or die("Error:" . mysqli_error());
-                                            $result = mysqli_query($con, $query);
-                                            echo  '<option value="unassign">unassign</option>';
-                                            while($row = mysqli_fetch_array($result)) {
-                                                if($row["backlog_sku"]==null){$backlog_sku = 0;}else{$backlog_sku = $row["backlog_sku"];}
-
-                                                if($row["username"]==$follow_assign_name){
-
-                                                        echo  '<option selected value="'.$row["username"].'">'.$row["nickname"].' - '.$backlog_sku.'</option>';
-
-
-                                                }else{
-
-                                                    echo  '<option value="'.$row["username"].'">'.$row["nickname"].' - '.$backlog_sku.'</option>';
-                                                }
-
-                                            }
-                                            mysqli_close($con);
-
-                                        ?>
-
-                                        </select>
-                                    </div>
-
-
-
-                                    <div class="col-auto">
-                                        <button type="button"
-                                            onclick="action_assign_follow(<?php echo  $_POST['id']; ?>)"
-                                            class="btn btn-primary mb-3">Assign to NS-<?php echo $id;?></button>
-                                    </div>
-                                </form>
-
-                                <?php if($status == 'waiting traffic'){ ?>
-                                <hr>
-                                <h6><strong>Create Writer & Studio - 24ep</strong></h6>
-                                <form action="base/action/action_create_job_cms.php" method="POST" target="_blank">
-                                    <input type="hidden" id="id_adj" name="id_adj" value="<?php echo  $_POST['id']; ?>">
-                                    <?php include('../form/form_create_job_cms.php')?>
-                                </form>
-                                <?php } ?>
-                            </div>
+                          
+                       
                             <div class="tab-pane fade" id="v-pills-internal_note" role="tabpanel"
                                 aria-labelledby="v-pills-internal_note-tab">
                                 <ul class="list-group list-group-flush" style="background: fixed;">
@@ -723,11 +376,8 @@ label#label_file_cme {
 
                             </div>
                             <!-- new cp -->
-                                <?php if($_SESSION["username"]=="poojaroonwit"){
-                                        include('../get/get_internal_console_nj.php');
-                                }
-                                ?>
-                                <!-- new cp -->
+                                <?php include('../get/get_internal_console_nj.php');?>
+                            <!-- new cp -->
                             </div>
 
                         </div>

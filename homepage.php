@@ -1407,6 +1407,21 @@ function cancel_stt(id, status_change) {
     }
 }
 
+function cancel_ticket(id) {
+    resone_cancel = document.getElementById('resone_cancel').value;
+    status_change = document.getElementById('type_cancel').value;
+    //  status_change = 'cancel';
+    if (id) {
+        $.post("base/action/action_cancel_stt.php", {
+            id: id,
+            resone_cancel: resone_cancel,
+            status_change: status_change
+        }, function(data) {
+            $('#cancel_checking_resault').html(data);
+        });
+    }
+}
+
 function itm_confirm_cancel(id, status_change) {
     let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
     if (message == null || message == "") {
@@ -1428,6 +1443,7 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
+
 
 function filter_cr_ticket(status) {
     document.getElementById('cr_search_input').value = '';

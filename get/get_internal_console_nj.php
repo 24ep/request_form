@@ -82,14 +82,15 @@
             <div class="col-4">
             <input type="text" class="form-control" id="itm_reason_cancel" <?php $allow_cancel; ?>
                   name="resone_cancel" placeholder="เหตุผลจากร้านค้า" value="">
-                  <select <?php echo $allow_cancel; ?> class="form-select" aria-label="Default select example">
+                  <select id="type_cancel" name="type_cancel" <?php echo $allow_cancel; ?> 
+                  class="form-select" aria-label="Default select example">
                     <option selected>Cancel</option>
-                    <option value="1">Cancel - Confirm not for sale</option>
-                    <option value="2">Cancel - Confirm to be new sku</option>
-                    <option value="3">Cancel - Confirm already content</option>
+                    <option value="Cancel - Confirm not for sale">Cancel - Confirm not for sale</option>
+                    <option value="Cancel - Confirm to be new sku">Cancel - Confirm to be new sku</option>
+                    <option value="Cancel - Confirm already content">Cancel - Confirm already content</option>
                 </select>
                 <button  type="button"
-                  class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel
+                  class="btn btn-danger btn-sm" onclick="cancel_ticket(<?php echo $id; ?>)" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel
               </button>
             </div> 
           <!-- <div class="col-4">
@@ -311,27 +312,15 @@
                                     </div>
                                 </div>
                                 <?php } ?>
-                                <!-- cancel -->
-
-                             
-                                <div class="row g-3  action-block">
-                                    <div class="col-4">
-                                        <h6><strong>Cancel ticket</strong></h6>
-                                        <small>ทำการยกเลิก ticket นี้ โปรดระบุเหตุผลให้ชัดเจน</small>
-                                        <input type="text" class="form-control" id="resone_cancel"
-                                            <?php $allow_cancel; ?> name="resone_cancel" value="">
-                                    </div>
-
-                                    <div class="col-4">
-                                        <button onclick="cancel_stt(<?php echo $id; ?>,'cancel');" type="button"
-                                            class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
-                                            style="width: 100%;margin-top:5px">Cancel
-                                        </button>
-                                    </div>
-                                    <div class="col-4">
-                                        <?php echo $help_cancel." ".$cancel_resone; ?>
-                                    </div>
-                                </div>
+                                
+                                <?php if($status == 'waiting traffic'){ ?>
+                                <hr>
+                                <h6><strong>Create Writer & Studio - 24ep</strong></h6>
+                                <form action="base/action/action_create_job_cms.php" method="POST" target="_blank">
+                                    <input type="hidden" id="id_adj" name="id_adj" value="<?php echo  $_POST['id']; ?>">
+                                    <?php include('../form/form_create_job_cms.php')?>
+                                </form>
+                                <?php } ?>
             <?php } ?>
 
       </div>
