@@ -726,7 +726,7 @@ label#label_file_cme {
                                 <!-- new cp -->
                            
 
-                        </div>
+                     
                         <?php echo $need_more_respone;?>
                     </div>
                 </div>
