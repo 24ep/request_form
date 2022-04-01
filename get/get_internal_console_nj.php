@@ -225,7 +225,9 @@
                                     </div>
                                 </form>
 
-                                <?php } ?>
+                                <?php }else{
+                                    echo "<small>this ticket had been accepted , so you can't use sub ticket function</small>";
+                                } ?>
 
                                 <?php if($config_type=="task"){ ?>
                                 <hr>
