@@ -13,9 +13,9 @@
     $allow_cancel = "disabled";
     $allow_send_to_traffic = "disabled";
     $allow_task_ticket = "disabled";
-    $help_start = "<small style='color:Red'>someone had been cancel this ticket</small>";
-    $help_traffic = "<small style='color:Red'>someone had been cancel this ticket</small>";
-    $help_cancel = "<small style='color:Red'>someone had been cancel this ticket</small>";
+    $help_start = "<small style='color:Red'>someone had been cancel this ticket</small><br>";
+    $help_traffic = "<small style='color:Red'>someone had been cancel this ticket</small><br>";
+    $help_cancel = "<small style='color:Red'>someone had been cancel this ticket</small><br>";
 }
     else{
         unset($allow_cancel);
@@ -210,7 +210,7 @@
                     }else{unset($allow_task_ticket);unset($help_start);}
                     if($accepted_date<>"" and $accepted_date<>null ){
                         $allow_send_to_traffic = "disabled";
-                        $help_traffic = "<small style='color:Red'>someone had been send this ticket to traffic</small>";
+                        $help_traffic = "<small style='color:Red'>someone had been send this ticket to traffic</small><br>";
                     }
 
                     else{
