@@ -148,5 +148,164 @@
           </div>
           <?php } ?>
      
+          <!-- normal process -->
+          
+          <?php if(strpos($status,"review")!==false){
+                        echo '<div class="alert alert-warning" style="border-radius: 0px;" role="alert">
+                        <h6 class="alert-heading" style="margin:0px">
+                        <strong>Need more infomation</strong>
+                        </h6><small style="color: gray;">Last reply date : '.$need_more_info_date.'</small>
+                        <p style="font-size:14px;margin-top:10px">
+                            '.$need_more_info_note.'
+                        </p>
+                        </div>';
+                    }?>
+                                <?php
+                    if($start_checking_date<>"" and $start_checking_date<>null){
+                        $allow_task_ticket = "disabled";
+                        $help_start = "<small style='color:Red'><strong>".$follow_up_by."</strong> had been start checking information</small>";
+                    } elseif($follow_assign_name=="unassign"){
+                            $allow_task_ticket = "disabled";
+                            $help_start = "<small style='color:Red'>this ticket is unassign</small>";}
+                    elseif($follow_assign_name <> $_SESSION["username"]){
+                        $allow_task_ticket = "disabled";
+                        $help_start = "<small style='color:Red'>Only ".$follow_assign_name."(assignee) can start checking information</small>";
+                    }else{unset($allow_task_ticket);unset($help_start);}
+                    if($accepted_date<>"" and $accepted_date<>null ){
+                        $allow_send_to_traffic = "disabled";
+                        $help_traffic = "<small style='color:Red'>someone had been send this ticket to traffic</small>";
+                    }
+
+                    else{
+                        unset($allow_send_to_traffic);unset($help_traffic);
+                    }
+                    if($cancel_resone<>"" and $cancel_resone<>null){
+                        $allow_cancel = "disabled";
+                        $allow_send_to_traffic = "disabled";
+                        $allow_task_ticket = "disabled";
+                        $help_start = "<small style='color:Red'>someone had been cancel this ticket</small>";
+                        $help_traffic = "<small style='color:Red'>someone had been cancel this ticket</small>";
+                        $help_cancel = "<small style='color:Red'>someone had been cancel this ticket</small>";
+                    }
+                        else{
+                            unset($allow_cancel);
+                            unset($help_cancel);
+                        }
+
+
+                    ?>
+                                <?php if(!isset($parent) or $status <> 'accepted'){
+
+                    ?>
+                                <h6><strong>Create Sub Ticket</strong></h6>
+                                <small>Generate new sub-ticket and convert ticket from buyer to parent ticket</small>
+                                <form>
+                                    <div class="row mb-1" style="margin-top:10px">
+                                        <label for="inputEmail3" class="col-sm-2 col-form-label">SKU</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control form-control-sm" id="sku_task_set"
+                                                name="sku_task_set" placeholder="10,40,23,45,45" required>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <button type="button" id="bt_create_task"
+                                                onclick="split_to_subtask(<?php echo $id; ?>);"
+                                                class="btn btn-outline-primary btn-sm">
+                                                <ion-icon name="color-wand-outline"></ion-icon>Create Sub-ticket
+                                            </button>
+                                        </div>
+                                        <div id="emailHelp" class="form-text">
+                                            <strong>Does it work ?</strong>
+                                            <ul>
+                                                <li>Fll separate number of SKUs you want to create sub-ticket</li>
+                                                <li>Additional data will be copy from parent ticket</li>
+                                                <li>Parent sku do not calculate on report</li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </form>
+
+                                <?php } ?>
+
+                                <?php if($config_type=="task"){ ?>
+                                <hr>
+                                <!-- Special brand guideline -->
+                                <?php if($brand_info_link<>'' or isset($brand_info_link)){
+                                    echo '<div class="alert alert-info" role="alert">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                  </svg>
+                                     สินค้าแบรนด์ '.$brand.' มี Guideline พิเศษของแบรนด์ '.$brand.' เอง กรุณาตรวจสอบ </strong><a style="color:red" href="'.$brand_info_link.'" target="_Blank"><strong>Click here</strong></a> !
+                                   </div>';
+                                }?>
+
+                                <!-- start -->
+
+                                <div class="row g-3">
+                                    <div class="col-4">
+                                        <h6><strong>Start checking</strong></h6>
+                                        <small>ลงบันทึกเวลาที่เริ่มตรวจสอบ information/linesheet/duplicate sku</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <?php
+                                           echo ' <button onclick="start_checking('.$id.');"
+                                           type="button"
+                                           class="btn btn-primary btn-sm" '.$allow_task_ticket.'
+                                           style="width: 100%;">Start</button>';
+                                        ?>
+                                    </div>
+                                    <div class="col-4">
+                                        <?php echo $help_start." ".$start_checking_date; ?>
+                                    </div>
+                                </div>
+                                <!-- accepted -->
+                                <?php  if($start_checking_date<>"" and $start_checking_date<>null ){?>
+                                <hr>
+                                <div class="row g-3">
+                                    <div class="col-4">
+                                        <h6><strong>Accept</strong></h6>
+                                        <small>ลงบันทึกยืนยันตรวจสอบข้อมูลเรียบร้อย พร้อมเปิด job สำหรับ writer </small>
+                                        <div>
+                                            <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted"></label>
+                                            <textarea style="font-size:12px" class="form-control" id="sku_accepted"
+                                                name="sku_accepted"
+                                                placeholder="Copy 1 column จาก excel วางตามตัวอย่างด้านล่าง&#10;&#10;CDS3466644&#10;CDS2443356&#10;CDS2487356"
+                                                rows="5" style="height: 100px"></textarea>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
+                                            class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?>
+                                            style="width: 100%;margin-top:5px">accept</button>
+                                    </div>
+                                    <div class="col-4">
+                                        <?php echo $help_accept." ".$accepted_date; ?>
+                                    </div>
+                                </div>
+                                <?php } ?>
+                                <!-- cancel -->
+
+                                <hr>
+                                <div class="row g-3">
+                                    <div class="col-4">
+                                        <h6><strong>Cancel ticket</strong></h6>
+                                        <small>ทำการยกเลิก ticket นี้ โปรดระบุเหตุผลให้ชัดเจน</small>
+                                        <input type="text" class="form-control" id="resone_cancel"
+                                            <?php $allow_cancel; ?> name="resone_cancel" value="">
+                                    </div>
+
+                                    <div class="col-4">
+                                        <button onclick="cancel_stt(<?php echo $id; ?>,'cancel');" type="button"
+                                            class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?>
+                                            style="width: 100%;margin-top:5px">Cancel
+                                        </button>
+                                    </div>
+                                    <div class="col-4">
+                                        <?php echo $help_cancel." ".$cancel_resone; ?>
+                                    </div>
+                                </div>
+            <?php } ?>
 
       </div>
