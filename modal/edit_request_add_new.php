@@ -724,11 +724,11 @@ label#label_file_cme {
                                 }
                                 ?>
                                 <!-- new cp -->
-                           
+                            </div>
 
-                     
+                        </div>
                         <?php echo $need_more_respone;?>
-                  
+                    </div>
                 </div>
                 <div class="modal-footer" style="height: 50px;position: absolute;bottom: 15px;width: inherit;">
                     <small style="color:gray;position: absolute;left: 10px;">Request by : <a
