@@ -307,7 +307,7 @@
                                             style="width: 100%;margin-top:5px">accept</button>
                                     </div>
                                     <div class="col-4">
-                                        <?php echo $help_accept." ".$accepted_date; ?>
+                                        <?php echo $help_traffic." ".$accepted_date; ?>
                                     </div>
                                 </div>
                                 <?php } ?>
