@@ -46,7 +46,9 @@ label#label_file_cme {
     margin-left: 70px;
     border-radius: 0.7rem 0.7rem 0rem 0.7rem !important;
 }
-
+ion-icon{
+    margin-right: 10px;
+}
 .inpo.active {
     /* background-color: red!important; */
     background: url('image/11.jpg') !important;
@@ -218,7 +220,7 @@ label#label_file_cme {
                             <hr>
                             <a class="nav-link inpo" id="v-pills-cp-tab" data-toggle="pill" href="#v-pills-cp"
                                 role="tab" aria-controls="v-pills-cp" aria-selected="false">
-                                <ion-icon name="chatbox-ellipses-outline"></ion-icon>Control panel
+                                <ion-icon name="grid-outline"></ion-icon>Control Panel
                             </a>
                       
 
