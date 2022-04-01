@@ -72,23 +72,33 @@
 
               <input type="text" class="form-control" id="itm_reason_cancel" <?php $allow_cancel; ?>
                   name="resone_cancel" placeholder="เหตุผลจากร้านค้า" value="">
+                  <select <?php echo $allow_cancel; ?> class="form-select" aria-label="Default select example">
+                    <option selected>Cancel</option>
+                    <option value="1">Cancel - Confirm not for sale</option>
+                    <option value="2">Cancel - Confirm to be new sku</option>
+                    <option value="3">Cancel - Confirm already content</option>
+                </select>
 
           </div>
-
-          <div class="col-4">
-              <button onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - confirm not for sale');" type="button"
-                  class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel -
+            <div class="col-4">
+                <button  type="button"
+                  class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel
+              </button>
+            </div> 
+          <!-- <div class="col-4">
+              <button onclick="itm_confirm_cancel(<?php //echo $id; ?>,'cancel - confirm not for sale');" type="button"
+                  class="btn btn-danger btn-sm" <?php //echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel -
                   Confirm not for sale
               </button>
-              <button onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - confirm to be new sku');" type="button"
-                  class="btn btn-dark btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel -
+              <button onclick="itm_confirm_cancel(<?php //echo $id; ?>,'cancel - confirm to be new sku');" type="button"
+                  class="btn btn-dark btn-sm" <?php //echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel -
                   Confirm to be new sku
               </button>
-              <button onclick="itm_confirm_cancel(<?php echo $id; ?>,'cancel - already content');" type="button"
-                  class="btn btn-success btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel
+              <button onclick="itm_confirm_cancel(<?php //echo $id; ?>,'cancel - already content');" type="button"
+                  class="btn btn-success btn-sm" <?php //echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel
                   - Confirm already content
               </button>
-          </div>
+          </div> -->
           <div class="col-4">
               <div id="cancel_checking_result">
                   <?php echo $help_cancel." ".$cancel_resone; ?>
@@ -226,7 +236,7 @@
                                 </form>
 
                                 <?php }else{
-                                    echo "<small>this ticket had been accepted , so you can't use sub ticket function</small>";
+                                    echo "<small>this ticket is sub ticket , so you can't use sub ticket function</small>";
                                 } ?>
 
                                 <?php if($config_type=="task"){ ?>
