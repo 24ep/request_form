@@ -31,7 +31,7 @@
                                                 }
                                             }
                                             mysqli_close($con);
-                                        ?>
+                  ?>
               </select>
           </div>
           <div class="col-auto">
@@ -53,7 +53,7 @@
                                                 type="button"
                                                 class="btn btn-primary btn-sm"
                                                 style="width: 100%;">Save</button>';
-                                                ?>
+               ?>
           </div>
           <div class="col-4">
               <div id="itemize_stamp_respond">
