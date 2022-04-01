@@ -5,6 +5,7 @@
         margin-top: 10px;
         background: white;
         box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+        padding: 15px;
     }
 </style>
   
@@ -78,7 +79,11 @@
               <small>ระบุข้อความยืนยันจากร้านค้าหรือจัดซื้อ
                   และเลือกสถานะที่ต้องการเปลี่ยน</small>
 
-              <input type="text" class="form-control" id="itm_reason_cancel" <?php $allow_cancel; ?>
+             
+
+          </div>
+            <div class="col-4">
+            <input type="text" class="form-control" id="itm_reason_cancel" <?php $allow_cancel; ?>
                   name="resone_cancel" placeholder="เหตุผลจากร้านค้า" value="">
                   <select <?php echo $allow_cancel; ?> class="form-select" aria-label="Default select example">
                     <option selected>Cancel</option>
@@ -86,9 +91,6 @@
                     <option value="2">Cancel - Confirm to be new sku</option>
                     <option value="3">Cancel - Confirm already content</option>
                 </select>
-
-          </div>
-            <div class="col-4">
                 <button  type="button"
                   class="btn btn-danger btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel
               </button>
