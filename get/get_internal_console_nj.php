@@ -16,9 +16,10 @@
       <form class="row g-3 action-block">
           <div class="col-4">
           <h6><strong>Person Assignee</strong></h6>
+          <small>มอมหมายงานนี้ให้กับบุึลอื่น หรือตัวเอง</small>
           </div>
           <div class="col-4">
-              <select class="form-select" id="op_follow_assign_name" name="op_follow_assign_name"
+              <select class="form-select form-select-sm" id="op_follow_assign_name" name="op_follow_assign_name"
                   aria-label="Default select example">
                   <?php
                       $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -42,8 +43,8 @@
                                             mysqli_close($con);
                   ?>
               </select>
-              <button type="button" onclick="action_assign_follow(<?php echo  $_POST['id']; ?>)"
-                  class="btn btn-primary mb-3">Assign to NS-<?php echo $id;?></button>
+              <button type="button" style="margin-top: 5px;width: 100%;" onclick="action_assign_follow(<?php echo  $_POST['id']; ?>)"
+                  class="btn btn-primary btn-sm mb-3">Assign to NS-<?php echo $id;?></button>
           </div>
       </form>
       <!-- end assign -->
@@ -80,8 +81,8 @@
             <div class="col-4">
             <input type="text" class="form-control" id="reason_cancel" <?php $allow_cancel; ?>
                   name="resone_cancel" placeholder="เหตุผลจากร้านค้า" value="">
-                  <select id="type_cancel" name="type_cancel" <?php echo $allow_cancel; ?> 
-                  class="form-select" aria-label="Default select example">
+                  <select style="margin-top: 5px;" id="type_cancel" name="type_cancel" <?php echo $allow_cancel; ?> 
+                  class="form-select form-select-sm" aria-label="Default select example">
                     <option selected>Cancel</option>
                     <option value="Cancel - Confirm not for sale">Cancel - Confirm not for sale</option>
                     <option value="Cancel - Confirm to be new sku">Cancel - Confirm to be new sku</option>
