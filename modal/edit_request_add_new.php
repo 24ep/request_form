@@ -273,7 +273,11 @@ label#label_file_cme {
                             <div class="tab-pane fade show active" id="v-pills-progress" role="tabpanel"
                                 aria-labelledby="v-pills-progress-tab">
                                 <div class="row">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12 shadow" style="padding: 20px;
+    background: white;
+    margin: 10px;
+    width: auto;
+    border-radius: 10px;">
 
 
                                         <div id="call_subtask">

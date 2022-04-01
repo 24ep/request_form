@@ -78,9 +78,6 @@
               <h6><strong>Cancel ticket</strong></h6>
               <small>ระบุข้อความยืนยันจากร้านค้าหรือจัดซื้อ
                   และเลือกสถานะที่ต้องการเปลี่ยน</small>
-
-             
-
           </div>
             <div class="col-4">
             <input type="text" class="form-control" id="itm_reason_cancel" <?php $allow_cancel; ?>
@@ -291,7 +288,11 @@
                                     <div class="col-4">
                                         <h6><strong>Accept</strong></h6>
                                         <small>ลงบันทึกยืนยันตรวจสอบข้อมูลเรียบร้อย พร้อมเปิด job สำหรับ writer </small>
-                                        <div>
+                                        
+                                    </div>
+
+                                    <div class="col-4">
+                                    <div>
                                             <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted"></label>
                                             <textarea style="font-size:12px" class="form-control" id="sku_accepted"
                                                 name="sku_accepted"
@@ -299,9 +300,6 @@
                                                 rows="5" style="height: 100px"></textarea>
 
                                         </div>
-                                    </div>
-
-                                    <div class="col-4">
                                         <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
                                             class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?>
                                             style="width: 100%;margin-top:5px">accept</button>
