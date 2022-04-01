@@ -352,7 +352,7 @@ label#label_file_cme {
                             <div class="tab-pane fade" id="v-pills-fu_team" role="tabpanel"
                                 aria-labelledby="v-pills-fu_team-tab">
 
-                                <?php if(strpos($status,"review")!==false){
+                    <?php if(strpos($status,"review")!==false){
                         echo '<div class="alert alert-warning" style="border-radius: 0px;" role="alert">
                         <h6 class="alert-heading" style="margin:0px">
                         <strong>Need more infomation</strong>
