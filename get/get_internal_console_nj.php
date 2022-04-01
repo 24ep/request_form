@@ -8,6 +8,22 @@
         padding: 15px;
     }
 </style>
+<?php
+ if($cancel_resone<>"" and $cancel_resone<>null){
+    $allow_cancel = "disabled";
+    $allow_send_to_traffic = "disabled";
+    $allow_task_ticket = "disabled";
+    $help_start = "<small style='color:Red'>someone had been cancel this ticket</small>";
+    $help_traffic = "<small style='color:Red'>someone had been cancel this ticket</small>";
+    $help_cancel = "<small style='color:Red'>someone had been cancel this ticket</small>";
+}
+    else{
+        unset($allow_cancel);
+        unset($help_cancel);
+    }
+
+
+?>
   
   <div class="tab-pane fade" id="v-pills-cp" role="tabpanel" aria-labelledby="v-pills-cp-tab">
 
@@ -200,18 +216,7 @@
                     else{
                         unset($allow_send_to_traffic);unset($help_traffic);
                     }
-                    if($cancel_resone<>"" and $cancel_resone<>null){
-                        $allow_cancel = "disabled";
-                        $allow_send_to_traffic = "disabled";
-                        $allow_task_ticket = "disabled";
-                        $help_start = "<small style='color:Red'>someone had been cancel this ticket</small>";
-                        $help_traffic = "<small style='color:Red'>someone had been cancel this ticket</small>";
-                        $help_cancel = "<small style='color:Red'>someone had been cancel this ticket</small>";
-                    }
-                        else{
-                            unset($allow_cancel);
-                            unset($help_cancel);
-                        }
+                   
 
 
                     ?>
