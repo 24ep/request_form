@@ -80,7 +80,7 @@
           </div>
             <div class="col-4">
             <input type="text" class="form-control" id="reason_cancel" <?php $allow_cancel; ?>
-                  name="resone_cancel" placeholder="เหตุผลจากร้านค้า" value="">
+                  name="reason_cancel" placeholder="เหตุผลจากร้านค้า" value="">
                   <select style="margin-top: 5px;" id="type_cancel" name="type_cancel" <?php echo $allow_cancel; ?> 
                   class="form-select form-select-sm" aria-label="Default select example">
                     <option selected>Cancel</option>
