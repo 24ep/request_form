@@ -1,4 +1,4 @@
-  new cp
+
 
   <div class="tab-pane fade" id="v-pills-cp" role="tabpanel" aria-labelledby="v-pills-cp-tab">
 
@@ -145,7 +145,8 @@
                   contact - change to Pending
               </button>
           </div>
+          </div>
+          <?php } ?>
+     
 
       </div>
-      </div>
-      <?php } ?>
