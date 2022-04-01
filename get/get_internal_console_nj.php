@@ -218,6 +218,7 @@
                                 <?php if(!isset($parent) or $status <> 'accepted'){
 
                     ?>
+                      <div class="row g-3 action-block">
                                 <h6><strong>Create Sub Ticket</strong></h6>
                                 <small>Generate new sub-ticket and convert ticket from buyer to parent ticket</small>
                                 <form>
@@ -245,6 +246,7 @@
 
                                     </div>
                                 </form>
+                                </div>
 
                                 <?php }else{
                                     echo "<small>this ticket is sub ticket , so you can't use sub ticket function</small>";
