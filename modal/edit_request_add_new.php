@@ -188,7 +188,7 @@ label#label_file_cme {
 <div class="offcanvas-body" style="padding-bottom: 0px;height: 100%;">
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="position: fixed;right: 40px;"
         aria-label="Close"></button>
-    <div class="row" style="height: 100%;">
+    <div class="row" style="height: 100%;margin-bottom: 0px;">
         <div class="col-9" style="border-right: solid 1px #f0eaea;padding-right:0px;height: 85%;">
             <div class="modal-header">
                 <h5 class="modal-title" id="edit_add_new_title">
@@ -197,10 +197,10 @@ label#label_file_cme {
                 <button type="button" class="btn btn-light btn-sm" <?php echo $status_style; ?>>
                     <?php  echo $status; ?></button>
             </div>
-            <div class="modal-body overflow-auto" style="height:100%">
+            <div class="modal-body" style="height:100%;padding-top: 0px;padding: unset;">
                 <!--"-->
-                <div class="row" style="height:auto">
-                    <div class="col-2" style="border-right: 1px #e6e6e6;border-right-style: double;height: auto;">
+                <div class="row" style="height:100%">
+                    <div class="col-2" style="border-right: 1px #e6e6e6;border-right-style: double;height: auto;padding-top: 20px">
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
                             aria-orientation="vertical">
 
@@ -254,7 +254,7 @@ label#label_file_cme {
                             <?php }?>
                         </div>
                     </div>
-                    <div class="col-10" style="height: 85%;">
+                    <div class="col-10 overflow-auto" style="height: 85%;padding: 10px 20px;background: #f3f3f3;">
                         <?php
             if(strpos(strtolower ($status),"waiting data",0)!== false or strpos(strtolower ($status),"wait image",0)!== false ){
                 echo '<div class="alert alert-danger" style="border-radius: 0px;"role="alert">

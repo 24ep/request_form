@@ -99,6 +99,14 @@
                   - Confirm already content
               </button>
           </div> -->
+
+            <!-- right now we looking at level 1 and level 2 category of central and lazada site
+
+            basiclly lazada have a total of category more than central site in top level , 
+            however some categories on central site also not show top-level at lazadata site as well like ...,
+            and also some category might show in level 3 -5  -->
+
+
           <div class="col-4">
               <div id="cancel_checking_result">
                   <?php echo $help_cancel." ".$cancel_resone; ?>

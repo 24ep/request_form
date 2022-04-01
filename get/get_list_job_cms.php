@@ -31,13 +31,13 @@
       ,$row["upload_image_date"]
       ,$row["shoots_complete_date"]);
         echo "<tr>";
-        echo "<th scope='row' style='background: #ededed;'>".$row["job_number"]."</th>";
-        echo "<td style='background: #ededed;'>".$row["job_type"]."</dh>";
-        echo "<td style='background: #ededed;'>".$row["sku"]."</td>";  
-        echo "<td style='background: #ededed;'>".$row["traffic"]."</td>";
-        echo "<td style='background: #ededed;'>".$state ."</td>";  
-        echo "<td style='background: #ededed;'>".$row["last_update_at"]."</td>";
-        echo "<td style='background: #ededed;'><a target='_Blank' href='https://content-service-gate.cdse-commercecontent.com/base/get/get_ns_log_by_id.php?job_number=".$row["job_number"]."&id=".$_POST['id']."&action_table=job_cms&action_data=24ep'><ion-icon name='calendar-outline'></ion-icon>history log</a></td>";
+        echo "<th scope='row' style='background: #ffffff;'>".$row["job_number"]."</th>";
+        echo "<td style='background: #ffffff;'>".$row["job_type"]."</dh>";
+        echo "<td style='background: #ffffff;'>".$row["sku"]."</td>";  
+        echo "<td style='background: #ffffff;'>".$row["traffic"]."</td>";
+        echo "<td style='background: #ffffff;'>".$state ."</td>";  
+        echo "<td style='background: #ffffff;'>".$row["last_update_at"]."</td>";
+        echo "<td style='background: #ffffff;'><a target='_Blank' href='https://content-service-gate.cdse-commercecontent.com/base/get/get_ns_log_by_id.php?job_number=".$row["job_number"]."&id=".$_POST['id']."&action_table=job_cms&action_data=24ep'><ion-icon name='calendar-outline'></ion-icon>history log</a></td>";
         echo "</tr>";
         $pass = true;
     } 
