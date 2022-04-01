@@ -1,10 +1,18 @@
 
-
+<style>
+    .action-block{
+        border-radius: 5px;
+        margin-top: 10px;
+        background: white;
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    }
+</style>
+  
   <div class="tab-pane fade" id="v-pills-cp" role="tabpanel" aria-labelledby="v-pills-cp-tab">
 
       <!-- assign -->
 
-      <form class="row g-3">
+      <form class="row g-3 action-block">
           <div class="col-auto">
               <strong>Person assign </strong>
           </div>
@@ -40,9 +48,9 @@
           </div>
       </form>
       <!-- end assign -->
-      <hr>
+     
       <!-- Itemize send email stamp -->
-      <div class="row g-3">
+      <div class="row g-3 action-block">
           <div class="col-4">
               <h6><strong>Itemize send email stamp</strong></h6>
               <small>ลงบันทึกส่งอีเมลติดตาม (ระบุ tag ticket id บนอีเมลทุกครั้ง)</small>
@@ -62,9 +70,9 @@
           </div>
       </div>
       <!-- end Itemize send email stamp -->
-      <hr>
+  
       <!-- cancel confirm not for sale -->
-      <div class="row g-3">
+      <div class="row g-3 action-block">
           <div class="col-4">
               <h6><strong>Cancel ticket</strong></h6>
               <small>ระบุข้อความยืนยันจากร้านค้าหรือจัดซื้อ
@@ -100,11 +108,7 @@
               </button>
           </div> -->
 
-            <!-- right now we looking at level 1 and level 2 category of central and lazada site
-
-            basiclly lazada have a total of category more than central site in top level , 
-            however some categories on central site also not show top-level at lazadata site as well like ...,
-            and also some category might show in level 3 -5  -->
+           
 
 
           <div class="col-4">
@@ -113,10 +117,10 @@
               </div>
           </div>
       </div>
-      <hr>
+      
       <!-- cancel confirm not for sale -->
       <?php if($status<>"need update contact"){ ?>
-      <div class="row g-3">
+      <div class="row g-3 action-block">
           <div class="col-4">
               <h6><strong>Need to update contact</strong></h6>
               <small>ใช้ในในกรณีที่ข้อมูลติดต่อร้านค้าหรือจัดซื้อผิด</small>
@@ -135,11 +139,11 @@
               </div>
           </div>
       </div>
-      <hr>
+    
       <?php } ?>
       <!-- Get new contact -->
       <?php if($status=="need update contact"){ ?>
-      <div class="row g-3">
+      <div class="row g-3 action-block">
           <div class="col-4">
               <h6><strong>Get new contact</strong></h6>
               <small>ได้รับ contact ใหม่เปลี่ยน status เป็น pending</small>
@@ -248,7 +252,7 @@
                                 } ?>
 
                                 <?php if($config_type=="task"){ ?>
-                                <hr>
+                              
                                 <!-- Special brand guideline -->
                                 <?php if($brand_info_link<>'' or isset($brand_info_link)){
                                     echo '<div class="alert alert-info" role="alert">
@@ -261,7 +265,7 @@
 
                                 <!-- start -->
 
-                                <div class="row g-3">
+                                <div class="row g-3  action-block">
                                     <div class="col-4">
                                         <h6><strong>Start checking</strong></h6>
                                         <small>ลงบันทึกเวลาที่เริ่มตรวจสอบ information/linesheet/duplicate sku</small>
@@ -280,8 +284,8 @@
                                 </div>
                                 <!-- accepted -->
                                 <?php  if($start_checking_date<>"" and $start_checking_date<>null ){?>
-                                <hr>
-                                <div class="row g-3">
+ 
+                                <div class="row g-3  action-block">
                                     <div class="col-4">
                                         <h6><strong>Accept</strong></h6>
                                         <small>ลงบันทึกยืนยันตรวจสอบข้อมูลเรียบร้อย พร้อมเปิด job สำหรับ writer </small>
@@ -307,8 +311,8 @@
                                 <?php } ?>
                                 <!-- cancel -->
 
-                                <hr>
-                                <div class="row g-3">
+                             
+                                <div class="row g-3  action-block">
                                     <div class="col-4">
                                         <h6><strong>Cancel ticket</strong></h6>
                                         <small>ทำการยกเลิก ticket นี้ โปรดระบุเหตุผลให้ชัดเจน</small>

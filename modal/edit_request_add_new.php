@@ -197,7 +197,7 @@ label#label_file_cme {
                 <button type="button" class="btn btn-light btn-sm" <?php echo $status_style; ?>>
                     <?php  echo $status; ?></button>
             </div>
-            <div class="modal-body" style="height:100%;padding-top: 0px;padding: unset;">
+            <div class="modal-body" style="height:100%;padding-top: 0px;padding-bottom: unset;">
                 <!--"-->
                 <div class="row" style="height:100%">
                     <div class="col-2" style="border-right: 1px #e6e6e6;border-right-style: double;height: auto;padding-top: 20px">
@@ -730,7 +730,7 @@ label#label_file_cme {
                         <?php echo $need_more_respone;?>
                     </div>
                 </div>
-                <div class="modal-footer" style="height: 50px;position: absolute;bottom: 15px;width: inherit;">
+                <div class="modal-footer" style="height: 50px;bottom: 15px;width: inherit;">
                     <small style="color:gray;position: absolute;left: 10px;">Request by : <a
                             href="action/action_show_user_info.php?username=<?php echo $request_username; ?>"
                             target="_blank" class="text-warning stretched-link"><?php echo $request_username; ?></a> |
