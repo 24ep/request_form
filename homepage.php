@@ -1408,7 +1408,7 @@ function cancel_stt(id, status_change) {
 }
 
 function cancel_ticket(id) {
-    resone_cancel = document.getElementById('resone_cancel').value;
+    resone_cancel = document.getElementById('reason_cancel').value;
     status_change = document.getElementById('type_cancel').value;
     //  status_change = 'cancel';
     if (id) {

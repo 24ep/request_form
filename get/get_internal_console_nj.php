@@ -80,7 +80,7 @@
                   และเลือกสถานะที่ต้องการเปลี่ยน</small>
           </div>
             <div class="col-4">
-            <input type="text" class="form-control" id="itm_reason_cancel" <?php $allow_cancel; ?>
+            <input type="text" class="form-control" id="reason_cancel" <?php $allow_cancel; ?>
                   name="resone_cancel" placeholder="เหตุผลจากร้านค้า" value="">
                   <select id="type_cancel" name="type_cancel" <?php echo $allow_cancel; ?> 
                   class="form-select" aria-label="Default select example">
@@ -312,7 +312,7 @@
                                     </div>
                                 </div>
                                 <?php } ?>
-                                
+
                                 <?php if($status == 'waiting traffic'){ ?>
                                 <hr>
                                 <h6><strong>Create Writer & Studio - 24ep</strong></h6>
