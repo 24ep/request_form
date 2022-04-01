@@ -225,14 +225,10 @@
                                     </div>
                                 </form>
 
-                                <?php }else{
-
-                                    echo "<small>this ticket had been accepted , so you can't use sub ticket function.<small>";
-
-                                } ?>
+                                <?php } ?>
 
                                 <?php if($config_type=="task"){ ?>
-                              
+                                <hr>
                                 <!-- Special brand guideline -->
                                 <?php if($brand_info_link<>'' or isset($brand_info_link)){
                                     echo '<div class="alert alert-info" role="alert">
