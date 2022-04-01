@@ -47,7 +47,7 @@ label#label_file_cme {
     border-radius: 0.7rem 0.7rem 0rem 0.7rem !important;
 }
 ion-icon{
-    margin-right: 10px;
+    margin-right: 5px!important;
 }
 .inpo.active {
     /* background-color: red!important; */
