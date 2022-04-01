@@ -254,7 +254,7 @@ label#label_file_cme {
                             <?php }?>
                         </div>
                     </div>
-                    <div class="col-10 overflow-auto" style="height: 85%;padding: 10px 20px;background: #f3f3f3;">
+                    <div class="col-10 overflow-auto" style="height: 100%;padding: 10px 20px;background: #f3f3f3;">
                         <?php
             if(strpos(strtolower ($status),"waiting data",0)!== false or strpos(strtolower ($status),"wait image",0)!== false ){
                 echo '<div class="alert alert-danger" style="border-radius: 0px;"role="alert">
