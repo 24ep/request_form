@@ -1,4 +1,4 @@
-  <!-- new cp -->
+  new cp
 
   <div class="tab-pane fade" id="v-pills-cp" role="tabpanel" aria-labelledby="v-pills-cp-tab">
 
@@ -29,7 +29,6 @@
 
                                                     echo  '<option value="'.$row["username"].'">'.$row["nickname"].' - '.$backlog_sku.'</option>';
                                                 }
-
                                             }
                                             mysqli_close($con);
                                         ?>
