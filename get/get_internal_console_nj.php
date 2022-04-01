@@ -14,10 +14,10 @@
       <!-- assign -->
 
       <form class="row g-3 action-block">
-          <div class="col-auto">
-              <strong>Person assign </strong>
+          <div class="col-4">
+          <h6><strong>Person Assignee</strong></h6>
           </div>
-          <div class="col-auto">
+          <div class="col-4">
               <select class="form-select" id="op_follow_assign_name" name="op_follow_assign_name"
                   aria-label="Default select example">
                   <?php
@@ -42,8 +42,6 @@
                                             mysqli_close($con);
                   ?>
               </select>
-          </div>
-          <div class="col-auto">
               <button type="button" onclick="action_assign_follow(<?php echo  $_POST['id']; ?>)"
                   class="btn btn-primary mb-3">Assign to NS-<?php echo $id;?></button>
           </div>
@@ -53,7 +51,7 @@
       <!-- Itemize send email stamp -->
       <div class="row g-3 action-block">
           <div class="col-4">
-              <h6><strong>Itemize send email stamp</strong></h6>
+              <h6><strong>Send Email Stamp</strong></h6>
               <small>ลงบันทึกส่งอีเมลติดตาม (ระบุ tag ticket id บนอีเมลทุกครั้ง)</small>
           </div>
           <div class="col-4">
@@ -220,7 +218,7 @@
 
                     ?>
                       <div class="row g-3 action-block">
-                                <h6><strong>Create Sub Ticket</strong></h6>
+                                <h6><strong>Create Sub-Ticket</strong></h6>
                                 <small>Generate new sub-ticket and convert ticket from buyer to parent ticket</small>
                                 <form>
                                     <div class="row mb-1" style="margin-top:10px">
@@ -269,7 +267,7 @@
 
                                 <div class="row g-3  action-block">
                                     <div class="col-4">
-                                        <h6><strong>Start checking</strong></h6>
+                                        <h6><strong>Start Checking</strong></h6>
                                         <small>ลงบันทึกเวลาที่เริ่มตรวจสอบ information/linesheet/duplicate sku</small>
                                     </div>
                                     <div class="col-4">
@@ -289,7 +287,7 @@
  
                                 <div class="row g-3  action-block">
                                     <div class="col-4">
-                                        <h6><strong>Accept</strong></h6>
+                                        <h6><strong>Complete Checking (Accepted)</strong></h6>
                                         <small>ลงบันทึกยืนยันตรวจสอบข้อมูลเรียบร้อย พร้อมเปิด job สำหรับ writer </small>
                                         
                                     </div>
