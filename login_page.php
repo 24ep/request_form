@@ -76,15 +76,7 @@
                 ?>
         
         <div class="row" style="margin-top:15%">
-        
-            <div class="col">
-            <div class="container-sm shadow p p-3 mb-5 bg-white rounded">
-                <!-- get from list -->
-                <?php include("get/linesheet_download.php"); ?>
-           
-            </div>
-            </div>
-            <div class="col">
+        <div class="col">
             <div class="container-sm ">
      
                 <h2 class="header_form">
@@ -121,6 +113,14 @@
         
             </div>
             </div>
+            <div class="col">
+            <div class="container-sm shadow p p-3 mb-5 bg-white rounded">
+                <!-- get from list -->
+                <?php include("get/linesheet_download.php"); ?>
+           
+            </div>
+            </div>
+         
             </div>
         
     <div class="container" style="text-align:center">
