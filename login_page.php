@@ -78,14 +78,14 @@
         <div class="row">
         
             <div class="col">
-            <div class="container-sm">
+            <div class="container-sm shadow p p-3 mb-5 bg-white rounded">
                 <!-- get from list -->
                 <?php include("get/linesheet_download.php"); ?>
            
             </div>
             </div>
             <div class="col">
-            <div class="container-sm shadow p p-3 mb-5 bg-white rounded">
+            <div class="container-sm ">
      
                 <h2 class="header_form">
                     <strong>Login</strong>
@@ -114,7 +114,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <button type="submit" id="login_bt" class="btn btn-dark" style="width:100%;margin-bottom:20px;margin-top:20px">Login</button>
+                        <button type="submit" id="login_bt" class="btn btn-dark" style="width:100%;margin-bottom:20px;margin-top:20px;background: #810000;border: solid 0px;">Login</button>
                         <a href="signup" style="text-align: center!important;">Don't have an account - Sign up</a>
                     </div>
                     </form>
