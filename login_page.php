@@ -84,7 +84,7 @@
            
             </div>
             </div>
-            <div class="col" style="height : 100vh;">
+            <div class="col" style="height : 100vh;background-color:white;">
             <div class="container-sm ">
      
                 <h2 class="header_form">
