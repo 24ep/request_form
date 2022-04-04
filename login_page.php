@@ -73,8 +73,9 @@
                 ?>
         
         <div class="row">
-        <div class="container-sm shadow p p-3 mb-5 bg-white rounded">
+        
             <div class="col">
+            <div class="container-sm shadow p p-3 mb-5 bg-white rounded">
                 <!-- get from list -->
 
                 <?php
