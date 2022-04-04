@@ -102,7 +102,7 @@
                     <option selected>Cancel</option>
                     <option value="Cancel - Confirm not for sale">Cancel - Confirm not for sale</option>
                     <option value="Cancel - Confirm to be new sku">Cancel - Confirm to be new sku</option>
-                    <option value="Cancel - Confirm already content">Cancel - Confirm already content</option>
+                    <option value="Cancel - already content">Cancel - already content</option>
                 </select>
                 <button  type="button"
                   class="btn btn-danger btn-sm" onclick="cancel_ticket(<?php echo $id; ?>)" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel
