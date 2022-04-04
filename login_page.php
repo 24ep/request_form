@@ -77,9 +77,9 @@
         
         <div class="row">
         
-            <div class="col">
-            <h6 style="margin: 50px;font-weight: 900;color: firebrick;">CONTENT SERVICE GATE</h6>
-            <div class="container-sm shadow p p-3 mb-5 bg-white rounded">
+            <div class="col" style="background: firebrick;">
+            <h6 style="margin: 50px;font-weight: 900;color: #f9fafb;">CONTENT SERVICE GATE</h6>
+            <div class="container-sm" style="width: fit-content;margin: initial;margin-left: 50px;height: unset;color: #ffffff;">
                 <!-- get from list -->
                 <?php include("get/linesheet_download.php"); ?>
            

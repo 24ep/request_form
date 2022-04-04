@@ -22,7 +22,7 @@ $con= mysqli_connect("localhost","cdse_admin","@aA417528639","u749625779_cdscont
                        <p style="font-size: 12px;"> <strong>Last Update '.date("Y-m-d H:i:s", strtotime($row["update_at"])).'</strong> </p>
                        </div>
                        <a  href="https://cdse-commercecontent.com/base/'.$row["file_path"].$row["file_name"].'" >
-                           <button type="button" class="btn btn-outline-dark" style="width:100%"><ion-icon name="cloud-download-outline" style="margin-left:5px"></ion-icon> Download</button>
+                           <button type="button" class="btn btn-danger" style="width:100%"><ion-icon name="cloud-download-outline" style="margin:5px"></ion-icon> Download</button>
                        </a>
                            ';
    
