@@ -75,7 +75,7 @@
                                 }
                 ?>
         
-        <div class="row">
+        <div class="row" style="margin-top:15%">
         
             <div class="col">
             <div class="container-sm shadow p p-3 mb-5 bg-white rounded">
