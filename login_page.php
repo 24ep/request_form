@@ -78,13 +78,14 @@
         <div class="row">
         
             <div class="col">
+            <h6 style="margin: 50px;font-weight: 900;color: firebrick;">CONTENT SERVICE GATE</h6>
             <div class="container-sm shadow p p-3 mb-5 bg-white rounded">
                 <!-- get from list -->
                 <?php include("get/linesheet_download.php"); ?>
            
             </div>
             </div>
-            <div class="col" style="height : 100vh;background-color:white;">
+            <div class="col-4" style="height : 100vh;background-color:white;">
             <div class="container-sm ">
      
                 <h2 class="header_form">
