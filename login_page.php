@@ -29,7 +29,7 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <style>
             body {
-                background-image: url(image/11.jpg);
+                background-image: url(base/image/11.jpg);
                 font-family: 'Prompt', sans-serif!important;
             }
             a {
