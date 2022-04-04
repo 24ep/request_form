@@ -1,23 +1,6 @@
     <?php
     session_start();
-    if($_GET["audit"]=="audit" ){
-        $_SESSION["nickname"]="Bos";
-        $_SESSION["pf_theme"]="Dark";
-        $_SESSION["department"]="Content Admin";
-        $_SESSION["page_view"]="";
-        $_SESSION["db_username"] = "cdse_admin";
-        $_SESSION["db_password"] = "@aA417528639";
-        $_SESSION["cr_status_filter"] ="Pending";
-        $_SESSION['login_csg']=true;
-        $_SESSION['pagenation'] = 1;
-        $_SESSION["user_filter"] = "poojaroonwit";
-        $internal_role = array("Content Admin", "Content Traffic", "Content Followup", "Content Studio Traffic");
-        $_SESSION["user_cr_filter"] = "all_user";
-        $_SESSION["username"] = "poojaroonwit";
-        $_SESSION["request_by_filter"] = "poojaroonwit";
-        $_SESSION["request_status"] = "pending";
-        $request_by ="poojaroonwit";
-    }
+
     if (!$_SESSION["login_csg"]){ 
             Header("Location: login");
     }else{
