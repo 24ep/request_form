@@ -71,9 +71,9 @@
                                     }
                                 }
                 ?>
-        <div class="container-sm shadow p p-3 mb-5 bg-white rounded">
+        
         <div class="row">
-       
+        <div class="container-sm shadow p p-3 mb-5 bg-white rounded">
             <div class="col">
                 <!-- get from list -->
 
@@ -105,7 +105,9 @@
                 ?>
                 <!-- end -->
             </div>
+            </div>
             <div class="col">
+            <div class="container-sm shadow p p-3 mb-5 bg-white rounded">
         <div class="row">
         <div class="col">
                 <h2 class="header_form">
@@ -143,7 +145,8 @@
             </div>
             </div>
             </div>
-        </div>
+            </div>
+        
     <div class="container" style="text-align:center">
         <a href="signup" style="font-size:10px">Copyright @ Central Department Store - Digital Content</a>
     </div>
