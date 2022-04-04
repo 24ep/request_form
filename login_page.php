@@ -118,14 +118,15 @@
                         <a href="signup" style="text-align: center!important;">Don't have an account - Sign up</a>
                     </div>
                     </form>
-        
-            </div>
-            </div>
-            </div>
-        
-    <div class="container" style="text-align:center">
+                    <div class="container" style="text-align:center">
         <a href="signup" style="font-size:10px">Copyright @ Central Department Store - Digital Content</a>
     </div>
+        
+            </div>
+            </div>
+            </div>
+        
+   
 </body>
 <!-- bootsrap js -->
 <script>
