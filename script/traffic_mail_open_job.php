@@ -88,10 +88,6 @@ $keywords = array("SKU maintanance","sku_maintanance","sku mainta","sku mainte",
 foreach ($keywords as $keyword) {
     if(strpos(strtolower($subject), strtolower($keyword)) !== false){
         create_ticket_csg();
-        
-    }else{
-        #end script
-        exit('non sku maintanance'); 
     }
   }
 
