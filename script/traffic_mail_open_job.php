@@ -26,7 +26,7 @@ function check_separate_subject_mail(){
         $max_position = array_search($max_char, $separates);
         return $separates[$max_position];
     }else{
-        exit("not found separent value");
+        exit("Error : not found separent value");
     }
 }
 function mapping_department(){
