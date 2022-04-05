@@ -14,11 +14,13 @@ $email_from = $_GET["email_from"];
 #check separate subject email
 function check_separate_subject_mail(){
     global $subject;
-    $separates = array("|","/",","); 
+    echo $subject;
+    $separates = array("/","|",","); 
     $count_sparates = [];
     foreach ($separates as $separate) {
         $count_sparate = substr_count($subject,$separate);
         array_push($count_sparates,$count_sparate);
+        echo $count_sparate;
     }
     $max_char = max($count_sparates);
     if($max_char>0){
