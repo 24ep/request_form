@@ -101,7 +101,7 @@ foreach ($keywords as $keyword) {
         create_ticket_csg();
         exit();
     }
-    if ($key === array_key_last($array)) {
+    if ($keyword === array_key_last($keywords)) {
         echo 'NON SKU MAINTENANCE';
     }
   }
