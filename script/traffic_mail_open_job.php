@@ -69,9 +69,9 @@ function create_ticket_csg(){
          $query = mysqli_query($con,$sql);
          if($query) {
             $last_id = $con->insert_id;
-            echo $last_id;
+            exit($last_id );
          }else{
-             echo $con->error;
+            exit($con->error); 
          }
 
          #add participant
@@ -86,15 +86,15 @@ function create_ticket_csg(){
 
 
 # check subject
-// $keywords = array("SKU maintanance","sku_maintanance","sku mainta","sku mainte"); 
-// foreach ($keywords as $keyword) {
-//     if(str_contains($subject , $keyword)){
-//         create_ticket_csg();
-//     }else{
-//         #end script
-//         exit('non sku maintanance'); 
-//     }
-//   }
+$keywords = array("SKU maintanance","sku_maintanance","sku mainta","sku mainte"); 
+foreach ($keywords as $keyword) {
+    if(str_contains($subject , $keyword)){
+        create_ticket_csg();
+    }else{
+        #end script
+        exit('non sku maintanance'); 
+    }
+  }
 
 
 
