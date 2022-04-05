@@ -103,6 +103,10 @@ foreach ($keywords as $keyword) {
     }
     if ($keyword === array_key_last($keywords)) {
         echo 'NON SKU MAINTENANCE';
+    }else{
+        if ($keyword === key($keywords)) {
+            echo 'NON SKU MAINTENANCE';
+        }
     }
   }
 
