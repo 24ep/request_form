@@ -44,7 +44,8 @@ $attributes = array(
     "username"=>"poojaroonwit",
     "request_important"=>$important,
     "production_type"=>"No info",
-    "contact"=>$contact
+    "contact"=>$contact,
+    "participant"=>"noti_follow_team,poojaroonwit"
     
 );
 
@@ -62,6 +63,8 @@ function create_ticket_csg(){
      $insert_head .= ",request_important";$insert_value .= ",'".$attributes["request_important"]."'";
      $insert_head .= ",department";$insert_value .= ",'".$attributes["department"]."'";
      $insert_head .= ",contact_buyer";$insert_value .= ",'".$attributes["contact"]."'";
+     $insert_head .= ",participant";$insert_value .= ",'".$attributes["participant"]."'";
+
      
      date_default_timezone_set("Asia/Bangkok");
      $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -75,7 +78,7 @@ function create_ticket_csg(){
          $query = mysqli_query($con,$sql);
          if($query) {
             $last_id = $con->insert_id;
-            exit($last_id);
+            echo $last_id;
          }else{
             exit($con->error); 
          }
