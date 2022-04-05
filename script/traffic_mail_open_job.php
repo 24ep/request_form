@@ -10,6 +10,7 @@ $message_id = $_POST["message_id"];
 $internet_message_id = $_POST["internet_message_id"];
 $conversation_id = $_POST["conversation_id"];
 $email_from = $_POST["email_from"];
+$contact = $_POST["contact"];
 
 #check separate subject email
 function check_separate_subject_mail(){
@@ -29,7 +30,7 @@ function check_separate_subject_mail(){
     }
 }
 function mapping_department(){
-    
+
 }
 
 $separant_value =  check_separate_subject_mail();
@@ -41,7 +42,9 @@ $attributes = array(
     "offline_runing_number"=>$attributes_form_email[3],
     "link_info"=>"link_info mockup",
     "username"=>"poojaroonwit",
-    "request_important"=>$important
+    "request_important"=>$important,
+    "production_type"=>"No info",
+    "contact"=>$contact
     
 );
 
@@ -58,6 +61,7 @@ function create_ticket_csg(){
      $insert_head .= ",request_username";$insert_value .= ",'".$attributes["username"]."'";
      $insert_head .= ",request_important";$insert_value .= ",'".$attributes["request_important"]."'";
      $insert_head .= ",department";$insert_value .= ",'".$attributes["department"]."'";
+     $insert_head .= ",contact_buyer";$insert_value .= ",'".$attributes["contact"]."'";
      
      date_default_timezone_set("Asia/Bangkok");
      $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
