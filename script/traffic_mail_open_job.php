@@ -45,8 +45,6 @@ $attributes = array(
 function create_ticket_csg(){
     global $subject;
     global $attributes;
-    global $importance;
-    global $message_id;
 
     $insert_head ="";
     $insert_value = "";
@@ -60,19 +58,19 @@ function create_ticket_csg(){
      date_default_timezone_set("Asia/Bangkok");
      $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
      mysqli_query($con, "SET NAMES 'utf8' ");
-         $sql = "INSERT INTO add_new_job (
-         ".$insert_head."
-         )
-         VALUES (
-         ".$insert_value."
-         )";
-         $query = mysqli_query($con,$sql);
-         if($query) {
-            $last_id = $con->insert_id;
-            exit($last_id );
-         }else{
-            exit($con->error); 
-         }
+        //  $sql = "INSERT INTO add_new_job (
+        //  ".$insert_head."
+        //  )
+        //  VALUES (
+        //  ".$insert_value."
+        //  )";
+        //  $query = mysqli_query($con,$sql);
+        //  if($query) {
+        //     $last_id = $con->insert_id;
+        //     exit($last_id );
+        //  }else{
+        //     exit($con->error); 
+        //  }
 
          #add participant
          #send line noti
