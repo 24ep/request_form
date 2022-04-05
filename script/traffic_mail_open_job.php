@@ -28,6 +28,9 @@ function check_separate_subject_mail(){
         exit("not found separent value");
     }
 }
+function mapping_department(){
+    
+}
 
 $separant_value =  check_separate_subject_mail();
 $attributes_form_email = explode($separant_value,$subject);
@@ -54,6 +57,7 @@ function create_ticket_csg(){
      $insert_head .= ",link_info";$insert_value .= ",'".$attributes["link_info"]."'";
      $insert_head .= ",request_username";$insert_value .= ",'".$attributes["username"]."'";
      $insert_head .= ",request_important";$insert_value .= ",'".$attributes["request_important"]."'";
+     $insert_head .= ",department";$insert_value .= ",'".$attributes["department"]."'";
      
      date_default_timezone_set("Asia/Bangkok");
      $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -67,7 +71,7 @@ function create_ticket_csg(){
          $query = mysqli_query($con,$sql);
          if($query) {
             $last_id = $con->insert_id;
-            exit($last_id );
+            exit($last_id);
          }else{
             exit($con->error); 
          }
