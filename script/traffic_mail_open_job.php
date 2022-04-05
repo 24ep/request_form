@@ -30,18 +30,19 @@ function check_separate_subject_mail(){
 }
 
 $separant_value =  check_separate_subject_mail();
-$attributes_form_email = explode($separant_value,$subject);
+echo $separant_value ;
+// $attributes_form_email = explode($separant_value,$subject);
 
-$attributes = array(
-    "department"=>$attributes_form_email[0],
-    "brand"=>$attributes_form_email[1],
-    "total_sku"=>$attributes_form_email[2],
-    "offline_runing_number"=>$attributes_form_email[3],
-    "link_info"=>"link_info mockup",
-    "username"=>"poojaroonwit",
-    "request_important"=>$important
+// $attributes = array(
+//     "department"=>$attributes_form_email[0],
+//     "brand"=>$attributes_form_email[1],
+//     "total_sku"=>$attributes_form_email[2],
+//     "offline_runing_number"=>$attributes_form_email[3],
+//     "link_info"=>"link_info mockup",
+//     "username"=>"poojaroonwit",
+//     "request_important"=>$important
     
-);
+// );
 
 function create_ticket_csg(){
     global $subject;
@@ -85,15 +86,15 @@ function create_ticket_csg(){
 
 
 # check subject
-$keywords = array("SKU maintanance","sku_maintanance","sku mainta","sku mainte"); 
-foreach ($keywords as $keyword) {
-    if(str_contains($subject , $keyword)){
-        create_ticket_csg();
-    }else{
-        #end script
-        exit('non sku maintanance'); 
-    }
-  }
+// $keywords = array("SKU maintanance","sku_maintanance","sku mainta","sku mainte"); 
+// foreach ($keywords as $keyword) {
+//     if(str_contains($subject , $keyword)){
+//         create_ticket_csg();
+//     }else{
+//         #end script
+//         exit('non sku maintanance'); 
+//     }
+//   }
 
 
 
