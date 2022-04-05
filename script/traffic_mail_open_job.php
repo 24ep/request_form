@@ -80,7 +80,7 @@ function create_ticket_csg(){
             $last_id = $con->insert_id;
             echo $last_id;
          }else{
-            exit($con->error); 
+            exit("Error : ".$con->error); 
          }
 
          #add participant
