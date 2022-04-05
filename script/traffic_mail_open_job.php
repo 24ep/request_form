@@ -17,7 +17,7 @@ function check_account(){
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
-    $sql = "SELECT username from account where status='Enabled' and work_email = ".$email_from;
+    $sql = "SELECT username from account where  work_email = '".$email_from."'";
     $result =  mysqli_query($con, $sql);
     while($row = mysqli_fetch_array($result)) {
         $exist_user =  $row["username"];
