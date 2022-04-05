@@ -15,7 +15,7 @@ $email_from = $_GET["email_from"];
 function check_separate_subject_mail(){
     global $subject;
     $separates = array("|","/",","); 
-    $count_sparate = [];
+    $count_sparates = [];
     foreach ($separates as $separate) {
         $count_sparate = substr_count($subject,$separate);
         array_push($count_sparates,$count_sparate);
