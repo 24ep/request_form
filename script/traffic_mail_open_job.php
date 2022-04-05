@@ -14,6 +14,7 @@ $email_from = $_POST["email_from"];
 #check separate subject email
 function check_separate_subject_mail(){
     global $subject;
+    echo $subject;
     $separates = array("/","|",","); 
     $count_sparates = [];
     foreach ($separates as $separate) {
