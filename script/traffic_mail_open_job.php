@@ -87,8 +87,8 @@ function create_ticket_csg(){
 $keywords = array("SKU maintanance","sku_maintanance","sku mainta","sku mainte"); 
 foreach ($keywords as $keyword) {
     if(str_contains($subject , $keyword)){
-        create_ticket_csg();
-        exit();
+        // create_ticket_csg();
+         exit("test1");
     }else{
         #end script
         exit('non sku maintanance'); 
