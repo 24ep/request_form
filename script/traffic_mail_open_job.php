@@ -3,24 +3,22 @@ session_start();
 include('action_send_line_api.php');
 include('action_add_participant.php');
 # Get Variable form email
-$subject = $_GET["subject"];
-$body = $_GET["body"];
-$important = $_GET["importance"];
-$message_id = $_GET["message_id"];
-$internet_message_id = $_GET["internet_message_id"];
-$conversation_id = $_GET["conversation_id"];
-$email_from = $_GET["email_from"];
+$subject = $_POST["subject"];
+$body = $_POST["body"];
+$important = $_POST["importance"];
+$message_id = $_POST["message_id"];
+$internet_message_id = $_POST["internet_message_id"];
+$conversation_id = $_POST["conversation_id"];
+$email_from = $_POST["email_from"];
 
 #check separate subject email
 function check_separate_subject_mail(){
     global $subject;
-    echo $subject;
     $separates = array("/","|",","); 
     $count_sparates = [];
     foreach ($separates as $separate) {
         $count_sparate = substr_count($subject,$separate);
         array_push($count_sparates,$count_sparate);
-        echo $count_sparate;
     }
     $max_char = max($count_sparates);
     if($max_char>0){
