@@ -17,7 +17,7 @@ function check_separate_subject_mail(){
     $separates = array("|","/",","); 
     $count_sparate = [];
     foreach ($separates as $separate) {
-        $count_sparate = substr_count($subject,"$separate");
+        $count_sparate = substr_count($subject,$separate);
         array_push($count_sparates,$count_sparate);
     }
     $max_char = max($count_sparates);
