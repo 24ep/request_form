@@ -27,7 +27,7 @@ function check_account(){
         date_default_timezone_set("Asia/Bangkok");
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
-        $username_replace = replace($email_from,"@central.co.th","");
+        $username_replace = str_replace($email_from,"@central.co.th","");
         $sql = "INSERT INTO account
          (firstname,
          lastname,
