@@ -96,18 +96,18 @@ function create_ticket_csg(){
 
 # check subject
 $keywords = array("SKU maintenance","SKU maintanance","sku_maintanance","sku mainta","sku mainte"); 
+$len = count($keywords);
+$i=0;
 foreach ($keywords as $keyword) {
     if(strpos(strtolower($subject), strtolower($keyword)) !== false){
         create_ticket_csg();
         exit();
     }
-    if ($keyword === array_key_last($keywords)) {
+    if ($i == $len - 1) {
         echo 'NON SKU MAINTENANCE';
-    }else{
-        if ($keyword === key($keywords)) {
-            echo 'NON SKU MAINTENANCE';
-        }
     }
+    $i++;
+
   }
 
 
