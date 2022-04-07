@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <title>Content and Studio - Register</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">

@@ -79,7 +79,6 @@ function check_separate_subject_mail(){
     }
 }
 
-
 $separant_value =  check_separate_subject_mail();
 $attributes_form_email = explode($separant_value,$subject);
 $attributes = array(
@@ -93,7 +92,6 @@ $attributes = array(
     "production_type"=>"No info",
     "contact"=>$contact,
     "participant"=>"noti_follow_team,".$username
-    
 );
 
 function mapping_department($department){
@@ -113,6 +111,8 @@ function mapping_department($department){
         return "MEN";
     }elseif(strpos(strtolower($department), "beauty") !== false){
         return "BEAUTY";
+    }else{
+        return "OTHER";
     }
 }
 
