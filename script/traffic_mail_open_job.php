@@ -11,13 +11,14 @@ $internet_message_id = $_POST["internet_message_id"];
 $conversation_id = $_POST["conversation_id"];
 $email_from = $_POST["email_from"];
 $contact = $_POST["contact"];
+$link_info =  $_POST["link_info"];
 
 function check_account(){
     global $email_from;
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
-    $sql = "SELECT username from account where  work_email = '".$email_from."'";
+    $sql = "SELECT username from account where  lower(work_email) = lower('".$email_from."')";
     $result =  mysqli_query($con, $sql);
     while($row = mysqli_fetch_array($result)) {
         $exist_user =  $row["username"];
@@ -86,7 +87,6 @@ $attributes = array(
     "brand"=>$attributes_form_email[1],
     "total_sku"=>$attributes_form_email[2],
     "offline_runing_number"=>$attributes_form_email[3],
-    "link_info"=>"link_info mockup",
     "username"=>$username,
     "request_important"=>$important,
     "production_type"=>"No info",
@@ -94,7 +94,8 @@ $attributes = array(
     "participant"=>"noti_follow_team,".$username,
     "mail_conversation_id"=>$conversation_id,
     "mail_message_id"=>$message_id,
-    "mail_internet_message_id"=>$internet_message_id
+    "mail_internet_message_id"=>$internet_message_id,
+    "link_info"=>$link_info
 
 );
 
