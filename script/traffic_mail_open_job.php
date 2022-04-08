@@ -161,14 +161,8 @@ function create_ticket_csg(){
          #add participant
          #send line noti
 
-         mysqli_close($con);
-     
-
-    
+         mysqli_close($con);   
 }
-
-
-
 # check subject
 $keywords = array("SKU maintenance","SKU maintanance","sku_maintanance","sku mainta","sku mainte"); 
 $len = count($keywords);
