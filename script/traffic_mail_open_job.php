@@ -91,7 +91,11 @@ $attributes = array(
     "request_important"=>$important,
     "production_type"=>"No info",
     "contact"=>$contact,
-    "participant"=>"noti_follow_team,".$username
+    "participant"=>"noti_follow_team,".$username,
+    "mail_conversation_id"=>$conversation_id,
+    "mail_message_id"=>$message_id,
+    "mail_internet_message_id"=>$internet_message_id
+
 );
 
 function mapping_department($department){
@@ -131,6 +135,9 @@ function create_ticket_csg(){
      $insert_head .= ",department";$insert_value .= ",'".$attributes["department"]."'";
      $insert_head .= ",contact_buyer";$insert_value .= ",'".$attributes["contact"]."'";
      $insert_head .= ",participant";$insert_value .= ",'".$attributes["participant"]."'";
+     $insert_head .= ",mail_conversation_id";$insert_value .= ",'".$attributes["mail_conversation_id"]."'";
+     $insert_head .= ",mail_message_id";$insert_value .= ",'".$attributes["mail_message_id"]."'";
+     $insert_head .= ",mail_internet_message_id";$insert_value .= ",'".$attributes["mail_internet_message_id"]."'";
 
      
      date_default_timezone_set("Asia/Bangkok");
