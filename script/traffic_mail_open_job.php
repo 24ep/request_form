@@ -12,6 +12,9 @@ $conversation_id = $_POST["conversation_id"];
 $email_from = $_POST["email_from"];
 $contact = $_POST["contact"];
 $link_info =  $_POST["link_info"];
+$launch_date =  $_POST["launch_date"];
+$production_type =  $_POST["production_type"];
+$store_stock =  $_POST["store_stock"];
 
 function check_account(){
     global $email_from;
@@ -89,13 +92,15 @@ $attributes = array(
     "offline_runing_number"=>$attributes_form_email[3],
     "username"=>$username,
     "request_important"=>$important,
-    "production_type"=>"No info",
     "contact"=>$contact,
     "participant"=>"noti_follow_team,".$username,
     "mail_conversation_id"=>$conversation_id,
     "mail_message_id"=>$message_id,
     "mail_internet_message_id"=>$internet_message_id,
-    "link_info"=>$link_info
+    "link_info"=>$link_info,
+    "launch_date"=>$launch_date,
+    "production_type"=>$production_type,
+    "store_stock"=>$store_stock
 
 );
 
@@ -139,6 +144,9 @@ function create_ticket_csg(){
      $insert_head .= ",mail_conversation_id";$insert_value .= ",'".$attributes["mail_conversation_id"]."'";
      $insert_head .= ",mail_message_id";$insert_value .= ",'".$attributes["mail_message_id"]."'";
      $insert_head .= ",mail_internet_message_id";$insert_value .= ",'".$attributes["mail_internet_message_id"]."'";
+     $insert_head .= ",launch_date";$insert_value .= ",'".$attributes["launch_date"]."'";
+     $insert_head .= ",production_type";$insert_value .= ",'".$attributes["production_type"]."'";
+     $insert_head .= ",store_stock";$insert_value .= ",'".$attributes["store_stock"]."'";
 
      
      date_default_timezone_set("Asia/Bangkok");
