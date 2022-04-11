@@ -57,11 +57,12 @@ function check_account(){
          )
          ";
         $query = mysqli_query($con,$sql);
-        return $username_replace;
+        $username =  $username_replace;
 
     }else{
-        return $exist_user;
+        $username =  $exist_user;
     }
+    return $username;
 
 }
 
