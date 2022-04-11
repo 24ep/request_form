@@ -15,6 +15,7 @@ $link_info =  $_POST["link_info"];
 $launch_date =  $_POST["launch_date"];
 $production_type =  $_POST["production_type"];
 $store_stock =  $_POST["store_stock"];
+$contact_vender = $_POST["contact_vender"];
 
 function check_account(){
     global $email_from;
@@ -101,7 +102,8 @@ $attributes = array(
     "link_info"=>$link_info,
     "launch_date"=>$launch_date,
     "production_type"=>$production_type,
-    "store_stock"=>$store_stock
+    "store_stock"=>$store_stock,
+    "contact_vender"=>$contact_vender
 
 );
 
@@ -148,6 +150,7 @@ function create_ticket_csg(){
      $insert_head .= ",launch_date";$insert_value .= ",'".$attributes["launch_date"]."'";
      $insert_head .= ",production_type";$insert_value .= ",'".$attributes["production_type"]."'";
      $insert_head .= ",stock_source";$insert_value .= ",'".$attributes["store_stock"]."'";
+     $insert_head .= ",contact_vender";$insert_value .= ",'".$attributes["contact_vender"]."'";
 
      
      date_default_timezone_set("Asia/Bangkok");
