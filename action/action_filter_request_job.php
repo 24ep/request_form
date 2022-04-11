@@ -4,7 +4,7 @@ session_start();
 
 $_SESSION["user_filter"] = $_GET["user_filter"];
 
-$_SESSIOLocation:hoilter"] = $_GET["status_filter"];
+$_SESSION["status_filter"] = $_GET["status_filter"];
 
 $_SESSION["page_view"] = $_GET["page_view"];
 

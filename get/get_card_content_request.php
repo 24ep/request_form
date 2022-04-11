@@ -11,7 +11,7 @@ function get_card($status){
   }
   $query = "SELECT * FROM all_in_one_project.content_request  where status = '".$status."' ORDER by ".$sort." ".$limit ;
   $result = mysqli_query($con, $query);
-  $result_count = mysqli_query($con, $query_count);
+  // $result_count = mysqli_query($con, $query_count);
      while($row = mysqli_fetch_array($result)) {
       //count comment
       $sql="SELECT count(*) as total from all_in_one_project.comment where ticket_type = 'content_request' and ticket_id=".$row['id'];
@@ -42,7 +42,7 @@ function get_card($status){
     <div class="card" id="card_cr_'.$row["id"].'" style="margin-top:15px;'.$border.'" draggable="true" ondragstart="drag_card_cr(event)">
         <div class="card-body shadow" >
             <h6 class="card-title" style="font-size:14px"><strong style="color:red">CR-'.$row["id"].'</strong> '.$row["title"].'</h6>
-            <p class="card-text" style="color:gray;font-size:13px"  data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].','.$comment.')">'.$description.'</p>
+            <p class="card-text" style="color:gray;font-size:13px"  data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].','.$count_comment_cr.')">'.$description.'</p>
             <ion-icon name="chatbubbles-outline" class="icon_ocv"></ion-icon> 
             <small style="color: #adb5bd;font-size:12px;">'.$count_comment_cr.' Comment <br><strong>'.$row["case_officer"].'</strong> </small>
         </div>

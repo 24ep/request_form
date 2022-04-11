@@ -22,7 +22,7 @@
   FROM u749625779_cdscontent.file_manage as file
   left join u749625779_cdscontent.job_cms as job_cms
   on job_cms.job_number = file.job_number
-  where file.create_at like '%".$_GET['create_date']."%' and file.file_type in ('Buyerfile') ORDER BY job_number ASC" or die("Error:" . mysqli_error());
+  where file.create_at like '%".$_GET['create_date']."%' and file.file_type in ('Buyerfile') ORDER BY job_number ASC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
     echo 
     "<table class='table table-bordered'>
@@ -43,7 +43,7 @@
         $herf = $row['file_path'].$row['file_name'];
         // $herf = str_replace(".xlsm",$herf);
         // $herf = str_replace(".xlsx",$herf);
-        $brand = str_replace("'",$row["brand"]);
+        $brand = str_replace("'","",$row["brand"]);
         $name_download = $row["job_number"]." ".$brand." ".$row["sku"]." SKU ____".$row['file_name'];
         echo "<tr>";
         echo "<th scope='row' style='background: #ededed;'>".$row["job_number"]."</th>";

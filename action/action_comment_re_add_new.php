@@ -167,7 +167,7 @@ if($comment<>'' or $file_size <>0){
    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
    mysqli_query($con, "SET NAMES 'utf8' ");
    $query = "SELECT  * FROM add_new_job  WHERE id = ".$id
-   or die("Error:" . mysqli_error());
+   or die("Error:" . mysqli_error($con));
    $result =  mysqli_query($con, $query);
        while($row = mysqli_fetch_array($result)) {
            $brand = $row["brand"];
@@ -179,7 +179,7 @@ if($comment<>'' or $file_size <>0){
        $sent_to = explode(",",$participant);
        foreach ($sent_to as $sent_to_username) {
          if($sent_to_username<>$_SESSION["username"]){
-          $query = "SELECT  * FROM account where username = '".$sent_to_username."'" or die("Error:" . mysqli_error());
+          $query = "SELECT  * FROM account where username = '".$sent_to_username."'" or die("Error:" . mysqli_error($con));
           $result =  mysqli_query($con, $query);
               while($row = mysqli_fetch_array($result)) {
                   $key = $row["token_line"];

@@ -1,4 +1,4 @@
-<div class="col-2 list_bra window-full shadow" style="<?php echo  $nev_avg; ?>">
+<div class="col-2 list_bra window-full shadow <?php echo 'style ='.$nev_avg; ?>">
                 <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a id="logo_badge" style="color:black" class="navbar-brand" href="#" style="margin: 15px;">Content
                         <span style="color: #dc3545;">Service Gate</span></a>
@@ -27,12 +27,12 @@
                         <ion-icon style="color:white" name="grid-outline"></ion-icon> Request Console
                     </a>
                     <?php }?>
-                    <!-- <?php// if(strpos($_SESSION["department"],'Content')!==false){?>
+                    <!-- <?php // if(strpos($_SESSION["department"],'Content')!==false){?>
                     <a class="nav-link" id="v-pills-fl_board-tab" data-toggle="pill" href="#v-pills-fl_board" role="tab"
                         aria-controls="v-pills-fl_board" onclick="updateURL('v-pills-fl_board');" aria-selected="false">
                         <ion-icon style="color:white" name="grid-outline"></ion-icon> Follow-up Board
                     </a>
-                    <?php// }?> -->
+                    <?php // }?> -->
                     <hr class="hr_nav_bra">
                     <ul class="list-unstyled ps-0">
                         <li class="mb-1">

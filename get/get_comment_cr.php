@@ -12,10 +12,10 @@ function get_comment_cr($id){
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
-    $query = "SELECT * FROM comment WHERE ticket_type = 'content_request' and ticket_id = ".$id." ORDER BY id ASC" or die("Error:" . mysqli_error());
+    $query = "SELECT * FROM comment WHERE ticket_type = 'content_request' and ticket_id = ".$id." ORDER BY id ASC" or die("Error:" . mysqli_error($con));
      $result = mysqli_query($con, $query);
       while($row = mysqli_fetch_array($result)) {
-        $query_attach = "SELECT * FROM attachment WHERE ticket_type = 'cr_comment' and ticket_id = ".$row['id']." ORDER BY id ASC" or die("Error:" . mysqli_error());
+        $query_attach = "SELECT * FROM attachment WHERE ticket_type = 'cr_comment' and ticket_id = ".$row['id']." ORDER BY id ASC" or die("Error:" . mysqli_error($con));
         $result_attach = mysqli_query($con, $query_attach);
         while($row_attach = mysqli_fetch_array($result_attach)) {
             $herf = str_replace("../..","../..",$row_attach['file_path'].$row_attach['file_name']);

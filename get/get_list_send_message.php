@@ -3,7 +3,7 @@
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
   $query_tg = "SELECT * FROM all_in_one_project.message_box
-  where create_by = '".$_SESSION["username"]."' ORDER BY id  DESC " or die("Error:" . mysqli_error());
+  where create_by = '".$_SESSION["username"]."' ORDER BY id  DESC " or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query_tg);
   while($row = mysqli_fetch_array($result)) {
       if($row["important"]==1){

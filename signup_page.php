@@ -55,7 +55,7 @@
        function getoption_return_edit_job($col,$table,$select_option,$sorm,$database) {
            $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
            mysqli_query($con, "SET NAMES 'utf8' ");
-           $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error());
+           $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
            $result = mysqli_query($con, $query);
            while($row = mysqli_fetch_array($result)) {
                             if($sorm=="multi"){
@@ -103,8 +103,9 @@
                                 }
                         }
            }
-              return $option_set;
-              mysqli_close($con);
+           mysqli_close($con);   
+           return $option_set;
+              
              }
       $department_op = getoption_return_edit_job("account_dept_team","option","","single","all_in_one_project");
 ?>

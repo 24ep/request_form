@@ -4,7 +4,7 @@
     session_start();
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
       $query_op = "SELECT * FROM content_service_gate.attribute_option
-      WHERE attribute_id = ".$attr_id." and function = 'content_request' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
+      WHERE attribute_id = ".$attr_id." and function = 'content_request' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
       $result_op = mysqli_query($con, $query_op);
       if($current_value==""){
         $option_element = "<option selected value=''></option>";
@@ -21,7 +21,7 @@
   function project_bucket(){
             $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
-            $query = "SELECT * FROM project_bucket where status <> 'Close' ORDER BY id asc" or die("Error:" . mysqli_error());
+            $query = "SELECT * FROM project_bucket where status <> 'Close' ORDER BY id asc" or die("Error:" . mysqli_error($con));
             $result = mysqli_query($con, $query);
             while($row = mysqli_fetch_array($result)) {
               if($row["prefix"]=="CR"){
@@ -37,7 +37,7 @@
         function getoption_cr($col,$table,$select_option,$sorm,$database) {
             $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
-            $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error());
+            $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
             $result = mysqli_query($con, $query);
             while($row = mysqli_fetch_array($result)) {
           // split array store
@@ -76,8 +76,9 @@
                       }
               }
             }
-               return $option_set;
                mysqli_close($con);
+               return $option_set;
+               
               }
        //$department_op = getoption_cr("department","job_option_cms",$department,"single","u749625779_cdscontent");
       //  $product_website_op = getoption_cr("product_website","job_option_cms","CDS","multi","u749625779_cdscontent");

@@ -35,7 +35,7 @@ ac.profile_url
 FROM all_in_one_project.project_bucket as pb 
 left join all_in_one_project.account as ac
 on pb.owner = ac.username 
-where pb.id=".$_POST["id"] or die("Error:" . mysqli_error());
+where pb.id=".$_POST["id"] or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
 

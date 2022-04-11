@@ -2,7 +2,7 @@
 function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
-    $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error());
+    $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
 // split array store
@@ -56,8 +56,9 @@ function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
             }
     }
     }
-    return $option_set;
     mysqli_close($con);
+    return $option_set;
+    
     }
 
     $username_op = getoption_return_filter("username","account","","single","all_in_one_project");

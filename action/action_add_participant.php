@@ -5,7 +5,7 @@ function add_participant($id,$table){
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT  * FROM ".$table."  WHERE id = ".$id
-        or die("Error:" . mysqli_error());
+        or die("Error:" . mysqli_error($con));
         $result =  mysqli_query($con, $query);
             while($row = mysqli_fetch_array($result)) {
                 $participant = $row["participant"];

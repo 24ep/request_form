@@ -185,7 +185,7 @@ function add_participant($id,$table,$username){
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT  * FROM ".$table."  WHERE id = ".$id
-        or die("Error:" . mysqli_error());
+        or die("Error:" . mysqli_error($con));
         $result =  mysqli_query($con, $query);
             while($row = mysqli_fetch_array($result)) {
                 $participant = $row["participant"];
@@ -327,7 +327,7 @@ date_default_timezone_set("Asia/Bangkok");
                 // $query = "SELECT  * FROM content_request as cr
                 // left join account as account
                 // ON cr.request_by = account.username WHERE cr.id = ".$last_id
-                // or die("Error:" . mysqli_error());
+                // or die("Error:" . mysqli_error($con));
                 // $result =  mysqli_query($con, $query);
                 //     while($row = mysqli_fetch_array($result)) {
                 //         $key = $row["token_line"];

@@ -19,8 +19,8 @@ $day_time = $say_hi.$time;
 //    $current_day_display_current = date("l j F");
 //    $tmr_day_display_tmr = date("l j F" , time() + 86400 );
 //    $tmr_day_display_tmr_nt = date("l j F" , time() + 86400 + 86400);
-   $query_cr = "SELECT * FROM all_in_one_project.content_request WHERE effective_date like '%". $current_day  ."%' ORDER BY id DESC" or die("Error:" . mysqli_error());
-   $query_job = "SELECT * FROM u749625779_cdscontent.job_cms WHERE luanch_date = '". $current_day  ."' ORDER BY id DESC" or die("Error:" . mysqli_error());
+   $query_cr = "SELECT * FROM all_in_one_project.content_request WHERE effective_date like '%". $current_day  ."%' ORDER BY id DESC" or die("Error:" . mysqli_error($con));
+   $query_job = "SELECT * FROM u749625779_cdscontent.job_cms WHERE luanch_date = '". $current_day  ."' ORDER BY id DESC" or die("Error:" . mysqli_error($con));
   // loop old
   $result =  mysqli_query($con, $query_cr);
   $massage_line = "\n😗Content Request ที่มี effective date วันนี้\n";

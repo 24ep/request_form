@@ -11,7 +11,7 @@ if($_POST['id']<>""){
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
   $query = "SELECT sl.sku,sl.create_by,sl.create_date,itm.jda,itm.sbc,itm.department,itm.sub_department,itm.product_name,itm.catalogue,itm.vendor,itm.vendornm,itm.retail 
-  FROM sku_list as sl left join itm_datalake as itm on itm.pid = sl.sku   where sl.csg_id = ".$id." ORDER BY sl.id DESC " or die("Error:" . mysqli_error());
+  FROM sku_list as sl left join itm_datalake as itm on itm.pid = sl.sku   where sl.csg_id = ".$id." ORDER BY sl.id DESC " or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
     echo 
     "<p>

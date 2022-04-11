@@ -37,7 +37,7 @@ $token_line = $en_response->{'access_token'};
 $password_encode = md5(strrev(md5(str_replace(2,4,str_replace(strpos( substr(md5($password),2,1),md5($password)),strpos( substr(md5($password),4,1),md5($password)),md5($password))))));
 include("connect.php");
 // get current username for check
-$query = "SELECT * FROM account WHERE username = '".$username."'"  or die("Error:" . mysqli_error());
+$query = "SELECT * FROM account WHERE username = '".$username."'"  or die("Error:" . mysqli_error($con));
 $result =  mysqli_query($con, $query);
 if((mysqli_fetch_array($result) === null)){
     //insert to database

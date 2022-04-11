@@ -1,5 +1,5 @@
 <?php
-function send_email($title,description){
+function send_email($title,$description){
   $to = "poojaroonwit@central.co.th,poojaroonwit@central.co.th";
   $subject = "HTML email";
   $message = '

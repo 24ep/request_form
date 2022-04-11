@@ -14,7 +14,7 @@
 
 function get_page_account(){
  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
- $query_account = "SELECT * FROM all_in_one_project.account" or die("Error:" . mysqli_error());
+ $query_account = "SELECT * FROM all_in_one_project.account" or die("Error:" . mysqli_error($con));
  $result_account = mysqli_query($con, $query_account);
  
  while($row_account = mysqli_fetch_array($result_account)) {

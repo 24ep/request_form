@@ -91,7 +91,7 @@ return $status;
                   mysqli_query($con_project, "SET NAMES 'utf8' ");
                   $query_project = "SELECT *
                   FROM all_in_one_project.project_bucket 
-                  where prefix='".$row["ticket_template"]."'" or die("Error:" . mysqli_error());
+                  where prefix='".$row["ticket_template"]."'" or die("Error:" . mysqli_error($con));
                   $result_project = mysqli_query($con_project, $query_project);
                   while($row_project = mysqli_fetch_array($result_project)) {
                     $color_project = $row_project["color_project"];

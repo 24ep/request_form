@@ -107,7 +107,7 @@ ion-icon{
             on ac.username = anj.follow_assign_name
             left join all_in_one_project.brand_information as brand_info
             on brand_info.brand = anj.brand
-            where anj.id = ".$_POST['id']." ORDER BY anj.id DESC " or die("Error:" . mysqli_error());
+            where anj.id = ".$_POST['id']." ORDER BY anj.id DESC " or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
       $id = $row['id'];
@@ -168,7 +168,7 @@ ion-icon{
   }
 
 
-  $query = "SELECT * FROM account where username = '".$follow_up_by."' ORDER BY id DESC " or die("Error:" . mysqli_error());
+  $query = "SELECT * FROM account where username = '".$follow_up_by."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
     $follow_up_nickname = $row['nickname'];
@@ -383,7 +383,7 @@ ion-icon{
                             </div>
 
                         </div>
-                        <?php echo $need_more_respone;?>
+                        <?php //echo $need_more_respone;?>
                     </div>
                 </div>
                 <div class="modal-footer" style="height: 50px;bottom: 15px;width: inherit;">

@@ -91,7 +91,7 @@ return $status;
                   mysqli_query($con_project, "SET NAMES 'utf8' ");
                   $query_project = "SELECT *
                   FROM all_in_one_project.project_bucket 
-                  where prefix='".$row["ticket_template"]."'" or die("Error:" . mysqli_error());
+                  where prefix='".$row["ticket_template"]."'" or die("Error:" . mysqli_error($con));
                   $result_project = mysqli_query($con_project, $query_project);
                   while($row_project = mysqli_fetch_array($result_project)) {
                     $color_project = $row_project["color_project"];
@@ -177,7 +177,7 @@ return $status;
                   mysqli_query($con_project, "SET NAMES 'utf8' ");
                   $query_project = "SELECT *
                   FROM all_in_one_project.project_bucket 
-                  where prefix='".$row["ticket_template"]."'" or die("Error:" . mysqli_error());
+                  where prefix='".$row["ticket_template"]."'" or die("Error:" . mysqli_error($con));
                   $result_project = mysqli_query($con_project, $query_project);
                   while($row_project = mysqli_fetch_array($result_project)) {
                     $color_project = $row_project["color_project"];
@@ -218,7 +218,7 @@ date_default_timezone_set("Asia/Bangkok");
 $con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 $query_status = "SELECT * FROM content_service_gate.attribute_option 
-where attribute_id= 38" or die("Error:" . mysqli_error());
+where attribute_id= 38" or die("Error:" . mysqli_error($con));
 $result_status = mysqli_query($con_status, $query_status);
 echo '<div class="row">
 <div class="col border-0 border-end">
@@ -279,7 +279,7 @@ date_default_timezone_set("Asia/Bangkok");
 $con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 $query_status = "SELECT * FROM content_service_gate.attribute_option 
-where attribute_id= 38 and attribute_option not in ('cancel','routine work','monitor','close')" or die("Error:" . mysqli_error());
+where attribute_id= 38 and attribute_option not in ('cancel','routine work','monitor','close')" or die("Error:" . mysqli_error($con));
 $result_status = mysqli_query($con_status, $query_status);
       $i=0;
 while($row_status = mysqli_fetch_array($result_status)) {

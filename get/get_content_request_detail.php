@@ -18,7 +18,7 @@ function return_option_edit_cr($current_value,$attr_id){
   session_start();
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM content_service_gate.attribute_option
-    WHERE attribute_id = ".$attr_id." and function = 'content_request' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
+    WHERE attribute_id = ".$attr_id." and function = 'content_request' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
     $result_op = mysqli_query($con, $query_op);
     if($current_value==""){
       $option_element = "<option selected value=''></option>";
@@ -33,10 +33,11 @@ function return_option_edit_cr($current_value,$attr_id){
   return $option_element;
 }
 function get_attachment_cr($id){
+  $list_attchment ="";
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
-  $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image<>1 ORDER BY id ASC" or die("Error:" . mysqli_error());
+  $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image<>1 ORDER BY id ASC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $list_attchment .=  '<small style="display:block;margin-bottom:3px"><strong style="color:gray">Attchment</strong></small>
   <ul class="list-group ">';
@@ -57,10 +58,11 @@ function get_attachment_cr($id){
     }
 }
 function get_image_cr($id){
+  $list_image="";
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
-  $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image=1 ORDER BY id ASC" or die("Error:" . mysqli_error());
+  $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image=1 ORDER BY id ASC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   if(isset($list_image)){$list_image.= '<div class="row">';}else{$list_image= '<div class="row">';}
   
@@ -78,7 +80,7 @@ function get_image_cr($id){
 function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
-    $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error());
+    $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
   // split array store
@@ -132,8 +134,9 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
               }
       }
     }
+        mysqli_close($con);
        return $option_set;
-       mysqli_close($con);
+       
       }
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
@@ -175,7 +178,7 @@ $result = mysqli_query($con, $query);
     $list_attachment = get_attachment_cr($id);
     $list_image = get_image_cr($id);
     // get contact
-    $query = "SELECT * FROM all_in_one_project.account where username = '".$case_officer."' ORDER BY id DESC " or die("Error:" . mysqli_error());
+    $query = "SELECT * FROM all_in_one_project.account where username = '".$case_officer."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
       $case_nickname = $row['nickname'];
@@ -183,7 +186,7 @@ $result = mysqli_query($con, $query);
       $office_tell = $row['office_tell'];
     }
     // get contact
-    $query = "SELECT * FROM all_in_one_project.account where username = '".$request_by."' ORDER BY id DESC " or die("Error:" . mysqli_error());
+    $query = "SELECT * FROM all_in_one_project.account where username = '".$request_by."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
       $request_by_nickname = $row['nickname'];
@@ -207,7 +210,7 @@ $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one
 mysqli_query($con_project, "SET NAMES 'utf8' ");
 $query_project = "SELECT *
 FROM all_in_one_project.project_bucket 
-where prefix='".$ticket_template."'" or die("Error:" . mysqli_error());
+where prefix='".$ticket_template."'" or die("Error:" . mysqli_error($con));
 $result_project = mysqli_query($con_project, $query_project);
 while($row_project = mysqli_fetch_array($result_project)) {
   $color_project = $row_project["color_project"];

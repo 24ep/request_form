@@ -69,10 +69,11 @@ date_default_timezone_set("Asia/Bangkok");
 
         <?php
         function get_attachment_cr($id){
+            $list_attchment ="";
             date_default_timezone_set("Asia/Bangkok");
             $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
-            $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image<>1 ORDER BY id ASC" or die("Error:" . mysqli_error());
+            $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image<>1 ORDER BY id ASC" or die("Error:" . mysqli_error($con));
             $result = mysqli_query($con, $query);
             $list_attchment .=  '<small style="display:block;margin-bottom:3px"><strong style="color:gray">Attchment</strong></small>
             <ul class="list-group ">';
@@ -93,10 +94,11 @@ date_default_timezone_set("Asia/Bangkok");
               }
           }
         function get_image_cr($id){
+            $list_image="";
             date_default_timezone_set("Asia/Bangkok");
             $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
-            $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image=1 ORDER BY id ASC" or die("Error:" . mysqli_error());
+            $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image=1 ORDER BY id ASC" or die("Error:" . mysqli_error($con));
             $result = mysqli_query($con, $query);
             if(isset($list_image)){$list_image.= '<div class="row">';}else{$list_image= '<div class="row">';}
             

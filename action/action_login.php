@@ -14,13 +14,13 @@ if($_GET["username"]=="poojaroonwit"){
 //encode password
 $password_encode = md5(strrev(md5(str_replace(2,4,str_replace(strpos( substr(md5($password),2,1),md5($password)),strpos( substr(md5($password),4,1),md5($password)),md5($password))))));
 // get current username for check
-$query = "SELECT * FROM account WHERE username = '".$username."' and password = '".$password_encode."'"or die("Error:" . mysqli_error());
+$query = "SELECT * FROM account WHERE username = '".$username."' and password = '".$password_encode."'"or die("Error:" . mysqli_error($con));
 $result =  mysqli_query($con, $query);
 if((mysqli_fetch_array($result) === null)){
     insert_log("login faild | username ".$username." | pass ".$password,"account",0);
     header("Location: /login_page?respond=username หรือ password ไม่ถูกต้อง&code=".$password_encode);
 }else{
-    $query = "SELECT * FROM account WHERE username = '".$username."' and password = '".$password_encode."'"or die("Error:" . mysqli_error());
+    $query = "SELECT * FROM account WHERE username = '".$username."' and password = '".$password_encode."'"or die("Error:" . mysqli_error($con));
     $result =  mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
         $_SESSION["nickname"]=$row["nickname"];

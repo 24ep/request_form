@@ -28,7 +28,7 @@
         }
         // cancel old ticket
         $sku_just =  implode(',',$sku_just_array);
-        $query_dulp_sku = "SELECT * FROM sku_list where sku in (".$sku_just .") ORDER BY id DESC " or die("Error:" . mysqli_error());
+        $query_dulp_sku = "SELECT * FROM sku_list where sku in (".$sku_just .") ORDER BY id DESC " or die("Error:" . mysqli_error($con));
         $result_dulp_sku = mysqli_query($con, $query_dulp_sku);
         $sku_csg_ticket_id_nc = array();
         while($row_dulp_sku = mysqli_fetch_array($result_dulp_sku)) {
@@ -71,7 +71,7 @@
         $query = "SELECT  * FROM add_new_job as job
         left join account as account
         ON job.request_username = account.username WHERE job.id = ".$id
-        or die("Error:" . mysqli_error());
+        or die("Error:" . mysqli_error($con));
         $result =  mysqli_query($con, $query);
             while($row = mysqli_fetch_array($result)) {
                 $key = $row["token_line"];

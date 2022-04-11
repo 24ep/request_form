@@ -5,8 +5,6 @@ $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password
 function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
   if($site_element=='datetime-local'){
     $current_value = str_replace(" ","T",$current_value);
-  }else{
-    $current_value = $current_value;
   }
   $element = '
   <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
@@ -30,7 +28,7 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
 function return_s_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit,$id){
   $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM content_service_gate.attribute_option
-    WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
+    WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
     $result_op = mysqli_query($con, $query_op);
     while($option = mysqli_fetch_array($result_op)) {
     if($option["attribute_option"]==$current_value){
@@ -62,7 +60,7 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
 function return_m_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit,$id){
   $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM content_service_gate.attribute_option
-    WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error());
+    WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
     $result_op = mysqli_query($con, $query_op);
     while($option = mysqli_fetch_array($result_op)) {
     if(strpos($current_value ,$option["attribute_option"])!==false){
@@ -113,7 +111,7 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
   return $element;
 }
 $query = "SELECT * FROM content_service_gate.attribute_entity
-          WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY attribute_id ASC" or die("Error:" . mysqli_error());
+          WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY attribute_id ASC" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
     //--

@@ -108,7 +108,7 @@
                 $query = "SELECT  * FROM content_request as cr
                 left join account as account
                 ON cr.request_by = account.username WHERE cr.id = ".$last_id
-                or die("Error:" . mysqli_error());
+                or die("Error:" . mysqli_error($con));
                 $result =  mysqli_query($con, $query);
                     while($row = mysqli_fetch_array($result)) {
                         $key = $row["token_line"];

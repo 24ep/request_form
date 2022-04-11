@@ -17,7 +17,7 @@
          mysqli_query($con, "SET NAMES 'utf8' ");
          $query = "SELECT  * FROM add_new_job as job
          left join account as account
-         ON job.request_username = account.username WHERE job.id = ".$id or die("Error:" . mysqli_error());
+         ON job.request_username = account.username WHERE job.id = ".$id or die("Error:" . mysqli_error($con));
          $result =  mysqli_query($con,$sql);
              while($row = mysqli_fetch_array($result)) {
                  $key = $row["token_line"];

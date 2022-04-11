@@ -1,6 +1,7 @@
 <?php 
 session_start();
         function get_option_return($attribute_code,$default_option,$select_type,$function){
+            $option_set= "";
             $con= mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
             $query = "SELECT 
@@ -13,7 +14,7 @@ session_start();
             left join content_service_gate.attribute_entity as attribute_entity
             on attribute_option.attribute_id = attribute_entity.attribute_id 
             where attribute_entity.attribute_code =  '".$attribute_code."' and attribute_option.function='".$function."' 
-            ORDER BY option_id asc" or die("Error:" . mysqli_error());
+            ORDER BY option_id asc" or die("Error:" . mysqli_error($con));
             $result = mysqli_query($con, $query);
             
             
@@ -32,6 +33,7 @@ session_start();
                     }
 
                 }else{
+                
                     $option_set .= '<option value=""></option>';
                     while($row = mysqli_fetch_array($result)) {
                         if($default_option==$row["attribute_option"]){
@@ -42,14 +44,14 @@ session_start();
                     }
                         
                 }
-            
-            return $option_set;
             mysqli_close($con);
+            return $option_set;
+            
         }
         function getoption_return_edit_job($col,$table,$select_option,$sorm,$database) {
             $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
-            $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error());
+            $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
             $result = mysqli_query($con, $query);
             while($row = mysqli_fetch_array($result)) {
           // split array store
@@ -172,8 +174,9 @@ session_start();
                       }
               }
             }
-               return $option_set;
                mysqli_close($con);
+               return $option_set;
+               
               }
        //get buyer department
         // if($department=="Buyer Beauty"){
