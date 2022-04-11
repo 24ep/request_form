@@ -25,6 +25,7 @@ function check_account(){
     $result =  mysqli_query($con, $sql);
     while($row = mysqli_fetch_array($result)) {
         $exist_user =  $row["username"];
+        break; 
     }
     if($exist_user == null or $exist_user = ""){
         #create a new user first
