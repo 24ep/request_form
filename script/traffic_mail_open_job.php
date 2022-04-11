@@ -155,7 +155,6 @@ function create_ticket_csg(){
      $insert_head .= ",stock_source";$insert_value .= ",'".$attributes["store_stock"]."'";
      $insert_head .= ",contact_vender";$insert_value .= ",'".$attributes["contact_vender"]."'";
      $insert_head .= ",tags";$insert_value .= ",'".$attributes["tags"]."'";
-     $insert_head .= ",lastest_mail_message_id";$insert_value .= ",'".$attributes["mail_message_id"]."'";
 
      
      date_default_timezone_set("Asia/Bangkok");
