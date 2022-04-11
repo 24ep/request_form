@@ -28,7 +28,7 @@ function check_account(){
         $exist_user =  $row["username"];
         break; 
     }
-    if($exist_user == null or $exist_user = ""){
+    if($exist_user == null or $exist_user == ""){
         #create a new user first
         date_default_timezone_set("Asia/Bangkok");
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -104,7 +104,8 @@ $attributes = array(
     "launch_date"=>$launch_date,
     "production_type"=>$production_type,
     "store_stock"=>$store_stock,
-    "contact_vender"=>$contact_vender
+    "contact_vender"=>$contact_vender,
+    "tags"=>"Auto_email_created"
 
 );
 
@@ -152,6 +153,7 @@ function create_ticket_csg(){
      $insert_head .= ",production_type";$insert_value .= ",'".$attributes["production_type"]."'";
      $insert_head .= ",stock_source";$insert_value .= ",'".$attributes["store_stock"]."'";
      $insert_head .= ",contact_vender";$insert_value .= ",'".$attributes["contact_vender"]."'";
+     $insert_head .= ",tags";$insert_value .= ",'".$attributes["tags"]."'";
 
      
      date_default_timezone_set("Asia/Bangkok");
