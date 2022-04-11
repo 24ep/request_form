@@ -7,6 +7,7 @@ $subject = $_POST["subject"];
 $body = $_POST["body"];
 $important = $_POST["importance"];
 $message_id = $_POST["message_id"];
+$lastest_message_id = $_POST["lastest_message_id"];
 $internet_message_id = $_POST["internet_message_id"];
 $conversation_id = $_POST["conversation_id"];
 $email_from = $_POST["email_from"];
@@ -105,8 +106,8 @@ $attributes = array(
     "production_type"=>$production_type,
     "store_stock"=>$store_stock,
     "contact_vender"=>$contact_vender,
-    "tags"=>"Auto_email_created"
-
+    "tags"=>"Auto_email_created",
+    "lastest_message_id"=>$message_id
 );
 
 function mapping_department($department){
@@ -154,6 +155,7 @@ function create_ticket_csg(){
      $insert_head .= ",stock_source";$insert_value .= ",'".$attributes["store_stock"]."'";
      $insert_head .= ",contact_vender";$insert_value .= ",'".$attributes["contact_vender"]."'";
      $insert_head .= ",tags";$insert_value .= ",'".$attributes["tags"]."'";
+     $insert_head .= ",lastest_mail_message_id";$insert_value .= ",'".$attributes["mail_message_id"]."'";
 
      
      date_default_timezone_set("Asia/Bangkok");
