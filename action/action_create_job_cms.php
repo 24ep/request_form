@@ -118,7 +118,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
                 $brand = $row["brand"];
                 $sku = $row["sku"];
                 $ticket_id = $row["id"];
-                $message_id = $row["mail_message_id"];
+                $message_id = $row["message_id"];
                 $f_first_name = $row["f_first_name"];
                 $f_last_name = $row["f_last_name"];
                 $f_work_email = $row["f_work_email"];
