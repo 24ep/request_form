@@ -3,6 +3,7 @@
  include('action_insert_log.php');
  include('action_send_line_api.php');
  include('action_add_participant.php');
+ include('traffic_mail_send_update.php');
 //include("connect.php");
     foreach($_POST["store_adj"] as $store)
         {
@@ -93,16 +94,42 @@ mysqli_query($con, "SET NAMES 'utf8' ");
          $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
          $query = mysqli_query($con,$sql);
         //get key
-        $query = "SELECT  * FROM add_new_job as job
+        $query = "SELECT  
+        account.token_line as token_line,
+        job.id as id,
+        job.brand as brand,
+        job.sku as sku,
+        job.mail_message_id  as message_id,
+        follow_up.firstname as f_first_name,
+        follow_up.lastname as f_last_name,
+        follow_up.work_email as f_work_email,
+        follow_up.office_tell as f_office_tell,
+        follow_up.department as f_department
+        FROM add_new_job as job
         left join account as account
-        ON job.request_username = account.username WHERE job.id = ".$_POST["id_adj"]
+        ON job.request_username = account.username
+        left join account as follow_up
+        ON job.follow_up_by = follow_up.username  
+        WHERE job.id = ".$_POST["id_adj"]
         or die("Error:" . mysqli_error($con));
         $result =  mysqli_query($con, $query);
             while($row = mysqli_fetch_array($result)) {
                 $key = $row["token_line"];
                 $brand = $row["brand"];
                 $sku = $row["sku"];
-                //echo '<script>alert("'.$key.'");</script>';
+                $ticket_id = $row["id"];
+                $message_id = $row["mail_message_id"];
+                $f_first_name = $row["f_first_name"];
+                $f_last_name = $row["f_last_name"];
+                $f_work_email = $row["f_work_email"];
+                $f_office_tell = $row["f_office_tell"];
+                $description = "The Follow-up team have been accepted your IM form , your information ready to create new SKU on online channel , we are passing the information to production team to writing a content.";
+                $ticket_status = "Accepted";
+
+            }
+            if($message_id <> ""){
+                $content_contact_person = $f_first_name." ".$f_last_name."\n".$f_work_email."\n".$f_office_tell; 
+                send_update_mail($ticket_id,$brand,$sku ,$content_contact_person,$message_id,$description,$ticket_status);
             }
             if($key<>"" and $key<>null){
                 sent_line_noti("\n• Updated NS-".$_POST["id_adj"]." [ ".$brand." ".$sku." SKUs ]\n----------------------------\n• ทำการเปิด job เรียบร้อยแล้ว\n• job number : ".$job_number_laset,$key);

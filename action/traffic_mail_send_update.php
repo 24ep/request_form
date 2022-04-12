@@ -1,5 +1,5 @@
 <?php
-function send_update($ticket_id,$brand,$total_sku,$content_contact_person,$message_id){
+function send_update_mail($ticket_id,$brand,$total_sku,$content_contact_person,$message_id,$description,$status){
 
 $curl = curl_init();
 
@@ -19,7 +19,9 @@ curl_setopt_array($curl, array(
   "content_contact_person": "'.$content_contact_person.'",
   "total_sku": '.$total_sku.',
   "link_to_more":"",
-  "message_id":"'.$message_id.'"
+  "message_id":"'.$message_id.'",
+  "status":"'.$status.'",
+  "description":"'.$description.'"
 }',
   CURLOPT_HTTPHEADER => array(
     'Content-Type: application/json'
