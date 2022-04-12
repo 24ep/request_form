@@ -123,7 +123,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
                 $f_last_name = $row["f_last_name"];
                 $f_work_email = $row["f_work_email"];
                 $f_office_tell = $row["f_office_tell"];
-                $description = "The Follow-up team have been accepted your IM form , your information ready to create new SKU on online channel , we are passing the information to production team to writing a content.";
+                $description = "The Follow-up team have been accepted your IM form , your information id <strong>NS-".$row['id']."</strong> ready to create new SKU on online channel , we are passing the information to production team to writing a content.";
                 $ticket_status = "Accepted";
             }
             if($message_id <> ""){
