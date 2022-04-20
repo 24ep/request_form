@@ -182,24 +182,25 @@ if(isset($_POST["from_post"] )){
       $launch_date = "<span style='color:#E0E0E0'>No launch date</span>";
     }
     //priority_badge  
+    $current_day = date("Y-m-d");
     $p_badge="";
     $create_date = date_create($row["create_date"]);
     $create_date = date_format($recive_mail_date,"Y-m-d");
     // -1 create date > 5
     $create_date_diff = (strtotime($current_day) - strtotime($create_date))/  ( 60 * 60 * 24 );
     if($create_date_diff>=5){
-      $p_badge .= "Age > 5 Days";
+      $p_badge .= '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">Age > 5 Days</span>';
     }
     //  launch date
     $launch_date_c = date_create($row["launch_date"]);
     $launch_date_c = date_format($recive_mail_date,"Y-m-d");
-     $create_date_diff = (strtotime($current_day) - strtotime($launch_date_c))/  ( 60 * 60 * 24 );
-    if($create_date_diff>=5){
-      $p_badge .= "Launch in 5 Days";
+     $launch_date_diff = (strtotime($current_day) - strtotime($launch_date_c))/  ( 60 * 60 * 24 );
+    if($launch_date_diff<=5){
+      $p_badge .= '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">Luanch in 5 days</span>';
     }
 
-    // -2 already image
-    $priority_badge = "";
+    // // -2 already image
+    // $priority_badge = "";
 
 
     //config_type
@@ -229,7 +230,7 @@ if(isset($_POST["from_post"] )){
       $ticket .= "<td>".$row["project_type"]."</td>";
       $ticket .= "<td>".$row["business_type"]."</td>";
       $ticket .= "<td>".$launch_date."</td>";
-      $ticket .= "<td>".$priority_badge."</td>";
+      $ticket .= "<td>".$p_badge."</td>";
       $ticket .= "<td>".$task_status ."</td>";
       $ticket .= "<td>".$ticket_role ."</td>";
       $ticket .= "<td>";
