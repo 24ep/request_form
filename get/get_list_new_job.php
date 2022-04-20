@@ -200,7 +200,7 @@ if(isset($_POST["from_post"] )){
     if($launch_date_diff<=3){
       $p_badge .= '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Launch in 3 days</span>';
     }elseif($launch_date_diff<=5){
-      $p_badge .= '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">Launch in 5 days</span>';
+      $p_badge .= '<span class="badge rounded-pill bg-warning" style="margin-left:5px">Launch in 5 days</span>';
     }
 
     // // -2 already image
