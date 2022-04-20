@@ -185,7 +185,7 @@ if(isset($_POST["from_post"] )){
     $current_day = date("Y-m-d");
     $p_badge="";
     $create_date = date_create($row["create_date"]);
-    $create_date = date_format($recive_mail_date,"Y-m-d");
+    $create_date = date_format($create_date,"Y-m-d");
     // -1 create date > 5
     $create_date_diff = (strtotime($current_day) - strtotime($create_date))/  ( 60 * 60 * 24 );
     if($create_date_diff>=5){
@@ -196,7 +196,7 @@ if(isset($_POST["from_post"] )){
     $launch_date_c = date_format($launch_date_c,"Y-m-d");
     $launch_date_diff = (strtotime($launch_date_c)-strtotime($current_day))/  ( 60 * 60 * 24 );
     if($launch_date_diff<=3){
-      $p_badge .= '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Luanch in 5 days</span>';
+      $p_badge .= '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Luanch in 3 days</span>';
     }
 
     // // -2 already image
