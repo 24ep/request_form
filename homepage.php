@@ -966,7 +966,7 @@
                                         <th scope="col">SKU</th>
                                         <th scope="col">Production request</th>
                                         <th scope="col">Project-type</th>
-                                        <th scope="col">Modal</th>
+                                        <!-- <th scope="col">Modal</th> -->
                                         <th scope="col">launch date</th>
                                         <th scope="col">Badge</th>
                                         <th scope="col">Status</th>
