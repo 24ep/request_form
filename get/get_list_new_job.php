@@ -198,9 +198,9 @@ if(isset($_POST["from_post"] )){
     $launch_date_c = date_format($launch_date_c,"Y-m-d");
     $launch_date_diff = (strtotime($launch_date_c)-strtotime($current_day))/  ( 60 * 60 * 24 );
     if($launch_date_diff<=3){
-      $p_badge .= '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Luanch in 3 days</span>';
+      $p_badge .= '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Launch in 3 days</span>';
     }elseif($launch_date_diff<=5){
-      $p_badge .= '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">Luanch in 5 days</span>';
+      $p_badge .= '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">Launch in 5 days</span>';
     }
 
     // // -2 already image
