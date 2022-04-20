@@ -194,14 +194,17 @@ if(isset($_POST["from_post"] )){
       $p_badge .= '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Age > 9 Days</span>';
     }
     //  launch date
-    $launch_date_c = date_create($row["launch_date"]);
-    $launch_date_c = date_format($launch_date_c,"Y-m-d");
-    $launch_date_diff = (strtotime($launch_date_c)-strtotime($current_day))/  ( 60 * 60 * 24 );
-    if($launch_date_diff<=3){
-      $p_badge .= '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Launch in 3 days</span>';
-    }elseif($launch_date_diff<=5){
-      $p_badge .= '<span class="badge rounded-pill bg-warning" style="margin-left:5px">Launch in 5 days</span>';
+    if($row["launch_date"] <> null){
+      $launch_date_c = date_create($row["launch_date"]);
+      $launch_date_c = date_format($launch_date_c,"Y-m-d");
+      $launch_date_diff = (strtotime($launch_date_c)-strtotime($current_day))/  ( 60 * 60 * 24 );
+      if($launch_date_diff<=3){
+        $p_badge .= '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Launch in 3 days</span>';
+      }elseif($launch_date_diff<=5){
+        $p_badge .= '<span class="badge rounded-pill bg-warning" style="margin-left:5px">Launch in 5 days</span>';
+      }
     }
+  
 
     // // -2 already image
     // $priority_badge = "";
