@@ -189,9 +189,9 @@ if(isset($_POST["from_post"] )){
     // -1 create date > 5
     $create_date_diff = (strtotime($current_day) - strtotime($create_date))/  ( 60 * 60 * 24 );
     if($create_date_diff>=5){
-      $p_badge .= '<span class="badge rounded-pill bg-warning" style="margin-left:5px">Age > 5 Days</span>';
+      $p_badge .= '<span class="badge rounded-pill bg-warning" style="margin-left:5px">Age > '.$create_date_diff.' Days</span>';
     }elseif($create_date_diff>=5){
-      $p_badge .= '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Age > 9 Days</span>';
+      $p_badge .= '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Age > '.$create_date_diff.' Days</span>';
     }
     //  launch date
     if($row["launch_date"] <> null){
@@ -199,9 +199,9 @@ if(isset($_POST["from_post"] )){
       $launch_date_c = date_format($launch_date_c,"Y-m-d");
       $launch_date_diff = (strtotime($launch_date_c)-strtotime($current_day))/  ( 60 * 60 * 24 );
       if($launch_date_diff<=3){
-        $p_badge .= '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Launch in 3 days</span>';
+        $p_badge .= '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Launch in '.$launch_date_diff.' days</span>';
       }elseif($launch_date_diff<=5){
-        $p_badge .= '<span class="badge rounded-pill bg-warning" style="margin-left:5px">Launch in 5 days</span>';
+        $p_badge .= '<span class="badge rounded-pill bg-warning" style="margin-left:5px">Launch in '.$launch_date_diff.' days</span>';
       }
     }
   
