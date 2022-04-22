@@ -171,7 +171,7 @@ function create_ticket_csg(){
             $last_id = $con->insert_id;
             echo $last_id;
          }else{
-            exit("Error : ".$con->error.$sql); 
+            exit("Error : ".$con->error.$sql.">>".$subject); 
          }
 
          #add participant
