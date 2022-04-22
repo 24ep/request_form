@@ -92,7 +92,7 @@ function check_exist_message_id(){
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
-    $sql = "SELECT id from add_new_job where mail_conversation_id='".$conversation_id."'";
+    $sql = "SELECT id from add_new_job where parent=null and  mail_conversation_id='".$conversation_id."'";
     $result =  mysqli_query($con, $sql);
     while($row = mysqli_fetch_array($result)) {
         $exist_id =  $row["id"];
