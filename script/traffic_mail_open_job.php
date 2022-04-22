@@ -140,7 +140,7 @@ function create_ticket_csg(){
     $insert_value = "";
 
      $insert_head .= "brand";$insert_value .= "'".str_replace("'","''",$attributes["brand"])."'";
-     $insert_head .= ",sku";$insert_value .= ",'".$attributes["total_sku"]."'";
+     $insert_head .= ",sku";$insert_value .= ",".$attributes["total_sku"]."";
      $insert_head .= ",link_info";$insert_value .= ",'".$attributes["link_info"]."'";
      $insert_head .= ",request_username";$insert_value .= ",'".$attributes["username"]."'";
      $insert_head .= ",request_important";$insert_value .= ",'".$attributes["request_important"]."'";
