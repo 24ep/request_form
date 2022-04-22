@@ -180,7 +180,7 @@ function create_ticket_csg(){
          mysqli_close($con);   
 }
 # check subject
-$keywords = array("SKU maintenance","SKU maintanance","sku_maintanance","sku mainta","sku mainte"); 
+$keywords = array("SKU maintenance","SKU maintanance","sku_maintanance","sku mainta","sku mainte","SKU Maintainence"); 
 $len = count($keywords);
 $i=0;
 foreach ($keywords as $keyword) {
