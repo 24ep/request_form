@@ -139,7 +139,7 @@ function create_ticket_csg(){
     $insert_head ="";
     $insert_value = "";
     if($attributes["launch_date"]==""){
-        $launch_date = null ;
+        $launch_date = ",''" ;
     }else{
         $launch_date = ",'".$attributes["launch_date"]."'";
     }
