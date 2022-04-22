@@ -155,7 +155,7 @@ function create_ticket_csg(){
      $insert_head .= ",mail_conversation_id";$insert_value .= ",'".$attributes["mail_conversation_id"]."'";
      $insert_head .= ",mail_message_id";$insert_value .= ",'".$attributes["mail_message_id"]."'";
      $insert_head .= ",mail_internet_message_id";$insert_value .= ",'".$attributes["mail_internet_message_id"]."'";
-     $insert_head .= ",launch_date";$insert_value .= ",'".$attributes["launch_date"]."'";
+     $insert_head .= ",launch_date";$insert_value .= $launch_date ;
      $insert_head .= ",production_type";$insert_value .= ",'".$attributes["production_type"]."'";
      $insert_head .= ",stock_source";$insert_value .= ",'".$attributes["store_stock"]."'";
      $insert_head .= ",contact_vender";$insert_value .= ",'".$attributes["contact_vender"]."'";
