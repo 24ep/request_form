@@ -144,8 +144,14 @@ function create_ticket_csg(){
         $launch_date = ",'".$attributes["launch_date"]."'";
     }
 
+    if($attributes["total_sku"]==""){
+        $total_sku = ",0" ;
+    }else{
+        $total_sku = ",'".$attributes["total_sku"]."'";
+    }
+
      $insert_head .= "brand";$insert_value .= "'".str_replace("'","''",$attributes["brand"])."'";
-     $insert_head .= ",sku";$insert_value .= ",".$attributes["total_sku"]."";
+     $insert_head .= ",sku";$insert_value .= $total_sku;
      $insert_head .= ",link_info";$insert_value .= ",'".$attributes["link_info"]."'";
      $insert_head .= ",request_username";$insert_value .= ",'".$attributes["username"]."'";
      $insert_head .= ",request_important";$insert_value .= ",'".$attributes["request_important"]."'";
