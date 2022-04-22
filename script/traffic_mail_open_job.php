@@ -87,12 +87,33 @@ function check_separate_subject_mail(){
     }
 }
 
+function check_exist_message_id(){
+    global $message_id;
+    date_default_timezone_set("Asia/Bangkok");
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+    mysqli_query($con, "SET NAMES 'utf8' ");
+    $sql = "SELECT username from add_new_job where mail_message_id=".$message_id;
+    $result =  mysqli_query($con, $sql);
+    while($row = mysqli_fetch_array($result)) {
+        $exist_id =  $row["id"];
+        break; 
+    }
+    if($exist_id == null or $exist_id == ""){
+        return  "NULL";
+    }else{
+        //chage status and config type
+        $sql_update_parent = "UPDATE add_new_job SET status = 'none',config_type= 'parent' where id=".$exist_id ;
+        $query_update_parent = mysqli_query($con,$sql_update_parent);
+        return  $exist_id;
+    }
+}
+
 $separant_value =  check_separate_subject_mail();
 $attributes_form_email = explode($separant_value,$subject);
 $attributes = array(
     "department"=>mapping_department($attributes_form_email[0]),
     "brand"=>$attributes_form_email[1],
-    "total_sku"=>$attributes_form_email[2],
+    "total_sku"=>preg_replace('/[A-Z,a-z," "]+/', '', $$attributes_form_email[2]),
     "offline_runing_number"=>$attributes_form_email[3],
     "username"=>$username,
     "request_important"=>$important,
@@ -149,6 +170,9 @@ function create_ticket_csg(){
     }else{
         $total_sku = ",'".$attributes["total_sku"]."'";
     }
+        
+        $parent_id = ",".check_exist_message_id();
+    
 
      $insert_head .= "brand";$insert_value .= "'".str_replace("'","''",$attributes["brand"])."'";
      $insert_head .= ",sku";$insert_value .= $total_sku;
@@ -166,6 +190,8 @@ function create_ticket_csg(){
      $insert_head .= ",stock_source";$insert_value .= ",'".$attributes["store_stock"]."'";
      $insert_head .= ",contact_vender";$insert_value .= ",'".$attributes["contact_vender"]."'";
      $insert_head .= ",tags";$insert_value .= ",'".$attributes["tags"]."'";
+     $insert_head .= ",status";$insert_value .= ",'pending'";
+     $insert_head .= ",parent";$insert_value .= $parent_id;
 
      
      date_default_timezone_set("Asia/Bangkok");
@@ -180,7 +206,12 @@ function create_ticket_csg(){
          $query = mysqli_query($con,$sql);
          if($query) {
             $last_id = $con->insert_id;
-            echo $last_id;
+            if(check_exist_message_id()=="NULL"){
+                echo $last_id;
+            }else{
+                echo check_exist_message_id()."_subtask";
+            }
+            
          }else{
             exit("Error : ".$con->error.$sql.">>".$subject); 
          }
