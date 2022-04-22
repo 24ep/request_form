@@ -138,6 +138,11 @@ function create_ticket_csg(){
 
     $insert_head ="";
     $insert_value = "";
+    if($attributes["launch_date"]==""){
+        $launch_date = null ;
+    }else{
+        $launch_date = ",'".$attributes["launch_date"]."'";
+    }
 
      $insert_head .= "brand";$insert_value .= "'".str_replace("'","''",$attributes["brand"])."'";
      $insert_head .= ",sku";$insert_value .= ",".$attributes["total_sku"]."";
