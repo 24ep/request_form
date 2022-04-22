@@ -88,11 +88,11 @@ function check_separate_subject_mail(){
 }
 
 function check_exist_message_id(){
-    global $message_id;
+    global $mail_convertion_id;
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
-    $sql = "SELECT username from add_new_job where mail_message_id=".$message_id;
+    $sql = "SELECT username from add_new_job where mail_convertion_id=".$mail_convertion_id;
     $result =  mysqli_query($con, $sql);
     while($row = mysqli_fetch_array($result)) {
         $exist_id =  $row["id"];
