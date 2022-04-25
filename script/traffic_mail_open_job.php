@@ -250,8 +250,8 @@ function create_ticket_csg(){
             if(check_exist_message_id()=="NULL"){
                 echo $last_id;
             }else{
-                count_conversation_id = count_conversion_id($attributes["mail_conversation_id"])+1;
-                echo check_exist_message_id()."-".count_conversation_id;
+                $count_conversation_id = count_conversion_id($attributes["mail_conversation_id"])+1;
+                echo check_exist_message_id()."-".$count_conversation_id;
             }
             
          }else{
