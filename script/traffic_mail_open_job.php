@@ -103,7 +103,7 @@ function check_exist_message_id(){
         return  "NULL";
     }else{
         //clone message id
-        clone_ticket($conversation_id,$exist_id);
+        $clone_id = clone_ticket($conversation_id,$exist_id);
         //chage status and config type
         $sql_update_parent = "UPDATE add_new_job SET status = 'none',config_type= 'parent' where id=".$exist_id ;
         $query_update_parent = mysqli_query($con,$sql_update_parent);
