@@ -96,11 +96,14 @@ function check_exist_message_id(){
     $result =  mysqli_query($con, $sql);
     while($row = mysqli_fetch_array($result)) {
         $exist_id =  $row["id"];
+        
         break; 
     }
     if($exist_id == null or $exist_id == ""){
         return  "NULL";
     }else{
+        //clone message id
+        clone_ticket($conversation_id,$exist_id);
         //chage status and config type
         $sql_update_parent = "UPDATE add_new_job SET status = 'none',config_type= 'parent' where id=".$exist_id ;
         $query_update_parent = mysqli_query($con,$sql_update_parent);
@@ -151,6 +154,42 @@ function mapping_department($department){
     }else{
         return "OTHER";
     }
+}
+
+function count_conversion_id($conversation_id){
+
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+    mysqli_query($con, "SET NAMES 'utf8' ");
+    $sql = "SELECT count(id) as total from add_new_job where mail_conversation_id='".$conversation_id."'";
+    $result =  mysqli_query($con, $sql);
+    $data=mysqli_fetch_assoc($result);
+    $count = $data['total'];
+    return $count;
+}
+function clone_ticket($conversation_id,$id){
+$count_conversion_id = count_conversion_id($conversation_id);
+if($count_conversion_id == 1){
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+    mysqli_query($con, "SET NAMES 'utf8' ");
+    //get current data from parent ticket
+    $sql = "INSERT INTO add_new_job (brand,department,sku,production_type,project_type,business_type,link_info,launch_date,stock_source,contact_buyer,
+    contact_vender,remark,request_username,new_brand,
+    online_channel,bu,request_important,tags,participant,subject_mail,sub_department,web_cate,request_date,mail_conversation_id,mail_message_id,mail_internet_message_id)
+    SELECT brand,department,sku,production_type,project_type,business_type,link_info,launch_date,stock_source,contact_buyer,
+    contact_vender,remark,request_username,new_brand,
+    online_channel,bu,request_important,tags,participant,subject_mail,sub_department,web_cate,request_date,mail_conversation_id,mail_message_id,mail_internet_message_id FROM add_new_job
+    WHERE id=".$id ;
+	$query = mysqli_query($con,$sql);
+    if($query) {
+        return $con->insert_id;
+    }else{
+        return $con ->error;
+    }
+	
+    //insert to new ticket
+}
+
+
 }
 
 function create_ticket_csg(){
@@ -209,7 +248,7 @@ function create_ticket_csg(){
             if(check_exist_message_id()=="NULL"){
                 echo $last_id;
             }else{
-                echo check_exist_message_id()."_subtask";
+                echo check_exist_message_id()."-".count_conversion_id($attributes["mail_conversation_id"])+1;
             }
             
          }else{
