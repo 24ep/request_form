@@ -136,10 +136,14 @@ function check_exist_message_id(){
         return  "NULL";
     }else{
         //clone message id
-        $clone_id = clone_ticket($conversation_id,$exist_id);
-        //update current clone id 
-        $sql_update_clone = "UPDATE add_new_job SET parent= ".$exist_id." where id=".$clone_id ;
-        $query_update_parent = mysqli_query($con,$sql_update_clone);
+        if(count_conversion_id($conversation_id)==1){
+            $clone_id = clone_ticket($conversation_id,$exist_id);
+            //update current clone id 
+            $sql_update_clone = "UPDATE add_new_job SET parent= ".$exist_id." where id=".$clone_id ;
+            $query_update_parent = mysqli_query($con,$sql_update_clone);
+        }
+        
+        
         //chage status and config type for
         $sql_update_parent = "UPDATE add_new_job SET status = 'none',config_type= 'parent' where id=".$exist_id ;
         $query_update_parent = mysqli_query($con,$sql_update_parent);
@@ -192,8 +196,6 @@ function mapping_department($department){
     }
 }
 
-
-
 function create_ticket_csg(){
     global $subject;
     global $attributes;
@@ -214,7 +216,6 @@ function create_ticket_csg(){
     }
         
         $parent_id = ",".check_exist_message_id();
-    
 
      $insert_head .= "brand";$insert_value .= "'".str_replace("'","''",$attributes["brand"])."'";
      $insert_head .= ",sku";$insert_value .= $total_sku;
@@ -234,8 +235,7 @@ function create_ticket_csg(){
      $insert_head .= ",tags";$insert_value .= ",'".$attributes["tags"]."'";
      $insert_head .= ",status";$insert_value .= ",'pending'";
      $insert_head .= ",parent";$insert_value .= $parent_id;
-
-     
+  
      date_default_timezone_set("Asia/Bangkok");
      $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
      mysqli_query($con, "SET NAMES 'utf8' ");
@@ -254,7 +254,6 @@ function create_ticket_csg(){
                 $count_conversation_id = count_conversion_id($conversation_id)-1;
                 echo check_exist_message_id()."-".$count_conversation_id;
             }
-            
          }else{
             exit("Error : ".$con->error.$sql.">>".$subject); 
          }
