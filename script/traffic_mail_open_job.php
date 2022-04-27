@@ -155,9 +155,10 @@ $separant_value =  check_separate_subject_mail();
 $attributes_form_email = explode($separant_value,$subject);
 $attributes = array(
     "department"=>mapping_department($attributes_form_email[0]),
-    "brand"=>$attributes_form_email[1],
-    "total_sku"=>preg_replace('/[A-Z,a-z," "]+/','',$attributes_form_email[2]),
-    "offline_runing_number"=>$attributes_form_email[3],
+    "sub_department"=>mapping_department($attributes_form_email[1]),
+    "brand"=>$attributes_form_email[2],
+    "total_sku"=>preg_replace('/[A-Z,a-z," "]+/','',$attributes_form_email[3]),
+    "offline_runing_number"=>$attributes_form_email[4],
     "username"=>$username,
     "request_important"=>$important,
     "contact"=>$contact,
@@ -223,6 +224,7 @@ function create_ticket_csg(){
      $insert_head .= ",request_username";$insert_value .= ",'".$attributes["username"]."'";
      $insert_head .= ",request_important";$insert_value .= ",'".$attributes["request_important"]."'";
      $insert_head .= ",department";$insert_value .= ",'".$attributes["department"]."'";
+     $insert_head .= ",sub_department";$insert_value .= ",'".$attributes["sub_department"]."'";
      $insert_head .= ",contact_buyer";$insert_value .= ",'".$attributes["contact"]."'";
      $insert_head .= ",participant";$insert_value .= ",'".$attributes["participant"]."'";
      $insert_head .= ",mail_conversation_id";$insert_value .= ",'".$attributes["mail_conversation_id"]."'";
