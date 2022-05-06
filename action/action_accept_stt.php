@@ -81,6 +81,7 @@
             }
             if($key<>"" and $key<>null){
                 sent_line_noti("\n• Updated  NS-".$id." [ ".$brand." ".$sku." SKUs ]\n----------------------------\n• ตรวจสอบข้อมูลเรียบร้อย งานถูกส่งต่อไปที่ Traffic แล้ว",$key);
+                send_ms_team("NS-".$id,$brand." ".$sku." SKUs","ตรวจสอบข้อมูลเรียบร้อย งานถูกส่งต่อไปที่ Traffic แล้ว");
             }
         insert_log("send to traffic > accepted_date = ".date("Y-m-d H:i:s")." \n status = waiting traffic" ,"add_new_job",$id);
         echo date("Y-m-d H:i:s");

@@ -117,6 +117,7 @@
                     }
                     if($key<>"" and $key<>null){
                         sent_line_noti("\n• Created new request\n----------------------------\n• คุณได้ทำการส่ง Content Request\n• Ticket ID : CR-".$last_id."\n".$title,$key);
+                        send_ms_team("NS-".$last_id,"Created new request (NS)",$_SEESION["username"]." ได้ทำการส่ง Content Request\n• Ticket ID : CR-".$last_id."<br>".$title);
                     }
                 $result='<div class="alert alert-success">already create content_request !<strong> ID '.$last_id.'</strong></div>';
                 header( "Location: /?tab=v-pills-cr&result_cr=".$result);

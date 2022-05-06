@@ -34,7 +34,8 @@
               }
               if($key<>"" and $key<>null){
                 sent_line_noti("\nNS-".$id." ".$topic."  \n----------------------------\n".$_SESSION["nickname"]." changed ".$value_name." to ".$value_change,$key);
-              }
+                send_ms_team("NS-".$id,$topic,$_SESSION["nickname"]." changed ".$value_name." to ".$value_change);  
+            }
          }
       }
         add_participant($_POST['id'],"add_new_job");

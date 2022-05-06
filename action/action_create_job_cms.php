@@ -132,6 +132,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
             }
             if($key<>"" and $key<>null){
                 sent_line_noti("\n• Updated NS-".$_POST["id_adj"]." [ ".$brand." ".$sku." SKUs ]\n----------------------------\n• ทำการเปิด job เรียบร้อยแล้ว\n• job number : ".$job_number_laset,$key);
+                send_ms_team("NS-".$id,$brand." ".$sku." SKUs","ทำการเปิด job เรียบร้อยแล้ว<br>• job number : ".$job_number_laset);
             }
         add_participant($_POST["id_adj"],"add_new_job");
         insert_log("create new job_cms ".$job_number_laset." id ".$last_id,"job_cms",$_POST["id_adj"]);

@@ -35,7 +35,8 @@
               }
               if($key<>"" and $key<>null){
                   sent_line_noti("\nNS-".$id." [".$brand." ".$sku." SKUs]  \n--------------------------\n".$_SESSION["nickname"]." has assign this task to ".$op_follow_assign_name,$key);
-              }
+                  send_ms_team("NS-".$id,$brand." ".$sku." SKUs",$_SESSION["nickname"]." has assign this task to ".$op_follow_assign_name);
+                }
           }
       }
        add_participant($_POST['id'],"add_new_job");

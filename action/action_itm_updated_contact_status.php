@@ -28,6 +28,7 @@
             }
             if($key<>"" and $key<>null){
                 sent_line_noti("\n• Get new contact - change status to pending  NS-".$id." [ ".$brand." ".$sku." SKUs ]",$key);
+                send_ms_team("NS-".$id,$brand." ".$sku." SKUs","<strong>Get new contact</strong> - change status to pending");
             }
         insert_log("Get new contact - change status to pending  Ticket = ".date("Y-m-d H:i:s")." \n status = need to update contact" ,"add_new_job",$id);
         echo "success ! ".date("Y-m-d H:i:s");

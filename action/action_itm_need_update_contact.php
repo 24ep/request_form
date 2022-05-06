@@ -25,6 +25,7 @@
             }
             if($key<>"" and $key<>null){
                 sent_line_noti("\n• Change status to need update contact  NS-".$id." [ ".$brand." ".$sku." SKUs ]",$key);
+                send_ms_team("NS-".$id,$brand." ".$sku." SKUs","The ticket have been changed the status to -need update contact- ");
             }
         insert_log("Change status to need update contact Ticket = ".date("Y-m-d H:i:s")." \n status = need update contact" ,"add_new_job",$id);
         echo "success ! ".date("Y-m-d H:i:s");

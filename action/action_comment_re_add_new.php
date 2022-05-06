@@ -186,6 +186,7 @@ if($comment<>'' or $file_size <>0){
               }
               if($key<>"" and $key<>null){
                 sent_line_noti("\nNS-".$id." [ ".$brand." ".$sku." SKUs ]\n----------------------------\n".$_SESSION["nickname"]." has comment : \n".$comment,$key);
+                send_ms_team("NS-".$id,$brand." ".$sku." SKUs",$_SESSION["nickname"]." has comment : <br>".$comment);
               }
          }
       }

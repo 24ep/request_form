@@ -131,6 +131,7 @@ session_start();
               }
               if($key<>"" and $key<>null){
                 sent_line_noti("\nCR-".$id." ".$topic."  \n----------------------------\n".$_SESSION["nickname"]." changed ".$value_name." to ".$value_change,$key);
+                send_ms_team("CR-".$id,$topic,$_SESSION["nickname"]." changed ".$value_name." to ".$value_change);
               }
               if($line_user_id <>"" and $line_user_id <>null and $sent_to_username == $request_by and $value_name == "status" ){
                 $pre_detail_request =  substr($description,0,80);

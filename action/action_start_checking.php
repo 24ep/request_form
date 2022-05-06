@@ -30,7 +30,8 @@
              }
              if($key<>"" and $key<>null){
                  sent_line_noti("\n• Updated NS-".$id." [ ".$brand." ".$sku." SKUs ]\n----------------------------\n• เริ่มทำการตรวจสอบข้อมูล\n• หากมีข้อสงสัยเพิ่มเติม กรุณาติดต่อคุณ  ".$follow_up."\n• tell :".$tell."\n• Email :".$email,$key);
-             }
+                 send_ms_team("NS-".$id,$brand." ".$sku." SKUs","เริ่มทำการตรวจสอบข้อมูล\n• หากมีข้อสงสัยเพิ่มเติม กรุณาติดต่อคุณ  ".$follow_up."<br>• tell :".$tell."<br>• Email :".$email);
+                }
         insert_log("follow-up start checking > start_checking_date = ".date("Y-m-d H:i:s")." \n status = checking \n follow_up_by= ".$_SESSION['username'] ,"add_new_job",$id);
         echo date("Y-m-d H:i:s");
 	}else{

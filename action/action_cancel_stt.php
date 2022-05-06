@@ -28,6 +28,7 @@
             }
             if($key<>"" and $key<>null){
                 sent_line_noti("\n• '".$status_change."'  NS-".$id." [ ".$brand." ".$sku." SKUs ]",$key);
+                send_ms_team("NS-".$id,$status_change,$brand." ".$sku." SKUs");
             }
         insert_log("'".$status_change."' Ticket = ".date("Y-m-d H:i:s")." \n status = '".$status_change."'" ,"add_new_job",$id);
         echo date("Y-m-d H:i:s");

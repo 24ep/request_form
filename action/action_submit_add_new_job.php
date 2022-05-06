@@ -98,6 +98,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
             }
             if($key<>"" and $key<>null){
                 sent_line_noti("\n• Created new request [ ".$brand." ".$sku." SKUs ]\n----------------------------\n• คุณได้ทำกาส่ง request ขอเปิด job\n• Ticket ID : NS-".$last_id." [ ".$brand." ".$sku." SKUs ]\n• Store : ".$stock_source,$key);
+                send_ms_team("NS-".$id,"New NS-ticket comming","ได้ทำกาส่ง request ขอเปิด job<br>• Ticket ID : NS-".$last_id." [ ".$brand." ".$sku." SKUs ]\n• Store : ".$stock_source);
             }
         $result='<div class="alert alert-success">already create Request !<strong> ID '.$last_id.'</strong></div>';
         header( "Location: /?tab=v-pills-request_list&result=".$result);
