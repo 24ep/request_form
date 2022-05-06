@@ -38,9 +38,9 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
-    "message_value":"Mag changed status to Close",
-    "topic":"PRIMA DIAMOND :  เพิ่ม Size Guide",
-    "id":"CR-4431 "
+    "message_value":"'.$value.'",
+    "topic":"'.$topic.'",
+    "id":"'.$id.'"
 }',
   CURLOPT_HTTPHEADER => array(
     'Content-Type: application/json'
