@@ -151,7 +151,7 @@ function check_exist_message_id(){
 
 $separant_value =  check_separate_subject_mail();
 $attributes_form_email = explode($separant_value,$subject);
-if(substr_count($subject,$separant_value)=5){
+if(substr_count($subject,$separant_value)==5){
     $attributes = array(
         "department"=>mapping_department($attributes_form_email[0]),
         "sub_department"=>mapping_department($attributes_form_email[1]),
