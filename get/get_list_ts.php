@@ -107,10 +107,10 @@ return $status;
               <!-- <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary" style="<?php //echo $ico_ts_bg; ?>;left: -8px!important;"><ion-icon name="<?php //echo $ico_ts; ?>" style="margin: 0px;color: white!important;"></ion-icon> <span class="visually-hidden">unread messages</span></span> -->
               <?php echo "<strong style='color: ".$color_project.";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
           </div>
-          <div class="col-3" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
+          <!-- <div class="col-3" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
               onclick="cr_id_toggle(<?php echo $row['id']; ?>)" style="align-self: center;">
-              <?php echo badge_status_cr($row["status"]); ?>
-          </div>
+              <?php //echo badge_status_cr($row["status"]); ?>
+          </div> -->
           
       </li>
 <?php
@@ -254,24 +254,6 @@ echo '
 echo '<div >
 <div class="row">';
    
-//------
-// echo '
-// <div class="col">
-//     <small class="row m-3" style="font-weight: 900;">Unassign</small>
-//     '; 
-//     list_ts_non_status("ticket.case_officer = 'unassign' and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].") and ticket.status <> 'Close'",500,'ticket');
-// echo' </div>
-// ';
-//-------
-//------
-// echo '
-// <div class="col">
-//     <small class="row m-3">Routine work & Monitor</small>
-//     '; 
-//     list_ts("ticket.ticket_status in ('routine work','monitor') and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].") and ticket.status <> 'Close'",500,'ticket');
-// echo' </div>
-// ';
-//-------
 
 date_default_timezone_set("Asia/Bangkok");
 $con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
