@@ -60,7 +60,7 @@ function get_comment_cr($id){
             '.substr(ucwords($row['firstname']),0,1).'
             </div>
           </div>
-            <div class="col">
+            <div class="col" style="padding-right: 0px;">
                 <div class="fw-bold">'.ucwords($row['firstname']).' '.ucwords($row['lastname']).'</div><small style="color:gray">Comment '.$row['comment_date'].'</small>
             </div>
           </div>
