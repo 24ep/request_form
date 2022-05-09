@@ -321,7 +321,7 @@ ion-icon{
                                                 ที่มีอยู่แล้ว</label>
                                         </div>
                                         <button type="button" style="margin-top:10px"
-                                            onclick="force_sync_with_ticket(<?php echo $_POST['id'].",".$bu; ?>)"
+                                            onclick="force_sync_with_ticket(<?php echo $_POST['id'].','.$bu; ?>)"
                                             class="btn btn-danger">ยืนยัน เชื่อมต่อ sku ด้านบนกับ ticket NS-
                                             <?php echo $_POST["id"];?></button>
                                         <small>ในกรณี ย้าย sku จาก ตัวแม่ "ให้เลือก คงสถานะเดิมไว้"</small>
