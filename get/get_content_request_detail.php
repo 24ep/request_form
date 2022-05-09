@@ -378,12 +378,6 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             <input class="form-control form-control-sm" id="cr_edit_cto_ref" name="cr_edit_cto_ref" onchange="update_cr_detail('.$id.','.$cr_edit_ref_cto.')" type="text" style="border: 0px;" placeholder="Default input" aria-label="default input example" value="'.$cto_ref.'"> 
             </div>
             </li>
-            <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">website</div><div class="col-6">
-            <select multiple="multiple"   id="cr_edit_platform_issue[]" name="cr_edit_platform_issue[]" onchange="update_cr_detail('.$id.','.$cr_edit_platform_issue.')"class="multiple-select_cr_edit" style="border: 0px;font-weight: bold;" aria-label=".form-select-lg example">
-            '.$website_op.'
-            </select>
-            </div>
-            </li>
             <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">type</div><div class="col-6">
             <select class="form-select form-select-sm" id="cr_edit_ticket_type" name="cr_edit_ticket_type" onchange="update_cr_detail('.$id.','.$cr_edit_ticket_type.')" style="border: 0px;font-weight: bold;" aria-label=".form-select-lg example">
             '.$type_op.'
@@ -452,7 +446,6 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
            <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">name</div><div class="col-6">'.$case_name.'</div></li>
            <li class="list-group-item border-0 border-bottom "  style="display: inline-flex;;"><div class="col-6 fw-bold ">office tell</div><div class="col-6">'.$office_tell.'</div></li>
            <li class="list-group-item border-0 border-bottom " style="display: inline-flex;"><div class="col-6 fw-bold ">ref cto</div><div class="col-6">'.$cto_ref.'</div></li>
-           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">website</div><div class="col-6">'.$platform_issue.'</div></li>
            <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">type</div><div class="col-6">'.$type.'</div></li>
            <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">sku</div><div class="col-6">'.$sku.'</div></li>
            <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">effective_date</div><div class="col-6">'.$effective_date.'</div></li>
