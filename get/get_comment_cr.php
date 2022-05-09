@@ -45,23 +45,24 @@ function get_comment_cr($id){
       <div >
       <div>
       <div class="row">
-      <div class="col">
-          <div style="   
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background: #222f3e;
-          font-size: 20px;
-          color: #fff;
-          text-align: center;
-          line-height: 40px;
-          margin: 20px 0;
-          '.substr(ucwords($row['firstname']),0,1).'
+        <div class="col">
+            <div style="   
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #222f3e;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            margin: 20px 0;
+            >
+            '.substr(ucwords($row['firstname']),0,1).'
+            </div>
           </div>
-          </div>
-          <div class="col">
-          <div class="fw-bold">'.ucwords($row['firstname']).' '.ucwords($row['lastname']).'</div><small style="color:gray">Comment '.$row['comment_date'].'</small>
-          </div>
+            <div class="col">
+                <div class="fw-bold">'.ucwords($row['firstname']).' '.ucwords($row['lastname']).'</div><small style="color:gray">Comment '.$row['comment_date'].'</small>
+            </div>
           </div>
       </div>
       <div style="margin-right: 7px;">'.$list_file.'</div>
