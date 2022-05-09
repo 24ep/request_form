@@ -20,7 +20,8 @@ function get_comment_cr($id){
     cm.comment_by as comment_by ,
     cm.comment_date  as comment_date ,
     ac.firstname as firstname,
-    ac.lastname as lastname
+    ac.lastname as lastname,
+    ac.department as department
     FROM all_in_one_project.comment as cm
     Left join all_in_one_project.account ac
     on ac.username = cm.comment_by 
@@ -50,7 +51,7 @@ function get_comment_cr($id){
       <div >
       <div>
       <div class="row">
-        <div class="col" style="max-width: fit-content;padding-top:3px">
+        <div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;">
             <div style="   
             width: 35px;
             height: 35px;
