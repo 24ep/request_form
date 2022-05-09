@@ -55,7 +55,7 @@ function get_comment_cr($id){
             width: 35px;
             height: 35px;
             border-radius: 50%;
-            background: '.$backgroud_profile_image.'
+            background: '.$backgroud_profile_image.';
             font-size: 18px;
             color: #fff;
             text-align: center;
