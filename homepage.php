@@ -1139,9 +1139,12 @@
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
                                     <!-- get card -->
-                                    <ion-icon name="time-outline"></ion-icon>
-                                    <h3>Coming soon</h3>
+                                    <!-- <ion-icon name="time-outline"></ion-icon>
+                                    <h3>Coming soon</h3> -->
                                     <!-- get card -->
+                                    <div >
+                                        <?php include('get/get_account_editor.php'); ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
