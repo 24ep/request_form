@@ -193,7 +193,8 @@ return $status;
               <!-- <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary" style="<?php //echo $ico_ts_bg; ?>;left: -8px!important;"><ion-icon name="<?php //echo $ico_ts; ?>" style="margin: 0px;color: white!important;"></ion-icon> <span class="visually-hidden">unread messages</span></span> -->
               <?php echo "<strong style='color: ".$color_project.";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
               <!-- <div style="margin: 5px 0px;"><?php // echo badge_status_cr($row["status"]); ?></div> -->
-              <div><img  data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $row["case_officer"]; ?>"  width="30px" height="30px" src="base/image/user_profile/<?php echo $row["case_officer"]; ?>.jpg" class="rounded-circle" alt="<?php echo $row["case_officer"]; ?>"><span style="margin-left:5px"><?php echo $row["case_officer"]; ?></span></div>
+              <hr style="margin: 5px;color: #6c757d8c;">
+              <div><img  data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $row["case_officer"]; ?>"  width="25px" height="25px" src="base/image/user_profile/<?php echo $row["case_officer"]; ?>.jpg" class="rounded-circle" alt="<?php echo $row["case_officer"]; ?>"><span style="margin-left:5px"><?php echo $row["case_officer"]; ?></span></div>
             </div>
          
      
