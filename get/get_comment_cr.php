@@ -1,6 +1,7 @@
 <?php
 //issue get
 session_start();
+
 $id = $_POST['id'];
 if(isset($_POST['comment'])){
     $comment = $_POST['comment'];
@@ -42,6 +43,18 @@ function get_comment_cr($id){
       border-top-width: 0px;">
       <div class="ms-2 me-auto">
       <div >
+      <div>
+          <div style="width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          background: #512DA8;
+          font-size: 35px;
+          color: #fff;
+          text-align: center;
+          line-height: 150px;
+          margin: 20px 0;">
+          '.substr(ucwords($row['firstname']),0,1).'
+          </div>
           <div class="fw-bold">'.ucwords($row['firstname']).' '.ucwords($row['lastname']).'</div><small style="color:gray">Comment '.$row['comment_date'].'</small>
       </div>
       <div style="margin-right: 7px;">'.$list_file.'</div>
