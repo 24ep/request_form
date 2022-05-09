@@ -19,7 +19,8 @@
         case when itm.id is not null then 'in itm list'
         else '' end as check_itm_list,
         count_sku.count_sku as sku_tied_with_ticket,
-        anj.status as status
+        anj.status as status,
+        anj.bu as bu
         FROM all_in_one_project.sku_list as sl 
         left join all_in_one_project.itm_datalake itm
         on sl.sku = itm.pid 
@@ -27,7 +28,7 @@
         on sl.csg_id = anj.id 
         left join (select csg_id,count(sku) as count_sku from all_in_one_project.sku_list group by csg_id) as count_sku
         on sl.csg_id = count_sku.csg_id  
-        where sl.sku in (".$sku_list .") ORDER BY sl.id DESC " or die("Error:" . mysqli_error($con));
+        where SUBSTR(sl.sku,4,LENGTH(sl.sku)-3) in (".$sku_list .") ORDER BY sl.id DESC " or die("Error:" . mysqli_error($con));
         $result = mysqli_query($con, $query);
         $sku_item_check = " ";
         $i=0;

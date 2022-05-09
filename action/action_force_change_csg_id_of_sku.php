@@ -2,6 +2,7 @@
     <?php
         session_start();
         $id = $_POST["id"];
+        $bu = $_POST["bu"];
         $sku_change = $_POST['sku_change'];
         $sku_change =trim($sku_change," ");
         date_default_timezone_set("Asia/Bangkok");
@@ -12,8 +13,8 @@
         $sku_just_array = array();
         foreach ( $sku_change_array as $sku ) {
             if($sku <> '' and $sku <> null){
-                array_push($sku_list_array,"('".trim($sku," ")."','".$_SESSION['username'] ."',".$id.")");
-                array_push($sku_just_array,"'".trim($sku," ")."'");
+                array_push($sku_list_array,"('".trim($bu.$sku," ")."','".$_SESSION['username'] ."',".$id.")");
+                array_push($sku_just_array,"'".trim($bu.$sku," ")."'");
             }
             
         }

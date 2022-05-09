@@ -108,23 +108,7 @@
                   class="btn btn-danger btn-sm" onclick="cancel_ticket(<?php echo $id; ?>)" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel
               </button>
             </div> 
-          <!-- <div class="col-4">
-              <button onclick="itm_confirm_cancel(<?php //echo $id; ?>,'cancel - confirm not for sale');" type="button"
-                  class="btn btn-danger btn-sm" <?php //echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel -
-                  Confirm not for sale
-              </button>
-              <button onclick="itm_confirm_cancel(<?php //echo $id; ?>,'cancel - confirm to be new sku');" type="button"
-                  class="btn btn-dark btn-sm" <?php //echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel -
-                  Confirm to be new sku
-              </button>
-              <button onclick="itm_confirm_cancel(<?php //echo $id; ?>,'cancel - already content');" type="button"
-                  class="btn btn-success btn-sm" <?php //echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Cancel
-                  - Confirm already content
-              </button>
-          </div> -->
-
-           
-
+  
 
           <div class="col-4">
               <div id="cancel_checking_result">
@@ -303,7 +287,7 @@
                                             <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted"></label>
                                             <textarea style="font-size:12px" class="form-control" id="sku_accepted"
                                                 name="sku_accepted"
-                                                placeholder="Copy 1 column จาก excel วางตามตัวอย่างด้านล่าง&#10;&#10;CDS3466644&#10;CDS2443356&#10;CDS2487356"
+                                                placeholder="Copy IBC column จาก excel วางตามตัวอย่างด้านล่าง&#10;&#10;3466644&#10;2443356&#10;2487356"
                                                 rows="5" style="height: 100px"></textarea>
 
                                         </div>

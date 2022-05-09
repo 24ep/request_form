@@ -306,7 +306,7 @@ ion-icon{
                                             checking</label>
                                         <textarea style="font-size:12px" oninput="sku_checking()" class="form-control"
                                             id="sku_checking" name="sku_accepted"
-                                            placeholder="ตรวจสอบ sku ตามตัวอย่างด้านล่าง วางตามตัวอย่างด้านล่าง&#10;&#10;CDS3466644&#10;CDS2443356&#10;CDS2487356"
+                                            placeholder="ตรวจสอบ IBC ตามตัวอย่างด้านล่าง วางตามตัวอย่างด้านล่าง&#10;&#10;3466644&#10;2443356&#10;2487356"
                                             rows="20" style="height: 300px"></textarea>
 
 
@@ -321,7 +321,7 @@ ion-icon{
                                                 ที่มีอยู่แล้ว</label>
                                         </div>
                                         <button type="button" style="margin-top:10px"
-                                            onclick="force_sync_with_ticket(<?php echo $_POST['id']; ?>)"
+                                            onclick="force_sync_with_ticket(<?php echo $_POST['id'].",".$bu; ?>)"
                                             class="btn btn-danger">ยืนยัน เชื่อมต่อ sku ด้านบนกับ ticket NS-
                                             <?php echo $_POST["id"];?></button>
                                         <small>ในกรณี ย้าย sku จาก ตัวแม่ "ให้เลือก คงสถานะเดิมไว้"</small>
@@ -566,14 +566,15 @@ ion-icon{
         }
     }
 
-    function force_sync_with_ticket(id) {
+    function force_sync_with_ticket(id,bu) {
         var sku_change = document.getElementById("sku_checking").value;
         var be_status_on_change = document.getElementById("be_status_on_change").value;
         if (sku_change) {
             $.post("base/action/action_force_change_csg_id_of_sku.php", {
                     id: id,
                     sku_change: sku_change,
-                    be_status_on_change: be_status_on_change
+                    be_status_on_change: be_status_on_change,
+                    bu:bu
                 },
                 function(data) {
                     $('#sku_checking_result_force').html(data);
