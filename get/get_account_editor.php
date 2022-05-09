@@ -19,5 +19,5 @@
 
 ?>
 
-<h2><?php echo $firstname." ".$lastname;?></h2>
+<h2><?php echo ucwords($firstname)." ".ucwords($lastname);?></h2>
 <hr>
