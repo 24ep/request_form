@@ -149,9 +149,17 @@ function check_exist_message_id(){
     }
 }
 
+
+
 $separant_value =  check_separate_subject_mail();
 $attributes_form_email = explode($separant_value,$subject);
 if(substr_count($subject,$separant_value)==5){
+
+    if(strtolower($attributes_form_email[2])=="muji"){
+        $bu = "MJT";
+    }else{
+        $bu = "CDS";
+    }
     $attributes = array(
         "department"=>mapping_department($attributes_form_email[0]),
         "sub_department"=>mapping_department($attributes_form_email[1]),
@@ -170,11 +178,17 @@ if(substr_count($subject,$separant_value)==5){
         "production_type"=>$production_type,
         "store_stock"=>$store_stock,
         "contact_vender"=>$contact_vender,
+        "bu"=>$bu,
         "tags"=>"Auto_email_created",
         "lastest_message_id"=>$message_id
     );
 
 }else{
+    if(strtolower($attributes_form_email[2])=="muji"){
+        $bu = "MJT";
+    }else{
+        $bu = "CDS";
+    }
     $attributes = array(
         "department"=>mapping_department($attributes_form_email[0]),
         "sub_department"=>"unknow",
@@ -193,6 +207,7 @@ if(substr_count($subject,$separant_value)==5){
         "production_type"=>$production_type,
         "store_stock"=>$store_stock,
         "contact_vender"=>$contact_vender,
+        "bu"=>$bu,
         "tags"=>"Auto_email_created",
         "lastest_message_id"=>$message_id
     );
@@ -258,6 +273,7 @@ function create_ticket_csg(){
      $insert_head .= ",production_type";$insert_value .= ",'".$attributes["production_type"]."'";
      $insert_head .= ",stock_source";$insert_value .= ",'".$attributes["store_stock"]."'";
      $insert_head .= ",contact_vender";$insert_value .= ",'".$attributes["contact_vender"]."'";
+     $insert_head .= ",bu";$insert_value .= ",'".$attributes["bu"]."'";
      $insert_head .= ",tags";$insert_value .= ",'".$attributes["tags"]."'";
      $insert_head .= ",status";$insert_value .= ",'pending'";
      $insert_head .= ",parent";$insert_value .= $parent_id;
