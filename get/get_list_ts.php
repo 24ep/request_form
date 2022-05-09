@@ -31,8 +31,6 @@ function badge_status_cr($status){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FA9193;color:#white;border:#FA9193">Waiting Execution</button>';
   }elseif($status=="Waiting Buyer"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting buyer</button>';
-  }elseif($status=="In-review"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #2bf2ca;color:black;border:#2bf2ca">Inreview</button>';
   }else{
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">'.$status.'</button>';
   }
@@ -279,7 +277,7 @@ date_default_timezone_set("Asia/Bangkok");
 $con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 $query_status = "SELECT * FROM content_service_gate.attribute_option 
-where attribute_id= 38 and attribute_option not in ('cancel','routine work','monitor','close')" or die("Error:" . mysqli_error($con));
+where attribute_id= 38 and attribute_option not in ('cancel','routine work','monitor','In-review','close')" or die("Error:" . mysqli_error($con));
 $result_status = mysqli_query($con_status, $query_status);
       $i=0;
 while($row_status = mysqli_fetch_array($result_status)) {
