@@ -12,7 +12,18 @@ function get_comment_cr($id){
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
-    $query = "SELECT * FROM comment WHERE ticket_type = 'content_request' and ticket_id = ".$id." ORDER BY id ASC" or die("Error:" . mysqli_error($con));
+    $query = "SELECT 
+    cm.id as id,
+    cm.comment  as comment ,
+    cm.ticket_id as ticket_id ,
+    cm.comment_by as comment_by ,
+    cm.comment_date  as comment_date ,
+    ac.firstname as firstname,
+    ac.lastname as lastname
+    FROM all_in_one_project.comment as cm
+    Left join all_in_one_project.account ac
+    on ac.username = cm.comment_by 
+    WHERE ticket_type = 'content_request' and ticket_id = ".$id." ORDER BY id ASC" or die("Error:" . mysqli_error($con));
      $result = mysqli_query($con, $query);
       while($row = mysqli_fetch_array($result)) {
         $query_attach = "SELECT * FROM attachment WHERE ticket_type = 'cr_comment' and ticket_id = ".$row['id']." ORDER BY id ASC" or die("Error:" . mysqli_error($con));
@@ -31,7 +42,7 @@ function get_comment_cr($id){
       border-top-width: 0px;">
       <div class="ms-2 me-auto">
       <div >
-          <div class="fw-bold">'.$row['comment_by'].'</div><small style="color:gray">Comment '.$row['comment_date'].'</small>
+          <div class="fw-bold">'.ucwords($row['firstname']).' '.ucwords($row['lastname']).'</div><small style="color:gray">Comment '.$row['comment_date'].'</small>
       </div>
       <div style="margin-right: 7px;">'.$list_file.'</div>
           <p>'.$row['comment'].'</p>
