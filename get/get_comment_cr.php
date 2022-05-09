@@ -47,14 +47,14 @@ function get_comment_cr($id){
       <div class="row">
         <div class="col" style="max-width: fit-content;">
             <div style="   
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             background: #222f3e;
-            font-size: 20px;
+            font-size: 18px;
             color: #fff;
             text-align: center;
-            line-height: 40px;
+            line-height: 35px;
             top: 0px;"
             >
             '.substr(ucwords($row['firstname']),0,1).'
