@@ -55,7 +55,7 @@ function get_comment_cr($id){
             color: #fff;
             text-align: center;
             line-height: 40px;
-            margin: 20px 0;
+            margin: 20px 0;"
             >
             '.substr(ucwords($row['firstname']),0,1).'
             </div>
