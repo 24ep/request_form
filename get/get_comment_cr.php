@@ -45,7 +45,7 @@ function get_comment_cr($id){
       <div >
       <div>
       <div class="row">
-        <div class="col" style="max-width: fit-content;padding: 5px;">
+        <div class="col" style="max-width: fit-content;">
             <div style="   
             width: 40px;
             height: 40px;
