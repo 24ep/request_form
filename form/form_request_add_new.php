@@ -178,32 +178,7 @@ session_start();
                return $option_set;
                
               }
-       //get buyer department
-        // if($department=="Buyer Beauty"){
-        //     $department_user = "BEAUTY";
-        // }elseif($department=="Buyer Fashion"){
-        //     $department_user = "FASHION";
-        // }
-        // elseif($department=="Buyer  Home"){
-        //     $department_user = "HOME";
-        // }
-        // elseif($department=="Buyer Mom and Kids"){
-        //     $department_user = "MOM&KIDS";
-        // }
-        // elseif($department=="Content Admin"){
-        //     $department_user = "HOME";
-        // }
-        // echo '<script>console.log("department '.$department_user.'");</script>';
-    //    $sub_department_op = getoption_return_edit_job("sub_department","option",$sub_department_user,"single","all_in_one_project");
-    //    $department_op = getoption_return_edit_job("department","job_option_cms",$department_user,"single","u749625779_cdscontent");
-    //    $production_type_op = getoption_return_edit_job("production_type","job_option_cms","","single","u749625779_cdscontent");
-    //    $business_type_op = getoption_return_edit_job("itemmize_type","job_option_cms","","single","u749625779_cdscontent");
-    //    $project_type_op = getoption_return_edit_job("project_type","option","New SKU","single","all_in_one_project");
-    //    $store_op = getoption_return_edit_job("store","job_option_cms","","multi","u749625779_cdscontent");
-    //    $bu_op = getoption_return_edit_job("bu","job_option_cms","","single","u749625779_cdscontent");
-    //    $product_website_op = getoption_return_edit_job("product_website","job_option_cms","CDS, RBS","multi","u749625779_cdscontent");
-    //    $request_important_op = getoption_return_edit_job("request_important","option","Normal","single","all_in_one_project");
-    //    $tags_op = getoption_return_edit_job("tags","option","","multi","all_in_one_project"); 
+      
        $project_type_op = get_option_return("project_type","New SKU","single","add_new");
        $department_op = get_option_return("department",$department_user,"single","add_new");
        $tags_op = get_option_return("tags","","multi","add_new");
@@ -233,15 +208,7 @@ session_start();
             name="brand">
         <small id="brandhelp" class="form-text text-muted">ชื่อแบรนด์ต้องตรงกับที่จะขายหน้าเว็บ</small>
     </div>
-    <!-- <div class="col-md-3">
-        <label for="department" class="form-label">*Department</label>
-        <select required class="form-select form-select-sm" aria-label="Default select example" id="department"
-            name="department">
-            <?php 
-                //echo $department_op;
-            ?>
-        </select>
-    </div> -->
+    
     <div class="col-md-3">
         <label for="sub_department" class="form-label">*Sub Department</label>
         <select required class="form-select form-select-sm" aria-label="Default select example" id="sub_department"

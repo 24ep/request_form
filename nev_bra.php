@@ -17,7 +17,7 @@
                         <ion-icon style="color:white" name="ticket-outline"></ion-icon>Content Request
                     </a>
                     <hr class="hr_nav_bra">
-                    <?php if(strpos($_SESSION["department"],'Admin')!==false){?>
+                    <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                     <!-- <a class="nav-link" id="v-pills-cr_admin-tab" data-toggle="pill" href="#v-pills-cr_admin" role="tab"
                         aria-controls="v-pills-cr_admin" onclick="updateURL('v-pills-cr_admin');" aria-selected="false">
                         <ion-icon style="color:white" name="grid-outline"></ion-icon> CR Board
