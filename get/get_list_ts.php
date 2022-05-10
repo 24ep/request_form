@@ -72,15 +72,15 @@ return $status;
           while( $row = mysqli_fetch_array($result)) {
                 $count_comment_cr = $row["count_comment"];
                 if($row['piority']=="Urgent"){
-                    $ri_style = "border-left: #dc3545 solid 15px;";
+                    $ri_style = "border-left: #dc3545 solid 10px;";
                   }elseif($row['piority']=="High"){
-                    $ri_style = "border-left: #f396bf solid 15px;";
+                    $ri_style = "border-left: #f396bf solid 10px;";
                   }elseif($row['piority']=="Medium"){
-                    $ri_style = "border-left: #f396bf solid 15px;";
+                    $ri_style = "border-left: #f396bf solid 10px;";
                   }elseif($row['piority']=="low"){
-                    $ri_style = "border-left: #ccc solid 15px;";
+                    $ri_style = "border-left: #ccc solid 10px;";
                   }else{
-                    $ri_style = "border-left: #ccc solid 15px;";
+                    $ri_style = "border-left: #ccc solid 10px;";
                   }
 
 
