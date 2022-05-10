@@ -283,14 +283,14 @@
                                     </div>
 
                                     <div class="col-4">
-                                    <div>
+                                    <!-- <div>
                                             <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted"></label>
                                             <textarea style="font-size:12px" class="form-control" id="sku_accepted"
                                                 name="sku_accepted"
                                                 placeholder="Copy IBC column จาก excel วางตามตัวอย่างด้านล่าง&#10;&#10;3466644&#10;2443356&#10;2487356"
                                                 rows="5" style="height: 100px"></textarea>
 
-                                        </div>
+                                        </div> -->
                                         <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
                                             class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?>
                                             style="width: 100%;margin-top:5px">accept</button>

@@ -1328,13 +1328,13 @@ function start_checking(id) {
 
 function accepted_stt(id) {
     if (id) {
-        sku_accepted = document.getElementById('sku_accepted').value;
+        // sku_accepted = document.getElementById('sku_accepted').value;
         if (sku_accepted == null) {
             alert("กรุณาระบ sku ที่ accept (ตัดซ้ำ ตัด cancel ออกแล้ว)")
         } else {
             $.post("base/action/action_accept_stt.php", {
-                id: id,
-                sku_accepted: sku_accepted
+                id: id
+                // sku_accepted: sku_accepted
             }, function(data) {
                 $('#accept_checking_resault').html(data);
             });
