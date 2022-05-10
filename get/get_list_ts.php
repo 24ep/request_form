@@ -13,9 +13,9 @@ if($_POST["ts_command_limit"]<>""){
 }
 
 $filter = "";
-$filter .= "ticket.id like '%".$_SESSION["ts_query_input"]."%' or ";
-$filter .= "ticket.title like '%".$_SESSION["ts_query_input"]."%' or ";
-$filter .= "ticket.description like '%".$_SESSION["ts_query_input"]."%' ";
+$filter .= "lower(ticket.id) like lower('%".$_SESSION["ts_query_input"]."%') or ";
+$filter .= "lower(ticket.title) like lower('%".$_SESSION["ts_query_input"]."%') or ";
+$filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]."%') ";
     function badge_status_cr($status){
       if($status=="Pending"){
         $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
@@ -63,7 +63,7 @@ $filter .= "ticket.description like '%".$_SESSION["ts_query_input"]."%' ";
         ON ticket.id = comment.ticket_id 
         where ".$ts_filter." 
         GROUP BY ticket.id order by ticket.id ".$sort_de_status."  limit ".$ts_command_limit;
-        echo "<script>console.log('".$query."');</script>";
+        // echo "<script>console.log('".$query."');</script>";
         $result = mysqli_query($con, $query);
         echo "<ul style='width: 95%;'>";
           while( $row = mysqli_fetch_array($result)) {
