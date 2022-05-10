@@ -1067,18 +1067,18 @@
                                                     </ion-icon>Search
                                                 </span>
                                                 <?php 
-                                                // if($_SESSION["ts_query_input"]<>""){
-                                                //     $sqb = $_SESSION["ts_query_input"];
-                                                // }else{
-                                                //     $sqb =  "ticket.case_officer like  '%".$_SESSION["username"]."%' and ticket.case_officer = 'unassign' ";
-                                                // }
+                                                if($_SESSION["ts_query_input"]<>""){
+                                                    $sqb = $_SESSION["ts_query_input"];
+                                                }else{
+                                                    $sqb =  "";
+                                                }
                                                 ?>
                                                 <input list="qlistoption" style="width: 75%;" type="text"
                                                     class="form-control" onchange="run_ts_command('task');"
                                                     id="ts_command" name="ts_command"
-                                                    placeholder="Your task will display follow your command .."
+                                                    placeholder="fill someting .."
                                                     aria-label="Username" aria-describedby="basic-addon1"
-                                                    value="<?php //echo $sqb;   ?>">
+                                                    value="<?php echo $sqb;   ?>">
                                                 <span class="input-group-text">Limit</span>
                                                 <input type="number" max="999" onchange="run_ts_command('task');"
                                                     min="1" class="form-control" id="ts_command_limit"
