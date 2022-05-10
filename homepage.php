@@ -1072,6 +1072,16 @@
                                                 }else{
                                                     $sqb =  "";
                                                 }
+                                                if($_SESSION["ts_username"]<>""){
+                                                    $squser = $_SESSION["ts_username"];
+                                                }else{
+                                                    if($_SESSION["ts_username"]==null){
+                                                        $squser = $_SESSION["username"];
+                                                    }else{
+                                                        $squser = "";
+                                                    }
+                                                    
+                                                }
                                                 ?>
                                                 <input  style="width: 75%;" type="text"
                                                     class="form-control" onchange="run_ts_command('task');"
@@ -1085,7 +1095,7 @@
                                                     id="ts_username" name="ts_username"
                                                     placeholder="unassign"
                                                     aria-label="Username" aria-describedby="basic-addon1"
-                                                    value="<?php echo $_SESSION["username"];   ?>">
+                                                    value="<?php echo $_SESSION["ts_username"];   ?>">
                                                 <span class="input-group-text">Limit</span>
                                                 <input type="number" max="999" onchange="run_ts_command('task');"
                                                     min="1" class="form-control" id="ts_command_limit"
