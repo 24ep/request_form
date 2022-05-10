@@ -15,6 +15,8 @@ if($_POST["ts_command_limit"]<>""){
 
 if($_POST["ts_username"]<>"" and $_POST["ts_username"]<>null ){
   $_SESSION["ts_username"] = $_POST["ts_username"];
+}elseif($_GET["ts_username"]<>"" and $_GET["ts_username"]<>null){
+  $_SESSION["ts_username"] = $_GET["ts_username"];
 }else{
   $_SESSION["ts_username"] = "";
 }
