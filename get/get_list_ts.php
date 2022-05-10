@@ -136,7 +136,7 @@ $filter .= "ticket.description like '%".$_SESSION["ts_query_input"]."%' ";
         ON ticket.id = comment.ticket_id 
         where ".$ts_filter." 
         GROUP BY ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
-        //echo "<script>console.log('".$query."');</script>";
+        echo "<script>console.log('".$query."');</script>";
         $result = mysqli_query($con, $query);
         echo "<ul style='width: 95%;padding: 15px;'>";
           while( $row = mysqli_fetch_array($result)) {
@@ -198,12 +198,12 @@ $filter .= "ticket.description like '%".$_SESSION["ts_query_input"]."%' ";
           if($i==0){
             echo' <div class="col" id="col_'.$row_status["attribute_option"].'" ondrop="drop_card_cr(event,'.$row_status["attribute_option"].')" ondragover="allowDrop(event)" >
             <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
-            list_ts_non_status("(".$filter .") and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
+            list_ts_non_status("(".$filter.") and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
             echo '</div>';
           }else{
             echo' <div class="col" style="border-left: 1px solid #e3e2e2;" id="col_'.$row_status["attribute_option"].'" ondrop="drop_card_cr(event,'.$row_status["attribute_option"].')" ondragover="allowDrop(event)" >
             <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
-            list_ts_non_status("(".$filter .") and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
+            list_ts_non_status("(".$filter.") and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
             echo '</div>';
           }
           $i++;
