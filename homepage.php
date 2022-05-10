@@ -1033,7 +1033,7 @@
                                 <div class="container ">
                                     <nav class="navbar">
                                         <div class="container-fluid p-0">
-                                            <a class="navbar-brand"></a>
+                                            <a class="navbar-brand">Request & Project Board</a>
                                             <form class="d-flex">
                                                 <div class="btn-group" role="group"
                                                     aria-label="Basic checkbox toggle button group">
@@ -1064,21 +1064,21 @@
                                             <div class="input-group input-group-sm mb-3">
                                                 <span class="input-group-text" id="basic-addon1">
                                                     <ion-icon style="vertical-align: middle;" name="terminal-outline">
-                                                    </ion-icon>Query Search
+                                                    </ion-icon>Search
                                                 </span>
                                                 <?php 
-                                                if($_SESSION["ts_query_input"]<>""){
-                                                    $sqb = $_SESSION["ts_query_input"];
-                                                }else{
-                                                    $sqb =  "ticket.case_officer like  '%".$_SESSION["username"]."%' and ticket.case_officer = 'unassign' ";
-                                                }
+                                                // if($_SESSION["ts_query_input"]<>""){
+                                                //     $sqb = $_SESSION["ts_query_input"];
+                                                // }else{
+                                                //     $sqb =  "ticket.case_officer like  '%".$_SESSION["username"]."%' and ticket.case_officer = 'unassign' ";
+                                                // }
                                                 ?>
                                                 <input list="qlistoption" style="width: 75%;" type="text"
                                                     class="form-control" onchange="run_ts_command('task');"
                                                     id="ts_command" name="ts_command"
                                                     placeholder="Your task will display follow your command .."
                                                     aria-label="Username" aria-describedby="basic-addon1"
-                                                    value="<?php echo $sqb;   ?>">
+                                                    value="<?php //echo $sqb;   ?>">
                                                 <span class="input-group-text">Limit</span>
                                                 <input type="number" max="999" onchange="run_ts_command('task');"
                                                     min="1" class="form-control" id="ts_command_limit"
