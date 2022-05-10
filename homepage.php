@@ -1073,12 +1073,19 @@
                                                     $sqb =  "";
                                                 }
                                                 ?>
-                                                <input list="qlistoption" style="width: 75%;" type="text"
+                                                <input  style="width: 75%;" type="text"
                                                     class="form-control" onchange="run_ts_command('task');"
                                                     id="ts_command" name="ts_command"
                                                     placeholder="fill someting .."
                                                     aria-label="Username" aria-describedby="basic-addon1"
                                                     value="<?php echo $sqb;   ?>">
+                                                <span class="input-group-text">Username</span>
+                                                <input list="qlistoption"  type="text"
+                                                    class="form-control" onchange="run_ts_command('task');"
+                                                    id="ts_username" name="ts_username"
+                                                    placeholder="fill someting .."
+                                                    aria-label="Username" aria-describedby="basic-addon1"
+                                                    value="<?php echo $_SESSION["username"];   ?>">
                                                 <span class="input-group-text">Limit</span>
                                                 <input type="number" max="999" onchange="run_ts_command('task');"
                                                     min="1" class="form-control" id="ts_command_limit"
@@ -1086,15 +1093,7 @@
                                                     aria-label="Server">
                                             </div>
                                             <datalist id="qlistoption">
-                                                <option
-                                                    value="(ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%' or ticket.case_officer like '%<?php echo $_SESSION["username"]; ?>%')">
-                                                <option
-                                                    value="ticket.participant like  '%<?php echo $_SESSION["username"]; ?>%'">
-                                                <option
-                                                    value="ticket.case_officer like '%<?php echo $_SESSION["username"]; ?>%'">
-                                                <option value="ticket.title like  '%grouping%'">
-                                                <option value="ticket.id = 3009">
-                                                <option value="ticket.status = 'Pending'">
+                                                <!-- <option value="all username'"> -->
                                             </datalist>
                                         </form>
                                     </nav>
@@ -1430,11 +1429,13 @@ function search_cr_ticket() {
 
 function run_ts_command(ts_level) {
     var ts_command_input = document.getElementById("ts_command").value;
+    var ts_username = document.getElementById("ts_username").value;
     var ts_command_limit = document.getElementById("ts_command_limit").value;
     var summary_filter = ts_command_input;
     $.post("base/get/get_list_ts.php", {
         summary_filter: summary_filter,
-        ts_command_limit: ts_command_limit
+        ts_command_limit: ts_command_limit,
+        ts_username:ts_username
 
     }, function(data) {
         $('#get_ts_admin_console').html(data);
