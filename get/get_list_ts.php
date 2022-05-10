@@ -3,9 +3,9 @@ session_start();
 if($_POST["summary_filter"]<>"" and $_POST["summary_filter"]<>null ){
   $_SESSION["ts_query_input"] = $_POST["summary_filter"];
 }
-if($_SESSION["ts_query_input"]=="" or $_SESSION["ts_query_input"] == null ){
-  $_SESSION["ts_query_input"] = "ticket.participant like  '%".$_SESSION["username"]."%'";
-}
+// if($_SESSION["ts_query_input"]=="" or $_SESSION["ts_query_input"] == null ){
+//   $_SESSION["ts_query_input"] = "ticket.participant like  '%".$_SESSION["username"]."%'";
+// }
 if($_POST["ts_command_limit"]<>""){
   $ts_command_limit = $_POST["ts_command_limit"];
 }else{
