@@ -63,7 +63,7 @@ $filter .= "ticket.description like '%".$_SESSION["ts_query_input"]."%' ";
         ON ticket.id = comment.ticket_id 
         where ".$ts_filter." 
         GROUP BY ticket.id order by ticket.id ".$sort_de_status."  limit ".$ts_command_limit;
-        //echo "<script>console.log('".$query."');</script>";
+        echo "<script>console.log('".$query."');</script>";
         $result = mysqli_query($con, $query);
         echo "<ul style='width: 95%;'>";
           while( $row = mysqli_fetch_array($result)) {
