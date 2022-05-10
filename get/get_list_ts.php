@@ -9,13 +9,13 @@ if($_POST["summary_filter"]<>"" and $_POST["summary_filter"]<>null ){
 if($_POST["ts_command_limit"]<>""){
   $ts_command_limit = $_POST["ts_command_limit"];
 }else{
-  $ts_command_limit=100;
+  $ts_command_limit= 100;
 }
 
 $filter = "";
 $filter .= "ticket.id '%".$_SESSION["ts_query_input"]."%' or ";
 $filter .= "ticket.title like '%".$_SESSION["ts_query_input"]."%' or ";
-$filter .= "ticket.description like '%".$_SESSION["ts_query_input"]."%' or ";
+$filter .= "ticket.description like '%".$_SESSION["ts_query_input"]."%' ";
     function badge_status_cr($status){
       if($status=="Pending"){
         $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
