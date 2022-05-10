@@ -1734,7 +1734,7 @@ function doAutoRefresh_ts_admin() {
         var req_ts = Inint_AJAX();
         //var req_cr = Inint_AJAX();
         // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-        req_ts.open("POST", 'base/get/get_list_ts.php?ts_command_input="'+ts_command_input+'",ts_username="'+ts_username+'",ts_command_limit='+ts_command_limit+',' + new Date().getTime(), true);
+        req_ts.open("POST", 'base/get/get_list_ts.php?ts_command_input="'+ts_command_input+'"&ts_username="'+ts_username+'"&ts_command_limit='+ts_command_limit+'&' + new Date().getTime(), true);
         //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
         req_ts.onreadystatechange = function() {
             if (req_ts.readyState == 4) {
