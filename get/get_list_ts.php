@@ -19,7 +19,10 @@ if($_POST["ts_command_limit"]<>""){
 if($_POST["ts_username"]<>""){
   $_SESSION["ts_username"] = $_POST["ts_username"];
 }
-if($_POST["ts_username"]=="" and( $_SESSION["ts_username"]=="" or $_SESSION["ts_username"] == null)){
+if($_SESSION["ts_username"] == null){
+  $_SESSION["ts_username"] = $_SESSION["username"];
+}
+if($_POST["ts_username"]=="" and( $_SESSION["ts_username"]=="")){
   $_SESSION["ts_username"] = "";
 }
 

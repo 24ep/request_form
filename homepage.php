@@ -1083,7 +1083,7 @@
                                                 <input list="qlistoption"  type="text"
                                                     class="form-control" onchange="run_ts_command('task');"
                                                     id="ts_username" name="ts_username"
-                                                    placeholder="fill someting .."
+                                                    placeholder="unassign"
                                                     aria-label="Username" aria-describedby="basic-addon1"
                                                     value="<?php echo $_SESSION["username"];   ?>">
                                                 <span class="input-group-text">Limit</span>
