@@ -1077,6 +1077,7 @@
                                                 }else{
                                                     if($_SESSION["ts_username"]==null){
                                                         $squser = $_SESSION["username"];
+                                                        $_SESSION["ts_username"]=$_SESSION["username"];
                                                     }else{
                                                         $squser = "";
                                                     }
