@@ -1083,14 +1083,14 @@
                                                     
                                                 }
                                                 ?>
-                                                <input  style="width: 75%;" type="text"
+                                                <input  style="width: 70%;" type="text"
                                                     class="form-control" onchange="run_ts_command('task');"
                                                     id="ts_command" name="ts_command"
                                                     placeholder="fill someting .."
                                                     aria-label="Username" aria-describedby="basic-addon1"
                                                     value="<?php echo $sqb;   ?>">
                                                 <span class="input-group-text">Username</span>
-                                                <input list="qlistoption"  type="text"
+                                                <input style="width: 5%;" list="qlistoption"  type="text"
                                                     class="form-control" onchange="run_ts_command('task');"
                                                     id="ts_username" name="ts_username"
                                                     placeholder="unassign"
