@@ -3,6 +3,9 @@ session_start();
 if($_POST["summary_filter"]<>"" and $_POST["summary_filter"]<>null ){
   $_SESSION["ts_query_input"] = $_POST["summary_filter"];
 }
+if($_POST["summary_filter"]=="" ){
+  $_SESSION["ts_query_input"] ="";
+}
 if($_SESSION["ts_query_input"]=="" or $_SESSION["ts_query_input"] == null ){
   $_SESSION["ts_query_input"] = "";
 }
