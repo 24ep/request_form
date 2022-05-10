@@ -18,13 +18,17 @@ if($_POST["ts_command_limit"]<>""){
 
 if($_POST["ts_username"]<>"" and $_POST["ts_username"]<>null ){
   $_SESSION["ts_username"] = $_POST["ts_username"];
+}else{
+  if($_POST["ts_username"]=="" ){
+    $_SESSION["ts_username"] ="";
+  }else{
+    if($_SESSION["ts_username"] == null ){
+      $_SESSION["ts_username"] = $_SESSION["username"];
+    }
+    
+  }
 }
-if($_POST["ts_username"]=="" ){
-  $_SESSION["ts_username"] ="";
-}
-if($_SESSION["ts_username"]=="" or $_SESSION["ts_username"] == null ){
-  $_SESSION["ts_username"] = "";
-}
+
 
 
 
