@@ -1726,11 +1726,15 @@ function doAutoRefresh() {
 function doAutoRefresh_ts_admin() {
     var url = window.location.href;
     let result = url.includes("v-pills-ts_admin");
+    var ts_command_input = document.getElementById("ts_command").value;
+    var ts_username = document.getElementById("ts_username").value;
+    var ts_command_limit = document.getElementById("ts_command_limit").value;
+    var summary_filter = ts_command_input;
     if (result == true) {
         var req_ts = Inint_AJAX();
         //var req_cr = Inint_AJAX();
         // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-        req_ts.open("POST", 'base/get/get_list_ts.php?' + new Date().getTime(), true);
+        req_ts.open("POST", 'base/get/get_list_ts.php?ts_command_input='+ts_command_input+',ts_username='+ts_username+',ts_command_limit='+ts_command_limit+',' + new Date().getTime(), true);
         //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
         req_ts.onreadystatechange = function() {
             if (req_ts.readyState == 4) {
