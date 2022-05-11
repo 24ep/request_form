@@ -666,9 +666,10 @@ tinymce.init({
   toolbar_location: "bottom",
   autoresize_bottom_margin: 0,
   contextmenu: false,
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; }.tox-tinymce {border-radius: 7px!important;}',
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
   setup: (ed) => {
     editor = ed;
   }
+  document.getElementsByClassName("tox-tinymce").style.borderRadius = "7px";
 });
 </script>
