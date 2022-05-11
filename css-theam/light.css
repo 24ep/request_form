@@ -60,7 +60,7 @@ label {
 .list_bra .nav-link:hover {
     color: white !important;
     width: 100%;
-    s font-weight: bolder;
+    font-weight: bolder;
 }
 
 .list_bra .nav-link.active:hover {
