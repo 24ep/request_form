@@ -666,7 +666,22 @@ tinymce.init({
   toolbar_location: "bottom",
   autoresize_bottom_margin: 0,
   contextmenu: false,
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:13px;border-top: 1px solid #ffffff; }',
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px;border-top: 1px solid #ffffff; }.tox.tox-tinymce.tox-tinymce--toolbar-bottom {
+    border: #d7d7d7 solid 1px;
+    border-radius: 7px;
+}
+.tox-tinymce {
+    border-radius: 7px;
+}
+
+.tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child 
+.tox-toolbar__primary, .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
+    border-top: 1px solid #fff;
+}
+.tox .tox-tbtn svg {
+    display: block;
+    fill: #6c757d;
+}',
   setup: (ed) => {
     editor = ed;
   }
