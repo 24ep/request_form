@@ -87,9 +87,9 @@ function new_select_option($col,$table,$select_option,$database) {
       //set null
               if($loop_in_null<>true){
                 if(isset($option_set)){
-                  $option_set .= '<option value=""></option>';
+                  $option_set .= '<div class="item" data-value="" ></div>';
                 }else{
-                  $option_set = '<option value=""></option>';
+                  $option_set .= '<div class="item" data-value="" ></div>';
                 }
                 $loop_in_null=true;
               }
