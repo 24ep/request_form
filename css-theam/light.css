@@ -226,11 +226,11 @@ ion-icon {
 }
 
 .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
-    border: #d7d7d7 solid 1px;
-    border-radius: 7px;
+    border: #d7d7d7 solid 1px!important;
+    border-radius: 7px!important;
 }
 .tox-tinymce {
-    border-radius: 7px;
+    border-radius: 7px!important;
 }
 
 .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child 
@@ -239,5 +239,5 @@ ion-icon {
 }
 .tox .tox-tbtn svg {
     display: block;
-    fill: #6c757d;
+    fill: #6c757d!important;
 }
