@@ -655,7 +655,7 @@ $(function() {
 // });
 
 tinymce.init({
-  selector: "#comment_input_cr",
+  selector: "textarea#comment_input_cr",
   plugins: "autoresize link lists emoticons",
   toolbar:
     "bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons",
