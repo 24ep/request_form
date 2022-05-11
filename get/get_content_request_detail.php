@@ -71,7 +71,7 @@ function get_image_cr($id){
       $list_image.=  ' <div class="col-md"><div class="thumbnail">
       <a href="'.$herf .'" target="_blank">
       <figure class="figure">
-      <img src="'.$herf .'" class="img-thumbnail img-fluid" alt="'.$row["file_name"].'  " style="object-fit:cover;width:180px;height:180px;">
+      <img src="'.$herf .'" class="img-thumbnail img-fluid" alt="'.$row["file_name"].'  " style="object-fit:cover;width:100px;height:100px;">
       <figcaption class="figure-caption text-end">'.$row["file_name"].'</figcaption></a></div></div>';
     }
     $list_image.= '</div>';
