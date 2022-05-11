@@ -596,21 +596,21 @@
                                                     
                                                 }
                                                 ?>
-                                                <input  type="search" style="width: 60%;" 
+                                                <input  type="text" style="width: 60%;" 
                                                     class="form-control" onsearch="run_ts_command('task');"
                                                     id="ts_command" name="ts_command"
                                                     placeholder="fill someting .."
                                                     aria-label="Username" aria-describedby="basic-addon1"
                                                     value="<?php echo $sqb;   ?>">
                                                 <span class="input-group-text">Username</span>
-                                                <input style="width: 10%;" list="qlistoption" type="search"
+                                                <input style="width: 10%;" list="qlistoption" type="text"
                                                     class="form-control" onsearch="run_ts_command('task');"
                                                     id="ts_username" name="ts_username"
                                                     placeholder="unassign"
                                                     aria-label="Username" aria-describedby="basic-addon1"
                                                     value="<?php echo $_SESSION["ts_username"];   ?>">
                                                 <span class="input-group-text">Limit</span>
-                                                <input type="number" max="999" onsearch="run_ts_command('task');"
+                                                <input type="number" max="999" onchange="run_ts_command('task');"
                                                     min="1" class="form-control" id="ts_command_limit"
                                                     name="ts_command_limit" placeholder="Server" value="100"
                                                     aria-label="Server">
