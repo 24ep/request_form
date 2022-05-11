@@ -77,6 +77,38 @@ function get_image_cr($id){
     $list_image.= '</div>';
       return $list_image;
 }
+function new_select_option($col,$table,$select_option,$database) {
+
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
+    mysqli_query($con, "SET NAMES 'utf8' ");
+    $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
+    $result = mysqli_query($con, $query);
+    while($row = mysqli_fetch_array($result)) {
+      //set null
+              if($loop_in_null<>true){
+                if(isset($option_set)){
+                  $option_set .= '<option value=""></option>';
+                }else{
+                  $option_set = '<option value=""></option>';
+                }
+                $loop_in_null=true;
+              }
+      //set text option
+              if($row[$col] <> '' and  $row[$col] <> null)
+              {
+                  if($select_option==$row[$col]){
+                      $option_set .= '<div class="item" data-value="'.$row[$col].'" selected>'.$row[$col].'</div>';
+                  }else{
+                      $option_set .= '<div class="item" data-value="'.$row[$col].'" >'.$row[$col].'</div>';
+                  }
+              }
+      
+    }
+    mysqli_close($con);
+    return $option_set;
+     
+}
+
 function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
@@ -171,6 +203,7 @@ $result = mysqli_query($con, $query);
     // $cr_op = getoption_return_edit_cr("content_request_status","option",$status,"single","all_in_one_project");
     $cr_op = return_option_edit_cr($status,"38");
     $username_op = getoption_return_edit_cr("username","account",$case_officer,"single","all_in_one_project");
+    $new_username_op = new_select_option("username","account",$case_officer,"all_in_one_project");
     // $type_op = getoption_return_edit_cr("issue_type","option",$ticket_type,"single","all_in_one_project");
     $type_op = return_option_edit_cr($ticket_type,"39");
     $content_request_reson_op = getoption_return_edit_cr("content_request_reson","option",$content_request_reson,"single","all_in_one_project");
@@ -304,43 +337,33 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             '.$cr_op.'
             </select>';
             
+
+            //new user select
             echo '
-      
             <div class="row" >
               <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>'.$sj.' Owner</strong></div>|
               <div class="col" style=" padding-left: 25px;text-align-last: right;">
-              <select class="form-select form-select-sm"  id="cr_edit_case_officer" name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')"  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
-              '.$username_op.'
-              </select>
-              </div>
+                <div class="ui fluid multiple search selection dropdown">
+                  <input type="hidden" name="country">
+                  <i class="dropdown icon"></i>
+                    <div class="default text">Select Country</div>
+                    <div class="menu">
+                    '.$new_username_op .'
+                    </div>
+                </div>
+                </div>
             </div>';
+            // end new user selecter
+            // echo '
+            // <div class="row" >
+            //   <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>'.$sj.' Owner</strong></div>|
+            //   <div class="col" style=" padding-left: 25px;text-align-last: right;">
+            //   <select class="form-select form-select-sm"  id="cr_edit_case_officer" name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')"  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
+            //   '.$new_username_op .'
+            //   </select>
+            //   </div>
+            // </div>';
 
-          //   if($case_name==null and $office_tell == null){
-          //    echo '
-          //       <div class="row" style="background: #d8ede4;
-          //           padding-top: 10px;
-          //           padding-bottom: 10px;
-          //           border-radius: 5px;
-          //           margin-top: 0px;
-          //           text-align: center;
-          //           font-weight: 900;
-          //           margin: 10px;">
-          //         <div class="col" style=" padding-left: 25px;">this ticket still in queue</div>
-          //       </div>';
-          //   }
-          //  else{
-          //       echo '
-          //       <div class="row" style="background: #2eff9f;
-          //           padding-top: 10px;
-          //           padding-bottom: 10px;
-          //           border-radius: 5px;
-          //           margin-top: 0px;
-          //           text-align: center;
-          //           font-weight: 900;
-          //           margin: 10px;">
-          //         <div class="col" style=" padding-left: 25px;">'.$case_name." Tell : ".$office_tell.'</div>
-          //       </div>';
-          //  }
             echo '<hr>';
             // end contact
             // ---check list

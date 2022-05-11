@@ -151,6 +151,13 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
         <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
+        <!-- Sematic UI -->
+            <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+            <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+            <script src="semantic/dist/semantic.min.js"></script>
         <script>
         $(function() {
             $(".multiple-select").multipleSelect()
@@ -1117,7 +1124,7 @@
                                     </div> -->
                                     <div id="get_ts_admin_console">
                                             <!-- <script>run_ts_command('task');</script> -->
-                                       <?php 
+                                        <?php 
                                             include('get/get_list_ts.php');
                                          ?> 
                                     </div>
