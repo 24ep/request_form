@@ -229,9 +229,13 @@ ion-icon {
     border: #d7d7d7 solid 1px;
     border-radius: 7px;
 }
+.tox-tinymce {
+    border-radius: 7px;
+}
 
-.tox-toolbar__primary {
-    border-top: 1px solid #ffffff;
+.tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child 
+.tox-toolbar__primary, .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
+    border-top: 1px solid #fff;
 }
 .tox .tox-tbtn svg {
     display: block;
