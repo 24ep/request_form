@@ -155,11 +155,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <!-- <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"> -->
-            <script
+            <!-- <script
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-            crossorigin="anonymous"></script>
-            <script src="semantic/dist/semantic.min.js"></script>
+            crossorigin="anonymous"></script> -->
+            <!-- <script src="semantic/dist/semantic.min.js"></script> -->
         <script>
         $(function() {
             $(".multiple-select").multipleSelect()
