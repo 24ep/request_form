@@ -290,7 +290,7 @@ function create_ticket_csg(){
          $query = mysqli_query($con,$sql);
          if($query) {
             $last_id = $con->insert_id;
-            if(check_exist_message_id()=="NULL"){
+            if(check_exist_message_id()=="NULL" or check_exist_message_id()==NULL){
                 echo $last_id;
             }else{
                 $count_conversation_id = count_conversion_id($conversation_id)-1;
@@ -306,7 +306,7 @@ function create_ticket_csg(){
          mysqli_close($con);   
 }
 # check subject
-$keywords = array("SKU maintenance","SKU maintanance","sku_maintanance","sku mainta","sku mainte","SKU Maintainence"); 
+$keywords = array("SKU maintenance","SKU maintanance","sku_maintanance","SKU Maintainence"); 
 $len = count($keywords);
 $i=0;
 foreach ($keywords as $keyword) {
