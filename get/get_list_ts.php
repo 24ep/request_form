@@ -4,7 +4,7 @@ session_start();
 if($_POST["summary_filter"]<>"" and $_POST["summary_filter"]<>null ){
   $_SESSION["ts_query_input"] = $_POST["summary_filter"];
 }elseif($_GET["summary_filter"]<>"" and $_GET["summary_filter"]<>null){
-  $_SESSION["ts_query_input"] = $_GET["ts_query_input"];
+  $_SESSION["ts_query_input"] = $_GET["summary_filter"];
 }else{
   $_SESSION["ts_query_input"] = "";
 }
