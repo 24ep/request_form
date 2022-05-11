@@ -256,7 +256,7 @@ function create_ticket_csg(){
     }
         
         $parent_id = ",".check_exist_message_id();
-
+        $return_check_exist_message_id = check_exist_message_id();
      $insert_head .= "brand";$insert_value .= "'".str_replace("'","''",$attributes["brand"])."'";
      $insert_head .= ",sku";$insert_value .= $total_sku;
      $insert_head .= ",link_info";$insert_value .= ",'".$attributes["link_info"]."'";
@@ -290,7 +290,7 @@ function create_ticket_csg(){
          $query = mysqli_query($con,$sql);
          if($query) {
             $last_id = $con->insert_id;
-            if(check_exist_message_id()=="NULL" or check_exist_message_id()==NULL){
+            if($return_check_exist_message_id=="NULL"){
                 echo $last_id;
             }else{
                 $count_conversation_id = count_conversion_id($conversation_id)-1;
