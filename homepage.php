@@ -1125,10 +1125,10 @@
                                     // } ?>
                                     </div> -->
                                     <div id="get_ts_admin_console">
-                                            <!-- <script>run_ts_command('task');</script> -->
-                                        <?php 
-                                            include('get/get_list_ts.php');
-                                         ?> 
+                                            
+                                        <!-- <?php 
+                                            //include('get/get_list_ts.php');
+                                         ?>  -->
                                     </div>
                                 </div>
                             </div>
@@ -1925,3 +1925,4 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
     </script>
+    <script>run_ts_command('task');</script>
