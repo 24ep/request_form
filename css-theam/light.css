@@ -38,7 +38,7 @@ label {
 .container-sm {
     max-width: 500px;
     margin-top: 8%;
-    padding: 10px !important 50px !important 100px !important !important;
+    /* padding: 10px !important 50px !important 100px !important !important; */
 }
 
 .list_bra .nav-pills .nav-link.active,
