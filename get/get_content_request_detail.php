@@ -672,5 +672,5 @@ tinymce.init({
   }
   
 });
-document.getElementsByClassName("tox-tinymce").style.borderRadius = "7px";
+document.getElementsByClassName("tox tox-tinymce tox-tinymce--toolbar-bottom").style.borderRadius = "7px";
 </script>
