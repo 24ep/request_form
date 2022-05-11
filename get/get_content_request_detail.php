@@ -296,8 +296,10 @@ while($row_project = mysqli_fetch_array($result_project)) {
         </div>
         </ul> 
         
-
-        <textarea id="comment_input_cr" rows="4" style="margin-top:0px;margin-bottom:10px;font-size: 14px;" placeholder="Type message and hit enter"></textarea>
+        <div class="custom-editor-wrapper">
+        <textarea id="comment_input_cr" placeholder="Type message and hit enter"></textarea>
+        </div>
+        
        ';
       //  <textarea id="comment_input_cr" style="margin-top:0px;margin-bottom:10px;font-size: 14px;" 
       //   class="form-control" placeholder="Leave a comment here..." rows="4" style="height: 100px"></textarea>
@@ -635,21 +637,32 @@ $(function() {
     $(".multiple-select_cr_edit").multipleSelect()
 });
 
+// tinymce.init({
+//   selector: "#comment_input_cr",
+//   plugins: "autoresize link lists emoticons",
+//   toolbar:
+//     "bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons",
+//   menubar: false,
+//   statusbar: false,
+//   skin: "naked",
+//   width: "100%",
+//   toolbar_location: "bottom",
+//   autoresize_bottom_margin: 0,
+//   contextmenu: false,
+//   setup: (ed) => {
+//     editor = ed;
+//   },
+// });
+
 tinymce.init({
-  selector: "#comment_input_cr",
-  plugins: "autoresize link lists emoticons",
-  toolbar:
-    "bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons",
+  selector: 'textarea#comment_input_cr',
+  skin: 'naked',
+  icons: 'small',
+  toolbar_location: 'bottom',
+  plugins: 'lists code table codesample link',
+  toolbar: 'bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons',
   menubar: false,
   statusbar: false,
-  skin: "naked",
-  width: "100%",
-  toolbar_location: "bottom",
-  autoresize_bottom_margin: 0,
-  contextmenu: false,
-  setup: (ed) => {
-    editor = ed;
-  },
+  content_css: '//www.tiny.cloud/css/codepen.min.css'
 });
-
 </script>
