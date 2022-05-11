@@ -668,6 +668,6 @@ tinymce.init({
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:13px;border:solid 0px; }'
   setup: (ed) => {
     editor = ed;
-  },
+  }
 });
 </script>
