@@ -655,7 +655,7 @@ $(function() {
 // });
 
 tinymce.init({
-  selector: 'textarea#comment_input_cr',
+  selector: '#comment_input_cr',
   skin: 'naked',
   icons: 'small',
   toolbar_location: 'bottom',
