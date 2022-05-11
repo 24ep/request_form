@@ -1370,11 +1370,12 @@ tinymce.init({
   icons: 'small',
   toolbar_location: 'bottom',
   plugins: 'lists code table codesample link',
-  toolbar: 'bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons',
+  toolbar: 'formatselect | bold italic underline strikethrough bullist link codesample',
   menubar: false,
   statusbar: false,
   content_css: '//www.tiny.cloud/css/codepen.min.css'
 });
+
     </script>
     <script>
 //   var toastElList = [].slice.call(document.querySelectorAll('.toast'))
