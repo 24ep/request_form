@@ -1,7 +1,10 @@
 <?php
 session_start();
+
 if($_POST["summary_filter"]<>"" and $_POST["summary_filter"]<>null ){
   $_SESSION["ts_query_input"] = $_POST["summary_filter"];
+}elseif($_GET["ts_query_input"]<>"" and $_GET["ts_query_input"]<>null){
+  $_SESSION["ts_query_input"] = $_GET["ts_query_input"];
 }else{
   $_SESSION["ts_query_input"] = "";
 }
@@ -22,7 +25,8 @@ if($_POST["ts_username"]<>"" and $_POST["ts_username"]<>null ){
 }
 
 
-
+echo "<script>console.log('query input : ".$_SESSION["ts_query_input"]."');</script>";
+echo "<script>console.log('username :  ".$_SESSION["ts_username"]."');</script>";
 
 
 $filter = "";
@@ -76,7 +80,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         ON ticket.id = comment.ticket_id 
         where ".$ts_filter." 
         GROUP BY ticket.id order by ticket.id ".$sort_de_status."  limit ".$ts_command_limit;
-        // echo "<script>console.log('".$query."');</script>";
+    
         $result = mysqli_query($con, $query);
         echo "<ul style='width: 95%;'>";
           while( $row = mysqli_fetch_array($result)) {
