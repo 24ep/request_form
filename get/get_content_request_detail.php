@@ -630,8 +630,6 @@ window.onresize = function(event) {
 $(function() {
     $(".multiple-select_cr_edit").multipleSelect()
 });
-$(document).ready(function() {
-    $('.form-select').select2();
-});
+
 
 </script>
