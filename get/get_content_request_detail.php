@@ -670,6 +670,7 @@ tinymce.init({
   setup: (ed) => {
     editor = ed;
   }
-  document.getElementsByClassName("tox-tinymce").style.borderRadius = "7px";
+  
 });
+document.getElementsByClassName("tox-tinymce").style.borderRadius = "7px";
 </script>
