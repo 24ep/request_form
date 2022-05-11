@@ -1364,6 +1364,17 @@ tinymce.init({
         'removeformat | help',
     //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
 });
+tinymce.init({
+  selector: 'textarea#comment_input_cr',
+  skin: 'naked',
+  icons: 'small',
+  toolbar_location: 'bottom',
+  plugins: 'lists code table codesample link',
+  toolbar: 'bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons',
+  menubar: false,
+  statusbar: false,
+  content_css: '//www.tiny.cloud/css/codepen.min.css'
+});
     </script>
     <script>
 //   var toastElList = [].slice.call(document.querySelectorAll('.toast'))

@@ -654,15 +654,5 @@ $(function() {
 //   },
 // });
 
-tinymce.init({
-  selector: '#comment_input_cr',
-  skin: 'naked',
-  icons: 'small',
-  toolbar_location: 'bottom',
-  plugins: 'lists code table codesample link',
-  toolbar: 'bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons',
-  menubar: false,
-  statusbar: false,
-  content_css: '//www.tiny.cloud/css/codepen.min.css'
-});
+
 </script>
