@@ -674,3 +674,13 @@ tinymce.init({
 });
 document.getElementsByClassName("tox tox-tinymce tox-tinymce--toolbar-bottom").style.borderRadius = "7px";
 </script>
+<style>
+  .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child 
+.tox-toolbar__primary, .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
+    border-top: 1px solid #fff;
+}
+.tox .tox-tbtn svg {
+    display: block;
+    fill: #6c757d!important;
+}
+</style>
