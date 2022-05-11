@@ -604,7 +604,7 @@
                                                     value="<?php echo $sqb;   ?>">
                                                 <span class="input-group-text">Username</span>
                                                 <input style="width: 10%;" list="qlistoption"  type="text"
-                                                    class="form-control" onchange="run_ts_command('task');"
+                                                    class="form-control" onsearch="run_ts_command('task');"
                                                     id="ts_username" name="ts_username"
                                                     placeholder="unassign"
                                                     aria-label="Username" aria-describedby="basic-addon1"
