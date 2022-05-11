@@ -1365,17 +1365,21 @@ tinymce.init({
     //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
 });
 tinymce.init({
-  selector: 'textarea#comment_input_cr',
-  skin: 'naked',
-  icons: 'small',
-  toolbar_location: 'bottom',
-  plugins: 'lists code table codesample link',
-  toolbar: 'formatselect | bold italic underline strikethrough bullist link codesample',
+  selector: "#comment_input_cr",
+  plugins: "autoresize link lists emoticons",
+  toolbar:
+    "bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons",
   menubar: false,
   statusbar: false,
-  content_css: '//www.tiny.cloud/css/codepen.min.css'
+  width: "100%",
+  toolbar_location: "bottom",
+  autoresize_bottom_margin: 0,
+  contextmenu: false,
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:13px;border:solid 0px; }'
+  setup: (ed) => {
+    editor = ed;
+  },
 });
-
     </script>
     <script>
 //   var toastElList = [].slice.call(document.querySelectorAll('.toast'))
