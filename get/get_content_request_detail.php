@@ -346,7 +346,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                 <div class="ui fluid multiple search selection dropdown">
                   <input type="hidden" name="country">
                   <i class="dropdown icon"></i>
-                    <div class="default text">Select Country</div>
+                    <div class="default text">Username</div>
                     <div class="menu">
                     '.$new_username_op .'
                     </div>
