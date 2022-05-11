@@ -1364,22 +1364,7 @@ tinymce.init({
         'removeformat | help',
     //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
 });
-tinymce.init({
-  selector: "#comment_input_cr",
-  plugins: "autoresize link lists emoticons",
-  toolbar:
-    "bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons",
-  menubar: false,
-  statusbar: false,
-  width: "100%",
-  toolbar_location: "bottom",
-  autoresize_bottom_margin: 0,
-  contextmenu: false,
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:13px;border:solid 0px; }'
-  setup: (ed) => {
-    editor = ed;
-  },
-});
+
     </script>
     <script>
 //   var toastElList = [].slice.call(document.querySelectorAll('.toast'))
