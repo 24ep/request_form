@@ -120,10 +120,7 @@
         }
         mysqli_close($con);
     ?>
-    <!DOCTYPE html>
-    <html lang="en">
-    <!-- set up theam -->
-    <?php 
+      <?php 
         if($_SESSION["pf_theme"]=="Dark") {
             $pftheam="dark";
         }elseif($_SESSION["pf_theme"]=="Light Modern") {
@@ -131,6 +128,10 @@
         }
 
      ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <!-- set up theam -->
+  
     <head>
         <title>Content and Studio - Homepage</title>
         <!-- Required meta tags -->
@@ -160,7 +161,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
         <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
         <script>
         $(function() {
             $(".multiple-select").multipleSelect()
@@ -262,10 +263,10 @@
         </div>
         <div class="row " style="margin-bottom: 0px;--bs-gutter-x: 0rem;">
             <?php 
-         if(strpos($_SESSION["department"],'Content Admin')!==false){
-            $nev_avg = "background: #212121;";
-         }
-        ?>
+            if(strpos($_SESSION["department"],'Content Admin')!==false){
+                $nev_avg = "background: #212121;";
+            }
+                ?>
             <!-- start nav normal -->
             <?php 
            if($_SESSION["pf_theme"]<>"Light Modern") {
