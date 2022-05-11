@@ -295,7 +295,10 @@ while($row_project = mysqli_fetch_array($result_project)) {
         </div>
         </div>
         </ul> 
-        <textarea id="comment_input_cr" style="margin-top:0px;margin-bottom:10px;font-size: 14px;" class="form-control" placeholder="Leave a comment here..." rows="4" style="height: 100px"></textarea>
+        <textarea id="comment_input_cr" style="margin-top:0px;margin-bottom:10px;font-size: 14px;" 
+        class="form-control" placeholder="Leave a comment here..." rows="4" style="height: 100px"></textarea>
+
+        <input id="comment_input_cr_new" type="text" placeholder="Type message and hit enter">
        ';
       //  if($_SESSION["username"]=="poojaroonwit"){
         echo '
@@ -341,7 +344,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             <div class="row" >
               <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>'.$sj.' Owner</strong></div>|
               <div class="col" style=" padding-left: 25px;text-align-last: right;">
-              <select class="selectpicker" data-live-search="true"  id="cr_edit_case_officer"  name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')"  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
+              <select class="form-select form-select-sm" data-live-search="true"  id="cr_edit_case_officer"  name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')"  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
               '.$username_op .'
               </select>
               </div>
@@ -631,5 +634,20 @@ $(function() {
     $(".multiple-select_cr_edit").multipleSelect()
 });
 
+tinymce.init({
+  selector: "#comment_input_cr_new",
+  plugins: "autoresize link lists emoticons",
+  toolbar:
+    "bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons",
+  menubar: false,
+  statusbar: false,
+  width: "100%",
+  toolbar_location: "bottom",
+  autoresize_bottom_margin: 0,
+  contextmenu: false,
+  setup: (ed) => {
+    editor = ed;
+  },
+});
 
 </script>
