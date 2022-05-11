@@ -77,37 +77,37 @@ function get_image_cr($id){
     $list_image.= '</div>';
       return $list_image;
 }
-function new_select_option($col,$table,$select_option,$database) {
+// function new_select_option($col,$table,$select_option,$database) {
 
-    $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
-    mysqli_query($con, "SET NAMES 'utf8' ");
-    $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
-    $result = mysqli_query($con, $query);
-    while($row = mysqli_fetch_array($result)) {
-      //set null
-              if($loop_in_null<>true){
-                if(isset($option_set)){
-                  $option_set .= '<div class="item" data-value="" ></div>';
-                }else{
-                  $option_set .= '<div class="item" data-value="" ></div>';
-                }
-                $loop_in_null=true;
-              }
-      //set text option
-              if($row[$col] <> '' and  $row[$col] <> null)
-              {
-                  if($select_option==$row[$col]){
-                      $option_set .= '<div class="item" data-value="'.$row[$col].'" selected>'.$row[$col].'</div>';
-                  }else{
-                      $option_set .= '<div class="item" data-value="'.$row[$col].'" >'.$row[$col].'</div>';
-                  }
-              }
+//     $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
+//     mysqli_query($con, "SET NAMES 'utf8' ");
+//     $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
+//     $result = mysqli_query($con, $query);
+//     while($row = mysqli_fetch_array($result)) {
+//       //set null
+//               if($loop_in_null<>true){
+//                 if(isset($option_set)){
+//                   $option_set .= '<div class="item" data-value="" ></div>';
+//                 }else{
+//                   $option_set .= '<div class="item" data-value="" ></div>';
+//                 }
+//                 $loop_in_null=true;
+//               }
+//       //set text option
+//               if($row[$col] <> '' and  $row[$col] <> null)
+//               {
+//                   if($select_option==$row[$col]){
+//                       $option_set .= '<div class="item" data-value="'.$row[$col].'" selected>'.$row[$col].'</div>';
+//                   }else{
+//                       $option_set .= '<div class="item" data-value="'.$row[$col].'" >'.$row[$col].'</div>';
+//                   }
+//               }
       
-    }
-    mysqli_close($con);
-    return $option_set;
+//     }
+//     mysqli_close($con);
+//     return $option_set;
      
-}
+// }
 
 function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
@@ -203,7 +203,7 @@ $result = mysqli_query($con, $query);
     // $cr_op = getoption_return_edit_cr("content_request_status","option",$status,"single","all_in_one_project");
     $cr_op = return_option_edit_cr($status,"38");
     $username_op = getoption_return_edit_cr("username","account",$case_officer,"single","all_in_one_project");
-    $new_username_op = new_select_option("username","account",$case_officer,"all_in_one_project");
+    // $new_username_op = new_select_option("username","account",$case_officer,"all_in_one_project");
     // $type_op = getoption_return_edit_cr("issue_type","option",$ticket_type,"single","all_in_one_project");
     $type_op = return_option_edit_cr($ticket_type,"39");
     $content_request_reson_op = getoption_return_edit_cr("content_request_reson","option",$content_request_reson,"single","all_in_one_project");
@@ -337,29 +337,12 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             '.$cr_op.'
             </select>';
             
-
-            //new user select
-            // echo '
-            // <div class="row" >
-            //   <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>'.$sj.' Owner</strong></div>|
-            //   <div class="col" style=" padding-left: 25px;text-align-last: right;">
-            //     <div class="ui fluid multiple search selection dropdown">
-            //       <input type="hidden" name="country">
-            //       <i class="dropdown icon"></i>
-            //         <div class="default text">Username</div>
-            //         <div class="menu">
-            //         '.$new_username_op .'
-            //         </div>
-            //     </div>
-            //     </div>
-            // </div>';
-            // end new user selecter
             echo '
             <div class="row" >
               <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>'.$sj.' Owner</strong></div>|
               <div class="col" style=" padding-left: 25px;text-align-last: right;">
               <select class="form-select form-select-sm"  id="cr_edit_case_officer" name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')"  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
-              '.$new_username_op .'
+              '.$username_op .'
               </select>
               </div>
             </div>';
@@ -368,27 +351,33 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             // end contact
             // ---check list
              ?>
-         
-             <div class="row">
-                <div class="col">
-                    <strong>Task list</strong><br>
-                    <small>Create a task for record action of ticket</small>
-                </div>
-                <div class="col"><div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">
-                 <button class="btn btn-primary btn-sm" onclick="add_cr_list(<?php echo $id; ?>,'<?php echo $ticket_template; ?>')"><ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon> ADD TASK</button>
-                </div>
 
-            </div></div>
-              
-              <ul id="checklist_box" style="padding: 5px;">
-            
-               <?php     include('https://content-service-gate.cdse-commercecontent.com/base/get/get_checklist_cr.php?id='.$id.'&department='.$_SESSION["department"]); ?>
-              </ul>
-         
-            
+<div class="row">
+    <div class="col">
+        <strong>Task list</strong><br>
+        <small>Create a task for record action of ticket</small>
+    </div>
+    <div class="col">
+        <div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">
+            <button class="btn btn-primary btn-sm"
+                onclick="add_cr_list(<?php echo $id; ?>,'<?php echo $ticket_template; ?>')">
+                <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon> ADD
+                TASK
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<ul id="checklist_box" style="padding: 5px;">
+
+    <?php     include('https://content-service-gate.cdse-commercecontent.com/base/get/get_checklist_cr.php?id='.$id.'&department='.$_SESSION["department"]); ?>
+</ul>
 
 
-             <?php
+
+
+<?php
 
       if($ticket_template<>"PJ"){
             echo '<hr>';
@@ -448,20 +437,20 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
         }else{
            echo '<h4 style="font-weight: 900;padding-left: 0rem;font-size: xxx-large;background-color: transparent;">'.$status.'</h4>'; 
                ?>
-                 <hr>
-                <div class="col">
-                <strong>Task list</strong><br>
-                <small>Sub task of ticket (for staff)</small>
-                </div>
-              <ul id="checklist_box" style="padding: 5px;">
-                  
-               <?php     include('https://content-service-gate.cdse-commercecontent.com/base/get/get_checklist_cr.php?id='.$id.'&department='.$_SESSION["department"]); ?>
-              </ul>
-         
-            
+<hr>
+<div class="col">
+    <strong>Task list</strong><br>
+    <small>Sub task of ticket (for staff)</small>
+</div>
+<ul id="checklist_box" style="padding: 5px;">
+
+    <?php     include('https://content-service-gate.cdse-commercecontent.com/base/get/get_checklist_cr.php?id='.$id.'&department='.$_SESSION["department"]); ?>
+</ul>
 
 
-            <?php
+
+
+<?php
            echo '  
            <hr>
            <ul class="list-group list-group shadow-sm border-0 rounded bg-white">
@@ -521,42 +510,43 @@ function comment_cr_id(id) {
     }
 }
 
-function add_cr_list(id,ticket_template) {
-  if(ticket_template=="CR"){
-    var sku = document.getElementById("cr_edit_sku").value;
-  }else{
-    var sku = 0;
-  }
-  
-  if (id) {
+function add_cr_list(id, ticket_template) {
+    if (ticket_template == "CR") {
+        var sku = document.getElementById("cr_edit_sku").value;
+    } else {
+        var sku = 0;
+    }
+
+    if (id) {
         $.post("base/action/action_create_checklist_cr.php", {
                 id: id,
-                sku:sku
+                sku: sku
             },
             function(data) {
-              $('#checklist_box').html(data);
+                $('#checklist_box').html(data);
                 // $('#call_ticket_comment_cr').html(data);
                 // document.getElementById('comment_box_cr').scrollBy(0, document.getElementById(
                 //     "call_ticket_comment_cr").offsetHeight);
             });
     }
-   
+
 }
-function remove_cr_list(list_id,ticket_id) {
-        if (list_id) {
-              $.post("base/action/action_remove_checklist_cr.php", {
-                      list_id: list_id,
-                      ticket_id:ticket_id
-                  },
-                  function(data) {
-                    $('#checklist_box').html(data);
-                      // $('#call_ticket_comment_cr').html(data);
-                      // document.getElementById('comment_box_cr').scrollBy(0, document.getElementById(
-                      //     "call_ticket_comment_cr").offsetHeight);
-                  });
-          }
-         
-      }
+
+function remove_cr_list(list_id, ticket_id) {
+    if (list_id) {
+        $.post("base/action/action_remove_checklist_cr.php", {
+                list_id: list_id,
+                ticket_id: ticket_id
+            },
+            function(data) {
+                $('#checklist_box').html(data);
+                // $('#call_ticket_comment_cr').html(data);
+                // document.getElementById('comment_box_cr').scrollBy(0, document.getElementById(
+                //     "call_ticket_comment_cr").offsetHeight);
+            });
+    }
+
+}
 
 function comment_cr_id_with_file(id) {
     var form_data = new FormData();
@@ -603,9 +593,10 @@ function update_cr_detail(id, id_name) {
             });
     }
 }
+
 function update_cl_detail(id, id_name) {
     var id_name = id_name;
-    var value_change = document.getElementById(id_name+'_'+id).value;
+    var value_change = document.getElementById(id_name + '_' + id).value;
     if (id) {
         $.post("base/action/action_update_checklist_cr.php", {
                 id: id,
