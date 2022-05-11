@@ -666,7 +666,7 @@ tinymce.init({
   toolbar_location: "bottom",
   autoresize_bottom_margin: 0,
   contextmenu: false,
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } .tox.tox-tinymce.tox-tinymce--toolbar-bottom {border: #d7d7d7 solid 1px;border-radius: 7px;} .tox-tinymce {border-radius: 7px;}',
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; }.tox-tinymce {border-radius: 7px!important;}',
   setup: (ed) => {
     editor = ed;
   }
