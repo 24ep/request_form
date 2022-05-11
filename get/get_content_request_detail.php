@@ -666,7 +666,7 @@ tinymce.init({
   toolbar_location: "bottom",
   autoresize_bottom_margin: 0,
   contextmenu: false,
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:13px;border:solid 0px; }'
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:13px;border:solid 0px; }',
   setup: (ed) => {
     editor = ed;
   }
