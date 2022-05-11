@@ -672,9 +672,11 @@ tinymce.init({
   }
   
 });
-document.getElementsByClassName("tox tox-tinymce tox-tinymce--toolbar-bottom").style.borderRadius = "7px";
 </script>
 <style>
+  .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
+    border-radius: 7px;
+}
   .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child 
 .tox-toolbar__primary, .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
     border-top: 1px solid #fff;
