@@ -659,14 +659,14 @@ tinymce.init({
   selector: "#comment_input_cr",
   plugins: "autoresize link lists emoticons",
   toolbar:
-    "bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons",
+    "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
   menubar: false,
   statusbar: false,
   width: "100%",
   toolbar_location: "bottom",
   autoresize_bottom_margin: 0,
   contextmenu: false,
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:13px;border:solid 0px; }',
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:13px;border-top: 1px solid #ffffff; }',
   setup: (ed) => {
     editor = ed;
   }
