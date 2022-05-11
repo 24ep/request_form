@@ -285,7 +285,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <div class="des_cr" id="des_cr_inline" >'.$description.'</div></form>
         '.$list_image.'
         <hr style="margin-bottom:5px;color: #dee2e6;">
-        <small style="font-weight: bolder;color: #adb5bd;">Comment</small>
+        <small style="font-weight: bolder;color: #adb5bd;margin-bottom:5px">Comment</small>
         <ul  class="list-group list-group-flush" style="background: fixed;">
         <div id="comment_box_cr">
         <div id="call_ticket_comment_cr">
