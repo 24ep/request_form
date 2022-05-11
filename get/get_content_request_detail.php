@@ -296,11 +296,12 @@ while($row_project = mysqli_fetch_array($result_project)) {
         </div>
         </ul> 
         
-        <div class="custom-editor-wrapper">
-        <textarea id="comment_input_cr" placeholder="Type message and hit enter"></textarea>
-        </div>
         
+        <input id="comment_input_cr" type="text" placeholder="Type message and hit enter">
        ';
+       //<div class="custom-editor-wrapper">
+        // <textarea id="comment_input_cr" placeholder="Type message and hit enter"></textarea>
+        // </div>
       //  <textarea id="comment_input_cr" style="margin-top:0px;margin-bottom:10px;font-size: 14px;" 
       //   class="form-control" placeholder="Leave a comment here..." rows="4" style="height: 100px"></textarea>
       //  if($_SESSION["username"]=="poojaroonwit"){
@@ -655,7 +656,7 @@ $(function() {
 // });
 
 tinymce.init({
-  selector: "textarea#comment_input_cr",
+  selector: "#comment_input_cr",
   plugins: "autoresize link lists emoticons",
   toolbar:
     "bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons",
