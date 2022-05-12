@@ -199,7 +199,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
            
             <div class="row">
                 <div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;">
-                    <?php  
+                    <?php     unset($image_profile);
                               $participants = explode(" ",$row['participant']);
                               foreach ($participants as $username) {
                                 $image_profile .= profile_image($row['firstname'],$row['department'],25,$row['username']);
