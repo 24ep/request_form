@@ -8,7 +8,7 @@ if(isset($_POST['comment'])){
 }else{
     $comment ="";
 }
-include("get_default_profile_image");
+
 function get_comment_cr($id){
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -38,11 +38,7 @@ function get_comment_cr($id){
                 $list_file .= '<a type="button" href="'.$herf.'" style="margin-right:8px;margin-bottom:5px;font-size: 12px;border-color: #7ec1a2;"class="btn btn-outline-success btn-sm "><ion-icon name="document-outline" style="font-size: 12px;"></ion-icon>'.$row_attach['file_name'].'</a>';
             }
         }
-        if(strpos($row['department'],'Content')!==false){
-            $backgroud_profile_image = "#dc3545";
-        }else{
-            $backgroud_profile_image = "#222f3e";
-        }
+       
         $image_profile = profile_image($row['firstname']);
       echo   '
       <li class="list-group-item" style="position: initial;padding-left:0px;border-color: #e9ecef;    border-right-width: 0px;

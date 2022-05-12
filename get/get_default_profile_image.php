@@ -1,11 +1,17 @@
 <?php
 function profile_image($firstname){
+
+if(strpos($firstname,'Content')!==false){
+    $backgroud_profile_image = "#dc3545";
+}else{
+    $backgroud_profile_image = "#222f3e";
+}
 $image = '
 <div style="   
             width: 35px;
             height: 35px;
             border-radius: 50%;
-            background: #222f3e;
+            background: '.$backgroud_profile_image.';
             font-size: 18px;
             color: #fff;
             text-align: center;
