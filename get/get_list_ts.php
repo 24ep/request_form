@@ -220,7 +220,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                                 echo '</div>';
                                
                               }else{
-                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 25px;">';
+                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;">';
                                 echo $image_profile;
                                 echo '</div>';
                                 echo '<div class="col" style="padding-left: 5px;padding-top: 5px;">';
