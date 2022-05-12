@@ -198,8 +198,8 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                             <!-- <img data-bs-toggle="tooltip" data-bs-placement="top" title="<?php //echo //$row["case_officer"]; ?>"
                                   width="25px" height="25px" src="base/image/user_profile/<?php //echo //$row["case_officer"]; ?>.jpg"
                                   class="rounded-circle" alt="<?php //echo $row["case_officer"]; ?>"> -->
-                            <?php   $image_profile = profile_image($row['firstname'],$row['department'],15); echo $image_profile; ?>
-                          <span style="margin-left:5px"><?php echo $row["case_officer"]; ?></span></div>
+                            
+                          <span style="margin-left:5px"><?php   $image_profile = profile_image($row['firstname'],$row['department'],20); echo $image_profile; ?> <?php echo $row["case_officer"]; ?></span></div>
                       </div>
                   </li>
                   <?php $i++; }
