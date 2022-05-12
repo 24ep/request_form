@@ -1314,7 +1314,7 @@ $(document).ready(function() {
     </script>
     <script>
 tinymce.init({
-  selector: "input#comment_input_cr",
+  selector: "comment_input_cr",
   plugins: "autoresize link lists emoticons",
   toolbar:
     "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
