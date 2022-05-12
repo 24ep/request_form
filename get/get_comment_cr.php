@@ -1,7 +1,7 @@
 <?php
 //issue get
 session_start();
-
+include_once("get_default_profile_image.php");
 $id = $_POST['id'];
 if(isset($_POST['comment'])){
     $comment = $_POST['comment'];
