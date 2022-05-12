@@ -676,6 +676,7 @@ tinymce.init({
 <style>
   .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
     border-radius: 7px;
+    margin-top: 8px;
 }
   .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child 
 .tox-toolbar__primary, .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
@@ -683,6 +684,6 @@ tinymce.init({
 }
 .tox .tox-tbtn svg {
     display: block;
-    fill: #6c757d!important;
+    fill: rgb(135 135 135 / 79%)!important;
 }
 </style>
