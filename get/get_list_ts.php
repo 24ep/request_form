@@ -162,7 +162,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         GROUP BY ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
         // echo "<script>console.log('".$query."');</script>";
         $result = mysqli_query($con, $query);
-        echo "<ul style='width: 95%;padding: 15px;'>";
+        echo "<ul style='padding:10px'>";
           while( $row = mysqli_fetch_array($result)) {
                 $count_comment_cr = $row["count_comment"];
 
