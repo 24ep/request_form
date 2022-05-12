@@ -147,10 +147,15 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         comment.ticket_type as ticket_type,
         ticket.participant as participant,
         ticket.case_officer as case_officer,
+        ac.firstname as firstname,
+        ac.lastname as lastname,
+        ac.department as department,
         sum(case when comment.ticket_type='content_request' then 1 else 0 end) as count_comment 
         FROM all_in_one_project.content_request as ticket
         LEFT JOIN all_in_one_project.comment as comment
         ON ticket.id = comment.ticket_id 
+        Left join all_in_one_project.account ac
+        on ac.username = ticket.case_officer 
         where ".$ts_filter." 
         GROUP BY ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
         // echo "<script>console.log('".$query."');</script>";
@@ -193,7 +198,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                             <!-- <img data-bs-toggle="tooltip" data-bs-placement="top" title="<?php //echo //$row["case_officer"]; ?>"
                                   width="25px" height="25px" src="base/image/user_profile/<?php //echo //$row["case_officer"]; ?>.jpg"
                                   class="rounded-circle" alt="<?php //echo $row["case_officer"]; ?>"> -->
-                            <?php echo profile_image($row['firstname'],$_SESSION["department"]); ?>
+                            <?php echo profile_image($row['firstname'],$row["department"]); ?>
                           <span style="margin-left:5px"><?php echo $row["case_officer"]; ?></span></div>
                       </div>
                   </li>
