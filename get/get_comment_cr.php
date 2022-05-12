@@ -39,7 +39,7 @@ function get_comment_cr($id){
             }
         }
        
-        $image_profile = profile_image($row['firstname']);
+        $image_profile = profile_image($row['firstname'],$_SESSION["department"]);
       echo   '
       <li class="list-group-item" style="position: initial;padding-left:0px;border-color: #e9ecef;    border-right-width: 0px;
       border-left-width: 0px;

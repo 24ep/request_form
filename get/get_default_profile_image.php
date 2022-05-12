@@ -1,7 +1,7 @@
 <?php
-function profile_image($firstname){
+function profile_image($firstname,$department){
 
-if(strpos($firstname,'Content')!==false){
+if(strpos($department,'Content')!==false){
     $backgroud_profile_image = "#dc3545";
 }else{
     $backgroud_profile_image = "#222f3e";
