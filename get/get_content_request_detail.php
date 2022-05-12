@@ -485,7 +485,7 @@ function comment_cr_id(id) {
     //var comment = document.getElementById("comment_input_cr").value;
     var iframe = document.getElementById("comment_input_cr_ifr");
     var comment = iframe.contentWindow.document.getElementsByTagName("p")[0];
-    document.getElementById('comment').innerHTML  = ''; //clear value
+    //document.getElementById('comment').innerHTML  = ''; //clear value
     if (id) {
         $.post("base/action/action_comment_cr.php", {
                 id: id,
