@@ -23,13 +23,19 @@
         $get_contact_buyer = $row['firstname']." ".$row['lastname']." ( ".$nickname." )\nEmail: ".$row['work_email']."\nOffice tell: ".$row['office_tell'];
         }
         mysqli_close($con);
-    ?>
-      <?php 
-        if($_SESSION["pf_theme"]=="Dark") {
-            $pftheam="dark";
-        }elseif($_SESSION["pf_theme"]=="Light Modern") {
-            $pftheam="light-modern";
-        }
+    
+        // if($_SESSION["pf_theme"]=="Dark") {
+        //     $pftheam="dark";
+        // }elseif($_SESSION["pf_theme"]=="Light Modern") {
+        //     $pftheam="light-modern";
+        // }
+
+        switch ($_SESSION["pf_theme"]) {
+            case "Dark":  $pftheam="dark"; break;
+            case "Light Modern": $pftheam="light-modern"; break;
+            case "Light":  $pftheam="light"; break;
+            default: $pftheam="light";
+          }
 
      ?>
     <!DOCTYPE html>
