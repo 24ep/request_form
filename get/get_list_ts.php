@@ -238,6 +238,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                                 echo  $ef_badge;
                                 echo '</div>';
                               }
+                              unset($ef_badge);
                     ?>
                 
               
