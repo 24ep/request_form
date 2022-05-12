@@ -1428,5 +1428,38 @@ var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggl
 var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
+tinymce.init({
+  selector: "#comment_input_cr",
+  plugins: "autoresize link lists emoticons",
+  toolbar:
+    "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
+  menubar: false,
+  statusbar: false,
+  width: "100%",
+  toolbar_location: "bottom",
+  autoresize_bottom_margin: 0,
+  contextmenu: false,
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
+  setup: (ed) => {
+    editor = ed;
+  }
+  
+});
+</script>
+<style>
+  .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
+    border-radius: 7px;
+    margin-top: 8px;
+}
+  .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child 
+.tox-toolbar__primary, .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
+    border-top: 1px solid #fff;
+}
+.tox .tox-tbtn svg {
+    display: block;
+    fill: rgb(135 135 135 / 79%)!important;
+}
+</style>
     </script>
+    
     <script>run_ts_command('task');</script>
