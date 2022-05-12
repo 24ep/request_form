@@ -12,7 +12,7 @@ curl_close($ch);
 
 if($httpcode==200) {
     echo ' <img  data-bs-toggle="tooltip" data-bs-placement="top" title="'.$username.'"
-     width="'.$size.'px" style="margin-left: -20px;" height="'.$size.'px" 
+     width="'.$size.'px" style="margin-left: -12px;" height="'.$size.'px" 
      src="base/image/user_profile/'.$username.'.jpg" 
      class="rounded-circle" alt="'.$username.'">';
 
@@ -37,7 +37,9 @@ if($httpcode==200) {
                 color: #fff;
                 text-align: center;
                 line-height: '.$size.'px;
-                top: 0px;"
+                position: absolute;
+                top: 85px;
+                left: 12px;"
                 >
                 '.substr(ucwords($firstname),0,1).'
     </div>';
