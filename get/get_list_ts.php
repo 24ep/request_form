@@ -211,14 +211,14 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                               }
                               
                               echo $image_profile;
-                              if($image_profile==null or $image_profile==""){
+                              if($row['case_offier']==null or $row['case_offier']=="" or $row['case_offier']=="unassign"){
                                 echo  '<button type="button" class="btn btn-sm btn-outline-secondary">Unassign</button>';
                               }
                     ?>
                 </div>
-                <!-- <div class="col" style="padding-left: 5px;padding-top: 5px;">
+                <div class="col" style="padding-left: 5px;padding-top: 5px;">
                     <?php //echo ucwords($row["case_officer"]); ?>
-                </div> -->
+                </div>
             </div>
 
             
