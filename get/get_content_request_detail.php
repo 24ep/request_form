@@ -1,6 +1,4 @@
-<script>$(document).ready(function() {
-  ​$('#js_comment_tiny').remove();
-});</script>
+<script>$('#js_comment_tiny').remove();</script>
 
 <style>
 .multiple-select_cr_edit .ms-choice {
