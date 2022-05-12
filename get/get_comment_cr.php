@@ -8,7 +8,7 @@ if(isset($_POST['comment'])){
 }else{
     $comment ="";
 }
-
+include("get_default_profile_image");
 function get_comment_cr($id){
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -43,6 +43,7 @@ function get_comment_cr($id){
         }else{
             $backgroud_profile_image = "#222f3e";
         }
+        $image_profile = profile_image($row['firstname']);
       echo   '
       <li class="list-group-item" style="position: initial;padding-left:0px;border-color: #e9ecef;    border-right-width: 0px;
       border-left-width: 0px;
@@ -52,19 +53,7 @@ function get_comment_cr($id){
       <div>
       <div class="row">
         <div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;">
-            <div style="   
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background: '.$backgroud_profile_image.';
-            font-size: 18px;
-            color: #fff;
-            text-align: center;
-            line-height: 35px;
-            top: 0px;"
-            >
-            '.substr(ucwords($row['firstname']),0,1).'
-            </div>
+           '.$image_profile .'
           </div>
             <div class="col" style="padding-right: 0px;">
                 <div class="fw-bold">'.ucwords($row['firstname']).' '.ucwords($row['lastname']).'</div><small style="color:gray">Comment '.$row['comment_date'].'</small>
