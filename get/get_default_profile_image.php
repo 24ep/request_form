@@ -27,7 +27,7 @@ if($httpcode==200) {
     }
     
     $size_front = $size/2;
-    $left_position_image = (12*$position_image)-(4*$position_image);
+    $left_position_image = ($size_front*$position_image)-($size_front*$position_image);
     $image = '
     <div style="   
                 width: '.$size.'px;
