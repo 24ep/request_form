@@ -540,9 +540,10 @@ function remove_cr_list(list_id, ticket_id) {
 
 function comment_cr_id_with_file(id) {
     var form_data = new FormData();
-    var comment = document.getElementById("comment_input_cr").value;
+    // var comment = document.getElementById("comment_input_cr").value;
 
-
+    var myIFrame = document.getElementById("comment_input_cr_ifr");
+    var comment = myIFrame.contentWindow.document.body.innerHTML;
 
     
     document.getElementById('comment_input_cr').value = ''; //clear value
