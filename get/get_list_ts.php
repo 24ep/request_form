@@ -211,6 +211,9 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                               }
                               
                               echo $image_profile;
+                              if($image_profile==null or $image_profile==""){
+                                echo  '<button type="button" class="btn btn-sm btn-outline-secondary">Unassign</button>';
+                              }
                     ?>
                 </div>
                 <!-- <div class="col" style="padding-left: 5px;padding-top: 5px;">
