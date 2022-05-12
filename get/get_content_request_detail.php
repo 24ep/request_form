@@ -297,7 +297,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
         </ul> 
         
         
-        <input id="comment_input_cr" type="text" placeholder="Type message and hit enter">
+        <input id="comment_input_cr" name="comment_input_cr" type="text" placeholder="Type message">
        ';
        //<div class="custom-editor-wrapper">
         // <textarea id="comment_input_cr" placeholder="Type message and hit enter"></textarea>

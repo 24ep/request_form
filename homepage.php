@@ -1313,20 +1313,39 @@ $(document).ready(function() {
 });
     </script>
     <script>
-// tinymce.init({
-//     selector: 'textarea#cr_description',
-//     height: 380,
-//     menubar: false,
-//     plugins: [
-//         'advlist autolink lists link image charmap print preview anchor',
-//         'searchreplace visualblocks code fullscreen',
-//         'insertdatetime media table paste code help wordcount'
-//     ],
-//     toolbar: 'bold italic backcolor | alignleft aligncenter ' +
-//         'alignright alignjustify | bullist numlist outdent indent | ' +
-//         'removeformat | help',
-//     //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
-// });
+tinymce.init({
+  selector: "input#comment_input_cr",
+  plugins: "autoresize link lists emoticons",
+  toolbar:
+    "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
+  menubar: false,
+  statusbar: false,
+  width: "100%",
+  toolbar_location: "bottom",
+  autoresize_bottom_margin: 0,
+  contextmenu: false,
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
+  setup: (ed) => {
+    editor = ed;
+  }
+  
+});
+</script>
+<style>
+  .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
+    border-radius: 7px;
+    margin-top: 8px;
+}
+  .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child 
+.tox-toolbar__primary, .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
+    border-top: 1px solid #fff;
+}
+.tox .tox-tbtn svg {
+    display: block;
+    fill: rgb(135 135 135 / 79%)!important;
+}
+</style>
+    <script>
 tinymce.init({
     selector: 'textarea#cr_description',
     plugins: 'print preview paste importcss searchreplace table autolink autosave save directionality lists code visualblocks visualchars fullscreen link template codesample charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist  wordcount textpattern noneditable help charmap  emoticons',
@@ -1429,38 +1448,6 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
     </script>
-    <script>
-tinymce.init({
-  selector: "#comment_input_cr",
-  plugins: "autoresize link lists emoticons",
-  toolbar:
-    "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
-  menubar: false,
-  statusbar: false,
-  width: "100%",
-  toolbar_location: "bottom",
-  autoresize_bottom_margin: 0,
-  contextmenu: false,
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
-  setup: (ed) => {
-    editor = ed;
-  }
-  
-});
-</script>
-<style>
-  .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
-    border-radius: 7px;
-    margin-top: 8px;
-}
-  .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child 
-.tox-toolbar__primary, .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
-    border-top: 1px solid #fff;
-}
-.tox .tox-tbtn svg {
-    display: block;
-    fill: rgb(135 135 135 / 79%)!important;
-}
-</style>
+    
     <script>run_ts_command('task');</script>
     
