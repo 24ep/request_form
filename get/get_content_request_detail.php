@@ -269,7 +269,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
         </ul> 
         
         
-        <input id="comment_input_cr" name="comment_input_cr" type="text" placeholder="Type message">
+        <textarea id="comment_input_cr" name="comment_input_cr" type="text" placeholder="Type message"></textarea>
        ';
        ?>
 
@@ -538,6 +538,10 @@ function remove_cr_list(list_id, ticket_id) {
 function comment_cr_id_with_file(id) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input_cr").value;
+
+
+
+    
     document.getElementById('comment_input_cr').value = ''; //clear value
     // var files = document.getElementById('actual-btn').files;
     var ins = document.getElementById('actual-btn').files.length;
