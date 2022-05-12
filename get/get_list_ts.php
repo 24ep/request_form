@@ -196,13 +196,15 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         <!-- <div style="margin: 5px 0px;"><?php // echo badge_status_cr($row["status"]); ?></div> -->
         <hr style="margin: 5px;color: #6c757d8c;">
         <div>
-            <!-- <img data-bs-toggle="tooltip" data-bs-placement="top" title="<?php //echo //$row["case_officer"]; ?>"
-                                  width="25px" height="25px" src="base/image/user_profile/<?php //echo //$row["case_officer"]; ?>.jpg"
-                                  class="rounded-circle" alt="<?php //echo $row["case_officer"]; ?>"> -->
+           
             <div class="row">
                 <div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;">
                     <?php  
-                              $image_profile = profile_image($row['firstname'],$row['department'],25,$row['username']);
+                              $participants = explode(" ",$row['participant']);
+                              foreach ($participants as $username) {
+                                $image_profile .= profile_image($row['firstname'],$row['department'],25,$row['username']);
+                              }
+                              
                               echo $image_profile;
                     ?>
                 </div>
@@ -211,7 +213,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 </div>
             </div>
 
-            <!-- <span style="margin-left:5px"><?php //echo $row["case_officer"]; ?></span> -->
+            
         </div>
     </div>
 </li>
