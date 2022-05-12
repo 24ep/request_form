@@ -206,14 +206,15 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                                 
                                 if($username <>"noti_content_request" and  $username <> $row['request_by']){
                                   $image_profile .= profile_image($row['firstname'],$row['department'],25,$username,$i);
+                                  $i++;
                                 }
-                                $i++;
+                                
                               }
                               
                       
 
                               if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
-                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 0px;">';
+                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 10px;">';
                                 echo  '<button type="button" class="btn btn-sm btn-outline-secondary">Unassign</button>';
                                 echo '</div>';
                               }else{
