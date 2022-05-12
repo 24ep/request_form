@@ -24,11 +24,6 @@
         }
         mysqli_close($con);
     
-        // if($_SESSION["pf_theme"]=="Dark") {
-        //     $pftheam="dark";
-        // }elseif($_SESSION["pf_theme"]=="Light Modern") {
-        //     $pftheam="light-modern";
-        // }
 
         switch ($_SESSION["pf_theme"]) {
             case "Dark":  $pftheam="dark"; break;
@@ -89,51 +84,8 @@
         </script>
         <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/light.css">
         <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/<?php echo $pftheam; ?>.css">
+        <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
         
-        
-        <style>
-        
-        /* add test */
-        .tree_label {
-            padding-left: 15px;
-            color: gray;
-        }
-
-        .tree_label:after {
-            position: absolute;
-            top: 0em;
-            left: -2px;
-            display: table-column-group;
-            height: 10px;
-            width: 20px;
-            border-bottom: 2px solid #727476;
-            border-left: 2px solid #727476;
-            border-radius: 0 0 0 .4em;
-            content: '';
-            padding-top: 23px;
-        }
-
-        .tree_lift {
-            left: 0px;
-            position: relative;
-            border-left: 2px solid #6c757d;
-        }
-
-        .tree_lift_end {
-            left: 0px;
-            position: relative;
-            border-left: 2px solid transparent;
-        }
-
-        .sub-ticket {
-            border: 0px solid transparent
-        }
-
-        label.tree_label:hover {
-            color: #666;
-        }
-
-        </style>
     </head>
 
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
