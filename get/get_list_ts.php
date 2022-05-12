@@ -218,16 +218,18 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                                 echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 10px;">';
                                 echo  '<button type="button" class="btn btn-sm btn-outline-secondary">Unassign</button>';
                                 echo '</div>';
+                               
                               }else{
-                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 25px;">'
-                                .$image_profile.
-                                '</div>';
+                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 25px;">';
+                                echo $image_profile;
+                                echo '</div>';
+                                echo '<div class="col" style="padding-left: 5px;padding-top: 5px;">';
+                                echo ucwords($row["case_officer"]);
+                                echo '</div>';
                               }
                     ?>
                 
-                <div class="col" style="padding-left: 5px;padding-top: 5px;">
-                    <?php //echo ucwords($row["case_officer"]); ?>
-                </div>
+              
             </div>
 
             
