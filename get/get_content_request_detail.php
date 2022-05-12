@@ -621,9 +621,9 @@ $(function() {
 if(tinyMCE.get('comment_input_cr')){
   tinymce.remove('#comment_input_cr');
 }else{
-  load_tiny_comment();
+  
 }
-
+load_tiny_comment();
 
 </script>
 
