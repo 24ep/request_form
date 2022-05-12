@@ -1283,24 +1283,7 @@ function doAutoRefresh_cr() {
         req_cr.send(null);
     }
 };
-// function doAutoRefresh_can() {
-//     var req_can = Inint_AJAX();
-//     //var req_cr = Inint_AJAX();
-//     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-//     req_can.open("POST", 'base/get/get_card_new_job.php?' + new Date().getTime(), true);
-//     req_can.onreadystatechange = function() {
-//         if (req_can.readyState == 4) {
-//             if (req_can.status == 200) {
-//                 // รับค่ากลับมา และ แสดงผล
-//                 //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
-//                 document.getElementById("get_card_add_new").innerHTML = req_can.responseText;
-//                 // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
-//                 setTimeout("doAutoRefresh_can()", 50000);
-//             }
-//         }
-//     };
-//     req_can.send(null);
-// };
+
     </script>
     <script>
 $(document).ready(function() {
@@ -1312,39 +1295,7 @@ $(document).ready(function() {
     });
 });
     </script>
-    <script>
-tinymce.init({
-  selector: "comment_input_cr",
-  plugins: "autoresize link lists emoticons",
-  toolbar:
-    "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
-  menubar: false,
-  statusbar: false,
-  width: "100%",
-  toolbar_location: "bottom",
-  autoresize_bottom_margin: 0,
-  contextmenu: false,
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
-  setup: (ed) => {
-    editor = ed;
-  },
-  
-});
-</script>
-<style>
-  .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
-    border-radius: 7px;
-    margin-top: 8px;
-}
-  .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child 
-.tox-toolbar__primary, .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
-    border-top: 1px solid #fff;
-}
-.tox .tox-tbtn svg {
-    display: block;
-    fill: rgb(135 135 135 / 79%)!important;
-}
-</style>
+   
     <script>
 tinymce.init({
     selector: 'textarea#cr_description',
