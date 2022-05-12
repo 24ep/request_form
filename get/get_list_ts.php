@@ -211,9 +211,9 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                               echo $image_profile;
                     ?>
                 </div>
-                <div class="col" style="padding-left: 5px;padding-top: 5px;">
-                    <?php echo ucwords($row["case_officer"]); ?>
-                </div>
+                <!-- <div class="col" style="padding-left: 5px;padding-top: 5px;">
+                    <?php //echo ucwords($row["case_officer"]); ?>
+                </div> -->
             </div>
 
             
