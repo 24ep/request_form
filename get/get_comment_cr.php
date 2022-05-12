@@ -1,7 +1,6 @@
 <?php
 //issue get
 session_start();
-include_once("get_default_profile_image.php");
 $id = $_POST['id'];
 if(isset($_POST['comment'])){
     $comment = $_POST['comment'];
@@ -39,7 +38,8 @@ function get_comment_cr($id){
             }
         }
        
-        $image_profile = profile_image($row['firstname'],$row['department']);
+        $image_profile = profile_image($row['firstname'],$row['department'],35);
+                            
       echo   '
       <li class="list-group-item" style="position: initial;padding-left:0px;border-color: #e9ecef;    border-right-width: 0px;
       border-left-width: 0px;
