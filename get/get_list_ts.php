@@ -202,7 +202,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     <?php     unset($image_profile);
                               $participants = explode(",",$row['participant']);
                               foreach ($participants as $username) {
-                                if($username <>"noti_follow_team"){
+                                if($username <>"noti_content_request" and  $username <> $row['request_by']){
                                   $image_profile .= profile_image($row['firstname'],$row['department'],25,$username);
                                 }
                                 
