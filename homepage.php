@@ -7,7 +7,7 @@
     // include('get/get_card_content_request.php'); 
     include_once('get/get_count_status.php');
     include_once('get/get_option_function.php');
-    include_once("get/get_default_profile_image.php");
+   
 
         $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
         $username_op_cr = getoption_return_filter("username","account",$_SESSION["user_cr_filter"],"single","all_in_one_project");
