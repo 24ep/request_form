@@ -205,12 +205,12 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                               echo $image_profile;
                     ?>
                 </div>
-                <div class="col" style="padding-right: 0px;">
+                <div class="col" style="padding-left: 5px;padding-top: 3px;">
                     <?php echo $row["case_officer"]; ?>
                 </div>
             </div>
 
-            <span style="margin-left:5px"><?php echo $row["case_officer"]; ?></span>
+            <!-- <span style="margin-left:5px"><?php //echo $row["case_officer"]; ?></span> -->
         </div>
     </div>
 </li>
