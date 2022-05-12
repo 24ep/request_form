@@ -206,7 +206,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     ?>
                 </div>
                 <div class="col" style="padding-left: 5px;padding-top: 5px;">
-                    <?php echo $row["case_officer"]; ?>
+                    <?php echo ucwords($row["case_officer"]); ?>
                 </div>
             </div>
 
