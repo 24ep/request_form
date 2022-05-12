@@ -147,6 +147,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         comment.ticket_type as ticket_type,
         ticket.participant as participant,
         ticket.case_officer as case_officer,
+        ticket.effective_date as effective_date,
         ac.firstname as firstname,
         ac.lastname as lastname,
         ac.department as department,
@@ -173,6 +174,21 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     case "low": $ri_style = "border-left: #ccc solid 8px;"; break;
                     default: $ri_style = "border-left: #ccc solid 8px;";
                 }
+                // show flag effective date
+                if($row["effective_date"] <> null){
+                  $current_day = date("Y-m-d");
+                  $effective_date = date_create($row["effective_date"]);
+                  $effective_date = date_format($effective_date,"Y-m-d");
+                  $effective_date_diff = (strtotime($effective_date)-strtotime($current_day))/  ( 60 * 60 * 24 );
+                  if($effective_date_diff=0){
+                    $ef_badge = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Effect Today</span>';
+                  }elseif($effective_date_diff=1){
+                    $ef_badge = '<span class="badge rounded-pill bg-warning" style="margin-left:5px">Effect Tmr</span>';
+                  }elseif($effective_date_diff<0){
+                    $ef_badge = '<span class="badge rounded-pill bg-dark" style="margin-left:5px">Over due</span>';
+                  }
+                }
+
              
                   date_default_timezone_set("Asia/Bangkok");
                   $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -207,6 +223,9 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                                 echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 10px;">';
                                 echo  '<button type="button" class="btn btn-sm btn-outline-secondary">Unassign</button>';
                                 echo '</div>';
+                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 10px;">';
+                                echo  $ef_badge;
+                                echo '</div>';
                                
                               }else{
                                 echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;">';
@@ -214,6 +233,9 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                                 echo '</div>';
                                 echo '<div class="col" style="padding-left: 5px;padding-top: 5px;">';
                                 echo ucwords($row["case_officer"]);
+                                echo '</div>';
+                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 10px;">';
+                                echo  $ef_badge;
                                 echo '</div>';
                               }
                     ?>
