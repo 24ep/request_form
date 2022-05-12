@@ -198,7 +198,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         <div>
            
             <div class="row">
-                <div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;    padding-left: 25px;">
+                
                     <?php     unset($image_profile);
                               $participants = explode(",",$row['participant']);
                               $i=1;
@@ -210,12 +210,17 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                                 $i++;
                               }
                               
-                              echo $image_profile;
+                              echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;    padding-left: 25px;">'
+                              .$image_profile.
+                              '</div>';
+
                               if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
+                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 0px;">';
                                 echo  '<button type="button" class="btn btn-sm btn-outline-secondary">Unassign</button>';
+                                echo '</div>';
                               }
                     ?>
-                </div>
+                
                 <div class="col" style="padding-left: 5px;padding-top: 5px;">
                     <?php //echo ucwords($row["case_officer"]); ?>
                 </div>
