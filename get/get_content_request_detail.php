@@ -1,7 +1,12 @@
+<script>$(document).ready(function() {
+  ​$('#js_comment_tiny').remove();
+});</script>
+
 <style>
 .multiple-select_cr_edit .ms-choice {
     border: 0px;
 }
+
 
 label#label_file {
     color: #adb5bd;
@@ -638,7 +643,7 @@ $(function() {
     $(".multiple-select_cr_edit").multipleSelect()
 });
 </script>
-<script>
+<script id="js_comment_tiny">
 tinymce.init({
   selector: "#comment_input_cr",
   plugins: "autoresize link lists emoticons",
@@ -656,6 +661,7 @@ tinymce.init({
   },
   
 });
+
 </script>
 <style>
   .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
@@ -671,3 +677,4 @@ tinymce.init({
     fill: rgb(135 135 135 / 79%)!important;
 }
 </style>
+
