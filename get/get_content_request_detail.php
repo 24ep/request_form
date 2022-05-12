@@ -617,10 +617,13 @@ window.onresize = function(event) {
 $(function() {
     $(".multiple-select_cr_edit").multipleSelect()
 });
-let tinmyMceInstance = tinymce.get('comment_input_cr');
-if( tinmyMceInstance === null ){
+
+if(tinyMCE.get('comment_input_cr')){
+  tinymce.remove('#comment_input_cr');
+}else{
   load_tiny_comment();
 }
+
 
 </script>
 
