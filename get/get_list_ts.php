@@ -212,7 +212,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                                 
                               // }
                               
-                              $image_profile .= profile_image($row['firstname'],$row['department'],25,$row['case_officer'],1);
+                              $image_profile = profile_image($row['firstname'],$row['department'],25,$row['case_officer'],1);
 
                               if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
                                 echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 10px;">';
