@@ -181,9 +181,9 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                   $effective_date = date_create($row["effective_date"]);
                   $effective_date = date_format($effective_date,"Y-m-d");
                   $effective_date_diff = (strtotime($effective_date)-strtotime($current_day))/  ( 60 * 60 * 24 );
-                  if($effective_date_diff=0){
+                  if($effective_date_diff==0){
                     $ef_badge = '<span class="badge rounded-pill bg-danger " style="margin-left:5px">Due Today</span>';
-                  }elseif($effective_date_diff=1){
+                  }elseif($effective_date_diff==1){
                     $ef_badge = '<span class="badge rounded-pill bg-warning text-dark" style="margin-left:5px">Due Tmr</span>';
                   }elseif($effective_date_diff<0){
                     $ef_badge = '<span class="badge rounded-pill bg-dark" style="margin-left:5px">Over due</span>';
