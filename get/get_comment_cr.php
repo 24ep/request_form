@@ -1,4 +1,29 @@
 <?php
+function profile_image_comment($firstname,$department,$size){
+
+    if(strpos($department,'Content')!==false){
+        $backgroud_profile_image = "#dc3545";
+    }else{
+        $backgroud_profile_image = "#222f3e";
+    }
+    $size_front = $size/2;
+    $image = '
+    <div style="   
+                width: '.$size.'px;
+                height: '.$size.'px;
+                border-radius: 50%;
+                background: '.$backgroud_profile_image.';
+                font-size: '.ceil($size_front).'px;
+                color: #fff;
+                text-align: center;
+                line-height: '.$size.'px;
+                top: 0px;"
+                >
+                '.substr(ucwords($firstname),0,1).'
+    </div>';
+    return $image;
+    }
+
 //issue get
 session_start();
 $id = $_POST['id'];
@@ -38,7 +63,7 @@ function get_comment_cr($id){
             }
         }
        
-        $image_profile = profile_image($row['firstname'],$row['department'],35);
+        $image_profile = profile_image_comment($row['firstname'],$row['department'],35);
                             
       echo   '
       <li class="list-group-item" style="position: initial;padding-left:0px;border-color: #e9ecef;    border-right-width: 0px;
