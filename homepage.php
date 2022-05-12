@@ -1428,6 +1428,8 @@ var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggl
 var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
+    </script>
+    <script>
 tinymce.init({
   selector: "#comment_input_cr",
   plugins: "autoresize link lists emoticons",
@@ -1460,6 +1462,4 @@ tinymce.init({
     fill: rgb(135 135 135 / 79%)!important;
 }
 </style>
-    </script>
-    
     <script>run_ts_command('task');</script>

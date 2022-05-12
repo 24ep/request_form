@@ -637,21 +637,4 @@ window.onresize = function(event) {
 $(function() {
     $(".multiple-select_cr_edit").multipleSelect()
 });
-
-// tinymce.init({
-//   selector: "#comment_input_cr",
-//   plugins: "autoresize link lists emoticons",
-//   toolbar:
-//     "bold italic underline strikethrough | forecolor | numlist bullist | link blockquote emoticons",
-//   menubar: false,
-//   statusbar: false,
-//   skin: "naked",
-//   width: "100%",
-//   toolbar_location: "bottom",
-//   autoresize_bottom_margin: 0,
-//   contextmenu: false,
-//   setup: (ed) => {
-//     editor = ed;
-//   },
-// });
-
+</script>
