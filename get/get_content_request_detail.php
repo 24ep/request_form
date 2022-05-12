@@ -1,4 +1,4 @@
-<script>$('#js_comment_tiny').remove();</script>
+
 
 <style>
 .multiple-select_cr_edit .ms-choice {
@@ -675,4 +675,5 @@ tinymce.init({
     fill: rgb(135 135 135 / 79%)!important;
 }
 </style>
+<script>$('#js_comment_tiny').remove();</script>
 
