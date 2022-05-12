@@ -175,6 +175,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     default: $ri_style = "border-left: #ccc solid 8px;";
                 }
                 // show flag effective date
+                unset($ef_badge);
                 if($row["effective_date"] <> null){
                   $current_day = date("Y-m-d");
                   $effective_date = date_create($row["effective_date"]);
@@ -238,7 +239,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                                 echo  $ef_badge;
                                 echo '</div>';
                               }
-                              unset($ef_badge);
+                              
                     ?>
                 
               
