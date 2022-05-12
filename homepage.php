@@ -1286,6 +1286,6 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
         }
         .tox .tox-tbtn svg {
             display: block;
-            fill: rgb(135 135 135 / 79%)!important;
+            fill: #6c757d!important;
         }
         </style>
