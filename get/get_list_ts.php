@@ -167,11 +167,11 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
 
 
                 switch ($row['piority']) {
-                    case "Urgent": $ri_style = "border-left: #dc3545 solid 10px;"; break;
-                    case "High": $ri_style = "border-left: #f396bf solid 10px;"; break;
-                    case "Medium": $ri_style = "border-left: #f396bf solid 10px;"; break;
-                    case "low": $ri_style = "border-left: #ccc solid 10px;"; break;
-                    default: $ri_style = "border-left: #ccc solid 10px;";
+                    case "Urgent": $ri_style = "border-left: #dc3545 solid 8px;"; break;
+                    case "High": $ri_style = "border-left: #f396bf solid 8px;"; break;
+                    case "Medium": $ri_style = "border-left: #f396bf solid 8px;"; break;
+                    case "low": $ri_style = "border-left: #ccc solid 8px;"; break;
+                    default: $ri_style = "border-left: #ccc solid 8px;";
                 }
              
                   date_default_timezone_set("Asia/Bangkok");
@@ -201,17 +201,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 
                     <?php     
                               unset($image_profile);
-                              // $participants = explode(",",$row['participant']);
-                              // $i=1;
-                              // foreach ($participants as $username) {
-                                
-                              //   if($username <>"noti_content_request" and  $username <> $row['request_by']){
-                              //     $image_profile .= profile_image($row['firstname'],$row['department'],25,$username,$i);
-                              //     $i++;
-                              //   }
-                                
-                              // }
-                              
                               $image_profile = profile_image($row['firstname'],$row['department'],25,$row['case_officer'],1);
 
                               if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
