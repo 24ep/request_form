@@ -150,6 +150,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         ac.firstname as firstname,
         ac.lastname as lastname,
         ac.department as department,
+        ac.username as username,
         sum(case when comment.ticket_type='content_request' then 1 else 0 end) as count_comment 
         FROM all_in_one_project.content_request as ticket
         LEFT JOIN all_in_one_project.comment as comment
@@ -201,7 +202,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
             <div class="row">
                 <div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;">
                     <?php  
-                              $image_profile = profile_image($row['firstname'],$row['department'],25);
+                              $image_profile = profile_image($row['firstname'],$row['department'],25,$row['username']);
                               echo $image_profile;
                     ?>
                 </div>
