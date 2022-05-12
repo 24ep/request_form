@@ -1,112 +1,14 @@
-    <?php
-    session_start();
-
-    if (!$_SESSION["login_csg"]){ 
+<?php
+session_start();
+if (!$_SESSION["login_csg"]){ 
             Header("Location: login");
     }else{
-    // include('get/get_card_content_request.php'); 
     include_once('get/get_count_status.php');
-    function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
-        mysqli_query($con, "SET NAMES 'utf8' ");
-        $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
-        $result = mysqli_query($con, $query);
-        while($row = mysqli_fetch_array($result)) {
-    // split array store
-            if($sorm=="multi"){
-                if($col=="store" or $col=="itemmize_type" or $col=="product_website"){
-                $array_store = explode(', ', $select_option);
-                $duplicate_op = false;
-                $loop_in_null = false;
-                foreach($array_store as $store)
-                {
-                    if($row[$col] <> '' ) {
-                    if($store==$row[$col]){
-                        $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
-                        $duplicate_op = true;
-                    }
-                    }
-                }
-                if($row[$col] <> ''){
-                    if($duplicate_op == false){
-                    $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
-                    }
-                }
-                }
-            }else{
-                if($loop_in_null==false){
-                $option_set .= '<option value=""></option>';
-                $loop_in_null=true;
-                }
-                if($row[$col] <> '' )
-                {
-                    if($select_option==$row[$col]){
-                        if($col=="username"){
-                            $op_label = $row["nickname"]." ".$row["firstname"]." (".$row["username"].") ";
-                        }else{
-                            $op_label = $row[$col];
-                        }
-                        $option_set .= '<option value="'.$row[$col].'" selected>'.$op_label.'</option>';
-                    }else{
-                        if($col=="username"){
-                            $op_label = $row["nickname"]." ".$row["firstname"]." (".$row["username"].") ";
-                        }else{
-                            $op_label = $row[$col];
-                        }
-                        $option_set .= '<option value="'.$row[$col].'">'.$op_label.'</option>';
-                    }
-                }
-        }
-        }
-        mysqli_close($con);
-        return $option_set;
-        
-        }
-        function get_option_return_filter($attribute_code,$default_option,$select_type,$function){
-            $option_set="";
-            $con= mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
-            mysqli_query($con, "SET NAMES 'utf8' ");
-            $query = "SELECT 
-            attribute_option.option_id as option_id,
-            attribute_option.attribute_id as attribute_id,
-            attribute_option.attribute_option as attribute_option,
-            attribute_option.function as function,
-            attribute_entity.attribute_code as attribute_code
-            FROM content_service_gate.attribute_option as attribute_option
-            left join content_service_gate.attribute_entity as attribute_entity
-            on attribute_option.attribute_id = attribute_entity.attribute_id 
-            where attribute_entity.attribute_code =  '".$attribute_code."' and attribute_option.function='".$function."' 
-            ORDER BY option_id asc" or die("Error:" . mysqli_error($con));
-            $result = mysqli_query($con, $query);
-                if($select_type=="multi"){
-                    while($row = mysqli_fetch_array($result)) {
-                    $array_default = explode(', ', $default_option);
-                    foreach($array_default as $option)
-                      {
-                        if($option==$row["attribute_option"]){
-                            $option_set .= '<option selected value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
-                        }else{
-                            $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
-                        }
-                      }
-                    }
-                }else{
-                    $option_set .= '<option value=""></option>';
-                    while($row = mysqli_fetch_array($result)) {
-                        if($default_option==$row["attribute_option"]){
-                            $option_set .= '<option selected value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
-                        }else{
-                            $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
-                        }
-                    }
-                }
-                mysqli_close($con);
-                return $option_set;
-            
-        }
+    include_once('get/option_function.php');
         $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
         $username_op_cr = getoption_return_filter("username","account",$_SESSION["user_cr_filter"],"single","all_in_one_project");
         $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
+        //get account information
         $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT * FROM account where username = '".$_SESSION['username']."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
@@ -119,26 +21,22 @@
         $get_contact_buyer = $row['firstname']." ".$row['lastname']." ( ".$nickname." )\nEmail: ".$row['work_email']."\nOffice tell: ".$row['office_tell'];
         }
         mysqli_close($con);
-    ?>
-      <?php 
-        if($_SESSION["pf_theme"]=="Dark") {
-            $pftheam="dark";
-        }elseif($_SESSION["pf_theme"]=="Light Modern") {
-            $pftheam="light-modern";
+        // get team referance
+        switch ($_SESSION["pf_theme"]) {
+            case "Dark": $pftheam="dark"; break;
+            case "High":  $pftheam="light-modern"; break;
+            default: $pftheam="light";
         }
-
      ?>
     <!DOCTYPE html>
     <html lang="en">
     <!-- set up theam -->
-  
     <head>
         <title>Content and Studio - Homepage</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" />
-        
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
@@ -161,7 +59,6 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
         <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
-      
         <script>
         $(function() {
             $(".multiple-select").multipleSelect()
@@ -177,18 +74,16 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
         </script>
-        <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/light.css">
-        <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/<?php echo $pftheam; ?>.css">
-        
-        
+        <link rel="stylesheet" type="text/css"
+            href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/light.css">
+        <link rel="stylesheet" type="text/css"
+            href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/<?php echo $pftheam; ?>.css">
         <style>
-        
         /* add test */
         .tree_label {
             padding-left: 15px;
             color: gray;
         }
-
         .tree_label:after {
             position: absolute;
             top: 0em;
@@ -202,30 +97,24 @@
             content: '';
             padding-top: 23px;
         }
-
         .tree_lift {
             left: 0px;
             position: relative;
             border-left: 2px solid #6c757d;
         }
-
         .tree_lift_end {
             left: 0px;
             position: relative;
             border-left: 2px solid transparent;
         }
-
         .sub-ticket {
             border: 0px solid transparent
         }
-
         label.tree_label:hover {
             color: #666;
         }
-
         </style>
     </head>
-
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
         <!-- Modal -->
         <div class="modal fade " id="project_model" tabindex="-1" aria-labelledby="project_modelLabel"
@@ -241,7 +130,6 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140386041-2"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -275,15 +163,12 @@
            include('nev_bra.php');
            $full_col = "col-10 ";
            $sty_col = "";
-         
            }else{
             include('nev_bra_modern.php');
             $full_col = "";
             $sty_col = "padding: 20px;padding-left:80px";
-          
            }
            ?>
-
             <div class="<?php echo  $full_col;?> window-full overflow-auto" style="<?php echo  $sty_col;?>">
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- style="margin-top:15px" -->
@@ -467,7 +352,6 @@
                                 </div>
                             </div>
                             <!-- <div class="container-fluid" style="border-radius: 10px;width: 95%;"> -->
-
                             <table class="table table-hover table-borderless  "
                                 style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
                                 <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
@@ -536,7 +420,6 @@
                             <!-- ffff -->
                         </div>
                     </div>
-
                     <!-- ts console -->
                     <div class="tab-pane fade" id="v-pills-ts_admin" role="tabpanel"
                         aria-labelledby="v-pills-ts_admin-tab">
@@ -549,7 +432,6 @@
                                             <form class="d-flex">
                                                 <div class="btn-group" role="group"
                                                     aria-label="Basic checkbox toggle button group">
-
                                                 </div>
                                                 <button class="btn btn-primary btn-sm " style="margin-left:10px;"
                                                     type="button" data-bs-toggle="offcanvas"
@@ -593,20 +475,16 @@
                                                     }else{
                                                         $squser = "";
                                                     }
-                                                    
                                                 }
                                                 ?>
-                                                <input  style="width: 60%;" type="text"
-                                                    class="form-control" onsearch="run_ts_command('task');"
-                                                    id="ts_command" name="ts_command"
-                                                    placeholder="fill someting .."
-                                                    aria-label="Username" aria-describedby="basic-addon1"
-                                                    value="<?php echo $sqb;   ?>">
+                                                <input style="width: 60%;" type="text" class="form-control"
+                                                    onsearch="run_ts_command('task');" id="ts_command" name="ts_command"
+                                                    placeholder="fill someting .." aria-label="Username"
+                                                    aria-describedby="basic-addon1" value="<?php echo $sqb;   ?>">
                                                 <span class="input-group-text">Username</span>
-                                                <input style="width: 10%;" list="qlistoption"  type="text"
+                                                <input style="width: 10%;" list="qlistoption" type="text"
                                                     class="form-control" onsearch="run_ts_command('task');"
-                                                    id="ts_username" name="ts_username"
-                                                    placeholder="unassign"
+                                                    id="ts_username" name="ts_username" placeholder="unassign"
                                                     aria-label="Username" aria-describedby="basic-addon1"
                                                     value="<?php echo $_SESSION["ts_username"];   ?>">
                                                 <span class="input-group-text">Limit</span>
@@ -621,14 +499,11 @@
                                         </form>
                                     </nav>
                                     <!-- <div id="project_bucket">
-                                   
                                         <?php //if(strpos($_SESSION["username"],'poojaroonwit')!==false){ 
-                                       
                                         //include('get/get_list_project.php');
                                     // } ?>
                                     </div> -->
                                     <div id="get_ts_admin_console">
-                                            
                                         <!-- <?php 
                                             //include('get/get_list_ts.php');
                                          ?>  -->
@@ -640,7 +515,7 @@
                     <!-- fl console -->
                     <div class="tab-pane fade" id="v-pills-fl_board" role="tabpanel"
                         aria-labelledby="v-pills-fl_board-tab">
-                        <div class="tab-content"  id="myTabContent">
+                        <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container " tyle="
                                             text-align: center;
@@ -664,14 +539,13 @@
                                     <!-- <ion-icon name="time-outline"></ion-icon>
                                     <h3>Coming soon</h3> -->
                                     <!-- get card -->
-                                    <div >
+                                    <div>
                                         <?php include('get/get_account_editor.php'); ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <!-- user -->
                     <div class="tab-pane fade" id="v-pills-setting" role="tabpanel"
                         aria-labelledby="v-pills-setting-tab">
@@ -703,16 +577,13 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- offcanvas detail cr -->
                     <div class="offcanvas offcanvas-start" tabindex="0" id="detail_cr" style="width:100%"
                         aria-labelledby="offcanvasExampleLabel">
                         <div id="calloffcanvas_cr">
                         </div>
                     </div>
-
                     <!-- offcanvas project sticky cr -->
-
                     <div class="offcanvas offcanvas-start" tabindex="-1" id="project_sticky"
                         aria-labelledby="offcanvasExampleLabel">
                         <div class="offcanvas-header">
@@ -727,9 +598,7 @@
                             <select class="form-select" style="border: 0px;margin-top: 30px;" size="25"
                                 id="project_sticky_mse" onclick="update_project_sticky();run_ts_command('task');"
                                 multiple aria-label="multiple select example">
-
                                 <?php
-                               
                                     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
                                     mysqli_query($con, "SET NAMES 'utf8' ");
                                     $query = "SELECT * FROM project_bucket where status <> 'Close' ORDER BY id asc" or die("Error:" . mysqli_error($con));
@@ -743,18 +612,14 @@
                                             $_SESSION["prefix_project_sticky"] .= ",'".$row_de["prefix"]."'";
                                         }
                                     }
-
                                     while($row = mysqli_fetch_array($result)) {
-
                                         if(strpos($_SESSION["prefix_project_sticky"],$row['prefix'])!==false){
                                             echo  "<option selected value='".$row["prefix"]."'>".$row["project_name"]."</option>";
                                         }else{
                                             echo "<option value='".$row["prefix"]."'>".$row["project_name"]."</option>";
                                         }
                                     }
-                                
                                 ?>
-
                             </select>
                         </div>
                     </div>
@@ -804,7 +669,6 @@
 var elements = document.getElementsByClassName('window-full');
 var windowheight = window.innerHeight + "px";
 fullheight(elements);
-
 function fullheight(elements) {
     for (let el in elements) {
         if (elements.hasOwnProperty(el)) {
@@ -827,7 +691,6 @@ function call_edit_add_new_modal(id, brand) {
         });
     }
 }
-
 function cr_id_toggle(id) {
     if (id) {
         $.post("base/get/get_content_request_detail.php", {
@@ -837,7 +700,6 @@ function cr_id_toggle(id) {
         });
     }
 }
-
 function start_checking(id) {
     if (id) {
         $.post("base/action/action_start_checking.php", {
@@ -847,21 +709,17 @@ function start_checking(id) {
         });
     }
 }
-
 function accepted_stt(id) {
     if (id) {
         // sku_accepted = document.getElementById('sku_accepted').value;
-        
-            $.post("base/action/action_accept_stt.php", {
-                id: id
-                // sku_accepted: sku_accepted
-            }, function(data) {
-                $('#accept_checking_resault').html(data);
-            });
-        
+        $.post("base/action/action_accept_stt.php", {
+            id: id
+            // sku_accepted: sku_accepted
+        }, function(data) {
+            $('#accept_checking_resault').html(data);
+        });
     }
 }
-
 function cancel_stt(id, status_change) {
     resone_cancel = document.getElementById('resone_cancel').value;
     status_change = 'cancel';
@@ -875,7 +733,6 @@ function cancel_stt(id, status_change) {
         });
     }
 }
-
 function cancel_ticket(id) {
     resone_cancel = document.getElementById('reason_cancel').value;
     status_change = document.getElementById('type_cancel').value;
@@ -890,7 +747,6 @@ function cancel_ticket(id) {
         });
     }
 }
-
 function itm_confirm_cancel(id, status_change) {
     let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
     if (message == null || message == "") {
@@ -912,8 +768,6 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
-
-
 function filter_cr_ticket(status) {
     document.getElementById('cr_search_input').value = '';
     var update = true;
@@ -926,9 +780,7 @@ function filter_cr_ticket(status) {
         });
     }
 }
-
 function get_project_model(id) {
-
     if (id) {
         $.post("base/get/get_project_model.php", {
             id: id
@@ -937,7 +789,6 @@ function get_project_model(id) {
         });
     }
 }
-
 function search_cr_ticket() {
     var cr_search_input = document.getElementById("cr_search_input").value
     var user_cr_filter = document.getElementById("user_cr_filter").value
@@ -949,7 +800,6 @@ function search_cr_ticket() {
         $('#list_grouping').html(data);
     });
 }
-
 function run_ts_command(ts_level) {
     var ts_command_input = document.getElementById("ts_command").value;
     var ts_username = document.getElementById("ts_username").value;
@@ -958,8 +808,7 @@ function run_ts_command(ts_level) {
     $.post("base/get/get_list_ts.php", {
         summary_filter: summary_filter,
         ts_command_limit: ts_command_limit,
-        ts_username:ts_username
-
+        ts_username: ts_username
     }, function(data) {
         $('#get_ts_admin_console').html(data);
     });
@@ -1120,11 +969,9 @@ function select_current_tab(selecttab) {
             .add('show');
     }
 }
-
 function open_ticket_detail(id) {
     document.getElementById("ns_ticket_" + id).click();
 }
-
 function updateURL(pill) {
     if (history.pushState) {
         var newurl = window.location.protocol + "//" + window.location.host +
@@ -1136,7 +983,6 @@ function updateURL(pill) {
             }, '', newurl);
     }
 }
-
 function update_project_sticky() {
     var prefix_project_sticky = "";
     for (var option of document.getElementById('project_sticky_mse').options) {
@@ -1146,21 +992,15 @@ function update_project_sticky() {
             } else {
                 prefix_project_sticky = prefix_project_sticky + ",'" + option.value + "'";
             }
-
             // selected.push(option.value);
         }
     }
-
     $.post("base/get/get_list_project.php", {
         prefix_project_sticky: prefix_project_sticky
-
     }, function(data) {
         $('#project_bucket').html(data);
     });
-
-
 }
-
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value
@@ -1209,7 +1049,6 @@ function Inint_AJAX() {
     alert("XMLHttpRequest not supported")
     return null
 }
-
 function doAutoRefresh() {
     var url = window.location.href;
     let result = url.includes("v-pills-request_list");
@@ -1234,7 +1073,6 @@ function doAutoRefresh() {
         req.send(null);
     }
 };
-
 function doAutoRefresh_ts_admin() {
     var url = window.location.href;
     let result = url.includes("v-pills-ts_admin");
@@ -1246,7 +1084,8 @@ function doAutoRefresh_ts_admin() {
         var req_ts = Inint_AJAX();
         //var req_cr = Inint_AJAX();
         // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-        req_ts.open("POST", 'base/get/get_list_ts.php?summary_filter='+ts_command_input+'&ts_username='+ts_username+'&ts_command_limit='+ts_command_limit+'&' + new Date().getTime(), true);
+        req_ts.open("POST", 'base/get/get_list_ts.php?summary_filter=' + ts_command_input + '&ts_username=' +
+            ts_username + '&ts_command_limit=' + ts_command_limit + '&' + new Date().getTime(), true);
         //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
         req_ts.onreadystatechange = function() {
             if (req_ts.readyState == 4) {
@@ -1262,7 +1101,6 @@ function doAutoRefresh_ts_admin() {
         req_ts.send(null);
     }
 };
-
 function doAutoRefresh_cr() {
     var url = window.location.href;
     let result = url.includes("v-pills-cr");
@@ -1283,7 +1121,6 @@ function doAutoRefresh_cr() {
         req_cr.send(null);
     }
 };
-
     </script>
     <script>
 $(document).ready(function() {
@@ -1295,7 +1132,6 @@ $(document).ready(function() {
     });
 });
     </script>
-   
     <script>
 tinymce.init({
     selector: 'textarea#cr_description',
@@ -1334,7 +1170,6 @@ tinymce.init({
         'removeformat | help',
     //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
 });
-
     </script>
     <script>
 //   var toastElList = [].slice.call(document.querySelectorAll('.toast'))
@@ -1346,11 +1181,9 @@ tinymce.init({
 function allowDrop(ev) {
     ev.preventDefault();
 }
-
 function drag_card_cr(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
-
 function drop_card_cr(ev, new_status) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("card");
@@ -1375,7 +1208,6 @@ function drop_card_cr(ev, new_status) {
     }
 }
     </script>
-
     </html>
     <?php if( $_GET["fopenticket"]<>""){
     $_SESSION["fopenticket"]=$_GET["fopenticket"];
@@ -1392,45 +1224,43 @@ function drop_card_cr(ev, new_status) {
         </script>';
         }
     } ?>
-
     <script>
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
     </script>
-    
-    <script>run_ts_command('task');</script>
+    <script>
+run_ts_command('task');
+    </script>
     <script>
 tinymce.init({
-  selector: "#comment_input_cr",
-  plugins: "autoresize link lists emoticons",
-  toolbar:
-    "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
-  menubar: false,
-  statusbar: false,
-  width: "100%",
-  toolbar_location: "bottom",
-  autoresize_bottom_margin: 0,
-  contextmenu: false,
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
-  setup: (ed) => {
-    editor = ed;
-  },
-  
+    selector: "#comment_input_cr",
+    plugins: "autoresize link lists emoticons",
+    toolbar: "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
+    menubar: false,
+    statusbar: false,
+    width: "100%",
+    toolbar_location: "bottom",
+    autoresize_bottom_margin: 0,
+    contextmenu: false,
+    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
+    setup: (ed) => {
+        editor = ed;
+    },
 });
-</script>
-<style>
-  .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
+    </script>
+    <style>
+.tox.tox-tinymce.tox-tinymce--toolbar-bottom {
     border-radius: 7px;
     margin-top: 8px;
 }
-  .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child 
-.tox-toolbar__primary, .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
+.tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child .tox-toolbar__primary,
+.tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
     border-top: 1px solid #fff;
 }
 .tox .tox-tbtn svg {
     display: block;
-    fill: rgb(135 135 135 / 79%)!important;
+    fill: rgb(135 135 135 / 79%) !important;
 }
-</style>
+    </style>
