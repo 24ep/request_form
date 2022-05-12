@@ -12,7 +12,7 @@ curl_close($ch);
 
 if($httpcode==200) {
     echo '<img data-bs-toggle="tooltip" data-bs-placement="top" title=""
-    width="'.$size.'px" height="'.$size.'px" src="base/image/user_profile/"'.$username.'".jpg"
+    width="'.$size.'px" height="'.$size.'px" src="base/image/user_profile/"'.$username.'.jpg"
     class="rounded-circle" alt="'.$username.'">';
 }else{
     if(strpos($department,'Content')!==false){
