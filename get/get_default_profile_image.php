@@ -1,5 +1,5 @@
 <?php
-function profile_image($firstname,$department,$size,$username,position_image){
+function profile_image($firstname,$department,$size,$username,$position_image){
 
 $ch = curl_init("https://content-service-gate.cdse-commercecontent.com/base/image/user_profile/".$username.".jpg");
 curl_setopt($ch, CURLOPT_HEADER, true);    // we want headers
