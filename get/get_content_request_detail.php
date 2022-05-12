@@ -617,7 +617,9 @@ window.onresize = function(event) {
 $(function() {
     $(".multiple-select_cr_edit").multipleSelect()
 });
+load_tiny_comment();
 </script>
+
 
 
 

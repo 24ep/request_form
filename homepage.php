@@ -134,15 +134,13 @@
             <!-- start nav normal -->
             <?php 
            if($_SESSION["pf_theme"]<>"Light Modern") {
-           include('nev_bra.php');
-           $full_col = "col-10 ";
-           $sty_col = "";
-         
+                include('nev_bra.php');
+                $full_col = "col-10 ";
+                $sty_col = "";
            }else{
-            include('nev_bra_modern.php');
-            $full_col = "";
-            $sty_col = "padding: 20px;padding-left:80px";
-          
+                include('nev_bra_modern.php');
+                $full_col = "";
+                $sty_col = "padding: 20px;padding-left:80px";
            }
            ?>
 
@@ -1264,23 +1262,26 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     
     <script>run_ts_command('task');</script>
     <script>
-        tinymce.init({
-        selector: "#comment_input_cr",
-        plugins: "autoresize link lists emoticons",
-        toolbar:
-            "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
-        menubar: false,
-        statusbar: false,
-        width: "100%",
-        toolbar_location: "bottom",
-        autoresize_bottom_margin: 0,
-        contextmenu: false,
-        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
-        setup: (ed) => {
-            editor = ed;
-        },
-        
-        });
+        function load_tiny_comment()
+            {
+                    tinymce.init({
+                    selector: "#comment_input_cr",
+                    plugins: "autoresize link lists emoticons",
+                    toolbar:
+                        "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
+                    menubar: false,
+                    statusbar: false,
+                    width: "100%",
+                    toolbar_location: "bottom",
+                    autoresize_bottom_margin: 0,
+                    contextmenu: false,
+                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
+                    setup: (ed) => {
+                        editor = ed;
+                    },
+                    
+                    });
+                }
     </script>
     <style>
         .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
