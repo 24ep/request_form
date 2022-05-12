@@ -1,4 +1,3 @@
-<!-- <script>$('#js_comment_tiny').remove();</script> -->
 
 <style>
 .multiple-select_cr_edit .ms-choice {
@@ -80,37 +79,7 @@ function get_image_cr($id){
     $list_image.= '</div>';
       return $list_image;
 }
-// function new_select_option($col,$table,$select_option,$database) {
 
-//     $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
-//     mysqli_query($con, "SET NAMES 'utf8' ");
-//     $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
-//     $result = mysqli_query($con, $query);
-//     while($row = mysqli_fetch_array($result)) {
-//       //set null
-//               if($loop_in_null<>true){
-//                 if(isset($option_set)){
-//                   $option_set .= '<div class="item" data-value="" ></div>';
-//                 }else{
-//                   $option_set .= '<div class="item" data-value="" ></div>';
-//                 }
-//                 $loop_in_null=true;
-//               }
-//       //set text option
-//               if($row[$col] <> '' and  $row[$col] <> null)
-//               {
-//                   if($select_option==$row[$col]){
-//                       $option_set .= '<div class="item" data-value="'.$row[$col].'" selected>'.$row[$col].'</div>';
-//                   }else{
-//                       $option_set .= '<div class="item" data-value="'.$row[$col].'" >'.$row[$col].'</div>';
-//                   }
-//               }
-      
-//     }
-//     mysqli_close($con);
-//     return $option_set;
-     
-// }
 
 function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
@@ -302,6 +271,46 @@ while($row_project = mysqli_fetch_array($result_project)) {
         
         <input id="comment_input_cr" name="comment_input_cr" type="text" placeholder="Type message">
        ';
+       ?>
+
+<script>$('#js_comment_tiny').remove();</script>
+<script>
+tinymce.init({
+  selector: "#comment_input_cr",
+  plugins: "autoresize link lists emoticons",
+  toolbar:
+    "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
+  menubar: false,
+  statusbar: false,
+  width: "100%",
+  toolbar_location: "bottom",
+  autoresize_bottom_margin: 0,
+  contextmenu: false,
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
+  setup: (ed) => {
+    editor = ed;
+  },
+  
+});
+</script>
+<style>
+  .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
+    border-radius: 7px;
+    margin-top: 8px;
+}
+  .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child 
+.tox-toolbar__primary, .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
+    border-top: 1px solid #fff;
+}
+.tox .tox-tbtn svg {
+    display: block;
+    fill: rgb(135 135 135 / 79%)!important;
+}
+</style>
+
+
+
+       <?php
        //<div class="custom-editor-wrapper">
         // <textarea id="comment_input_cr" placeholder="Type message and hit enter"></textarea>
         // </div>
