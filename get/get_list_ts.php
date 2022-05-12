@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("get/get_default_profile_image.php");
+include_once("get_default_profile_image.php");
 if($_POST["summary_filter"]<>"" and $_POST["summary_filter"]<>null ){
   $_SESSION["ts_query_input"] = $_POST["summary_filter"];
 }elseif($_GET["summary_filter"]<>"" and $_GET["summary_filter"]<>null){
