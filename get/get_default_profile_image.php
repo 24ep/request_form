@@ -1,7 +1,7 @@
 <?php
 function profile_image($firstname,$department,$size,$username){
 
-$ch = curl_init("https://content-service-gate.cdse-commercecontent.com/base/image/file_icon/user_profile/".$username.".jpg");
+$ch = curl_init("https://content-service-gate.cdse-commercecontent.com/base/image/user_profile/".$username.".jpg");
 curl_setopt($ch, CURLOPT_HEADER, true);    // we want headers
 curl_setopt($ch, CURLOPT_NOBODY, true);    // we don't need body
 curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
@@ -12,7 +12,7 @@ curl_close($ch);
 
 if($httpcode==200) {
     echo '<img data-bs-toggle="tooltip" data-bs-placement="top" title=""
-    width="25px" height="25px" src="base/image/file_icon/user_profile/"'.$username.'".jpg"
+    width="'.$size.'px" height="'.$size.'px" src="base/image/user_profile/"'.$username.'".jpg"
     class="rounded-circle" alt="'.$username.'">';
 }else{
     if(strpos($department,'Content')!==false){
