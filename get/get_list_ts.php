@@ -181,9 +181,9 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                   $effective_date = date_format($effective_date,"Y-m-d");
                   $effective_date_diff = (strtotime($effective_date)-strtotime($current_day))/  ( 60 * 60 * 24 );
                   if($effective_date_diff=0){
-                    $ef_badge = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Due Today</span>';
+                    $ef_badge = '<span class="badge rounded-pill bg-danger " style="margin-left:5px">Due Today</span>';
                   }elseif($effective_date_diff=1){
-                    $ef_badge = '<span class="badge rounded-pill bg-warning" style="margin-left:5px">Due Tmr</span>';
+                    $ef_badge = '<span class="badge rounded-pill bg-warning text-dark" style="margin-left:5px">Due Tmr</span>';
                   }elseif($effective_date_diff<0){
                     $ef_badge = '<span class="badge rounded-pill bg-dark" style="margin-left:5px">Over due</span>';
                   }
@@ -223,7 +223,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                                 echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 10px;">';
                                 echo  '<button type="button" class="btn btn-sm btn-outline-secondary">Unassign</button>';
                                 echo '</div>';
-                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 10px;">';
+                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;">';
                                 echo  $ef_badge;
                                 echo '</div>';
                                
@@ -234,7 +234,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                                 echo '<div class="col" style="padding-left: 5px;padding-top: 5px;">';
                                 echo ucwords($row["case_officer"]);
                                 echo '</div>';
-                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 10px;">';
+                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;">';
                                 echo  $ef_badge;
                                 echo '</div>';
                               }
