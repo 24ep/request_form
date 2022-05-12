@@ -12,8 +12,7 @@ curl_close($ch);
 
 if($httpcode==200) {
     return ' <img  data-bs-toggle="tooltip" data-bs-placement="top" title="'.$username.'"
-     width="'.$size.'px"  
-     height="'.$size.'px" 
+     width="'.$size.'px"  height="'.$size.'px" 
      src="base/image/user_profile/'.$username.'.jpg" 
      class="rounded-circle" alt="'.$username.'">';
 
