@@ -1,5 +1,5 @@
 <?php
-function profile_image($firstname,$department,$size,$username){
+function profile_image($firstname,$department,$size,$username,position_image){
 
 $ch = curl_init("https://content-service-gate.cdse-commercecontent.com/base/image/user_profile/".$username.".jpg");
 curl_setopt($ch, CURLOPT_HEADER, true);    // we want headers
@@ -27,6 +27,7 @@ if($httpcode==200) {
     }
     
     $size_front = $size/2;
+    $left_position_image = (12*$position_image)-(4*$position_image);
     $image = '
     <div style="   
                 width: '.$size.'px;
@@ -39,7 +40,7 @@ if($httpcode==200) {
                 line-height: '.$size.'px;
                 position: absolute;
                 top: 85px;
-                left: 12px;"
+                left: '.$left_position_image.'px;"
                 >
                 '.substr(ucwords($firstname),0,1).'
     </div>';

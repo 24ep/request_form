@@ -198,14 +198,16 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         <div>
            
             <div class="row">
-                <div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;">
+                <div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;    padding-left: 25px;">
                     <?php     unset($image_profile);
                               $participants = explode(",",$row['participant']);
+                              $i=1;
                               foreach ($participants as $username) {
-                                if($username <>"noti_content_request" and  $username <> $row['request_by']){
-                                  $image_profile .= profile_image($row['firstname'],$row['department'],25,$username);
-                                }
                                 
+                                if($username <>"noti_content_request" and  $username <> $row['request_by']){
+                                  $image_profile .= profile_image($row['firstname'],$row['department'],25,$username,$i);
+                                }
+                                $i++;
                               }
                               
                               echo $image_profile;
