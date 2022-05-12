@@ -211,7 +211,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                               }
                               
                               echo $image_profile;
-                              if($row['case_offier']==null or $row['case_offier']=="" or $row['case_offier']=="unassign"){
+                              if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
                                 echo  '<button type="button" class="btn btn-sm btn-outline-secondary">Unassign</button>';
                               }
                     ?>
