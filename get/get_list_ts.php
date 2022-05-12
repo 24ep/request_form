@@ -189,10 +189,12 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                           <?php echo "<strong style='color: ".$color_project.";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
                           <!-- <div style="margin: 5px 0px;"><?php // echo badge_status_cr($row["status"]); ?></div> -->
                           <hr style="margin: 5px;color: #6c757d8c;">
-                          <div><img data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $row["case_officer"]; ?>"
-                                  width="25px" height="25px" src="base/image/user_profile/<?php echo $row["case_officer"]; ?>.jpg"
-                                  class="rounded-circle" alt="<?php echo $row["case_officer"]; ?>"><span
-                                  style="margin-left:5px"><?php echo $row["case_officer"]; ?></span></div>
+                          <div>
+                            <!-- <img data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo //$row["case_officer"]; ?>"
+                                  width="25px" height="25px" src="base/image/user_profile/<?php echo //$row["case_officer"]; ?>.jpg"
+                                  class="rounded-circle" alt="<?php echo $row["case_officer"]; ?>"> -->
+                            <?php echo profile_image($row['firstname'],$_SESSION["department"]); ?>
+                          <span style="margin-left:5px"><?php echo $row["case_officer"]; ?></span></div>
                       </div>
                   </li>
                   <?php $i++; }
