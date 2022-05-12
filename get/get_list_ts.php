@@ -199,19 +199,20 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
            
             <div class="row">
                 
-                    <?php     unset($image_profile);
-                              $participants = explode(",",$row['participant']);
-                              $i=1;
-                              foreach ($participants as $username) {
+                    <?php     
+                              unset($image_profile);
+                              // $participants = explode(",",$row['participant']);
+                              // $i=1;
+                              // foreach ($participants as $username) {
                                 
-                                if($username <>"noti_content_request" and  $username <> $row['request_by']){
-                                  $image_profile .= profile_image($row['firstname'],$row['department'],25,$username,$i);
-                                  $i++;
-                                }
+                              //   if($username <>"noti_content_request" and  $username <> $row['request_by']){
+                              //     $image_profile .= profile_image($row['firstname'],$row['department'],25,$username,$i);
+                              //     $i++;
+                              //   }
                                 
-                              }
+                              // }
                               
-                      
+                              $image_profile .= profile_image($row['firstname'],$row['department'],25,$row['case_officer'],1);
 
                               if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
                                 echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 10px;">';

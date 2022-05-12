@@ -37,10 +37,7 @@ if($httpcode==200) {
                 font-size: '.ceil($size_front).'px;
                 color: #fff;
                 text-align: center;
-                line-height: '.$size.'px;
-                position: absolute;
-                top: 85px;
-                left: '.$left_position_image.'px;"
+                line-height: '.$size.'px;"
                 >
                 '.substr(ucwords($firstname),0,1).'
     </div>';
