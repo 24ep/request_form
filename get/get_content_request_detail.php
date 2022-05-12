@@ -617,7 +617,11 @@ window.onresize = function(event) {
 $(function() {
     $(".multiple-select_cr_edit").multipleSelect()
 });
-load_tiny_comment();
+let tinmyMceInstance = tinymce.get('comment_input_cr');
+if( tinmyMceInstance === null ){
+  load_tiny_comment();
+}
+
 </script>
 
 

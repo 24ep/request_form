@@ -225,10 +225,7 @@
                                 <div class="col-4">
                                     <?php include("get/get_list_message_log.php"); ?>
                                 </div>
-                            </div>
-                            <?php //include('get/get_list_message_log.php'); ?>
-                            <!-- <hr>
-                            <?php //include('get/get_list_job_cms_dashboard.php'); ?> -->
+                            </div>>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="v-pills-request_list" role="tabpanel"
@@ -241,10 +238,6 @@
                             ?>
                                 <div class="row align-items-center" style="margin:20px">
                                     <div class="col-auto">
-                                        <!-- <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
-                                    <select class="selection_filter" id="user_filter" onchange="filter_update();">
-                                        <?php //echo $username_op;?>
-                                    </select> -->
                                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
                                         <input value="<?php echo $_SESSION["user_filter"];?>" class="selection_filter"
                                             list="datalistOptionsuser" id="user_filter" onchange="filter_update();"
@@ -338,7 +331,6 @@
                                         <th scope="col">SKU</th>
                                         <th scope="col">Production request</th>
                                         <th scope="col">Project-type</th>
-                                        <!-- <th scope="col">Modal</th> -->
                                         <th scope="col">launch date</th>
                                         <th scope="col">Badge</th>
                                         <th scope="col">Status</th>
