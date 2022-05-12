@@ -11,7 +11,7 @@ $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
 
 if($httpcode==200) {
-    echo ' <img  data-bs-toggle="tooltip" data-bs-placement="top" title="'.$username.'"
+    return ' <img  data-bs-toggle="tooltip" data-bs-placement="top" title="'.$username.'"
      width="'.$size.'px" style="margin-left: -12px;" height="'.$size.'px" 
      src="base/image/user_profile/'.$username.'.jpg" 
      class="rounded-circle" alt="'.$username.'">';
