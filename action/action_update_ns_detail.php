@@ -9,7 +9,7 @@
     include('action_insert_log.php');
     include('action_send_line_api.php');
     date_default_timezone_set("Asia/Bangkok");
-    $sql = "UPDATE add_new_job SET ".$value_name." = '".$value_change."'  WHERE id=".$id;
+    $sql = "UPDATE add_new_job SET ".$value_name." = '".str_replace("'","''",$value_change)."'  WHERE id=".$id;
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
 	if($query) {
