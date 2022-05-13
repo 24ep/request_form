@@ -45,7 +45,6 @@
                       <div class="form-group mx-4 m-3"> <label>Work email</label> <input type="email" class="form-control" placeholder="yourusername@central.co.th" value="<?php echo $work_email;?>" name="ac_work_email" id="ac_work_email"> </div>
                       <div class="form-group mx-4 m-3"> <label>Tell</label> <input type="text" class="form-control" placeholder="Tell" name="ac_tell" id="ac_tell" value="<?php echo $office_tell;?>"> </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
                 </div>
             </div>
