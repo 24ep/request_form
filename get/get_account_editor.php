@@ -38,7 +38,7 @@
                         <div class="form-group mx-4 m-3" style=""> <label>Firstname</label> <input type="text" class="form-control" placeholder="First name" name="ac_firstname" id="ac_firstname" value="<?php echo $firstname;?>"> </div>
                         <div class="form-group mx-4 m-3"> <label>Lastname</label> <input type="text" class="form-control" placeholder="Lastname" name="ac_lastname" id="ac_lastname" value="<?php echo $lastname;?>"> </div>
                         <div class="form-group mx-4 m-3"> <label>Nickname</label> <input type="text" class="form-control" placeholder="Nickname" name="ac_nickname" id="ac_nickname" value="<?php echo $nickname;?>">  </div>
-                        <div class="form-group mx-4 m-3"> <label>Username</label> <input type="text" class="form-control" placeholder="Username" name="ac_username" id="ac_username" value="<?php echo $username;?>"> </div> 
+                        <div class="form-group mx-4 m-3"> <label>Username</label> <input type="text" disabled class="form-control" placeholder="Username" name="ac_username" id="ac_username" value="<?php echo $username;?>"> </div> 
                     </div>
                     <div class="col-md-6">
                       <div class="form-group mx-4 m-3"> <label>Department</label> <input type="text" class="form-control" placeholder="Department" name="ac_department" value="<?php echo $department;?>" id="ac_department">  </div>
@@ -69,7 +69,7 @@
                   <p>Some quick example text to build on the card title .</p>
                   <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group mx-4 m-3" style=""> <label>Role</label> <input type="text" class="form-control" placeholder="token" name="ac_line_token" id="ac_line_token"> </div>
+                        <div class="form-group mx-4 m-3" style=""> <label>Role</label> <input type="text" class="form-control" placeholder="token" name="ac_role" id="ac_role"> </div>
                         <div class="form-group mx-4 m-3"> <label>Permission</label> 
                             <select class="form-select" multiple aria-label="multiple select example">
                                 <option selected>Open this select menu</option>
