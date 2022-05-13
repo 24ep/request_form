@@ -28,15 +28,8 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <ul class="nav nav-pills my-2">
-            <li class="nav-item"> <a href="" class="active nav-link" data-toggle="pill" data-target="#tabone">Account</a> </li>
-            <li class="nav-item"> <a class="nav-link" href="" data-toggle="pill" data-target="#tabtwo">Setting</a> </li>
-            <li class="nav-item"> <a href="" class="nav-link" data-toggle="pill" data-target="#tabthree">Preferance</a> </li>
-          </ul>
-          <div class="tab-content mt-2">
-            <div class="tab-pane fade show active" id="tabone" role="tabpanel">
               <div class="card">
-                <div class="card-header"> Account Information</div>
+                <div class="card-header">Account Information</div>
                 <div class="card-body">
                   <h4 contenteditable="true">General information</h4>
                   <p>Some quick example text to build on the card title .</p>
@@ -55,42 +48,35 @@
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-              </div>
             </div>
-            <div class="tab-pane fade" id="tabtwo" role="tabpanel">
-              <h3>Setting</h3>
+        </div>
+      </div>
+      <!-- setting -->
+      <div class="row">
+        <div class="col-md-12">
               <div class="card">
+                <div class="card-header">Setting</div>
                 <div class="card-body">
-                  <h5 class="card-title">Role &amp; Permission</h5>
-                    <div class="form-group row"> <label for="inputmailh" class="col-2 col-form-label">Role</label>
-                      <div class="col-10">
-                        <input type="email" class="form-control" id="ac_user_role" placeholder="User Role" name="ac_user_role"> </div>
+                  <h4 contenteditable="true">Notification & Updateing</h4>
+                  <p>Some quick example text to build on the card title .</p>
+                  <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group mx-4 m-3" style=""> <label>Line Notify Token</label> <input type="text" class="form-control" placeholder="token" name="ac_line_token" id="ac_line_token"> </div>
+                        <div class="form-group mx-4 m-3"> <label>Email</label> <input type="text" class="form-control" placeholder="Lastname" name="ac_email_update" id="ac_email_update" > </div>
                     </div>
-                    <div class="form-group row"> <label for="inputmailh" class="col-2 col-form-label">Permission</label>
-                      <div class="col-md-12">
-                        <div class="row">
-                          <div class="col-md-6"></div>
-                          <div class="col-md-6"></div>
-                        </div>
-                      </div>
+                  </div>
+                  <hr>
+                  <h4 contenteditable="true">Role & Permission</h4>
+                  <p>Some quick example text to build on the card title .</p>
+                  <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group mx-4 m-3" style=""> <label>Role</label> <input type="text" class="form-control" placeholder="token" name="ac_line_token" id="ac_line_token"> </div>
+                        <div class="form-group mx-4 m-3"> <label>Email</label> <input type="text" class="form-control" placeholder="Lastname" name="ac_email_update" id="ac_email_update" > </div>
                     </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-              </div>
             </div>
-            <div class="tab-pane fade" id="tabthree" role="tabpanel">
-              <p class="">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy.</p>
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title"><b>Theam</b></h5>
-                    <div class="form-group row">
-                      <div class="col-10">
-                        <input type="text" class="form-control" id="inputmailh" placeholder="Light" value="<?php echo  $pf_theam ;?>"> </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
