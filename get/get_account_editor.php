@@ -19,5 +19,126 @@
 
 ?>
 
-<h2><?php echo ucwords($firstname)." ".ucwords($lastname);?></h2>
-<hr>
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+</head>
+
+<body> -->
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"><img class="img-fluid d-block rounded-circle" src="https://static.pingendo.com/img-placeholder-3.svg" width="320" height="320"></div>
+        <div class="col-md-6">
+          <h1 class="display-2"><?php echo ucwords($firstname)." ".ucwords($lastname);?></h1>
+          <h1 class="">Content Writer</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav nav-pills my-2">
+            <li class="nav-item"> <a href="" class="active nav-link" data-toggle="pill" data-target="#tabone">Account</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="" data-toggle="pill" data-target="#tabtwo">Setting</a> </li>
+            <li class="nav-item"> <a href="" class="nav-link" data-toggle="pill" data-target="#tabthree">Preferance</a> </li>
+          </ul>
+          <div class="tab-content mt-2">
+            <div class="tab-pane fade show active" id="tabone" role="tabpanel">
+              <div class="card">
+                <div class="card-header"> Account Information</div>
+                <div class="card-body">
+                  <h4 contenteditable="true">General information</h4>
+                  <p>Some quick example text to build on the card title .</p>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <form class="">
+                        <div class="form-group"> <label>Firstname</label> <input type="text" class="form-control" placeholder="First name" name="ac_firstname" id="ac_firstname"> <small class="form-text text-muted"></small> </div>
+                        <div class="form-group"> <label>Lastname</label> <input type="text" class="form-control" placeholder="Lastname" name="ac_lastname" id="ac_lastname"> </div>
+                        <div class="form-group"> <label>Nickname</label> <input type="text" class="form-control" placeholder="Nickname" name="ac_nickname" id="ac_nickname"> <small class="form-text text-muted"></small> </div>
+                        <div class="form-group"> <label>Username</label> <input type="text" class="form-control" placeholder="Username" name="ac_username" id="ac_username"> </div> <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group"> <label>Department</label> <input type="text" class="form-control" placeholder="Department" name="ac_department" id="ac_department"> <small class="form-text text-muted"></small> </div>
+                      <div class="form-group"> <label>Work email</label> <input type="email" class="form-control" placeholder="yourusername@central.co.th" name="ac_work_email" id="ac_work_email"> <small class="form-text text-muted"></small> </div>
+                      <div class="form-group"> <label>Tell</label> <input type="text" class="form-control" placeholder="Tell" name="ac_tell" id="ac_tell"> <small class="form-text text-muted"></small> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tabtwo" role="tabpanel">
+              <h3>Setting</h3>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Role &amp; Permission</h5>
+                  <form id="c_form-h" class="">
+                    <div class="form-group row"> <label for="inputmailh" class="col-2 col-form-label">Role</label>
+                      <div class="col-10">
+                        <input type="email" class="form-control" id="ac_user_role" placeholder="User Role" name="ac_user_role"> </div>
+                    </div>
+                    <div class="form-group row"> <label for="inputmailh" class="col-2 col-form-label">Permission</label>
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="col-md-6"></div>
+                          <div class="col-md-6"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="card my-2">
+                <div class="card-body my-1">
+                  <blockquote class="blockquote mb-0">
+                    <h5 class="card-title"><b>Line notify</b></h5>
+                    <form id="c_form-h" class="">
+                      <div class="form-group row"> <label for="inputmailh" class="col-form-label col-2">Line notify Token</label>
+                        <div class="col-10">
+                          <input type="text" class="form-control" id="ac_line_notify_token" placeholder="Line token ID" name="ac_line_notify_token"> </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Connect</button><button type="submit" class="btn btn-primary mx-2">Save</button>
+                    </form>
+                  </blockquote>
+                </div>
+              </div>
+              <div class="card my-2">
+                <div class="card-body">
+                  <blockquote class="blockquote mb-0">
+                    <h5 class="card-title"><b>Email update</b></h5>
+                    <p></p>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tabthree" role="tabpanel">
+              <p class="">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy.</p>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><b>Theam</b></h5>
+                  <form id="c_form-h" class="">
+                    <div class="form-group row">
+                      <div class="col-10">
+                        <input type="text" class="form-control" id="inputmailh" placeholder="Light"> </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+<!-- </body>
+
+</html> -->
