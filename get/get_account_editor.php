@@ -76,26 +76,6 @@
                     </div>
                 </div>
               </div>
-              <div class="card my-2">
-                <div class="card-body my-1">
-                  <blockquote class="blockquote mb-0">
-                    <h5 class="card-title"><b>Line notify</b></h5>
-                      <div class="form-group row"> <label for="inputmailh" class="col-form-label col-2">Line notify Token</label>
-                        <div class="col-10">
-                          <input type="text" class="form-control" id="ac_line_notify_token" value="<?php echo $token_line; ?>"placeholder="Line token ID" name="ac_line_notify_token"> </div>
-                      </div>
-                      <button type="submit" class="btn btn-primary">Connect</button><button type="submit" class="btn btn-primary mx-2">Save</button>
-                  </blockquote>
-                </div>
-              </div>
-              <div class="card my-2">
-                <div class="card-body">
-                  <blockquote class="blockquote mb-0">
-                    <h5 class="card-title"><b>Email update</b></h5>
-                    <p></p>
-                  </blockquote>
-                </div>
-              </div>
             </div>
             <div class="tab-pane fade" id="tabthree" role="tabpanel">
               <p class="">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy.</p>
