@@ -27,21 +27,16 @@ $filter .= "lower(ticket.id) like lower('%".$_SESSION["ts_query_input"]."%') or 
 $filter .= "lower(ticket.title) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]."%') ";
     function badge_status_cr($status){
-      if($status=="Pending"){
-        $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
-      }elseif( $status=="Inprogress"){
-        $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ff9a59;color:white;border:#ff9a59">Inprogress</button>';
-      }elseif($status=="Close" or $status=="approved"){
-        $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #7befb2;color:#115636;border:#115636">'.$status.'</button>';
-      }elseif($status=="Waiting CTO"){
-        $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #499CF7;color:#093f8e;border:#499CF7">Waiting CTO</button>';
-      }elseif($status=="Waiting Execution"){
-        $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FA9193;color:#white;border:#FA9193">Waiting Execution</button>';
-      }elseif($status=="Waiting Buyer"){
-        $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting buyer</button>';
-      }else{
-        $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">'.$status.'</button>';
-      }
+  
+    switch ($status) {
+      case "Pending": $status = '<button type="button" class="btn btn-sm shadow-sm badge-status-npd-pd" >pending</button>'; break;
+      case "Inprogress": $status = '<button type="button" class="btn btn-sm shadow-sm badge-status-npd-ip">Inprogress</button>'; break;
+      case "Close": $status = '<button type="button" class="btn btn-sm shadow-sm badge-status-npd-c" >'.$status.'</button>'; break;
+      case "Waiting CTO": $status = '<button type="button" class="btn btn-sm shadow-sm bage-status-npd-wc">Waiting CTO</button>'; break;
+      case "Waiting Execution":  $status = '<button type="button" class="btn btn-sm shadow-sm bage-status-npd-we">Waiting Execution</button>'; break;
+      case "Waiting Buyer": $status = '<button type="button" class="btn btn-sm shadow-sm">waiting buyer</button>'; break;
+      default: $status = '<button type="button" class="btn btn-sm shadow-sm badge-status-npd-df">'.$status.'</button>';
+    }
     return $status;
     }
     function list_ts($filter,$ts_command_limit,$level ){
@@ -58,7 +53,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT ticket.id as id,
         ticket.title as title,
-        -- ticket.description as description,
         ticket.piority as piority,
         ticket.request_by as request_by,
         ticket.create_date as create_date,
@@ -130,7 +124,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT ticket.id as id,
         ticket.title as title,
-        -- ticket.description as description,
         ticket.piority as piority,
         ticket.request_by as request_by,
         ticket.create_date as create_date,
