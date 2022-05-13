@@ -45,8 +45,8 @@
                       <div class="form-group mx-4 m-3"> <label>Work email</label> <input type="email" class="form-control" placeholder="yourusername@central.co.th" value="<?php echo $work_email;?>" name="ac_work_email" id="ac_work_email"> </div>
                       <div class="form-group mx-4 m-3"> <label>Tell</label> <input type="text" class="form-control" placeholder="Tell" name="ac_tell" id="ac_tell" value="<?php echo $office_tell;?>"> </div>
                     </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
                   <div class="row">
                     <div class="col-md-12">
                         <div class="form-group mx-4 m-3" style=""> <label>Role</label> <input type="text" class="form-control" placeholder="token" name="ac_line_token" id="ac_line_token"> </div>
-                        <div class="form-group mx-4 m-3"> <label>Email</label> <input type="text" class="form-control" placeholder="Lastname" name="ac_email_update" id="ac_email_update" > </div>
+                        <div class="form-group mx-4 m-3"> <label>Permission</label> <input type="text" class="form-control" placeholder="Lastname" name="ac_email_update" id="ac_email_update" > </div>
                     </div>
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
