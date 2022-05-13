@@ -41,10 +41,10 @@
       }
        add_participant($_POST['id'],"add_new_job");
        add_participant($parent,"add_new_job");
-        insert_log("send to traffic > accepted_date = ".date("Y-m-d H:i:s")." \n status = accepted" ,"add_new_job",$id);
+        insert_log("assign follow = ".date("Y-m-d H:i:s")." has assign this task to ".$op_follow_assign_name ,"add_new_job",$_POST['id']);
         // echo date("Y-m-d H:i:s");
 	}else{
-        insert_log("send to traffic faild >".$con->error ,"add_new_job",$id);
+        insert_log("assign follow >".$con->error ,"add_new_job",$id);
         // echo 'Error: ' . $sql . '<br>' . $con->error.'';
     }
     mysqli_close($con);
