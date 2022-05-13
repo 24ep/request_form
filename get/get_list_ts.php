@@ -71,13 +71,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         echo "<ul style='width: 95%;'>";
           while( $row = mysqli_fetch_array($result)) {
                 $count_comment_cr = $row["count_comment"];
-                  // switch ($row['piority']) {
-                  //   case "Urgent": $ri_style = "border-left: #dc3545 solid 10px;"; break;
-                  //   case "High": $ri_style = "border-left: #f396bf solid 10px;"; break;
-                  //   case "Medium": $ri_style = "border-left: #f396bf solid 10px;"; break;
-                  //   case "low": $ri_style = "border-left: #ccc solid 10px;"; break;
-                  //   default: $ri_style = "border-left: #ccc solid 10px;";
-                  // }
+                
                   date_default_timezone_set("Asia/Bangkok");
                   $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
                   mysqli_query($con_project, "SET NAMES 'utf8' ");
