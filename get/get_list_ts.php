@@ -26,6 +26,23 @@ $filter = "";
 $filter .= "lower(ticket.id) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.title) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]."%') ";
+    function badge_due_date($date){
+                      
+      if($date <> null){
+        $current_day = date("Y-m-d");
+        $date_wiht_formate = date_create($date);
+        $date_wiht_formate = date_format($date_wiht_formate,"Y-m-d");
+        $date_wiht_formate_diff = (strtotime($date_wiht_formate)-strtotime($current_day))/  ( 60 * 60 * 24 );
+        if($date_wiht_formate_diff==0){
+          $ef_badge = '<span class="badge rounded-pill bg-danger " style="margin-left:5px">Due Today</span>';
+        }elseif($date_wiht_formate_diff==1){
+          $ef_badge = '<span class="badge rounded-pill bg-warning text-dark" style="margin-left:5px">Due Tmr</span>';
+        }elseif($date_wiht_formate_diff<0){
+          $ef_badge = '<span class="badge rounded-pill bg-dark" style="margin-left:5px">Over due</span>';
+        }
+      }
+      return $ef_badge;
+    }
     function badge_status_cr($status){
   
     switch ($status) {
@@ -39,71 +56,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
     }
     return $status;
     }
-    function list_ts($filter,$ts_command_limit,$level ){
-      if(strpos($filter,"ticket.status = 'Close'")!==false){
-        $sort_de_status=" DESC ";
-      }else{
-        $sort_de_status=" ASC ";
-      }
-      $i=1;
-      //--
-        $ts_filter = $filter;
-        date_default_timezone_set("Asia/Bangkok");
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-        mysqli_query($con, "SET NAMES 'utf8' ");
-        $query = "SELECT ticket.id as id,
-        ticket.title as title,
-        ticket.piority as piority,
-        ticket.request_by as request_by,
-        ticket.create_date as create_date,
-        ticket.status as status,
-        ticket.ticket_template as ticket_template,
-        comment.ticket_type as ticket_type,
-        ticket.participant as participant,
-        ticket.case_officer as case_officer,
-        sum(case when comment.ticket_type='content_request' then 1 else 0 end) as count_comment 
-        FROM all_in_one_project.content_request as ticket
-        LEFT JOIN all_in_one_project.comment as comment
-        ON ticket.id = comment.ticket_id 
-        where ".$ts_filter." 
-        GROUP BY ticket.id order by ticket.id ".$sort_de_status."  limit ".$ts_command_limit;
-        $result = mysqli_query($con, $query);
-        echo "<ul style='width: 95%;'>";
-          while( $row = mysqli_fetch_array($result)) {
-                $count_comment_cr = $row["count_comment"];
-                
-                  date_default_timezone_set("Asia/Bangkok");
-                  $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-                  mysqli_query($con_project, "SET NAMES 'utf8' ");
-                  $query_project = "SELECT *
-                  FROM all_in_one_project.project_bucket 
-                  where prefix='".$row["ticket_template"]."'" or die("Error:" . mysqli_error($con));
-                  $result_project = mysqli_query($con_project, $query_project);
-                  while($row_project = mysqli_fetch_array($result_project)) {
-                    $color_project = $row_project["color_project"];
-                    $project_name = $row_project["project_name"];
-                  }
-                ?>
-<li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
-    data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
-    onclick="cr_id_toggle(<?php echo $row['id'] ?>)">
-    <div class="col-9" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
-        onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
-        <!-- <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary" style="<?php //echo $ico_ts_bg; ?>;left: -8px!important;"><ion-icon name="<?php //echo $ico_ts; ?>" style="margin: 0px;color: white!important;"></ion-icon> <span class="visually-hidden">unread messages</span></span> -->
-        <?php echo "<strong style='color: ".$color_project.";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
-    </div>
-    <!-- <div class="col-3" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
-              onclick="cr_id_toggle(<?php // echo $row['id']; ?>)" style="align-self: center;">
-              <?php //echo badge_status_cr($row["status"]); ?>
-          </div> -->
-</li>
-<?php
-                 $i++;
-      }
-        //------------------------------
-     echo "</ul>";
-   mysqli_close($con);
-    }
+
     function list_ts_non_status($filter,$ts_command_limit,$level ){
         if(strpos($filter,"ticket.status = 'Close'")!==false){
           $sort_de_status="ticket.id DESC ";
@@ -152,20 +105,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     default: $ri_style = "border-left: #ccc solid 8px;";
                 }
                 // show flag effective date
-                unset($ef_badge);
-                if($row["effective_date"] <> null){
-                  $current_day = date("Y-m-d");
-                  $effective_date = date_create($row["effective_date"]);
-                  $effective_date = date_format($effective_date,"Y-m-d");
-                  $effective_date_diff = (strtotime($effective_date)-strtotime($current_day))/  ( 60 * 60 * 24 );
-                  if($effective_date_diff==0){
-                    $ef_badge = '<span class="badge rounded-pill bg-danger " style="margin-left:5px">Due Today</span>';
-                  }elseif($effective_date_diff==1){
-                    $ef_badge = '<span class="badge rounded-pill bg-warning text-dark" style="margin-left:5px">Due Tmr</span>';
-                  }elseif($effective_date_diff<0){
-                    $ef_badge = '<span class="badge rounded-pill bg-dark" style="margin-left:5px">Over due</span>';
-                  }
-                }
                   date_default_timezone_set("Asia/Bangkok");
                   $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
                   mysqli_query($con_project, "SET NAMES 'utf8' ");
@@ -183,32 +122,31 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
     onclick="cr_id_toggle(<?php echo $row['id'] ?>)">
     <div class="col-12" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
         onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
-        <!-- <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary" style="<?php //echo $ico_ts_bg; ?>;left: -8px!important;"><ion-icon name="<?php //echo $ico_ts; ?>" style="margin: 0px;color: white!important;"></ion-icon> <span class="visually-hidden">unread messages</span></span> -->
         <?php echo "<strong style='color: ".$color_project.";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
-        <!-- <div style="margin: 5px 0px;"><?php // echo badge_status_cr($row["status"]); ?></div> -->
         <hr style="margin: 5px;color: #6c757d8c;">
         <div>
             <div class="row">
                 <?php     
-                              unset($image_profile);
-                              $image_profile = profile_image($row['firstname'],$row['department'],25,$row['case_officer'],1);
-                              if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
-                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 10px;">';
-                                echo  '<button type="button" class="btn btn-sm btn-outline-secondary">Unassign</button>';
-                                echo '</div>';
-                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;">';
-                                echo  $ef_badge;
-                                echo '</div>';
-                              }else{
-                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;">';
-                                echo $image_profile;
-                                echo '</div>';
-                                echo '<div class="col" style="padding-left: 5px;padding-top: 5px;">';
-                                echo ucwords($row["case_officer"]);
-                                echo '</div>';
-                                echo '<div class="col" style="max-width: fit-content;padding-top:3px;">';
-                                echo  $ef_badge;
-                                echo '</div>';
+                    unset($ef_badge);
+                    unset($image_profile);
+                    $image_profile = profile_image($row['firstname'],$row['department'],25,$row['case_officer'],1);
+                    if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
+                        echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 10px;">';
+                        echo  '<button type="button" class="btn btn-sm btn-outline-secondary">Unassign</button>';
+                        echo '</div>';
+                        echo '<div class="col" style="max-width: fit-content;padding-top:3px;">';
+                        echo  badge_due_date($row["effective_date"]);
+                        echo '</div>';
+                    }else{
+                        echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;">';
+                        echo $image_profile;
+                        echo '</div>';
+                        echo '<div class="col" style="padding-left: 5px;padding-top: 5px;">';
+                        echo ucwords($row["case_officer"]);
+                        echo '</div>';
+                        echo '<div class="col" style="max-width: fit-content;padding-top:3px;">';
+                        echo  badge_due_date($row["effective_date"]);
+                        echo '</div>';
                               }
                     ?>
             </div>
@@ -244,9 +182,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
           }
           $i++;
         }
-        // echo '<small class="row m-3">Assigned to other</small>';
-        //   list_ts("(ticket.case_officer <> '".$_SESSION["username"]."' and ticket.case_officer <> 'unassign'  ) and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status <> 'Close'",500 ,'ticket');
-        //   echo '<hr>';
+     
         echo '</div>
         </div>';
         //------------- new
