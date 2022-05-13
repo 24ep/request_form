@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+include_once("get/get_function_badge.php");
+include_once("get/get_default_profile_image.php");
 
 //query limit
 if($_POST["ts_command_limit"]<>""){
@@ -134,7 +135,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         $i=0;
         while($row_status = mysqli_fetch_array($result_status)) {
 
-        if($i<>0){
+        if($i>0){
           $ts_board_col_left = "ts-board-col-left";
         }
 
