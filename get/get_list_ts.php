@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once("get_default_profile_image.php");
-
+include_once("get_function_badge.php");
 //query limit
 if($_POST["ts_command_limit"]<>""){
   $ts_command_limit = $_POST["ts_command_limit"];
