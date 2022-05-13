@@ -99,9 +99,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         $result = mysqli_query($con, $query);
         echo "<ul style='padding:15px'>";
           while( $row = mysqli_fetch_array($result)) {
-                $count_comment_cr = $row["count_comment"];
-             
-                // show flag effective date
                   date_default_timezone_set("Asia/Bangkok");
                   $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
                   mysqli_query($con_project, "SET NAMES 'utf8' ");
