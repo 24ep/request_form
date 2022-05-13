@@ -66,7 +66,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         Left join all_in_one_project.account ac
         on ac.username = ticket.case_officer 
         where ".$ts_filter." 
-        GROUP BY ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
+        GROUP BY ticket.effective_date ASC, ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
         // echo "<script>console.log('".$query."');</script>";
         $result = mysqli_query($con, $query);
         echo "<ul style='padding:15px'>";
