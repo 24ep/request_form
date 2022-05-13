@@ -163,21 +163,16 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         $query_status = "SELECT * FROM content_service_gate.attribute_option 
         where attribute_id= 38 and attribute_option not in ('cancel','routine work','monitor','In-review','close')" or die("Error:" . mysqli_error($con));
         $result_status = mysqli_query($con_status, $query_status);
-              $i=0;
+        $i=0;
         while($row_status = mysqli_fetch_array($result_status)) {
-        $limit = $ts_command_limit;
-          if($i==0){
-            echo' <div class="col" id="col_'.$row_status["attribute_option"].'" ondrop="drop_card_cr(event,'.$row_status["attribute_option"].')" ondragover="allowDrop(event)" >
-            <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
-            list_ts_non_status("(".$filter.") and ( lower(ticket.participant) like  lower('%".$_SESSION["ts_username"]."%') or  lower(ticket.case_officer) like lower('%".$_SESSION["ts_username"]."%') )  and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
-            echo '</div>';
-          }else{
-            echo' <div class="col" style="border-left: 1px solid #e3e2e2;" id="col_'.$row_status["attribute_option"].'" ondrop="drop_card_cr(event,'.$row_status["attribute_option"].')" ondragover="allowDrop(event)" >
-            <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
-            list_ts_non_status("(".$filter.") and ( lower(ticket.participant) like  lower('%".$_SESSION["ts_username"]."%') or  lower(ticket.case_officer) like lower('%".$_SESSION["ts_username"]."%') ) and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$limit ,'ticket');
-            echo '</div>';
-          }
-          $i++;
+
+        if($i==0){$ts_board_col_end = "ts-board-col-end";}
+
+        echo' <div class="col '.$ts_board_col_end.'" id="col_'.$row_status["attribute_option"].'" ondrop="drop_card_cr(event,'.$row_status["attribute_option"].')" ondragover="allowDrop(event)" >
+        <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
+        list_ts_non_status("(".$filter.") and ( lower(ticket.participant) like  lower('%".$_SESSION["ts_username"]."%') or  lower(ticket.case_officer) like lower('%".$_SESSION["ts_username"]."%') )  and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$ts_command_limit  ,'ticket');
+        echo '</div>';
+        $i++;
         }
      
         echo '</div>

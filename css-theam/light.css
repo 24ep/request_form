@@ -292,6 +292,9 @@ ion-icon {
 .npd-card-bording-priority-default{
     border-left: #ccc solid 10px;
 }
+.ts-board-col-end{
+    border-left: 1px solid #e3e2e2;
+}
 
 
 
