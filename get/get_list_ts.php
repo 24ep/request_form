@@ -134,9 +134,11 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         $i=0;
         while($row_status = mysqli_fetch_array($result_status)) {
 
-        if($i==0){$ts_board_col_end = "ts-board-col-end";}
+        if($i<>0){
+          $ts_board_col_left = "ts-board-col-left";
+        }
 
-        echo' <div class="col '.$ts_board_col_end.'" id="col_'.$row_status["attribute_option"].'" ondrop="drop_card_cr(event,'.$row_status["attribute_option"].')" ondragover="allowDrop(event)" >
+        echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'" ondrop="drop_card_cr(event,'.$row_status["attribute_option"].')" ondragover="allowDrop(event)" >
         <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
         list_ts_non_status("(".$filter.") and ( lower(ticket.participant) like  lower('%".$_SESSION["ts_username"]."%') or  lower(ticket.case_officer) like lower('%".$_SESSION["ts_username"]."%') )  and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$ts_command_limit  ,'ticket');
         echo '</div>';
