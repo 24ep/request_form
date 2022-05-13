@@ -42,15 +42,15 @@
                   <p>Some quick example text to build on the card title .</p>
                   <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group mx-4 m-2" style=""> <label>Firstname</label> <input type="text" class="form-control" placeholder="First name" name="ac_firstname" id="ac_firstname" value="<?php echo $firstname;?>"> </div>
-                        <div class="form-group mx-4 m-2"> <label>Lastname</label> <input type="text" class="form-control" placeholder="Lastname" name="ac_lastname" id="ac_lastname" value="<?php echo $lastname;?>"> </div>
-                        <div class="form-group mx-4 m-2"> <label>Nickname</label> <input type="text" class="form-control" placeholder="Nickname" name="ac_nickname" id="ac_nickname" value="<?php echo $nickname;?>">  </div>
-                        <div class="form-group mx-4 m-2"> <label>Username</label> <input type="text" class="form-control" placeholder="Username" name="ac_username" id="ac_username" value="<?php echo $username;?>"> </div> 
+                        <div class="form-group mx-4 m-3" style=""> <label>Firstname</label> <input type="text" class="form-control" placeholder="First name" name="ac_firstname" id="ac_firstname" value="<?php echo $firstname;?>"> </div>
+                        <div class="form-group mx-4 m-3"> <label>Lastname</label> <input type="text" class="form-control" placeholder="Lastname" name="ac_lastname" id="ac_lastname" value="<?php echo $lastname;?>"> </div>
+                        <div class="form-group mx-4 m-3"> <label>Nickname</label> <input type="text" class="form-control" placeholder="Nickname" name="ac_nickname" id="ac_nickname" value="<?php echo $nickname;?>">  </div>
+                        <div class="form-group mx-4 m-3"> <label>Username</label> <input type="text" class="form-control" placeholder="Username" name="ac_username" id="ac_username" value="<?php echo $username;?>"> </div> 
                     </div>
                     <div class="col-md-6">
-                      <div class="form-group mx-4 m-2"> <label>Department</label> <input type="text" class="form-control" placeholder="Department" name="ac_department" value="<?php echo $department;?>" id="ac_department">  </div>
-                      <div class="form-group mx-4 m-2"> <label>Work email</label> <input type="email" class="form-control" placeholder="yourusername@central.co.th" value="<?php echo $work_email;?>" name="ac_work_email" id="ac_work_email"> </div>
-                      <div class="form-group mx-4 m-2"> <label>Tell</label> <input type="text" class="form-control" placeholder="Tell" name="ac_tell" id="ac_tell" value="<?php echo $office_tell;?>"> </div>
+                      <div class="form-group mx-4 m-3"> <label>Department</label> <input type="text" class="form-control" placeholder="Department" name="ac_department" value="<?php echo $department;?>" id="ac_department">  </div>
+                      <div class="form-group mx-4 m-3"> <label>Work email</label> <input type="email" class="form-control" placeholder="yourusername@central.co.th" value="<?php echo $work_email;?>" name="ac_work_email" id="ac_work_email"> </div>
+                      <div class="form-group mx-4 m-3"> <label>Tell</label> <input type="text" class="form-control" placeholder="Tell" name="ac_tell" id="ac_tell" value="<?php echo $office_tell;?>"> </div>
                     </div>
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
