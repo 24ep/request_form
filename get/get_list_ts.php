@@ -1,18 +1,14 @@
 <?php
 session_start();
 include_once("get_default_profile_image.php");
-if($_POST["summary_filter"]<>"" and $_POST["summary_filter"]<>null ){
-  $_SESSION["ts_query_input"] = $_POST["summary_filter"];
-}elseif($_GET["summary_filter"]<>"" and $_GET["summary_filter"]<>null){
-  $_SESSION["ts_query_input"] = $_GET["summary_filter"];
-}else{
-  $_SESSION["ts_query_input"] = "";
-}
+
+//query limit
 if($_POST["ts_command_limit"]<>""){
   $ts_command_limit = $_POST["ts_command_limit"];
 }else{
   $ts_command_limit= 100;
 }
+//query username filter
 if($_POST["ts_username"]<>"" and $_POST["ts_username"]<>null ){
   $_SESSION["ts_username"] = $_POST["ts_username"];
 }elseif($_GET["ts_username"]<>"" and $_GET["ts_username"]<>null){
@@ -20,8 +16,15 @@ if($_POST["ts_username"]<>"" and $_POST["ts_username"]<>null ){
 }else{
   $_SESSION["ts_username"] = "";
 }
-// echo "<script>console.log('query input : ".$_SESSION["ts_query_input"]."');</script>";
-// echo "<script>console.log('username :  ".$_SESSION["ts_username"]."');</script>";
+//query search input
+if($_POST["summary_filter"]<>"" and $_POST["summary_filter"]<>null ){
+  $_SESSION["ts_query_input"] = $_POST["summary_filter"];
+}elseif($_GET["summary_filter"]<>"" and $_GET["summary_filter"]<>null){
+  $_SESSION["ts_query_input"] = $_GET["summary_filter"];
+}else{
+  $_SESSION["ts_query_input"] = "";
+}
+
 $filter = "";
 $filter .= "lower(ticket.id) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.title) like lower('%".$_SESSION["ts_query_input"]."%') or ";
@@ -97,13 +100,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         echo "<ul style='padding:15px'>";
           while( $row = mysqli_fetch_array($result)) {
                 $count_comment_cr = $row["count_comment"];
-                switch ($row['piority']) {
-                    case "Urgent": $ri_style = "border-left: #dc3545 solid 8px;"; break;
-                    case "High": $ri_style = "border-left: #f396bf solid 8px;"; break;
-                    case "Medium": $ri_style = "border-left: #f396bf solid 8px;"; break;
-                    case "low": $ri_style = "border-left: #ccc solid 8px;"; break;
-                    default: $ri_style = "border-left: #ccc solid 8px;";
-                }
+             
                 // show flag effective date
                   date_default_timezone_set("Asia/Bangkok");
                   $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -117,7 +114,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     $project_name = $row_project["project_name"];
                   }
                 ?>
-<li class="row shadow-sm rounded md-3 p-2 bg-white position-relative" style="<?php echo  $ri_style ?> "
+<li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
     data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
     onclick="cr_id_toggle(<?php echo $row['id'] ?>)">
     <div class="col-12" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
