@@ -8,14 +8,11 @@ if($_POST["summary_filter"]<>"" and $_POST["summary_filter"]<>null ){
 }else{
   $_SESSION["ts_query_input"] = "";
 }
-
 if($_POST["ts_command_limit"]<>""){
   $ts_command_limit = $_POST["ts_command_limit"];
 }else{
   $ts_command_limit= 100;
 }
-
-
 if($_POST["ts_username"]<>"" and $_POST["ts_username"]<>null ){
   $_SESSION["ts_username"] = $_POST["ts_username"];
 }elseif($_GET["ts_username"]<>"" and $_GET["ts_username"]<>null){
@@ -23,12 +20,8 @@ if($_POST["ts_username"]<>"" and $_POST["ts_username"]<>null ){
 }else{
   $_SESSION["ts_username"] = "";
 }
-
-
-echo "<script>console.log('query input : ".$_SESSION["ts_query_input"]."');</script>";
-echo "<script>console.log('username :  ".$_SESSION["ts_username"]."');</script>";
-
-
+// echo "<script>console.log('query input : ".$_SESSION["ts_query_input"]."');</script>";
+// echo "<script>console.log('username :  ".$_SESSION["ts_username"]."');</script>";
 $filter = "";
 $filter .= "lower(ticket.id) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.title) like lower('%".$_SESSION["ts_query_input"]."%') or ";
@@ -65,7 +58,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT ticket.id as id,
         ticket.title as title,
-        ticket.description as description,
+        -- ticket.description as description,
         ticket.piority as piority,
         ticket.request_by as request_by,
         ticket.create_date as create_date,
@@ -80,7 +73,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         ON ticket.id = comment.ticket_id 
         where ".$ts_filter." 
         GROUP BY ticket.id order by ticket.id ".$sort_de_status."  limit ".$ts_command_limit;
-    
         $result = mysqli_query($con, $query);
         echo "<ul style='width: 95%;'>";
           while( $row = mysqli_fetch_array($result)) {
@@ -138,7 +130,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT ticket.id as id,
         ticket.title as title,
-        ticket.description as description,
+        -- ticket.description as description,
         ticket.piority as piority,
         ticket.request_by as request_by,
         ticket.create_date as create_date,
@@ -165,8 +157,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         echo "<ul style='padding:15px'>";
           while( $row = mysqli_fetch_array($result)) {
                 $count_comment_cr = $row["count_comment"];
-
-
                 switch ($row['piority']) {
                     case "Urgent": $ri_style = "border-left: #dc3545 solid 8px;"; break;
                     case "High": $ri_style = "border-left: #f396bf solid 8px;"; break;
@@ -189,8 +179,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     $ef_badge = '<span class="badge rounded-pill bg-dark" style="margin-left:5px">Over due</span>';
                   }
                 }
-
-             
                   date_default_timezone_set("Asia/Bangkok");
                   $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
                   mysqli_query($con_project, "SET NAMES 'utf8' ");
@@ -213,13 +201,10 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         <!-- <div style="margin: 5px 0px;"><?php // echo badge_status_cr($row["status"]); ?></div> -->
         <hr style="margin: 5px;color: #6c757d8c;">
         <div>
-           
             <div class="row">
-                
-                    <?php     
+                <?php     
                               unset($image_profile);
                               $image_profile = profile_image($row['firstname'],$row['department'],25,$row['case_officer'],1);
-
                               if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
                                 echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;padding-left: 10px;">';
                                 echo  '<button type="button" class="btn btn-sm btn-outline-secondary">Unassign</button>';
@@ -227,7 +212,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                                 echo '<div class="col" style="max-width: fit-content;padding-top:3px;">';
                                 echo  $ef_badge;
                                 echo '</div>';
-                               
                               }else{
                                 echo '<div class="col" style="max-width: fit-content;padding-top:3px;padding-right: 0px;">';
                                 echo $image_profile;
@@ -239,18 +223,12 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                                 echo  $ef_badge;
                                 echo '</div>';
                               }
-                              
                     ?>
-                
-              
             </div>
-
-            
         </div>
     </div>
 </li>
 <?php $i++; }
-                  
                       echo "</ul>";
                     mysqli_close($con);
                 }
@@ -285,5 +263,4 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         echo '</div>
         </div>';
         //------------- new
-    
 ?>
