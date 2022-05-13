@@ -3,6 +3,7 @@
     include("connect.php");
     include('action_insert_log.php');
     include('action_send_line_api.php');
+    include('action_add_participant.php');
     date_default_timezone_set("Asia/Bangkok");
     $id = $_POST["id"];
     $op_follow_assign_name = $_POST["op_follow_assign_name"];
