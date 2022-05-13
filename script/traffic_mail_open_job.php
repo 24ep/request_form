@@ -119,6 +119,29 @@ $count_conversion_id = count_conversion_id($conversation_id);
         //insert to new ticket
     }
 }
+function mapping_department($department){
+
+    date_default_timezone_set("Asia/Bangkok");
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+    mysqli_query($con, "SET NAMES 'utf8' ");
+    $sql = "SELECT `number`, name from dept_subdept_number_mapping";
+    $result =  mysqli_query($con, $sql);
+    while($row = mysqli_fetch_array($result)) {
+        if(strpos(strtolower($department), $row["number"]) !== false){
+            $dept_name =  $row["name"];
+            break;
+        }
+        
+    }
+    
+    if($dept_name<>""){
+        return $dept_name;
+    }else{
+        return "OTHER";
+    }
+
+
+}
 function check_exist_message_id(){
     global $conversation_id;
     date_default_timezone_set("Asia/Bangkok");
@@ -214,29 +237,7 @@ if(substr_count($subject,$separant_value)==5){
 }
 
 
-function mapping_department($department){
 
-    date_default_timezone_set("Asia/Bangkok");
-    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-    mysqli_query($con, "SET NAMES 'utf8' ");
-    $sql = "SELECT `number`, name from dept_subdept_number_mapping";
-    $result =  mysqli_query($con, $sql);
-    while($row = mysqli_fetch_array($result)) {
-        if(strpos(strtolower($department), $row["number"]) !== false){
-            $dept_name =  $row["name"];
-            break;
-        }
-        
-    }
-    
-    if($dept_name<>""){
-        return $dept_name;
-    }else{
-        return "OTHER";
-    }
-
-
-}
 
 function create_ticket_csg(){
     global $subject;
