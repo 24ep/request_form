@@ -71,7 +71,14 @@
                   <div class="row">
                     <div class="col-md-12">
                         <div class="form-group mx-4 m-3" style=""> <label>Role</label> <input type="text" class="form-control" placeholder="token" name="ac_line_token" id="ac_line_token"> </div>
-                        <div class="form-group mx-4 m-3"> <label>Permission</label> <input type="text" class="form-control" placeholder="Lastname" name="ac_email_update" id="ac_email_update" > </div>
+                        <div class="form-group mx-4 m-3"> <label>Permission</label> 
+                            <select class="form-select" multiple aria-label="multiple select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                    </div>
                     </div>
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
