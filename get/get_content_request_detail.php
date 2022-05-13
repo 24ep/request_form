@@ -544,7 +544,8 @@ function comment_cr_id_with_file(id) {
 
     var myIFrame = document.getElementById("comment_input_cr_ifr");
     var comment = myIFrame.contentWindow.document.body.innerHTML;
-    document.getElementById("comment_input_cr_ifr").innerHTML = '';
+    myIFrame.contentWindow.document.body.innerHTML = '';
+    
     
     // document.getElementById('comment_input_cr').value = ''; //clear value
     // var files = document.getElementById('actual-btn').files;
