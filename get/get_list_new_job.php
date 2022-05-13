@@ -49,19 +49,19 @@ if(isset($_POST["from_post"] )){
   $start_item =  ($_SESSION['pagenation'] -1 )* 30;
  if(strpos($_SESSION["page_view"],'Followup')!==false){
   if($_SESSION['user_filter']<>""){
-    $position_filter = "anj.participant like '%,".$_SESSION["user_filter"]."' or  anj.participant like '".$_SESSION["user_filter"].",%' or  anj.participant = '".$_SESSION["user_filter"]."' or  anj.participant like '%,".$_SESSION["user_filter"].",%'";
+    $position_filter = "lower(anj.participant) like lower('%,".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('".$_SESSION["user_filter"].",%') or  lower(anj.participant) = lower('".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('%,".$_SESSION["user_filter"].",%')";
    }else{
     $position_filter = "(anj.follow_up_by ='' or anj.follow_up_by is null)";
    }
  }elseif(strpos($_SESSION["page_view"],'Buyer')!==false){
   if($_SESSION['user_filter']<>""){
-    $position_filter = "anj.participant like '%,".$_SESSION["user_filter"]."' or  anj.participant like '".$_SESSION["user_filter"].",%' or  anj.participant = '".$_SESSION["user_filter"]."' or  anj.participant like '%,".$_SESSION["user_filter"].",%'";
+    $position_filter = "lower(anj.participant) like lower('%,".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('".$_SESSION["user_filter"].",%') or  lower(anj.participant) = lower('".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('%,".$_SESSION["user_filter"].",%')";
    }else{
     $position_filter ="(anj.request_username ='' or anj.request_username is null)";
    }
  }else{
   if($_SESSION['user_filter']<>""){
-    $position_filter = "anj.participant like '%,".$_SESSION["user_filter"]."' or  anj.participant like '".$_SESSION["user_filter"].",%' or  anj.participant = '".$_SESSION["user_filter"]."' or  anj.participant like '%,".$_SESSION["user_filter"].",%'";
+    $position_filter = "lower(anj.participant) like lower('%,".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('".$_SESSION["user_filter"].",%') or  lower(anj.participant) = lower('".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('%,".$_SESSION["user_filter"].",%')";
    }else{
     $position_filter ="1=1";
    }
