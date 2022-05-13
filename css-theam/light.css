@@ -278,19 +278,19 @@ ion-icon {
     border:#8f8f8f;
 }
 .npd-card-bording-priority-urgent{
-    border-left: #dc3545 solid 10px;
+    border-left: #dc3545 solid 8px;
 }
 .npd-card-bording-priority-high{
-    border-left: #f396bf solid 10px;
+    border-left: #f396bf solid 8px;
 }
 .npd-card-bording-priority-medium{
-    border-left: #f396bf solid 10px;
+    border-left: #f396bf solid 8px;
 }
 .npd-card-bording-priority-low{
-    border-left: #ccc solid 10px;
+    border-left: #ccc solid 8px;
 }
 .npd-card-bording-priority-default{
-    border-left: #ccc solid 10px;
+    border-left: #ccc solid 8px;
 }
 .ts-board-col-end{
     border-left: 1px solid #e3e2e2;
