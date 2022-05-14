@@ -296,8 +296,33 @@ ion-icon {
     border-left: 1px solid #e3e2e2;
 }
 th.sorting.sorting_asc {
-    border:0px
+    border: 0px;
+    width: 0px;
+    color: #d3a237;
+    font-family: revert;
 }
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+ .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+    background: antiquewhite;
+    border-radius: 10px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: #9d7706 !important;
+    border: 2px solid #ffa507
+}
+.dataTables_wrapper .dataTables_length select {
+    border: 0px solid #fff;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: transparent;
+    padding: 4px;
+}
+table.dataTable.no-footer {
+    border-bottom: 0px solid #111;
+}
+
+
+
 
 
 
