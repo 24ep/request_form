@@ -94,7 +94,7 @@ if($subtask<>""){
               <td scope="col" style="background: #ffffff;">'. $work_email.'</td>';
     }
 echo '<h6><strong>Contact Person</strong> | <small class="card-text">Content & Studio Team - Follow up</small></h6>
-<table class="table table-bordered">
+<table class="table table-bordered contentperson_table">
     <thead>
         <tr>
             <th scope="col">Name</th>

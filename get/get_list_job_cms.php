@@ -6,7 +6,7 @@
   $result = mysqli_query($con, $query);
   include('../function/cal_job_status.php');
     echo 
-    "<table class='table table-bordered'>
+    "<table class='table table-bordered ns_detail_jobtable'>
         <thead>
             <tr>";
     echo "<th scope='row'>job number</th>";  
