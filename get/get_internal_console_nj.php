@@ -1,13 +1,5 @@
 
-<style>
-    .action-block{
-        border-radius: 5px;
-        margin-top: 10px;
-        background: white;
-        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
-        padding: 15px;
-    }
-</style>
+
 <?php
  if($cancel_resone<>"" and $cancel_resone<>null){
     $allow_cancel = "disabled";
