@@ -338,6 +338,10 @@ table.dataTable.no-footer {
     border-right-style: double;
     height: auto;padding-top: 20px
 }
+.nsdetaillist{
+    padding: 10px;
+    background: white;
+}
 
 
 

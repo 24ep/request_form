@@ -73,12 +73,6 @@ a:hover {
     width: 100%;
 }
 
-li.list-group-item {
-    background-color: #1f1f1f !important;
-    color: white;
-    border: solid 1px #171717;
-}
-
 .alert-success {
     color: #1ac570;
     background-color: #1c3128;
@@ -181,13 +175,7 @@ a#logo_badge {
     padding: 10px 20px;
     background: #181818;
 }
-.action-block {
-    border-radius: 5px;
-    margin-top: 10px;
-    background: black;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
-    padding: 15px;
-}
+
 .officerassingbox{
     padding: 20px;
     background: Black;
@@ -209,4 +197,77 @@ a#logo_badge {
 }
 .ns_detail_jobtable{
     border: 1px solid #262626;
+}
+.nsdetaillist{
+    padding: 10px;
+    background: Black;
+}
+.alert-primary {
+    color: #0e58c6;
+    background-color: #000916;
+    border-color: #000000;
+}
+.form-select:disabled {
+    background-color: #272727;
+}
+.action-block {
+    border-radius: 5px;
+    margin-top: 10px;
+    background: #0c0c0c;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    padding: 15px;
+}
+li.list-group-item {
+    background-color: #0f0f0f !important;
+    color: white;
+    border: solid 1px #171717;
+}
+.badge {
+    display: inline-block;
+    padding: .35em .65em;
+    font-size: .75em;
+    font-weight: 700;
+    line-height: 1;
+    color: #060404;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+}
+.tox .tox-edit-area__iframe {
+    background-color: #000;
+    border: 0;
+    box-sizing: border-box;
+    flex: 1;
+    -ms-flex-preferred-size: auto;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+
+.tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child .tox-toolbar__primary, .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
+    border-top: 1px solid #000;
+}
+.tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child .tox-toolbar__primary, .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
+    border-top: 1px solid #000;
+}
+.tox .tox-toolbar, .tox .tox-toolbar__overflow, .tox .tox-toolbar__primary {
+    background-color: #000;
+    display: flex;
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    padding: 0 0;
+}
+li.row.shadow-sm.rounded.md-3.p-2.bg-white {
+    background-color: #0f0f0f !important;
+}
+.ts-board-col-left {
+    border-left: 1px solid #272727;
 }
