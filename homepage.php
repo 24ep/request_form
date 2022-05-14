@@ -145,7 +145,7 @@
            }
            ?>
 
-            <div class="<?php echo  $full_col;?> window-full overflow-auto" style="<?php echo  $sty_col;?>">
+            <div class="<?php echo  $full_col;?>  overflow-auto" style="<?php echo  $sty_col;?>">
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- style="margin-top:15px" -->
                     <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel"
