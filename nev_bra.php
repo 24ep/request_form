@@ -1,4 +1,4 @@
-<div class="col-2 list_bra window-full shadow <?php echo 'style ='.$nev_avg; ?>">
+<div class="col-2 list_bra shadow <?php echo 'style ='.$nev_avg; ?>">
                 <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a id="logo_badge" style="color:black" class="navbar-brand" href="#" style="margin: 15px;">Content
                         <span style="color: #dc3545;">Service Gate</span></a>
