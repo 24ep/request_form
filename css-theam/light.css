@@ -44,7 +44,6 @@ label {
 .list_bra .nav-pills .nav-link.active,
 .list_bra .nav-pills .show .nav-link {
     color: white;
-    /* background-color: white; */
     border-radius: unset;
     background-color: #f0f2fc87;
     font-weight: bolder;
@@ -321,6 +320,13 @@ table.dataTable.no-footer {
     border-bottom: 0px solid #111;
 }
 
+.list_bra {
+    width: fit-content;padding: 10px;
+    padding-top: 30px;
+    position: absolute;
+    z-index:1,    position: fixed;
+    height: -webkit-fill-available;
+}
 
 
 

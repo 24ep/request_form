@@ -1,5 +1,4 @@
-<div class="list_bra window-full shadow"
-    style="width: fit-content;padding: 10px;padding-top: 30px;position: absolute;z-index:1">
+<div class="list_bra shadow">
     <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <h5 style="text-align-last: center;font-weight: bolder;font-family: 'Prompt';color: #d36363;">CSG</h5>
         <a data-bs-toggle="tooltip" data-bs-placement="right" title="Home" class="nav-link active"
