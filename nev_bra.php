@@ -116,6 +116,6 @@
                     </ul>
                 </div>
                 <button type="button" class="btn btn-light"
-                    style="margin: 0px 20px 0px 20px;bottom: 30px;width: 13%;position: absolute;">
+                    style="margin: 0px 20px 0px 20px;bottom: 30px;width:fit-content;position: absolute;">
                     <?php echo $_SESSION["username"]; ?></button>
             </div>
