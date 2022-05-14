@@ -153,8 +153,8 @@
                         <div class="container overflow-auto" style="padding:20px 20px 0px 20px">
                             <?php echo $_GET["result"]; ?>
                             <div class="card-group">
-                                <div class="card text-dark bg-light mb-3"
-                                    style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 1px solid #dee2e6;">
+                                <div class="card text-dark shadow-sm bg-light mb-3"
+                                    style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
                                     <div class="card-header">Pending</div>
                                     <div class="card-body text-secondary">
                                         <div class="total_count_dashboard">
