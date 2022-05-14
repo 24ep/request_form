@@ -192,7 +192,7 @@ ion-icon{
         aria-label="Close"></button>
     <div class="row" style="height: 100%;margin-bottom: 0px;">
         <div class="col-9" style="border-right: solid 1px #f0eaea;padding-right:0px;height: 85%;">
-            <div class="modal-header">
+            <div class="modal-header nsbox_header">
                 <h5 class="modal-title" id="edit_add_new_title">
                     <?php echo "<strong><span style='color:red'>NS</span>-".$_POST["id"]."</strong> ".$brand." ".$sku." SKU ". $dp_tags . "<a style='font-size:10px;margin-left:10px' target='_Blank' href='https://content-service-gate.cdse-commercecontent.com/base/get/get_ns_log_by_id.php?id=".$_POST["id"]."&action_table=add_new_job&action_data=csg'><small><ion-icon name='time-outline'></ion-icon>Changed log</small></a>"; ?>
                 </h5>
@@ -202,7 +202,7 @@ ion-icon{
             <div class="modal-body" style="height:100%;padding-top: 0px;padding-bottom: unset;">
                 <!--"-->
                 <div class="row" style="height:100%">
-                    <div class="col-2" style="border-right: 1px #e6e6e6;border-right-style: double;height: auto;padding-top: 20px">
+                    <div class="col-2 ns_detail_manubox">
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
                             aria-orientation="vertical">
 
@@ -243,7 +243,7 @@ ion-icon{
                             <?php }?>
                         </div>
                     </div>
-                    <div class="col-10 overflow-auto" style="height: 100%;padding: 10px 20px;background: #f3f3f3;">
+                    <div class="col-10 overflow-auto ns_detail_box" >
                         <?php
             if(strpos(strtolower ($status),"waiting data",0)!== false or strpos(strtolower ($status),"wait image",0)!== false ){
                 echo '<div class="alert alert-danger" style="border-radius: 0px;"role="alert">
@@ -262,11 +262,7 @@ ion-icon{
                             <div class="tab-pane fade show active" id="v-pills-progress" role="tabpanel"
                                 aria-labelledby="v-pills-progress-tab">
                                 <div class="row">
-                                    <div class="col-sm-12 shadow" style="padding: 20px;
-    background: white;
-    margin: 10px;
-    width: auto;
-    border-radius: 10px;">
+                                    <div class="col-sm-12 shadow officerassingbox">
 
 
                                         <div id="call_subtask">

@@ -320,7 +320,24 @@ table.dataTable.no-footer {
     border-bottom: 0px solid #111;
 }
 
-
+.ns_detail_box{
+    height: 100%;
+    padding: 10px 20px;
+    background: #f3f3f3;
+}
+.officerassingbox{
+    padding: 20px;
+    background: white;
+    margin: 10px;
+    width: auto;
+    border-radius: 10px;
+}
+.ns_detail_manubox{
+    margin-top: 25px;
+    border-right: 1px white;
+    border-right-style: double;
+    height: auto;padding-top: 20px
+}
 
 
 
