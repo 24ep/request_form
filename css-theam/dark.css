@@ -168,8 +168,8 @@ button.ms-choice {
     border-right: 1px solid #2f2d2d;
 }
 
-.col-2.list_bra..shadow {
-    background-color: transparent !important;
-    padding: 30px;
-    box-shadow: none !important;
+.list_bra {
+    padding-right: 0;
+    background: #212529!important;
+    color: rgb(255, 255, 255);
 }
