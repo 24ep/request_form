@@ -295,6 +295,9 @@ ion-icon {
 .ts-board-col-left{
     border-left: 1px solid #e3e2e2;
 }
+th.sorting.sorting_asc {
+    border:0px
+}
 
 
 
