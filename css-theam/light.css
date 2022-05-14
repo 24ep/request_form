@@ -45,7 +45,7 @@ label {
 .list_bra .nav-pills .show .nav-link {
     color: white;
     border-radius: unset;
-    background-color: #f0f2fc87;
+    background-color: #ff7683!important;
     font-weight: bolder;
 }
 
