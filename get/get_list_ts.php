@@ -51,18 +51,14 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         ticket.create_date as create_date,
         ticket.status as status,
         ticket.ticket_template as ticket_template,
-        comment.ticket_type as ticket_type,
         ticket.participant as participant,
         ticket.case_officer as case_officer,
         ticket.effective_date as effective_date,
         ac.firstname as firstname,
         ac.lastname as lastname,
         ac.department as department,
-        ac.username as username,
-        sum(case when comment.ticket_type='content_request' then 1 else 0 end) as count_comment 
+        ac.username as username
         FROM all_in_one_project.content_request as ticket
-        LEFT JOIN all_in_one_project.comment as comment
-        ON ticket.id = comment.ticket_id 
         Left join all_in_one_project.account ac
         on ac.username = ticket.case_officer 
         where ".$ts_filter." 
