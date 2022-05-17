@@ -449,12 +449,13 @@
                                                     
                                                 }
                                                 ?>
-                                                <input  style="width: 60%;" type="search"
-                                                    class="form-control" onsearch="run_ts_command('task');"
+                                                <input  style="width: 60%;" type="search" 
+                                                    class="form-control" onchange="run_ts_command('task');"
                                                     id="ts_command" name="ts_command"
                                                     placeholder="fill someting .."
                                                     aria-label="Username" aria-describedby="basic-addon1"
                                                     value="<?php echo $sqb; ?>">
+                                                
                                                 <span class="input-group-text">Username</span>
                                                 <input style="width: 10%;" list="qlistoption"  type="text"
                                                     class="form-control" onchange="run_ts_command('task');"
