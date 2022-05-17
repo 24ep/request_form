@@ -76,7 +76,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                   $result_project = mysqli_query($con_project, $query_project);
                   while($row_project = mysqli_fetch_array($result_project)) {
                     $color_project = $row_project["color_project"];
-                    $project_name = $row_project["project_name"];
                   }
                 ?>
 <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
