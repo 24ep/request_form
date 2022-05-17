@@ -75,7 +75,7 @@
                                 }
                 ?>
         
-        <div class="row">
+        <div class="container-lg row" style="margin: 0px;padding: 0px;width: 100%;max-width: 100%;">
         
             <div class="col" style="background: firebrick;">
             <h6 style="margin: 50px;font-weight: 900;color: #f9fafb;">CONTENT SERVICE GATE</h6>
