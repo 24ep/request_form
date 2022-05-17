@@ -449,7 +449,7 @@
                                                     
                                                 }
                                                 ?>
-                                                <input  style="width: 60%;" type="search" 
+                                                <input  style="width: 60%;" type="text" 
                                                     class="form-control" onchange="run_ts_command('task');"
                                                     id="ts_command" name="ts_command"
                                                     placeholder="fill someting .."
