@@ -429,7 +429,7 @@
                                             <div class="input-group input-group-sm mb-3">
                                                 <span class="input-group-text" id="basic-addon1">
                                                     <ion-icon style="vertical-align: middle;" name="terminal-outline">
-                                                    </ion-icon>Search
+                                                    </ion-icon> Search
                                                 </span>
                                                 <?php 
                                                 if($_SESSION["ts_query_input"]<>""){
@@ -454,7 +454,7 @@
                                                     id="ts_command" name="ts_command"
                                                     placeholder="fill someting .."
                                                     aria-label="Username" aria-describedby="basic-addon1"
-                                                    value="<?php echo $sqb;   ?>">
+                                                    value="<?php echo $sqb; ?>">
                                                 <span class="input-group-text">Username</span>
                                                 <input style="width: 10%;" list="qlistoption"  type="text"
                                                     class="form-control" onchange="run_ts_command('task');"
@@ -804,10 +804,9 @@ function search_cr_ticket() {
 }
 
 function run_ts_command(ts_level) {
-    var ts_command_input = document.getElementById("ts_command").value;
+    var summary_filter = document.getElementById("ts_command").value;
     var ts_username = document.getElementById("ts_username").value;
     var ts_command_limit = document.getElementById("ts_command_limit").value;
-    var summary_filter = ts_command_input;
     $.post("base/get/get_list_ts.php", {
         summary_filter: summary_filter,
         ts_command_limit: ts_command_limit,
@@ -1091,15 +1090,14 @@ function doAutoRefresh() {
 function doAutoRefresh_ts_admin() {
     var url = window.location.href;
     let result = url.includes("v-pills-ts_admin");
-    var ts_command_input = document.getElementById("ts_command").value;
+    var summary_filter = document.getElementById("ts_command").value;
     var ts_username = document.getElementById("ts_username").value;
     var ts_command_limit = document.getElementById("ts_command_limit").value;
-    var summary_filter = ts_command_input;
     if (result == true) {
         var req_ts = Inint_AJAX();
         //var req_cr = Inint_AJAX();
         // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-        req_ts.open("POST", 'base/get/get_list_ts.php?summary_filter='+ts_command_input+'&ts_username='+ts_username+'&ts_command_limit='+ts_command_limit+'&' + new Date().getTime(), true);
+        req_ts.open("POST", 'base/get/get_list_ts.php?summary_filter='+summary_filter+'&ts_username='+ts_username+'&ts_command_limit='+ts_command_limit+'&' + new Date().getTime(), true);
         //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
         req_ts.onreadystatechange = function() {
             if (req_ts.readyState == 4) {
