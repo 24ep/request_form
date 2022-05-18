@@ -95,63 +95,11 @@ if(isset($_POST["from_post"] )){
  //set_query
  if(isset($_SESSION['fopenticket'])){
   $query = "SELECT * FROM add_new_job as anj where anj.id =".$_SESSION['fopenticket']."  ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error($con));
-  // $query = "SELECT 
-  // anj.id,
-  // anj.brand,
-  // anj.department,
-  // anj.sku,
-  // anj.production_type,
-  // anj.project_type,
-  // anj.business_type,
-  // anj.launch_date,
-  // anj.request_username,
-  // anj.status, 
-  // anj.online_channel,
-  // anj.bu,
-  // anj.request_important,
-  // anj.tags,
-  // anj.participant,
-  // anj.config_type,
-  // anj.parent,
-  // anj.sub_department, 
-  // anj.trigger_status, 
-  // jc.job_number,
-  // jc.job_status_filter,
-  // jc.approved_editing_status 
-  // FROM all_in_one_project.add_new_job as anj
-  // left join u749625779_cdscontent.job_cms as jc 
-  // on anj.id = jc.csg_request_new_id  where anj.id =".$_SESSION['fopenticket']."  ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error($con));
   unset($_SESSION['fopenticket']);
  }else{
   $query = "SELECT * FROM add_new_job as anj where ((".$status_filter.") and (".$brand_filter.")
          and (".$position_filter.")) and anj.parent is null ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error($con));
-  // $query = "SELECT 
-  // anj.id,
-  // anj.brand,
-  // anj.department,
-  // anj.sku,
-  // anj.production_type,
-  // anj.project_type,
-  // anj.business_type,
-  // anj.launch_date,
-  // anj.request_username,
-  // anj.status, 
-  // anj.online_channel,
-  // anj.bu,
-  // anj.request_important,
-  // anj.tags,
-  // anj.participant,
-  // anj.config_type,
-  // anj.parent,
-  // anj.sub_department, 
-  // anj.trigger_status, 
-  // jc.job_number,
-  // jc.job_status_filter,
-  // jc.approved_editing_status 
-  // FROM all_in_one_project.add_new_job as anj
-  // left join u749625779_cdscontent.job_cms as jc 
-  // on anj.id = jc.csg_request_new_id  where ((".$status_filter.") and (".$brand_filter.")
-  //        and (".$position_filter.")) and anj.parent is null ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error($con));
+
  }
   date_default_timezone_set("Asia/Bangkok");
   mysqli_query($con, "SET NAMES 'utf8' ");
@@ -168,7 +116,6 @@ if(isset($_POST["from_post"] )){
       $status =badge_status($row['status']);
     }
     
-    // $status = badge_status($row['status']);
     //important badge
     if($row['request_important']=="Urgent"){
       $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row['request_important'].'</span>';
@@ -206,10 +153,7 @@ if(isset($_POST["from_post"] )){
     }
   
 
-    // // -2 already image
-    // $priority_badge = "";
-
-
+    //  -2 already image
     //config_type
     if($row["config_type"]=="parent"){
       //set style
@@ -218,7 +162,12 @@ if(isset($_POST["from_post"] )){
       $query_sum="SELECT sum(sku) as total from add_new_job where parent = ".$row["id"];
       $result_sum = mysqli_query($con, $query_sum);
       $data_sum=mysqli_fetch_assoc($result_sum);
-      $subtask_sum = $row["sku"]." S(".$data_sum['total'].")";
+      if($row["sku"]<>$data_sum['total']){
+        $badge_alert_sku = "<ion-icon name='alert-circle-outline' style='color:red'></ion-icon>";
+      }else{
+        $badge_alert_sku = "";
+      }
+      $subtask_sum = $row["sku"]." S(".$data_sum['total'].") ".$badge_alert_sku ;
     }else{
       $tr_class = "class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'";
       $task_status = $status ;

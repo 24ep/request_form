@@ -119,6 +119,18 @@ $count_conversion_id = count_conversion_id($conversation_id);
         //insert to new ticket
     }
 }
+function mapping_datapump_store($store_value){
+    date_default_timezone_set("Asia/Bangkok");
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","u749625779_cdscontent") or die("Error: " . mysqli_error($con));
+    mysqli_query($con, "SET NAMES 'utf8' ");
+    $sql = "SELECT store_label,system_label from u749625779_cdscontent.datapump_store_mapping";
+    $result =  mysqli_query($con, $sql);
+    while($row = mysqli_fetch_array($result)) {
+        $store_value = str_replace($row["store_label"],$row["system_label"],$store_value,);
+    }
+    $store_value = str_replace(",",", ",$store_value);
+    return $store_value;
+}
 function mapping_department($department){
 
     date_default_timezone_set("Asia/Bangkok");
@@ -186,7 +198,7 @@ if(substr_count($subject,$separant_value)==5){
     $attributes = array(
         "department"=>mapping_department($attributes_form_email[0]),
         "sub_department"=>mapping_department($attributes_form_email[1]),
-        "brand"=>$attributes_form_email[2],
+        "brand"=>str_replace("brand","",trim($attributes_form_email[2]," ")),
         "total_sku"=>preg_replace('/[A-Z,a-z," "]+/','',$attributes_form_email[3]),
         "offline_runing_number"=>$attributes_form_email[4],
         "username"=>$username,
@@ -199,7 +211,7 @@ if(substr_count($subject,$separant_value)==5){
         "link_info"=>$link_info,
         "launch_date"=>$launch_date,
         "production_type"=>$production_type,
-        "store_stock"=>$store_stock,
+        "store_stock"=>mapping_datapump_store($store_stock),
         "contact_vender"=>$contact_vender,
         "bu"=>$bu,
         "tags"=>"Auto_email_created",
@@ -215,7 +227,7 @@ if(substr_count($subject,$separant_value)==5){
     $attributes = array(
         "department"=>mapping_department($attributes_form_email[0]),
         "sub_department"=>"unknow",
-        "brand"=>$attributes_form_email[1],
+        "brand"=>str_replace("brand","",trim($attributes_form_email[1]," ")),
         "total_sku"=>preg_replace('/[A-Z,a-z," "]+/','',$attributes_form_email[2]),
         "offline_runing_number"=>$attributes_form_email[3],
         "username"=>$username,
@@ -228,7 +240,7 @@ if(substr_count($subject,$separant_value)==5){
         "link_info"=>$link_info,
         "launch_date"=>$launch_date,
         "production_type"=>$production_type,
-        "store_stock"=>$store_stock,
+        "store_stock"=>mapping_datapump_store($store_stock),
         "contact_vender"=>$contact_vender,
         "bu"=>$bu,
         "tags"=>"Auto_email_created",
