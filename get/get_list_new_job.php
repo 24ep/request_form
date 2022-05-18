@@ -163,7 +163,7 @@ if(isset($_POST["from_post"] )){
       $result_sum = mysqli_query($con, $query_sum);
       $data_sum=mysqli_fetch_assoc($result_sum);
       if($row["sku"]<>$data_sum['total']){
-        $badge_alert_sku = "<ion-icon name='alert-circle-outline' style='color:red!important' data-bs-toggle='tooltip' title='จำนวน SKU ของ ticket แม่ไม่ตรงกับผลรวมของ SKU ใน ticket ลูกทั้งหมด' ></ion-icon>";
+        $badge_alert_sku = "<ion-icon name='alert-circle-outline' style='color:red!important' data-bs-toggle='tooltip' data-bs-placement='top' title='จำนวน SKU ของ ticket แม่ไม่ตรงกับลูก' ></ion-icon>";
       }else{
         $badge_alert_sku = "";
       }
