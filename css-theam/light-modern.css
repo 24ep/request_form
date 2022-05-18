@@ -84,4 +84,5 @@ button.btn.btn-toggle.align-items-center.rounded {
     z-index:1; 
     position: fixed;
     height: -webkit-fill-available;
+    background-image: url('https://content-service-gate.cdse-commercecontent.com//base/image/11.jpg');
 }
