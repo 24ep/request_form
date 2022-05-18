@@ -353,41 +353,41 @@ table.dataTable.no-footer {
 /* tooltip */
 
 .tooltip-main {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    font-weight: 700;
-    background: #f3f3f3;
-    border: 1px solid #737373;
-    color: #737373;
-    margin: 4px 121px 0 5px;
-    float: right;
+    width: 15px!important;
+    height: 15px!important;
+    border-radius: 50%!important;
+    font-weight: 700!important;
+    background: #f3f3f3!important;
+    border: 1px solid #737373!important;
+    color: #737373!important;
+    margin: 4px 121px 0 5px!important;
+    float: right!important;
     text-align: left !important;
   }
   
   .tooltip-qm {
-    float: left;
-    margin: -2px 0px 3px 4px;
-    font-size: 12px;
+    float: left!important;
+    margin: -2px 0px 3px 4px!important;
+    font-size: 12px!important;
   }
   
   .tooltip-inner {
     max-width: auto!important;
-    min-width:150px;
-    height: fit-content;
-    font-size: 12px;
-    padding: 10px 20px 10px 20px;
-    background: #212529;
-    color: #f8f9fa;
-    border: 1px solid #212529;
-    text-align: left;
+    min-width:150px!important;
+    height: fit-content!important;
+    font-size: 12px!important;
+    padding: 10px 20px 10px 20px!important;
+    background: #000000!important;
+    color: #f8f9fa!important;
+    border: 1px solid #000000!important;
+    text-align: left!important;
     position:absolute !important;
-    margin-left:40px;
-      margin-top:5px;
+    margin-left:40px!important;
+      margin-top:5px!important;
   }
   
   .tooltip.show {
-    opacity: 1;
+    opacity: 1!important;
   }
   
   
