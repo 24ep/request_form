@@ -439,6 +439,9 @@ table.dataTable.no-footer {
   li.option_dd >img {
     margin-right: 1em;
   } */
+  .icon-mg{
+      margin-left:5px;
+  }
 
 
 
