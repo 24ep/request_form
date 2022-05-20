@@ -119,7 +119,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         //----------------- new
         echo '<div >
         <div class="row">';
-        date_default_timezone_set("Asia/Bangkok");
         $con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query_status = "SELECT * FROM content_service_gate.attribute_option 
