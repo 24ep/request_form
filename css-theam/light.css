@@ -390,7 +390,7 @@ table.dataTable.no-footer {
     opacity: 1!important;
   }
   
-/* downdown account select */
+/* downdown account select
   .container_dd {
     display: flex;
     flex-wrap: wrap;
@@ -438,7 +438,7 @@ table.dataTable.no-footer {
   
   li.option_dd >img {
     margin-right: 1em;
-  }
+  } */
 
 
 

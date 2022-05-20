@@ -324,17 +324,17 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             '.$cr_op.'
             </select>';
             
-            echo '<input type="hidden" id="sel">
-            <div class="containe_dd">
-              <div class="selected_dd">Select an option</div>
-              <ul class="options_dd">
-                <li class="option_dd"><img src="http://placehold.it/50/00ff00"><span>Option 1</span></li>
-                <li class="option_dd"><img src="http://placehold.it/50/ff0000"><span>Option 2</span></li>
-                <li class="option_dd"><img src="http://placehold.it/50/0000ff"><span>Option 3</span></li>
-              </ul>
-            </div>';
+            // echo '<input type="hidden" id="sel">
+            // <div class="containe_dd">
+            //   <div class="selected_dd">Select an option</div>
+            //   <ul class="options_dd">
+            //     <li class="option_dd"><img src="http://placehold.it/50/00ff00"><span>Option 1</span></li>
+            //     <li class="option_dd"><img src="http://placehold.it/50/ff0000"><span>Option 2</span></li>
+            //     <li class="option_dd"><img src="http://placehold.it/50/0000ff"><span>Option 3</span></li>
+            //   </ul>
+            // </div>';
             ?>
-<script>
+<!-- <script>
 $("body").on("click", ".selected_dd", function() {
   $(this).next(".options_dd").toggleClass("open_dd");
 });
@@ -345,7 +345,7 @@ $("body").on("click", ".option_dd", function() {
   $("#sel").val(value);
   $(".options_dd").toggleClass("open_dd");
 });
-</script>
+</script> -->
 
 <?php
             echo '
