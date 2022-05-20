@@ -71,7 +71,7 @@
                   <p>Some quick example text to build on the card title .</p>
                   <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group mx-4 m-3" style=""> <label>Role</label> <input disabled type="text" class="form-control" placeholder="token" name="ac_role" id="ac_role"> </div>
+                        <div class="form-group mx-4 m-3" style=""> <label>Role</label> <input disabled type="text" class="form-control" placeholder="token" name="ac_role" id="ac_role" value="disabled"> </div>
                         <!-- <div class="form-group mx-4 m-3"> <label>Permission</label> 
                             <select class="form-select" multiple aria-label="multiple select example">
                                 <option selected>Open this select menu</option>

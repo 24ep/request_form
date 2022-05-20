@@ -19,7 +19,7 @@ function get_page_account(){
  
  while($row_account = mysqli_fetch_array($result_account)) {
   unset($image_profile);
-  $image_profile = profile_image($row_account['firstname'],$row_account['department'],25,$row_account['case_officer'],1);
+  $image_profile = profile_image($row_account['firstname'],$row_account['department'],32,$row_account['case_officer'],1);
    if($row_account["status"]=="Enabled"){
     $status ='<span class="badge rounded-pill bg-success">Enabled</span>';
 
@@ -28,8 +28,8 @@ function get_page_account(){
    }
     $value_account .='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
     $value_account .= '<td>'.$row_account["id"].'</td>';
-    $value_account .= '<td style="text-align-last: left;"><div class="row"><div class="col-1">
-    '.$image_profile.'</div><div class="col-11">
+    $value_account .= '<td ><div class="row"><div class="col-2">
+    '.$image_profile.'</div><div style="text-align-last: left;" class="col-10">
     <strong>'.$row_account["firstname"]." ".$row_account["lastname"].' ('.$row_account["nickname"].')</strong>
     <br>
     <small>Username : '.$row_account["username"].'</small></div></div></td>';
