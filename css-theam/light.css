@@ -294,10 +294,10 @@ ion-icon {
 .ts-board-col-left{
     border-left: 1px solid #e3e2e2;
 }
-th.sorting.sorting_asc {
+th.sorting {
     border: 0px;
     width: 0px;
-    color: #d3a237;
+    color: #494848;
     font-family: revert;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
