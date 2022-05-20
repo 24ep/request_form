@@ -25,8 +25,8 @@
       <div class="row">
         <div class="col-md-2"> <?php echo $image_profile; ?></div>
         <div class="col-md-6">
-          <h2 class="display-2"><?php echo ucwords($firstname)." ".ucwords($lastname);?></h2>
-          <h2 class=""><?php echo ucwords($department);?></h2>
+          <h3 class="display-3"><?php echo ucwords($firstname)." ".ucwords($lastname);?></h3>
+          <h3 class=""><?php echo ucwords($department);?></h3>
         </div>
       </div>
       <div class="row">

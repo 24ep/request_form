@@ -27,7 +27,7 @@ function get_page_account(){
     $status ='<span class="badge rounded-pill bg-secondary">Disabled</span>';
    }
     $value_account .='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
-    $value_account .= '<td>'.$row_account["id"].'</td>';
+    $value_account .= '<td scope="col">'.$row_account["id"].'</td>';
     $value_account .= '<td ><div class="row"><div class="col-2">
     '.$image_profile.'</div><div style="text-align-last: left;" class="col-10">
     <strong>'.$row_account["firstname"]." ".$row_account["lastname"].' ('.$row_account["nickname"].')</strong>
@@ -46,8 +46,8 @@ function get_page_account(){
  $table =  '<table class="table" id="st_account_tb"  name="st_account_tb" >
 <thead>
     <tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
-      <th style="text-align-last: left;" scope="col">ID</th>
-      <th scope="col">Name</th>
+      <th style="text-align-last: center;" scope="col">ID</th>
+      <th scope="col" style="width: 30%;text-align-last: left;">Name</th>
       <th scope="col">Contact</th>
       <th scope="col">Status</th>
       <th scope="col">Department</th>
