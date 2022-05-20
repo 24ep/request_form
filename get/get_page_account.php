@@ -67,8 +67,8 @@ return $table;
   $(document).ready( function () {
   $('#st_account_tb').DataTable({
         lengthMenu: [
-            [25, 50, 100, -1],
-            [25, 50, 100, 'All'],
+            [20, 50, 100, -1],
+            [20, 50, 100, 'All'],
         ],
     });
 
