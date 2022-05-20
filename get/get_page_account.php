@@ -27,7 +27,6 @@ function get_page_account(){
     $value_account .='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
     $value_account .= '<td>'.$row_account["id"].'</td>';
     $value_account .= '<td style="text-align-last: left;"><strong>'.$row_account["firstname"]." ".$row_account["lastname"].'('.$row_account["nickname"].')</strong><br><small>Username : '.$row_account["username"].'</small></td>';
-    $value_account .= '<td></td>';
     $value_account .= '<td>'.$status.'</td>';
     $value_account .= '<td>'.$row_account["department"].'</td>';
     $value_account .= '<td>'.$row_account["register_type"].'</td>';
@@ -42,8 +41,7 @@ function get_page_account(){
 <thead>
     <tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
       <th style="text-align-last: left;" scope="col">Account ID</th>
-      <th scope="col">Firstname - Lastname</th>
-      <th scope="col">Nickname</th>
+      <th scope="col">Name</th>
       <th scope="col">status</th>
       <th scope="col">Department</th>
       <th scope="col">Register type</th>
