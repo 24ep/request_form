@@ -41,7 +41,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         $i=1;
         //--
         $ts_filter = $filter;
-        date_default_timezone_set("Asia/Bangkok");
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT ticket.id as id,
@@ -67,7 +66,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         $result = mysqli_query($con, $query);
         echo "<ul style='padding:15px'>";
           while( $row = mysqli_fetch_array($result)) {
-                  date_default_timezone_set("Asia/Bangkok");
                   $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
                   mysqli_query($con_project, "SET NAMES 'utf8' ");
                   $query_project = "SELECT *
@@ -134,7 +132,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
           $ts_board_col_left = "ts-board-col-left";
         }
 
-        echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'" ondrop="drop_card_cr(event,'.$row_status["attribute_option"].')" ondragover="allowDrop(event)" >
+        echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'"  >
         <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
         list_ts_non_status("(".$filter.") and ( lower(ticket.participant) like  lower('%".$_SESSION["ts_username"]."%') or  lower(ticket.case_officer) like lower('%".$_SESSION["ts_username"]."%') )  and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$ts_command_limit  ,'ticket');
         echo '</div>';
