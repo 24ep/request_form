@@ -30,7 +30,6 @@ function get_page_account(){
     $value_account .= '<td style="text-align-last: left;"><ion-icon class="icon-mg" name="mail-outline"></ion-icon>'.$row_account["work_email"].'<br><ion-icon class="icon-mg" name="call-outline"></ion-icon>'.$row_account["office_tell"].'</td>';
     $value_account .= '<td>'.$status.'</td>';
     $value_account .= '<td>'.$row_account["department"].'</td>';
-    $value_account .= '<td>'.$row_account["register_type"].'</td>';
     $value_account .= '<td><button type="button" class="btn btn-outline-dark btn-sm"><ion-icon name="pencil-outline"></ion-icon></button></td>';
     $value_account .= '</tr>';
 }
@@ -46,7 +45,6 @@ function get_page_account(){
       <th scope="col">Contact</th>
       <th scope="col">Status</th>
       <th scope="col">Department</th>
-      <th scope="col">Register type</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
