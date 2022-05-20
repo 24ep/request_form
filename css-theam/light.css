@@ -394,6 +394,20 @@ table.dataTable.no-footer {
     margin-right: 10px!important;
     margin-bottom: 5px!important;
   }
-
+.card-unassin-bt{
+    padding-top:3px;padding-right: 0px;padding-left: 10px;
+}
+.card-unassin-eft{
+    padding-top:3px;text-align: right;padding-right: 0px;
+}
+.card-col-image-profile{
+    max-width: fit-content;padding-top:3px;padding-right: 15px;
+}
+.card-assign-name{
+    padding-left: 5px;padding-top: 5px;
+}
+.card-assigned-eft{
+    max-width: fit-content;padding-top:3px;
+}
 
 
