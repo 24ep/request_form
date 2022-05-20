@@ -1,6 +1,7 @@
 <?php
     session_start();
-    
+    include_once("get_default_profile_image.php");
+
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
@@ -16,12 +17,13 @@
         $department = $row["department"];
         $username = $row["username"];
         $token_line = $row["token_line"];
+        $image_profile = profile_image($row['firstname'],$row['department'],250,$row['case_officer'],1);
     }
 ?>
   <div class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-2"><img class="img-fluid d-block rounded-circle" src="https://static.pingendo.com/img-placeholder-3.svg" width="300" height="300"></div>
+        <div class="col-md-2"> <?php echo $image_profile; ?></div>
         <div class="col-md-6">
           <h2 class="display-2"><?php echo ucwords($firstname)." ".ucwords($lastname);?></h2>
           <h2 class=""><?php echo ucwords($department);?></h2>
