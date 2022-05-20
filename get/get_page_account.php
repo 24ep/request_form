@@ -32,7 +32,7 @@ function get_page_account(){
     $value_account .= '<td>'.$status.'</td>';
     $value_account .= '<td>'.$row_account["department"].'</td>';
     $value_account .= '<td>'.$row_account["register_type"].'</td>';
-    $value_account .= '<td><button type="button" class="btn btn-outline-dark btn-sm">More detail</button></td>';
+    $value_account .= '<td><button type="button" class="btn btn-outline-dark btn-sm"><ion-icon name="pencil-outline"></ion-icon></button></td>';
     $value_account .= '</tr>';
 }
 
