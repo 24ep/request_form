@@ -4,6 +4,7 @@
  $query = "SELECT * FROM content_service_gate.setting_menu" or die("Error:" . mysqli_error($con));
  $result = mysqli_query($con, $query);
  include("get/get_page_account.php");
+ include("get/get_page_data_script.php");
  while($row = mysqli_fetch_array($result)) {
 
     $value.= '<button style="text-align: left;font-weight: 600;" class="nav-link" id="v-pills-setting_'.$row["code"].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-setting_'.$row["code"].'" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><ion-icon style="margin-right: 8px" name="'.$row["icon"].'"></ion-icon>'.$row["value"].'</button>';
@@ -14,6 +15,9 @@
          if($row["code"]=="account"){
             $detail .= get_page_account();
          }
+         if($row["code"]=="data_script"){
+          $detail .= get_page_data_script();
+       }
     $detail.='</div>';
 }
 
