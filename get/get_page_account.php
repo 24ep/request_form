@@ -11,13 +11,15 @@
 }
 </style>
 <?php
-
+include_once("get_default_profile_image.php");
 function get_page_account(){
  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
  $query_account = "SELECT * FROM all_in_one_project.account" or die("Error:" . mysqli_error($con));
  $result_account = mysqli_query($con, $query_account);
  
  while($row_account = mysqli_fetch_array($result_account)) {
+  unset($image_profile);
+  $image_profile = profile_image($row_account['firstname'],$row_account['department'],25,$row_account['case_officer'],1);
    if($row_account["status"]=="Enabled"){
     $status ='<span class="badge rounded-pill bg-success">Enabled</span>';
 
@@ -26,7 +28,11 @@ function get_page_account(){
    }
     $value_account .='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
     $value_account .= '<td>'.$row_account["id"].'</td>';
-    $value_account .= '<td style="text-align-last: left;"><strong>'.$row_account["firstname"]." ".$row_account["lastname"].' ('.$row_account["nickname"].')</strong><br><small>Username : '.$row_account["username"].'</small></td>';
+    $value_account .= '<td style="text-align-last: left;">
+    '.$image_profile.'
+    <strong>'.$row_account["firstname"]." ".$row_account["lastname"].' ('.$row_account["nickname"].')</strong>
+    <br>
+    <small>Username : '.$row_account["username"].'</small></td>';
     $value_account .= '<td style="text-align-last: left;"><ion-icon class="icon-mg" name="mail-outline"></ion-icon>'.$row_account["work_email"].'<br><ion-icon class="icon-mg" name="call-outline"></ion-icon>'.$row_account["office_tell"].'</td>';
     $value_account .= '<td>'.$status.'</td>';
     $value_account .= '<td>'.$row_account["department"].'</td>';
