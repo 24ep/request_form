@@ -390,8 +390,55 @@ table.dataTable.no-footer {
     opacity: 1!important;
   }
   
+/* downdown account select */
+  .container_dd {
+    display: flex;
+    flex-wrap: wrap;
+    width: 25%;
+  }
   
-
+  .selected_dd {
+    border: thin solid darkgray;
+    border-radius: 5px;
+    background: lightgray;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 1.5em;
+    margin-bottom: .2em;
+    padding-left: .5em;
+    min-width: 150px;
+    position: relative;
+  }
+  
+  .selected_dd:after {
+    font-family: FontAwesome;
+    content: "\f0d7";
+    margin-left: 1em;
+    position: absolute;
+    right: .5em;
+  }
+  
+  .options_dd {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .options_dd.open_dd {
+    display: inline-block;
+  }
+  
+  li.option_dd {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  li.option_dd >img {
+    margin-right: 1em;
+  }
 
 
 
