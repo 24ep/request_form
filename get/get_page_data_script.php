@@ -30,7 +30,7 @@ function get_page_data_script(){
 // }
 
 $value_account ='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
-$value_account .= '<td scope="col">SKU on web status checking</td>';
+$value_account .= '<td style="width:30%" scope="col"><strong>SKU on web status checking</strong></td>';
 $value_account .= '<td>db_mdc-monitor_list.py</td>';
 $value_account .= '<td><a href="https://docs.google.com/spreadsheets/d/1JUGTB55LmrI5tcJjpt6HVtf1fC8Ak3h3ofSoUuZ_6ds/edit#gid=893993526" target="_blank"><ion-icon class="icon-mg" name="analytics-outline"></ion-icon>Input sku here</a></td>';
 $value_account .= '<td><a href="https://datastudio.google.com/u/0/reporting/b90ee0e2-066f-4a82-a210-6ce8c514947d/page/p_tm56um2itc" target="_blank"></ion-icon>Dashboard</a></td>';
@@ -39,7 +39,7 @@ $value_account .= '<td><a href="https://cdse-commercecontent.com/atena-query/run
 $value_account .= '</tr>';
 
 $value_account .='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
-$value_account .= '<td scope="col">Brand day checking</td>';
+$value_account .= '<td style="width:30%" scope="col"><strong>Brand day checking</strong></td>';
 $value_account .= '<td>db_mdc-brand_day.py</td>';
 $value_account .= '<td><a href="https://docs.google.com/spreadsheets/d/1JUGTB55LmrI5tcJjpt6HVtf1fC8Ak3h3ofSoUuZ_6ds/edit#gid=1693215773" target="_blank"><ion-icon class="icon-mg" name="analytics-outline"></ion-icon>Input sku here</a></td>';
 $value_account .= '<td><a href="https://datastudio.google.com/reporting/b90ee0e2-066f-4a82-a210-6ce8c514947d/page/p_m13q7ei0qc" target="_blank"><ion-icon class="icon-mg" name="reader-outline"></ion-icon>Dashboard</a></td>';
