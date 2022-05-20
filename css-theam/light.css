@@ -391,8 +391,8 @@ table.dataTable.no-footer {
   }
   
   .icon-mg{
-    margin-right: 10px;
-    margin-bottom: 5px;
+    margin-right: 10px!important;
+    margin-bottom: 5px!important;
   }
 
 
