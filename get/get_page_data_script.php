@@ -19,7 +19,7 @@ $conn_id = ftp_connect("156.67.217.3") or die("Cannot connect");
 ftp_login($conn_id, "admin_convert_module", "a417528639") or die("Cannot login");
 ftp_pasv($conn_id, true) or die("Cannot change to passive mode");
 
-$files = ftp_nlist($conn_id, "/path/*.txt");
+$files = ftp_nlist($conn_id, "/atena-query/*.py");
 
 foreach ($files as $file)
 {
