@@ -34,7 +34,7 @@ $value_account .= '<td>SKU on web status checking</td>';
 $value_account .= '<td>db_mdc-monitor_list.py</td>';
 $value_account .= '<td><a href="https://docs.google.com/spreadsheets/d/1JUGTB55LmrI5tcJjpt6HVtf1fC8Ak3h3ofSoUuZ_6ds/edit#gid=893993526" target="_blank">Input sku here</a></td>';
 $value_account .= '<td><a href="https://datastudio.google.com/u/0/reporting/b90ee0e2-066f-4a82-a210-6ce8c514947d/page/p_tm56um2itc" target="_blank">Input sku here</a></td>';
-$value_account .= '<td><a href="https://cdse-commercecontent.com/atena-query/running.php?file=db_mdc-monitor_list.py<" target="_blank"class="btn btn-danger btn-sm">Run Script</a></td>';
+$value_account .= '<td><a href="https://cdse-commercecontent.com/atena-query/running.php?file=db_mdc-monitor_list.py" target="_blank"class="btn btn-danger btn-sm">Run Script</a></td>';
 $value_account .= '</tr>';
 
 ?>
