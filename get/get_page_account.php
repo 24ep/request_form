@@ -1,15 +1,6 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
-<style>
-.dataTables_wrapper {
-    position: relative;
-    clear: both;
-    background: white;
-    padding: 50px;
-    border-radius: 30px;
-    box-shadow: 0 .3rem 1rem rgba(0,0,0,.15)!important;
-}
-</style>
+
 <?php
 
 function get_page_account(){

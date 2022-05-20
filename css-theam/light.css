@@ -319,7 +319,14 @@ th.sorting.sorting_asc {
 table.dataTable.no-footer {
     border-bottom: 0px solid #111;
 }
-
+.dataTables_wrapper {
+    position: relative;
+    clear: both;
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 .3rem 1rem rgba(0,0,0,.15)!important;
+}
 .ns_detail_box{
     height: 100%;
     padding: 10px 20px;
