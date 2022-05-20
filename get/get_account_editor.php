@@ -17,7 +17,7 @@
         $department = $row["department"];
         $username = $row["username"];
         $token_line = $row["token_line"];
-        $image_profile = profile_image($row['firstname'],$row['department'],250,$row['case_officer'],1);
+        $image_profile = profile_image($row['firstname'],$row['department'],150,$row['case_officer'],1);
     }
 ?>
   <div class="py-5">
