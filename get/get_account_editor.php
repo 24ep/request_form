@@ -1,5 +1,6 @@
 <?php
     session_start();
+    
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
@@ -35,15 +36,15 @@
                   <p>Some quick example text to build on the card title .</p>
                   <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group mx-4 m-3" style=""> <label>Firstname</label> <input type="text" class="form-control" placeholder="First name" name="ac_firstname" id="ac_firstname" value="<?php echo $firstname;?>"> </div>
-                        <div class="form-group mx-4 m-3"> <label>Lastname</label> <input type="text" class="form-control" placeholder="Lastname" name="ac_lastname" id="ac_lastname" value="<?php echo $lastname;?>"> </div>
-                        <div class="form-group mx-4 m-3"> <label>Nickname</label> <input type="text" class="form-control" placeholder="Nickname" name="ac_nickname" id="ac_nickname" value="<?php echo $nickname;?>">  </div>
-                        <div class="form-group mx-4 m-3"> <label>Username</label> <input type="text" disabled class="form-control" placeholder="Username" name="ac_username" id="ac_username" value="<?php echo $username;?>"> </div> 
+                        <div class="form-group mx-4 m-3" style=""> <label>Firstname</label> <input disabled type="text" class="form-control" placeholder="First name" name="ac_firstname" id="ac_firstname" value="<?php echo $firstname;?>"> </div>
+                        <div class="form-group mx-4 m-3"> <label>Lastname</label> <input disabled type="text" class="form-control" placeholder="Lastname" name="ac_lastname" id="ac_lastname" value="<?php echo $lastname;?>"> </div>
+                        <div class="form-group mx-4 m-3"> <label>Nickname</label> <input disabled type="text" class="form-control" placeholder="Nickname" name="ac_nickname" id="ac_nickname" value="<?php echo $nickname;?>">  </div>
+                        <div class="form-group mx-4 m-3"> <label>Username</label> <input disabled type="text" disabled class="form-control" placeholder="Username" name="ac_username" id="ac_username" value="<?php echo $username;?>"> </div> 
                     </div>
                     <div class="col-md-6">
-                      <div class="form-group mx-4 m-3"> <label>Department</label> <input type="text" class="form-control" placeholder="Department" name="ac_department" value="<?php echo $department;?>" id="ac_department">  </div>
-                      <div class="form-group mx-4 m-3"> <label>Work email</label> <input type="email" class="form-control" placeholder="yourusername@central.co.th" value="<?php echo $work_email;?>" name="ac_work_email" id="ac_work_email"> </div>
-                      <div class="form-group mx-4 m-3"> <label>Tell</label> <input type="text" class="form-control" placeholder="Tell" name="ac_tell" id="ac_tell" value="<?php echo $office_tell;?>"> </div>
+                      <div class="form-group mx-4 m-3"> <label>Department</label> <input disabled type="text" class="form-control" placeholder="Department" name="ac_department" value="<?php echo $department;?>" id="ac_department">  </div>
+                      <div class="form-group mx-4 m-3"> <label>Work email</label> <input disabled type="email" class="form-control" placeholder="yourusername@central.co.th" value="<?php echo $work_email;?>" name="ac_work_email" id="ac_work_email"> </div>
+                      <div class="form-group mx-4 m-3"> <label>Tell</label> <input type="text" disabled class="form-control" placeholder="Tell" name="ac_tell" id="ac_tell" value="<?php echo $office_tell;?>"> </div>
                     </div>
                   </div>
                 </div>
@@ -60,8 +61,9 @@
                   <p>Some quick example text to build on the card title .</p>
                   <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group mx-4 m-3" style=""> <label>Line Notify Token</label> <input type="text" class="form-control" placeholder="token" name="ac_line_token" id="ac_line_token"> </div>
-                        <div class="form-group mx-4 m-3"> <label>Email</label> <input type="text" class="form-control" placeholder="Lastname" name="ac_email_update" id="ac_email_update" > </div>
+                        <div class="form-group mx-4 m-3" style=""> <label>Line Notify Token</label> <input type="text" disabled class="form-control" placeholder="token" name="ac_line_token" id="ac_line_token" value="<?php echo $token_line;?>"> </div>
+                        <div class="form-group mx-4 m-3"> <label>Email</label> <input type="text" class="form-control" disabled placeholder="Lastname" name="ac_email_update" id="ac_email_update" value="disabled"> </div>
+                        <div class="form-group mx-4 m-3"> <label>Microsoft team</label> <input type="text" class="form-control" disabled placeholder="Lastname" name="ac_email_update" id="ac_email_update" value="disabled"> </div>
                     </div>
                   </div>
                   <hr>
@@ -69,15 +71,15 @@
                   <p>Some quick example text to build on the card title .</p>
                   <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group mx-4 m-3" style=""> <label>Role</label> <input type="text" class="form-control" placeholder="token" name="ac_role" id="ac_role"> </div>
-                        <div class="form-group mx-4 m-3"> <label>Permission</label> 
+                        <div class="form-group mx-4 m-3" style=""> <label>Role</label> <input disabled type="text" class="form-control" placeholder="token" name="ac_role" id="ac_role"> </div>
+                        <!-- <div class="form-group mx-4 m-3"> <label>Permission</label> 
                             <select class="form-select" multiple aria-label="multiple select example">
                                 <option selected>Open this select menu</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                             </select>
-                    </div>
+                    </div> -->
                     </div>
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>

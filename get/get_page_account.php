@@ -28,11 +28,11 @@ function get_page_account(){
    }
     $value_account .='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
     $value_account .= '<td>'.$row_account["id"].'</td>';
-    $value_account .= '<td style="text-align-last: left;">
-    '.$image_profile.'
+    $value_account .= '<td style="text-align-last: left;"><div class="row"><div class="col-1">
+    '.$image_profile.'</div><div class="col-11">
     <strong>'.$row_account["firstname"]." ".$row_account["lastname"].' ('.$row_account["nickname"].')</strong>
     <br>
-    <small>Username : '.$row_account["username"].'</small></td>';
+    <small>Username : '.$row_account["username"].'</small></div></div></td>';
     $value_account .= '<td style="text-align-last: left;"><ion-icon class="icon-mg" name="mail-outline"></ion-icon>'.$row_account["work_email"].'<br><ion-icon class="icon-mg" name="call-outline"></ion-icon>'.$row_account["office_tell"].'</td>';
     $value_account .= '<td>'.$status.'</td>';
     $value_account .= '<td>'.$row_account["department"].'</td>';
