@@ -28,7 +28,7 @@ function get_page_account(){
    }
     $value_account .='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
     $value_account .= '<td scope="col">'.$row_account["id"].'</td>';
-    $value_account .= '<td style="width:35%"><div class="row"><div class="col-2">
+    $value_account .= '<td style="width:30%"><div class="row"><div class="col-2">
     '.$image_profile.'</div><div style="text-align-last: left;" class="col-10">
     <strong>'.$row_account["firstname"]." ".$row_account["lastname"].' ('.$row_account["nickname"].')</strong>
     <br>
