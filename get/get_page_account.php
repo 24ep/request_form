@@ -59,7 +59,12 @@ return $table;
 
 <script>
   $(document).ready( function () {
-  $('#st_account_tb').DataTable();
+  $('#st_account_tb').DataTable({
+        lengthMenu: [
+            [25, 50, 100, -1],
+            [25, 50, 100, 'All'],
+        ],
+    });
 
 } );
 
