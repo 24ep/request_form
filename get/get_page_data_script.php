@@ -60,7 +60,12 @@ return $table;
 
 <script>
   $(document).ready( function () {
-  $('#st_querry_running_tb').DataTable();
+  $('#st_querry_running_tb').DataTable({
+        lengthMenu: [
+            [25, 50, 100, -1],
+            [25, 50, 100, 'All'],
+        ],
+    });
 
 } );
 
