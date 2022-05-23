@@ -134,7 +134,7 @@ function mapping_datapump_store($store_value){
 function mapping_department($department){
 
     date_default_timezone_set("Asia/Bangkok");
-    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $sql = "SELECT `number`, name from dept_subdept_number_mapping";
     $result =  mysqli_query($con, $sql);
