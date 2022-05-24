@@ -76,8 +76,8 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
       <select
         multiple="multiple"
         class="form-select"
-        id="'.$code_element.'[]"
-        name="'.$code_element.'[]"
+        id="'.$code_element.'"
+        name="'.$code_element.'"
         style="border: 0px"
         '.$enable_edit.'
         onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"

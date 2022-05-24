@@ -126,7 +126,7 @@ function mapping_datapump_store($store_value){
     $sql = "SELECT store_label,system_label from u749625779_cdscontent.datapump_store_mapping";
     $result =  mysqli_query($con, $sql);
     while($row = mysqli_fetch_array($result)) {
-        $store_value = str_replace($row["store_label"],$row["system_label"],$store_value,);
+        $store_value = str_replace($row["store_label"],$row["system_label"],$store_value);
     }
     $store_value = str_replace(",",", ",$store_value);
     return $store_value;
