@@ -47,6 +47,15 @@ $value_account .= '<td><a href="https://github.com/DVM-CDS-CONTENT/athena-cds-pr
 $value_account .= '<td><a href="https://cdse-commercecontent.com/atena-query/running.php?file=db_mdc-brand_day.py" target="_blank"class="btn btn-danger btn-sm">Run Script</a></td>';
 $value_account .= '</tr>';
 
+$value_account .='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
+$value_account .= '<td style="width:30%" scope="col"><strong>Beauty Brand day checking</strong></td>';
+$value_account .= '<td>db_mdc-beauty_brand_day.py</td>';
+$value_account .= '<td><a href="https://docs.google.com/spreadsheets/d/1JUGTB55LmrI5tcJjpt6HVtf1fC8Ak3h3ofSoUuZ_6ds/edit#gid=94037544" target="_blank"><ion-icon class="icon-mg" name="analytics-outline"></ion-icon>Input sku here</a></td>';
+$value_account .= '<td><a href="https://datastudio.google.com/reporting/b90ee0e2-066f-4a82-a210-6ce8c514947d/page/p_m13q7ei0qc" target="_blank"><ion-icon class="icon-mg" name="reader-outline"></ion-icon>Dashboard</a></td>';
+$value_account .= '<td><a href="https://github.com/DVM-CDS-CONTENT/athena-cds-product-query/blob/main/db_mdc-beauty_brand_day.py" ><ion-icon name="logo-github"></ion-icon></a></td>';
+$value_account .= '<td><a href="https://cdse-commercecontent.com/atena-query/running.php?file=db_mdc-beauty_brand_day.py" target="_blank"class="btn btn-danger btn-sm">Run Script</a></td>';
+$value_account .= '</tr>';
+
 ?>
 <?php
  $table =  '<table class="table" id="st_querry_running_tb"  name="st_querry_running_tb" table table-bordered">
