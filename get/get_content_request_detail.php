@@ -344,7 +344,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <div id="call_ticket_comment_cr">
         '; 
         // include('get_comment_cr.php');
-        include('https://content-service-gate.cdse-commercecontent.com/base/get/get_comment_cr.php');
+        include('https://content-service-gate.cdse-commercecontent.com/base/get/get_comment_cr.php?id='.$id);
         
         echo '
         </div>
