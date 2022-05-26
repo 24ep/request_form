@@ -95,12 +95,16 @@ if($id=="" or $id == null){
   </head>
   <body onload="'.$overlay.'">
   <div id="overlay">
-  <h1 style="
-    color: white;
-    font-size: 20px;
-    text-align: -webkit-center;
-    top: 100;
-    margin: 25%;">View only, please login</h4>
+  <div style="
+  color: white;
+  font-size: 20px;
+  text-align: -webkit-center;
+  top: 100;
+  margin: 25%;">  
+  <h1>View only, please login</h1>
+    <button type="button" class="btn btn-danger">Login</button>
+    <button type="button" class="btn btn-dark">Register</button>
+  </div>
   </div>
   <script>
   function load_tiny_comment()
