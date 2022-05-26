@@ -317,7 +317,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <div class="offcanvas-body"  style="padding:0px;z-index:1"> 
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="position: fixed;right: 40px;top: 15px;" aria-label="Close"></button>
         <div class="row window-full overflow-auto" style="margin-bottom: 0px;padding-left:20px">
-        <div class="col-7" style="border-right:1px solid  #ebedef;padding: 1rem 1rem;">
+        <div class="col-7" style="border-right:1px solid  #ebedef;padding: 1rem 1rem;background: white;">
 
           <div class="text-white bg-success toast align-items-center top-5 start-50 translate-middle-x fade hide" role="alert" aria-atomic="true" data-bs-delay="2000" aria-live="assertive" id="liveToast_cr" style="position: absolute; top: 0; right: 0;margin-top:10px;margin-right:10px">
             <div class="d-flex">
