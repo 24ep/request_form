@@ -77,7 +77,7 @@ if($id=="" or $id == null){
   <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
   </head>
   <body onload="'.$overlay.'">
-  <div id="overlay">
+  <div id="overlay"></div>
   <script>
   function load_tiny_comment()
       {
@@ -750,7 +750,7 @@ load_tiny_comment();
 
 </script>
 <?php if( $direct == 'external'){
-echo ' </div>
+echo ' 
 <script>
 function on_overlay() {
   document.getElementById("overlay").style.display = "block";
