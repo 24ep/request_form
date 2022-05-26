@@ -106,6 +106,7 @@ if($id=="" or $id == null){
     <a href="https://content-service-gate.cdse-commercecontent.com/signup" target="_blank" class="btn btn-dark">Register</a>
   </div>
   </div>
+  <h4><ion-icon name="eye-outline"></ion-icon>Share view</h4>
   <script>
   function load_tiny_comment()
       {
@@ -368,7 +369,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <span>'.$create_date.'</span>      
         </div>
         <span class="badge bg-primary" style="background-color:'.$color_project.'!important;margin-bottom:15px;padding:8px 15px;">'.$project_name.'</span>
-        <a onclick="copyToClipboard(4270)"><ion-icon style="margin:10px"name="share-social-outline"></ion-icon> share</a>
+        <a onclick="copyToClipboard(4270)"><ion-icon style="margin:5px"name="share-social-outline"></ion-icon>share</a>
         <h5 style="font-weight: 800;"><strong style="color:'.$color_project.'!important;">'.$ticket_template.'-'.$id .'</strong> '.$title.'</h5>
         <form method="post">
         <div class="des_cr" id="des_cr_inline" >'.$description.'</div></form>
