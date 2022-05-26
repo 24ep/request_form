@@ -85,8 +85,9 @@ if($id=="" or $id == null){
               
               });
           }
+          load_tiny_comment();
 </script>
-load_tiny_comment();';
+';
 }
 // $func = $_POST['func'];
 function return_option_edit_cr($current_value,$attr_id){
