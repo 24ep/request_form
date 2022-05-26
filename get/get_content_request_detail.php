@@ -18,7 +18,11 @@ $id = $_POST['id'];
 if($id=="" or $id == null){
   $direct = "external";
   $id = $_GET['id'];
-  echo '  <title>Content and Studio - Content Request</title>
+  echo '  
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Content and Studio - Content Request</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -65,6 +69,8 @@ if($id=="" or $id == null){
   <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/light.css">
   <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/light-modern.css">
   <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
+  </head>
+  <body>
   <script>
   function load_tiny_comment()
       {
@@ -736,6 +742,11 @@ if(tinyMCE.get('comment_input_cr')){
 load_tiny_comment();
 
 </script>
+<?php if( $direct == 'external'){
+echo ' </body>
+</html>';
+}
+?>
 
 
 
