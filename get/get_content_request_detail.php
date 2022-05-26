@@ -106,7 +106,7 @@ if($id=="" or $id == null){
     <a href="https://content-service-gate.cdse-commercecontent.com/signup" target="_blank" class="btn btn-dark">Register</a>
   </div>
   </div>
-  <h4><ion-icon name="eye-outline"></ion-icon>Instent view</h4>
+  <h5 style="position: fixed;background: #00000087;width: 100%;color: white;padding: 5px 15px;z-index: 2;">Instent view</h5>
   <script>
   function load_tiny_comment()
       {
