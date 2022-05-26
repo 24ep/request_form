@@ -16,6 +16,7 @@ label#label_file {
 <?php
 $id = $_POST['id'];
 if($id=="" or $id == null){
+  $direct = "external";
   $id = $_GET['id'];
   echo '  <title>Content and Studio - Homepage</title>
   <!-- Required meta tags -->
@@ -336,7 +337,9 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <div id="comment_box_cr">
         <div id="call_ticket_comment_cr">
         '; 
-        include('get_comment_cr.php');
+        // include('get_comment_cr.php');
+        include('https://content-service-gate.cdse-commercecontent.com/base/get/get_comment_cr.php');
+        
         echo '
         </div>
         </div>
