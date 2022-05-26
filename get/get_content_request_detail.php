@@ -102,8 +102,8 @@ if($id=="" or $id == null){
   top: 100;
   margin: 25%;">  
   <h1>View only, please login</h1>
-    <button type="button" class="btn btn-danger">Login</button>
-    <a  href="https://content-service-gate.cdse-commercecontent.com/signup" target="_blank" class="btn btn-dark">Register</a>
+    <a href="https://content-service-gate.cdse-commercecontent.com/login?redirect=https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='.$id.'" class="btn btn-danger">Login</a>
+    <a href="https://content-service-gate.cdse-commercecontent.com/signup" target="_blank" class="btn btn-dark">Register</a>
   </div>
   </div>
   <script>
