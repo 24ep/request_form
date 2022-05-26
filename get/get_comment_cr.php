@@ -33,6 +33,11 @@ if(isset($_POST['comment'])){
     $comment ="";
 }
 
+if($id =="" or $id == null){
+    $id = $_GET['id'];
+}
+
+
 function get_comment_cr($id){
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
