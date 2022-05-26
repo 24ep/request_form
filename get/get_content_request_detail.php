@@ -15,7 +15,7 @@ label#label_file {
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <?php
 session_start();
-if(isset($_SESSION["username"])){
+if(!isset($_SESSION["username"])){
   $overlay = "on_overlay();";
 }else{
   $overlay = "off_overlay();";
