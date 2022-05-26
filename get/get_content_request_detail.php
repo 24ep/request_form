@@ -64,7 +64,28 @@ if($id=="" or $id == null){
   <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/light.css">
   <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/<?php echo $pftheam; ?>.css">
   <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
-  ';
+  <script>
+  function load_tiny_comment()
+      {
+              tinymce.init({
+              selector: "textarea#comment_input_cr",
+              plugins: "autoresize link lists emoticons",
+              toolbar:
+                  "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
+              menubar: false,
+              statusbar: false,
+              width: "100%",
+              toolbar_location: "bottom",
+              autoresize_bottom_margin: 0,
+              contextmenu: false,
+              content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
+              setup: (ed) => {
+                  editor = ed;
+              },
+              
+              });
+          }
+</script>';
 }
 // $func = $_POST['func'];
 function return_option_edit_cr($current_value,$attr_id){
