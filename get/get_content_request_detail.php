@@ -78,7 +78,7 @@ if($id=="" or $id == null){
               toolbar_location: "bottom",
               autoresize_bottom_margin: 0,
               contextmenu: false,
-              content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
+              content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ",
               setup: (ed) => {
                   editor = ed;
               },
