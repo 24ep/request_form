@@ -15,6 +15,9 @@ label#label_file {
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <?php
 $id = $_POST['id'];
+if($id=="" or $id == null){
+  $id = $_GET['id'];
+}
 // $func = $_POST['func'];
 function return_option_edit_cr($current_value,$attr_id){
   session_start();
