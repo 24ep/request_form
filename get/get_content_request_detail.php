@@ -368,6 +368,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <span>'.$create_date.'</span>      
         </div>
         <span class="badge bg-primary" style="background-color:'.$color_project.'!important;margin-bottom:15px;padding:8px 15px;">'.$project_name.'</span>
+        <a onclick="copyToClipboard(4270)"><ion-icon style="margin:10px"name="share-social-outline"></ion-icon> share</a>
         <h5 style="font-weight: 800;"><strong style="color:'.$color_project.'!important;">'.$ticket_template.'-'.$id .'</strong> '.$title.'</h5>
         <form method="post">
         <div class="des_cr" id="des_cr_inline" >'.$description.'</div></form>
@@ -762,6 +763,17 @@ function fullheight(elements) {
 }
 window.onresize = function(event) {
     fullheight(elements);
+}
+</script>
+<script>
+function copyToClipboard(id) {
+var inputc = 'https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='+id;
+inputc.value = window.location.href;
+inputc.focus();
+inputc.select();
+document.execCommand('copy');
+inputc.parentNode.removeChild(inputc);
+alert("URL Copied.");
 }
 </script>
 <script>
