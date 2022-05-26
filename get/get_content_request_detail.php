@@ -18,7 +18,7 @@ $id = $_POST['id'];
 if($id=="" or $id == null){
   $direct = "external";
   $id = $_GET['id'];
-  echo '  <title>Content and Studio - Homepage</title>
+  echo '  <title>Content and Studio - Content Request</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
