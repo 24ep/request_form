@@ -86,9 +86,9 @@ if($id=="" or $id == null){
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(0 0 0 / 40%) /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case youre using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+  background-color: #0000002e;
+  z-index: 2; 
+  cursor: pointer; 
 }
   </style>
   
@@ -103,7 +103,7 @@ if($id=="" or $id == null){
   margin: 25%;">  
   <h1>View only, please login</h1>
     <button type="button" class="btn btn-danger">Login</button>
-    <button type="button" class="btn btn-dark">Register</button>
+    <a  href="https://content-service-gate.cdse-commercecontent.com/signup" target="_blank" class="btn btn-dark">Register</a>
   </div>
   </div>
   <script>
