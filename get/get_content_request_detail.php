@@ -14,6 +14,12 @@ label#label_file {
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <?php
+session_start();
+if(isset($_SESSION["username"])){
+  $overlay = "on_overlay();";
+}else{
+  $overlay = "off_overlay();";
+}
 $id = $_POST['id'];
 if($id=="" or $id == null){
   $direct = "external";
@@ -70,7 +76,8 @@ if($id=="" or $id == null){
   <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/light-modern.css">
   <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
   </head>
-  <body>
+  <body onload="'.$overlay.'">
+  <div id="overlay">
   <script>
   function load_tiny_comment()
       {
@@ -743,7 +750,17 @@ load_tiny_comment();
 
 </script>
 <?php if( $direct == 'external'){
-echo ' </body>
+echo ' </div>
+<script>
+function on_overlay() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off_overlay() {
+  document.getElementById("overlay").style.display = "none";
+}
+</script>
+</body>
 </html>';
 }
 ?>
