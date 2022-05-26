@@ -44,6 +44,12 @@ if((mysqli_fetch_array($result) === null)){
     $_SESSION["request_status"] = "pending";
     $request_by = $_SESSION["username"];
     insert_log("login success | username ".$username,"account",0);
-    header("Location: /?");
+    if($_GET["redirect"]<>"" and $_GET["redirect"]<>null){
+        $redirect =  $_GET["redirect"];
+        header( "Location: $redirect" );
+    }else{
+        header("Location: /?");
+    }
+    
 }
 ?>
