@@ -47,7 +47,7 @@ if((mysqli_fetch_array($result) === null)){
     if($_GET["redirect"]<>"" and $_GET["redirect"]<>null){
         $redirect =  $_GET["redirect"];
         if($redirect=="cr_detail"){
-            header( "Location: https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id=".$_GET["id"] );
+            header( "Location: https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id=".$_GET['id'] );
         }
         
     }else{
