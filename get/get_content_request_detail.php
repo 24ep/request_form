@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <style>
 .multiple-select_cr_edit .ms-choice {
     border: 0px;
@@ -19,7 +19,7 @@ if($id=="" or $id == null){
   $direct = "external";
   $id = $_GET['id'];
   echo '  
-  <!DOCTYPE html>
+  
 <html lang="en">
   <head>
   <title>Content and Studio - Content Request</title>
