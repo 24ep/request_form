@@ -91,7 +91,7 @@
                 <h2 class="header_form">
                     <strong>Login</strong>
                 </h2>
-                <form action="https://content-service-gate.cdse-commercecontent.com/base/action/action_login.php" method="POST">
+                <form action="https://content-service-gate.cdse-commercecontent.com/base/action/action_login.php?redirect=<?php echo $_GET["redirect"]; ?>&id=<?php echo $_GET["id"]; ?>" method="POST">
                     <div class="form-group">
                         <div class="form-floating">
                             <input
