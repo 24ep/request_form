@@ -770,8 +770,8 @@ window.onresize = function(event) {
 function copyToClipboard(id) {
 var inputc = 'https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='+id;
 inputc.value = window.location.href;
-inputc.focus();
-inputc.select();
+// inputc.focus();
+// inputc.select();
 document.execCommand('copy');
 inputc.parentNode.removeChild(inputc);
 alert("URL Copied.");
