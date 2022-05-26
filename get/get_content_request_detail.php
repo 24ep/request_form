@@ -86,7 +86,7 @@ if($id=="" or $id == null){
               
               });
           }
-          load_tiny_comment();
+      
 </script>
 ';
 }
