@@ -86,7 +86,7 @@ if($id=="" or $id == null){
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  background-color: rgb(0 0 0 / 28%) /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case youre using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
@@ -97,10 +97,10 @@ if($id=="" or $id == null){
   <div id="overlay">
   <h1 style="
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     text-align: -webkit-center;
     top: 100;
-    margin: 25%;">Please login</h4>
+    margin: 25%;">View only, please login</h4>
   </div>
   <script>
   function load_tiny_comment()
