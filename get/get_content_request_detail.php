@@ -106,7 +106,7 @@ if($id=="" or $id == null){
     <a href="https://content-service-gate.cdse-commercecontent.com/signup" target="_blank" class="btn btn-dark">Register</a>
   </div>
   </div>
-  <h5 style="position: fixed;background: #00000087;width: 100%;color: white;padding: 5px 15px;z-index: 2;">Instent view | <a target="_blank" style="color: #a7f0ff;" href="https://content-service-gate.cdse-commercecontent.com/">Home</a> | </h5>
+  <h5 style="position: fixed;background: #00000087;width: 100%;color: #a7f0ff;;padding: 5px 15px;z-index: 2;">Instent view | <a  href="https://content-service-gate.cdse-commercecontent.com/" style="color:white">Return Homepage</a> | </h5>
   <script>
   function load_tiny_comment()
       {
