@@ -632,7 +632,7 @@ function comment_cr_id(id) {
     alert("frame content : " + frameContent);
     //document.getElementById('comment').innerHTML  = ''; //clear value
     if (id) {
-        $.post("base/action/action_comment_cr.php", {
+        $.post("https://content-service-gate.cdse-commercecontent.com/base/action/action_comment_cr.php", {
                 id: id,
                 comment: comment
             },
