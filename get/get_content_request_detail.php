@@ -701,7 +701,7 @@ function comment_cr_id_with_file(id) {
     form_data.append("comment", comment) // Adding extra parameters to form_data
     form_data.append("id", id)
     $.ajax({
-        url: "base/action/action_comment_cr.php",
+        url: "https://content-service-gate.cdse-commercecontent.com/base/action/action_comment_cr.php",
         dataType: 'text',
         cache: false,
         contentType: false,
