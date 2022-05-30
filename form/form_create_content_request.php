@@ -89,26 +89,29 @@
        $project_bucket = project_bucket();
        $cr_issue_type_op = return_option_create_cr("","39");
 ?>
-  <div class="row">
+<div class="row">
     <div class="form-group">
-        <label for="cr_title" class="cr_title" >Topic</label>
-        <input type="text" class="form-control form-control-sm" placeholder="ใส่หัวข้อเรื่องของคุณที่นี่" id="cr_title" name="cr_title" aria-describedby="emailHelp">
+        <label for="cr_title" class="cr_title">Topic</label>
+        <input type="text" class="form-control form-control-sm" placeholder="ใส่หัวข้อเรื่องของคุณที่นี่" id="cr_title"
+            name="cr_title" aria-describedby="emailHelp">
         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
     </div>
     <div class="form-group" style="margin-top:10px">
-        <textarea class="form-control form-control-sm" id="cr_description" name="cr_description" rows=12" placeholder="กรุณาระบุ ข้อมูลโดยละเอียด และ SKU ที่เกี่ยวข้องให้ชัดเจน"></textarea>
+        <textarea class="form-control form-control-sm" id="cr_description" name="cr_description" rows=12"
+            placeholder="กรุณาระบุ ข้อมูลโดยละเอียด และ SKU ที่เกี่ยวข้องให้ชัดเจน"></textarea>
     </div>
 </div>
 <div class="row">
     <div class="form-group col-md-3">
-      <label for="cr_ticket_type" class="form-label">*Request for</label>
-      <select id="cr_ticket_type" onchange="SelectedBucket()" name="cr_ticket_type" class="form-select form-select-sm">
-      <?php echo $cr_issue_type_op;?>
-      </select>
+        <label for="cr_ticket_type" class="form-label">*Request for</label>
+        <select id="cr_ticket_type" onchange="SelectedBucket()" name="cr_ticket_type"
+            class="form-select form-select-sm">
+            <?php echo $cr_issue_type_op;?>
+        </select>
     </div>
     <div class="form-group col-md-3">
-      <label for="cr_sku" class="form-label">Total SKU</label>
-      <input type="number" value=0 class="form-control form-control-sm" id="cr_sku" name="cr_sku" min="0">
+        <label for="cr_sku" class="form-label">Total SKU</label>
+        <input type="number" value=0 class="form-control form-control-sm" id="cr_sku" name="cr_sku" min="0">
     </div>
     <?php
        //Calculate min date
@@ -141,18 +144,18 @@
     <div class="form-group col-md-3">
         <label for="cr_ticket_template" class="form-label">Bucket & Project</label>
         <select id="cr_ticket_template" disabled name="cr_ticket_template" class="form-select form-select-sm">
-           <?php  echo $project_bucket; ?>
+            <?php  echo $project_bucket; ?>
         </select>
     </div>
 
-  </div>
-  <hr>
-  <div class="row">
+</div>
+<hr>
+<div class="row">
     <div class="form-group col-md-3">
-      <label for="inputState" class="form-label">*Piority</label>
-      <select id="cr_piority" name="cr_piority" class="form-select form-select-sm">
-      <?php echo $cr_important_op;?>
-      </select>
+        <label for="inputState" class="form-label">*Piority</label>
+        <select id="cr_piority" name="cr_piority" class="form-select form-select-sm">
+            <?php echo $cr_important_op;?>
+        </select>
     </div>
     <div class="form-group col-md-3">
         <label for="date" class="form-label">Effective Date</label>
@@ -161,15 +164,16 @@
         <small>เฉพาะ request ที่จำเป็นต้องตั้ง Schedule เท่านั้น หากต้องการให้มีผลทันทีไม่ต้องกรอก</small>
     </div>
     <div class="form-group col-md-6">
-      <label for="formFileMultiple" class="form-label">Multiple files input</label>
-      <input class="form-control form-control-sm" type="file" id="cr_attachment" name="cr_attachment[]" multiple="multiple">
-      <small>ขนาดไฟล์ต้องไม่เกิน 2MB</small>
+        <label for="formFileMultiple" class="form-label">Multiple files input</label>
+        <input class="form-control form-control-sm" type="file" id="cr_attachment" name="cr_attachment[]"
+            multiple="multiple">
+        <small>ขนาดไฟล์ต้องไม่เกิน 2MB</small>
     </div>
 </div>
 <?php if($_SESSION['username']=="poojaroonwit"){
   ?>
-<button type="button" onclick="attaction_alert_cr()" class="btn btn-primary" >
-  Submit
+<button type="button" onclick="attaction_alert_cr()" class="btn btn-primary">
+    Submit
 </button>
 
 <?php
@@ -178,113 +182,114 @@
 
 
 <script>
-  function SelectedBucket(){
+function SelectedBucket() {
     var cr_ticket_type = document.getElementById("cr_ticket_type").value;
-    if(cr_ticket_type=="Datapump"){
-      document.getElementById('cr_ticket_template').value="DP";
-      document.getElementById('cr_piority').value="Urgent";
-      
-    }else if(cr_ticket_type=="System development"){
-      document.getElementById('cr_ticket_template').value="DT";
-    }else if(cr_ticket_type=="NPS"){
-      document.getElementById('cr_ticket_template').value="NPS";
-    }else{
-      document.getElementById('cr_ticket_template').value="CR";
-    }
-  }
+    if (cr_ticket_type == "Datapump Add Source" || cr_ticket_type == "Datapump Delete Source" ) {
+        document.getElementById('cr_ticket_template').value = "DP";
+        document.getElementById('cr_piority').value = "Urgent";
 
-</script>
-<!-- <script>
-     function submit_cr_form(id) {
-       
+    } else if (cr_ticket_type == "System development") {
+        document.getElementById('cr_ticket_template').value = "DT";
+    } else if (cr_ticket_type == "NPS") {
+        document.getElementById('cr_ticket_template').value = "NPS";
+    } else {
+        document.getElementById('cr_ticket_template').value = "CR";
     }
-</script> -->
+}
+</script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-  function attaction_alert_cr(id){
-    var cr_ticket_type = document.getElementById("cr_ticket_type").value;
-    if(cr_ticket_type<>"Datapump"){
-      result.isConfirmed = true;
+function submit_cr_form(id) {
+    var form_data = new FormData();
+    var cr_title = document.getElementById("cr_title").value;
+    var cr_description = document.getElementById("cr_description").value;
+    var cr_issue_type = document.getElementById("cr_issue_type").value;
+    var myIFrame = document.getElementById("cr_description_ifr");
+    var cr_description = myIFrame.contentWindow.document.body.innerHTML;
+    var cr_sku = document.getElementById("cr_sku").value;
+    var cr_ticket_template = document.getElementById("cr_ticket_template").value;
+    var cr_piority = document.getElementById("cr_piority").value;
+    var cr_effective_date = document.getElementById("cr_effective_date").value;
+    var files = document.getElementById('cr_attachment').files.length;
+    for (var x = 0; x < files; x++) {
+        form_data.append("files[]", document.getElementById('cr_attachment').files[x]);
     }
-    const swalWithBootstrapButtons = Swal.mixin({
-  customClass: {
-    confirmButton: 'btn btn-success m-2',
-    cancelButton: 'btn btn-danger m-2'
-  },
-  buttonsStyling: false
-})
+    form_data.append("cr_title", cr_title)
+    form_data.append("cr_description", cr_description)
+    form_data.append("cr_issue_type", cr_issue_type)
+    form_data.append("cr_sku", cr_sku)
+    form_data.append("cr_ticket_template", cr_ticket_template)
+    form_data.append("cr_piority", cr_piority)
+    form_data.append("cr_effective_date", cr_effective_date)
+    form_data.append("id", id)
+    $.ajax({
+        url: "base/action/action_submit_add_content_request.php",
+        dataType: 'text',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data, // Setting the data attribute of ajax with file_data
+        type: 'post',
+        success: function(data) {
+            // $('#call_ticket_comment_ins').html(data);
+            Swal.fire(
+                'Created!',
+                data,
+                'success'
+            )
 
-swalWithBootstrapButtons.fire({
-  title: 'Attantion',
-  icon: 'info',
-  html: '<strong>Your request will be processed within 1 business day</strong>'+
-        '<strong>Notice :</strong>'+
-        '<li>Covid items ex. Mask , Alcohol gel have to keep at WH 10138 only.</li>'+
-        '<li>GWP should be keep at WH 10138 except Brand pick from store 100%</li><hr>'+
-        '<strong>ระบบจะดำเนินการเสร็จสิ้นภายใน 1 วันทำการ</strong>'+
-        '<strong>หมายเหตุ :</strong>'+
-        '<li>สินค้า Covid เช่น หน้ากาอนามัย , แอลกอฮอล์เจล ควรจัดเก็บที่คลังออนไลน์ 10138 เท่านั้น</li>'+
-        '<li>GWP ควรจัดเก็บที่คลังออนไลน์ 10138 ยกเว้น สินค้าที่ขายที่สาขา 100%</li>',
-  showCancelButton: true,
-  confirmButtonText: 'Understoods',
-  cancelButtonText: 'Cancel',
-  reverseButtons: true,
-  width:'50rem'
-}).then((result) => {
-  if (result.isConfirmed) {
-    // --
-        var form_data = new FormData();
-        var cr_title = document.getElementById("cr_title").value;
-        var cr_description = document.getElementById("cr_description").value;
-        var cr_issue_type = document.getElementById("cr_issue_type").value;
-        var myIFrame = document.getElementById("cr_description_ifr");
-        var cr_description = myIFrame.contentWindow.document.body.innerHTML;
-        var cr_sku = document.getElementById("cr_sku").value;
-        var cr_ticket_template = document.getElementById("cr_ticket_template").value;
-        var cr_piority = document.getElementById("cr_piority").value;
-        var cr_effective_date = document.getElementById("cr_effective_date").value;
-        var files = document.getElementById('cr_attachment').files.length;
-        for (var x = 0; x < files; x++) {
-            form_data.append("files[]", document.getElementById('cr_attachment').files[x]);
         }
-        form_data.append("cr_title", cr_title) 
-        form_data.append("cr_description", cr_description) 
-        form_data.append("cr_issue_type", cr_issue_type) 
-        form_data.append("cr_sku", cr_sku) 
-        form_data.append("cr_ticket_template", cr_ticket_template) 
-        form_data.append("cr_piority", cr_piority) 
-        form_data.append("cr_effective_date", cr_effective_date) 
-        form_data.append("id", id)
-        $.ajax({
-            url: "base/action/action_submit_add_content_request.php",
-            dataType: 'text',
-            cache: false,
-            contentType: false,
-            processData: false,
-            data: form_data, // Setting the data attribute of ajax with file_data
-            type: 'post',
-            success: function(data) {
-                // $('#call_ticket_comment_ins').html(data);
-                swalWithBootstrapButtons.fire(
-                  'Complete!',
-                  'Your request has been submited.',
-                  'success'
-                )
-          
+    });
+}
+</script>
+
+<script>
+function attaction_alert_cr(id) {
+    var cr_ticket_type = document.getElementById("cr_ticket_type").value;
+    if (cr_ticket_type != "Datapump Add Source" && cr_ticket_type != "Datapump Delete Source") {
+        submit_cr_form(id);
+    } else {
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success m-2',
+                cancelButton: 'btn btn-danger m-2'
+            },
+            buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+            title: 'Attantion',
+            icon: 'info',
+            html: '<strong>Your request will be processed within 1 business day</strong>' +
+                '<strong>Notice :</strong><ul>' +
+                '<li>Covid items ex. Mask , Alcohol gel have to keep at WH 10138 only.</li>' +
+                '<li>GWP should be keep at WH 10138 except Brand pick from store 100%</li><hr>' +
+                '<strong>ระบบจะดำเนินการเสร็จสิ้นภายใน 1 วันทำการ</strong>' +
+                '<strong>หมายเหตุ :</strong>' +
+                '<li>สินค้า Covid เช่น หน้ากาอนามัย , แอลกอฮอล์เจล ควรจัดเก็บที่คลังออนไลน์ 10138 เท่านั้น</li>' +
+                '<li>GWP ควรจัดเก็บที่คลังออนไลน์ 10138 ยกเว้น สินค้าที่ขายที่สาขา 100%</li></ul>',
+            showCancelButton: true,
+            confirmButtonText: 'Understoods',
+            cancelButtonText: 'Cancel',
+            reverseButtons: true,
+            width: '50rem'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                submit_cr_form(id);
+
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                // swalWithBootstrapButtons.fire(
+                //   'Cancelled',
+                //   'Your imaginary file is safe :)',
+                //   'error'
+                // )
             }
-        });
-    // --
-   
-  } else if (
-    /* Read more about handling dismissals below */
-    result.dismiss === Swal.DismissReason.cancel
-  ) {
-    // swalWithBootstrapButtons.fire(
-    //   'Cancelled',
-    //   'Your imaginary file is safe :)',
-    //   'error'
-    // )
-  }
-})
-  }
+        })
+    }
+
+
+}
 </script>
