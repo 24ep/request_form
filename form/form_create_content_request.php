@@ -248,7 +248,7 @@ swalWithBootstrapButtons.fire({
         '<strong>ระบบจะดำเนินการเสร็จสิ้นภายใน 1 วันทำการ</strong>'+
         '<strong>หมายเหตุ :</strong>'+
         '<li>สินค้า Covid เช่น หน้ากาอนามัย , แอลกอฮอล์เจล ควรจัดเก็บที่คลังออนไลน์ 10138 เท่านั้น</li>'+
-        '<li>ควรจัดเก็บที่คลังออนไลน์ 10138 ยกเว้น สินค้าที่ขายที่สาขา 100%</li><hr>'+
+        '<li>GWP ควรจัดเก็บที่คลังออนไลน์ 10138 ยกเว้น สินค้าที่ขายที่สาขา 100%</li><hr>'
   showCancelButton: true,
   confirmButtonText: 'Understoods',
   cancelButtonText: 'Cancel',
