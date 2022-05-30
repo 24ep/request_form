@@ -259,7 +259,7 @@ function attaction_alert_cr(id) {
 
         swalWithBootstrapButtons.fire({
             title: 'Attantion',
-            icon: 'info',
+            icon: 'warning',
             html: '<ul style="text-align-last: start;"><strong>Your request will be processed within 1 business day</strong>' +
                 '<strong>Notice :</strong>' +
                 '<li>Covid items ex. Mask , Alcohol gel have to keep at WH 10138 only.</li>' +
