@@ -171,6 +171,8 @@
     var cr_ticket_type = document.getElementById("cr_ticket_type").value;
     if(cr_ticket_type=="Datapump"){
       document.getElementById('cr_ticket_template').value="DP";
+      document.getElementById('cr_piority').value="Urgent";
+      
     }else if(cr_ticket_type=="System development"){
       document.getElementById('cr_ticket_template').value="DT";
     }else if(cr_ticket_type=="NPS"){
