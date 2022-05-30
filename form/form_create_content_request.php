@@ -104,7 +104,7 @@
 <div class="row">
     <div class="form-group col-md-3">
         <label for="cr_ticket_type" class="form-label">*Request for</label>
-        <select id="cr_ticket_type" onchange="SelectedBucket()" name="cr_ticket_type"
+        <select id="cr_ticket_type" required onchange="SelectedBucket()" name="cr_ticket_type"
             class="form-select form-select-sm">
             <?php echo $cr_issue_type_op;?>
         </select>
@@ -203,7 +203,7 @@ function submit_cr_form(id) {
     var form_data = new FormData();
     var cr_title = document.getElementById("cr_title").value;
     var cr_description = document.getElementById("cr_description").value;
-    var cr_issue_type = document.getElementById("cr_issue_type").value;
+    var cr_ticket_type = document.getElementById("cr_ticket_type").value;
     var myIFrame = document.getElementById("cr_description_ifr");
     var cr_description = myIFrame.contentWindow.document.body.innerHTML;
     var cr_sku = document.getElementById("cr_sku").value;
@@ -216,7 +216,7 @@ function submit_cr_form(id) {
     }
     form_data.append("cr_title", cr_title)
     form_data.append("cr_description", cr_description)
-    form_data.append("cr_issue_type", cr_issue_type)
+    form_data.append("cr_issue_type", cr_ticket_type)
     form_data.append("cr_sku", cr_sku)
     form_data.append("cr_ticket_template", cr_ticket_template)
     form_data.append("cr_piority", cr_piority)
@@ -260,8 +260,8 @@ function attaction_alert_cr(id) {
         swalWithBootstrapButtons.fire({
             title: 'Attantion',
             icon: 'info',
-            html: '<strong>Your request will be processed within 1 business day</strong>' +
-                '<strong>Notice :</strong><ul>' +
+            html: '<ul style="text-align-last: start;"><strong>Your request will be processed within 1 business day</strong>' +
+                '<strong>Notice :</strong>' +
                 '<li>Covid items ex. Mask , Alcohol gel have to keep at WH 10138 only.</li>' +
                 '<li>GWP should be keep at WH 10138 except Brand pick from store 100%</li><hr>' +
                 '<strong>ระบบจะดำเนินการเสร็จสิ้นภายใน 1 วันทำการ</strong>' +
