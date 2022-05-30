@@ -166,9 +166,9 @@
       <small>ขนาดไฟล์ต้องไม่เกิน 2MB</small>
     </div>
 </div>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#attaction_cr">
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#attaction_cr">
   Launch static backdrop modal
-</button>
+</button> -->
 <!-- Modal -->
 <div class="modal fade" id="attaction_cr" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="attaction_cr" aria-hidden="true">
   <div class="modal-dialog">
