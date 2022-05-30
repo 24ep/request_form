@@ -168,7 +168,7 @@
 </div>
 <?php if($_SESSION['username']=="poojaroonwit"){
   ?>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#attaction_cr">
+<button type="button" onclick="attaction_alert_cr()" class="btn btn-primary" >
   Submit
 </button>
 
@@ -176,7 +176,7 @@
 }
 ?>
 
-<!-- Modal -->
+<!-- Modal
 <div class="modal fade" id="attaction_cr" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="attaction_cr" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -204,7 +204,7 @@ GWP should be keep at WH 10138 except Brand pick from store 100%
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <script>
   function SelectedBucket(){
     var cr_ticket_type = document.getElementById("cr_ticket_type").value;
@@ -259,4 +259,44 @@ GWP should be keep at WH 10138 except Brand pick from store 100%
             }
         });
     }
+</script>
+<script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+<script>
+  function attaction_alert_cr(){
+    const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})
+
+swalWithBootstrapButtons.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonText: 'Yes, delete it!',
+  cancelButtonText: 'No, cancel!',
+  reverseButtons: true
+}).then((result) => {
+  if (result.isConfirmed) {
+    swalWithBootstrapButtons.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
+  } else if (
+    /* Read more about handling dismissals below */
+    result.dismiss === Swal.DismissReason.cancel
+  ) {
+    swalWithBootstrapButtons.fire(
+      'Cancelled',
+      'Your imaginary file is safe :)',
+      'error'
+    )
+  }
+})
+  }
 </script>
