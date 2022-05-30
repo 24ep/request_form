@@ -102,7 +102,7 @@
 <div class="row">
     <div class="form-group col-md-3">
       <label for="cr_ticket_type" class="form-label">*Request for</label>
-      <select id="cr_ticket_type" name="cr_ticket_type" class="form-select form-select-sm">
+      <select id="cr_ticket_type" onchange="SelectedBucket()" name="cr_ticket_type" class="form-select form-select-sm">
       <?php echo $cr_issue_type_op;?>
       </select>
     </div>
