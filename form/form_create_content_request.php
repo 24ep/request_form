@@ -101,13 +101,13 @@
 </div>
 <div class="row">
     <div class="form-group col-md-3">
-      <label for="cr_ticket_type" class="form-label">*ticket type</label>
+      <label for="cr_ticket_type" class="form-label">*Request for</label>
       <select id="cr_ticket_type" name="cr_ticket_type" class="form-select form-select-sm">
       <?php echo $cr_issue_type_op;?>
       </select>
     </div>
     <div class="form-group col-md-3">
-      <label for="cr_sku" class="form-label">SKU</label>
+      <label for="cr_sku" class="form-label">Total SKU</label>
       <input type="number" value=0 class="form-control form-control-sm" id="cr_sku" name="cr_sku" min="0">
     </div>
     <?php
@@ -155,7 +155,7 @@
       </select>
     </div>
     <div class="form-group col-md-3">
-        <label for="date" class="form-label">effective date</label>
+        <label for="date" class="form-label">Effective Date</label>
         <input class="form-control form-control-sm" type="datetime-local" min="<?php echo $min_launch_date; ?>"
             id="cr_effective_date" name="cr_effective_date">
         <small>เฉพาะ request ที่จำเป็นต้องตั้ง Schedule เท่านั้น หากต้องการให้มีผลทันทีไม่ต้องกรอก</small>
@@ -166,3 +166,18 @@
       <small>ขนาดไฟล์ต้องไม่เกิน 2MB</small>
     </div>
 </div>
+<script>
+  function SelectedBucket(){
+    var cr_ticket_type = document.getElementById("cr_ticket_type").value;
+    if(cr_ticket_type=="Datapump"){
+      document.getElementById('cr_ticket_template').value="DP";
+    }else if(cr_ticket_type=="System development"){
+      document.getElementById('cr_ticket_template').value="DT";
+    }else if(cr_ticket_type=="NPS"){
+      document.getElementById('cr_ticket_template').value="NPS";
+    }else{
+      document.getElementById('cr_ticket_template').value="CR";
+    }
+  }
+
+</script>

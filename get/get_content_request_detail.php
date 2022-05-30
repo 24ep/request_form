@@ -697,7 +697,7 @@ function comment_cr_id_with_file(id) {
     for (var x = 0; x < ins; x++) {
         form_data.append("files[]", document.getElementById('actual-btn').files[x]);
     }
-    // form_data.append("files", files)              // Appending parameter named file with properties of file_field to form_data
+    // form_data.append("files", files)  // Appending parameter named file with properties of file_field to form_data
     form_data.append("comment", comment) // Adding extra parameters to form_data
     form_data.append("id", id)
     $.ajax({

@@ -1199,6 +1199,10 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
+function messagebox(ev) {
+    ev.dataTransfer.setData("card", ev.target.id);
+}
+
 function drag_card_cr(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
