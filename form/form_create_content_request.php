@@ -176,35 +176,7 @@
 }
 ?>
 
-<!-- Modal
-<div class="modal fade" id="attaction_cr" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="attaction_cr" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="attaction_crLabel">Attaction please</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <P>Your request will be processed within 1 business day
-Notice :
-Covid items ex. Mask , Alcohol gel have to keep at WH 10138 only.
-GWP should be keep at WH 10138 except Brand pick from store 100%
-</p>
-<hr>
-<P>ระบบจะดำเนินการเสร็จสิ้นภายใน 1 วันทำการ
-หมายเหตุ :
-สินค้า Covid เช่น หน้ากาอนามัย , แอลกอฮอล์เจล ควรจัดเก็บที่คลังออนไลน์ 10138 เท่านั้น
-ควรจัดเก็บที่คลังออนไลน์ 10138 ยกเว้น สินค้าที่ขายที่สาขา 100%
 
-</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div>
-    </div>
-  </div>
-</div> -->
 <script>
   function SelectedBucket(){
     var cr_ticket_type = document.getElementById("cr_ticket_type").value;
@@ -264,7 +236,9 @@ swalWithBootstrapButtons.fire({
         var form_data = new FormData();
         var cr_title = document.getElementById("cr_title").value;
         var cr_description = document.getElementById("cr_description").value;
-        var cr_ticket_type = document.getElementById("cr_ticket_type").value;
+        var cr_issue_type = document.getElementById("cr_issue_type").value;
+        var myIFrame = document.getElementById("cr_description_ifr");
+        var cr_description = myIFrame.contentWindow.document.body.innerHTML;
         var cr_sku = document.getElementById("cr_sku").value;
         var cr_ticket_template = document.getElementById("cr_ticket_template").value;
         var cr_piority = document.getElementById("cr_piority").value;
@@ -275,7 +249,7 @@ swalWithBootstrapButtons.fire({
         }
         form_data.append("cr_title", cr_title) 
         form_data.append("cr_description", cr_description) 
-        form_data.append("cr_ticket_type", cr_ticket_type) 
+        form_data.append("cr_issue_type", cr_issue_type) 
         form_data.append("cr_sku", cr_sku) 
         form_data.append("cr_ticket_template", cr_ticket_template) 
         form_data.append("cr_piority", cr_piority) 
