@@ -26,7 +26,7 @@
             if (($file_size > 2097152 or $file_size ==0) and $file_name <> ""  ) { 
                 $result = '<div class="alert alert-danger">ขนาดไฟล์ต้องไม่เกิน 2MB โปรดทำใฟล์เล็กลง หรือแชร์เป็น link เพื่อเข้าถึงไฟล์</div>';
                 echo '<script>alert("ขนาดไฟล์ต้องไม่เกิน 2MB โปรดทำใฟล์เล็กลง หรือแชร์เป็น link เพื่อเข้าถึงไฟล์")</script>';
-                header( "Location: /homepage.php?tab=v-pills-cr&result_cr=".$result);
+                //header( "Location: /homepage.php?tab=v-pills-cr&result_cr=".$result);
                 exit();
         }
     }
@@ -119,10 +119,11 @@
                         sent_line_noti("\n• Created new request\n----------------------------\n• คุณได้ทำการส่ง Content Request\n• Ticket ID : CR-".$last_id."\n".$title,$key);
                         send_ms_team("NS-".$last_id,"Created new request (NS)",$_SEESION["username"]." ได้ทำการส่ง Content Request\n• Ticket ID : CR-".$last_id."<br>".$title);
                     }
-                $result='<div class="alert alert-success">already create content_request !<strong> ID '.$last_id.'</strong></div>';
-                header( "Location: /?tab=v-pills-cr&result_cr=".$result);
+                $result='already create content_request !<strong> ID '.$last_id.'';
+                echo $result;
+               // header( "Location: /?tab=v-pills-cr&result_cr=".$result);
             }else{
-                echo '<div class="alert alert-danger">Error: ' . $sql . '<hr>' . $con->error.'</div>';
+                echo 'Error: ' . $sql." ". $con->error;
             }
             mysqli_close($con);
    // header( "location: https://cdse-commercecontent.com/base/job_manage.php");

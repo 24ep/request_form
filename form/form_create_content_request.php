@@ -230,6 +230,10 @@ GWP should be keep at WH 10138 except Brand pick from store 100%
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
   function attaction_alert_cr(id){
+    var cr_ticket_type = document.getElementById("cr_ticket_type").value;
+    if(cr_ticket_type=="Datapump"){
+      result.isConfirmed = true;
+    }
     const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
     confirmButton: 'btn btn-success m-2',
@@ -257,7 +261,7 @@ swalWithBootstrapButtons.fire({
 }).then((result) => {
   if (result.isConfirmed) {
     // --
-    var form_data = new FormData();
+        var form_data = new FormData();
         var cr_title = document.getElementById("cr_title").value;
         var cr_description = document.getElementById("cr_description").value;
         var cr_ticket_type = document.getElementById("cr_ticket_type").value;
