@@ -265,7 +265,7 @@ swalWithBootstrapButtons.fire({
         var cr_ticket_template = document.getElementById("cr_ticket_template").value;
         var cr_piority = document.getElementById("cr_piority").value;
         var cr_effective_date = document.getElementById("cr_effective_date").value;
-        var files = document.getElementById('actual-cr_attachment').files.length;
+        var files = document.getElementById('cr_attachment').files.length;
         for (var x = 0; x < files; x++) {
             form_data.append("files[]", document.getElementById('cr_attachment').files[x]);
         }
