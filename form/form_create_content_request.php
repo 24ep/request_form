@@ -166,6 +166,38 @@
       <small>ขนาดไฟล์ต้องไม่เกิน 2MB</small>
     </div>
 </div>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#attaction_cr">
+  Launch static backdrop modal
+</button>
+<!-- Modal -->
+<div class="modal fade" id="attaction_cr" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="attaction_cr" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="attaction_crLabel">Attaction please</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <P>Your request will be processed within 1 business day
+Notice :
+Covid items ex. Mask , Alcohol gel have to keep at WH 10138 only.
+GWP should be keep at WH 10138 except Brand pick from store 100%
+</p>
+<hr>
+<P>ระบบจะดำเนินการเสร็จสิ้นภายใน 1 วันทำการ
+หมายเหตุ :
+สินค้า Covid เช่น หน้ากาอนามัย , แอลกอฮอล์เจล ควรจัดเก็บที่คลังออนไลน์ 10138 เท่านั้น
+ควรจัดเก็บที่คลังออนไลน์ 10138 ยกเว้น สินค้าที่ขายที่สาขา 100%
+
+</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
   function SelectedBucket(){
     var cr_ticket_type = document.getElementById("cr_ticket_type").value;
@@ -182,4 +214,42 @@
     }
   }
 
+</script>
+<script>
+     function submit_cr_form(id) {
+        var form_data = new FormData();
+        var cr_title = document.getElementById("cr_title").value;
+        var cr_description = document.getElementById("cr_description").value;
+        var cr_ticket_type = document.getElementById("cr_ticket_type").value;
+        var cr_sku = document.getElementById("cr_sku").value;
+        var cr_ticket_template = document.getElementById("cr_ticket_template").value;
+        var cr_piority = document.getElementById("cr_piority").value;
+        var cr_effective_date = document.getElementById("cr_effective_date").value;
+        var files = document.getElementById('actual-cr_attachment').files.length;
+        for (var x = 0; x < files; x++) {
+            form_data.append("files[]", document.getElementById('cr_attachment').files[x]);
+        }
+        form_data.append("cr_title", cr_title) 
+        form_data.append("cr_description", cr_description) 
+        form_data.append("cr_ticket_type", cr_ticket_type) 
+        form_data.append("cr_sku", cr_sku) 
+        form_data.append("cr_ticket_template", cr_ticket_template) 
+        form_data.append("cr_piority", cr_piority) 
+        form_data.append("cr_effective_date", cr_effective_date) 
+        form_data.append("id", id)
+        $.ajax({
+            url: "base/action/action_submit_add_content_request.php",
+            dataType: 'text',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data, // Setting the data attribute of ajax with file_data
+            type: 'post',
+            success: function(data) {
+                // $('#call_ticket_comment_ins').html(data);
+                alert(data);
+          
+            }
+        });
+    }
 </script>

@@ -37,14 +37,14 @@
     <!DOCTYPE html>
     <html lang="en">
     <!-- set up theam -->
-  
+
     <head>
         <title>Content and Studio - Homepage</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" />
-        
+
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
@@ -67,7 +67,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
         <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
-      
+
         <script>
         $(function() {
             $(".multiple-select").multipleSelect()
@@ -83,10 +83,13 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
         </script>
-        <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/light.css">
-        <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/<?php echo $pftheam; ?>.css">
-        <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
-        
+        <link rel="stylesheet" type="text/css"
+            href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/light.css">
+        <link rel="stylesheet" type="text/css"
+            href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/<?php echo $pftheam; ?>.css">
+        <link rel="stylesheet" type="text/css"
+            href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
+
     </head>
 
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
@@ -449,18 +452,15 @@
                                                     
                                                 }
                                                 ?>
-                                                <input  style="width: 60%;" type="text" 
-                                                    class="form-control" onchange="run_ts_command('task');"
-                                                    id="ts_command" name="ts_command"
-                                                    placeholder="fill someting .."
-                                                    aria-label="Username" aria-describedby="basic-addon1"
-                                                    value="<?php echo $sqb; ?>">
-                                                
+                                                <input style="width: 60%;" type="text" class="form-control"
+                                                    onchange="run_ts_command('task');" id="ts_command" name="ts_command"
+                                                    placeholder="fill someting .." aria-label="Username"
+                                                    aria-describedby="basic-addon1" value="<?php echo $sqb; ?>">
+
                                                 <span class="input-group-text">Username</span>
-                                                <input style="width: 10%;" list="qlistoption"  type="text"
+                                                <input style="width: 10%;" list="qlistoption" type="text"
                                                     class="form-control" onchange="run_ts_command('task');"
-                                                    id="ts_username" name="ts_username"
-                                                    placeholder="unassign"
+                                                    id="ts_username" name="ts_username" placeholder="unassign"
                                                     aria-label="Username" aria-describedby="basic-addon1"
                                                     value="<?php echo $_SESSION["ts_username"];   ?>">
                                                 <span class="input-group-text">Limit</span>
@@ -482,7 +482,7 @@
                                     // } ?>
                                     </div> -->
                                     <div id="get_ts_admin_console">
-                                            
+
                                         <!-- <?php 
                                             //include('get/get_list_ts.php');
                                          ?>  -->
@@ -494,7 +494,7 @@
                     <!-- fl console -->
                     <div class="tab-pane fade" id="v-pills-fl_board" role="tabpanel"
                         aria-labelledby="v-pills-fl_board-tab">
-                        <div class="tab-content"  id="myTabContent">
+                        <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container " tyle="
                                             text-align: center;
@@ -518,7 +518,7 @@
                                     <!-- <ion-icon name="time-outline"></ion-icon>
                                     <h3>Coming soon</h3> -->
                                     <!-- get card -->
-                                    <div >
+                                    <div>
                                         <?php include('get/get_account_editor.php'); ?>
                                     </div>
                                 </div>
@@ -636,8 +636,10 @@
                                                 </div>
                                                 <?php include_once('form/form_create_content_request.php')?>
                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                                    <button type="submit" class="btn btn-primary btn-sm"
-                                                        style="width:100%">Submit</button>
+                                                    <button type="submit" onclick="summit_cr_form()"
+                                                        class="btn btn-primary btn-sm"
+                                                        style="width:100%">Submit
+                                                    </button>
                                                 </div>
                                             </form>
                                         </div>
@@ -705,14 +707,14 @@ function start_checking(id) {
 function accepted_stt(id) {
     if (id) {
         // sku_accepted = document.getElementById('sku_accepted').value;
-        
-            $.post("base/action/action_accept_stt.php", {
-                id: id
-                // sku_accepted: sku_accepted
-            }, function(data) {
-                $('#accept_checking_resault').html(data);
-            });
-        
+
+        $.post("base/action/action_accept_stt.php", {
+            id: id
+            // sku_accepted: sku_accepted
+        }, function(data) {
+            $('#accept_checking_resault').html(data);
+        });
+
     }
 }
 
@@ -811,7 +813,7 @@ function run_ts_command(ts_level) {
     $.post("base/get/get_list_ts.php", {
         summary_filter: summary_filter,
         ts_command_limit: ts_command_limit,
-        ts_username:ts_username
+        ts_username: ts_username
 
     }, function(data) {
         $('#get_ts_admin_console').html(data);
@@ -1098,7 +1100,8 @@ function doAutoRefresh_ts_admin() {
         var req_ts = Inint_AJAX();
         //var req_cr = Inint_AJAX();
         // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-        req_ts.open("POST", 'base/get/get_list_ts.php?summary_filter='+summary_filter+'&ts_username='+ts_username+'&ts_command_limit='+ts_command_limit+'&' + new Date().getTime(), true);
+        req_ts.open("POST", 'base/get/get_list_ts.php?summary_filter=' + summary_filter + '&ts_username=' +
+            ts_username + '&ts_command_limit=' + ts_command_limit + '&' + new Date().getTime(), true);
         //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
         req_ts.onreadystatechange = function() {
             if (req_ts.readyState == 4) {
@@ -1135,7 +1138,6 @@ function doAutoRefresh_cr() {
         req_cr.send(null);
     }
 };
-
     </script>
     <script>
 $(document).ready(function() {
@@ -1147,7 +1149,7 @@ $(document).ready(function() {
     });
 });
     </script>
-   
+
     <script>
 tinymce.init({
     selector: 'textarea#cr_description',
@@ -1186,7 +1188,6 @@ tinymce.init({
         'removeformat | help',
     //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
 });
-
     </script>
     <script>
 //   var toastElList = [].slice.call(document.querySelectorAll('.toast'))
@@ -1255,41 +1256,52 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
     </script>
-    
-    <script>run_ts_command('task');</script>
+
     <script>
-        function load_tiny_comment()
-            {
-                    tinymce.init({
-                    selector: "textarea#comment_input_cr",
-                    plugins: "autoresize link lists emoticons",
-                    toolbar:
-                        "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
-                    menubar: false,
-                    statusbar: false,
-                    width: "100%",
-                    toolbar_location: "bottom",
-                    autoresize_bottom_margin: 0,
-                    contextmenu: false,
-                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
-                    setup: (ed) => {
-                        editor = ed;
-                    },
-                    
-                    });
-                }
+run_ts_command('task');
+    </script>
+    <script>
+function load_tiny_comment() {
+    tinymce.init({
+        selector: "textarea#comment_input_cr",
+        plugins: "autoresize link lists emoticons",
+        toolbar: "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
+        menubar: false,
+        statusbar: false,
+        width: "100%",
+        toolbar_location: "bottom",
+        autoresize_bottom_margin: 0,
+        contextmenu: false,
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
+        setup: (ed) => {
+            editor = ed;
+        },
+
+    });
+}
     </script>
     <style>
-        .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
-            border-radius: 7px;
-            margin-top: 8px;
-        }
-        .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child 
-        .tox-toolbar__primary, .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
-            border-top: 1px solid #fff;
-        }
-        .tox .tox-tbtn svg {
-            display: block;
-            fill: #6c757d!important;
-        }
-        </style>
+.tox.tox-tinymce.tox-tinymce--toolbar-bottom {
+    border-radius: 7px;
+    margin-top: 8px;
+}
+
+.tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child .tox-toolbar__primary,
+.tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
+    border-top: 1px solid #fff;
+}
+
+.tox .tox-tbtn svg {
+    display: block;
+    fill: #6c757d !important;
+}
+    </style>
+<script>
+function summit_cr_form() {
+    var cr_ticket_type = document.getElementById("cr_ticket_type").value;
+    if(cr_ticket_type=="Datapump"){
+   
+      
+    }
+}
+</script>
