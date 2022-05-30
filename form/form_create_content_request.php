@@ -222,9 +222,41 @@ GWP should be keep at WH 10138 except Brand pick from store 100%
   }
 
 </script>
-<script>
+<!-- <script>
      function submit_cr_form(id) {
-        var form_data = new FormData();
+       
+    }
+</script> -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  function attaction_alert_cr(){
+    const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success m-2',
+    cancelButton: 'btn btn-danger m-2'
+  },
+  buttonsStyling: false
+})
+
+swalWithBootstrapButtons.fire({
+  title: 'Attantion',
+  icon: 'info',
+  html: '<strong>Your request will be processed within 1 business day</strong>'+
+        '<strong>Notice :</strong>'+
+        '<li>Covid items ex. Mask , Alcohol gel have to keep at WH 10138 only.</li>'+
+        '<li>GWP should be keep at WH 10138 except Brand pick from store 100%</li><hr>'+
+        '<strong>ระบบจะดำเนินการเสร็จสิ้นภายใน 1 วันทำการ</strong>'+
+        '<strong>หมายเหตุ :</strong>'+
+        '<li>สินค้า Covid เช่น หน้ากาอนามัย , แอลกอฮอล์เจล ควรจัดเก็บที่คลังออนไลน์ 10138 เท่านั้น</li>'+
+        '<li>ควรจัดเก็บที่คลังออนไลน์ 10138 ยกเว้น สินค้าที่ขายที่สาขา 100%</li><hr>'+
+  showCancelButton: true,
+  confirmButtonText: 'Understoods',
+  cancelButtonText: 'Cancel',
+  reverseButtons: true
+}).then((result) => {
+  if (result.isConfirmed) {
+    // --
+    var form_data = new FormData();
         var cr_title = document.getElementById("cr_title").value;
         var cr_description = document.getElementById("cr_description").value;
         var cr_ticket_type = document.getElementById("cr_ticket_type").value;
@@ -254,47 +286,25 @@ GWP should be keep at WH 10138 except Brand pick from store 100%
             type: 'post',
             success: function(data) {
                 // $('#call_ticket_comment_ins').html(data);
-                alert(data);
+                swalWithBootstrapButtons.fire(
+                  'Complete!',
+                  'Your request has been submited.',
+                  'success'
+                )
           
             }
         });
-    }
-</script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-  function attaction_alert_cr(){
-    const swalWithBootstrapButtons = Swal.mixin({
-  customClass: {
-    confirmButton: 'btn btn-success',
-    cancelButton: 'btn btn-danger'
-  },
-  buttonsStyling: false
-})
-
-swalWithBootstrapButtons.fire({
-  title: 'Are you sure?',
-  text: "You won't be able to revert this!",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonText: 'Yes, delete it!',
-  cancelButtonText: 'No, cancel!',
-  reverseButtons: true
-}).then((result) => {
-  if (result.isConfirmed) {
-    swalWithBootstrapButtons.fire(
-      'Deleted!',
-      'Your file has been deleted.',
-      'success'
-    )
+    // --
+   
   } else if (
     /* Read more about handling dismissals below */
     result.dismiss === Swal.DismissReason.cancel
   ) {
-    swalWithBootstrapButtons.fire(
-      'Cancelled',
-      'Your imaginary file is safe :)',
-      'error'
-    )
+    // swalWithBootstrapButtons.fire(
+    //   'Cancelled',
+    //   'Your imaginary file is safe :)',
+    //   'error'
+    // )
   }
 })
   }
