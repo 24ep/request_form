@@ -260,8 +260,7 @@ GWP should be keep at WH 10138 except Brand pick from store 100%
         });
     }
 </script>
-<script src="sweetalert2.min.js"></script>
-<link rel="stylesheet" href="sweetalert2.min.css">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
   function attaction_alert_cr(){
     const swalWithBootstrapButtons = Swal.mixin({
