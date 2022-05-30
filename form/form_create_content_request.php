@@ -229,7 +229,7 @@ GWP should be keep at WH 10138 except Brand pick from store 100%
 </script> -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-  function attaction_alert_cr(){
+  function attaction_alert_cr(id){
     const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
     confirmButton: 'btn btn-success m-2',
@@ -248,7 +248,7 @@ swalWithBootstrapButtons.fire({
         '<strong>ระบบจะดำเนินการเสร็จสิ้นภายใน 1 วันทำการ</strong>'+
         '<strong>หมายเหตุ :</strong>'+
         '<li>สินค้า Covid เช่น หน้ากาอนามัย , แอลกอฮอล์เจล ควรจัดเก็บที่คลังออนไลน์ 10138 เท่านั้น</li>'+
-        '<li>GWP ควรจัดเก็บที่คลังออนไลน์ 10138 ยกเว้น สินค้าที่ขายที่สาขา 100%</li><hr>'
+        '<li>GWP ควรจัดเก็บที่คลังออนไลน์ 10138 ยกเว้น สินค้าที่ขายที่สาขา 100%</li>',
   showCancelButton: true,
   confirmButtonText: 'Understoods',
   cancelButtonText: 'Cancel',
