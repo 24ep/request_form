@@ -252,7 +252,8 @@ swalWithBootstrapButtons.fire({
   showCancelButton: true,
   confirmButtonText: 'Understoods',
   cancelButtonText: 'Cancel',
-  reverseButtons: true
+  reverseButtons: true,
+  width:'50rem'
 }).then((result) => {
   if (result.isConfirmed) {
     // --
