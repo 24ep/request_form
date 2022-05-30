@@ -203,7 +203,7 @@
 <script>
   function attaction_alert_cr(id){
     var cr_ticket_type = document.getElementById("cr_ticket_type").value;
-    if(cr_ticket_type=="Datapump"){
+    if(cr_ticket_type<>"Datapump"){
       result.isConfirmed = true;
     }
     const swalWithBootstrapButtons = Swal.mixin({
