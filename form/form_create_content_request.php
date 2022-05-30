@@ -140,7 +140,7 @@
    -->
     <div class="form-group col-md-3">
         <label for="cr_ticket_template" class="form-label">Bucket & Project</label>
-        <select id="cr_ticket_template" name="cr_ticket_template" class="form-select form-select-sm">
+        <select id="cr_ticket_template" disabled name="cr_ticket_template" class="form-select form-select-sm">
            <?php  echo $project_bucket; ?>
         </select>
     </div>
