@@ -171,7 +171,7 @@
     </div>
 </div>
 
-<button type="button" onclick="attaction_alert_cr()" class="btn btn-primary">
+<button type="submit" onclick="attaction_alert_cr()" class="btn btn-primary">
     Submit
 </button>
 <script>

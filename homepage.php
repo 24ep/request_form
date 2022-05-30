@@ -629,9 +629,7 @@
                                     </div>
                                     <div class="offcanvas-body" style="background-color: #fcfbf9;">
                                         <div class="container-md" style="padding:0px 50px 50px 50px;">
-                                            <form class="row g-3"
-                                                action="base/action/action_submit_add_content_request.php" method="POST"
-                                                enctype="multipart/form-data">
+                                            <form class="row g-3" >
                                                 <div id="add_new_cr_result">
                                                 </div>
                                                 <?php include_once('form/form_create_content_request.php')?>
