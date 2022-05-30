@@ -170,17 +170,10 @@
         <small>ขนาดไฟล์ต้องไม่เกิน 2MB</small>
     </div>
 </div>
-<?php if($_SESSION['username']=="poojaroonwit"){
-  ?>
+
 <button type="button" onclick="attaction_alert_cr()" class="btn btn-primary">
     Submit
 </button>
-
-<?php
-}
-?>
-
-
 <script>
 function SelectedBucket() {
     var cr_ticket_type = document.getElementById("cr_ticket_type").value;

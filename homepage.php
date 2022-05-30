@@ -636,10 +636,10 @@
                                                 </div>
                                                 <?php include_once('form/form_create_content_request.php')?>
                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                                    <button type="submit" onclick="summit_cr_form()"
+                                                    <!-- <button type="submit" onclick="summit_cr_form()"
                                                         class="btn btn-primary btn-sm"
                                                         style="width:100%">Submit
-                                                    </button>
+                                                    </button> -->
                                                 </div>
                                             </form>
                                         </div>
