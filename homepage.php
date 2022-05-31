@@ -474,18 +474,10 @@
                                             </datalist>
                                         </form>
                                     </nav>
-                                    <!-- <div id="project_bucket">
-                                   
-                                        <?php //if(strpos($_SESSION["username"],'poojaroonwit')!==false){ 
-                                       
-                                        //include('get/get_list_project.php');
-                                    // } ?>
-                                    </div> -->
+
                                     <div id="get_ts_admin_console">
 
-                                        <!-- <?php 
-                                            //include('get/get_list_ts.php');
-                                         ?>  -->
+
                                     </div>
                                 </div>
                             </div>
@@ -629,16 +621,11 @@
                                     </div>
                                     <div class="offcanvas-body" style="background-color: #fcfbf9;">
                                         <div class="container-md" style="padding:0px 50px 50px 50px;">
-                                            <form class="row g-3" >
+                                            <form class="row g-3">
                                                 <div id="add_new_cr_result">
                                                 </div>
                                                 <?php include_once('form/form_create_content_request.php')?>
-                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                                    <!-- <button type="submit" onclick="summit_cr_form()"
-                                                        class="btn btn-primary btn-sm"
-                                                        style="width:100%">Submit
-                                                    </button> -->
-                                                </div>
+
                                             </form>
                                         </div>
                                     </div>
@@ -1188,12 +1175,6 @@ tinymce.init({
 });
     </script>
     <script>
-//   var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-//   var toastList = toastElList.map(function (toastEl) {
-//   return new bootstrap.Toast(toastEl, option)
-// })
-    </script>
-    <script>
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -1294,12 +1275,3 @@ function load_tiny_comment() {
     fill: #6c757d !important;
 }
     </style>
-<script>
-function summit_cr_form() {
-    var cr_ticket_type = document.getElementById("cr_ticket_type").value;
-    if(cr_ticket_type=="Datapump"){
-   
-      
-    }
-}
-</script>
