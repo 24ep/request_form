@@ -205,7 +205,7 @@ function submit_cr_form(id) {
     var cr_effective_date = document.getElementById("cr_effective_date").value;
     var crfiles = document.getElementById('cr_attachment').files.length;
     for (var x = 0; x < crfiles; x++) {
-        form_data.append("files[]", document.getElementById('cr_attachment').files[x]);
+        form_data.append("cr_attachment[]", document.getElementById('cr_attachment').files[x]);
     }
     form_data.append("cr_title", cr_title)
     form_data.append("cr_description", cr_description)
