@@ -15,7 +15,7 @@ session_start();
             left join content_service_gate.attribute_entity as attribute_entity
             on attribute_option.attribute_id = attribute_entity.attribute_id 
             where attribute_entity.attribute_code =  '".$attribute_code."' and attribute_option.function='".$function."' 
-            ORDER BY option_id asc" or die("Error:" . mysqli_error($con));
+            ORDER BY attribute_label asc" or die("Error:" . mysqli_error($con));
             $result = mysqli_query($con, $query);
             
             
