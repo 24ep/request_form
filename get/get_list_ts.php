@@ -58,7 +58,8 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         ac.department as department,
         ac.username as username,
         pb.color_project as color_project,
-        case when ticket.ticket_type like '%Content%' then 'Yes' end as contain_content,
+        case when ticket.ticket_type like '%Content%' or ticket.ticket_type like '%Status%' then 'Yes' end as contain_content,
+        case when ticket.ticket_type like '%Provide%' then 'Yes' end as contain_data,
         case when ticket.ticket_type like '%Image%' then 'Yes' end as contain_studio,
         case when ticket.ticket_type like '%Datapump%' then 'Yes' end as contain_datapump
         FROM all_in_one_project.content_request as ticket
@@ -96,6 +97,9 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                   }
                   if($row["contain_datapump"] == 'Yes'){
                     echo '<ion-icon name="server-outline"></ion-icon>';
+                  }
+                  if($row["contain_data"] == 'Yes'){
+                    echo '<ion-icon name="receipt-outline"></ion-icon>';
                   }
                 ?>
             </div>
