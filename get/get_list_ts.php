@@ -53,6 +53,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         ticket.participant as participant,
         ticket.case_officer as case_officer,
         ticket.effective_date as effective_date,
+        ticket.color_project as color_project,
         ac.firstname as firstname,
         ac.lastname as lastname,
         ac.department as department,
@@ -79,24 +80,13 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
     onclick="cr_id_toggle(<?php echo $row['id'] ?>)">
 
     <div class="col-12" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
-        onclick="cr_id_toggle(<?php echo $row['id'];?>)" style="align-self: center;">
+        onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
         <div class="row">
-            <div class="col-10" >
+            <div class="col-10">
                 <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
             </div>
-            <div class="col-2" >
+            <div class="col-2">
                 <!-- icon -->
-                <?php
-                  // if($row["contain_content"] == 'Yes'){
-                  //   echo '<ion-icon name="pencil-outline"></ion-icon>';
-                  // }
-                  // if($row["contain_studio"] == 'Yes'){
-                  //   echo '<ion-icon name="image-outline"></ion-icon>';
-                  // }
-                  // if($row["contain_datapump"] == 'Yes'){
-                  //   echo '<ion-icon name="server-outline"></ion-icon>';
-                  // }
-                ?>
             </div>
         </div>
         <hr style="margin: 5px;color: #6c757d8c;">
