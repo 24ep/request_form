@@ -87,15 +87,15 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
             <div class="col-2" >
                 <!-- icon -->
                 <?php
-                  if($row["contain_content"] == 'Yes'){
-                    echo '<ion-icon name="pencil-outline"></ion-icon>';
-                  }
-                  if($row["contain_studio"] == 'Yes'){
-                    echo '<ion-icon name="image-outline"></ion-icon>';
-                  }
-                  if($row["contain_datapump"] == 'Yes'){
-                    echo '<ion-icon name="server-outline"></ion-icon>';
-                  }
+                  // if($row["contain_content"] == 'Yes'){
+                  //   echo '<ion-icon name="pencil-outline"></ion-icon>';
+                  // }
+                  // if($row["contain_studio"] == 'Yes'){
+                  //   echo '<ion-icon name="image-outline"></ion-icon>';
+                  // }
+                  // if($row["contain_datapump"] == 'Yes'){
+                  //   echo '<ion-icon name="server-outline"></ion-icon>';
+                  // }
                 ?>
             </div>
         </div>
