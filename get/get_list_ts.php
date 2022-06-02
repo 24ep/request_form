@@ -80,7 +80,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
 
     <div class="col-12" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
         onclick="cr_id_toggle(<?php echo $row['id'];?>)" style="align-self: center;">
-        <div class="row" onclick="cr_id_toggle(<?php echo $row['id'];?>)">
+        <div class="row">
             <div class="col-10" >
                 <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
             </div>
