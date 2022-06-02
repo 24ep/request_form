@@ -90,16 +90,16 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 <!-- icon -->
                 <?php
                   if($row["contain_content"] == 'Yes'){
-                    echo '<ion-icon name="pencil-outline"></ion-icon>';
+                    echo '<ion-icon style="color:#41baf0" name="pencil-outline"></ion-icon>';
                   }
                   if($row["contain_studio"] == 'Yes'){
-                    echo '<ion-icon name="image-outline"></ion-icon>';
+                    echo '<ion-icon style="color:#CC0000" name="image-outline"></ion-icon>';
                   }
                   if($row["contain_datapump"] == 'Yes'){
-                    echo '<ion-icon name="server-outline"></ion-icon>';
+                    echo '<ion-icon style="color:#e126ec" name="server-outline"></ion-icon>';
                   }
                   if($row["contain_data"] == 'Yes'){
-                    echo '<ion-icon name="receipt-outline"></ion-icon>';
+                    echo '<ion-icon "color:#41baf0" name="receipt-outline"></ion-icon>';
                   }
                 ?>
             </div>
