@@ -56,32 +56,49 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         ac.firstname as firstname,
         ac.lastname as lastname,
         ac.department as department,
-        ac.username as username
+        ac.username as username,
+        pb.color_project as color_project,
+        case when ticket.ticket_type like '%Content%' then 'Yes' end as contain_content,
+        case when ticket.ticket_type like '%Image%' then 'Yes' end as contain_studio,
+        case when ticket.ticket_type like '%Datapump%' then 'Yes' end as contain_datapump
         FROM all_in_one_project.content_request as ticket
         Left join all_in_one_project.account ac
         on ac.username = ticket.case_officer 
+        Left join all_in_one_project.project_bucket pb 
+        on pb.prefix  = ticket.ticket_template 
         where ".$ts_filter." 
         GROUP BY  ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
         // echo "<script>console.log('".$query."');</script>";
         $result = mysqli_query($con, $query);
         echo "<ul style='padding:15px'>";
           while( $row = mysqli_fetch_array($result)) {
-                  $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-                  mysqli_query($con_project, "SET NAMES 'utf8' ");
-                  $query_project = "SELECT *
-                  FROM all_in_one_project.project_bucket 
-                  where prefix='".$row["ticket_template"]."'" or die("Error:" . mysqli_error($con));
-                  $result_project = mysqli_query($con_project, $query_project);
-                  while($row_project = mysqli_fetch_array($result_project)) {
-                    $color_project = $row_project["color_project"];
-                  }
+           
                 ?>
 <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
     data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
     onclick="cr_id_toggle(<?php echo $row['id'] ?>)">
+
     <div class="col-12" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
         onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
-        <?php echo "<strong style='color: ".$color_project.";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
+        <div class="row">
+            <div class="col-10">
+                <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
+            </div>
+            <div class="col-2">
+                <!-- icon -->
+                <?php
+                  if($row["contain_content"] == 'Yes'){
+                    echo '<ion-icon name="pencil-outline"></ion-icon>';
+                  }
+                  if($row["contain_studio"] == 'Yes'){
+                    echo '<ion-icon name="image-outline"></ion-icon>';
+                  }
+                  if($row["contain_datapump"] == 'Yes'){
+                    echo '<ion-icon name="server-outline"></ion-icon>';
+                  }
+                ?>
+            </div>
+        </div>
         <hr style="margin: 5px;color: #6c757d8c;">
         <div>
             <div class="row">
