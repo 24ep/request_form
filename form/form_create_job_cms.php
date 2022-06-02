@@ -1,4 +1,15 @@
+
 <?php 
+function mapping_house_department($sub_department){
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+    mysqli_query($con, "SET NAMES 'utf8' ");
+    $query = "SELECT * FROM content_service_gate.mapping_dept_subdept where sub_department = '".$sub_department."' ORDER BY id asc" or die("Error:" . mysqli_error($con));
+    $result = mysqli_query($con, $query);
+    while($row = mysqli_fetch_array($result)) {
+       $house =  $row["house"];
+    }
+    return $house;
+}
 function getoption_return_create_job($col,$table,$select_option,$sorm,$database) {
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
@@ -73,7 +84,7 @@ function getoption_return_create_job($col,$table,$select_option,$sorm,$database)
        $product_sorting_op = getoption_return_create_job("product_sorting","job_option_cms",$df_psort,"single","u749625779_cdscontent");
        $job_status_filter_op = getoption_return_create_job("job_status_filter","job_option_cms","Wait image","single","u749625779_cdscontent");
        $product_website_op = getoption_return_create_job("product_website","job_option_cms","","multi","u749625779_cdscontent");
-       $department_op = getoption_return_create_job("department","job_option_cms",$department,"single","u749625779_cdscontent");
+       $department_op = getoption_return_create_job("department","job_option_cms",mapping_house_department($sub_department),"single","u749625779_cdscontent");
        $production_type_op = getoption_return_create_job("production_type","job_option_cms",$production_type,"single","u749625779_cdscontent");
        $business_type_op = getoption_return_create_job("itemmize_type","job_option_cms",$business_type,"multi","u749625779_cdscontent");
        $project_type_op = getoption_return_create_job("itemmize_type","job_option_cms",$project_type,"multi","u749625779_cdscontent");
