@@ -53,7 +53,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         ticket.participant as participant,
         ticket.case_officer as case_officer,
         ticket.effective_date as effective_date,
-        ticket.color_project as color_project,
         ac.firstname as firstname,
         ac.lastname as lastname,
         ac.department as department,
