@@ -8,6 +8,7 @@ session_start();
             attribute_option.option_id as option_id,
             attribute_option.attribute_id as attribute_id,
             attribute_option.attribute_option as attribute_option,
+            attribute_option.attribute_label as attribute_label,
             attribute_option.function as function,
             attribute_entity.attribute_code as attribute_code
             FROM content_service_gate.attribute_option as attribute_option
@@ -24,9 +25,9 @@ session_start();
                     foreach($array_default as $option)
                       {
                         if($option==$row["attribute_option"]){
-                            $option_set .= '<option selected value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
+                            $option_set .= '<option selected value="'.$row["attribute_option"].'">'.$row["attribute_label"].'</option>';
                         }else{
-                            $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
+                            $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_label"].'</option>';
                         }
                         
                       }
@@ -37,9 +38,9 @@ session_start();
                     $option_set .= '<option value=""></option>';
                     while($row = mysqli_fetch_array($result)) {
                         if($default_option==$row["attribute_option"]){
-                            $option_set .= '<option selected value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
+                            $option_set .= '<option selected value="'.$row["attribute_option"].'">'.$row["attribute_label"].'</option>';
                         }else{
-                            $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_option"].'</option>';
+                            $option_set .= '<option value="'.$row["attribute_option"].'">'.$row["attribute_label"].'</option>';
                         }
                     }
                         
