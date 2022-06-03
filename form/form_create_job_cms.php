@@ -1,5 +1,6 @@
 
 <?php 
+ session_start();
 function mapping_house_department($sub_department){
     $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");

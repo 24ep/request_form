@@ -1,4 +1,5 @@
 <?php
+ session_start();
     include('action_insert_log.php');
     include('action_send_line_api.php');
 $id = $_POST["id"];

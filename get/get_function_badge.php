@@ -1,4 +1,5 @@
 <?php
+ session_start();
     function badge_due_date($date){
                       
         if($date <> null){

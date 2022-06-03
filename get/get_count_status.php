@@ -1,7 +1,7 @@
 
 
 <?php
-
+ session_start();
     //include('action/connect.php');
 
 function count_status($username,$status){

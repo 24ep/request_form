@@ -1,4 +1,5 @@
 <?php 
+ session_start();
 function badge_status($status){
     if($status=="Pending"){
       $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';

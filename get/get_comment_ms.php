@@ -1,5 +1,6 @@
 
 <?php
+ session_start();
 //issue get
 session_start();
 $id = $_POST['id'];

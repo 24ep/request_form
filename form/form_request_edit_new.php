@@ -1,6 +1,6 @@
 
 <?php
-
+ session_start();
 $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
 function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
   if($site_element=='datetime-local'){

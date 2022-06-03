@@ -1,4 +1,5 @@
 <?php
+ session_start();
  function is_image($path)
  {
      $a = getimagesize($path);

@@ -1,4 +1,5 @@
 <?php
+ session_start();
 if(isset($_FILES['file']['name'])){
    // file name
    $filename = $_FILES['file']['name'];

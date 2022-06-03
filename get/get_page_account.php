@@ -11,6 +11,7 @@
 }
 </style>
 <?php
+ session_start();
  include_once("get_default_profile_image.php");
 function get_page_account(){
  $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));

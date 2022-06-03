@@ -1,4 +1,5 @@
 <?php
+ session_start();
  function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
     $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],$database) or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");

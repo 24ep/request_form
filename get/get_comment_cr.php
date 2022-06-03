@@ -1,4 +1,5 @@
 <?php
+ session_start();
 function profile_image_comment($firstname,$department,$size){
 
     if(strpos($department,'Content')!==false){

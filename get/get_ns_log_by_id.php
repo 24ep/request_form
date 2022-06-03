@@ -1,4 +1,5 @@
 <?php
+ session_start();
 $id = $_GET['id'];
 $action_table = $_GET['action_table'];
 $actiob_data = $_GET['action_data'];

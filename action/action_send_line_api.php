@@ -1,4 +1,5 @@
 <?php
+ session_start();
 function sent_line_noti($message,$key){
     //echo '<script>alert("'.$key.'");</script>';
     $curl = curl_init();

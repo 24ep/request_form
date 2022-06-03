@@ -1,6 +1,7 @@
 
 
 <?php
+ session_start();
  if($cancel_resone<>"" and $cancel_resone<>null){
     $allow_cancel = "disabled";
     $allow_send_to_traffic = "disabled";

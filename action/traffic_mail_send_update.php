@@ -1,5 +1,5 @@
 <?php
-
+ session_start();
 function send_update_mail($ticket_id,$brand,$total_sku,$content_contact_person,$message_id,$description,$status){
 
 $curl = curl_init();

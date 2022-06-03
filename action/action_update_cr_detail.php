@@ -1,4 +1,5 @@
 <?php
+ session_start();
 function bb_confirm_ticket($id ,$user_id,$detail,$status){
 
     $curl = curl_init();

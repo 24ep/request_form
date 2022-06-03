@@ -1,4 +1,5 @@
 <?php
+ session_start();
 $account=$_GET["state"];
 $account_array = explode(",", $account);
 $firstname = $account_array[0];

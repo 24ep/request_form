@@ -1,6 +1,7 @@
 <?php
 
-$con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"u749625779_cdscontent") or die("Error: " . mysqli_error($con));
+session_start();
+$con= mysqli_connect("localhost","cdse_admin","@aA417528639","u749625779_cdscontent") or die("Error: " . mysqli_error($con));
                    mysqli_query($con, "SET NAMES 'utf8' ");
                
                        $id = $_POST["id"];

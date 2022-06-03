@@ -1,4 +1,5 @@
 <?php
+ session_start();
   $sku_list= $_POST['sku_list'];
   trim($sku_list," ");
   date_default_timezone_set("Asia/Bangkok");

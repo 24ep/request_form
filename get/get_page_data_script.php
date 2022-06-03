@@ -11,7 +11,7 @@
 }
 </style>
 <?php
-
+ session_start();
 function get_page_data_script(){
 
 

@@ -1,4 +1,5 @@
 <?php
+ session_start();
 function cal_status($job_status_filter ,$approved_editing_status,$transfer_type,$content_complete_date,$approved_by,$production_type,$retouch_complete_date,$upload_image_date,$shoots_complete_date){
 if($job_status_filter == 'Continue' and $approved_editing_status == 'content_editing' ){ $status =  'Content'; }
 elseif($job_status_filter == 'Continue' and $approved_editing_status == 'studio_editing' ){ $status =  'Upload Image' ; }

@@ -1,4 +1,5 @@
 <?php
+ session_start();
 function profile_image($firstname,$department,$size,$username,$position_image){
 
 $ch = curl_init("https://content-service-gate.cdse-commercecontent.com/base/image/user_profile/".$username.".jpg");

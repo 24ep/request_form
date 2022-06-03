@@ -56,6 +56,7 @@
     <body>
   
     <?php 
+     session_start();
                                 if($_GET["respond"]<>""){
                                     if($_GET["respond"]=="already register ! please login"){
                                         echo "<div class='alert alert-success' role='alert'>
