@@ -1,6 +1,6 @@
 <?php
     session_start();
-    // include_once("get_default_profile_image.php");
+     include_once("get_default_profile_image.php");
 
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
