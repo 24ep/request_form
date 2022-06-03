@@ -31,6 +31,7 @@
     <!DOCTYPE html>
     <html lang="en">
     <!-- set up theam -->
+
     <head>
         <title>Content and Studio - Homepage</title>
         <!-- Required meta tags -->
@@ -81,6 +82,7 @@
         <link rel="stylesheet" type="text/css"
             href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
     </head>
+
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
         <!-- Modal -->
         <div class="modal fade " id="project_model" tabindex="-1" aria-labelledby="project_modelLabel"
@@ -96,6 +98,7 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140386041-2"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -531,6 +534,7 @@
 var elements = document.getElementsByClassName('window-full');
 var windowheight = window.innerHeight + "px";
 fullheight(elements);
+
 function fullheight(elements) {
     for (let el in elements) {
         if (elements.hasOwnProperty(el)) {
@@ -553,6 +557,7 @@ function call_edit_add_new_modal(id, brand) {
         });
     }
 }
+
 function cr_id_toggle(id) {
     if (id) {
         $.post("base/get/get_content_request_detail.php", {
@@ -562,6 +567,7 @@ function cr_id_toggle(id) {
         });
     }
 }
+
 function start_checking(id) {
     if (id) {
         $.post("base/action/action_start_checking.php", {
@@ -571,6 +577,7 @@ function start_checking(id) {
         });
     }
 }
+
 function accepted_stt(id) {
     if (id) {
         // sku_accepted = document.getElementById('sku_accepted').value;
@@ -582,6 +589,7 @@ function accepted_stt(id) {
         });
     }
 }
+
 function cancel_stt(id, status_change) {
     resone_cancel = document.getElementById('resone_cancel').value;
     status_change = 'cancel';
@@ -595,6 +603,7 @@ function cancel_stt(id, status_change) {
         });
     }
 }
+
 function cancel_ticket(id) {
     resone_cancel = document.getElementById('reason_cancel').value;
     status_change = document.getElementById('type_cancel').value;
@@ -609,6 +618,7 @@ function cancel_ticket(id) {
         });
     }
 }
+
 function itm_confirm_cancel(id, status_change) {
     let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
     if (message == null || message == "") {
@@ -630,6 +640,7 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
+
 function filter_cr_ticket(status) {
     document.getElementById('cr_search_input').value = '';
     var update = true;
@@ -642,6 +653,7 @@ function filter_cr_ticket(status) {
         });
     }
 }
+
 function get_project_model(id) {
     if (id) {
         $.post("base/get/get_project_model.php", {
@@ -651,6 +663,7 @@ function get_project_model(id) {
         });
     }
 }
+
 function search_cr_ticket() {
     var cr_search_input = document.getElementById("cr_search_input").value
     var user_cr_filter = document.getElementById("user_cr_filter").value
@@ -662,6 +675,7 @@ function search_cr_ticket() {
         $('#list_grouping').html(data);
     });
 }
+
 function run_ts_command(ts_level) {
     var summary_filter = document.getElementById("ts_command").value;
     var ts_username = document.getElementById("ts_username").value;
@@ -830,9 +844,11 @@ function select_current_tab(selecttab) {
             .add('show');
     }
 }
+
 function open_ticket_detail(id) {
     document.getElementById("ns_ticket_" + id).click();
 }
+
 function updateURL(pill) {
     if (history.pushState) {
         var newurl = window.location.protocol + "//" + window.location.host +
@@ -844,6 +860,7 @@ function updateURL(pill) {
             }, '', newurl);
     }
 }
+
 function update_project_sticky() {
     var prefix_project_sticky = "";
     for (var option of document.getElementById('project_sticky_mse').options) {
@@ -862,6 +879,7 @@ function update_project_sticky() {
         $('#project_bucket').html(data);
     });
 }
+
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value
@@ -910,6 +928,7 @@ function Inint_AJAX() {
     alert("XMLHttpRequest not supported")
     return null
 }
+
 function doAutoRefresh() {
     var url = window.location.href;
     let result = url.includes("v-pills-request_list");
@@ -934,6 +953,7 @@ function doAutoRefresh() {
         req.send(null);
     }
 };
+
 function doAutoRefresh_ts_admin() {
     var url = window.location.href;
     let result = url.includes("v-pills-ts_admin");
@@ -961,6 +981,7 @@ function doAutoRefresh_ts_admin() {
         req_ts.send(null);
     }
 };
+
 function doAutoRefresh_cr() {
     var url = window.location.href;
     let result = url.includes("v-pills-cr");
@@ -1035,12 +1056,15 @@ tinymce.init({
 function allowDrop(ev) {
     ev.preventDefault();
 }
+
 function messagebox(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
+
 function drag_card_cr(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
+
 function drop_card_cr(ev, new_status) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("card");
@@ -1065,6 +1089,7 @@ function drop_card_cr(ev, new_status) {
     }
 }
     </script>
+
     </html>
     <?php if( $_GET["fopenticket"]<>""){
     $_SESSION["fopenticket"]=$_GET["fopenticket"];
@@ -1114,10 +1139,12 @@ function load_tiny_comment() {
     border-radius: 7px;
     margin-top: 8px;
 }
+
 .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child .tox-toolbar__primary,
 .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
     border-top: 1px solid #fff;
 }
+
 .tox .tox-tbtn svg {
     display: block;
     fill: #6c757d !important;
