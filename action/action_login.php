@@ -4,6 +4,7 @@ session_start();
 $_SESSION["db_username"]= "cdse_admin";
 $_SESSION["db_password"]= "@aA417528639";
 include("https://".$_SERVER['HTTP_HOST']."/base/connect.php");
+include("../connect.php");
 include('action_insert_log.php');
 $username = $_POST["username"];
 $password = $_POST["password"];
