@@ -182,7 +182,7 @@ function bb_confirm_ticket($id ,$user_id,$detail,$priority,$image_path,$date_cre
 
 function add_participant($id,$table,$username){
         date_default_timezone_set("Asia/Bangkok");
-        $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
+        $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT  * FROM ".$table."  WHERE id = ".$id
         or die("Error:" . mysqli_error($con));
@@ -204,7 +204,7 @@ function add_participant($id,$table,$username){
         }
 }
 $userId = $_POST["userId"];
-$con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
+$con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 date_default_timezone_set("Asia/Bangkok");
     $sql_gb = "SELECT * from  account WHERE line_user_id ='".$userId."'";
@@ -261,7 +261,7 @@ date_default_timezone_set("Asia/Bangkok");
          $insert_head .= ",sku";$insert_value .= ",1";
         if($_POST["priority"]<>""){ $insert_head .= ",piority";$insert_value .= ",'".$_POST["priority"]."'";}
         if($username<>""){ $insert_head .= ",request_by";$insert_value .= ",'".$username."'";}
-        $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
+        $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
             $sql = "INSERT INTO content_request (
             ".$insert_head."
@@ -322,7 +322,7 @@ date_default_timezone_set("Asia/Bangkok");
                  
                 //get key
                 // date_default_timezone_set("Asia/Bangkok");
-                // $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
+                // $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
                 // mysqli_query($con, "SET NAMES 'utf8' ");
                 // $query = "SELECT  * FROM content_request as cr
                 // left join account as account

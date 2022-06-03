@@ -40,7 +40,7 @@ $send_type= $_POST["send_type"];
 }
   //need more status change
   if(strpos($comment,"#need_more")!==false){
-    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $comment_to_nmi =str_replace('#need_more_image','',str_replace('#need_more_data','',$comment));
     if(strpos($comment,"#need_more_data")!==false){
@@ -57,7 +57,7 @@ $send_type= $_POST["send_type"];
   }
   //traffic_need_more
   if(strpos($comment,"#traffic_need_more")!==false){
-    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $comment_to_nmi =str_replace('#traffic_need_more','',$comment);
     $sql = "UPDATE add_new_job SET 
@@ -70,7 +70,7 @@ $send_type= $_POST["send_type"];
   }
   //accept
   if(strpos($comment,"#accepted")!==false){
-    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $comment_to_nmi =str_replace('#accepted','',$comment);
     $sql = "UPDATE add_new_job SET 
@@ -81,7 +81,7 @@ $send_type= $_POST["send_type"];
   }
    //waiting confirm
   if(strpos($comment,"#waiting_confirm")!==false){
-    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $comment_to_nmi =str_replace('#accepted','',$comment);
     $sql = "UPDATE add_new_job SET 
@@ -92,7 +92,7 @@ $send_type= $_POST["send_type"];
 
   //repy_back
   if($send_type=="send_back_data"){
-    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $sql = "UPDATE add_new_job SET 
     status = 'waiting confirm'  , reply_back_info_date = CURRENT_TIMESTAMP WHERE id=".$id;
@@ -100,7 +100,7 @@ $send_type= $_POST["send_type"];
     $query = mysqli_query($con,$sql); 
   }
 date_default_timezone_set("Asia/Bangkok");
-$con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
+$con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 if($comment<>'' or $file_size <>0){
     //add comment
@@ -165,7 +165,7 @@ if($comment<>'' or $file_size <>0){
    mysqli_close($con);
    //send to line
    date_default_timezone_set("Asia/Bangkok");
-   $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
+   $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
    mysqli_query($con, "SET NAMES 'utf8' ");
    $query = "SELECT  * FROM add_new_job  WHERE id = ".$id
    or die("Error:" . mysqli_error($con));

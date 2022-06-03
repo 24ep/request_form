@@ -174,7 +174,7 @@
  
  
  session_start();
-    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     date_default_timezone_set("Asia/Bangkok");
     $sql = "INSERT INTO account (firstname,nickname,username,password,department,office_tell,register_type,line_user_id,profile_url) values (

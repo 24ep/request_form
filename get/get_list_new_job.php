@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-$con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error( $con));
+$con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error( $con));
 function badge_status($status){
   if($status=="pending"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
@@ -201,7 +201,7 @@ if(isset($_POST["from_post"] )){
       if(isset($subtask_count) and $subtask_count <> 0 and $subtask_count <>null){
         $query_child = "SELECT * FROM add_new_job where parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error($con));
         date_default_timezone_set("Asia/Bangkok");
-        // $con_get_list= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con_get_list));
+        // $con_get_list= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con_get_list));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $result_child = mysqli_query($con, $query_child);
         $i = 1;

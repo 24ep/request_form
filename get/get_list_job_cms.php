@@ -1,7 +1,7 @@
 <?php
  session_start();
   date_default_timezone_set("Asia/Bangkok");
-  $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"u749625779_cdscontent") or die("Error: " . mysqli_error($con));
+  $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"u749625779_cdscontent") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
   $query = "SELECT * FROM job_cms where csg_request_new_id = ".$_POST['id']." ORDER BY id DESC " or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);

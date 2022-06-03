@@ -1,6 +1,6 @@
 <?php
  session_start();
- $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
+ $con= mysqli_connect("localhost",cdse_admin,@aA417528639) or die("Error: " . mysqli_error($con));
  mysqli_query($con, "SET NAMES 'utf8' ");
  $query = "SELECT * FROM content_service_gate.setting_menu" or die("Error:" . mysqli_error($con));
  $result = mysqli_query($con, $query);

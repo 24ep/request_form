@@ -7,7 +7,7 @@ $id = $_POST['id'];
 $comment = $_POST['comment'];
 function get_comment_ms($id){
     date_default_timezone_set("Asia/Bangkok");
-    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $query = "SELECT * FROM comment WHERE ticket_type = 'message_box' and ticket_id = ".$id." ORDER BY id ASC" or die("Error:" . mysqli_error($con));
      $result = mysqli_query($con, $query);

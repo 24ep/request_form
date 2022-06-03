@@ -62,7 +62,7 @@ if(isset($_POST["status"])){$_SESSION["status"]= $_POST["status"];}
       $cr_status = '(( lower(ticket.title) like lower("%'.$_SESSION["cr_search_input"].'%") or lower(ticket.id) like lower("%'.$_SESSION["cr_search_input"].'%") or lower(ticket.id) like lower("%'.str_replace('CR-','',$_SESSION["cr_search_input"]).'%")  or lower(ticket.description) like lower("%'.$_SESSION["cr_search_input"].'%")))';
     }
    date_default_timezone_set("Asia/Bangkok");
-   $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
+   $con= mysqli_connect("localhost",cdse_admin,@aA417528639) or die("Error: " . mysqli_error($con));
    mysqli_query($con, "SET NAMES 'utf8' ");
    $query = "SELECT ticket.id as id,
    ticket.title as title,

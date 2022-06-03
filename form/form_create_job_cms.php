@@ -2,7 +2,7 @@
 <?php 
  session_start();
 function mapping_house_department($sub_department){
-    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost",cdse_admin,@aA417528639) or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $query = "SELECT * FROM content_service_gate.mapping_dept_subdept where sub_department = '".$sub_department."' ORDER BY id asc" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
@@ -12,7 +12,7 @@ function mapping_house_department($sub_department){
     return $house;
 }
 function getoption_return_create_job($col,$table,$select_option,$sorm,$database) {
-    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],$database) or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost",cdse_admin,@aA417528639,$database) or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
