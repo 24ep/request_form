@@ -1,9 +1,8 @@
 <?php
  session_start();
+ include("./connect.php");
 function get_card($status){
-  date_default_timezone_set("Asia/Bangkok");
-  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-  mysqli_query($con, "SET NAMES 'utf8' ");
+global $con;
   if($status=='Close'){
     $limit = 'limit 5';
     $sort = 'update_date DESC';

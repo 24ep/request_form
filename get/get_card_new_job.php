@@ -4,15 +4,14 @@ session_start();
 session_destroy();
 
 header("Location: /");
-
+include("./connect.php");
 function get_card_new_job($status,$username){
   if($username==''){
       $username=$_SESSION["username"];
   }
 
   date_default_timezone_set("Asia/Bangkok");
-  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-  mysqli_query($con, "SET NAMES 'utf8' ");
+  global $con;
   $sort = 'launch_date ASC';
   $query = "SELECT * FROM all_in_one_project.add_new_job  where (".$status." and follow_assign_name = '".$username."') or status = 'none' ORDER by ".$sort ;
   $result = mysqli_query($con, $query);
