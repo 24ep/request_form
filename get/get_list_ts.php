@@ -2,8 +2,6 @@
 session_start();
 include_once("get_function_badge.php");
 include_once("get_default_profile_image.php");
-
-
 //query limit
 if($_POST["ts_command_limit"]<>""){
   $ts_command_limit = $_POST["ts_command_limit"];
@@ -26,13 +24,10 @@ if($_POST["summary_filter"]<>"" and $_POST["summary_filter"]<>null ){
 }else{
   $_SESSION["ts_query_input"] = "";
 }
-
 $filter = "";
 $filter .= "lower(ticket.id) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.title) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]."%') ";
-  
-
     function list_ts_non_status($filter,$ts_command_limit ){
         if(strpos($filter,"ticket.status = 'Close'")!==false){
           $sort_de_status="-ticket.effective_date DESC ,ticket.id DESC ";
@@ -74,21 +69,19 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         $result = mysqli_query($con, $query);
         echo "<ul style='padding:15px'>";
           while( $row = mysqli_fetch_array($result)) {
-           
                 ?>
 <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
-            onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
+    onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
+    aria-controls="offcanvasExample">
+    <div class="row">
+        <div class="col-10" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
             data-bs-target="#detail_cr" aria-controls="offcanvasExample">
-
-        <div class="row" >
-            <div class="col-10" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
+            <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
+        </div>
+        <div class="col-2" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
             data-bs-target="#detail_cr" aria-controls="offcanvasExample">
-                <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
-            </div>
-            <div class="col-2" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
-            data-bs-target="#detail_cr" aria-controls="offcanvasExample">
-                <!-- icon -->
-                <?php
+            <!-- icon -->
+            <?php
                   if($row["contain_content"] == 'Yes'){
                     echo '<ion-icon style="color:#41baf0!important" name="pencil-outline"></ion-icon>';
                   }
@@ -102,12 +95,12 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     echo '<ion-icon style="color:#41baf0!important" name="receipt-outline"></ion-icon>';
                   }
                 ?>
-            </div>
         </div>
-        <hr style="margin: 5px;color: #6c757d8c;">
-        <div>
-            <div class="row">
-                <?php     
+    </div>
+    <hr style="margin: 5px;color: #6c757d8c;">
+    <div>
+        <div class="row">
+            <?php     
                     unset($ef_badge);
                     unset($image_profile);
                     $image_profile = profile_image($row['firstname'],$row['department'],25,$row['case_officer'],1);
@@ -130,17 +123,14 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                         echo '</div>';
                               }
                     ?>
-            </div>
         </div>
- 
+    </div>
 </li>
 <?php $i++; }
                       echo "</ul>";
                     mysqli_close($con);
                 }
         //----------------- new
-  
-        
         $con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query_status = "SELECT * FROM content_service_gate.attribute_option 
@@ -148,17 +138,15 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         $result_status = mysqli_query($con_status, $query_status);
         $i=0;
         while($row_status = mysqli_fetch_array($result_status)) {
-
         if($i>0){
           $ts_board_col_left = "ts-board-col-left";
         }
-
         echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'"  >
         <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
         list_ts_non_status("(".$filter.") and ( lower(ticket.participant) like  lower('%".$_SESSION["ts_username"]."%') or  lower(ticket.case_officer) like lower('%".$_SESSION["ts_username"]."%') )  and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$ts_command_limit  );
         echo '</div>';
         $i++;
         }
-    
+        mysqli_close($con_status);
         //------------- new
 ?>
