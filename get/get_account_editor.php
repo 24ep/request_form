@@ -1,6 +1,7 @@
 <?php
     session_start();
-     include_once("get_default_profile_image.php");
+    include_once("get_default_profile_image.php");
+   // include_once("https://content-service-gate.cdse-commercecontent.com/base/connect.php");
 
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
