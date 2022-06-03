@@ -1,6 +1,8 @@
 <?php
 session_start();
-if(!@include_once("get_function_badge.php")) {
+
+
+if (basename(__FILE__) == basename($_SERVER["get_function_badge.php"])) {
   include_once("get_function_badge.php");
   include_once("get_default_profile_image.php");
 }
