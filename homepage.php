@@ -470,8 +470,8 @@
                                 id="project_sticky_mse" onclick="update_project_sticky();run_ts_command('task');"
                                 multiple aria-label="multiple select example">
                                 <?php
-                                    // $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-                                    // mysqli_query($con, "SET NAMES 'utf8' ");
+                                    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+                                    mysqli_query($con, "SET NAMES 'utf8' ");
                                     $query = "SELECT * FROM all_in_one_project.project_bucket where status <> 'Close' ORDER BY id asc" or die("Error:" . mysqli_error($con));
                                     $result = mysqli_query($con, $query);
                                     if($_SESSION["prefix_project_sticky"]==""){
