@@ -33,7 +33,7 @@ $filter .= "lower(ticket.title) like lower('%".$_SESSION["ts_query_input"]."%') 
 $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]."%') ";
   
 
-    function list_ts_non_status($filter,$ts_command_limit,$level ){
+    function list_ts_non_status($filter,$ts_command_limit ){
         if(strpos($filter,"ticket.status = 'Close'")!==false){
           $sort_de_status="-ticket.effective_date DESC ,ticket.id DESC ";
         }else{
@@ -155,7 +155,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
 
         echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'"  >
         <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
-        list_ts_non_status("(".$filter.") and ( lower(ticket.participant) like  lower('%".$_SESSION["ts_username"]."%') or  lower(ticket.case_officer) like lower('%".$_SESSION["ts_username"]."%') )  and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$ts_command_limit  ,'ticket');
+        list_ts_non_status("(".$filter.") and ( lower(ticket.participant) like  lower('%".$_SESSION["ts_username"]."%') or  lower(ticket.case_officer) like lower('%".$_SESSION["ts_username"]."%') )  and ticket.ticket_template in (".$_SESSION['prefix_project_sticky'].")  and ticket.status = '".$row_status["attribute_option"]."'",$ts_command_limit  );
         echo '</div>';
         $i++;
         }
