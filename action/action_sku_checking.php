@@ -3,7 +3,7 @@
   $sku_list= $_POST['sku_list'];
   trim($sku_list," ");
   date_default_timezone_set("Asia/Bangkok");
-  $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
   $sku_list_ex = explode("\n", $sku_list);
   $sku_list_array = array();

@@ -1,7 +1,7 @@
 <?php
  session_start();
    date_default_timezone_set("Asia/Bangkok");
-   $con= mysqli_connect("localhost",cdse_admin,@aA417528639) or die("Error: " . mysqli_error($con));
+   $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
    mysqli_query($con, "SET NAMES 'utf8' ");
    $query = "SELECT 
    log_data.action_data_id as action_data_id,

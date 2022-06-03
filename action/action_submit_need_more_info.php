@@ -5,7 +5,7 @@
     $id = $_POST["id"];
     $need_more_status = $_POST["need_more_status"];
     $need_more_info_note = $_POST["need_more_info_note"];
-    $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $sql = "UPDATE add_new_job SET need_more_info_date = CURRENT_TIMESTAMP , 
     need_more_info_note = concat(need_more_info_note,'<hr>','".$_SESSION['username']." > ','".$need_more_info_note." ','<small>',CURRENT_TIMESTAMP,'</small>') ,

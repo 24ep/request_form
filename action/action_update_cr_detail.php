@@ -1,5 +1,4 @@
 <?php
- session_start();
 function bb_confirm_ticket($id ,$user_id,$detail,$status){
 
     $curl = curl_init();
@@ -109,7 +108,7 @@ session_start();
    //send to line
    if( $value_name<>"content_request_reson" and $value_name<>"note" ){
    date_default_timezone_set("Asia/Bangkok");
-   $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
+   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
    mysqli_query($con, "SET NAMES 'utf8' ");
    $query = "SELECT  * FROM content_request  WHERE id = ".$id
    or die("Error:" . mysqli_error($con));

@@ -1,7 +1,7 @@
 
 <?php
  session_start();
-$con= mysqli_connect("localhost",cdse_admin,@aA417528639) or die("Error: " . mysqli_error($con));
+$con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
   if($site_element=='datetime-local'){
     $current_value = str_replace(" ","T",$current_value);
@@ -26,7 +26,7 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
   return $element;
 }
 function return_s_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit,$id){
-  $con= mysqli_connect("localhost",cdse_admin,@aA417528639) or die("Error: " . mysqli_error($con));
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM content_service_gate.attribute_option
     WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
     $result_op = mysqli_query($con, $query_op);
@@ -58,7 +58,7 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
   return $element;
 }
 function return_m_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit,$id){
-  $con= mysqli_connect("localhost",cdse_admin,@aA417528639) or die("Error: " . mysqli_error($con));
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM content_service_gate.attribute_option
     WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
     $result_op = mysqli_query($con, $query_op);

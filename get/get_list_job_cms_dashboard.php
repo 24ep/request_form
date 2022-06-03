@@ -1,7 +1,7 @@
 <?php
  session_start();
   date_default_timezone_set("Asia/Bangkok");
-  $con= mysqli_connect("localhost",cdse_admin,@aA417528639) or die("Error: " . mysqli_error($con));
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
   $query = "SELECT * FROM u749625779_cdscontent.job_cms as job 
   left join all_in_one_project.add_new_job as request 

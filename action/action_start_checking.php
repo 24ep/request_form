@@ -13,7 +13,7 @@
          add_participant($id,"add_new_job");
          //get key
          date_default_timezone_set("Asia/Bangkok");
-         $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
+         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
          mysqli_query($con, "SET NAMES 'utf8' ");
          $query = "SELECT  * FROM add_new_job as job
          left join account as account

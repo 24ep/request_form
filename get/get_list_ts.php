@@ -37,7 +37,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         $i=1;
         //--
         $ts_filter = $filter;
-        $con= mysqli_connect("localhost",cdse_admin,@aA417528639) or die("Error: " . mysqli_error($con));
+        $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT ticket.id as id,
         ticket.title as title,
@@ -130,7 +130,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     mysqli_close($con);
                 }
         //----------------- new
-        $con_status= mysqli_connect("localhost",cdse_admin,@aA417528639) or die("Error: " . mysqli_error($con));
+        $con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
         $query_status = "SELECT * FROM content_service_gate.attribute_option 
         where attribute_id= 38 and attribute_option not in ('cancel','routine work','monitor','In-review','close')" or die("Error:" . mysqli_error($con));
         $result_status = mysqli_query($con_status, $query_status);

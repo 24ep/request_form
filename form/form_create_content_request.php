@@ -1,8 +1,7 @@
 <?php 
-  session_start();
   function return_option_create_cr($current_value,$attr_id){
     session_start();
-    $con= mysqli_connect("localhost",cdse_admin,@aA417528639) or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
       $query_op = "SELECT * FROM content_service_gate.attribute_option
       WHERE attribute_id = ".$attr_id." and function = 'content_request' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
       $result_op = mysqli_query($con, $query_op);
@@ -19,7 +18,7 @@
     return $option_element;
   }
   function project_bucket(){
-            $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
+            $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
             $query = "SELECT * FROM project_bucket where status <> 'Close' ORDER BY id asc" or die("Error:" . mysqli_error($con));
             $result = mysqli_query($con, $query);
@@ -35,7 +34,7 @@
 
   }
         function getoption_cr($col,$table,$select_option,$sorm,$database) {
-            $con= mysqli_connect("localhost",cdse_admin,@aA417528639,$database) or die("Error: " . mysqli_error($con));
+            $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
             $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
             $result = mysqli_query($con, $query);

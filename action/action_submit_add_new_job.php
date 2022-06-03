@@ -38,7 +38,7 @@
     //calculate job number
 //get department
         date_default_timezone_set("Asia/Bangkok");
-        $con_map_sub_dept = mysqli_connect("localhost",cdse_admin,@aA417528639,"content_service_gate") or die("Error: " . mysqli_error($con));
+        $con_map_sub_dept = mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
         mysqli_query($con_map_sub_dept, "SET NAMES 'utf8' ");
         $query_map_sub_dept = "SELECT * FROM mapping_dept_subdept where sub_department = '".$_POST["sub_department"]."'";
         $result_map_sub_dept =  mysqli_query($con_map_sub_dept, $query_map_sub_dept);
@@ -68,7 +68,7 @@ if($_SESSION["username"]<>""){ $insert_head .= ",request_username";$insert_value
 if($_POST["request_important"]<>""){ $insert_head .= ",request_important";$insert_value .= ",'".$_POST["request_important"]."'";}
 if($sum_tags<>""){ $insert_head .= ",tags";$insert_value .= ",'".$sum_tags."'";}
 date_default_timezone_set("Asia/Bangkok");
-$con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
+$con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 	$sql = "INSERT INTO add_new_job (
 	".$insert_head."
@@ -82,7 +82,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
         add_participant($last_id,"add_new_job");
         //get key
         date_default_timezone_set("Asia/Bangkok");
-        $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
+        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT  * FROM add_new_job as job
         left join account as account

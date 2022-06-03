@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-cdse_admin = cdse_admin;
-@aA417528639 = @aA417528639;
+$_SESSION["db_uesrname"]= "cdse_admin";
+$_SESSION["db_password"]= "@aA417528639";
 include("connect.php");
 include('action_insert_log.php');
 $username = $_POST["username"];

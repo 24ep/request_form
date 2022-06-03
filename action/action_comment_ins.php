@@ -1,5 +1,4 @@
 <?php
- session_start();
   function is_image($path)
   {
       $a = getimagesize($path);
@@ -40,7 +39,7 @@ $send_type= $_POST["send_type"];
   }
 }
 date_default_timezone_set("Asia/Bangkok");
-$con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
+$con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 if($comment<>'' or $file_size <>0){
   //add comment
@@ -105,7 +104,7 @@ if($comment<>'' or $file_size <>0){
   mysqli_close($con);
    //send to line
    date_default_timezone_set("Asia/Bangkok");
-   $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
+   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
    mysqli_query($con, "SET NAMES 'utf8' ");
    $query = "SELECT  * FROM add_new_job  WHERE id = ".$id
    or die("Error:" . mysqli_error($con));

@@ -1,7 +1,7 @@
 <?php
  session_start();
 date_default_timezone_set("Asia/Bangkok");
-$con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
+$con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 $query_bk = "SELECT DISTINCT  bucket FROM all_in_one_project.quick_link" or die("Error:" . mysqli_error($con));
 $result_bk = mysqli_query($con, $query_bk);

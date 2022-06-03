@@ -1,7 +1,7 @@
 <?php
 $userId = $_POST["userId"];
 $additional_condition = $_POST["additional_condition"];
-$con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
+$con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 date_default_timezone_set("Asia/Bangkok");
     $sql_gb = "SELECT ac.username,cr.description,cr.title,cr.status,cr.create_date,cr.id  from content_request as cr

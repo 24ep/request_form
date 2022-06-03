@@ -32,7 +32,7 @@
     //calculate job number
           function max_job_by_bu($bu_job) {
           date_default_timezone_set("Asia/Bangkok");
-          $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"u749625779_cdscontent") or die("Error: " . mysqli_error($con));
+          $con= mysqli_connect("localhost","cdse_admin","@aA417528639","u749625779_cdscontent") or die("Error: " . mysqli_error($con));
           mysqli_query($con, "SET NAMES 'utf8' ");
           $query_text = "SELECT MAX(substring(job_number,9,4)) AS max_job FROM `u749625779_cdscontent`.`job_cms` WHERE  substring(job_number,1,3) ='".$bu_job."' and substring(job_number,4,2) = substring(YEAR(current_timestamp),3,2)";
           $query = mysqli_query($con,$query_text);
@@ -73,7 +73,7 @@ if($_POST["id_adj"]<>""){ $insrt_head .= ",csg_request_new_id";$insrt_value .= "
 if($_SESSION["nickname"]<>""){ $insrt_head .= ",traffic";$insrt_value .= ",'".$_SESSION["nickname"]."'";}
 if($sum_product_website<>""){ $insrt_head .= ",product_website";$insrt_value .= ",'".$sum_product_website."'";}
 if($sum_itemmize_type<>""){ $insrt_head .= ",itemmize_type";$insrt_value .=",'".$sum_itemmize_type."'";}
-$con= mysqli_connect("localhost",cdse_admin,@aA417528639,"u749625779_cdscontent") or die("Error: " . mysqli_error($con));
+$con= mysqli_connect("localhost","cdse_admin","@aA417528639","u749625779_cdscontent") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 	$sql = "INSERT INTO job_cms (
 	".$insrt_head."
@@ -87,7 +87,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 	if($query) {
          $last_id =$con->insert_id;
          date_default_timezone_set("Asia/Bangkok");
-         $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
+         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
          mysqli_query($con, "SET NAMES 'utf8' ");
          //chage status to accept
          $sql = "UPDATE add_new_job SET status = 'accepted'  WHERE id=".$_POST["id_adj"];

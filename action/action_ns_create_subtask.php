@@ -10,7 +10,7 @@ $array_number_subtask = explode(",",$sku_task_set );
 foreach ($array_number_subtask as $number_of_sku) {
     //create new ticket
     date_default_timezone_set("Asia/Bangkok");
-    $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
 	$sql = "INSERT INTO add_new_job (brand,department,sku,production_type,project_type,business_type,link_info,launch_date,stock_source,contact_buyer,
     contact_vender,remark,request_username,new_brand,
@@ -33,7 +33,7 @@ foreach ($array_number_subtask as $number_of_sku) {
         }
             //send to line
             date_default_timezone_set("Asia/Bangkok");
-            $con= mysqli_connect("localhost",cdse_admin,@aA417528639,"all_in_one_project") or die("Error: " . mysqli_error($con));
+            $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
             $query = "SELECT  * FROM add_new_job  WHERE id = ".$id
             or die("Error:" . mysqli_error($con));
