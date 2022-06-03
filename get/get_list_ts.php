@@ -79,14 +79,11 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
     data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
     onclick="cr_id_toggle(<?php echo $row['id'] ?>)">
 
-        <div class="row" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
-            data-bs-target="#detail_cr" aria-controls="offcanvasExample">
-            <div class="col-10" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
-                data-bs-target="#detail_cr" aria-controls="offcanvasExample">
+        <div class="row" >
+            <div class="col-10" >
                 <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
             </div>
-            <div class="col-2" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
-                data-bs-target="#detail_cr" aria-controls="offcanvasExample">
+            <div class="col-2" >
                 <!-- icon -->
                 <?php
                   if($row["contain_content"] == 'Yes'){
