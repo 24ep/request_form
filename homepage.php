@@ -1,21 +1,18 @@
     <?php
     session_start();
-
     if (!$_SESSION["login_csg"]){ 
             Header("Location: login");
     }else{
     // include('get/get_card_content_request.php'); 
     include_once('get/get_count_status.php');
     include_once('get/get_option_function.php');
-
-    
-
+    include("connect.php");
         $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
         $username_op_cr = getoption_return_filter("username","account",$_SESSION["user_cr_filter"],"single","all_in_one_project");
         $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-        mysqli_query($con, "SET NAMES 'utf8' ");
-        $query = "SELECT * FROM account where username = '".$_SESSION['username']."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
+        // $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+        // mysqli_query($con, "SET NAMES 'utf8' ");
+        $query = "SELECT * FROM all_in_one_project.account where username = '".$_SESSION['username']."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
         $result = mysqli_query($con, $query);
         while($row = mysqli_fetch_array($result)) {
         $nickname = $row['nickname'];
@@ -25,27 +22,22 @@
         $get_contact_buyer = $row['firstname']." ".$row['lastname']." ( ".$nickname." )\nEmail: ".$row['work_email']."\nOffice tell: ".$row['office_tell'];
         }
         mysqli_close($con);
-    
-
         switch ($_SESSION["pf_theme"]) {
             case "Dark":  $pftheam="dark"; break;
             case "Light Modern": $pftheam="light-modern"; break;
             case "Light":  $pftheam="light"; break;
             default: $pftheam="light";
           }
-
      ?>
     <!DOCTYPE html>
     <html lang="en">
     <!-- set up theam -->
-
     <head>
         <title>Content and Studio - Homepage</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" />
-
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
@@ -68,7 +60,6 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
         <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
-
         <script>
         $(function() {
             $(".multiple-select").multipleSelect()
@@ -90,9 +81,7 @@
             href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/<?php echo $pftheam; ?>.css">
         <link rel="stylesheet" type="text/css"
             href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
-
     </head>
-
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
         <!-- Modal -->
         <div class="modal fade " id="project_model" tabindex="-1" aria-labelledby="project_modelLabel"
@@ -108,7 +97,6 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140386041-2"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -148,7 +136,6 @@
                 $sty_col = "padding: 20px;padding-left:80px";
            }
            ?>
-
             <div class="<?php echo  $full_col;?>  overflow-auto" style="<?php echo  $sty_col;?>">
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- style="margin-top:15px" -->
@@ -325,7 +312,6 @@
                                 </div>
                             </div>
                             <!-- <div class="container-fluid" style="border-radius: 10px;width: 95%;"> -->
-
                             <table class="table table-hover table-borderless  "
                                 style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
                                 <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
@@ -393,7 +379,6 @@
                             <!-- ffff -->
                         </div>
                     </div>
-
                     <!-- ts console -->
                     <div class="tab-pane fade" id="v-pills-ts_admin" role="tabpanel"
                         aria-labelledby="v-pills-ts_admin-tab">
@@ -406,7 +391,6 @@
                                             <form class="d-flex">
                                                 <div class="btn-group" role="group"
                                                     aria-label="Basic checkbox toggle button group">
-
                                                 </div>
                                                 <button class="btn btn-primary btn-sm " style="margin-left:10px;"
                                                     type="button" data-bs-toggle="offcanvas"
@@ -451,7 +435,6 @@
                                                     onchange="run_ts_command('task');" id="ts_command" name="ts_command"
                                                     placeholder="fill someting .." aria-label="Username"
                                                     aria-describedby="basic-addon1" value="<?php echo $sqb; ?>">
-
                                                 <span class="input-group-text">Username</span>
                                                 <input style="width: 10%;" list="qlistoption" type="text"
                                                     class="form-control" onchange="run_ts_command('task');"
@@ -469,9 +452,7 @@
                                             </datalist>
                                         </form>
                                     </nav>
-
                                     <div class="row" id="get_ts_admin_console">
-
                                     </div>
                                 </div>
                             </div>
@@ -511,7 +492,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- user -->
                     <div class="tab-pane fade" id="v-pills-setting" role="tabpanel"
                         aria-labelledby="v-pills-setting-tab">
@@ -543,16 +523,13 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- offcanvas detail cr -->
                     <div class="offcanvas offcanvas-start" tabindex="0" id="detail_cr" style="width:100%"
                         aria-labelledby="offcanvasExampleLabel">
                         <div id="calloffcanvas_cr">
                         </div>
                     </div>
-
                     <!-- offcanvas project sticky cr -->
-
                     <div class="offcanvas offcanvas-start" tabindex="-1" id="project_sticky"
                         aria-labelledby="offcanvasExampleLabel">
                         <div class="offcanvas-header">
@@ -567,34 +544,28 @@
                             <select class="form-select" style="border: 0px;margin-top: 30px;" size="25"
                                 id="project_sticky_mse" onclick="update_project_sticky();run_ts_command('task');"
                                 multiple aria-label="multiple select example">
-
                                 <?php
-                               
-                                    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-                                    mysqli_query($con, "SET NAMES 'utf8' ");
-                                    $query = "SELECT * FROM project_bucket where status <> 'Close' ORDER BY id asc" or die("Error:" . mysqli_error($con));
+                                    // $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+                                    // mysqli_query($con, "SET NAMES 'utf8' ");
+                                    $query = "SELECT * FROM all_in_one_project.project_bucket where status <> 'Close' ORDER BY id asc" or die("Error:" . mysqli_error($con));
                                     $result = mysqli_query($con, $query);
                                     if($_SESSION["prefix_project_sticky"]==""){
                                         // $_SESSION["prefix_project_sticky"] = "'CR','DT'";
-                                        $query_default = "SELECT * FROM project_bucket where status <> 'Close' and `default` = 1 ORDER BY id asc" or die("Error:" . mysqli_error($con));
+                                        $query_default = "SELECT * FROM all_in_one_project.project_bucket where status <> 'Close' and `default` = 1 ORDER BY id asc" or die("Error:" . mysqli_error($con));
                                         $result_de = mysqli_query($con, $query_default);
                                         $_SESSION["prefix_project_sticky"]="'OO'";
                                         while($row_de = mysqli_fetch_array($result_de)) {
                                             $_SESSION["prefix_project_sticky"] .= ",'".$row_de["prefix"]."'";
                                         }
                                     }
-
                                     while($row = mysqli_fetch_array($result)) {
-
                                         if(strpos($_SESSION["prefix_project_sticky"],$row['prefix'])!==false){
                                             echo  "<option selected value='".$row["prefix"]."'>".$row["project_name"]."</option>";
                                         }else{
                                             echo "<option value='".$row["prefix"]."'>".$row["project_name"]."</option>";
                                         }
                                     }
-                                
                                 ?>
-
                             </select>
                         </div>
                     </div>
@@ -619,7 +590,6 @@
                                                 <div id="add_new_cr_result">
                                                 </div>
                                                 <?php include_once('form/form_create_content_request.php')?>
-
                                             </form>
                                         </div>
                                     </div>
@@ -639,7 +609,6 @@
 var elements = document.getElementsByClassName('window-full');
 var windowheight = window.innerHeight + "px";
 fullheight(elements);
-
 function fullheight(elements) {
     for (let el in elements) {
         if (elements.hasOwnProperty(el)) {
@@ -662,7 +631,6 @@ function call_edit_add_new_modal(id, brand) {
         });
     }
 }
-
 function cr_id_toggle(id) {
     if (id) {
         $.post("base/get/get_content_request_detail.php", {
@@ -672,7 +640,6 @@ function cr_id_toggle(id) {
         });
     }
 }
-
 function start_checking(id) {
     if (id) {
         $.post("base/action/action_start_checking.php", {
@@ -682,21 +649,17 @@ function start_checking(id) {
         });
     }
 }
-
 function accepted_stt(id) {
     if (id) {
         // sku_accepted = document.getElementById('sku_accepted').value;
-
         $.post("base/action/action_accept_stt.php", {
             id: id
             // sku_accepted: sku_accepted
         }, function(data) {
             $('#accept_checking_resault').html(data);
         });
-
     }
 }
-
 function cancel_stt(id, status_change) {
     resone_cancel = document.getElementById('resone_cancel').value;
     status_change = 'cancel';
@@ -710,7 +673,6 @@ function cancel_stt(id, status_change) {
         });
     }
 }
-
 function cancel_ticket(id) {
     resone_cancel = document.getElementById('reason_cancel').value;
     status_change = document.getElementById('type_cancel').value;
@@ -725,7 +687,6 @@ function cancel_ticket(id) {
         });
     }
 }
-
 function itm_confirm_cancel(id, status_change) {
     let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
     if (message == null || message == "") {
@@ -747,8 +708,6 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
-
-
 function filter_cr_ticket(status) {
     document.getElementById('cr_search_input').value = '';
     var update = true;
@@ -761,9 +720,7 @@ function filter_cr_ticket(status) {
         });
     }
 }
-
 function get_project_model(id) {
-
     if (id) {
         $.post("base/get/get_project_model.php", {
             id: id
@@ -772,7 +729,6 @@ function get_project_model(id) {
         });
     }
 }
-
 function search_cr_ticket() {
     var cr_search_input = document.getElementById("cr_search_input").value
     var user_cr_filter = document.getElementById("user_cr_filter").value
@@ -784,7 +740,6 @@ function search_cr_ticket() {
         $('#list_grouping').html(data);
     });
 }
-
 function run_ts_command(ts_level) {
     var summary_filter = document.getElementById("ts_command").value;
     var ts_username = document.getElementById("ts_username").value;
@@ -793,7 +748,6 @@ function run_ts_command(ts_level) {
         summary_filter: summary_filter,
         ts_command_limit: ts_command_limit,
         ts_username: ts_username
-
     }, function(data) {
         $('#get_ts_admin_console').html(data);
     });
@@ -954,11 +908,9 @@ function select_current_tab(selecttab) {
             .add('show');
     }
 }
-
 function open_ticket_detail(id) {
     document.getElementById("ns_ticket_" + id).click();
 }
-
 function updateURL(pill) {
     if (history.pushState) {
         var newurl = window.location.protocol + "//" + window.location.host +
@@ -970,7 +922,6 @@ function updateURL(pill) {
             }, '', newurl);
     }
 }
-
 function update_project_sticky() {
     var prefix_project_sticky = "";
     for (var option of document.getElementById('project_sticky_mse').options) {
@@ -980,21 +931,15 @@ function update_project_sticky() {
             } else {
                 prefix_project_sticky = prefix_project_sticky + ",'" + option.value + "'";
             }
-
             // selected.push(option.value);
         }
     }
-
     $.post("base/get/get_list_project.php", {
         prefix_project_sticky: prefix_project_sticky
-
     }, function(data) {
         $('#project_bucket').html(data);
     });
-
-
 }
-
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value
@@ -1043,7 +988,6 @@ function Inint_AJAX() {
     alert("XMLHttpRequest not supported")
     return null
 }
-
 function doAutoRefresh() {
     var url = window.location.href;
     let result = url.includes("v-pills-request_list");
@@ -1068,7 +1012,6 @@ function doAutoRefresh() {
         req.send(null);
     }
 };
-
 function doAutoRefresh_ts_admin() {
     var url = window.location.href;
     let result = url.includes("v-pills-ts_admin");
@@ -1096,7 +1039,6 @@ function doAutoRefresh_ts_admin() {
         req_ts.send(null);
     }
 };
-
 function doAutoRefresh_cr() {
     var url = window.location.href;
     let result = url.includes("v-pills-cr");
@@ -1128,7 +1070,6 @@ $(document).ready(function() {
     });
 });
     </script>
-
     <script>
 tinymce.init({
     selector: 'textarea#cr_description',
@@ -1172,15 +1113,12 @@ tinymce.init({
 function allowDrop(ev) {
     ev.preventDefault();
 }
-
 function messagebox(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
-
 function drag_card_cr(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
-
 function drop_card_cr(ev, new_status) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("card");
@@ -1205,7 +1143,6 @@ function drop_card_cr(ev, new_status) {
     }
 }
     </script>
-
     </html>
     <?php if( $_GET["fopenticket"]<>""){
     $_SESSION["fopenticket"]=$_GET["fopenticket"];
@@ -1222,14 +1159,12 @@ function drop_card_cr(ev, new_status) {
         </script>';
         }
     } ?>
-
     <script>
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
     </script>
-
     <script>
 run_ts_command('task');
     </script>
@@ -1249,7 +1184,6 @@ function load_tiny_comment() {
         setup: (ed) => {
             editor = ed;
         },
-
     });
 }
     </script>
@@ -1258,12 +1192,10 @@ function load_tiny_comment() {
     border-radius: 7px;
     margin-top: 8px;
 }
-
 .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child .tox-toolbar__primary,
 .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
     border-top: 1px solid #fff;
 }
-
 .tox .tox-tbtn svg {
     display: block;
     fill: #6c757d !important;
