@@ -4,7 +4,6 @@
             Header("Location: login");
     }else{
     // include('get/get_card_content_request.php'); 
-    include_once('get/get_count_status.php');
     include_once('get/get_option_function.php');
     include("connect.php");
         $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
@@ -141,84 +140,7 @@
                     <!-- style="margin-top:15px" -->
                     <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel"
                         aria-labelledby="v-pills-dashboard-tab">
-                        <div class="container overflow-auto" style="padding:20px 20px 0px 20px">
-                            <?php echo $_GET["result"]; ?>
-                            <div class="card-group">
-                                <div class="card text-dark shadow-sm bg-light mb-3"
-                                    style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
-                                    <div class="card-header">Pending</div>
-                                    <div class="card-body text-secondary">
-                                        <div class="total_count_dashboard">
-                                            <?php 
-                                                $count_pending = count_status($_SESSION['username'],'pending');
-                                                echo $count_pending;
-                                                ?>
-                                        </div>
-                                        <div class="unit_count_dashboard">Ticket</div>
-                                    </div>
-                                </div>
-                                <div class="card text-dark  shadow-sm  bg-light mb-3"
-                                    style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
-                                    <div class="card-header">Checking</div>
-                                    <div class="card-body text-secondary">
-                                        <div class="total_count_dashboard">
-                                            <?php
-                                                $count_checking =  count_status($_SESSION['username'],'checking');
-                                                echo $count_checking;
-                                             ?>
-                                        </div>
-                                        <div class="unit_count_dashboard">Ticket</div>
-                                    </div>
-                                </div>
-                                <div class="card text-dark  shadow-sm  bg-light mb-3"
-                                    style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
-                                    <div class="card-header">Waiting info</div>
-                                    <div class="card-body text-secondary">
-                                        <div class="total_count_dashboard" style="color:red">
-                                            <?php
-                                                $count_checking =  count_status($_SESSION['username'],'wait');
-                                                echo $count_checking;
-                                                ?>
-                                        </div>
-                                        <div class="unit_count_dashboard" style="color:red">Ticket</div>
-                                    </div>
-                                </div>
-                                <div class="card text-dark  shadow-sm bg-light mb-3"
-                                    style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
-                                    <div class="card-header">Waiting Confirm</div>
-                                    <div class="card-body text-secondary">
-                                        <div class="total_count_dashboard">
-                                            <?php
-                                                $count_checking =  count_status($_SESSION['username'],'confirm');
-                                                echo $count_checking;
-                                                ?>
-                                        </div>
-                                        <div class="unit_count_dashboard">Ticket</div>
-                                    </div>
-                                </div>
-                                <div class="card text-white  shadow-sm bg-dark mb-3"
-                                    style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
-                                    <div class="card-header">Send to traffic already</div>
-                                    <div class="card-body text-secondary">
-                                        <div class="total_count_dashboard">
-                                            <?php
-                                                $count_checking =  count_status($_SESSION['username'],'accepted');
-                                                echo $count_checking;
-                                                ?>
-                                        </div>
-                                        <div class="unit_count_dashboard">Ticket</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-8" style="border-right: 1px solid #efecec;">
-                                    <?php include("get/get_list_job_cms_dashboard.php"); ?>
-                                </div>
-                                <div class="col-4">
-                                    <?php include("get/get_list_message_log.php"); ?>
-                                </div>
-                            </div>>
-                        </div>
+                        <?php include("get/get_home_detail.php?result=".$_GET["result"]); ?>
                     </div>
                     <div class="tab-pane fade" id="v-pills-request_list" role="tabpanel"
                         aria-labelledby="v-pills-request_list-tab">
