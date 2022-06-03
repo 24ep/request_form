@@ -1,11 +1,7 @@
 <?php
 session_start();
-
-
-if (basename(__FILE__) == basename($_SERVER["get_function_badge.php"])) {
-  include_once("get_function_badge.php");
-  include_once("get_default_profile_image.php");
-}
+include_once("get_function_badge.php");
+include_once("get_default_profile_image.php");
 
 
 //query limit
@@ -41,7 +37,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         if(strpos($filter,"ticket.status = 'Close'")!==false){
           $sort_de_status="-ticket.effective_date DESC ,ticket.id DESC ";
         }else{
-          $sort_de_status="-ticket.effective_date DESC ,ticket.case_officer ASC, ticket.id ASC ";
+          $sort_de_status="-ticket.effective_date DESC ,ticket.case_officer ASC, ticket.id ASC";
         }
         $i=1;
         //--
