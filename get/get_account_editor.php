@@ -1,12 +1,12 @@
 <?php
     session_start();
     include_once("get_default_profile_image.php");
-    // include("../connect.php");
+    include("../connect.php");
    // include_once("https://content-service-gate.cdse-commercecontent.com/base/connect.php");
 
     date_default_timezone_set("Asia/Bangkok");
-    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-    mysqli_query($con, "SET NAMES 'utf8' ");
+    // $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+    // mysqli_query($con, "SET NAMES 'utf8' ");
     $query =  "SELECT * FROM all_in_one_project.account where username = '".$_SESSION['username']."'";
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
