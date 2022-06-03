@@ -136,7 +136,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     mysqli_close($con);
                 }
         //----------------- new
-        echo '<div >
+        echo '
         <div class="row">';
         $con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
@@ -157,7 +157,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         $i++;
         }
      
-        echo '</div>
-        </div>';
+        echo '</div>';
         //------------- new
 ?>

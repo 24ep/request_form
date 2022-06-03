@@ -477,7 +477,6 @@
 
                                     <div id="get_ts_admin_console">
 
-
                                     </div>
                                 </div>
                             </div>
