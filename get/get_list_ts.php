@@ -79,9 +79,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
     data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
     onclick="cr_id_toggle(<?php echo $row['id'] ?>)">
 
-    <div class="col-12" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
-        onclick="cr_id_toggle(<?php echo $row['id'];?>) " style="align-self: center;">
-
         <div class="row" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
             data-bs-target="#detail_cr" aria-controls="offcanvasExample">
             <div class="col-10" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
@@ -135,7 +132,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     ?>
             </div>
         </div>
-    </div>
+ 
 </li>
 <?php $i++; }
                       echo "</ul>";
