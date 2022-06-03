@@ -10,7 +10,7 @@ $day  = date("l");
 $time = date("A");
 $day_time = $say_hi.$time;
    // end--------------------------------------------------------------------------------------
-   $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+   $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
    mysqli_query($con, "SET NAMES 'utf8' ");
    $day_num = date("d");
    $current_day = date("Y-m-d");

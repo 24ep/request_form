@@ -16,7 +16,7 @@
 
 <?php
   date_default_timezone_set("Asia/Bangkok");
-  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+  $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
   $query = "SELECT file.job_number , job_cms.brand , job_cms.sku ,file.id, file.file_name, file.file_path, file.create_at,  file.remark,  file.file_owner
   FROM u749625779_cdscontent.file_manage as file

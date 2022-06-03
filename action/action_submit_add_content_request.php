@@ -50,7 +50,7 @@
         if($_POST["cr_effective_date"]<>""){ $insert_head .= ",effective_date";$insert_value .= ",'".$_POST["cr_effective_date"]."'";}
         if($_SESSION["username"]<>""){ $insert_head .= ",request_by";$insert_value .= ",'".$_SESSION["username"]."'";}
         if($sum_product_website<>""){ $insert_head .= ",platform_issue";$insert_value .= ",'".$sum_product_website."'";}
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+        $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
             $sql = "INSERT INTO content_request (
             ".$insert_head."
@@ -103,7 +103,7 @@
                  add_participant($last_id,"content_request");
                 //get key
                 date_default_timezone_set("Asia/Bangkok");
-                $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+                $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
                 mysqli_query($con, "SET NAMES 'utf8' ");
                 $query = "SELECT  * FROM content_request as cr
                 left join account as account

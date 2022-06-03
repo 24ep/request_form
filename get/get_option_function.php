@@ -1,6 +1,6 @@
 <?php
  function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
-    $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],$database) or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
@@ -58,7 +58,7 @@
 
     function get_option_return_filter($attribute_code,$default_option,$select_type,$function){
         $option_set="";
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
+        $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"content_service_gate") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT 
         attribute_option.option_id as option_id,

@@ -2,7 +2,7 @@
  session_start();
 $id=$_POST["id"];
 date_default_timezone_set("Asia/Bangkok");
-$con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+$con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 $query = "SELECT message_box.id as target_ms_id,target.target_username as username,target.msid as msid,target.id as trmsid,message_box.title as title,message_box.description as description 
   FROM target_message_box as target left join message_box as message_box on target.msid = message_box.id 

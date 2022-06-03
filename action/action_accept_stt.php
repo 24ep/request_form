@@ -13,7 +13,7 @@
 	if($query) {
 
         // date_default_timezone_set("Asia/Bangkok");
-        // $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+        // $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
 
         // $sku_accepted_array = explode("\n", $sku_accepted);
         // $sku_list_array = array();

@@ -21,7 +21,7 @@ $contact_vender = $_POST["contact_vender"];
 function check_account(){
     global $email_from;
     date_default_timezone_set("Asia/Bangkok");
-    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $sql = "SELECT username from account where  lower(work_email) = lower('".$email_from."')";
     $result =  mysqli_query($con, $sql);
@@ -32,7 +32,7 @@ function check_account(){
     if($exist_user == null or $exist_user == ""){
         #create a new user first
         date_default_timezone_set("Asia/Bangkok");
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+        $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $username_replace = str_replace("@central.co.th","",$email_from);
         $sql = "INSERT INTO account
@@ -88,7 +88,7 @@ function check_separate_subject_mail(){
 }
 function count_conversion_id($conversation_id){
 
-    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $sql = "SELECT count(id) as total from add_new_job where mail_conversation_id='".$conversation_id."'";
     $result =  mysqli_query($con, $sql);
@@ -99,7 +99,7 @@ function count_conversion_id($conversation_id){
 function clone_ticket($conversation_id,$id){
 $count_conversion_id = count_conversion_id($conversation_id);
     if($count_conversion_id == 1){
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+        $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         //get current data from parent ticket
         $sql = "INSERT INTO add_new_job (brand,department,sku,production_type,project_type,business_type,link_info,launch_date,stock_source,contact_buyer,
@@ -121,7 +121,7 @@ $count_conversion_id = count_conversion_id($conversation_id);
 }
 function mapping_datapump_store($store_value){
     date_default_timezone_set("Asia/Bangkok");
-    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","u749625779_cdscontent") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"u749625779_cdscontent") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $sql = "SELECT store_label,system_label from u749625779_cdscontent.datapump_store_mapping";
     $result =  mysqli_query($con, $sql);
@@ -134,7 +134,7 @@ function mapping_datapump_store($store_value){
 function mapping_department($department){
 
     date_default_timezone_set("Asia/Bangkok");
-    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"content_service_gate") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $sql = "SELECT `number`, name from dept_subdept_number_mapping";
     $result =  mysqli_query($con, $sql);
@@ -157,7 +157,7 @@ function mapping_department($department){
 function check_exist_message_id(){
     global $conversation_id;
     date_default_timezone_set("Asia/Bangkok");
-    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $sql = "SELECT id from add_new_job where parent is null and  mail_conversation_id='".$conversation_id."'";
     $result =  mysqli_query($con, $sql);
@@ -294,7 +294,7 @@ function create_ticket_csg(){
      $insert_head .= ",parent";$insert_value .= $parent_id;
   
      date_default_timezone_set("Asia/Bangkok");
-     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+     $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
      mysqli_query($con, "SET NAMES 'utf8' ");
          $sql = "INSERT INTO add_new_job (
          ".$insert_head."

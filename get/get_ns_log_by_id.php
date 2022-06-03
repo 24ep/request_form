@@ -3,7 +3,7 @@ $id = $_GET['id'];
 $action_table = $_GET['action_table'];
 $actiob_data = $_GET['action_data'];
 $job_number = $_GET['job_number'];
-$con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+$con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
 if($_GET['action_data']=="24ep"){;
   $query = "SELECT * FROM u749625779_cdscontent.log_cms where action_at_table='".$action_table."' and job_number ='".$job_number."'" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);

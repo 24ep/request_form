@@ -43,7 +43,7 @@
     <div class="container-sm" style="margin-top:5px">
 <?php 
 $ticket_id=$_GET["id"];
-$con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+$con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 date_default_timezone_set("Asia/Bangkok");
     $sql = "SELECT id,status,description,create_date,update_date from content_request 
@@ -71,7 +71,7 @@ date_default_timezone_set("Asia/Bangkok");
         function get_attachment_cr($id){
             $list_attchment ="";
             date_default_timezone_set("Asia/Bangkok");
-            $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+            $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
             $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image<>1 ORDER BY id ASC" or die("Error:" . mysqli_error($con));
             $result = mysqli_query($con, $query);
@@ -96,7 +96,7 @@ date_default_timezone_set("Asia/Bangkok");
         function get_image_cr($id){
             $list_image="";
             date_default_timezone_set("Asia/Bangkok");
-            $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+            $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
             $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image=1 ORDER BY id ASC" or die("Error:" . mysqli_error($con));
             $result = mysqli_query($con, $query);

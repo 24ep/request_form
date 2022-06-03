@@ -6,7 +6,7 @@
         $sku_change = $_POST['sku_change'];
         $sku_change =trim($sku_change," ");
         date_default_timezone_set("Asia/Bangkok");
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+        $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
         
         $sku_change_array = explode("\n", $sku_change);
         $sku_list_array = array();

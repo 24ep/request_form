@@ -4,7 +4,7 @@
     $_SESSION["prefix_project_sticky"] = $_POST["prefix_project_sticky"];
   }else{
     if($_SESSION["prefix_project_sticky"]==""){
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+        $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query_default = "SELECT * FROM project_bucket where status <> 'Close' and `default` = 1 ORDER BY id asc" or die("Error:" . mysqli_error($con));
         $result_de = mysqli_query($con, $query_default);
@@ -20,7 +20,7 @@
   }
 
   // date_default_timezone_set("Asia/Bangkok");
-  // $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+  // $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
   // mysqli_query($con, "SET NAMES 'utf8' ");
   // $query = "SELECT pb.id,pb.project_name,
   // pb.description,

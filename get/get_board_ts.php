@@ -47,7 +47,7 @@ $filter = $_SESSION["ts_query_input"];
 //       //--
 //         $ts_filter = $filter;
 //         date_default_timezone_set("Asia/Bangkok");
-//         $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+//         $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"]) or die("Error: " . mysqli_error($con));
 //         mysqli_query($con, "SET NAMES 'utf8' ");
 //         $query = "SELECT ticket.id as id,
 //         ticket.title as title,
@@ -85,7 +85,7 @@ $filter = $_SESSION["ts_query_input"];
 
 
 //                   date_default_timezone_set("Asia/Bangkok");
-//                   $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+//                   $con_project= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
 //                   mysqli_query($con_project, "SET NAMES 'utf8' ");
 //                   $query_project = "SELECT *
 //                   FROM all_in_one_project.project_bucket 

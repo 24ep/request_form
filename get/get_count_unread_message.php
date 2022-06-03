@@ -1,7 +1,7 @@
 <?php
 session_start();
     function get_badge_message_important(){
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+        $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],"all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT count(*) as total FROM target_message_box where readable = 0 and target_username = '".$_SESSION["username"]."'" or die("Error:" . mysqli_error($con));
         $result = mysqli_query($con, $query);

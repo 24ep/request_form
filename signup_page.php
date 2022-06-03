@@ -53,7 +53,7 @@
 </head>
 <?php 
        function getoption_return_edit_job($col,$table,$select_option,$sorm,$database) {
-           $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
+           $con= mysqli_connect("localhost",$_SESSION["db_username"],$_SESSION["db_password"],$database) or die("Error: " . mysqli_error($con));
            mysqli_query($con, "SET NAMES 'utf8' ");
            $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
            $result = mysqli_query($con, $query);
