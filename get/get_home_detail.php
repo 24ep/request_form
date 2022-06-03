@@ -2,7 +2,7 @@
  session_start();
 // include_once('get_count_status.php');
 include('../connect.php');
-function count_status($username,$status,$con){
+function count_status($username,$status){
     global $con;
     $sql="SELECT count(*) as total from all_in_one_project.add_new_job where request_username = '".$username."' and status like '%".$status."%'";
     $result=mysqli_query($con,$sql);
