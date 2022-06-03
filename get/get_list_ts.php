@@ -38,6 +38,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         //--
         $ts_filter = $filter;
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+        mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT ticket.id as id,
         ticket.title as title,
         ticket.piority as piority,
