@@ -143,7 +143,7 @@
                     <!-- style="margin-top:15px" -->
                     <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel"
                         aria-labelledby="v-pills-dashboard-tab">
-                        <?php include("get/get_home_detail.php?result=".$_GET["result"]); ?>
+                        <?php include('get/get_home_detail.php'); ?>
                     </div>
                     <div class="tab-pane fade" id="v-pills-request_list" role="tabpanel"
                         aria-labelledby="v-pills-request_list-tab">
