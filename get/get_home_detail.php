@@ -1,4 +1,5 @@
 <?php  
+ session_start();
 // include_once('get_count_status.php');
 function count_status($username,$status){
     include('../connect.php');
