@@ -97,7 +97,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         </div>
     </div>
     <hr style="margin: 5px;color: #6c757d8c;">
-    <div>
         <div class="row">
             <?php     
                     unset($ef_badge);
@@ -123,7 +122,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                               }
                     ?>
         </div>
-    </div>
+    
 </li>
 <?php $i++; }
                       echo "</ul>";
