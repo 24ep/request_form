@@ -5,12 +5,12 @@
     }else{
     // include('get/get_card_content_request.php'); 
     include_once('get/get_option_function.php');
-    include_once("connect.php");
+    // include_once("connect.php");
         $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
         $username_op_cr = getoption_return_filter("username","account",$_SESSION["user_cr_filter"],"single","all_in_one_project");
         $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
-        // $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-        // mysqli_query($con, "SET NAMES 'utf8' ");
+        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+        mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT * FROM all_in_one_project.account where username = '".$_SESSION['username']."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
         $result = mysqli_query($con, $query);
         while($row = mysqli_fetch_array($result)) {
