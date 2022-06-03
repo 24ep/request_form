@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
     <title>Content and Studio - Register</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -23,20 +23,24 @@
         /* font-family: 'Quicksand', sans-serif!important; */
         font-family: 'Prompt', sans-serif;
     }
+
     a {
         color: gray;
         text-decoration: auto;
     }
+
     a:hover {
         color: black;
         text-decoration: auto;
         font-weight: bold;
     }
+
     .header_form {
         text-align: center;
         margin-bottom: 50px;
         margin-top: 50px;
     }
+
     .container-sm {
         max-width: 500px;
         margin-top: 4%;
@@ -46,6 +50,7 @@
         padding-bottom: 100px !important;
         max-width: 60%;
     }
+
     .row {
         margin-bottom: 15px;
     }
@@ -105,10 +110,10 @@
            }
            mysqli_close($con);   
            return $option_set;
-              
              }
       $department_op = getoption_return_edit_job("account_dept_team","option","","single","all_in_one_project");
 ?>
+
 <body>
     <?php 
                         if($_GET["reply"]<>""){
@@ -190,7 +195,7 @@
                 <div class="row ">
                     <div class="col-12">
                         <label for="floatingPassword">Department - Team</label>
-                        <select id="department" name="department" required class="form-select">         
+                        <select id="department" name="department" required class="form-select">
                             <?php echo  $department_op; ?>
                         </select>
                     </div>
@@ -201,7 +206,8 @@
                             name="allow_access_line" checked>
                         <label class="form-check-label" for="flexCheckChecked">
                             รับการอัพเดตเกี่ยวกับ Request ของคุณผ่าน Line Notify<br>
-                            <small>ระบบจะทำการผูก LINE ของคุณกับบัญชีที่ได้ทำการลงทะเบียนไว้ เพื่อรับการอัพเดตเกี่ยวกับ Ticket ของคุณ</small>
+                            <small>ระบบจะทำการผูก LINE ของคุณกับบัญชีที่ได้ทำการลงทะเบียนไว้ เพื่อรับการอัพเดตเกี่ยวกับ
+                                Ticket ของคุณ</small>
                         </label>
                     </div>
                 </div>
@@ -355,7 +361,8 @@ function Auth(type_action) {
                 URL += '&scope=notify';
                 URL += '&state=' + firstname + ',' + lastname + ',' + nickname + ',' + username + ',' + password + ',' +
                     department + ',' + workemail + ',' + office_tell;
-                URL += '&redirect_uri=https://content-service-gate.cdse-commercecontent.com/base/action/action_register_account.php';
+                URL +=
+                    '&redirect_uri=https://content-service-gate.cdse-commercecontent.com/base/action/action_register_account.php';
                 window.location.href = URL;
             } else {
                 window.location.href =
@@ -368,4 +375,5 @@ function Auth(type_action) {
 }
 </script>
 <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
 </html>
