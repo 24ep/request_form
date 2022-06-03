@@ -1,7 +1,7 @@
 <?php
     session_start();
     include_once("get_default_profile_image.php");
-    include("../connect.php");
+    // include("../connect.php");
    // include_once("https://content-service-gate.cdse-commercecontent.com/base/connect.php");
 
     date_default_timezone_set("Asia/Bangkok");
