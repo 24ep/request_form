@@ -475,7 +475,7 @@
                                         </form>
                                     </nav>
 
-                                    <div id="get_ts_admin_console">
+                                    <div class="row" id="get_ts_admin_console">
 
                                     </div>
                                 </div>

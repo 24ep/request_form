@@ -79,7 +79,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
             onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
             data-bs-target="#detail_cr" aria-controls="offcanvasExample">
 
-        <div class="row" >
+        <div class="row" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample">
             <div class="col-10" >
                 <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
             </div>
@@ -136,8 +136,8 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     mysqli_close($con);
                 }
         //----------------- new
-        echo '
-        <div class="row">';
+  
+        
         $con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query_status = "SELECT * FROM content_service_gate.attribute_option 
@@ -156,7 +156,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         echo '</div>';
         $i++;
         }
-     
-        echo '</div>';
+    
         //------------- new
 ?>
