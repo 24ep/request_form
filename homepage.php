@@ -454,7 +454,7 @@
                                                 <span class="input-group-text">Username</span>
                                                 <input style="width: 10%;" list="qlistoption" type="text"
                                                     class="form-control" onchange="run_ts_command('task');"
-                                                    id="ts_username" name="ts_username" placeholder="unassign"
+                                                    id="ts_username" name="ts_username" placeholder="all user"
                                                     aria-label="Username" aria-describedby="basic-addon1"
                                                     value="<?php echo $_SESSION["ts_username"];   ?>">
                                                 <span class="input-group-text">Limit</span>
