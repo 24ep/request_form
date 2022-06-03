@@ -3,7 +3,7 @@ session_start();
 
 $_SESSION["db_username"]= "cdse_admin";
 $_SESSION["db_password"]= "@aA417528639";
-include("https://content-service-gate.cdse-commercecontent.com/base/connect.php");
+include("https://".$_SERVER['HTTP_HOST']."/base/connect.php");
 include('action_insert_log.php');
 $username = $_POST["username"];
 $password = $_POST["password"];
