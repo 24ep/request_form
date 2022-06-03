@@ -352,7 +352,13 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <div id="call_update_complete"></div>
         <div class="offcanvas-body"  style="padding:0px;z-index:1"> 
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="position: fixed;right: 40px;top: 15px;" aria-label="Close"></button>
-        <div class="row window-full overflow-auto" style="margin-bottom: 0px;padding-left:20px;background: white;">
+        <script>document.getElementById("dialog_cr_detail").style.display = "none";</script>
+        <div class="text-center">
+          <div class="spinner-border" role="status" id="spinner_load_cr_detail">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        <div class="row window-full overflow-auto" style="margin-bottom: 0px;padding-left:20px;background: white;" id="dialog_cr_detail">
         <div class="col-7" style="border-right:1px solid  #ebedef;padding: 1rem 1rem;">
 
           <div class="text-white bg-success toast align-items-center top-5 start-50 translate-middle-x fade hide" role="alert" aria-atomic="true" data-bs-delay="2000" aria-live="assertive" id="liveToast_cr" style="position: absolute; top: 0; right: 0;margin-top:10px;margin-right:10px">
@@ -390,6 +396,8 @@ while($row_project = mysqli_fetch_array($result_project)) {
         
         
         <textarea id="comment_input_cr" name="comment_input_cr" type="text" placeholder="Type message"></textarea>
+        <script>document.getElementById("spinner_load_cr_detail").style.display = "none";</script>
+        <script>document.getElementById("dialog_cr_detail").style.display = "block";</script>
        ';
        ?>
 
