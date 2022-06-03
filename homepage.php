@@ -443,13 +443,7 @@
                                                 if($_SESSION["ts_username"]<>""){
                                                     $squser = $_SESSION["ts_username"];
                                                 }else{
-                                                    if($_SESSION["ts_username"]==null){
-                                                        $squser = $_SESSION["username"];
-                                                        $_SESSION["ts_username"]=$_SESSION["username"];
-                                                    }else{
-                                                        $squser = "";
-                                                    }
-                                                    
+                                                    $squser="";
                                                 }
                                                 ?>
                                                 <input style="width: 60%;" type="text" class="form-control"
