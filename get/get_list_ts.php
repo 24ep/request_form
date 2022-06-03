@@ -76,8 +76,8 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
            
                 ?>
 <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
-    data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample"
-    onclick="cr_id_toggle(<?php echo $row['id'] ?>)">
+            onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
+            data-bs-target="#detail_cr" aria-controls="offcanvasExample">
 
         <div class="row" >
             <div class="col-10" >
