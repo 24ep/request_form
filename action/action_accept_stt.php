@@ -14,8 +14,8 @@
 
         
         mysqli_query($con, "SET NAMES 'utf8' ");
-        $query = "SELECT  * FROM add_new_job as job
-        left join account as account
+        $query = "SELECT  * FROM all_in_one_project.add_new_job as job
+        left join all_in_one_project.account as account
         ON job.request_username = account.username WHERE job.id = ".$id
         or die("Error:" . mysqli_error($con));
         $result =  mysqli_query($con, $query);
@@ -33,8 +33,10 @@
         echo date("Y-m-d H:i:s");
 	}else{
         insert_log("send to traffic faild >".$con->error ,"add_new_job",$id);
-        echo 'Error: ' . $sql . '<br>' . $con->error.'';
+        echo '<script>alert("'.'Error: ' . $sql . '<br>' . $con->error.'");</script>';
+     
     }
     mysqli_close($con);
     //header( "location: https://cdse-commercecontent.com/base/homepage.php");
     ?>
+    
