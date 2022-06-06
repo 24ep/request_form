@@ -22,7 +22,6 @@ jobs:
       with:
           token: ${{ secrets.LINE_NOTIFY_TOKEN }}
           message: |
-            Triggered ${{github.repository}}'s ${{ github.event_name }} event.
-            show the github varable ref: ${{ github.ref }}
-            show the github varable commit: ${{ github.sha }}
+            ${{github.repository}}'s ${{ github.event_name }} event.
+            commit SHA : ${{ github.sha }} \n
             Commit: ${{ github.event.head_commit.message }}
