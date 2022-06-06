@@ -22,6 +22,6 @@ jobs:
       with:
           token: ${{ secrets.LINE_NOTIFY_TOKEN }}
           message: |
-            ${{github.repository}}'s ${{ github.event_name }} event.
-            commit SHA : ${{ github.sha }} \n
+            /n${{github.repository}}'s ${{ github.event_name }} event.
+            commit SHA : ${{ github.sha }} /n
             Commit: ${{ github.event.head_commit.message }}
