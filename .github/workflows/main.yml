@@ -25,6 +25,7 @@ jobs:
             -
             -
             ${{github.repository}}'s ${{ github.event_name }} event.
+            -
             commit SHA : ${{ github.sha }}
             -
             Commit: ${{ github.event.head_commit.message }}
