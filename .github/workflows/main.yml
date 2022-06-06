@@ -20,5 +20,9 @@ jobs:
     - name: send default message
       uses: louis70109/line-notify-action@master
       with:
-        token: ${{ secrets.LINE_NOTIFY_TOKEN }}
-        message: 'CSG Deploy code Notification'
+          token: ${{ secrets.LINE_NOTIFY_TOKEN }}
+          message: |
+            Triggered ${{github.repository}}'s ${{ github.event_name }} event.
+            show the github varable ref: ${{ github.ref }}
+            show the github varable commit: ${{ github.sha }}
+            Commit: ${{ github.event.head_commit.message }}
