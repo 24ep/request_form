@@ -7,7 +7,7 @@
     $id = $_POST["id"];
     $sku_accepted = $_POST['sku_accepted'];
     trim($sku_accepted," ");
-    $sql = "UPDATE add_new_job SET all_in_one_project.accepted_date = CURRENT_TIMESTAMP , status = 'waiting traffic'  WHERE id=".$id;
+    $sql = "UPDATE all_in_one_project.add_new_job SET accepted_date = CURRENT_TIMESTAMP , status = 'waiting traffic'  WHERE id=".$id;
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
 	if($query) {
