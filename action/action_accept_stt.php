@@ -12,7 +12,6 @@
     $query = mysqli_query($con,$sql);
 	if($query) {
 
-        
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT  * FROM all_in_one_project.add_new_job as job
         left join all_in_one_project.account as account
