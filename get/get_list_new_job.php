@@ -86,7 +86,7 @@ if(isset($_POST["from_post"] )){
     }
     
    }else{
-    $brand_filter =" anj.brand like '%".$_SESSION['brand_filter']."%'";
+    $brand_filter =" ( anj.brand like '%".$_SESSION['brand_filter']."%' or anj.department like '%".$_SESSION['brand_filter']."%' or anj.sub_department like '%".$_SESSION['brand_filter']."%') ";
    }
   
  }else{
