@@ -170,7 +170,7 @@
                                         </select>
                                     </div>
                                     <div class="col-auto">
-                                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Brand or ID</label>
+                                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Dept , Sub Dept, ID</label>
                                         <input type="text" class="selection_filter"
                                             style="border-bottom: 1px #e0e0e0;border-style: double;" id="brand_filter"
                                             onchange="filter_update();">
