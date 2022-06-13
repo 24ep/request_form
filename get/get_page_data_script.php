@@ -26,7 +26,7 @@ function get_page_data_script(){
     $value_account .= '<td><a href="'.$rowscript["input_date_link"].'" target="_blank"><ion-icon class="icon-mg" name="analytics-outline"></ion-icon>Input sku here</a></td>';
     $value_account .= '<td><a href="'.$rowscript["dashboard_link"].'" target="_blank"></ion-icon>Dashboard</a></td>';
     $value_account .= '<td><a href="'.$rowscript["scurce_code"].'" ><ion-icon name="logo-github"></ion-icon></a></td>';
-    $value_account .= '<td><a href="https://cdse-commercecontent.com/atena-query/running.php?file='.$rowscript["running_path"].'" target="_blank"class="btn btn-danger btn-sm">Run Script</a></td>';
+    $value_account .= '<td><a href="'.$rowscript["running_path"].'" target="_blank"class="btn btn-danger btn-sm">Run Script</a></td>';
     $value_account .= '</tr>';
   } 
 
