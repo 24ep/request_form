@@ -18,9 +18,10 @@ function get_page_data_script(){
   $query_cr = "SELECT * FROM all_in_one_project.script_running" or die("Error:" . mysqli_error($con));
   // loop old
   $result =  mysqli_query($con, $query_cr);
+  $value_account="";
   while($row = mysqli_fetch_array($result)) {
     
-    $value_account ='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
+    $value_account .='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
     $value_account .= '<td style="width:30%;text-align-last: left;" scope="col"><strong>'.$row["script_name"].'</strong><br><small>'.$row["description"].'</small></td>';
     $value_account .= '<td><a href="'.$row["input_date_link"].'" target="_blank"><ion-icon class="icon-mg" name="analytics-outline"></ion-icon>Input sku here</a></td>';
     $value_account .= '<td><a href="'.$row["dashboard_link"].'" target="_blank"></ion-icon>Dashboard</a></td>';
@@ -38,7 +39,6 @@ function get_page_data_script(){
 <thead>
     <tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
       <th scope="col">Script</th>
-      <th scope="col">File</th>
       <th scope="col">Input data</th>
       <th scope="col">Output data</th>
       <th scope="col">Source code</th>
