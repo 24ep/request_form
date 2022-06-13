@@ -22,7 +22,7 @@ function get_page_data_script(){
   while($rowscript = mysqli_fetch_array($result)) {
     
     $value_account .='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
-    $value_account .= '<td style="width:30%;text-align-last: left;" scope="col"><strong>'.$rowscript["script_name"].'</strong><br><small>'.$rowscript["description"].'</small></td>';
+    $value_account .= '<td style="width:40%;text-align-last: left;" scope="col"><strong>'.$rowscript["script_name"].'</strong><br><small>'.$rowscript["description"].'</small></td>';
     $value_account .= '<td><a href="'.$rowscript["input_date_link"].'" target="_blank"><ion-icon class="icon-mg" name="analytics-outline"></ion-icon>Input sku here</a></td>';
     $value_account .= '<td><a href="'.$rowscript["dashboard_link"].'" target="_blank"></ion-icon>Dashboard</a></td>';
     $value_account .= '<td><a href="'.$rowscript["scurce_code"].'" ><ion-icon name="logo-github"></ion-icon></a></td>';
