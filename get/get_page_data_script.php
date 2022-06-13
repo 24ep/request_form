@@ -13,48 +13,24 @@
 <?php
  session_start();
 function get_page_data_script(){
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+  mysqli_query($con, "SET NAMES 'utf8' ");
+  $query_cr = "SELECT * FROM all_in_one_project.script_running" or die("Error:" . mysqli_error($con));
+  // loop old
+  $result =  mysqli_query($con, $query_cr);
+  while($row = mysqli_fetch_array($result)) {
+    
+    $value_account ='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
+    $value_account .= '<td style="width:30%;text-align-last: left;" scope="col"><strong>'.$row["script_name"].'</strong></td>';
+    $value_account .= '<td><a href="'.$row["input_date_link"].'" target="_blank"><ion-icon class="icon-mg" name="analytics-outline"></ion-icon>Input sku here</a></td>';
+    $value_account .= '<td><a href="'.$row["dashboard_link"].'" target="_blank"></ion-icon>Dashboard</a></td>';
+    $value_account .= '<td><a href="'.$row["scurce_code"].'" ><ion-icon name="logo-github"></ion-icon></a></td>';
+    $value_account .= '<td><a href="https://cdse-commercecontent.com/atena-query/running.php?file='.$row["running_path"].'" target="_blank"class="btn btn-danger btn-sm">Run Script</a></td>';
+    $value_account .= '</tr>';
+  } 
 
 
-// $conn_id = ftp_connect("156.67.217.3") or die("Cannot connect");
-// ftp_login($conn_id, "admin_convert_module", "a417528639") or die("Cannot login");
-// ftp_pasv($conn_id, true) or die("Cannot change to passive mode");
 
-// $files = ftp_nlist($conn_id, "/atena-query/*.py");
-
-// foreach ($files as $file)
-// {
-//     $value_account .='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
-//     $value_account .= '<td>'.$file.'</td>';
-//     $value_account .= '<td><a href="https://cdse-commercecontent.com/atena-query/running.php?file='.$file.'" target="_blank"class="btn btn-danger btn-sm">Run Script</a></td>';
-//     $value_account .= '</tr>';
-// }
-
-$value_account ='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
-$value_account .= '<td style="width:30%" scope="col"><strong>SKU on web status checking</strong></td>';
-$value_account .= '<td>db_mdc-monitor_list.py</td>';
-$value_account .= '<td><a href="https://docs.google.com/spreadsheets/d/1JUGTB55LmrI5tcJjpt6HVtf1fC8Ak3h3ofSoUuZ_6ds/edit#gid=893993526" target="_blank"><ion-icon class="icon-mg" name="analytics-outline"></ion-icon>Input sku here</a></td>';
-$value_account .= '<td><a href="https://datastudio.google.com/u/0/reporting/b90ee0e2-066f-4a82-a210-6ce8c514947d/page/p_tm56um2itc" target="_blank"></ion-icon>Dashboard</a></td>';
-$value_account .= '<td><a href="https://github.com/DVM-CDS-CONTENT/athena-cds-product-query/blob/main/db_mdc-monitor_list.py" ><ion-icon name="logo-github"></ion-icon></a></td>';
-$value_account .= '<td><a href="https://cdse-commercecontent.com/atena-query/running.php?file=db_mdc-monitor_list.py" target="_blank"class="btn btn-danger btn-sm">Run Script</a></td>';
-$value_account .= '</tr>';
-
-$value_account .='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
-$value_account .= '<td style="width:30%" scope="col"><strong>Brand day checking</strong></td>';
-$value_account .= '<td>db_mdc-brand_day.py</td>';
-$value_account .= '<td><a href="https://docs.google.com/spreadsheets/d/1JUGTB55LmrI5tcJjpt6HVtf1fC8Ak3h3ofSoUuZ_6ds/edit#gid=1693215773" target="_blank"><ion-icon class="icon-mg" name="analytics-outline"></ion-icon>Input sku here</a></td>';
-$value_account .= '<td><a href="https://datastudio.google.com/reporting/b90ee0e2-066f-4a82-a210-6ce8c514947d/page/p_m13q7ei0qc" target="_blank"><ion-icon class="icon-mg" name="reader-outline"></ion-icon>Dashboard</a></td>';
-$value_account .= '<td><a href="https://github.com/DVM-CDS-CONTENT/athena-cds-product-query/blob/main/db_mdc-brand_day.py" ><ion-icon name="logo-github"></ion-icon></a></td>';
-$value_account .= '<td><a href="https://cdse-commercecontent.com/atena-query/running.php?file=db_mdc-brand_day.py" target="_blank"class="btn btn-danger btn-sm">Run Script</a></td>';
-$value_account .= '</tr>';
-
-$value_account .='<tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">';
-$value_account .= '<td style="width:30%" scope="col"><strong>Beauty Brand day checking</strong></td>';
-$value_account .= '<td>db_mdc-beauty_brand_day.py</td>';
-$value_account .= '<td><a href="https://docs.google.com/spreadsheets/d/1JUGTB55LmrI5tcJjpt6HVtf1fC8Ak3h3ofSoUuZ_6ds/edit#gid=94037544" target="_blank"><ion-icon class="icon-mg" name="analytics-outline"></ion-icon>Input sku here</a></td>';
-$value_account .= '<td><a href="https://datastudio.google.com/reporting/b90ee0e2-066f-4a82-a210-6ce8c514947d/page/p_m13q7ei0qc" target="_blank"><ion-icon class="icon-mg" name="reader-outline"></ion-icon>Dashboard</a></td>';
-$value_account .= '<td><a href="https://github.com/DVM-CDS-CONTENT/athena-cds-product-query/blob/main/db_mdc-beauty_brand_day.py" ><ion-icon name="logo-github"></ion-icon></a></td>';
-$value_account .= '<td><a href="https://cdse-commercecontent.com/atena-query/running.php?file=db_mdc-beauty_brand_day.py" target="_blank"class="btn btn-danger btn-sm">Run Script</a></td>';
-$value_account .= '</tr>';
 
 ?>
 <?php
@@ -74,7 +50,7 @@ $value_account .= '</tr>';
     '.$value_account.'
   </tbody>
 </table>';
-
+mysqli_close($con);
 return $table;
 }
 ?>
