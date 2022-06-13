@@ -15,7 +15,7 @@
 function get_page_data_script(){
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
-  $query_cr = "SELECT * FROM all_in_one_project.script_running" or die("Error:" . mysqli_error($con));
+  $query_cr = "SELECT * FROM all_in_one_project.script_running order by id ASC" or die("Error:" . mysqli_error($con));
   // loop old
   $result =  mysqli_query($con, $query_cr);
   $value_account="";
