@@ -15,15 +15,14 @@ $day_time = $say_hi.$time;
    $day_num = date("d");
    $current_day = date("Y-m-d");
 
-   $query_cr = "SELECT status,sum(sku) as sku,count(id) as ticket FROM all_in_one_project.content_request  group by status ORDER BY id DESC" or die("Error:" . mysqli_error($con));
+   $query_cr = "SELECT status,sum(sku) as sku,count(id) as ticket FROM all_in_one_project.content_request where status not in ('Close','Monitor','Cancel') group by status ORDER BY id DESC" or die("Error:" . mysqli_error($con));
   // loop old
   $result =  mysqli_query($con, $query_cr);
-  $massage_line = "\nContent request status\n";
+  $massage_line = "\nContent Request Status\n";
   while($row = mysqli_fetch_array($result)) {
     
     $massage_line .= "• ".$row["status"]." ".number_format($row["sku"])." SKUs"."\n";
   } 
-  $massage_line .= "---\nดูเพิ่มเติม https://datastudio.google.com/u/0/reporting/0a77f199-2334-4601-a865-70dfcdf28ec6/page/RenVC";
   
    mysqli_close($con);
    // line noti api
