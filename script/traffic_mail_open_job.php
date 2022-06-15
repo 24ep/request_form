@@ -17,7 +17,7 @@ $launch_date =  $_POST["launch_date"];
 $production_type =  $_POST["production_type"];
 $store_stock =  $_POST["store_stock"];
 $contact_vender = $_POST["contact_vender"];
-$im_from_version = $_POST["im_from_version"];
+$im_form_version = $_POST["im_form_version"];
 $dataset = $_POST["dataset"];
 
 function check_account(){
@@ -216,7 +216,7 @@ if(substr_count($subject,$separant_value)==5){
         "store_stock"=>mapping_datapump_store($store_stock),
         "contact_vender"=>$contact_vender,
         "bu"=>$bu,
-        "tags"=>"Auto_email_created,".$im_from_version.",".$dataset,
+        "tags"=>"Auto_email_created,".$im_form_version.",".$dataset,
         "lastest_message_id"=>$message_id
     );
 
@@ -245,7 +245,7 @@ if(substr_count($subject,$separant_value)==5){
         "store_stock"=>mapping_datapump_store($store_stock),
         "contact_vender"=>$contact_vender,
         "bu"=>$bu,
-        "tags"=>"Auto_email_created,".$im_from_version.",".$dataset,
+        "tags"=>"Auto_email_created,".$im_form_version.",".$dataset,
         "lastest_message_id"=>$message_id
     );
 }
