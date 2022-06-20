@@ -257,6 +257,7 @@ function create_ticket_csg(){
     global $subject;
     global $attributes;
     global $conversation_id;
+    global $dataset;
 
     $insert_head ="";
     $insert_value = "";
@@ -271,6 +272,8 @@ function create_ticket_csg(){
     }else{
         $total_sku = ",'".$attributes["total_sku"]."'";
     }
+    
+ 
         
         $parent_id = ",".check_exist_message_id();
         $return_check_exist_message_id = check_exist_message_id();
@@ -292,9 +295,15 @@ function create_ticket_csg(){
      $insert_head .= ",contact_vender";$insert_value .= ",'".$attributes["contact_vender"]."'";
      $insert_head .= ",bu";$insert_value .= ",'".$attributes["bu"]."'";
      $insert_head .= ",tags";$insert_value .= ",'".$attributes["tags"]."'";
-     $insert_head .= ",status";$insert_value .= ",'pending'";
      $insert_head .= ",parent";$insert_value .= $parent_id;
-  
+     if($dataset=="OFFLINE ONLY"){
+        $insert_head .= ",status";$insert_value .= ",'cancel'";
+        $insert_head .= ",cancel_date";$insert_value .= ",'".date("Y-m-d H:i:s")."'";
+        $insert_head .= ",cancel_resone";$insert_value .= ",'AUTOMATIC CANCEL SINCE THE TICKET IS OFFLINE ONLY'"
+      }else{
+       $insert_head .= ",status";$insert_value .= ",'pending'";
+      }
+    
      date_default_timezone_set("Asia/Bangkok");
      $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
      mysqli_query($con, "SET NAMES 'utf8' ");
