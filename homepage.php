@@ -885,15 +885,6 @@ function update_project_sticky() {
 function update_project_sticky_badge(){
     var prefix_project_sticky_array = [];
     var prefix_project_sticky = "";
-        $.each($("input[name='bucket_checking']:checked"), function(){
-            prefix_project_sticky_array.push($(this).val());
-
-            document.querySelectorAll('[data-bucket*="'+$(this).val()+'"]').forEach(
-                (elem) => elem.style.display = 'none'
-                (elem) => elem.style.position = 'absolute!important'
-                (elem) => elem.style.zIndex  = '-1'
-            );
-        });
         $.each($("input[name='bucket_checking']:unchecked"), function(){
             prefix_project_sticky_array.push($(this).val());
 
@@ -903,6 +894,16 @@ function update_project_sticky_badge(){
                 (elem) => elem.style.zIndex  = ''
             );
         });
+        $.each($("input[name='bucket_checking']:checked"), function(){
+            prefix_project_sticky_array.push($(this).val());
+
+            document.querySelectorAll('[data-bucket*="'+$(this).val()+'"]').forEach(
+                (elem) => elem.style.display = 'none'
+                (elem) => elem.style.position = 'absolute!important'
+                (elem) => elem.style.zIndex  = '-1'
+            );
+        });
+     
         
         prefix_project_sticky = prefix_project_sticky_array.join("','");
         prefix_project_sticky = "'"+prefix_project_sticky+"'";
