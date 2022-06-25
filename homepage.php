@@ -886,7 +886,7 @@ function update_project_sticky_badge(){
     var prefix_project_sticky_array = [];
     var prefix_project_sticky = "";
         $.each($("input[name='bucket_checking']:checked"), function(){
-            prefix_project_sticky_array.push($(this).val());
+            prefix_project_sticky_array.push($("'"+this+"'").val());
         });
         
         prefix_project_sticky = prefix_project_sticky_array.join(",");
