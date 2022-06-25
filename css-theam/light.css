@@ -213,6 +213,7 @@ ion-icon {
     border-radius: 10px;
     background: #f8f9fa!important;
     margin-bottom: 10px;
+    border: solid 1px #e2e2e2;
 }
 
 .custom-editor-wrapper {
