@@ -666,7 +666,7 @@ function get_project_model(id) {
     }
 }
 function search_cr_data(){
-    car input = document.getElementById('ts_command').value;
+    var input = document.getElementById('ts_command').value;
     if(input!=""){
         //hide all card
         const boxes = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
