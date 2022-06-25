@@ -344,7 +344,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <h5 style="font-weight: 800;"><strong style="color:'.$color_project.'!important;">'.$ticket_template.'-'.$id .'</strong> '.$title.'</h5>
         <form method="post">
         <div class="des_cr" id="des_cr_inline" >'.$description.'</div></form>
-        '.$list_image.'
+        '.$list_attachment.$list_image.'
         <hr style="margin-bottom:5px;color: #dee2e6;">
         <small style="font-weight: bolder;color: #adb5bd;margin-bottom:5px">Comment</small>
         <ul  class="list-group list-group-flush" style="background: fixed;">
@@ -453,7 +453,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             </ul>
             <br>';
       }
-            echo $list_attachment;
+            
             if($ticket_template<>"PJ"){
             echo '
             <hr>
