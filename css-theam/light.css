@@ -422,6 +422,7 @@ table.dataTable.no-footer {
     display: inherit;
 }
 .bk-cr{
-    border-radius: 20px;
-    margin: 5px;
+    border-radius: 20px!important;
+    margin: 5px!important;
+    align-self: center!important;
 }
