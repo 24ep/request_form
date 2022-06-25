@@ -670,20 +670,18 @@ function update_project_sticky_badge(){
     var prefix_project_sticky = "";
         $.each($("input[name='bucket_checking']:not(:checked)"), function(){
             const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
-            document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]').classList.add("bucket-hin");
-            // for (const box of boxes) {
+            for (const box of boxes) {
                
-            //     box.classList.add("bucket-hin");
-            //     console.log('done');
-            // }
+                box.classList.add("bucket-hin");
+                console.log('done');
+            }
 
         });
         $.each($("input[name='bucket_checking']:checked"), function(){
             const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
-            document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]').classList.remove("bucket-hin");
-            // for (const box of boxes) {
-            //     box.classList.remove("bucket-hin");
-            // }
+            for (const box of boxes) {
+                box.classList.remove("bucket-hin");
+            }
             prefix_project_sticky_array.push($(this).val());
         });
      
