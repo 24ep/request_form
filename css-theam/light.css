@@ -443,9 +443,9 @@ table.dataTable.no-footer {
     z-index: -1;
 }
 .cr_detail_with_attachment{
-    color:gray;
+    /* color:gray;
     border-bottom: solid 5px #adadad;
-    padding: 0px 10px;
+    padding: 0px 10px; */
 }
 .cr_hr_detail{
     margin-bottom:5px;
