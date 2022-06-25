@@ -275,7 +275,7 @@
                                         <button onclick="filter_cr_ticket('Close')" class="btn btn-secondary">
                                             <ion-icon name="checkmark-done-circle-outline"></ion-icon>Fixed (Lastest 10)
                                         </button>
-                                        <select class="form-select" style="width:150px" onchange="search_cr_data(this)();"
+                                        <select class="form-select" style="width:150px" onchange="search_cr_data(this);"
                                             id="user_cr_filter" name="user_cr_filter"
                                             aria-label="Default select example">
                                             <option value="all_user">All User</option>
