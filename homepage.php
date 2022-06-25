@@ -889,18 +889,19 @@ function update_project_sticky_badge(){
             prefix_project_sticky_array.push($(this).val());
 
             document.querySelectorAll('[data-bucket*="'+$(this).val()+'"]').forEach(
-                (elem) => elem.style.display = ''
-                (elem) => elem.style.position = ''
-                (elem) => elem.style.zIndex  = ''
+                (elem) => elem.style.display = 'none'
+                (elem) => elem.style.position = 'absolute!important'
+                (elem) => elem.style.zIndex  = '-1'
             );
         });
         $.each($("input[name='bucket_checking']:checked"), function(){
             prefix_project_sticky_array.push($(this).val());
 
             document.querySelectorAll('[data-bucket*="'+$(this).val()+'"]').forEach(
-                (elem) => elem.style.display = 'none'
-                (elem) => elem.style.position = 'absolute!important'
-                (elem) => elem.style.zIndex  = '-1'
+                
+                (elem) => elem.style.display = ''
+                (elem) => elem.style.position = ''
+                (elem) => elem.style.zIndex  = ''
             );
         });
      
