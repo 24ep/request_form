@@ -356,7 +356,7 @@
                                                 }
                                                 ?>
                                                 <input style="width: 60%;" type="text" class="form-control"
-                                                    onchange="search_cr_data(this);" id="ts_command" name="ts_command"
+                                                    onchange="search_cr_data();" id="ts_command" name="ts_command"
                                                     placeholder="fill someting .." aria-label="Username"
                                                     aria-describedby="basic-addon1" value="<?php echo $sqb; ?>">
                                                 <span class="input-group-text">Username</span>
@@ -665,7 +665,8 @@ function get_project_model(id) {
         });
     }
 }
-function search_cr_data(input){
+function search_cr_data(){
+    car input = document.getElementById('ts_command').value;
     if(input!=""){
         //hide all card
         const boxes = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
