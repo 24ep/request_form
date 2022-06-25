@@ -413,7 +413,6 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
 <div class="row">
     <div class="col">
         <strong>Task list</strong><br>
-        <small>Create a task for record action of ticket</small>
     </div>
     <div class="col">
         <div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">

@@ -144,7 +144,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
               <div class="col text-center" style="padding:3px;"> <strong>Status</strong></div>
               <div class="col text-center" style="padding:3px;"> <strong>Type</strong></div>
               <div class="col text-center" style="padding:3px;"> <strong>Reason</strong></div>
-              <div class="col-1 text-center" style="padding:3px;"> <strong>Remove</strong></div>
+              <div class="col-1 text-center" style="padding:3px;"> <strong></strong></div>
               </li>';
               }else{
                 echo '<li class="mb-1 row">
