@@ -886,7 +886,7 @@ function update_project_sticky_badge(){
     var prefix_project_sticky_array = [];
     var prefix_project_sticky = "";
         $.each($("input[name='bucket_checking']:unchecked"), function(){
-            prefix_project_sticky_array.push($(this).val());
+           
 
             document.querySelectorAll('[data-bucket*="'+$(this).val()+'"]').forEach(
                 (elem) => elem.style.display = 'none'
