@@ -113,7 +113,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                         echo '</div>';
                     }else{
                         echo '<div class="badge-profile">';
-                          echo '<div class="col card-col-image-profile">';
+                          echo '<div class="col">';
                           echo $image_profile;
                           echo '</div>';
                           echo '<div class="col card-assign-name">';
