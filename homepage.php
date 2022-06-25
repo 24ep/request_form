@@ -672,10 +672,7 @@ function update_project_sticky_badge(){
             const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
             console.log($(this).val());
             for (const box of boxes) {
-               
                 box.className += " bucket-hin";
-
-                
             }
 
         });
