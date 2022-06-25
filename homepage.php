@@ -794,6 +794,8 @@ function run_ts_command(ts_level) {
         $('#get_ts_admin_console').html(data);
     });
     update_project_sticky_badge('skip');
+    search_cr_data();
+    search_cr_username();
 }
     </script>
     <script type="text/javascript">
@@ -1090,6 +1092,8 @@ function doAutoRefresh_ts_admin() {
         req_ts.send(null);
     }
     update_project_sticky_badge('skip');
+    search_cr_data();
+    search_cr_username();
 };
 
 function doAutoRefresh_cr() {
