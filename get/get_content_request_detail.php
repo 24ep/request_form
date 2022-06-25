@@ -679,6 +679,9 @@ function EditDetailTicket(){
 }
 function SaveDetailTicket(id){
   update_cr_detail(id,'cr_edit_title');
+  document.getElementById("cr_edit_title").disabled = true;
+  document.getElementById("EditDetailTicket").style.display = 'block';
+  document.getElementById("SaveDetailTicket").style.display = 'none';
 }
 </script>
 <script>
