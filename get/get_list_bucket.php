@@ -33,20 +33,20 @@
   FROM all_in_one_project.project_bucket as pb order by pb.sticky DESC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
 
-  echo '
-        <input type="checkbox" class="btn-check" name="bucket_checking" id="all" autocomplete="off">
-        <label onclick="update_project_sticky_badge()" class="btn btn-outline-primary btn-sm bk-cr" for="all">Show all</label>
-    ';
+//   echo '
+//         <input type="checkbox" class="btn-check" name="bucket_checking" id="all" autocomplete="off">
+//         <label onclick="update_project_sticky_badge()" class="btn btn-outline-primary btn-sm bk-cr" for="all">Show all</label>
+//     ';
   while($row = mysqli_fetch_array($result)) {
     if(strpos( $_SESSION["prefix_project_sticky"],$row['prefix'])!==false){
         echo '
         <input type="checkbox" class="btn-check" name="bucket_checking" id="'.$row["prefix"].'" autocomplete="off" checked>
-        <label onclick="update_project_sticky_badge()" class="btn btn-outline-primary btn-sm bk-cr shadow-sm" for="'.$row["prefix"].'" >'.$row["project_name"].'</label>
+        <label onclick="update_project_sticky_badge()" value="'.$row["prefix"].'" class="btn btn-outline-primary btn-sm bk-cr shadow-sm" for="'.$row["prefix"].'" >'.$row["project_name"].'</label>
     ';
     }else{
         echo '
         <input type="checkbox" class="btn-check" name="bucket_checking" id="'.$row["prefix"].'" autocomplete="off">
-        <label onclick="update_project_sticky_badge()" class="btn btn-outline-primary btn-sm bk-cr shadow-sm" for="'.$row["prefix"].'">'.$row["project_name"].'</label>
+        <label onclick="update_project_sticky_badge()" value="'.$row["prefix"].'" class="btn btn-outline-primary btn-sm bk-cr shadow-sm" for="'.$row["prefix"].'">'.$row["project_name"].'</label>
     ';
     }
     
