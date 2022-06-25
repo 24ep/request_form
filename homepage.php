@@ -668,39 +668,43 @@ function get_project_model(id) {
 function update_project_sticky_badge(BuketPrefix){
     var prefix_project_sticky_array = [];
     var prefix_project_sticky = "";
-    if(BuketPrefix!='skip'){
-        var BuketPrefixEle= document.getElementById(BuketPrefix);
-        if(BuketPrefixEle.checked){
-            document.getElementById(BuketPrefix).checked = false;
-        }else{
+    // if(BuketPrefix!='skip'){
+    //     var BuketPrefixEle= document.getElementById(BuketPrefix);
+    //     if(BuketPrefixEle.checked){
+    //         document.getElementById(BuketPrefix).checked = false;
+    //     }else{
             
-            document.getElementById(BuketPrefix).checked = true;
-        }
-    }
+    //         document.getElementById(BuketPrefix).checked = true;
+    //     }
+    // }
 
 
 
     
         $.each($("input[name='bucket_checking']:not(:checked)"), function(){
-            const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
-            console.log($(this).val());
-            for (const box of boxes) {
-                box.className += " bucket-hin";
+            if($(this).val()!=BuketPrefix){
+                const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
+                for (const box of boxes) {
+                    box.className += " bucket-hin";
+                }
             }
+           
 
         });
         $.each($("input[name='bucket_checking']:checked"), function(){
-            const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
-            for (const box of boxes) {
-                // box.classList.remove("bucket-hin");
-                box.className.replace(" bucket-hin", "");
+            if($(this).val()!=BuketPrefix){
+                const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
+                for (const box of boxes) {
+                    // box.classList.remove("bucket-hin");
+                    box.className.replace(" bucket-hin", "");
+                }
+                prefix_project_sticky_array.push($(this).val());
             }
-            prefix_project_sticky_array.push($(this).val());
         });
      
         prefix_project_sticky = prefix_project_sticky_array.join("','");
         prefix_project_sticky = "'"+prefix_project_sticky+"'";
-        console.log("My favourite sports are: " + prefix_project_sticky_array.join(","));
+        console.log("is checked: " + prefix_project_sticky_array.join(","));
         $.post("base/get/get_list_bucket.php", {
         prefix_project_sticky: prefix_project_sticky
         }, function(data) {
