@@ -40,15 +40,13 @@
   while($row = mysqli_fetch_array($result)) {
     if(strpos( $_SESSION["prefix_project_sticky"],$row['prefix'])!==false){
         echo '
-        <label   class="btn btn-outline-primary btn-sm bk-cr shadow-sm" for="'.$row["prefix"].'" >
         <input type="checkbox" class="btn-check" onchange="update_project_sticky_badge();" value="'.$row["prefix"].'"  name="bucket_checking" id="'.$row["prefix"].'" autocomplete="off" checked>
-        '.$row["project_name"].'</label>
+        <label   class="btn btn-outline-primary btn-sm bk-cr shadow-sm" for="'.$row["prefix"].'" >'.$row["project_name"].'</label>
     ';
     }else{
         echo '
-        <label   class="btn btn-outline-primary btn-sm bk-cr shadow-sm" for="'.$row["prefix"].'">
         <input type="checkbox" class="btn-check" onchange="update_project_sticky_badge();" value="'.$row["prefix"].'" name="bucket_checking" id="'.$row["prefix"].'" autocomplete="off">
-        '.$row["project_name"].'</label>
+        <label   class="btn btn-outline-primary btn-sm bk-cr shadow-sm" for="'.$row["prefix"].'">'.$row["project_name"].'</label>
     ';
     }
     
