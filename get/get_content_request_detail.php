@@ -666,15 +666,15 @@ function EditDetailTicket(){
   var disabled = document.getElementById("cr_edit_title").disabled;
     if (disabled) {
         document.getElementById("cr_edit_title").disabled = false;
-        document.getElementById("EditDetailTicket").disabled = true;
+        document.getElementById("EditDetailTicket").style.display = 'none';
         document.getElementById("SaveDetailTicket").disabled = false;
-        document.getElementById("SaveDetailTicket").style.display = 'none';
+        document.getElementById("SaveDetailTicket").style.display = 'block';
     }
     else {
         document.getElementById("cr_edit_title").disabled = true;
-        document.getElementById("EditDetailTicket").disabled = false;
+        document.getElementById("EditDetailTicket").style.display = 'block';
         document.getElementById("SaveDetailTicket").disabled = true;
-        document.getElementById("SaveDetailTicket").style.display = 'black';
+        document.getElementById("SaveDetailTicket").style.display = 'none';
     }
 }
 function SaveDetailTicket(id){
