@@ -151,7 +151,7 @@ function get_attachment_cr($id){
   <ul class="list-group ">';
     while($row = mysqli_fetch_array($result)) {
       $herf = str_replace("../..",'../..',$row['file_path'].$row['file_name']);
-      $list_attchment.=  ' <li class="list-group-item d-flex justify-content-between align-items-left" style="border-color: #7ec1a2;" > 
+      $list_attchment.=  ' <li class="list-group-item d-flex justify-content-between align-items-left" style="border:0px;padding:0px > 
                               <a href="'.$herf.'" download="'.$row['file_name'].'" class="btn btn-outline-success btn-sm ">
                                 <ion-icon name="document-attach-outline"></ion-icon>'.$row["file_name"].'
                               </a>
