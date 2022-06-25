@@ -343,7 +343,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <span>'.$create_date.'</span>      
         </div>
         <span class="badge bg-primary" style="background-color:'.$color_project.'!important;margin-bottom:15px;padding:8px 15px;">'.$project_name.'</span>
-        <a onclick="prompt(&#39Press Ctrl + C, then Enter to copy to clipboard&#39,&#39https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='.$id.'&#39)"><ion-icon style="margin:5px"name="share-social-outline"></ion-icon>Copie ticket URL</a>
+        <a class="badge bg-light text-dark" style="border: solid 1px gainsboro;" onclick="prompt(&#39Press Ctrl + C, then Enter to copy to clipboard&#39,&#39https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='.$id.'&#39)"><ion-icon name="share-social-outline"></ion-icon>Copie ticket URL</a>
         <h5 style="font-weight: 800;"><strong style="color:'.$color_project.'!important;">'.$ticket_template.'-'.$id .'</strong> '.$title.'</h5>
         <form method="post">
         <div class="des_cr" id="des_cr_inline" >'.$description.'</div></form>
