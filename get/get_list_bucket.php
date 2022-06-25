@@ -37,7 +37,7 @@
         <input type="checkbox" class="btn-check"  value="'.$row["prefix"].'"  name="bucket_checking" id="'.$row["prefix"].'" autocomplete="off" checked>
         <label  onclick="update_project_sticky_badge(&#39;'.$row["prefix"].'&#39;);" class="btn btn-outline-primary btn-sm bk-cr shadow-sm" for="'.$row["prefix"].'" >
         '.$row["project_name"].'
-        <span class="badge bg-danger">'.$row["count_ticket"].'</span>
+        <span class="badge rounded-pill bg-danger">'.$row["count_ticket"].'</span>
         </label>
     ';
     }else{
