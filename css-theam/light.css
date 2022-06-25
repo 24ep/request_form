@@ -409,6 +409,8 @@ table.dataTable.no-footer {
 }
 .card-assigned-eft{
     max-width: fit-content;padding-top:3px;
+    position: absolute;
+    right: 0;
 }
 .badge-profile{
     background: #ecf0f4;
