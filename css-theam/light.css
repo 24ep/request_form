@@ -401,12 +401,11 @@ table.dataTable.no-footer {
     padding-top:3px;text-align: right;padding-right: 0px;
 }
 .card-col-image-profile{
-    max-width: fit-content;padding-top:3px;padding-right: 15px;
+    max-width: fit-content;padding-right: 15px;
 }
 .card-assign-name{
-    padding-left: 5px;padding-top: 5px;
-    position: absolute;
-    right: 0;
+    padding: 0px 5px;
+    align-self: center;
 }
 .card-assigned-eft{
     max-width: fit-content;padding-top:3px;
@@ -416,6 +415,7 @@ table.dataTable.no-footer {
     border-radius: 20px;
     border: solid 1px #dddddd;
     width: fit-content;
-    padding: unset;
+    padding: 2px;
     margin: unset;
+    display: inherit;
 }

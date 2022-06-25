@@ -51,6 +51,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         ticket.effective_date as effective_date,
         ac.firstname as firstname,
         ac.lastname as lastname,
+        ac.nickname as nickname,
         ac.department as department,
         ac.username as username,
         pb.color_project as color_project,
@@ -116,7 +117,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                           echo $image_profile;
                           echo '</div>';
                           echo '<div class="col card-assign-name">';
-                          echo ucwords($row["case_officer"]);
+                          echo ucwords($row["nickname"]);
                           echo '</div>';
                         echo '</div>';
                         echo '<div class="col card-assigned-eft">';
