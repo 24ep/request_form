@@ -671,9 +671,8 @@ function update_project_sticky_badge(){
         $.each($("input[name='bucket_checking']:not(:checked)"), function(){
             const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
             for (const box of boxes) {
-                box.style.display = 'none';
-                box.style.position = 'absolute!important';
-                box.style.zIndex = '-1';
+                box.classList.add("bucket-hin");
+  
             }
         });
         $.each($("input[name='bucket_checking']:checked"), function(){
@@ -681,9 +680,7 @@ function update_project_sticky_badge(){
 
             const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
             for (const box of boxes) {
-                box.style.display = '';
-                box.style.position = '';
-                box.style.zIndex = '';
+                box.classList.remove("bucket-hin");
             }
         });
      
