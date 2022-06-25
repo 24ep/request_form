@@ -670,7 +670,7 @@ function update_project_sticky_badge(BuketPrefix){
     var prefix_project_sticky = "";
     if(BuketPrefix!='skip'){
         var BuketPrefixEle= document.getElementById(BuketPrefix)
-        if(BuketPrefixEle.checked == true){
+        if(BuketPrefixEle.checked){
             document.getElementById(BuketPrefix).checked = false;
         }else{
             
