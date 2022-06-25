@@ -887,9 +887,9 @@ function update_project_sticky_badge(){
         $.each($("input[name='bucket_checking']:checked"), function(){
             prefix_project_sticky.push($(this).val());
         });
-       
+        
         prefix_project_sticky = prefix_project_sticky.join(",")
-     
+        console.log("My favourite sports are: " + prefix_project_sticky);
         $.post("base/get/get_list_project.php", {
         prefix_project_sticky: prefix_project_sticky
         }, function(data) {
