@@ -666,7 +666,8 @@ function get_project_model(id) {
     }
 }
 function update_project_sticky_badge(BuketPrefix){
-    
+    var prefix_project_sticky_array = [];
+    var prefix_project_sticky = "";
     if(BuketPrefix!=='skip'){
         if(document.getElementById(BuketPrefix).checked = true){
         const boxes = document.querySelectorAll('li[data-bucket="'+BuketPrefix+'"]');
@@ -687,8 +688,7 @@ function update_project_sticky_badge(BuketPrefix){
 
 
 
-    var prefix_project_sticky_array = [];
-    var prefix_project_sticky = "";
+    
         $.each($("input[name='bucket_checking']:not(:checked)"), function(){
             const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
             console.log($(this).val());
