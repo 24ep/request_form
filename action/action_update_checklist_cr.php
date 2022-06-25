@@ -24,6 +24,9 @@ session_start();
     $query = mysqli_query($con,$sql);
 	if($query) {
         add_participant($_POST['id'],"content_request");
+        if( $value_name=="case_officer"){
+            add_participant_with_user($_POST['id'],"content_request",$value_change);
+        }
         insert_log("update ticket \n ".$value_name." = ".$value_change ,"cl_content_request",$_POST['id']);
         echo '<script>alert("Update Ticket ID CR-'.$_POST['id'].'")</script>';
 	}else{
