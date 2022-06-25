@@ -673,7 +673,8 @@ function update_project_sticky_badge(){
             console.log($(this).val());
             for (const box of boxes) {
                
-                box.classList.add("bucket-hin");
+                box.className += " bucket-hin";
+
                 
             }
 
@@ -681,7 +682,8 @@ function update_project_sticky_badge(){
         $.each($("input[name='bucket_checking']:checked"), function(){
             const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
             for (const box of boxes) {
-                box.classList.remove("bucket-hin");
+                // box.classList.remove("bucket-hin");
+                box.className.replace(" bucket-hin", "");
             }
             prefix_project_sticky_array.push($(this).val());
         });
