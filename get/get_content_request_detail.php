@@ -147,13 +147,14 @@ function get_attachment_cr($id){
   mysqli_query($con, "SET NAMES 'utf8' ");
   $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image<>1 ORDER BY id ASC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
-  $list_attchment .=  '<small style="display:block;margin-bottom:3px"><strong style="color:gray">Attchment</strong></small>
-  <ul class="list-group ">';
+  $list_attchment .=  '<hr class="cr_hr_detail">
+  <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Attchment</strong></small>
+  <ul class="list-group mt-2">';
     while($row = mysqli_fetch_array($result)) {
       $herf = str_replace("../..",'../..',$row['file_path'].$row['file_name']);
       $list_attchment.=  ' <li class="list-group-item d-flex justify-content-between align-items-left" style="border:0px;padding:0px;background: transparent;" > 
-                              <a href="'.$herf.'" download="'.$row['file_name'].'" class="btn btn-outline-success btn-sm ">
-                                <ion-icon name="document-attach-outline"></ion-icon>'.$row["file_name"].'
+                              <a href="'.$herf.'" download="'.$row['file_name'].'" class="btn btn-secondary btn-sm ">
+                                <ion-icon style="color:white;margin-right:5px"name="document-attach-outline"></ion-icon>'.$row["file_name"].'
                               </a>
                            </li>';
       $pass = true;
@@ -344,9 +345,9 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <button class="badge bg-light text-dark" style="border: solid 1px gainsboro;" onclick="prompt(&#39Press Ctrl + C, then Enter to copy to clipboard&#39,&#39https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='.$id.'&#39)"><ion-icon name="share-social-outline"></ion-icon>Copie ticket URL</button>
         <h5 style="font-weight: 800;"><strong style="color:'.$color_project.'!important;">'.$ticket_template.'-'.$id .'</strong> '.$title.'</h5>
         <form method="post">
-        <div class="des_cr" id="des_cr_inline" >'.$description.'<hr>'.$list_attachment.$list_image.'</div></form>
+        <div class="des_cr" id="des_cr_inline" >'.$description.$list_attachment.$list_image.'</div></form>
         
-        <hr style="margin-bottom:5px;color: #dee2e6;">
+        <hr class="cr_hr_detail">
         <small style="font-weight: bolder;color: #adb5bd;margin-bottom:5px">Comment</small>
         <ul  class="list-group list-group-flush" style="background: fixed;">
         <div id="comment_box_cr">
