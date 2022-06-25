@@ -669,12 +669,12 @@ function update_project_sticky_badge(){
     var prefix_project_sticky_array = [];
     var prefix_project_sticky = "";
         $.each($("input[name='bucket_checking']:not(:checked)"), function(){
-            document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]').forEach(el => el.classList.add("bucket-hin"););
+            document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]').forEach(el => el.classList.remove("bucket-hin"););
            
         });
         $.each($("input[name='bucket_checking']:checked"), function(){
             prefix_project_sticky_array.push($(this).val());
-            document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]').forEach(el => el.classList.remove("bucket-hin"););
+            document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]').forEach(el => el.classList.add("bucket-hin"););
         });
      
         
