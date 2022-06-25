@@ -436,3 +436,8 @@ table.dataTable.no-footer {
     position : absolute!important;
     z-index: -1;
 }
+.cr-username-hide{
+    display : none;
+    position : absolute!important;
+    z-index: -1;
+}
