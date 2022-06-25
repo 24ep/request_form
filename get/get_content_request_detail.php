@@ -349,7 +349,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <label for="staticEmail" class="col-sm-2 col-form-label" style="width: fit-content;padding: 0px 5px 5px 15px;">
         <strong style="color:'.$color_project.'!important;font-size: smaller;border-bottom: solid 3px;">'.$ticket_template.'-'.$id .'</strong></label>
           <div class="col-sm-10">
-            <input id="cr_edit_title" name="cr_edit_title" 
+            <input class="input-cr-inactive" id="cr_edit_title" name="cr_edit_title" 
             type="text" style="border: 0px;background: transparent;font-weight: lighter;width: inherit;font-size: smaller;" disabled value="'.$title.'">
           </div>
         </div>
@@ -669,12 +669,14 @@ function EditDetailTicket(){
         document.getElementById("EditDetailTicket").style.display = 'none';
         document.getElementById("SaveDetailTicket").disabled = false;
         document.getElementById("SaveDetailTicket").style.display = 'block';
+        document.getElementById("cr_edit_title").className = document.getElementById("cr_edit_title").className.replace(/(?:^|\s)input-cr-inactive(?!\S)/g, 'input-cr-active');
     }
     else {
         document.getElementById("cr_edit_title").disabled = true;
         document.getElementById("EditDetailTicket").style.display = 'block';
         document.getElementById("SaveDetailTicket").disabled = true;
         document.getElementById("SaveDetailTicket").style.display = 'none';
+        document.getElementById("cr_edit_title").className = document.getElementById("cr_edit_title").className.replace(/(?:^|\s)input-cr-active(?!\S)/g, 'input-cr-inactive');
     }
 }
 function SaveDetailTicket(id){
@@ -682,6 +684,7 @@ function SaveDetailTicket(id){
   document.getElementById("cr_edit_title").disabled = true;
   document.getElementById("EditDetailTicket").style.display = 'block';
   document.getElementById("SaveDetailTicket").style.display = 'none';
+  document.getElementById("cr_edit_title").className = document.getElementById("cr_edit_title").className.replace(/(?:^|\s)input-cr-active(?!\S)/g, 'input-cr-inactive');
 }
 </script>
 <script>
