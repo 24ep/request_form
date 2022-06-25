@@ -345,11 +345,12 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <button class="badge bg-light text-dark" style="border: solid 1px gainsboro;" onclick="prompt(&#39Press Ctrl + C, then Enter to copy to clipboard&#39,&#39https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='.$id.'&#39)"><ion-icon name="share-social-outline"></ion-icon>Copie ticket URL</button>
         
         <div class="mb-3 row" style="font-size: x-large;">
-        <label for="staticEmail" class="col-sm-2 col-form-label"><strong style="color:'.$color_project.'!important;font-size: medium;border-bottom: solid 3px;">'.$ticket_template.'-'.$id .'</strong></label>
+        <label for="staticEmail" class="col-sm-2 col-form-label" style="width: fit-content;padding: 0px 5px 5px 15px;">
+        <strong style="color:'.$color_project.'!important;font-size: medium;border-bottom: solid 3px;">'.$ticket_template.'-'.$id .'</strong></label>
           <div class="col-sm-10">
             <input id="cr_edit_title" name="cr_edit_title" 
             onchange="update_cr_detail(5346,&#39;cr_edit_title&#39;)"
-            type="text" style="border: 0px;background: transparent;" disabled value="'.$title.'">
+            type="text" style="border: 0px;background: transparent;font-weight: lighter;width: inherit;" disabled value="'.$title.'">
           </div>
         </div>
    
