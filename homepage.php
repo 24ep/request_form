@@ -361,7 +361,7 @@
                                                     aria-describedby="basic-addon1" value="<?php echo $sqb; ?>">
                                                 <span class="input-group-text">Username</span>
                                                 <input style="width: 10%;" list="qlistoption" type="text"
-                                                    class="form-control" onchange="run_ts_command('task');"
+                                                    class="form-control" onchange="search_cr_username();"
                                                     id="ts_username" name="ts_username" placeholder="all user"
                                                     aria-label="Username" aria-describedby="basic-addon1"
                                                     value="<?php echo $_SESSION["ts_username"];   ?>">
@@ -694,7 +694,7 @@ function search_cr_data(){
     }
     
 }
-function search_cr_data(){
+function search_cr_username(){
   
     var username = document.getElementById('ts_username').value;
     
