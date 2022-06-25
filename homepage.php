@@ -665,20 +665,36 @@ function get_project_model(id) {
         });
     }
 }
+function search_cr_data(input){
+    if(input!=""){
+        //hide all card
+        const boxes = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
+        for (const box of boxes) {
+            box.className += " cr-search-hide";
+        }
+        //show title contain
+        const boxes = document.querySelectorAll('li[data-cr-title=*"'+input+'"]');
+        for (const box of boxes) {
+            box.className = box.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '')
+        }
+        //show id equal
+        const boxes = document.querySelectorAll('li[data-cr-id="'+input+'"]');
+        for (const box of boxes) {
+            box.className = box.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '')
+        }
+    }else{
+        //unhide all card
+        const boxes = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
+        for (const box of boxes) {
+            box.className = box.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '')
+        }
+    }
+    
+}
 function update_project_sticky_badge(BuketPrefix){
     var prefix_project_sticky_array = [];
     var prefix_project_sticky = "";
-    // if(BuketPrefix!='skip'){
-    //     var BuketPrefixEle= document.getElementById(BuketPrefix);
-    //     if(BuketPrefixEle.checked){
-    //         document.getElementById(BuketPrefix).checked = false;
-    //     }else{
-            
-    //         document.getElementById(BuketPrefix).checked = true;
-    //     }
-    // }
 
-    
         $.each($("input[name='bucket_checking']:not(:checked)"), function(){
             if($(this).val()!=BuketPrefix){
                 const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
@@ -688,8 +704,6 @@ function update_project_sticky_badge(BuketPrefix){
             }else{
                 const boxes = document.querySelectorAll('li[data-bucket="'+BuketPrefix+'"]');
                 for (const box of boxes) {
-                    // box.classList.remove("bucket-hin");
-                    //box.className.replace("bucket-hin", "");
                     box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '')
                 }
                 prefix_project_sticky_array.push($(this).val());
@@ -700,8 +714,6 @@ function update_project_sticky_badge(BuketPrefix){
             if($(this).val()!=BuketPrefix){
                 const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
                 for (const box of boxes) {
-                    // box.classList.remove("bucket-hin");
-                    // box.className.replace("bucket-hin", "");
                     box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '')
                 }
                 prefix_project_sticky_array.push($(this).val());
@@ -719,10 +731,7 @@ function update_project_sticky_badge(BuketPrefix){
         $.post("base/get/get_list_bucket.php", {
         prefix_project_sticky: prefix_project_sticky
         }, function(data) {
-            // z-index: -1;
-            // position: absolute!important;
-            // display: none;
-        
+            //#nothing
         });
 }
 

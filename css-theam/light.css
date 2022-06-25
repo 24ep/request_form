@@ -431,3 +431,8 @@ table.dataTable.no-footer {
     position : absolute!important;
     z-index: -1;
 }
+.cr-search-hide{
+    display : none;
+    position : absolute!important;
+    z-index: -1;
+}
