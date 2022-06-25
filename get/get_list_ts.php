@@ -73,12 +73,12 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
 <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
     onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
     aria-controls="offcanvasExample">
-    <div class="row">
-        <div class="col-10" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
+    <div class="row" style="padding-right: 0px;">
+        <div class="col-10" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
             data-bs-target="#detail_cr" aria-controls="offcanvasExample">
             <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
         </div>
-        <div class="col-2" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
+        <div class="col-2" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
             data-bs-target="#detail_cr" aria-controls="offcanvasExample">
             <!-- icon -->
             <?php
@@ -111,11 +111,13 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                         echo  badge_due_date($row["effective_date"]);
                         echo '</div>';
                     }else{
-                        echo '<div class="col card-col-image-profile">';
-                        echo $image_profile;
-                        echo '</div>';
-                        echo '<div class="col card-assign-name">';
-                        echo ucwords($row["case_officer"]);
+                        echo '<div class="badge-profile">';
+                          echo '<div class="col card-col-image-profile">';
+                          echo $image_profile;
+                          echo '</div>';
+                          echo '<div class="col card-assign-name">';
+                          echo ucwords($row["case_officer"]);
+                          echo '</div>';
                         echo '</div>';
                         echo '<div class="col card-assigned-eft">';
                         echo  badge_due_date($row["effective_date"]);

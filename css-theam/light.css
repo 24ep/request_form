@@ -409,4 +409,11 @@ table.dataTable.no-footer {
 .card-assigned-eft{
     max-width: fit-content;padding-top:3px;
 }
-
+.badge-profile{
+    background: #ecf0f4;
+    border-radius: 20px;
+    border: solid 1px #dddddd;
+    width: fit-content;
+    padding: unset;
+    margin: unset;
+}
