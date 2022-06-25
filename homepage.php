@@ -671,10 +671,11 @@ function update_project_sticky_badge(){
         $.each($("input[name='bucket_checking']:not(:checked)"), function(){
             const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
             for (const box of boxes) {
-                console.log(box);
+               
                 box.classList.add("bucket-hin");
-  
+                console.log('done');
             }
+
         });
         $.each($("input[name='bucket_checking']:checked"), function(){
             const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
