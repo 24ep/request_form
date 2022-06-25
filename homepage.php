@@ -275,7 +275,7 @@
                                         <button onclick="filter_cr_ticket('Close')" class="btn btn-secondary">
                                             <ion-icon name="checkmark-done-circle-outline"></ion-icon>Fixed (Lastest 10)
                                         </button>
-                                        <select class="form-select" style="width:150px" onchange="search_cr_data(this);"
+                                        <select class="form-select" style="width:150px" onchange="search_cr_ticket();"
                                             id="user_cr_filter" name="user_cr_filter"
                                             aria-label="Default select example">
                                             <option value="all_user">All User</option>
@@ -356,7 +356,7 @@
                                                 }
                                                 ?>
                                                 <input style="width: 60%;" type="text" class="form-control"
-                                                    onchange="run_ts_command('task');" id="ts_command" name="ts_command"
+                                                    onchange="serach_cr_data(this);" id="ts_command" name="ts_command"
                                                     placeholder="fill someting .." aria-label="Username"
                                                     aria-describedby="basic-addon1" value="<?php echo $sqb; ?>">
                                                 <span class="input-group-text">Username</span>
@@ -686,7 +686,7 @@ function search_cr_data(input){
         //unhide all card
         const boxes = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
         for (const box of boxes) {
-            box.className = box.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '')
+            box.className += " cr-search-hide";
         }
     }
     
