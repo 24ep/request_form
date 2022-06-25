@@ -671,17 +671,17 @@ function update_project_sticky_badge(){
         $.each($("input[name='bucket_checking']:not(:checked)"), function(){
             const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
             for (const box of boxes) {
+                console.log(box)
                 box.classList.add("bucket-hin");
   
             }
         });
         $.each($("input[name='bucket_checking']:checked"), function(){
-            prefix_project_sticky_array.push($(this).val());
-
             const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
             for (const box of boxes) {
                 box.classList.remove("bucket-hin");
             }
+            prefix_project_sticky_array.push($(this).val());
         });
      
         
