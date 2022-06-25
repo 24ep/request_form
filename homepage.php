@@ -675,7 +675,7 @@ function search_cr_data(){
             card.className += " cr-search-hide";
         }
         //show title contain
-        var SearchInputQuery = document.querySelectorAll('li[data-cr-title=*"'+input+'"]');
+        var SearchInputQuery = document.querySelectorAll('li[data-cr-title*="'+input+'"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
         }
