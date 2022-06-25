@@ -894,7 +894,7 @@ function update_project_sticky_badge(){
         $.post("base/get/get_list_bucket.php", {
         prefix_project_sticky: prefix_project_sticky
         }, function(data) {
-            $('#project_bucket').html(data);
+            // $('#project_bucket').html(data);
         });
 }
 
