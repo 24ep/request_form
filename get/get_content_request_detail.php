@@ -3,15 +3,12 @@
 .multiple-select_cr_edit .ms-choice {
     border: 0px;
 }
-
-
 label#label_file {
     color: #adb5bd;
     font-size: 12px;
     font-weight: 600 !important;
 }
 </style>
-
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <?php
 session_start();
@@ -25,7 +22,6 @@ if($id=="" or $id == null){
   $direct = "external";
   $id = $_GET['id'];
   echo '  
-  
 <html lang="en">
   <head>
   <title>Content and Studio - Content Request</title>
@@ -33,7 +29,6 @@ if($id=="" or $id == null){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" />
-  
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
@@ -55,8 +50,6 @@ if($id=="" or $id == null){
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-
-
   <script>
   $(function() {
       $(".multiple-select").multipleSelect()
@@ -76,7 +69,6 @@ if($id=="" or $id == null){
   <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/light-modern.css">
   <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
   <style>
-  
 #overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
@@ -91,7 +83,6 @@ if($id=="" or $id == null){
   cursor: pointer; 
 }
   </style>
-  
   </head>
   <body onload="'.$overlay.'">
   <div id="overlay">
@@ -125,10 +116,8 @@ if($id=="" or $id == null){
               setup: (ed) => {
                   editor = ed;
               },
-              
               });
           }
-      
 </script>
 ';
 }
@@ -184,7 +173,6 @@ function get_image_cr($id){
   $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image=1 ORDER BY id ASC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   if(isset($list_image)){$list_image.= '<div class="row">';}else{$list_image= '<div class="row">';}
-  
     while($row = mysqli_fetch_array($result)) {
       $herf = str_replace("../..",'../..',$row['file_path'].$row['file_name']);
       $list_image.=  ' <div class="col-md"><div class="thumbnail">
@@ -196,8 +184,6 @@ function get_image_cr($id){
     $list_image.= '</div>';
       return $list_image;
 }
-
-
 function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
@@ -218,7 +204,6 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
                     }else{
                       $option_set = '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
                     }
-                    
                     $duplicate_op = true;
                   }
                 }
@@ -234,15 +219,12 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
               }
             }
           }else{
-       
-
             if($loop_in_null<>true){
               if(isset($option_set)){
                 $option_set .= '<option value=""></option>';
               }else{
                 $option_set = '<option value=""></option>';
               }
-           
               $loop_in_null=true;
             }
               if($row[$col] <> '' and  $row[$col] <> null)
@@ -257,14 +239,12 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
     }
         mysqli_close($con);
        return $option_set;
-       
       }
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 $query = "SELECT * FROM all_in_one_project.content_request where id=".$id." ORDER by id DESC";
 $result = mysqli_query($con, $query);
-// $result_count = mysqli_query($con, $query_count);
    while($row = mysqli_fetch_array($result)) {
     $description = $row["description"];
     $description = htmlspecialchars_decode($description,ENT_NOQUOTES);
@@ -289,11 +269,8 @@ $result = mysqli_query($con, $query);
     }else{
         $assign = '<div style="margin-bottom:15px">assign to '.$case_officer.'</div>';
     }
-    // $cr_op = getoption_return_edit_cr("content_request_status","option",$status,"single","all_in_one_project");
     $cr_op = return_option_edit_cr($status,"38");
     $username_op = getoption_return_edit_cr("username","account",$case_officer,"single","all_in_one_project");
-    // $new_username_op = new_select_option("username","account",$case_officer,"all_in_one_project");
-    // $type_op = getoption_return_edit_cr("issue_type","option",$ticket_type,"single","all_in_one_project");
     $type_op = return_option_edit_cr($ticket_type,"39");
     $content_request_reson_op = getoption_return_edit_cr("content_request_reson","option",$content_request_reson,"single","all_in_one_project");
     $website_op = getoption_return_edit_cr("product_website","job_option_cms",$platform_issue,"multi","u749625779_cdscontent");
@@ -312,7 +289,6 @@ $result = mysqli_query($con, $query);
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
       $request_by_nickname = $row['nickname'];
-      
       if($row['line_user_id']<> null and $row['line_user_id']<> "" ){
         if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
           $request_by_contact = $request_by." | ".$row['firstname']." ".$row['lastname']." ( ".$request_by_nickname." ) | ".$row['work_email'];
@@ -320,13 +296,10 @@ $result = mysqli_query($con, $query);
         }else{
           $request_by_contact = $request_by." | ".$row['firstname']." ".$row['lastname']." ( ".$request_by_nickname." ) | ".$row['work_email'];
         }
-        
       }else{
         $request_by_contact = $request_by." | ".$row['firstname']." ".$row['lastname']." ( ".$request_by_nickname." ) | ".$row['work_email'];
       }
-      // $office_tell = $row['office_tell'];
     }
-  
     date_default_timezone_set("Asia/Bangkok");
 $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con_project, "SET NAMES 'utf8' ");
@@ -352,10 +325,8 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <div id="call_update_complete"></div>
         <div class="offcanvas-body"  style="padding:0px;z-index:1"> 
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="position: fixed;right: 40px;top: 15px;" aria-label="Close"></button>
-        
         <div class="row window-full overflow-auto" style="margin-bottom: 0px;padding-left:20px;background: white;">
         <div class="col-8" style="border-right:1px solid  #ebedef;padding: 1rem 1rem;">
-
           <div class="text-white bg-success toast align-items-center top-5 start-50 translate-middle-x fade hide" role="alert" aria-atomic="true" data-bs-delay="2000" aria-live="assertive" id="liveToast_cr" style="position: absolute; top: 0; right: 0;margin-top:10px;margin-right:10px">
             <div class="d-flex">
               <div class="toast-body" id="toast_ms">
@@ -364,7 +335,6 @@ while($row_project = mysqli_fetch_array($result_project)) {
               <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
           </div>
-
         <div style="color:gray;margin-bottom:15px;margin-top:10px;font-size:13px">
         <span>Create by '.$request_by_contact.'</span>   
         <span>'.$create_date.'</span>      
@@ -381,31 +351,15 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <div id="comment_box_cr">
         <div id="call_ticket_comment_cr">
         '; 
-        // include('get_comment_cr.php');
         include('https://content-service-gate.cdse-commercecontent.com/base/get/get_comment_cr.php?id='.$id);
-        
         echo '
         </div>
         </div>
         </ul> 
-        
-        
         <textarea id="comment_input_cr" name="comment_input_cr" type="text" placeholder="Type message"></textarea>
        ';
        ?>
-
-<!-- <script>$('#js_comment_tiny').remove();</script> -->
-
-
-
-
        <?php
-       //<div class="custom-editor-wrapper">
-        // <textarea id="comment_input_cr" placeholder="Type message and hit enter"></textarea>
-        // </div>
-      //  <textarea id="comment_input_cr" style="margin-top:0px;margin-bottom:10px;font-size: 14px;" 
-      //   class="form-control" placeholder="Leave a comment here..." rows="4" style="height: 100px"></textarea>
-      //  if($_SESSION["username"]=="poojaroonwit"){
         echo '
         <div class="mb-3">
           <input type="file" id="actual-btn" name="actual-btn[]" multiple hidden/>
@@ -436,38 +390,12 @@ while($row_project = mysqli_fetch_array($result_project)) {
         $cr_edit_effective_date = "'cr_edit_effective_date'";
         $cr_edit_content_request_reson= "'cr_edit_content_request_reson'";
         $cr_edit_request_by= "'cr_edit_request_by'";
-     
-         
-        
 echo "<script>console.log('".$_SESSION["department"]."');</script>";
         if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
             echo '<select class="form-select form-select-lg mt-2" id="cr_edit_status" name="cr_edit_status" onchange="update_cr_detail('.$id.','.$cr_edit_status.')" style="border: 0px;font-weight: bold;padding-left: 0.6rem;font-size: xxx-large;background-color: transparent;" aria-label=".form-select-lg example">
             '.$cr_op.'
             </select>';
-            
-            // echo '<input type="hidden" id="sel">
-            // <div class="containe_dd">
-            //   <div class="selected_dd">Select an option</div>
-            //   <ul class="options_dd">
-            //     <li class="option_dd"><img src="http://placehold.it/50/00ff00"><span>Option 1</span></li>
-            //     <li class="option_dd"><img src="http://placehold.it/50/ff0000"><span>Option 2</span></li>
-            //     <li class="option_dd"><img src="http://placehold.it/50/0000ff"><span>Option 3</span></li>
-            //   </ul>
-            // </div>';
             ?>
-<!-- <script>
-$("body").on("click", ".selected_dd", function() {
-  $(this).next(".options_dd").toggleClass("open_dd");
-});
-
-$("body").on("click", ".option_dd", function() {
-  var value = $(this).find("span").html();
-  $(".selected_dd").html(value);
-  $("#sel").val(value);
-  $(".options_dd").toggleClass("open_dd");
-});
-</script> -->
-
 <?php
             echo '
             <div class="row" >
@@ -478,12 +406,10 @@ $("body").on("click", ".option_dd", function() {
               </select>
               </div>
             </div>';
-
             echo '<hr>';
             // end contact
             // ---check list
              ?>
-
 <div class="row">
     <div class="col">
         <strong>Task list</strong><br>
@@ -497,41 +423,32 @@ $("body").on("click", ".option_dd", function() {
                 TASK
             </button>
         </div>
-
     </div>
 </div>
-
 <ul id="checklist_box" style="padding: 5px;">
-
     <?php     include('https://content-service-gate.cdse-commercecontent.com/base/get/get_checklist_cr.php?id='.$id.'&department='.$_SESSION["department"]); ?>
 </ul>
-
-
-
-
 <?php
-
       if($ticket_template<>"PJ"){
             echo '<hr>';
             // ---- end check list
             // start detail
-
             echo '
             <ul class="list-group">
-            <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">ref cto</div><div class="col-6">
+            <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">Ticket CTO</div><div class="col-6">
             <input class="form-control form-control-sm" id="cr_edit_cto_ref" name="cr_edit_cto_ref" onchange="update_cr_detail('.$id.','.$cr_edit_ref_cto.')" type="text" style="border: 0px;" placeholder="Default input" aria-label="default input example" value="'.$cto_ref.'"> 
             </div>
             </li>
-            <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">type</div><div class="col-6">
+            <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">Request for</div><div class="col-6">
             <select class="form-select form-select-sm" id="cr_edit_ticket_type" name="cr_edit_ticket_type" onchange="update_cr_detail('.$id.','.$cr_edit_ticket_type.')" style="border: 0px;font-weight: bold;" aria-label=".form-select-lg example">
             '.$type_op.'
             </select>
             </div></li>
-            <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">sku</div><div class="col-6">
+            <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">SKUs</div><div class="col-6">
             <input class="form-control form-control-sm" id="cr_edit_sku" name="cr_edit_sku" onchange="update_cr_detail('.$id.','.$cr_edit_sku.')" type="text" style="border: 0px;" placeholder="" aria-label="default input example" value="'.$sku.'"> 
             </div>
             </li>
-            <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">effective_date</div><div class="col-6">
+            <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">Effective date</div><div class="col-6">
             <input class="form-control form-control-sm" id="cr_edit_effective_date" name="cr_edit_effective_date" onchange="update_cr_detail('.$id.','.$cr_edit_effective_date.')" type="datetime-local" style="border: 0px;" placeholder="" aria-label="default input example" value="'.$effective_date_edit.'"> 
             </div></li>
             </ul>
@@ -565,7 +482,6 @@ $("body").on("click", ".option_dd", function() {
             <textarea id="cr_edit_note" name="cr_edit_note" onchange="update_cr_detail('.$id.','.$cr_edit_note.')"  class="form-control"  rows="5">'.$note.'</textarea>
             </div>';
             }
-      
         }else{
            echo '<h4 style="font-weight: 900;padding-left: 0rem;font-size: xxx-large;background-color: transparent;">'.$status.'</h4>'; 
                ?>
@@ -575,24 +491,19 @@ $("body").on("click", ".option_dd", function() {
     <small>Sub task of ticket (for staff)</small>
 </div>
 <ul id="checklist_box" style="padding: 5px;">
-
     <?php     include('https://content-service-gate.cdse-commercecontent.com/base/get/get_checklist_cr.php?id='.$id.'&department='.$_SESSION["department"]); ?>
 </ul>
-
-
-
-
 <?php
            echo '  
            <hr>
            <ul class="list-group list-group shadow-sm border-0 rounded bg-white">
-           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">assign</div><div class="col-6">'.$case_officer.'</div></li>
-           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">name</div><div class="col-6">'.$case_name.'</div></li>
-           <li class="list-group-item border-0 border-bottom "  style="display: inline-flex;;"><div class="col-6 fw-bold ">office tell</div><div class="col-6">'.$office_tell.'</div></li>
-           <li class="list-group-item border-0 border-bottom " style="display: inline-flex;"><div class="col-6 fw-bold ">ref cto</div><div class="col-6">'.$cto_ref.'</div></li>
-           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">type</div><div class="col-6">'.$type.'</div></li>
-           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">sku</div><div class="col-6">'.$sku.'</div></li>
-           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">effective_date</div><div class="col-6">'.$effective_date.'</div></li>
+           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">Assign</div><div class="col-6">'.$case_officer.'</div></li>
+           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">Name</div><div class="col-6">'.$case_name.'</div></li>
+           <li class="list-group-item border-0 border-bottom "  style="display: inline-flex;;"><div class="col-6 fw-bold ">Office tell</div><div class="col-6">'.$office_tell.'</div></li>
+           <li class="list-group-item border-0 border-bottom " style="display: inline-flex;"><div class="col-6 fw-bold ">Ticket CTO</div><div class="col-6">'.$cto_ref.'</div></li>
+           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">Request for</div><div class="col-6">'.$type.'</div></li>
+           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">SKUs</div><div class="col-6">'.$sku.'</div></li>
+           <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">Effective date</div><div class="col-6">'.$effective_date.'</div></li>
            </ul>
            <br>
            '.$list_attachment.'
@@ -625,7 +536,6 @@ actualBtn.addEventListener('change', function() {
     }
     fileChosen_bt.textContent = ' Selected file : ' + file_name;
 })
-
 function comment_cr_id(id) {
     //var comment = document.getElementById("comment_input_cr").value;
     var myIFrame = document.getElementById("comment_input_cr_ifr");
@@ -644,14 +554,12 @@ function comment_cr_id(id) {
             });
     }
 }
-
 function add_cr_list(id, ticket_template) {
     if (ticket_template == "CR") {
         var sku = document.getElementById("cr_edit_sku").value;
     } else {
         var sku = 0;
     }
-
     if (id) {
         $.post("base/action/action_create_checklist_cr.php", {
                 id: id,
@@ -664,9 +572,7 @@ function add_cr_list(id, ticket_template) {
                 //     "call_ticket_comment_cr").offsetHeight);
             });
     }
-
 }
-
 function remove_cr_list(list_id, ticket_id) {
     if (list_id) {
         $.post("base/action/action_remove_checklist_cr.php", {
@@ -680,18 +586,13 @@ function remove_cr_list(list_id, ticket_id) {
                 //     "call_ticket_comment_cr").offsetHeight);
             });
     }
-
 }
-
 function comment_cr_id_with_file(id) {
     var form_data = new FormData();
     // var comment = document.getElementById("comment_input_cr").value;
-
     var myIFrame = document.getElementById("comment_input_cr_ifr");
     var comment = myIFrame.contentWindow.document.body.innerHTML;
     myIFrame.contentWindow.document.body.innerHTML = '';
-    
-    
     // document.getElementById('comment_input_cr').value = ''; //clear value
     // var files = document.getElementById('actual-btn').files;
     var ins = document.getElementById('actual-btn').files.length;
@@ -718,7 +619,6 @@ function comment_cr_id_with_file(id) {
         }
     });
 }
-
 function update_cr_detail(id, id_name) {
     var id_name = id_name;
     var value_change = document.getElementById(id_name).value;
@@ -734,7 +634,6 @@ function update_cr_detail(id, id_name) {
             });
     }
 }
-
 function update_cl_detail(id, id_name) {
     var id_name = id_name;
     var value_change = document.getElementById(id_name + '_' + id).value;
@@ -755,7 +654,6 @@ function update_cl_detail(id, id_name) {
 var elements = document.getElementsByClassName('window-full');
 var windowheight = window.innerHeight + "px";
 fullheight(elements);
-
 function fullheight(elements) {
     for (let el in elements) {
         if (elements.hasOwnProperty(el)) {
@@ -768,28 +666,16 @@ window.onresize = function(event) {
 }
 </script>
 <script>
-// function copyToClipboard(id) {
-// var inputc = 'https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='+id;
-// inputc.value = window.location.href;
-// // inputc.focus();
-// // inputc.select();
-// document.execCommand('copy');
-// inputc.parentNode.removeChild(inputc);
-// alert("URL Copied.");
-// }
 </script>
 <script>
 $(function() {
     $(".multiple-select_cr_edit").multipleSelect()
 });
-
 if(tinyMCE.get('comment_input_cr')){
   tinymce.remove('#comment_input_cr');
 }else{
-  
 }
 load_tiny_comment();
-
 </script>
 <?php if( $direct == 'external'){
 echo ' 
@@ -797,7 +683,6 @@ echo '
 function on_overlay() {
   document.getElementById("overlay").style.display = "block";
 }
-
 function off_overlay() {
   document.getElementById("overlay").style.display = "none";
 }
@@ -806,7 +691,3 @@ function off_overlay() {
 </html>';
 }
 ?>
-
-
-
-
