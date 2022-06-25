@@ -888,6 +888,7 @@ function update_project_sticky_badge(){
             prefix_project_sticky.push($(this).val());
         });
         prefix_project_sticky = prefix_project_sticky.join(",")
+        alert("My favourite sports are: " + favorite.join(", "));
         $.post("base/get/get_list_project.php", {
         prefix_project_sticky: prefix_project_sticky
         }, function(data) {
