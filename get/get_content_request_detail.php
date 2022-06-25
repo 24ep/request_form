@@ -669,14 +669,14 @@ function EditDetailTicket(){
         document.getElementById("cr_edit_title").disabled = false;
         document.getElementById("EditDetailTicket").style.display = 'none';
         document.getElementById("SaveDetailTicket").disabled = false;
-        document.getElementById("SaveDetailTicket").style.display = 'block';
+        document.getElementById("SaveDetailTicket").style.display = 'inline';
         document.getElementById("CancelDetailTicket").disabled = false;
-        document.getElementById("CancelDetailTicket").style.display = 'block';
+        document.getElementById("CancelDetailTicket").style.display = 'inline';
         document.getElementById("cr_edit_title").className = document.getElementById("cr_edit_title").className.replace(/(?:^|\s)input-cr-inactive(?!\S)/g, 'input-cr-active');
     }
     else {
         document.getElementById("cr_edit_title").disabled = true;
-        document.getElementById("EditDetailTicket").style.display = 'block';
+        document.getElementById("EditDetailTicket").style.display = 'inline';
         document.getElementById("SaveDetailTicket").disabled = true;
         document.getElementById("SaveDetailTicket").style.display = 'none';
         document.getElementById("CancelDetailTicket").disabled = true;
@@ -687,14 +687,14 @@ function EditDetailTicket(){
 function SaveDetailTicket(id){
   update_cr_detail(id,'cr_edit_title');
   document.getElementById("cr_edit_title").disabled = true;
-  document.getElementById("EditDetailTicket").style.display = 'block';
+  document.getElementById("EditDetailTicket").style.display = 'inline';
   document.getElementById("SaveDetailTicket").style.display = 'none';
   document.getElementById("CancelDetailTicket").style.display = 'none';
   document.getElementById("cr_edit_title").className = document.getElementById("cr_edit_title").className.replace(/(?:^|\s)input-cr-active(?!\S)/g, 'input-cr-inactive');
 }
 function CancelDetailTicket(id){
   document.getElementById("cr_edit_title").disabled = true;
-  document.getElementById("EditDetailTicket").style.display = 'block';
+  document.getElementById("EditDetailTicket").style.display = 'inline';
   document.getElementById("SaveDetailTicket").style.display = 'none';
   document.getElementById("CancelDetailTicket").style.display = 'none';
   document.getElementById("cr_edit_title").className = document.getElementById("cr_edit_title").className.replace(/(?:^|\s)input-cr-active(?!\S)/g, 'input-cr-inactive');
