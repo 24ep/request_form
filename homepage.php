@@ -666,7 +666,7 @@ function get_project_model(id) {
     }
 }
 function search_cr_data(){
-    var input = document.getElementById('ts_command').value;
+    car input = document.getElementById('ts_command').value;
     if(input!=""){
         //hide all card
         const boxes = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
@@ -707,7 +707,7 @@ function update_project_sticky_badge(BuketPrefix){
                 for (const box of boxes) {
                     box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '');
                 }
-                prefix_project_sticky_array.push(BuketPrefix);
+                prefix_project_sticky_array.push($(this).val());
             }
                 
         });
