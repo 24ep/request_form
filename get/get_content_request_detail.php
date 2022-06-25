@@ -164,8 +164,6 @@ function get_attachment_cr($id){
     if(!isset($pass)){$pass=false;}
     if($pass==true){
       return $list_attchment;
-    }else{
-      return '<small style="display: block;"><strong style="color:gray">No attachment</strong></small>';
     }
 }
 function get_image_cr($id){
