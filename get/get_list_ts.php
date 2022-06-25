@@ -104,7 +104,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         </div>
     </div>
     <hr style="margin: 5px;color: #6c757d8c;">
-        <div class="row">
+        <div class="row" style="margin-bottom: 0px;">
             <?php     
                     unset($ef_badge);
                     unset($image_profile);
