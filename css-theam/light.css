@@ -421,3 +421,7 @@ table.dataTable.no-footer {
     margin: unset;
     display: inherit;
 }
+.bk-cr{
+    border-radius: 20px;
+    margin: 10px;
+}

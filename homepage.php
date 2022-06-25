@@ -378,13 +378,13 @@
                                     </nav>
                                     <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
                                         <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
+                                        <label class="btn btn-outline-primary bk-cr" for="btncheck1">Checkbox 1</label>
 
                                         <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="btncheck2">Checkbox 2</label>
+                                        <label class="btn btn-outline-primary bk-cr" for="btncheck2">Checkbox 2</label>
 
                                         <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="btncheck3">Checkbox 3</label>
+                                        <label class="btn btn-outline-primary bk-cr" for="btncheck3">Checkbox 3</label>
                                     </div>
                                     <div class="row" id="get_ts_admin_console">
                                     </div>
