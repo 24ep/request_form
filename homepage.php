@@ -676,18 +676,18 @@ function search_cr_data(){
         //show title contain
         const boxes = document.querySelectorAll('li[data-cr-title=*"'+input+'"]');
         for (const box of boxes) {
-            box.className = box.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '')
+            box.className = box.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
         }
         //show id equal
         const boxes = document.querySelectorAll('li[data-cr-id="'+input+'"]');
         for (const box of boxes) {
-            box.className = box.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '')
+            box.className = box.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
         }
     }else{
         //unhide all card
         const boxes = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
         for (const box of boxes) {
-            box.className = box.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '')
+            box.className = box.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
         }
     }
     
@@ -717,7 +717,7 @@ function update_project_sticky_badge(BuketPrefix){
                 for (const box of boxes) {
                     box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '')
                 }
-                prefix_project_sticky_array.push(BuketPrefix);
+                prefix_project_sticky_array.push($(this).val());
             }else{
                 const boxes = document.querySelectorAll('li[data-bucket="'+BuketPrefix+'"]');
                 for (const box of boxes) {
