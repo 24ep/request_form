@@ -890,7 +890,7 @@ function update_project_sticky_badge(){
         });
         
         prefix_project_sticky = prefix_project_sticky_array.join(",");
-        console.log("My favourite sports are: " + prefix_project_sticky);
+        console.log("My favourite sports are: " + prefix_project_sticky_array.join(","));
         $.post("base/get/get_list_bucket.php", {
         prefix_project_sticky: prefix_project_sticky
         }, function(data) {
