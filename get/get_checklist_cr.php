@@ -240,14 +240,14 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                     <div class="card-body" style="padding: 10px">
                       <div class="row" style="margin-bottom: 5px;">
                       <label for="inputPassword" class="col-sm-1 col-form-label" style="flex-basis: fit-content;padding: 2px;place-self: center;">'.$i.'</label>
-                      <div class="col-sm-6" style="width: 56%;">
+                      <div class="col-sm-6" style="padding-right:0px">
                     
                           <textarea placeholder="input detail of task  '.$i.' here ." style="font-size: unset;
                           border-color: transparent;background-color:transparent;" class="form-control" onchange="update_cl_detail('.$row["id"].','.$cl_edit_description.')" id="cl_edit_description_'.$row["id"].'" name="cl_edit_description_'.$row["id"].'" rows="auto">'.$row["description"].'</textarea>
                        
                       </div>
-                      <div class="col-sm-5" style="width: 56%;">
-                          <div  style="align-self: center;padding: 2px;">
+                      <div class="col-sm-4" style="padding: 0px 4px;">
+                          <div  style="align-self: center;padding-bottom: 2px;">
                           
                                         
                                           <select  id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">';
@@ -257,7 +257,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                                           </select>
                                     
                           </div>
-                          <div  style="align-self: center;padding: 2px;">
+                          <div  style="align-self: center;padding-top: 2px;">
                                           <select  id="cl_edit_status_'.$row["id"].'" name="cl_edit_status_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_status.')" class="form-select form-select-sm" aria-label="Default select example">';
                                           $op_status_cl = getoption_return_edit_job("content_request_status","option", $row["status"],"single");
                                           echo $op_status_cl;
@@ -272,39 +272,7 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
                       
                     </div>
                     </div>';
-                  //----------------
-                  //   echo '
-                  //           <div class="col">
-                  //             <div class="col">
-                  //               <div class="row" style="margin-bottom: 5px;">
-                  //                 <div class="col-4">
-                  //                   <span style="align-self: center;">Est.Start</span>
-                  //                 </div>
-                  //                 <div class="col-8">
-                  //                   <input value="'.$row["est_start_date"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_est_start_date.')" id="cl_edit_est_start_date_'.$row["id"].'" name="cl_edit_est_start_date_'.$row["id"].'" style="border-color: transparent;"  class="form-control form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
-                  //                 </div>
-                  //               </div>
-                  //             </div>
-                          
-                  //           <div class="col">
-                  //             <div class="row" style="margin-bottom: 5px;">
-                  //               <div class="col-4">
-                  //                 <span style="align-self: center;">Est.Due</span>
-                  //               </div>
-                  //               <div class="col-8">
-                  //                 <input value="'.$row["est_due_date"].'" style="border-color: transparent;" onchange="update_cl_detail('.$row["id"].','.$cl_edit_est_due_date.')"  id="cl_edit_est_due_date_'.$row["id"].'" name="cl_edit_est_due_date_'.$row["id"].'" class="form-control form-control-sm" type="date" placeholder="Default input" aria-label="default input example">
-                  //               </div>
-                  //             </div>
-                  //           </div>
-                  //         </div>
-        
-                  //       </div>
-                  //   </div>
-                  // 
-                  
-                  // ';
-        
-
+              
                 }
           
 
