@@ -686,7 +686,7 @@ function search_cr_data(input){
         //unhide all card
         const boxes = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
         for (const box of boxes) {
-            box.className += " cr-search-hide";
+            box.className = box.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '')
         }
     }
     
