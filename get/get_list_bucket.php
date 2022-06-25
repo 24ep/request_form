@@ -30,15 +30,26 @@
   pb.status,
   pb.prefix,
   pb.color_project
-  FROM all_in_one_project.project_bucket as pb 
-  where pb.prefix in (".$_SESSION['prefix_project_sticky'].") order by pb.sticky DESC" or die("Error:" . mysqli_error($con));
+  FROM all_in_one_project.project_bucket as pb order by pb.sticky DESC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
 
+  echo '
+        <input type="checkbox" class="btn-check" id="all" autocomplete="off">
+        <label class="btn btn-outline-primary btn-sm bk-cr" for="all">Show all</label>
+    ';
   while($row = mysqli_fetch_array($result)) {
-    echo '
+    if(strpos( $_SESSION["prefix_project_sticky"],$row['prefix'])!==false){
+        echo '
+        <input type="checkbox" class="btn-check" id="'.$row["pb.id"].'" autocomplete="off">
+        <label class="btn btn-primary btn-sm bk-cr" for="'.$row["pb.id"].'">'.$row["project_name"].'</label>
+    ';
+    }else{
+        echo '
         <input type="checkbox" class="btn-check" id="'.$row["pb.id"].'" autocomplete="off">
         <label class="btn btn-outline-primary btn-sm bk-cr" for="'.$row["pb.id"].'">'.$row["project_name"].'</label>
     ';
+    }
+    
   }
 
 ?>
