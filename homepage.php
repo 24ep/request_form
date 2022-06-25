@@ -665,7 +665,41 @@ function get_project_model(id) {
         });
     }
 }
+function update_project_sticky_badge(){
+    var prefix_project_sticky_array = [];
+    var prefix_project_sticky = "";
+        $.each($("input[name='bucket_checking']:not(:checked)"), function(){
+            const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
+            for (const box of boxes) {
+                box.style.display = 'none';
+                box.style.position = 'absolute!important';
+                box.style.zIndex = '-1';
+            }
+        });
+        $.each($("input[name='bucket_checking']:checked"), function(){
+            prefix_project_sticky_array.push($(this).val());
 
+            const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
+            for (const box of boxes) {
+                box.style.display = '';
+                box.style.position = '';
+                box.style.zIndex = '';
+            }
+        });
+     
+        
+        prefix_project_sticky = prefix_project_sticky_array.join("','");
+        prefix_project_sticky = "'"+prefix_project_sticky+"'";
+        // console.log("My favourite sports are: " + prefix_project_sticky_array.join(","));
+        $.post("base/get/get_list_bucket.php", {
+        prefix_project_sticky: prefix_project_sticky
+        }, function(data) {
+            // z-index: -1;
+            // position: absolute!important;
+            // display: none;
+        
+        });
+}
 function search_cr_ticket() {
     var cr_search_input = document.getElementById("cr_search_input").value
     var user_cr_filter = document.getElementById("user_cr_filter").value
@@ -689,6 +723,7 @@ function run_ts_command(ts_level) {
     }, function(data) {
         $('#get_ts_admin_console').html(data);
     });
+    update_project_sticky_badge();
 }
     </script>
     <script type="text/javascript">
@@ -882,41 +917,7 @@ function update_project_sticky() {
     });
 }
 
-function update_project_sticky_badge(){
-    var prefix_project_sticky_array = [];
-    var prefix_project_sticky = "";
-        $.each($("input[name='bucket_checking']:not(:checked)"), function(){
-            const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
-            for (const box of boxes) {
-                box.style.display = 'none';
-                box.style.position = 'absolute!important';
-                box.style.zIndex = '-1';
-            }
-        });
-        $.each($("input[name='bucket_checking']:checked"), function(){
-            prefix_project_sticky_array.push($(this).val());
 
-            const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
-            for (const box of boxes) {
-                box.style.display = '';
-                box.style.position = '';
-                box.style.zIndex = '';
-            }
-        });
-     
-        
-        prefix_project_sticky = prefix_project_sticky_array.join("','");
-        prefix_project_sticky = "'"+prefix_project_sticky+"'";
-        // console.log("My favourite sports are: " + prefix_project_sticky_array.join(","));
-        $.post("base/get/get_list_bucket.php", {
-        prefix_project_sticky: prefix_project_sticky
-        }, function(data) {
-            // z-index: -1;
-            // position: absolute!important;
-            // display: none;
-        
-        });
-}
 
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
@@ -1018,6 +1019,7 @@ function doAutoRefresh_ts_admin() {
         };
         req_ts.send(null);
     }
+    update_project_sticky_badge();
 };
 
 function doAutoRefresh_cr() {
