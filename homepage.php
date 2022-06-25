@@ -356,7 +356,7 @@
                                                 }
                                                 ?>
                                                 <input style="width: 60%;" type="text" class="form-control"
-                                                    onchange="search_cr_data();" id="ts_command" name="ts_command"
+                                                    onchange="run_ts_command('task');" id="ts_command" name="ts_command"
                                                     placeholder="fill someting .." aria-label="Username"
                                                     aria-describedby="basic-addon1" value="<?php echo $sqb; ?>">
                                                 <span class="input-group-text">Username</span>
@@ -665,37 +665,11 @@ function get_project_model(id) {
         });
     }
 }
-function search_cr_data(){
-    car input = document.getElementById('ts_command').value;
-    if(input!=""){
-        //hide all card
-        const boxes = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
-        for (const box of boxes) {
-            box.className += " cr-search-hide";
-        }
-        //show title contain
-        const boxes = document.querySelectorAll('li[data-cr-title=*"'+input+'"]');
-        for (const box of boxes) {
-            box.className = box.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
-        }
-        //show id equal
-        const boxes = document.querySelectorAll('li[data-cr-id="'+input+'"]');
-        for (const box of boxes) {
-            box.className = box.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
-        }
-    }else{
-        //unhide all card
-        const boxes = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
-        for (const box of boxes) {
-            box.className = box.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
-        }
-    }
-    
-}
 function update_project_sticky_badge(BuketPrefix){
     var prefix_project_sticky_array = [];
     var prefix_project_sticky = "";
 
+    
         $.each($("input[name='bucket_checking']:not(:checked)"), function(){
             if($(this).val()!=BuketPrefix){
                 const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
@@ -705,6 +679,7 @@ function update_project_sticky_badge(BuketPrefix){
             }else{
                 const boxes = document.querySelectorAll('li[data-bucket="'+BuketPrefix+'"]');
                 for (const box of boxes) {
+              
                     box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '');
                 }
                 prefix_project_sticky_array.push($(this).val());
@@ -715,6 +690,7 @@ function update_project_sticky_badge(BuketPrefix){
             if($(this).val()!=BuketPrefix){
                 const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
                 for (const box of boxes) {
+     
                     box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '');
                 }
                 prefix_project_sticky_array.push($(this).val());
@@ -732,7 +708,10 @@ function update_project_sticky_badge(BuketPrefix){
         $.post("base/get/get_list_bucket.php", {
         prefix_project_sticky: prefix_project_sticky
         }, function(data) {
-            //#nothing
+            // z-index: -1;
+            // position: absolute!important;
+            // display: none;
+        
         });
 }
 
