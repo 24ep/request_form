@@ -665,7 +665,28 @@ function get_project_model(id) {
         });
     }
 }
-function update_project_sticky_badge(){
+function update_project_sticky_badge(BuketPrefix){
+    
+    if(BuketPrefix!=='skip'){
+        if(document.getElementById(BuketPrefix).checked = true){
+        const boxes = document.querySelectorAll('li[data-bucket="'+BuketPrefix+'"]');
+            for (const box of boxes) {
+                // box.classList.remove("bucket-hin");
+                box.className.replace(" bucket-hin", "");
+            }
+            prefix_project_sticky_array.push(BuketPrefix);
+    }else{
+        
+            const boxes = document.querySelectorAll('li[data-bucket="'+BuketPrefix+'"]');
+            console.log($(this).val());
+            for (const box of boxes) {
+                box.className += " bucket-hin";
+            }
+    }
+    }
+
+
+
     var prefix_project_sticky_array = [];
     var prefix_project_sticky = "";
         $.each($("input[name='bucket_checking']:not(:checked)"), function(){
@@ -698,6 +719,7 @@ function update_project_sticky_badge(){
         });
 }
 
+
 function search_cr_ticket() {
     var cr_search_input = document.getElementById("cr_search_input").value
     var user_cr_filter = document.getElementById("user_cr_filter").value
@@ -721,7 +743,7 @@ function run_ts_command(ts_level) {
     }, function(data) {
         $('#get_ts_admin_console').html(data);
     });
-    update_project_sticky_badge();
+    update_project_sticky_badge('skip');
 }
     </script>
     <script type="text/javascript">
@@ -1017,7 +1039,7 @@ function doAutoRefresh_ts_admin() {
         };
         req_ts.send(null);
     }
-    update_project_sticky_badge();
+    update_project_sticky_badge('skip');
 };
 
 function doAutoRefresh_cr() {
