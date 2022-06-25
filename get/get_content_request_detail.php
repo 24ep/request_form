@@ -344,8 +344,8 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <button class="badge bg-light text-dark" style="border: solid 1px gainsboro;" onclick="prompt(&#39Press Ctrl + C, then Enter to copy to clipboard&#39,&#39https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='.$id.'&#39)"><ion-icon name="share-social-outline"></ion-icon>Copie ticket URL</button>
         <h5 style="font-weight: 800;"><strong style="color:'.$color_project.'!important;">'.$ticket_template.'-'.$id .'</strong> '.$title.'</h5>
         <form method="post">
-        <div class="des_cr" id="des_cr_inline" >'.$description.'</div></form>
-        '.$list_attachment.$list_image.'
+        <div class="des_cr" id="des_cr_inline" >'.$description.'<hr>'.$list_attachment.$list_image.'</div></form>
+        
         <hr style="margin-bottom:5px;color: #dee2e6;">
         <small style="font-weight: bolder;color: #adb5bd;margin-bottom:5px">Comment</small>
         <ul  class="list-group list-group-flush" style="background: fixed;">
