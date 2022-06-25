@@ -343,15 +343,16 @@ while($row_project = mysqli_fetch_array($result_project)) {
         </div>
         <span class="badge bg-primary" style="background-color:'.$color_project.'!important;margin-bottom:15px;padding:8px 15px;">'.$project_name.'</span>
         <button class="badge bg-light text-dark" style="border: solid 1px gainsboro;" onclick="prompt(&#39Press Ctrl + C, then Enter to copy to clipboard&#39,&#39https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='.$id.'&#39)"><ion-icon name="share-social-outline"></ion-icon>Copie ticket URL</button>
-        <h5 style="font-weight: 800;">
-        <strong style="color:'.$color_project.'!important;">'.$ticket_template.'-'.$id .'</strong>
-         
-
-         <input class="form-control form-control-sm" id="cr_edit_title" name="cr_edit_title" 
-         onchange="update_cr_detail(5346,&#39;cr_edit_title&#39;)"
-         type="text" style="border: 0px;background: transparent;" disabled value="'.$title.'">
-
-         </h5>
+        
+        <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label"><strong style="color:'.$color_project.'!important;">'.$ticket_template.'-'.$id .'</strong></label>
+        <div class="col-sm-10">
+          <input class="form-control form-control-sm" id="cr_edit_title" name="cr_edit_title" 
+          onchange="update_cr_detail(5346,&#39;cr_edit_title&#39;)"
+          type="text" style="border: 0px;background: transparent;" disabled value="'.$title.'">
+        </div>
+        </div>
+   
         <form method="post">
         <div class="des_cr" id="des_cr_inline" >
         <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Description</strong></small>
