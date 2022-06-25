@@ -705,7 +705,7 @@ function update_project_sticky_badge(BuketPrefix){
             }else{
                 const boxes = document.querySelectorAll('li[data-bucket="'+BuketPrefix+'"]');
                 for (const box of boxes) {
-                    box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '')
+                    box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '');
                 }
                 prefix_project_sticky_array.push(BuketPrefix);
             }
@@ -715,7 +715,7 @@ function update_project_sticky_badge(BuketPrefix){
             if($(this).val()!=BuketPrefix){
                 const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
                 for (const box of boxes) {
-                    box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '')
+                    box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '');
                 }
                 prefix_project_sticky_array.push($(this).val());
             }else{
