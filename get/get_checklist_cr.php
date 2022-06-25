@@ -237,8 +237,8 @@ function getoption_return_edit_job($col,$table,$select_option,$sorm) {
 
                   echo '
                   <div class="card text-dark bg-light mb-3 shadow-sm" style="border-color: transparent;padding-left: 10px;background-color: #ffffff!important;" >
-                    <div class="card-body" style="padding: 10px">
-                      <div class="row" style="margin-bottom: 5px;">
+                    <div class="card-body" style="height: 100px;">
+                      <div class="row" style="margin-bottom: 5px;place-content: center; ">
                       <label for="inputPassword" class="col-sm-1 col-form-label" style="flex-basis: fit-content;padding: 2px;place-self: center;">'.$i.'</label>
                       <div class="col-sm-6" style="padding-right:0px">
                     

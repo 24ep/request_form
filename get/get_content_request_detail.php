@@ -392,7 +392,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
         $cr_edit_request_by= "'cr_edit_request_by'";
 echo "<script>console.log('".$_SESSION["department"]."');</script>";
         if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
-            echo '<select class="form-select form-select-lg mt-2" id="cr_edit_status" name="cr_edit_status" onchange="update_cr_detail('.$id.','.$cr_edit_status.')" style="border: 0px;font-weight: bold;padding-left: 0.6rem;font-size: xxx-large;background-color: transparent;" aria-label=".form-select-lg example">
+            echo '<select class="form-select form-select-lg mt-2" id="cr_edit_status" name="cr_edit_status" onchange="update_cr_detail('.$id.','.$cr_edit_status.')" style="border: 0px;font-weight: bold;padding-left: 0.6rem;font-size: xx-large;background-color: transparent;" aria-label=".form-select-lg example">
             '.$cr_op.'
             </select>';
             ?>
