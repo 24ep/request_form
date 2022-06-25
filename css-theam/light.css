@@ -458,6 +458,8 @@ table.dataTable.no-footer {
     font-weight: lighter;
     width: inherit;
     font-size: smaller;
+    font-size: medium;
+    padding: 5px 20px;
 }
 .input-cr-inactive{
     border: 0px;
