@@ -356,7 +356,7 @@
                                                 }
                                                 ?>
                                                 <input style="width: 60%;" type="text" class="form-control"
-                                                    onchange="serach_cr_data(this);" id="ts_command" name="ts_command"
+                                                    onchange="search_cr_data(this);" id="ts_command" name="ts_command"
                                                     placeholder="fill someting .." aria-label="Username"
                                                     aria-describedby="basic-addon1" value="<?php echo $sqb; ?>">
                                                 <span class="input-group-text">Username</span>
