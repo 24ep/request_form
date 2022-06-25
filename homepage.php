@@ -888,7 +888,7 @@ function update_project_sticky_badge(){
         $.each($("input[name='bucket_checking']:unchecked"), function(){
            
 
-            document.querySelectorAll('[data-bucket*="'+$(this).val()+'"]').forEach(
+            document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]').forEach(
                 (elem) => elem.style.display = 'none'
                 (elem) => elem.style.position = 'absolute!important'
                 (elem) => elem.style.zIndex  = '-1'
@@ -897,7 +897,7 @@ function update_project_sticky_badge(){
         $.each($("input[name='bucket_checking']:checked"), function(){
             prefix_project_sticky_array.push($(this).val());
 
-            document.querySelectorAll('[data-bucket*="'+$(this).val()+'"]').forEach(
+            document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]').forEach(
                 
                 (elem) => elem.style.display = ''
                 (elem) => elem.style.position = ''
