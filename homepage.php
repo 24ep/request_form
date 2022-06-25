@@ -668,23 +668,22 @@ function get_project_model(id) {
 function update_project_sticky_badge(BuketPrefix){
     var prefix_project_sticky_array = [];
     var prefix_project_sticky = "";
-    if(BuketPrefix!='skip'){
-        if(document.getElementById(BuketPrefix).checked = true){
-        const boxes = document.querySelectorAll('li[data-bucket="'+BuketPrefix+'"]');
-            for (const box of boxes) {
-                // box.classList.remove("bucket-hin");
-                box.className.replace(" bucket-hin", "");
-            }
-            prefix_project_sticky_array.push(BuketPrefix);
-    }else{
-        
-            const boxes = document.querySelectorAll('li[data-bucket="'+BuketPrefix+'"]');
-            console.log($(this).val());
-            for (const box of boxes) {
-                box.className += " bucket-hin";
-            }
-    }
-    }
+    // if(BuketPrefix!='skip'){
+    //     if(document.getElementById(BuketPrefix).checked = true){
+    //     const boxes = document.querySelectorAll('li[data-bucket="'+BuketPrefix+'"]');
+    //         for (const box of boxes) {
+    //             // box.classList.remove("bucket-hin");
+    //             box.className.replace(" bucket-hin", "");
+    //         }
+    //         prefix_project_sticky_array.push(BuketPrefix);
+    //     }else{
+            
+    //             const boxes = document.querySelectorAll('li[data-bucket="'+BuketPrefix+'"]');
+    //             for (const box of boxes) {
+    //                 box.className += " bucket-hin";
+    //             }
+    //     }
+    // }
 
 
 
