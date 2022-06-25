@@ -41,12 +41,12 @@
     if(strpos( $_SESSION["prefix_project_sticky"],$row['prefix'])!==false){
         echo '
         <input type="checkbox" class="btn-check" id="'.$row["prefix"].'" autocomplete="off">
-        <label class="btn btn-primary btn-sm bk-cr" for="'.$row["prefix"].'">'.$row["project_name"].'</label>
+        <label class="btn btn-primary btn-sm bk-cr shadow-sm" for="'.$row["prefix"].'">'.$row["project_name"].'</label>
     ';
     }else{
         echo '
         <input type="checkbox" class="btn-check" id="'.$row["prefix"].'" autocomplete="off">
-        <label class="btn btn-outline-primary btn-sm bk-cr" for="'.$row["prefix"].'">'.$row["project_name"].'</label>
+        <label class="btn btn-outline-primary btn-sm bk-cr shadow-sm" for="'.$row["prefix"].'">'.$row["project_name"].'</label>
     ';
     }
     
