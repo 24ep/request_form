@@ -667,7 +667,7 @@ function get_project_model(id) {
 }
 
 function search_cr_data(){
-    var input = document.getElementById('ts_command').value;
+    var input = document.getElementById('ts_command').value.toLowerCase();;
     
     if(input!=""){
         //hide all card
@@ -696,7 +696,7 @@ function search_cr_data(){
 }
 function search_cr_username(){
   
-    var username = document.getElementById('ts_username').value;
+    var username = document.getElementById('ts_username').value.toLowerCase();;
     
     if(username!=""){
         //hide all card
