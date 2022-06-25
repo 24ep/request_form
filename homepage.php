@@ -316,14 +316,14 @@
                                                 <div class="btn-group" role="group"
                                                     aria-label="Basic checkbox toggle button group">
                                                 </div>
-                                                <button class="btn btn-primary btn-sm " style="margin-left:10px;"
+                                                <!-- <button class="btn btn-primary btn-sm " style="margin-left:10px;"
                                                     type="button" data-bs-toggle="offcanvas"
                                                     data-bs-target="#project_sticky" aria-controls="project_sticky">
                                                     <ion-icon size="small" name="file-tray-stacked-outline" role="img"
                                                         class="md icon-small hydrated" aria-label="add outline">
                                                     </ion-icon>
                                                     Bucket
-                                                </button>
+                                                </button> -->
                                                 <button class="btn btn-primary btn-sm " style="margin-left:10px;"
                                                     type="button" data-bs-toggle="offcanvas"
                                                     data-bs-target="#content_request_canvas"
