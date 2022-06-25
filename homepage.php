@@ -703,6 +703,11 @@ function update_project_sticky_badge(BuketPrefix){
                     box.className.replace(" bucket-hin", "");
                 }
                 prefix_project_sticky_array.push($(this).val());
+            }else{
+                const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
+                for (const box of boxes) {
+                    box.className += " bucket-hin";
+                }
             }
         });
      
