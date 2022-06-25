@@ -28,7 +28,7 @@
   left join all_in_one_project.content_request as cr
   on cr.ticket_template = pb.prefix and lower(cr.status) not in ('close','cancel') 
   group by pb.prefix , pb.project_name
-  order by pb.sticky DESC" or die("Error:" . mysqli_error($con));
+  order by pb.prefix  ASC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
 
   while($row = mysqli_fetch_array($result)) {
