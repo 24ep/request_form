@@ -898,9 +898,9 @@ function update_project_sticky_badge(){
 
             const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
             for (const box of boxes) {
-                box.removeProperty('display');
-                box.removeProperty('position');
-                box.removeProperty('z-index');
+                box.style.display = '';
+                box.style.position = '';
+                box.style.zIndex = '';
             }
         });
      
