@@ -894,6 +894,15 @@ function update_project_sticky_badge(){
                 (elem) => elem.style.zIndex  = '-1'
             );
         });
+        $.each($("input[name='bucket_checking']:unchecked"), function(){
+            prefix_project_sticky_array.push($(this).val());
+
+            document.querySelectorAll('[data-bucket*="'+$(this).val()+'"]').forEach(
+                (elem) => elem.style.display = ''
+                (elem) => elem.style.position = ''
+                (elem) => elem.style.zIndex  = ''
+            );
+        });
         
         prefix_project_sticky = prefix_project_sticky_array.join("','");
         prefix_project_sticky = "'"+prefix_project_sticky+"'";
