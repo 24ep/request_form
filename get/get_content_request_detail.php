@@ -344,7 +344,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <span class="badge bg-primary" style="background-color:'.$color_project.'!important;margin-bottom:15px;padding:8px 15px;">'.$project_name.'</span>
         <button class="badge bg-light text-dark" style="border: solid 1px gainsboro;" onclick="prompt(&#39Press Ctrl + C, then Enter to copy to clipboard&#39,&#39https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='.$id.'&#39)"><ion-icon name="share-social-outline"></ion-icon>Copie ticket URL</button>
         <button class="badge bg-light text-dark" style="border: solid 1px gainsboro;" id="EditDetailTicket" onclick="EditDetailTicket()"><ion-icon name="pencil-outline"></ion-icon></button>
-        <button class="badge bg-primary text-light" style="border: solid 1px gainsboro;"id="SaveDetailTicket"  onclick="SaveDetailTicket('.$id.')"><ion-icon name="save-outline"></ion-icon></ion-icon></button>
+        <button class="badge bg-primary" style="border: solid 1px gainsboro;"id="SaveDetailTicket"  onclick="SaveDetailTicket('.$id.')"><ion-icon name="save-outline"></ion-icon></ion-icon>Save</button>
         <div class="mb-3 row" style="font-size: x-large;">
         <label for="staticEmail" class="col-sm-2 col-form-label" style="width: fit-content;padding: 0px 5px 5px 15px;">
         <strong style="color:'.$color_project.'!important;font-size: smaller;border-bottom: solid 3px;">'.$ticket_template.'-'.$id .'</strong></label>
