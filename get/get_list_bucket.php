@@ -1,0 +1,44 @@
+<?php
+
+  session_start();
+  if($_POST["prefix_project_sticky"]<>""){
+    $_SESSION["prefix_project_sticky"] = $_POST["prefix_project_sticky"];
+  }else{
+    if($_SESSION["prefix_project_sticky"]==""){
+        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+        mysqli_query($con, "SET NAMES 'utf8' ");
+        $query_default = "SELECT * FROM project_bucket where status <> 'Close' and `default` = 1 ORDER BY id asc" or die("Error:" . mysqli_error($con));
+        $result_de = mysqli_query($con, $query_default);
+        $_SESSION["prefix_project_sticky"]="'OO'";
+        while($row_de = mysqli_fetch_array($result_de)) {
+            $_SESSION["prefix_project_sticky"] .= ",'".$row_de["prefix"]."'";
+        }
+    
+      
+    }else{
+      $_SESSION["prefix_project_sticky"] = $_SESSION["prefix_project_sticky"];
+    }
+  }
+
+  date_default_timezone_set("Asia/Bangkok");
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+  mysqli_query($con, "SET NAMES 'utf8' ");
+  $query = "SELECT pb.id,pb.project_name,
+  pb.description,
+  pb.owner,
+  pb.sticky,
+  pb.status,
+  pb.prefix,
+  pb.color_project
+  FROM all_in_one_project.project_bucket as pb 
+  where pb.prefix in (".$_SESSION['prefix_project_sticky'].") order by pb.sticky DESC" or die("Error:" . mysqli_error($con));
+  $result = mysqli_query($con, $query);
+
+  while($row = mysqli_fetch_array($result)) {
+    echo '
+        <input type="checkbox" class="btn-check" id="'.$row["pb.id"].'" autocomplete="off">
+        <label class="btn btn-outline-primary btn-sm bk-cr" for="'.$row["pb.id"].'">'.$row["project_name"].'</label>
+    ';
+  }
+
+?>
