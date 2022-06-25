@@ -190,7 +190,6 @@
                                     <div class="col-auto">
                                         <div id="total_page_nj"></div>
                                     </div>
-                                    <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end"> -->
                                     <div class="col-auto">
                                         <button class="btn btn-primary btn-sm" style="margin-left:10px" type="button"
                                             data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
@@ -377,6 +376,16 @@
                                             </datalist>
                                         </form>
                                     </nav>
+                                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                                        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
+
+                                        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="btncheck2">Checkbox 2</label>
+
+                                        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="btncheck3">Checkbox 3</label>
+                                    </div>
                                     <div class="row" id="get_ts_admin_console">
                                     </div>
                                 </div>
