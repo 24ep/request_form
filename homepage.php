@@ -686,7 +686,7 @@ function update_project_sticky_badge(BuketPrefix){
                     box.className += " bucket-hin";
                 }
             }else{
-                const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
+                const boxes = document.querySelectorAll('li[data-bucket="'+BuketPrefix+'"]');
                 for (const box of boxes) {
                     // box.classList.remove("bucket-hin");
                     box.className.replace(" bucket-hin", "");
