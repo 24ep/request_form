@@ -376,7 +376,7 @@
                                             </datalist>
                                         </form>
                                     </nav>
-                                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic checkbox toggle button group">
                                         <?php include('get/get_list_bucket.php'); ?>
                                     </div>
                                     <div class="row" id="get_ts_admin_console">
