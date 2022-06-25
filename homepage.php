@@ -882,6 +882,18 @@ function update_project_sticky() {
     });
 }
 
+function update_project_sticky_badge(){
+    var prefix_project_sticky = [];
+        $.each($("input[name='bucket_checking']:checked"), function(){
+            prefix_project_sticky.push($(this).val());
+        });
+        prefix_project_sticky.join(",")
+        $.post("base/get/get_list_project.php", {
+        prefix_project_sticky: prefix_project_sticky
+        }, function(data) {
+            $('#project_bucket').html(data);
+        });
+}
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value
