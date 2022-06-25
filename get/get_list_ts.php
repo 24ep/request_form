@@ -127,6 +127,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     ?>
         </div>
     
+        
 </li>
 <?php $i++; }
                       echo "</ul>";
