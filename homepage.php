@@ -1084,6 +1084,9 @@ function doAutoRefresh_ts_admin() {
                     // รับค่ากลับมา และ แสดงผล
                     //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
                     document.getElementById("get_ts_admin_console").innerHTML = req_ts.responseText;
+                    update_project_sticky_badge('skip');
+                    search_cr_data();
+                    search_cr_username();
                     // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
                     setTimeout("doAutoRefresh_ts_admin()", 5000);
                 }
@@ -1091,9 +1094,7 @@ function doAutoRefresh_ts_admin() {
         };
         req_ts.send(null);
     }
-    update_project_sticky_badge('skip');
-    search_cr_data();
-    search_cr_username();
+   
 };
 
 function doAutoRefresh_cr() {
