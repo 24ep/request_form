@@ -887,6 +887,12 @@ function update_project_sticky_badge(){
     var prefix_project_sticky = "";
         $.each($("input[name='bucket_checking']:checked"), function(){
             prefix_project_sticky_array.push($(this).val());
+
+            document.querySelectorAll('[data-bucket*="'+$(this).val()+'"]').forEach(
+                (elem) => elem.style.display = 'none'
+                (elem) => elem.style.position = 'absolute!important'
+                (elem) => elem.style.zIndex  = '-1'
+            );
         });
         
         prefix_project_sticky = prefix_project_sticky_array.join("','");
@@ -895,7 +901,10 @@ function update_project_sticky_badge(){
         $.post("base/get/get_list_bucket.php", {
         prefix_project_sticky: prefix_project_sticky
         }, function(data) {
-            // $('#project_bucket').html(data);
+            // z-index: -1;
+            // position: absolute!important;
+            // display: none;
+        
         });
 }
 

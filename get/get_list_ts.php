@@ -55,6 +55,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         ac.department as department,
         ac.username as username,
         pb.color_project as color_project,
+        pb.prefix as prefix,
         case when ticket.ticket_type like '%Content%' or ticket.ticket_type like '%Status%' then 'Yes' end as contain_content,
         case when ticket.ticket_type like '%Provide%' then 'Yes' end as contain_data,
         case when ticket.ticket_type like '%Image%' then 'Yes' end as contain_studio,
@@ -73,6 +74,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 ?>
 <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
     onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
+    data-bucket="<?php echo $row['prefix'];?>"
     aria-controls="offcanvasExample">
     <div class="row" style="padding-right: 0px;">
         <div class="col-10" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas"
@@ -127,7 +129,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     ?>
         </div>
     
-        
+
 </li>
 <?php $i++; }
                       echo "</ul>";
