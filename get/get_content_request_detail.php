@@ -343,7 +343,8 @@ while($row_project = mysqli_fetch_array($result_project)) {
         </div>
         <span class="badge bg-primary" style="background-color:'.$color_project.'!important;margin-bottom:15px;padding:8px 15px;">'.$project_name.'</span>
         <button class="badge bg-light text-dark" style="border: solid 1px gainsboro;" onclick="prompt(&#39Press Ctrl + C, then Enter to copy to clipboard&#39,&#39https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='.$id.'&#39)"><ion-icon name="share-social-outline"></ion-icon>Copie ticket URL</button>
-        
+        <button class="badge bg-light text-dark" style="border: solid 1px gainsboro;" id="EditDetailTicket" onclick="EditDetailTicket()"><ion-icon name="pencil-outline"></ion-icon></button>
+        <button class="badge bg-primary text-light" style="border: solid 1px gainsboro;"id="SaveDetailTicket"  onclick="SaveDetailTicket()"><ion-icon name="save-outline"></ion-icon></ion-icon></button>
         <div class="mb-3 row" style="font-size: x-large;">
         <label for="staticEmail" class="col-sm-2 col-form-label" style="width: fit-content;padding: 0px 5px 5px 15px;">
         <strong style="color:'.$color_project.'!important;font-size: smaller;border-bottom: solid 3px;">'.$ticket_template.'-'.$id .'</strong></label>
@@ -660,6 +661,21 @@ function update_cl_detail(id, id_name) {
                 // $('#call_update_complete').html(data);
                 // document.getElementById('comment_box_cr').scrollBy(0, document.getElementById("call_ticket_comment_cr").offsetHeight);
             });
+    }
+}
+function EditDetailTicket(){
+  var disabled = document.getElementById("cr_edit_title").disabled;
+    if (disabled) {
+        document.getElementById("cr_edit_title").disabled = false;
+        document.getElementById("EditDetailTicket").disabled = true;
+        document.getElementById("SaveDetailTicket").disabled = false;
+        document.getElementById("SaveDetailTicket").style.display = 'none';
+    }
+    else {
+        document.getElementById("cr_edit_title").disabled = true;
+        document.getElementById("EditDetailTicket").disabled = false;
+        document.getElementById("SaveDetailTicket").disabled = true;
+        document.getElementById("SaveDetailTicket").style.display = 'black';
     }
 }
 </script>
