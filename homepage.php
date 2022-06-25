@@ -700,7 +700,7 @@ function update_project_sticky_badge(){
 $('#bucket_checking').change(function() 
 {
     update_project_sticky_badge();
-}
+});
 function search_cr_ticket() {
     var cr_search_input = document.getElementById("cr_search_input").value
     var user_cr_filter = document.getElementById("user_cr_filter").value
