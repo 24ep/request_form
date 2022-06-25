@@ -350,7 +350,6 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <strong style="color:'.$color_project.'!important;font-size: smaller;border-bottom: solid 3px;">'.$ticket_template.'-'.$id .'</strong></label>
           <div class="col-sm-10">
             <input id="cr_edit_title" name="cr_edit_title" 
-            onchange="update_cr_detail(5346,&#39;cr_edit_title&#39;)"
             type="text" style="border: 0px;background: transparent;font-weight: lighter;width: inherit;font-size: smaller;" disabled value="'.$title.'">
           </div>
         </div>
