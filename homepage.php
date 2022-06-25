@@ -885,7 +885,7 @@ function update_project_sticky() {
 function update_project_sticky_badge(){
     var prefix_project_sticky_array = [];
     var prefix_project_sticky = "";
-        $.each($("input[name='bucket_checking']not(:checked)"), function(){
+        $.each($("input[name='bucket_checking']not:checked"), function(){
             const boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
             for (const box of boxes) {
                 box.style.display = 'none';
