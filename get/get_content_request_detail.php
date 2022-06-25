@@ -354,7 +354,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="position: fixed;right: 40px;top: 15px;" aria-label="Close"></button>
         
         <div class="row window-full overflow-auto" style="margin-bottom: 0px;padding-left:20px;background: white;">
-        <div class="col-7" style="border-right:1px solid  #ebedef;padding: 1rem 1rem;">
+        <div class="col-8" style="border-right:1px solid  #ebedef;padding: 1rem 1rem;">
 
           <div class="text-white bg-success toast align-items-center top-5 start-50 translate-middle-x fade hide" role="alert" aria-atomic="true" data-bs-delay="2000" aria-live="assertive" id="liveToast_cr" style="position: absolute; top: 0; right: 0;margin-top:10px;margin-right:10px">
             <div class="d-flex">
@@ -421,7 +421,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
       }
        echo ' <button type="button" class="btn btn-outline-primary btn-sm" onClick="comment_cr_id_with_file('.$id.')"  >Add comment</button></div>';
         echo'
-        <div class="col-5" style="padding:1rem 1rem;background: #f7f7f7;">
+        <div class="col-4" style="padding:1rem 1rem;background: #f7f7f7;">
         <div style="margin-left: 10px;margin-right: 10px;">
         <small style="display:block;"><strong style="color:gray">'.$sj.' Status</strong></small>
         ';
