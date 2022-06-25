@@ -707,7 +707,7 @@ function update_project_sticky_badge(BuketPrefix){
                 for (const box of boxes) {
                     box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '')
                 }
-                prefix_project_sticky_array.push($(this).val());
+                prefix_project_sticky_array.push(BuketPrefix);
             }
                 
         });
