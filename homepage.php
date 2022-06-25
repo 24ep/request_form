@@ -357,7 +357,7 @@
                                                 ?>
                                                 <input style="width: 60%;" type="text" class="form-control"
                                                     onchange="search_cr_data();" id="ts_command" name="ts_command"
-                                                    placeholder="leave ticket number or Title of ticket" aria-label="Username"
+                                                    placeholder="leave your ticket number or message have contain in title" aria-label="Username"
                                                     aria-describedby="basic-addon1" value="<?php echo $sqb; ?>">
                                                 <span class="input-group-text">Username</span>
                                                 <input style="width: 10%;" list="qlistoption" type="text"
