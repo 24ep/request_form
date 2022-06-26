@@ -106,7 +106,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         <?php     
                         unset($ef_badge);
                         unset($image_profile);
-                        if($officer==null or $officer=="" or $officer=="unassign"){
+                        if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
                             echo '<div class="col card-unassin-bt" >';
                             echo  '<a type="button" class="btn btn-sm btn-outline-secondary">Unassign</a>';
                             echo '</div>';
@@ -127,10 +127,11 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                               echo ucwords($officer);
                               echo '</div>';
                             echo '</div>';
-                            echo '<div class="col card-assigned-eft">';
+                            
+                          }
+                          echo '<div class="col card-assigned-eft">';
                             echo  badge_due_date($row["effective_date"]);
                             echo '</div>';
-                          }
                         }
                     
                 
