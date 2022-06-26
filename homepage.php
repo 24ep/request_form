@@ -88,6 +88,8 @@
         <!-- multi-select -->
         <link rel="stylesheet" href="base/css-theam/pureScriptSelect/style.css" />
         <script src="base/css-theam/pureScriptSelect/script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.css" rel="stylesheet"></link>
     </head>
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
         <!-- Modal -->
