@@ -305,23 +305,23 @@ ion-icon{
                                             placeholder="ตรวจสอบ IBC ตามตัวอย่างด้านล่าง วางตามตัวอย่างด้านล่าง&#10;&#10;3466644&#10;2443356&#10;2487356"
                                             rows="20" style="height: 300px"></textarea>
 
-
-                                        <div class="form-floating" style="margin-top:10px">
-                                            <select class="form-select" style="margin-top:10px" id="be_status_on_change"
+<!-- 
+                                        <div class="form-floating" style="margin-top:10px"> -->
+                                            <!-- <select class="form-select" style="margin-top:10px" id="be_status_on_change"
                                                 aria-label="Floating label select example">
                                                 <option selected value="cancel">ให้ยกเลิก ticket นั้น (ปรับสถานะเป็น
                                                     cancel)</option>
                                                 <option value="keep">ให้คงสถานะเดิมไว้</option>
-                                            </select>
-                                            <label for="floatingSelect">สถานะ ticket เดิมในกรณีที่เป็น sku
+                                            </select> -->
+                                            <!-- <label for="floatingSelect">สถานะ ticket เดิมในกรณีที่เป็น sku
                                                 ที่มีอยู่แล้ว</label>
-                                        </div>
+                                        </div> -->
                                         <input type="hidden" id="result_checking_sku" name="result_checking_sku" value="">
                                         <button type="button" style="margin-top:10px"
                                             onclick="force_sync_with_ticket(<?php echo $_POST['id'].',&#34;'.$bu.'&#34;'; ?>)"
                                             class="btn btn-danger">ยืนยัน เชื่อมต่อ sku ด้านบนกับ ticket NS-
                                             <?php echo $_POST["id"];?></button>
-                                        <small>ในกรณี ย้าย sku จาก ตัวแม่ "ให้เลือก คงสถานะเดิมไว้"</small>
+                                        <br><small>ในกรณี ย้าย sku จาก ตัวแม่ "ให้เลือก คงสถานะเดิมไว้"</small>
                                     </div>
                                     <div class="col-6">
                                         <div id="sku_checking_result">
@@ -566,7 +566,7 @@ ion-icon{
     function force_sync_with_ticket(id,bu) {
         var result_checking_sku = document.getElementById("result_checking_sku").value;
         var sku_change = document.getElementById("sku_checking").value;
-        var be_status_on_change = document.getElementById("be_status_on_change").value;
+        // var be_status_on_change = document.getElementById("be_status_on_change").value;
         if(result_checking_sku=="no_duplicate"){
             be_status_on_change = "Keep";
             if (sku_change) {
@@ -584,8 +584,9 @@ ion-icon{
             Notiflix.Confirm.show(
             'Found some sku in current database',
             'Do you want the system do any action with duplicate ticket ?',
-            'Keep',
-            'Cancel',
+            'Keep duplicate ticket',
+            'Cancel duplicate ticket',
+            'Close',
             // 'Keep that ticket , I will update some sku then replace sku of that ticket by myself.',
             // 'Cancel that ticket , all sku duplicate and I want to use this ticket to proceed',
             // 'Close , I will update later',
