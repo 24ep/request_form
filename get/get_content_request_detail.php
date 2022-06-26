@@ -758,7 +758,7 @@ function off_overlay() {
 // });
 
 baguetteBox.run('.baguetteBoxFour'); //preview image
-pureScriptSelect('#cr_edit_case_officer'); //multi select
+pureScriptSelect('#multiSelect'); //multi select
 </script>
 
 
