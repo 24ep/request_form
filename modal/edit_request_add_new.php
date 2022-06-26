@@ -589,13 +589,7 @@ ion-icon{
             // 'Keep that ticket , I will update some sku then replace sku of that ticket by myself.',
             // 'Cancel that ticket , all sku duplicate and I want to use this ticket to proceed',
             // 'Close , I will update later',
-            {
-                width: '500px',
-                cancelButtonColor: '#ffffff',
-                cancelButtonBackground: '#CF142B',
-                clickToClose: true,
-                closeButton: true,
-            },
+           
             function okCb() {
                 be_status_on_change = "Keep";
                 if (sku_change) {
@@ -635,9 +629,13 @@ ion-icon{
                     });
                 }
             },
-            // () => {
-            //     alert('Ok , got you');
-            // },
+            {
+                width: '500px',
+                cancelButtonColor: '#ffffff',
+                cancelButtonBackground: '#CF142B',
+                clickToClose: true,
+                closeButton: true,
+            },
             
             );
         }
