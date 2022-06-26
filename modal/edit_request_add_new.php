@@ -584,9 +584,16 @@ ion-icon{
             Notiflix.Confirm.show(
             'Found some sku in current database',
             'Do you want the system do any action with duplicate ticket ?',
-            'Keep that ticket , I will update some sku then replace sku of that ticket by myself.',
-            'Cancel that ticket , all sku duplicate and I want to use this ticket to proceed',
-            'Close , I will update later',
+            'Keep',
+            'Cancel',
+            // 'Keep that ticket , I will update some sku then replace sku of that ticket by myself.',
+            // 'Cancel that ticket , all sku duplicate and I want to use this ticket to proceed',
+            // 'Close , I will update later',
+            {
+                width: '500px',
+                cancelButtonColor: '#ffffff',
+                cancelButtonBackground: '#CF142B',
+            },
             () => {
                 be_status_on_change = "Keep";
                 if (sku_change) {
