@@ -468,37 +468,3 @@ table.dataTable.no-footer {
     width: inherit;
     font-size: smaller;
 }
-
-/* fff */
-.img-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .popupContainer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    top: 0;
-    overflow: auto;
-  }
-  .popupContainer .popUpBackground {
-    transition: all 0.3s ease-in-out;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    top: 0;
-  }
-  .popupContainer .popUpBackground.active {
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  .popupContainer .popImage {
-    position: relative;
-    display: block;
-    transition: all 0.3s ease-in-out;
-    border-radius: 6px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
-  }
