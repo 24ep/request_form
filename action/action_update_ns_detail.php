@@ -48,9 +48,9 @@
         echo '<script>Notiflix.Notify.success("NS-'.$id.' have been updated");</script>';
         add_participant($_POST['id'],"add_new_job");
         insert_log("update ticket \n ".$value_name." = ".$value_change ,"add_new_job",$_POST['id']);
-        echo '<script>alert("Update Ticket ID NS-'.$_POST['id'].'")</script>';
+        // echo '<script>alert("Update Ticket ID NS-'.$_POST['id'].'")</script>';
 	}else{
-        insert_log("update ticket fails".$con->error ,"content_request",$id);
+        insert_log("Update ticket fails".$con->error ,"content_request",$id);
         echo '<script>alert("Error: ' . $sql . '\n\n' . $con->error.'")</script>';
     }
     mysqli_close($con);
