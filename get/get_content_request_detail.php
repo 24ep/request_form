@@ -303,8 +303,8 @@ $result = mysqli_query($con, $query);
         $assign = '<div style="margin-bottom:15px">assign to '.$case_officer.'</div>';
     }
     $cr_op = return_option_edit_cr($status,"38");
-    //$username_op = getoption_return_edit_cr("username","account",$case_officer,"multi","all_in_one_project");
-    $username_op = get_username_option($case_officer);
+    $username_op = getoption_return_edit_cr("username","account",$case_officer,"multi","all_in_one_project");
+    $username_op_mul = get_username_option($case_officer);
     //prticipant to string set
     $set_participant = str_replace(",","','",$participant);
     $set_participant = "'".trim($set_participant," ")."'";
@@ -481,7 +481,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                  name="cr_edit_case_officer_show" 
                  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
                  <option data-placeholder="true"></option>
-                 '.$username_op .'
+                 '.$$username_op_mul .'
                 </select>
               </div>
             </div>';
