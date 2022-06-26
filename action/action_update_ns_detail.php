@@ -47,7 +47,6 @@
          }
       }
         echo '<script>
-        import Notiflix from "notiflix"
         Notiflix.Notify.success("NS-'.$id.' have been updated");</script>';
         add_participant($_POST['id'],"add_new_job");
         insert_log("update ticket \n ".$value_name." = ".$value_change ,"add_new_job",$_POST['id']);
