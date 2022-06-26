@@ -300,7 +300,7 @@ $result = mysqli_query($con, $query);
     $username_op_set = get_username_option();
     //prticipant to string set
     $set_participant = str_replace(',','","',$participant);
-    $set_participant = '"'.$set_participant.'"';
+    $set_participant = '"'.trim($set_participant," ").'"';
     // end
     $type_op = return_option_edit_cr($ticket_type,"39");
     $content_request_reson_op = getoption_return_edit_cr("content_request_reson","option",$content_request_reson,"single","all_in_one_project");
