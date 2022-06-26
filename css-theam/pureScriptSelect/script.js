@@ -46,7 +46,7 @@ const pureScriptSelect = (selector) => {
             let html = `
             <div class="directorist-select__label">
                 <div class="directorist-select__label--text">${option[0].text}</div>
-                <span class="directorist-select__label--icon"><img src="assets/svg/angle-down-solid.svg" alt=""></span>
+                <span class="directorist-select__label--icon"><img src="base/css-theam/pureScriptSelect/assets/svg/angle-down-solid.svg" alt=""></span>
             </div>
             <div class="directorist-select__dropdown">
                 <input class='directorist-select__search ${ isSearch ? 'directorist-select__search--show' : 'directorist-select__search--hide' }' type='text' class='value' placeholder='Filter Options....' />
@@ -65,7 +65,7 @@ const pureScriptSelect = (selector) => {
                     el.setAttribute('selected', 'selected');
                 }
                 if(el.hasAttribute('selected')){
-                    selectTrigger.innerHTML = el.innerHTML +'<img src="assets/svg/angle-down-solid.svg" alt="">';
+                    selectTrigger.innerHTML = el.innerHTML +'<img src="base/css-theam/pureScriptSelect/assets/svg/angle-down-solid.svg" alt="">';
                 };
             });
 
@@ -111,7 +111,7 @@ const pureScriptSelect = (selector) => {
                     el.addEventListener('click', (event) => {
                         elem[index].setAttribute('selected', 'selected');
                         sibling.querySelector('.directorist-select__dropdown').classList.remove('directorist-select__dropdown-open');
-                        item.querySelector('.directorist-select__label').innerHTML = el.querySelector('.directorist-select-dropdown-text').textContent +'<img src="assets/svg/angle-down-solid.svg" alt="">';
+                        item.querySelector('.directorist-select__label').innerHTML = el.querySelector('.directorist-select-dropdown-text').textContent +'<img src="base/css-theam/pureScriptSelect/assets/svg/angle-down-solid.svg" alt="">';
                     });
                 });
             });
@@ -154,7 +154,7 @@ const pureScriptSelect = (selector) => {
                     el.addEventListener('click', (event) => {
                         elem[index].setAttribute('selected', 'selected');
                         sibling.querySelector('.directorist-select__dropdown').classList.remove('directorist-select__dropdown-open');
-                        item.querySelector('.directorist-select__label').innerHTML = el.querySelector('.directorist-select-dropdown-text').textContent +'<img src="assets/svg/angle-down-solid.svg" alt="">';
+                        item.querySelector('.directorist-select__label').innerHTML = el.querySelector('.directorist-select-dropdown-text').textContent +'<img src="base/css-theam/pureScriptSelect/assets/svg/angle-down-solid.svg" alt="">';
                     });
                 });
             });

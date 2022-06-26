@@ -123,7 +123,13 @@
                 $result='Your request have been create <strong> ID '.$last_id.'';
                 echo $result;
             }else{
-                echo 'Error: ' . $sql." ". $con->error;
+                echo "<script>
+                Notiflix.Report.failure(
+                    'Failure',
+                    'Error: " . $sql . "<br/><br/>" . $con->error.",
+                    'Okay',
+                    )</script>;
+                ";
             }
             mysqli_close($con);
    // header( "location: https://cdse-commercecontent.com/base/job_manage.php");

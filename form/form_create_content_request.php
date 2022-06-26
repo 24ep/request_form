@@ -224,11 +224,7 @@ function submit_cr_form(id) {
         type: 'post',
         success: function(data) {
             // $('#call_ticket_comment_ins').html(data);
-            Swal.fire(
-                'Created!',
-                data,
-                'success'
-            )
+            Notiflix.Notify.success(data);
 
         }
     });
