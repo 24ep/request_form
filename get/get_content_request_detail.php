@@ -817,8 +817,8 @@ new SlimSelect({
   select: '#cr_edit_case_officer_show',
   closeOnSelect: false,
   allowDeselectOption: true,
-  onChange: (value) => {
-    document.getElementById("cr_edit_case_officer").value = document.getElementById("cr_edit_case_officer").value + ','+value;
+  onChange: (info) => {
+    document.getElementById("cr_edit_case_officer").value = document.getElementById("cr_edit_case_officer").value + ','+info.value;
   }
 })
 
