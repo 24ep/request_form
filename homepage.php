@@ -31,7 +31,6 @@
     <!DOCTYPE html>
     <html lang="en">
     <!-- set up theam -->
-
     <head>
         <title>Content and Studio - Homepage</title>
         <!-- Required meta tags -->
@@ -81,8 +80,9 @@
             href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/<?php echo $pftheam; ?>.css">
         <link rel="stylesheet" type="text/css"
             href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
+        <link rel="stylesheet" href="notiflix/dist/notiflix-3.2.5.min.css" />
+        <script src="notiflix/dist/notiflix-3.2.5.min.js"></script>
     </head>
-
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
         <!-- Modal -->
         <div class="modal fade " id="project_model" tabindex="-1" aria-labelledby="project_modelLabel"
@@ -98,7 +98,6 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140386041-2"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -171,9 +170,10 @@
                                     </div>
                                     <div class="col-auto">
                                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Search</label>
-                                        <input placeholder="Dept , Sub Dept , Brand , ID" type="text" class="selection_filter"
-                                            style="border-bottom: 1px #e0e0e0;border-style: double;width:300px" id="brand_filter"
-                                            onchange="filter_update();">
+                                        <input placeholder="Dept , Sub Dept , Brand , ID" type="text"
+                                            class="selection_filter"
+                                            style="border-bottom: 1px #e0e0e0;border-style: double;width:300px"
+                                            id="brand_filter" onchange="filter_update();">
                                     </div>
                                     <div class="col-auto">
                                         <h5>|</h5>
@@ -235,7 +235,6 @@
                                     </nav>
                                 </div>
                             </div>
-                            <!-- <div class="container-fluid" style="border-radius: 10px;width: 95%;"> -->
                             <table class="table table-hover table-borderless  "
                                 style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
                                 <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
@@ -300,7 +299,6 @@
                                     </ul>
                                 </div>
                             </div>
-                            <!-- ffff -->
                         </div>
                     </div>
                     <!-- ts console -->
@@ -316,14 +314,6 @@
                                                 <div class="btn-group" role="group"
                                                     aria-label="Basic checkbox toggle button group">
                                                 </div>
-                                                <!-- <button class="btn btn-primary btn-sm " style="margin-left:10px;"
-                                                    type="button" data-bs-toggle="offcanvas"
-                                                    data-bs-target="#project_sticky" aria-controls="project_sticky">
-                                                    <ion-icon size="small" name="file-tray-stacked-outline" role="img"
-                                                        class="md icon-small hydrated" aria-label="add outline">
-                                                    </ion-icon>
-                                                    Bucket
-                                                </button> -->
                                                 <button class="btn btn-primary btn-sm " style="margin-left:10px;"
                                                     type="button" data-bs-toggle="offcanvas"
                                                     data-bs-target="#content_request_canvas"
@@ -340,7 +330,8 @@
                                         <form style="width:100%">
                                             <div class="input-group input-group-sm mb-3">
                                                 <span class="input-group-text" id="basic-addon1">
-                                                    <ion-icon style="vertical-align: middle;margin-right: 5px;" name="search-outline">
+                                                    <ion-icon style="vertical-align: middle;margin-right: 5px;"
+                                                        name="search-outline">
                                                     </ion-icon> Search
                                                 </span>
                                                 <?php 
@@ -357,8 +348,9 @@
                                                 ?>
                                                 <input style="width: 60%;" type="text" class="form-control"
                                                     onchange="search_cr_data();" id="ts_command" name="ts_command"
-                                                    placeholder="leave your ticket number or message have contain in title" aria-label="Username"
-                                                    aria-describedby="basic-addon1" value="<?php echo $sqb; ?>">
+                                                    placeholder="leave your ticket number or message have contain in title"
+                                                    aria-label="Username" aria-describedby="basic-addon1"
+                                                    value="<?php echo $sqb; ?>">
                                                 <span class="input-group-text">Username</span>
                                                 <input style="width: 10%;" list="qlistoption" type="text"
                                                     class="form-control" onchange="search_cr_username();"
@@ -376,7 +368,8 @@
                                             </datalist>
                                         </form>
                                     </nav>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic checkbox toggle button group">
+                                    <div class="btn-group btn-group-sm" role="group"
+                                        aria-label="Basic checkbox toggle button group">
                                         <?php include('get/get_list_bucket.php'); ?>
                                     </div>
                                     <div class="row" id="get_ts_admin_console">
@@ -408,10 +401,6 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="padding:20px">
                                 <div class="container ">
-                                    <!-- get card -->
-                                    <!-- <ion-icon name="time-outline"></ion-icon>
-                                    <h3>Coming soon</h3> -->
-                                    <!-- get card -->
                                     <div>
                                         <?php include('get/get_account_editor.php'); ?>
                                     </div>
@@ -477,7 +466,6 @@
                                     $query = "SELECT * FROM all_in_one_project.project_bucket where status <> 'Close' ORDER BY id asc" or die("Error:" . mysqli_error($con));
                                     $result = mysqli_query($con, $query);
                                     if($_SESSION["prefix_project_sticky"]==""){
-                                        // $_SESSION["prefix_project_sticky"] = "'CR','DT'";
                                         $query_default = "SELECT * FROM all_in_one_project.project_bucket where status <> 'Close' and `default` = 1 ORDER BY id asc" or die("Error:" . mysqli_error($con));
                                         $result_de = mysqli_query($con, $query_default);
                                         $_SESSION["prefix_project_sticky"]="'OO'";
@@ -536,7 +524,6 @@
 var elements = document.getElementsByClassName('window-full');
 var windowheight = window.innerHeight + "px";
 fullheight(elements);
-
 function fullheight(elements) {
     for (let el in elements) {
         if (elements.hasOwnProperty(el)) {
@@ -559,7 +546,6 @@ function call_edit_add_new_modal(id, brand) {
         });
     }
 }
-
 function cr_id_toggle(id) {
     if (id) {
         $.post("base/get/get_content_request_detail.php", {
@@ -569,7 +555,6 @@ function cr_id_toggle(id) {
         });
     }
 }
-
 function start_checking(id) {
     if (id) {
         $.post("base/action/action_start_checking.php", {
@@ -579,7 +564,6 @@ function start_checking(id) {
         });
     }
 }
-
 function accepted_stt(id) {
     if (id) {
         // sku_accepted = document.getElementById('sku_accepted').value;
@@ -591,7 +575,6 @@ function accepted_stt(id) {
         });
     }
 }
-
 function cancel_stt(id, status_change) {
     resone_cancel = document.getElementById('resone_cancel').value;
     status_change = 'cancel';
@@ -605,7 +588,6 @@ function cancel_stt(id, status_change) {
         });
     }
 }
-
 function cancel_ticket(id) {
     resone_cancel = document.getElementById('reason_cancel').value;
     status_change = document.getElementById('type_cancel').value;
@@ -620,7 +602,6 @@ function cancel_ticket(id) {
         });
     }
 }
-
 function itm_confirm_cancel(id, status_change) {
     let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
     if (message == null || message == "") {
@@ -642,7 +623,6 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
-
 function filter_cr_ticket(status) {
     document.getElementById('cr_search_input').value = '';
     var update = true;
@@ -655,7 +635,6 @@ function filter_cr_ticket(status) {
         });
     }
 }
-
 function get_project_model(id) {
     if (id) {
         $.post("base/get/get_project_model.php", {
@@ -665,111 +644,95 @@ function get_project_model(id) {
         });
     }
 }
-
-function search_cr_data(){
+function search_cr_data() {
     var input = document.getElementById('ts_command').value.toLowerCase();;
-    
-    if(input!=""){
+    if (input != "") {
         //hide all card
         var SearchInputQuery = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
         for (var card of SearchInputQuery) {
             card.className += " cr-search-hide";
         }
         //show title contain
-        var SearchInputQuery = document.querySelectorAll('li[data-cr-title*="'+input+'"]');
+        var SearchInputQuery = document.querySelectorAll('li[data-cr-title*="' + input + '"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
         }
         //show id equal
-        var SearchInputQuery = document.querySelectorAll('li[data-cr-id="'+input+'"]');
+        var SearchInputQuery = document.querySelectorAll('li[data-cr-id="' + input + '"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
         }
-    }else{
+    } else {
         //unhide all card
         var SearchInputQuery = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
         }
     }
-    
 }
-function search_cr_username(){
-  
+function search_cr_username() {
     var username = document.getElementById('ts_username').value.toLowerCase();;
-    
-    if(username!=""){
+    if (username != "") {
         //hide all card
         var SearchInputQuery = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
         for (var card of SearchInputQuery) {
             card.className += " cr-username-hide";
         }
         //show data-cr-participant contain
-        var SearchInputQuery = document.querySelectorAll('li[data-cr-participant*="'+username+'"]');
+        var SearchInputQuery = document.querySelectorAll('li[data-cr-participant*="' + username + '"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-username-hide(?!\S)/g, '');
         }
-    
-    }else{
+    } else {
         //unhide all card
         var SearchInputQuery = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-username-hide(?!\S)/g, '');
         }
     }
-    
 }
-function update_project_sticky_badge(BuketPrefix){
+function update_project_sticky_badge(BuketPrefix) {
     var prefix_project_sticky_array = [];
     var prefix_project_sticky = "";
-
-    
-        $.each($("input[name='bucket_checking']:not(:checked)"), function(){
-            if($(this).val()!=BuketPrefix){
-                var boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
-                for (var box of boxes) {
-                    box.className += " bucket-hin";
-                }
-            }else{
-                var boxes = document.querySelectorAll('li[data-bucket="'+BuketPrefix+'"]');
-                for (var box of boxes) {
-              
-                    box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '');
-                }
-                prefix_project_sticky_array.push($(this).val());
+    $.each($("input[name='bucket_checking']:not(:checked)"), function() {
+        if ($(this).val() != BuketPrefix) {
+            var boxes = document.querySelectorAll('li[data-bucket="' + $(this).val() + '"]');
+            for (var box of boxes) {
+                box.className += " bucket-hin";
             }
-                
-        });
-        $.each($("input[name='bucket_checking']:checked"), function(){
-            if($(this).val()!=BuketPrefix){
-                var boxes = document.querySelectorAll('li[data-bucket="'+$(this).val()+'"]');
-                for (var box of boxes) {
-     
-                    box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '');
-                }
-                prefix_project_sticky_array.push($(this).val());
-            }else{
-                var boxes = document.querySelectorAll('li[data-bucket="'+BuketPrefix+'"]');
-                for (var box of boxes) {
-                    box.className += " bucket-hin";
-                }
+        } else {
+            var boxes = document.querySelectorAll('li[data-bucket="' + BuketPrefix + '"]');
+            for (var box of boxes) {
+                box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '');
             }
-        });
-     
-        prefix_project_sticky = prefix_project_sticky_array.join("','");
-        prefix_project_sticky = "'"+prefix_project_sticky+"'";
-        console.log("is checked: " + prefix_project_sticky_array.join(","));
-        $.post("base/get/get_list_bucket.php", {
+            prefix_project_sticky_array.push($(this).val());
+        }
+    });
+    $.each($("input[name='bucket_checking']:checked"), function() {
+        if ($(this).val() != BuketPrefix) {
+            var boxes = document.querySelectorAll('li[data-bucket="' + $(this).val() + '"]');
+            for (var box of boxes) {
+                box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '');
+            }
+            prefix_project_sticky_array.push($(this).val());
+        } else {
+            var boxes = document.querySelectorAll('li[data-bucket="' + BuketPrefix + '"]');
+            for (var box of boxes) {
+                box.className += " bucket-hin";
+            }
+        }
+    });
+    prefix_project_sticky = prefix_project_sticky_array.join("','");
+    prefix_project_sticky = "'" + prefix_project_sticky + "'";
+    console.log("is checked: " + prefix_project_sticky_array.join(","));
+    $.post("base/get/get_list_bucket.php", {
         prefix_project_sticky: prefix_project_sticky
-        }, function(data) {
-            // z-index: -1;
-            // position: absolute!important;
-            // display: none;
-        
-        });
+    }, function(data) {
+        // z-index: -1;
+        // position: absolute!important;
+        // display: none;
+    });
 }
-
-
 function search_cr_ticket() {
     var cr_search_input = document.getElementById("cr_search_input").value
     var user_cr_filter = document.getElementById("user_cr_filter").value
@@ -781,7 +744,6 @@ function search_cr_ticket() {
         $('#list_grouping').html(data);
     });
 }
-
 function run_ts_command(ts_level) {
     var summary_filter = document.getElementById("ts_command").value;
     var ts_username = document.getElementById("ts_username").value;
@@ -804,67 +766,22 @@ function select_current_tab(selecttab) {
         document.getElementById("v-pills-dashboard-tab").classList.add('active');
         document.getElementById("v-pills-request_list-tab").classList.remove('active');
         document.getElementById("v-pills-cr-tab").classList.remove('active');
-        document
-            .getElementById("v-pills-dashboard")
-            .classList
-            .add('active');
-        document
-            .getElementById("v-pills-request_list")
-            .classList
-            .remove('active');
-        document
-            .getElementById("v-pills-cr")
-            .classList
-            .remove('active');
-        document
-            .getElementById("v-pills-dashboard")
-            .classList
-            .add('show');
-        document
-            .getElementById("v-pills-request_list")
-            .classList
-            .remove('show');
-        document
-            .getElementById("v-pills-cr")
-            .classList
-            .remove('show');
+        document.getElementById("v-pills-dashboard").classList.add('active');
+        document.getElementById("v-pills-request_list").classList.remove('active');
+        document.getElementById("v-pills-cr").classList.remove('active');
+        document.getElementById("v-pills-dashboard").classList.add('show');
+        document.getElementById("v-pills-request_list").classList.remove('show');
+        document.getElementById("v-pills-cr").classList.remove('show');
     } else if (selecttab == "v-pills-request_list") {
-        document
-            .getElementById("v-pills-dashboard-tab")
-            .classList
-            .remove('active');
-        document
-            .getElementById("v-pills-cr-tab")
-            .classList
-            .remove('active');
-        document
-            .getElementById("v-pills-request_list-tab")
-            .classList
-            .add('active');
-        document
-            .getElementById("v-pills-dashboard")
-            .classList
-            .remove('active');
-        document
-            .getElementById("v-pills-cr")
-            .classList
-            .remove('active');
-        document
-            .getElementById("v-pills-request_list")
-            .classList
-            .add('active');
-        document
-            .getElementById("v-pills-dashboard")
-            .classList
-            .remove('show');
-        document
-            .getElementById("v-pills-cr")
-            .classList
-            .remove('show');
-        document
-            .getElementById("v-pills-request_list")
-            .classList
-            .add('show');
+        document.getElementById("v-pills-dashboard-tab").classList.remove('active');
+        document.getElementById("v-pills-cr-tab").classList.remove('active');
+        document.getElementById("v-pills-request_list-tab").classList.add('active');
+        document.getElementById("v-pills-dashboard").classList.remove('active');
+        document.getElementById("v-pills-cr").classList.remove('active');
+        document.getElementById("v-pills-request_list").classList.add('active');
+        document.getElementById("v-pills-dashboard").classList.remove('show');
+        document.getElementById("v-pills-cr").classList.remove('show');
+        document.getElementById("v-pills-request_list").classList.add('show');
     } else if (selecttab == "v-pills-cr") {
         document
             .getElementById("v-pills-dashboard-tab")
@@ -953,11 +870,9 @@ function select_current_tab(selecttab) {
             .add('show');
     }
 }
-
 function open_ticket_detail(id) {
     document.getElementById("ns_ticket_" + id).click();
 }
-
 function updateURL(pill) {
     if (history.pushState) {
         var newurl = window.location.protocol + "//" + window.location.host +
@@ -969,7 +884,6 @@ function updateURL(pill) {
             }, '', newurl);
     }
 }
-
 function update_project_sticky() {
     var prefix_project_sticky = "";
     for (var option of document.getElementById('project_sticky_mse').options) {
@@ -988,9 +902,6 @@ function update_project_sticky() {
         $('#project_bucket').html(data);
     });
 }
-
-
-
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value
@@ -1039,7 +950,6 @@ function Inint_AJAX() {
     alert("XMLHttpRequest not supported")
     return null
 }
-
 function doAutoRefresh() {
     var url = window.location.href;
     let result = url.includes("v-pills-request_list");
@@ -1064,7 +974,6 @@ function doAutoRefresh() {
         req.send(null);
     }
 };
-
 function doAutoRefresh_ts_admin() {
     var url = window.location.href;
     let result = url.includes("v-pills-ts_admin");
@@ -1094,9 +1003,7 @@ function doAutoRefresh_ts_admin() {
         };
         req_ts.send(null);
     }
-   
 };
-
 function doAutoRefresh_cr() {
     var url = window.location.href;
     let result = url.includes("v-pills-cr");
@@ -1171,15 +1078,12 @@ tinymce.init({
 function allowDrop(ev) {
     ev.preventDefault();
 }
-
 function messagebox(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
-
 function drag_card_cr(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
-
 function drop_card_cr(ev, new_status) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("card");
@@ -1204,7 +1108,6 @@ function drop_card_cr(ev, new_status) {
     }
 }
     </script>
-
     </html>
     <?php if( $_GET["fopenticket"]<>""){
     $_SESSION["fopenticket"]=$_GET["fopenticket"];
@@ -1248,20 +1151,18 @@ function load_tiny_comment() {
         },
     });
 }
-    </script>
-    <style>
+</script>
+<style>
 .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
     border-radius: 7px;
     margin-top: 8px;
 }
-
 .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child .tox-toolbar__primary,
 .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
     border-top: 1px solid #fff;
 }
-
 .tox .tox-tbtn svg {
     display: block;
     fill: #6c757d !important;
 }
-    </style>
+</style>

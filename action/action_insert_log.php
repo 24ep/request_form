@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 function insert_log($action,$action_table,$action_data_id){
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -20,5 +21,6 @@ function insert_log($action,$action_table,$action_data_id){
     )";
 	$query = mysqli_query($con,$sql);
     mysqli_close($con);
+    echo '<script>Notify.success("'.$action_data_id.' have been updated");</script>';
 }
 ?>
