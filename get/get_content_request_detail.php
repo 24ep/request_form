@@ -212,7 +212,7 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
     while($row = mysqli_fetch_array($result)) {
   // split array store
           if($sorm=="multi"){
-            if($col=="store" or $col=="itemmize_type" or $col=="product_website"){
+            if($col=="store" or $col=="itemmize_type" or $col=="product_website"  or $col=="username"){
               $array_store = explode(', ', $select_option);
               $duplicate_op = false;
               foreach($array_store as $store)
@@ -296,7 +296,7 @@ $result = mysqli_query($con, $query);
         $assign = '<div style="margin-bottom:15px">assign to '.$case_officer.'</div>';
     }
     $cr_op = return_option_edit_cr($status,"38");
-    $username_op = getoption_return_edit_cr("username","account",$case_officer,"single","all_in_one_project");
+    $username_op = getoption_return_edit_cr("username","account",$case_officer,"multi","all_in_one_project");
     $username_op_set = get_username_option();
     //prticipant to string set
     $set_participant = str_replace(",","','",$participant);
