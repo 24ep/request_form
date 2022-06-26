@@ -242,7 +242,7 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
             }
               if($row[$col] <> '' and  $row[$col] <> null)
               {
-                  if($select_option==$row[$col] or $select_option=="unassign"){
+                  if($select_option==$row[$col] ){
                        $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
                   }else{
                        $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
