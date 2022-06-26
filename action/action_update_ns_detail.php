@@ -45,7 +45,9 @@
             }
          }
       }
-        echo '<script>Notiflix.Notiflix.Notify.success("NS-'.$id.' have been updated");</script>';
+        echo '<script>
+        import { Notify } from "./notiflix/build/notiflix-notify-aio";
+        Notify.success("NS-'.$id.' have been updated");</script>';
         add_participant($_POST['id'],"add_new_job");
         insert_log("update ticket \n ".$value_name." = ".$value_change ,"add_new_job",$_POST['id']);
         // echo '<script>alert("Update Ticket ID NS-'.$_POST['id'].'")</script>';
