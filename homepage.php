@@ -80,8 +80,8 @@
             href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/<?php echo $pftheam; ?>.css">
         <link rel="stylesheet" type="text/css"
             href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
-        <link rel="stylesheet" href="action/notiflix/dist/notiflix-3.2.5.min.css" />
-        <script src="action/notiflix/dist/notiflix-3.2.5.min.js"></script>
+        <link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
+        <script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
     </head>
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
         <!-- Modal -->
