@@ -481,6 +481,7 @@ table.dataTable.no-footer {
     outline: 0;
     box-sizing: border-box;
     transition: background-color .2s;
+    border:0px;
 }
 .ss-main .ss-multi-selected .ss-values .ss-value {
     display: flex;
