@@ -352,7 +352,7 @@
                                                     $squser="";
                                                 }
                                                 ?>
-                                                <input style="width: 60%;" type="text" class="form-control"
+                                                <input style="width: 60%;" type="search" class="form-control"
                                                     onsearch="search_cr_data();" id="ts_command" name="ts_command"
                                                     placeholder="leave your ticket number or message have contain in title"
                                                     aria-label="Username" aria-describedby="basic-addon1"
