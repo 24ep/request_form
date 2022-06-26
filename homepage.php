@@ -1181,7 +1181,7 @@ function load_tiny_comment() {
 
 <canvas id="map"></canvas>
 
-<script src="css-theam/pagemap.min.js"></script>
+<script src="base/css-theam/pagemap.min.js"></script>
 <script>
     pagemap(document.querySelector('#map'));
 </script>
