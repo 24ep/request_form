@@ -1,6 +1,3 @@
-<script>
- Notiflix.Loading.hourglass('Loading...');
-</script>
 <!DOCTYPE html>
 <style>
 .multiple-select_cr_edit .ms-choice {
@@ -744,6 +741,4 @@ function off_overlay() {
 </html>';
 }
 ?>
-<script>
- Notiflix.Loading.remove();
-</script>
+

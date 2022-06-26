@@ -547,6 +547,7 @@ function call_edit_add_new_modal(id, brand) {
     }
 }
 function cr_id_toggle(id) {
+    Notiflix.Loading.hourglass('Loading...');
     if (id) {
         $.post("base/get/get_content_request_detail.php", {
             id: id
@@ -554,6 +555,7 @@ function cr_id_toggle(id) {
             $('#calloffcanvas_cr').html(data);
         });
     }
+    Notiflix.Loading.remove();
 }
 function start_checking(id) {
     if (id) {
