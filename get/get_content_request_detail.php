@@ -231,13 +231,18 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
               if(isset($option_set)){
                 $option_set .= '<option value=""></option>';
               }else{
-                $option_set = '<option value=""></option>';
+                if($select_option=="unassign"){
+                  $option_set = '<option value="unassign">unassign</option>';
+                }else{
+                  $option_set = '<option value=""></option>';
+                }
+                
               }
               $loop_in_null=true;
             }
               if($row[$col] <> '' and  $row[$col] <> null)
               {
-                  if($select_option==$row[$col] or $select_option=="unassin"){
+                  if($select_option==$row[$col] or $select_option=="unassign"){
                        $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
                   }else{
                        $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
