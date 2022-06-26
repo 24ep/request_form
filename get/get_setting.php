@@ -20,9 +20,7 @@
          if($row["code"]=="data_script"){
           $detail .= get_page_data_script();
          }
-         if($row["code"]=="system_performance"){
-          $detail .= get_page_system_performance();
-         }
+        
   
     $detail.='</div>';
 }
