@@ -353,7 +353,7 @@
                                                 }
                                                 ?>
                                                 <input style="width: 60%;" type="text" class="form-control"
-                                                    onchange="search_cr_data();" id="ts_command" name="ts_command"
+                                                    onsearch="search_cr_data();" id="ts_command" name="ts_command"
                                                     placeholder="leave your ticket number or message have contain in title"
                                                     aria-label="Username" aria-describedby="basic-addon1"
                                                     value="<?php echo $sqb; ?>">
