@@ -1177,11 +1177,3 @@ function load_tiny_comment() {
   }
   window.addEventListener('load', addDarkmodeWidget);
 </script> -->
-
-
-<canvas id="map"></canvas>
-
-<script src="base/css-theam/pagemap.min.js"></script>
-<script>
-    pagemap(document.querySelector('#map'));
-</script>
