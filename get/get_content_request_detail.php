@@ -818,11 +818,15 @@ new SlimSelect({
   closeOnSelect: false,
   allowDeselectOption: true,
   onChange: (info) => {
-    // var input_update ="";
-    // for (let i = 0; i < info.length; i++) {
-    //   input_update = input_update +','+info[i].value;
-    // }
-    let input_update = info.value.toString(",");
+    var input_update ="";
+    for (let i = 0; i < info.length; i++) {
+      if(input_update==""){
+        input_update = info[i].value;
+      }else{
+        input_update = input_update +','+info[i].value;
+      }
+     
+    }
     document.getElementById("cr_edit_case_officer").value = input_update;
   }
 })
