@@ -303,8 +303,8 @@ $result = mysqli_query($con, $query);
         $assign = '<div style="margin-bottom:15px">assign to '.$case_officer.'</div>';
     }
     $cr_op = return_option_edit_cr($status,"38");
-    $username_op = getoption_return_edit_cr("username","account",$case_officer,"multi","all_in_one_project");
-    $username_op_set = get_username_option();
+    //$username_op = getoption_return_edit_cr("username","account",$case_officer,"multi","all_in_one_project");
+    $username_op = get_username_option($case_officer);
     //prticipant to string set
     $set_participant = str_replace(",","','",$participant);
     $set_participant = "'".trim($set_participant," ")."'";
