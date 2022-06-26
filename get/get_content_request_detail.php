@@ -818,9 +818,11 @@ new SlimSelect({
   closeOnSelect: false,
   allowDeselectOption: true,
   onChange: (info) => {
-    console.log(info.value);
-    console.log(info);
-    document.getElementById("cr_edit_case_officer").value = document.getElementById("cr_edit_case_officer").value + ','+info.value[1];
+    var input_update ="";
+    for (let i = 0; i < info.length; i++) {
+      input_update = input_update +','+info[i].value;
+    }
+    document.getElementById("cr_edit_case_officer").value = input_update;
   }
 })
 
