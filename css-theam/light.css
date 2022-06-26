@@ -498,3 +498,10 @@ table.dataTable.no-footer {
     border-radius: 20px;
     padding: 0px 10px;
 }
+.ss-content .ss-list .ss-option {
+    padding: 6px 10px;
+    cursor: pointer;
+    user-select: none;
+    text-align-last: left;
+    color: black;
+}
