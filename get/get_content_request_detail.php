@@ -472,7 +472,8 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                 <select  multiple id="cr_edit_case_officer" 
                  name="cr_edit_case_officer" 
                  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
-                '.$username_op .'
+                 <option data-placeholder="true"></option>
+                 '.$username_op .'
                 </select>
               </div>
             </div>';
@@ -814,10 +815,10 @@ function off_overlay() {
 new SlimSelect({
   select: '#cr_edit_case_officer',
   closeOnSelect: false,
-  onChange: (info) => {
-    update_cr_detail(<?php echo $id; ?>,<?php echo $cr_edit_case_officer; ?>)
-  }
+  allowDeselectOption: true
 })
+
+
 </script>
 
 
