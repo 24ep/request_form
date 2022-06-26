@@ -21,6 +21,5 @@ function insert_log($action,$action_table,$action_data_id){
     )";
 	$query = mysqli_query($con,$sql);
     mysqli_close($con);
-    echo '<script>Notify.success("'.$action_data_id.' have been updated");</script>';
 }
 ?>
