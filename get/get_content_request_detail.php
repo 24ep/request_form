@@ -809,7 +809,7 @@ function off_overlay() {
 //     buttons: false
 // });
 
-baguetteBox.run('.baguetteBoxFour'); //preview image
+// baguetteBox.run('.baguetteBoxFour'); //preview image
 // pureScriptSelect('#multiSelect'); //multi select
 new SlimSelect({
   select: '#cr_edit_case_officer',
