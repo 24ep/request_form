@@ -47,6 +47,9 @@
       }
         echo '<script>Notiflix.Notify.success("NS-'.$id.' have been updated");</script>';
         add_participant($_POST['id'],"add_new_job");
+        if($value_name=="follow_assign_name"){
+            add_participant_with_user($_POST['id'],"add_new_job",$value_change);
+        }
         insert_log("update ticket \n ".$value_name." = ".$value_change ,"add_new_job",$_POST['id']);
 	}else{
         insert_log("Update ticket fails".$con->error ,"content_request",$id);
