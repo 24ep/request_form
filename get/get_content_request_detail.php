@@ -152,7 +152,7 @@ function get_attachment_cr($id){
   <ul class="list-group mt-2">';
     while($row = mysqli_fetch_array($result)) {
       $herf = str_replace("../..",'../..',$row['file_path'].$row['file_name']);
-      $list_attchment.=  ' <li class="list-group-item d-flex justify-content-between align-items-left" style="border:0px;padding:0px;background: transparent;" > 
+      $list_attchment.=  ' <li class="list-group-item d-flex justify-content-between align-items-left" style="border:0px;padding:0px;margin-top:5px;background: transparent;" > 
                               <a href="'.$herf.'" download="'.$row['file_name'].'" class="btn btn-secondary btn-sm ">
                                 <ion-icon style="color:white;margin-right:5px"name="document-attach-outline"></ion-icon>'.$row["file_name"].'
                               </a>
@@ -167,25 +167,6 @@ function get_attachment_cr($id){
       return $list_attchment;
     }
 }
-// function get_image_cr($id){
-//   $list_image="";
-//   date_default_timezone_set("Asia/Bangkok");
-//   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-//   mysqli_query($con, "SET NAMES 'utf8' ");
-//   $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image=1 ORDER BY id ASC" or die("Error:" . mysqli_error($con));
-//   $result = mysqli_query($con, $query);
-//   if(isset($list_image)){$list_image.= '<div style="display: inline-flex;">';}else{$list_image= '<div class="row">';}
-//     while($row = mysqli_fetch_array($result)) {
-//       $herf = str_replace("../..",'../..',$row['file_path'].$row['file_name']);
-//       $list_image.=  ' <div class="thumbnail">
-//       <a href="'.$herf .'" target="_blank">
-//       <figure class="figure">
-//         <img src="'.$herf .'" class="img-thumbnail img-fluid" alt="'.$row["file_name"].'  " style="object-fit:cover;width:100px;height:100px;">
-//       <figcaption class="figure-caption text-end">'.$row["file_name"].'</figcaption></a></div>';
-//     }
-//     $list_image.= '</div>';
-//       return $list_image;
-// }
 function get_image_cr($id){
   $list_image="";
   date_default_timezone_set("Asia/Bangkok");
@@ -197,15 +178,15 @@ function get_image_cr($id){
     while($row = mysqli_fetch_array($result)) {
       $herf = str_replace("../..",'../..',$row['file_path'].$row['file_name']);
       $list_image.=  ' <div class="thumbnail">
+      <a href="'.$herf .'" target="_blank">
       <figure class="figure">
-      <div class="img-container">
         <img src="'.$herf .'" class="img-thumbnail img-fluid" alt="'.$row["file_name"].'  " style="object-fit:cover;width:100px;height:100px;">
-      </div>
-        <figcaption class="figure-caption text-end">'.$row["file_name"].'</figcaption></div>';
+      <figcaption class="figure-caption text-end">'.$row["file_name"].'</figcaption></a></div>';
     }
     $list_image.= '</div>';
       return $list_image;
 }
+
 function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
