@@ -481,7 +481,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                  name="cr_edit_case_officer_show" 
                  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
                  <option data-placeholder="true"></option>
-                 '.$$username_op_mul .'
+                 '.$username_op_mul .'
                 </select>
               </div>
             </div>';
