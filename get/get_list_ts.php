@@ -102,7 +102,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         </div>
     </div>
     <hr style="margin: 5px;color: #6c757d8c;">
-    <div class="row" style="margin-bottom: 0px;">
+    <div class="row" style="margin-bottom: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr">
         <?php     
                         unset($ef_badge);
                         unset($image_profile);
