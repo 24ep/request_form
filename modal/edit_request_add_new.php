@@ -596,7 +596,7 @@ ion-icon{
                 clickToClose: true,
                 closeButton: true,
             },
-            () => {
+            function okCb() {
                 be_status_on_change = "Keep";
                 if (sku_change) {
                 $.post("base/action/action_force_change_csg_id_of_sku.php", {
@@ -616,7 +616,7 @@ ion-icon{
                     });
                 }
             },
-            () => {
+            function cancelCb() {
                 be_status_on_change = "cancel";
                 if (sku_change) {
                 $.post("base/action/action_force_change_csg_id_of_sku.php", {
