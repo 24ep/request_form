@@ -130,7 +130,12 @@ function return_option_edit_cr($current_value,$attr_id){
     $result_op = mysqli_query($con, $query_op);
     if($current_value==""){
       $option_element = "<option selected value=''></option>";
+    }else{
+      if($current_value=="unassign"){
+        $option_element = "<option selected value='unassign'>unassign</option>";
+      }
     }
+    
     while($option = mysqli_fetch_array($result_op)) {
       if($option["attribute_option"]==$current_value){
           $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
@@ -426,7 +431,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             <div class="row" >
               <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>'.$sj.' Owner</strong></div>|
               <div class="col " style=" padding-left: 25px;text-align-last: right;">
-              <div class="directorist-select directorist-select-multi" id="multiSelect" data-isSearch="true" data-multiSelect="[{value: &#39&#39, key: 0}]";>
+              <div class="directorist-select directorist-select-multi" id="multiSelect" data-isSearch="true" data-multiSelect="[{value: &#39unassign&#39, key: 0}]";>
                 <select class="form-select form-select-sm" data-live-search="true"  id="cr_edit_case_officer"  name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')"  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
                 '.$username_op .'
                 </select>
