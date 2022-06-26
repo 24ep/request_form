@@ -174,7 +174,7 @@ function get_image_cr($id){
   mysqli_query($con, "SET NAMES 'utf8' ");
   $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image=1 ORDER BY id ASC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
-  if(isset($list_image)){$list_image.= '<div style="display: inline-flex;">';}else{$list_image= '<div class="row">';}
+  if(isset($list_image)){$list_image.= '<div style="display: inline-flex;">';}else{$list_image= '<div class="row baguetteBoxFour gallery">';}
     while($row = mysqli_fetch_array($result)) {
       $herf = str_replace("../..",'../..',$row['file_path'].$row['file_name']);
       $list_image.=  ' <div class="thumbnail">
@@ -743,5 +743,9 @@ function off_overlay() {
 }
 ?>
 <script>
-// Notiflix.Loading.remove();
+baguetteBox.run('.baguetteBoxFour', {
+    buttons: false
+});
 </script>
+
+
