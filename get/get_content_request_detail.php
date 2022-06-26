@@ -464,7 +464,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
 
             echo '
                 <div class="directorist-select directorist-select-multi" id="multiSelect" data-max="50" 
-                    data-isSearch="true" data-multiSelect="['.$username_op_set.']" >               
+                    data-isSearch="true" data-multiSelect="['.$username_op_set.']" style="z-index:1" >               
                     <input value="['.$set_participant.']" type="hidden">
                 </div>
             ';
