@@ -813,8 +813,7 @@ function off_overlay() {
 // pureScriptSelect('#multiSelect'); //multi select
 new SlimSelect({
   select: '#cr_edit_case_officer',
-  closeOnSelect: false,
-  addToBody: true
+  closeOnSelect: false
 })
 </script>
 
