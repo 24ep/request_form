@@ -469,8 +469,9 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             <div class="row" >
               <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>'.$sj.' Owner</strong></div>|
               <div class="col " style=" padding-left: 25px;text-align-last: right;">
-                <select  multiple id="cr_edit_case_officer" 
-                 name="cr_edit_case_officer" 
+                <input type="hidden" id="cr_edit_case_officer" name="cr_edit_case_officer" value="'.$case_officer.'">
+                <select  multiple id="cr_edit_case_officer_show" 
+                 name="cr_edit_case_officer_show" 
                  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
                  <option data-placeholder="true"></option>
                  '.$username_op .'
@@ -813,9 +814,12 @@ function off_overlay() {
 // baguetteBox.run('.baguetteBoxFour'); //preview image
 // pureScriptSelect('#multiSelect'); //multi select
 new SlimSelect({
-  select: '#cr_edit_case_officer',
+  select: '#cr_edit_case_officer_show',
   closeOnSelect: false,
-  allowDeselectOption: true
+  allowDeselectOption: true,
+  onChange: (info) => {
+    document.getElementById("cr_edit_case_officer").value = document.getElementById("cr_edit_case_officer").value + ','+info.value;
+  }
 })
 
 
