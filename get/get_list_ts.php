@@ -108,7 +108,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                         unset($image_profile);
                         if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
                             echo '<div class="col card-unassin-bt" >';
-                            echo  '<a type="button" class="btn btn-sm btn-outline-secondary">Unassign</a>';
+                            echo  '<a type="button" class="btn btn-sm btn-outline-secondary" style="border-radius: 15px;">Unassign</a>';
                             echo '</div>';
                             echo '<div class="col card-unassin-eft" >';
                             echo  badge_due_date($row["effective_date"]);
