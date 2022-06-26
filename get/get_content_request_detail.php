@@ -192,17 +192,24 @@ function get_image_cr($id){
       return $list_image;
 }
 
-function get_username_option(){
+function get_username_option($current_username){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $query = "SELECT * FROM account ORDER BY username asc" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
-    $list_username = array();
+    $current_username_list = explode(',', $current_username);
     while($row = mysqli_fetch_array($result)) {
-      $list_username[] = "'".$row["username"]."'";
+      if($current_username=="unassign"){
+        $option_set = '<option value="unassign" selected>unassign</option>';
+      }
+    
+      if(in_array($row["username"],$current_username_list)){
+        $option_set .= '<option value="'.$row['username'].'" selected>'.$row['username'].'</option>';
+      }else{
+        $option_set .= '<option value="'.$row['username'].'">'.$row['username'].'</option>';
+      }
     }
-    $username = implode(",",$list_username);
-    return $username;
+    return $option_set ;
 }
 function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
