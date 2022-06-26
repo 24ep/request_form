@@ -63,7 +63,7 @@ function get_comment_cr($id){
         while($row_attach = mysqli_fetch_array($result_attach)) {
             $herf = str_replace("../..","../..",$row_attach['file_path'].$row_attach['file_name']);
             if($row_attach['is_image']==1){
-                $list_image .= '<a target= "_blank" href="'.$herf.'"><img src="'.$herf.'"  class="img-thumbnail" alt="'.$row_attach['file_name'].'" style="object-fit:cover;width:180px;height:180px;margin: 5px;"></a>';
+                $list_image .= '<div class="baguetteBoxFour gallery"><a target= "_blank" href="'.$herf.'"><img src="'.$herf.'"  class="img-thumbnail" alt="'.$row_attach['file_name'].'" style="object-fit:cover;width:180px;height:180px;margin: 5px;"></a></div>';
                 
             }else{
                 $list_file .= '<a type="button" href="'.$herf.'" style="margin-right:8px;margin-bottom:5px;font-size: 12px;border-color: #7ec1a2;"class="btn btn-outline-success btn-sm "><ion-icon name="document-outline" style="font-size: 12px;"></ion-icon>'.$row_attach['file_name'].'</a>';
