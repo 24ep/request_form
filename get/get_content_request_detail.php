@@ -469,7 +469,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             <div class="row" >
               <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>'.$sj.' Owner</strong></div>|
               <div class="col " style=" padding-left: 25px;text-align-last: right;">
-                <input type="hidden" id="cr_edit_case_officer" name="cr_edit_case_officer" value="'.$case_officer.'">
+                <input onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')" type="hidden" id="cr_edit_case_officer" name="cr_edit_case_officer" value="'.$case_officer.'">
                 <select  multiple id="cr_edit_case_officer_show" 
                  name="cr_edit_case_officer_show" 
                  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
@@ -828,6 +828,7 @@ new SlimSelect({
      
     }
     document.getElementById("cr_edit_case_officer").value = input_update;
+    
   }
 })
 
