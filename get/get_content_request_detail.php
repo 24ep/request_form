@@ -192,17 +192,13 @@ function get_image_cr($id){
       return $list_image;
 }
 
-function get_username_option($select_option){
+function get_username_option(){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $query = "SELECT * FROM account where status = 'Enable' ORDER BY id asc" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
-    $select_option_list = explode(",",$select_option);
-    $list_username_unselected = array();
+    $list_username = array();
     while($row = mysqli_fetch_array($result)) {
-      // if(!in_array($row["username"], $select_option_list)){
-      //   $list_username_unselected[] = "'".$row["username"]."'";
-      // }
       $list_username[] = "'".$row["username"]."'";
     }
     $username = implode(",",$list_username);
@@ -301,7 +297,7 @@ $result = mysqli_query($con, $query);
     }
     $cr_op = return_option_edit_cr($status,"38");
     $username_op = getoption_return_edit_cr("username","account",$case_officer,"single","all_in_one_project");
-    $username_op_set = get_username_option($participant);
+    $username_op_set = get_username_option();
     //prticipant to string set
     $set_participant = str_replace(",","','",$participant);
     $set_participant = "'".$set_participant."'";
