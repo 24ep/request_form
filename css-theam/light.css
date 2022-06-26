@@ -468,6 +468,19 @@ table.dataTable.no-footer {
     width: inherit;
     font-size: smaller;
 }
+.ss-main .ss-multi-selected {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    min-height: 30px;
+    width: 100%;
+    padding: 0 0 0 3px;
+    border-radius: 4px;
+    background-color: transparent;
+    outline: 0;
+    box-sizing: border-box;
+    transition: background-color .2s;
+}
 .ss-main .ss-multi-selected .ss-values .ss-value {
     display: flex;
     user-select: none;
