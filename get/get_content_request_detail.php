@@ -299,8 +299,8 @@ $result = mysqli_query($con, $query);
     $username_op = getoption_return_edit_cr("username","account",$case_officer,"single","all_in_one_project");
     $username_op_set = get_username_option();
     //prticipant to string set
-    $set_participant = str_replace(',','","',$participant);
-    $set_participant = '"'.trim($set_participant," ").'"';
+    $set_participant = str_replace(",","','",$participant);
+    $set_participant = "'".trim($set_participant," ")."'";
     // end
     $type_op = return_option_edit_cr($ticket_type,"39");
     $content_request_reson_op = getoption_return_edit_cr("content_request_reson","option",$content_request_reson,"single","all_in_one_project");
@@ -464,7 +464,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
 
             echo '
                 <div class="directorist-select directorist-select-multi" id="multiSelect" data-max="50" 
-                    data-isSearch="true" data-multiSelect="['.$username_op_set.']" style="z-index:1" >               
+                    data-isSearch="true" data-multiSelect="['.$username_op_set.']" style="position: relative!important; z-index: 1!important;" >               
                     <input value="['.$set_participant.']" type="hidden">
                 </div>
             ';
