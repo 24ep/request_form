@@ -456,7 +456,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
               <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>'.$sj.' Owner</strong></div>|
               <div class="col " style=" padding-left: 25px;text-align-last: right;">
               <div class="directorist-select directorist-select-multi" id="multiSelect" data-isSearch="true" 
-              data-multiSelect="['.$username_op_set.']" data-max="20">
+              data-multiSelect="['.$username_op_set.']" data-max="9">
                 <select class="form-select form-select-sm" data-live-search="true"  id="cr_edit_case_officer" 
                  name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')" 
                  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
