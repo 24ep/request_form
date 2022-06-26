@@ -198,12 +198,11 @@ function get_username_option($current_username){
     $query = "SELECT * FROM account ORDER BY username asc" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     $current_username_list = explode(',', $current_username);
+    if($current_username=="unassign"){
+      $option_set = '<option value="unassign" selected>unassign</option>';
+    }
     while($row = mysqli_fetch_array($result)) {
-      if($current_username=="unassign"){
-        $option_set = '<option value="unassign" selected>unassign</option>';
-      }
-    
-      if(in_array($row["username"],$current_username_list)){
+      if(in_array($row['username'],$current_username_list)){
         $option_set .= '<option value="'.$row['username'].'" selected>'.$row['username'].'</option>';
       }else{
         $option_set .= '<option value="'.$row['username'].'">'.$row['username'].'</option>';
@@ -481,7 +480,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
                  name="cr_edit_case_officer_show" 
                  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
                  <option data-placeholder="true"></option>
-                 '.$username_op_mul .'
+                 '.$username_op_mul.'
                 </select>
               </div>
             </div>';
