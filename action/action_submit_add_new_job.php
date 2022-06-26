@@ -103,6 +103,13 @@ mysqli_query($con, "SET NAMES 'utf8' ");
         $result='<div class="alert alert-success">already create Request !<strong> ID '.$last_id.'</strong></div>';
         header( "Location: /?tab=v-pills-request_list&result=".$result);
 	}else{
+        echo "<script>
+        Notiflix.Report.failure(
+            'Failure',
+            'Error: " . $sql . "<br/><br/>" . $con->error.",
+            'Okay',
+            )</script>;
+        ";
         echo '<div class="alert alert-danger">Error: ' . $sql . '<hr>' . $con->error.'</div>';
     }
     mysqli_close($con);

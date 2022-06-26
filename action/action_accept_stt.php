@@ -28,12 +28,20 @@
                 sent_line_noti("\n• Updated  NS-".$id." [ ".$brand." ".$sku." SKUs ]\n----------------------------\n• ตรวจสอบข้อมูลเรียบร้อย งานถูกส่งต่อไปที่ Traffic แล้ว",$key);
                 send_ms_team("NS-".$id,$brand." ".$sku." SKUs","ตรวจสอบข้อมูลเรียบร้อย งานถูกส่งต่อไปที่ Traffic แล้ว");
             }
+        echo '<script>
+        Notiflix.Notify.success("NS-'.$id.' have been accepted");</script>';
         insert_log("send to traffic > accepted_date = ".date("Y-m-d H:i:s")." \n status = waiting traffic" ,"add_new_job",$id);
         echo date("Y-m-d H:i:s");
 	}else{
         insert_log("send to traffic faild >".$con->error ,"add_new_job",$id);
         echo '<script>alert("'.'Error: ' . $sql . '<br>' . $con->error.'");</script>';
-     
+        echo "<script>
+        Notiflix.Report.failure(
+            'Failure',
+            'Error: " . $sql . "<br/><br/>" . $con->error.",
+            'Okay',
+            )</script>;
+        ";
     }
     mysqli_close($con);
     //header( "location: https://cdse-commercecontent.com/base/homepage.php");

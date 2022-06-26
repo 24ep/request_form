@@ -61,12 +61,17 @@ foreach ($array_number_subtask as $number_of_sku) {
                 add_participant($last_id,"add_new_job");
                 insert_log("create new sub-ticket (".$last_id.")","add_new_job",$_POST['id']);
                 insert_log("create new sub-ticket (".$last_id.")","add_new_job",$last_id);
-                echo 'success';
+                echo '<script>Notiflix.Notify.success("NS-'.$_POST['id'].' have been create new sub-ticket ('.$last_id.')");</script>';
 
 
     }else{
-        echo '<script>console.log("'.$con -> error.'");</script>';
-        echo '<script>alert("'.$con ->error.'");</script>';
+        echo "<script>
+        Notiflix.Report.failure(
+            'Failure',
+            'Error: " . $query  . "<br/><br/>" . $con->error.",
+            'Okay',
+            )</script>;
+        ";
         
     }
 }

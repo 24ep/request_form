@@ -8,20 +8,14 @@ session_start();
   while($row = mysqli_fetch_array($result)) {
 
       echo "user id : ".$row["id"]."<br>";
-
       echo "username : ".$row["username"]."<br>";
-
       echo "firstname : ".$row["firstname"]."<br>";
-
       echo "lastname : ".$row["lastname"]."<br>";
-
       echo "nickname : ".$row["nickname"]."<br>";
-
       echo "work-email : ".$row["workemail"]."<br>";
-
-
-
   }
+
+  
 
 
 

@@ -149,7 +149,13 @@ session_start();
          toast.show();</script>';
 	}else{
         insert_log("update ticket faild".$con->error ,"content_request",$id);
-        echo '<script>alert("Error: ' . $sql . '\n\n' . $con->error.'")</script>';
+        echo "<script>
+        Notiflix.Report.failure(
+            'Failure',
+            'Error: " . $sql . "<br/><br/>" . $con->error.",
+            'Okay',
+            )</script>;
+        ";
     }
     mysqli_close($con);
 ?>

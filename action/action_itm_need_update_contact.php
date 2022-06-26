@@ -28,10 +28,16 @@
                 send_ms_team("NS-".$id,$brand." ".$sku." SKUs","The ticket have been changed the status to -need update contact- ");
             }
         insert_log("Change status to need update contact Ticket = ".date("Y-m-d H:i:s")." \n status = need update contact" ,"add_new_job",$id);
-        echo "success ! ".date("Y-m-d H:i:s");
+        echo '<script>Notiflix.Notify.success("NS-'.$id.' have been updated to need more contact");</script>';
 	}else{
         insert_log("Change status to need update contact Ticket faild >".$con->error ,"add_new_job",$id);
-        echo 'Error: ' . $sql . '<br>' . $con->error.'';
+        echo "<script>
+        Notiflix.Report.failure(
+            'Failure',
+            'Error: " . $sql . "<br/><br/>" . $con->error.",
+            'Okay',
+            )</script>;
+        ";
     }
     mysqli_close($con);
     ?>

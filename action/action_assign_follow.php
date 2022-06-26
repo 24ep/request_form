@@ -40,13 +40,20 @@
                 }
           }
       }
+      echo '<script>Notiflix.Notify.success("NS-'.$id.' have been assign to "'.$op_follow_assign_name.');</script>';
        add_participant($_POST['id'],"add_new_job");
        add_participant($parent,"add_new_job");
         insert_log("assign follow = ".date("Y-m-d H:i:s")." has assign this task to ".$op_follow_assign_name ,"add_new_job",$_POST['id']);
         // echo date("Y-m-d H:i:s");
 	}else{
         insert_log("assign follow >".$con->error ,"add_new_job",$id);
-        // echo 'Error: ' . $sql . '<br>' . $con->error.'';
+        echo "<script>
+        Notiflix.Report.failure(
+            'Failure',
+            'Error: " . $sql . "<br/><br/>" . $con->error.",
+            'Okay',
+            )</script>;
+        ";
     }
     mysqli_close($con);
     //header( "location: https://cdse-commercecontent.com/base/homepage.php");

@@ -30,9 +30,15 @@ include('action_insert_log.php');
       $query = mysqli_query($con,$sql_update);
 
       if($query){
-          echo '<strong style="color:green">Success !</strong>';
+        echo '<script>Notiflix.Notify.success("NS-'.$id.' have been stamp send mail");</script>';
       }else{
-        echo 'Error: ' . $sql . '<hr>' . $con->error.'';
+        echo "<script>
+        Notiflix.Report.failure(
+            'Failure',
+            'Error: " . $sql . "<br/><br/>" . $con->error.",
+            'Okay',
+            )</script>;
+        ";
       }
       insert_log("Stamp send email itemmize\n","New Job",$id);
       mysqli_close($con);

@@ -31,10 +31,16 @@
                 send_ms_team("NS-".$id,$brand." ".$sku." SKUs","<strong>Get new contact</strong> - change status to pending");
             }
         insert_log("Get new contact - change status to pending  Ticket = ".date("Y-m-d H:i:s")." \n status = need to update contact" ,"add_new_job",$id);
-        echo "success ! ".date("Y-m-d H:i:s");
+        echo '<script>Notiflix.Notify.success("NS-'.$id.' : Get new contact - change status to pending ");</script>';
 	}else{
         insert_log("Get new contact - change status to pending  Ticket faild >".$con->error ,"add_new_job",$id);
-        echo 'Error: ' . $sql . '<br>' . $con->error.'';
+        echo "<script>
+        Notiflix.Report.failure(
+            'Failure',
+            'Error: " . $sql . "<br/><br/>" . $con->error.",
+            'Okay',
+            )</script>;
+        ";
     }
     mysqli_close($con);
     //header( "location: https://cdse-commercecontent.com/base/homepage.php");

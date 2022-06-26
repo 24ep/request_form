@@ -122,7 +122,6 @@
                     }
                 $result='Your request have been create <strong> ID '.$last_id.'';
                 echo $result;
-               // header( "Location: /?tab=v-pills-cr&result_cr=".$result);
             }else{
                 echo 'Error: ' . $sql." ". $con->error;
             }

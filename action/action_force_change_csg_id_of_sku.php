@@ -49,9 +49,21 @@
         
         $query_sku = mysqli_query($con,$sql_sku);
         if($query_sku){
-            echo 'success !';
+            echo "<script>
+            Notiflix.Report.success(
+            'Success',
+            'These sku have been sync to this ticket <br/>".$sku_list_text."',
+            'Okay',
+            )</script>;
+        ";
         }else{
-            echo 'Error: ' . $sql_sku . '<br>' . $con->error.'';
+            echo "<script>
+            Notiflix.Report.failure(
+                'Failure',
+                'Error: " . $sql . "<br/><br/>" . $con->error.",
+                'Okay',
+                )</script>;
+            ";
         }
         unset($sku_list_array);
         unset($sku_just_array);

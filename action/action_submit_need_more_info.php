@@ -15,7 +15,13 @@
 	if($query) {
         header( "Location: /homepage.php?tab=v-pills-request_list");
 	}else{
-        echo 'Error: ' . $sql . '<br>' . $con->error.'';
+        echo "<script>
+        Notiflix.Report.failure(
+            'Failure',
+            'Error: " . $sql . "<br/><br/>" . $con->error.",
+            'Okay',
+            )</script>;
+        ";
     }
     mysqli_close($con);
     //header( "location: https://cdsecommercecontent.ga/base/homepage.php");

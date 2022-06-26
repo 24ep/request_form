@@ -135,12 +135,17 @@ mysqli_query($con, "SET NAMES 'utf8' ");
                 send_ms_team("NS-".$_POST["id_adj"],$brand." ".$sku." SKUs","ทำการเปิด job เรียบร้อยแล้ว<br>• job number : ".$job_number_laset);
             }
         add_participant($_POST["id_adj"],"add_new_job");
-        insert_log("create new job_cms ".$job_number_laset." id ".$last_id,"job_cms",$_POST["id_adj"]);
+        insert_log("Create new job_cms ".$job_number_laset." id ".$last_id,"job_cms",$_POST["id_adj"]);
         $result='<div class="alert alert-success">already create new job !</div>';
         header( "location: https://cdse-commercecontent.com/base/job_manage.php?result=".$result);
 	}else{
-        $result='<div class="alert alert-danger">Error: ' . $sql . '<hr>' . $con->error.'</div>';
-        echo $result;
+        echo "<script>
+        Notiflix.Report.failure(
+            'Failure',
+            'Error: " . $sql . "<br/><br/>" . $con->error.",
+            'Okay',
+            )</script>;
+        ";
     }
     mysqli_close($con);
    // header( "location: https://cdse-commercecontent.com/base/job_manage.php");
