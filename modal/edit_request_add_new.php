@@ -316,6 +316,7 @@ ion-icon{
                                             <label for="floatingSelect">สถานะ ticket เดิมในกรณีที่เป็น sku
                                                 ที่มีอยู่แล้ว</label>
                                         </div>
+                                        <input type="hidden" id="result_checking_sku" name="result_checking_sku" value="">
                                         <button type="button" style="margin-top:10px"
                                             onclick="force_sync_with_ticket(<?php echo $_POST['id'].',&#34;'.$bu.'&#34;'; ?>)"
                                             class="btn btn-danger">ยืนยัน เชื่อมต่อ sku ด้านบนกับ ticket NS-
@@ -563,9 +564,12 @@ ion-icon{
     }
 
     function force_sync_with_ticket(id,bu) {
+        var result_checking_sku = document.getElementById("result_checking_sku").value;
         var sku_change = document.getElementById("sku_checking").value;
         var be_status_on_change = document.getElementById("be_status_on_change").value;
-        if (sku_change) {
+        if(result_checking_sku=="no_duplicate"){
+            be_status_on_change = "Keep";
+            if (sku_change) {
             $.post("base/action/action_force_change_csg_id_of_sku.php", {
                     id: id,
                     sku_change: sku_change,
@@ -575,7 +579,62 @@ ion-icon{
                 function(data) {
                     $('#sku_checking_result_force').html(data);
                 });
+            }
+        }else{
+            Notiflix.Confirm.show(
+            'Found some sku in current database',
+            'Do you want the system do any action with duplicate ticket ?',
+            'Keep that ticket , I will update some sku then replace sku of that ticket by myself.',
+            'Cancel that ticket , all sku duplicate and I want to use this ticket to proceed',
+            'Close , I will update later',
+            () => {
+                be_status_on_change = "Keep";
+                if (sku_change) {
+                $.post("base/action/action_force_change_csg_id_of_sku.php", {
+                        id: id,
+                        sku_change: sku_change,
+                        be_status_on_change: be_status_on_change,
+                        bu:bu
+                    },
+                    function(data) {
+                        Notiflix.Report.success(
+                            'Success',
+                            'SKU have updated to CR-'+id,
+                            'Okay',
+                        );
+                        $('#sku_checking_result_force').html(data);
+                      
+                    });
+                }
+            },
+            () => {
+                be_status_on_change = "cancel";
+                if (sku_change) {
+                $.post("base/action/action_force_change_csg_id_of_sku.php", {
+                        id: id,
+                        sku_change: sku_change,
+                        be_status_on_change: be_status_on_change,
+                        bu:bu
+                    },
+                    function(data) {
+                        $('#sku_checking_result_force').html(data);
+                        Notiflix.Report.success(
+                            'Success',
+                            'SKU have updated to CR-'+id+' and duplicate ticket have been cancel',
+                            'Okay',
+                        );
+                    });
+                }
+            },
+            () => {
+                alert('Ok , got yor');
+            },
+            
+            );
         }
+
+
+     
     }
 
 

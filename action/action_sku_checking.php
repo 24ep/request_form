@@ -51,6 +51,7 @@
             echo '<div class="alert alert-success" role="alert">
                         ตรวจไม่พบ sku ที่ซ้ำบนระบบ service-gate
                   </div>';
+            echo '<script>document.getElementById("result_checking_sku").value = "no_duplicate";</script>';
         }else{
             echo '<div class="alert alert-danger" role="alert">
             ตรวจจพบ sku ด้านล่าง ซ้ำในฐานข้องมูลของ <strong>SERVICE-GATE จำนวน '.$i.' sku <br>
@@ -70,6 +71,7 @@
             echo ' </tbody>
             </table>
             </div>';
+            echo '<script>document.getElementById("result_checking_sku").value = "duplicate";</script>';
         }
         echo '<strong>ปล.การตรวจสอบกับฐานข้อมูล MDC ยังทำไม่เสร็จ</strong>';
         echo '<hr>';

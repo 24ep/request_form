@@ -52,7 +52,7 @@
             echo "<script>
             Notiflix.Report.success(
             'Success',
-            'These sku have been sync to this ticket <br/>".$sku_list_text."',
+            'These sku have been sync to this ticket',
             'Okay',
             )</script>;
         ";
