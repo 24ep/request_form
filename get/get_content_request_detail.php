@@ -203,9 +203,11 @@ function get_username_option($current_username){
     }
     while($row = mysqli_fetch_array($result)) {
       if(in_array($row['username'],$current_username_list)){
-        $option_set .= '<option value="'.$row['username'].'" selected>'.$row['username'].'</option>';
+        $option_set .= '<option value="'.$row['username'].'" selected>
+        '.$row['nickname'].'<br>'.$row['firstname'].' '.$row['lastname'].'</option>';
       }else{
-        $option_set .= '<option value="'.$row['username'].'">'.$row['username'].'</option>';
+        $option_set .= '<option value="'.$row['username'].'">
+        '.$row['nickname'].'<br>'.$row['firstname'].' '.$row['lastname'].'</option>';
       }
     }
     return $option_set ;
