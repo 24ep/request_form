@@ -743,9 +743,10 @@ function off_overlay() {
 }
 ?>
 <script>
-baguetteBox.run('.baguetteBoxFour', {
-    buttons: false
-});
+// baguetteBox.run('.baguetteBoxFour', {
+//     buttons: false
+// });
+baguetteBox.run('.baguetteBoxFour');
 </script>
 
 
