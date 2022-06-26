@@ -586,7 +586,6 @@ ion-icon{
             'Do you want the system do any action with duplicate ticket ?',
             'Keep duplicate ticket',
             'Cancel duplicate ticket',
-            'Close',
             // 'Keep that ticket , I will update some sku then replace sku of that ticket by myself.',
             // 'Cancel that ticket , all sku duplicate and I want to use this ticket to proceed',
             // 'Close , I will update later',
