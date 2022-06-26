@@ -593,6 +593,8 @@ ion-icon{
                 width: '500px',
                 cancelButtonColor: '#ffffff',
                 cancelButtonBackground: '#CF142B',
+                clickToClose: true,
+                closeButton: true,
             },
             () => {
                 be_status_on_change = "Keep";
