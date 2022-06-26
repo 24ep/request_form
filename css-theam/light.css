@@ -421,6 +421,7 @@ table.dataTable.no-footer {
     padding: 2px;
     margin: unset;
     display: inherit;
+    margin: 1px;
 }
 .bk-cr{
     border-radius: 20px!important;
