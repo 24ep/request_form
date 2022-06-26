@@ -192,6 +192,22 @@ function get_image_cr($id){
       return $list_image;
 }
 
+function get_username_option($select_option){
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+    mysqli_query($con, "SET NAMES 'utf8' ");
+    $query = "SELECT * FROM account where status = 'Enable' ORDER BY id asc" or die("Error:" . mysqli_error($con));
+    $result = mysqli_query($con, $query);
+    $select_option_list = explode(",",$select_option);
+    $list_username_unselected = array();
+    while($row = mysqli_fetch_array($result)) {
+      // if(!in_array($row["username"], $select_option_list)){
+      //   $list_username_unselected[] = "'".$row["username"]."'";
+      // }
+      $list_username[] = "'".$row["username"]."'";
+    }
+    $username = implode(",",$list_username);
+    return $username;
+}
 function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
@@ -273,6 +289,7 @@ $result = mysqli_query($con, $query);
     $sku = $row["sku"];
     $note = $row["note"];
     $ticket_template = $row["ticket_template"];
+    $participant = $row["participant"];
     $effective_date = $row["effective_date"];
     $effective_date_edit =  str_replace(' ','T',$row["effective_date"]);
     $content_request_reson = $row["content_request_reson"];
@@ -284,6 +301,11 @@ $result = mysqli_query($con, $query);
     }
     $cr_op = return_option_edit_cr($status,"38");
     $username_op = getoption_return_edit_cr("username","account",$case_officer,"single","all_in_one_project");
+    $username_op_set = get_username_option($participant);
+    //prticipant to string set
+    $set_participant = str_replace(",","','",$participant);
+    $set_participant = "'".$set_participant."'";
+    // end
     $type_op = return_option_edit_cr($ticket_type,"39");
     $content_request_reson_op = getoption_return_edit_cr("content_request_reson","option",$content_request_reson,"single","all_in_one_project");
     $website_op = getoption_return_edit_cr("product_website","job_option_cms",$platform_issue,"multi","u749625779_cdscontent");
@@ -432,17 +454,26 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
             //   </select>
             //   </div>
             // </div>';
+
+            // echo '
+            // <div class="row" >
+            //   <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>'.$sj.' Owner</strong></div>|
+            //   <div class="col " style=" padding-left: 25px;text-align-last: right;">
+            //   <div class="directorist-select directorist-select-multi" id="multiSelect" data-isSearch="true" data-multiSelect="[{value: &#39unassign&#39, key: 0}]" data-max="20">
+            //     <select class="form-select form-select-sm" data-live-search="true"  id="cr_edit_case_officer"  name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')"  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
+            //     '.$username_op .'
+            //     </select>
+            //   </div>
+            // </div>';
+
             echo '
-            <div class="row" >
-              <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>'.$sj.' Owner</strong></div>|
-              <div class="col " style=" padding-left: 25px;text-align-last: right;">
-              <div class="directorist-select directorist-select-multi" id="multiSelect" data-isSearch="true" data-multiSelect="[{value: &#39unassign&#39, key: 0}]" data-max="20">
-                <select class="form-select form-select-sm" data-live-search="true"  id="cr_edit_case_officer"  name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')"  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
-                '.$username_op .'
-                </select>
-              </div>
-            </div>';
+                <div class="directorist-select directorist-select-multi" id="multiSelect" data-isSearch="true" data-max="2" 
+                    data-isSearch="true" data-multiSelect="['.$username_op_set.']" >               
+                    <input value="['.$set_participant.']" type="hidden">
+                </div>
+            ';
             echo '<hr>';
+            // $set_participant 
             // end contact
             // ---check list
              ?>
