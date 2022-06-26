@@ -633,9 +633,9 @@ ion-icon{
                     });
                 }
             },
-            () => {
-                alert('Ok , got yor');
-            },
+            // () => {
+            //     alert('Ok , got you');
+            // },
             
             );
         }
