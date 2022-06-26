@@ -635,6 +635,7 @@ ion-icon{
                 cancelButtonBackground: '#CF142B',
                 clickToClose: true,
                 closeButton: true,
+                backOverlayClickToClose: true,
             },
             
             );

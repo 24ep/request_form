@@ -250,7 +250,7 @@ function attaction_alert_cr(id) {
         })
 
         swalWithBootstrapButtons.fire({
-            title: 'Attantion',
+            title: 'Attention',
             icon: 'warning',
             html: '<ul style="text-align-last: start;"><strong>Your request will be processed within 1 business day</strong><br>' +
                 '<strong>Notice :</strong>' +
