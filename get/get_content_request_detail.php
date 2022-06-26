@@ -299,7 +299,7 @@ $result = mysqli_query($con, $query);
     $username_op = getoption_return_edit_cr("username","account",$case_officer,"single","all_in_one_project");
     $username_op_set = get_username_option();
     //prticipant to string set
-    $set_participant = str_replace(",","','",$participant);
+    $set_participant = str_replace(',','","',$participant);
     $set_participant = '"'.$set_participant.'"';
     // end
     $type_op = return_option_edit_cr($ticket_type,"39");
