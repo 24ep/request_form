@@ -746,7 +746,9 @@ function off_overlay() {
 // baguetteBox.run('.baguetteBoxFour', {
 //     buttons: false
 // });
-baguetteBox.run('.baguetteBoxFour');
+
+baguetteBox.run('.baguetteBoxFour'); //preview image
+pureScriptSelect('#cr_edit_case_officer'); //multi select
 </script>
 
 

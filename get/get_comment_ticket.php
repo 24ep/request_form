@@ -74,7 +74,7 @@ function get_comment($id){
                 $last_comment = "non_need_more";
                 $last_comment_by = $row['comment_by'];
             }
-            echo '<div style="width:100%">'. $list_file.'</div><div style="width:100%;margin-bottom:8px;">'.$list_image.'</div>';
+            echo '<div style="width:100%">'. $list_file.'</div><div class="baguetteBoxFour gallery" style="width:100%;margin-bottom:8px;">'.$list_image.'</div>';
             echo '<div  style="width:100%">';
                 echo "<span class='comment_label shadow-sm cl_left badge rounded-pill ".$background_cm." text-dark ' ".$sd." >".$comment."</span>";
             echo '</div>';
