@@ -475,7 +475,7 @@ echo "<script>console.log('".$_SESSION["department"]."');</script>";
 
             echo '
             <div class="row" >
-              <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>'.$sj.' Owner</strong></div>|
+              <span><strong>'.$sj.' Owner</strong></span>
               <div class="col " style=" padding-left: 25px;text-align-last: right;">
                 <input type="hidden" id="cr_edit_case_officer" name="cr_edit_case_officer" value="'.$case_officer.'">
                 <select  multiple id="cr_edit_case_officer_show" 
