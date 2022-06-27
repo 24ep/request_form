@@ -227,7 +227,7 @@ function submit_cr_form(id) {
             // Notiflix.Notify.success(data);
             Notiflix.Report.success(
             'Success',
-            'data',
+             data,
             'Okay',
             );
         }
