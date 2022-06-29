@@ -21,7 +21,7 @@ $day_time = $say_hi.$time;
   $massage_line = "\nContent Request Status\n";
   while($row = mysqli_fetch_array($result)) {
     
-    $massage_line .= "• ".$row["status"]." ".number_format($row["sku"])." SKUs"."\n";
+    $massage_line .= "• ".$row["status"]." ".number_format($row["ticket"])." Ticket - ".number_format($row["sku"])." SKUs"."\n";
   } 
   
    mysqli_close($con);
