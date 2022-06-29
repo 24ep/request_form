@@ -147,6 +147,9 @@ session_start();
          var toastLiveExample = document.getElementById("liveToast_cr");
          var toast = new bootstrap.Toast(toastLiveExample);
          toast.show();</script>';
+	if($value_name=="status" and $value_change<>"close"){
+		$("[data-cr-id='".$value_change."']").appendTo("ul_".$value_change);
+	}
 	}else{
         insert_log("update ticket faild".$con->error ,"content_request",$id);
         echo "<script>
