@@ -28,7 +28,7 @@ $filter = "";
 $filter .= "lower(ticket.id) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.title) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]."%') ";
-    function list_ts_non_status($filter,$ts_command_limit ){
+    function list_ts_non_status($filter,$ts_command_limit ,$status){
         if(strpos($filter,"ticket.status = 'Close'")!==false){
           $sort_de_status="-ticket.effective_date DESC ,ticket.id DESC ";
         }else{
@@ -69,7 +69,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         GROUP BY  ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
         // echo "<script>console.log('".$query."');</script>";
         $result = mysqli_query($con, $query);
-        echo "<ul style='padding:15px'>";
+        echo "<ul id='ul_".$status."' style='padding:15px'>";
           while( $row = mysqli_fetch_array($result)) {
                 ?>
 <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
@@ -133,12 +133,8 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                             echo  badge_due_date($row["effective_date"]);
                             echo '</div>';
                         }
-                    
-                
                     ?>
     </div>
-
-
 </li>
 <?php $i++; }
                       echo "</ul>";
@@ -156,7 +152,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         }
         echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'"  >
         <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
-        list_ts_non_status("(".$filter.") and ticket.status = '".$row_status["attribute_option"]."'",$ts_command_limit  );
+        list_ts_non_status("(".$filter.") and ticket.status = '".$row_status["attribute_option"]."'",$ts_command_limit  ,$row_status["attribute_option"]);
         echo '</div>';
         $i++;
         }
