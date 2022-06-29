@@ -148,7 +148,10 @@ session_start();
          var toast = new bootstrap.Toast(toastLiveExample);
          toast.show();</script>';
 	if($value_name=="status" and $value_change<>"close"){
-		$("#crid_".$_POST['id'].").appendTo("ul_".$value_change);
+		var child_c = document.getElementById("#crid_".$_POST['id']);
+		var parent_c = document.getElementById("ul_".$value_change);
+		child_c.appendTo(parent_c);
+		
 	}
 	}else{
         insert_log("update ticket faild".$con->error ,"content_request",$id);
