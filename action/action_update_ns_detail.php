@@ -51,9 +51,6 @@
             add_participant_with_user($_POST['id'],"add_new_job",$value_change);
         }
         insert_log("update ticket \n ".$value_name." = ".$value_change ,"add_new_job",$_POST['id']);
-	if($value_name=="status" and $value_change<>"close"){
-		$("[data-cr-id='".$value_change."']").appendTo("ul_".$value_change);
-	}
 	}else{
         insert_log("Update ticket fails".$con->error ,"content_request",$id);
         echo "<script>
