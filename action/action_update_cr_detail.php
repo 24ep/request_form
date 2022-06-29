@@ -148,7 +148,7 @@ session_start();
          var toast = new bootstrap.Toast(toastLiveExample);
          toast.show();</script>';
 	if($value_name=="status" and $value_change<>"close"){
-		$("#crid_".$value_change.").appendTo("ul_".$value_change);
+		$("#crid_".$_POST['id'].").appendTo("ul_".$value_change);
 	}
 	}else{
         insert_log("update ticket faild".$con->error ,"content_request",$id);
