@@ -35,7 +35,7 @@
     }
 
     if($row['readed']==1){
-        $style = 'style="color: #8a8787;"'
+        $style = 'style="color: #8a8787;"';
 
     }
     echo ' <li class="notifications-li" '.$style.'>
