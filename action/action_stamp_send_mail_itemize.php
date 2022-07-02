@@ -40,7 +40,7 @@ include('action_insert_log.php');
             )</script>;
         ";
       }
-      insert_log("Stamp send email itemmize\n","New Job",$id);
+      insert_log("Stamp send email itemmize\n","add_new_job",$id);
       mysqli_close($con);
 
       

@@ -97,7 +97,7 @@ if($comment<>'' or $file_size <>0){
                 }
             }
       add_participant($id,"add_new_job");
-      insert_log("New message box comment \n".$comment,"New Job",$id);
+      insert_log("New message box comment \n".$comment,"comment",$id);
 }
   include('../get/get_comment_ms.php');
   mysqli_close($con);
