@@ -68,9 +68,13 @@ label {
 
 .nav-pills .nav-link.active,
 .nav-pills .show .nav-link {
-    background-color: #f0f2fc87;
+    /* background-color: #f0f2fc87;
     color: white !important;
+    width: 100%; */
+    background-color: #cecece!important;
+    color: #242121 !important;
     width: 100%;
+}
 }
 
 .navbar-brand {
