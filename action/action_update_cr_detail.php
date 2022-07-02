@@ -150,7 +150,7 @@ session_start();
           if($value_name=='status' and $value_change<>'close'){
             echo '<script>
              var child_c = document.getElementById("#crid_'.$_POST["id"].'");
-             var parent_c = document.getElementById("ul_".$value_change);
+             var parent_c = document.getElementById("ul_'.$value_change.'");
             child_c.appendTo(parent_c);	
             </script>';
           }
