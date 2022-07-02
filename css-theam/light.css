@@ -525,3 +525,7 @@ table.dataTable.no-footer {
     padding: 15px 15px;
     border-bottom: 1px solid #cec7c7;
 }
+.style_cancel{
+    color: #d5d1d1;
+    background-color: #f6f6f600!important;
+}

@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error( $con));
@@ -45,7 +44,6 @@ if(isset($_POST["from_post"] )){
   $_SESSION['pagenation'] = $_POST["pagenation_input"];
   $_SESSION['brand_filter'] = $_POST["brand_filter"];
 }}
-
   $start_item =  ($_SESSION['pagenation'] -1 )* 30;
  if(strpos($_SESSION["page_view"],'Followup')!==false){
   if($_SESSION['user_filter']<>""){
@@ -71,7 +69,6 @@ if(isset($_POST["from_post"] )){
  }else{
   $status_filter ="1=1";
  }
-
  if($_SESSION['brand_filter']<>""){
    if(is_numeric($_SESSION['brand_filter'])){
     $query_parent = "SELECT parent from all_in_one_project.add_new_job where id = ".$_SESSION['brand_filter'] or die("Error:" . mysqli_error($con));
@@ -84,11 +81,9 @@ if(isset($_POST["from_post"] )){
     }else{
       $brand_filter =" anj.id = ".str_replace('NS-','',$_SESSION['brand_filter']);
     }
-    
    }else{
     $brand_filter =" ( anj.brand like '%".$_SESSION['brand_filter']."%' or anj.department like '%".$_SESSION['brand_filter']."%' or anj.sub_department like '%".$_SESSION['brand_filter']."%') ";
    }
-  
  }else{
   $brand_filter ="1=1";
  }
@@ -99,7 +94,6 @@ if(isset($_POST["from_post"] )){
  }else{
   $query = "SELECT * FROM add_new_job as anj where ((".$status_filter.") and (".$brand_filter.")
          and (".$position_filter.")) and anj.parent is null ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error($con));
-
  }
   date_default_timezone_set("Asia/Bangkok");
   mysqli_query($con, "SET NAMES 'utf8' ");
@@ -107,7 +101,6 @@ if(isset($_POST["from_post"] )){
   // echo '<script>console.log("'.htmlspecialchars(stripslashes(str_replace(array("\r", "\n"), '', var_export($query, true)))).'")</script>';
   while($row = mysqli_fetch_array($result)) {
     $ticket_role = role_user($row["request_username"],$row["follow_up_by"]);
-    
     if($row['status']=="accepted" and $row['trigger_status'] <> "approved"){
       $status=badge_status("on-production");
     }elseif($row['status']=="accepted" and $row['trigger_status'] == "approved"){
@@ -115,7 +108,6 @@ if(isset($_POST["from_post"] )){
     }else{
       $status =badge_status($row['status']);
     }
-    
     //important badge
     if($row['request_important']=="Urgent"){
       $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row['request_important'].'</span>';
@@ -151,13 +143,17 @@ if(isset($_POST["from_post"] )){
         $p_badge .= '<span class="badge rounded-pill bg-warning" style="margin-left:5px">Launch in '.$launch_date_diff.' days</span>';
       }
     }
-  
-
     //  -2 already image
+    if($status=="cancel"){
+      $style_cancel =  "style_cancel";
+      
+    }else{
+      unset($style_cancel);
+    }
     //config_type
     if($row["config_type"]=="parent"){
       //set style
-      $tr_class = "class='sub-ticket shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'";
+      $tr_class = "class='sub-ticket shadow-sm p-3 mb-5 bg-body rounded ".$style_cancel."' style='border-bottom: 1px solid #e0e0e0;'";
       $task_status = '';
       $query_sum="SELECT sum(sku) as total from add_new_job where parent = ".$row["id"];
       $result_sum = mysqli_query($con, $query_sum);
@@ -169,13 +165,12 @@ if(isset($_POST["from_post"] )){
       }
       $subtask_sum = $row["sku"]." S(".$data_sum['total'].") ".$badge_alert_sku ;
     }else{
-      $tr_class = "class='shadow-sm p-3 mb-5 bg-body rounded' style='border-bottom: 1px solid #e0e0e0;'";
+      $tr_class = "class='shadow-sm p-3 mb-5 bg-body rounded ".$style_cancel."' style='border-bottom: 1px solid #e0e0e0;'";
       $task_status = $status ;
       $subtask_sum = $row["sku"];
     }
       if(!isset($ticket)){$ticket="";}
       if(!isset($tr_class)){$tr_class="";}
-
       $ticket .= "<tr ".$tr_class." >";
       $ticket .= "<th scope='row'>NS-".$row["id"]."</th>";
       $ticket .= "<td>".$row["department"]."</td>";
@@ -208,7 +203,6 @@ if(isset($_POST["from_post"] )){
         while($row_child = mysqli_fetch_array($result_child)) {
             $ticket_role = role_user($row_child["request_username"],$row_child["follow_up_by"]);
             // $status = badge_status($row_child['status']);
-                
           if($row_child['status']=="accepted" and $row_child['trigger_status'] <> "approved"){
             $status=badge_status("on-production");
           }elseif($row_child['status']=="accepted" and $row_child['trigger_status'] == "approved"){
@@ -234,7 +228,6 @@ if(isset($_POST["from_post"] )){
                 }else{
                   $sub_ticket .= "<tr >";
                 }
-                
               }else{
                 if(isset($tr_class)){
                   $sub_ticket = "<tr ".$tr_class.">";
@@ -246,12 +239,10 @@ if(isset($_POST["from_post"] )){
               $sub_ticket .= "<td></td>";
               $sub_ticket .= "<td></td>";
               $sub_ticket .= "<td>".$row_child["sku"]."</td>";
-        
               $sub_ticket .= "<td></td>";
               $sub_ticket .= "<td></td>";
               $sub_ticket .= "<td></td>";
               $sub_ticket .= "<td></td>";
-             
               $sub_ticket .= "<td>".$status."</td>";
               $sub_ticket .= "<td>". $ticket_role ."</td>";
               $sub_ticket .= "<td>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
@@ -267,12 +258,10 @@ if(isset($_POST["from_post"] )){
           $sub_ticket .= "<td></td>";
           $sub_ticket .= "<td></td>";
           $sub_ticket .= "<td>".$row_child["sku"]."</td>";
-          
           $sub_ticket .= "<td></td>";
           $sub_ticket .= "<td></td>";
           $sub_ticket .= "<td></td>";
           $sub_ticket .= "<td></td>";
-      
           $sub_ticket .= "<td  >".$status."</td>";
           $sub_ticket .= "<td>". $ticket_role ."</td>";
           $sub_ticket .= "<td>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
@@ -280,10 +269,7 @@ if(isset($_POST["from_post"] )){
           $i++;
           }
         }
-    
-
       }
-
       if($_SESSION['status_filter']<>""){
         if($row["config_type"]=="parent"){
           if( isset($sub_ticket)){
@@ -295,14 +281,12 @@ if(isset($_POST["from_post"] )){
           }else{
             if(isset($ticket)){ echo $ticket;}
           }
-          
         }
        }else{
         if(isset($sub_ticket)){
           echo $ticket.$sub_ticket;
         }else{
           if(isset($ticket)){ echo $ticket;}
-         
         }
        }
        unset($ticket);
@@ -310,5 +294,4 @@ if(isset($_POST["from_post"] )){
        unset($status);
   }
   mysqli_close($con);
-
   ?>
