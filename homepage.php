@@ -932,7 +932,7 @@ function get_list_update_job() {
     }, function(data) {
         $('#get_list_job_update').html(data);
         timeago().render(document.querySelectorAll('.timeago'));
-        update_readed_nt()
+        update_readed_nt();
     });
 }
 function filter_update(be) {
