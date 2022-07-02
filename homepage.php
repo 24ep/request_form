@@ -1,11 +1,9 @@
     <?php
-    session_start();
-    if (!$_SESSION["login_csg"]){ 
+session_start();
+if (!$_SESSION["login_csg"]){ 
             Header("Location: login");
     }else{
-    // include('get/get_card_content_request.php'); 
     include_once('get/get_option_function.php');
-    // include_once("connect.php");
         $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
         $username_op_cr = getoption_return_filter("username","account",$_SESSION["user_cr_filter"],"single","all_in_one_project");
         $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
@@ -31,6 +29,7 @@
     <!DOCTYPE html>
     <html lang="en">
     <!-- set up theam -->
+
     <head>
         <title>Content and Studio - Homepage</title>
         <!-- Required meta tags -->
@@ -86,7 +85,7 @@
             href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
         <link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
         <script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
-        <!-- //preview image -->
+        <!-- preview image -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.css"
             integrity="sha512-3eoKq7cU6gdVeT+6eL40YcJLD8dxzQmOK54qxUWVjg7H4NN3u5AA5k5ywrqLV15hOZDBBgdQH/GK5CA9MwDVwg=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -98,7 +97,9 @@
             integrity="sha512-N3oYWQZs8pMSQhQtB13XHSIry/zDIUimpMqX4QMULawuaAYgRWSiU17cLHh7f51xgkGY18jQtY2ph98HtKeWaA=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
-    <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();doAutoRefresh_count_nt();">
+
+    <body
+        onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();doAutoRefresh_count_nt();">
         <!-- Modal -->
         <div class="modal fade " id="project_model" tabindex="-1" aria-labelledby="project_modelLabel"
             aria-hidden="true">
@@ -113,6 +114,7 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140386041-2"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -134,14 +136,14 @@
                 <?php include("get/get_log.php"); ?>
             </div>
         </div>
-        <div class="row " style="margin-bottom: 0px;--bs-gutter-x: 0rem;">
-            <?php 
+        <div class="row" style="margin-bottom: 0px;--bs-gutter-x: 0rem;">
+            <?php
             if(strpos($_SESSION["department"],'Content Admin')!==false){
                 $nev_avg = "background: #212121;";
             }
                 ?>
             <!-- start nav normal -->
-            <?php 
+            <?php
            if($_SESSION["pf_theme"]<>"Light Modern") {
                 include('nev_bra.php');
                 $full_col = "col-10 ";
@@ -539,6 +541,7 @@
 var elements = document.getElementsByClassName('window-full');
 var windowheight = window.innerHeight + "px";
 fullheight(elements);
+
 function fullheight(elements) {
     for (let el in elements) {
         if (elements.hasOwnProperty(el)) {
@@ -563,6 +566,7 @@ function call_edit_add_new_modal(id, brand) {
         });
     }
 }
+
 function cr_id_toggle(id) {
     Notiflix.Loading.hourglass('Loading...');
     if (id) {
@@ -574,6 +578,7 @@ function cr_id_toggle(id) {
         });
     }
 }
+
 function start_checking(id) {
     if (id) {
         $.post("base/action/action_start_checking.php", {
@@ -583,6 +588,7 @@ function start_checking(id) {
         });
     }
 }
+
 function accepted_stt(id) {
     if (id) {
         // sku_accepted = document.getElementById('sku_accepted').value;
@@ -594,6 +600,7 @@ function accepted_stt(id) {
         });
     }
 }
+
 function cancel_stt(id, status_change) {
     resone_cancel = document.getElementById('resone_cancel').value;
     status_change = 'cancel';
@@ -607,6 +614,7 @@ function cancel_stt(id, status_change) {
         });
     }
 }
+
 function cancel_ticket(id) {
     resone_cancel = document.getElementById('reason_cancel').value;
     status_change = document.getElementById('type_cancel').value;
@@ -621,6 +629,7 @@ function cancel_ticket(id) {
         });
     }
 }
+
 function itm_confirm_cancel(id, status_change) {
     let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
     if (message == null || message == "") {
@@ -642,6 +651,7 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
+
 function filter_cr_ticket(status) {
     document.getElementById('cr_search_input').value = '';
     var update = true;
@@ -654,6 +664,7 @@ function filter_cr_ticket(status) {
         });
     }
 }
+
 function get_project_model(id) {
     if (id) {
         $.post("base/get/get_project_model.php", {
@@ -663,6 +674,7 @@ function get_project_model(id) {
         });
     }
 }
+
 function search_cr_data() {
     var input = document.getElementById('ts_command').value.toLowerCase();;
     if (input != "") {
@@ -689,6 +701,7 @@ function search_cr_data() {
         }
     }
 }
+
 function search_cr_username() {
     var username = document.getElementById('ts_username').value.toLowerCase();;
     if (username != "") {
@@ -710,6 +723,7 @@ function search_cr_username() {
         }
     }
 }
+
 function update_project_sticky_badge(BuketPrefix) {
     var prefix_project_sticky_array = [];
     var prefix_project_sticky = "";
@@ -752,6 +766,7 @@ function update_project_sticky_badge(BuketPrefix) {
         // display: none;
     });
 }
+
 function search_cr_ticket() {
     var cr_search_input = document.getElementById("cr_search_input").value
     var user_cr_filter = document.getElementById("user_cr_filter").value
@@ -763,6 +778,7 @@ function search_cr_ticket() {
         $('#list_grouping').html(data);
     });
 }
+
 function run_ts_command(ts_level) {
     var summary_filter = document.getElementById("ts_command").value;
     var ts_username = document.getElementById("ts_username").value;
@@ -889,11 +905,12 @@ function select_current_tab(selecttab) {
             .add('show');
     }
 }
+
 function open_ticket_detail(id) {
-    
     document.getElementById('user_filter').value = "";
     document.getElementById("ns_ticket_" + id).click();
 }
+
 function updateURL(pill) {
     if (history.pushState) {
         var newurl = window.location.protocol + "//" + window.location.host +
@@ -905,6 +922,7 @@ function updateURL(pill) {
             }, '', newurl);
     }
 }
+
 function update_project_sticky() {
     var prefix_project_sticky = "";
     for (var option of document.getElementById('project_sticky_mse').options) {
@@ -925,26 +943,26 @@ function update_project_sticky() {
 }
 
 function get_count_read_nt() {
-    $.post("base/get/get_count_nt_unread.php", {
-    }, function(data) {
-         $('#get_count_nt_unread').html(data);
+    $.post("base/get/get_count_nt_unread.php", {}, function(data) {
+        $('#get_count_nt_unread').html(data);
     });
 }
+
 function update_readed_nt() {
-    $.post("base/action/action_update_read_nt.php", {
-    }, function(data) {
+    $.post("base/action/action_update_read_nt.php", {}, function(data) {
         // $('#project_bucket').html(data);
     });
 }
+
 function get_list_update_job() {
-    $.post("base/get/get_list_job_update.php", {
-    }, function(data) {
+    $.post("base/get/get_list_job_update.php", {}, function(data) {
         $('#get_list_job_update').html(data);
         timeago().render(document.querySelectorAll('.timeago'));
         update_readed_nt();
         get_count_read_nt();
     });
 }
+
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value
@@ -993,6 +1011,7 @@ function Inint_AJAX() {
     alert("XMLHttpRequest not supported")
     return null
 }
+
 function doAutoRefresh() {
     var url = window.location.href;
     let result = url.includes("v-pills-request_list");
@@ -1017,6 +1036,7 @@ function doAutoRefresh() {
         req.send(null);
     }
 };
+
 function doAutoRefresh_ts_admin() {
     var url = window.location.href;
     let result = url.includes("v-pills-ts_admin");
@@ -1047,6 +1067,7 @@ function doAutoRefresh_ts_admin() {
         req_ts.send(null);
     }
 };
+
 function doAutoRefresh_cr() {
     var url = window.location.href;
     let result = url.includes("v-pills-cr");
@@ -1080,7 +1101,6 @@ function doAutoRefresh_count_nt() {
                 // รับค่ากลับมา และ แสดงผล
                 document.getElementById("get_count_nt_unread").innerHTML = req_count_nt.responseText;
                 setTimeout("doAutoRefresh_count_nt()", 5000);
-
             }
         }
     };
@@ -1140,12 +1160,15 @@ tinymce.init({
 function allowDrop(ev) {
     ev.preventDefault();
 }
+
 function messagebox(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
+
 function drag_card_cr(ev) {
     ev.dataTransfer.setData("card", ev.target.id);
 }
+
 function drop_card_cr(ev, new_status) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("card");
@@ -1170,6 +1193,7 @@ function drop_card_cr(ev, new_status) {
     }
 }
     </script>
+
     </html>
     <?php if( $_GET["fopenticket"]<>""){
     $_SESSION["fopenticket"]=$_GET["fopenticket"];
@@ -1219,10 +1243,12 @@ function load_tiny_comment() {
     border-radius: 7px;
     margin-top: 8px;
 }
+
 .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child .tox-toolbar__primary,
 .tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
     border-top: 1px solid #fff;
 }
+
 .tox .tox-tbtn svg {
     display: block;
     fill: #6c757d !important;
