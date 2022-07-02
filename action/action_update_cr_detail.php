@@ -153,7 +153,16 @@ session_start();
              var child_c = document.getElementById("crid_'.$_POST["id"].'");
              var parent_c = document.getElementById("ul_'.$value_change.'");
              parent_c.appendChild(child_c);	
+
             </script>';
+          }elseif($value_name=='status' and $value_change=='close'){
+            echo '<script>
+           
+            var child_c = document.getElementById("crid_'.$_POST["id"].'");
+            
+            child_c.parentNode.removeChild(child_c);
+
+           </script>';
           }
 	}else{
         insert_log("update ticket faild".$con->error ,"content_request",$id);
