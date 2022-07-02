@@ -1042,20 +1042,20 @@ function doAutoRefresh_cr() {
 };
 function doAutoRefresh_nt() {
     var url = window.location.href;
-        var req_cr = Inint_AJAX();
+        var req_nt = Inint_AJAX();
         // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-        req_cr.open("POST", 'base/get/get_list_job_update.php?' + new Date().getTime(), true);
+        req_nt.open("POST", 'base/get/get_list_job_update.php?' + new Date().getTime(), true);
         // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
-        req_cr.onreadystatechange = function() {
-            if (req_cr.readyState == 4) {
-                if (req_cr.status == 200) {
+        req_nt.onreadystatechange = function() {
+            if (req_nt.readyState == 4) {
+                if (req_nt.status == 200) {
                     // รับค่ากลับมา และ แสดงผล
-                    document.getElementById("get_list_job_update").innerHTML = req_cr.responseText;
+                    document.getElementById("get_list_job_update").innerHTML = req_nt.responseText;
                     setTimeout("doAutoRefresh_nt()", 5000);
                 }
             }
         };
-        req_cr.send(null);
+        req_nt.send(null);
 };
     </script>
     <script>
