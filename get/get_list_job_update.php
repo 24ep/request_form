@@ -1,9 +1,9 @@
 <?php
  session_start();
  date_default_timezone_set("Asia/Bangkok");
- $con = mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
- mysqli_query($con, "SET NAMES 'utf8' ");
- $query = "
+ $con_log = mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+ mysqli_query($con_log, "SET NAMES 'utf8' ");
+ $query_log = "
  SELECT 
  lg.id,
  lg.`action`,
@@ -16,9 +16,9 @@
  order by lg.id desc
  limit 100
  ";
- $result = mysqli_query($con, $query);
- while($row = mysqli_fetch_array($result)) {
-    if($row["action_table"]=="add_new_job"){
+ $result_log = mysqli_query($con_log, $query_log);
+ while($row_log = mysqli_fetch_array($result_log)) {
+    if($row_log["action_table"]=="add_new_job"){
         $prefix = "NS";
     }elseif($row["action_table"]=="content_request"){
         $prefix = "CR";
@@ -28,19 +28,19 @@
         $prefix = "NA";
     }
 
-    if($row['readed']=='readed'){
+    if($row_log['readed']=='readed'){
         $style_read = 'style="color: #c7c7c7;"';
 
     }
     echo ' <li class="notifications-li" '.$style_read.'>
                 <span>
-                <strong>'.ucwords($row["firstname"]).' '.$row["lastname"].'</strong> has '.$row["action"].' at ticket <strong>'.$prefix.'-'.$row["action_data_id"].'</strong>
+                <strong>'.ucwords($row_log["firstname"]).' '.$row_log["lastname"].'</strong> has '.$row_log["action"].' at ticket <strong>'.$prefix.'-'.$row_log["action_data_id"].'</strong>
                 </span>
                 <br>
-                <small class="timeago" datetime="'.$row["action_date"].'">'.$row["action_date"].'</small>
+                <small class="timeago" datetime="'.$row_log["action_date"].'">'.$row_log["action_date"].'</small>
            </li>';
   }
-  mysqli_close($con);
+  mysqli_close($con_log);
   ?>
 <script>
     timeago().render(document.querySelectorAll('.timeago'));
