@@ -19,12 +19,13 @@ function badge_status($status){
   }elseif($status=="waiting traffic"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ea79f7;color:#6a2e71;border:#ea79f7">waiting traffic</button>';
   }elseif($status=="Cancel"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ffffff;color:#8f8585;border:#ea79f7">Cancel</button>';
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #efefef;color:#dddddd;border:#ea79f7">Cancel</button>';
   }else{
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">'.$status.'</button>';
   }
 return $status;
 }
+
 function role_user($request_username,$follow_up_by){
   // session_start();
   if($_SESSION['username']==$request_username){
