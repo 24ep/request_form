@@ -7,7 +7,7 @@
         <div class="btn-group dropend">
         <button type="button" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
             <ion-icon style="color:white" name="notifications-outline"></ion-icon>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 <div id="get_count_nt_unread">
                         <?php include('get/get_count_nt_unread.php'); ?>
                 </div>
