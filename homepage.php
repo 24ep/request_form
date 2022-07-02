@@ -76,8 +76,8 @@
         </script>
         <!-- multi-select -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.js"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.css" rel="stylesheet"></link>
-
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.css" rel="stylesheet">
+        </link>
         <link rel="stylesheet" type="text/css"
             href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/light.css">
         <link rel="stylesheet" type="text/css"
@@ -87,11 +87,16 @@
         <link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
         <script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
         <!-- //preview image -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.css" integrity="sha512-3eoKq7cU6gdVeT+6eL40YcJLD8dxzQmOK54qxUWVjg7H4NN3u5AA5k5ywrqLV15hOZDBBgdQH/GK5CA9MwDVwg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.js" integrity="sha512-FbW9TrdqAZVgIOrQeqDRnCe+l0g+aMBP7pWEt/zLWx8zgafpBwvJ6F1rsU+mkvbXuB4mBwS2ehlkZHE9cknTrg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.css"
+            integrity="sha512-3eoKq7cU6gdVeT+6eL40YcJLD8dxzQmOK54qxUWVjg7H4NN3u5AA5k5ywrqLV15hOZDBBgdQH/GK5CA9MwDVwg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.js"
+            integrity="sha512-FbW9TrdqAZVgIOrQeqDRnCe+l0g+aMBP7pWEt/zLWx8zgafpBwvJ6F1rsU+mkvbXuB4mBwS2ehlkZHE9cknTrg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <!-- time ago -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.2/timeago.js" integrity="sha512-N3oYWQZs8pMSQhQtB13XHSIry/zDIUimpMqX4QMULawuaAYgRWSiU17cLHh7f51xgkGY18jQtY2ph98HtKeWaA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.2/timeago.js"
+            integrity="sha512-N3oYWQZs8pMSQhQtB13XHSIry/zDIUimpMqX4QMULawuaAYgRWSiU17cLHh7f51xgkGY18jQtY2ph98HtKeWaA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();doAutoRefresh_nt();">
         <!-- Modal -->
@@ -557,7 +562,6 @@ function call_edit_add_new_modal(id, brand) {
             Notiflix.Loading.remove();
         });
     }
-    
 }
 function cr_id_toggle(id) {
     Notiflix.Loading.hourglass('Loading...');
@@ -569,7 +573,6 @@ function cr_id_toggle(id) {
             Notiflix.Loading.remove();
         });
     }
-    
 }
 function start_checking(id) {
     if (id) {
@@ -1042,20 +1045,20 @@ function doAutoRefresh_cr() {
 };
 function doAutoRefresh_nt() {
     var url = window.location.href;
-        var req_nt = Inint_AJAX();
-        // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-        req_nt.open("POST", 'base/get/get_list_job_update.php?' + new Date().getTime(), true);
-        // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
-        req_nt.onreadystatechange = function() {
-            if (req_nt.readyState == 4) {
-                if (req_nt.status == 200) {
-                    // รับค่ากลับมา และ แสดงผล
-                    document.getElementById("get_list_job_update").innerHTML = req_nt.responseText;
-                    setTimeout("doAutoRefresh_nt()", 5000);
-                }
+    var req_nt = Inint_AJAX();
+    // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
+    req_nt.open("POST", 'base/get/get_list_job_update.php?' + new Date().getTime(), true);
+    // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
+    req_nt.onreadystatechange = function() {
+        if (req_nt.readyState == 4) {
+            if (req_nt.status == 200) {
+                // รับค่ากลับมา และ แสดงผล
+                document.getElementById("get_list_job_update").innerHTML = req_nt.responseText;
+                setTimeout("doAutoRefresh_nt()", 5000);
             }
-        };
-        req_nt.send(null);
+        }
+    };
+    req_nt.send(null);
 };
     </script>
     <script>
@@ -1184,8 +1187,8 @@ function load_tiny_comment() {
         },
     });
 }
-</script>
-<style>
+    </script>
+    <style>
 .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
     border-radius: 7px;
     margin-top: 8px;
@@ -1198,13 +1201,12 @@ function load_tiny_comment() {
     display: block;
     fill: #6c757d !important;
 }
-</style>
-
-<script>
-    baguetteBox.run('.baguetteBoxFour', {
+    </style>
+    <script>
+baguetteBox.run('.baguetteBoxFour', {
     buttons: false
 });
-</script>
-<script>
+    </script>
+    <script>
 timeago().render(document.querySelectorAll('.timeago'));
-</script>
+    </script>
