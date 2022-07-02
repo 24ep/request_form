@@ -98,7 +98,7 @@
             integrity="sha512-N3oYWQZs8pMSQhQtB13XHSIry/zDIUimpMqX4QMULawuaAYgRWSiU17cLHh7f51xgkGY18jQtY2ph98HtKeWaA=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
-    <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();doAutoRefresh_nt();">
+    <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();doAutoRefresh_count_nt();doAutoRefresh_nt();">
         <!-- Modal -->
         <div class="modal fade " id="project_model" tabindex="-1" aria-labelledby="project_modelLabel"
             aria-hidden="true">
