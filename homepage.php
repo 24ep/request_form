@@ -93,7 +93,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.2/timeago.js" integrity="sha512-N3oYWQZs8pMSQhQtB13XHSIry/zDIUimpMqX4QMULawuaAYgRWSiU17cLHh7f51xgkGY18jQtY2ph98HtKeWaA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         
     </head>
-    <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
+    <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();doAutoRefresh_nt();">
         <!-- Modal -->
         <div class="modal fade " id="project_model" tabindex="-1" aria-labelledby="project_modelLabel"
             aria-hidden="true">
@@ -1040,6 +1040,23 @@ function doAutoRefresh_cr() {
         req_cr.send(null);
     }
 };
+function doAutoRefresh_nt() {
+    var url = window.location.href;
+        var req_cr = Inint_AJAX();
+        // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
+        req_cr.open("POST", 'base/get/get_list_job_update.php?' + new Date().getTime(), true);
+        // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
+        req_cr.onreadystatechange = function() {
+            if (req_cr.readyState == 4) {
+                if (req_cr.status == 200) {
+                    // รับค่ากลับมา และ แสดงผล
+                    document.getElementById("get_list_job_update").innerHTML = req_cr.responseText;
+                    setTimeout("doAutoRefresh_nt()", 5000);
+                }
+            }
+        };
+        req_cr.send(null);
+};
     </script>
     <script>
 $(document).ready(function() {
@@ -1183,13 +1200,6 @@ function load_tiny_comment() {
 }
 </style>
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    new Darkmode().showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script> -->
 <script>
     baguetteBox.run('.baguetteBoxFour', {
     buttons: false

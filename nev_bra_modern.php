@@ -11,7 +11,9 @@
         <ul class="dropdown-menu notifications-box shadow">
             <span><ion-icon style="color:white" name="notifications-outline"></ion-icon> Job updated</span>
             
-                  <?php include("base/get/get_list_job_update.php"); ?>
+                  <div id="get_list_job_update">
+                    
+                  </div>
         </ul>
         </div>
         <a data-bs-toggle="tooltip" data-bs-placement="right" title="Home" class="nav-link active"
