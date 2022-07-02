@@ -18,7 +18,7 @@ function badge_status($status){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting data</button>';
   }elseif($status=="waiting traffic"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ea79f7;color:#6a2e71;border:#ea79f7">waiting traffic</button>';
-  }elseif($status=="cancel"){
+  }elseif($status=="Cancel"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ffffff;color:#8f8585;border:#ea79f7">waiting traffic</button>';
   }else{
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">'.$status.'</button>';
@@ -146,7 +146,7 @@ if(isset($_POST["from_post"] )){
       }
     }
     //  -2 already image
-    if($status=="cancel"){
+    if($status=="Cancel"){
       $style_cancel =  "style_cancel";
     }else{
       unset($style_cancel);
