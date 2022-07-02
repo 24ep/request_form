@@ -17,11 +17,21 @@
  ";
  $result = mysqli_query($con, $query);
  while($row = mysqli_fetch_array($result)) {
+    if($row["action_table"]=="add_new_job"){
+        $prefix = "NS";
+    }elseif($row["action_table"]=="content_requst"){
+        $prefix = "CR";
+    }elseif($row["action_table"]=="checklist_of_content_requst"){
+        $prefix = "CR";
+    }else{
+        $prefix = "NA";
+    }
     echo ' <li class="notifications-li">
-                <span>'.$row["action_table"].'</span>
-                <span>'.$row["action_data_id"].'</span>
-                <span>'.$row["action"].'</span>
-                <span>'.$row["actiondate"].'</span>
+                <span>
+                '.$row["action_by"].' has '.$row["action"].' at ticket <strong>'.$prefix.'-'.$row["action_data_id"].'</strong>
+                <span>
+                <br>
+                <small>'.$row["action_date"].'</small>
            </li>';
   }
   mysqli_close($con);
