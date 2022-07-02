@@ -147,7 +147,7 @@ session_start();
          var toastLiveExample = document.getElementById("liveToast_cr");
          var toast = new bootstrap.Toast(toastLiveExample);
          toast.show();</script>';
-          if($value_name=='status' and $value_change<>'close'){
+          if($value_name=='status' and $value_change<>'Close' and $value_change<>'Cancel'){
             echo '<script>
            
              var child_c = document.getElementById("crid_'.$_POST["id"].'");
@@ -155,7 +155,7 @@ session_start();
              parent_c.appendChild(child_c);	
 
             </script>';
-          }elseif($value_name=='status' and $value_change=='close'){
+          }elseif($value_name=='status' and $value_change=='Close' ){
             echo '<script>
            
             var child_c = document.getElementById("crid_'.$_POST["id"].'");
