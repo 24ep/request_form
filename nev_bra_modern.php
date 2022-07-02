@@ -1,6 +1,16 @@
 <div class="list_bra shadow">
     <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <h5 style="text-align-last: center;font-weight: bolder;font-family: 'Prompt';color: #d36363;">CSG</h5>
+        <a data-bs-toggle="tooltip" data-bs-placement="right" title="notifications" class="nav-link active"
+            id="v-pills-notifications-tab" data-bs-toggle="dropdown" aria-expanded="false" href="#v-pills-notifications" role="tab"
+            aria-controls="v-pills-notifications" onclick="updateURL('v-pills-notifications');" aria-selected="true">
+            <ion-icon style="color:white" name="notifications-outline"></ion-icon>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Menu item</a></li>
+            <li><a class="dropdown-item" href="#">Menu item</a></li>
+            <li><a class="dropdown-item" href="#">Menu item</a></li>
+        </ul>
         <a data-bs-toggle="tooltip" data-bs-placement="right" title="Home" class="nav-link active"
             id="v-pills-dashboard-tab" data-toggle="pill" href="#v-pills-dashboard" role="tab"
             aria-controls="v-pills-dashboard" onclick="updateURL('v-pills-dashboard');" aria-selected="true">
