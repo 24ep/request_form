@@ -29,7 +29,7 @@ function check_account(){
     $result =  mysqli_query($con, $sql);
     while($row = mysqli_fetch_array($result)) {
         $exist_user =  $row["username"];
-        break; 
+        break;
     }
     if($exist_user == null or $exist_user == ""){
         #create a new user first
@@ -297,7 +297,7 @@ function create_ticket_csg(){
      $insert_head .= ",tags";$insert_value .= ",'".$attributes["tags"]."'";
      $insert_head .= ",parent";$insert_value .= $parent_id;
      if($dataset=="OFFLINE ONLY"){
-        $insert_head .= ",status";$insert_value .= ",'cancel'";
+        $insert_head .= ",status";$insert_value .= ",'Cancel'";
         $insert_head .= ",cancel_date";$insert_value .= ",'".date("Y-m-d H:i:s")."'";
         $insert_head .= ",cancel_resone";$insert_value .= ",'AUTOMATIC CANCEL SINCE THE TICKET IS OFFLINE ONLY'";
       }else{
