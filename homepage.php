@@ -1054,7 +1054,11 @@ function doAutoRefresh_nt() {
             if (req_nt.status == 200) {
                 // รับค่ากลับมา และ แสดงผล
                 document.getElementById("get_list_job_update").innerHTML = req_nt.responseText;
+
+                timeago().render(document.querySelectorAll('.timeago'));
+
                 setTimeout("doAutoRefresh_nt()", 5000);
+
             }
         }
     };
