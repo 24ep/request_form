@@ -5,7 +5,7 @@ function return_s_select_box_cl_cr($current_value,$attr_id){
     session_start();
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
       $query_op = "SELECT * FROM content_service_gate.attribute_option
-      WHERE attribute_id = ".$attr_id." and  (function = 'cl_content_request' or function = 'content_request') ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
+      WHERE attribute_id = ".$attr_id." and  (function = 'checklist_of_content_request' or function = 'content_request') ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
       $result_op = mysqli_query($con, $query_op);
       if($current_value==""){
         $option_element = "<option selected value=''></option>";

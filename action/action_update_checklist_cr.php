@@ -27,7 +27,7 @@ session_start();
         if( $value_name=="case_officer"){
             add_participant_with_user($_POST['id'],"content_request",$value_change);
         }
-        insert_log("update ticket \n ".$value_name." = ".$value_change ,"cl_content_request",$_POST['id']);
+        insert_log("update ticket \n ".$value_name." = ".$value_change ,"checklist_of_content_request",$_POST['id']);
         echo '<script>Notiflix.Notify.success("Checklist ID '.$id.' have been updated");</script>';
 	}else{
         insert_log("update ticket fails".$con->error ,"content_request",$id);
