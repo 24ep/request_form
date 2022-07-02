@@ -12,7 +12,8 @@
  SELECT 
  lg.id,
  lg.`action`,
- lg.action_date, lg.action_by, lg.action_table, lg.action_data_id, lg.nt_readable, lg.nt_readed , ac.firstname,ac.lastname    
+ lg.action_date, lg.action_by, lg.action_table, lg.action_data_id, lg.nt_readable, lg.nt_readed , ac.firstname,ac.lastname  ,
+ case when lg.nt_readed like 'poojaroonwit' then 1 end as readed  
  FROM all_in_one_project.log  as lg
  left join all_in_one_project.account as ac 
  on ac.username = lg.action_by
@@ -32,7 +33,12 @@
     }else{
         $prefix = "NA";
     }
-    echo ' <li class="notifications-li">
+
+    if($row['readed']==1){
+        $style = 'style="color: #8a8787;"'
+
+    }
+    echo ' <li class="notifications-li" '.$style.'>
                 <span>
                 '.ucwords($row["firstname"]).' '.$row["lastname"].' has '.$row["action"].' at ticket <strong>'.$prefix.'-'.$row["action_data_id"].'</strong>
                 <span>
