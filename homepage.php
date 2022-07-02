@@ -890,6 +890,8 @@ function select_current_tab(selecttab) {
     }
 }
 function open_ticket_detail(id) {
+    
+    document.getElementById('user_filter').value = "";
     document.getElementById("ns_ticket_" + id).click();
 }
 function updateURL(pill) {
