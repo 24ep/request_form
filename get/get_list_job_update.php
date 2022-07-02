@@ -17,7 +17,7 @@
  FROM all_in_one_project.log  as lg
  left join all_in_one_project.account as ac 
  on ac.username = lg.action_by
- where (lg.nt_readable like '%".$row['username']."%' or lg.nt_readed like '%".$row['username']."%' ) and lg.action_by <> '".$row['username']."'
+ where lg.nt_readable like '%".$row['username']."%'  and lg.action_by <> '".$row['username']."'
  order by lg.id desc
  limit 100
  ";
