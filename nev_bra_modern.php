@@ -12,7 +12,7 @@
             <span><ion-icon style="color:white" name="notifications-outline"></ion-icon> <strong>Job updated</strong></span>
             
                   <div id="get_list_job_update">
-
+                    <?php include('get/get_list_job_update.php'); ?>
                   </div>
         </ul>
         </div>
