@@ -30,14 +30,18 @@
 
     if($row_log['readed']=='readed'){
         $style_read = 'style="color: #c7c7c7;"';
+        $read_badge = '. Read';
 
+    }else{
+        unset($style_read);
+        unset($read_badge);
     }
     echo ' <li class="notifications-li" '.$style_read.'>
                 <span>
                 <strong>'.ucwords($row_log["firstname"]).' '.$row_log["lastname"].'</strong> has '.$row_log["action"].' at ticket <strong>'.$prefix.'-'.$row_log["action_data_id"].'</strong>
                 </span>
                 <br>
-                <small class="timeago" datetime="'.$row_log["action_date"].'">'.$row_log["action_date"].'</small>
+                <small class="timeago" datetime="'.$row_log["action_date"].'">'.$row_log["action_date"].'</small> '.$read_badge.'
            </li>';
   }
   mysqli_close($con_log);
