@@ -512,3 +512,13 @@ table.dataTable.no-footer {
     text-align-last: left;
     color: black;
 }
+.notifications-box.show {
+    display: block;
+    width: 500px;
+    margin-left: 20px!important;
+    background: white;
+}
+.notifications-li{
+    padding: 10px;
+    border-bottom: 1px solid #cec7c7;
+}

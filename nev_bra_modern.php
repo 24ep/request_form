@@ -5,10 +5,12 @@
         <button type="button" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
             <ion-icon style="color:white" name="notifications-outline"></ion-icon>
         </button>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Menu item</a></li>
-            <li><a class="dropdown-item" href="#">Menu item</a></li>
-            <li><a class="dropdown-item" href="#">Menu item</a></li>
+        <ul class="dropdown-menu notifications-box shadow">
+            <span><ion-icon style="color:white" name="notifications-outline"></ion-icon> Job updated</span>
+            
+            <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
+            <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
+            <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
         </ul>
         </div>
         <a data-bs-toggle="tooltip" data-bs-placement="right" title="Home" class="nav-link active"
