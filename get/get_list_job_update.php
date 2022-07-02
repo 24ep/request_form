@@ -20,7 +20,6 @@
  where (lg.nt_readable like '%".$row['username']."%' or lg.nt_readed like '%".$row['username']."%' ) and lg.action_by <> '".$row['username']."'
  order by lg.id desc
  limit 100
-
  ";
  $result = mysqli_query($con, $query);
  while($row = mysqli_fetch_array($result)) {
@@ -35,10 +34,10 @@
     }
 
     if($row['readed']=='readed'){
-        $style = 'style="color: #8a8787;"';
+        $style_read = 'style="color: #8a8787;"';
 
     }
-    echo ' <li class="notifications-li" '.$style.'>
+    echo ' <li class="notifications-li" '.$style_read.'>
                 <span>
                 <strong>'.ucwords($row["firstname"]).' '.$row["lastname"].'</strong> has '.$row["action"].' at ticket <strong>'.$prefix.'-'.$row["action_data_id"].'</strong>
                 </span>
