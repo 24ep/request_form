@@ -152,7 +152,7 @@ session_start();
            
              var child_c = document.getElementById("crid_'.$_POST["id"].'");
              var parent_c = document.getElementById("ul_'.$value_change.'");
-            child_c.appendChild(parent_c);	
+             parent_c.appendChild(child_c);	
             </script>';
           }
 	}else{
