@@ -32,7 +32,7 @@ function insert_log($action,$action_table,$action_data_id){
     '".$_SESSION['username']."',
     '".$action_table."',
     '".$action_data_id."',
-    '".$participant."',
+    '".$participant."'
     )";
 	$query = mysqli_query($con,$sql);
     mysqli_close($con);
