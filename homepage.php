@@ -1198,5 +1198,4 @@ function load_tiny_comment() {
 <script>
     //time ago libraty
     timeago.render(document.querySelectorAll('.need_to_be_rendered'));
-});
 </script>
