@@ -9,11 +9,14 @@
  $con = mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
  mysqli_query($con, "SET NAMES 'utf8' ");
  $query = "
- SELECT log.id, log.`action`, log.action_date, log.action_by, log.action_table, log.action_data_id, log.nt_readable, log.nt_readed , ac.firstname,ac.lastname    
- FROM all_in_one_project.log  as log
- left join all_in_one_project.account ac 
- where (log.nt_readable like '%".$row['username']."%' or log.nt_readed like '%".$row['username']."%' ) and log.action_by <> '".$row['username']."'
- order by log.id desc
+ SELECT 
+ lg.id,
+ lg.`action`,
+ lg.action_date, lg.action_by, lg.action_table, lg.action_data_id, lg.nt_readable, lg.nt_readed , ac.firstname,ac.lastname    
+ FROM all_in_one_project.log  as lg
+ left join all_in_one_project.account as ac 
+ where (lg.nt_readable like '%".$row['username']."%' or lg.nt_readed like '%".$row['username']."%' ) and lg.action_by <> '".$row['username']."'
+ order by lg.id desc
  limit 100
 
  ";
