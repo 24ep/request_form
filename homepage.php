@@ -921,6 +921,12 @@ function update_project_sticky() {
         $('#project_bucket').html(data);
     });
 }
+function update_readed_nt() {
+    $.post("base/action/action_update_read_nt.php", {
+    }, function(data) {
+        // $('#project_bucket').html(data);
+    });
+}
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value

@@ -5,7 +5,7 @@
             <img style="padding:0px" src="/base/image/csg_logo.png" alt="" width="30" height="30">
         </a>
         <div class="btn-group dropend">
-        <button type="button" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
+        <button type="button" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false" onclick="update_readed_nt();" >
             <ion-icon style="color:white" name="notifications-outline"></ion-icon>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 <div id="get_count_nt_unread">
