@@ -13,6 +13,7 @@
 session_start();
 include('action_send_line_api.php');
 include('action_add_participant.php');
+include('action_insert_log.php');
 // include("connect.php");
 $id = $_POST["id"];
 $ticket_type = "add_new";
@@ -160,6 +161,7 @@ if($comment<>'' or $file_size <>0){
           }
       }
       add_participant($id,"add_new_job");
+      insert_log("New ns comment \n".str_replace("'","''",$comment),"add_new_job",$id);
 }
   include('../get/get_comment_ticket.php');
    mysqli_close($con);
