@@ -92,7 +92,7 @@
                   name="reason_cancel" placeholder="เหตุผลยกเลิก ticket นี้" value="">
                   <select style="margin-top: 5px;" id="type_cancel" name="type_cancel" <?php echo $allow_cancel; ?> 
                   class="form-select form-select-sm" aria-label="Default select example">
-                    <option selected>Cancel</option>
+                    <option value="cancel" selected>Cancel</option>
                     <option value="Cancel - Confirm not for sale">Cancel - Confirm not for sale</option>
                     <option value="Cancel - Confirm to be new sku">Cancel - Confirm to be new sku</option>
                     <option value="Cancel - already content">Cancel - already content</option>
