@@ -33,7 +33,7 @@ if(isset($_POST["status"])){$_SESSION["status"]= $_POST["status"];}
           $sort_by= 'ticket.complete_date'.$cr_status_user;
           $sort_code = 'DESC';
         }else{
-          $cr_status = 'ticket.status <> "Close" and status  <> "Pending"'.$cr_status_user;
+          $cr_status = 'ticket.status <> "Cancel" and  ticket.status <> "Close" and status  <> "Pending"'.$cr_status_user;
           $LIMIT ='';
           $sort_by= 'ticket.update_date';
           $sort_code = 'DESC';
@@ -52,7 +52,7 @@ if(isset($_POST["status"])){$_SESSION["status"]= $_POST["status"];}
               $sort_by= 'ticket.complete_date';
               $sort_code = 'DESC';
             }else{
-              $cr_status = 'ticket.status <> "Close" and status  <> "Pending"'.$cr_status_user;
+              $cr_status = 'ticket.status <> "Cancel" and ticket.status <> "Close" and status  <> "Pending"'.$cr_status_user;
               $LIMIT ='';
               $sort_by= 'ticket.update_date';
               $sort_code = 'DESC';
