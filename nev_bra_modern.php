@@ -8,9 +8,35 @@
         <ul class="dropdown-menu notifications-box shadow">
             <span><ion-icon style="color:white" name="notifications-outline"></ion-icon> Job updated</span>
             
-            <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
-            <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
-            <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-owner-tab" data-bs-toggle="pill" data-bs-target="#pills-owner" type="button" role="tab" aria-controls="pills-owner" aria-selected="true">Owner</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-participant-tab" data-bs-toggle="pill" data-bs-target="#pills-participant" type="button" role="tab" aria-controls="pills-participant" aria-selected="false">Participant</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-message-tab" data-bs-toggle="pill" data-bs-target="#pills-message" type="button" role="tab" aria-controls="pills-message" aria-selected="false">Message</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-owner" role="tabpanel" aria-labelledby="pills-owner-tab">
+                    <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
+                    <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
+                    <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
+                </div>
+                <div class="tab-pane fade" id="pills-participant" role="tabpanel" aria-labelledby="pills-participant-tab">
+                    <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
+                    <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
+                    <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
+                </div>
+                <div class="tab-pane fade" id="pills-message" role="tabpanel" aria-labelledby="pills-message-tab">
+                    <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
+                    <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
+                    <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
+                </div>
+            </div>
+            
         </ul>
         </div>
         <a data-bs-toggle="tooltip" data-bs-placement="right" title="Home" class="nav-link active"
