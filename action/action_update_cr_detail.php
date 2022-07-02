@@ -149,9 +149,8 @@ session_start();
          toast.show();</script>';
           if($value_name=='status' and $value_change<>'close'){
             echo '<script>
-             var child_c = document.getElementById("#crid_'.$_POST["id"].'");
-             var parent_c = document.getElementById("ul_'.$value_change.'");
-            child_c.appendTo(parent_c);	
+            $("#crid_'.$_POST["id"].'").appendTo("ul_'.$value_change.'");
+        	
             </script>';
           }
 	}else{
