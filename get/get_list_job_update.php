@@ -30,7 +30,7 @@
 
     if($row_log['readed']=='readed'){
         $style_read = 'style="color: #c7c7c7;"';
-        $read_badge = '. Read';
+        $read_badge = '.<small> Read</small>';
 
     }else{
         unset($style_read);
