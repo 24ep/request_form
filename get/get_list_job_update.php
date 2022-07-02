@@ -31,7 +31,7 @@
                 '.$row["action_by"].' has '.$row["action"].' at ticket <strong>'.$prefix.'-'.$row["action_data_id"].'</strong>
                 <span>
                 <br>
-                <small>'.$row["action_date"].'</small>
+                <small class="timeago" datetime="'.$row["action_date"].'">'.$row["action_date"].'</small>
            </li>';
   }
   mysqli_close($con);
