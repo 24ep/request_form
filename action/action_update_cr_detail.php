@@ -155,7 +155,7 @@ session_start();
              parent_c.appendChild(child_c);	
 
             </script>';
-          }elseif($value_name=='status' and $value_change=='Close' ){
+          }elseif($value_name=='status' and ( $value_change=='Close' or $value_change=='Cancel') ){
             echo '<script>
            
             var child_c = document.getElementById("crid_'.$_POST["id"].'");
