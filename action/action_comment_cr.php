@@ -99,7 +99,7 @@ if($comment<>'' or $file_size <>0){
                 }
             }
       add_participant($id,"content_request");
-      insert_log("New Comment \n".$comment,"content_request",$id);
+      insert_log("Comment \n".$comment,"content_request",$id);
 }
   include('../get/get_comment_cr.php');
   mysqli_close($con);
