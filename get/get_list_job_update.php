@@ -41,7 +41,7 @@
     echo ' <li class="notifications-li" '.$style.'>
                 <span>
                 <strong>'.ucwords($row["firstname"]).' '.$row["lastname"].'</strong> has '.$row["action"].' at ticket <strong>'.$prefix.'-'.$row["action_data_id"].'</strong>
-                <span>
+                </span>
                 <br>
                 <small class="timeago" datetime="'.$row["action_date"].'">'.$row["action_date"].'</small>
            </li>';
