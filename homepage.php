@@ -1196,8 +1196,9 @@ function load_tiny_comment() {
 });
 </script>
 <script>
-const nodes = document.querySelectorAll('.timeago');
+// const nodes = document.querySelectorAll('.timeago');
 
-// use render method to render nodes in real time
-render(nodes, 'en_US');
+// // use render method to render nodes in real time
+// render(nodes, 'en_US');
+timeago().render(document.querySelectorAll('.timeago'));
 </script>
