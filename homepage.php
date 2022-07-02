@@ -98,7 +98,7 @@
             integrity="sha512-N3oYWQZs8pMSQhQtB13XHSIry/zDIUimpMqX4QMULawuaAYgRWSiU17cLHh7f51xgkGY18jQtY2ph98HtKeWaA=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
-    <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();doAutoRefresh_count_nt();doAutoRefresh_nt();">
+    <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();doAutoRefresh_count_nt();">
         <!-- Modal -->
         <div class="modal fade " id="project_model" tabindex="-1" aria-labelledby="project_modelLabel"
             aria-hidden="true">
@@ -927,6 +927,13 @@ function update_readed_nt() {
         // $('#project_bucket').html(data);
     });
 }
+function get_list_update_job() {
+    $.post("base/get/get_list_job_update.php", {
+    }, function(data) {
+        $('#get_list_job_update').html(data);
+        timeago().render(document.querySelectorAll('.timeago'));
+    });
+}
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value
@@ -1049,27 +1056,27 @@ function doAutoRefresh_cr() {
         req_cr.send(null);
     }
 };
-function doAutoRefresh_nt() {
-    var url = window.location.href;
-    var req_nt = Inint_AJAX();
-    // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-    req_nt.open("POST", 'base/get/get_list_job_update.php?' + new Date().getTime(), true);
-    // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
-    req_nt.onreadystatechange = function() {
-        if (req_nt.readyState == 4) {
-            if (req_nt.status == 200) {
-                // รับค่ากลับมา และ แสดงผล
-                document.getElementById("get_list_job_update").innerHTML = req_nt.responseText;
+// function doAutoRefresh_nt() {
+//     var url = window.location.href;
+//     var req_nt = Inint_AJAX();
+//     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
+//     req_nt.open("POST", 'base/get/get_list_job_update.php?' + new Date().getTime(), true);
+//     // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
+//     req_nt.onreadystatechange = function() {
+//         if (req_nt.readyState == 4) {
+//             if (req_nt.status == 200) {
+//                 // รับค่ากลับมา และ แสดงผล
+//                 document.getElementById("get_list_job_update").innerHTML = req_nt.responseText;
 
-                timeago().render(document.querySelectorAll('.timeago'));
+//                 timeago().render(document.querySelectorAll('.timeago'));
 
-                setTimeout("doAutoRefresh_nt()", 5000);
+//                 setTimeout("doAutoRefresh_nt()", 5000);
 
-            }
-        }
-    };
-    req_nt.send(null);
-};
+//             }
+//         }
+//     };
+//     req_nt.send(null);
+// };
 function doAutoRefresh_count_nt() {
     var url = window.location.href;
     var req_count_nt = Inint_AJAX();
