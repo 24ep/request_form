@@ -8,11 +8,11 @@
         <button type="button" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
             <ion-icon style="color:white" name="notifications-outline"></ion-icon>
         </button>
-        <ul class="dropdown-menu notifications-box shadow">
+        <ul class="dropdown-menu notifications-box shadow overflow-auto">
             <span><ion-icon style="color:white" name="notifications-outline"></ion-icon> Job updated</span>
             
                   <div id="get_list_job_update">
-                    
+
                   </div>
         </ul>
         </div>

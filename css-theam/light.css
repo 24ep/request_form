@@ -518,6 +518,7 @@ table.dataTable.no-footer {
     margin-left: 20px!important;
     background: white;
     padding: 20px 20px;
+    height: 500px;
 }
 .notifications-li{
     padding: 15px 15px;
