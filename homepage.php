@@ -1196,5 +1196,5 @@ function load_tiny_comment() {
 });
 </script>
 <script>
-//timeago().render(document.querySelectorAll('.timeago'));
+timeago().render(document.querySelectorAll('.timeago'));
 </script>

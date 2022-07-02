@@ -49,7 +49,7 @@ WHERE job.approved_editing_status <> 'approved' and job.job_status_filter <> 'ca
         echo "<td>".$row["sku"]."</td>";
         echo "<td>".$row["traffic"]."</td>";
         echo "<td>".$state ."</td>";  
-        echo "<td>".$row["last_update_at"]."</td>";
+        echo "<td class='timeago' datetime='".$row["last_update_at"]."'>".$row["last_update_at"]."</td>";
         echo "<td>".$row["csg_request_new_id"]."</td>";
         echo "</tr>";
         $pass = true;
