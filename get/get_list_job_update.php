@@ -9,11 +9,13 @@
  $con = mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
  mysqli_query($con, "SET NAMES 'utf8' ");
  $query = "
-    SELECT id, `action`, action_date, action_by, action_table, action_data_id, nt_readable, nt_readed
-    FROM all_in_one_project.log 
-    where (nt_readable like '%".$_SESSION["username"]."%' or nt_readed like '%".$_SESSION["username"]."%' ) and action_by <> '".$_SESSION["username"]."'
-    order by id desc
-    limit 100
+ SELECT log.id, log.`action`, log.action_date, log.action_by, log.action_table, log.action_data_id, log.nt_readable, log.nt_readed , ac.firstname,ac.lastname    
+ FROM all_in_one_project.log  as log
+ left join all_in_one_project.account ac 
+ where (log.nt_readable like '%".$row['username']."%' or log.nt_readed like '%".$row['username']."%' ) and log.action_by <> '".$row['username']."'
+ order by log.id desc
+ limit 100
+
  ";
  $result = mysqli_query($con, $query);
  while($row = mysqli_fetch_array($result)) {
@@ -28,7 +30,7 @@
     }
     echo ' <li class="notifications-li">
                 <span>
-                '.$row["action_by"].' has '.$row["action"].' at ticket <strong>'.$prefix.'-'.$row["action_data_id"].'</strong>
+                '.ucwords($row["firstname"]).' '.ucwords($row["lastname"]).' has '.$row["action"].' at ticket <strong>'.$prefix.'-'.$row["action_data_id"].'</strong>
                 <span>
                 <br>
                 <small class="timeago" datetime="'.$row["action_date"].'">'.$row["action_date"].'</small>
