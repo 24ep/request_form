@@ -1196,6 +1196,8 @@ function load_tiny_comment() {
 });
 </script>
 <script>
-    //time ago libraty
-    timeago.render(document.querySelectorAll('.need_to_be_rendered'));
+const nodes = document.querySelectorAll('.timeago');
+
+// use render method to render nodes in real time
+render(nodes, 'en_US');
 </script>
