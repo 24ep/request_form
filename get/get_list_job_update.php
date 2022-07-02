@@ -48,6 +48,6 @@
   }
   mysqli_close($con);
   ?>
-      <script>
-timeago().render(document.querySelectorAll('.timeago'));
-    </script>
+<script>
+    timeago().render(document.querySelectorAll('.timeago'));
+</script>
