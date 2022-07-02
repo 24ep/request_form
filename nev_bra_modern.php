@@ -5,7 +5,7 @@
             <img style="padding:0px" src="/base/image/csg_logo.png" alt="" width="30" height="30">
         </a>
         <div class="btn-group dropend">
-        <button type="button" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false" onclick="update_readed_nt();get_list_update_job();" >
+        <button type="button" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false" onclick="get_list_update_job();" >
             <ion-icon style="color:white" name="notifications-outline"></ion-icon>
             
             <div id="get_count_nt_unread">
