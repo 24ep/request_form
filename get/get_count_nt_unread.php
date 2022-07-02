@@ -8,7 +8,14 @@
  ";
  $result = mysqli_query($con, $query);
  while($row = mysqli_fetch_array($result)) {
-    echo $row['count_id'];
+    $count =  $row['count_id'];
   }
+  if($count > 0){
+    echo '<span class="position-absolute top-5 start-80 translate-middle badge rounded-pill bg-danger">  
+    '.$count.'       
+    <span class="visually-hidden">unread messages</span>
+    </span>';
+  }
+
   mysqli_close($con);
   ?>

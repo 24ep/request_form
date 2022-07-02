@@ -7,12 +7,10 @@
         <div class="btn-group dropend">
         <button type="button" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false" onclick="update_readed_nt();" >
             <ion-icon style="color:white" name="notifications-outline"></ion-icon>
-            <span class="position-absolute top-5 start-80 translate-middle badge rounded-pill bg-danger">
-                <div id="get_count_nt_unread">
+            
+            <div id="get_count_nt_unread">
                         <?php include('get/get_count_nt_unread.php'); ?>
                 </div>
-                <span class="visually-hidden">unread messages</span>
-            </span>
         </button>
         <ul class="dropdown-menu notifications-box shadow overflow-auto">
             <span><ion-icon style="color:white" name="notifications-outline"></ion-icon> <strong>Job updated</strong></span>
