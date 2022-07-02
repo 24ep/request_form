@@ -109,3 +109,6 @@ if(isset($_POST["status"])){$_SESSION["status"]= $_POST["status"];}
     } 
   mysqli_close($con);
   ?>
+  <script>
+    timeago().render(document.querySelectorAll('.timeago'));
+  </script>
