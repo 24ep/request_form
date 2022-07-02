@@ -297,7 +297,7 @@ function create_ticket_csg(){
      $insert_head .= ",tags";$insert_value .= ",'".$attributes["tags"]."'";
      $insert_head .= ",parent";$insert_value .= $parent_id;
      if($dataset=="OFFLINE ONLY"){
-        $insert_head .= ",status";$insert_value .= ",'Cancel'";
+        $insert_head .= ",status";$insert_value .= ",'cancel'";
         $insert_head .= ",cancel_date";$insert_value .= ",'".date("Y-m-d H:i:s")."'";
         $insert_head .= ",cancel_resone";$insert_value .= ",'AUTOMATIC CANCEL SINCE THE TICKET IS OFFLINE ONLY'";
       }else{
