@@ -89,7 +89,8 @@
         <!-- //preview image -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.css" integrity="sha512-3eoKq7cU6gdVeT+6eL40YcJLD8dxzQmOK54qxUWVjg7H4NN3u5AA5k5ywrqLV15hOZDBBgdQH/GK5CA9MwDVwg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.js" integrity="sha512-FbW9TrdqAZVgIOrQeqDRnCe+l0g+aMBP7pWEt/zLWx8zgafpBwvJ6F1rsU+mkvbXuB4mBwS2ehlkZHE9cknTrg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        
+        <!-- time ago -->
+        <script src="//unpkg.com/timeago.js"></script>
         
     </head>
     <body onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();">
@@ -1192,5 +1193,10 @@ function load_tiny_comment() {
 <script>
     baguetteBox.run('.baguetteBoxFour', {
     buttons: false
+});
+</script>
+<script>
+    //time ago libraty
+    timeago.render(document.querySelectorAll('.need_to_be_rendered'));
 });
 </script>
