@@ -1067,27 +1067,7 @@ function doAutoRefresh_cr() {
         req_cr.send(null);
     }
 };
-// function doAutoRefresh_nt() {
-//     var url = window.location.href;
-//     var req_nt = Inint_AJAX();
-//     // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-//     req_nt.open("POST", 'base/get/get_list_job_update.php?' + new Date().getTime(), true);
-//     // กำหนด ฟังก์ชั่นเพื่อส่งค่ากลับ
-//     req_nt.onreadystatechange = function() {
-//         if (req_nt.readyState == 4) {
-//             if (req_nt.status == 200) {
-//                 // รับค่ากลับมา และ แสดงผล
-//                 document.getElementById("get_list_job_update").innerHTML = req_nt.responseText;
 
-//                 timeago().render(document.querySelectorAll('.timeago'));
-
-//                 setTimeout("doAutoRefresh_nt()", 5000);
-
-//             }
-//         }
-//     };
-//     req_nt.send(null);
-// };
 function doAutoRefresh_count_nt() {
     var url = window.location.href;
     var req_count_nt = Inint_AJAX();
