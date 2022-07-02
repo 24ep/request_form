@@ -517,9 +517,9 @@ table.dataTable.no-footer {
     width: 500px;
     margin-left: 20px!important;
     background: white;
-    padding: 20px 40px;
+    padding: 20px 20px;
 }
 .notifications-li{
-    padding: 20px 30px;
+    padding: 15px 15px;
     border-bottom: 1px solid #cec7c7;
 }

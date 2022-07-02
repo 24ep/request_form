@@ -34,7 +34,7 @@
     }
     echo ' <li class="notifications-li">
                 <span>
-                '.ucwords($row["firstname"]).' '.ucwords($row["lastname"]).' has '.$row["action"].' at ticket <strong>'.$prefix.'-'.$row["action_data_id"].'</strong>
+                '.ucwords($row["firstname"]).' '.$row["lastname"].' has '.$row["action"].' at ticket <strong>'.$prefix.'-'.$row["action_data_id"].'</strong>
                 <span>
                 <br>
                 <small class="timeago" datetime="'.$row["action_date"].'">'.$row["action_date"].'</small>
