@@ -1,9 +1,9 @@
 <div class="list_bra shadow">
     <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <h5 style="text-align-last: center;font-weight: bolder;font-family: 'Prompt';color: #d36363;">CSG</h5>
-        <!-- <a class="navbar-brand" href="#">
+        <!-- <h5 style="text-align-last: center;font-weight: bolder;font-family: 'Prompt';color: #d36363;">CSG</h5> -->
+        <a class="navbar-brand" href="#">
             <img src="/base/image/csg_logo.png" alt="" width="30" height="24">
-        </a> -->
+        </a>
         <div class="btn-group dropend">
         <button type="button" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
             <ion-icon style="color:white" name="notifications-outline"></ion-icon>
@@ -11,34 +11,9 @@
         <ul class="dropdown-menu notifications-box shadow">
             <span><ion-icon style="color:white" name="notifications-outline"></ion-icon> Job updated</span>
             
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-owner-tab" data-bs-toggle="pill" data-bs-target="#pills-owner" type="button" role="tab" aria-controls="pills-owner" aria-selected="true">Owner</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-participant-tab" data-bs-toggle="pill" data-bs-target="#pills-participant" type="button" role="tab" aria-controls="pills-participant" aria-selected="false">Participant</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-message-tab" data-bs-toggle="pill" data-bs-target="#pills-message" type="button" role="tab" aria-controls="pills-message" aria-selected="false">Message</button>
-                </li>
-            </ul>
-            <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-owner" role="tabpanel" aria-labelledby="pills-owner-tab">
                     <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
                     <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
                     <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
-                </div>
-                <div class="tab-pane fade" id="pills-participant" role="tabpanel" aria-labelledby="pills-participant-tab">
-                    <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
-                    <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
-                    <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
-                </div>
-                <div class="tab-pane fade" id="pills-message" role="tabpanel" aria-labelledby="pills-message-tab">
-                    <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
-                    <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
-                    <li><a class="dropdown-item notifications-li" href="#">Menu item</a></li>
-                </div>
-            </div>
             
         </ul>
         </div>
