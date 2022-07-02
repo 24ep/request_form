@@ -19,9 +19,9 @@
  while($row = mysqli_fetch_array($result)) {
     if($row["action_table"]=="add_new_job"){
         $prefix = "NS";
-    }elseif($row["action_table"]=="content_requst"){
+    }elseif($row["action_table"]=="content_request"){
         $prefix = "CR";
-    }elseif($row["action_table"]=="checklist_of_content_requst"){
+    }elseif($row["action_table"]=="checklist_of_content_request"){
         $prefix = "CR";
     }else{
         $prefix = "NA";
