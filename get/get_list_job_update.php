@@ -1,9 +1,4 @@
 <?php
-// $type = $_GET['type']; 
-
-// if($type =='owner'){
-
-// }
  session_start();
  date_default_timezone_set("Asia/Bangkok");
  $con = mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
@@ -50,3 +45,4 @@
 <script>
     timeago().render(document.querySelectorAll('.timeago'));
 </script>
+
