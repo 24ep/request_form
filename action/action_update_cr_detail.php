@@ -147,11 +147,13 @@ session_start();
          var toastLiveExample = document.getElementById("liveToast_cr");
          var toast = new bootstrap.Toast(toastLiveExample);
          toast.show();</script>';
-// 	if($value_name=="status" and $value_change<>"close"){
-// 		var child_c = document.getElementById("#crid_".$_POST['id']);
-// 		var parent_c = document.getElementById("ul_".$value_change);
-// 		child_c.appendTo(parent_c);	
-// 	}
+          if($value_name=='status' and $value_change<>'close'){
+            echo '<script>
+             var child_c = document.getElementById("#crid_".'.$_POST["id"].');
+             var parent_c = document.getElementById("ul_".$value_change);
+            child_c.appendTo(parent_c);	
+            </script>';
+          }
 	}else{
         insert_log("update ticket faild".$con->error ,"content_request",$id);
         echo "<script>
