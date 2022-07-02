@@ -147,7 +147,7 @@ if(isset($_POST["from_post"] )){
       }
     }
     //  -2 already image
-    if($row["status"]=="Cancel"){
+    if($row["status"]=="cancel"){
       $style_cancel =  "style_cancel";
     }else{
       unset($style_cancel);
