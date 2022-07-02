@@ -32,7 +32,7 @@ echo '<div class="list-group">';
         echo 
         '<div class="d-flex w-100 justify-content-between">
              <h5 class="mb-1" style="font-size:15px"><strong>'. $label_id.'</strong></h5>
-             <small class="timeago" datetime="'.$row["action_date"].'"><script>format("'.$row["action_date"].'", "en_US");</script></small>
+             <small class="timeago" datetime="'.$row["action_date"].'">'.$row["action_date"].'</small>
            </div>
            <p class="mb-1"><small>'.$row["action"].'</small></p>
            <small style="color:gray">Update by <strong>'.$row["action_by"].'</strong></small>
