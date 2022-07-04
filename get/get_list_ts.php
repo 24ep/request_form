@@ -106,7 +106,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
     <div class="row" style="margin-bottom: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr">
         <?php     
                         $ef_badge = "";
-                        unset($image_profile);
+                        $image_profile = "";
                         if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
                             echo '<div class="col card-unassin-bt" >';
                             echo  '<a type="button" class="btn btn-sm btn-outline-secondary" style="border-radius: 15px;">Unassign</a>';
@@ -116,7 +116,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                             echo '</div>';
                         }else{
                           $ef_badge = "";
-                          unset($image_profile);
+                          $image_profile = "";
                           $officer_display =  explode(",",$row['case_officer']);
                           foreach ($officer_display as $officer){
                            $image_profile = profile_image($officer,$row['department'],25,$officer,1);

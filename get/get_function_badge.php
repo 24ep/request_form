@@ -1,7 +1,6 @@
 <?php
  session_start();
     function badge_due_date($date){
-                      
         if($date <> null){
           $current_day = date("Y-m-d");
           $date_wiht_formate = date_create($date);
@@ -18,7 +17,6 @@
         return $ef_badge;
       }
       function badge_status_cr($status){
-    
       switch ($status) {
         case "Pending": $status = '<button type="button" class="btn btn-sm shadow-sm badge-status-npd-pd" >pending</button>'; break;
         case "Inprogress": $status = '<button type="button" class="btn btn-sm shadow-sm badge-status-npd-ip">Inprogress</button>'; break;
