@@ -147,10 +147,11 @@ if(isset($_POST["from_post"] )){
       }
     }
     //  -2 already image
+    $style_cancel = "";
     if($row["status"]=="cancel"){
       $style_cancel =  "style_cancel";
     }else{
-      unset($style_cancel);
+      $style_cancel = "";
     }
     //config_type
     if($row["config_type"]=="parent"){

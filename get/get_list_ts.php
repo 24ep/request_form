@@ -105,7 +105,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
     <hr style="margin: 5px;color: #6c757d8c;">
     <div class="row" style="margin-bottom: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr">
         <?php     
-                        unset($ef_badge);
+                        $ef_badge = "";
                         unset($image_profile);
                         if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
                             echo '<div class="col card-unassin-bt" >';
@@ -115,7 +115,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                             echo  badge_due_date($row["effective_date"]);
                             echo '</div>';
                         }else{
-                          unset($ef_badge);
+                          $ef_badge = "";
                           unset($image_profile);
                           $officer_display =  explode(",",$row['case_officer']);
                           foreach ($officer_display as $officer){
