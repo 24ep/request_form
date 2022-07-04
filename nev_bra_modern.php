@@ -1,9 +1,9 @@
 <div class="list_bra shadow">
     <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <!-- <h5 style="text-align-last: center;font-weight: bolder;font-family: 'Prompt';color: #d36363;">CSG</h5> -->
-        <a class="navbar-brand" href="#" style="padding:0px">
+        <h5 style="text-align-last: center;font-weight: bolder;font-family: 'Prompt';color: #d36363;">CSG</h5>
+        <!-- <a class="navbar-brand" href="#" style="padding:0px">
             <img style="padding:0px" src="/base/image/csg_logo.png" alt="" width="30" height="30">
-        </a>
+        </a> -->
         <div class="btn-group dropend">
         <button type="button" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false" onclick="get_list_update_job();" >
             <ion-icon style="color:white" name="notifications-outline"></ion-icon>
