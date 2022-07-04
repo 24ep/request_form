@@ -21,7 +21,7 @@ $id = $_POST['id'];
 if($id=="" or $id == null){
   $direct = "external";
   $id = $_GET['id'];
-  echo '  
+  echo '
 <html lang="en">
   <head>
   <title>Content and Studio - Content Request</title>
@@ -328,15 +328,22 @@ $result = mysqli_query($con, $query);
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
       $request_by_nickname = $row['nickname'];
+      $token_line = $row['token_line'];
+      if($token_line<>""){
+        $allow_requester_noti = ' <ion-icon name="notifications-outline"></ion-icon>';
+      }else{
+        $allow_requester_noti = "";
+      }
+     
       if($row['line_user_id']<> null and $row['line_user_id']<> "" ){
         if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
-          $request_by_contact = $request_by." | ".$row['firstname']." ".$row['lastname']." ( ".$request_by_nickname." ) | ".$row['work_email'];
+          $request_by_contact = $request_by." | ".$row['firstname']." ".$row['lastname']." ( ".$request_by_nickname." ) | ".$row['work_email']. " ".$allow_requester_noti;
           // $request_by_contact = $request_by." | ".$row['firstname']." ".$row['lastname']." ( ".$request_by_nickname." ) | ".$row['work_email']."<a type='button' href='https://chat.line.biz/Ubc7faf107145495bd45be106915c5ecd/chat/".$row['line_user_id']."' style='background:#00B900;color:white;border-radius:10px'class='btn btn-outline-success'>Chat with ".$row['nickname']."</a>";
         }else{
-          $request_by_contact = $request_by." | ".$row['firstname']." ".$row['lastname']." ( ".$request_by_nickname." ) | ".$row['work_email'];
+          $request_by_contact = $request_by." | ".$row['firstname']." ".$row['lastname']." ( ".$request_by_nickname." ) | ".$row['work_email']. " ".$allow_requester_noti;
         }
       }else{
-        $request_by_contact = $request_by." | ".$row['firstname']." ".$row['lastname']." ( ".$request_by_nickname." ) | ".$row['work_email'];
+        $request_by_contact = $request_by." | ".$row['firstname']." ".$row['lastname']." ( ".$request_by_nickname." ) | ".$row['work_email']. " ".$allow_requester_noti;
       }
     }
     date_default_timezone_set("Asia/Bangkok");

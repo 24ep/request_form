@@ -12,6 +12,8 @@
             $ef_badge = '<span class="badge rounded-pill bg-warning text-dark" style="margin-left:5px">Due Tmr</span>';
           }elseif($date_wiht_formate_diff<0){
             $ef_badge = '<span class="badge rounded-pill bg-dark" style="margin-left:5px">Over due</span>';
+          }else{
+            $ef_badge  = '';
           }
         }
         return $ef_badge;
