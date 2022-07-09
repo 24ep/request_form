@@ -62,10 +62,10 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         case when ticket.ticket_type like '%Datapump%' then 'Yes' end as contain_datapump
         FROM all_in_one_project.content_request as ticket
         Left join all_in_one_project.account ac
-        on ac.username = ticket.case_officer 
-        Left join all_in_one_project.project_bucket pb 
-        on pb.prefix  = ticket.ticket_template 
-        where ".$ts_filter." 
+        on ac.username = ticket.case_officer
+        Left join all_in_one_project.project_bucket pb
+        on pb.prefix  = ticket.ticket_template
+        where ".$ts_filter."
         GROUP BY  ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
         // echo "<script>console.log('".$query."');</script>";
         $result = mysqli_query($con, $query);
@@ -75,8 +75,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
 <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
     onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
     data-bucket="<?php echo $row['prefix'];?>" data-cr-id="<?php echo $row['id'];?>"
-    data-cr-participant="<?php echo strtolower($row['participant']);?>"
-    id="crid_<?php echo $row['id'];?>"
+    data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
     data-cr-title="<?php echo strtolower($row['title']);?>" aria-controls="offcanvasExample">
     <div class="row" style="padding-right: 0px;">
         <div class="col-10" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
@@ -85,7 +84,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         </div>
         <div class="col-2" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
             data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample">
-            <!-- icon -->
             <?php
                   if($row["contain_content"] == 'Yes'){
                     echo '<ion-icon style="color:#41baf0!important" name="pencil-outline"></ion-icon>';
@@ -103,8 +101,9 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         </div>
     </div>
     <hr style="margin: 5px;color: #6c757d8c;">
-    <div class="row" style="margin-bottom: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr">
-        <?php     
+    <div class="row" style="margin-bottom: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
+        data-bs-toggle="offcanvas" data-bs-target="#detail_cr">
+        <?php
                         $ef_badge = "";
                         $image_profile = "";
                         if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
@@ -128,7 +127,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                               echo ucwords($officer);
                               echo '</div>';
                             echo '</div>';
-                            
                           }
                           echo '<div class="col card-assigned-eft">';
                             echo  badge_due_date($row["effective_date"]);
@@ -141,7 +139,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                       echo "</ul>";
                     mysqli_close($con);
                 }
-        //----------------- new
         $con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
         $query_status = "SELECT * FROM content_service_gate.attribute_option 
         where attribute_id= 38 and attribute_option not in ('cancel','routine work','monitor','In-review','close')" or die("Error:" . mysqli_error($con));
@@ -158,5 +155,4 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         $i++;
         }
         mysqli_close($con_status);
-        //------------- new
 ?>
