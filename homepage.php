@@ -365,7 +365,7 @@ if (!$_SESSION["login_csg"]){
                                                     $squser="";
                                                 }
                                                 ?>
-                                                <input style="width: 60%;" type="search" class="form-control"
+                                                <input style="width: 30%;" type="search" class="form-control"
                                                     onsearch="search_cr_data();" id="ts_command" name="ts_command"
                                                     placeholder="leave your ticket number or message have contain in title"
                                                     aria-label="Username" aria-describedby="basic-addon1"
@@ -382,6 +382,12 @@ if (!$_SESSION["login_csg"]){
                                                     id="ts_request_for" name="ts_request_for" placeholder="all type"
                                                     aria-label="Request for" aria-describedby="basic-addon1"
                                                     value="<?php echo $_SESSION["ts_request_for"];  ?>">
+                                                    <span class="input-group-text">status</span>
+                                                <input style="width: 10%;" list="qlistoption_rf" type="text"
+                                                    class="form-control"  onchange="search_cr_status();"
+                                                    id="ts_status" name="ts_status" placeholder="all status"
+                                                    aria-label="status" aria-describedby="basic-addon1"
+                                                    value="<?php echo $_SESSION["ts_status"];  ?>">
                                                 <span class="input-group-text">Limit</span>
                                                 <input type="number" max="999" onchange="run_ts_command('task');"
                                                     min="1" class="form-control" id="ts_command_limit"
@@ -774,6 +780,27 @@ function search_cr_request_for() {
         }
     }
 }
+function search_cr_status() {
+    var status = document.getElementById('ts_status').value.toLowerCase();;
+    if (status != "") {
+        //hide all card
+        var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
+        for (var card of SearchInputQuery) {
+            card.className += " cr-status-hide";
+        }
+        //show data-cr-request contain
+        var SearchInputQuery = document.querySelectorAll('[data-cr-status="' + status + '"]');
+        for (var card of SearchInputQuery) {
+            card.className = card.className.replace(/(?:^|\s)cr-status-hide(?!\S)/g, '');
+        }
+    } else {
+        //unhide all card
+        var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
+        for (var card of SearchInputQuery) {
+            card.className = card.className.replace(/(?:^|\s)cr-status-hide(?!\S)/g, '');
+        }
+    }
+}
 
 function update_project_sticky_badge(BuketPrefix) {
     var prefix_project_sticky_array = [];
@@ -844,6 +871,8 @@ function run_ts_command(ts_level) {
     update_project_sticky_badge('skip');
     search_cr_data();
     search_cr_username();
+    search_cr_request_for();
+    search_cr_status();
 }
     </script>
     <script type="text/javascript">
@@ -1110,6 +1139,8 @@ function doAutoRefresh_ts_admin() {
                     update_project_sticky_badge('skip');
                     search_cr_data();
                     search_cr_username();
+                    search_cr_request_for();
+                    search_cr_status();
                     // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
                     setTimeout("doAutoRefresh_ts_admin()", 5000);
                 }

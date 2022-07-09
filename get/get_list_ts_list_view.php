@@ -167,6 +167,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 data-bucket="<?php echo $row['prefix'];?>" 
                 data-cr-request-for="<?php echo $row['ticket_type'];?>"
                 data-cr-id="<?php echo $row['id'];?>"
+                data-cr-status="<?php echo $row['status'];?>"
                 data-cr-participant="<?php echo strtolower($row['participant']);?>" 
                 id="crid_<?php echo $row['id'];?>"
                 data-cr-title="<?php echo strtolower($row['title']);?>" 
