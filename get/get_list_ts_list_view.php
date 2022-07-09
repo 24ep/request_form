@@ -53,6 +53,7 @@ $filter = "";
 $filter .= "lower(ticket.id) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.title) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]."%') ";
+
     function list_ts_non_status($filter,$ts_command_limit ,$status){
         if(strpos($filter,"ticket.status = 'Close'")!==false){
           $sort_de_status="-ticket.effective_date DESC ,ticket.id DESC ";
@@ -109,9 +110,17 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 ?>
                 
             <!-- ui -->
-            <tr  onclick="cr_id_toggle(<?php echo $row['id'];?>) " aria-controls="offcanvasExample" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" data-bucket="<?php echo $row['prefix'];?>" data-cr-id="<?php echo $row['id'];?>"
-    data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
-    data-cr-title="<?php echo strtolower($row['title']);?>">
+            <tr  
+            onclick="cr_id_toggle(<?php echo $row['id'];?>) " 
+            data-bs-toggle="offcanvas" 
+            data-bs-target="#detail_cr"
+            data-bucket="<?php echo $row['prefix'];?>" 
+            data-cr-id="<?php echo $row['id'];?>"
+            data-cr-participant="<?php echo strtolower($row['participant']);?>" 
+            id="crid_<?php echo $row['id'];?>"
+            data-cr-title="<?php echo strtolower($row['title']);?>" 
+            aria-controls="offcanvasExample">
+            >
                 <td><?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?></td>
                 <td><?php echo $row['title']; ?></td>
                 <td style="text-align: -webkit-center;"><?php echo badge_ticket_status_cr($row['status']); ?></td>

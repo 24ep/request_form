@@ -375,6 +375,12 @@ if (!$_SESSION["login_csg"]){
                                                     id="ts_username" name="ts_username" placeholder="all user"
                                                     aria-label="Username" aria-describedby="basic-addon1"
                                                     value="<?php echo $_SESSION["ts_username"];   ?>">
+                                                <span class="input-group-text">Request for</span>
+                                                <input style="width: 10%;" list="qlistoption_rf" type="text"
+                                                    class="form-control" 
+                                                    id="ts_request_for" name="ts_request_for" placeholder="all type"
+                                                    aria-label="Request for" aria-describedby="basic-addon1"
+                                                    value="<?php echo $_SESSION["ts_request_for"];  ?>">
                                                 <span class="input-group-text">Limit</span>
                                                 <input type="number" max="999" onchange="run_ts_command('task');"
                                                     min="1" class="form-control" id="ts_command_limit"
