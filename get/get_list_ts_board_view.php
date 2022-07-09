@@ -87,11 +87,11 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
     aria-controls="offcanvasExample">
     <div class="row" style="padding-right: 0px;">
         <div class="col-10" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
-            data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample">
+            data-bs-toggle="offcanvas"  aria-controls="offcanvasExample">
             <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
         </div>
         <div class="col-2" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
-            data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample">
+            data-bs-toggle="offcanvas"  aria-controls="offcanvasExample">
             <?php
                   if($row["contain_content"] == 'Yes'){
                     echo '<ion-icon style="color:#41baf0!important" name="pencil-outline"></ion-icon>';
@@ -110,7 +110,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
     </div>
     <hr style="margin: 5px;color: #6c757d8c;">
     <div class="row" style="margin-bottom: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
-        data-bs-toggle="offcanvas" data-bs-target="#detail_cr">
+        data-bs-toggle="offcanvas" >
         <?php
                         $ef_badge = "";
                         $image_profile = "";
