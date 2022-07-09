@@ -70,7 +70,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         GROUP BY  ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
         $result = mysqli_query($con, $query);
         echo " <table id='ts_board_view_list'class='table table-hover'>";
-        echo "  <tr>
+        echo "  <th>
                     <th>Id</th>
                     <td>Title</td>
                     <td>STATUS</td>
@@ -101,7 +101,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         ?>
 
 <script>
-  $(document).ready( function () {
   $('#ts_board_view_list').DataTable({
         lengthMenu: [
             [10,20, 50, 100, -1],
@@ -109,6 +108,5 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         ],
     });
 
-} );
 
 </script>
