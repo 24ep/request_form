@@ -698,23 +698,23 @@ function search_cr_data() {
     var input = document.getElementById('ts_command').value.toLowerCase();;
     if (input != "") {
         //hide all card
-        var SearchInputQuery = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
+        var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
         for (var card of SearchInputQuery) {
             card.className += " cr-search-hide";
         }
         //show title contain
-        var SearchInputQuery = document.querySelectorAll('li[data-cr-title*="' + input + '"]');
+        var SearchInputQuery = document.querySelectorAll('[data-cr-title*="' + input + '"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
         }
         //show id equal
-        var SearchInputQuery = document.querySelectorAll('li[data-cr-id="' + input + '"]');
+        var SearchInputQuery = document.querySelectorAll('[data-cr-id="' + input + '"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
         }
     } else {
         //unhide all card
-        var SearchInputQuery = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
+        var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
         }
@@ -725,18 +725,18 @@ function search_cr_username() {
     var username = document.getElementById('ts_username').value.toLowerCase();;
     if (username != "") {
         //hide all card
-        var SearchInputQuery = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
+        var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
         for (var card of SearchInputQuery) {
             card.className += " cr-username-hide";
         }
         //show data-cr-participant contain
-        var SearchInputQuery = document.querySelectorAll('li[data-cr-participant*="' + username + '"]');
+        var SearchInputQuery = document.querySelectorAll('[data-cr-participant*="' + username + '"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-username-hide(?!\S)/g, '');
         }
     } else {
         //unhide all card
-        var SearchInputQuery = document.querySelectorAll('li[data-bs-target="#detail_cr"]');
+        var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-username-hide(?!\S)/g, '');
         }
@@ -748,12 +748,12 @@ function update_project_sticky_badge(BuketPrefix) {
     var prefix_project_sticky = "";
     $.each($("input[name='bucket_checking']:not(:checked)"), function() {
         if ($(this).val() != BuketPrefix) {
-            var boxes = document.querySelectorAll('li[data-bucket="' + $(this).val() + '"]');
+            var boxes = document.querySelectorAll('[data-bucket="' + $(this).val() + '"]');
             for (var box of boxes) {
                 box.className += " bucket-hin";
             }
         } else {
-            var boxes = document.querySelectorAll('li[data-bucket="' + BuketPrefix + '"]');
+            var boxes = document.querySelectorAll('[data-bucket="' + BuketPrefix + '"]');
             for (var box of boxes) {
                 box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '');
             }
@@ -762,13 +762,13 @@ function update_project_sticky_badge(BuketPrefix) {
     });
     $.each($("input[name='bucket_checking']:checked"), function() {
         if ($(this).val() != BuketPrefix) {
-            var boxes = document.querySelectorAll('li[data-bucket="' + $(this).val() + '"]');
+            var boxes = document.querySelectorAll('[data-bucket="' + $(this).val() + '"]');
             for (var box of boxes) {
                 box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '');
             }
             prefix_project_sticky_array.push($(this).val());
         } else {
-            var boxes = document.querySelectorAll('li[data-bucket="' + BuketPrefix + '"]');
+            var boxes = document.querySelectorAll('[data-bucket="' + BuketPrefix + '"]');
             for (var box of boxes) {
                 box.className += " bucket-hin";
             }

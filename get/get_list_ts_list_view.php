@@ -80,7 +80,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
           while( $row = mysqli_fetch_array($result)) {
                 ?>
             <!-- ui -->
-            <tr  data-bucket="<?php echo $row['prefix'];?>" data-cr-id="<?php echo $row['id'];?>"
+            <tr  onclick="cr_id_toggle(<?php echo $row['id'];?>) " aria-controls="offcanvasExample" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" data-bucket="<?php echo $row['prefix'];?>" data-cr-id="<?php echo $row['id'];?>"
     data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
     data-cr-title="<?php echo strtolower($row['title']);?>">
                 <td><?php echo $row['ticket_template']."-".$row['id']; ?></td>
