@@ -77,6 +77,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
     data-bs-toggle="offcanvas" 
     data-bs-target="#detail_cr"
     data-bucket="<?php echo $row['prefix'];?>" 
+    data-cr-request-for="<?php echo $row['ticket_type'];?>"
     data-cr-id="<?php echo $row['id'];?>"
     data-cr-participant="<?php echo strtolower($row['participant']);?>" 
     id="crid_<?php echo $row['id'];?>"

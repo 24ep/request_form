@@ -6,6 +6,7 @@ if (!$_SESSION["login_csg"]){
     include_once('get/get_option_function.php');
         $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
         $username_op_cr = getoption_return_filter("username","account",$_SESSION["user_cr_filter"],"single","all_in_one_project");
+        $request_for_op = get_option_return_filter("ticket_type","","single","content_request");
         $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
@@ -377,7 +378,7 @@ if (!$_SESSION["login_csg"]){
                                                     value="<?php echo $_SESSION["ts_username"];   ?>">
                                                 <span class="input-group-text">Request for</span>
                                                 <input style="width: 10%;" list="qlistoption_rf" type="text"
-                                                    class="form-control" 
+                                                    class="form-control"  onchange="search_cr_username();"
                                                     id="ts_request_for" name="ts_request_for" placeholder="all type"
                                                     aria-label="Request for" aria-describedby="basic-addon1"
                                                     value="<?php echo $_SESSION["ts_request_for"];  ?>">
@@ -388,7 +389,10 @@ if (!$_SESSION["login_csg"]){
                                                     aria-label="Server">
                                             </div>
                                             <datalist id="qlistoption">
-                                                <!-- <option value="all username'"> -->
+                                            <?php echo $username_op_cr; ?>
+                                            </datalist>
+                                            <datalist id="qlistoption_rf">
+                                                <?php echo $request_for_op; ?>
                                             </datalist>
                                         </form>
                                     </nav>
@@ -713,6 +717,7 @@ function search_cr_data() {
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
         }
+        
         //show id equal
         var SearchInputQuery = document.querySelectorAll('[data-cr-id="' + input + '"]');
         for (var card of SearchInputQuery) {
@@ -745,6 +750,27 @@ function search_cr_username() {
         var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-username-hide(?!\S)/g, '');
+        }
+    }
+}
+function search_cr_request_for() {
+    var username = document.getElementById('ts_request_for').value.toLowerCase();;
+    if (username != "") {
+        //hide all card
+        var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
+        for (var card of SearchInputQuery) {
+            card.className += " cr-request-for-hide";
+        }
+        //show data-cr-participant contain
+        var SearchInputQuery = document.querySelectorAll('[data-cr-request-for*="' + username + '"]');
+        for (var card of SearchInputQuery) {
+            card.className = card.className.replace(/(?:^|\s)cr-request-for-hide(?!\S)/g, '');
+        }
+    } else {
+        //unhide all card
+        var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
+        for (var card of SearchInputQuery) {
+            card.className = card.className.replace(/(?:^|\s)cr-request-for-hide(?!\S)/g, '');
         }
     }
 }

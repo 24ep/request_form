@@ -448,6 +448,11 @@ table.dataTable.no-footer {
     position : absolute!important;
     z-index: -1;
 }
+.cr-request-for-hide{
+    display : none;
+    position : absolute!important;
+    z-index: -1;
+}
 .cr_detail_with_attachment{
     /* color:gray;
     border-bottom: solid 5px #adadad;
