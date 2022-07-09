@@ -101,7 +101,7 @@ if (!$_SESSION["login_csg"]){
     </head>
 
     <body
-        onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin();doAutoRefresh_count_nt();">
+        onload="doAutoRefresh();filter_update();doAutoRefresh_cr();doAutoRefresh_ts_admin_list_view();doAutoRefresh_ts_admin();doAutoRefresh_count_nt();">
         <!-- Modal -->
         <div class="modal fade " id="project_model" tabindex="-1" aria-labelledby="project_modelLabel"
             aria-hidden="true">
@@ -1149,7 +1149,39 @@ function doAutoRefresh_ts_admin() {
                     search_cr_request_for();
                     search_cr_status();
                     // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
-                    setTimeout("doAutoRefresh_ts_admin()", 5000);
+                    setTimeout("doAutoRefresh_ts_admin()", 1000);
+                }
+            }
+        };
+        req_ts.send(null);
+    }
+};
+function doAutoRefresh_ts_admin_list_view() {
+    var url = window.location.href;
+    let result = url.includes("v-pills-ts_admin");
+    var summary_filter = document.getElementById("ts_command").value;
+    var ts_username = document.getElementById("ts_username").value;
+    var ts_command_limit = document.getElementById("ts_command_limit").value;
+    if (result == true) {
+        var req_ts = Inint_AJAX();
+        //var req_cr = Inint_AJAX();
+        // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
+        req_ts.open("POST", 'base/get/get_list_ts_list_view.php?summary_filter=' + summary_filter + '&ts_username=' +
+            ts_username + '&ts_command_limit=' + ts_command_limit + '&' + new Date().getTime(), true);
+        //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
+        req_ts.onreadystatechange = function() {
+            if (req_ts.readyState == 4) {
+                if (req_ts.status == 200) {
+                    // รับค่ากลับมา และ แสดงผล
+                    //document.getElementById("list_grouping").innerHTML = req_cr.responseText;
+                    document.getElementById("get_ts_admin_console_list_view").innerHTML = req_ts.responseText;
+                    update_project_sticky_badge('skip');
+                    search_cr_data();
+                    search_cr_username();
+                    search_cr_request_for();
+                    search_cr_status();
+                    // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
+                    setTimeout("doAutoRefresh_ts_admin_list_view()", 5000);
                 }
             }
         };
