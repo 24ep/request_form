@@ -15,12 +15,13 @@
     }
     function badge_ticket_status_cr($status){
         switch ($status) {
-          case "Close": $status = 'text-align-last: center;background: #4aff6080;font-weight: 900;'; break;
-          case "Pending":$status = 'text-align-last: center;background: #c3c3c380;font-weight: 900;'; break;
-          case "Waiting Buyer": $status = 'text-align-last: center;background: #f4b0f980;font-weight: 900;'; break;
-          case "Waiting Execution": $status = 'text-align-last: center;background: #61d5e180;font-weight: 900;'; break;
-          case "Inprogress": $status = 'text-align-last: center;background: #fbac4a80;font-weight: 900;'; break;
-          default:$status = 'text-align-last: center;background: #bbbbbb80;font-weight: 900;'; 
+          case "Close": $status = "text-align-last: center;background: #4aff6080;font-weight: 900;"; break;
+          case "Pending":$status = "text-align-last: center;background: #c3c3c380;font-weight: 900;"; break;
+          case "Waiting Buyer": $status = "text-align-last: center;background: #f4b0f980;font-weight: 900;"; break;
+          case "Waiting Execution": $status = "text-align-last: center;background: #61d5e180;font-weight: 900;"; break;
+          case "Inprogress": $status = "text-align-last: center;background: #fbac4a80;font-weight: 900;"; break;
+          default:$status = "text-align-last: center;background: #bbbbbb80;font-weight: 900;" ;
+        }
         return $status;
         }
 session_start();
@@ -110,7 +111,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
             <tr  onclick="cr_id_toggle(<?php echo $row['id'];?>) " aria-controls="offcanvasExample" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" data-bucket="<?php echo $row['prefix'];?>" data-cr-id="<?php echo $row['id'];?>"
     data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
     data-cr-title="<?php echo strtolower($row['title']);?>">
-                <td> <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?></td>
+                <td><?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?></td>
                 <td><?php echo $row['title']; ?></td>
                 <td><?php echo badge_ticket_status_cr($row['status']); ?></td>
                 <td><?php echo badge_ticket_type_cr($row['ticket_type']); ?></td>
