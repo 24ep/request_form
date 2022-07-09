@@ -13,8 +13,6 @@
         while($row_de = mysqli_fetch_array($result_de)) {
             $_SESSION["prefix_project_sticky"] .= ",'".$row_de["prefix"]."'";
         }
-    
-      
     }else{
       $_SESSION["prefix_project_sticky"] = $_SESSION["prefix_project_sticky"];
     }
@@ -26,7 +24,7 @@
   $query = "SELECT pb.prefix,pb.project_name,count(cr.id) as count_ticket
   FROM all_in_one_project.project_bucket as pb
   left join all_in_one_project.content_request as cr
-  on cr.ticket_template = pb.prefix and lower(cr.status) not in ('close','cancel') 
+  on cr.ticket_template = pb.prefix and lower(cr.status) not in ('close','cancel','archive') 
   group by pb.prefix , pb.project_name
   order by pb.prefix  ASC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
@@ -35,7 +33,7 @@
     if(strpos( $_SESSION["prefix_project_sticky"],$row['prefix'])!==false){
         echo '
         <input type="checkbox" class="btn-check"  value="'.$row["prefix"].'"  name="bucket_checking" id="'.$row["prefix"].'" autocomplete="off" checked>
-        <label  onclick="update_project_sticky_badge(&#39;'.$row["prefix"].'&#39;);" class="btn btn-outline-primary btn-sm bk-cr shadow-sm" for="'.$row["prefix"].'" >
+        <label  onclick="update_project_sticky_badge(&#39;'.$row["prefix"].'&#39;);" class="btn btn-outline-primary btn-sm bk-cr shadow-sm btn-bucket-cr " for="'.$row["prefix"].'" >
         '.$row["project_name"].'
         <span class="badge rounded-pill bg-danger">'.$row["count_ticket"].'</span>
         </label>
@@ -43,7 +41,7 @@
     }else{
         echo '
         <input type="checkbox" class="btn-check"  value="'.$row["prefix"].'" name="bucket_checking" id="'.$row["prefix"].'" autocomplete="off">
-        <label  onclick="update_project_sticky_badge(&#39;'.$row["prefix"].'&#39;);" class="btn btn-outline-primary btn-sm bk-cr shadow-sm" for="'.$row["prefix"].'">
+        <label  onclick="update_project_sticky_badge(&#39;'.$row["prefix"].'&#39;);" class="btn btn-outline-primary btn-sm bk-cr shadow-sm btn-bucket-cr " for="'.$row["prefix"].'">
         '.$row["project_name"].'
         <span class="badge rounded-pill bg-danger">'.$row["count_ticket"].'</span>
         </label>

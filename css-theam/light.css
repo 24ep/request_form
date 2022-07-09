@@ -534,3 +534,12 @@ table.dataTable.no-footer {
       color: #fcfcfc !important;
       width: 100%;
 }
+.btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
+    color: #7e7e7e;
+    background-color: #e1e1e1;
+    border-color: #e3e3e3;
+}
+.btn-bucket-cr {
+    color: #7e7e7e!important;
+    border-color: #c1c1c1!important;
+}
