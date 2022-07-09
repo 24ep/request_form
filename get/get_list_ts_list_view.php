@@ -100,6 +100,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     <th>STATUS</th>
                     <th>Request for</th>
                     <th>Due date</th>
+                    <th>Assinee</th>
                 </tr>";
           while( $row = mysqli_fetch_array($result)) {
           
@@ -113,7 +114,43 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 <td><?php echo $row['title']; ?></td>
                 <td><?php echo badge_ticket_status_cr($row['status']); ?></td>
                 <td><?php echo badge_ticket_type_cr($row['ticket_type']); ?></td>
+                
                 <td><?php echo badge_due_date($row["effective_date"]); ?></td>
+                <td>
+                <?php
+                        $ef_badge = "";
+                        $image_profile = "";
+                        if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
+                            echo '<div class="col card-unassin-bt" >';
+                            echo  '<a type="button" class="btn btn-sm btn-outline-secondary" style="border-radius: 15px;">Unassign</a>';
+                            echo '</div>';
+                            echo '<div class="col card-unassin-eft" >';
+                            echo  badge_due_date($row["effective_date"]);
+                            echo '</div>';
+                        }else{
+                          $ef_badge = "";
+                          $image_profile = "";
+                          $officer_display =  explode(",",$row['case_officer']);
+                          foreach ($officer_display as $officer){
+                           $image_profile = profile_image($officer,$row['department'],25,$officer,1);
+                            echo '<div class="badge-profile">';
+                              echo '<div class="col">';
+                              echo $image_profile;
+                              echo '</div>';
+                              echo '<div class="col card-assign-name">';
+                              echo ucwords($officer);
+                              echo '</div>';
+                            echo '</div>';
+                          }
+                          echo '<div class="col card-assigned-eft">';
+                            echo  badge_due_date($row["effective_date"]);
+                            echo '</div>';
+                        }
+                    ?>
+
+
+
+                </td>
             </tr>
             <!-- ui -->
         <?php $i++; }
@@ -135,6 +172,5 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
             [10, 20,50, 100, 'All'],
         ],
     });
-
 
 </script>
