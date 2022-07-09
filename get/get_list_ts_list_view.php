@@ -95,7 +95,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         GROUP BY  ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
         $result = mysqli_query($con, $query);
         echo "<div class='table-responsive-sm'>
-                <table id='ts_board_view_list' class='table table-hover'>";
+                <table id='ts_board_view_list' class='table table-hover align-middle'>";
         echo "  <tr>
                     <th>Id</th>
                     <th>Title</th>
