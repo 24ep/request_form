@@ -86,3 +86,8 @@ button.btn.btn-toggle.align-items-center.rounded {
     height: -webkit-fill-available;
     background-image: url('https://content-service-gate.cdse-commercecontent.com//base/image/11.jpg');
 }
+.ts-view.active {
+    background-color: #ebebeb !important;
+    color: #fcfcfc !important;
+    width: 100%;
+}
