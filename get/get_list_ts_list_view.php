@@ -120,7 +120,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
             id="crid_<?php echo $row['id'];?>"
             data-cr-title="<?php echo strtolower($row['title']);?>" 
             aria-controls="offcanvasExample">
-            >
+            
                 <td><?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?></td>
                 <td><?php echo $row['title']; ?></td>
                 <td style="text-align: -webkit-center;"><?php echo badge_ticket_status_cr($row['status']); ?></td>
