@@ -90,10 +90,10 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         on ac.username = ticket.case_officer
         Left join all_in_one_project.project_bucket pb
         on pb.prefix  = ticket.ticket_template
-        where ".$ts_filter."  and ticket.status not in ('archive','cancel') 
+        where ".$ts_filter."  and ticket.status not in ('archive','cancel')
         GROUP BY  ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
         $result = mysqli_query($con, $query);
-        echo " <table id='ts_board_view_list'class='table table-hover'>";
+        echo " <table id='ts_board_view_list' class='table table-hover'>";
         echo "  <tr>
                     <th>Id</th>
                     <th>Title</th>
@@ -110,7 +110,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
             <tr  onclick="cr_id_toggle(<?php echo $row['id'];?>) " aria-controls="offcanvasExample" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" data-bucket="<?php echo $row['prefix'];?>" data-cr-id="<?php echo $row['id'];?>"
     data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
     data-cr-title="<?php echo strtolower($row['title']);?>">
-                <td> <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>" ?></td>
+                <td> <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?></td>
                 <td><?php echo $row['title']; ?></td>
                 <td><?php echo badge_ticket_status_cr($row['status']); ?></td>
                 <td><?php echo badge_ticket_type_cr($row['ticket_type']); ?></td>
