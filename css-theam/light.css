@@ -529,3 +529,8 @@ table.dataTable.no-footer {
     color: #d5d1d1;
     background-color: #f6f6f600!important;
 }
+.ts-view.active {
+      background-color: #ebebeb !important;
+      color: #fcfcfc !important;
+      width: 100%;
+}
