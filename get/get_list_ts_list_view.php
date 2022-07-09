@@ -70,13 +70,13 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         GROUP BY  ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
         $result = mysqli_query($con, $query);
         echo " <table id='ts_board_view_list'class='table table-hover'>";
-        echo "  <th>
+        echo "  <tr>
                     <th>Id</th>
-                    <td>Title</td>
-                    <td>STATUS</td>
-                    <td>Request for</td>
-                    <td>Due date</td>
-                </th>";
+                    <th>Title</th>
+                    <th>STATUS</th>
+                    <th>Request for</th>
+                    <th>Due date</th>
+                </tr>";
           while( $row = mysqli_fetch_array($result)) {
                 ?>
             <!-- ui -->
@@ -87,7 +87,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 <td><?php echo $row['title']; ?></td>
                 <td><?php echo $row['status']; ?></td>
                 <td><?php echo $row['ticket_type']; ?></td>
-                <td><?php echo $row['effective_date']; ?></td>
+                <td><?php badge_due_date($row["effective_date"]); ?></td>
             </tr>
             <!-- ui -->
         <?php $i++; }
