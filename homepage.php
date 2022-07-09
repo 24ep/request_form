@@ -388,7 +388,7 @@ if (!$_SESSION["login_csg"]){
                                     </nav>
                                     <div class="btn-group btn-group-sm" style="position: inherit;" role="group"
                                         aria-label="Basic checkbox toggle button group">
-                                        <?php include('get/get_list_bucket.php'); ?>
+                                            <?php include('get/get_list_bucket.php'); ?>
 
                                         <ul class="nav nav-pills mb-3" id="pills-tab" style="right: 0;position: absolute;padding: 10px 40px;" role="tablist">
                                             <li class="nav-item" role="presentation">
@@ -398,14 +398,19 @@ if (!$_SESSION["login_csg"]){
                                                 <button class="nav-link ts-view" id="pills-board_view_ts-tab" data-bs-toggle="pill" data-bs-target="#pills-board_view_ts" type="button" role="tab" aria-controls="pills-board_view_ts" aria-selected="false"><ion-icon name="grid-outline"></ion-icon></button>
                                             </li>
                                         </ul>
-                                        <div class="tab-content" id="pills-tabContent">
-                                            <div class="tab-pane fade show active" id="pills-list_view_ts" role="tabpanel" aria-labelledby="pills-list_view_ts-tab" tabindex="0">...</div>
+                                       
+                                    </div>
+                                    <div class="tab-content" id="pills-tabContent">
+                                            <div class="tab-pane fade show active" id="pills-list_view_ts" role="tabpanel" aria-labelledby="pills-list_view_ts-tab" tabindex="0">
+                                                <div class="row" id="get_ts_admin_console_list_view">
+                                                    <?php include('get/get_list_ts_list_view.php'); ?>
+                                                </div>
+                                            </div>
                                             <div class="tab-pane fade" id="pills-board_view_ts" role="tabpanel" aria-labelledby="pills-board_view_ts-tab" tabindex="0">
                                                 <div class="row" id="get_ts_admin_console">
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -798,7 +803,7 @@ function run_ts_command(ts_level) {
     var summary_filter = document.getElementById("ts_command").value;
     var ts_username = document.getElementById("ts_username").value;
     var ts_command_limit = document.getElementById("ts_command_limit").value;
-    $.post("base/get/get_list_ts.php", {
+    $.post("base/get/get_list_ts_board_view.php", {
         summary_filter: summary_filter,
         ts_command_limit: ts_command_limit,
         ts_username: ts_username
@@ -1062,7 +1067,7 @@ function doAutoRefresh_ts_admin() {
         var req_ts = Inint_AJAX();
         //var req_cr = Inint_AJAX();
         // Ajax ส่งค่าไปสอบถามเวลาจาก Server ที่ไฟล์ time.php
-        req_ts.open("POST", 'base/get/get_list_ts.php?summary_filter=' + summary_filter + '&ts_username=' +
+        req_ts.open("POST", 'base/get/get_list_ts_board_view.php?summary_filter=' + summary_filter + '&ts_username=' +
             ts_username + '&ts_command_limit=' + ts_command_limit + '&' + new Date().getTime(), true);
         //req_cr.open("POST", 'get/get_list_content_request.php?' + new Date().getTime(), true);
         req_ts.onreadystatechange = function() {
