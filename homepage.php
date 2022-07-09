@@ -378,7 +378,7 @@ if (!$_SESSION["login_csg"]){
                                                     value="<?php echo $_SESSION["ts_username"];   ?>">
                                                 <span class="input-group-text">Request for</span>
                                                 <input style="width: 10%;" list="qlistoption_rf" type="text"
-                                                    class="form-control"  onchange="search_cr_username();"
+                                                    class="form-control"  onchange="search_cr_request_for();"
                                                     id="ts_request_for" name="ts_request_for" placeholder="all type"
                                                     aria-label="Request for" aria-describedby="basic-addon1"
                                                     value="<?php echo $_SESSION["ts_request_for"];  ?>">
@@ -762,7 +762,7 @@ function search_cr_request_for() {
             card.className += " cr-request-for-hide";
         }
         //show data-cr-request contain
-        var SearchInputQuery = document.querySelectorAll('[data-cr-request-for*="' + request_for + '"]');
+        var SearchInputQuery = document.querySelectorAll('[data-cr-request-for="' + request_for + '"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-request-for-hide(?!\S)/g, '');
         }
