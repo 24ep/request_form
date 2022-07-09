@@ -155,6 +155,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
 
                 </td>
                 <td 
+                class=""
                 onclick="cr_id_toggle(<?php echo $row['id'];?>) " 
                 data-bs-toggle="offcanvas" 
                 data-bs-target="#detail_cr"
