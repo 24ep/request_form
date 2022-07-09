@@ -380,7 +380,6 @@ if (!$_SESSION["login_csg"]){
                                                     min="1" class="form-control" id="ts_command_limit"
                                                     name="ts_command_limit" placeholder="Server" value="100"
                                                     aria-label="Server">
-                                                
                                             </div>
                                             <datalist id="qlistoption">
                                                 <!-- <option value="all username'"> -->
@@ -390,23 +389,23 @@ if (!$_SESSION["login_csg"]){
                                     <div class="btn-group btn-group-sm" role="group"
                                         aria-label="Basic checkbox toggle button group">
                                         <?php include('get/get_list_bucket.php'); ?>
-                                    </div>
-                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link active" id="pills-list_view_ts-tab" data-bs-toggle="pill" data-bs-target="#pills-list_view_ts" type="button" role="tab" aria-controls="pills-list_view_ts" aria-selected="true"><ion-icon name="list-outline"></ion-icon></button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="pills-board_view_ts-tab" data-bs-toggle="pill" data-bs-target="#pills-board_view_ts" type="button" role="tab" aria-controls="pills-board_view_ts" aria-selected="false"><ion-icon name="grid-outline"></ion-icon></button>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content" id="pills-tabContent">
-                                        <div class="tab-pane fade show active" id="pills-list_view_ts" role="tabpanel" aria-labelledby="pills-list_view_ts-tab" tabindex="0">...</div>
-                                        <div class="tab-pane fade" id="pills-board_view_ts" role="tabpanel" aria-labelledby="pills-board_view_ts-tab" tabindex="0">
-                                            <div class="row" id="get_ts_admin_console">
+
+                                        <ul class="nav nav-pills mb-3" id="pills-tab" style="right: 0;position: fixed;padding: 10px 40px;" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" id="pills-list_view_ts-tab" data-bs-toggle="pill" data-bs-target="#pills-list_view_ts" type="button" role="tab" aria-controls="pills-list_view_ts" aria-selected="true"><ion-icon name="list-outline"></ion-icon></button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="pills-board_view_ts-tab" data-bs-toggle="pill" data-bs-target="#pills-board_view_ts" type="button" role="tab" aria-controls="pills-board_view_ts" aria-selected="false"><ion-icon name="grid-outline"></ion-icon></button>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="pills-tabContent">
+                                            <div class="tab-pane fade show active" id="pills-list_view_ts" role="tabpanel" aria-labelledby="pills-list_view_ts-tab" tabindex="0">...</div>
+                                            <div class="tab-pane fade" id="pills-board_view_ts" role="tabpanel" aria-labelledby="pills-board_view_ts-tab" tabindex="0">
+                                                <div class="row" id="get_ts_admin_console">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                  
                                 </div>
                             </div>
                         </div>
