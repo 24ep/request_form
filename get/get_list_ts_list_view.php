@@ -94,7 +94,8 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         where ".$ts_filter."  and ticket.status not in ('archive','cancel')
         GROUP BY  ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
         $result = mysqli_query($con, $query);
-        echo " <table id='ts_board_view_list' class='table table-hover'>";
+        echo "<div class='table-responsive-sm'>
+                <table id='ts_board_view_list' class='table table-hover'>";
         echo "  <tr>
                     <th>Id</th>
                     <th>Title</th>
@@ -113,11 +114,11 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
     data-cr-title="<?php echo strtolower($row['title']);?>">
                 <td><?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?></td>
                 <td><?php echo $row['title']; ?></td>
-                <td <?php echo badge_ticket_status_cr($row['status']); ?>><?php echo $row['status']; ?></td>
+                <td style="<?php echo badge_ticket_status_cr($row['status']); ?>"><?php echo $row['status']; ?></td>
                 <td><?php echo badge_ticket_type_cr($row['ticket_type']); ?></td>
                 
                 <td><?php echo badge_due_date($row["effective_date"]); ?></td>
-                <td style="display: flex;">
+                <td style="inline-size: 10px;">
                 <?php
                         $ef_badge = "";
                         $image_profile = "";
@@ -131,7 +132,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                           $officer_display =  explode(",",$row['case_officer']);
                           foreach ($officer_display as $officer){
                            $image_profile = profile_image($officer,$row['department'],25,$officer,1);
-                            echo '<div class="badge-profile">';
+                            echo '<div class="badge-profile" style="display: inline-flex;">';
                               echo '<div class="col">';
                               echo $image_profile;
                               echo '</div>';
@@ -150,6 +151,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
             <!-- ui -->
         <?php $i++; }
         echo '</table>';
+        echo '</div>';
                       echo "</ul>";
                     mysqli_close($con);
         }
