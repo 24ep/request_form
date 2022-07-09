@@ -125,9 +125,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                             echo '<div class="col card-unassin-bt" >';
                             echo  '<a type="button" class="btn btn-sm btn-outline-secondary" style="border-radius: 15px;">Unassign</a>';
                             echo '</div>';
-                            echo '<div class="col card-unassin-eft" >';
-                            echo  badge_due_date($row["effective_date"]);
-                            echo '</div>';
                         }else{
                           $ef_badge = "";
                           $image_profile = "";
@@ -143,9 +140,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                               echo '</div>';
                             echo '</div>';
                           }
-                          echo '<div class="col card-assigned-eft">';
-                            echo  badge_due_date($row["effective_date"]);
-                            echo '</div>';
                         }
                     ?>
 
