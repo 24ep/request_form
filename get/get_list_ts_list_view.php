@@ -1,26 +1,26 @@
 <?php
  function badge_ticket_type_cr($type){
     switch ($type) {
-      case "Update Content": $type = '<span class="badge bg-primary" style="background-color: #5f85ff99!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Update Content & Image": $type = '<span class="badge bg-primary" style="background-color: #24929b99!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Free Gift Image": $type = '<span class="badge bg-primary" style="background-color: #f12f6099!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Change status": $type = '<span class="badge bg-primary" style="background-color: #2ff19499!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Product not found": $type = '<span class="badge bg-primary" style="background-color: #87878799!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Update image": $type = '<span class="badge bg-primary" style="background-color: #269d6499!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Datapump Add Source": $type = '<span class="badge bg-primary" style="background-color: #c567d399!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Datapump Delete Source": $type = '<span class="badge bg-primary" style="background-color: #c567d399!important;padding: 8px;">'.$type.'</span>'; break;
-      default: $type = '<span class="badge bg-primary" style="background-color: #00000099!important;padding: 8px;">'.$type.'</span>';
+      case "Update Content": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #5f85ff99!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Update Content & Image": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #24929b99!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Free Gift Image": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #f12f6099!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Change status": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #2ff19499!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Product not found": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #87878799!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Update image": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #269d6499!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Datapump Add Source": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #c567d399!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Datapump Delete Source": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #c567d399!important;padding: 8px;">'.$type.'</span>'; break;
+      default: $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #00000099!important;padding: 8px;">'.$type.'</span>';
     }
     return $type;
     }
     function badge_ticket_status_cr($status){
         switch ($status) {
-          case "Close": $status = "text-align-last: center;background: #4aff6080;font-weight: 900;"; break;
-          case "Pending":$status = "text-align-last: center;background: #c3c3c380;font-weight: 900;"; break;
-          case "Waiting Buyer": $status = "text-align-last: center;background: #f4b0f980;font-weight: 900;"; break;
-          case "Waiting Execution": $status = "text-align-last: center;background: #61d5e180;font-weight: 900;"; break;
-          case "Inprogress": $status = "text-align-last: center;background: #fbac4a80;font-weight: 900;"; break;
-          default:$status = "text-align-last: center;background: #bbbbbb80;font-weight: 900;" ;
+          case "Close": $status = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #0eb32699!important;padding: 8px;">'.$status.'</span>'; break;
+          case "Pending": $status = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #afafaf99!important;padding: 8px;">'.$status.'</span>'; break;
+          case "Inprogress": $status = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #d7aa3999!important;padding: 8px;">'.$status.'</span>'; break;
+          case "Waiting Buyer": $status = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #cf67e599!important;padding: 8px;">'.$status.'</span>'; break;
+          case "Waiting Execution": $status = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #182bd599!important;padding: 8px;">'.$status.'</span>'; break;
+          default: $status = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #00000099!important;padding: 8px;">'.$status.'</span>';
         }
         return $status;
         }
@@ -114,7 +114,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
     data-cr-title="<?php echo strtolower($row['title']);?>">
                 <td><?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?></td>
                 <td><?php echo $row['title']; ?></td>
-                <td style="<?php echo badge_ticket_status_cr($row['status']); ?>"><?php echo $row['status']; ?></td>
+                <td style="<?php echo badge_ticket_status_cr($row['status']); ?>"><?php echo badge_ticket_status_cr($row['status']); ?></td>
                 <td><?php echo badge_ticket_type_cr($row['ticket_type']); ?></td>
                 
                 <td><?php echo badge_due_date($row["effective_date"]); ?></td>
