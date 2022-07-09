@@ -76,9 +76,6 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     <td>STATUS</td>
                     <td>Request for</td>
                     <td>Due date</td>
-                }
-                
-                
                 </th>";
           while( $row = mysqli_fetch_array($result)) {
                 ?>
