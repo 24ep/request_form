@@ -6,7 +6,7 @@ include_once("get_default_profile_image.php");
 if($_POST["ts_command_limit"]<>""){
   $ts_command_limit = $_POST["ts_command_limit"];
 }else{
-  $ts_command_limit= 100;
+  $ts_command_limit= 500;
 }
 //query username filter
 if($_POST["ts_username"]<>"" and $_POST["ts_username"]<>null ){
@@ -65,7 +65,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         on ac.username = ticket.case_officer
         Left join all_in_one_project.project_bucket pb
         on pb.prefix  = ticket.ticket_template
-        where ".$ts_filter."
+        where ".$ts_filter."  and status <> 'archive' 
         GROUP BY  ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
         $result = mysqli_query($con, $query);
         echo " <table class='table table-hover'>";
@@ -80,11 +80,11 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 ?>
             <!-- ui -->
             <tr>
-                <th><?php echo $row['id']; ?></th>
+                <th><?php echo $row['ticket_template']."-".$row['id']; ?></th>
                 <td><?php echo $row['title']; ?></td>
                 <td><?php echo $row['status']; ?></td>
                 <td><?php echo $row['ticket_type']; ?></td>
-                <td><?php echo $row['effective_fate']; ?></td>
+                <td><?php echo $row['effective_date']; ?></td>
             </tr>
             <!-- ui -->
         <?php $i++; }
