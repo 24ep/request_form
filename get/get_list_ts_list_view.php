@@ -113,11 +113,11 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
     data-cr-title="<?php echo strtolower($row['title']);?>">
                 <td><?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?></td>
                 <td><?php echo $row['title']; ?></td>
-                <td><?php echo badge_ticket_status_cr($row['status']); ?></td>
+                <td <?php echo badge_ticket_status_cr($row['status']); ?>><?php echo $row['status']; ?></td>
                 <td><?php echo badge_ticket_type_cr($row['ticket_type']); ?></td>
                 
                 <td><?php echo badge_due_date($row["effective_date"]); ?></td>
-                <td>
+                <td class="display: flex;">
                 <?php
                         $ef_badge = "";
                         $image_profile = "";
