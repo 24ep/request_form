@@ -5,8 +5,8 @@
       case "Update Content & Image": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #24929b99!important;padding: 8px;">'.$type.'</span>'; break;
       case "Free Gift Image": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #f12f6099!important;padding: 8px;">'.$type.'</span>'; break;
       case "Change status": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #2ff19499!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Product not found": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #87878799!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Update image": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #269d6499!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Product not found": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #5f85ff99!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Update image": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #f12f6099!important;padding: 8px;">'.$type.'</span>'; break;
       case "Datapump Add Source": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #c567d399!important;padding: 8px;">'.$type.'</span>'; break;
       case "Datapump Delete Source": $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #c567d399!important;padding: 8px;">'.$type.'</span>'; break;
       default: $type = '<span class="badge bg-primary" style="text-align: -webkit-center;background-color: #00000099!important;padding: 8px;">'.$type.'</span>';
