@@ -775,7 +775,7 @@ function search_cr_request_for() {
             card.className += " cr-request-for-hide";
         }
         //show data-cr-request contain
-        var SearchInputQuery = document.querySelectorAll('[data-cr-request-for="' + request_for + '"]');
+        var SearchInputQuery = document.querySelectorAll('[data-cr-request-for*="' + request_for + '"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-request-for-hide(?!\S)/g, '');
         }
@@ -796,7 +796,7 @@ function search_cr_status() {
             card.className += " cr-status-hide";
         }
         //show data-cr-request contain
-        var SearchInputQuery = document.querySelectorAll('[data-cr-status="' + status + '"]');
+        var SearchInputQuery = document.querySelectorAll('[data-cr-status*="' + status + '"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-status-hide(?!\S)/g, '');
         }
