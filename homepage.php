@@ -766,7 +766,7 @@ function search_cr_username() {
     }
 }
 function search_cr_request_for() {
-    var request_for = document.getElementById('ts_request_for').value.toLowerCase();;
+    var request_for = document.getElementById('ts_request_for').value;
     if (request_for != "") {
         //hide all card
         var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
@@ -788,7 +788,7 @@ function search_cr_request_for() {
     }
 }
 function search_cr_status() {
-    var status = document.getElementById('ts_status').value.toLowerCase();;
+    var status = document.getElementById('ts_status').value;
     if (status != "") {
         //hide all card
         var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
