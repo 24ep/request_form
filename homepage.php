@@ -398,7 +398,6 @@ if (!$_SESSION["login_csg"]){
                                                 <button class="nav-link ts-view" id="pills-board_view_ts-tab" data-bs-toggle="pill" data-bs-target="#pills-board_view_ts" type="button" role="tab" aria-controls="pills-board_view_ts" aria-selected="false"><ion-icon name="grid-outline"></ion-icon></button>
                                             </li>
                                         </ul>
-                                       
                                     </div>
                                     <div class="tab-content" id="pills-tabContent">
                                             <div class="tab-pane fade show active" id="pills-list_view_ts" role="tabpanel" aria-labelledby="pills-list_view_ts-tab" tabindex="0">
