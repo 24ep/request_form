@@ -1149,7 +1149,7 @@ function doAutoRefresh_ts_admin() {
                     search_cr_request_for();
                     search_cr_status();
                     // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
-                    setTimeout("doAutoRefresh_ts_admin()", 1000);
+                    setTimeout("doAutoRefresh_ts_admin()", 5000);
                 }
             }
         };
@@ -1181,7 +1181,7 @@ function doAutoRefresh_ts_admin_list_view() {
                     search_cr_request_for();
                     search_cr_status();
                     // Auto Refresh กลับมาอ่าน เวลาทุก 30 วินาที สำหรับรอบต่อไป
-                    setTimeout("doAutoRefresh_ts_admin_list_view()", 5000);
+                    setTimeout("doAutoRefresh_ts_admin_list_view()", 1000);
                 }
             }
         };
