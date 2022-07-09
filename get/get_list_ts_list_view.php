@@ -111,15 +111,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 
             <!-- ui -->
             <tr  
-            onclick="cr_id_toggle(<?php echo $row['id'];?>) " 
-            data-bs-toggle="offcanvas" 
-            data-bs-target="#detail_cr"
-            data-bucket="<?php echo $row['prefix'];?>" 
-            data-cr-id="<?php echo $row['id'];?>"
-            data-cr-participant="<?php echo strtolower($row['participant']);?>" 
-            id="crid_<?php echo $row['id'];?>"
-            data-cr-title="<?php echo strtolower($row['title']);?>" 
-            aria-controls="offcanvasExample">
+            >
             
                 <td><?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?></td>
                 <td><?php echo $row['title']; ?></td>
@@ -156,6 +148,17 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
 
 
                 </td>
+                <td 
+                onclick="cr_id_toggle(<?php echo $row['id'];?>) " 
+                data-bs-toggle="offcanvas" 
+                data-bs-target="#detail_cr"
+                data-bucket="<?php echo $row['prefix'];?>" 
+                data-cr-id="<?php echo $row['id'];?>"
+                data-cr-participant="<?php echo strtolower($row['participant']);?>" 
+                id="crid_<?php echo $row['id'];?>"
+                data-cr-title="<?php echo strtolower($row['title']);?>" 
+                aria-controls="offcanvasExample"
+                style="text-align: -webkit-center;"><button type="button" class="btn btn-outline-dark">Open</button></td>
             </tr>
             <!-- ui -->
         <?php $i++; }
