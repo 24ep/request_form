@@ -111,13 +111,16 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 
             <!-- ui -->
             <tr  
-                data-bucket="<?php echo $row['prefix'];?>" 
-                data-cr-id="<?php echo $row['id'];?>"
-                data-bs-target="#detail_cr"
-                data-cr-request-for="<?php echo $row['ticket_type'];?>"
-                data-cr-participant="<?php echo strtolower($row['participant']);?>" 
-                id="crid_<?php echo $row['id'];?>"
-                data-cr-title="<?php echo strtolower($row['title']);?>" 
+            onclick="cr_id_toggle(<?php echo $row['id'];?>) " 
+            data-bs-toggle="offcanvas" 
+            data-bs-target="#detail_cr"
+            data-bucket="<?php echo $row['prefix'];?>" 
+            data-cr-request-for="<?php echo $row['ticket_type'];?>"
+            data-cr-id="<?php echo $row['id'];?>"
+            data-cr-participant="<?php echo strtolower($row['participant']);?>" 
+            id="crid_<?php echo $row['id'];?>"
+            data-cr-title="<?php echo strtolower($row['title']);?>" 
+            aria-controls="offcanvasExample"
             >
             
                 <td><?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?></td>
@@ -161,8 +164,14 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 onclick="cr_id_toggle(<?php echo $row['id'];?>) " 
                 data-bs-toggle="offcanvas" 
                 data-bs-target="#detail_cr"
+                data-bucket="<?php echo $row['prefix'];?>" 
+                data-cr-request-for="<?php echo $row['ticket_type'];?>"
+                data-cr-id="<?php echo $row['id'];?>"
+                data-cr-participant="<?php echo strtolower($row['participant']);?>" 
+                id="crid_<?php echo $row['id'];?>"
+                data-cr-title="<?php echo strtolower($row['title']);?>" 
                 aria-controls="offcanvasExample"
-                style="text-align: -webkit-center;"type="button" class="btn btn-outline-dark btn-sm">Open</button></td>
+                type="button" class="btn btn-outline-dark btn-sm">Open</button></td>
             </tr>
             <!-- ui -->
         <?php $i++; }
