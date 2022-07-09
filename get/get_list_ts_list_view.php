@@ -65,7 +65,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         on ac.username = ticket.case_officer
         Left join all_in_one_project.project_bucket pb
         on pb.prefix  = ticket.ticket_template
-        where ".$ts_filter."  and status <> 'archive' 
+        where ".$ts_filter."  and ticket.status <> 'archive' 
         GROUP BY  ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
         $result = mysqli_query($con, $query);
         echo " <table class='table table-hover'>";
