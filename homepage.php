@@ -8,6 +8,7 @@ if (!$_SESSION["login_csg"]){
         $username_op_cr = getoption_return_filter("username","account",$_SESSION["user_cr_filter"],"single","all_in_one_project");
         $request_for_op = get_option_return_filter("ticket_type","","single","content_request");
         $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
+        $request_cr_status_op = get_option_return_filter("status","","single","content_reuqest");
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT * FROM all_in_one_project.account where username = '".$_SESSION['username']."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
@@ -383,7 +384,7 @@ if (!$_SESSION["login_csg"]){
                                                     aria-label="Request for" aria-describedby="basic-addon1"
                                                     value="<?php echo $_SESSION["ts_request_for"];  ?>">
                                                     <span class="input-group-text">status</span>
-                                                <input style="width: 10%;" list="qlistoption_rf" type="text"
+                                                <input style="width: 10%;" list="qlistoption_status" type="text"
                                                     class="form-control"  onchange="search_cr_status();"
                                                     id="ts_status" name="ts_status" placeholder="all status"
                                                     aria-label="status" aria-describedby="basic-addon1"
@@ -399,6 +400,9 @@ if (!$_SESSION["login_csg"]){
                                             </datalist>
                                             <datalist id="qlistoption_rf">
                                                 <?php echo $request_for_op; ?>
+                                            </datalist>
+                                            <datalist id="qlistoption_status">
+                                                <?php echo $request_cr_status_op; ?>
                                             </datalist>
                                         </form>
                                     </nav>
@@ -716,6 +720,7 @@ function search_cr_data() {
         //hide all card
         var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
         for (var card of SearchInputQuery) {
+            card.className = card.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
             card.className += " cr-search-hide";
         }
         //show title contain
@@ -744,6 +749,7 @@ function search_cr_username() {
         //hide all card
         var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
         for (var card of SearchInputQuery) {
+            card.className = card.className.replace(/(?:^|\s)cr-username-hide(?!\S)/g, '');
             card.className += " cr-username-hide";
         }
         //show data-cr-participant contain
@@ -765,6 +771,7 @@ function search_cr_request_for() {
         //hide all card
         var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
         for (var card of SearchInputQuery) {
+            card.className = card.className.replace(/(?:^|\s)cr-request-for-hide(?!\S)/g, '');
             card.className += " cr-request-for-hide";
         }
         //show data-cr-request contain
