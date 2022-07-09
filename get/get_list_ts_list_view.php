@@ -55,6 +55,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         ac.department as department,
         ac.username as username,
         pb.color_project as color_project,
+        ticket.ticket_type as ticket_type,
         pb.prefix as prefix,
         case when ticket.ticket_type like '%Content%' or ticket.ticket_type like '%Status%' then 'Yes' end as contain_content,
         case when ticket.ticket_type like '%Provide%' then 'Yes' end as contain_data,
@@ -65,16 +66,19 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         on ac.username = ticket.case_officer
         Left join all_in_one_project.project_bucket pb
         on pb.prefix  = ticket.ticket_template
-        where ".$ts_filter."  and ticket.status <> 'archive' 
+        where ".$ts_filter."  and ticket.status not in ('archive','cancel') 
         GROUP BY  ticket.id order by ".$sort_de_status."  limit ".$ts_command_limit;
         $result = mysqli_query($con, $query);
-        echo " <table class='table table-hover'>";
+        echo " <table id='ts_board_view_list'class='table table-hover'>";
         echo "  <tr>
                     <th>Id</th>
                     <td>Title</td>
                     <td>STATUS</td>
                     <td>Request for</td>
                     <td>Due date</td>
+                }
+                
+                
                 </th>";
           while( $row = mysqli_fetch_array($result)) {
                 ?>
@@ -98,3 +102,16 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         echo '</div>';
         mysqli_close($con_status);
         ?>
+
+<script>
+  $(document).ready( function () {
+  $('#ts_board_view_list').DataTable({
+        lengthMenu: [
+            [10,20, 50, 100, -1],
+            [10, 20,50, 100, 'All'],
+        ],
+    });
+
+} );
+
+</script>
