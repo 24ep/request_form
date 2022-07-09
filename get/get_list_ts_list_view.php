@@ -113,6 +113,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
             <tr  
                 data-bucket="<?php echo $row['prefix'];?>" 
                 data-cr-id="<?php echo $row['id'];?>"
+                data-bs-target="#detail_cr"
                 data-cr-request-for="<?php echo $row['ticket_type'];?>"
                 data-cr-participant="<?php echo strtolower($row['participant']);?>" 
                 id="crid_<?php echo $row['id'];?>"
@@ -155,13 +156,13 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
 
                 </td>
                 <td 
-                class=""
+                >
+                <button
                 onclick="cr_id_toggle(<?php echo $row['id'];?>) " 
                 data-bs-toggle="offcanvas" 
                 data-bs-target="#detail_cr"
-               
                 aria-controls="offcanvasExample"
-                style="text-align: -webkit-center;"><button type="button" class="btn btn-outline-dark btn-sm">Open</button></td>
+                style="text-align: -webkit-center;"type="button" class="btn btn-outline-dark btn-sm">Open</button></td>
             </tr>
             <!-- ui -->
         <?php $i++; }
