@@ -87,7 +87,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 <td><?php echo $row['title']; ?></td>
                 <td><?php echo $row['status']; ?></td>
                 <td><?php echo $row['ticket_type']; ?></td>
-                <td><?php badge_due_date($row["effective_date"]); ?></td>
+                <td><?php echo badge_due_date($row["effective_date"]); ?></td>
             </tr>
             <!-- ui -->
         <?php $i++; }
