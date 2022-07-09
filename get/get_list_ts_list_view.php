@@ -160,7 +160,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 data-bs-target="#detail_cr"
                
                 aria-controls="offcanvasExample"
-                style="text-align: -webkit-center;"><button type="button" class="btn btn-outline-dark">Open</button></td>
+                style="text-align: -webkit-center;"><button type="button" class="btn btn-outline-dark btn-sm">Open</button></td>
             </tr>
             <!-- ui -->
         <?php $i++; }

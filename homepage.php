@@ -754,15 +754,15 @@ function search_cr_username() {
     }
 }
 function search_cr_request_for() {
-    var username = document.getElementById('ts_request_for').value.toLowerCase();;
-    if (username != "") {
+    var request_for = document.getElementById('ts_request_for').value.toLowerCase();;
+    if (request_for != "") {
         //hide all card
         var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
         for (var card of SearchInputQuery) {
             card.className += " cr-request-for-hide";
         }
-        //show data-cr-participant contain
-        var SearchInputQuery = document.querySelectorAll('[data-cr-request-for*="' + username + '"]');
+        //show data-cr-request contain
+        var SearchInputQuery = document.querySelectorAll('[data-cr-request-for*="' + request_for + '"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-request-for-hide(?!\S)/g, '');
         }
