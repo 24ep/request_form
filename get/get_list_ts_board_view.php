@@ -28,9 +28,9 @@ $filter = "";
 $filter .= "lower(ticket.id) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.title) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]."%') ";
-function listing_ticket_card($row ,$status){
+function listing_ticket_card($result ,$status){
         echo "<ul id='ul_".$status."' style='padding:15px'>";
-          while( $row ) {
+          while( $row = mysqli_fetch_array($result) ) {
             if(strtolower($row['status'])==strtolower($status)){
                 ?>
                   <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
@@ -103,33 +103,33 @@ function listing_ticket_card($row ,$status){
          echo "</ul>";
         }
          // query all status
-                $sort_de_status="-ticket.effective_date DESC ,ticket.case_officer ASC, ticket.id ASC";
-                $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-                mysqli_query($con, "SET NAMES 'utf8' ");
-                $query = "SELECT ticket.id as id,
-                ticket.title as title,
-                ticket.piority as piority,
-                ticket.request_by as request_by,
-                ticket.create_date as create_date,
-                ticket.status as status,
-                ticket.ticket_template as ticket_template,
-                ticket.participant as participant,
-                ticket.case_officer as case_officer,
-                ticket.effective_date as effective_date,
-                ticket.ticket_type as ticket_type,
-                pb.color_project as color_project,
-                pb.prefix as prefix,
-                case when ticket.ticket_type like '%Content%' or ticket.ticket_type like '%Status%' then 'Yes' end as contain_content,
-                case when ticket.ticket_type like '%Provide%' then 'Yes' end as contain_data,
-                case when ticket.ticket_type like '%Image%' then 'Yes' end as contain_studio,
-                case when ticket.ticket_type like '%Datapump%' then 'Yes' end as contain_datapump
-                FROM all_in_one_project.content_request as ticket
-                Left join all_in_one_project.project_bucket pb
-                on pb.prefix  = ticket.ticket_template
-                where (".$filter.") and lower(ticket.status) not in ('cancel','routine work','monitor','in-review','close','archive')
-                order by ".$sort_de_status."  limit ".$ts_command_limit;
-                $result = mysqli_query($con, $query);
-                $row= mysqli_fetch_array($result);
+          $sort_de_status="ticket.status ASC , -ticket.effective_date DESC ,ticket.case_officer ASC, ticket.id ASC";
+          $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+          mysqli_query($con, "SET NAMES 'utf8' ");
+          $query = "SELECT ticket.id as id,
+          ticket.title as title,
+          ticket.piority as piority,
+          ticket.request_by as request_by,
+          ticket.create_date as create_date,
+          ticket.status as status,
+          ticket.ticket_template as ticket_template,
+          ticket.participant as participant,
+          ticket.case_officer as case_officer,
+          ticket.effective_date as effective_date,
+          ticket.ticket_type as ticket_type,
+          pb.color_project as color_project,
+          pb.prefix as prefix,
+          case when ticket.ticket_type like '%Content%' or ticket.ticket_type like '%Status%' then 'Yes' end as contain_content,
+          case when ticket.ticket_type like '%Provide%' then 'Yes' end as contain_data,
+          case when ticket.ticket_type like '%Image%' then 'Yes' end as contain_studio,
+          case when ticket.ticket_type like '%Datapump%' then 'Yes' end as contain_datapump
+          FROM all_in_one_project.content_request as ticket
+          Left join all_in_one_project.project_bucket pb
+          on pb.prefix  = ticket.ticket_template
+          where (".$filter.") and lower(ticket.status) not in ('cancel','routine work','monitor','in-review','close','archive')
+          order by ".$sort_de_status."  limit ".$ts_command_limit;
+          $result = mysqli_query($con, $query);
+          
         // getting by status
         $query_status = "SELECT attribute_option FROM content_service_gate.attribute_option
         where attribute_id= 38 and attribute_option not in ('cancel','routine work','monitor','In-review','close')" or die("Error:" . mysqli_error($con));
@@ -139,7 +139,7 @@ function listing_ticket_card($row ,$status){
         if($i>0){$ts_board_col_left = "ts-board-col-left";}
         echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'"  >
         <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
-        listing_ticket_card( $row,$row_status["attribute_option"]);
+        listing_ticket_card( $result,$row_status["attribute_option"]);
         // list_ts_non_status("(".$filter.") and ticket.status = '".$row_status["attribute_option"]."'",$ts_command_limit  ,$row_status["attribute_option"]);
         echo '</div>';
         $i++;
