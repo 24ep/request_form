@@ -31,6 +31,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
 function listing_ticket_card($result ,$status){
         echo "<ul id='ul_".$status."' style='padding:15px'>";
           while( $row = mysqli_fetch_array($result)) {
+            echo $row['status'];
             if(strtolower($row['status'])==strtolower($status)){
                 ?>
                   <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
@@ -47,19 +48,19 @@ function listing_ticket_card($result ,$status){
                           <div class="col-2" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
                               data-bs-toggle="offcanvas" aria-controls="offcanvasExample">
                               <?php
-                                                  if($row["contain_content"] == 'Yes'){
-                                                    echo '<ion-icon style="color:#41baf0!important" name="pencil-outline"></ion-icon>';
-                                                  }
-                                                  if($row["contain_studio"] == 'Yes'){
-                                                    echo '<ion-icon style="color:#CC0000!important" name="image-outline"></ion-icon>';
-                                                  }
-                                                  if($row["contain_datapump"] == 'Yes'){
-                                                    echo '<ion-icon style="color:#e126ec!important" name="server-outline"></ion-icon>';
-                                                  }
-                                                  if($row["contain_data"] == 'Yes'){
-                                                    echo '<ion-icon style="color:#41baf0!important" name="receipt-outline"></ion-icon>';
-                                                  }
-                                                ?>
+                                if($row["contain_content"] == 'Yes'){
+                                    echo '<ion-icon style="color:#41baf0!important" name="pencil-outline"></ion-icon>';
+                                }
+                                if($row["contain_studio"] == 'Yes'){
+                                    echo '<ion-icon style="color:#CC0000!important" name="image-outline"></ion-icon>';
+                                }
+                                if($row["contain_datapump"] == 'Yes'){
+                                    echo '<ion-icon style="color:#e126ec!important" name="server-outline"></ion-icon>';
+                                }
+                                if($row["contain_data"] == 'Yes'){
+                                   echo '<ion-icon style="color:#41baf0!important" name="receipt-outline"></ion-icon>';
+                                }
+                              ?>
                           </div>
                       </div>
                       <hr style="margin: 5px;color: #6c757d8c;">
@@ -117,11 +118,6 @@ function listing_ticket_card($result ,$status){
                 ticket.case_officer as case_officer,
                 ticket.effective_date as effective_date,
                 ticket.ticket_type as ticket_type,
-                ac.firstname as firstname,
-                ac.lastname as lastname,
-                ac.nickname as nickname,
-                ac.department as department,
-                ac.username as username,
                 pb.color_project as color_project,
                 pb.prefix as prefix,
                 case when ticket.ticket_type like '%Content%' or ticket.ticket_type like '%Status%' then 'Yes' end as contain_content,
@@ -129,22 +125,18 @@ function listing_ticket_card($result ,$status){
                 case when ticket.ticket_type like '%Image%' then 'Yes' end as contain_studio,
                 case when ticket.ticket_type like '%Datapump%' then 'Yes' end as contain_datapump
                 FROM all_in_one_project.content_request as ticket
-                Left join all_in_one_project.account ac
-                on ac.username = ticket.case_officer
                 Left join all_in_one_project.project_bucket pb
                 on pb.prefix  = ticket.ticket_template
-                where ".$filter."
+                where ".$filter." 
                 order by ".$sort_de_status."  limit ".$ts_command_limit;
                 $result = mysqli_query($con, $query);
         // getting by status
-        $query_status = "SELECT * FROM content_service_gate.attribute_option
+        $query_status = "SELECT attribute_option FROM content_service_gate.attribute_option
         where attribute_id= 38 and attribute_option not in ('cancel','routine work','monitor','In-review','close')" or die("Error:" . mysqli_error($con));
         $result_status = mysqli_query($con, $query_status);
         $i=0;
         while($row_status = mysqli_fetch_array($result_status)) {
-        if($i>0){
-          $ts_board_col_left = "ts-board-col-left";
-        }
+        if($i>0){$ts_board_col_left = "ts-board-col-left";}
         echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'"  >
         <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
         listing_ticket_card( $result,$row_status["attribute_option"]);
