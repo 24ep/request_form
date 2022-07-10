@@ -129,7 +129,7 @@ function listing_ticket_card($row ,$status){
           where (".$filter.") and lower(ticket.status) not in ('cancel','routine work','monitor','in-review','close','archive')
           order by ".$sort_de_status."  limit ".$ts_command_limit;
           $result = mysqli_query($con, $query);
-          
+          $row = mysqli_fetch_array($result);
         // getting by status
         $query_status = "SELECT attribute_option FROM content_service_gate.attribute_option
         where attribute_id= 38 and attribute_option not in ('cancel','routine work','monitor','In-review','close')" or die("Error:" . mysqli_error($con));

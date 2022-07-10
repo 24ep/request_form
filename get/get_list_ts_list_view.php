@@ -94,7 +94,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         on pb.prefix  = ticket.ticket_template
         -- and ticket.status not in ('archive','cancel')
         where ".$ts_filter."  
-         order by ticket.status desc ,".$sort_de_status."  limit ".$ts_command_limit;
+         order by ticket.status desc ,".$sort_de_status."  limit 300";
         $result = mysqli_query($con, $query);
         echo "<div class='table-responsive-sm'>
                 <table id='ts_board_view_list' class='table table-hover align-middle'>";
