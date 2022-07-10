@@ -103,7 +103,7 @@ function listing_ticket_card($row ,$status){
          echo "</ul>";
         }
          // query all status
-          $sort_de_status="ticket.status ASC , -ticket.effective_date DESC ,ticket.case_officer ASC, ticket.id ASC";
+          $sort_de_status="ticket.status DESC , -ticket.effective_date DESC ,ticket.case_officer ASC, ticket.id ASC";
           $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
           mysqli_query($con, "SET NAMES 'utf8' ");
           $query = "SELECT ticket.id as id,
@@ -127,7 +127,7 @@ function listing_ticket_card($row ,$status){
           Left join all_in_one_project.project_bucket pb
           on pb.prefix  = ticket.ticket_template
           where (".$filter.") and lower(ticket.status) not in ('cancel','routine work','monitor','in-review','close','archive')
-          order by ".$sort_de_status."  limit ".$ts_command_limit;
+          order by ".$sort_de_status."  limit 300";
           $result = mysqli_query($con, $query);
           $row = mysqli_fetch_array($result);
         // getting by status
