@@ -29,10 +29,10 @@ $filter .= "lower(ticket.id) like lower('%".$_SESSION["ts_query_input"]."%') or 
 $filter .= "lower(ticket.title) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]."%') ";
 function listing_ticket_card($result ,$status){
+  $row  = "";
         echo "<ul id='ul_".$status."' style='padding:15px'>";
           while( $row = mysqli_fetch_array($result)) {
-            echo strtolower($row['status']);
-            echo strtolower($status);
+      
             if(strtolower($row['status'])==strtolower($status)){
                 ?>
 <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
