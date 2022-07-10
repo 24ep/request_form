@@ -127,7 +127,7 @@ function listing_ticket_card($result ,$status){
                 FROM all_in_one_project.content_request as ticket
                 Left join all_in_one_project.project_bucket pb
                 on pb.prefix  = ticket.ticket_template
-                where ".$filter." 
+                where (".$filter.") and ticket.status not in ('cancel','routine work','monitor','In-review','close','archive')
                 order by ".$sort_de_status."  limit ".$ts_command_limit;
                 $result = mysqli_query($con, $query);
         // getting by status
