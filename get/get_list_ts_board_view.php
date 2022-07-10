@@ -132,7 +132,7 @@ function listing_ticket_card($result_after_fetch ,$status){
           on pb.prefix  = ticket.ticket_template
           where (".$filter.") and lower(ticket.status) not in ('cancel','routine work','monitor','in-review','close','archive') 
           order by ".$sort_de_status."  limit 150";
-          $result = mysqli_query($con, $query);
+         
        
         // getting by status
         $query_status = "SELECT attribute_option FROM content_service_gate.attribute_option
@@ -143,6 +143,7 @@ function listing_ticket_card($result_after_fetch ,$status){
           if($i>0){$ts_board_col_left = "ts-board-col-left";}
           echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'"  >
           <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
+          $result = mysqli_query($con, $query);
             $result_after_fetch =$result;
             listing_ticket_card( $result_after_fetch,$row_status["attribute_option"]);
           // list_ts_non_status("(".$filter.") and ticket.status = '".$row_status["attribute_option"]."'",$ts_command_limit  ,$row_status["attribute_option"]);
