@@ -100,8 +100,6 @@ function listing_ticket_card($result ,$status){
     </div>
 </li>
 <?php
-            }else{
-              echo $status."=".$row["status"];
             }
           }
          echo "</ul>";
