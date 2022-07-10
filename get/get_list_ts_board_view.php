@@ -28,10 +28,10 @@ $filter = "";
 $filter .= "lower(ticket.id) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.title) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]."%') ";
-function listing_ticket_card($result ,$status){
+function listing_ticket_card($result_after_fetch ,$status){
   $row  = "";
         echo "<ul id='ul_".$status."' style='padding:15px'>";
-          while( $row = mysqli_fetch_array($result)) {
+          while( $row = mysqli_fetch_array($result_after_fetch)) {
       
             if(strtolower($row['status'])==strtolower($status)){
                 ?>
@@ -103,7 +103,7 @@ function listing_ticket_card($result ,$status){
             }
           }
          echo "</ul>";
-         unset($result);
+         unset($result_after_fetch);
          unset($status);
         }
          // query all status
