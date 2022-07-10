@@ -191,12 +191,3 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         mysqli_close($con_status);
         ?>
 
-<script>
-  $('#ts_board_view_list').DataTable({
-        lengthMenu: [
-            [10,20, 50, 100, -1],
-            [10, 20,50, 100, 'All'],
-        ],
-    });
-
-</script>

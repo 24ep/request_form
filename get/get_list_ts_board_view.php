@@ -28,25 +28,25 @@ $filter = "";
 $filter .= "lower(ticket.id) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.title) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]."%') ";
-function listing_ticket_card($row ,$status){
+function listing_ticket_card($result ,$status){
         echo "<ul id='ul_".$status."' style='padding:15px'>";
-          while( $row ) {
+          while( $row = mysqli_fetch_array($result)) {
             if(strtolower($row['status'])==strtolower($status)){
                 ?>
-                  <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
-                      onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
-                      data-bucket="<?php echo $row['prefix'];?>" data-cr-status="<?php echo $row['status'];?>"
-                      data-cr-request-for="<?php echo $row['ticket_type'];?>" data-cr-id="<?php echo $row['id'];?>"
-                      data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
-                      data-cr-title="<?php echo strtolower($row['title']);?>" aria-controls="offcanvasExample">
-                      <div class="row" style="padding-right: 0px;">
-                          <div class="col-10" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
-                              data-bs-toggle="offcanvas" aria-controls="offcanvasExample">
-                              <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
-                          </div>
-                          <div class="col-2" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
-                              data-bs-toggle="offcanvas" aria-controls="offcanvasExample">
-                              <?php
+<li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
+    onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
+    data-bucket="<?php echo $row['prefix'];?>" data-cr-status="<?php echo $row['status'];?>"
+    data-cr-request-for="<?php echo $row['ticket_type'];?>" data-cr-id="<?php echo $row['id'];?>"
+    data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
+    data-cr-title="<?php echo strtolower($row['title']);?>" aria-controls="offcanvasExample">
+    <div class="row" style="padding-right: 0px;">
+        <div class="col-10" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
+            data-bs-toggle="offcanvas" aria-controls="offcanvasExample">
+            <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
+        </div>
+        <div class="col-2" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
+            data-bs-toggle="offcanvas" aria-controls="offcanvasExample">
+            <?php
                                 if($row["contain_content"] == 'Yes'){
                                     echo '<ion-icon style="color:#41baf0!important" name="pencil-outline"></ion-icon>';
                                 }
@@ -60,12 +60,12 @@ function listing_ticket_card($row ,$status){
                                    echo '<ion-icon style="color:#41baf0!important" name="receipt-outline"></ion-icon>';
                                 }
                               ?>
-                          </div>
-                      </div>
-                      <hr style="margin: 5px;color: #6c757d8c;">
-                      <div class="row" style="margin-bottom: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
-                          data-bs-toggle="offcanvas">
-                          <?php
+        </div>
+    </div>
+    <hr style="margin: 5px;color: #6c757d8c;">
+    <div class="row" style="margin-bottom: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>)"
+        data-bs-toggle="offcanvas">
+        <?php
                                                         $ef_badge = "";
                                                         $image_profile = "";
                                                         if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
@@ -95,8 +95,8 @@ function listing_ticket_card($row ,$status){
                                                             echo '</div>';
                                                         }
                                                     ?>
-                      </div>
-                  </li>
+    </div>
+</li>
 <?php
             }
           }
@@ -129,7 +129,7 @@ function listing_ticket_card($row ,$status){
           where (".$filter.") and lower(ticket.status) not in ('cancel','routine work','monitor','in-review','close','archive') 
           order by ".$sort_de_status."  limit 300";
           $result = mysqli_query($con, $query);
-          $row = mysqli_fetch_array($result);
+         
         // getting by status
         $query_status = "SELECT attribute_option FROM content_service_gate.attribute_option
         where attribute_id= 38 and attribute_option not in ('cancel','routine work','monitor','In-review','close')" or die("Error:" . mysqli_error($con));
@@ -139,7 +139,7 @@ function listing_ticket_card($row ,$status){
         if($i>0){$ts_board_col_left = "ts-board-col-left";}
         echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'"  >
         <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
-        listing_ticket_card( $row,$row_status["attribute_option"]);
+        listing_ticket_card( $result,$row_status["attribute_option"]);
         // list_ts_non_status("(".$filter.") and ticket.status = '".$row_status["attribute_option"]."'",$ts_command_limit  ,$row_status["attribute_option"]);
         echo '</div>';
         $i++;
