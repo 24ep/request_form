@@ -103,7 +103,8 @@ function listing_ticket_card($result ,$status){
             }
           }
          echo "</ul>";
-         $result = "";
+         unset($result);
+         unset($status);
         }
          // query all status
           $sort_de_status="ticket.status DESC , -ticket.effective_date DESC ,ticket.case_officer ASC, ticket.id ASC";
