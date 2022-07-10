@@ -121,7 +121,7 @@
                         if($_GET["reply"]<>""){
                             echo "<div class='alert alert-danger' role='alert'><ion-icon name='alert-circle-outline' style='border-radius: 0px;;margin-right: 10px;
                                     font-size: 25px;
-                                    position: absolute;'></ion-icon><strong style='padding-left: 30px;'>".$_GET["reply"]."</div>";
+                                    position: absolute;'></ion-icon><strong style='padding-left: 30px;'>".htmlspecialchars($_GET["reply"],  ENT_QUOTES, 'UTF-8')."</div>";
                         }
                         ?>
     <div class="container-sm shadow p p-3 mb-5 bg-white rounded">
@@ -132,19 +132,19 @@
                     <div class="col-5">
                         <label for="firstname">Firstname</label>
                         <input type="text" class="form-control form-control-sm"
-                            value="<?php echo $_GET["firstname"]; ?>" required id="firstname" onchange="Auth('check');"
+                            value="<?php echo htmlspecialchars($_GET["firstname"],  ENT_QUOTES, 'UTF-8'); ?>" required id="firstname" onchange="Auth('check');"
                             name="firstname" placeholder="">
                         <small id="namehelp" class="form-text text-muted">กรุณาระบุเป็นภาษาอังกฤษ</small>
                     </div>
                     <div class="col-5">
                         <label for="lastname">Lastname</label>
-                        <input type="text" class="form-control form-control-sm" value="<?php echo $_GET["lastname"]; ?>"
+                        <input type="text" class="form-control form-control-sm" value="<?php echo htmlspecialchars($_GET["lastname"],  ENT_QUOTES, 'UTF-8'); ?>"
                             required id="lastname" onchange="Auth('check');" name="lastname" placeholder="">
                         <small id="namehelp" class="form-text text-muted">กรุณาระบุเป็นภาษาอังกฤษ</small>
                     </div>
                     <div class="col-2">
                         <label for="nickname">Nickname</label>
-                        <input type="text" class="form-control form-control-sm" value="<?php echo $_GET["nickname"]; ?>"
+                        <input type="text" class="form-control form-control-sm" value="<?php echo htmlspecialchars($_GET["nickname"],  ENT_QUOTES, 'UTF-8'); ?>"
                             required id="nickname" onchange="Auth('check');" name="nickname" placeholder="">
                     </div>
                 </div>
@@ -152,7 +152,7 @@
                     <div class="col-12">
                         <label for="username">Username</label>
                         <input type="username" class="form-control form-control-sm"
-                            value="<?php echo $_GET["username"]; ?>" required id="username" onchange="Auth('check');"
+                            value="<?php echo htmlspecialchars($_GET["username"],  ENT_QUOTES, 'UTF-8'); ?>" required id="username" onchange="Auth('check');"
                             name="username" placeholder="">
                         <small id="namehelp" class="form-text text-muted">แนะนำให้ใช้ ชื่ออีเมลแบบตัดโดเมนออก เช่น
                             username@central.co.th = username</small>
@@ -162,7 +162,7 @@
                     <div class="col-6">
                         <label for="password">Password</label>
                         <input type="password" class="form-control form-control-sm"
-                            value="<?php echo $_GET["password"]; ?>" required id="password" onchange="Auth('check');"
+                            value="<?php echo htmlspecialchars($_GET["password"],  ENT_QUOTES, 'UTF-8'); ?>" required id="password" onchange="Auth('check');"
                             name="password" placeholder="">
                         <small id="passworderror_dont_match" style="visibility:hidden;color: #dc3545!important"
                             class="form-text text-muted">
@@ -172,7 +172,7 @@
                     <div class="col-6">
                         <label for="confirm_password">Confirm Password</label>
                         <input type="password" class="form-control form-control-sm"
-                            value="<?php echo $_GET["password"]; ?>" required id="confirm_password"
+                            value="<?php echo htmlspecialchars($_GET["password"],  ENT_QUOTES, 'UTF-8'); ?>" required id="confirm_password"
                             onchange="Auth('check');" name="confirm_password" placeholder="">
                         <small id="passworderror_dont_match" style="visibility:hidden;color: #dc3545!important"
                             class="form-text text-muted">
@@ -184,13 +184,13 @@
                     <div class="col-6">
                         <label for="email">E-mail for work</label>
                         <input type="email" class="form-control form-control-sm"
-                            value="<?php echo $_GET["workemail"]; ?>" required id="work_email" onchange="check_value();"
+                            value="<?php echo htmlspecialchars($_GET["workemail"],  ENT_QUOTES, 'UTF-8'); ?>" required id="work_email" onchange="check_value();"
                             name="work_email" placeholder="xxxxxxxx@central.co.th">
                     </div>
                     <div class="col-6">
                         <label for="office_tell">Tel.</label>
                         <input type="int" class="form-control form-control-sm"
-                            value="<?php echo $_GET["office_tell"]; ?>" required id="office_tell"
+                            value="<?php echo htmlspecialchars($_GET["office_tell"],  ENT_QUOTES, 'UTF-8'); ?>" required id="office_tell"
                             onchange="check_value();" name="office_tell">
                     </div>
                 </div>

@@ -168,7 +168,7 @@ if (!$_SESSION["login_csg"]){
                         <div style="    margin-left: 30px;">
                             <div class="tab-content" id="myTabContent">
                                 <?php if($_GET["result"]<>""){
-                                    echo $_GET["result"];
+                                    echo htmlspecialchars($_GET["result"],  ENT_QUOTES, 'UTF-8');
                                 }
                             ?>
                                 <div class="row align-items-center" style="margin:20px">
@@ -281,7 +281,7 @@ if (!$_SESSION["login_csg"]){
                         <div class="tab-content" id="myTabContent">
                             <div class="row align-items-center" style="margin:20px">
                                 <div class="container " style="max-width: 1240px;">
-                                    <?php echo $_GET["result_cr"]; ?>
+                                    <?php echo  htmlspecialchars($_GET["result_cr"],  ENT_QUOTES, 'UTF-8'); ?>
                                     <div class="btn-group">
                                         <button onclick="filter_cr_ticket('Pending')" class="btn btn-secondary"
                                             aria-current="page">

@@ -53,14 +53,14 @@
                                     <ion-icon name='checkmark-done-circle-outline' style='border-radius: 0px;;margin-right: 10px;
                                     font-size: 25px;
                                     position: absolute;'>
-                                    </ion-icon><strong style='padding-left: 30px;'>".$_GET["respond"]."</strong>
+                                    </ion-icon><strong style='padding-left: 30px;'>".htmlspecialchars($_GET["respond"],  ENT_QUOTES, 'UTF-8')."</strong>
                                     </div>";
                                     }else{
                                         echo "<div class='alert alert-danger' role='alert'>
                                         <ion-icon name='alert-circle-outline' style='border-radius: 0px;;margin-right: 10px;
                                         font-size: 25px;
                                         position: absolute;'>
-                                        </ion-icon><strong style='padding-left: 30px;'>".$_GET["respond"]."</strong>
+                                        </ion-icon><strong style='padding-left: 30px;'>".htmlspecialchars($_GET["respond"],  ENT_QUOTES, 'UTF-8')."</strong>
                                         </div>";
                                     }
                                 }
@@ -80,7 +80,7 @@
                     <strong>Login</strong>
                 </h2>
                 <form
-                    action="https://content-service-gate.cdse-commercecontent.com/base/action/action_login.php?redirect=<?php echo $_GET["redirect"]; ?>&id=<?php echo $_GET["id"]; ?>"
+                    action="https://content-service-gate.cdse-commercecontent.com/base/action/action_login.php?redirect=<?php echo htmlspecialchars($_GET["redirect"],  ENT_QUOTES, 'UTF-8'); ?>&id=<?php echo htmlspecialchars($_GET["id"],  ENT_QUOTES, 'UTF-8'); ?>"
                     method="POST">
                     <div class="form-group">
                         <div class="form-floating">

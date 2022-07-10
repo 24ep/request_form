@@ -149,7 +149,7 @@ echo "ID NJ-".$id."<br>";
 echo '<h5>Reply Back - need more infomation</h5>';
 echo '<form action="/base/action/action_submit_reply_need_more.php" method="POST">';
 echo '<div class="form-group">
-        <input type="hidden" id="id" name="id" value='.$id.'>
+        <input type="hidden" id="id" name="id" value='.htmlspecialchars($id,  ENT_QUOTES, 'UTF-8').'>
         <textarea class="form-control" id="need_more_info_note" name="need_more_info_note" rows="8"></textarea>
         <button type="submit" id="" name=""  class="btn btn-dark" style="margin-top:20px;right:0px">reply</button>
       </div>';
