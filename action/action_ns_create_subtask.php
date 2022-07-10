@@ -4,7 +4,6 @@
     include('action_send_line_api.php');
 $id = $_POST["id"];
 $sku_task_set = $_POST["sku_task_set"];
-echo '<script>console.log("'.$id.'|'.$sku_task_set.'");</script>';
 $array_number_subtask = explode(",",$sku_task_set );
 //loop insert new to new ticket
 foreach ($array_number_subtask as $number_of_sku) {
@@ -61,7 +60,7 @@ foreach ($array_number_subtask as $number_of_sku) {
                 add_participant($last_id,"add_new_job");
                 insert_log("create new sub-ticket (".$last_id.")","add_new_job",$_POST['id']);
                 insert_log("create new sub-ticket (".$last_id.")","add_new_job",$last_id);
-                echo '<script>Notiflix.Notify.success("NS-'.$_POST['id'].' have been create new sub-ticket ('.$last_id.')");</script>';
+                echo '<script>Notiflix.Notify.success("NS-'.htmlspecialchars($_POST['id'],  ENT_QUOTES, 'UTF-8').' have been create new sub-ticket ('.htmlspecialchars($last_id,  ENT_QUOTES, 'UTF-8').')");</script>';
 
 
     }else{

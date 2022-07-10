@@ -50,7 +50,7 @@
         echo "<script>
         Notiflix.Report.failure(
             'Failure',
-            'Error: " . $sql . "<br/><br/>" . $con->error.",
+            'Error: " . htmlspecialchars($sql ,ENT_QUOTES, 'UTF-8') . "<br/><br/>" .htmlspecialchars( $con->error,ENT_QUOTES, 'UTF-8').",
             'Okay',
             )</script>;
         ";

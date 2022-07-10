@@ -1,8 +1,6 @@
 <?php
 function bb_confirm_ticket($id ,$user_id,$detail,$status){
-
     $curl = curl_init();
-     
     curl_setopt_array($curl, array(
       CURLOPT_URL => 'https://api.line.me/v2/bot/message/push',
       CURLOPT_RETURNTRANSFER => true,
@@ -78,7 +76,6 @@ function bb_confirm_ticket($id ,$user_id,$detail,$status){
         'Authorization: Bearer J/R5foEYEGdmDL85DJBMdlMfOos7JOKVlqzd4VOE3nXpT8OtSoc6On+3wNH4bZ6GU+4riP4v562ixfwVUwWdDmHae3qbVBxKUMrKcgoBFbGkrpX+QttoamNeNodqY5aXN3hXijql94zqPLAW7d+JgQdB04t89/1O/w1cDnyilFU='
       ),
     ));
-
 }
  $id = $_POST['id'];
  $value_change = $_POST['value_change'];
@@ -143,25 +140,20 @@ session_start();
         add_participant($_POST['id'],"content_request");
         insert_log("update ticket \n ".$value_name." = ".$value_change ,"content_request",$_POST['id']);
         echo '<script>
-         document.getElementById("toast_ms").innerHTML =  "Updated Ticket ID '.$ticket_template.'-'.$_POST['id'].'";
+         document.getElementById("toast_ms").innerHTML =  "Updated Ticket ID '.htmlspecialchars($ticket_template,  ENT_QUOTES, 'UTF-8').'-'.htmlspecialchars($_POST['id'],  ENT_QUOTES, 'UTF-8').'";
          var toastLiveExample = document.getElementById("liveToast_cr");
          var toast = new bootstrap.Toast(toastLiveExample);
          toast.show();</script>';
           if($value_name=='status' and $value_change<>'Close' and $value_change<>'Cancel'){
             echo '<script>
-           
              var child_c = document.getElementById("crid_'.$_POST["id"].'");
              var parent_c = document.getElementById("ul_'.$value_change.'");
              parent_c.appendChild(child_c);	
-
             </script>';
           }elseif($value_name=='status' and ( $value_change=='Close' or $value_change=='Cancel') ){
             echo '<script>
-           
-            var child_c = document.getElementById("crid_'.$_POST["id"].'");
-            
+            var child_c = document.getElementById("crid_'.htmlspecialchars($_POST["id"],  ENT_QUOTES, 'UTF-8').'");
             child_c.parentNode.removeChild(child_c);
-
            </script>';
           }
 	}else{
@@ -169,7 +161,7 @@ session_start();
         echo "<script>
         Notiflix.Report.failure(
             'Failure',
-            'Error: " . $sql . "<br/><br/>" . $con->error.",
+            'Error: " . htmlspecialchars($sql,  ENT_QUOTES, 'UTF-8') . "<br/><br/>" . htmlspecialchars($con->error,  ENT_QUOTES, 'UTF-8').",
             'Okay',
             )</script>;
         ";

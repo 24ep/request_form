@@ -37,7 +37,7 @@ while($row = mysqli_fetch_array($result)) {
         </label>
         <span id="file-chosen_ms"> </span>
     </div>
-    <button type="button" class="btn btn-outline-primary btn-sm" onClick="comment_ms_id_with_file(<?php echo  $_POST['id']; ?>)">Add comment</button>
+    <button type="button" class="btn btn-outline-primary btn-sm" onClick="comment_ms_id_with_file(<?php echo  htmlspecialchars($_POST['id'],  ENT_QUOTES, 'UTF-8'); ?>)">Add comment</button>
     </div>
     <?php
     echo '</div>';
