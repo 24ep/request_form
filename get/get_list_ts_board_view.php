@@ -136,12 +136,10 @@ function listing_ticket_card($result ,$status){
                 where ".$filter."
                 order by ".$sort_de_status."  limit ".$ts_command_limit;
                 $result = mysqli_query($con, $query);
-                mysqli_close($con);
         // getting by status
-        $con_status= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
         $query_status = "SELECT * FROM content_service_gate.attribute_option
         where attribute_id= 38 and attribute_option not in ('cancel','routine work','monitor','In-review','close')" or die("Error:" . mysqli_error($con));
-        $result_status = mysqli_query($con_status, $query_status);
+        $result_status = mysqli_query($con, $query_status);
         $i=0;
         while($row_status = mysqli_fetch_array($result_status)) {
         if($i>0){
@@ -154,5 +152,5 @@ function listing_ticket_card($result ,$status){
         echo '</div>';
         $i++;
         }
-mysqli_close($con_status);
+mysqli_close($con);
 ?>
