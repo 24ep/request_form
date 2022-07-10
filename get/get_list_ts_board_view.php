@@ -100,6 +100,8 @@ function listing_ticket_card($result ,$status){
     </div>
 </li>
 <?php
+            }else{
+              echo $status."=".$row["status"];
             }
           }
          echo "</ul>";
@@ -139,13 +141,13 @@ function listing_ticket_card($result ,$status){
         $result_status = mysqli_query($con, $query_status);
         $i=0;
         while($row_status = mysqli_fetch_array($result_status)) {
-        if($i>0){$ts_board_col_left = "ts-board-col-left";}
-        echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'"  >
-        <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
-        listing_ticket_card( $result,$row_status["attribute_option"]);
-        // list_ts_non_status("(".$filter.") and ticket.status = '".$row_status["attribute_option"]."'",$ts_command_limit  ,$row_status["attribute_option"]);
-        echo '</div>';
-        $i++;
+          if($i>0){$ts_board_col_left = "ts-board-col-left";}
+          echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'"  >
+          <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
+            listing_ticket_card( $result,$row_status["attribute_option"]);
+          // list_ts_non_status("(".$filter.") and ticket.status = '".$row_status["attribute_option"]."'",$ts_command_limit  ,$row_status["attribute_option"]);
+          echo '</div>';
+          $i++;
         }
 mysqli_close($con);
 ?>
