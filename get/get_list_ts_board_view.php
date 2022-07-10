@@ -28,9 +28,9 @@ $filter = "";
 $filter .= "lower(ticket.id) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.title) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]."%') ";
-function listing_ticket_card($result ,$status){
+function listing_ticket_card($row ,$status){
         echo "<ul id='ul_".$status."' style='padding:15px'>";
-          while( $row = mysqli_fetch_array($result)) {
+          while( $row ) {
             if(strtolower($row['status'])==strtolower($status)){
                 ?>
                   <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
@@ -129,6 +129,7 @@ function listing_ticket_card($result ,$status){
                 where (".$filter.") and ticket.status not in ('cancel','routine work','monitor','In-review','close','archive')
                 order by ".$sort_de_status."  limit ".$ts_command_limit;
                 $result = mysqli_query($con, $query);
+                $row= mysqli_fetch_array($result);
         // getting by status
         $query_status = "SELECT attribute_option FROM content_service_gate.attribute_option
         where attribute_id= 38 and attribute_option not in ('cancel','routine work','monitor','In-review','close')" or die("Error:" . mysqli_error($con));
@@ -138,7 +139,7 @@ function listing_ticket_card($result ,$status){
         if($i>0){$ts_board_col_left = "ts-board-col-left";}
         echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'"  >
         <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
-        listing_ticket_card( $result,$row_status["attribute_option"]);
+        listing_ticket_card( $row,$row_status["attribute_option"]);
         // list_ts_non_status("(".$filter.") and ticket.status = '".$row_status["attribute_option"]."'",$ts_command_limit  ,$row_status["attribute_option"]);
         echo '</div>';
         $i++;
