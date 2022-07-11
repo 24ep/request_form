@@ -238,7 +238,7 @@ function submit_cr_form(id) {
 <script>
 function attaction_alert_cr(id) {
     var cr_ticket_type = document.getElementById("cr_ticket_type").value;
-    if (cr_ticket_type == "System Development") {
+    if (cr_ticket_type == "System development") {
         Notiflix.Report.warning(
             'Dear team',
             'Please note : if the issue that you creating is duplicate with the current ticket are opening , pls update that case on current ticket , <strong>do not open ticket again</strong><br>and please help understand some issue cant solve in urgently, please also short-fixing by yourself first',
