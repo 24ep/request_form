@@ -121,7 +121,11 @@
                         send_ms_team("CR-".$last_id,"Created new request (CR)",$_SEESION["username"]." ได้ทำการส่ง Content Request\n• Ticket ID : CR-".$last_id."<br>".$title);
                     }
                 $result='Your request have been create <strong> ID '.$last_id.'';
-                echo $result;
+                echo " <script>Notiflix.Report.success(
+                    'Success',
+                     '".$result."',
+                    'Okay',
+                    );</script>";
             }else{
                 echo "<script>
                 Notiflix.Report.failure(
