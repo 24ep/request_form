@@ -225,7 +225,19 @@ function submit_cr_form(id) {
         success: function(data) {
             // $('#call_ticket_comment_ins').html(data);
             // Notiflix.Notify.success(data);
-            data;
+            failure
+            if(data.startsWith('Error')){
+                Notiflix.Report.failure(
+                    'Error',
+                    data,
+                    'Okay',
+                    );
+            }
+                Notiflix.Report.success(
+                    'Success',
+                    data,
+                    'Okay',
+                    );
         }
     });
 }

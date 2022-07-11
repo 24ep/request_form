@@ -121,18 +121,10 @@
                         send_ms_team("CR-".$last_id,"Created new request (CR)",$_SEESION["username"]." ได้ทำการส่ง Content Request\n• Ticket ID : CR-".$last_id."<br>".$title);
                     }
                 $result='Your request have been create <strong> ID '.$last_id.'';
-                echo "Notiflix.Report.success(
-                    'Success',
-                     '".$result."',
-                    'Okay',
-                    );";
+                echo $result;
             }else{
-                echo "Notiflix.Report.failure(
-                    'Failure',
-                    'Error: " . $sql . "<br/><br/>" . $con->error."',
-                    'Okay',
-                    );
-                ";
+                echo 'Error: " . $sql . "<br/><br/>" . $con->error."';
+                
             }
             mysqli_close($con);
    // header( "location: https://cdse-commercecontent.com/base/job_manage.php");
