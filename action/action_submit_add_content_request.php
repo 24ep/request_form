@@ -121,18 +121,17 @@
                         send_ms_team("CR-".$last_id,"Created new request (CR)",$_SEESION["username"]." ได้ทำการส่ง Content Request\n• Ticket ID : CR-".$last_id."<br>".$title);
                     }
                 $result='Your request have been create <strong> ID '.$last_id.'';
-                echo " <script>Notiflix.Report.success(
+                echo "Notiflix.Report.success(
                     'Success',
                      '".$result."',
                     'Okay',
-                    );</script>";
+                    );";
             }else{
-                echo "<script>
-                Notiflix.Report.failure(
+                echo "Notiflix.Report.failure(
                     'Failure',
                     'Error: " . $sql . "<br/><br/>" . $con->error."',
                     'Okay',
-                    )</script>;
+                    );
                 ";
             }
             mysqli_close($con);
