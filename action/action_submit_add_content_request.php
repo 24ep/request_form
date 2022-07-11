@@ -130,7 +130,7 @@
                 echo "<script>
                 Notiflix.Report.failure(
                     'Failure',
-                    'Error: " . $sql . "<br/><br/>" . $con->error.",
+                    'Error: " . $sql . "<br/><br/>" . $con->error."',
                     'Okay',
                     )</script>;
                 ";
