@@ -37,17 +37,18 @@ function listing_ticket_card($result_after_fetch ,$status){
                 ?>
 <li class="row shadow-sm rounded md-3 p-2 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
     onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
+    data-card="#detail_cr"
     data-bucket="<?php echo $row['prefix'];?>" data-cr-status="<?php echo $row['status'];?>"
     data-cr-request-for="<?php echo $row['ticket_type'];?>" data-cr-id="<?php echo $row['id'];?>"
     data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
     data-cr-title="<?php echo strtolower($row['title']);?>" aria-controls="offcanvasExample">
     <div class="row" style="padding-right: 0px;">
         <div class="col-10" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
-            data-bs-toggle="offcanvas" aria-controls="offcanvasExample">
+            data-bs-toggle="offcanvas"data-bs-target="#detail_cr" aria-controls="offcanvasExample">
             <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
         </div>
         <div class="col-2" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
-            data-bs-toggle="offcanvas" aria-controls="offcanvasExample">
+            data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample">
             <?php
                                 if($row["contain_content"] == 'Yes'){
                                     echo '<ion-icon style="color:#41baf0!important" name="pencil-outline"></ion-icon>';
@@ -66,7 +67,7 @@ function listing_ticket_card($result_after_fetch ,$status){
     </div>
     <hr style="margin: 5px;color: #6c757d8c;">
     <div class="row" style="margin-bottom: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>)"
-        data-bs-toggle="offcanvas">
+        data-bs-toggle="offcanvas" data-bs-target="#detail_cr">
         <?php
                                                         $ef_badge = "";
                                                         $image_profile = "";
