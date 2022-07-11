@@ -232,12 +232,13 @@ function submit_cr_form(id) {
                     data,
                     'Okay',
                     );
-            }
-                Notiflix.Report.success(
+            }else{
+                            Notiflix.Report.success(
                     'Success',
                     data,
                     'Okay',
                     );
+                }
         }
     });
 }
