@@ -237,7 +237,7 @@ function attaction_alert_cr(id) {
     if (cr_ticket_type == "System development") {
         Notiflix.Report.warning(
             'Attention',
-            'Please note : if the issue that you creating is duplicate with the current ticket are opening , pls update that case on current ticket , <strong>do not open ticket again</strong></br></br>and please help understand some issue cant solve in urgently, please also short-fixing by yourself first',
+            'Please note : if the issue that you creating is duplicate with the current ticket are opening , pls update that case on current ticket , * do not open ticket again *<br/><br/>and please help understand some issue cant solve in urgently, please also short-fixing by yourself first',
             'Understood',
             function cb() {
                 submit_cr_form(id);
