@@ -238,9 +238,16 @@ function submit_cr_form(id) {
 <script>
 function attaction_alert_cr(id) {
     var cr_ticket_type = document.getElementById("cr_ticket_type").value;
-    if (cr_ticket_type != "Datapump Add Source" && cr_ticket_type != "Datapump Delete Source") {
-        submit_cr_form(id);
-    } else {
+    if (cr_ticket_type == "System Development") {
+        Notiflix.Report.warning(
+            'Dear team',
+            'Please note : if the issue that you creating is duplicate with the current ticket are opening , pls update that case on current ticket , <strong>do not open ticket again</strong><br>and please help understand some issue cant solve in urgently, please also short-fixing by yourself first',
+            'Understood',
+            function cb() {
+                submit_cr_form(id);
+                },
+            );
+    } else if (cr_ticket_type == "Datapump Add Source" || cr_ticket_type == "Datapump Delete Source"){
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn btn-success m-2',
@@ -280,6 +287,8 @@ function attaction_alert_cr(id) {
                 // )
             }
         })
+    }else{
+        submit_cr_form(id);
     }
 
 

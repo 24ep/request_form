@@ -108,9 +108,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                     <th>Ticket</th>
                 </tr>";
           while( $row = mysqli_fetch_array($result)) {
-          
                 ?>
-                
             <!-- ui -->
             <tr  
             onclick="cr_id_toggle(<?php echo $row['id'];?>) " 
