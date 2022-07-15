@@ -718,7 +718,7 @@ function search_cr_data() {
     var input = document.getElementById('ts_command').value.toLowerCase();;
     if (input != "") {
         //hide all card
-        var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
+        var SearchInputQuery = document.querySelectorAll('[data-card="#detail_cr"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
             card.className += " cr-search-hide";
@@ -747,7 +747,7 @@ function search_cr_username() {
     var username = document.getElementById('ts_username').value.toLowerCase();;
     if (username != "") {
         //hide all card
-        var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
+        var SearchInputQuery = document.querySelectorAll('[data-card="#detail_cr"]');
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-username-hide(?!\S)/g, '');
             card.className += " cr-username-hide";
