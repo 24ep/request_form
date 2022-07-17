@@ -365,7 +365,7 @@ ion-icon {
                                             },
                                         },
                                         data: 
-                                            <?php print_r($brand_editor); ?>
+                                            <?php echo $brand_editor; ?>
                                         
                                     }
 
