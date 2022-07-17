@@ -8,7 +8,7 @@ $fileType = $_FILES['file']['type'];
 /* Choose where to save the uploaded file */
 $location = "../../attachment/brand_editor/".$filename;
 /* Save the uploaded file to the local filesystem */
-
+$extension = pathinfo($file_name, PATHINFO_EXTENSION);
 if ($fileSize > 2000000) {
     $errors[] = "You cannot upload this file because its size exceeds the maximum limit of 2 MB.";
     echo "<script>
@@ -27,7 +27,7 @@ if (empty($errors)) {
     $didUpload = move_uploaded_file($fileTmpName, $location);
 
     if ($didUpload) {
-        $arr=array("success"=>1,"file"=>array("url"=>"https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/".$filename,"size"=>$fileSize,"name"=>$filename,"title"=>$filename));
+        $arr=array("success"=>1,"file"=>array("url"=>"https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/".$extension,"size"=>$fileSize,"name"=>$filename,"title"=>$filename,"extension"=>$extension ));
         echo json_encode($arr);
    
 
