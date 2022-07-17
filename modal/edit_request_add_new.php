@@ -319,12 +319,7 @@ ion-icon {
                                         tools: {
                                             header: {
                                                 class: Header,
-                                                config: {
-                                                    placeholder: 'Enter a header',
-                                                    levels: [2, 3, 4],
-                                                    defaultLevel: 3
-                                                },
-                                                shortcut: 'CMD+SHIFT+H'
+                                                inlineToolbar: ['link']
                                             },
                                             list: {
                                                 class: List,
@@ -365,17 +360,22 @@ ion-icon {
                                                 class: Marker,
                                                 shortcut: 'CMD+SHIFT+M'
                                             },
+                                            <?php mkdir('../../attachment/brand_editor/'.$brand, 0777, true);?>
                                             image: {
                                                 class: ImageTool,
                                                 config: {
-                                                    <?php mkdir('../../attachment/brand_editor/'.$brand, 0777, true);?>
-                                                    endpoints: '../../attachment/brand_editor'
+                                                    endpoints: {
+                                                        byFile: 'http://localhost:8008/uploadFile', // Your backend file uploader endpoint
+                                                        byUrl: 'http://localhost:8008/fetchUrl', // Your endpoint that provides uploading by Url
+                                                    }
+
                                                 }
+
                                             },
                                             attaches: {
                                                 class: AttachesTool,
                                                 config: {
-                                                    endpoint: '../../attachment/brand_editor'
+                                                    endpoint: 'http://localhost:8008/uploadFile'
                                                 }
                                             },
                                         },
