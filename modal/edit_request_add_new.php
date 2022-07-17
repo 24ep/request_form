@@ -297,18 +297,20 @@ ion-icon {
                                 <script>
                                 // editor.destroy();
                                 var editor = new EditorJS({
-                                    placeholder: 'Let`s write an awesome story!',
-                                    onReady: () => {console.log('Editor.js is ready to work!')},
-                                    onChange: (api, event) => {
-                                        //console.log('<?php //echo $_SESSION['username'];?>have been updated a content in brand note', event)
-                                        editor.save().then((outputData) => {
-                                            // console.log('Article data: ', outputData)
-                                            outputData = JSON.stringify(outputData, null, 4);
-                                            update_brand_note(outputData,'<?php echo $brand; ?>');
-                                        }).catch((error) => {
-                                            console.log('Saving failed: ', error)
-                                        });
-                                    },
+                                        placeholder: 'Let`s write an awesome story!',
+                                        onReady: () => {
+                                            console.log('Editor.js is ready to work!')
+                                        },
+                                        onChange: (api, event) => {
+                                            //console.log('<?php //echo $_SESSION['username'];?>have been updated a content in brand note', event)
+                                            editor.save().then((outputData) => {
+                                                // console.log('Article data: ', outputData)
+                                                outputData = JSON.stringify(outputData, null, 4);
+                                                update_brand_note(outputData, '<?php echo $brand; ?>');
+                                            }).catch((error) => {
+                                                console.log('Saving failed: ', error)
+                                            });
+                                        },
                                         holder: 'editorjs',
                                         tools: {
                                             header: {
@@ -354,12 +356,14 @@ ion-icon {
                                             alert: Alert,
                                             delimiter: Delimiter,
                                             underline: Underline,
-                                            marker:marker,
+                                            marker: {
+                                                class: Marker,
+                                                shortcut: 'CMD+SHIFT+M'
+                                            },
                                         },
                                     }
 
                                 );
-                              
                                 </script>
                                 <?php } ?>
                             </div>
