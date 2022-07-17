@@ -288,7 +288,7 @@ ion-icon {
                                     </div>
                                 </div>
                                 <?php }?>
-                                <?php if($_SESSION['username']=='poojaroonwit'){ ?>
+
                                 <h6>
                                     <ion-icon name="document-text-outline"></ion-icon>
                                     <strong><?php echo $brand; ?></strong> Note
@@ -319,8 +319,20 @@ ion-icon {
                                         tools: {
                                             header: {
                                                 class: Header,
-                                                inlineToolbar: ['link']
+                                                tunes: ['anyTuneName'],
                                             },
+                                            paragraph: {
+                                                class: Paragraph,
+                                                inlineToolbar: true,
+                                                tunes: ['anyTuneName'],
+                                            },
+                                            columns: {
+                                                class: editorjsColumns,
+                                                config: {
+                                                    tools: column_tools, // IMPORTANT! ref the column_tools
+                                                }
+                                            },
+
                                             list: {
                                                 class: List,
                                                 inlineToolbar: true,
@@ -360,6 +372,16 @@ ion-icon {
                                                 class: Marker,
                                                 shortcut: 'CMD+SHIFT+M'
                                             },
+                                            anyTuneName: {
+                                                class: AlignmentTuneTool,
+                                                config: {
+                                                    default: "right",
+                                                    blocks: {
+                                                        header: 'center',
+                                                        list: 'right'
+                                                    }
+                                                },
+                                            },
                                             <?php //mkdir('../../attachment/brand_editor/'.$brand, 0777, true);?>
                                             // image: {
                                             //     class: ImageTool,
@@ -388,7 +410,7 @@ ion-icon {
 
                                 );
                                 </script>
-                                <?php } ?>
+
                             </div>
                             <div class="tab-pane fade" id="v-pills-request_detail" role="tabpanel"
                                 aria-labelledby="v-pills-request_detail-tab">

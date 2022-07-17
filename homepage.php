@@ -103,7 +103,6 @@ if (!$_SESSION["login_csg"]){
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script>
@@ -119,6 +118,8 @@ if (!$_SESSION["login_csg"]){
         <script src="https://cdn.jsdelivr.net/npm/editorjs-style@latest"></script>
         <!-- <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@calumk/editorjs-columns@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/editorjs-text-alignment-blocktune@latest"></script>
         <!-- <script src="https://cdn.jsdelivr.net/npm/codex.editor.header@2.0.4/dist/bundle.js"></script> -->
         <!-- <script src="https://cdn.jsdelivr.net/npm/@editorjs/raw"></script> -->
     </head>
