@@ -206,10 +206,10 @@ ion-icon {
                             <hr>
                             <strong>Content Assinee</strong>
                             <ul class="contact-person-ns">
-                                <li>
+                                <li style="margin-top: 5px;"
                                     <ion-icon name="person-outline"></ion-icon><?php echo $follow_up_name; ?>
                                 </li>
-                                <li>
+                                <li style="margin-top: 5px;">
                                     <ion-icon name="call-outline"></ion-icon> <?php echo $office_tell; ?>
                                 </li>
                             </ul>
@@ -275,7 +275,7 @@ ion-icon {
                                 <?php }?>
                                 <?php if($_SESSION['username']=='poojaroonwit'){ ?>
                                 <h5>Brand information - EditorJS</h5>
-                                <div class="container-fluid" style="background-color:white;">
+                                <div class="container-fluid">
                                     <div id="editorjs"></div>
                                 </div>
                              
@@ -285,22 +285,11 @@ ion-icon {
                                             tools: {
                                                 header: Header,
                                                 raw: RawTool,
-                                                image: SimpleImage,
-                                                checklist: {
-                                                    class: Checklist,
-                                                    inlineToolbar: true,
-                                                },
                                                 list: {
                                                     class: List,
                                                     inlineToolbar: true,
                                                     config: {
                                                         defaultStyle: 'unordered'
-                                                    }
-                                                },
-                                                linkTool: {
-                                                    class: LinkTool,
-                                                    config: {
-                                                        endpoint: 'http://localhost:8008/fetchUrl', // Your backend endpoint for url data fetching,
                                                     }
                                                 },
                                                 quote: Quote,
