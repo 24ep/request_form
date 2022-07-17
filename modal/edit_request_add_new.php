@@ -206,7 +206,7 @@ ion-icon {
                             <hr>
                             <strong>Content Assinee</strong>
                             <ul class="contact-person-ns">
-                                <li style="margin-top: 5px;"
+                                <li style="margin-top: 5px;">
                                     <ion-icon name="person-outline"></ion-icon><?php echo $follow_up_name; ?>
                                 </li>
                                 <li style="margin-top: 5px;">
