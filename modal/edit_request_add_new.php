@@ -361,6 +361,7 @@ ion-icon {
                                             delimiter: Delimiter,
                                             underline: Underline,
                                             code: CodeTool,
+                                            raw: RawTool,
                                             inlineCode: {
                                                 class: InlineCode,
                                                 shortcut: 'CMD+SHIFT+I',
