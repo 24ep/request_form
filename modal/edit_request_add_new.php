@@ -302,7 +302,9 @@ ion-icon {
                                                 class: Header,
                                                 inlineToolbar: ['marker', 'link'],
                                                 config: {
-                                                    placeholder: 'Header'
+                                                    placeholder: 'Enter a header',
+                                                    levels: [2, 3, 4],
+                                                    defaultLevel: 3
                                                 },
                                                 shortcut: 'CMD+SHIFT+H'
                                             },
