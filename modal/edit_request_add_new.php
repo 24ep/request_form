@@ -295,7 +295,18 @@ ion-icon {
                                 </div>
 
                                 <script>
+                                editor.destroy();
                                 var editor = new EditorJS({
+                                    placeholder: 'Let`s write an awesome story!',
+                                    onReady: () => {console.log('Editor.js is ready to work!')},
+                                    onChange: (api, event) => {
+                                        console.log('Now I know that Editor\'s content changed!', event)
+                                        editor.save().then((outputData) => {
+                                            console.log('Article data: ', outputData)
+                                        }).catch((error) => {
+                                            console.log('Saving failed: ', error)
+                                        });
+                                    },
                                         holder: 'editorjs',
                                         tools: {
                                             header: {
@@ -345,11 +356,7 @@ ion-icon {
                                     }
 
                                 );
-                                editor.save().then((outputData) => {
-                                    console.log('Article data: ', outputData)
-                                }).catch((error) => {
-                                    console.log('Saving failed: ', error)
-                                });
+                              
                                 </script>
                                 <?php } ?>
                             </div>
