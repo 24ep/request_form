@@ -3,24 +3,29 @@
     border-radius: 0rem;
     border-color: #b4b4b4;
 }
+
 .close {
     background: transparent;
     border: none;
     font-size: 30px;
 }
+
 label#label_file_ins {
     color: #adb5bd;
     font-size: 12px;
     font-weight: 600 !important;
 }
+
 label#label_file_cme {
     color: #adb5bd;
     font-size: 12px;
     font-weight: 500 !important;
 }
+
 .modal {
     background: #fffcfc73;
 }
+
 .comment_label {
     padding: 12px;
     text-align: initial;
@@ -31,17 +36,21 @@ label#label_file_cme {
     line-height: normal;
     overflow-wrap: anywhere;
 }
+
 .cl_left {
     margin-right: 70px;
     border-radius: 0.7rem 0.7rem 0.7rem 0rem !important;
 }
+
 .cl_right {
     margin-left: 70px;
     border-radius: 0.7rem 0.7rem 0rem 0.7rem !important;
 }
+
 ion-icon {
     margin-right: 5px !important;
 }
+
 .inpo.active {
     /* background-color: red!important; */
     background: url('image/11.jpg') !important;
@@ -266,7 +275,7 @@ ion-icon {
                                 <hr>
                                 <?php }?>
                                 <?php if($config_type=='task'){?>
-                                <h6><strong>Writer & Studio Job</strong></h6>
+                                <h6><ion-icon name="color-wand-outline"></ion-icon><strong>Writer & Studio Job</strong></h6>
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <?php include('../get/get_list_job_cms.php'); ?>
@@ -274,16 +283,21 @@ ion-icon {
                                 </div>
                                 <?php }?>
                                 <?php if($_SESSION['username']=='poojaroonwit'){ ?>
-                                <h5>Brand information - EditorJS</h5>
+                                <h6><ion-icon name="document-text-outline"></ion-icon><strong><?php echo $brand; ?><strong> Note</h6>
                                 <div class="container-fluid">
                                     <div id="editorjs"></div>
                                 </div>
-                             
+
                                 <script>
                                 const editor = new EditorJS({
-                                            holder: 'editorjs',
-                                        }
-                                        );
+                                        holder: 'editorjs',
+                                        tools: {
+                                            header: Header,
+                                            list: List
+                                        },
+                                    }
+
+                                );
                                 </script>
                                 <?php } ?>
                             </div>
@@ -444,6 +458,7 @@ actualBtn.addEventListener('change', function() {
     }
     fileChosen_bt.textContent = ' Selected file : ' + file_name;
 })
+
 function comment_ins_id_with_file(id) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input_ins").value;
@@ -473,6 +488,7 @@ function comment_ins_id_with_file(id) {
         }
     });
 }
+
 function itm_just_status_updated_contact(id) {
     var new_contact_vender = document.getElementById('new_contact_vender').value;
     var new_contact_buyer = document.getElementById('new_contact_buyer').value;
@@ -486,6 +502,7 @@ function itm_just_status_updated_contact(id) {
         });
     }
 }
+
 function comment_cr_id(id) {
     var comment = document.getElementById("comment_input_cr").value;
     document.getElementById('comment_input_cr').value = ''; //clear value
@@ -501,6 +518,7 @@ function comment_cr_id(id) {
             });
     }
 }
+
 function itemize_send_mail_stamp(id) {
     let subject_mail = prompt("ระบุ subject mail", '<?php echo $subject_mail; ?>');
     if (subject_mail == null || subject_mail == "") {
@@ -520,6 +538,7 @@ function itemize_send_mail_stamp(id) {
         }
     }
 }
+
 function itm_just_status_need_updated_contact(id) {
     if (id) {
         $.post("base/action/action_itm_need_update_contact.php", {
@@ -530,6 +549,7 @@ function itm_just_status_need_updated_contact(id) {
             });
     }
 }
+
 function sku_checking() {
     // sku_checking_result
     var sku_list = document.getElementById("sku_checking").value;
@@ -542,6 +562,7 @@ function sku_checking() {
             });
     }
 }
+
 function force_sync_with_ticket(id, bu) {
     var result_checking_sku = document.getElementById("result_checking_sku").value;
     var sku_change = document.getElementById("sku_checking").value;
@@ -616,6 +637,7 @@ function force_sync_with_ticket(id, bu) {
         );
     }
 }
+
 function comment_ticket_id(id, send_type) {
     var comment = document.getElementById("comment_input").value;
     document.getElementById('comment_input').value = ''; //clear value
@@ -633,6 +655,7 @@ function comment_ticket_id(id, send_type) {
             });
     }
 }
+
 function comment_cme_id_with_file(id, send_type) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input").value;
@@ -664,6 +687,7 @@ function comment_cme_id_with_file(id, send_type) {
         }
     });
 }
+
 function split_to_subtask(id) {
     var sku_task_set = document.getElementById("sku_task_set").value;
     document.getElementById('bt_create_task').innerHTML =
@@ -682,6 +706,7 @@ function split_to_subtask(id) {
             '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
     }
 }
+
 function action_assign_follow(id) {
     var op_follow_assign_name = document.getElementById("op_follow_assign_name").value;
     if (id) {
