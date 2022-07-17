@@ -364,9 +364,9 @@ ion-icon {
                                                 shortcut: 'CMD+SHIFT+M'
                                             },
                                         },
-                                        data: {
-                                            <?php print($brand_editor); ?>
-                                        }
+                                        data: 
+                                            <?php print_r($brand_editor); ?>
+                                        
                                     }
 
                                 );
