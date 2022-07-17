@@ -109,11 +109,11 @@ if (!$_SESSION["login_csg"]){
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@editorjs/paragraph@2.0.2"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@2.0.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/paragraph@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/nested-list@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/editorjs-alert@latest"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@1.0.1"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
       
         
         
