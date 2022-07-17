@@ -300,7 +300,7 @@ ion-icon {
 
                                 <script>
                                 // first define the tools to be made avaliable in the columns
-                                let column_tools = {
+                                var column_tools = {
                                     header: Header,
                                     alert: Alert,
                                     paragraph: Paragraph,
@@ -309,7 +309,7 @@ ion-icon {
 
                                 // next define the tools in the main block
                                 // Warning - Dont just use main_tools - you will probably generate a circular reference 
-                                let main_tools = {
+                                var main_tools = {
                                     // Load Official Tools
                                     header: Header,
                                     alert: Alert,
