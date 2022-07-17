@@ -360,16 +360,22 @@ ion-icon {
                                             alert: Alert,
                                             delimiter: Delimiter,
                                             underline: Underline,
+                                            code: CodeTool,
+                                            raw: RawTool,
+                                            inlineCode: {
+                                                class: InlineCode,
+                                                shortcut: 'CMD+SHIFT+I',
+                                            },
                                             marker: {
                                                 class: Marker,
                                                 shortcut: 'CMD+SHIFT+M'
                                             },
                                         },
-                                       
-                                            <?php if($brand_editor<>""){
+
+                                        <?php if($brand_editor<>""){
                                                 echo ' data: '.$brand_editor; 
                                             }?>
-                                        
+
                                     }
 
                                 );

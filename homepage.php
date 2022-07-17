@@ -116,6 +116,9 @@ if (!$_SESSION["login_csg"]){
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/underline@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/editorjs-style@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/raw"></script>
+    
       
         
         
