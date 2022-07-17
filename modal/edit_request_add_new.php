@@ -110,7 +110,7 @@ ion-icon {
             on ac.username = anj.follow_assign_name
             left join all_in_one_project.brand_information as brand_info
             on brand_info.brand = anj.brand
-            left join all_in_one_project.brand_editior as brand_editor
+            left join all_in_one_project.brand_editor as brand_editor
             on brand_editor.brand = anj.brand
             where anj.id = ".$_POST['id']." ORDER BY anj.id DESC " or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
@@ -365,7 +365,7 @@ ion-icon {
                                             },
                                         },
                                         data: 
-                                            <?php echo $brand_editor; ?>
+                                            <?php print($brand_editor); ?>
                                         
                                     }
 
