@@ -389,16 +389,6 @@ ion-icon {
                                                 class: Marker,
                                                 shortcut: 'CMD+SHIFT+M'
                                             },
-                                            anyTuneName: {
-                                                class: AlignmentTuneTool,
-                                                config: {
-                                                    default: "right",
-                                                    blocks: {
-                                                        header: 'center',
-                                                        list: 'right'
-                                                    }
-                                                },
-                                            },
                                             <?php //mkdir('../../attachment/brand_editor/'.$brand, 0777, true);?>
                                             // image: {
                                             //     class: ImageTool,
