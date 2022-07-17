@@ -370,7 +370,7 @@ ion-icon {
                                                 class: ImageTool,
                                                 config: {
                                                     endpoints: {
-                                                        <?php mkdir("../attchment/brand_editor/'.$brand.'", 0777, true);?>
+                                                        <?php mkdir('https://content-service-gate.cdse-commercecontent.com/attchment/brand_editor/'.$brand, 0777, true);?>
                                                         byFile: 'https://content-service-gate.cdse-commercecontent.com/attchment/brand_editor/<?php echo $brand;?>'
                                                         
                                                     }
