@@ -15,7 +15,7 @@ if ( move_uploaded_file($_FILES['file']['tmp_name'], $location) ) {
         }
     }';
 } else { 
-  echo 'Failure'; 
+  echo 'Failure uploaded'; 
 }
 
 ?>
