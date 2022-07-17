@@ -27,14 +27,8 @@ if (empty($errors)) {
     $didUpload = move_uploaded_file($fileTmpName, $location);
 
     if ($didUpload) {
-       $arr = '
-        {
-            "success" : 1,
-            "file": {
-                "url" : "https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/'.$filename.'",
-            }
-        }';
-        echo json_decode($arr);
+        $arr=array("success"=>1,"file"=>array("url"=>"https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/'.$filename.'"));
+        echo json_encode($arr);
    
 
     } else {
