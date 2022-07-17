@@ -570,5 +570,6 @@ table.dataTable.no-footer {
     margin-top: 10px;
 }
 .ce-block__content, .ce-toolbar__content {
-    max-width: 80%;
+    max-width: 70%;
+    margin-left: 5px;
 }
