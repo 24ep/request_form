@@ -2,11 +2,10 @@
 
 /* Get the name of the uploaded file */
 $filename = $_FILES['file']['name'];
-$fileSize = $_FILES['myfile']['size'];
-$fileTmpName  = $_FILES['myfile']['tmp_name'];
-$fileType = $_FILES['myfile']['type'];
+$fileSize = $_FILES['file']['size'];
+$fileTmpName  = $_FILES['file']['tmp_name'];
+$fileType = $_FILES['file']['type'];
 /* Choose where to save the uploaded file */
-mkdir('../../attachment/brand_editor', 0777, true);
 $location = "../../attachment/brand_editor/".$filename;
 /* Save the uploaded file to the local filesystem */
 if (! in_array($fileExtension,$fileExtensions)) {
