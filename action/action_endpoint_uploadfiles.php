@@ -11,6 +11,13 @@ $location = "../../attachment/brand_editor/".$filename;
 
 if ($fileSize > 2000000) {
     $errors[] = "You cannot upload this file because its size exceeds the maximum limit of 2 MB.";
+    echo "<script>
+    Notiflix.Report.failure(
+        'Failure',
+        'Error: You cannot upload this file because its size exceeds the maximum limit of 2 MB.',
+        'Okay',
+        )</script>;
+    ";
 }
 if($fileSize == 0){
     $errors[] = "not found upload file.";
@@ -35,6 +42,7 @@ if (empty($errors)) {
     foreach ($errors as $error) {
         echo $error . "These are the errors" . "\n";
     }
+    
 }
 
 
