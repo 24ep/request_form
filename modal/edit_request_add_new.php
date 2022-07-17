@@ -369,8 +369,8 @@ ion-icon {
                                                 class: ImageTool,
                                                 config: {
                                                     endpoints: {
-                                                        <?php mkdir('https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/'.$brand, 0777, true);?>
-                                                        byFile: 'https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/<?php echo $brand;?>'
+                                                        <?php mkdir('../attachment/brand_editor/'.$brand, 0777, true);?>
+                                                        byFile: 'https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor'
                                                         
                                                     }
                                                 }
