@@ -295,7 +295,7 @@ ion-icon {
                                 </div>
 
                                 <script>
-                                editor.destroy();
+                                // editor.destroy();
                                 var editor = new EditorJS({
                                     placeholder: 'Let`s write an awesome story!',
                                     onReady: () => {console.log('Editor.js is ready to work!')},
