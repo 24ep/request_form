@@ -28,14 +28,12 @@ if (empty($errors)) {
 
     if ($didUpload) {
         ?>
-<script>
-    return {
-        "success" : 1,
-        "file": {
-            "url" : "https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/'<?php echo $filename; ?>'",
+        {
+            "success" : 1,
+            "file": {
+                "url" : "https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/'<?php echo $filename; ?>'",
+            }
         }
-    }
-</script>
         <?php
 
     } else {
