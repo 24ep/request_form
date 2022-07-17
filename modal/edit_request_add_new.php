@@ -3,29 +3,24 @@
     border-radius: 0rem;
     border-color: #b4b4b4;
 }
-
 .close {
     background: transparent;
     border: none;
     font-size: 30px;
 }
-
 label#label_file_ins {
     color: #adb5bd;
     font-size: 12px;
     font-weight: 600 !important;
 }
-
 label#label_file_cme {
     color: #adb5bd;
     font-size: 12px;
     font-weight: 500 !important;
 }
-
 .modal {
     background: #fffcfc73;
 }
-
 .comment_label {
     padding: 12px;
     text-align: initial;
@@ -36,21 +31,17 @@ label#label_file_cme {
     line-height: normal;
     overflow-wrap: anywhere;
 }
-
 .cl_left {
     margin-right: 70px;
     border-radius: 0.7rem 0.7rem 0.7rem 0rem !important;
 }
-
 .cl_right {
     margin-left: 70px;
     border-radius: 0.7rem 0.7rem 0rem 0.7rem !important;
 }
-
 ion-icon {
     margin-right: 5px !important;
 }
-
 .inpo.active {
     /* background-color: red!important; */
     background: url('image/11.jpg') !important;
@@ -149,8 +140,6 @@ ion-icon {
       $follow_assign_nickname = $row['follow_assign_nickname'];
       $brand_info_link = $row['brand_info_link'];
       $web_cate = $row['web_cate'];
-
-
     //stamp color status
     if($row["status"]=="pending"){
     $status_style = 'style="background: #a9a9a94f;color:#8f8f8f"';
@@ -168,8 +157,6 @@ ion-icon {
         $status_style = 'style="background: #ea79f7;color:#6a2e71"';
     }
   }
-
-
   $query = "SELECT * FROM account where username = '".$follow_up_by."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
@@ -178,7 +165,6 @@ ion-icon {
     $office_tell = $row['office_tell'];
     $work_email = $row['work_email'];
   }
-
   mysqli_close($con);
   if($request_important=="Urgent"){
     $dp_tags .= '<span class="badge rounded-pill bg-danger" style="margin-left:10px">'.$request_important.'</span>';
@@ -188,7 +174,6 @@ ion-icon {
    $dp_tags .= '<span class="badge rounded-pill bg-dark" style="margin-left:10px">'.$tag.'</span>';
   }
 ?>
-
 <div class="offcanvas-body" style="padding-bottom: 0px;height: 100%;">
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="position: fixed;right: 40px;"
         aria-label="Close"></button>
@@ -207,7 +192,6 @@ ion-icon {
                     <div class="col-2 ns_detail_manubox">
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
                             aria-orientation="vertical">
-
                             <a class="nav-link active inpo" id="v-pills-progress-tab" data-toggle="pill"
                                 href="#v-pills-progress" role="tab" aria-controls="v-pills-progress"
                                 aria-selected="false">
@@ -218,31 +202,33 @@ ion-icon {
                                 aria-selected="true">
                                 <ion-icon name="reader-outline"></ion-icon>Request Detail
                             </a>
+                            <?php if($config_type=='task'){?>
                             <hr>
                             <strong>Content Assinee</strong>
                             <ul class="contact-person-ns">
-                                <li><ion-icon name="person-outline"></ion-icon><?php echo $follow_up_name; ?></li>
-                                <li><ion-icon name="call-outline"></ion-icon> <?php echo $office_tell; ?></li>
+                                <li>
+                                    <ion-icon name="person-outline"></ion-icon><?php echo $follow_up_name; ?>
+                                </li>
+                                <li>
+                                    <ion-icon name="call-outline"></ion-icon> <?php echo $office_tell; ?>
+                                </li>
                             </ul>
+                            <?php }?>
                             <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                             <hr>
                             <a class="nav-link inpo" id="v-pills-cp-tab" data-toggle="pill" href="#v-pills-cp"
                                 role="tab" aria-controls="v-pills-cp" aria-selected="false">
                                 <ion-icon name="grid-outline"></ion-icon>Control Panel
                             </a>
-
-
                             <a class="nav-link inpo" id="v-pills-sku-checking-tab" data-toggle="pill"
                                 href="#v-pills-sku-checking" role="tab" aria-controls="v-pills-sku-checking"
                                 aria-selected="false">
                                 <ion-icon name="trail-sign-outline"></ion-icon>SKU Checking tools
                             </a>
-
                             <a class="nav-link inpo" id="v-pills-sku-tab" data-toggle="pill" href="#v-pills-sku"
                                 role="tab" aria-controls="v-pills-sku" aria-selected="false">
                                 <ion-icon name="trail-sign-outline"></ion-icon>SKU list
                             </a>
-
                             <a class="nav-link inpo" id="v-pills-internal_note-tab" data-toggle="pill"
                                 href="#v-pills-internal_note" role="tab" aria-controls="v-pills-internal_note"
                                 aria-selected="false">
@@ -269,17 +255,16 @@ ion-icon {
                         <div class="tab-content" id="v-pills-tabContent">
                             <div class="tab-pane fade show active" id="v-pills-progress" role="tabpanel"
                                 aria-labelledby="v-pills-progress-tab">
+                                <?php if($config_type=='parent'){?>
                                 <div class="row">
                                     <div class="col-sm-12 shadow officerassingbox">
-
-
                                         <div id="call_subtask">
                                             <?php include('../get/get_sub_task_in_task.php'); ?>
                                         </div>
-
                                     </div>
                                 </div>
                                 <hr>
+                                <?php }?>
                                 <h6><strong>Writer & Studio Job</strong></h6>
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -291,9 +276,8 @@ ion-icon {
                                 <div class="container-fluid" style="background-color:white;">
                                     <div id="editorjs"></div>
                                 </div>
-                                <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
+                             
                                 <script>
-                                      
                                 const editor = new EditorJS({
                                             holder: 'editorjs',
                                             tools: {
@@ -320,12 +304,11 @@ ion-icon {
                                                 quote: Quote,
                                                 embed: Embed,
                                             }
+                                        }
                                         );
                                 </script>
                                 <?php } ?>
-
                             </div>
-
                             <div class="tab-pane fade" id="v-pills-request_detail" role="tabpanel"
                                 aria-labelledby="v-pills-request_detail-tab">
                                 <div class="container" style="padding: 20px!important;">
@@ -335,12 +318,10 @@ ion-icon {
                                         ticket นี้ให้กับทางผู้เกี่ยวข้อง
                                     </div>
                                     <?php include('../form/form_request_edit_new.php')?>
-
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="v-pills-sku-checking" role="tabpanel"
                                 aria-labelledby="v-pills-sku-checking-tab">
-
                                 <div class="row">
                                     <div class="col-6">
                                         <label style="margin-top:5px;margin-bottom:5px" for="sku_checking">sku
@@ -349,7 +330,6 @@ ion-icon {
                                             id="sku_checking" name="sku_accepted"
                                             placeholder="ตรวจสอบ IBC ตามตัวอย่างด้านล่าง วางตามตัวอย่างด้านล่าง&#10;&#10;3466644&#10;2443356&#10;2487356"
                                             rows="20" style="height: 300px"></textarea>
-
                                         <!-- 
                                         <div class="form-floating" style="margin-top:10px"> -->
                                         <!-- <select class="form-select" style="margin-top:10px" id="be_status_on_change"
@@ -372,27 +352,15 @@ ion-icon {
                                     <div class="col-6">
                                         <div id="sku_checking_result">
                                         </div>
-
                                         <div id="sku_checking_result_force">
                                         </div>
-
-
                                     </div>
                                 </div>
-
-
-
-
-
                             </div>
-
                             <div class="tab-pane fade" id="v-pills-sku" role="tabpanel"
                                 aria-labelledby="v-pills-sku-tab">
                                 <?php include('../get/get_list_sku_ticket.php'); ?>
-
                             </div>
-
-
                             <div class="tab-pane fade" id="v-pills-internal_note" role="tabpanel"
                                 aria-labelledby="v-pills-internal_note-tab">
                                 <ul class="list-group list-group-flush" style="background: fixed;">
@@ -418,13 +386,11 @@ ion-icon {
                                 <button type="button" class="btn btn-outline-primary btn-sm"
                                     onClick="comment_ins_id_with_file(<?php echo  $_POST['id']; ?>)">Add
                                     comment</button>
-
                             </div>
                             <!-- new cp -->
                             <?php include('../get/get_internal_console_nj.php');?>
                             <!-- new cp -->
                         </div>
-
                     </div>
                     <?php //echo $need_more_respone;?>
                 </div>
@@ -500,7 +466,6 @@ actualBtn.addEventListener('change', function() {
     }
     fileChosen_bt.textContent = ' Selected file : ' + file_name;
 })
-
 function comment_ins_id_with_file(id) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input_ins").value;
@@ -530,12 +495,10 @@ function comment_ins_id_with_file(id) {
         }
     });
 }
-
 function itm_just_status_updated_contact(id) {
     var new_contact_vender = document.getElementById('new_contact_vender').value;
     var new_contact_buyer = document.getElementById('new_contact_buyer').value;
     if (id) {
-
         $.post("base/action/action_itm_updated_contact_status.php", {
             id: id,
             new_contact_buyer: new_contact_buyer,
@@ -544,9 +507,7 @@ function itm_just_status_updated_contact(id) {
             $('#contact_update').html(data);
         });
     }
-
 }
-
 function comment_cr_id(id) {
     var comment = document.getElementById("comment_input_cr").value;
     document.getElementById('comment_input_cr').value = ''; //clear value
@@ -562,7 +523,6 @@ function comment_cr_id(id) {
             });
     }
 }
-
 function itemize_send_mail_stamp(id) {
     let subject_mail = prompt("ระบุ subject mail", '<?php echo $subject_mail; ?>');
     if (subject_mail == null || subject_mail == "") {
@@ -582,9 +542,7 @@ function itemize_send_mail_stamp(id) {
         }
     }
 }
-
 function itm_just_status_need_updated_contact(id) {
-
     if (id) {
         $.post("base/action/action_itm_need_update_contact.php", {
                 id: id
@@ -594,7 +552,6 @@ function itm_just_status_need_updated_contact(id) {
             });
     }
 }
-
 function sku_checking() {
     // sku_checking_result
     var sku_list = document.getElementById("sku_checking").value;
@@ -607,7 +564,6 @@ function sku_checking() {
             });
     }
 }
-
 function force_sync_with_ticket(id, bu) {
     var result_checking_sku = document.getElementById("result_checking_sku").value;
     var sku_change = document.getElementById("sku_checking").value;
@@ -634,7 +590,6 @@ function force_sync_with_ticket(id, bu) {
             // 'Keep that ticket , I will update some sku then replace sku of that ticket by myself.',
             // 'Cancel that ticket , all sku duplicate and I want to use this ticket to proceed',
             // 'Close , I will update later',
-
             function okCb() {
                 be_status_on_change = "Keep";
                 if (sku_change) {
@@ -651,7 +606,6 @@ function force_sync_with_ticket(id, bu) {
                                 'Okay',
                             );
                             $('#sku_checking_result_force').html(data);
-
                         });
                 }
             },
@@ -681,15 +635,9 @@ function force_sync_with_ticket(id, bu) {
                 closeButton: true,
                 backOverlayClickToClose: true,
             },
-
         );
     }
-
-
-
 }
-
-
 function comment_ticket_id(id, send_type) {
     var comment = document.getElementById("comment_input").value;
     document.getElementById('comment_input').value = ''; //clear value
@@ -707,7 +655,6 @@ function comment_ticket_id(id, send_type) {
             });
     }
 }
-
 function comment_cme_id_with_file(id, send_type) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input").value;
@@ -739,22 +686,17 @@ function comment_cme_id_with_file(id, send_type) {
         }
     });
 }
-
 function split_to_subtask(id) {
     var sku_task_set = document.getElementById("sku_task_set").value;
     document.getElementById('bt_create_task').innerHTML =
         '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Loading...';
-
-
     if (id) {
         $.post("base/action/action_ns_create_subtask.php", {
                 id: id,
                 sku_task_set: sku_task_set
             },
             function(data) {
-
                 $('#call_subtask').html(data);
-
                 // alert("Created new sub ticket");
             });
         document.getElementById('sku_task_set').value = ''; //clear value
@@ -762,10 +704,8 @@ function split_to_subtask(id) {
             '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
     }
 }
-
 function action_assign_follow(id) {
     var op_follow_assign_name = document.getElementById("op_follow_assign_name").value;
-
     if (id) {
         $.post("base/action/action_assign_follow.php", {
                 id: id,
@@ -776,7 +716,6 @@ function action_assign_follow(id) {
                 // alert("Assigned !");
             });
         alert("Assigned !");
-
     }
 }
 </script>

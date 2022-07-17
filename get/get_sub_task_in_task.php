@@ -64,7 +64,6 @@
     $i++;
   }
 if($subtask<>""){
-
 ?>
 
 <h6><strong>Sub ticket</strong> - <small class="card-text">Contact person</small></h6>
@@ -86,29 +85,4 @@ if($subtask<>""){
 
     </tbody>
 </table>
-<?php }else{ 
-    //   if($follow_up_name==""){
-    //     $tr_filst = '<td colspan="3" style="text-align: center;" >กำลังรอการยืนยัน content person ที่จะมาดูแล ticket นี้</td>';
-    // }else{
-    //   $tr_filst ='<td scope="col" style="background: #ffffff;">'. $follow_up_name.'</td>
-    //           <td scope="col" style="background: #ffffff;">'. $office_tell.'</td>
-    //           <td scope="col" style="background: #ffffff;">'. $work_email.'</td>';
-    // }
-// echo '<h6><strong>Contact Person</strong> | <small class="card-text">Content & Studio Team - Follow up</small></h6>
-// <table class="table table-bordered contentperson_table">
-//     <thead>
-//         <tr>
-//             <th scope="col">Name</th>
-//             <th scope="col">Tell</th>
-//             <th scope="col">Email</th>
-//         </tr>
-//     </thead>
-//     <tbody>
-//         <tr>
-//        '.$tr_filst.'
-
-//         </tr>
-//     </tbody>
-// </table>';
-
-} ?>
+<?php } ?>
