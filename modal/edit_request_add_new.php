@@ -278,6 +278,14 @@ ion-icon{
                                         <?php include('../get/get_list_job_cms.php'); ?>
                                     </div>
                                 </div>
+                                 <?php if($username=='poojaroonwit'){ ?>
+                                <div id="editorjs"></div>
+                                <script>
+                                    import EditorJS from '@editorjs/editorjs';
+                                    const editor = new EditorJS('editorjs');
+                                    
+                                </script>
+                                <?php } ?>
 
                             </div>
 
