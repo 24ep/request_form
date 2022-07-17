@@ -282,11 +282,6 @@ ion-icon {
                                 <script>
                                 const editor = new EditorJS({
                                             holder: 'editorjs',
-                                            tools: {
-                                                header: Header,
-                                                quote: Quote,
-                                                embed: Embed,
-                                            }
                                         }
                                         );
                                 </script>
