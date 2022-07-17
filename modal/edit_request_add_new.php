@@ -412,12 +412,12 @@ ion-icon {
                                                     }
                                                 }
                                             },
-                                            // attaches: {
-                                            //     class: AttachesTool,
-                                            //     config: {
-                                            //         endpoint: 'http://localhost:8008/uploadFile'
-                                            //     }
-                                            // },
+                                            attaches: {
+                                                class: AttachesTool,
+                                                config: {
+                                                    endpoint: 'ttps://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_attachfiles.php'
+                                                }
+                                            },
                                         },
 
                                         <?php if($brand_editor<>""){
