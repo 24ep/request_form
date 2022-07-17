@@ -284,13 +284,6 @@ ion-icon {
                                             holder: 'editorjs',
                                             tools: {
                                                 header: Header,
-                                                list: {
-                                                    class: List,
-                                                    inlineToolbar: true,
-                                                    config: {
-                                                        defaultStyle: 'unordered'
-                                                    }
-                                                },
                                                 quote: Quote,
                                                 embed: Embed,
                                             }
