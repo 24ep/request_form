@@ -265,12 +265,14 @@ ion-icon {
                                 </div>
                                 <hr>
                                 <?php }?>
+                                <?php if($config_type=='task'){?>
                                 <h6><strong>Writer & Studio Job</strong></h6>
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <?php include('../get/get_list_job_cms.php'); ?>
                                     </div>
                                 </div>
+                                <?php }?>
                                 <?php if($_SESSION['username']=='poojaroonwit'){ ?>
                                 <h5>Brand information - EditorJS</h5>
                                 <div class="container-fluid" style="background-color:white;">
