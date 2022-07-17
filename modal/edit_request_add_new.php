@@ -279,34 +279,16 @@ ion-icon{
                                     </div>
                                 </div>
                                  <?php if($_SESSION['username']=='poojaroonwit'){ ?>
-                                <div id="editorjs"></div>
+                                    <h5>Brand information - EditorJS</h5>
+                                    <div class="container">
+                                        <div id="editorjs"></div>
+                                    </div>
                   
                                 <script>
-                                   import EditorJS from '@editorjs/editorjs'; 
-                                    import Header from '@editorjs/header'; 
-                                    import List from '@editorjs/list'; 
-
-                                    const editor = new EditorJS({ 
-                                    /** 
-                                     * Id of Element that should contain the Editor 
-                                     */ 
-                                    holder: 'editorjs', 
-
-                                    /** 
-                                     * Available Tools list. 
-                                     * Pass Tool's class or Settings object for each Tool you want to use 
-                                     */ 
-                                    tools: { 
-                                        header: {
-                                        class: Header, 
-                                        inlineToolbar: ['link'] 
-                                        }, 
-                                        list: { 
-                                        class: List, 
-                                        inlineToolbar: true 
-                                        } 
-                                    }, 
-                                    })
+                                 const editor = new EditorJS({
+                                    holder: 'editorjs',
+                                    }
+                                    );
                                 </script>
                                 <?php } ?>
 
