@@ -401,18 +401,16 @@ ion-icon {
                                                 class: Marker,
                                                 shortcut: 'CMD+SHIFT+M'
                                             },
-                                            <?php //mkdir('../../attachment/brand_editor/'.$brand, 0777, true);?>
-                                            // image: {
-                                            //     class: ImageTool,
-                                            //     config: {
-                                            //         endpoints: {
-                                            //             byFile: 'http://localhost:8008/uploadFile', // Your backend file uploader endpoint
-                                            //             byUrl: 'http://localhost:8008/fetchUrl', // Your endpoint that provides uploading by Url
-                                            //         }
-
-                                            //     }
-
-                                            // },
+                                            <?php mkdir('../../attachment/brand_editor/'.$brand, 0777, true);?>
+                                            image: {
+                                                class: ImageTool,
+                                                config: {
+                                                    endpoints: {
+                                                        byFile: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_uploadfiles.php', // Your backend file uploader endpoint
+                                                        byUrl: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_uploadfiles.php', // Your endpoint that provides uploading by Url
+                                                    }
+                                                }
+                                            },
                                             // attaches: {
                                             //     class: AttachesTool,
                                             //     config: {
