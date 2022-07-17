@@ -329,7 +329,7 @@ table.dataTable.no-footer {
 .ns_detail_box{
     height: 100%;
     padding: 10px 20px;
-    background: #f3f3f3;
+    background: #ffffff;
 }
 .officerassingbox{
     padding: 20px;
@@ -339,7 +339,6 @@ table.dataTable.no-footer {
     border-radius: 10px;
 }
 .ns_detail_manubox{
-    margin-top: 25px;
     border-right: 1px white;
     border-right-style: double;
     height: auto;padding-top: 20px
@@ -351,7 +350,7 @@ table.dataTable.no-footer {
 .action-block {
     border-radius: 5px;
     margin-top: 10px;
-    background: #ffffff;
+    background: #e8e8e8;
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
     padding: 15px;
 }
