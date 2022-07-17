@@ -559,3 +559,8 @@ table.dataTable.no-footer {
     margin: 0px;
     margin-left: 15px;
 }
+.content-assignee-header{
+    font-weight: 500;
+    color: #aaaaaa;
+    margin-left: 15px;
+}
