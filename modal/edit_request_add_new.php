@@ -103,12 +103,15 @@ ion-icon {
             anj.subject_mail as subject_mail,
             ac.nickname as follow_assign_nickname,
             brand_info.link as brand_info_link,
+            brand_editor.body  as brand_editor,
             anj.web_cate as web_cate
             FROM all_in_one_project.add_new_job as anj
             left join all_in_one_project.account as ac
             on ac.username = anj.follow_assign_name
             left join all_in_one_project.brand_information as brand_info
             on brand_info.brand = anj.brand
+            left join all_in_one_project.rand_editior as brand_editor
+            on brand_editor.brand = anj.brand
             where anj.id = ".$_POST['id']." ORDER BY anj.id DESC " or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
@@ -361,6 +364,9 @@ ion-icon {
                                                 shortcut: 'CMD+SHIFT+M'
                                             },
                                         },
+                                        data: {
+                                            <?php print($brand_editor); ?>
+                                        }
                                     }
 
                                 );
