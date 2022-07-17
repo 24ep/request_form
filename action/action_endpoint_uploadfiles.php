@@ -34,7 +34,7 @@ if (empty($errors)) {
                 "url" : "https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/'.$filename.'",
             }
         }';
-        var_dump(json_decode($arr,true));
+        print_r(json_decode($arr,true));
     } else {
         echo "An error occurred. Try again or contact your system administrator.";
     }
