@@ -1,10 +1,10 @@
 <?php
 
 /* Get the name of the uploaded file */
-$filename = date("Ymdhms").'_'.$_FILES['uploadFile']['name'];
-$fileSize = $_FILES['uploadFile']['size'];
-$fileTmpName  = $_FILES['uploadFile']['tmp_name'];
-$fileType = $_FILES['uploadFile']['type'];
+$filename = date("Ymdhms").'_'.$_FILES['byFile']['name'];
+$fileSize = $_FILES['byFile']['size'];
+$fileTmpName  = $_FILES['byFile']['tmp_name'];
+$fileType = $_FILES['byFile']['type'];
 /* Choose where to save the uploaded file */
 $location = "../../attachment/brand_editor/".$filename;
 /* Save the uploaded file to the local filesystem */
