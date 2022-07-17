@@ -350,7 +350,7 @@ table.dataTable.no-footer {
 .action-block {
     border-radius: 5px;
     margin-top: 10px;
-    background: #e8e8e8;
+    background: #efefef;
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
     padding: 15px;
 }
@@ -563,4 +563,9 @@ table.dataTable.no-footer {
     font-weight: 500;
     color: #aaaaaa;
     margin-left: 15px;
+}
+.ns_detail_manubox {
+    background: #efefef;
+    border-radius: 10px;
+    margin-top: 10px;
 }
