@@ -390,7 +390,6 @@ ion-icon {
                                             delimiter: Delimiter,
                                             underline: Underline,
                                             code: CodeTool,
-                                            code: editorjsCodeflask,
                                             // linkTool: {
                                             //     class: LinkTool,
                                             //     config: {
