@@ -27,9 +27,8 @@ if (empty($errors)) {
     $didUpload = move_uploaded_file($fileTmpName, $location);
 
     if ($didUpload) {
-        $arr=array("success"=>1,"file"=>array("url"=>"https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/".$extension,"size"=>$fileSize,"name"=>$filename,"title"=>$filename,"extension"=>$extension ));
+        $arr=array("success"=>1,"file"=>array("url"=>"https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/".$filename,"size"=>$fileSize,"name"=>'"'.$filename.'"',"title"=>'"'.$filename.'"',"extension"=>'"'.$extension.'"' ));
         echo json_encode($arr);
-   
 
     } else {
         echo "An error occurred. Try again or contact your system administrator.";
