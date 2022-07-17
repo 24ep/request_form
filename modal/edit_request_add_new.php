@@ -313,10 +313,32 @@ ion-icon {
                                                     defaultStyle: 'unordered'
                                                 }
                                             },
+                                            list: {
+                                                class: NestedList,
+                                                inlineToolbar: true,
+                                            },
                                             checklist: {
                                                 class: Checklist,
                                                 inlineToolbar: true,
                                             },
+                                            table: {
+                                                class: Table,
+                                                inlineToolbar: true,
+                                                config: {
+                                                    rows: 2,
+                                                    cols: 3,
+                                                },
+                                            },
+                                            paragraph: {
+                                                class: Paragraph,
+                                                inlineToolbar: true,
+                                            },
+                                            code: CodeTool,
+                                            embed: Embed,
+                                            quote: Quote,
+                                            warning: Warning,
+                                            alert: Alert,
+                                            delimiter: Delimiter,
                                         },
                                     }
 
