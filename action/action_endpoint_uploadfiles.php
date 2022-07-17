@@ -6,7 +6,7 @@ $fileSize = $_FILES['file']['size'];
 $fileTmpName  = $_FILES['file']['tmp_name'];
 $fileType = $_FILES['file']['type'];
 /* Choose where to save the uploaded file */
-$location = "../../attachment/brand_editor/";
+$location = "../../attachment/brand_editor/".$filename;
 /* Save the uploaded file to the local filesystem */
 
 if ($fileSize > 2000000) {
