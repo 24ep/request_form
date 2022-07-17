@@ -29,7 +29,7 @@ if (empty($errors)) {
     if ($didUpload) {
         
         $arr = '{"success" : 1,"file": {"url" : "https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/'.$filename.'",}}';
-        echo json_decode($arr, true);
+        print_r($arr);
     } else {
         echo "An error occurred. Try again or contact your system administrator.";
     }
