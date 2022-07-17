@@ -278,7 +278,7 @@ ion-icon{
                                         <?php include('../get/get_list_job_cms.php'); ?>
                                     </div>
                                 </div>
-                                 <?php if($_POST['username']=='poojaroonwit'){ ?>
+                                 <?php if($_SESSION['username']=='poojaroonwit'){ ?>
                                 <div id="editorjs"></div>
                                 <script>
                                     import EditorJS from '@editorjs/editorjs';
