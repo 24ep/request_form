@@ -361,7 +361,7 @@ ion-icon {
                                             delimiter: Delimiter,
                                             underline: Underline,
                                             code: CodeTool,
-                                            raw: RawTool,
+                                            // raw: RawTool,
                                             marker: {
                                                 class: Marker,
                                                 shortcut: 'CMD+SHIFT+M'
