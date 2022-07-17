@@ -280,23 +280,33 @@ ion-icon{
                                 </div>
                                  <?php if($_SESSION['username']=='poojaroonwit'){ ?>
                                 <div id="editorjs"></div>
-                                <!-- js editor go -->
-        <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
-        <script src="https://cdn.jsdelivr.net/npm/codex.editor.header@2.0.4/dist/bundle.js"></script>
+                  
                                 <script>
-                                    
-                                    import EditorJS from '@editorjs/editorjs';
-                                    const editor = new EditorJS('editorjs');
-                                   class MyTool {
-                                    render() {
-                                        return document.createElement('textarea');
-                                    }
-                                    save(textarea) {
-                                        return {
-                                        text: textarea.value
-                                        }
-                                    }
-                                    }
+                                   import EditorJS from '@editorjs/editorjs'; 
+                                    import Header from '@editorjs/header'; 
+                                    import List from '@editorjs/list'; 
+
+                                    const editor = new EditorJS({ 
+                                    /** 
+                                     * Id of Element that should contain the Editor 
+                                     */ 
+                                    holder: 'editorjs', 
+
+                                    /** 
+                                     * Available Tools list. 
+                                     * Pass Tool's class or Settings object for each Tool you want to use 
+                                     */ 
+                                    tools: { 
+                                        header: {
+                                        class: Header, 
+                                        inlineToolbar: ['link'] 
+                                        }, 
+                                        list: { 
+                                        class: List, 
+                                        inlineToolbar: true 
+                                        } 
+                                    }, 
+                                    })
                                 </script>
                                 <?php } ?>
 
