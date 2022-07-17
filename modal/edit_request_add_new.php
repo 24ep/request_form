@@ -281,9 +281,16 @@ ion-icon{
                                  <?php if($_SESSION['username']=='poojaroonwit'){ ?>
                                 <div id="editorjs"></div>
                                 <script>
-                                    import EditorJS from '@editorjs/editorjs';
-                                    const editor = new EditorJS('editorjs');
-                                    
+                                   class MyTool {
+                                    render() {
+                                        return document.createElement('textarea');
+                                    }
+                                    save(textarea) {
+                                        return {
+                                        text: textarea.value
+                                        }
+                                    }
+                                    }
                                 </script>
                                 <?php } ?>
 
