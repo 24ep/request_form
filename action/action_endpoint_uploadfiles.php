@@ -27,14 +27,15 @@ if (empty($errors)) {
     $didUpload = move_uploaded_file($fileTmpName, $location);
 
     if ($didUpload) {
-        ?>
+       $arr = '
         {
             "success" : 1,
             "file": {
-                "url" : "https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/'<?php echo $filename; ?>'",
+                "url" : "https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/'.$filename.'",
             }
-        }
-        <?php
+        }';
+        var_dump(json_decode($arr));
+   
 
     } else {
         echo "An error occurred. Try again or contact your system administrator.";
