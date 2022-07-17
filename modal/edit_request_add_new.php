@@ -386,8 +386,8 @@ ion-icon {
                     <?php //echo $need_more_respone;?>
                 </div>
             </div>
-            <div class="modal-footer" style="height: 50px;bottom: 15px;width: inherit;">
-                <small style="color:gray;position: absolute;left: 10px;">Request by : <a
+            <div class="modal-footer" style="margin: 15px;position: relative;">
+                <small style="color:gray;position: inherit;">Request by : <a
                         href="action/action_show_user_info.php?username=<?php echo $request_username; ?>"
                         target="_blank" class="text-warning stretched-link"><?php echo $request_username; ?></a> |
                     create date :
