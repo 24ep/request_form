@@ -362,13 +362,18 @@ ion-icon {
                                             underline: Underline,
                                             code: CodeTool,
                                             raw: RawTool,
-                                            inlineCode: {
-                                                class: InlineCode,
-                                                shortcut: 'CMD+SHIFT+I',
-                                            },
                                             marker: {
                                                 class: Marker,
                                                 shortcut: 'CMD+SHIFT+M'
+                                            },
+                                            image: {
+                                                class: ImageTool,
+                                                config: {
+                                                    endpoints: {
+                                                        byFile: 'https://content-service-gate.cdse-commercecontent.com/attchment/brand_editor/<?php echo $brand;?>'
+                                                        
+                                                    }
+                                                }
                                             },
                                         },
 
