@@ -325,7 +325,7 @@ ion-icon {
                                 // }
                                 // editor.destroy();
                                 var editor = new EditorJS({
-                                        placeholder: '<h6>Let`s write commitment and brand guideline together !</h6>',
+                                        placeholder: 'Let`s write commitment and brand guideline together !',
                                         onReady: () => {
                                             console.log('Editor.js is ready to work!');
                                             new DragDrop(editor);
