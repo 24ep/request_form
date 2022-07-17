@@ -299,6 +299,30 @@ ion-icon {
                                 </div>
 
                                 <script>
+                                // first define the tools to be made avaliable in the columns
+                                let column_tools = {
+                                    header: Header,
+                                    alert: Alert,
+                                    paragraph: editorjsParagraphLinebreakable,
+                                    delimiter: Delimiter
+                                }
+
+                                // next define the tools in the main block
+                                // Warning - Dont just use main_tools - you will probably generate a circular reference 
+                                let main_tools = {
+                                    // Load Official Tools
+                                    header: Header,
+                                    alert: Alert,
+                                    paragraph: editorjsParagraphLinebreakable,
+                                    delimiter: Delimiter,
+
+                                    columns: {
+                                        class: editorjsColumns,
+                                        config: {
+                                            tools: column_tools, // IMPORTANT! ref the column_tools
+                                        }
+                                    },
+                                }
                                 // editor.destroy();
                                 var editor = new EditorJS({
                                         placeholder: 'Let`s write an awesome story!',
@@ -317,22 +341,15 @@ ion-icon {
                                         },
                                         holder: 'editorjs',
                                         tools: {
+                                            tools: main_tools,
                                             header: {
                                                 class: Header,
-                                                tunes: ['anyTuneName'],
-                                            },
-                                            paragraph: {
-                                                class: Paragraph,
-                                                inlineToolbar: true,
-                                                tunes: ['anyTuneName'],
-                                            },
-                                            columns: {
-                                                class: editorjsColumns,
                                                 config: {
-                                                    tools: column_tools, // IMPORTANT! ref the column_tools
+                                                    placeholder: 'Enter a header',
+                                                    levels: [2, 3, 4],
+                                                    defaultLevel: 3
                                                 }
                                             },
-
                                             list: {
                                                 class: List,
                                                 inlineToolbar: true,
