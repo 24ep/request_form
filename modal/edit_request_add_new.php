@@ -291,9 +291,9 @@ ion-icon {
                                 <div class="container-fluid" style="background-color:white;">
                                     <div id="editorjs"></div>
                                 </div>
-
+                                <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
                                 <script>
-                                       <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
+                                      
                                 const editor = new EditorJS({
                                             holder: 'editorjs',
                                             tools: {
