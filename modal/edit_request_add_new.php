@@ -303,7 +303,7 @@ ion-icon {
                                 let column_tools = {
                                     header: Header,
                                     alert: Alert,
-                                    paragraph: editorjsParagraphLinebreakable,
+                                    paragraph: Paragraph,
                                     delimiter: Delimiter
                                 }
 
@@ -313,7 +313,7 @@ ion-icon {
                                     // Load Official Tools
                                     header: Header,
                                     alert: Alert,
-                                    paragraph: editorjsParagraphLinebreakable,
+                                    paragraph: Paragraph,
                                     delimiter: Delimiter,
 
                                     columns: {
