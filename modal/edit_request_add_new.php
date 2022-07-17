@@ -152,6 +152,7 @@ ion-icon {
       $follow_assign_nickname = $row['follow_assign_nickname'];
       $brand_info_link = $row['brand_info_link'];
       $web_cate = $row['web_cate'];
+      $brand_editor=$row['brand_editor'];
     //stamp color status
     if($row["status"]=="pending"){
     $status_style = 'style="background: #a9a9a94f;color:#8f8f8f"';
