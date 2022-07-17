@@ -8,9 +8,6 @@ $fileType = $_FILES['file']['type'];
 /* Choose where to save the uploaded file */
 $location = "../../attachment/brand_editor/".$filename;
 /* Save the uploaded file to the local filesystem */
-if (! in_array($fileExtension,$fileExtensions)) {
-    $errors[] = "This process does not support this file type. Upload a JPEG or PNG file only.";
-}
 
 if ($fileSize > 2000000) {
     $errors[] = "You cannot upload this file because its size exceeds the maximum limit of 2 MB.";
