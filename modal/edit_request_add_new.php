@@ -370,7 +370,7 @@ ion-icon {
                                                 config: {
                                                     endpoints: {
                                                         <?php mkdir('https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/'.$brand, 0777, true);?>
-                                                        byFile: 'https://content-service-gate.cdse-commercecontent.com/attchment/brand_editor/<?php echo $brand;?>'
+                                                        byFile: 'https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor/<?php echo $brand;?>'
                                                         
                                                     }
                                                 }
