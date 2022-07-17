@@ -1,7 +1,7 @@
 <?php
 
 /* Get the name of the uploaded file */
-$filename = $_FILES['file']['name'];
+$filename = date("Ymdhms").'_'.$_FILES['file']['name'];
 $fileSize = $_FILES['file']['size'];
 $fileTmpName  = $_FILES['file']['tmp_name'];
 $fileType = $_FILES['file']['type'];
