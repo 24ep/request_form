@@ -309,20 +309,20 @@ ion-icon {
 
                                 // next define the tools in the main block
                                 // Warning - Dont just use main_tools - you will probably generate a circular reference 
-                                var main_tools = {
-                                    // Load Official Tools
-                                    header: Header,
-                                    alert: Alert,
-                                    paragraph: Paragraph,
-                                    delimiter: Delimiter,
+                                // var main_tools = {
+                                //     // Load Official Tools
+                                //     header: Header,
+                                //     alert: Alert,
+                                //     paragraph: Paragraph,
+                                //     delimiter: Delimiter,
 
-                                    columns: {
-                                        class: editorjsColumns,
-                                        config: {
-                                            tools: column_tools, // IMPORTANT! ref the column_tools
-                                        }
-                                    },
-                                }
+                                //     columns: {
+                                //         class: editorjsColumns,
+                                //         config: {
+                                //             tools: column_tools, // IMPORTANT! ref the column_tools
+                                //         }
+                                //     },
+                                // }
                                 // editor.destroy();
                                 var editor = new EditorJS({
                                         placeholder: 'Let`s write an awesome story!',
@@ -341,7 +341,12 @@ ion-icon {
                                         },
                                         holder: 'editorjs',
                                         tools: {
-                                            tools: main_tools,
+                                            columns: {
+                                                class: editorjsColumns,
+                                                config: {
+                                                    tools: column_tools, // IMPORTANT! ref the column_tools
+                                                }
+                                            },
                                             header: {
                                                 class: Header,
                                                 config: {
