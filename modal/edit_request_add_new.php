@@ -327,7 +327,8 @@ ion-icon {
                                 var editor = new EditorJS({
                                         placeholder: 'Let`s write an awesome story!',
                                         onReady: () => {
-                                            console.log('Editor.js is ready to work!')
+                                            console.log('Editor.js is ready to work!');
+                                            new DragDrop(editor);
                                         },
                                         onChange: (api, event) => {
                                             //console.log('<?php //echo $_SESSION['username'];?>have been updated a content in brand note', event)
@@ -389,6 +390,13 @@ ion-icon {
                                             delimiter: Delimiter,
                                             underline: Underline,
                                             code: CodeTool,
+                                            code: editorjsCodeflask,
+                                            // linkTool: {
+                                            //     class: LinkTool,
+                                            //     config: {
+                                            //         endpoint: 'http://localhost:8008/fetchUrl', // Your backend endpoint for url data fetching,
+                                            //     }
+                                            // },
                                             // raw: RawTool,
                                             marker: {
                                                 class: Marker,
