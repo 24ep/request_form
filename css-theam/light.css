@@ -569,3 +569,6 @@ table.dataTable.no-footer {
     border-radius: 10px;
     margin-top: 10px;
 }
+.ce-block__content, .ce-toolbar__content {
+    max-width: 90%;
+}
