@@ -1074,6 +1074,14 @@ function get_list_update_job() {
     });
 }
 
+function update_brand_note(dataoutput){
+    $.post("base/action/action_update_brand_note.php", {
+        dataoutput: dataoutput
+    }, function(data) {
+        // $('#get_list_job_update').html(data);
+    });
+}
+
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value

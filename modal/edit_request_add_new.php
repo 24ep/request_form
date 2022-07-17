@@ -300,9 +300,10 @@ ion-icon {
                                     placeholder: 'Let`s write an awesome story!',
                                     onReady: () => {console.log('Editor.js is ready to work!')},
                                     onChange: (api, event) => {
-                                        console.log('Now I know that Editor\'s content changed!', event)
+                                        //console.log('<?php //echo $_SESSION['username'];?>have been updated a content in brand note', event)
                                         editor.save().then((outputData) => {
-                                            console.log('Article data: ', outputData)
+                                            // console.log('Article data: ', outputData)
+                                            update_brand_note(outputData);
                                         }).catch((error) => {
                                             console.log('Saving failed: ', error)
                                         });
