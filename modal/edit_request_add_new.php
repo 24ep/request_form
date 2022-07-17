@@ -280,7 +280,13 @@ ion-icon{
                                 </div>
                                  <?php if($_SESSION['username']=='poojaroonwit'){ ?>
                                 <div id="editorjs"></div>
+                                <!-- js editor go -->
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/codex.editor.header@2.0.4/dist/bundle.js"></script>
                                 <script>
+                                    
+                                    import EditorJS from '@editorjs/editorjs';
+                                    const editor = new EditorJS('editorjs');
                                    class MyTool {
                                     render() {
                                         return document.createElement('textarea');
