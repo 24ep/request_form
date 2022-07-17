@@ -220,10 +220,9 @@ ion-icon {
                             </a>
                             <hr>
                             <strong>Content Assinee</strong>
-                            <ul>
-                                <li><?php echo $follow_up_name; ?></li>
-                                <li><?php echo $office_tell; ?></li>
-                                <li><?php echo $work_email; ?></li>
+                            <ul class="contact-person-ns">
+                                <li><ion-icon name="person-outline"></ion-icon><?php echo $follow_up_name; ?></li>
+                                <li><ion-icon name="call-outline"></ion-icon> <?php echo $office_tell; ?></li>
                             </ul>
                             <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                             <hr>
@@ -294,6 +293,7 @@ ion-icon {
                                 </div>
 
                                 <script>
+                                       <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
                                 const editor = new EditorJS({
                                             holder: 'editorjs',
                                             tools: {
