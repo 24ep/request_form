@@ -170,7 +170,7 @@ ion-icon {
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
     $follow_up_nickname = $row['nickname'];
-    $follow_up_name = $row['firstname']." ".substr($row['lastname'],0,1).". ( ".$follow_up_nickname." ) ";
+    $follow_up_name = $row['firstname']." ".substr($row['lastname'],0,2).". ( ".$follow_up_nickname." ) ";
     $office_tell = $row['office_tell'];
     $work_email = $row['work_email'];
   }
