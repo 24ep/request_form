@@ -557,4 +557,5 @@ table.dataTable.no-footer {
     padding: initial;
     font-size: small;
     margin: 0px;
+    margin-left: 15px;
 }

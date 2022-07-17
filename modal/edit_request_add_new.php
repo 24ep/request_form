@@ -204,7 +204,7 @@ ion-icon {
                             </a>
                             <?php if($config_type=='task'){?>
                             <hr>
-                            <strong>Content Assinee</strong>
+                            <strong style="margin-left: 15px;">Content Assinee</strong>
                             <ul class="contact-person-ns">
                                 <li style="margin-top: 5px;">
                                     <ion-icon name="person-outline"></ion-icon><?php echo $follow_up_name; ?>
