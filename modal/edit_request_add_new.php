@@ -368,11 +368,14 @@ ion-icon {
                                             image: {
                                                 class: ImageTool,
                                                 config: {
-                                                    endpoints: {
-                                                        <?php mkdir('../../attachment/brand_editor/'.$brand, 0777, true);?>
-                                                        byFile: 'https://content-service-gate.cdse-commercecontent.com/attachment/brand_editor'
-                                                        
-                                                    }
+                                                    <?php mkdir('../../attachment/brand_editor/'.$brand, 0777, true);?>
+                                                    endpoints: '../../attachment/brand_editor'
+                                                }
+                                            },
+                                            attaches: {
+                                                class: AttachesTool,
+                                                config: {
+                                                    endpoint: '../../attachment/brand_editor'
                                                 }
                                             },
                                         },

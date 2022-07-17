@@ -115,6 +115,7 @@ if (!$_SESSION["login_csg"]){
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/underline@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/attaches@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/editorjs-style@latest"></script>
         <!-- <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@latest"></script>
