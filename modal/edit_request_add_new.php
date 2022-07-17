@@ -324,6 +324,7 @@ ion-icon {
                                 //     },
                                 // }
                                 // editor.destroy();
+                                var ImageTool = window.ImageTool;
                                 var editor = new EditorJS({
                                         placeholder: 'Let`s write commitment and brand guideline together !',
                                         onReady: () => {
