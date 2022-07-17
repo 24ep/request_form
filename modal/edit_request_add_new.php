@@ -275,7 +275,9 @@ ion-icon {
                                 <hr>
                                 <?php }?>
                                 <?php if($config_type=='task'){?>
-                                <h6><ion-icon name="color-wand-outline"></ion-icon><strong>Writer & Studio Job</strong></h6>
+                                <h6>
+                                    <ion-icon name="color-wand-outline"></ion-icon><strong>Writer & Studio Job</strong>
+                                </h6>
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <?php include('../get/get_list_job_cms.php'); ?>
@@ -283,8 +285,12 @@ ion-icon {
                                 </div>
                                 <?php }?>
                                 <?php if($_SESSION['username']=='poojaroonwit'){ ?>
-                                <h6><ion-icon name="document-text-outline"></ion-icon><strong><?php echo $brand; ?></strong> Note</h6>
-                                <div class="container-fluid shadow-sm" style="border-radius: 10px;border: 1px solid #f4f4f4;padding: 30px;">
+                                <h6>
+                                    <ion-icon name="document-text-outline"></ion-icon>
+                                    <strong><?php echo $brand; ?></strong> Note
+                                </h6>
+                                <div class="container-fluid shadow-sm"
+                                    style="border-radius: 10px;border: 1px solid #f4f4f4;padding: 30px;">
                                     <div id="editorjs"></div>
                                 </div>
 
@@ -292,8 +298,25 @@ ion-icon {
                                 var editor = new EditorJS({
                                         holder: 'editorjs',
                                         tools: {
-                                            header: Header,
-                                            list: List
+                                            header: {
+                                                class: Header,
+                                                inlineToolbar: ['marker', 'link'],
+                                                config: {
+                                                    placeholder: 'Header'
+                                                },
+                                                shortcut: 'CMD+SHIFT+H'
+                                            },
+                                            list: {
+                                                class: List,
+                                                inlineToolbar: true,
+                                                config: {
+                                                    defaultStyle: 'unordered'
+                                                }
+                                            },
+                                            checklist: {
+                                                class: Checklist,
+                                                inlineToolbar: true,
+                                            },
                                         },
                                     }
 
