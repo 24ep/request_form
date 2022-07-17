@@ -283,7 +283,7 @@ ion-icon {
                                 </div>
                                 <?php }?>
                                 <?php if($_SESSION['username']=='poojaroonwit'){ ?>
-                                <h6><ion-icon name="document-text-outline"></ion-icon><strong><?php echo $brand; ?><strong> Note</h6>
+                                <h6><ion-icon name="document-text-outline"></ion-icon><strong><?php echo $brand; ?></strong> Note</h6>
                                 <div class="container-fluid shadow-sm" style="border-radius: 10px;border: 1px solid #f4f4f4;padding: 30px;">
                                     <div id="editorjs"></div>
                                 </div>
