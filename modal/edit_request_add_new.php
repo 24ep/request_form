@@ -319,7 +319,6 @@ ion-icon {
                                         tools: {
                                             header: {
                                                 class: Header,
-                                                inlineToolbar: ['marker', 'link'],
                                                 config: {
                                                     placeholder: 'Enter a header',
                                                     levels: [2, 3, 4],
