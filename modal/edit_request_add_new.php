@@ -337,14 +337,19 @@ ion-icon {
                                             },
                                             code: CodeTool,
                                             embed: Embed,
-                                            quote: Quote,
                                             warning: Warning,
                                             alert: Alert,
                                             delimiter: Delimiter,
+                                            underline: Underline,
                                         },
                                     }
 
                                 );
+                                editor.save().then((outputData) => {
+                                    console.log('Article data: ', outputData)
+                                }).catch((error) => {
+                                    console.log('Saving failed: ', error)
+                                });
                                 </script>
                                 <?php } ?>
                             </div>
