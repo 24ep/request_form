@@ -12,6 +12,9 @@ $location = "../../attachment/brand_editor/".$filename;
 if ($fileSize > 2000000) {
     $errors[] = "You cannot upload this file because its size exceeds the maximum limit of 2 MB.";
 }
+if($fileSize = 0){
+    $errors[] = "not found upload file.";
+}
 
 if (empty($errors)) {
     $didUpload = move_uploaded_file($fileTmpName, $location);
