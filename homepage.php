@@ -1074,9 +1074,10 @@ function get_list_update_job() {
     });
 }
 
-function update_brand_note(dataoutput){
+function update_brand_note(dataoutput,brand){
     $.post("base/action/action_update_brand_note.php", {
-        dataoutput: dataoutput
+        dataoutput: dataoutput,
+        brand : brand
     }, function(data) {
         // $('#get_list_job_update').html(data);
     });

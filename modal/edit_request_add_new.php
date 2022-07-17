@@ -303,7 +303,7 @@ ion-icon {
                                         //console.log('<?php //echo $_SESSION['username'];?>have been updated a content in brand note', event)
                                         editor.save().then((outputData) => {
                                             // console.log('Article data: ', outputData)
-                                            update_brand_note(outputData);
+                                            update_brand_note(outputData,<?php echo $brand; ?>);
                                         }).catch((error) => {
                                             console.log('Saving failed: ', error)
                                         });
