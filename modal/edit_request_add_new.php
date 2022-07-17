@@ -299,6 +299,24 @@ ion-icon {
                                 </div>
 
                                 <script>
+                                class CustomBlock {
+                                    private data;
+                                    private block;
+
+                                    constructor({
+                                        data,
+                                        block
+                                    }) {
+                                        this.data = data;
+                                        this.block = block;
+                                    }
+
+                                    toggleStretched() {
+                                        this.block.stretched = !!this.data.stretched;
+                                    }
+
+                                    // Rest of the block implementation
+                                }
                                 // first define the tools to be made avaliable in the columns
                                 var column_tools = {
                                     header: Header,
@@ -326,6 +344,7 @@ ion-icon {
                                 // editor.destroy();
                                 var ImageTool = window.ImageTool;
                                 var editor = new EditorJS({
+
                                         placeholder: 'Let`s write commitment and brand guideline together !',
                                         onReady: () => {
                                             console.log('Editor.js is ready to work!');
@@ -402,7 +421,7 @@ ion-icon {
                                                 class: Marker,
                                                 shortcut: 'CMD+SHIFT+M'
                                             },
-                                         
+
                                             image: {
                                                 class: ImageTool,
                                                 config: {
