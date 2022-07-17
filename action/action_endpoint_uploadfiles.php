@@ -4,8 +4,8 @@
 $filename = $_FILES['file']['name'];
 
 /* Choose where to save the uploaded file */
+mkdir('../../attachment/brand_editor/', 0777, true);
 $location = "../../attachment/brand_editor/".$filename;
-
 /* Save the uploaded file to the local filesystem */
 if ( move_uploaded_file($_FILES['file']['tmp_name'], $location) ) { 
     echo '{

@@ -402,7 +402,7 @@ ion-icon {
                                                 class: Marker,
                                                 shortcut: 'CMD+SHIFT+M'
                                             },
-                                            <?php mkdir('../../attachment/brand_editor/'.$brand, 0777, true);?>
+                                         
                                             image: {
                                                 class: ImageTool,
                                                 config: {
