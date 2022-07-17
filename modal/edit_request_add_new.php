@@ -415,7 +415,7 @@ ion-icon {
                                             attaches: {
                                                 class: AttachesTool,
                                                 config: {
-                                                    endpoint: 'ttps://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_attachfiles.php'
+                                                    endpoint: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_attachfiles.php'
                                                 }
                                             },
                                         },
