@@ -299,7 +299,6 @@ ion-icon {
                                 </div>
 
                                 <script>
-                                    
                                 // first define the tools to be made avaliable in the columns
                                 var column_tools = {
                                     header: Header,
@@ -307,32 +306,15 @@ ion-icon {
                                     paragraph: Paragraph,
                                     delimiter: Delimiter
                                 }
-
-                                // next define the tools in the main block
-                                // Warning - Dont just use main_tools - you will probably generate a circular reference 
-                                // var main_tools = {
-                                //     // Load Official Tools
-                                //     header: Header,
-                                //     alert: Alert,
-                                //     paragraph: Paragraph,
-                                //     delimiter: Delimiter,
-
-                                //     columns: {
-                                //         class: editorjsColumns,
-                                //         config: {
-                                //             tools: column_tools, // IMPORTANT! ref the column_tools
-                                //         }
-                                //     },
-                                // }
                                 // editor.destroy();
                                 var ImageTool = window.ImageTool;
                                 var editor = new EditorJS({
-                                    
+
                                         placeholder: 'Let`s write commitment and brand guideline together !',
                                         onReady: () => {
                                             console.log('Editor.js is ready to work!');
                                             new DragDrop(editor);
-                                            
+
                                         },
                                         onChange: (api, event) => {
                                             //console.log('<?php //echo $_SESSION['username'];?>have been updated a content in brand note', event)
@@ -405,7 +387,7 @@ ion-icon {
                                                 class: Marker,
                                                 shortcut: 'CMD+SHIFT+M'
                                             },
-                                         
+
                                             image: {
                                                 class: ImageTool,
                                                 config: {
