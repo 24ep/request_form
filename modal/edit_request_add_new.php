@@ -415,12 +415,12 @@ ion-icon {
                                                     }
                                                 }
                                             },
-                                            attaches: {
-                                                class: AttachesTool,
-                                                config: {
-                                                    endpoint: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_attachfiles.php'
-                                                }
-                                            },
+                                            // attaches: {
+                                            //     class: AttachesTool,
+                                            //     config: {
+                                            //         endpoint: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_attachfiles.php'
+                                            //     }
+                                            // },
                                         },
 
                                         <?php if($brand_editor<>""){
