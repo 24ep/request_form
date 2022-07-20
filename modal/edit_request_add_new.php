@@ -291,7 +291,7 @@ ion-icon {
 
                                 <h6>
                                     <ion-icon name="document-text-outline"></ion-icon>
-                                    <strong><?php echo $brand; ?></strong> Note
+                                    <strong><?php echo $brand; ?></strong> Note <small style="color:red">ข้อความที่อยู่ใน block นี้จะแสดงในทุกๆ ticket ของแบรนด์ดังกล่าว</small>
                                 </h6>
                                 <div class="container-fluid shadow-sm"
                                     style="border-radius: 10px;border: 1px solid #f4f4f4;padding: 30px;">
