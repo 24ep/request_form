@@ -33,7 +33,6 @@ function get_page_convert_cat_condition(){
                 </ul>
                </td>';
     $value .= '<td scope="col">'.$row['category_path_cds'].'</td>';
-    $value .= '<td scope="col">'.$row['category_path_id_cds'].'</td>';
     $value .= '<td scope="col">Action</td>';
     $value .= '</tr>';
 }
@@ -47,7 +46,6 @@ function get_page_convert_cat_condition(){
       <th style="text-align-last: center;" scope="col">Id</th>
       <th scope="col" style="text-align-last: left;">Condition</th>
       <th scope="col">category_path_cds</th>
-      <th scope="col">category_path_id_cds</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
