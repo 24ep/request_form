@@ -16,8 +16,8 @@
 function get_page_convert_cat_condition(){
  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
  $query = "SELECT * FROM u749625779_cdscontent.pim_cate_convert_condition" or die("Error:" . mysqli_error($con));
- $result = mysqli_query($con, $query);
  mysqli_query($con, "SET NAMES 'utf8' ");
+ $result = mysqli_query($con, $query);
  while($row = mysqli_fetch_array($result)) {
     $value .= '<tr>';
     $value .= '<td scope="col">'.$row['id'].'</td>';
