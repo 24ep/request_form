@@ -17,13 +17,20 @@ function get_page_convert_cat_condition(){
  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
  $query = "SELECT * FROM u749625779_cdscontent.pim_cate_convert_condition" or die("Error:" . mysqli_error($con));
  $result = mysqli_query($con, $query);
- 
+ mysqli_query($con, "SET NAMES 'utf8' ");
  while($row = mysqli_fetch_array($result)) {
     $value .= '<tr>';
     $value .= '<td scope="col">'.$row['id'].'</td>';
     $value .= '<td scope="col"><ul>
                 <li> dept :'.$row['department'].'</li>
                 <li> sdept :'.$row['sub_department'].'</li>
+                <li> sdept :'.$row['sub_department'].'</li>
+                <li> bou_dept :'.$row['boutique_department'].'</li>
+                <li> bou_sdept :'.$row['boutique_sub_department'].'</li>
+                <li> gender :'.$row['gender'].'</li>
+                <li> age :'.$row['age'].'</li>
+                <li> occasion :'.$row['age'].'</li>
+                <li> watch :'.$row['age'].'</li>
                 </ul>
                </td>';
     $value .= '<td scope="col">Action</td>';
