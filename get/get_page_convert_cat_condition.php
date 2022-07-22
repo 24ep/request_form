@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script> -->
 <style>
 .dataTables_wrapper {
     position: relative;
@@ -29,10 +29,12 @@ function get_page_convert_cat_condition(){
                 <li> bou_sdept :'.$row['boutique_sub_department'].'</li>
                 <li> gender :'.$row['gender'].'</li>
                 <li> age :'.$row['age'].'</li>
-                <li> occasion :'.$row['age'].'</li>
-                <li> watch :'.$row['age'].'</li>
+                <li> occasion :'.$row['occasion'].'</li>
+                <li> watches_style :'.$row['watches_style'].'</li>
                 </ul>
                </td>';
+    $value .= '<td scope="col">'.$row['category_path_cds'].'</td>';
+    $value .= '<td scope="col">'.$row['category_path_id_cds'].'</td>';
     $value .= '<td scope="col">Action</td>';
     $value .= '</tr>';
 }
@@ -45,7 +47,8 @@ function get_page_convert_cat_condition(){
     <tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
       <th style="text-align-last: center;" scope="col">id</th>
       <th scope="col" style="width: 30%;text-align-last: left;">Condition</th>
-      <th scope="col">categories_path_id/th>
+      <th scope="col">category_path_cds</th>
+      <th scope="col">category_path_id_cds</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
