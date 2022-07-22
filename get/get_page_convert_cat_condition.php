@@ -30,7 +30,6 @@ function get_page_convert_cat_condition(){
                 <li> gender :'.$row['gender'].'</li>
                 <li> age :'.$row['age'].'</li>
                 <li> occasion :'.$row['occasion'].'</li>
-                <li> watches_style :'.$row['watches_style'].'</li>
                 </ul>
                </td>';
     $value .= '<td scope="col">'.$row['category_path_cds'].'</td>';
