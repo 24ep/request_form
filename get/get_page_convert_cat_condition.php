@@ -44,8 +44,8 @@ function get_page_convert_cat_condition(){
  $table =  '<table class="table" id="st_convert_cate_mapping"  name="st_convert_cate_mapping" >
 <thead>
     <tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
-      <th style="text-align-last: center;" scope="col">id</th>
-      <th scope="col" style="width: 30%;text-align-last: left;">Condition</th>
+      <th style="text-align-last: center;" scope="col">Id</th>
+      <th scope="col" style="text-align-last: left;">Condition</th>
       <th scope="col">category_path_cds</th>
       <th scope="col">category_path_id_cds</th>
       <th scope="col">Action</th>
