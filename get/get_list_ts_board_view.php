@@ -132,7 +132,7 @@ function listing_ticket_card($result_after_fetch ,$status){
           Left join all_in_one_project.project_bucket pb
           on pb.prefix  = ticket.ticket_template
           where (".$filter.") and lower(ticket.status) not in ('cancel','routine work','monitor','in-review','close','archive') 
-          order by ".$sort_de_status."  limit 150";
+          order by ".$sort_de_status."  limit 300";
          
        
         // getting by status
