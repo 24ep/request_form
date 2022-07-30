@@ -1,10 +1,10 @@
 
 body {
     background-color: #f8f9fa;
-  
+/*   
     font-family: 'Mulish', sans-serif;
-    font-family: 'Quicksand', sans-serif;
-    
+    font-family: 'Quicksand', sans-serif; */
+    font-family: 'Prompt', sans-serif;
     font-weight: 500;
 }
 .list_bra  {
@@ -17,8 +17,8 @@ body {
 .navbar-brand{
     font-weight: 900;
     margin:20px 20px;
-    font-family: 'Mulish', bold;
-    font-family: 'Quicksand', bold;
+    /* font-family: 'Mulish', bold;
+    font-family: 'Quicksand', bold; */
 }
 ion-icon{
     margin-right:10px;
