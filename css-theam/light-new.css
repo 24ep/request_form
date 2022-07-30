@@ -1,0 +1,67 @@
+
+body {
+    background-color: #f1f0f0;
+    font-family: 'Mulish', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+}
+.list_bra  {
+    color: black;
+    background-color: #ffffff;
+    padding-bottom: 100%;
+    position: fixed;
+}
+.navbar-brand{
+    font-weight: 900;
+    margin:20px 20px;
+    font-family: 'Mulish', bold;
+    font-family: 'Quicksand', bold;
+    
+  
+}
+ion-icon{
+    margin-right:10px;
+    font-size: 17px;
+    vertical-align: middle;
+}
+.nav-link{
+    color:black;
+}
+.hr_manu_bra{
+    margin-top:0px;
+    color: #919191;
+}
+.name_manu_bra{
+    font-weight: 900;
+    margin:0px 20px;
+}
+.dept_manu_bra{
+    margin:0px 0px 10px 20px;
+}
+.header_manu_bra{
+    font-weight: 900;
+    margin:0px 20px;
+    font-size: 12px;
+}
+.nav-pills .nav-link {
+    margin: 3px 10px;
+    width: 100%;
+    font-size: 14px;
+    padding: 5px 10px;
+    color: #7a7a7a;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #000000;
+    background-color: #f1f0f0;
+    margin: 3px 10px;
+    width: 100%;
+    font-size: 14px;
+    padding: 5px 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+.hr_manu_bra_in{
+    color: #919191;
+    margin: 15px 0px;
+    width: 100%;
+}
+
