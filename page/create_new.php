@@ -74,25 +74,23 @@
             </nav>
         </div>
     </div>
-    <table class="table table-hover table-borderless  "
-        style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
-        <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
-            <tr>
-                <th scope="col">Ticket ID</th>
-                <th scope="col">Department</th>
-                <th scope="col">Brand</th>
-                <th scope="col">SKU</th>
-                <th scope="col">Production request</th>
-                <th scope="col">Project-type</th>
-                <th scope="col">launch date</th>
-                <th scope="col">Badge</th>
-                <th scope="col">Status</th>
-                <th scope="col">Role</th>
-                <th scope="col">Action</th>
-            </tr>
-        </thead>
-        <tbody id="job_list">
+    
+            <li class="row">
+                <div class="col" scope="col">Ticket ID</div>
+                <div class="col" scope="col">Department</div>
+                <div class="col" scope="col">Brand</div>
+                <div class="col" scope="col">SKU</div>
+                <div class="col" scope="col">Production request</div>
+                <div class="col" scope="col">Project-type</div>
+                <div class="col" scope="col">launch date</div>
+                <div class="col" scope="col">Badge</div>
+                <div class="col" scope="col">Status</div>
+                <div class="col" scope="col">Role</div>
+                <div class="col" scope="col">Action</div>
+</li>
+      
+        
             <?php include('../get/get_list_new_job.php'); ?>
-        </tbody>
-    </table>
+     
+    
 </div>

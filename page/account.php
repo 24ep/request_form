@@ -44,20 +44,26 @@ function get_page_account(){
 
 ?>
 <?php
- $table =  '
-    <li class="row" style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
-      <div class="col" style="text-align-last: center;" scope="col">ID</div>
-      <div class="col" scope="col" style="width: 30%;text-align-last: left;">Name</div>
-      <div class="col" scope="col">Contact</div>
-      <div class="col" scope="col">Status</div>
-      <div class="col" scope="col">Department</div>
-      <div class="col" scope="col">Action</div>
-    </li>
-    '.$value_account;
+ $table =  '<table class="table" id="st_account_tb"  name="st_account_tb" >
+<thead>
+    <tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
+      <th style="text-align-last: center;" scope="col">ID</th>
+      <th scope="col" style="width: 30%;text-align-last: left;">Name</th>
+      <th scope="col">Contact</th>
+      <th scope="col">Status</th>
+      <th scope="col">Department</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    '.$value_account.'
+  </tbody>
+</table>';
 
 return $table;
 }
-get_page_account();
+$detail .= get_page_account();
+echo $detail;
 ?>
 
 <script>
