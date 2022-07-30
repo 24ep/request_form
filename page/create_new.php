@@ -1,4 +1,4 @@
-<div style="margin-left: 30px;">
+<div style="    margin-left: 30px;">
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center" style="margin:20px">
             <div class="col-auto">
@@ -73,3 +73,26 @@
             </ul>
             </nav>
         </div>
+    </div>
+    <table class="table table-hover table-borderless  "
+        style="margin: 0px;font-size: 13px;vertical-align:middle;text-align:center;width:100%">
+        <thead style="background-color: rgba(0, 0, 0, 0);color: #908e8e;" class="fixed">
+            <tr>
+                <th scope="col">Ticket ID</th>
+                <th scope="col">Department</th>
+                <th scope="col">Brand</th>
+                <th scope="col">SKU</th>
+                <th scope="col">Production request</th>
+                <th scope="col">Project-type</th>
+                <th scope="col">launch date</th>
+                <th scope="col">Badge</th>
+                <th scope="col">Status</th>
+                <th scope="col">Role</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody id="job_list">
+            <?php include('../get/get_list_new_job.php'); ?>
+        </tbody>
+    </table>
+</div>
