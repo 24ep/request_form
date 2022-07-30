@@ -104,7 +104,7 @@
                     <small class="header_manu_bra">Internals</small>
                     <li class="nav-item" role="presentation"></li>
                     <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
-                        <ion-icon name="code"></ion-icon>Script
+                        <ion-icon name="bar-chart"></ion-icon>Reports
                     </a>
                     </li>
                     <li class="nav-item" role="presentation"></li>
