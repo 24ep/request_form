@@ -214,10 +214,10 @@ if(isset($_POST["from_post"] )){
           }
             //important
           if($i<$subtask_count){
-            $th_class = "class='col tree_lift'";
+            $th_class = "class='col tree_lift p-3'";
             $tr_class = "class='row sub-ticket mb-0'";
           }else{
-            $th_class = "class='col tree_lift_end'";
+            $th_class = "class='col tree_lift_end p-3'";
             $tr_class = "class='row mb-3' style='align-items: center;'";
             // unset($tr_class);
           }
@@ -238,8 +238,7 @@ if(isset($_POST["from_post"] )){
                   $sub_ticket = "<li class='row mb-3' >";
                 }
               }
-              $sub_ticket .= "<div scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></div>";
-              $sub_ticket .= "<div class='col'></div>";
+              $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 250px;' ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></div>";
               $sub_ticket .= "<div class='col'></div>";
               $sub_ticket .= "<div class='col'>".$row_child["sku"]."</div>";
               $sub_ticket .= "<div class='col'></div>";
@@ -256,8 +255,7 @@ if(isset($_POST["from_post"] )){
           if(!isset($sub_ticket)){$sub_ticket ="";}
           if(!isset($tr_class)){$tr_class="";}
           $sub_ticket .= "<li ".$tr_class.">";
-          $sub_ticket .= "<div scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></div>";
-          $sub_ticket .= "<div class='col'></div>";
+          $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 250px;'><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></div>";
           $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col'>".$row_child["sku"]."</div>";
           $sub_ticket .= "<div class='col'></div>";
