@@ -75,7 +75,7 @@
         </div>
     </div>
     
-            <li class="row">
+            <li class="row mb-3" style="color: #b3b3b3;font-weight: 600;text-align-last: center;">
                 <div class="col" scope="col">Ticket ID</div>
                 <div class="col" scope="col">Department</div>
                 <div class="col" scope="col">Brand</div>
