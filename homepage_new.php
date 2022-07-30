@@ -137,7 +137,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-10" style="margin-left: auto;">
+        <div class="col-10" style="margin-left: auto;font-size: 14px;">
             <div id="col_detail">
             </div>
         </div>
