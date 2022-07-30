@@ -77,12 +77,14 @@
 <script>
     function get_page(page){
         if(page=="update_content"){
+            Notiflix.Loading.hourglass('Loading...');
                 $.post("get/get_list_ts_list_view.php", {
             }, function(data) {
                 $('#col_detail').html(data);
             });
         }else{
             $('#col_detail').html("not avaliable");
+            Notiflix.Loading.remove();
         }
     }
 </script>
