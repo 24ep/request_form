@@ -12,7 +12,7 @@
   }
   if($count > 0){
     echo '<span class="position-absolute translate-middle badge rounded-pill bg-danger" style="left: 35px;top: 10px;">  
-    '.$count.'       
+    '.$count.'
     <span class="visually-hidden">unread messages</span>
     </span>';
   }
