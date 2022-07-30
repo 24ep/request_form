@@ -106,6 +106,7 @@ function get_page(page) {
         Notiflix.Loading.hourglass('Loading...');
         $.post("page/update_content.php", {}, function(data) {
             $('#col_detail').html(data);
+            Notiflix.Loading.remove();
         });
     } else {
         $('#col_detail').html("not avaliable");

@@ -31,10 +31,11 @@ ion-icon{
 }
 .name_manu_bra{
     margin:0px 20px;
-    font-weight: 200;
+    
 }
 .dept_manu_bra{
     margin:0px 0px 10px 20px;
+    font-weight: 200;
 }
 .header_manu_bra{
     font-weight: 900;
