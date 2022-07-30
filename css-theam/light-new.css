@@ -66,4 +66,8 @@ ion-icon{
     margin: 15px 0px;
     width: 100%;
 }
+.new_lob_list{
+    background: white;
+    border-radius: 10px 0px 0px 10px;
+}
 

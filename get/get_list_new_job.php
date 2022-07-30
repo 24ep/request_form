@@ -156,7 +156,7 @@ if(isset($_POST["from_post"] )){
     //config_type
     if($row["config_type"]=="parent"){
       //set style
-      $tr_class = "class='sub-ticket shadow-sm p-3 mb-5 bg-body rounded ".$style_cancel."' style='border-bottom: 1px solid #e0e0e0;'";
+      $tr_class = "class='sub-ticket shadow-sm p-3 mb-5 rounded ".$style_cancel."' style='background: white;'";
       $task_status = '';
       $query_sum="SELECT sum(sku) as total from add_new_job where parent = ".$row["id"];
       $result_sum = mysqli_query($con, $query_sum);
@@ -168,14 +168,14 @@ if(isset($_POST["from_post"] )){
       }
       $subtask_sum = $row["sku"]." S(".$data_sum['total'].") ".$badge_alert_sku ;
     }else{
-      $tr_class = "class='shadow-sm p-3 mb-5 bg-body rounded ".$style_cancel."' style='border-bottom: 1px solid #e0e0e0;'";
+      $tr_class = "class='shadow-sm p-3 mb-5 rounded ".$style_cancel."' style='background: white;'";
       $task_status = $status ;
       $subtask_sum = $row["sku"];
     }
       if(!isset($ticket)){$ticket="";}
       if(!isset($tr_class)){$tr_class="";}
-      $ticket .= "<tr ".$tr_class." >";
-      $ticket .= "<th scope='row'>NS-".$row["id"]."</th>";
+      $ticket .= "<tr  ".$tr_class." >";
+      $ticket .= "<th scope='row' class='new_lob_list' >NS-".$row["id"]."</th>";
       $ticket .= "<td>".$row["department"]."</td>";
       $ticket .= "<td>".$row["brand"]."</td>";
       $ticket .= "<td>".$subtask_sum."</td>";
