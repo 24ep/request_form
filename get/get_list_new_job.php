@@ -174,7 +174,7 @@ if(isset($_POST["from_post"] )){
     }
       if(!isset($ticket)){$ticket="";}
       if(!isset($tr_class)){$tr_class="";}
-      $ticket .= "<li  ".$tr_class." >";
+      $ticket .= "<tr  ".$tr_class." >";
       $ticket .= "<th scope='row' class='new_lob_list' >NS-".$row["id"]."</th>";
       $ticket .= "<td>".$row["department"]."</td>";
       $ticket .= "<td>".$row["brand"]."</td>";
@@ -190,7 +190,7 @@ if(isset($_POST["from_post"] )){
       $ticket .= "<td>";
       $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row["id"].")' >
        Detail </button></td>";
-      $ticket .=  "</li>";
+      $ticket .=  "</tr>";
       //get sub ticket
       $query_count="SELECT count(*) as total from add_new_job where parent = ".$row["id"];
       $result_count = mysqli_query($con, $query_count);
