@@ -238,7 +238,7 @@ if(isset($_POST["from_post"] )){
                   $sub_ticket = "<li >";
                 }
               }
-              $sub_ticket .= "<li scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></div>";
+              $sub_ticket .= "<div scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></div>";
               $sub_ticket .= "<div class='col'></div>";
               $sub_ticket .= "<div class='col'></div>";
               $sub_ticket .= "<div class='col'>".$row_child["sku"]."</div>";
@@ -249,7 +249,7 @@ if(isset($_POST["from_post"] )){
               $sub_ticket .= "<div class='col'>".$status."</div>";
               $sub_ticket .= "<div class='col'>". $ticket_role ."</div>";
               $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
-              Detail </button></li >";
+              Detail </button></div >";
               $i++;
             }
           }else{
@@ -268,7 +268,7 @@ if(isset($_POST["from_post"] )){
           $sub_ticket .= "<div class='col' >".$status."</div>";
           $sub_ticket .= "<div class='col'>". $ticket_role ."</div>";
           $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
-           Detail </button></li>";
+           Detail </button></div>";
           $i++;
           }
         }
