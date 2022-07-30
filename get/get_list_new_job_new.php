@@ -3,7 +3,7 @@ session_start();
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error( $con));
 function badge_status($status){
   if($status=="pending"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#a9a9a94f;border:#a9a9a94f solid 1px;width: 100%;">pending</button>';
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#5f9ee5;border:#5f9ee5 solid 1px;width: 100%;">pending</button>';
   }elseif($status=="checking"  ){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#ffff7e;border:#ffff7e solid 1px;width: 100%;">checking</button>';
   }elseif( $status=="on-production"){
