@@ -32,6 +32,7 @@
 
 .sub-ticket {
     border: 0px solid transparent
+    align-items: center;
 }
 
 label.tree_label:hover {
