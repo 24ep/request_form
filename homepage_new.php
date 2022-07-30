@@ -104,7 +104,7 @@
 function get_page(page) {
     if (page == "update_content") {
         Notiflix.Loading.hourglass('Loading...');
-        $.post("get/get_list_ts_list_view.php", {}, function(data) {
+        $.post("page/update_content.php", {}, function(data) {
             $('#col_detail').html(data);
         });
     } else {
