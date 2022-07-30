@@ -15,7 +15,7 @@
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="action/notiflix/dist/notiflix-3.2.5.min.css" />
     <script src="action/notiflix/dist/notiflix-3.2.5.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css-theam/light-new.css">
+    
     <script src="js/notifications.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <!-- multi-select -->
@@ -64,6 +64,7 @@
     <script src="https://cdn.jsdelivr.net/npm/editorjs-drag-drop@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@calumk/editorjs-nested-checklist@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script>
+    <link rel="stylesheet" type="text/css" href="css-theam/light-new.css">
 </head>
 
 <body>
