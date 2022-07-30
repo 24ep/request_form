@@ -15,56 +15,56 @@
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="action/notiflix/dist/notiflix-3.2.5.min.css" />
     <script src="action/notiflix/dist/notiflix-3.2.5.min.js"></script>
-    
+    <link rel="stylesheet" type="text/css" href="css-theam/light-new.css">
     <script src="js/notifications.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <!-- multi-select -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.css" rel="stylesheet">
+            <!-- multi-select -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.css" rel="stylesheet">
     <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
-    <!-- textarray -->
+    
+     <!-- textarray -->
     <link href="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.css" rel="stylesheet">
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-    <!-- preview image -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.css"
-        integrity="sha512-3eoKq7cU6gdVeT+6eL40YcJLD8dxzQmOK54qxUWVjg7H4NN3u5AA5k5ywrqLV15hOZDBBgdQH/GK5CA9MwDVwg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.js"
-        integrity="sha512-FbW9TrdqAZVgIOrQeqDRnCe+l0g+aMBP7pWEt/zLWx8zgafpBwvJ6F1rsU+mkvbXuB4mBwS2ehlkZHE9cknTrg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" type="text/css"
-        href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
-    <!-- time ago -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.2/timeago.js"
-        integrity="sha512-N3oYWQZs8pMSQhQtB13XHSIry/zDIUimpMqX4QMULawuaAYgRWSiU17cLHh7f51xgkGY18jQtY2ph98HtKeWaA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- js editor go -->
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/paragraph@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/nested-list@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/editorjs-alert@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/underline@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/attaches@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/editorjs-style@latest"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@calumk/editorjs-columns@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/editorjs-text-alignment-blocktune@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/editorjs-paragraph-with-alignment@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/editorjs-drag-drop@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@calumk/editorjs-nested-checklist@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script>
-    <link rel="stylesheet" type="text/css" href="css-theam/light-new.css">
+       <!-- preview image -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.css"
+            integrity="sha512-3eoKq7cU6gdVeT+6eL40YcJLD8dxzQmOK54qxUWVjg7H4NN3u5AA5k5ywrqLV15hOZDBBgdQH/GK5CA9MwDVwg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.js"
+            integrity="sha512-FbW9TrdqAZVgIOrQeqDRnCe+l0g+aMBP7pWEt/zLWx8zgafpBwvJ6F1rsU+mkvbXuB4mBwS2ehlkZHE9cknTrg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" type="text/css"
+            href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
+        <!-- time ago -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.2/timeago.js"
+            integrity="sha512-N3oYWQZs8pMSQhQtB13XHSIry/zDIUimpMqX4QMULawuaAYgRWSiU17cLHh7f51xgkGY18jQtY2ph98HtKeWaA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- js editor go -->
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/paragraph@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/nested-list@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/editorjs-alert@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/underline@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/attaches@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/editorjs-style@latest"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@calumk/editorjs-columns@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/editorjs-text-alignment-blocktune@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/editorjs-paragraph-with-alignment@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/editorjs-drag-drop@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@calumk/editorjs-nested-checklist@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script>
 </head>
 
 <body>
@@ -90,8 +90,7 @@
                     </a>
                     </li>
                     <li class="nav-item" role="presentation"></li>
-                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="get_page('create_new');">
+                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false" onclick="get_page('create_new');">
                         <ion-icon name="ticket"></ion-icon>Create New
                     </a>
                     </li>
@@ -114,8 +113,7 @@
                     </a>
                     </li>
                     <li class="nav-item" role="presentation"></li>
-                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="get_page('account');">
+                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false" onclick="get_page('account');">
                         <ion-icon name="people"></ion-icon>Account
                     </a>
                     </li>
@@ -132,8 +130,7 @@
                     </a>
                     </li>
                     <li class="nav-item" role="presentation"></li>
-                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="logout()">
+                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false" onclick="logout()">
                         <ion-icon name="log-out"></ion-icon>Logout
                     </a>
                     </li>
@@ -159,19 +156,22 @@ function get_page(page) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
-    } else if (page == "create_new") {
+    }
+    else if (page == "create_new") {
         Notiflix.Loading.hourglass('Loading...');
         $.post("page/create_new.php", {}, function(data) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
-    } else if (page == "account") {
+    }
+    else if (page == "account") {
         Notiflix.Loading.hourglass('Loading...');
         $.post("page/account.php", {}, function(data) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
-    } else {
+    } 
+    else {
         $('#col_detail').html("not avaliable");
         Notiflix.Loading.remove();
     }
@@ -179,17 +179,17 @@ function get_page(page) {
 
 function logout() {
     Notiflix.Confirm.show(
-        'Confirm ',
-        'Do you want to logout ?',
-        'Yes ',
-        'No ',
-        function okCb() {
-            window.location.href = "action/action_logout.php";
-        },
-        function cancelCb() {
-            //nothing to do
-        },
+            'Confirm ',
+            'Do you want to logout ?',
+            'Yes ',
+            'No ',
+            function okCb() {
+                window.location.href = "action/action_logout.php";
+            },
+            function cancelCb() {
+                //nothing to do
+            },
     );
 
-}
+            }
 </script>
