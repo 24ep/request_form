@@ -94,7 +94,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-10">
+        <div class="col-10" style="margin-left: auto;">
             <div id="col_detail">
             </div>
         </div>

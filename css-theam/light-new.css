@@ -12,6 +12,7 @@ body {
     background-color: #ffffff;
     padding-bottom: 100%;
     font-weight: bold;
+    position: fixed;
 }
 .navbar-brand{
     font-weight: 900;
