@@ -156,7 +156,7 @@ if(isset($_POST["from_post"] )){
     //config_type
     if($row["config_type"]=="parent"){
       //set style
-      $tr_class = "class='row sub-ticket shadow-sm p-3 mb-5 rounded ".$style_cancel."' style='background: white;'";
+      $tr_class = "class='row sub-ticket shadow-sm p-3 rounded ".$style_cancel."' style='background: white;'";
       $task_status = '';
       $query_sum="SELECT sum(sku) as total from add_new_job where parent = ".$row["id"];
       $result_sum = mysqli_query($con, $query_sum);
@@ -168,7 +168,7 @@ if(isset($_POST["from_post"] )){
       }
       $subtask_sum = $row["sku"]." S(".$data_sum['total'].") ".$badge_alert_sku ;
     }else{
-      $tr_class = "class='row shadow-sm p-3 mb-5 rounded ".$style_cancel."' style='background: white;'";
+      $tr_class = "class='row shadow-sm p-3  rounded ".$style_cancel."' style='background: white;'";
       $task_status = $status ;
       $subtask_sum = $row["sku"];
     }
