@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" />
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Sans+Thai&family=Mulish&family=Pacifico&family=Quicksand:wght@300&family=Square+Peg&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Sans+Thai&family=Mulish&family=Pacifico&family=Quicksand:wght@400&family=Square+Peg&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
