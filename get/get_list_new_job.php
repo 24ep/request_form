@@ -219,7 +219,8 @@ if(isset($_POST["from_post"] )){
             $tr_class = "class='row sub-ticket'";
           }else{
             $th_class = "class='row tree_lift_end'";
-            unset($tr_class);
+            $tr_class = "class='row'";
+            // unset($tr_class);
           }
           //check status of brand ticket match with filter or not
           if($_SESSION['status_filter']<>""){
