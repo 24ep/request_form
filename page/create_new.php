@@ -58,10 +58,10 @@
                             </div>
                             <div class="offcanvas-body">
                                 <div class="container-md" style="padding:0px 80px 0px 80px;">
-                                    <form class="row g-3" action="base/action/action_submit_add_new_job.php"
+                                    <form class="row g-3" action="../base/action/action_submit_add_new_job.php"
                                         method="POST">
                                         <div id="add_new_job_result"></div>
-                                        <?php include('form/form_request_add_new.php')?>
+                                        <?php include('../form/form_request_add_new.php')?>
                                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                             <button type="submit" class="btn btn-dark btn-sm">Submit</button>
                                         </div>
