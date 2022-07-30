@@ -44,7 +44,7 @@ function get_page_account(){
 
 ?>
 <?php
- $table =  '<table class="table" id="st_account_tb"  name="st_account_tb" >
+ $table =  '
     <li class="row" style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
       <div class="col" style="text-align-last: center;" scope="col">ID</div>
       <div class="col" scope="col" style="width: 30%;text-align-last: left;">Name</div>
