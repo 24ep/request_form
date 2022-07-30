@@ -215,10 +215,10 @@ if(isset($_POST["from_post"] )){
           }
             //important
           if($i<$subtask_count){
-            $th_class = "class='tree_lift'";
+            $th_class = "class='row tree_lift'";
             $tr_class = "class='row sub-ticket'";
           }else{
-            $th_class = "class='tree_lift_end'";
+            $th_class = "class='row tree_lift_end'";
             unset($tr_class);
           }
           //check status of brand ticket match with filter or not
