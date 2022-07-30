@@ -174,23 +174,23 @@ if(isset($_POST["from_post"] )){
     }
       if(!isset($ticket)){$ticket="";}
       if(!isset($tr_class)){$tr_class="";}
-      $ticket .= "<tr  ".$tr_class." >";
-      $ticket .= "<th scope='row' class='new_lob_list' >NS-".$row["id"]."</th>";
-      $ticket .= "<td>".$row["department"]."</td>";
-      $ticket .= "<td>".$row["brand"]."</td>";
-      $ticket .= "<td>".$subtask_sum."</td>";
+      $ticket .= "<li  ".$tr_class." >";
+      $ticket .= "<div scope='row' class='col new_lob_list' >NS-".$row["id"]."</div>";
+      $ticket .= "<div class='col'>".$row["department"]."</div>";
+      $ticket .= "<div class='col'>".$row["brand"]."</div>";
+      $ticket .= "<div class='col'>".$subtask_sum."</div>";
       // $ticket .= "<td>".$ri_style ."</td>";
-      $ticket .= "<td>".$row["production_type"]."</td>";
-      $ticket .= "<td>".$row["project_type"]."</td>";
+      $ticket .= "<div class='col'>".$row["production_type"]."</div>";
+      $ticket .= "<div class='col'>".$row["project_type"]."</div>";
       // $ticket .= "<td>".$row["business_type"]."</td>";
-      $ticket .= "<td>".$launch_date."</td>";
-      $ticket .= "<td>".$p_badge."</td>";
-      $ticket .= "<td>".$task_status ."</td>";
-      $ticket .= "<td>".$ticket_role ."</td>";
-      $ticket .= "<td>";
+      $ticket .= "<div class='col'>".$launch_date."</div>";
+      $ticket .= "<div class='col'>".$p_badge."</div>";
+      $ticket .= "<div class='col'>".$task_status ."</div>";
+      $ticket .= "<div class='col'>".$ticket_role ."</div>";
+      $ticket .= "<div class='col'>";
       $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row["id"].")' >
-       Detail </button></td>";
-      $ticket .=  "</tr>";
+       Detail </button></div>";
+      $ticket .=  "</li>";
       //get sub ticket
       $query_count="SELECT count(*) as total from add_new_job where parent = ".$row["id"];
       $result_count = mysqli_query($con, $query_count);
