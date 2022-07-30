@@ -168,7 +168,7 @@ if(isset($_POST["from_post"] )){
       }
       $subtask_sum = $row["sku"]." S(".$data_sum['total'].") ".$badge_alert_sku ;
     }else{
-      $tr_class = "class='shadow-sm p-3 mb-5 rounded ".$style_cancel."' style='background: white;'";
+      $tr_class = "class='row shadow-sm p-3 mb-5 rounded ".$style_cancel."' style='background: white;'";
       $task_status = $status ;
       $subtask_sum = $row["sku"];
     }
@@ -216,7 +216,7 @@ if(isset($_POST["from_post"] )){
             //important
           if($i<$subtask_count){
             $th_class = "class='tree_lift'";
-            $tr_class = "class='sub-ticket'";
+            $tr_class = "class='row sub-ticket'";
           }else{
             $th_class = "class='tree_lift_end'";
             unset($tr_class);
@@ -227,48 +227,48 @@ if(isset($_POST["from_post"] )){
               //data row
               if(isset($sub_ticket)){
                 if(isset($tr_class)){
-                  $sub_ticket .= "<tr ".$tr_class.">";
+                  $sub_ticket .= "<div ".$tr_class.">";
                 }else{
-                  $sub_ticket .= "<tr >";
+                  $sub_ticket .= "<div >";
                 }
               }else{
                 if(isset($tr_class)){
-                  $sub_ticket = "<tr ".$tr_class.">";
+                  $sub_ticket = "<div ".$tr_class.">";
                 }else{
-                  $sub_ticket = "<tr >";
+                  $sub_ticket = "<div >";
                 }
               }
-              $sub_ticket .= "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></th>";
-              $sub_ticket .= "<td></td>";
-              $sub_ticket .= "<td></td>";
-              $sub_ticket .= "<td>".$row_child["sku"]."</td>";
-              $sub_ticket .= "<td></td>";
-              $sub_ticket .= "<td></td>";
-              $sub_ticket .= "<td></td>";
-              $sub_ticket .= "<td></td>";
-              $sub_ticket .= "<td>".$status."</td>";
-              $sub_ticket .= "<td>". $ticket_role ."</td>";
-              $sub_ticket .= "<td>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
-              Detail </button></td>";
+              $sub_ticket .= "<div scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></div>";
+              $sub_ticket .= "<div class='col'></div>";
+              $sub_ticket .= "<div class='col'></div>";
+              $sub_ticket .= "<div class='col'>".$row_child["sku"]."</div>";
+              $sub_ticket .= "<div class='col'></div>";
+              $sub_ticket .= "<div class='col'></div>";
+              $sub_ticket .= "<div class='col'></div>";
+              $sub_ticket .= "<div class='col'></div>";
+              $sub_ticket .= "<div class='col'>".$status."</div>";
+              $sub_ticket .= "<div class='col'>". $ticket_role ."</div>";
+              $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+              Detail </button></div >";
               $i++;
             }
           }else{
                //data row
           if(!isset($sub_ticket)){$sub_ticket ="";}
           if(!isset($tr_class)){$tr_class="";}
-          $sub_ticket .= "<tr ".$tr_class.">";
-          $sub_ticket .= "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></th>";
-          $sub_ticket .= "<td></td>";
-          $sub_ticket .= "<td></td>";
-          $sub_ticket .= "<td>".$row_child["sku"]."</td>";
-          $sub_ticket .= "<td></td>";
-          $sub_ticket .= "<td></td>";
-          $sub_ticket .= "<td></td>";
-          $sub_ticket .= "<td></td>";
-          $sub_ticket .= "<td  >".$status."</td>";
-          $sub_ticket .= "<td>". $ticket_role ."</td>";
-          $sub_ticket .= "<td>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
-           Detail </button></td>";
+          $sub_ticket .= "<div ".$tr_class.">";
+          $sub_ticket .= "<div scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></div>";
+          $sub_ticket .= "<div class='col'></div>";
+          $sub_ticket .= "<div class='col'></div>";
+          $sub_ticket .= "<div class='col'>".$row_child["sku"]."</div>";
+          $sub_ticket .= "<div class='col'></div>";
+          $sub_ticket .= "<div class='col'></div>";
+          $sub_ticket .= "<div class='col'></div>";
+          $sub_ticket .= "<div class='col'></div>";
+          $sub_ticket .= "<div class='col' >".$status."</div>";
+          $sub_ticket .= "<div class='col'>". $ticket_role ."</div>";
+          $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+           Detail </button></div>";
           $i++;
           }
         }
