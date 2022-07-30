@@ -1,7 +1,6 @@
 <div class="container ">
     <nav class="navbar">
         <div class="container-fluid p-0">
-            <a class="navbar-brand">Request & Project Board</a>
             <form class="d-flex">
                 <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
                 </div>
@@ -54,9 +53,7 @@
                 <input style="width: 10%;" list="qlistoption_status" type="text" class="form-control"
                     onchange="search_cr_status();" id="ts_status" name="ts_status" placeholder="all status"
                     aria-label="status" aria-describedby="basic-addon1" value="<?php echo $_SESSION["ts_status"];  ?>">
-                <span class="input-group-text">Limit</span>
-                <input type="number" max="999" onchange="run_ts_command('task');" min="1" class="form-control"
-                    id="ts_command_limit" name="ts_command_limit" placeholder="Server" value="100" aria-label="Server">
+            
             </div>
             <datalist id="qlistoption">
                 <?php echo $username_op_cr; ?>
