@@ -35,7 +35,7 @@
                         <a class="nav-link"  data-bs-toggle="pill" type="button" role="tab" aria-selected="false"><ion-icon name="ticket" ></ion-icon>Create New</a>
                     </li>
                     <li class="nav-item" role="presentation"></li>
-                        <a class="nav-link"  data-bs-toggle="pill" type="button" role="tab"  aria-selected="false"><ion-icon name="ticket"></ion-icon>Update content</a>
+                        <a class="nav-link"  data-bs-toggle="pill" type="button" role="tab"  aria-selected="false"><ion-icon name="ticket" onclick="get_page('update_content')"></ion-icon>Update content</a>
                     </li>
                 <hr class="hr_manu_bra_in">
                 <small class="header_manu_bra">Internals</small>
