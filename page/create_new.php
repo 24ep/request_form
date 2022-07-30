@@ -89,7 +89,7 @@
 </li>
       
         
-            <?php include('../get/get_list_new_job.php'); ?>
+            <?php include('../get/get_list_new_job_new.php'); ?>
      
     
 </div>
