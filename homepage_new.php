@@ -81,6 +81,8 @@
             }, function(data) {
                 $('#col_detail').html(data);
             });
+        }else{
+            $('#col_detail').html("not avaliable");
         }
     }
 </script>
