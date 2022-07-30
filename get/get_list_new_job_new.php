@@ -3,25 +3,25 @@ session_start();
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error( $con));
 function badge_status($status){
   if($status=="pending"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#a9a9a94f;border:#a9a9a94f solid 1px;width: 100%;">pending</button>';
   }elseif($status=="checking"  ){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ffff7e;color:#997300;border:#ffff7e">checking</button>';
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#ffff7e;border:#ffff7e solid 1px;width: 100%;">checking</button>';
   }elseif( $status=="on-production"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ff9a59;color:white;border:#ff9a59">on-production</button>';
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:ff9a59;border:#ff9a59 solid 1px;width: 100%;">on-production</button>';
   }elseif($status=="accepted" or $status=="approved"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #7befb2;color:#115636;border:#115636">'.$status.'</button>';
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#7befb2;border:#7befb2 solid 1px;width: 100%;">'.$status.'</button>';
   }elseif($status=="waiting confirm"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #499CF7;color:#093f8e;border:#499CF7">waiting confirm</button>';
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#499CF7;border:#499CF7 solid 1px;width: 100%;">waiting confirm</button>';
   }elseif($status=="waiting image"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting image</button>';
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#FE7A6F;border:#FE7A6F solid 1px;width: 100%;">waiting image</button>';
   }elseif($status=="waiting data"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting data</button>';
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#FE7A6F;border:#FE7A6F solid 1px;width: 100%;">waiting data</button>';
   }elseif($status=="waiting traffic"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ea79f7;color:#6a2e71;border:#ea79f7">waiting traffic</button>';
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#ea79f7;border:#ea79f7 solid 1px;width: 100%;">waiting traffic</button>';
   }elseif($status=="cancel"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #efefef;color:#dddddd;border:#ea79f7">Cancel</button>';
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#efefef;border:#efefef solid 1px;width: 100%;">Cancel</button>';
   }else{
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">'.$status.'</button>';
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#a9a9a94f;border:#a9a9a94f solid 1px;width: 100%;">'.$status.'</button>';
   }
 return $status;
 }
