@@ -186,7 +186,6 @@ if(isset($_POST["from_post"] )){
       $ticket .= "<td>".$launch_date."</td>";
       $ticket .= "<td>".$p_badge."</td>";
       $ticket .= "<td>".$task_status ."</td>";
-      $ticket .= "<td>".$ticket_role ."</td>";
       $ticket .= "<td>";
       $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row["id"].")' >
        Detail </button></td>";
@@ -247,7 +246,6 @@ if(isset($_POST["from_post"] )){
               $sub_ticket .= "<td></td>";
               $sub_ticket .= "<td></td>";
               $sub_ticket .= "<td>".$status."</td>";
-              $sub_ticket .= "<td>". $ticket_role ."</td>";
               $sub_ticket .= "<td>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
               Detail </button></td>";
               $i++;
@@ -266,7 +264,6 @@ if(isset($_POST["from_post"] )){
           $sub_ticket .= "<td></td>";
           $sub_ticket .= "<td></td>";
           $sub_ticket .= "<td  >".$status."</td>";
-          $sub_ticket .= "<td>". $ticket_role ."</td>";
           $sub_ticket .= "<td>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
            Detail </button></td>";
           $i++;
