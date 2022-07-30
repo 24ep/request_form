@@ -70,7 +70,7 @@
                     </a>
                     </li>
                     <li class="nav-item" role="presentation"></li>
-                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
+                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false" onclick="get_page('account');">
                         <ion-icon name="people"></ion-icon>Account
                     </a>
                     </li>
@@ -117,6 +117,13 @@ function get_page(page) {
     else if (page == "create_new") {
         Notiflix.Loading.hourglass('Loading...');
         $.post("page/create_new.php", {}, function(data) {
+            $('#col_detail').html(data);
+            Notiflix.Loading.remove();
+        });
+    }
+    else if (page == "account") {
+        Notiflix.Loading.hourglass('Loading...');
+        $.post("page/account.php", {}, function(data) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
