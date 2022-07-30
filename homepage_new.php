@@ -81,7 +81,7 @@
                     </a>
                     </li>
                     <li class="nav-item" role="presentation"></li>
-                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
+                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false" onclick="logout()">
                         <ion-icon name="log-out"></ion-icon>Logout
                     </a>
                     </li>
