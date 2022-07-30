@@ -168,7 +168,7 @@ if(isset($_POST["from_post"] )){
       }
       $subtask_sum = $row["sku"]." S(".$data_sum['total'].") ".$badge_alert_sku ;
     }else{
-      $tr_class = "class='row shadow-sm p-1 mb-3 rounded ".$style_cancel."' style='background: white;align-items: center;'";
+      $tr_class = "class='row shadow-sm p-1 mb-2 rounded ".$style_cancel."' style='background: white;align-items: center;'";
       $task_status = $status ;
       $subtask_sum = $row["sku"];
     }
@@ -218,7 +218,7 @@ if(isset($_POST["from_post"] )){
             $tr_class = "class='row sub-ticket mb-0'";
           }else{
             $th_class = "class='col tree_lift_end p-1'";
-            $tr_class = "class='row mb-3' style='align-items: center;'";
+            $tr_class = "class='row mb-2' style='align-items: center;'";
             // unset($tr_class);
           }
           //check status of brand ticket match with filter or not
@@ -229,13 +229,13 @@ if(isset($_POST["from_post"] )){
                 if(isset($tr_class)){
                   $sub_ticket .= "<li ".$tr_class.">";
                 }else{
-                  $sub_ticket .= "<li class='row mb-3'>";
+                  $sub_ticket .= "<li class='row mb-2'>";
                 }
               }else{
                 if(isset($tr_class)){
                   $sub_ticket = "<li ".$tr_class.">";
                 }else{
-                  $sub_ticket = "<li class='row mb-3' >";
+                  $sub_ticket = "<li class='row mb-2' >";
                 }
               }
               $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 250px;' ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></div>";
