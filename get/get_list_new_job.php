@@ -168,7 +168,7 @@ if(isset($_POST["from_post"] )){
       }
       $subtask_sum = $row["sku"]." S(".$data_sum['total'].") ".$badge_alert_sku ;
     }else{
-      $tr_class = "class='row shadow-sm p-3  rounded ".$style_cancel."' style='background: white;'";
+      $tr_class = "class='row shadow-sm p-3 mb-3 rounded ".$style_cancel."' style='background: white;'";
       $task_status = $status ;
       $subtask_sum = $row["sku"];
     }
