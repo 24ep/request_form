@@ -215,10 +215,10 @@ if(isset($_POST["from_post"] )){
           }
             //important
           if($i<$subtask_count){
-            $th_class = "class='row tree_lift'";
+            $th_class = "class='col tree_lift'";
             $tr_class = "class='row sub-ticket'";
           }else{
-            $th_class = "class='row tree_lift_end'";
+            $th_class = "class='col tree_lift_end'";
             unset($tr_class);
           }
           //check status of brand ticket match with filter or not
@@ -229,13 +229,13 @@ if(isset($_POST["from_post"] )){
                 if(isset($tr_class)){
                   $sub_ticket .= "<li ".$tr_class.">";
                 }else{
-                  $sub_ticket .= "<li >";
+                  $sub_ticket .= "<li class='row'>";
                 }
               }else{
                 if(isset($tr_class)){
                   $sub_ticket = "<li ".$tr_class.">";
                 }else{
-                  $sub_ticket = "<li >";
+                  $sub_ticket = "<li class='row' >";
                 }
               }
               $sub_ticket .= "<div scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></div>";
