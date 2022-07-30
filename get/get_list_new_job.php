@@ -227,15 +227,15 @@ if(isset($_POST["from_post"] )){
               //data row
               if(isset($sub_ticket)){
                 if(isset($tr_class)){
-                  $sub_ticket .= "<div ".$tr_class.">";
+                  $sub_ticket .= "<li ".$tr_class.">";
                 }else{
-                  $sub_ticket .= "<div >";
+                  $sub_ticket .= "<li >";
                 }
               }else{
                 if(isset($tr_class)){
-                  $sub_ticket = "<div ".$tr_class.">";
+                  $sub_ticket = "<li ".$tr_class.">";
                 }else{
-                  $sub_ticket = "<div >";
+                  $sub_ticket = "<li >";
                 }
               }
               $sub_ticket .= "<li scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></div>";
