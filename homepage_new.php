@@ -10,15 +10,15 @@
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css"
-        href="css-theam/light-new.css">
+    <link rel="stylesheet" type="text/css" href="css-theam/light-new.css">
+    <script src="js/notificatios.js"></script>
 </head>
 <body>
         <div class="col-2 list_bra shadow">
             <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a class="navbar-brand" href="#">ONLINE CONTENT</a>
                 <hr class="hr_manu_bra">
-                <span class="name_manu_bra">Jaroonwit P.</span>
+                <span class="name_manu_bra">Jaroonwit p.</span>
                 <small class="dept_manu_bra">Admin</small>
                 <hr class="hr_manu_bra">
                 <small class="header_manu_bra">Manu</small>
@@ -60,6 +60,10 @@
                         <a class="nav-link" data-bs-toggle="pill" type="button" role="tab"  aria-selected="false"><ion-icon name="log-out" ></ion-icon>Logout</a>
                     </li>
                 </ul>
+            </div>
+        </div>
+        <div class="col-10">
+            <div id="col_detail">
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
