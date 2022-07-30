@@ -7,6 +7,7 @@
     <title>New ui content service gate</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&family=Mulish&family=Quicksand:wght@300&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -16,6 +17,11 @@
     <script src="action/notiflix/dist/notiflix-3.2.5.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css-theam/light-new.css">
     <script src="js/notifications.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
+     <!-- textarray -->
+    <link href="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
