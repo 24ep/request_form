@@ -53,7 +53,7 @@ function get_page_account(){
       <div class="col" scope="col">Department</div>
       <div class="col" scope="col">Action</div>
     </li>
-    '.$value_account.'
+    '.$value_account;
 
 return $table;
 }

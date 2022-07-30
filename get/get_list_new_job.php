@@ -156,7 +156,7 @@ if(isset($_POST["from_post"] )){
     //config_type
     if($row["config_type"]=="parent"){
       //set style
-      $tr_class = "class='row sub-ticket shadow-sm p-3 rounded ".$style_cancel."' style='background: white;'";
+      $tr_class = "class='row sub-ticket shadow-sm p-3 mb-0 rounded ".$style_cancel."' style='background: white;'";
       $task_status = '';
       $query_sum="SELECT sum(sku) as total from add_new_job where parent = ".$row["id"];
       $result_sum = mysqli_query($con, $query_sum);
@@ -219,7 +219,7 @@ if(isset($_POST["from_post"] )){
             $tr_class = "class='row sub-ticket'";
           }else{
             $th_class = "class='col tree_lift_end'";
-            $tr_class = "class='row mb-3'";
+            $tr_class = "class='row'";
             // unset($tr_class);
           }
           //check status of brand ticket match with filter or not
@@ -230,13 +230,13 @@ if(isset($_POST["from_post"] )){
                 if(isset($tr_class)){
                   $sub_ticket .= "<li ".$tr_class.">";
                 }else{
-                  $sub_ticket .= "<li class='row'>";
+                  $sub_ticket .= "<li class='row mb-0'>";
                 }
               }else{
                 if(isset($tr_class)){
                   $sub_ticket = "<li ".$tr_class.">";
                 }else{
-                  $sub_ticket = "<li class='row' >";
+                  $sub_ticket = "<li class='row mb-3' >";
                 }
               }
               $sub_ticket .= "<div scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></div>";
