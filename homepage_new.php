@@ -74,7 +74,7 @@
 <script>
     function get_page(page){
         if(page=="update_content"){
-                $.post("base/action/get_list_ts_list_view.php", {
+                $.post("action/get_list_ts_list_view.php", {
             }, function(data) {
                 $('#col_detail').html(data);
             });
