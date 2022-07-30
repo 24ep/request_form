@@ -215,10 +215,10 @@ if(isset($_POST["from_post"] )){
           }
             //important
           if($i<$subtask_count){
-            $th_class = "class='row tree_lift'";
+            $th_class = "class='col tree_lift'";
             $tr_class = "class='row sub-ticket'";
           }else{
-            $th_class = "class='row tree_lift_end'";
+            $th_class = "class='col tree_lift_end'";
             $tr_class = "class='row'";
             // unset($tr_class);
           }
