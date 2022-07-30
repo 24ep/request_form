@@ -296,7 +296,6 @@ if (!$_SESSION["login_csg"]){
                                         <th scope="col">launch date</th>
                                         <th scope="col">Badge</th>
                                         <th scope="col">Status</th>
-                                        <th scope="col">Role</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>

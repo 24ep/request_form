@@ -85,7 +85,6 @@
                 <div class="col" scope="col">launch date</div>
                 <div class="col" scope="col">Badge</div>
                 <div class="col" scope="col">Status</div>
-                <div class="col" scope="col">Role</div>
                 <div class="col" scope="col">Action</div>
 </li>
       
