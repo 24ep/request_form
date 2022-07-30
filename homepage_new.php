@@ -41,7 +41,7 @@
                     </a>
                     </li>
                     <li class="nav-item" role="presentation"></li>
-                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
+                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false" onclick="get_page('create_new');">
                         <ion-icon name="ticket"></ion-icon>Create New
                     </a>
                     </li>
@@ -107,7 +107,15 @@ function get_page(page) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
-    } else {
+    }
+    else if (page == "create_new") {
+        Notiflix.Loading.hourglass('Loading...');
+        $.post("page/create_new.php", {}, function(data) {
+            $('#col_detail').html(data);
+            Notiflix.Loading.remove();
+        });
+    } 
+    else {
         $('#col_detail').html("not avaliable");
         Notiflix.Loading.remove();
     }
