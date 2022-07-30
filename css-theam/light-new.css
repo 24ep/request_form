@@ -1,7 +1,11 @@
+@font-face {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    unicode-range: U+0E00–U+0E7F;
+  }
 
 body {
     background-color: #f8f9fa;
-    font-family: 'IBM Plex Sans Thai', sans-serif;
+  
     font-family: 'Mulish', sans-serif;
     font-family: 'Quicksand', sans-serif;
     
