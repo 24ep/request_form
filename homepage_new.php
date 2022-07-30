@@ -35,7 +35,7 @@
                         <a class="nav-link"  data-bs-toggle="pill" type="button" role="tab" aria-selected="false"><ion-icon name="ticket" ></ion-icon>Create New</a>
                     </li>
                     <li class="nav-item" role="presentation"></li>
-                        <a class="nav-link"  data-bs-toggle="pill" type="button" role="tab"  aria-selected="false"><ion-icon name="ticket" onclick="get_page('update_content');"></ion-icon>Update content</a>
+                        <a class="nav-link"  data-bs-toggle="pill" type="button" role="tab"  aria-selected="false" onclick="get_page('update_content');"><ion-icon name="ticket" ></ion-icon>Update content</a>
                     </li>
                 <hr class="hr_manu_bra_in">
                 <small class="header_manu_bra">Internals</small>
@@ -74,7 +74,7 @@
 <script>
     function get_page(page){
         if(page=="update_content"){
-                $.post("../base/action/get_list_ts_list_view.php", {
+                $.post("base/action/get_list_ts_list_view.php", {
             }, function(data) {
                 $('#col_detail').html(data);
             });
