@@ -156,7 +156,7 @@ if(isset($_POST["from_post"] )){
     //config_type
     if($row["config_type"]=="parent"){
       //set style
-      $tr_class = "class='row sub-ticket shadow-sm p-3 mb-0 rounded ".$style_cancel."' style='background: white;align-items: center;'";
+      $tr_class = "class='row sub-ticket shadow-sm p-1 mb-0 rounded ".$style_cancel."' style='background: white;align-items: center;'";
       $task_status = '';
       $query_sum="SELECT sum(sku) as total from add_new_job where parent = ".$row["id"];
       $result_sum = mysqli_query($con, $query_sum);
@@ -168,7 +168,7 @@ if(isset($_POST["from_post"] )){
       }
       $subtask_sum = $row["sku"]." S(".$data_sum['total'].") ".$badge_alert_sku ;
     }else{
-      $tr_class = "class='row shadow-sm p-3 mb-3 rounded ".$style_cancel."' style='background: white;align-items: center;'";
+      $tr_class = "class='row shadow-sm p-1 mb-3 rounded ".$style_cancel."' style='background: white;align-items: center;'";
       $task_status = $status ;
       $subtask_sum = $row["sku"];
     }
@@ -214,10 +214,10 @@ if(isset($_POST["from_post"] )){
           }
             //important
           if($i<$subtask_count){
-            $th_class = "class='col tree_lift p-3'";
+            $th_class = "class='col tree_lift p-1'";
             $tr_class = "class='row sub-ticket mb-0'";
           }else{
-            $th_class = "class='col tree_lift_end p-3'";
+            $th_class = "class='col tree_lift_end p-1'";
             $tr_class = "class='row mb-3' style='align-items: center;'";
             // unset($tr_class);
           }
