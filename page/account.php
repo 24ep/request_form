@@ -62,6 +62,7 @@ function get_page_account(){
 
 return $table;
 }
+get_page_account();
 ?>
 
 <script>
