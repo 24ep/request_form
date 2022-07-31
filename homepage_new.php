@@ -112,7 +112,7 @@ if (!$_SESSION["login_csg"]){
                         </div>
                     </a>
                     <li class="nav-item" role="presentation"></li>
-                    <a class="nav-link active" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
+                    <a class="nav-link active" data-bs-toggle="pill" type="button" role="tab" aria-selected="false" onclick="get_page('dashboard');">
                         <ion-icon name="home"></ion-icon>Dashboard
                     </a>
                     </li>
