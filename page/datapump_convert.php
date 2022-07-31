@@ -1,18 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" />
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <title>Datapump | Template Ganerate</title>
     <style>
-    body {
-        padding: 3%;
-    }
+    
     .template-generate-header-s {
         color: #737df4;
     }
@@ -30,8 +17,7 @@
         width: 100%;
     }
     </style>
-</head>
-<body>
+
     <h4>Datapump <span class="template-generate-header-s"> | Template Generate</span></h4>
     <small class="template-generate-sub-s">Please use lastest Linesheet<small>
             <hr>
@@ -93,8 +79,6 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
                 crossorigin="anonymous"></script>
-</body>
-</html>
 <script>
 function send_file_to_convert() {
     document.getElementById('convert_bt').innerHTML =
