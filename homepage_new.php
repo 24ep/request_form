@@ -218,7 +218,7 @@ function logout() {
         'Yes ',
         'No ',
         function okCb() {
-            window.location.href = "action/action_logout.php";
+            window.location.href = "base/action/action_logout.php";
         },
         function cancelCb() {
             //nothing to do
