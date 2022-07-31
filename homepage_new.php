@@ -161,7 +161,7 @@ if (!$_SESSION["login_csg"]){
                     </li>
 
                     <li class="nav-item btn-group dropend" role="presentation">
-                            <a class="nav-link" data-bs-toggle="dropdown" data-bs-auto-close="inside" type="button" role="tab" aria-selected="false"
+                            <a class="nav-link" data-bs-toggle="dropdown"  data-bs-auto-close="outside" type="button" role="tab" aria-selected="false"
                                 data-bs-toggle="dropdown">
                                 <ion-icon name="layers"></ion-icon>Productions
                             </a>
@@ -174,6 +174,7 @@ if (!$_SESSION["login_csg"]){
                                         type="button">
                                         <ion-icon name="shapes"></ion-icon>Datapump Admin
                                     </a></li>
+                                <hr class="hr_manu_bra_in">
                                 <small class="header_manu_bra">Backend (PROD)</small>
                                 <li><a href="https://cto-pim.cloud.akeneo.com/" target="_blank" class="dropdown-item" type="button">
                                         <ion-icon name="shapes"></ion-icon>PIM 
@@ -181,6 +182,7 @@ if (!$_SESSION["login_csg"]){
                                 <li><a href="https://backend.central.co.th/gutentag/admin/index/index/key/36f79751536eaff794291a09bb5d1831d1f4453a2819d0d731cde2da72b95ffb/" target="_blank" class="dropdown-item" type="button">
                                         <ion-icon name="shapes"></ion-icon>MDC
                                 </a></li>
+                                <hr class="hr_manu_bra_in">
                                 <small class="header_manu_bra">Backend (Stagging)</small>
                                 <li><a href="https://uat.central.co.th/th" target="_blank" class="dropdown-item" type="button">
                                         <ion-icon name="shapes"></ion-icon>FE 
@@ -194,7 +196,7 @@ if (!$_SESSION["login_csg"]){
                                 <li><a href="https://staging-mdc.central.co.th/admin/admin/index/index/key/84db97aa4de2e2c911fef6db4bab589d9eab2b47811d1d714d7193c2029e299f/" target="_blank" class="dropdown-item" type="button">
                                         <ion-icon name="shapes"></ion-icon>MDC
                                 </a></li>
-                                
+                                <hr class="hr_manu_bra_in">
                                 <small class="header_manu_bra">Ability</small>
                                 <li><a onclick="get_page('writer-auto-assign-console');" class="dropdown-item" type="button">
                                         <ion-icon name="shapes"></ion-icon>writer auto-assign console
@@ -213,7 +215,7 @@ if (!$_SESSION["login_csg"]){
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Others</small>
                     <li class="nav-item btn-group dropend" role="presentation">
-                            <a class="nav-link" data-bs-toggle="dropdown" data-bs-auto-close="inside" type="button" role="tab" aria-selected="false"
+                            <a class="nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button" role="tab" aria-selected="false"
                                 data-bs-toggle="dropdown">
                                 <ion-icon name="globe"></ion-icon>Quicklink
                             </a>
