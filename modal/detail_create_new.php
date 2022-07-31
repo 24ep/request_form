@@ -117,11 +117,11 @@
   }
   mysqli_close($con);
   if($request_important=="Urgent"){
-    $dp_tags .= '<span class="badge bg-danger" style="margin-left:10px">'.$request_important.'</span>';
+    $dp_tags .= '<span class="badge bg-danger" style="margin: 0px 10px 10px 0px;padding: 8px;">'.$request_important.'</span>';
 }
   $tags_array = explode(", ", $tags);
   foreach ($tags_array as $tag) {
-   $dp_tags .= '<span class="badge bg-dark" style="margin-left:10px">'.$tag.'</span>';
+   $dp_tags .= '<span class="badge bg-dark" style="margin: 0px 10px 10px 0px;padding: 8px;">'.$tag.'</span>';
   }
 ?>
 <div class="offcanvas-body" style="padding-bottom: 0px;height: 100%;">
@@ -157,13 +157,13 @@
                             <small class="content-assignee-header">Content Assinee</small>
                             <ul class="contact-person-ns">
                                 <li style="margin-top: 5px;">
-                                    <ion-icon name="ticket-outline"></ion-icon><strong><span style='color:red'>NS</span><?php echo $_POST["id"]; ?></strong>
+                                    <ion-icon name="ticket-outline"></ion-icon><strong><span style='color:red'>NS-</span><?php echo $_POST["id"]; ?></strong>
                                 </li>
                                 <li style="margin-top: 5px;">
                                     <ion-icon name="storefront-outline"></ion-icon> <?php echo $brand; ?>
                                 </li>
                                 <li style="margin-top: 5px;">
-                                    <ion-icon name="server-outline"></ion-icon> <?php echo $sku; ?>
+                                    <ion-icon name="server-outline"></ion-icon> <?php echo $sku; ?> SKUs
                                 </li>
                             </ul>
                             <hr>
