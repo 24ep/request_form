@@ -174,10 +174,27 @@ if (!$_SESSION["login_csg"]){
                                         type="button">
                                         <ion-icon name="shapes"></ion-icon>Datapump Admin
                                     </a></li>
-                                <small class="header_manu_bra">Backend</small>
-                                <li><a disabled class="dropdown-item" type="button">
-                                        <ion-icon name="shapes"></ion-icon>PIM
-                                    </a></li>
+                                <small class="header_manu_bra">Backend (PROD)</small>
+                                <li><a href="https://cto-pim.cloud.akeneo.com/" target="_blank" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>PIM 
+                                </a></li>
+                                <li><a href="https://backend.central.co.th/gutentag/admin/index/index/key/36f79751536eaff794291a09bb5d1831d1f4453a2819d0d731cde2da72b95ffb/" target="_blank" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>MDC
+                                </a></li>
+                                <small class="header_manu_bra">Backend (Stagging)</small>
+                                <li><a href="https://uat.central.co.th/th" target="_blank" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>FE 
+                                </a></li>
+                                <li><a href="https://eor-admin-uat.central.tech/upload" target="_blank" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>DATAPUMP Admin 
+                                </a></li>
+                                <li><a href="https://cto-pim-uat.cloud.akeneo.com/user/login" target="_blank" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>PIM 
+                                </a></li>
+                                <li><a href="https://staging-mdc.central.co.th/admin/admin/index/index/key/84db97aa4de2e2c911fef6db4bab589d9eab2b47811d1d714d7193c2029e299f/" target="_blank" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>MDC
+                                </a></li>
+                                
                                 <small class="header_manu_bra">Ability</small>
                                 <li><a onclick="get_page('writer-auto-assign-console');" class="dropdown-item" type="button">
                                         <ion-icon name="shapes"></ion-icon>writer auto-assign console
@@ -187,6 +204,9 @@ if (!$_SESSION["login_csg"]){
                                 </a></li>
                                 <li><a onclick="get_page('wordtohtml');" class="dropdown-item" type="button">
                                         <ion-icon name="shapes"></ion-icon>Word to HTML
+                                </a></li>
+                                <li><a href="https://centrality.workplace.com/" target="_blank" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>Workchat 
                                 </a></li>
                             </ul>
                     </li>
@@ -211,6 +231,9 @@ if (!$_SESSION["login_csg"]){
                                 </a></li>
                                 <li><a href="https://centralgroup-my.sharepoint.com/:f:/g/personal/ton_central_tech/Ek7nHI386MZAgCvU5e1xAvkBJX9gZbW_xE6NYjq8dUgo6g?e=2frs9b" target="_blank" class="dropdown-item" type="button">
                                         <ion-icon name="shapes"></ion-icon>LAMTON DRIVE
+                                </a></li>
+                                <li><a href="https://cds-content.myjetbrains.com/youtrack/articles/SD-A-21/user-for-content-team"" target="_blank" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>Yourtrack
                                 </a></li>
                             </ul>
                            
