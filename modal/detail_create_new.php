@@ -271,15 +271,14 @@
                                     ?>
                                     <div class="position-relative m-4">
                                     <div class="progress" style="height: 1px;">
-                                        <div class="progress-bar" role="progressbar" aria-label="Progress" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-label="Progress" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-success rounded-pill" style="width: 2rem; height:2rem;">1</button>
-                                    <small style="margin: 50px 20px!important;font-weight: bold;top: 10;">Checking information</small>
-                                    <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-success rounded-pill" style="width: 2rem; height:2rem;">2</button>
-                                    <small style="margin: 50px 20px!important;font-weight: bold;top: 10;">Accpeted > On-Production</small>
-                                    <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-success rounded-pill" style="width: 2rem; height:2rem;">2</button>
-                                    <small style="margin: 50px 20px!important;font-weight: bold;top: 10;">Approved</small>
-                                    
+                                    <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm <?php echo $badge_progres_1; ?> rounded-pill" style="width: fit-content; height:2rem;">Checking</button>
+                
+                                    <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm <?php echo $badge_progres_2; ?> rounded-pill" style="width: fit-content; height:2rem;">On-production</button>
+                 
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm <?php echo $badge_progres_3; ?> rounded-pill" style="width: fit-content; height:2rem;">Approved</button>
+                       
                                     </div>
                                 <h6>
                                     <ion-icon name="color-wand-outline"></ion-icon><strong>Productions Job</strong>

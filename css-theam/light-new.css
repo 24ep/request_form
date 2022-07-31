@@ -180,3 +180,14 @@ label#label_file_cme {
     font-size: 12px;
     font-weight: 500 !important;
 }
+.progress-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--bs-progress-bar-color);
+    text-align: center;
+    white-space: nowrap;
+    background-color: #198754;
+    transition: var(--bs-progress-bar-transition);
+}
