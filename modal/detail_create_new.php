@@ -143,12 +143,12 @@
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
                             aria-orientation="vertical">
                             <a class="nav-link active inpo" id="v-pills-progress-tab" data-bs-toggle="pill"
-                                href="#v-pills-progress" role="tab" aria-controls="v-pills-progress"
+                            data-bs-target="#v-pills-progress" role="tab" aria-controls="v-pills-progress"
                                 aria-selected="false">
                                 <ion-icon name="speedometer-outline"></ion-icon>Progress
                             </a>
                             <a class="nav-link inpo" id="v-pills-request_detail-tab" data-bs-toggle="pill"
-                                href="#v-pills-request_detail" role="tab" aria-controls="v-pills-request_detail"
+                            data-bs-target="#v-pills-request_detail" role="tab" aria-controls="v-pills-request_detail"
                                 aria-selected="true">
                                 <ion-icon name="reader-outline"></ion-icon>Request Detail
                             </a>
@@ -166,21 +166,21 @@
                             <?php }?>
                             <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                             <hr>
-                            <a class="nav-link inpo" id="v-pills-cp-tab" data-bs-toggle="pill" href="#v-pills-cp"
+                            <a class="nav-link inpo" id="v-pills-cp-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cp"
                                 role="tab" aria-controls="v-pills-cp" aria-selected="false">
                                 <ion-icon name="grid-outline"></ion-icon>Control Panel
                             </a>
                             <a class="nav-link inpo" id="v-pills-sku-checking-tab" data-bs-toggle="pill"
-                                href="#v-pills-sku-checking" role="tab" aria-controls="v-pills-sku-checking"
+                            data-bs-target="#v-pills-sku-checking" role="tab" aria-controls="v-pills-sku-checking"
                                 aria-selected="false">
                                 <ion-icon name="trail-sign-outline"></ion-icon>SKU Checking tools
                             </a>
-                            <a class="nav-link inpo" id="v-pills-sku-tab" data-bs-toggle="pill" href="#v-pills-sku"
+                            <a class="nav-link inpo" id="v-pills-sku-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sku"
                                 role="tab" aria-controls="v-pills-sku" aria-selected="false">
                                 <ion-icon name="trail-sign-outline"></ion-icon>SKU list
                             </a>
                             <a class="nav-link inpo" id="v-pills-internal_note-tab" data-bs-toggle="pill"
-                                href="#v-pills-internal_note" role="tab" aria-controls="v-pills-internal_note"
+                            data-bs-target="#v-pills-internal_note" role="tab" aria-controls="v-pills-internal_note"
                                 aria-selected="false">
                                 <ion-icon name="chatbox-ellipses-outline"></ion-icon>Internal note
                             </a>
