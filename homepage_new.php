@@ -702,7 +702,7 @@ function filter_update(be) {
                 echo '<script>select_current_tab("'.$tab_select.'");</script>';
                 ?>
 <script>
-< script >
+<script>
     $(document).ready(function() {
         $("#search_job").on("keyup", function() {
             var value = $(this).val().toLowerCase();
@@ -711,96 +711,5 @@ function filter_update(be) {
             });
         });
     });
-</script>
-<script>
-tinymce.init({
-    selector: 'textarea#cr_description',
-    plugins: 'print preview paste importcss searchreplace table autolink autosave save directionality lists code visualblocks visualchars fullscreen link template codesample charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist  wordcount textpattern noneditable help charmap  emoticons',
-    imagetools_cors_hosts: ['picsum.photos'],
-    menubar: 'file edit view insert format tools table help',
-    toolbar: 'bold italic underline strikethrough | forecolor backcolor removeformat | table code | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | pagebreak | charmap emoticons | fullscreen  preview  print | link anchor codesample | ltr rtl',
-    toolbar_sticky: true,
-    template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
-    template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
-    height: 600,
-    noneditable_noneditable_class: 'mceNonEditable',
-    toolbar_mode: 'sliding',
-    contextmenu: 'link bold italic | quicklink h2 h3 blockquote ',
-    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-});
-</script>
-<script type="text/javascript">
-tinymce.init({
-    selector: '#des_cr_inline',
-    inline: true
-});
-</script>
-<script>
-tinymce.init({
-    selector: 'textarea#ms_description',
-    height: 380,
-    menubar: false,
-    plugins: [
-        'advlist autolink lists link image charmap print preview anchor',
-        'searchreplace visualblocks code fullscreen',
-        'insertdatetime media table paste code help wordcount'
-    ],
-    toolbar: 'bold italic backcolor | alignleft aligncenter ' +
-        'alignright alignjustify | bullist numlist outdent indent | ' +
-        'removeformat | help',
-    //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
-});
-</script>
-<script>
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl)
-})
-</script>
-<script>
-run_ts_command('task');
-</script>
-<script>
-function load_tiny_comment() {
-    tinymce.init({
-        selector: "textarea#comment_input_cr",
-        plugins: "autoresize link lists emoticons",
-        toolbar: "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
-        menubar: false,
-        statusbar: false,
-        width: "100%",
-        toolbar_location: "bottom",
-        autoresize_bottom_margin: 0,
-        contextmenu: false,
-        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
-        setup: (ed) => {
-            editor = ed;
-        },
-    });
-}
-</script>
-<style>
-.tox.tox-tinymce.tox-tinymce--toolbar-bottom {
-    border-radius: 7px;
-    margin-top: 8px;
-}
-
-.tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child .tox-toolbar__primary,
-.tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
-    border-top: 1px solid #fff;
-}
-
-.tox .tox-tbtn svg {
-    display: block;
-    fill: #6c757d !important;
-}
-</style>
-<script>
-baguetteBox.run('.baguetteBoxFour', {
-    buttons: false
-});
-</script>
-<script>
-timeago().render(document.querySelectorAll('.timeago'));
 </script>
 <?php } ?>
