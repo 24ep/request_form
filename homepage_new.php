@@ -161,11 +161,11 @@ if (!$_SESSION["login_csg"]){
                     </li>
 
                     <li class="nav-item btn-group dropend" role="presentation">
-                            <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                            <a class="nav-link" data-bs-toggle="dropdown" data-bs-auto-close="inside" type="button" role="tab" aria-selected="false"
                                 data-bs-toggle="dropdown">
                                 <ion-icon name="layers"></ion-icon>Productions
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu shadow p3">
                                 <small class="header_manu_bra">Datapump</small>
                                 <li><a onclick="get_page('datapump_convert');" class="dropdown-item" type="button">
                                         <ion-icon name="shapes"></ion-icon>Datapump Convert
@@ -176,10 +176,20 @@ if (!$_SESSION["login_csg"]){
                                     </a></li>
                                 <small class="header_manu_bra">Backend</small>
                                 <li><a disabled class="dropdown-item" type="button">
-                                        <ion-icon name="shapes"></ion-icon>Imform version control
+                                        <ion-icon name="shapes"></ion-icon>PIM
                                     </a></li>
+                                <small class="header_manu_bra">Ability</small>
+                                <li><a onclick="get_page('writer-auto-assign-console');" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>writer auto-assign console
+                                </a></li>
+                                <li><a onclick="get_page('convert_mapping');" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>Convert Mapping
+                                </a></li>
+                                <li><a onclick="get_page('wordtohtml');" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>Word to HTML
+                                </a></li>
                             </ul>
-
+                            
                     </li>
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Others</small>
@@ -248,6 +258,24 @@ function get_page(page) {
     } else if (page == "datapump_admin") {
         Notiflix.Loading.hourglass('Loading...');
         $.post("base/page/datapump_admin.php", {}, function(data) {
+            $('#col_detail').html(data);
+            Notiflix.Loading.remove();
+        });
+    } else if (page == "writer-auto-assign-console") {
+        Notiflix.Loading.hourglass('Loading...');
+        $.post("base/page/writer-auto-assign-console.php", {}, function(data) {
+            $('#col_detail').html(data);
+            Notiflix.Loading.remove();
+        });
+    } else if (page == "convert_mapping") {
+        Notiflix.Loading.hourglass('Loading...');
+        $.post("base/page/convert_mapping.php", {}, function(data) {
+            $('#col_detail').html(data);
+            Notiflix.Loading.remove();
+        });
+    } else if (page == "wordtohtml") {
+        Notiflix.Loading.hourglass('Loading...');
+        $.post("base/page/wordtohtml.php", {}, function(data) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
