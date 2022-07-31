@@ -160,8 +160,7 @@ if (!$_SESSION["login_csg"]){
                         </a>
                     </li>
 
-                    <li class="nav-item" role="presentation">
-                        <div class="dropdown">
+                    <li class="nav-item dropdown" role="presentation">
                             <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                                 data-bs-toggle="dropdown">
                                 <ion-icon name="layers"></ion-icon>Productions
@@ -180,7 +179,6 @@ if (!$_SESSION["login_csg"]){
                                         <ion-icon name="shapes"></ion-icon>Imform version control
                                     </a></li>
                             </ul>
-                        </div>
 
                     </li>
                     <hr class="hr_manu_bra_in">
