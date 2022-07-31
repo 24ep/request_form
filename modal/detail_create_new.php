@@ -154,7 +154,7 @@
                             </a>
                             <?php if($config_type=='task'){?>
                             <hr>
-                            <small class="content-assignee-header">Content Assinee</small>
+                            <small class="content-assignee-header">Job Detail</small>
                             <ul class="contact-person-ns">
                                 <li style="margin-top: 5px;">
                                     <ion-icon name="ticket-outline"></ion-icon><strong><span style='color:red'>NS-</span><?php echo $_POST["id"]; ?></strong>
