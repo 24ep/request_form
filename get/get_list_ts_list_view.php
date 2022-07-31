@@ -15,12 +15,12 @@
     }
     function badge_ticket_status_cr($status){
         switch ($status) {
-          case "Close": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #0eb32699!important;padding: 8px;">'.$status.'</span>'; break;
-          case "Pending": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #afafaf99!important;padding: 8px;">'.$status.'</span>'; break;
-          case "Inprogress": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #d7aa3999!important;padding: 8px;">'.$status.'</span>'; break;
-          case "Waiting Buyer": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #cf67e599!important;padding: 8px;">'.$status.'</span>'; break;
-          case "Waiting Execution": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #182bd599!important;padding: 8px;">'.$status.'</span>'; break;
-          default: $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #00000099!important;padding: 8px;">'.$status.'</span>';
+          case "Close": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #0eb32699!important;padding: 8px;color:#0eb32699">'.$status.'</span>'; break;
+          case "Pending": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #afafaf99!important;padding: 8px;color:#afafaf99">'.$status.'</span>'; break;
+          case "Inprogress": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #d7aa3999!important;padding: 8px;color:#d7aa3999">'.$status.'</span>'; break;
+          case "Waiting Buyer": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #cf67e599!important;padding: 8px;color:#cf67e599">'.$status.'</span>'; break;
+          case "Waiting Execution": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #182bd599!important;padding: 8px;color:#182bd599">'.$status.'</span>'; break;
+          default: $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #00000099!important;padding: 8px;color:#00000099">'.$status.'</span>';
         }
         return $status;
         }
