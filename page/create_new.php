@@ -1,6 +1,15 @@
 <div style="margin-left: 10px;">
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center mt-3 mb-3">
+            <div class="col-5">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
+                    <input type="text" class="form-control" id="brand_filter" onchange="filter_update();"
+                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                        placeholder="Dept , Sub Dept , Brand , ID">
+                </div>
+
+            </div>
             <div class="col-auto">
                 <div class="input-group input-group-sm mb-3 flex-nowrap">
                     <span class="input-group-text " id="addon-wrapping">Username</span>
@@ -29,15 +38,7 @@
                     </select>
                 </div>
             </div>
-            <div class="col-5">
-                <div class="input-group input-group-sm mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
-                    <input type="text" class="form-control" id="brand_filter" onchange="filter_update();"
-                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-                        placeholder="Dept , Sub Dept , Brand , ID">
-                </div>
-
-            </div>
+         
             <div class="col-1">
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>

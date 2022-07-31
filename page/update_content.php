@@ -1,19 +1,7 @@
 <div class="container-fluid ">
     <nav class="navbar">
         <div class="container-fluid p-0">
-            <form class="d-flex">
-                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                </div>
-                <button class="btn btn-dark btn-sm " style="margin-left:10px;" type="button"
-                    data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas"
-                    aria-controls="offcanvasExample">
-                    <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated"
-                        aria-label="add outline">
-                    </ion-icon>
-                    New Ticket
-                </button>
 
-            </form>
         </div>
     </nav>
     <nav class="navbar">
@@ -53,7 +41,19 @@
                 <input style="width: 10%;" list="qlistoption_status" type="text" class="form-control"
                     onchange="search_cr_status();" id="ts_status" name="ts_status" placeholder="all status"
                     aria-label="status" aria-describedby="basic-addon1" value="<?php echo $_SESSION["ts_status"];  ?>">
-            
+                <form class="d-flex">
+                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                    </div>
+                    <button class="btn btn-dark btn-sm " style="margin-left:10px;" type="button"
+                        data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas"
+                        aria-controls="offcanvasExample">
+                        <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated"
+                            aria-label="add outline">
+                        </ion-icon>
+                        New Ticket
+                    </button>
+
+                </form>
             </div>
             <datalist id="qlistoption">
                 <?php echo $username_op_cr; ?>
