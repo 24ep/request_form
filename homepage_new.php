@@ -95,6 +95,19 @@ if (!$_SESSION["login_csg"]){
 </head>
 
 <body>
+    <div class="offcanvas offcanvas-start overflow-auto" role="dialog" tabindex="-1" id="edit_add_new"
+        style="width:100%" aria-labelledby="offcanvasExampleLabel">
+        <div id="callmodal_request_add_new" style="height: 100%;"></div>
+    </div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="notificationcanvas" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Update</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <?php include("get/get_log.php"); ?>
+        </div>
+    </div>
     <div class="row">
         <div class="col-2 list_bra shadow">
             <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -211,6 +224,7 @@ function get_page(page) {
     }
 }
 get_page('dashboard');
+
 function logout() {
     Notiflix.Confirm.show(
         'Confirm ',
