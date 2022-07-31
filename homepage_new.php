@@ -124,82 +124,82 @@ if (!$_SESSION["login_csg"]){
                         </div>
                     </a>
                     <li class="nav-item" role="presentation">
-                    <a class="nav-link active" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="get_page('dashboard');">
-                        <ion-icon name="home"></ion-icon>Dashboard
-                    </a>
+                        <a class="nav-link active" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                            onclick="get_page('dashboard');">
+                            <ion-icon name="home"></ion-icon>Dashboard
+                        </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="get_page('create_new');">
-                        <ion-icon name="ticket"></ion-icon>Create New
-                    </a>
+                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                            onclick="get_page('create_new');">
+                            <ion-icon name="ticket"></ion-icon>Create New
+                        </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="get_page('update_content');">
-                        <ion-icon name="ticket"></ion-icon>Update content
-                    </a>
+                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                            onclick="get_page('update_content');">
+                            <ion-icon name="ticket"></ion-icon>Update content
+                        </a>
                     </li>
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Internals</small>
                     <li class="nav-item" role="presentation">
-                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
-                        <ion-icon name="bar-chart"></ion-icon>Reports
-                    </a>
+                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
+                            <ion-icon name="bar-chart"></ion-icon>Reports
+                        </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
-                        <ion-icon name="cube"></ion-icon>Assests
-                    </a>
+                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
+                            <ion-icon name="cube"></ion-icon>Assests
+                        </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="get_page('account');">
-                        <ion-icon name="people"></ion-icon>Account
-                    </a>
+                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                            onclick="get_page('account');">
+                            <ion-icon name="people"></ion-icon>Account
+                        </a>
                     </li>
 
                     <li class="nav-item" role="presentation">
-                    <div class="dropdown">
-                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                            data-bs-toggle="dropdown">
-                            <ion-icon name="layers"></ion-icon>Productions
-                        </a>
-                        <ul class="dropdown-menu">
-                            <small class="header_manu_bra">Datapump</small>
-                            <li><button onclick="get_page('datapump_convert');" class="dropdown-item" type="button">
-                                    <ion-icon name="shapes"></ion-icon>Datapump Convert
-                                </button></li>
-                            <li><button disabled onclick="get_page('datapump_convert');" class="dropdown-item"
-                                    type="button">
-                                    <ion-icon name="shapes"></ion-icon>Datapump Admin
-                                </button></li>
-                            <small class="header_manu_bra">Imfrom</small>
-                            <li><button disabled class="dropdown-item" type="button">
-                                    <ion-icon name="shapes"></ion-icon>Imform version control
-                                </button></li>
-                        </ul>
-                    </div>
+                        <div class="dropdown">
+                            <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                                data-bs-toggle="dropdown">
+                                <ion-icon name="layers"></ion-icon>Productions
+                            </a>
+                            <ul class="dropdown-menu">
+                                <small class="header_manu_bra">Datapump</small>
+                                <li><a onclick="get_page('datapump_convert');" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>Datapump Convert
+                                    </a></li>
+                                <li><a onclick="get_page('datapump_admin');" class="dropdown-item"
+                                        type="button">
+                                        <ion-icon name="shapes"></ion-icon>Datapump Admin
+                                    </a></li>
+                                <small class="header_manu_bra">Imfrom</small>
+                                <li><a disabled class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>Imform version control
+                                    </a></li>
+                            </ul>
+                        </div>
 
                     </li>
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Others</small>
                     <li class="nav-item" role="presentation">
-                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
-                        <ion-icon name="globe"></ion-icon>Quick link
-                    </a>
+                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
+                            <ion-icon name="globe"></ion-icon>Quick link
+                        </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
-                        <ion-icon name="settings"></ion-icon>Settings
-                    </a>
+                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
+                            <ion-icon name="settings"></ion-icon>Settings
+                        </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="logout()">
-                        <ion-icon name="log-out"></ion-icon>Logout
-                    </a>
+                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                            onclick="logout()">
+                            <ion-icon name="log-out"></ion-icon>Logout
+                        </a>
                     </li>
                 </ul>
             </div>
