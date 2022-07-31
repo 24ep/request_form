@@ -79,3 +79,32 @@ ion-icon{
     color: #7e7e7e!important;
     border-color: #c1c1c1!important;
 }
+.ns_detail_manubox{
+    border-right: 1px white;
+    border-right-style: double;
+    height: auto;padding-top: 20px
+}
+.nsdetaillist{
+    padding: 10px;
+    background: white;
+}
+.contact-person-ns{
+    list-style: none;
+    padding: initial;
+    font-size: small;
+    margin: 0px;
+    margin-left: 15px;
+}
+.content-assignee-header{
+    font-weight: 500;
+    color: #aaaaaa;
+    margin-left: 15px;
+}
+.ns_detail_manubox {
+    background: #efefef;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.ce-block__content, .ce-toolbar__content {
+    max-width: 85%!important;
+}
