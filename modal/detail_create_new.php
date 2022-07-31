@@ -117,11 +117,11 @@
   }
   mysqli_close($con);
   if($request_important=="Urgent"){
-    $dp_tags .= '<span class="badge rounded bg-danger" style="margin-left:10px">'.$request_important.'</span>';
+    $dp_tags .= '<span class="badge bg-danger" style="margin-left:10px">'.$request_important.'</span>';
 }
   $tags_array = explode(", ", $tags);
   foreach ($tags_array as $tag) {
-   $dp_tags .= '<span class="badge rounded bg-dark" style="margin-left:10px">'.$tag.'</span>';
+   $dp_tags .= '<span class="badge bg-dark" style="margin-left:10px">'.$tag.'</span>';
   }
 ?>
 <div class="offcanvas-body" style="padding-bottom: 0px;height: 100%;">
