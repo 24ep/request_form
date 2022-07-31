@@ -123,11 +123,11 @@ li.nav-item{
 }
 .inpo.active {
     /* background-color: red!important; */
-    background: url('image/11.jpg') !important;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
     color: white !important;
     font-weight: 600;
     width: 100%;
+    background: #212529!important;
 }
 .modal {
     background: #fffcfc73;
