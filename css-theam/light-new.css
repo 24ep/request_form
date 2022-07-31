@@ -191,3 +191,10 @@ label#label_file_cme {
     background-color: #198754;
     transition: var(--bs-progress-bar-transition);
 }
+.action-block {
+    border-radius: 5px;
+    margin-top: 10px;
+    background: #efefef;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    padding: 15px;
+}

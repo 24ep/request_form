@@ -42,12 +42,16 @@
             ac.nickname as follow_assign_nickname,
             brand_info.link as brand_info_link,
             brand_editor.body  as brand_editor,
-            anj.web_cate as web_cate
+            anj.web_cate as web_cate,
+            jc.approved_date as approved_date,
+            jc.job_number as job_number,
             FROM all_in_one_project.add_new_job as anj
             left join all_in_one_project.account as ac
             on ac.username = anj.follow_assign_name
             left join all_in_one_project.brand_information as brand_info
             on brand_info.brand = anj.brand
+            left join all_in_one_project.job_cms as jc
+            on anj.id = jc.csg_request_new_id
             left join all_in_one_project.brand_editor as brand_editor
             on brand_editor.brand = anj.brand
             where anj.id = ".$_POST['id']." ORDER BY anj.id DESC " or die("Error:" . mysqli_error($con));
@@ -92,6 +96,8 @@
       $web_cate = $row['web_cate'];
       $brand_editor=$row['brand_editor'];
       $trigger_status=$row['trigger_status'];
+      $job_number=$row['job_number'];
+      $approved_date=$row['approved_date'];
       
     //stamp color status
     if($row["status"]=="pending"){
@@ -247,13 +253,13 @@
                                         $badge_progres_3 = 'btn-secondary';
                                         $badge_progres_4 = 'btn-secondary';
                                         $progress_per = '25';
-                                    }elseif($status=='accepted' and $trigger_status <>'approved'){
+                                    }elseif($status=='accepted' and $approved_date ==''){
                                         $badge_progres_0 = 'btn-success';
                                         $badge_progres_1 = 'btn-success';
                                         $badge_progres_2 = 'btn-success';
                                         $badge_progres_3 = 'btn-secondary';
                                         $progress_per = '50';
-                                    }elseif($status=='accepted' and $trigger_status =='approved'){
+                                    }elseif($status=='accepted' and $approved_date <>''){
                                         $badge_progres_0 = 'btn-success';
                                         $badge_progres_1 = 'btn-success';
                                         $badge_progres_2 = 'btn-success';
@@ -284,11 +290,11 @@
                                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-label="Progress" style="width: <?php echo $progress_per; ?>%;" aria-valuenow="<?php echo $progress_per; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                     <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm <?php echo $badge_progres_0; ?> rounded-pill" style="width: fit-content; height:2rem;">Queue</button>
-                                    <button type="button" class="position-absolute top-0 start-25 translate-middle btn btn-sm <?php echo $badge_progres_1; ?> rounded-pill" style="width: fit-content; height:2rem;">Checking</button>
+                                    <button type="button" class="position-absolute top-0 start-25 translate-middle btn btn-sm <?php echo $badge_progres_1; ?> rounded-pill" style="width: fit-content; height:2rem;">Checking <?php echo $accepted_date; ?></button>
                 
-                                    <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm <?php echo $badge_progres_2; ?> rounded-pill" style="width: fit-content; height:2rem;">On-production</button>
+                                    <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm <?php echo $badge_progres_2; ?> rounded-pill" style="width: fit-content; height:2rem;">On-production <?php echo $job_number; ?></button>
                  
-                                    <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm <?php echo $badge_progres_3; ?> rounded-pill" style="width: fit-content; height:2rem;">Approved</button>
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm <?php echo $badge_progres_3; ?> rounded-pill" style="width: fit-content; height:2rem;">Approved <?php echo $approved_date; ?></button>
                        
                                     </div>
                                 <h6>
