@@ -20,13 +20,17 @@
                 </datalist> -->
             </div>
             <div class="col-auto">
-                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Status</label>
-                <select class="selection_filter" id="status_filter" onchange="filter_update();">
+              
+               
+                <div class="input-group input-group-sm mb-3" style=" width: 500px;">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
+                <select class="form-select" id="status_filter" onchange="filter_update();">
                     <?php echo $request_new_status_op;?>
                 </select>
             </div>
+            </div>
             <div class="col-auto">
-            <div class="input-group input-group-sm mb-3">
+            <div class="input-group input-group-sm mb-3" style=" width: 500px;">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
                 <input type="text" class="form-control" id="brand_filter" onchange="filter_update();" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Dept , Sub Dept , Brand , ID">
             </div>
