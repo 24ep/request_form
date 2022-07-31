@@ -37,7 +37,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <div class="col-1">
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
-                    <input type="number" class="form-control" onchange="filter_update();"
+                    <input type="number" class="form-control" 
                         id="pagenation_input" min=1
                         <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
                         value="<?php echo $_SESSION["pagenation"];?>" onchange="filter_update();" placeholder=""
