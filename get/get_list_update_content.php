@@ -96,7 +96,8 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         where ".$ts_filter."  and lower(ticket.status) not in ('cancel','archive')
          order by ticket.status desc ,".$sort_de_status."  limit 300";
         $result = mysqli_query($con, $query);
-        echo "  <li class='row shadow-sm p-2 m-2 rounded bg-white' style='text-align: -webkit-center;align-items: center;'>
+        
+        echo "  <li class='row mb-3' style='color: #b3b3b3;font-weight: 600;text-align-last: center;'>
                     <div class='col'>Id</div>
                     <div class='col-4'>Title</div>
                     <div class='col'>STATUS</div>
@@ -108,7 +109,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
           while( $row = mysqli_fetch_array($result)) {
                 ?>
             <!-- ui -->
-            <li  class='row' 
+            <li class='row shadow-sm p-2 m-2 rounded bg-white' style='text-align: -webkit-center;align-items: center;'
             onclick="cr_id_toggle(<?php echo $row['id'];?>) " 
             data-bs-toggle="offcanvas" 
             data-bs-target="#detail_cr"
