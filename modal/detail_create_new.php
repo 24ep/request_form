@@ -292,9 +292,9 @@
                                     <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm <?php echo $badge_progres_0; ?> rounded-pill" style="width: 2rem; height:2rem;">0</button>
                                     <small style="top: 50px!important;" class="position-absolute top-100 start-0 translate-middle btn btn-sm"><strong>Request</strong><br><?php echo $create_date; ?></small>
                                     <button type="button" class="position-absolute top-0 start-25 translate-middle btn btn-sm <?php echo $badge_progres_1; ?> rounded-pill" style="width: 2rem; height:2rem;">1</button>
-                                    <small style="top: 40px!important;" class="position-absolute top-100 start-25 translate-middle btn btn-sm"><strong>Checking</strong> <br><?php echo $accepted_date; ?></small>
+                                    <small style="top: 50px!important;" class="position-absolute top-100 start-30 translate-middle btn btn-sm"><strong>Checking</strong> <br><?php echo $accepted_date; ?></small>
                                     <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm <?php echo $badge_progres_2; ?> rounded-pill" style="width: 2rem; height:2rem;">2</button>
-                                    <small style="top: 50px!important;" class="position-absolute top-100 start-50 translate-middle btn btn-sm"><strong>On-productions</strong> <br><?php echo $job_number; ?></small>
+                                    <small style="top: 50px!important;" class="position-absolute top-100 start-60 translate-middle btn btn-sm"><strong>On-productions</strong> <br><?php echo $job_number; ?></small>
                                     <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm <?php echo $badge_progres_3; ?> rounded-pill" style="width: 2rem; height:2rem;">3</button>
                                     <small style="top: 50px!important;" class="position-absolute top-100 start-100 translate-middle btn btn-sm"><strong>Approved</strong><br><?php echo $approved_date; ?></small>
                                     </div>
@@ -523,11 +523,11 @@
         </div>
         <div class="col-3" style="padding-left:0px">
             <div class="modal-header">
-                <h5 class="modal-title">
+                <h5 class="modal-title" style="padding: 20px;">
                     <ion-icon name="chatbubbles-outline"></ion-icon>Comment
                 </h5>
             </div>
-            <div class="modal-body" style="height: 85%;padding-top: 0px;padding-right: 0px;" id="over_comment">
+            <div class="modal-body" style="height: 85%;padding-top: 0px;padding-right: 0px;padding-left: 20px;" id="over_comment">
                 <div class=" overflow-auto" id="comment_box" style="height: auto;margin-bottom: 0px;margin-top: 0px;">
                     <div id="call_ticket_comment">
                         <?php   include('../get/get_comment_ticket.php');?>

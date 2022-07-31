@@ -58,9 +58,9 @@ function get_comment($id){
             echo '<div class="d-grid gap-2 d-md-flex justify-content-md-end" style="width:100%">';
                 echo "<span class='comment_label  shadow-sm cl_right badge rounded-pill ".$background_cm." text-light' ".$sd.">".$comment."</span>";
             echo '</div>';
-            echo '<div class="d-grid gap-2 d-md-flex justify-content-md-end" style="width:100%;margin-bottom: 15px;">';
+            echo '<small class="d-grid gap-2 d-md-flex justify-content-md-end" style="width:100%;margin-bottom: 15px;">';
                 echo "<small class='form-text' style='margin-right: 10px;text-align: end;'>".$comment_by." - ".$comment_by_nickname." | ". $comment_by_dp."<hr style='margin:2px'>".date('d/m/y h:i A',strtotime($row['comment_date']))."</small>";
-            echo '</div>';
+            echo '</small>';
         }else{
             if(strpos($row['comment'],"need_more")!==false){
                 $background_cm = '';
