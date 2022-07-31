@@ -111,3 +111,6 @@ ion-icon{
 li.nav-item{
     width: 90%;
 }
+.span-ifram:hover{
+    display: none;
+}
