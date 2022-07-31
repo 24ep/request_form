@@ -1,7 +1,7 @@
 <?php  
  session_start();
 // include_once('get_count_status.php');
-include("connect.php");
+include("./connect.php");
 function count_status($username,$status){
     global $con;
     $sql="SELECT count(*) as total from all_in_one_project.add_new_job where request_username = '".$username."' and status like '%".$status."%'";
@@ -81,10 +81,10 @@ function count_status($username,$status){
     </div>
     <div class="row">
         <div class="col-8" style="border-right: 1px solid #efecec;">
-            <?php include("get/get_list_job_cms_dashboard.php"); ?>
+            <?php include("base/get/get_list_job_cms_dashboard.php"); ?>
         </div>
         <div class="col-4">
-            <?php include("get/get_list_message_log.php"); ?>
+            <?php include("base/get/get_list_message_log.php"); ?>
         </div>
     </div>
 </div>
