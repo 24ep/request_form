@@ -103,3 +103,34 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
     </li>
     <?php include('../get/get_list_new_job_new.php'); ?>
 </div>
+<script>
+function filter_update(be) {
+    var user_filter = document.getElementById("user_filter").value
+    var status_filter = document.getElementById("status_filter").value
+    var pagenation_input = document.getElementById("pagenation_input").value
+    var brand_filter = document.getElementById("brand_filter").value
+    var from_post = true;
+    if (from_post) {
+        $.post("../get/get_list_new_job.php", {
+            user_filter: user_filter,
+            status_filter: status_filter,
+            from_post: from_post,
+            pagenation_input: pagenation_input,
+            brand_filter: brand_filter
+        }, function(data) {
+            $('#job_list').html(data);
+        });
+    }
+    if (from_post) {
+        $.post("../get/get_total_page_nj.php", {
+            user_filter: user_filter,
+            status_filter: status_filter,
+            from_post: from_post,
+            pagenation_input: pagenation_input,
+            brand_filter: brand_filter
+        }, function(data) {
+            $('#total_page_nj').html(data);
+        });
+    }
+}
+</script>

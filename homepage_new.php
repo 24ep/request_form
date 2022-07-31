@@ -563,35 +563,7 @@ function update_brand_note(dataoutput, brand) {
     });
 }
 
-function filter_update(be) {
-    var user_filter = document.getElementById("user_filter").value
-    var status_filter = document.getElementById("status_filter").value
-    var pagenation_input = document.getElementById("pagenation_input").value
-    var brand_filter = document.getElementById("brand_filter").value
-    var from_post = true;
-    if (from_post) {
-        $.post("base/get/get_list_new_job.php", {
-            user_filter: user_filter,
-            status_filter: status_filter,
-            from_post: from_post,
-            pagenation_input: pagenation_input,
-            brand_filter: brand_filter
-        }, function(data) {
-            $('#job_list').html(data);
-        });
-    }
-    if (from_post) {
-        $.post("base/get/get_total_page_nj.php", {
-            user_filter: user_filter,
-            status_filter: status_filter,
-            from_post: from_post,
-            pagenation_input: pagenation_input,
-            brand_filter: brand_filter
-        }, function(data) {
-            $('#total_page_nj').html(data);
-        });
-    }
-}
+
 </script>
 <script>
 $(document).ready(function() {
