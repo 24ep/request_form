@@ -111,7 +111,7 @@
     </li>
 
 
-    <?php include('get/get_list_new_job_new.php'); ?>
+    <?php include('../get/get_list_new_job_new.php'); ?>
 
 
 </div>
