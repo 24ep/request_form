@@ -24,6 +24,8 @@ if((mysqli_fetch_array($result) === null)){
     $result =  mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
         $_SESSION["nickname"]=$row["nickname"];
+        $_SESSION["firstname"]=$row["firstname"];
+        $_SESSION["lastname"]=$row["lastname"];
         $_SESSION["department"]=$row["department"];
         $_SESSION["page_view"]="";
         $_SESSION['pf_theme']=$row["pf_theme"];
