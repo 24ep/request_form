@@ -171,7 +171,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 id="crid_<?php echo $row['id'];?>"
                 data-cr-title="<?php echo strtolower($row['title']);?>" 
                 aria-controls="offcanvasExample"
-                type="button" class="btn btn-outline-dark btn-sm">Detail</button></div>
+                type="button" class="btn btn-dark btn-sm">Detail</button></div>
                     </li>
             <!-- ui -->
         <?php $i++; }
