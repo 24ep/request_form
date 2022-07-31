@@ -129,6 +129,11 @@ li.nav-item{
     width: 100%;
     background: #212529!important;
 }
+.inpo {
+    margin: 0px!important;
+    color:rgb(0 0 0 / 87%)!important;
+    padding: 5px 10px;
+}
 .modal {
     background: #fffcfc73;
 }

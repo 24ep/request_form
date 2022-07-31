@@ -173,7 +173,7 @@
                             <a class="nav-link inpo" id="v-pills-sku-checking-tab" data-bs-toggle="pill"
                             data-bs-target="#v-pills-sku-checking" role="tab" aria-controls="v-pills-sku-checking"
                                 aria-selected="false">
-                                <ion-icon name="trail-sign-outline"></ion-icon>SKU Checking tools
+                                <ion-icon name="trail-sign-outline"></ion-icon>SKU Checking
                             </a>
                             <a class="nav-link inpo" id="v-pills-sku-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sku"
                                 role="tab" aria-controls="v-pills-sku" aria-selected="false">
