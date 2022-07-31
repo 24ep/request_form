@@ -37,6 +37,7 @@
             anj.sub_department as sub_department,
             anj.parent as parent,
             anj.config_type as config_type,
+            anj.trigger_status as trigger_status,
             anj.subject_mail as subject_mail,
             ac.nickname as follow_assign_nickname,
             brand_info.link as brand_info_link,
@@ -90,6 +91,8 @@
       $brand_info_link = $row['brand_info_link'];
       $web_cate = $row['web_cate'];
       $brand_editor=$row['brand_editor'];
+      $trigger_status=$row['trigger_status'];
+      
     //stamp color status
     if($row["status"]=="pending"){
     $status_style = 'style="background: #a9a9a94f;color:#8f8f8f"';
@@ -236,13 +239,47 @@
                                 <?php }?>
                                 
                                 <?php if($config_type=='task'){?>
+                                    <?php 
+                                    if($status=='checking'){
+                                        $badge_progres_1 = 'btn-success';
+                                        $badge_progres_2 = 'btn-secondary';
+                                        $badge_progres_3 = 'btn-secondary';
+                                        $badge_progres_4 = 'btn-secondary';
+                                        $progress_per = '0';
+                                    }elseif($status=='accepted' and $trigger_status <>'approved'){
+                                        $badge_progres_1 = 'btn-success';
+                                        $badge_progres_2 = 'btn-success';
+                                        $badge_progres_3 = 'btn-secondary';
+                                        $progress_per = '50';
+                                    }elseif($status=='accepted' and $trigger_status =='approved'){
+                                        $badge_progres_1 = 'btn-success';
+                                        $badge_progres_2 = 'btn-success';
+                                        $badge_progres_3 = 'btn-success';
+                                        $progress_per = '100';
+                                    }elseif($status=='cancel'){
+                                        $badge_progres_1 = 'btn-danger';
+                                        $badge_progres_2 = 'btn-danger';
+                                        $badge_progres_3 = 'btn-danger';
+                                        $progress_per = '100';
+                                    }else{
+                                        $badge_progres_1 = 'btn-secondary';
+                                        $badge_progres_2 = 'btn-secondary';
+                                        $badge_progres_3 = 'btn-secondary';
+                                        $progress_per = '0';
+                                    }
+                                        
+                                    ?>
                                     <div class="position-relative m-4">
                                     <div class="progress" style="height: 1px;">
                                         <div class="progress-bar" role="progressbar" aria-label="Progress" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">Checking information</button>
-                                    <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">Productions</button>
-                                    <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">Approve</button>
+                                    <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-success rounded-pill" style="width: 2rem; height:2rem;">1</button>
+                                    <small style="margin: 50px 20px!important;font-weight: bold;top: 10;">Checking information</small>
+                                    <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-success rounded-pill" style="width: 2rem; height:2rem;">2</button>
+                                    <small style="margin: 50px 20px!important;font-weight: bold;top: 10;">Accpeted > On-Production</small>
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-success rounded-pill" style="width: 2rem; height:2rem;">2</button>
+                                    <small style="margin: 50px 20px!important;font-weight: bold;top: 10;">Approved</small>
+                                    
                                     </div>
                                 <h6>
                                     <ion-icon name="color-wand-outline"></ion-icon><strong>Productions Job</strong>
