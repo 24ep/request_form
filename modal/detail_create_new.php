@@ -44,7 +44,7 @@
             brand_editor.body  as brand_editor,
             anj.web_cate as web_cate,
             jc.approved_date as approved_date,
-            jc.job_number as job_number,
+            jc.job_number as job_number
             FROM all_in_one_project.add_new_job as anj
             left join all_in_one_project.account as ac
             on ac.username = anj.follow_assign_name
