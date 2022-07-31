@@ -455,6 +455,7 @@ if (!$_SESSION["login_csg"]){
                                             </div>
                                             <div class="tab-pane fade" id="pills-board_view_ts" role="tabpanel" aria-labelledby="pills-board_view_ts-tab" tabindex="0">
                                                 <div class="row" id="get_ts_admin_console">
+                                                <?php include('get/get_list_ts_board_view.php'); ?>
                                                 </div>
                                             </div>
                                         </div>
