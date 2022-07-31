@@ -112,7 +112,8 @@ if (!$_SESSION["login_csg"]){
                         </div>
                     </a>
                     <li class="nav-item" role="presentation"></li>
-                    <a class="nav-link active" data-bs-toggle="pill" type="button" role="tab" aria-selected="false" onclick="get_page('dashboard');">
+                    <a class="nav-link active" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                        onclick="get_page('dashboard');">
                         <ion-icon name="home"></ion-icon>Dashboard
                     </a>
                     </li>
@@ -227,174 +228,15 @@ function logout() {
 }
 </script>
 <script>
-function call_edit_add_new_modal(id, brand) {
-    Notiflix.Loading.hourglass('Loading...');
-    if (id) {
-        $.post("base/modal/edit_request_add_new.php", {
-            id: id
-        }, function(data) {
-            $('#callmodal_request_add_new').html(data);
-            Notiflix.Loading.remove();
-        });
-    }
-}
 
-function cr_id_toggle(id) {
-    Notiflix.Loading.hourglass('Loading...');
-    if (id) {
-        $.post("base/get/get_content_request_detail.php", {
-            id: id
-        }, function(data) {
-            $('#calloffcanvas_cr').html(data);
-            Notiflix.Loading.remove();
-        });
-    }
-}
 
-function start_checking(id) {
-    if (id) {
-        $.post("base/action/action_start_checking.php", {
-            id: id
-        }, function(data) {
-            $('#start_checking_resault').html(data);
-        });
-    }
-}
 
-function accepted_stt(id) {
-    if (id) {
-        // sku_accepted = document.getElementById('sku_accepted').value;
-        $.post("base/action/action_accept_stt.php", {
-            id: id
-            // sku_accepted: sku_accepted
-        }, function(data) {
-            $('#accept_checking_resault').html(data);
-        });
-    }
-}
 
-function cancel_stt(id, status_change) {
-    resone_cancel = document.getElementById('resone_cancel').value;
-    status_change = 'cancel';
-    if (id) {
-        $.post("base/action/action_cancel_stt.php", {
-            id: id,
-            resone_cancel: resone_cancel,
-            status_change: status_change
-        }, function(data) {
-            $('#cancel_checking_resault').html(data);
-        });
-    }
-}
 
-function cancel_ticket(id) {
-    resone_cancel = document.getElementById('reason_cancel').value;
-    status_change = document.getElementById('type_cancel').value;
-    // status_change = 'cancel';
-    if (id) {
-        $.post("base/action/action_cancel_stt.php", {
-            id: id,
-            resone_cancel: resone_cancel,
-            status_change: status_change
-        }, function(data) {
-            $('#cancel_checking_resault').html(data);
-        });
-    }
-}
-
-function itm_confirm_cancel(id, status_change) {
-    let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
-    if (message == null || message == "") {
-        alert("user cancel prompt");
-    } else {
-        if (message == status_change) {
-            if (id) {
-                resone_cancel = document.getElementById('itm_reason_cancel').value;
-                $.post("base/action/action_cancel_stt.php", {
-                    id: id,
-                    resone_cancel: resone_cancel,
-                    status_change: status_change
-                }, function(data) {
-                    $('#cancel_checking_result').html(data);
-                });
-            }
-        } else {
-            alert("ไม่ตรงกัน ลองใหม่อีกครั้ง");
-        }
-    }
-}
-
-function filter_cr_ticket(status) {
-    document.getElementById('cr_search_input').value = '';
-    var update = true;
-    if (status) {
-        $.post("base/get/get_list_content_request.php", {
-            status: status,
-            update: update
-        }, function(data) {
-            $('#list_grouping').html(data);
-        });
-    }
-}
-
-function get_project_model(id) {
-    if (id) {
-        $.post("base/get/get_project_model.php", {
-            id: id
-        }, function(data) {
-            $('#return_project_model').html(data);
-        });
-    }
-}
 
 
 </script>
 <script type="text/javascript">
-function open_ticket_detail(id) {
-    document.getElementById('user_filter').value = "";
-    document.getElementById("ns_ticket_" + id).click();
-}
-
-function updateURL(pill) {
-    if (history.pushState) {
-        var newurl = window.location.protocol + "//" + window.location.host +
-            window.location.pathname + '?tab=' + pill;
-        window
-            .history
-            .pushState({
-                path: newurl
-            }, '', newurl);
-    }
-}
-
-function update_project_sticky() {
-    var prefix_project_sticky = "";
-    for (var option of document.getElementById('project_sticky_mse').options) {
-        if (option.selected) {
-            if (prefix_project_sticky == "") {
-                prefix_project_sticky = "'" + option.value + "'";
-            } else {
-                prefix_project_sticky = prefix_project_sticky + ",'" + option.value + "'";
-            }
-            // selected.push(option.value);
-        }
-    }
-    $.post("base/get/get_list_project.php", {
-        prefix_project_sticky: prefix_project_sticky
-    }, function(data) {
-        $('#project_bucket').html(data);
-    });
-}
-
-function update_brand_note(dataoutput, brand) {
-    $.post("base/action/action_update_brand_note.php", {
-        dataoutput: dataoutput,
-        brand: brand
-    }, function(data) {
-        // $('#get_list_job_update').html(data);
-    });
-}
-
 
 </script>
 <script>
@@ -407,95 +249,14 @@ $(document).ready(function() {
     });
 });
 </script>
-<script>
-tinymce.init({
-    selector: 'textarea#cr_description',
-    plugins: 'print preview paste importcss searchreplace table autolink autosave save directionality lists code visualblocks visualchars fullscreen link template codesample charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist  wordcount textpattern noneditable help charmap  emoticons',
-    imagetools_cors_hosts: ['picsum.photos'],
-    menubar: 'file edit view insert format tools table help',
-    toolbar: 'bold italic underline strikethrough | forecolor backcolor removeformat | table code | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | pagebreak | charmap emoticons | fullscreen  preview  print | link anchor codesample | ltr rtl',
-    toolbar_sticky: true,
-    template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
-    template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
-    height: 600,
-    noneditable_noneditable_class: 'mceNonEditable',
-    toolbar_mode: 'sliding',
-    contextmenu: 'link bold italic | quicklink h2 h3 blockquote ',
-    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-});
-</script>
-<script type="text/javascript">
-tinymce.init({
-    selector: '#des_cr_inline',
-    inline: true
-});
-</script>
-<script>
-tinymce.init({
-    selector: 'textarea#ms_description',
-    height: 380,
-    menubar: false,
-    plugins: [
-        'advlist autolink lists link image charmap print preview anchor',
-        'searchreplace visualblocks code fullscreen',
-        'insertdatetime media table paste code help wordcount'
-    ],
-    toolbar: 'bold italic backcolor | alignleft aligncenter ' +
-        'alignright alignjustify | bullist numlist outdent indent | ' +
-        'removeformat | help',
-    //content_style: 'body { font-family: Prompt, sans-serif; font-size:14px }'
-});
-</script>
+
 <script>
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 </script>
-<script>
-run_ts_command('task');
-</script>
-<script>
-function load_tiny_comment() {
-    tinymce.init({
-        selector: "textarea#comment_input_cr",
-        plugins: "autoresize link lists emoticons",
-        toolbar: "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
-        menubar: false,
-        statusbar: false,
-        width: "100%",
-        toolbar_location: "bottom",
-        autoresize_bottom_margin: 0,
-        contextmenu: false,
-        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ',
-        setup: (ed) => {
-            editor = ed;
-        },
-    });
-}
-</script>
-<style>
-.tox.tox-tinymce.tox-tinymce--toolbar-bottom {
-    border-radius: 7px;
-    margin-top: 8px;
-}
 
-.tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar-overlord:first-child .tox-toolbar__primary,
-.tox-tinymce:not(.tox-tinymce-inline) .tox-editor-header:not(:first-child) .tox-toolbar:first-child {
-    border-top: 1px solid #fff;
-}
 
-.tox .tox-tbtn svg {
-    display: block;
-    fill: #6c757d !important;
-}
-</style>
-<script>
-baguetteBox.run('.baguetteBoxFour', {
-    buttons: false
-});
-</script>
-<script>
-timeago().render(document.querySelectorAll('.timeago'));
-</script>
+
 <?php } ?>

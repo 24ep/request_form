@@ -88,3 +88,6 @@ function count_status($username,$status){
         </div>
     </div>
 </div>
+<script>
+timeago().render(document.querySelectorAll('.timeago'));
+</script>

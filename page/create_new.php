@@ -133,4 +133,95 @@ function filter_update(be) {
         });
     }
 }
+function update_brand_note(dataoutput, brand) {
+    $.post("../base/action/action_update_brand_note.php", {
+        dataoutput: dataoutput,
+        brand: brand
+    }, function(data) {
+        // $('#get_list_job_update').html(data);
+    });
+}
+function start_checking(id) {
+    if (id) {
+        $.post("base/action/action_start_checking.php", {
+            id: id
+        }, function(data) {
+            $('#start_checking_resault').html(data);
+        });
+    }
+}
+
+function accepted_stt(id) {
+    if (id) {
+        // sku_accepted = document.getElementById('sku_accepted').value;
+        $.post("base/action/action_accept_stt.php", {
+            id: id
+            // sku_accepted: sku_accepted
+        }, function(data) {
+            $('#accept_checking_resault').html(data);
+        });
+    }
+}
+
+function cancel_stt(id, status_change) {
+    resone_cancel = document.getElementById('resone_cancel').value;
+    status_change = 'cancel';
+    if (id) {
+        $.post("base/action/action_cancel_stt.php", {
+            id: id,
+            resone_cancel: resone_cancel,
+            status_change: status_change
+        }, function(data) {
+            $('#cancel_checking_resault').html(data);
+        });
+    }
+}
+
+function cancel_ticket(id) {
+    resone_cancel = document.getElementById('reason_cancel').value;
+    status_change = document.getElementById('type_cancel').value;
+    // status_change = 'cancel';
+    if (id) {
+        $.post("base/action/action_cancel_stt.php", {
+            id: id,
+            resone_cancel: resone_cancel,
+            status_change: status_change
+        }, function(data) {
+            $('#cancel_checking_resault').html(data);
+        });
+    }
+}
+
+function itm_confirm_cancel(id, status_change) {
+    let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
+    if (message == null || message == "") {
+        alert("user cancel prompt");
+    } else {
+        if (message == status_change) {
+            if (id) {
+                resone_cancel = document.getElementById('itm_reason_cancel').value;
+                $.post("base/action/action_cancel_stt.php", {
+                    id: id,
+                    resone_cancel: resone_cancel,
+                    status_change: status_change
+                }, function(data) {
+                    $('#cancel_checking_result').html(data);
+                });
+            }
+        } else {
+            alert("ไม่ตรงกัน ลองใหม่อีกครั้ง");
+        }
+    }
+}
+function call_edit_add_new_modal(id, brand) {
+    Notiflix.Loading.hourglass('Loading...');
+    if (id) {
+        $.post("base/modal/edit_request_add_new.php", {
+            id: id
+        }, function(data) {
+            $('#callmodal_request_add_new').html(data);
+            Notiflix.Loading.remove();
+        });
+    }
+}
 </script>
