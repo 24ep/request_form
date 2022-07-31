@@ -160,6 +160,18 @@ if (!$_SESSION["login_csg"]){
                         <ion-icon name="people"></ion-icon>Account
                     </a>
                     </li>
+                    <li class="nav-item" role="presentation"></li>
+                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                        data-bs-toggle="dropdown">
+                        <ion-icon name="people"></ion-icon>Tools
+                    </a>
+                    <ul class="dropdown-menu">
+                        <small class="header_manu_bra">Datapump</small>
+                        <li><button onclick="get_page('datapump_convert');" class="dropdown-item" type="button"><ion-icon name="shapes"></ion-icon>Datapump Convert</button></li>
+                        <li><button disabled onclick="get_page('datapump_convert');" class="dropdown-item" type="button"><ion-icon name="shapes"></ion-icon>Datapump Admin</button></li>
+                        <li><button disabled class="dropdown-item" type="button"><ion-icon name="shapes"></ion-icon>Imform version control</button></li>
+                    </ul>
+                    </li>
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Others</small>
                     <li class="nav-item" role="presentation"></li>
@@ -213,6 +225,12 @@ function get_page(page) {
             Notiflix.Loading.remove();
         });
     } else if (page == "dashboard") {
+        Notiflix.Loading.hourglass('Loading...');
+        $.post("base/page/dashboard.php", {}, function(data) {
+            $('#col_detail').html(data);
+            Notiflix.Loading.remove();
+        });
+    } else if (page == "datapump_convert") {
         Notiflix.Loading.hourglass('Loading...');
         $.post("base/page/dashboard.php", {}, function(data) {
             $('#col_detail').html(data);
