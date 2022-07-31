@@ -241,26 +241,36 @@
                                 <?php if($config_type=='task'){?>
                                     <?php 
                                     if($status=='checking'){
+                                        $badge_progres_0 = 'btn-success';
                                         $badge_progres_1 = 'btn-success';
                                         $badge_progres_2 = 'btn-secondary';
                                         $badge_progres_3 = 'btn-secondary';
                                         $badge_progres_4 = 'btn-secondary';
                                         $progress_per = '0';
                                     }elseif($status=='accepted' and $trigger_status <>'approved'){
+                                        $badge_progres_0 = 'btn-success';
                                         $badge_progres_1 = 'btn-success';
                                         $badge_progres_2 = 'btn-success';
                                         $badge_progres_3 = 'btn-secondary';
                                         $progress_per = '50';
                                     }elseif($status=='accepted' and $trigger_status =='approved'){
+                                        $badge_progres_0 = 'btn-success';
                                         $badge_progres_1 = 'btn-success';
                                         $badge_progres_2 = 'btn-success';
                                         $badge_progres_3 = 'btn-success';
                                         $progress_per = '100';
                                     }elseif($status=='cancel'){
+                                        $badge_progres_0 = 'btn-danger';
                                         $badge_progres_1 = 'btn-danger';
                                         $badge_progres_2 = 'btn-danger';
                                         $badge_progres_3 = 'btn-danger';
                                         $progress_per = '100';
+                                    }elseif($status=='pending'){
+                                        $badge_progres_0 = 'btn-success';
+                                        $badge_progres_1 = 'btn-secondary';
+                                        $badge_progres_2 = 'btn-secondary';
+                                        $badge_progres_3 = 'btn-secondary';
+                                        $progress_per = '25';
                                     }else{
                                         $badge_progres_1 = 'btn-secondary';
                                         $badge_progres_2 = 'btn-secondary';
@@ -273,7 +283,8 @@
                                     <div class="progress" style="height: 1px;">
                                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-label="Progress" style="width: <?php echo $progress_per; ?>%;" aria-valuenow="<?php echo $progress_per; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm <?php echo $badge_progres_1; ?> rounded-pill" style="width: fit-content; height:2rem;">Checking</button>
+                                    <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm <?php echo $badge_progres_0; ?> rounded-pill" style="width: fit-content; height:2rem;">Queue</button>
+                                    <button type="button" class="position-absolute top-0 start-25 translate-middle btn btn-sm <?php echo $badge_progres_1; ?> rounded-pill" style="width: fit-content; height:2rem;">Checking</button>
                 
                                     <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm <?php echo $badge_progres_2; ?> rounded-pill" style="width: fit-content; height:2rem;">On-production</button>
                  
