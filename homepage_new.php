@@ -100,8 +100,8 @@ if (!$_SESSION["login_csg"]){
             <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a class="navbar-brand" href="#">ONLINE CONTENT</a>
                 <hr class="hr_manu_bra">
-                <span class="name_manu_bra">Jaroonwit p.</span>
-                <small class="dept_manu_bra">Admin</small>
+                <span class="name_manu_bra"><?php $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span>
+                <small class="dept_manu_bra"><?php $_SESSION['department']; ?></small>
                 <hr class="hr_manu_bra">
                 <small class="header_manu_bra">Manu</small>
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
