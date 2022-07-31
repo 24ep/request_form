@@ -111,7 +111,7 @@ function filter_update(be) {
     var brand_filter = document.getElementById("brand_filter").value
     var from_post = true;
     if (from_post) {
-        $.post("../get/get_list_new_job.php", {
+        $.post("../base/get/get_list_new_job.php", {
             user_filter: user_filter,
             status_filter: status_filter,
             from_post: from_post,
@@ -122,7 +122,7 @@ function filter_update(be) {
         });
     }
     if (from_post) {
-        $.post("../get/get_total_page_nj.php", {
+        $.post("../base/get/get_total_page_nj.php", {
             user_filter: user_filter,
             status_filter: status_filter,
             from_post: from_post,
