@@ -63,7 +63,7 @@ function get_page_account(){
 
 return $table;
 }
-$detail .= get_page_account();
+$detail = get_page_account();
 echo $detail;
 ?>
 
