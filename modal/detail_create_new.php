@@ -117,27 +117,27 @@
   }
   mysqli_close($con);
   if($request_important=="Urgent"){
-    $dp_tags .= '<span class="badge rounded-pill bg-danger" style="margin-left:10px">'.$request_important.'</span>';
+    $dp_tags .= '<span class="badge rounded bg-danger" style="margin-left:10px">'.$request_important.'</span>';
 }
   $tags_array = explode(", ", $tags);
   foreach ($tags_array as $tag) {
-   $dp_tags .= '<span class="badge rounded-pill bg-dark" style="margin-left:10px">'.$tag.'</span>';
+   $dp_tags .= '<span class="badge rounded bg-dark" style="margin-left:10px">'.$tag.'</span>';
   }
 ?>
 <div class="offcanvas-body" style="padding-bottom: 0px;height: 100%;">
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="position: fixed;right: 40px;"
         aria-label="Close"></button>
-    <div class="row" style="height: 100%;margin-bottom: 0px;">
+    <div class="row" style="height: 100%;margin-bottom: 0px;padding: 20px">
         <div class="col-9" style="border-right: solid 1px #f0eaea;padding-right:0px;height: 85%;">
-            <div class="modal-header nsbox_header">
+            <!-- <div class="modal-header nsbox_header" >
                 <h5 class="modal-title" id="edit_add_new_title">
-                    <?php echo "<strong><span style='color:red'>NS</span>-".$_POST["id"]."</strong> ".$brand." ".$sku." SKU ". $dp_tags . "<a style='font-size:10px;margin-left:10px' target='_Blank' href='https://content-service-gate.cdse-commercecontent.com/base/get/get_ns_log_by_id.php?id=".$_POST["id"]."&action_table=add_new_job&action_data=csg'><small><ion-icon name='time-outline'></ion-icon>Changed log</small></a>"; ?>
+                    <?php //echo "<strong><span style='color:red'>NS</span>-".$_POST["id"]."</strong> ".$brand." ".$sku." SKU ". $dp_tags . "<a style='font-size:10px;margin-left:10px' target='_Blank' href='https://content-service-gate.cdse-commercecontent.com/base/get/get_ns_log_by_id.php?id=".$_POST["id"]."&action_table=add_new_job&action_data=csg'><small><ion-icon name='time-outline'></ion-icon>Changed log</small></a>"; ?>
                 </h5>
-                <button type="button" class="btn btn-light btn-sm" <?php echo $status_style; ?>>
-                    <?php  echo $status; ?></button>
+                <button type="button" class="btn btn-light btn-sm" <?php //echo $status_style; ?>>
+                    <?php  //echo $status; ?></button>
             </div>
+            <hr> -->
             <div class="modal-body" style="height:100%;padding-top: 0px;padding-bottom: unset;">
-                <!--"-->
                 <div class="row" style="height:100%">
                     <div class="col-2 ns_detail_manubox shadow-sm">
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
@@ -153,6 +153,19 @@
                                 <ion-icon name="reader-outline"></ion-icon>Request Detail
                             </a>
                             <?php if($config_type=='task'){?>
+                            <hr>
+                            <small class="content-assignee-header">Content Assinee</small>
+                            <ul class="contact-person-ns">
+                                <li style="margin-top: 5px;">
+                                    <ion-icon name="ticket-outline"></ion-icon><strong><span style='color:red'>NS</span><?php echo $_POST["id"]; ?></strong>
+                                </li>
+                                <li style="margin-top: 5px;">
+                                    <ion-icon name="storefront-outline"></ion-icon> <?php echo $brand; ?>
+                                </li>
+                                <li style="margin-top: 5px;">
+                                    <ion-icon name="server-outline"></ion-icon> <?php echo $sku; ?>
+                                </li>
+                            </ul>
                             <hr>
                             <small class="content-assignee-header">Content Assinee</small>
                             <ul class="contact-person-ns">
@@ -187,7 +200,7 @@
                             <?php }?>
                         </div>
                     </div>
-                    <div class="col-10 overflow-auto ns_detail_box">
+                    <div class="col-10 overflow-auto ns_detail_box" style="padding: 30px;">
                         <?php
             if(strpos(strtolower ($status),"waiting data",0)!== false or strpos(strtolower ($status),"wait image",0)!== false ){
                 echo '<div class="alert alert-danger" style="border-radius: 0px;"role="alert">
@@ -205,6 +218,7 @@
                         <div class="tab-content" id="v-pills-tabContent">
                             <div class="tab-pane fade show active" id="v-pills-progress" role="tabpanel"
                                 aria-labelledby="v-pills-progress-tab">
+                                <?php echo $dp_tags;?>
                                 <?php if($config_type=='parent'){?>
                                 <div class="row">
                                     <div class="col-sm-12 shadow officerassingbox">
@@ -215,7 +229,9 @@
                                 </div>
                                 <hr>
                                 <?php }?>
+                                
                                 <?php if($config_type=='task'){?>
+                                
                                 <h6>
                                     <ion-icon name="color-wand-outline"></ion-icon><strong>Writer & Studio Job</strong>
                                 </h6>
