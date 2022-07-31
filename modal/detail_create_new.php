@@ -280,7 +280,7 @@
                                         
                                     ?>
                                     <div class="position-relative m-4">
-                                    <div class="progress" style="height: 1px;">
+                                    <div class="progress" style="height: 5px;">
                                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-label="Progress" style="width: <?php echo $progress_per; ?>%;" aria-valuenow="<?php echo $progress_per; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                     <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm <?php echo $badge_progres_0; ?> rounded-pill" style="width: fit-content; height:2rem;">Queue</button>
