@@ -101,7 +101,9 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
         <div class="col" scope="col">Status</div>
         <div class="col" scope="col">Action</div>
     </li>
+    <div id="job_list">
     <?php include('../get/get_list_new_job_new.php'); ?>
+    </div>
 </div>
 <script>
 function filter_update(be) {
@@ -111,7 +113,7 @@ function filter_update(be) {
     var brand_filter = document.getElementById("brand_filter").value
     var from_post = true;
     if (from_post) {
-        $.post("../base/get/get_list_new_job.php", {
+        $.post("../base/get/get_list_new_job_new.php", {
             user_filter: user_filter,
             status_filter: status_filter,
             from_post: from_post,
@@ -213,15 +215,5 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
-function call_edit_add_new_modal(id, brand) {
-    Notiflix.Loading.hourglass('Loading...');
-    if (id) {
-        $.post("base/modal/edit_request_add_new.php", {
-            id: id
-        }, function(data) {
-            $('#callmodal_request_add_new').html(data);
-            Notiflix.Loading.remove();
-        });
-    }
-}
+
 </script>
