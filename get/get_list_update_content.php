@@ -94,23 +94,21 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         on pb.prefix  = ticket.ticket_template
         -- and ticket.status not in ('archive','cancel')
         where ".$ts_filter."  and lower(ticket.status) not in ('cancel','archive')
-         order by ticket.status desc ,".$sort_de_status."  limit 150";
+         order by ticket.status desc ,".$sort_de_status."  limit 300";
         $result = mysqli_query($con, $query);
-        echo "<div class='table-responsive-sm'>
-                <table id='ts_board_view_list' class='table table-hover align-middle'>";
-        echo "  <tr style='text-align: -webkit-center;'>
-                    <th>Id</th>
-                    <th>Title</th>
-                    <th>STATUS</th>
-                    <th>Request for</th>
-                    <th>Due date</th>
-                    <th>Assinee</th>
-                    <th>Ticket</th>
-                </tr>";
+        echo "  <li class='row' style='text-align: -webkit-center;'>
+                    <div class='col'>Id</div>
+                    <div class='col'>Title</div>
+                    <div class='col'>STATUS</div>
+                    <div class='col'>Request for</div>
+                    <div class='col'>Due date</div>
+                    <div class='col'>Assinee</div>
+                    <div class='col'>Ticket</div>
+                </li>";
           while( $row = mysqli_fetch_array($result)) {
                 ?>
             <!-- ui -->
-            <li  
+            <li  class='row' 
             onclick="cr_id_toggle(<?php echo $row['id'];?>) " 
             data-bs-toggle="offcanvas" 
             data-bs-target="#detail_cr"
@@ -125,7 +123,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
             >
             
                 <div class="col"><?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?></div>
-                <div class="col"><?php echo $row['title']; ?></td>
+                <div class="col"><?php echo $row['title']; ?></div>
                 <div class="col" style="text-align: -webkit-center;"><?php echo badge_ticket_status_cr($row['status']); ?></div>
                 <div class="col" style="text-align: -webkit-center;"><?php echo badge_ticket_type_cr($row['ticket_type']); ?></div>
                 
