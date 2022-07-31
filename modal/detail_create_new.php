@@ -298,14 +298,14 @@
                                     <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm <?php echo $badge_progres_3; ?> rounded-pill" style="width: 2rem; height:2rem;">3</button>
                                     <small class="position-absolute top-100 start-100 translate-middle btn btn-sm">Approved<?php echo $approved_date; ?></small>
                                     </div>
-                                <h6>
+                                <!-- <h6>
                                     <ion-icon name="color-wand-outline"></ion-icon><strong>Productions Job</strong>
-                                </h6>
-                                <div class="row">
+                                </h6> -->
+                                <!-- <div class="row">
                                     <div class="col-sm-12">
-                                        <?php include('../get/get_list_job_cms.php'); ?>
+                                        <?php// include('../get/get_list_job_cms.php'); ?>
                                     </div>
-                                </div>
+                                </div> -->
                                 <?php }?>
                                 <h6>
                                     <ion-icon name="document-text-outline"></ion-icon>
