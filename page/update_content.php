@@ -4,7 +4,7 @@
             <form class="d-flex">
                 <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
                 </div>
-                <button class="btn btn-primary btn-sm " style="margin-left:10px;" type="button"
+                <button class="btn btn-dark btn-sm " style="margin-left:10px;" type="button"
                     data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas"
                     aria-controls="offcanvasExample">
                     <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated"
