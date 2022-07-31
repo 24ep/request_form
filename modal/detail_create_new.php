@@ -260,11 +260,11 @@
                                         $badge_progres_3 = 'btn-success';
                                         $progress_per = '100';
                                     }elseif($status=='cancel'){
-                                        $badge_progres_0 = 'btn-danger';
-                                        $badge_progres_1 = 'btn-danger';
-                                        $badge_progres_2 = 'btn-danger';
-                                        $badge_progres_3 = 'btn-danger';
-                                        $progress_per = '100';
+                                        $badge_progres_0 = 'btn-secondary';
+                                        $badge_progres_1 = 'btn-secondary';
+                                        $badge_progres_2 = 'btn-secondary';
+                                        $badge_progres_3 = 'btn-secondary';
+                                        $progress_per = '0';
                                     }elseif($status=='pending'){
                                         $badge_progres_0 = 'btn-success';
                                         $badge_progres_1 = 'btn-secondary';
