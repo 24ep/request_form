@@ -14,7 +14,6 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                         aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
                         placeholder="Dept , Sub Dept , Brand , ID">
                 </div>
-
             </div>
             <div class="col-auto">
                 <div class="input-group input-group-sm mb-3 flex-nowrap">
@@ -26,17 +25,8 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                         <?php echo $username_op;?>
                     </datalist>
                 </div>
-                <!-- <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
-                <input value="<?php //echo $_SESSION["user_filter"];?>" class="selection_filter"
-                    list="datalistOptionsuser" id="user_filter" onchange="filter_update();"
-                    placeholder="Type to username...">
-                <datalist id="datalistOptionsuser">
-                    <?php //echo $username_op;?>
-                </datalist> -->
             </div>
             <div class="col-2">
-
-
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Status</span>
                     <select class="form-select" id="status_filter" onchange="filter_update();">
@@ -44,7 +34,6 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                     </select>
                 </div>
             </div>
-         
             <div class="col-1">
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
@@ -58,9 +47,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                         <div id="total_page_nj"></div>
                     </span>
                 </div>
-
             </div>
-
             <div class="col-auto">
                 <div class="input-group input-group-sm mb-3">
                     <button class="btn btn-dark btn-sm" style="margin-left:10px" type="button"
@@ -102,7 +89,6 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             </nav>
         </div>
     </div>
-
     <li class="row mb-3" style="color: #b3b3b3;font-weight: 600;text-align-last: center;">
         <div class="col" scope="col">Ticket ID</div>
         <div class="col" scope="col">Department</div>
@@ -115,9 +101,5 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
         <div class="col" scope="col">Status</div>
         <div class="col" scope="col">Action</div>
     </li>
-
-
     <?php include('../get/get_list_new_job_new.php'); ?>
-
-
 </div>
