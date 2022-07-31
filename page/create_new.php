@@ -2,13 +2,22 @@
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center mt-3 mb-3">
             <div class="col-auto">
-                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
-                <input value="<?php echo $_SESSION["user_filter"];?>" class="selection_filter"
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Username</span>
+                <input value="<?php echo $_SESSION["user_filter"];?>" class="form-control"
                     list="datalistOptionsuser" id="user_filter" onchange="filter_update();"
-                    placeholder="Type to username...">
+                    placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
                 <datalist id="datalistOptionsuser">
                     <?php echo $username_op;?>
                 </datalist>
+            </div>
+                <!-- <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
+                <input value="<?php //echo $_SESSION["user_filter"];?>" class="selection_filter"
+                    list="datalistOptionsuser" id="user_filter" onchange="filter_update();"
+                    placeholder="Type to username...">
+                <datalist id="datalistOptionsuser">
+                    <?php //echo $username_op;?>
+                </datalist> -->
             </div>
             <div class="col-auto">
                 <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Status</label>
