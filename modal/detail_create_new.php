@@ -50,7 +50,7 @@
             on ac.username = anj.follow_assign_name
             left join all_in_one_project.brand_information as brand_info
             on brand_info.brand = anj.brand
-            left join all_in_one_project.job_cms as jc
+            left join u749625779_cdscontent.job_cms as jc
             on anj.id = jc.csg_request_new_id
             left join all_in_one_project.brand_editor as brand_editor
             on brand_editor.brand = anj.brand
