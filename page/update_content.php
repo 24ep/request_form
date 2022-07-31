@@ -1,4 +1,4 @@
-<div class="container ">
+<div class="container-fluid ">
     <nav class="navbar">
         <div class="container-fluid p-0">
             <form class="d-flex">
