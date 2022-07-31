@@ -1,10 +1,11 @@
 <span style="
-    position: absolute;
+    position: fixed;
     color: white;
     background: black;
     padding: 5px 20px;
     border-radius: 0px 0px 10px 0px;
-" class="shadow-sm span-ifram">Ifram</span>
+    z-index: 1;"
+class="shadow-sm span-ifram">Ifram</span>
 <iframe src="https://eor-admin.central.tech/upload"
     style="
     position: absolute;
@@ -16,6 +17,6 @@
     margin: 0;
     width: 84%;
     overflow: hidden;
-    z-index: 1;"
+    z-index: -1;"
     title="cto_datapump">
 </iframe>

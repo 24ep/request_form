@@ -202,7 +202,7 @@ if (!$_SESSION["login_csg"]){
                 </ul>
             </div>
         </div>
-        <div class="col-10" style="margin-left: auto;font-size: 14px;">
+        <div class="col-10" style="margin-left: auto;font-size: 14px;padding: 0px;">
             <div id="col_detail">
             </div>
         </div>
