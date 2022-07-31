@@ -15,12 +15,12 @@
     }
     function badge_ticket_status_cr($status){
         switch ($status) {
-          case "Close": $status = '<span class="badge bg-primary" style="min-width: 120px;border: 1px solid #0eb32699!important;padding: 8px;">'.$status.'</span>'; break;
-          case "Pending": $status = '<span class="badge bg-primary" style="min-width: 120px;border: 1px solid #afafaf99!important;padding: 8px;">'.$status.'</span>'; break;
-          case "Inprogress": $status = '<span class="badge bg-primary" style="min-width: 120px;border: 1px solid #d7aa3999!important;padding: 8px;">'.$status.'</span>'; break;
-          case "Waiting Buyer": $status = '<span class="badge bg-primary" style="min-width: 120px;border: 1px solid #cf67e599!important;padding: 8px;">'.$status.'</span>'; break;
-          case "Waiting Execution": $status = '<span class="badge bg-primary" style="min-width: 120px;border: 1px solid #182bd599!important;padding: 8px;">'.$status.'</span>'; break;
-          default: $status = '<span class="badge bg-primary" style="min-width: 120px;border: 1px solid #00000099!important;padding: 8px;">'.$status.'</span>';
+          case "Close": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #0eb32699!important;padding: 8px;">'.$status.'</span>'; break;
+          case "Pending": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #afafaf99!important;padding: 8px;">'.$status.'</span>'; break;
+          case "Inprogress": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #d7aa3999!important;padding: 8px;">'.$status.'</span>'; break;
+          case "Waiting Buyer": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #cf67e599!important;padding: 8px;">'.$status.'</span>'; break;
+          case "Waiting Execution": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #182bd599!important;padding: 8px;">'.$status.'</span>'; break;
+          default: $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #00000099!important;padding: 8px;">'.$status.'</span>';
         }
         return $status;
         }
@@ -124,7 +124,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
             >
             
                 <div class="col"><?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?></div>
-                <div class="col-4"><?php echo $row['title']; ?></div>
+                <div class="col-4" style="text-align: -webkit-left;"><?php echo $row['title']; ?></div>
                 <div class="col" style="text-align: -webkit-center;"><?php echo badge_ticket_status_cr($row['status']); ?></div>
                 <div class="col" style="text-align: -webkit-center;"><?php echo badge_ticket_type_cr($row['ticket_type']); ?></div>
                 
