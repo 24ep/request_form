@@ -246,7 +246,7 @@
                                         $badge_progres_2 = 'btn-secondary';
                                         $badge_progres_3 = 'btn-secondary';
                                         $badge_progres_4 = 'btn-secondary';
-                                        $progress_per = '0';
+                                        $progress_per = '25';
                                     }elseif($status=='accepted' and $trigger_status <>'approved'){
                                         $badge_progres_0 = 'btn-success';
                                         $badge_progres_1 = 'btn-success';
@@ -270,7 +270,7 @@
                                         $badge_progres_1 = 'btn-secondary';
                                         $badge_progres_2 = 'btn-secondary';
                                         $badge_progres_3 = 'btn-secondary';
-                                        $progress_per = '25';
+                                        $progress_per = '0';
                                     }else{
                                         $badge_progres_1 = 'btn-secondary';
                                         $badge_progres_2 = 'btn-secondary';
