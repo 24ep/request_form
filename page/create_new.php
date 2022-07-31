@@ -1,3 +1,9 @@
+<?php
+session_start();
+include_once('../get/get_option_function.php');
+$username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
+$request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
+?>
 <div style="margin-left: 10px;">
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center mt-3 mb-3">
