@@ -115,6 +115,11 @@
     $office_tell = $row['office_tell'];
     $work_email = $row['work_email'];
   }
+  if($follow_up_name==""){
+    $follow_up_name = '-';
+    $office_tell = '-';
+    $work_email = '-';
+  }
   mysqli_close($con);
   if($request_important=="Urgent"){
     $dp_tags .= '<span class="badge bg-danger" style="margin: 0px 10px 10px 0px;padding: 8px;">'.$request_important.'</span>';
