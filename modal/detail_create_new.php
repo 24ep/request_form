@@ -132,7 +132,7 @@
 <div class="offcanvas-body" style="padding-bottom: 0px;height: 100%;">
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="position: fixed;right: 40px;"
         aria-label="Close"></button>
-    <div class="row" style="height: 100%;margin-bottom: 0px;padding: 20px">
+    <div class="row" style="height: 100%;margin-bottom: 0px;padding: 0px 20px;">
         <div class="col-9" style="border-right: solid 1px #f0eaea;padding-right:0px;height: 85%;">
             <!-- <div class="modal-header nsbox_header" >
                 <h5 class="modal-title" id="edit_add_new_title">
@@ -238,7 +238,7 @@
                                 <?php if($config_type=='task'){?>
                                 
                                 <h6>
-                                    <ion-icon name="color-wand-outline"></ion-icon><strong>Writer & Studio Job</strong>
+                                    <ion-icon name="color-wand-outline"></ion-icon><strong>Productions Job</strong>
                                 </h6>
                                 <div class="row">
                                     <div class="col-sm-12">
