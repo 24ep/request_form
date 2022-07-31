@@ -70,4 +70,12 @@ ion-icon{
     background: white;
     border-radius: 10px 0px 0px 10px;
 }
-
+.bk-cr{
+    border-radius: 5px!important;
+    margin: 5px!important;
+    align-self: center!important;
+}
+.btn-bucket-cr {
+    color: #7e7e7e!important;
+    border-color: #c1c1c1!important;
+}
