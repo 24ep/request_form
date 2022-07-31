@@ -279,7 +279,7 @@
                                     }
                                         
                                     ?>
-                                    <div class="position-relative m-4">
+                                    <div class="position-relative m-5">
                                     <div class="progress" style="height: 5px;">
                                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-label="Progress" style="width: <?php echo $progress_per; ?>%;" aria-valuenow="<?php echo $progress_per; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
