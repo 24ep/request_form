@@ -179,7 +179,7 @@ if(isset($_POST["from_post"] )){
       if(!isset($ticket)){$ticket="";}
       if(!isset($tr_class)){$tr_class="";}
       $ticket .= "<li  ".$tr_class." >";
-      $ticket .= "<div scope='row' class='col new_lob_list' >NS-".$row["id"]."</div>";
+      $ticket .= "<div scope='row' class='col new_lob_list' ><strong>NS-".$row["id"]."</strong></div>";
       $ticket .= "<div class='col'>".$row["department"]."</div>";
       $ticket .= "<div class='col'>".$row["brand"]."</div>";
       $ticket .= "<div class='col'>".$subtask_sum."</div>";
