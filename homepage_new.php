@@ -210,7 +210,7 @@ function get_page(page) {
         Notiflix.Loading.remove();
     }
 }
-
+get_page('dashboard');
 function logout() {
     Notiflix.Confirm.show(
         'Confirm ',
