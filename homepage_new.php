@@ -24,6 +24,7 @@ if (!$_SESSION["login_csg"]){
      ?>
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -91,6 +92,7 @@ if (!$_SESSION["login_csg"]){
     <script src="https://cdn.jsdelivr.net/npm/@calumk/editorjs-nested-checklist@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script>
 </head>
+
 <body>
     <div class="offcanvas offcanvas-start overflow-auto" role="dialog" tabindex="-1" id="edit_add_new"
         style="width:100%" aria-labelledby="offcanvasExampleLabel">
@@ -158,25 +160,25 @@ if (!$_SESSION["login_csg"]){
                     </a>
                     </li>
                     <div class="dropdown">
-                    <li class="nav-item" role="presentation"></li>
-                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        data-bs-toggle="dropdown">
-                        <ion-icon name="layers"></ion-icon>Tools
-                    </a>
-                    <ul class="dropdown-menu">
-                        <small class="header_manu_bra">Datapump</small>
-                        <li><button onclick="get_page('datapump_convert');" class="dropdown-item" type="button">
-                                <ion-icon name="shapes"></ion-icon>Datapump Convert
-                            </button></li>
-                        <li><button disabled onclick="get_page('datapump_convert');" class="dropdown-item"
-                                type="button">
-                                <ion-icon name="shapes"></ion-icon>Datapump Admin
-                            </button></li>
-                        <small class="header_manu_bra">Imfrom</small>
-                        <li><button disabled class="dropdown-item" type="button">
-                                <ion-icon name="shapes"></ion-icon>Imform version control
-                            </button></li>
-                    </ul>
+                        <li class="nav-item" role="presentation"></li>
+                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                            data-bs-toggle="dropdown">
+                            <ion-icon name="layers"></ion-icon>Tools
+                        </a>
+                        <ul class="dropdown-menu">
+                            <small class="header_manu_bra">Datapump</small>
+                            <li><button onclick="get_page('datapump_convert');" class="dropdown-item" type="button">
+                                    <ion-icon name="shapes"></ion-icon>Datapump Convert
+                                </button></li>
+                            <li><button disabled onclick="get_page('datapump_convert');" class="dropdown-item"
+                                    type="button">
+                                    <ion-icon name="shapes"></ion-icon>Datapump Admin
+                                </button></li>
+                            <small class="header_manu_bra">Imfrom</small>
+                            <li><button disabled class="dropdown-item" type="button">
+                                    <ion-icon name="shapes"></ion-icon>Imform version control
+                                </button></li>
+                        </ul>
                     </div>
                     </li>
                     <hr class="hr_manu_bra_in">
@@ -209,6 +211,7 @@ if (!$_SESSION["login_csg"]){
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
 </body>
+
 </html>
 <script>
 function get_page(page) {
@@ -254,6 +257,7 @@ function get_page(page) {
     }
 }
 get_page('dashboard');
+
 function logout() {
     Notiflix.Confirm.show(
         'Confirm ',
