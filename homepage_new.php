@@ -43,7 +43,6 @@ if (!$_SESSION["login_csg"]){
     <link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
     <script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
     <link rel="stylesheet" type="text/css" href="base/css-theam/light-new.css">
-    <script src="base/js/notifications.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <!-- multi-select -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.js"></script>
@@ -266,6 +265,7 @@ if (!$_SESSION["login_csg"]){
 
 </html>
 <script>
+    
 function get_page(page) {
     if (page == "update_content") {
         Notiflix.Loading.hourglass('Loading...');
@@ -327,7 +327,24 @@ function get_page(page) {
     }
 }
 get_page('dashboard');
-
+function update_readed_nt() {
+    $.post("base/action/action_update_read_nt.php", {}, function(data) {
+        // $('#project_bucket').html(data);
+    });
+}
+function get_count_read_nt() {
+    $.post("base/get/get_count_nt_unread.php", {}, function(data) {
+        $('#get_count_nt_unread').html(data);
+    });
+}
+function get_list_update_job() {
+    $.post("base/get/get_list_job_update.php", {}, function(data) {
+        $('#get_list_job_update').html(data);
+        timeago().render(document.querySelectorAll('.timeago'));
+        update_readed_nt();
+        get_count_read_nt();
+    });
+}
 function logout() {
     Notiflix.Confirm.show(
         'Confirm ',
@@ -363,4 +380,5 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 </script>
+
 <?php } ?>
