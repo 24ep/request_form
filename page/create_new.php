@@ -2,9 +2,9 @@
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center mt-3 mb-3">
             <div class="col-auto">
-            <div class="input-group flex-nowrap">
-                <span class="input-group-text input-group-sm" id="addon-wrapping">Username</span>
-                <input value="<?php echo $_SESSION["user_filter"];?>" class="form-control form-control-sm"
+            <div class="input-group input-group-sm mb-3 flex-nowrap">
+                <span class="input-group-text " id="addon-wrapping">Username</span>
+                <input value="<?php echo $_SESSION["user_filter"];?>" class="form-control"
                     list="datalistOptionsuser" id="user_filter" onchange="filter_update();"
                     placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
                 <datalist id="datalistOptionsuser">
@@ -22,8 +22,8 @@
             <div class="col-auto">
               
                
-                <div class="input-group input-group-sm mb-3" style=" width: 500px;">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
+                <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Status</span>
                 <select class="form-select" id="status_filter" onchange="filter_update();">
                     <?php echo $request_new_status_op;?>
                 </select>
