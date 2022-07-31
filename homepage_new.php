@@ -189,14 +189,31 @@ if (!$_SESSION["login_csg"]){
                                         <ion-icon name="shapes"></ion-icon>Word to HTML
                                 </a></li>
                             </ul>
-                            
                     </li>
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Others</small>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
-                            <ion-icon name="globe"></ion-icon>Quick link
-                        </a>
+                    <li class="nav-item btn-group dropend" role="presentation">
+                            <a class="nav-link" data-bs-toggle="dropdown" data-bs-auto-close="inside" type="button" role="tab" aria-selected="false"
+                                data-bs-toggle="dropdown">
+                                <ion-icon name="globe"></ion-icon>Quicklink
+                            </a>
+                            <ul class="dropdown-menu shadow p3">
+                                <small class="header_manu_bra">Central</small>
+                    
+                                <li><a href="http://cnext.centralgroup.com/" target="_blank" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>Cnext
+                                </a></li>
+                                <li><a href="https://ris6789.central.co.th/arsys/shared/login.jsp?/arsys/" target="_blank" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>RIS 6789
+                                </a></li>
+                                <li><a href="https://cenergy.atlassian.net/servicedesk/customer/portals" target="_blank" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>CTO JIRA
+                                </a></li>
+                                <li><a href="https://centralgroup-my.sharepoint.com/:f:/g/personal/ton_central_tech/Ek7nHI386MZAgCvU5e1xAvkBJX9gZbW_xE6NYjq8dUgo6g?e=2frs9b" target="_blank" class="dropdown-item" type="button">
+                                        <ion-icon name="shapes"></ion-icon>LAMTON DRIVE
+                                </a></li>
+                            </ul>
+                           
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
