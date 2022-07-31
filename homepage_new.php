@@ -160,7 +160,7 @@ if (!$_SESSION["login_csg"]){
                         </a>
                     </li>
 
-                    <li class="nav-item dropdown dropend" role="presentation">
+                    <li class="nav-item btn-group dropend" role="presentation">
                             <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                                 data-bs-toggle="dropdown">
                                 <ion-icon name="layers"></ion-icon>Productions
