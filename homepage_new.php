@@ -21,12 +21,6 @@ if (!$_SESSION["login_csg"]){
         $get_contact_buyer = $row['firstname']." ".$row['lastname']." ( ".$nickname." )\nEmail: ".$row['work_email']."\nOffice tell: ".$row['office_tell'];
         }
         mysqli_close($con);
-        switch ($_SESSION["pf_theme"]) {
-            case "Dark":  $pftheam="dark"; break;
-            case "Light Modern": $pftheam="light-modern"; break;
-            case "Light":  $pftheam="light"; break;
-            default: $pftheam="light";
-          }
      ?>
 <!doctype html>
 <html lang="en">
@@ -198,6 +192,12 @@ function get_page(page) {
     } else if (page == "account") {
         Notiflix.Loading.hourglass('Loading...');
         $.post("page/account.php", {}, function(data) {
+            $('#col_detail').html(data);
+            Notiflix.Loading.remove();
+        });
+    } else if (page == "dashboard") {
+        Notiflix.Loading.hourglass('Loading...');
+        $.post("page/dashboard.php", {}, function(data) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
