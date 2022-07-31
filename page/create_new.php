@@ -1,6 +1,6 @@
-<div style="    margin-left: 30px;">
+<div style="margin-left: 10px;">
     <div class="tab-content" id="myTabContent">
-        <div class="row align-items-center" style="margin:20px">
+        <div class="row align-items-center mt-3 mb-3">
             <div class="col-auto">
                 <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Username</label>
                 <input value="<?php echo $_SESSION["user_filter"];?>" class="selection_filter"

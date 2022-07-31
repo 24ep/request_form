@@ -92,7 +92,7 @@
         <div class="tab-pane fade show active" id="pills-list_view_ts" role="tabpanel"
             aria-labelledby="pills-list_view_ts-tab" tabindex="0">
             <div class="row" id="get_ts_admin_console_list_view">
-                <?php include('../get/get_list_ts_list_view.php'); ?>
+                <?php include('../get/get_list_update_content.php'); ?>
             </div>
         </div>
         <div class="tab-pane fade" id="pills-board_view_ts" role="tabpanel" aria-labelledby="pills-board_view_ts-tab"
