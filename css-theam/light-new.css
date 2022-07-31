@@ -108,3 +108,6 @@ ion-icon{
 .ce-block__content, .ce-toolbar__content {
     max-width: 85%!important;
 }
+li.nav-item{
+    width: 90%;
+}
