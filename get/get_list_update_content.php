@@ -15,12 +15,12 @@
     }
     function badge_ticket_status_cr($status){
         switch ($status) {
-          case "Close": $status = '<span class="badge bg-primary" style="min-width: 120px;background-color: #0eb32699!important;padding: 8px;">'.$status.'</span>'; break;
-          case "Pending": $status = '<span class="badge bg-primary" style="min-width: 120px;background-color: #afafaf99!important;padding: 8px;">'.$status.'</span>'; break;
-          case "Inprogress": $status = '<span class="badge bg-primary" style="min-width: 120px;background-color: #d7aa3999!important;padding: 8px;">'.$status.'</span>'; break;
-          case "Waiting Buyer": $status = '<span class="badge bg-primary" style="min-width: 120px;background-color: #cf67e599!important;padding: 8px;">'.$status.'</span>'; break;
-          case "Waiting Execution": $status = '<span class="badge bg-primary" style="min-width: 120px;background-color: #182bd599!important;padding: 8px;">'.$status.'</span>'; break;
-          default: $status = '<span class="badge bg-primary" style="min-width: 120px;background-color: #00000099!important;padding: 8px;">'.$status.'</span>';
+          case "Close": $status = '<span class="badge bg-primary" style="min-width: 120px;border: 1px solid #0eb32699!important;padding: 8px;">'.$status.'</span>'; break;
+          case "Pending": $status = '<span class="badge bg-primary" style="min-width: 120px;border: 1px solid #afafaf99!important;padding: 8px;">'.$status.'</span>'; break;
+          case "Inprogress": $status = '<span class="badge bg-primary" style="min-width: 120px;border: 1px solid #d7aa3999!important;padding: 8px;">'.$status.'</span>'; break;
+          case "Waiting Buyer": $status = '<span class="badge bg-primary" style="min-width: 120px;border: 1px solid #cf67e599!important;padding: 8px;">'.$status.'</span>'; break;
+          case "Waiting Execution": $status = '<span class="badge bg-primary" style="min-width: 120px;border: 1px solid #182bd599!important;padding: 8px;">'.$status.'</span>'; break;
+          default: $status = '<span class="badge bg-primary" style="min-width: 120px;border: 1px solid #00000099!important;padding: 8px;">'.$status.'</span>';
         }
         return $status;
         }
@@ -96,9 +96,9 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         where ".$ts_filter."  and lower(ticket.status) not in ('cancel','archive')
          order by ticket.status desc ,".$sort_de_status."  limit 300";
         $result = mysqli_query($con, $query);
-        echo "  <li class='row' style='text-align: -webkit-center;'>
+        echo "  <li class='row shadow-sm p-2 m-2 rounded bg-white' style='text-align: -webkit-center;align-items: center;'>
                     <div class='col'>Id</div>
-                    <div class='col'>Title</div>
+                    <div class='col-4'>Title</div>
                     <div class='col'>STATUS</div>
                     <div class='col'>Request for</div>
                     <div class='col'>Due date</div>
@@ -123,7 +123,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
             >
             
                 <div class="col"><?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?></div>
-                <div class="col"><?php echo $row['title']; ?></div>
+                <div class="col-4"><?php echo $row['title']; ?></div>
                 <div class="col" style="text-align: -webkit-center;"><?php echo badge_ticket_status_cr($row['status']); ?></div>
                 <div class="col" style="text-align: -webkit-center;"><?php echo badge_ticket_type_cr($row['ticket_type']); ?></div>
                 
@@ -170,7 +170,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 id="crid_<?php echo $row['id'];?>"
                 data-cr-title="<?php echo strtolower($row['title']);?>" 
                 aria-controls="offcanvasExample"
-                type="button" class="btn btn-outline-dark btn-sm">Open</button></div>
+                type="button" class="btn btn-outline-dark btn-sm">Detail</button></div>
                     </li>
             <!-- ui -->
         <?php $i++; }
