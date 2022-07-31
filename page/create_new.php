@@ -3,8 +3,8 @@
         <div class="row align-items-center mt-3 mb-3">
             <div class="col-auto">
             <div class="input-group flex-nowrap">
-                <span class="input-group-text" id="addon-wrapping">Username</span>
-                <input value="<?php echo $_SESSION["user_filter"];?>" class="form-control"
+                <span class="input-group-text input-group-sm" id="addon-wrapping">Username</span>
+                <input value="<?php echo $_SESSION["user_filter"];?>" class="form-control form-control-sm"
                     list="datalistOptionsuser" id="user_filter" onchange="filter_update();"
                     placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
                 <datalist id="datalistOptionsuser">
@@ -26,24 +26,26 @@
                 </select>
             </div>
             <div class="col-auto">
-                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Search</label>
-                <input placeholder="Dept , Sub Dept , Brand , ID" type="text" class="selection_filter"
-                    style="border-bottom: 1px #e0e0e0;border-style: double;width:300px" id="brand_filter"
-                    onchange="filter_update();">
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
+                <input type="text" class="form-control" id="brand_filter" onchange="filter_update();" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Dept , Sub Dept , Brand , ID">
+            </div>
+             
             </div>
             <div class="col-auto">
                 <h5>|</h5>
             </div>
             <div class="col-auto">
-                <label class="mr-sm-2 sr-only" for="inlineFormInput">Page</label>
-                <input type="number" class="selection_filter"
-                    style="width: 40px;border-bottom: 1px #e0e0e0;border-style: double;" id="pagenation_input" min=1
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
+                <input type="number" class="form-control" id="brand_filter" onchange="filter_update();" id="pagenation_input" min=1
                     <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
-                    value="<?php echo $_SESSION["pagenation"];?>" onchange="filter_update();" placeholder="">
+                    value="<?php echo $_SESSION["pagenation"];?>" onchange="filter_update();" placeholder="" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Dept , Sub Dept , Brand , ID">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"><div id="total_page_nj"></div></span>
+                </div>
+
             </div>
-            <div class="col-auto">
-                <div id="total_page_nj"></div>
-            </div>
+       
             <div class="col-auto">
                 <button class="btn btn-primary btn-sm" style="margin-left:10px" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
