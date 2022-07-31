@@ -30,16 +30,13 @@
             </div>
             </div>
             <div class="col-5">
-            <div class="input-group input-group-sm mb-3" style=" width: 500px;">
+            <div class="input-group input-group-sm mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
                 <input type="text" class="form-control" id="brand_filter" onchange="filter_update();" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Dept , Sub Dept , Brand , ID">
             </div>
              
             </div>
-            <div class="col-auto">
-                <h5>|</h5>
-            </div>
-            <div class="col-auto">
+            <div class="col-1">
             <div class="input-group input-group-sm mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
                 <input type="number" class="form-control" id="brand_filter" onchange="filter_update();" id="pagenation_input" min=1
