@@ -5,7 +5,7 @@
     padding: 5px 20px;
     border-radius: 0px 0px 10px 0px;
     z-index: 1;"
-class="shadow-sm span-ifram">Ifram</span>
+class="shadow-sm span-ifram">https://eor-admin.central.tech/upload</span>
 <iframe src="https://eor-admin.central.tech/upload"
     style="
     position: absolute;
