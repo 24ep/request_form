@@ -258,10 +258,8 @@ function search_cr_ticket() {
 function run_ts_command(ts_level) {
     var summary_filter = document.getElementById("ts_command").value;
     var ts_username = document.getElementById("ts_username").value;
-    var ts_command_limit = document.getElementById("ts_command_limit").value;
     $.post("base/get/get_list_ts_board_view.php", {
         summary_filter: summary_filter,
-        ts_command_limit: ts_command_limit,
         ts_username: ts_username
     }, function(data) {
         $('#get_ts_admin_console').html(data);
