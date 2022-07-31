@@ -173,7 +173,7 @@ if(isset($_POST["from_post"] )){
       $subtask_sum = $row["sku"];
     }
 
-    if(strpos($task_status,"approved")===true){
+    if(strpos($task_status,"approved")===true or strpos($task_status,"cancel")===true ){
       $p_badge = "";
     }
       if(!isset($ticket)){$ticket="";}
