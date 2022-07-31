@@ -114,3 +114,10 @@ li.nav-item{
 .span-ifram:hover{
     display: none;
 }
+.dp-link{
+    margin: 3px 10px;
+    width: 100%;
+    font-size: 14px;
+    padding: 5px 10px;
+    color: #7a7a7a;
+}
