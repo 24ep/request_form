@@ -113,29 +113,24 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 </li>";
           while( $row = mysqli_fetch_array($result)) {
                 ?>
-            <!-- ui -->
-            <li class='row shadow-sm p-2 m-2 rounded bg-white' style='text-align: -webkit-center;align-items: center;'
-            onclick="cr_id_toggle(<?php echo $row['id'];?>) " 
-            data-bs-toggle="offcanvas" 
-            data-bs-target="#detail_cr"
-            data-bucket="<?php echo $row['prefix'];?>" 
-            data-cr-status="<?php echo $row['status'];?>"
-            data-cr-request-for="<?php echo $row['ticket_type'];?>"
-            data-cr-id="<?php echo $row['id'];?>"
-            data-cr-participant="<?php echo strtolower($row['participant']);?>" 
-            id="crid_<?php echo $row['id'];?>"
-            data-cr-title="<?php echo strtolower($row['title']);?>" 
-            aria-controls="offcanvasExample"
-            >
-            
-                <div class="col"><?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?></div>
-                <div class="col-4" style="text-align: -webkit-left;"><?php echo $row['title']; ?></div>
-                <div class="col" style="text-align: -webkit-center;"><?php echo badge_ticket_status_cr($row['status']); ?></div>
-                <div class="col" style="text-align: -webkit-center;"><?php echo badge_ticket_type_cr($row['ticket_type']); ?></div>
-                
-                <div class="col" style="text-align: -webkit-center;"><?php echo badge_due_date($row["effective_date"]); ?></div>
-                <div class="col" style="inline-size: 10px;">
-                <?php
+<!-- ui -->
+<li class='row shadow-sm p-2 m-2 rounded bg-white' style='text-align: -webkit-center;align-items: center;'
+    onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
+    data-bucket="<?php echo $row['prefix'];?>" data-cr-status="<?php echo $row['status'];?>"
+    data-cr-request-for="<?php echo $row['ticket_type'];?>" data-cr-id="<?php echo $row['id'];?>"
+    data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
+    data-cr-title="<?php echo strtolower($row['title']);?>" aria-controls="offcanvasExample">
+
+    <div class="col">
+        <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?>
+    </div>
+    <div class="col-4" style="text-align: -webkit-left;"><?php echo $row['title']; ?></div>
+    <div class="col" style="text-align: -webkit-center;"><?php echo badge_ticket_status_cr($row['status']); ?></div>
+    <div class="col" style="text-align: -webkit-center;"><?php echo badge_ticket_type_cr($row['ticket_type']); ?></div>
+
+    <div class="col" style="text-align: -webkit-center;"><?php echo badge_due_date($row["effective_date"]); ?></div>
+    <div class="col" style="inline-size: 10px;">
+        <?php
                         $ef_badge = "";
                         $image_profile = "";
                         if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
@@ -162,27 +157,19 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
 
 
 
-                </div>
-                <div  class="col">
-                <button
-                onclick="cr_id_toggle(<?php echo $row['id'];?>) " 
-                data-bs-toggle="offcanvas" 
-                data-bs-target="#detail_cr"
-                data-bucket="<?php echo $row['prefix'];?>" 
-                data-cr-request-for="<?php echo $row['ticket_type'];?>"
-                data-cr-id="<?php echo $row['id'];?>"
-                data-cr-status="<?php echo $row['status'];?>"
-                data-cr-participant="<?php echo strtolower($row['participant']);?>" 
-                id="crid_<?php echo $row['id'];?>"
-                data-cr-title="<?php echo strtolower($row['title']);?>" 
-                aria-controls="offcanvasExample"
-                type="button" class="btn btn-dark btn-sm">Detail</button></div>
-                    </li>
-            <!-- ui -->
-        <?php $i++; }
-        echo '</table>';
-        echo '</div>';
-                      echo "</ul>";
+    </div>
+    <div class="col">
+        <button onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
+            data-bucket="<?php echo $row['prefix'];?>" data-cr-request-for="<?php echo $row['ticket_type'];?>"
+            data-cr-id="<?php echo $row['id'];?>" data-cr-status="<?php echo $row['status'];?>"
+            data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
+            data-cr-title="<?php echo strtolower($row['title']);?>" aria-controls="offcanvasExample" type="button"
+            class="btn btn-dark btn-sm">Detail</button>
+    </div>
+</li>
+<!-- ui -->
+<?php $i++; }
+
                     mysqli_close($con);
         }
         echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'"  >
@@ -191,4 +178,3 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         echo '</div>';
         mysqli_close($con_status);
         ?>
-
