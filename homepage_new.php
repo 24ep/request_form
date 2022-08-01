@@ -112,7 +112,7 @@ if (!$_SESSION["login_csg"]){
             <?php include("get/get_log.php"); ?>
         </div>
     </div>
-    <div class="row">
+    <!-- <div class="row"> -->
         <div class="col-2 list_bra shadow">
             <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a class="navbar-brand" href="#">ONLINE CONTENT</a>
@@ -275,7 +275,7 @@ if (!$_SESSION["login_csg"]){
             <div id="col_detail">
             </div>
         </div>
-    </div>
+    <!-- </div> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
