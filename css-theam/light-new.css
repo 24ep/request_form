@@ -268,5 +268,5 @@ label#label_file_cme {
     font-weight: bold;
 }
 .notiflix-loading.nx-with-animation{
-    background: rgb(193 193 193 / 80%);
+    background: rgb(193 193 193 / 80%)!important;
 }
