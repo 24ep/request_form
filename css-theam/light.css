@@ -573,3 +573,9 @@ table.dataTable.no-footer {
 .ce-block__content, .ce-toolbar__content {
     max-width: 85%!important;
 }
+.btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
+    color: #bfbfbf;
+    background-color: #040404;
+    border-color: #e3e3e300;
+    font-weight: bold;
+}
