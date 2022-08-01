@@ -210,3 +210,36 @@ label#label_file_cme {
 .start-100 {
     left: 100%!important;
 }
+  
+.icon-mg{
+    margin-right: 10px!important;
+    margin-bottom: 5px!important;
+  }
+.card-unassin-bt{
+    padding-top:3px;padding-right: 0px;padding-left: 10px;
+}
+.card-unassin-eft{
+    padding-top:3px;text-align: right;padding-right: 0px;
+}
+.card-col-image-profile{
+    max-width: fit-content;padding-right: 15px;
+}
+.card-assign-name{
+    padding: 0px 5px;
+    align-self: center;
+}
+.card-assigned-eft{
+    max-width: fit-content;padding-top:3px;
+    position: absolute;
+    right: 0;
+}
+.badge-profile{
+    background: #ecf0f4;
+    border-radius: 20px;
+    border: solid 1px #dddddd;
+    width: fit-content;
+    padding: 2px;
+    margin: unset;
+    display: inherit;
+    margin: 1px;
+}
