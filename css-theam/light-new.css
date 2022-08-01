@@ -261,3 +261,12 @@ label#label_file_cme {
     height: 500px;
     font-size: inherit;
 }
+.btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
+    color: #bfbfbf;
+    background-color: #040404;
+    border-color: #e3e3e300;
+    font-weight: bold;
+}
+.notiflix-loading.nx-with-animation{
+    background: rgb(193 193 193 / 80%);
+}
