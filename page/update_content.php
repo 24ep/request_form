@@ -258,7 +258,7 @@ function search_cr_ticket() {
 function run_ts_command(ts_level) {
     var summary_filter = document.getElementById("ts_command").value;
     var ts_username = document.getElementById("ts_username").value;
-    $.post("base/get/get_list_ts_board_view.php", {
+    $.post("base/get/get_board_update_content.php", {
         summary_filter: summary_filter,
         ts_username: ts_username
     }, function(data) {
