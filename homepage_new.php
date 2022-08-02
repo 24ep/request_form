@@ -112,6 +112,33 @@ if (!$_SESSION["login_csg"]){
             <?php include("get/get_log.php"); ?>
         </div>
     </div>
+    <!-- <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination pagination-sm"> -->
+                                <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1"
+                                    id="content_request_canvas" aria-labelledby="offcanvasExampleLabel">
+                                    <div class="offcanvas-header" style="    background: #313131;color: white;">
+                                        <h5 class="offcanvas-title" id="offcanvasExampleLabel"
+                                            style="padding-left:50px;font-weight: bold;">
+                                            <ion-icon style="margin-right:10px" name="add-circle-outline">
+                                            </ion-icon>Request Creation
+                                        </h5>
+                                        <button type="button" class="btn-close btn-close-white text-reset"
+                                            data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body" style="background-color: #fcfbf9;">
+                                        <div class="container-md" style="padding:0px 50px 50px 50px;">
+                                            <form class="row g-3">
+                                                <div id="add_new_cr_result">
+                                                </div>
+                                                <?php include_once('form/form_create_content_request.php')?>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- </ul>
+                        </nav>
+                    </div> -->
     <!-- <div class="row"> -->
         <div class="col-2 list_bra shadow">
             <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
