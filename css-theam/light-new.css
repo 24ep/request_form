@@ -270,3 +270,54 @@ label#label_file_cme {
 .notiflix-loading.nx-with-animation{
     background: rgb(193 193 193 / 80%)!important;
 }
+.bucket-hin{
+    display : none;
+    position : absolute!important;
+    z-index: -1;
+}
+.cr-search-hide{
+    display : none;
+    position : absolute!important;
+    z-index: -1;
+}
+.cr-username-hide{
+    display : none;
+    position : absolute!important;
+    z-index: -1;
+}
+.cr-request-for-hide{
+    display : none;
+    position : absolute!important;
+    z-index: -1;
+}
+.cr-status-hide{
+    display : none;
+    position : absolute!important;
+    z-index: -1;
+}
+.cr_detail_with_attachment{
+    /* color:gray;
+    border-bottom: solid 5px #adadad;
+    padding: 0px 10px; */
+}
+.cr_hr_detail{
+    margin-bottom:5px;
+    color: #dee2e6;
+}
+.input-cr-active{
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    background: transparent;
+    font-weight: lighter;
+    width: inherit;
+    font-size: smaller;
+    font-size: medium;
+    padding: 5px 20px;
+}
+.input-cr-inactive{
+    border: 0px;
+    background: transparent;
+    font-weight: lighter;
+    width: inherit;
+    font-size: smaller;
+}
