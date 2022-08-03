@@ -130,7 +130,7 @@
     </div>
     <!-- for datapump only -->
     <div class="form-group col-md-3" id="cr_dp_reason_block" style="display: none;">
-        <label for="cr_dp_reason" class="form-label">* Why do whan to [datapump] ?</label>
+        <label for="cr_dp_reason" class="form-label">* Why do you want to do datapump ?</label>
         <select id="cr_dp_reason" required  name="cr_dp_reason"
             class="form-select form-select-sm">
             <?php echo $cr_reason_op_add;?>
@@ -295,7 +295,7 @@ function attaction_alert_cr(id) {
         cr_ticket_type.classList.add("is-invalid");
         is_valid[0] = true;
     } else {
-        cr_ticket_type.classList.remove("is-invalid");
+        cr_ticket_type.classList.replace("is-invalid","");
         is_valid[0] = false;
 
         if (cr_ticket_type == "Datapump Add Source" || cr_ticket_type == "Datapump Delete Source") {
@@ -306,7 +306,7 @@ function attaction_alert_cr(id) {
                 cr_dp_reason.classList.add("is-invalid");
                 is_valid[1] = true;
             } else {
-                cr_dp_reason.classList.remove("is-invalid");
+                cr_dp_reason.classList.replace("is-invalid","");
                 is_valid[1] = false;
             }
             //brand
@@ -314,7 +314,7 @@ function attaction_alert_cr(id) {
                 cr_brand.classList.add("is-invalid");
                 is_valid[2] = true;
             } else {
-                cr_brand.classList.remove("is-invalid");
+                cr_brand.classList.replace("is-invalid","");
                 is_valid[2] = false;
             }
         }
