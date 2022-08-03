@@ -298,11 +298,9 @@ function attaction_alert_cr(id) {
         is_valid[0] = true;
     } else {
         if (is_valid[0] == true) {
-            cr_ticket_type.className.replace(/(?:^|\s)is-invalid(?!\S)/g, "");
+            cr_ticket_type.className =  cr_ticket_type.className.replace(/(?:^|\s)is-invalid(?!\S)/g, "");
             is_valid[0] = false;
         }
-
-
         if (cr_ticket_type == "Datapump Add Source" || cr_ticket_type == "Datapump Delete Source") {
             var cr_dp_reason = document.getElementById("cr_dp_reason");
             var cr_brand = document.getElementById("cr_brand");
@@ -312,18 +310,17 @@ function attaction_alert_cr(id) {
                 is_valid[1] = true;
             } else {
                 if (is_valid[1] == true) {
-                    cr_dp_reason.className.replace(/(?:^|\s)is-invalid(?!\S)/g, "");
+                    cr_dp_reason.className  = cr_dp_reason.className.replace(/(?:^|\s)is-invalid(?!\S)/g, "");
                     is_valid[1] = false;
                 }
             }
             //brand
             if (cr_brand.value == '') {
-
                 cr_brand.className += " is-invalid";
                 is_valid[2] = true;
             } else {
                 if (is_valid[2] == true) {
-                    cr_brand.className.replace(/(?:^|\s)is-invalid(?!\S)/g, "");
+                    cr_brand.className  =  cr_brand.className.replace(/(?:^|\s)is-invalid(?!\S)/g, "");
                     is_valid[2] = false;
                 }
             }
