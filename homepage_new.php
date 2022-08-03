@@ -114,7 +114,7 @@ if (!$_SESSION["login_csg"]){
     </div>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid" style="background:red;color:white">
-            <a class="navbar-brand" href="#">You are in test environment</a>
+            <a class="navbar-brand" href="#">You are in pre-launch environment</a>
         </div>
     </nav>
     <!-- <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
