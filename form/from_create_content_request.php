@@ -266,41 +266,6 @@ function submit_cr_form(id) {
 <script>
 function attaction_alert_cr(id) {
     //check requirt value
-    var cr_ticket_type = document.getElementById("cr_ticket_type").value;
-    var is_valid = [];
-    if (cr_ticket_type == '') {
-        cr_ticket_type.classList.add("is-invalid");
-        is_valid[0] = true;
-    } else {
-        cr_ticket_type.classList.remove("is-invalid");
-        is_valid[0] = false;
-
-        if (cr_ticket_type == "Datapump Add Source" || cr_ticket_type == "Datapump Delete Source") {
-            var cr_dp_reason = document.getElementById("cr_dp_reason").value;
-            var cr_brand = document.getElementById("cr_brand").value;
-            //reason
-            if (cr_dp_reason == '') {
-                cr_dp_reason.classList.add("is-invalid");
-                is_valid[1] = true;
-            } else {
-                cr_dp_reason.classList.remove("is-invalid");
-                is_valid[1] = false;
-            }
-            //brand
-            if (cr_brand == '') {
-                cr_brand.classList.add("is-invalid");
-                is_valid[2] = true;
-            } else {
-                cr_brand.classList.remove("is-invalid");
-                is_valid[2] = false;
-            }
-        }
-    }
-
-    //end check requirt value
-    if (is_valid.includes(true)) {
-        // nothing
-    } else {
         var cr_ticket_type = document.getElementById("cr_ticket_type").value;
         if (cr_ticket_type == "System development") {
             Notiflix.Report.warning(
@@ -354,7 +319,7 @@ function attaction_alert_cr(id) {
         } else {
             submit_cr_form(id);
         }
-    }
+    
 
 
 
