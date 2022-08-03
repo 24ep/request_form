@@ -309,7 +309,7 @@ function attaction_alert_cr(id) {
                 cr_dp_reason.classList.add("is-invalid");
                 is_valid[1] = true;
             } else {
-                cr_dp_reason.classList.replace(/(?:^|\s)is-invalid(?!\S)/g,"");;
+                cr_dp_reason.classList.replace(/(?:^|\s)is-invalid(?!\S)/g,"");
                 is_valid[1] = false;
             }
             //brand
@@ -317,7 +317,7 @@ function attaction_alert_cr(id) {
                 cr_brand.classList.add("is-invalid");
                 is_valid[2] = true;
             } else {
-                cr_brand.classList.replace(/(?:^|\s)is-invalid(?!\S)/g,"");;
+                cr_brand.classList.replace(/(?:^|\s)is-invalid(?!\S)/g,"");
                 is_valid[2] = false;
             }
         }
