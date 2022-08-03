@@ -245,6 +245,7 @@ function submit_cr_form(id) {
     var cr_ticket_template = document.getElementById("cr_ticket_template").value;
     var cr_piority = document.getElementById("cr_piority").value;
     var cr_effective_date = document.getElementById("cr_effective_date").value;
+    var cr_content_request_reson = document.getElementById("cr_content_request_reson").value;
     var crfiles = document.getElementById('cr_attachment').files.length;
     for (var x = 0; x < crfiles; x++) {
         form_data.append("cr_attachment[]", document.getElementById('cr_attachment').files[x]);
@@ -256,6 +257,7 @@ function submit_cr_form(id) {
     form_data.append("cr_ticket_template", cr_ticket_template)
     form_data.append("cr_piority", cr_piority)
     form_data.append("cr_effective_date", cr_effective_date)
+    form_data.append("cr_content_request_reson", cr_content_request_reson)
     form_data.append("id", id)
     $.ajax({
         url: "base/action/action_submit_add_content_request.php",
@@ -296,7 +298,7 @@ function attaction_alert_cr(id) {
         cr_ticket_type.classList.add("is-invalid");
         is_valid[0] = true;
     } else {
-        cr_ticket_type.classList.replace("is-invalid","");
+        cr_ticket_type.classList.replace(/(?:^|\s)is-invalid(?!\S)/g,"");
         is_valid[0] = false;
 
         if (cr_ticket_type == "Datapump Add Source" || cr_ticket_type == "Datapump Delete Source") {
@@ -307,7 +309,7 @@ function attaction_alert_cr(id) {
                 cr_dp_reason.classList.add("is-invalid");
                 is_valid[1] = true;
             } else {
-                cr_dp_reason.classList.replace("is-invalid","");
+                cr_dp_reason.classList.replace(/(?:^|\s)is-invalid(?!\S)/g,"");;
                 is_valid[1] = false;
             }
             //brand
@@ -315,7 +317,7 @@ function attaction_alert_cr(id) {
                 cr_brand.classList.add("is-invalid");
                 is_valid[2] = true;
             } else {
-                cr_brand.classList.replace("is-invalid","");
+                cr_brand.classList.replace(/(?:^|\s)is-invalid(?!\S)/g,"");;
                 is_valid[2] = false;
             }
         }
