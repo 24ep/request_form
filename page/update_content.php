@@ -282,7 +282,7 @@ tinymce.init({
     toolbar_sticky: true,
     template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
     template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
-    height: 600,
+    height: 500,
     noneditable_noneditable_class: 'mceNonEditable',
     toolbar_mode: 'sliding',
     contextmenu: 'link bold italic | quicklink h2 h3 blockquote ',

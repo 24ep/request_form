@@ -17,6 +17,24 @@
       }
     return $option_element;
   }
+  function return_option_create_filter($current_value,$attr_id,$key){
+    session_start();
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+      $query_op = "SELECT * FROM content_service_gate.attribute_option
+      WHERE attribute_id = ".$attr_id." and function = 'content_request' and attribute_code like '%".$key."%' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
+      $result_op = mysqli_query($con, $query_op);
+      if($current_value==""){
+        $option_element = "<option selected value=''></option>";
+      }
+      while($option = mysqli_fetch_array($result_op)) {
+        if($option["attribute_option"]==$current_value){
+            $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_label"]."</option>";
+          }else{
+            $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_label"]."</option>";
+          }
+      }
+    return $option_element;
+  }
   function project_bucket(){
             $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
@@ -87,6 +105,8 @@
 
        $project_bucket = project_bucket();
        $cr_issue_type_op = return_option_create_cr("","39");
+       $cr_reason_op_add = return_option_create_filter("","40",'dp_add');
+       $cr_reason_op_remove = return_option_create_filter("","40",'dp_remove');
 ?>
 <div class="row">
     <div class="form-group">
@@ -108,6 +128,20 @@
             <?php echo $cr_issue_type_op;?>
         </select>
     </div>
+    <!-- for datapump only -->
+    <div class="form-group col-md-3" style="display: none;">
+        <label for="cr_dp_reason" class="form-label">* Why do whan to [datapump] ?</label>
+        <select id="cr_dp_reason" required  name="cr_dp_reason"
+            class="form-select form-select-sm">
+            <?php echo $cr_reason_op_add;?>
+            <?php echo $cr_reason_op_remove;?>
+        </select>
+    </div>
+    <div class="form-group col-md-3" style="display: none;">
+        <label for="cr_brand" class="form-label">* Brand </label>
+        <input type="text" class="form-control form-control-sm" id="cr_brand" name="cr_brand">
+    </div>
+    <!-- end for datapump only -->
     <div class="form-group col-md-3">
         <label for="cr_sku" class="form-label">Total SKU</label>
         <input type="number" value=0 class="form-control form-control-sm" id="cr_sku" name="cr_sku" min="0">
@@ -176,16 +210,24 @@
 <script>
 function SelectedBucket() {
     var cr_ticket_type = document.getElementById("cr_ticket_type").value;
-    if (cr_ticket_type == "Datapump Add Source" || cr_ticket_type == "Datapump Delete Source" ) {
+    if (cr_ticket_type == "Datapump Add Source" || cr_ticket_type == "Datapump Delete Source") {
         document.getElementById('cr_ticket_template').value = "DP";
         document.getElementById('cr_piority').value = "Urgent";
+        document.getElementById('cr_dp_reason').style.display = "block";
+        document.getElementById('cr_dp_brand').style.display = "block";
 
     } else if (cr_ticket_type == "System development") {
         document.getElementById('cr_ticket_template').value = "DT";
+        document.getElementById('cr_dp_reason').style.display = "none";
+        document.getElementById('cr_dp_brand').style.display = "none";
     } else if (cr_ticket_type == "NPS") {
         document.getElementById('cr_ticket_template').value = "NPS";
+        document.getElementById('cr_dp_reason').style.display = "none";
+        document.getElementById('cr_dp_brand').style.display = "none";
     } else {
         document.getElementById('cr_ticket_template').value = "CR";
+        document.getElementById('cr_dp_reason').style.display = "none";
+        document.getElementById('cr_dp_brand').style.display = "none";
     }
 }
 </script>
@@ -225,20 +267,20 @@ function submit_cr_form(id) {
         success: function(data) {
             // $('#call_ticket_comment_ins').html(data);
             // Notiflix.Notify.success(data);
-            
-            if(data.startsWith('Error')){
+
+            if (data.startsWith('Error')) {
                 Notiflix.Report.failure(
                     'Error',
                     data,
                     'Okay',
-                    );
-            }else{
-                            Notiflix.Report.success(
+                );
+            } else {
+                Notiflix.Report.success(
                     'Success',
                     data,
                     'Okay',
-                    );
-                }
+                );
+            }
         }
     });
 }
@@ -246,59 +288,98 @@ function submit_cr_form(id) {
 
 <script>
 function attaction_alert_cr(id) {
+    //check requirt value
     var cr_ticket_type = document.getElementById("cr_ticket_type").value;
-    if (cr_ticket_type == "System development") {
-        Notiflix.Report.warning(
-            'Attention',
-            'Please note : if the issue that you creating is duplicate with the current ticket are opening , pls update that case on current ticket , * do not open ticket again *<br/><br/>and please help understand some issue cant solve in urgently, please also short-fixing by yourself first',
-            'Understood',
-            function cb() {
-                submit_cr_form(id);
+    var is_valid = [];
+    if (cr_ticket_type == '') {
+        cr_ticket_type.classList.add("is-invalid");
+        is_valid[0] = true;
+    } else {
+        cr_ticket_type.classList.remove("is-invalid");
+        is_valid[0] = false;
+
+        if (cr_ticket_type == "Datapump Add Source" || cr_ticket_type == "Datapump Delete Source") {
+            var cr_dp_reason = document.getElementById("cr_dp_reason").value;
+            var cr_brand = document.getElementById("cr_brand").value;
+            //reason
+            if (cr_dp_reason == '') {
+                cr_dp_reason.classList.add("is-invalid");
+                is_valid[1] = true;
+            } else {
+                cr_dp_reason.classList.remove("is-invalid");
+                is_valid[1] = false;
+            }
+            //brand
+            if (cr_brand == '') {
+                cr_brand.classList.add("is-invalid");
+                is_valid[2] = true;
+            } else {
+                cr_brand.classList.remove("is-invalid");
+                is_valid[2] = false;
+            }
+        }
+    }
+
+    //end check requirt value
+    if (is_valid.includes(true)) {
+        // nothing
+    } else {
+        var cr_ticket_type = document.getElementById("cr_ticket_type").value;
+        if (cr_ticket_type == "System development") {
+            Notiflix.Report.warning(
+                'Attention',
+                'Please note : if the issue that you creating is duplicate with the current ticket are opening , pls update that case on current ticket , * do not open ticket again *<br/><br/>and please help understand some issue cant solve in urgently, please also short-fixing by yourself first',
+                'Understood',
+                function cb() {
+                    submit_cr_form(id);
                 },
             );
-    } else if (cr_ticket_type == "Datapump Add Source" || cr_ticket_type == "Datapump Delete Source"){
-        const swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-                confirmButton: 'btn btn-success m-2',
-                cancelButton: 'btn btn-danger m-2'
-            },
-            buttonsStyling: false
-        })
+        } else if (cr_ticket_type == "Datapump Add Source" || cr_ticket_type == "Datapump Delete Source") {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success m-2',
+                    cancelButton: 'btn btn-danger m-2'
+                },
+                buttonsStyling: false
+            })
 
-        swalWithBootstrapButtons.fire({
-            title: 'Attention',
-            icon: 'warning',
-            html: '<ul style="text-align-last: start;"><strong>Your request will be processed within 1 business day</strong><br>' +
-                '<strong>Notice :</strong>' +
-                '<li>Covid items ex. Mask , Alcohol gel have to keep at WH 10138 only.</li>' +
-                '<li>GWP should be keep at WH 10138 except Brand pick from store 100%</li><hr>' +
-                '<strong>ระบบจะดำเนินการเสร็จสิ้นภายใน 1 วันทำการ</strong><br>' +
-                '<strong>หมายเหตุ :</strong>' +
-                '<li>สินค้า Covid เช่น หน้ากาอนามัย , แอลกอฮอล์เจล ควรจัดเก็บที่คลังออนไลน์ 10138 เท่านั้น</li>' +
-                '<li>GWP ควรจัดเก็บที่คลังออนไลน์ 10138 ยกเว้น สินค้าที่ขายที่สาขา 100%</li></ul>',
-            showCancelButton: true,
-            confirmButtonText: 'Understoods',
-            cancelButtonText: 'Cancel',
-            reverseButtons: true,
-            width: '50rem'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                submit_cr_form(id);
+            swalWithBootstrapButtons.fire({
+                title: 'Attention',
+                icon: 'warning',
+                html: '<ul style="text-align-last: start;"><strong>Your request will be processed within 1 business day</strong><br>' +
+                    '<strong>Notice :</strong>' +
+                    '<li>Covid items ex. Mask , Alcohol gel have to keep at WH 10138 only.</li>' +
+                    '<li>GWP should be keep at WH 10138 except Brand pick from store 100%</li><hr>' +
+                    '<strong>ระบบจะดำเนินการเสร็จสิ้นภายใน 1 วันทำการ</strong><br>' +
+                    '<strong>หมายเหตุ :</strong>' +
+                    '<li>สินค้า Covid เช่น หน้ากาอนามัย , แอลกอฮอล์เจล ควรจัดเก็บที่คลังออนไลน์ 10138 เท่านั้น</li>' +
+                    '<li>GWP ควรจัดเก็บที่คลังออนไลน์ 10138 ยกเว้น สินค้าที่ขายที่สาขา 100%</li></ul>',
+                showCancelButton: true,
+                confirmButtonText: 'Understoods',
+                cancelButtonText: 'Cancel',
+                reverseButtons: true,
+                width: '50rem'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    submit_cr_form(id);
 
-            } else if (
-                /* Read more about handling dismissals below */
-                result.dismiss === Swal.DismissReason.cancel
-            ) {
-                // swalWithBootstrapButtons.fire(
-                //   'Cancelled',
-                //   'Your imaginary file is safe :)',
-                //   'error'
-                // )
-            }
-        })
-    }else{
-        submit_cr_form(id);
+                } else if (
+                    /* Read more about handling dismissals below */
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    // swalWithBootstrapButtons.fire(
+                    //   'Cancelled',
+                    //   'Your imaginary file is safe :)',
+                    //   'error'
+                    // )
+                }
+            })
+        } else {
+            submit_cr_form(id);
+        }
     }
+
+
 
 
 }
