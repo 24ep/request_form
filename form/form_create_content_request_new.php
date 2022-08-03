@@ -134,6 +134,7 @@
         <select id="cr_dp_reason" required  name="cr_dp_reason"
             class="form-select form-select-sm">
             <?php echo $cr_reason_op_add;?>
+            <hr>
             <?php echo $cr_reason_op_remove;?>
         </select>
     </div>
