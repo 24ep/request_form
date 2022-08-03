@@ -301,7 +301,7 @@ function attaction_alert_cr(id) {
             cr_ticket_type.className =  cr_ticket_type.className.replace(/(?:^|\s)is-invalid(?!\S)/g, "");
             is_valid[0] = false;
         }
-        if (cr_ticket_type == "Datapump Add Source" || cr_ticket_type == "Datapump Delete Source") {
+        if (cr_ticket_type.value  == "Datapump Add Source" || cr_ticket_type.value  == "Datapump Delete Source") {
             var cr_dp_reason = document.getElementById("cr_dp_reason");
             var cr_brand = document.getElementById("cr_brand");
             //reason

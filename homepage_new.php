@@ -93,6 +93,11 @@ if (!$_SESSION["login_csg"]){
 </head>
 
 <body>
+<nav class="navbar navbar-light bg-light">
+        <div class="" style="background:#ff000069;color:white;position: fixed;z-index: 1;">
+            <a class="navbar-brand" href="#">You are in pre-launch environment</a>
+        </div>
+    </nav>
     <div class="offcanvas offcanvas-start overflow-auto" role="dialog" tabindex="-1" id="edit_add_new"
         style="width:100%" aria-labelledby="offcanvasExampleLabel">
         <div id="callmodal_request_add_new" style="height: 100%;"></div>
@@ -112,11 +117,7 @@ if (!$_SESSION["login_csg"]){
             <?php include("get/get_log.php"); ?>
         </div>
     </div>
-    <nav class="navbar navbar-light bg-light">
-        <div class="" style="background:#ff000069;color:white;position: fixed;z-index: 1;">
-            <a class="navbar-brand" href="#">You are in pre-launch environment</a>
-        </div>
-    </nav>
+   
     <!-- <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination pagination-sm"> -->
