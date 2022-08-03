@@ -21,7 +21,7 @@
     session_start();
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
       $query_op = "SELECT * FROM content_service_gate.attribute_option
-      WHERE attribute_id = ".$attr_id." and function = 'content_request' and attribute_code like '%".$key."%' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
+      WHERE attribute_id = ".$attr_id." and function = 'content_request' and attribute_option like '%".$key."%' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
       $result_op = mysqli_query($con, $query_op);
       if($current_value==""){
         $option_element = "<option selected value=''></option>";
@@ -105,8 +105,8 @@
 
        $project_bucket = project_bucket();
        $cr_issue_type_op = return_option_create_cr("","39");
-       $cr_reason_op_add = return_option_create_filter("","40",'dp_add');
-       $cr_reason_op_remove = return_option_create_filter("","40",'dp_remove');
+       $cr_reason_op_add = return_option_create_filter("","40","dp_add");
+       $cr_reason_op_remove = return_option_create_filter("","40","dp_remove");
 ?>
 <div class="row">
     <div class="form-group">
