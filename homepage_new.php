@@ -112,6 +112,11 @@ if (!$_SESSION["login_csg"]){
             <?php include("get/get_log.php"); ?>
         </div>
     </div>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid" style="background:red;color:white">
+            <a class="navbar-brand" href="#">You are in test environment</a>
+        </div>
+    </nav>
     <!-- <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination pagination-sm"> -->
