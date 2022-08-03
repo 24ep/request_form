@@ -294,7 +294,7 @@ function attaction_alert_cr(id) {
     var cr_ticket_type = document.getElementById("cr_ticket_type");
     var is_valid = [];
     if (cr_ticket_type.value == '') {
-        cr_ticket_type.className += "is-invalid";
+        cr_ticket_type.className += " is-invalid";
         is_valid[0] = true;
     } else {
         if (is_valid[0] == true) {
@@ -308,7 +308,7 @@ function attaction_alert_cr(id) {
             var cr_brand = document.getElementById("cr_brand");
             //reason
             if (cr_dp_reason.value == '') {
-                cr_dp_reason.className += "is-invalid";
+                cr_dp_reason.className += " is-invalid";
                 is_valid[1] = true;
             } else {
                 if (is_valid[1] == true) {
@@ -319,7 +319,7 @@ function attaction_alert_cr(id) {
             //brand
             if (cr_brand.value == '') {
 
-                cr_brand.className += "is-invalid";
+                cr_brand.className += " is-invalid";
                 is_valid[2] = true;
             } else {
                 if (is_valid[2] == true) {
