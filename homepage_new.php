@@ -131,7 +131,7 @@ if (!$_SESSION["login_csg"]){
                                             <form class="row g-3">
                                                 <div id="add_new_cr_result">
                                                 </div>
-                                                <?php include_once('form/form_create_content_request.php')?>
+                                                <?php include_once('form/form_create_content_request_new.php')?>
                                             </form>
                                         </div>
                                     </div>
