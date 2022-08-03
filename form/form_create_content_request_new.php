@@ -131,8 +131,7 @@
     <!-- for datapump only -->
     <div class="form-group col-md-3" id="cr_dp_reason_block" style="display: none;">
         <label for="cr_dp_reason" class="form-label">* Why do you want to do datapump ?</label>
-        <select id="cr_dp_reason" required  name="cr_dp_reason"
-            class="form-select form-select-sm">
+        <select id="cr_dp_reason" required name="cr_dp_reason" class="form-select form-select-sm">
             <?php echo $cr_reason_op_add;?>
             <hr>
             <?php echo $cr_reason_op_remove;?>
@@ -295,30 +294,38 @@ function attaction_alert_cr(id) {
     var cr_ticket_type = document.getElementById("cr_ticket_type").value;
     var is_valid = [];
     if (cr_ticket_type == '') {
-        cr_ticket_type.className +=  "is-invalid";
+        cr_ticket_type.className += "is-invalid";
         is_valid[0] = true;
     } else {
-        cr_ticket_type.className.replace(/(?:^|\s)is-invalid(?!\S)/g,"");
-        is_valid[0] = false;
+        if (is_valid[0] == true) {
+            cr_ticket_type.className.replace(/(?:^|\s)is-invalid(?!\S)/g, "");
+            is_valid[0] = false;
+        }
+
 
         if (cr_ticket_type == "Datapump Add Source" || cr_ticket_type == "Datapump Delete Source") {
             var cr_dp_reason = document.getElementById("cr_dp_reason").value;
             var cr_brand = document.getElementById("cr_brand").value;
             //reason
             if (cr_dp_reason == '') {
-                cr_dp_reason.className +=  "is-invalid";
+                cr_dp_reason.className += "is-invalid";
                 is_valid[1] = true;
             } else {
-                cr_dp_reason.className.replace(/(?:^|\s)is-invalid(?!\S)/g,"");
-                is_valid[1] = false;
+                if (is_valid[1] == true) {
+                    cr_dp_reason.className.replace(/(?:^|\s)is-invalid(?!\S)/g, "");
+                    is_valid[1] = false;
+                }
             }
             //brand
             if (cr_brand == '') {
-                cr_brand.className +=  "is-invalid";
+
+                cr_brand.className += "is-invalid";
                 is_valid[2] = true;
             } else {
-                cr_brand.className.replace(/(?:^|\s)is-invalid(?!\S)/g,"");
-                is_valid[2] = false;
+                if (is_valid[2] == true) {
+                    cr_brand.className.replace(/(?:^|\s)is-invalid(?!\S)/g, "");
+                    is_valid[2] = false;
+                }
             }
         }
     }
