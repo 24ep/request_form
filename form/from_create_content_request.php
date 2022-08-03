@@ -128,20 +128,6 @@
             <?php echo $cr_issue_type_op;?>
         </select>
     </div>
-    <!-- for datapump only -->
-    <div class="form-group col-md-3" id="cr_dp_reason_block" style="display: none;">
-        <label for="cr_dp_reason" class="form-label">* Why do whan to [datapump] ?</label>
-        <select id="cr_dp_reason" required  name="cr_dp_reason"
-            class="form-select form-select-sm">
-            <?php echo $cr_reason_op_add;?>
-            <?php echo $cr_reason_op_remove;?>
-        </select>
-    </div>
-    <div class="form-group col-md-3" id="cr_dp_brand_block"style="display: none;">
-        <label for="cr_brand" class="form-label">* Brand </label>
-        <input type="text" class="form-control form-control-sm" id="cr_brand" name="cr_brand">
-    </div>
-    <!-- end for datapump only -->
     <div class="form-group col-md-3">
         <label for="cr_sku" class="form-label">Total SKU</label>
         <input type="number" value=0 class="form-control form-control-sm" id="cr_sku" name="cr_sku" min="0">
@@ -213,21 +199,12 @@ function SelectedBucket() {
     if (cr_ticket_type == "Datapump Add Source" || cr_ticket_type == "Datapump Delete Source") {
         document.getElementById('cr_ticket_template').value = "DP";
         document.getElementById('cr_piority').value = "Urgent";
-        document.getElementById('cr_dp_reason_block').style.display = "block";
-        document.getElementById('cr_dp_brand_block').style.display = "block";
-
     } else if (cr_ticket_type == "System development") {
         document.getElementById('cr_ticket_template').value = "DT";
-        document.getElementById('cr_dp_reason_block').style.display = "none";
-        document.getElementById('cr_dp_brand_block').style.display = "none";
     } else if (cr_ticket_type == "NPS") {
         document.getElementById('cr_ticket_template').value = "NPS";
-        document.getElementById('cr_dp_reason_block').style.display = "none";
-        document.getElementById('cr_dp_brand_block').style.display = "none";
     } else {
         document.getElementById('cr_ticket_template').value = "CR";
-        document.getElementById('cr_dp_reason_block').style.display = "none";
-        document.getElementById('cr_dp_brand_block').style.display = "none";
     }
 }
 </script>
