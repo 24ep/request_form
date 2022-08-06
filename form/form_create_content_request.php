@@ -21,7 +21,7 @@
     session_start();
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
       $query_op = "SELECT * FROM content_service_gate.attribute_option
-      WHERE attribute_id = ".$attr_id." and function = 'content_request' and attribute_code like '%".$key."%' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
+      WHERE attribute_id = ".$attr_id." and function = 'content_request' and attribute_option like '%".$key."%' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
       $result_op = mysqli_query($con, $query_op);
       if($current_value==""){
         $option_element = "<option selected value=''></option>";
@@ -105,8 +105,8 @@
 
        $project_bucket = project_bucket();
        $cr_issue_type_op = return_option_create_cr("","39");
-       $cr_reason_op_add = return_option_create_filter("","40",'dp_add');
-       $cr_reason_op_remove = return_option_create_filter("","40",'dp_remove');
+       $cr_reason_op_add = return_option_create_filter("","40","dp_add");
+       $cr_reason_op_remove = return_option_create_filter("","40","dp_remove");
 ?>
 <div class="row">
     <div class="form-group">
@@ -128,6 +128,20 @@
             <?php echo $cr_issue_type_op;?>
         </select>
     </div>
+    <!-- for datapump only -->
+    <div class="form-group col-md-3" id="cr_dp_reason_block" style="display: none;">
+        <label for="cr_dp_reason" class="form-label">* Why do you want to do datapump ?</label>
+        <select id="cr_dp_reason" required name="cr_dp_reason" class="form-select form-select-sm">
+            <?php echo $cr_reason_op_add;?>
+            <hr>
+            <?php echo $cr_reason_op_remove;?>
+        </select>
+    </div>
+    <div class="form-group col-md-3" id="cr_dp_brand_block" style="display: none;">
+        <label for="cr_brand" class="form-label">* Brand </label>
+        <input type="text" class="form-control form-control-sm" id="cr_brand" name="cr_brand">
+    </div>
+    <!-- end for datapump only -->
     <div class="form-group col-md-3">
         <label for="cr_sku" class="form-label">Total SKU</label>
         <input type="number" value=0 class="form-control form-control-sm" id="cr_sku" name="cr_sku" min="0">
@@ -199,12 +213,21 @@ function SelectedBucket() {
     if (cr_ticket_type == "Datapump Add Source" || cr_ticket_type == "Datapump Delete Source") {
         document.getElementById('cr_ticket_template').value = "DP";
         document.getElementById('cr_piority').value = "Urgent";
+        document.getElementById('cr_dp_reason_block').style.display = "block";
+        document.getElementById('cr_dp_brand_block').style.display = "block";
+
     } else if (cr_ticket_type == "System development") {
         document.getElementById('cr_ticket_template').value = "DT";
+        document.getElementById('cr_dp_reason_block').style.display = "none";
+        document.getElementById('cr_dp_brand_block').style.display = "none";
     } else if (cr_ticket_type == "NPS") {
         document.getElementById('cr_ticket_template').value = "NPS";
+        document.getElementById('cr_dp_reason_block').style.display = "none";
+        document.getElementById('cr_dp_brand_block').style.display = "none";
     } else {
         document.getElementById('cr_ticket_template').value = "CR";
+        document.getElementById('cr_dp_reason_block').style.display = "none";
+        document.getElementById('cr_dp_brand_block').style.display = "none";
     }
 }
 </script>
@@ -221,6 +244,8 @@ function submit_cr_form(id) {
     var cr_ticket_template = document.getElementById("cr_ticket_template").value;
     var cr_piority = document.getElementById("cr_piority").value;
     var cr_effective_date = document.getElementById("cr_effective_date").value;
+    var cr_content_request_reson = document.getElementById("cr_dp_reason").value;
+    var cr_brand = document.getElementById("cr_brand").value;
     var crfiles = document.getElementById('cr_attachment').files.length;
     for (var x = 0; x < crfiles; x++) {
         form_data.append("cr_attachment[]", document.getElementById('cr_attachment').files[x]);
@@ -232,6 +257,8 @@ function submit_cr_form(id) {
     form_data.append("cr_ticket_template", cr_ticket_template)
     form_data.append("cr_piority", cr_piority)
     form_data.append("cr_effective_date", cr_effective_date)
+    form_data.append("cr_content_request_reson", cr_content_request_reson)
+    form_data.append("cr_brand", cr_brand)
     form_data.append("id", id)
     $.ajax({
         url: "base/action/action_submit_add_content_request.php",
@@ -266,6 +293,46 @@ function submit_cr_form(id) {
 <script>
 function attaction_alert_cr(id) {
     //check requirt value
+    var cr_ticket_type = document.getElementById("cr_ticket_type");
+    var is_valid = [];
+    if (cr_ticket_type.value == '') {
+        cr_ticket_type.className += " is-invalid";
+        is_valid[0] = true;
+    } else {
+        if (is_valid[0] == true) {
+            cr_ticket_type.className =  cr_ticket_type.className.replace(/(?:^|\s)is-invalid(?!\S)/g, "");
+            is_valid[0] = false;
+        }
+        if (cr_ticket_type.value  == "Datapump Add Source" || cr_ticket_type.value  == "Datapump Delete Source") {
+            var cr_dp_reason = document.getElementById("cr_dp_reason");
+            var cr_brand = document.getElementById("cr_brand");
+            //reason
+            if (cr_dp_reason.value == '') {
+                cr_dp_reason.className += " is-invalid";
+                is_valid[1] = true;
+            } else {
+                if (is_valid[1] == true) {
+                    cr_dp_reason.className  = cr_dp_reason.className.replace(/(?:^|\s)is-invalid(?!\S)/g, "");
+                    is_valid[1] = false;
+                }
+            }
+            //brand
+            if (cr_brand.value == '') {
+                cr_brand.className += " is-invalid";
+                is_valid[2] = true;
+            } else {
+                if (is_valid[2] == true) {
+                    cr_brand.className  =  cr_brand.className.replace(/(?:^|\s)is-invalid(?!\S)/g, "");
+                    is_valid[2] = false;
+                }
+            }
+        }
+    }
+
+    //end check requirt value
+    if (is_valid.includes(true)) {
+        // nothing
+    } else {
         var cr_ticket_type = document.getElementById("cr_ticket_type").value;
         if (cr_ticket_type == "System development") {
             Notiflix.Report.warning(
@@ -319,7 +386,7 @@ function attaction_alert_cr(id) {
         } else {
             submit_cr_form(id);
         }
-    
+    }
 
 
 
