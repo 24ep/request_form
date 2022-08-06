@@ -118,9 +118,6 @@ if (!$_SESSION["login_csg"]){
         </div>
     </div>
    
-    <!-- <div class="col-auto" style="right: 20px;position: absolute;margin-top: 10px;">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination pagination-sm"> -->
                                 <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1"
                                     id="content_request_canvas" aria-labelledby="offcanvasExampleLabel">
                                     <div class="offcanvas-header" style="    background: #313131;color: white;">
@@ -142,10 +139,7 @@ if (!$_SESSION["login_csg"]){
                                         </div>
                                     </div>
                                 </div>
-                            <!-- </ul>
-                        </nav>
-                    </div> -->
-    <!-- <div class="row"> -->
+        
         <div class="col-2 list_bra shadow">
             <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a class="navbar-brand" href="#">ONLINE CONTENT</a>
@@ -188,7 +182,7 @@ if (!$_SESSION["login_csg"]){
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="get_page('Assert');">
+                        onclick="get_page('assert');">
                             <ion-icon name="cube"></ion-icon>Assests
                         </a>
                     </li>
