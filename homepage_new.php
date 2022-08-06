@@ -187,7 +187,8 @@ if (!$_SESSION["login_csg"]){
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
+                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                        onclick="get_page('Assert');">
                             <ion-icon name="cube"></ion-icon>Assests
                         </a>
                     </li>
@@ -368,6 +369,12 @@ function get_page(page) {
     } else if (page == "wordtohtml") {
         Notiflix.Loading.hourglass('Loading...');
         $.post("base/page/wordtohtml.php", {}, function(data) {
+            $('#col_detail').html(data);
+            Notiflix.Loading.remove();
+        });
+    } else if (page == "assert") {
+        Notiflix.Loading.hourglass('Loading...');
+        $.post("base/page/assert.php", {}, function(data) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
