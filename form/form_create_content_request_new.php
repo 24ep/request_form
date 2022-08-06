@@ -244,7 +244,8 @@ function submit_cr_form(id) {
     var cr_ticket_template = document.getElementById("cr_ticket_template").value;
     var cr_piority = document.getElementById("cr_piority").value;
     var cr_effective_date = document.getElementById("cr_effective_date").value;
-    var cr_content_request_reson = document.getElementById("cr_content_request_reson").value;
+    var cr_content_request_reson = document.getElementById("cr_dp_reason").value;
+    var cr_brand = document.getElementById("cr_dp_brand").value;
     var crfiles = document.getElementById('cr_attachment').files.length;
     for (var x = 0; x < crfiles; x++) {
         form_data.append("cr_attachment[]", document.getElementById('cr_attachment').files[x]);
@@ -257,6 +258,7 @@ function submit_cr_form(id) {
     form_data.append("cr_piority", cr_piority)
     form_data.append("cr_effective_date", cr_effective_date)
     form_data.append("cr_content_request_reson", cr_content_request_reson)
+    form_data.append("cr_brand", cr_brand)
     form_data.append("id", id)
     $.ajax({
         url: "base/action/action_submit_add_content_request.php",

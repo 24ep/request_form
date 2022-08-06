@@ -47,6 +47,8 @@
         if($_POST["cr_ticket_template"]<>""){ $insert_head .= ",ticket_template";$insert_value .= ",'".$_POST["cr_ticket_template"]."'";}
         if($_POST["cr_ticket_type"]<>"" or $_POST["cr_issue_type"]<>""){ $insert_head .= ",ticket_type";$insert_value .= ",'".$_POST["cr_issue_type"]."'";}
         if($_POST["cr_piority"]<>""){ $insert_head .= ",piority";$insert_value .= ",'".$_POST["cr_piority"]."'";}
+        if($_POST["cr_content_request_reson"]<>""){ $insert_head .= ",content_request_reson";$insert_value .= ",'".$_POST["cr_content_request_reson"]."'";}
+        if($_POST["cr_brand"]<>""){ $insert_head .= ",brand";$insert_value .= ",'".$_POST["cr_brand"]."'";}
         // if($_POST["cr_online_chanel"]<>""){ $insert_head .= ",online_chanel";$insert_value .= ",'".$_POST["cr_online_chanel"]."'";}
         if($_POST["cr_effective_date"]<>""){ $insert_head .= ",effective_date";$insert_value .= ",'".$_POST["cr_effective_date"]."'";}
         if($_SESSION["username"]<>""){ $insert_head .= ",request_by";$insert_value .= ",'".$_SESSION["username"]."'";}
