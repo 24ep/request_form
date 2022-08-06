@@ -245,7 +245,7 @@ function submit_cr_form(id) {
     var cr_piority = document.getElementById("cr_piority").value;
     var cr_effective_date = document.getElementById("cr_effective_date").value;
     var cr_content_request_reson = document.getElementById("cr_dp_reason").value;
-    var cr_brand = document.getElementById("cr_dp_brand").value;
+    var cr_brand = document.getElementById("cr_brand").value;
     var crfiles = document.getElementById('cr_attachment').files.length;
     for (var x = 0; x < crfiles; x++) {
         form_data.append("cr_attachment[]", document.getElementById('cr_attachment').files[x]);
