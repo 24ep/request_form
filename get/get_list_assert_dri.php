@@ -19,7 +19,7 @@
       
       echo '<a class="list-group-item d-flex justify-content-between align-items-center" onclick="goto_dri('.$row['id'].')">
       <ion-icon name="folder-open-outline"></ion-icon> '.$row['label'].'
-        <span class="badge bg-secondary rounded-pill">></span>
+       
       </a>';
     
   }
@@ -33,7 +33,7 @@
 
   while($row = mysqli_fetch_array($result)) {
       //pring folder
-      echo '<a class="list-group-item d-flex justify-content-between align-items-center" onclick="goto_dri('.$row['parent'].')">
+      echo '<a class="list-group-item d-flex" onclick="goto_dri('.$row['parent'].')">
       <ion-icon name="document-outline"></ion-icon> '.$row['assert_name'].'
       </a>';
     
