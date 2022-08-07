@@ -115,7 +115,7 @@ function filter_update(be) {
     var brand_filter = document.getElementById("brand_filter").value
     var from_post = true;
     if (from_post) {
-        $.post("../get/get_list_new_job_new.php", {
+        $.post("../base/get/get_list_new_job_new.php", {
             user_filter: user_filter,
             status_filter: status_filter,
             from_post: from_post,
@@ -126,7 +126,7 @@ function filter_update(be) {
         });
     }
     if (from_post) {
-        $.post("../get/get_total_page_nj.php", {
+        $.post("../base/get/get_total_page_nj.php", {
             user_filter: user_filter,
             status_filter: status_filter,
             from_post: from_post,
@@ -138,7 +138,7 @@ function filter_update(be) {
     }
 }
 function update_brand_note(dataoutput, brand) {
-    $.post("../action/action_update_brand_note.php", {
+    $.post("../base/action/action_update_brand_note.php", {
         dataoutput: dataoutput,
         brand: brand
     }, function(data) {
@@ -147,7 +147,7 @@ function update_brand_note(dataoutput, brand) {
 }
 function start_checking(id) {
     if (id) {
-        $.post("../action/action_start_checking.php", {
+        $.post("../base/action/action_start_checking.php", {
             id: id
         }, function(data) {
             $('#start_checking_resault').html(data);
@@ -158,7 +158,7 @@ function start_checking(id) {
 function accepted_stt(id) {
     if (id) {
         // sku_accepted = document.getElementById('sku_accepted').value;
-        $.post("../action/action_accept_stt.php", {
+        $.post("../base/action/action_accept_stt.php", {
             id: id
             // sku_accepted: sku_accepted
         }, function(data) {
@@ -171,7 +171,7 @@ function cancel_stt(id, status_change) {
     resone_cancel = document.getElementById('resone_cancel').value;
     status_change = 'cancel';
     if (id) {
-        $.post("../action/action_cancel_stt.php", {
+        $.post("../base/action/action_cancel_stt.php", {
             id: id,
             resone_cancel: resone_cancel,
             status_change: status_change
@@ -186,7 +186,7 @@ function cancel_ticket(id) {
     status_change = document.getElementById('type_cancel').value;
     // status_change = 'cancel';
     if (id) {
-        $.post("../action/action_cancel_stt.php", {
+        $.post("../base/action/action_cancel_stt.php", {
             id: id,
             resone_cancel: resone_cancel,
             status_change: status_change
@@ -204,7 +204,7 @@ function itm_confirm_cancel(id, status_change) {
         if (message == status_change) {
             if (id) {
                 resone_cancel = document.getElementById('itm_reason_cancel').value;
-                $.post("../action/action_cancel_stt.php", {
+                $.post("../base/action/action_cancel_stt.php", {
                     id: id,
                     resone_cancel: resone_cancel,
                     status_change: status_change
@@ -220,7 +220,7 @@ function itm_confirm_cancel(id, status_change) {
 function call_edit_add_new_modal(id, brand) {
     Notiflix.Loading.hourglass('Loading...');
     if (id) {
-        $.post("../modal/detail_create_new.php", {
+        $.post("../base/modal/detail_create_new.php", {
             id: id
         }, function(data) {
             $('#callmodal_request_add_new').html(data);
