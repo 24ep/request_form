@@ -21,7 +21,7 @@
 
 <script>
   function goto_dri(dri_parent){
-    $.post("../get/get_list_assert_dri.php", {
+    $.post("../base/get/get_list_assert_dri.php", {
       dri_parent: dri_parent
     }, function(data) {
          $('#list_asserts').html(data);
