@@ -17,7 +17,7 @@
 
   while($row = mysqli_fetch_array($result)) {
       
-      echo '<a type="button"  class="list-group-item d-flex " onclick="goto_dri('.$row['id'].');change_breadcrumb('.$row['parent'].')">
+      echo '<a type="button"  class="list-group-item d-flex " onclick="goto_dri('.$row['id'].');change_breadcrumb('.$row['id'].')">
       <ion-icon name="folder-open-outline"></ion-icon> '.$row['label'].'
        
       </a>';
