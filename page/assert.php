@@ -4,8 +4,16 @@
     <a class="navbar-brand">Asserts</a>
     <form class="d-flex" role="search">
       <input class="form-control me-2 form-control-sm" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-warning btn-sm me-2" type="button">Create folder</button>
-      <button class="btn btn-dark btn-sm" type="button">Create Block</button>
+      <div class="btn-group">
+      <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Create New
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Folder</a></li>
+        <li><a class="dropdown-item" href="#">Block</a></li>
+        <li><a class="dropdown-item" href="#">Upload a files</a></li>
+      </ul>
+    </div>
     </form>
     <!-- list -->
   </div>
