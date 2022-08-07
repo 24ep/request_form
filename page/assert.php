@@ -11,7 +11,7 @@
   </div>
   <div class="container-fluid">
   <ul class="list-group">
-        <?php include('base/get/get_list_assert_dri.php'); ?>
+        <?php include('../get/get_list_assert_dri.php'); ?>
     </ul>
   </div>
 </nav>
