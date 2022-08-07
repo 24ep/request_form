@@ -19,10 +19,8 @@
   </div>
   <div class="container-fluid m-3">
   <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-  <ol class="breadcrumb">
-  <div id=breadcrumb>
+  <ol class="breadcrumb" id="breadcrumb">
         <?php include('../get/get_assert_breadcrumb.php'); ?>
-  </div>
   </ol>
 </nav>
  
