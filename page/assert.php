@@ -55,7 +55,7 @@
 </script>
 <script>
   function get_block(block_id){
-    $.post("../base/get/get_block_editiod.php", {
+    $.post("../base/get/get_block_editor.php", {
       block_id: block_id
     }, function(data) {
          $('#list_asserts').html(data);
