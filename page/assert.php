@@ -10,6 +10,9 @@
     <!-- list -->
   </div>
   <div class="container-fluid m-3">
+  <div id=breadcrumb>
+        <?php include('../get/get_assert_breadcrumb.php'); ?>
+  </div>
   <ul class="list-group" style="width:100%">
       <div id=list_asserts>
         <?php include('../get/get_list_assert_dri.php'); ?>
@@ -34,7 +37,7 @@
     $.post("../base/get/get_assert_breadcrumb.php", {
       drt_id: drt_id
     }, function(data) {
-         $('#list_asserts').html(data);
+         $('#breadcrumb').html(data);
     });
   }
  
