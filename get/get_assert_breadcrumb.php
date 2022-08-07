@@ -17,10 +17,9 @@
 
   while($row = mysqli_fetch_array($result)) {
     $path_id = $row['path_id'];
-    echo $path_id ;
+    echo '<input type="hidden" id="under_path" name="under_path" value="'.$path_id.'">';
   }
   $path_id_arr = explode("/",$path_id);
-  
   foreach($path_id_arr as $dri_id_in_path ){
     $query = "SELECT dri.id, dri.code, dri.label, dri.parent
     FROM all_in_one_project.assets_directories as dri
@@ -30,10 +29,7 @@
 
     while($row = mysqli_fetch_array($result)) {
         echo '<li class="breadcrumb-item"><a onclick="goto_dri('.$row['id'].')">'.$row['label'].'</a></li>';
-    
-        
     }
-    
   }
 
 
