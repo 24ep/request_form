@@ -17,7 +17,7 @@
 
   while($row = mysqli_fetch_array($result)) {
       
-      echo '<a class="list-group-item d-flex justify-content-between align-items-center" onclick="goto_dri('.$row['id'].')">
+      echo '<a class="list-group-item d-flex " onclick="goto_dri('.$row['id'].')">
       <ion-icon name="folder-open-outline"></ion-icon> '.$row['label'].'
        
       </a>';
