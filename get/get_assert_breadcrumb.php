@@ -9,7 +9,7 @@
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
   //pring folder
-  $query = "SELECT dri.id, dri.code, dri.label, dri.parent , concat(path_id,',',id) as path_id
+  $query = "SELECT dri.id, dri.code, dri.label, dri.parent , concat(path_id,'/',id) as path_id
   FROM all_in_one_project.assets_directories as dri
   where  dri.id =   ".$dri_id."
   " or die("Error:" . mysqli_error($con));
