@@ -189,7 +189,7 @@ if (!$_SESSION["login_csg"]){
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                             onclick="get_page('account');">
-                            <ion-icon name="people"></ion-icon>aAdministration
+                            <ion-icon name="people"></ion-icon>Administration
                         </a>
                     </li>
 
