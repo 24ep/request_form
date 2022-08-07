@@ -5,7 +5,7 @@
     <form class="d-flex" role="search">
       <input class="form-control me-2 form-control-sm" type="search" placeholder="Search" aria-label="Search">
       <div class="btn-group">
-      <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         Create New
       </button>
       <ul class="dropdown-menu">
@@ -41,9 +41,9 @@
  
 </script>
 <script>
-  function change_breadcrumb(drt_id){
+  function change_breadcrumb(dri_id){
     $.post("../base/get/get_assert_breadcrumb.php", {
-      drt_id: drt_id
+      dri_id: dri_id
     }, function(data) {
          $('#breadcrumb').html(data);
     });

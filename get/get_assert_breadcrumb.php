@@ -1,9 +1,9 @@
 <?php
 
   session_start();
-  $drt_id = $_POST["drt_id"];
-  if($drt_id==""){
-    $drt_id = 1;
+  $dri_id = $_POST["dri_id"];
+  if($dri_id==""){
+    $dri_id = 1;
   }
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -11,7 +11,7 @@
   //pring folder
   $query = "SELECT dri.id, dri.code, dri.label, dri.parent ,dri.path_id
   FROM all_in_one_project.assets_directories as dri
-  where  dri.id =   ".$drt_id."
+  where  dri.id =   ".$dri_id."
   " or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
 
