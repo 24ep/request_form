@@ -29,7 +29,7 @@
     $result = mysqli_query($con, $query);
 
     while($row = mysqli_fetch_array($result)) {
-        echo '<li  class="breadcrumb-item"><a type="button" onclick="goto_dri('.$row['id'].')">'.$row['label'].'</a></li>';
+        echo '<li  class="breadcrumb-item"><a type="button" onclick="goto_dri('.$row['id'].');change_breadcrumb('.$row['id'].',0)">'.$row['label'].'</a></li>';
     }
   }
 
