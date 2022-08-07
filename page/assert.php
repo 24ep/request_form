@@ -4,16 +4,7 @@
     <a class="navbar-brand">Asserts</a>
     <form class="d-flex" role="search">
       <input class="form-control me-2 form-control-sm" type="search" placeholder="Search" aria-label="Search">
-      <div class="btn-group">
-      <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        Create New
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Folder</a></li>
-        <li><a class="dropdown-item" href="#">Block</a></li>
-        <li><a class="dropdown-item" href="#">Upload a files</a></li>
-      </ul>
-    </div>
+      
     </form>
     <!-- list -->
   </div>
@@ -22,7 +13,19 @@
   <ol class="breadcrumb" id="breadcrumb">
         <?php include('../get/get_assert_breadcrumb.php'); ?>
   </ol>
-</nav>
+    <div class="d-flex" >
+    <div class="btn-group">
+      <button type="button" class="btn btn-dark dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">
+        Create New
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Folder</a></li>
+        <li><a class="dropdown-item" href="#">Block</a></li>
+        <li><a class="dropdown-item" href="#">Upload a files</a></li>
+      </ul>
+    </div>
+    </div>
+  </nav>
  
   <ul class="list-group" style="width:100%">
       <div id=list_asserts>
