@@ -10,7 +10,7 @@
     <!-- list -->
   </div>
   <div class="container-fluid m-3">
-  <ul class="list-group">
+  <ul class="list-group" style="width:100%">
       <div id=list_asserts>
         <?php include('../get/get_list_assert_dri.php'); ?>
       </div>
