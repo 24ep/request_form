@@ -29,3 +29,13 @@
   }
  
 </script>
+<script>
+  function change_breadcrumb(drt_id){
+    $.post("../base/get/get_assert_breadcrumb.php", {
+      drt_id: drt_id
+    }, function(data) {
+         $('#list_asserts').html(data);
+    });
+  }
+ 
+</script>
