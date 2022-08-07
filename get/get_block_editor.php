@@ -15,7 +15,7 @@ while($row = mysqli_fetch_array($result)) {
   $body = $row['body'];
 }
 ?>
-<div class="container-fluid ">
+<div class="container-fluid shadow-sm" style="border-radius: 10px;border: 1px solid #f4f4f4;padding: 30px;background: white;">
     <div id="editorjs"></div>
 </div>
 
