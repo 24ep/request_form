@@ -44,9 +44,10 @@
  
 </script>
 <script>
-  function change_breadcrumb(dri_id){
+  function change_breadcrumb(dri_id,block_id){
     $.post("../base/get/get_assert_breadcrumb.php", {
-      dri_id: dri_id
+      dri_id: dri_id,
+      block_id:block_id
     }, function(data) {
          $('#breadcrumb').html(data);
     });

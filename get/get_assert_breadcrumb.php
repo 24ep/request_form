@@ -5,6 +5,7 @@
   if($dri_id==""){
     $dri_id = 1;
   }
+  $block_id = $_POST["block_id"];
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
@@ -28,9 +29,20 @@
     $result = mysqli_query($con, $query);
 
     while($row = mysqli_fetch_array($result)) {
-        echo '<li  class="breadcrumb-item"><a type="button" onclick="goto_dri('.$row['id'].')" butt>'.$row['label'].'</a></li>';
+        echo '<li  class="breadcrumb-item"><a type="button" onclick="goto_dri('.$row['id'].')">'.$row['label'].'</a></li>';
     }
   }
 
+  if($block_id<>""){
+    $query = "SELECT id, brand, body, version, create_date, update_date, update_by, dri_id
+    FROM all_in_one_project.brand_editor
+    where  id =   ".$block_id."
+    " or die("Error:" . mysqli_error($con));
+    $result = mysqli_query($con, $query);
+    
+    while($row = mysqli_fetch_array($result)) {
+      echo '<li  class="breadcrumb-item active" aria-current="page">'.$row['brand'].'</a></li>';
+    }
+  }
 
 ?>

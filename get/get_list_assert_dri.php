@@ -17,7 +17,7 @@
 
   while($row = mysqli_fetch_array($result)) {
       
-      echo '<a type="button"  class="list-group-item d-flex " onclick="goto_dri('.$row['id'].');change_breadcrumb('.$row['id'].')">
+      echo '<a type="button"  class="list-group-item d-flex " onclick="goto_dri('.$row['id'].');change_breadcrumb('.$row['id'].',0)">
       <ion-icon name="folder-open-outline"></ion-icon> '.$row['label'].'
        
       </a>';
@@ -33,7 +33,7 @@
 
   while($row = mysqli_fetch_array($result)) {
       //pring folder
-      echo '<a type="button" class="list-group-item d-flex" onclick="change_breadcrumb('.$row['dri_id'].');get_block('.$row['id'].')">
+      echo '<a type="button" class="list-group-item d-flex" onclick="change_breadcrumb('.$row['dri_id'].','.$row['id'].');get_block('.$row['id'].')">
       <ion-icon name="document-outline"></ion-icon> '.$row['assert_name'].'
       </a>';
     
