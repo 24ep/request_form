@@ -3,7 +3,7 @@
   session_start();
   $dri_parent = $_POST["dri_parent"];
   if($dri_parent==""){
-    $dri_parent = 1;
+    $dri_parent = 0;
   }
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
