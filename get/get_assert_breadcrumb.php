@@ -20,8 +20,8 @@
   
     
   }
-
-  foreach( $dri_id_in_path as $path_id){
+  $path_id_arr = explode("/",$path_id);
+  foreach( $dri_id_in_path as $path_id_arr){
     $query = "SELECT dri.id, dri.code, dri.label, dri.parent
     FROM all_in_one_project.assets_directories as dri
     where  dri.id =   ".$dri_id_in_path."
