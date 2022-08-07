@@ -19,7 +19,7 @@
       
       echo '<li class="list-group-item d-flex justify-content-between align-items-center" onclick="goto_dri('.$row['parent'].')">
       <ion-icon name="folder-open-outline"></ion-icon> '.$row['label'].'
-        <span class="badge bg-seconday rounded-pill">></span>
+        <span class="badge bg-secondary rounded-pill">></span>
       </li>';
     
   }
