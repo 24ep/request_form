@@ -20,9 +20,9 @@
 </div>
 
 <script>
-  function goto_dri(dri_id){
+  function goto_dri(dri_parent){
     $.post("../get/get_list_assert_dri.php", {
-        dri_id: dri_id
+      dri_parent: dri_parent
     }, function(data) {
          $('#list_asserts').html(data);
     });
