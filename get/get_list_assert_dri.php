@@ -33,7 +33,7 @@
 
   while($row = mysqli_fetch_array($result)) {
       //pring folder
-      echo '<a type="button" class="list-group-item d-flex" onclick="goto_dri('.$row['parent'].');change_breadcrumb('.$row['parent'].')">
+      echo '<a type="button" class="list-group-item d-flex" onclick="change_breadcrumb('.$row['parent'].');get_block('.$row['id'].')">
       <ion-icon name="document-outline"></ion-icon> '.$row['assert_name'].'
       </a>';
     
