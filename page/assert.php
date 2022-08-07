@@ -15,8 +15,8 @@
         <?php include('../get/get_assert_breadcrumb.php'); ?>
   </ol>
   </nav>
-  <div class="btn-group">
-      <button type="button" class="btn btn-dark dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">
+  <div class="btn-group" style="margin-bottom: 15px;">
+      <button type="button" class="btn btn-outline-dark dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">
         Create New
       </button>
       <ul class="dropdown-menu">
