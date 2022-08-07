@@ -9,12 +9,13 @@
     <!-- list -->
   </div>
   <div class="container-fluid m-3">
+  
   <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb" id="breadcrumb">
         <?php include('../get/get_assert_breadcrumb.php'); ?>
   </ol>
-    <div class="d-flex" >
-    <div class="btn-group">
+  </nav>
+  <div class="btn-group">
       <button type="button" class="btn btn-dark dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">
         Create New
       </button>
@@ -24,8 +25,6 @@
         <li><a class="dropdown-item" href="#">Upload a files</a></li>
       </ul>
     </div>
-    </div>
-  </nav>
  
   <ul class="list-group" style="width:100%">
       <div id=list_asserts>
