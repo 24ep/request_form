@@ -357,10 +357,12 @@ function attaction_alert_cr(id) {
                 icon: 'warning',
                 html: '<ul style="text-align-last: start;"><strong>Your request will be processed within 1 business day</strong><br>' +
                     '<strong>Notice :</strong>' +
+                    '<li style="color:red">**Product consignment dont puทp to store RBS (begin with 20)</li>' +
                     '<li>Covid items ex. Mask , Alcohol gel have to keep at WH 10138 only.</li>' +
                     '<li>GWP should be keep at WH 10138 except Brand pick from store 100%</li><hr>' +
                     '<strong>ระบบจะดำเนินการเสร็จสิ้นภายใน 1 วันทำการ</strong><br>' +
                     '<strong>หมายเหตุ :</strong>' +
+                    '<li style="color:red">**สินค้า consignment ห้าม datapump Store RBS หรือที่ขึ้นต้นด้วย 20</li>' +
                     '<li>สินค้า Covid เช่น หน้ากาอนามัย , แอลกอฮอล์เจล ควรจัดเก็บที่คลังออนไลน์ 10138 เท่านั้น</li>' +
                     '<li>GWP ควรจัดเก็บที่คลังออนไลน์ 10138 ยกเว้น สินค้าที่ขายที่สาขา 100%</li></ul>',
                 showCancelButton: true,
