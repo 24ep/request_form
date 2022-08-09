@@ -357,7 +357,7 @@ function attaction_alert_cr(id) {
                 icon: 'warning',
                 html: '<ul style="text-align-last: start;"><strong>Your request will be processed within 1 business day</strong><br>' +
                     '<strong>Notice :</strong>' +
-                    '<li style="color:red">**Product consignment dont puทp to store RBS (begin with 20)</li>' +
+                    '<li style="color:red">**Product consignment dont add source to store RBS (begin with 20)</li>' +
                     '<li>Covid items ex. Mask , Alcohol gel have to keep at WH 10138 only.</li>' +
                     '<li>GWP should be keep at WH 10138 except Brand pick from store 100%</li><hr>' +
                     '<strong>ระบบจะดำเนินการเสร็จสิ้นภายใน 1 วันทำการ</strong><br>' +
