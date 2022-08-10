@@ -6,7 +6,7 @@
     border-radius: 0px 0px 10px 0px;
     z-index: 1;"
 class="shadow-sm span-ifram">https://eor-admin.central.tech/upload</span> -->
-<iframe src="https://www.notion.so/d82b34d77d634fe08f614f6fa6e23c7f?v=89dac92da27b4357b2ea7992c095b905"
+<iframe src="https://cds-content.notion.site/d82b34d77d634fe08f614f6fa6e23c7f?v=89dac92da27b4357b2ea7992c095b905"
     style="
     position: absolute;
     top: 0;

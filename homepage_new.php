@@ -387,7 +387,7 @@ function get_page(page) {
     } 
     else if (page == "report") {
         Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/notion.php", {}, function(data) {
+        $.post("base/page/report.php", {}, function(data) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
