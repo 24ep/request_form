@@ -188,6 +188,12 @@ if (!$_SESSION["login_csg"]){
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                        onclick="get_page('notion');">
+                            <ion-icon name="book"></ion-icon>Notion
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                             onclick="get_page('account');">
                             <ion-icon name="people"></ion-icon>Administration
                         </a>
@@ -372,7 +378,14 @@ function get_page(page) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
-    } else {
+    } else if (page == "notion") {
+        Notiflix.Loading.hourglass('Loading...');
+        $.post("base/page/notion.php", {}, function(data) {
+            $('#col_detail').html(data);
+            Notiflix.Loading.remove();
+        });
+    } 
+    else {
         $('#col_detail').html("not avaliable");
         Notiflix.Loading.remove();
     }
