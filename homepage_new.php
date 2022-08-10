@@ -176,7 +176,7 @@ if (!$_SESSION["login_csg"]){
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Internals</small>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
+                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false" onclick="get_page('report');">
                             <ion-icon name="bar-chart"></ion-icon>Reports
                         </a>
                     </li>
