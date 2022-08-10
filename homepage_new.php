@@ -385,6 +385,13 @@ function get_page(page) {
             Notiflix.Loading.remove();
         });
     } 
+    else if (page == "report") {
+        Notiflix.Loading.hourglass('Loading...');
+        $.post("base/page/notion.php", {}, function(data) {
+            $('#col_detail').html(data);
+            Notiflix.Loading.remove();
+        });
+    } 
     else {
         $('#col_detail').html("not avaliable");
         Notiflix.Loading.remove();
