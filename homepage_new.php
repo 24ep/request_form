@@ -168,7 +168,7 @@ if (!$_SESSION["login_csg"]){
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false" onclick="get_page('report');"
                             onclick="get_page('update_content');">
                             <ion-icon name="ticket"></ion-icon>Other Requests
                         </a>
