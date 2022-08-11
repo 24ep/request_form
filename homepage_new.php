@@ -93,11 +93,11 @@ if (!$_SESSION["login_csg"]){
 </head>
 
 <body>
-<nav class="navbar navbar-light bg-light">
+<!-- <nav class="navbar navbar-light bg-light">
         <div class="" style="background:#ff000069;color:white;position: fixed;z-index: 1;">
             <a class="navbar-brand" href="#">You are in pre-launch environment</a>
         </div>
-    </nav>
+    </nav> -->
     <div class="offcanvas offcanvas-start overflow-auto" role="dialog" tabindex="-1" id="edit_add_new"
         style="width:100%" aria-labelledby="offcanvasExampleLabel">
         <div id="callmodal_request_add_new" style="height: 100%;"></div>
