@@ -142,7 +142,8 @@ if (!$_SESSION["login_csg"]){
         
         <div class="col-2 list_bra shadow">
             <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="navbar-brand" href="#">ONLINE CONTENT</a>
+                <a class="navbar-brand" href="#"><ion-icon name="layers-outline"></ion-icon>
+ ONLINE CONTENT</a>
                 <hr class="hr_manu_bra">
                 <span class="name_manu_bra"><?php echo $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span>
                 <small class="dept_manu_bra"><?php echo $_SESSION['department']; ?></small>
@@ -204,7 +205,7 @@ if (!$_SESSION["login_csg"]){
                             role="tab" aria-selected="false" data-bs-toggle="dropdown">
                             <ion-icon name="layers"></ion-icon>Productions
                         </a>
-                        <ul class="dropdown-menu shadow p3">
+                        <ul class="dropdown-menu menu-block shadow p3">
                             <small class="header_manu_bra">Datapump</small>
                             <li><a onclick="get_page('datapump_convert');" class="dropdown-item dp-link" type="button">
                                     <ion-icon name="shapes"></ion-icon>Datapump Convert
@@ -265,7 +266,7 @@ if (!$_SESSION["login_csg"]){
                             role="tab" aria-selected="false" data-bs-toggle="dropdown">
                             <ion-icon name="globe"></ion-icon>Quicklink
                         </a>
-                        <ul class="dropdown-menu shadow p3">
+                        <ul class="dropdown-menu menu-block shadow p3">
                             <small class="header_manu_bra">Central</small>
 
                             <li><a href="http://cnext.centralgroup.com/" target="_blank" class="dropdown-item dp-link"
