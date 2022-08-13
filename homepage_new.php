@@ -144,7 +144,7 @@ if (!$_SESSION["login_csg"]){
             <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
                 class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-dark rounded-pill"
                 style="width: 2rem; height:2rem;padding: 0px;">
-                <ion-icon name="menu-outline" style="margin:0px"></ion-icon>
+                <!-- <ion-icon name="menu-outline" style="margin:0px"></ion-icon> -->
             </button>
             <input type="hidden" id="minimize_manu" name="minimize_manu" value="show">
             <a class="navbar-brand" href="#">
@@ -464,12 +464,13 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
 </script>
 
 <script>
+ document.getElementById("bt_nav_coll_ex").innerHTML = '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
 function minimize_nav() {
     var minimize_manu = document.getElementById('minimize_manu').value;
     console.log(minimize_manu);
     if (minimize_manu == 'hide') {
         document.getElementById('minimize_manu').value = 'show';
-        document.getElementById("apps_name").innerHTML = '<ion-icon name="chevron-back-outline"></ion-icon>';
+        document.getElementById("bt_nav_coll_ex").innerHTML = '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
         
         var list_bra = document.getElementsByClassName("list_bra");
         for(var i = 0; i < list_bra.length; i++)
@@ -512,7 +513,7 @@ function minimize_nav() {
     }  
     else {
         document.getElementById('minimize_manu').value = 'hide';
-        document.getElementById("apps_name").innerHTML = '<ion-icon name="chevron-forward-outline"></ion-icon>';
+        document.getElementById("bt_nav_coll_ex").innerHTML = '<ion-icon name="chevron-forward-outline" style="margin:0px;color:white"></ion-icon>';
         var list_bra = document.getElementsByClassName("list_bra");
         for(var i = 0; i < list_bra.length; i++)
         {
