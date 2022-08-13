@@ -469,6 +469,7 @@ function minimize_nav() {
     console.log(minimize_manu);
     if (minimize_manu == 'hide') {
         document.getElementById('minimize_manu').value = 'show';
+        document.getElementById("apps_name").innerHTML = '<ion-icon name="chevron-back-outline"></ion-icon>';
         
         var list_bra = document.getElementsByClassName("list_bra");
         for(var i = 0; i < list_bra.length; i++)
@@ -511,6 +512,7 @@ function minimize_nav() {
     }  
     else {
         document.getElementById('minimize_manu').value = 'hide';
+        document.getElementById("apps_name").innerHTML = '<ion-icon name="chevron-forward-outline"></ion-icon>';
         var list_bra = document.getElementsByClassName("list_bra");
         for(var i = 0; i < list_bra.length; i++)
         {
@@ -519,6 +521,7 @@ function minimize_nav() {
 
         document.getElementById("main-manu-nav").className += " hide";
         document.getElementById("apps_name").className += " hide";
+        
         var header_manu_bra = document.getElementsByClassName("header_manu_bra");
         for(var i = 0; i < header_manu_bra.length; i++)
         {
