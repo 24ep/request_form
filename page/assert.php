@@ -127,7 +127,7 @@ function action_remove_asert(assert_type,remove_id){
               remove_id: remove_id
           }, function(data) {
               goto_dri(parent);
-              //Notiflix.Notify.success('asserts have been remove :)');
+              Notiflix.Notify.success('asserts have been remove :)');
           });
 }
 </script>
