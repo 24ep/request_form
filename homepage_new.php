@@ -469,21 +469,21 @@ function minimize_nav() {
     console.log(minimize_manu);
     if (minimize_manu == 'hide') {
         document.getElementById('minimize_manu').value = 'show';
-        document.getElementsByClassName('list_bra').className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
-        document.getElementsByClassName('main-manu-nav').className.replace(/(?:^|\s)hide(?!\S)/g, '');
-        document.getElementsByClassName('header_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
-        document.getElementsByClassName('dept_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
-        document.getElementsByClassName('hr_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
-        document.getElementsByClassName('hr_manu_bra_in').className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        document.getElementByClassName('list_bra').className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
+        document.getElementByClassName('main-manu-nav').className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        document.getElementByClassName('header_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        document.getElementByClassName('dept_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        document.getElementByClassName('hr_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        document.getElementByClassName('hr_manu_bra_in').className.replace(/(?:^|\s)hide(?!\S)/g, '');
     }
     else {
         document.getElementById('minimize_manu').value = 'hide';
-        document.getElementsByClassName('list_bra').className += ' mini-nav-col';
-        document.getElementsByClassName('main-manu-nav').className += "  hide";
-        document.getElementsByClassName('header_manu_bra').className += "  hide";
-        document.getElementsByClassName('dept_manu_bra').className += "  hide";
-        document.getElementsByClassName('hr_manu_bra').className += "  hide";
-        document.getElementsByClassName('hr_manu_bra_in').className += "  hide";
+        document.getElementByClassName('list_bra').className += ' mini-nav-col';
+        document.getElementByClassName('main-manu-nav').className += "  hide";
+        document.getElementByClassName('header_manu_bra').className += "  hide";
+        document.getElementByClassName('dept_manu_bra').className += "  hide";
+        document.getElementByClassName('hr_manu_bra').className += "  hide";
+        document.getElementByClassName('hr_manu_bra_in').className += "  hide";
     }
 }
 </script>
