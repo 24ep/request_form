@@ -491,7 +491,7 @@ function minimize_nav() {
          var name_manu_bra = document.getElementsByClassName("name_manu_bra");
         for(var i = 0; i < name_manu_bra.length; i++)
         {
-            name_manu_bra = dept_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
+            name_manu_bra = name_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
         var dept_manu_bra = document.getElementsByClassName("dept_manu_bra");
         for(var i = 0; i < dept_manu_bra.length; i++)
