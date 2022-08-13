@@ -142,7 +142,7 @@ if (!$_SESSION["login_csg"]){
         
         <div class="col-2 list_bra shadow">
             <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="navbar-brand" href="#"><ion-icon name="layers-outline"></ion-icon>
+                <a class="navbar-brand" href="#"><ion-icon name="layers-outline" style="font-size: 20px;margin: 0px;"></ion-icon>
  ONLINE CONTENT</a>
                 <hr class="hr_manu_bra">
                 <span class="name_manu_bra"><?php echo $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span>
