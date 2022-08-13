@@ -54,7 +54,7 @@ function get_list_status($username,$status){
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Checking</div>
             <div class="row card-body text-light">
-            <div class="col-4" style="text-align: -webkit-center;">
+            <div class="col-3" style="text-align: -webkit-center;">
                 <div class="total_count_dashboard">
                     <?php $count_pending = count_status($_SESSION['username'],'checking');
                           echo $count_pending;
@@ -76,7 +76,7 @@ function get_list_status($username,$status){
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Waiting info</div>
             <div class="row card-body text-light">
-            <div class="col-4" style="text-align: -webkit-center;">
+            <div class="col-3" style="text-align: -webkit-center;">
                 <div class="total_count_dashboard">
                     <?php $count_pending = count_status($_SESSION['username'],'wait');
                           echo $count_pending;
@@ -98,7 +98,7 @@ function get_list_status($username,$status){
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">On production</div>
             <div class="row card-body text-light">
-            <div class="col-4" style="text-align: -webkit-center;">
+            <div class="col-3" style="text-align: -webkit-center;">
                 <div class="total_count_dashboard">
                     <?php $count_pending = count_status($_SESSION['username'],'accepted');
                           echo $count_pending;
