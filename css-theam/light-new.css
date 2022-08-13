@@ -383,7 +383,7 @@ label#label_file_cme {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: rgb(124, 27, 27); 
 }
 
 .npd-card-bording-priority-urgent{
