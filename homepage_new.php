@@ -479,10 +479,11 @@ function minimize_nav() {
         }
         
         document.getElementById("apps_name").className = document.getElementById("apps_name").className.replace(/(?:^|\s)hide(?!\S)/g, '');
+
         var main_manu_nav = document.getElementsByClassName("main-manu-nav hide");
         for(var i = 0; i < main_manu_nav.length; i++)
         {
-            console.log('hide '+i );
+            console.log('unhide '+i );
             main_manu_nav[i].className = main_manu_nav[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
         var main_bra = document.getElementsByClassName("main_bra nav-link minimize");
