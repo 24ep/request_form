@@ -21,9 +21,9 @@
                     Create New
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Folder</a></li>
-                    <li><a class="dropdown-item" href="#">Block</a></li>
-                    <li><a class="dropdown-item" href="#">Upload a files</a></li>
+                    <li><a type="button" class="dropdown-item" onclick="ask_label('Folder')">Folder</a></li>
+                    <li><a type="button" class="dropdown-item" onclick="ask_label('type')">Block</a></li>
+                    <li><a type="button" class="dropdown-item" onclick="ask_label('upload_a_file')">Upload a files</a></li>
                 </ul>
             </div>
 
@@ -67,7 +67,8 @@ function get_block(block_id) {
 <script>
 function create_assert(label) {
 var label = label.toLowerCase();
-var code = code.replace(/[^a-zA-Z ]/g, "_"))
+var code = code.toLowerCase();
+var code = code.replace(/[^a-zA-Z ]/g, "_"));
 var parent = document.getElementById('parent').value;
 var path_id = document.getElementById('under_path').value;
 $.post("../base/get/action_create_assert.php", {
