@@ -363,3 +363,6 @@ label#label_file_cme {
 #apps_name.hide{
     display: none;
 }
+.col-10.col_detail_main.minimize{
+    width: 100%;
+}

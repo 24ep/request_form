@@ -491,7 +491,12 @@ function minimize_nav() {
         {
             main_bra[i].className = main_bra[i].className.replace(/(?:^|\s)minimize(?!\S)/g, '');
         }
-    
+
+        var col_detail_main = document.getElementsByClassName("col-10 col_detail_main minimize");
+        for(var i = 0; i < col_detail_main.length; i++)
+        {
+            col_detail_main[i].className = col_detail_main[i].className.replace(/(?:^|\s)minimize(?!\S)/g, '');
+        }
     
         
         var header_manu_bra = document.getElementsByClassName("header_manu_bra");
@@ -546,6 +551,12 @@ function minimize_nav() {
         for(var i = 0; i < header_manu_bra.length; i++)
         {
             header_manu_bra[i].className += " hide";
+        }
+
+        var col_detail_main = document.getElementsByClassName("col-10 col_detail_main");
+        for(var i = 0; i < col_detail_main.length; i++)
+        {
+            col_detail_main[i].className += " minimize";
         }
         
         var main_bra = document.getElementsByClassName("main_bra");
