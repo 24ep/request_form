@@ -20,7 +20,7 @@ function get_list_status($username,$status){
     $result = mysqli_query($con, $sql);
     $list="";
     while($row = mysqli_fetch_array($result)) {
-        $list .= '<li type="button" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row["id"].')" class="list-group-item bg-transparent text-light p-1 text-nowrap" style="font-size: smaller;width: 160px;">NS-'.$row["id"].' '.$row["brand"].' '.$row["sku"].' SKU</li>';
+        $list .= '<li type="button" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row["id"].')" class="list-group-item bg-transparent text-light p-1 text-nowrap" style="font-size: smaller;width: 150px;overflow: hidden;">NS-'.$row["id"].' '.$row["brand"].' '.$row["sku"].' SKU</li>';
     }
     // mysqli_close($con);
     return $list;
@@ -32,7 +32,7 @@ function get_list_status($username,$status){
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Pending</div>
             <div class="row card-body text-light">
-                <div class="col-3" style="text-align: -webkit-center;">
+                <div class="col-4" style="text-align: -webkit-center;">
                 <div class="total_count_dashboard">
                     <?php $count_pending = count_status($_SESSION['username'],'pending');
                           echo $count_pending;
@@ -54,7 +54,7 @@ function get_list_status($username,$status){
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Checking</div>
             <div class="row card-body text-light">
-            <div class="col-3" style="text-align: -webkit-center;">
+            <div class="col-4" style="text-align: -webkit-center;">
                 <div class="total_count_dashboard">
                     <?php $count_pending = count_status($_SESSION['username'],'checking');
                           echo $count_pending;
@@ -76,7 +76,7 @@ function get_list_status($username,$status){
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Waiting info</div>
             <div class="row card-body text-light">
-            <div class="col-3" style="text-align: -webkit-center;">
+            <div class="col-4" style="text-align: -webkit-center;">
                 <div class="total_count_dashboard">
                     <?php $count_pending = count_status($_SESSION['username'],'wait');
                           echo $count_pending;
@@ -98,7 +98,7 @@ function get_list_status($username,$status){
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">On production</div>
             <div class="row card-body text-light">
-            <div class="col-3" style="text-align: -webkit-center;">
+            <div class="col-4" style="text-align: -webkit-center;">
                 <div class="total_count_dashboard">
                     <?php $count_pending = count_status($_SESSION['username'],'accepted');
                           echo $count_pending;
