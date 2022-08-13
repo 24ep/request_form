@@ -30,7 +30,7 @@ function count_status($username,$status){
                 <div class="unit_count_dashboard">Ticket</div>
                 </div>
                 <div class="col">
-                    <ul class="list-group list-group-flush">
+                    <ul class="list-group list-group-flush overflow-auto" style="max-height: 100px;">
                         <li class="list-group-item bg-transparent text-light p-1">An item</li>
                         <li class="list-group-item bg-transparent text-light p-1">A second item</li>
                         <li class="list-group-item bg-transparent text-light p-1">A third item</li>
