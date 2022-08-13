@@ -21,12 +21,23 @@ function count_status($username,$status){
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Pending</div>
             <div class="card-body text-light">
+                <div class="col">
                 <div class="total_count_dashboard">
                     <?php $count_pending = count_status($_SESSION['username'],'pending');
                           echo $count_pending;
                     ?>
                 </div>
                 <div class="unit_count_dashboard">Ticket</div>
+                </div>
+                <div class="col">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
