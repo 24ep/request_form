@@ -25,7 +25,7 @@
         </a>
 
         <ul class="dropdown-menu"  style="font-size: 14px;" aria-labelledby="dropdownMenuLink">
-          <li><a class="dropdown-item" href="#" bnclick="remove_assert(&#34;folder&#34;,'.$row['id'].')"> <ion-icon name="trash-outline"></ion-icon> Remove</a></li>
+          <li><a type="button" class="dropdown-item"  onclick="remove_assert(&#34;folder&#34;,'.$row['id'].')"> <ion-icon name="trash-outline"></ion-icon> Remove</a></li>
         </ul>
       </div>
       </li>';
