@@ -113,17 +113,21 @@ function remove_assert(assert_type,remove_id) {
         'Remove',
         'Cancel',
         function okCb() {
-          $.post("../base/action/action_remove_assert.php", {
+          action_remove_asert(assert_type,parent);
+        },
+        function cancelCb() {
+            //alert('If you say so...');
+        },
+    );
+}
+
+function action_remove_asert(assert_type,parent){
+  $.post("../base/action/action_remove_assert.php", {
               assert_type: assert_type,
               remove_id: remove_id
           }, function(data) {
               goto_dri(parent);
               //Notiflix.Notify.success('asserts have been remove :)');
           });
-        },
-        function cancelCb() {
-            //alert('If you say so...');
-        },
-    );
 }
 </script>
