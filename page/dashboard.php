@@ -20,7 +20,7 @@ function get_list_status($username,$status){
     $result = mysqli_query($con, $sql);
     $list="";
     while($row = mysqli_fetch_array($result)) {
-        $list .= '<li type="button" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row["id"].')" class="list-group-item bg-transparent text-light p-1 text-nowrap" style="font-size: smaller;width: 150px;overflow-x: hidden;">NS-'.$row["id"].' '.$row["brand"].' '.$row["sku"].' SKU</li>';
+        $list .= '<li type="button" data-bs-toggle="offcanvas" data-bs-target="#edit_add_new" aria-controls="offcanvasExample" onclick="call_edit_add_new_modal('.$row["id"].')" class="list-group-item bg-transparent text-light p-1 text-nowrap" style="font-size: smaller;width: 150px;">NS-'.$row["id"].' '.$row["brand"].' '.$row["sku"].' SKU</li>';
     }
     // mysqli_close($con);
     return $list;
