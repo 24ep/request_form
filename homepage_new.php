@@ -158,7 +158,7 @@ if (!$_SESSION["login_csg"]){
             <small class="header_manu_bra">Manu</small>
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                 <a class="nav-link" type="button" onclick="get_list_update_job();">
-                    <ion-icon name="notifications"></ion-icon><span id="main-manu-nav">Notifications</span>
+                    <ion-icon name="notifications"></ion-icon><span class="main-manu-nav">Notifications</span>
                     <div id="get_count_nt_unread">
                         <?php include('get/get_count_nt_unread.php'); ?>
                     </div>
@@ -166,19 +166,19 @@ if (!$_SESSION["login_csg"]){
                 <li class="nav-item" role="presentation">
                     <a class="nav-link active" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('dashboard');">
-                        <ion-icon name="home"></ion-icon><span id="main-manu-nav">Dashboard</span>
+                        <ion-icon name="home"></ion-icon><span class="main-manu-nav">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('create_new');">
-                        <ion-icon name="ticket"></ion-icon><span id="main-manu-nav">Create New</span>
+                        <ion-icon name="ticket"></ion-icon><span class="main-manu-nav">Create New</span>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('update_content');">
-                        <ion-icon name="ticket"></ion-icon><span id="main-manu-nav">Other Requests</span>
+                        <ion-icon name="ticket"></ion-icon><span class="main-manu-nav">Other Requests</span>
                     </a>
                 </li>
                 <hr class="hr_manu_bra_in">
@@ -186,32 +186,32 @@ if (!$_SESSION["login_csg"]){
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('report');">
-                        <ion-icon name="bar-chart"></ion-icon><span id="main-manu-nav">Reports</span>
+                        <ion-icon name="bar-chart"></ion-icon><span class="main-manu-nav">Reports</span>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('assert');">
-                        <ion-icon name="cube"></ion-icon><span id="main-manu-nav">Assests</span>
+                        <ion-icon name="cube"></ion-icon><span class="main-manu-nav">Assests</span>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('notion');">
-                        <ion-icon name="book"></ion-icon><span id="main-manu-nav">Notion</span>
+                        <ion-icon name="book"></ion-icon><span class="main-manu-nav">Notion</span>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('account');">
-                        <ion-icon name="people"></ion-icon><span id="main-manu-nav">Administration</span>
+                        <ion-icon name="people"></ion-icon><span class="main-manu-nav">Administration</span>
                     </a>
                 </li>
 
                 <li class="nav-item btn-group dropend" role="presentation">
                     <a class="nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button" role="tab"
                         aria-selected="false" data-bs-toggle="dropdown">
-                        <ion-icon name="layers"></ion-icon><span id="main-manu-nav">Productions</span>
+                        <ion-icon name="layers"></ion-icon><span class="main-manu-nav">Productions</span>
                     </a>
                     <ul class="dropdown-menu menu-block shadow p3">
                         <small class="header_manu_bra">Datapump</small>
@@ -272,7 +272,7 @@ if (!$_SESSION["login_csg"]){
                 <li class="nav-item btn-group dropend" role="presentation">
                     <a class="nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button" role="tab"
                         aria-selected="false" data-bs-toggle="dropdown">
-                        <ion-icon name="globe"></ion-icon><span id="main-manu-nav">Quicklink</span>
+                        <ion-icon name="globe"></ion-icon><span class="main-manu-nav">Quicklink</span>
                     </a>
                     <ul class="dropdown-menu menu-block shadow p3">
                         <small class="header_manu_bra">Central</small>
@@ -302,13 +302,13 @@ if (!$_SESSION["login_csg"]){
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
-                        <ion-icon name="settings"></ion-icon><span id="main-manu-nav">Settings</span>
+                        <ion-icon name="settings"></ion-icon><span class="main-manu-nav">Settings</span>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="logout()">
-                        <ion-icon name="log-out"></ion-icon><span id="main-manu-nav">Logout</span>
+                        <ion-icon name="log-out"></ion-icon><span class="main-manu-nav">Logout</span>
                     </a>
                 </li>
             </ul>
@@ -479,7 +479,7 @@ function minimize_nav() {
         }
         
         var apps_name = document.getElementById("apps_name").className.replace(/(?:^|\s)hide(?!\S)/g, '');
-        var main_manu_nav = document.getElementById("main-manu-nav");
+        var main_manu_nav = document.getElementsByClassName("main-manu-nav");
         for(var i = 0; i < main_manu_nav.length; i++)
         {
             main_manu_nav[i] = main_manu_nav[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
@@ -526,7 +526,7 @@ function minimize_nav() {
 
         // document.getElementById("main-manu-nav").className += " hide";
         document.getElementById("apps_name").className += " hide";
-        var main_manu_nav = document.getElementById("main-manu-nav");
+        var main_manu_nav = document.getElementsByClassName("main-manu-nav");
         for(var i = 0; i < main_manu_nav.length; i++)
         {
             main_manu_nav[i] = main_manu_nav[i].className += " hide";
