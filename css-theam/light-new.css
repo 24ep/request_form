@@ -338,7 +338,7 @@ label#label_file_cme {
 .mini-nav-col{
     width: 55px;
 }
-.main-manu-nav.hide {
+#main-manu-nav.hide {
     display: none;
 }
 .header_manu_bra.hide{
