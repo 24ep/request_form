@@ -75,7 +75,7 @@ function get_list_status($username,$status){
         </div>
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
-            <div class="card-header">Waiting info</div>
+            <div class="card-header">Waiting information</div>
             <div class="row card-body text-light" style="flex: 0;">
                 <div class="ps-3">
                     <div class="total_count_dashboard">
