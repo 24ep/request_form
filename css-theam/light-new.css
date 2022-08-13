@@ -356,6 +356,6 @@ label#label_file_cme {
 .hr_manu_bra_in.hide{
     display: none;
 }
-.apps_name.hide{
+#apps_name.hide{
     display: none;
 }

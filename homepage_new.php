@@ -478,7 +478,7 @@ function minimize_nav() {
             list_bra[i] = list_bra[i].className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
         }
         
-        var apps_name = document.getElementById("apps_name").className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        document.getElementById("apps_name").className.replace(/(?:^|\s)hide(?!\S)/g, '');
         var main_manu_nav = document.getElementsByClassName("main-manu-nav");
         for(var i = 0; i < main_manu_nav.length; i++)
         {
