@@ -157,8 +157,8 @@ if (!$_SESSION["login_csg"]){
             <hr class="hr_manu_bra">
             <small class="header_manu_bra">Manu</small>
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <a class="nav-link" type="button" onclick="get_list_update_job();">
-                    <ion-icon name="notifications"></ion-icon><span class="main-manu-nav">Notifications</span>
+                <a class="nav-link" type="button" data-bs-toggle="dropdown" aria-expanded="false"  onclick="get_list_update_job();">
+                    <ion-icon name="notifications"></ion-icon><span class="main-manu-nav">Activities</span>
                     <div id="get_count_nt_unread">
                         <?php include('get/get_count_nt_unread.php'); ?>
                     </div>
