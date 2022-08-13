@@ -52,7 +52,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             </div>
             <div class="col-auto">
                 <div class="input-group input-group-sm mb-3">
-                    <button class="btn btn-dark btn-sm" style="margin-left:10px" type="button"
+                    <button class="btn btn-dark btn-sm bg-gradient" style="margin-left:10px" type="button"
                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                         <ion-icon size="small" name="add-outline"></ion-icon>
                         Create New

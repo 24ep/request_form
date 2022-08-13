@@ -4,11 +4,14 @@
 include("../connect.php");
 function count_status($username,$status){
     global $con;
-    $sql="SELECT count(*) as total from all_in_one_project.add_new_job where request_username = '".$username."' and status like '%".$status."%'";
+    $sql="SELECT count(*) as total from all_in_one_project.add_new_job where request_username = '".$username."' and status like '%".$status."%' and trigger_status is null";
     $result=mysqli_query($con,$sql);
     $data=mysqli_fetch_assoc($result);
     $count = $data['total'];
     mysqli_close($con);
+    if($count==null){
+        $count = 0;
+    }
     return $count;
 }
 ?>
@@ -54,20 +57,7 @@ function count_status($username,$status){
         </div>
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
-            <div class="card-header">Waiting Confirm</div>
-            <div class="card-body text-warning">
-                <div class="total_count_dashboard">
-                    <?php
-                        $count_checking =  count_status($_SESSION['username'],'confirm');
-                        echo $count_checking;
-                    ?>
-                </div>
-                <div class="unit_count_dashboard">Ticket</div>
-            </div>
-        </div>
-        <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
-            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
-            <div class="card-header">Send to traffic already</div>
+            <div class="card-header">On production</div>
             <div class="card-body text-light">
                 <div class="total_count_dashboard">
                     <?php

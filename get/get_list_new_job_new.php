@@ -191,7 +191,7 @@ if(isset($_POST["from_post"] )){
       $ticket .= "<div class='col'>".$p_badge."</div>";
       $ticket .= "<div class='col'>".$task_status ."</div>";
       $ticket .= "<div class='col'>";
-      $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row["id"].")' >
+      $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='btn btn-dark btn-sm bg-gradient' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row["id"].")' >
        Detail </button></div>";
       $ticket .=  "</li>";
       //get sub ticket
@@ -250,7 +250,7 @@ if(isset($_POST["from_post"] )){
               $sub_ticket .= "<div class='col'></div>";
               $sub_ticket .= "<div class='col'></div>";
               $sub_ticket .= "<div class='col'>".$status."</div>";
-              $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+              $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm bg-gradient'  data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
               Detail </button></div >";
               $i++;
             }
@@ -267,7 +267,7 @@ if(isset($_POST["from_post"] )){
           $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col' >".$status."</div>";
-          $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+          $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm bg-gradient' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
            Detail </button></div>";
           $i++;
           }
