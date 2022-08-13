@@ -107,6 +107,7 @@ function ask_label(create_type) {
 }
 
 function remove_assert(assert_type,remove_id) {
+    var parent = document.getElementById('parent').value;
     Notiflix.Confirm.show(
         'Confirm',
         'Do you want to remove?',
@@ -114,8 +115,7 @@ function remove_assert(assert_type,remove_id) {
         'Cancel',
         function okCb() {
           action_remove_assert(assert_type,remove_id);
-          goto_dri(parent);
-          Notiflix.Notify.success('asserts have been remove :)');
+         
         },
         function cancelCb() {
             //alert('If you say so...');
@@ -128,7 +128,8 @@ function action_remove_assert(assert_type,remove_id){
               assert_type: assert_type,
               remove_id: remove_id
           }, function(data) {
-             //nothing
+            goto_dri(parent);
+            //Notiflix.Notify.success('asserts have been remove :)');
       
           });
 }
