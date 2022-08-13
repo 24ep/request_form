@@ -466,10 +466,10 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
 <script>
 function minimize_nav() {
     var minimize_manu = document.getElementsByClassName('minimize_manu').value;
-
+    console.log(minimize_manu);
     if (minimize_manu == 'hide') {
         document.getElementsByClassName('minimize_manu').value = 'show';
-        document.getElementsByClassName('col-2 list_bra shadow').className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
+        document.getElementsByClassName('list_bra').className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
         document.getElementsByClassName('main-manu-nav').className.replace(/(?:^|\s)hide(?!\S)/g, '');
         document.getElementsByClassName('header_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
         document.getElementsByClassName('dept_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
@@ -478,7 +478,7 @@ function minimize_nav() {
     }
     else {
         document.getElementsByClassName('minimize_manu').value = 'hide';
-        document.getElementsByClassName('col-2 list_bra shadow').className += ' mini-nav-col';
+        document.getElementsByClassName('list_bra').className += ' mini-nav-col';
         document.getElementsByClassName('main-manu-nav').className += "  hide";
         document.getElementsByClassName('header_manu_bra').className += "  hide";
         document.getElementsByClassName('dept_manu_bra').className += "  hide";
