@@ -20,7 +20,7 @@ function get_list_status($username,$status){
     $result = mysqli_query($con, $sql);
     $list="";
     while($row = mysqli_fetch_array($result)) {
-        $list .= '<li class="list-group-item bg-transparent text-light p-1" style="font-size: smaller;font-size: smaller;width: 160px; overflow: hidden;">'.$row["id"].' '.$row["brand"].' '.$row["sku"].' SKU</li>';
+        $list .= '<li class="list-group-item bg-transparent text-light p-1" style="font-size: smaller;width: 160px;">'.$row["id"].' '.$row["brand"].' '.$row["sku"].' SKU</li>';
     }
     // mysqli_close($con);
     return $list;
