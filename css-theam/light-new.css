@@ -335,3 +335,24 @@ label#label_file_cme {
 .total_count_dashboard{
     font-size: 50px;
 }
+.mini-nav-col{
+    width: 55px;
+}
+.main-manu-nav.hide {
+    display: none;
+}
+.header_manu_bra.hide{
+    display: none;
+}
+.name_manu_bra.hide {
+    display: none;
+}
+.dept_manu_bra.hide {
+    display: none;
+}
+.hr_manu_bra.hide{
+    display: none;
+}
+.hr_manu_bra_in.hide{
+    display: none;
+}

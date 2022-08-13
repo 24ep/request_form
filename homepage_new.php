@@ -142,8 +142,9 @@ if (!$_SESSION["login_csg"]){
         
         <div class="col-2 list_bra shadow">
             <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <button type="button" id="bt_nav_coll_ex" class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-dark rounded-pill" style="width: 2rem; height:2rem;padding: 0px;"><ion-icon name="menu-outline" style="margin:0px"></ion-icon></button>
-                <a class="navbar-brand" href="#"><ion-icon name="layers" style="font-size: 20px;margin: 0px;"></ion-icon>
+            <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();" class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-dark rounded-pill" style="width: 2rem; height:2rem;padding: 0px;"><ion-icon name="menu-outline" style="margin:0px"></ion-icon></button>
+            <input type="hidden" id="minimize_manu" name="minimize_manu" value="show"> 
+            <a class="navbar-brand" href="#"><ion-icon name="layers" style="font-size: 20px;margin: 0px;"></ion-icon>
  ONLINE CONTENT</a>
                 <hr class="hr_manu_bra">
                 <span class="name_manu_bra"><?php echo $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span>
@@ -152,7 +153,7 @@ if (!$_SESSION["login_csg"]){
                 <small class="header_manu_bra">Manu</small>
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <a class="nav-link" type="button" onclick="get_list_update_job();">
-                        <ion-icon name="notifications"></ion-icon><Notifications</span>
+                        <ion-icon name="notifications"></ion-icon><span id="main-manu-nav">Notifications</span>
                         <div id="get_count_nt_unread">
                             <?php include('get/get_count_nt_unread.php'); ?>
                         </div>
@@ -456,6 +457,28 @@ var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggl
 var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
+
+function minimize_nav(){
+var minimize_manu =document.getElementsByClassName('minimize_manu').value;
+   
+       if(minimize_manu =='hide'){
+            document.getElementsByClassName('minimize_manu').value = 'show';
+            document.getElementsByClassName('col-2 list_bra shadow').className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
+            document.getElementsByClassName('main-manu-nav').className.replace(/(?:^|\s)hide(?!\S)/g, '');
+            document.getElementsByClassName('header_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
+            document.getElementsByClassName('dept_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
+            document.getElementsByClassName('hr_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
+            document.getElementsByClassName('hr_manu_bra_in').className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        }eles{
+            document.getElementsByClassName('minimize_manu').value ='hide';
+            document.getElementsByClassName('col-2 list_bra shadow').className +=' mini-nav-col';
+            document.getElementsByClassName('main-manu-nav').className += "  hide";
+            document.getElementsByClassName('header_manu_bra').className += "  hide";
+            document.getElementsByClassName('dept_manu_bra').className += "  hide";
+            document.getElementsByClassName('hr_manu_bra').className += "  hide";
+            document.getElementsByClassName('hr_manu_bra_in').className += "  hide";
+        }
+}
 </script>
 
 <?php } ?>
