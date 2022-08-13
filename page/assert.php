@@ -81,8 +81,9 @@ $.post("../base/action/action_create_assert.php", {
     create_type: create_type
 }, function(data) {
     // $('#list_asserts').html(data);
-    Notiflix.Notify.success('asserts have been create :)');
+   
     goto_dri(parent);
+    Notiflix.Notify.success('asserts have been create :)');
    
     
 });
