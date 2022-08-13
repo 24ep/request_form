@@ -217,15 +217,5 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
-function call_edit_add_new_modal(id, brand) {
-    Notiflix.Loading.hourglass('Loading...');
-    if (id) {
-        $.post("../base/modal/detail_create_new.php", {
-            id: id
-        }, function(data) {
-            $('#callmodal_request_add_new').html(data);
-            Notiflix.Loading.remove();
-        });
-    }
-}
+
 </script>
