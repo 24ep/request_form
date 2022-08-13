@@ -14,7 +14,7 @@ function count_status($username,$status){
     }
     return $count;
 }
-function get_lst_status($username,$status){
+function get_list_status($username,$status){
     global $con;
     $sql="SELECT id,brand,sku from all_in_one_project.add_new_job where request_username = '".$username."' and status like '%".$status."%' and trigger_status is null";
     $result = mysqli_query($con, $sql);
@@ -42,7 +42,7 @@ function get_lst_status($username,$status){
                 </div>
                 <div class="col">
                     <ul class="list-group list-group-flush overflow-auto" style="max-height: 100px;">
-                    <?php $list = get_lst_status($_SESSION['username'],'pending');
+                    <?php $list = get_list_status($_SESSION['username'],'pending');
                           echo $list;
                     ?>
                   
