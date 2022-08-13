@@ -62,6 +62,9 @@ ion-icon{
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
     border: 1px #f85d60 solid;
 }
+.main_bra.minimize.nav-link.active {
+    width: auto;
+}
 .hr_manu_bra_in{
     color: #919191;
     margin: 15px 0px;
@@ -337,7 +340,7 @@ label#label_file_cme {
     font-size: 50px;
 }
 .mini-nav-col{
-    width: 55px;
+    width: 60px;
 }
 .main-manu-nav.hide {
     display: none;
