@@ -476,11 +476,8 @@ function minimize_nav() {
             list_bra[i] = list_bra[i].className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
         }
 
-        var main_manu_nav = document.getElementsByClassName("main-manu-nav");
-        for(var i = 0; i < main_manu_nav.length; i++)
-        {
-            main_manu_nav[i] = main_manu_nav[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
-        }
+        var main_manu_nav = document.getElementById("main-manu-nav").replace(/(?:^|\s)hide(?!\S)/g, '');
+    
 
         var header_manu_bra = document.getElementsByClassName("header_manu_bra");
         for(var i = 0; i < header_manu_bra.length; i++)
@@ -514,11 +511,7 @@ function minimize_nav() {
             list_bra[i].className += " mini-nav-col";
         }
 
-        var main_manu_nav = document.getElementsByClassName("main-manu-nav");
-        for(var i = 0; i < main_manu_nav.length; i++)
-        {
-            main_manu_nav[i].className += " hide";
-        }
+        var main_manu_nav = document.getElementById("main-manu-nav").className += " hide";
 
         var header_manu_bra = document.getElementsByClassName("header_manu_bra");
         for(var i = 0; i < header_manu_bra.length; i++)
