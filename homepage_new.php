@@ -503,7 +503,7 @@ function minimize_nav() {
         var hr_manu_bra_in = document.getElementsByClassName("hr_manu_bra_in");
         for(var i = 0; i < hr_manu_bra_in.length; i++)
         {
-            hr_mhr_manu_bra_inanu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
+            hr_manu_bra_in[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
     }  
     else {
