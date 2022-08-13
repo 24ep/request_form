@@ -314,7 +314,7 @@ if (!$_SESSION["login_csg"]){
             </ul>
         </div>
     </div>
-    <div class="col-10" style="margin-left: auto;font-size: 14px;padding: 0px;">
+    <div class="col-10 col_detail_main" style="margin-left: auto;font-size: 14px;padding: 0px;">
         <div id="col_detail">
         </div>
     </div>
@@ -484,7 +484,7 @@ function minimize_nav() {
         {
             main_manu_nav[i].className = main_manu_nav[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-        var main_bra = document.getElementsByClassName("main_bra nav-link minimize");
+        var main_bra = document.getElementsByClassName("main_bra nav-link hide");
         for(var i = 0; i < main_bra.length; i++)
         {
             main_bra[i].className = main_bra[i].className.replace(/(?:^|\s)minimize(?!\S)/g, '');
@@ -548,7 +548,7 @@ function minimize_nav() {
         var main_bra = document.getElementsByClassName("main_bra");
         for(var i = 0; i < main_bra.length; i++)
         {
-            main_bra[i].className += " minimize";
+            main_bra[i].className += " hide";
         }
         
         var name_manu_bra = document.getElementsByClassName("name_manu_bra");

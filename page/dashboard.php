@@ -21,7 +21,7 @@ function count_status($username,$status){
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Pending</div>
             <div class="row card-body text-light">
-                <div class="col-4">
+                <div class="col-4" style="text-align: -webkit-center;">
                 <div class="total_count_dashboard">
                     <?php $count_pending = count_status($_SESSION['username'],'pending');
                           echo $count_pending;
@@ -31,11 +31,11 @@ function count_status($username,$status){
                 </div>
                 <div class="col">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item bg-transparent text-light">An item</li>
-                        <li class="list-group-item bg-transparent text-light">A second item</li>
-                        <li class="list-group-item bg-transparent text-light">A third item</li>
-                        <li class="list-group-item bg-transparent text-light">A fourth item</li>
-                        <li class="list-group-item bg-transparent text-light">And a fifth one</li>
+                        <li class="list-group-item bg-transparent text-light p-1">An item</li>
+                        <li class="list-group-item bg-transparent text-light p-1">A second item</li>
+                        <li class="list-group-item bg-transparent text-light p-1">A third item</li>
+                        <li class="list-group-item bg-transparent text-light p-1">A fourth item</li>
+                        <li class="list-group-item bg-transparent text-light p-1">And a fifth one</li>
                     </ul>
                 </div>
             </div>
