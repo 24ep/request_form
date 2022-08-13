@@ -71,7 +71,7 @@ var code = label.toLowerCase();
 var code = code.replace(/[^a-zA-Z ]/g, "_");
 var parent = document.getElementById('parent').value;
 var path_id = document.getElementById('under_path').value;
-$.post("../base/get/action_create_assert.php", {
+$.post("../base/action/action_create_assert.php", {
     parent: parent,
     label: label,
     code: path_id+'_'+code,
