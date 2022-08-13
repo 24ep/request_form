@@ -68,7 +68,7 @@ function get_block(block_id) {
 function create_assert(label) {
 var label = label.toLowerCase();
 var code = code.toLowerCase();
-var code = code.replace(/[^a-zA-Z ]/g, "_"));
+var code = code.replace(/[^a-zA-Z ]/g, "_");
 var parent = document.getElementById('parent').value;
 var path_id = document.getElementById('under_path').value;
 $.post("../base/get/action_create_assert.php", {
