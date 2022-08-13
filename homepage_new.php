@@ -494,30 +494,30 @@ function minimize_nav() {
     
     
         
-        var header_manu_bra = document.getElementsByClassName("header_manu_bra hide");
+        var header_manu_bra = document.getElementsByClassName("header_manu_bra");
         for(var i = 0; i < header_manu_bra.length; i++)
         {
             header_manu_bra[i].className = header_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
         
-         var name_manu_bra = document.getElementsByClassName("name_manu_bra hide");
+         var name_manu_bra = document.getElementsByClassName("name_manu_bra");
         for(var i = 0; i < name_manu_bra.length; i++)
         {
             name_manu_bra[i].className = name_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-        var dept_manu_bra = document.getElementsByClassName("dept_manu_bra hide");
+        var dept_manu_bra = document.getElementsByClassName("dept_manu_bra");
         for(var i = 0; i < dept_manu_bra.length; i++)
         {
             dept_manu_bra[i].className = dept_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
 
-        var hr_manu_bra = document.getElementsByClassName("hr_manu_bra hide");
+        var hr_manu_bra = document.getElementsByClassName("hr_manu_bra");
         for(var i = 0; i < hr_manu_bra.length; i++)
         {
             hr_manu_bra[i].className = hr_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
 
-        var hr_manu_bra_in = document.getElementsByClassName("hr_manu_bra_in hide");
+        var hr_manu_bra_in = document.getElementsByClassName("hr_manu_bra_in");
         for(var i = 0; i < hr_manu_bra_in.length; i++)
         {
             hr_manu_bra_in[i].className = hr_manu_bra_in[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
