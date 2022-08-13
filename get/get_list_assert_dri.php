@@ -17,7 +17,7 @@
 
   while($row = mysqli_fetch_array($result)) {
       
-      echo '<a type="button"  class="list-group-item d-flex justify-content-between align-items-center " onclick="goto_dri('.$row['id'].');change_breadcrumb('.$row['id'].',0)">
+      echo '<li type="button"  class="list-group-item d-flex justify-content-between align-items-center " onclick="goto_dri('.$row['id'].');change_breadcrumb('.$row['id'].',0)">
       <ion-icon name="folder-open"></ion-icon> '.$row['label'].'
       <div class="dropdown">
         <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,7 +28,7 @@
           <li><a class="dropdown-item" href="#">Remove</a></li>
         </ul>
       </div>
-      </a>';
+      </li>';
     
   }
 
@@ -41,7 +41,7 @@
 
   while($row = mysqli_fetch_array($result)) {
       //pring folder
-      echo '<a type="button" class="list-group-item d-flex justify-content-between align-items-center" onclick="change_breadcrumb('.$row['dri_id'].','.$row['id'].');get_block('.$row['id'].')">
+      echo '<li type="button" class="list-group-item d-flex justify-content-between align-items-center" onclick="change_breadcrumb('.$row['dri_id'].','.$row['id'].');get_block('.$row['id'].')">
       <ion-icon name="document-outline"></ion-icon> '.$row['assert_name'].'
       <div class="dropdown">
         <a class="btn btn-light dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,7 +52,7 @@
           <li><a class="dropdown-item" href="#">Remove</a></li>
         </ul>
       </div>
-      </a>';
+      </li>';
     
   }
 
