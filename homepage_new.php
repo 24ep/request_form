@@ -142,7 +142,7 @@ if (!$_SESSION["login_csg"]){
     <div class="col-2 list_bra shadow">
         <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
-                class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-dark rounded-pill"
+                class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-dark bg-gradient shadow rounded-pill"
                 style="width: 2rem; height:2rem;padding: 0px;">
                 <!-- <ion-icon name="menu-outline" style="margin:0px"></ion-icon> -->
             </button>
@@ -501,7 +501,7 @@ function minimize_nav() {
          var name_manu_bra = document.getElementsByClassName("name_manu_bra hide");
         for(var i = 0; i < name_manu_bra.length; i++)
         {
-            console.log('unhide '+name_manu_bra[i].className );
+            console.log('unhide '+i );
             name_manu_bra[i].className = name_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
         var dept_manu_bra = document.getElementsByClassName("dept_manu_bra hide");
@@ -555,7 +555,7 @@ function minimize_nav() {
         var name_manu_bra = document.getElementsByClassName("name_manu_bra");
         for(var i = 0; i < name_manu_bra.length; i++)
         {
-            console.log('hide '+name_manu_bra[i].className );
+            console.log('hide '+i );
             name_manu_bra[i].className += " hide";
         }
 
