@@ -31,7 +31,7 @@ function get_list_status($username,$status){
 <div class="container overflow-auto" style="padding:20px 20px 0px 20px">
     <div class="card-group">
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
-            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;z-index: -1;">
+            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Pending</div>
             <div class="row card-body text-light" style="flex: 0;">
                 <div class="ps-3">
@@ -53,7 +53,7 @@ function get_list_status($username,$status){
             </div>
         </div>
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
-            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;z-index: -1;">
+            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Checking</div>
             <div class="row card-body text-light" style="flex: 0;">
                 <div class="ps-3">
@@ -76,7 +76,7 @@ function get_list_status($username,$status){
             </div>
         </div>
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
-            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;z-index: -1;">
+            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Waiting information</div>
             <div class="row card-body text-light" style="flex: 0;">
                 <div class="ps-3">
@@ -98,7 +98,7 @@ function get_list_status($username,$status){
             </div>
         </div>
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
-            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;z-index: -1;">
+            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">On production</div>
             <div class="row card-body text-light" style="flex: 0;">
                 <div class="ps-3">
