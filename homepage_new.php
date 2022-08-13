@@ -465,7 +465,7 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
 
 <script>
 function minimize_nav() {
-    var minimize_manu = document.getElementsByClassName('minimize_manu').value;
+    var minimize_manu = document.getElementById('minimize_manu').value;
     console.log(minimize_manu);
     if (minimize_manu == 'hide') {
         document.getElementById('minimize_manu').value = 'show';
