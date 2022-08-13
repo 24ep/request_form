@@ -479,7 +479,11 @@ function minimize_nav() {
         }
         
         var apps_name = document.getElementById("apps_name").className.replace(/(?:^|\s)hide(?!\S)/g, '');
-        var main_manu_nav = document.getElementById("main-manu-nav").className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        var main_manu_nav = document.getElementById("main-manu-nav");
+        for(var i = 0; i < main_manu_nav.length; i++)
+        {
+            main_manu_nav[i] = main_manu_nav[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        }
     
 
         var header_manu_bra = document.getElementsByClassName("header_manu_bra");
@@ -520,8 +524,14 @@ function minimize_nav() {
             list_bra[i].className += " mini-nav-col";
         }
 
-        document.getElementById("main-manu-nav").className += " hide";
+        // document.getElementById("main-manu-nav").className += " hide";
         document.getElementById("apps_name").className += " hide";
+        var main_manu_nav = document.getElementById("main-manu-nav");
+        for(var i = 0; i < main_manu_nav.length; i++)
+        {
+            main_manu_nav[i] = main_manu_nav[i].className += " hide";
+        }
+    
         
         var header_manu_bra = document.getElementsByClassName("header_manu_bra");
         for(var i = 0; i < header_manu_bra.length; i++)
