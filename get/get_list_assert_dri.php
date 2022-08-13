@@ -17,15 +17,15 @@
 
   while($row = mysqli_fetch_array($result)) {
       
-      echo '<li type="button"  class="list-group-item d-flex justify-content-start align-items-center " >
+      echo '<li type="button"  class="list-group-item d-flex  align-items-center " >
       <div onclick="goto_dri('.$row['id'].');change_breadcrumb('.$row['id'].',0)"><ion-icon name="folder-open"></ion-icon> '.$row['label'].'</div>
-      <div class="dropdown" style="right: 10px;position: absolute;">
-        <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+      <div class="dropdown dropstart" style="right: 0px;position: absolute;color: gray;">
+        <a class="" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
           <ion-icon name="ellipsis-vertical-outline"></ion-icon>
         </a>
 
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <li><a class="dropdown-item" href="#">Remove</a></li>
+        <ul class="dropdown-menu"  style="font-size: 14px;" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="#" bnclick="remove_assert(&#34;folder&#34;,'.$row['id'].')"> <ion-icon name="trash-outline"></ion-icon> Remove</a></li>
         </ul>
       </div>
       </li>';
@@ -41,15 +41,15 @@
 
   while($row = mysqli_fetch_array($result)) {
       //pring folder
-      echo '<li type="button" class="list-group-item d-flex justify-content-start align-items-center" >
+      echo '<li type="button" class="list-group-item d-flex align-items-center" >
       <div onclick="change_breadcrumb('.$row['dri_id'].','.$row['id'].');get_block('.$row['id'].')"><ion-icon name="document-outline"></ion-icon> '.$row['assert_name'].'</div>
-      <div class="dropdown" style="right: 10px;position: absolute;">
-        <a class="btn btn-light dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+      <div class="dropdown dropstart" style="right: 0px;position: absolute;color: gray;">
+        <a class="" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
           <ion-icon name="ellipsis-vertical-outline"></ion-icon>
         </a>
 
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <li><a class="dropdown-item" href="#">Remove</a></li>
+        <ul class="dropdown-menu" style="font-size: 14px;" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="#"> <ion-icon name="trash-outline"></ion-icon> Remove</a></li>
         </ul>
       </div>
       </li>';

@@ -25,7 +25,8 @@
                 <ul class="dropdown-menu">
                     <li><a type="button" class="dropdown-item" onclick="ask_label('Folder')">Folder</a></li>
                     <li><a type="button" class="dropdown-item" onclick="ask_label('type')">Block</a></li>
-                    <li><a type="button" class="dropdown-item" onclick="ask_label('upload_a_file')">Upload a files</a></li>
+                    <li><a type="button" class="dropdown-item" onclick="ask_label('upload_a_file')">Upload a files</a>
+                    </li>
                 </ul>
             </div>
 
@@ -67,43 +68,62 @@ function get_block(block_id) {
 }
 </script>
 <script>
-function create_assert(label,create_type) {
-var label = label.toLowerCase();
-var code = label.toLowerCase();
-var code = code.replace(/[^a-zA-Z ]/g, "_");
-var parent = document.getElementById('parent').value;
-var path_id = document.getElementById('under_path').value;
-$.post("../base/action/action_create_assert.php", {
-    parent: parent,
-    label: label,
-    code: path_id+'_'+code,
-    path_id: path_id,
-    create_type: create_type
-}, function(data) {
-    // $('#list_asserts').html(data);
-   
-    goto_dri(parent);
-    Notiflix.Notify.success('asserts have been create :)');
-   
-    
-});
+function create_assert(label, create_type) {
+    var label = label.toLowerCase();
+    var code = label.toLowerCase();
+    var code = code.replace(/[^a-zA-Z ]/g, "_");
+    var parent = document.getElementById('parent').value;
+    var path_id = document.getElementById('under_path').value;
+    $.post("../base/action/action_create_assert.php", {
+        parent: parent,
+        label: label,
+        code: path_id + '_' + code,
+        path_id: path_id,
+        create_type: create_type
+    }, function(data) {
+        // $('#list_asserts').html(data);
+
+        goto_dri(parent);
+        Notiflix.Notify.success('asserts have been create :)');
+
+
+    });
 }
+
 function ask_label(create_type) {
     Notiflix.Confirm.prompt(
-      'Create assert',
-       create_type + ' name',
-       create_type+'_name',
-      'Submit',
-      'Cancel',
-        function okCb(clientAnswer,create_type) {
-          create_assert(clientAnswer,create_type)
+        'Create assert',
+        create_type + ' name',
+        create_type + '_name',
+        'Submit',
+        'Cancel',
+        function okCb(clientAnswer, create_type) {
+            create_assert(clientAnswer, create_type)
         },
         function cancelCb(clientAnswer) {
-          //nothing
+            //nothing
         },
     );
 }
 
-
-
+function remove_assert(assert_type,remove_id) {
+    Notiflix.Confirm.show(
+        'Confirm',
+        'Do you want to remove?',
+        'Remove',
+        'Cancel',
+        function okCb() {
+          $.post("../base/action/action_remove_assert.php", {
+              assert_type: assert_type,
+              remove_id: remove_id
+          }, function(data) {
+              goto_dri(parent);
+              //Notiflix.Notify.success('asserts have been remove :)');
+          });
+        },
+        function cancelCb() {
+            //alert('If you say so...');
+        },
+    );
+}
 </script>
