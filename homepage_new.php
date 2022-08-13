@@ -501,7 +501,7 @@ function minimize_nav() {
          var name_manu_bra = document.getElementsByClassName("name_manu_bra hide");
         for(var i = 0; i < name_manu_bra.length; i++)
         {
-            console.log('unhide '+name_manu_bra[i]);
+            console.log('unhide '+name_manu_bra[i].className );
             name_manu_bra[i].className = name_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
         var dept_manu_bra = document.getElementsByClassName("dept_manu_bra hide");
@@ -555,7 +555,7 @@ function minimize_nav() {
         var name_manu_bra = document.getElementsByClassName("name_manu_bra");
         for(var i = 0; i < name_manu_bra.length; i++)
         {
-            console.log('hide '+name_manu_bra[i]);
+            console.log('hide '+name_manu_bra[i].className );
             name_manu_bra[i].className += " hide";
         }
 
