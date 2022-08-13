@@ -468,7 +468,7 @@ function minimize_nav() {
     var minimize_manu = document.getElementsByClassName('minimize_manu').value;
     console.log(minimize_manu);
     if (minimize_manu == 'hide') {
-        document.getElementsByClassName('minimize_manu').value = 'show';
+        document.getElementById('minimize_manu').value = 'show';
         document.getElementsByClassName('list_bra').className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
         document.getElementsByClassName('main-manu-nav').className.replace(/(?:^|\s)hide(?!\S)/g, '');
         document.getElementsByClassName('header_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
@@ -477,7 +477,7 @@ function minimize_nav() {
         document.getElementsByClassName('hr_manu_bra_in').className.replace(/(?:^|\s)hide(?!\S)/g, '');
     }
     else {
-        document.getElementsByClassName('minimize_manu').value = 'hide';
+        document.getElementById('minimize_manu').value = 'hide';
         document.getElementsByClassName('list_bra').className += ' mini-nav-col';
         document.getElementsByClassName('main-manu-nav').className += "  hide";
         document.getElementsByClassName('header_manu_bra').className += "  hide";
