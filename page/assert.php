@@ -79,7 +79,9 @@ $.post("../base/action/action_create_assert.php", {
     create_type: create_type
 }, function(data) {
     // $('#list_asserts').html(data);
+    goto_dri(parent)
     Notify.success('asserts have been create :)');
+    
 });
 }
 function ask_label(create_type) {
