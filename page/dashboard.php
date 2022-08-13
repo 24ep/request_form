@@ -42,8 +42,13 @@ function get_list_status($username,$status){
                 </div>
                 <div class="col">
                     <ul class="list-group list-group-flush overflow-auto" style="max-height: 100px;">
-                    <?php $list = get_list_status($_SESSION['username'],'pending');
-                          echo $list;
+                    <?php 
+                     $sql="SELECT id,brand,sku from all_in_one_project.add_new_job where request_username = '".$username."' and status like '%".$status."%' and trigger_status is null";
+                     $result = mysqli_query($con, $sql);
+                     $list="";
+                     while($row = mysqli_fetch_array($result)) {
+                        echo '<li class="list-group-item bg-transparent text-light p-1">[NS-'.$row["id"].']'.$row["brand"].' '.$row["sku"].' SKU</li>';
+                     }
                     ?>
                   
                     </ul>
