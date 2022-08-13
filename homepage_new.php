@@ -149,7 +149,7 @@ if (!$_SESSION["login_csg"]){
             <input type="hidden" id="minimize_manu" name="minimize_manu" value="show">
             <a class="navbar-brand" href="#">
                 <ion-icon name="layers" style="font-size: 20px;margin: 0px;"></ion-icon>
-                ONLINE CONTENT
+                <span id="apps_name">ONLINE CONTENT</span>
             </a>
             <hr class="hr_manu_bra">
             <span class="name_manu_bra"><?php echo $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span>
@@ -475,7 +475,8 @@ function minimize_nav() {
         {
             list_bra[i] = list_bra[i].className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
         }
-
+        
+        var apps_name = document.getElementById("apps_name").className.replace(/(?:^|\s)hide(?!\S)/g, '');
         var main_manu_nav = document.getElementById("main-manu-nav").className.replace(/(?:^|\s)hide(?!\S)/g, '');
     
 
@@ -517,7 +518,7 @@ function minimize_nav() {
         }
 
         var main_manu_nav = document.getElementById("main-manu-nav").className += " hide";
-
+        var apps_name = document.getElementById("apps_name").className += " hide";
         var header_manu_bra = document.getElementsByClassName("header_manu_bra");
         for(var i = 0; i < header_manu_bra.length; i++)
         {
