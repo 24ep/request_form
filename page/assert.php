@@ -115,7 +115,8 @@ function remove_assert(assert_type,remove_id) {
         'Cancel',
         function okCb() {
           action_remove_assert(assert_type,remove_id);
-         
+          goto_dri(parent);
+
         },
         function cancelCb() {
             //alert('If you say so...');
@@ -128,8 +129,7 @@ function action_remove_assert(assert_type,remove_id){
               assert_type: assert_type,
               remove_id: remove_id
           }, function(data) {
-            goto_dri(parent);
-            Notiflix.Notify.success('asserts have been remove :)');
+            //Notiflix.Notify.success('asserts have been remove :)');
       
           });
 }

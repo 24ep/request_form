@@ -10,15 +10,15 @@ session_start();
 	$sql = "DELETE FROM assets_directories WHERE (id = ".$remove_id." or code like '%/".$remove_id."_%' or code like '%/".$remove_id."/%' )" ;
 	$query = mysqli_query($con,$sql);
   if($query){
-    echo '<script>Notiflix.Notify.success("assert have been delete");</script>';
+   // echo '<script>Notiflix.Notify.success("assert have been delete");</script>';
   }else{
-    echo "<script>
-    Notiflix.Report.failure(
-        'Failure',
-        'Error: " . $query  . "<br/><br/>" . $con->error.",
-        'Okay',
-        )</script>;
-    ";
+    // echo "<script>
+    // Notiflix.Report.failure(
+    //     'Failure',
+    //     'Error: " . $query  . "<br/><br/>" . $con->error.",
+    //     'Okay',
+    //     )</script>;
+    // ";
   }
   }
 
