@@ -157,7 +157,7 @@ if (!$_SESSION["login_csg"]){
             <hr class="hr_manu_bra">
             <small class="header_manu_bra">Manu</small>
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <a class="nav-link" type="button" data-bs-toggle="dropdown" aria-expanded="false"  onclick="get_list_update_job();">
+                <a class="nav-link" type="button" data-toggle="dropdown" aria-expanded="false"  onclick="get_list_update_job();">
                     <ion-icon name="notifications"></ion-icon><span class="main-manu-nav">Activities</span>
                     <div id="get_count_nt_unread">
                         <?php include('get/get_count_nt_unread.php'); ?>
@@ -484,7 +484,7 @@ function minimize_nav() {
         {
             main_manu_nav[i].className = main_manu_nav[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-        var main_bra = document.getElementsByClassName("main_bra minimize");
+        var main_bra = document.getElementsByClassName("main_bra nav-link minimize");
         for(var i = 0; i < main_bra.length; i++)
         {
             main_bra[i].className = main_bra[i].className.replace(/(?:^|\s)minimize(?!\S)/g, '');
@@ -492,30 +492,30 @@ function minimize_nav() {
     
     
         
-        var header_manu_bra = document.getElementsByClassName("header_manu_bra  hide");
+        var header_manu_bra = document.getElementsByClassName("header_manu_bra hide");
         for(var i = 0; i < header_manu_bra.length; i++)
         {
             header_manu_bra[i].className = header_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
         
-         var name_manu_bra = document.getElementsByClassName("name_manu_bra  hide");
+         var name_manu_bra = document.getElementsByClassName("name_manu_bra hide");
         for(var i = 0; i < name_manu_bra.length; i++)
         {
             name_manu_bra[i].className = name_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-        var dept_manu_bra = document.getElementsByClassName("dept_manu_bra  hide");
+        var dept_manu_bra = document.getElementsByClassName("dept_manu_bra hide");
         for(var i = 0; i < dept_manu_bra.length; i++)
         {
             dept_manu_bra[i].className = dept_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
 
-        var hr_manu_bra = document.getElementsByClassName("hr_manu_bra  hide");
+        var hr_manu_bra = document.getElementsByClassName("hr_manu_bra hide");
         for(var i = 0; i < hr_manu_bra.length; i++)
         {
             hr_manu_bra[i].className = hr_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
 
-        var hr_manu_bra_in = document.getElementsByClassName("hr_manu_bra_in  hide");
+        var hr_manu_bra_in = document.getElementsByClassName("hr_manu_bra_in hide");
         for(var i = 0; i < hr_manu_bra_in.length; i++)
         {
             hr_manu_bra_in[i].className = hr_manu_bra_in[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
