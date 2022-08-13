@@ -31,7 +31,7 @@ function get_list_status($username,$status){
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Pending</div>
-            <div class="row text-light">
+            <div class="row card-body text-light" style="flex: 0;">
                 <div class="ps-3">
                     <div class="total_count_dashboard">
                         <?php $count_pending = count_status($_SESSION['username'],'pending');
@@ -45,6 +45,7 @@ function get_list_status($username,$status){
                         <?php $list = get_list_status($_SESSION['username'],'pending');
                           echo $list;
                     ?>
+
                     </ul>
                 </div>
             </div>
@@ -52,7 +53,7 @@ function get_list_status($username,$status){
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Checking</div>
-            <div class="row text-light">
+            <div class="row card-body text-light" style="flex: 0;">
                 <div class="ps-3">
                     <div class="total_count_dashboard">
                         <?php $count_pending = count_status($_SESSION['username'],'checking');
@@ -60,12 +61,14 @@ function get_list_status($username,$status){
                     ?>
                         <small class="unit_count_dashboard" style="font-size: small;">Ticket</small>
                     </div>
+
                 </div>
                 <div class="ps-3">
                     <ul class="list-group list-group-flush overflow-auto" style="max-height: 100px;">
                         <?php $list = get_list_status($_SESSION['username'],'checking');
                           echo $list;
                     ?>
+
                     </ul>
                 </div>
             </div>
@@ -73,7 +76,7 @@ function get_list_status($username,$status){
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Waiting info</div>
-            <div class="row text-light">
+            <div class="row card-body text-light" style="flex: 0;">
                 <div class="ps-3">
                     <div class="total_count_dashboard">
                         <?php $count_pending = count_status($_SESSION['username'],'wait');
@@ -87,6 +90,7 @@ function get_list_status($username,$status){
                         <?php $list = get_list_status($_SESSION['username'],'wait');
                           echo $list;
                     ?>
+
                     </ul>
                 </div>
             </div>
@@ -94,7 +98,7 @@ function get_list_status($username,$status){
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">On production</div>
-            <div class="row  text-light">
+            <div class="row card-body text-light" style="flex: 0;">
                 <div class="ps-3">
                     <div class="total_count_dashboard">
                         <?php $count_pending = count_status($_SESSION['username'],'accepted');
@@ -102,12 +106,14 @@ function get_list_status($username,$status){
                     ?>
                         <small class="unit_count_dashboard" style="font-size: small;">Ticket</small>
                     </div>
+
                 </div>
                 <div class="ps-3">
                     <ul class="list-group list-group-flush overflow-auto" style="max-height: 100px;">
                         <?php $list = get_list_status($_SESSION['username'],'accepted');
                           echo $list;
                     ?>
+
                     </ul>
                 </div>
             </div>
