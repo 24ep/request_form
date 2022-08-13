@@ -18,9 +18,9 @@
 
   while($row = mysqli_fetch_array($result)) {
     $path_id = $row['path_id'];
-    $parent = $row['parent'];
+    $id = $row['id'];
     echo '<input type="hidden" id="under_path" name="under_path" value="'.$path_id.'">';
-    echo '<input type="hidden" id="parent" name="parent" value="'.$parent.'">';
+    echo '<input type="hidden" id="parent" name="parent" value="'.$id.'">';
   }
   $path_id_arr = explode("/",$path_id);
   foreach($path_id_arr as $dri_id_in_path ){
