@@ -20,7 +20,7 @@ function get_list_status($username,$status){
     $result = mysqli_query($con, $sql);
     $list="";
     while($row = mysqli_fetch_array($result)) {
-        $list .= '<li class="list-group-item bg-transparent text-light p-1" style="font-size: smaller;">NS-'.$row["id"].' '.$row["brand"].' '.$row["sku"].' SKU</li>';
+        $list .= '<li class="list-group-item bg-transparent text-light p-1" style="font-size: smaller;font-size: smaller;width: 160px; overflow: hidden;">'.$row["id"].' '.$row["brand"].' '.$row["sku"].' SKU</li>';
     }
     // mysqli_close($con);
     return $list;
@@ -32,7 +32,7 @@ function get_list_status($username,$status){
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Pending</div>
             <div class="row card-body text-light">
-                <div class="col-4" style="text-align: -webkit-center;">
+                <div class="col-3" style="text-align: -webkit-center;">
                 <div class="total_count_dashboard">
                     <?php $count_pending = count_status($_SESSION['username'],'pending');
                           echo $count_pending;
