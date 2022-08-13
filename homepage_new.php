@@ -482,6 +482,7 @@ function minimize_nav() {
         var main_manu_nav = document.getElementsByClassName("main-manu-nav hide");
         for(var i = 0; i < main_manu_nav.length; i++)
         {
+            console.log('hide '+i );
             main_manu_nav[i].className = main_manu_nav[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
         var main_bra = document.getElementsByClassName("main_bra nav-link minimize");
@@ -501,7 +502,6 @@ function minimize_nav() {
          var name_manu_bra = document.getElementsByClassName("name_manu_bra hide");
         for(var i = 0; i < name_manu_bra.length; i++)
         {
-            console.log('unhide '+i );
             name_manu_bra[i].className = name_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
         var dept_manu_bra = document.getElementsByClassName("dept_manu_bra hide");
@@ -536,6 +536,7 @@ function minimize_nav() {
         var main_manu_nav = document.getElementsByClassName("main-manu-nav");
         for(var i = 0; i < main_manu_nav.length; i++)
         {
+             console.log('hide '+i );
              main_manu_nav[i].className += " hide";
         }
     
@@ -555,7 +556,7 @@ function minimize_nav() {
         var name_manu_bra = document.getElementsByClassName("name_manu_bra");
         for(var i = 0; i < name_manu_bra.length; i++)
         {
-            console.log('hide '+i );
+            
             name_manu_bra[i].className += " hide";
         }
 
