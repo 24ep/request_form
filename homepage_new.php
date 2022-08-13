@@ -484,11 +484,16 @@ function minimize_nav() {
         {
             header_manu_bra[i] = header_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-
+        
+         var name_manu_bra = document.getElementsByClassName("name_manu_bra");
+        for(var i = 0; i < name_manu_bra.length; i++)
+        {
+            name_manu_bra = dept_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        }
         var dept_manu_bra = document.getElementsByClassName("dept_manu_bra");
         for(var i = 0; i < dept_manu_bra.length; i++)
         {
-            dept_manu_b = dept_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
+            dept_manu_bra = dept_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
 
         var hr_manu_bra = document.getElementsByClassName("hr_manu_bra");
@@ -517,6 +522,13 @@ function minimize_nav() {
         for(var i = 0; i < header_manu_bra.length; i++)
         {
             header_manu_bra[i].className += " hide";
+        }
+        
+        
+        var name_manu_bra = document.getElementsByClassName("name_manu_bra");
+        for(var i = 0; i < name_manu_bra.length; i++)
+        {
+            name_manu_bra[i].className += " hide";
         }
 
         var dept_manu_bra = document.getElementsByClassName("dept_manu_bra");
