@@ -152,7 +152,7 @@ if (!$_SESSION["login_csg"]){
                 <small class="header_manu_bra">Manu</small>
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <a class="nav-link" type="button" onclick="get_list_update_job();">
-                        <ion-icon name="notifications"></ion-icon>Notifications
+                        <ion-icon name="notifications"></ion-icon><Notifications</span>
                         <div id="get_count_nt_unread">
                             <?php include('get/get_count_nt_unread.php'); ?>
                         </div>
@@ -160,51 +160,51 @@ if (!$_SESSION["login_csg"]){
                     <li class="nav-item" role="presentation">
                         <a class="nav-link active" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                             onclick="get_page('dashboard');">
-                            <ion-icon name="home"></ion-icon>Dashboard
+                            <ion-icon name="home"></ion-icon><span id="main-manu-nav">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                             onclick="get_page('create_new');">
-                            <ion-icon name="ticket"></ion-icon>Create New
+                            <ion-icon name="ticket"></ion-icon><span id="main-manu-nav">Create New</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                             onclick="get_page('update_content');">
-                            <ion-icon name="ticket"></ion-icon>Other Requests
+                            <ion-icon name="ticket"></ion-icon><span id="main-manu-nav">Other Requests</span>
                         </a>
                     </li>
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Internals</small>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false" onclick="get_page('report');">
-                            <ion-icon name="bar-chart"></ion-icon>Reports
+                            <ion-icon name="bar-chart"></ion-icon><span id="main-manu-nav">Reports</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('assert');">
-                            <ion-icon name="cube"></ion-icon>Assests
+                            <ion-icon name="cube"></ion-icon><span id="main-manu-nav">Assests</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('notion');">
-                            <ion-icon name="book"></ion-icon>Notion
+                            <ion-icon name="book"></ion-icon><span id="main-manu-nav">Notion</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                             onclick="get_page('account');">
-                            <ion-icon name="people"></ion-icon>Administration
+                            <ion-icon name="people"></ion-icon><span id="main-manu-nav">Administration</span>
                         </a>
                     </li>
 
                     <li class="nav-item btn-group dropend" role="presentation">
                         <a class="nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button"
                             role="tab" aria-selected="false" data-bs-toggle="dropdown">
-                            <ion-icon name="layers"></ion-icon>Productions
+                            <ion-icon name="layers"></ion-icon><span id="main-manu-nav">Productions</span>
                         </a>
                         <ul class="dropdown-menu menu-block shadow p3">
                             <small class="header_manu_bra">Datapump</small>
@@ -265,7 +265,7 @@ if (!$_SESSION["login_csg"]){
                     <li class="nav-item btn-group dropend" role="presentation">
                         <a class="nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button"
                             role="tab" aria-selected="false" data-bs-toggle="dropdown">
-                            <ion-icon name="globe"></ion-icon>Quicklink
+                            <ion-icon name="globe"></ion-icon><span id="main-manu-nav">Quicklink</span>
                         </a>
                         <ul class="dropdown-menu menu-block shadow p3">
                             <small class="header_manu_bra">Central</small>
@@ -295,13 +295,13 @@ if (!$_SESSION["login_csg"]){
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
-                            <ion-icon name="settings"></ion-icon>Settings
+                            <ion-icon name="settings"></ion-icon><span id="main-manu-nav">Settings</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                             onclick="logout()">
-                            <ion-icon name="log-out"></ion-icon>Logout
+                            <ion-icon name="log-out"></ion-icon><span id="main-manu-nav">Logout</span>
                         </a>
                     </li>
                 </ul>
