@@ -74,7 +74,7 @@ var path_id = document.getElementById('under_path').value;
 $.post("../base/get/action_create_assert.php", {
     parent: parent,
     label: label,
-    code: code,
+    code: path_id+'_'+code,
     path_id: path_id,
     create_type: create_type
 }, function(data) {
