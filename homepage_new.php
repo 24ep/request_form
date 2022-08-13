@@ -472,7 +472,7 @@ function minimize_nav() {
         document.getElementById('minimize_manu').value = 'show';
         document.getElementById("bt_nav_coll_ex").innerHTML = '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
         
-        var list_bra = document.getElementsByClassName("list_bra");
+        var list_bra = document.getElementsByClassName("mini-nav-col");
         for(var i = 0; i < list_bra.length; i++)
         {
             list_bra[i] = list_bra[i].className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
