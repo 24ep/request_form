@@ -14,6 +14,17 @@ function count_status($username,$status){
     }
     return $count;
 }
+function get_lst_status($username,$status){
+    global $con;
+    $sql="SELECT id,brand,sku from all_in_one_project.add_new_job where request_username = '".$username."' and status like '%".$status."%' and trigger_status is null";
+    $result = mysqli_query($con, $sql);
+    $list="";
+    while($row = mysqli_fetch_array($result)) {
+        $list .= '<li class="list-group-item bg-transparent text-light p-1">[NS-'.$row["id"].']'.$row["brand"].' '.$row["sku"].' SKU</li>';
+    }
+    mysqli_close($con);
+    return $list;
+}
 ?>
 <div class="container overflow-auto" style="padding:20px 20px 0px 20px">
     <div class="card-group">
@@ -31,11 +42,10 @@ function count_status($username,$status){
                 </div>
                 <div class="col">
                     <ul class="list-group list-group-flush overflow-auto" style="max-height: 100px;">
-                        <li class="list-group-item bg-transparent text-light p-1">An item</li>
-                        <li class="list-group-item bg-transparent text-light p-1">A second item</li>
-                        <li class="list-group-item bg-transparent text-light p-1">A third item</li>
-                        <li class="list-group-item bg-transparent text-light p-1">A fourth item</li>
-                        <li class="list-group-item bg-transparent text-light p-1">And a fifth one</li>
+                    <?php $list = get_lst_status($_SESSION['username'],'pending');
+                          echo $list;
+                    ?>
+                  
                     </ul>
                 </div>
             </div>
