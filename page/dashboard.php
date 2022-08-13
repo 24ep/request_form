@@ -4,7 +4,7 @@
 include("../connect.php");
 function count_status($username,$status){
     global $con;
-    $sql="SELECT count(*) as total from all_in_one_project.add_new_job where request_username = '".$username."' and status like '%".$status."%' and trigger_status is null and config_type<>'parent'";
+    $sql="SELECT count(*) as total from all_in_one_project.add_new_job where  (participant like '%".$username."%' or request_username = '".$username."')  and status like '%".$status."%' and trigger_status is null and config_type<>'parent'";
     $result=mysqli_query($con,$sql);
     $data=mysqli_fetch_assoc($result);
     $count = $data['total'];
@@ -16,7 +16,7 @@ function count_status($username,$status){
 }
 function get_list_status($username,$status){
     global $con;
-    $sql="SELECT id,brand,sku from all_in_one_project.add_new_job where request_username = '".$username."' and status like '%".$status."%' and trigger_status is null and config_type<>'parent'";
+    $sql="SELECT id,brand,sku from all_in_one_project.add_new_job where (participant like '%".$username."%' or request_username = '".$username."') and status like '%".$status."%' and trigger_status is null and config_type<>'parent'";
     $result = mysqli_query($con, $sql);
     $list="";
     while($row = mysqli_fetch_array($result)) {
