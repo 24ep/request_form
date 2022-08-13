@@ -93,7 +93,7 @@ if (!$_SESSION["login_csg"]){
 </head>
 
 <body>
-<!-- <nav class="navbar navbar-light bg-light">
+    <!-- <nav class="navbar navbar-light bg-light">
         <div class="" style="background:#ff000069;color:white;position: fixed;z-index: 1;">
             <a class="navbar-brand" href="#">You are in pre-launch environment</a>
         </div>
@@ -117,201 +117,207 @@ if (!$_SESSION["login_csg"]){
             <?php include("get/get_log.php"); ?>
         </div>
     </div>
-   
-                                <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1"
-                                    id="content_request_canvas" aria-labelledby="offcanvasExampleLabel">
-                                    <div class="offcanvas-header" style="    background: #313131;color: white;">
-                                        <h5 class="offcanvas-title" id="offcanvasExampleLabel"
-                                            style="padding-left:50px;font-weight: bold;">
-                                            <ion-icon style="margin-right:10px" name="add-circle-outline">
-                                            </ion-icon>Request Creation
-                                        </h5>
-                                        <button type="button" class="btn-close btn-close-white text-reset"
-                                            data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                    </div>
-                                    <div class="offcanvas-body" style="background-color: #fcfbf9;">
-                                        <div class="container-md" style="padding:0px 50px 50px 50px;">
-                                            <form class="row g-3">
-                                                <div id="add_new_cr_result">
-                                                </div>
-                                                <?php include_once('form/form_create_content_request_new.php')?>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-        
-        <div class="col-2 list_bra shadow">
-            <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();" class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-dark rounded-pill" style="width: 2rem; height:2rem;padding: 0px;"><ion-icon name="menu-outline" style="margin:0px"></ion-icon></button>
-            <input type="hidden" id="minimize_manu" name="minimize_manu" value="show"> 
-            <a class="navbar-brand" href="#"><ion-icon name="layers" style="font-size: 20px;margin: 0px;"></ion-icon>
- ONLINE CONTENT</a>
-                <hr class="hr_manu_bra">
-                <span class="name_manu_bra"><?php echo $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span>
-                <small class="dept_manu_bra"><?php echo $_SESSION['department']; ?></small>
-                <hr class="hr_manu_bra">
-                <small class="header_manu_bra">Manu</small>
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <a class="nav-link" type="button" onclick="get_list_update_job();">
-                        <ion-icon name="notifications"></ion-icon><span id="main-manu-nav">Notifications</span>
-                        <div id="get_count_nt_unread">
-                            <?php include('get/get_count_nt_unread.php'); ?>
-                        </div>
+
+    <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1" id="content_request_canvas"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header" style="    background: #313131;color: white;">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel" style="padding-left:50px;font-weight: bold;">
+                <ion-icon style="margin-right:10px" name="add-circle-outline">
+                </ion-icon>Request Creation
+            </h5>
+            <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" style="background-color: #fcfbf9;">
+            <div class="container-md" style="padding:0px 50px 50px 50px;">
+                <form class="row g-3">
+                    <div id="add_new_cr_result">
+                    </div>
+                    <?php include_once('form/form_create_content_request_new.php')?>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-2 list_bra shadow">
+        <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
+                class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-dark rounded-pill"
+                style="width: 2rem; height:2rem;padding: 0px;">
+                <ion-icon name="menu-outline" style="margin:0px"></ion-icon>
+            </button>
+            <input type="hidden" id="minimize_manu" name="minimize_manu" value="show">
+            <a class="navbar-brand" href="#">
+                <ion-icon name="layers" style="font-size: 20px;margin: 0px;"></ion-icon>
+                ONLINE CONTENT
+            </a>
+            <hr class="hr_manu_bra">
+            <span class="name_manu_bra"><?php echo $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span>
+            <small class="dept_manu_bra"><?php echo $_SESSION['department']; ?></small>
+            <hr class="hr_manu_bra">
+            <small class="header_manu_bra">Manu</small>
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <a class="nav-link" type="button" onclick="get_list_update_job();">
+                    <ion-icon name="notifications"></ion-icon><span id="main-manu-nav">Notifications</span>
+                    <div id="get_count_nt_unread">
+                        <?php include('get/get_count_nt_unread.php'); ?>
+                    </div>
+                </a>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                        onclick="get_page('dashboard');">
+                        <ion-icon name="home"></ion-icon><span id="main-manu-nav">Dashboard</span>
                     </a>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link active" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                            onclick="get_page('dashboard');">
-                            <ion-icon name="home"></ion-icon><span id="main-manu-nav">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                            onclick="get_page('create_new');">
-                            <ion-icon name="ticket"></ion-icon><span id="main-manu-nav">Create New</span>
-                        </a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                            onclick="get_page('update_content');">
-                            <ion-icon name="ticket"></ion-icon><span id="main-manu-nav">Other Requests</span>
-                        </a>
-                    </li>
-                    <hr class="hr_manu_bra_in">
-                    <small class="header_manu_bra">Internals</small>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false" onclick="get_page('report');">
-                            <ion-icon name="bar-chart"></ion-icon><span id="main-manu-nav">Reports</span>
-                        </a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                        onclick="get_page('create_new');">
+                        <ion-icon name="ticket"></ion-icon><span id="main-manu-nav">Create New</span>
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                        onclick="get_page('update_content');">
+                        <ion-icon name="ticket"></ion-icon><span id="main-manu-nav">Other Requests</span>
+                    </a>
+                </li>
+                <hr class="hr_manu_bra_in">
+                <small class="header_manu_bra">Internals</small>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                        onclick="get_page('report');">
+                        <ion-icon name="bar-chart"></ion-icon><span id="main-manu-nav">Reports</span>
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('assert');">
-                            <ion-icon name="cube"></ion-icon><span id="main-manu-nav">Assests</span>
-                        </a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                        <ion-icon name="cube"></ion-icon><span id="main-manu-nav">Assests</span>
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('notion');">
-                            <ion-icon name="book"></ion-icon><span id="main-manu-nav">Notion</span>
-                        </a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                            onclick="get_page('account');">
-                            <ion-icon name="people"></ion-icon><span id="main-manu-nav">Administration</span>
-                        </a>
-                    </li>
+                        <ion-icon name="book"></ion-icon><span id="main-manu-nav">Notion</span>
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                        onclick="get_page('account');">
+                        <ion-icon name="people"></ion-icon><span id="main-manu-nav">Administration</span>
+                    </a>
+                </li>
 
-                    <li class="nav-item btn-group dropend" role="presentation">
-                        <a class="nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button"
-                            role="tab" aria-selected="false" data-bs-toggle="dropdown">
-                            <ion-icon name="layers"></ion-icon><span id="main-manu-nav">Productions</span>
-                        </a>
-                        <ul class="dropdown-menu menu-block shadow p3">
-                            <small class="header_manu_bra">Datapump</small>
-                            <li><a onclick="get_page('datapump_convert');" class="dropdown-item dp-link" type="button">
-                                    <ion-icon name="shapes"></ion-icon>Datapump Convert
-                                </a></li>
-                            <li><a onclick="get_page('datapump_admin');" class="dropdown-item dp-link" type="button">
-                                    <ion-icon name="shapes"></ion-icon>Datapump Admin
-                                </a></li>
-                            <hr class="hr_manu_bra_in">
-                            <small class="header_manu_bra">Backend (PROD)</small>
-                            <li><a href="https://cto-pim.cloud.akeneo.com/" target="_blank"
-                                    class="dropdown-item dp-link" type="button">
-                                    <ion-icon name="shapes"></ion-icon>PIM
-                                </a></li>
-                            <li><a href="https://backend.central.co.th/gutentag/admin/index/index/key/36f79751536eaff794291a09bb5d1831d1f4453a2819d0d731cde2da72b95ffb/"
-                                    target="_blank" class="dropdown-item dp-link" type="button">
-                                    <ion-icon name="shapes"></ion-icon>MDC
-                                </a></li>
-                            <hr class="hr_manu_bra_in">
-                            <small class="header_manu_bra">Backend (Stagging)</small>
-                            <li><a href="https://uat.central.co.th/th" target="_blank" class="dropdown-item dp-link"
-                                    type="button">
-                                    <ion-icon name="shapes"></ion-icon>FE
-                                </a></li>
-                            <li><a href="https://eor-admin-uat.central.tech/upload" target="_blank"
-                                    class="dropdown-item dp-link" type="button">
-                                    <ion-icon name="shapes"></ion-icon>DATAPUMP Admin
-                                </a></li>
-                            <li><a href="https://cto-pim-uat.cloud.akeneo.com/user/login" target="_blank"
-                                    class="dropdown-item dp-link" type="button">
-                                    <ion-icon name="shapes"></ion-icon>PIM
-                                </a></li>
-                            <li><a href="https://staging-mdc.central.co.th/admin/admin/index/index/key/84db97aa4de2e2c911fef6db4bab589d9eab2b47811d1d714d7193c2029e299f/"
-                                    target="_blank" class="dropdown-item dp-link" type="button">
-                                    <ion-icon name="shapes"></ion-icon>MDC
-                                </a></li>
-                            <hr class="hr_manu_bra_in">
-                            <small class="header_manu_bra">Ability</small>
-                            <li><a onclick="get_page('writer-auto-assign-console');" class="dropdown-item dp-link"
-                                    type="button">
-                                    <ion-icon name="shapes"></ion-icon>writer auto-assign console
-                                </a></li>
-                            <li><a onclick="get_page('convert_mapping');" class="dropdown-item dp-link" type="button">
-                                    <ion-icon name="shapes"></ion-icon>Convert Mapping
-                                </a></li>
-                            <li><a onclick="get_page('wordtohtml');" class="dropdown-item dp-link" type="button">
-                                    <ion-icon name="shapes"></ion-icon>Word to HTML
-                                </a></li>
-                            <li><a href="https://centrality.workplace.com/" target="_blank"
-                                    class="dropdown-item dp-link" type="button">
-                                    <ion-icon name="shapes"></ion-icon>Workchat
-                                </a></li>
-                        </ul>
-                    </li>
-                    <hr class="hr_manu_bra_in">
-                    <small class="header_manu_bra">Others</small>
-                    <li class="nav-item btn-group dropend" role="presentation">
-                        <a class="nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button"
-                            role="tab" aria-selected="false" data-bs-toggle="dropdown">
-                            <ion-icon name="globe"></ion-icon><span id="main-manu-nav">Quicklink</span>
-                        </a>
-                        <ul class="dropdown-menu menu-block shadow p3">
-                            <small class="header_manu_bra">Central</small>
+                <li class="nav-item btn-group dropend" role="presentation">
+                    <a class="nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button" role="tab"
+                        aria-selected="false" data-bs-toggle="dropdown">
+                        <ion-icon name="layers"></ion-icon><span id="main-manu-nav">Productions</span>
+                    </a>
+                    <ul class="dropdown-menu menu-block shadow p3">
+                        <small class="header_manu_bra">Datapump</small>
+                        <li><a onclick="get_page('datapump_convert');" class="dropdown-item dp-link" type="button">
+                                <ion-icon name="shapes"></ion-icon>Datapump Convert
+                            </a></li>
+                        <li><a onclick="get_page('datapump_admin');" class="dropdown-item dp-link" type="button">
+                                <ion-icon name="shapes"></ion-icon>Datapump Admin
+                            </a></li>
+                        <hr class="hr_manu_bra_in">
+                        <small class="header_manu_bra">Backend (PROD)</small>
+                        <li><a href="https://cto-pim.cloud.akeneo.com/" target="_blank" class="dropdown-item dp-link"
+                                type="button">
+                                <ion-icon name="shapes"></ion-icon>PIM
+                            </a></li>
+                        <li><a href="https://backend.central.co.th/gutentag/admin/index/index/key/36f79751536eaff794291a09bb5d1831d1f4453a2819d0d731cde2da72b95ffb/"
+                                target="_blank" class="dropdown-item dp-link" type="button">
+                                <ion-icon name="shapes"></ion-icon>MDC
+                            </a></li>
+                        <hr class="hr_manu_bra_in">
+                        <small class="header_manu_bra">Backend (Stagging)</small>
+                        <li><a href="https://uat.central.co.th/th" target="_blank" class="dropdown-item dp-link"
+                                type="button">
+                                <ion-icon name="shapes"></ion-icon>FE
+                            </a></li>
+                        <li><a href="https://eor-admin-uat.central.tech/upload" target="_blank"
+                                class="dropdown-item dp-link" type="button">
+                                <ion-icon name="shapes"></ion-icon>DATAPUMP Admin
+                            </a></li>
+                        <li><a href="https://cto-pim-uat.cloud.akeneo.com/user/login" target="_blank"
+                                class="dropdown-item dp-link" type="button">
+                                <ion-icon name="shapes"></ion-icon>PIM
+                            </a></li>
+                        <li><a href="https://staging-mdc.central.co.th/admin/admin/index/index/key/84db97aa4de2e2c911fef6db4bab589d9eab2b47811d1d714d7193c2029e299f/"
+                                target="_blank" class="dropdown-item dp-link" type="button">
+                                <ion-icon name="shapes"></ion-icon>MDC
+                            </a></li>
+                        <hr class="hr_manu_bra_in">
+                        <small class="header_manu_bra">Ability</small>
+                        <li><a onclick="get_page('writer-auto-assign-console');" class="dropdown-item dp-link"
+                                type="button">
+                                <ion-icon name="shapes"></ion-icon>writer auto-assign console
+                            </a></li>
+                        <li><a onclick="get_page('convert_mapping');" class="dropdown-item dp-link" type="button">
+                                <ion-icon name="shapes"></ion-icon>Convert Mapping
+                            </a></li>
+                        <li><a onclick="get_page('wordtohtml');" class="dropdown-item dp-link" type="button">
+                                <ion-icon name="shapes"></ion-icon>Word to HTML
+                            </a></li>
+                        <li><a href="https://centrality.workplace.com/" target="_blank" class="dropdown-item dp-link"
+                                type="button">
+                                <ion-icon name="shapes"></ion-icon>Workchat
+                            </a></li>
+                    </ul>
+                </li>
+                <hr class="hr_manu_bra_in">
+                <small class="header_manu_bra">Others</small>
+                <li class="nav-item btn-group dropend" role="presentation">
+                    <a class="nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button" role="tab"
+                        aria-selected="false" data-bs-toggle="dropdown">
+                        <ion-icon name="globe"></ion-icon><span id="main-manu-nav">Quicklink</span>
+                    </a>
+                    <ul class="dropdown-menu menu-block shadow p3">
+                        <small class="header_manu_bra">Central</small>
 
-                            <li><a href="http://cnext.centralgroup.com/" target="_blank" class="dropdown-item dp-link"
-                                    type="button">
-                                    <ion-icon name="shapes"></ion-icon>Cnext
-                                </a></li>
-                            <li><a href="https://ris6789.central.co.th/arsys/shared/login.jsp?/arsys/" target="_blank"
-                                    class="dropdown-item dp-link" type="button">
-                                    <ion-icon name="shapes"></ion-icon>RIS 6789
-                                </a></li>
-                            <li><a href="https://cenergy.atlassian.net/servicedesk/customer/portals" target="_blank"
-                                    class="dropdown-item dp-link" type="button">
-                                    <ion-icon name="shapes"></ion-icon>CTO JIRA
-                                </a></li>
-                            <li><a href="https://centralgroup-my.sharepoint.com/:f:/g/personal/ton_central_tech/Ek7nHI386MZAgCvU5e1xAvkBJX9gZbW_xE6NYjq8dUgo6g?e=2frs9b"
-                                    target="_blank" class="dropdown-item dp-link" type="button">
-                                    <ion-icon name="shapes"></ion-icon>LAMTON DRIVE
-                                </a></li>
-                            <li><a href="https://cds-content.myjetbrains.com/youtrack/articles/SD-A-21/user-for-content-team"
-                                    target="_blank" class="dropdown-item dp-link" type="button">
-                                    <ion-icon name="shapes"></ion-icon>Yourtrack
-                                </a></li>
-                        </ul>
+                        <li><a href="http://cnext.centralgroup.com/" target="_blank" class="dropdown-item dp-link"
+                                type="button">
+                                <ion-icon name="shapes"></ion-icon>Cnext
+                            </a></li>
+                        <li><a href="https://ris6789.central.co.th/arsys/shared/login.jsp?/arsys/" target="_blank"
+                                class="dropdown-item dp-link" type="button">
+                                <ion-icon name="shapes"></ion-icon>RIS 6789
+                            </a></li>
+                        <li><a href="https://cenergy.atlassian.net/servicedesk/customer/portals" target="_blank"
+                                class="dropdown-item dp-link" type="button">
+                                <ion-icon name="shapes"></ion-icon>CTO JIRA
+                            </a></li>
+                        <li><a href="https://centralgroup-my.sharepoint.com/:f:/g/personal/ton_central_tech/Ek7nHI386MZAgCvU5e1xAvkBJX9gZbW_xE6NYjq8dUgo6g?e=2frs9b"
+                                target="_blank" class="dropdown-item dp-link" type="button">
+                                <ion-icon name="shapes"></ion-icon>LAMTON DRIVE
+                            </a></li>
+                        <li><a href="https://cds-content.myjetbrains.com/youtrack/articles/SD-A-21/user-for-content-team"
+                                target="_blank" class="dropdown-item dp-link" type="button">
+                                <ion-icon name="shapes"></ion-icon>Yourtrack
+                            </a></li>
+                    </ul>
 
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
-                            <ion-icon name="settings"></ion-icon><span id="main-manu-nav">Settings</span>
-                        </a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                            onclick="logout()">
-                            <ion-icon name="log-out"></ion-icon><span id="main-manu-nav">Logout</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
+                        <ion-icon name="settings"></ion-icon><span id="main-manu-nav">Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                        onclick="logout()">
+                        <ion-icon name="log-out"></ion-icon><span id="main-manu-nav">Logout</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <div class="col-10" style="margin-left: auto;font-size: 14px;padding: 0px;">
-            <div id="col_detail">
-            </div>
+    </div>
+    <div class="col-10" style="margin-left: auto;font-size: 14px;padding: 0px;">
+        <div id="col_detail">
         </div>
+    </div>
     <!-- </div> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
@@ -387,15 +393,13 @@ function get_page(page) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
-    } 
-    else if (page == "report") {
+    } else if (page == "report") {
         Notiflix.Loading.hourglass('Loading...');
         $.post("base/page/report.php", {}, function(data) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
-    } 
-    else {
+    } else {
         $('#col_detail').html("not avaliable");
         Notiflix.Loading.remove();
     }
@@ -457,28 +461,30 @@ var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggl
 var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
-
-function minimize_nav(){
-var minimize_manu =document.getElementsByClassName('minimize_manu').value;
-   
-       if(minimize_manu =='hide'){
-            document.getElementsByClassName('minimize_manu').value = 'show';
-            document.getElementsByClassName('col-2 list_bra shadow').className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
-            document.getElementsByClassName('main-manu-nav').className.replace(/(?:^|\s)hide(?!\S)/g, '');
-            document.getElementsByClassName('header_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
-            document.getElementsByClassName('dept_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
-            document.getElementsByClassName('hr_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
-            document.getElementsByClassName('hr_manu_bra_in').className.replace(/(?:^|\s)hide(?!\S)/g, '');
-        }eles{
-            document.getElementsByClassName('minimize_manu').value ='hide';
-            document.getElementsByClassName('col-2 list_bra shadow').className +=' mini-nav-col';
-            document.getElementsByClassName('main-manu-nav').className += "  hide";
-            document.getElementsByClassName('header_manu_bra').className += "  hide";
-            document.getElementsByClassName('dept_manu_bra').className += "  hide";
-            document.getElementsByClassName('hr_manu_bra').className += "  hide";
-            document.getElementsByClassName('hr_manu_bra_in').className += "  hide";
-        }
-}
 </script>
 
+<script>
+function minimize_nav() {
+    var minimize_manu = document.getElementsByClassName('minimize_manu').value;
+
+    if (minimize_manu == 'hide') {
+        document.getElementsByClassName('minimize_manu').value = 'show';
+        document.getElementsByClassName('col-2 list_bra shadow').className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
+        document.getElementsByClassName('main-manu-nav').className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        document.getElementsByClassName('header_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        document.getElementsByClassName('dept_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        document.getElementsByClassName('hr_manu_bra').className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        document.getElementsByClassName('hr_manu_bra_in').className.replace(/(?:^|\s)hide(?!\S)/g, '');
+    }
+    else {
+        document.getElementsByClassName('minimize_manu').value = 'hide';
+        document.getElementsByClassName('col-2 list_bra shadow').className += ' mini-nav-col';
+        document.getElementsByClassName('main-manu-nav').className += "  hide";
+        document.getElementsByClassName('header_manu_bra').className += "  hide";
+        document.getElementsByClassName('dept_manu_bra').className += "  hide";
+        document.getElementsByClassName('hr_manu_bra').className += "  hide";
+        document.getElementsByClassName('hr_manu_bra_in').className += "  hide";
+    }
+}
+</script>
 <?php } ?>
