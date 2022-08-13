@@ -31,7 +31,7 @@ function get_list_status($username,$status){
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Pending</div>
-            <div class="row card-body text-light">
+            <div class="row text-light">
                 <div class="ps-3">
                     <div class="total_count_dashboard">
                         <?php $count_pending = count_status($_SESSION['username'],'pending');
@@ -52,7 +52,7 @@ function get_list_status($username,$status){
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Checking</div>
-            <div class="row card-body text-light">
+            <div class="row text-light">
                 <div class="ps-3">
                     <div class="total_count_dashboard">
                         <?php $count_pending = count_status($_SESSION['username'],'checking');
@@ -73,7 +73,7 @@ function get_list_status($username,$status){
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Waiting info</div>
-            <div class="row card-body text-light">
+            <div class="row text-light">
                 <div class="ps-3">
                     <div class="total_count_dashboard">
                         <?php $count_pending = count_status($_SESSION['username'],'wait');
@@ -94,7 +94,7 @@ function get_list_status($username,$status){
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">On production</div>
-            <div class="row card-body text-light">
+            <div class="row  text-light">
                 <div class="ps-3">
                     <div class="total_count_dashboard">
                         <?php $count_pending = count_status($_SESSION['username'],'accepted');
