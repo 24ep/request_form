@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
+<script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
 <div class="container-fluid ">
     <nav class="navbar bg-light">
         <div class="container-fluid">
@@ -79,7 +81,7 @@ $.post("../base/action/action_create_assert.php", {
     create_type: create_type
 }, function(data) {
     // $('#list_asserts').html(data);
-    goto_dri(parent)
+    goto_dri(parent);
     Notify.success('asserts have been create :)');
     
 });
