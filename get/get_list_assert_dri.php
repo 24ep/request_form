@@ -20,14 +20,14 @@
       echo '<a type="button"  class="list-group-item d-flex justify-content-between align-items-center " onclick="goto_dri('.$row['id'].');change_breadcrumb('.$row['id'].',0)">
       <ion-icon name="folder-open"></ion-icon> '.$row['label'].'
       <div class="dropdown">
-      <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-      </a>
+        <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+        </a>
 
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <li><a class="dropdown-item" href="#">Remove</a></li>
-      </ul>
-    </div>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="#">Remove</a></li>
+        </ul>
+      </div>
       </a>';
     
   }
