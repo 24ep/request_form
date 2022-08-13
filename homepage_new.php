@@ -480,7 +480,7 @@ function minimize_nav() {
         
         document.getElementById("apps_name").className = document.getElementById("apps_name").className.replace(/(?:^|\s)hide(?!\S)/g, '');
 
-        var main_manu_nav = document.getElementsByClassName("main-manu-nav hide");
+        var main_manu_nav = document.getElementsByClassName("main-manu-nav");
         for(var i = 0; i < main_manu_nav.length; i++)
         {
             console.log('unhide '+i );
