@@ -32,20 +32,19 @@ function get_list_status($username,$status){
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Pending</div>
             <div class="row card-body text-light">
-                <div class="col-4" style="text-align: -webkit-center;">
-                <div class="total_count_dashboard">
-                    <?php $count_pending = count_status($_SESSION['username'],'pending');
+                <div class="ps-3">
+                    <div class="total_count_dashboard">
+                        <?php $count_pending = count_status($_SESSION['username'],'pending');
                           echo $count_pending;
                     ?>
+                        <small class="unit_count_dashboard" style="font-size: small;">Ticket</small>
+                    </div>
                 </div>
-                <div class="unit_count_dashboard">Ticket</div>
-                </div>
-                <div class="col">
+                <div class="ps-3">
                     <ul class="list-group list-group-flush overflow-auto" style="max-height: 100px;">
-                    <?php $list = get_list_status($_SESSION['username'],'pending');
+                        <?php $list = get_list_status($_SESSION['username'],'pending');
                           echo $list;
                     ?>
-                  
                     </ul>
                 </div>
             </div>
@@ -54,20 +53,19 @@ function get_list_status($username,$status){
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Checking</div>
             <div class="row card-body text-light">
-            <div class="col-4" style="text-align: -webkit-center;">
-                <div class="total_count_dashboard">
-                    <?php $count_pending = count_status($_SESSION['username'],'checking');
+                <div class="ps-3">
+                    <div class="total_count_dashboard">
+                        <?php $count_pending = count_status($_SESSION['username'],'checking');
                           echo $count_pending;
                     ?>
+                        <small class="unit_count_dashboard" style="font-size: small;">Ticket</small>
+                    </div>
                 </div>
-                <div class="unit_count_dashboard">Ticket</div>
-                </div>
-                <div class="col">
+                <div class="ps-3">
                     <ul class="list-group list-group-flush overflow-auto" style="max-height: 100px;">
-                    <?php $list = get_list_status($_SESSION['username'],'checking');
+                        <?php $list = get_list_status($_SESSION['username'],'checking');
                           echo $list;
                     ?>
-                  
                     </ul>
                 </div>
             </div>
@@ -76,20 +74,19 @@ function get_list_status($username,$status){
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Waiting info</div>
             <div class="row card-body text-light">
-            <div class="col-4" style="text-align: -webkit-center;">
-                <div class="total_count_dashboard">
-                    <?php $count_pending = count_status($_SESSION['username'],'wait');
+                <div class="ps-3">
+                    <div class="total_count_dashboard">
+                        <?php $count_pending = count_status($_SESSION['username'],'wait');
                           echo $count_pending;
                     ?>
+                        <small class="unit_count_dashboard" style="font-size: small;">Ticket</small>
+                    </div>
                 </div>
-                <div class="unit_count_dashboard">Ticket</div>
-                </div>
-                <div class="col">
+                <div class="ps-3">
                     <ul class="list-group list-group-flush overflow-auto" style="max-height: 100px;">
-                    <?php $list = get_list_status($_SESSION['username'],'wait');
+                        <?php $list = get_list_status($_SESSION['username'],'wait');
                           echo $list;
                     ?>
-                  
                     </ul>
                 </div>
             </div>
@@ -98,20 +95,19 @@ function get_list_status($username,$status){
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">On production</div>
             <div class="row card-body text-light">
-            <div class="col-4" style="text-align: -webkit-center;">
-                <div class="total_count_dashboard">
-                    <?php $count_pending = count_status($_SESSION['username'],'accepted');
+                <div class="ps-3">
+                    <div class="total_count_dashboard">
+                        <?php $count_pending = count_status($_SESSION['username'],'accepted');
                           echo $count_pending;
                     ?>
+                        <small class="unit_count_dashboard" style="font-size: small;">Ticket</small>
+                    </div>
                 </div>
-                <div class="unit_count_dashboard">Ticket</div>
-                </div>
-                <div class="col">
+                <div class="ps-3">
                     <ul class="list-group list-group-flush overflow-auto" style="max-height: 100px;">
-                    <?php $list = get_list_status($_SESSION['username'],'accepted');
+                        <?php $list = get_list_status($_SESSION['username'],'accepted');
                           echo $list;
                     ?>
-                  
                     </ul>
                 </div>
             </div>
