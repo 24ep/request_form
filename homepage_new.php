@@ -505,7 +505,7 @@ function minimize_nav() {
         {
             hr_mhr_manu_bra_inanu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-        
+    }  
     else {
         document.getElementById('minimize_manu').value = 'hide';
         var list_bra = document.getElementsByClassName("list_bra");
