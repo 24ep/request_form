@@ -65,7 +65,7 @@ function get_block(block_id) {
 }
 </script>
 <script>
-function create_assert(label) {
+function create_assert(label,create_type) {
 var label = label.toLowerCase();
 var code = label.toLowerCase();
 var code = code.replace(/[^a-zA-Z ]/g, "_");
