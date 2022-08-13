@@ -113,7 +113,7 @@ function remove_assert(assert_type,remove_id) {
         'Remove',
         'Cancel',
         function okCb() {
-          action_remove_asert(assert_type,parent);
+          action_remove_assert(assert_type,remove_id);
         },
         function cancelCb() {
             //alert('If you say so...');
@@ -121,7 +121,7 @@ function remove_assert(assert_type,remove_id) {
     );
 }
 
-function action_remove_asert(assert_type,remove_id){
+function action_remove_assert(assert_type,remove_id){
   $.post("../base/action/action_remove_assert.php", {
               assert_type: assert_type,
               remove_id: remove_id
