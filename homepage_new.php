@@ -142,7 +142,7 @@ if (!$_SESSION["login_csg"]){
         
         <div class="col-2 list_bra shadow">
             <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <button type="button" id="bt_nav_coll_ex" class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-dark rounded-pill" style="width: 2rem; height:2rem;"><ion-icon name="menu-outline"></ion-icon></button>
+            <button type="button" id="bt_nav_coll_ex" class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-dark rounded-pill" style="width: 2rem; height:2rem;padding: 0px;"><ion-icon name="menu-outline" style="margin:0px"></ion-icon></button>
                 <a class="navbar-brand" href="#"><ion-icon name="layers" style="font-size: 20px;margin: 0px;"></ion-icon>
  ONLINE CONTENT</a>
                 <hr class="hr_manu_bra">
