@@ -479,37 +479,37 @@ function minimize_nav() {
         }
         
         document.getElementById("apps_name") = document.getElementById("apps_name").className.replace(/(?:^|\s)hide(?!\S)/g, '');
-        var main_manu_nav = document.getElementsByClassName("main-manu-nav");
+        var main_manu_nav = document.getElementsByClassName("main-manu-nav hide");
         for(var i = 0; i < main_manu_nav.length; i++)
         {
             main_manu_nav[i].className = main_manu_nav[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
     
 
-        var header_manu_bra = document.getElementsByClassName("header_manu_bra");
+        var header_manu_bra = document.getElementsByClassName("header_manu_bra  hide");
         for(var i = 0; i < header_manu_bra.length; i++)
         {
             header_manu_bra[i].className = header_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
         
-         var name_manu_bra = document.getElementsByClassName("name_manu_bra");
+         var name_manu_bra = document.getElementsByClassName("name_manu_bra  hide");
         for(var i = 0; i < name_manu_bra.length; i++)
         {
             name_manu_bra[i].className = name_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-        var dept_manu_bra = document.getElementsByClassName("dept_manu_bra");
+        var dept_manu_bra = document.getElementsByClassName("dept_manu_bra  hide");
         for(var i = 0; i < dept_manu_bra.length; i++)
         {
             dept_manu_bra[i].className = dept_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
 
-        var hr_manu_bra = document.getElementsByClassName("hr_manu_bra");
+        var hr_manu_bra = document.getElementsByClassName("hr_manu_bra  hide");
         for(var i = 0; i < hr_manu_bra.length; i++)
         {
             hr_manu_bra[i].className = hr_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
 
-        var hr_manu_bra_in = document.getElementsByClassName("hr_manu_bra_in");
+        var hr_manu_bra_in = document.getElementsByClassName("hr_manu_bra_in  hide");
         for(var i = 0; i < hr_manu_bra_in.length; i++)
         {
             hr_manu_bra_in[i].className = hr_manu_bra_in[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
