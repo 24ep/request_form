@@ -14,10 +14,10 @@ function count_status($username,$status){
 ?>
 <div class="container overflow-auto" style="padding:20px 20px 0px 20px">
     <div class="card-group">
-        <div class="card text-dark shadow-sm bg-light mb-3"
+        <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Pending</div>
-            <div class="card-body text-secondary">
+            <div class="card-body text-light">
                 <div class="total_count_dashboard">
                     <?php $count_pending = count_status($_SESSION['username'],'pending');
                           echo $count_pending;
@@ -26,10 +26,10 @@ function count_status($username,$status){
                 <div class="unit_count_dashboard">Ticket</div>
             </div>
         </div>
-        <div class="card text-dark  shadow-sm  bg-light mb-3"
+        <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Checking</div>
-            <div class="card-body text-secondary">
+            <div class="card-body text-light">
                 <div class="total_count_dashboard">
                     <?php
                         $count_checking =  count_status($_SESSION['username'],'checking');
@@ -39,10 +39,10 @@ function count_status($username,$status){
                 <div class="unit_count_dashboard">Ticket</div>
             </div>
         </div>
-        <div class="card text-dark  shadow-sm  bg-light mb-3"
+        <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Waiting info</div>
-            <div class="card-body text-secondary">
+            <div class="card-body text-light">
                 <div class="total_count_dashboard" style="color:red">
                     <?php
                          $count_checking =  count_status($_SESSION['username'],'wait');
@@ -52,10 +52,10 @@ function count_status($username,$status){
                 <div class="unit_count_dashboard" style="color:red">Ticket</div>
             </div>
         </div>
-        <div class="card text-dark  shadow-sm bg-light mb-3"
+        <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Waiting Confirm</div>
-            <div class="card-body text-secondary">
+            <div class="card-body text-warning">
                 <div class="total_count_dashboard">
                     <?php
                         $count_checking =  count_status($_SESSION['username'],'confirm');
@@ -65,10 +65,10 @@ function count_status($username,$status){
                 <div class="unit_count_dashboard">Ticket</div>
             </div>
         </div>
-        <div class="card text-white  shadow-sm bg-dark mb-3"
+        <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
             <div class="card-header">Send to traffic already</div>
-            <div class="card-body text-secondary">
+            <div class="card-body text-light">
                 <div class="total_count_dashboard">
                     <?php
                         $count_checking =  count_status($_SESSION['username'],'accepted');
