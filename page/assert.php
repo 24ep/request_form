@@ -121,7 +121,7 @@ function remove_assert(assert_type,remove_id) {
     );
 }
 
-function action_remove_asert(assert_type,parent){
+function action_remove_asert(assert_type,remove_id){
   $.post("../base/action/action_remove_assert.php", {
               assert_type: assert_type,
               remove_id: remove_id
