@@ -30,7 +30,7 @@ function get_list_status($username,$status){
 ?>
 <div class="container overflow-auto" style="padding:20px 20px 0px 20px">
 <h5 style="    font-weight: 700;margin-bottom: 20px;margin-left: 5px;">Welcome back <?php echo $_SESSION['firstname']?> :)</h5>
-    <div class="card-group" style="width: inherit;">
+    <div class="card-group" style="position: absolute;    z-index: -1;width: inherit;">
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;z-index: -1;">
             <div class="card-header">Pending</div>
@@ -123,12 +123,12 @@ function get_list_status($username,$status){
         </div>
     </div>
 
-    <hr>
-    <h6>Brand Report</h6><small>updated one time everyday 7 am</small>
+    <!-- <hr> -->
+    <!-- <h6>Brand Report</h6><small>updated one time everyday 7 am</small>
     <div class="row">
     <iframe width="100%" height="100%" 
     src="https://datastudio.google.com/embed/reporting/b90ee0e2-066f-4a82-a210-6ce8c514947d/page/p_m13q7ei0qc" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
+    </div> -->
     <!-- <div class="row">
         <div class="col-8" style="border-right: 1px solid #efecec;">
             <?php include("../get/get_list_job_cms_dashboard.php"); ?>
