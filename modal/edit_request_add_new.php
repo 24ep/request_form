@@ -420,7 +420,7 @@ ion-icon {
                                 <div class="container" style="padding: 20px!important;">
                                     <div class="alert alert-primary" role="alert">
                                         <ion-icon name="color-wand-outline"></ion-icon>
-                                        สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ จนกว่า ทาง Content-Traffic จะทำการ assign
+                                        สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ จนกว่า ทาง Content จะทำการ assign
                                         ticket นี้ให้กับทางผู้เกี่ยวข้อง
                                     </div>
                                     <?php include('../form/form_request_edit_new.php')?>
