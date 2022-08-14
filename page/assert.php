@@ -46,7 +46,7 @@ function goto_dri(dri_parent) {
         dri_parent: dri_parent
     }, function(data) {
         $('#list_asserts').html(data);
-        document.getElementById('block-name').value = document.getElementById('breadcrumb-item-active').value;
+     
     });
 }
 </script>
@@ -62,6 +62,7 @@ function change_breadcrumb(dri_id, block_id) {
 </script>
 <script>
 function get_block(block_id) {
+    document.getElementById('block-name').value = document.getElementById('breadcrumb-item-active').value;
     $.post("../base/get/get_block_editor.php", {
         block_id: block_id
     }, function(data) {

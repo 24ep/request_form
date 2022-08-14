@@ -13,6 +13,7 @@ $result = mysqli_query($con, $query);
 
 while($row = mysqli_fetch_array($result)) {
   $body = $row['body'];
+  $id = $row['id'];
 }
 ?>
 <div class="container-fluid shadow-sm" style="border-radius: 10px;border: 1px solid #f4f4f4;padding: 30px;background: white;">
@@ -42,7 +43,7 @@ var editor = new EditorJS({
             editor.save().then((outputData) => {
                 // console.log('Article data: ', outputData)
                 outputData = JSON.stringify(outputData, null, 4);
-                update_brand_note(outputData, '<?php echo $brand; ?>');
+                update_brand_note(outputData, '<?php echo $id; ?>');
             }).catch((error) => {
                 console.log('Saving failed: ', error)
             });
