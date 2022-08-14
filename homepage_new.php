@@ -108,15 +108,17 @@ if (!$_SESSION["login_csg"]){
         <div id="calloffcanvas_cr">
         </div>
     </div>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="notificationcanvas" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h5 id="offcanvasRightLabel">Update</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="notificationcanvas"
+            aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 id="offcanvasRightLabel">Update</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <?php include("get/get_log.php"); ?>
+            </div>
         </div>
-        <div class="offcanvas-body">
-            <?php include("get/get_log.php"); ?>
-        </div>
-    </div>
 
     <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1" id="content_request_canvas"
         aria-labelledby="offcanvasExampleLabel">
@@ -157,7 +159,7 @@ if (!$_SESSION["login_csg"]){
             <hr class="hr_manu_bra">
             <small class="header_manu_bra">Manu</small>
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <a class="nav-link" type="button" data-bs-toggle="notificationcanvas" aria-expanded="false"  onclick="get_list_update_job();">
+                <a class="nav-link" type="button" data-bs-toggle="dropdown" aria-expanded="false"  onclick="get_list_update_job();">
                     <ion-icon name="notifications"></ion-icon><span class="main-manu-nav">Activity</span>
                     <div id="get_count_nt_unread">
                         <?php include('get/get_count_nt_unread.php'); ?>
