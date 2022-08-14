@@ -203,7 +203,7 @@ if (!$_SESSION["login_csg"]){
                 <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('assert');">
-                        <ion-icon name="cube"></ion-icon><span class="main-manu-nav">Assests</span>
+                        <ion-icon name="cube"></ion-icon><span class="main-manu-nav">Block</span>
                     </a>
                 </li>
                 <!-- <li class="nav-item" role="presentation">

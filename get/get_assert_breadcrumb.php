@@ -43,7 +43,7 @@
     $result = mysqli_query($con, $query);
     
     while($row = mysqli_fetch_array($result)) {
-      echo '<li  class="breadcrumb-item active" aria-current="page">'.$row['brand'].'</a></li>';
+      echo '<li  class="breadcrumb-item active" id="breadcrumb-item-active" aria-current="page">'.$row['brand'].'</a></li>';
     }
   }
 

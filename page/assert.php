@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
 <script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
 <div class="container-fluid ">
-    <nav class="navbar bg-light">
+    <nav class="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand">Asserts</a>
+            <a class="navbar-brand" id="block-name">Block</a>
             <form class="d-flex" role="search">
                 <input class="form-control me-2 form-control-sm" type="search" placeholder="Search" aria-label="Search">
 
@@ -45,6 +45,7 @@ function goto_dri(dri_parent) {
         dri_parent: dri_parent
     }, function(data) {
         $('#list_asserts').html(data);
+        document.getElementById('block-name').value = document.getElementById('breadcrumb-item-active').value;
     });
 }
 </script>
