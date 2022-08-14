@@ -38,7 +38,7 @@ function insert_block($parent,$label,$code,$path_id){
       VALUES (
       '".$label."',
       '".$_SESSION['username']."',
-      '".$path_id."'
+      '".$parent."'
       )";
       $query = mysqli_query($con,$sql);
       mysqli_close($con);
