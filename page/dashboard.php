@@ -29,7 +29,7 @@ function get_list_status($username,$status){
 }
 ?>
 <div class="container overflow-auto" style="padding:20px 20px 0px 20px">
-<h6>Welcome back <?php echo $_SESSION['firstname']?> :)</h6>
+<h5 style="    font-weight: 700;margin-bottom: 20px;margin-left: 5px;">Welcome back <?php echo $_SESSION['firstname']?> :)</h5>
     <div class="card-group" style="position: absolute;    z-index: -1;width: inherit;">
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;z-index: -1;">
