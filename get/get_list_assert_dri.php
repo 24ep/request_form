@@ -26,6 +26,7 @@
 
         <ul class="dropdown-menu"  style="font-size: 14px;" aria-labelledby="dropdownMenuLink">
           <li><a type="button" class="dropdown-item"  onclick="remove_assert(&#34;folder&#34;,'.$row['id'].')"> <ion-icon name="trash-outline"></ion-icon> Remove</a></li>
+          <li><a type="button" class="dropdown-item" disable  > <ion-icon name="pencil-outline"></ion-icon> Rename</a></li>
         </ul>
       </div>
       </li>';
@@ -49,7 +50,9 @@
         </a>
 
         <ul class="dropdown-menu" style="font-size: 14px;" aria-labelledby="dropdownMenuLink">
-          <li><a class="dropdown-item"  onclick="remove_assert(&#34;block&#34;,'.$row['id'].')" href="#"> <ion-icon name="trash-outline"></ion-icon> Remove</a></li>
+          <li><a class="dropdown-item" disable onclick="remove_assert(&#34;block&#34;,'.$row['id'].')" href="#"> <ion-icon name="trash-outline"></ion-icon> Remove</a></li>
+          <li><a class="dropdown-item" disable  > <ion-icon name="pencil-outline"></ion-icon> Rename</a></li>
+          <li><a class="dropdown-item" disable  > <ion-icon name="copy-outline"></ion-icon> Duplicate</a></li>
         </ul>
       </div>
       </li>';

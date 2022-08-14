@@ -23,9 +23,9 @@
                     Create New
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a type="button" class="dropdown-item" onclick="ask_label('folder')">Folder</a></li>
-                    <li><a type="button" class="dropdown-item" onclick="ask_label('block')">Block</a></li>
-                    <li><a type="button" class="dropdown-item" onclick="ask_label('upload_a_file')">Upload a files</a>
+                    <li><a type="button" class="dropdown-item" onclick="ask_label('folder')"><ion-icon name="folder-outline"></ion-icon> Folder</a></li>
+                    <li><a type="button" class="dropdown-item" onclick="ask_label('block')"><ion-icon name="book-outline"></ion-icon>Block</a></li>
+                    <li><a type="button" class="dropdown-item" onclick="ask_label('upload_a_file')"><ion-icon name="cloud-upload-outline"></ion-icon>Upload a files</a>
                     </li>
                 </ul>
                 <input type="hidden" id="create_type" name="create_type" value="">
