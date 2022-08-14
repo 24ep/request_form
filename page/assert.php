@@ -28,6 +28,7 @@
                     <li><a type="button" class="dropdown-item" onclick="ask_label('upload_a_file')">Upload a files</a>
                     </li>
                 </ul>
+                <input type="hidden" id="create_type" name="create_type" value="">
             </div>
 
             <ul class="list-group" style="width:100%">
@@ -69,12 +70,13 @@ function get_block(block_id) {
 }
 </script>
 <script>
-function create_assert(label, create_type) {
+function create_assert(label) {
     var label = label.toLowerCase();
     var code = label.toLowerCase();
     var code = code.replace(/[^a-zA-Z ]/g, "_");
     var parent = document.getElementById('parent').value;
     var path_id = document.getElementById('under_path').value;
+    var create_type = document.getElementById('create_type').value;
     console.log(create_type);
     console.log(label);
     $.post("../base/action/action_create_assert.php", {
@@ -94,14 +96,15 @@ function create_assert(label, create_type) {
 }
 
 function ask_label(create_type) {
+    document.getElementById('create_type').value = create_type;
     Notiflix.Confirm.prompt(
         'Create assert',
         create_type + ' name',
         create_type + '_name',
         'Submit',
         'Cancel',
-        function okCb(clientAnswer, create_type) {
-            create_assert(clientAnswer, create_type)
+        function okCb(clientAnswer) {
+            create_assert(clientAnswer)
         },
         function cancelCb(clientAnswer) {
             //nothing
