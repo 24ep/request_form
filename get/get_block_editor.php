@@ -128,12 +128,13 @@ var editor = new EditorJS({
     }
 
 );
-function update_brand_note(dataoutput,brand){
-    $.post("../base/action/action_update_brand_note.php", {
-        dataoutput: dataoutput,
-        brand : brand
-    }, function(data) {
-        // $('#get_list_job_update').html(data);
-    });
-}
+// function update_brand_note(dataoutput,brand){
+//     $.post("../base/action/action_update_brand_note.php", {
+//         dataoutput: dataoutput,
+//         brand : brand
+//     }, function(data) {
+//         // $('#get_list_job_update').html(data);
+//     });
+// }
+
 </script>
