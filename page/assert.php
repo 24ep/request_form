@@ -24,7 +24,7 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li><a type="button" class="dropdown-item" onclick="ask_label('Folder')">Folder</a></li>
-                    <li><a type="button" class="dropdown-item" onclick="ask_label('type')">Block</a></li>
+                    <li><a type="button" class="dropdown-item" onclick="ask_label('block')">Block</a></li>
                     <li><a type="button" class="dropdown-item" onclick="ask_label('upload_a_file')">Upload a files</a>
                     </li>
                 </ul>
