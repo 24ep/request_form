@@ -122,6 +122,13 @@ function get_list_status($username,$status){
             </div>
         </div>
     </div>
+
+    <hr>
+    <h6>Brand Report</h6><small>updated one time everyday 7 am</small>
+    <div class="row">
+    <iframe width="100%" height="100%" 
+    src="https://datastudio.google.com/embed/reporting/b90ee0e2-066f-4a82-a210-6ce8c514947d/page/p_m13q7ei0qc" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
     <!-- <div class="row">
         <div class="col-8" style="border-right: 1px solid #efecec;">
             <?php include("../get/get_list_job_cms_dashboard.php"); ?>
