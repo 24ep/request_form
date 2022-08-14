@@ -122,7 +122,7 @@ var editor = new EditorJS({
         },
 
         <?php if($body<>""){
-            echo ' data: '.htmlspecialchars($body,  ENT_QUOTES, 'UTF-8');
+            echo ' data: '.htmlspecialchars($body,  ENT_QUOTES);
         }?>
 
     }
