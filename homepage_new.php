@@ -197,16 +197,16 @@ if (!$_SESSION["login_csg"]){
                         <ion-icon name="cube"></ion-icon><span class="main-manu-nav">Assests</span>
                     </a>
                 </li>
-                <li class="nav-item" role="presentation">
+                <!-- <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('notion');">
                         <ion-icon name="book"></ion-icon><span class="main-manu-nav">Notion</span>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('account');">
-                        <ion-icon name="people"></ion-icon><span class="main-manu-nav">Administration</span>
+                        <ion-icon name="terminal-outline"></ion-icon><span class="main-manu-nav">Administration</span>
                     </a>
                 </li>
 
