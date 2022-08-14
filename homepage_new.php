@@ -108,17 +108,16 @@ if (!$_SESSION["login_csg"]){
         <div id="calloffcanvas_cr">
         </div>
     </div>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="notificationcanvas"
-            aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header">
-                <h5 id="offcanvasRightLabel">Update</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <?php include("get/get_log.php"); ?>
-            </div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="notificationcanvas" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Activity</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
         </div>
+        <div class="offcanvas-body">
+            <?php include("get/get_log.php"); ?>
+        </div>
+    </div>
 
     <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1" id="content_request_canvas"
         aria-labelledby="offcanvasExampleLabel">
@@ -159,15 +158,25 @@ if (!$_SESSION["login_csg"]){
             <hr class="hr_manu_bra">
             <small class="header_manu_bra">Manu</small>
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <a class="nav-link" type="button" data-bs-toggle="dropdown" aria-expanded="false"  onclick="get_list_update_job();">
+                <a class="nav-link" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                    onclick="get_list_update_job();">
                     <ion-icon name="notifications"></ion-icon><span class="main-manu-nav">Activity</span>
                     <div id="get_count_nt_unread">
                         <?php include('get/get_count_nt_unread.php'); ?>
                     </div>
                 </a>
+                <ul class="dropdown-menu notifications-box shadow overflow-auto">
+                    <span>
+                        <ion-icon style="color:white" name="notifications-outline"></ion-icon> <strong>Activity</strong>
+                    </span>
+
+                    <div id="get_list_job_update">
+                        <?php include('get/get_list_job_update.php'); ?>
+                    </div>
+                </ul>
                 <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link active"  data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="get_page('dashboard');">
+                    <a class="main_bra nav-link active" data-bs-toggle="pill" type="button" role="tab"
+                        aria-selected="false" onclick="get_page('dashboard');">
                         <ion-icon name="home"></ion-icon><span class="main-manu-nav">Dashboard</span>
                     </a>
                 </li>
@@ -211,8 +220,8 @@ if (!$_SESSION["login_csg"]){
                 </li>
 
                 <li class="nav-item btn-group dropend" role="presentation">
-                    <a class="main_bra nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button" role="tab"
-                        aria-selected="false" data-bs-toggle="dropdown">
+                    <a class="main_bra nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button"
+                        role="tab" aria-selected="false" data-bs-toggle="dropdown">
                         <ion-icon name="layers"></ion-icon><span class="main-manu-nav">Productions</span>
                     </a>
                     <ul class="dropdown-menu menu-block shadow p3">
@@ -272,8 +281,8 @@ if (!$_SESSION["login_csg"]){
                 <hr class="hr_manu_bra_in">
                 <small class="header_manu_bra">Others</small>
                 <li class="nav-item btn-group dropend" role="presentation">
-                    <a class="main_bra nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button" role="tab"
-                        aria-selected="false" data-bs-toggle="dropdown">
+                    <a class="main_bra nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button"
+                        role="tab" aria-selected="false" data-bs-toggle="dropdown">
                         <ion-icon name="globe"></ion-icon><span class="main-manu-nav">Quicklink</span>
                     </a>
                     <ul class="dropdown-menu menu-block shadow p3">
@@ -466,136 +475,123 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
 </script>
 
 <script>
- document.getElementById("bt_nav_coll_ex").innerHTML = '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
+document.getElementById("bt_nav_coll_ex").innerHTML =
+    '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
+
 function minimize_nav() {
     var minimize_manu = document.getElementById('minimize_manu').value;
     console.log(minimize_manu);
     if (minimize_manu == 'hide') {
         document.getElementById('minimize_manu').value = 'show';
-        document.getElementById("bt_nav_coll_ex").innerHTML = '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
-        
+        document.getElementById("bt_nav_coll_ex").innerHTML =
+            '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
+
         var list_bra = document.getElementsByClassName("mini-nav-col");
-        for(var i = 0; i < list_bra.length; i++)
-        {
+        for (var i = 0; i < list_bra.length; i++) {
             list_bra[i].className = list_bra[i].className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
         }
-        
-        document.getElementById("apps_name").className = document.getElementById("apps_name").className.replace(/(?:^|\s)hide(?!\S)/g, '');
+
+        document.getElementById("apps_name").className = document.getElementById("apps_name").className.replace(
+            /(?:^|\s)hide(?!\S)/g, '');
 
         var main_manu_nav = document.getElementsByClassName("main-manu-nav");
-        for(var i = 0; i < main_manu_nav.length; i++)
-        {
-            console.log('unhide '+i );
+        for (var i = 0; i < main_manu_nav.length; i++) {
+            console.log('unhide ' + i);
             main_manu_nav[i].className = main_manu_nav[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
         var main_bra = document.getElementsByClassName("main_bra nav-link minimize");
-        for(var i = 0; i < main_bra.length; i++)
-        {
+        for (var i = 0; i < main_bra.length; i++) {
             main_bra[i].className = main_bra[i].className.replace(/(?:^|\s)minimize(?!\S)/g, '');
         }
 
         var col_detail_main = document.getElementsByClassName("col-10 col_detail_main minimize");
-        for(var i = 0; i < col_detail_main.length; i++)
-        {
+        for (var i = 0; i < col_detail_main.length; i++) {
             col_detail_main[i].className = col_detail_main[i].className.replace(/(?:^|\s)minimize(?!\S)/g, '');
         }
-    
-        
+
+
         var header_manu_bra = document.getElementsByClassName("header_manu_bra");
-        for(var i = 0; i < header_manu_bra.length; i++)
-        {
+        for (var i = 0; i < header_manu_bra.length; i++) {
             header_manu_bra[i].className = header_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-        
-         var name_manu_bra = document.getElementsByClassName("name_manu_bra");
-        for(var i = 0; i < name_manu_bra.length; i++)
-        {
+
+        var name_manu_bra = document.getElementsByClassName("name_manu_bra");
+        for (var i = 0; i < name_manu_bra.length; i++) {
             name_manu_bra[i].className = name_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
         var dept_manu_bra = document.getElementsByClassName("dept_manu_bra");
-        for(var i = 0; i < dept_manu_bra.length; i++)
-        {
+        for (var i = 0; i < dept_manu_bra.length; i++) {
             dept_manu_bra[i].className = dept_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
 
         var hr_manu_bra = document.getElementsByClassName("hr_manu_bra");
-        for(var i = 0; i < hr_manu_bra.length; i++)
-        {
+        for (var i = 0; i < hr_manu_bra.length; i++) {
             hr_manu_bra[i].className = hr_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
 
         var hr_manu_bra_in = document.getElementsByClassName("hr_manu_bra_in");
-        for(var i = 0; i < hr_manu_bra_in.length; i++)
-        {
+        for (var i = 0; i < hr_manu_bra_in.length; i++) {
             hr_manu_bra_in[i].className = hr_manu_bra_in[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-    }  
-    else {
+    } else {
         document.getElementById('minimize_manu').value = 'hide';
-        document.getElementById("bt_nav_coll_ex").innerHTML = '<ion-icon name="chevron-forward-outline" style="margin:0px;color:white"></ion-icon>';
+        document.getElementById("bt_nav_coll_ex").innerHTML =
+            '<ion-icon name="chevron-forward-outline" style="margin:0px;color:white"></ion-icon>';
         var list_bra = document.getElementsByClassName("list_bra");
-        for(var i = 0; i < list_bra.length; i++)
-        {
+        for (var i = 0; i < list_bra.length; i++) {
             list_bra[i].className += " mini-nav-col";
         }
 
         // document.getElementById("main-manu-nav").className += " hide";
         document.getElementById("apps_name").className += " hide";
         var main_manu_nav = document.getElementsByClassName("main-manu-nav");
-        for(var i = 0; i < main_manu_nav.length; i++)
-        {
-             console.log('hide '+i );
-             main_manu_nav[i].className += " hide";
+        for (var i = 0; i < main_manu_nav.length; i++) {
+            console.log('hide ' + i);
+            main_manu_nav[i].className += " hide";
         }
-    
-        
+
+
         var header_manu_bra = document.getElementsByClassName("header_manu_bra");
-        for(var i = 0; i < header_manu_bra.length; i++)
-        {
+        for (var i = 0; i < header_manu_bra.length; i++) {
             header_manu_bra[i].className += " hide";
         }
 
         var col_detail_main = document.getElementsByClassName("col-10 col_detail_main");
-        for(var i = 0; i < col_detail_main.length; i++)
-        {
+        for (var i = 0; i < col_detail_main.length; i++) {
             col_detail_main[i].className += " minimize";
         }
-        
+
         var main_bra = document.getElementsByClassName("main_bra");
-        for(var i = 0; i < main_bra.length; i++)
-        {
+        for (var i = 0; i < main_bra.length; i++) {
             main_bra[i].className += " minimize";
         }
-        
+
         var name_manu_bra = document.getElementsByClassName("name_manu_bra");
-        for(var i = 0; i < name_manu_bra.length; i++)
-        {
-            
+        for (var i = 0; i < name_manu_bra.length; i++) {
+
             name_manu_bra[i].className += " hide";
         }
 
         var dept_manu_bra = document.getElementsByClassName("dept_manu_bra");
-        for(var i = 0; i < dept_manu_bra.length; i++)
-        {
+        for (var i = 0; i < dept_manu_bra.length; i++) {
             dept_manu_bra[i].className += " hide";
         }
 
         var hr_manu_bra = document.getElementsByClassName("hr_manu_bra");
-        for(var i = 0; i < hr_manu_bra.length; i++)
-        {
+        for (var i = 0; i < hr_manu_bra.length; i++) {
             hr_manu_bra[i].className += " hide";
         }
 
         var hr_manu_bra_in = document.getElementsByClassName("hr_manu_bra_in");
-        for(var i = 0; i < hr_manu_bra_in.length; i++)
-        {
+        for (var i = 0; i < hr_manu_bra_in.length; i++) {
             hr_manu_bra_in[i].className += " hide";
         }
 
-     
-    
+
+
     }
 }
+
 function call_edit_add_new_modal(id, brand) {
     Notiflix.Loading.hourglass('Loading...');
     if (id) {
