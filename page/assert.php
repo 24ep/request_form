@@ -139,10 +139,10 @@ function action_remove_assert(assert_type,remove_id){
       
           });
 }
-function update_brand_note(dataoutput,brand){
-    $.post("../base/action/action_update_brand_note.php", {
+function update_brand_note(dataoutput,id){
+    $.post("../base/action/action_update_block.php", {
         dataoutput: dataoutput,
-        brand : brand
+        id : id
     }, function(data) {
         // $('#get_list_job_update').html(data);
     });
