@@ -222,7 +222,7 @@ if (!$_SESSION["login_csg"]){
                 <li class="nav-item btn-group dropend" role="presentation">
                     <a class="main_bra nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button"
                         role="tab" aria-selected="false" data-bs-toggle="dropdown">
-                        <ion-icon name="layers"></ion-icon><span class="main-manu-nav">Productions</span>
+                        <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Productions</span>
                     </a>
                     <ul class="dropdown-menu menu-block shadow p3">
                         <small class="header_manu_bra">Datapump</small>
