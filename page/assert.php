@@ -75,6 +75,7 @@ function create_assert(label, create_type) {
     var code = code.replace(/[^a-zA-Z ]/g, "_");
     var parent = document.getElementById('parent').value;
     var path_id = document.getElementById('under_path').value;
+    console.log(create_type);
     $.post("../base/action/action_create_assert.php", {
         parent: parent,
         label: label,
