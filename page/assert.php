@@ -62,7 +62,7 @@ function change_breadcrumb(dri_id, block_id) {
 </script>
 <script>
 function get_block(block_id) {
-    document.getElementById('block-name').value = document.getElementById('breadcrumb-item-active').value;
+    document.getElementById('block-name').value = document.getElementById('breadcrumb-item-active').innerHTML;
     $.post("../base/get/get_block_editor.php", {
         block_id: block_id
     }, function(data) {

@@ -49,7 +49,7 @@
         </a>
 
         <ul class="dropdown-menu" style="font-size: 14px;" aria-labelledby="dropdownMenuLink">
-          <li><a class="dropdown-item" href="#"> <ion-icon name="trash-outline"></ion-icon> Remove</a></li>
+          <li><a class="dropdown-item"  onclick="remove_assert(&#34;block&#34;,'.$row['id'].')" href="#"> <ion-icon name="trash-outline"></ion-icon> Remove</a></li>
         </ul>
       </div>
       </li>';
