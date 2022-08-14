@@ -167,7 +167,7 @@ if (!$_SESSION["login_csg"]){
                 </a>
                 <ul class="dropdown-menu notifications-box shadow overflow-auto">
                     <span>
-                        <ion-icon style="color:white" name="notifications-outline"></ion-icon> <strong>Activity</strong>
+                    <ion-icon name="notifications-outline"></ion-icon> <strong>Activity</strong>
                     </span>
 
                     <div id="get_list_job_update">

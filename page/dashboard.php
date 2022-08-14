@@ -29,9 +29,9 @@ function get_list_status($username,$status){
 }
 ?>
 <div class="container overflow-auto" style="padding:20px 20px 0px 20px">
-    <div class="card-group">
+    <div class="card-group" style="position: absolute;    z-index: -1;">
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
-            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
+            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;z-index: -1;">
             <div class="card-header">Pending</div>
             <div class="row card-body text-light" style="flex: 0;">
                 <div class="ps-3">
@@ -53,7 +53,7 @@ function get_list_status($username,$status){
             </div>
         </div>
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
-            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
+            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;z-index: -1;">
             <div class="card-header">Checking</div>
             <div class="row card-body text-light" style="flex: 0;">
                 <div class="ps-3">
@@ -76,7 +76,7 @@ function get_list_status($username,$status){
             </div>
         </div>
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
-            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
+            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;z-index: -1;">
             <div class="card-header">Waiting information</div>
             <div class="row card-body text-light" style="flex: 0;">
                 <div class="ps-3">
@@ -98,7 +98,7 @@ function get_list_status($username,$status){
             </div>
         </div>
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
-            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;">
+            style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;z-index: -1;">
             <div class="card-header">On production</div>
             <div class="row card-body text-light" style="flex: 0;">
                 <div class="ps-3">
@@ -121,14 +121,14 @@ function get_list_status($username,$status){
             </div>
         </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-8" style="border-right: 1px solid #efecec;">
             <?php include("../get/get_list_job_cms_dashboard.php"); ?>
         </div>
         <div class="col-4">
             <?php include("../get/get_list_message_log.php"); ?>
         </div>
-    </div>
+    </div> -->
 </div>
 <script>
 timeago().render(document.querySelectorAll('.timeago'));
