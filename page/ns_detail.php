@@ -134,14 +134,14 @@
     $office_tell = $row['office_tell'];
     $work_email = $row['work_email'];
   }
-  $query = "SELECT * FROM all_in_one_project.add_new_job  where request_username = '".$request_username."' and status not in ('accepted','cancel') ORDER BY id DESC limit 2" or die("Error:" . mysqli_error($con));
+  $query = "SELECT * FROM all_in_one_project.add_new_job  where id<> ".$id." and request_username = '".$request_username."' and status not in ('accepted','cancel') ORDER BY id DESC limit 2" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $same_owner = '';
   while($row = mysqli_fetch_array($result)) {
     $same_owner .= " <li style='margin-top: 5px;' class='text-nowrap' >NS-".$row['id']." ".$row['brand']." ".$row['sku']." SKUs</li>";
   }
-  $same_owner .= " <li style='margin-top: 5px;color: #81a8dd;' class='text-nowrap' >Discover more <ion-icon name='arrow-forward-outline'></ion-icon></li>";
-  $query = "SELECT * FROM all_in_one_project.add_new_job  where brand = '".$brand."' and status not in ('accepted','cancel') ORDER BY id DESC limit 2" or die("Error:" . mysqli_error($con));
+  $same_owner .= " <li style='margin-top: 5px;color: #81a8dd;' class='text-nowrap' ><a type='button' onclick='ns_discover(&#34;brand_filter&#34;,&#34;".$brand."&#34;);' >Discover more <ion-icon name='arrow-forward-outline'></ion-icon></a></li>";
+  $query = "SELECT * FROM all_in_one_project.add_new_job  where id<> ".$id." and brand = '".$brand."' and status not in ('accepted','cancel') ORDER BY id DESC limit 2" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $same_brand = '';
   while($row = mysqli_fetch_array($result)) {
@@ -170,12 +170,14 @@
     <div class="row">
         <div class="col-4">
             <div class="container-fluid">
+            <small>
                 <a style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"
                     onclick="get_page('create_new');">
-                    <small>
+                   
                         <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
-                    </small>
+                  
                 </a>
+                </small>
                 <h5><a class="navbar-brand" href="#">NS-<?php echo $id." ".$brand." ".$sku." SKUs" ?> </a></h5>
                 <div class="ms-3">
                 <?php echo $dp_tags; ?>
@@ -494,3 +496,21 @@
     </div>
 </div>
 </div>
+
+<script>
+    function ns_discover(filter_id,value){
+        // document.getElementById(filter_id).value = value;
+        var url = new URL(window.location.href);
+        url.searchParams.append(filter_id, value);
+        get_page('create_new');
+    }
+    
+</script>
+<!-- 
+var url = new URL("http://foo.bar/?x=1&y=2");
+
+// If your expected result is "http://foo.bar/?x=1&y=2&x=42"
+url.searchParams.append('x', 42);
+
+// If your expected result is "http://foo.bar/?x=42&y=2"
+url.searchParams.set('x', 42); -->
