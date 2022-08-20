@@ -171,7 +171,7 @@
         <div class="col-4">
             <div class="container-fluid">
             <small>
-                <a style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"
+                <a type="button" style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"
                     onclick="get_page('create_new');">
                    
                         <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
