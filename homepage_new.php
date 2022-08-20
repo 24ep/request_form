@@ -382,7 +382,7 @@ function get_page(page) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
-        change_param('page', page);
+        // change_param('page', page);
 }
 //check for page param
 var queryString = window.location.search;
