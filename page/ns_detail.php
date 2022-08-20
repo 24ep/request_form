@@ -43,7 +43,7 @@
             ac_request.firstname as request_firstname,
             ac_request.lastname as request_lastname,
             ac_request.office_tell as request_office_tell,
-            ac_request.nickname as requst_nickname,
+            ac_request.nickname as request_nickname,
             brand_info.link as brand_info_link,
             brand_editor.body  as brand_editor,
             anj.web_cate as web_cate,
@@ -156,27 +156,30 @@
         <div class="col-8">
             <div class="container-fluid">
                 <a style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"
-                        onclick="get_page('create_new');">
+                    onclick="get_page('create_new');">
                     <small>
                         <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
                     </small>
                 </a>
                 <h5><a class="navbar-brand" href="#">NS-<?php echo $id." ".$brand." ".$sku." SKUs" ?> </a></h5>
+                <div class="ms-3">
                 <?php echo $dp_tags; ?>
+                </div>
             </div>
         </div>
-        <div class="col-2"  style="border-left: 1px solid #e0e0e0;">
-            <small class="content-assignee-header">Create by</small>
+        <div class="col-2" style="border-left: 1px solid #e0e0e0;">
+            <small class="content-assignee-header">Requested by</small>
             <ul class="contact-person-ns">
                 <li style="margin-top: 5px;">
-                    <ion-icon name="person-outline"></ion-icon><?php echo $request_firstname." ".substr($request_lastname,0,2).". ( ".$request_nickname." ) " ?>
+                    <ion-icon name="person-outline"></ion-icon>
+                    <?php echo $request_firstname." ".substr($request_lastname,0,2).". ( ".$request_nickname." ) " ?>
                 </li>
                 <li style="margin-top: 5px;">
                     <ion-icon name="call-outline"></ion-icon> <?php echo $request_office_tell; ?>
                 </li>
             </ul>
         </div>
-        <div class="col-2"  style="border-left: 1px solid #e0e0e0;">
+        <div class="col-2" style="border-left: 1px solid #e0e0e0;">
             <small class="content-assignee-header">Contact person</small>
             <ul class="contact-person-ns">
                 <li style="margin-top: 5px;">
@@ -294,44 +297,50 @@
             </h6>
         </div>
         <div class="col-4"
-            style="height: -webkit-fill-available;background-color: white;border-left: solid 1px #fde5e5;z-index: -1;padding: 10px;">
-            
+            style="height: -webkit-fill-available;background-color: white;border-left: solid 1px #fde5e5;margin-top: 2.5px;padding: 10px;">
 
 
 
-            
+
+
             <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                
-                    <button class="nav-link active" id="nav-note-tab" data-bs-toggle="tab" data-bs-target="#nav-note" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+                    <button class="nav-link active" id="nav-note-tab" data-bs-toggle="tab" data-bs-target="#nav-note"
+                        type="button" role="tab" aria-controls="nav-note" aria-selected="true">
                         <ion-icon name="document-text-outline"></ion-icon>
                         <strong><?php echo $brand; ?></strong> Note
                     </button>
-                    <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail" type="button" role="tab" aria-controls="nav-detail" aria-selected="false">
+                    <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail"
+                        type="button" role="tab" aria-controls="nav-detail" aria-selected="false">
                         Detail
                     </button>
-                    <button class="nav-link" id="nav-sku-tab" data-bs-toggle="tab" data-bs-target="#nav-sku" type="button" role="tab" aria-controls="nav-sku" aria-selected="false">
+                    <button class="nav-link" id="nav-sku-tab" data-bs-toggle="tab" data-bs-target="#nav-sku"
+                        type="button" role="tab" aria-controls="nav-sku" aria-selected="false">
                         SKU List
                     </button>
                 </div>
             </nav>
 
             <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-note" role="tabpanel" aria-labelledby="nav-note-tab" tabindex="0">
+                <div class="tab-pane fade show active" id="nav-note" role="tabpanel" aria-labelledby="nav-note-tab"
+                    tabindex="0">
 
-            <div class="container-fluid " style="padding: 10px;">
-                <div id="editorjs"></div>
+                    <div class="container-fluid " style="padding: 10px;">
+                        <div id="editorjs"></div>
+                    </div>
+
+                </div>
+
+                <div class="tab-pane fade" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab"
+                    tabindex="0">...</div>
+                <div class="tab-pane fade" id="nav-sku" role="tabpanel" aria-labelledby="nav-sku-tab" tabindex="0">...
+                </div>
             </div>
 
-            </div>
-            
-            <div class="tab-pane fade" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab" tabindex="0">...</div>
-            <div class="tab-pane fade" id="nav-sku" role="tabpanel" aria-labelledby="nav-sku-tab" tabindex="0">...</div>
-            </div>
-            
-            
 
-           
+
+
             <script>
             // first define the tools to be made avaliable in the columns
             var column_tools = {
