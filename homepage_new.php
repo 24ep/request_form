@@ -372,8 +372,14 @@ function get_page(page) {
     var urlParams = new URLSearchParams(queryString);
     var brand_filter =   urlParams.get('brand_filter');
     var user_filter =   urlParams.get('user_filter');
-    var param = change_param('page', page);
-    console.log(param);
+    // var param = change_param('page', page);
+    // console.log(param);
+    // Construct URLSearchParams object instance from current URL querystring.
+var queryParams = new URLSearchParams(window.location.search);
+ 
+// Set new or modify existing parameter value. 
+queryParams.set("page", page);
+
     // if (page ===true ) {
         Notiflix.Loading.hourglass('Loading...');
         $.post("base/page/"+page+".php", {
