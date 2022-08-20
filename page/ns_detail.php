@@ -134,19 +134,21 @@
     $office_tell = $row['office_tell'];
     $work_email = $row['work_email'];
   }
-  $query = "SELECT * FROM all_in_one_project.add_new_job  where request_username = '".$request_username."' and status not in ('accepted','cancel') ORDER BY id DESC limit 3" or die("Error:" . mysqli_error($con));
+  $query = "SELECT * FROM all_in_one_project.add_new_job  where request_username = '".$request_username."' and status not in ('accepted','cancel') ORDER BY id DESC limit 2" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $same_owner = '';
   while($row = mysqli_fetch_array($result)) {
-    $same_owner .= " <li style='margin-top: 5px;'>NS-".$row['id']." ".$row['brand']." ".$row['sku']." SKUs</li>";
+    $same_owner .= " <li style='margin-top: 5px;' class='text-nowrap' >NS-".$row['id']." ".$row['brand']." ".$row['sku']." SKUs</li>";
   }
-  $query = "SELECT * FROM all_in_one_project.add_new_job  where brand = '".$brand."' and status not in ('accepted','cancel') ORDER BY id DESC limit 3" or die("Error:" . mysqli_error($con));
+  $same_owner .= " <li style='margin-top: 5px;color: #81a8dd;' class='text-nowrap' >Discover more <ion-icon name='arrow-forward-outline'></ion-icon></li>";
+  $query = "SELECT * FROM all_in_one_project.add_new_job  where brand = '".$brand."' and status not in ('accepted','cancel') ORDER BY id DESC limit 2" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $same_brand = '';
   while($row = mysqli_fetch_array($result)) {
    
-    $same_brand .= " <li style='margin-top: 5px;'>NS-".$row['id']." ".$row['brand']." ".$row['sku']." SKUs</li>";
+    $same_brand .= " <li style='margin-top: 5px;' class='text-nowrap' >NS-".$row['id']." ".$row['brand']." ".$row['sku']." SKUs</li>";
   }
+  $same_brand .= " <li style='margin-top: 5px;color: #81a8dd;' class='text-nowrap' >Discover more <ion-icon name='arrow-forward-outline'></ion-icon></li>";
   if($follow_up_name==""){
     $follow_up_name = '-';
     $office_tell = '-';
@@ -180,19 +182,19 @@
                 </div>
             </div>
         </div>
-        <div class="col-2" style="border-left: 1px solid #e0e0e0;">
+        <div class="col-2 bg-white" style="border-left: 1px solid #e0e0e0;">
             <small class="content-assignee-header"><?php echo $request_firstname; ?> also pending</small>
             <ul class="contact-person-ns">
                     <?php echo $same_owner; ?>
             </ul>
         </div>
-        <div class="col-2" style="border-left: 1px solid #e0e0e0;">
+        <div class="col-2 bg-white" style="border-left: 1px solid #e0e0e0;">
             <small class="content-assignee-header"><?php echo $brand; ?> also pending</small>
             <ul class="contact-person-ns">
                     <?php echo $same_brand; ?>
             </ul>
         </div>
-        <div class="col-2" style="border-left: 1px solid #e0e0e0;">
+        <div class="col-2 bg-white" style="border-left: 1px solid #e0e0e0;">
             <small class="content-assignee-header">Requested by</small>
             <ul class="contact-person-ns">
                 <li style="margin-top: 5px;">
