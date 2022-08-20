@@ -388,7 +388,7 @@ function get_page(page) {
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
 console.log(queryString );
-if ( urlParams.has('page') && urlParams.get('page') <> null ) {
+if ( urlParams.has('page') && urlParams.get('page') != null ) {
   
     document.getElementById('nav_'+urlParams.get('page')).click();
     get_page(urlParams.get('page'));
