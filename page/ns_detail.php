@@ -524,13 +524,14 @@
     let params = kvp.join('&');
 
     // reload page with new params
-    // document.location.search = params;
+    document.location.search = params;
+    get_page('create_new');
+    filter_update();
 }
 function ns_discover(filter_id,value){
         // document.getElementById(filter_id).value = value;
         insertParam(filter_id, value);
-        get_page('create_new');
-        filter_update();
+     
     }
 </script>
 <!-- 
