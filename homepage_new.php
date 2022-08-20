@@ -341,6 +341,8 @@ if (!$_SESSION["login_csg"]){
 function get_page(page) {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
+    
+    var search_params = url.searchParams;
     var brand_filter =   urlParams.get('brand_filter');
     var user_filter =   urlParams.get('user_filter');
     // if (page ===true ) {
@@ -352,7 +354,7 @@ function get_page(page) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
-        url.searchParams.set('page', urlParams.get('page'));
+        urlParams.set('page', urlParams.get('page'));
 }
 //check for page param
 var queryString = window.location.search;
