@@ -354,9 +354,12 @@ if ( urlParams.has('page')) {
   
     document.getElementById('nav_'+urlParams.get('page')).click();
     get_page(urlParams.get('page'));
+    var url = new URL(window.location.href);
+    url.searchParams.set('page', urlParams.get('page'));
 }else{
     document.getElementById('nav_dashboard').click();
     get_page(urlParams.get('dashboard'));
+    url.searchParams.set('page', 'dashboard');
 }
 
 
