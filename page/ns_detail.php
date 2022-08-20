@@ -140,7 +140,7 @@
   while($row = mysqli_fetch_array($result)) {
     $same_owner .= " <li style='margin-top: 5px;' class='text-nowrap' >NS-".$row['id']." ".$row['brand']." ".$row['sku']." SKUs</li>";
   }
-  $same_owner .= " <li style='margin-top: 5px;color: #81a8dd;' class='text-nowrap' ><a type='button' onclick='ns_discover(&#34;brand_filter&#34;,&#34;".$brand."&#34;);' >Discover more <ion-icon name='arrow-forward-outline'></ion-icon></a></li>";
+  $same_owner .= " <li style='margin-top: 5px;color: #81a8dd;' class='text-nowrap' ><a type='button' onclick='ns_discover(&#34;user_filter&#34;,&#34;".$request_username."&#34;);' >Discover more <ion-icon name='arrow-forward-outline'></ion-icon></a></li>";
   $query = "SELECT * FROM all_in_one_project.add_new_job  where id<> ".$id." and brand = '".$brand."' and status not in ('accepted','cancel') ORDER BY id DESC limit 2" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $same_brand = '';
@@ -148,7 +148,7 @@
    
     $same_brand .= " <li style='margin-top: 5px;' class='text-nowrap' >NS-".$row['id']." ".$row['brand']." ".$row['sku']." SKUs</li>";
   }
-  $same_brand .= " <li style='margin-top: 5px;color: #81a8dd;' class='text-nowrap' >Discover more <ion-icon name='arrow-forward-outline'></ion-icon></li>";
+  $same_brand .= " <li style='margin-top: 5px;color: #81a8dd;' class='text-nowrap' ><a type='button' onclick='ns_discover(&#34;brand_filter&#34;,&#34;".$brand."&#34;);' >Discover more <ion-icon name='arrow-forward-outline'></ion-icon></a></li>";
   if($follow_up_name==""){
     $follow_up_name = '-';
     $office_tell = '-';
