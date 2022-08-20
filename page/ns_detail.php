@@ -524,7 +524,7 @@
     let params = kvp.join('&');
 
     // reload page with new params
-    document.location.search = params;
+    // document.location.search = params;
 }
 function ns_discover(filter_id,value){
         // document.getElementById(filter_id).value = value;
