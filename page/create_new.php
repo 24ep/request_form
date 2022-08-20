@@ -108,6 +108,23 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
     </div>
 </div>
 <script>
+function removeParam(key, sourceURL) {
+    var rtn = sourceURL.split("?")[0],
+        param,
+        params_arr = [],
+        queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
+    if (queryString !== "") {
+        params_arr = queryString.split("&");
+        for (var i = params_arr.length - 1; i >= 0; i -= 1) {
+            param = params_arr[i].split("=")[0];
+            if (param === key) {
+                params_arr.splice(i, 1);
+            }
+        }
+        if (params_arr.length) rtn = rtn + "?" + params_arr.join("&");
+    }
+    return rtn;
+}
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value
@@ -136,6 +153,11 @@ function filter_update(be) {
             $('#total_page_nj').html(data);
         });
     }
+    if(user_filter==""){
+        var queryString = window.location.search;
+        removeParam('user_filter', queryString);
+    }
+   
 }
 function update_brand_note(dataoutput, brand) {
     $.post("../base/action/action_update_brand_note.php", {
