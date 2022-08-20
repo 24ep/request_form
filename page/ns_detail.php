@@ -147,14 +147,15 @@
         <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
     </small></a>
         <h5><a class="navbar-brand" href="#">NS-<?php echo $id." ".$brand." ".$sku." SKUs" ?> </a></h5>
-
+        <?php echo $dp_tags; ?>
     </div>
+    
 </nav>
 
 <div class="container-fluid ">
-    <div class="row mt-3 ">
-        <div class="col-8 ">
-            <?php echo $dp_tags; ?>
+    <div class="row">
+        <div class="col-8 mt-3 ">
+           
             <?php if($config_type=='parent'){?>
 
             <div class="row">
@@ -208,6 +209,7 @@
                                     }
                                         
                                     ?>
+            <h6>Progress</h6>
             <div class="position-relative" style="margin: 10%!important;margin-top: 50px!important;">
                 <div class="progress" style="height: 5px;">
                     <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
@@ -238,8 +240,9 @@
                     class="position-absolute top-100 start-100 translate-middle btn btn-sm"><strong>Approved</strong><br><?php echo $approved_date; ?></small>
             </div>
             <?php }?>
+            <h6>Comment</h6>
         </div>
-        <div class="col-4">
+        <div class="col-4" style="height: -webkit-fill-available;background-color: white;border-left: solid 1px #fde5e5;z-index: -1;padding: 10px;">
         <h6>
                                     <ion-icon name="document-text-outline"></ion-icon>
                                     <strong><?php echo $brand; ?></strong> Note 
