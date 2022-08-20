@@ -150,7 +150,8 @@
 
 <div class="container-fluid ">
 
-?php if($config_type=='parent'){?>
+<?php if($config_type=='parent'){?>
+    
                                 <div class="row">
                                     <div class="col-sm-12 shadow officerassingbox">
                                         <div id="call_subtask">
