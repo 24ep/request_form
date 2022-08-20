@@ -351,10 +351,12 @@ var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
 console.log(queryString );
 if ( urlParams.has('page')) {
-    // get_page(urlParams.get('page'));
+  
     document.getElementById('nav_'+urlParams.get('page')).click();
+    get_page(urlParams.get('page'));
 }else{
     document.getElementById('nav_dashboard').click();
+    get_page(urlParams.get('dashboard'));
 }
 
 
