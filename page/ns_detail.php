@@ -311,9 +311,9 @@
                         <ion-icon name="document-text-outline"></ion-icon>
                         <strong><?php echo $brand; ?></strong> Note
                     </button>
-                    <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail"
-                        type="button" role="tab" aria-controls="nav-detail" aria-selected="false">
-                        Detail
+                    <button class="nav-link" id="nav-console-tab" data-bs-toggle="tab" data-bs-target="#nav-console"
+                        type="button" role="tab" aria-controls="nav-console" aria-selected="false">
+                        console
                     </button>
                     <button class="nav-link" id="nav-sku-tab" data-bs-toggle="tab" data-bs-target="#nav-sku"
                         type="button" role="tab" aria-controls="nav-sku" aria-selected="false">
@@ -332,9 +332,12 @@
 
                 </div>
 
-                <div class="tab-pane fade" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab"
-                    tabindex="0">...</div>
-                <div class="tab-pane fade" id="nav-sku" role="tabpanel" aria-labelledby="nav-sku-tab" tabindex="0">...
+                <div class="tab-pane fade" id="nav-console" role="tabpanel" aria-labelledby="nav-console-tab"
+                    tabindex="0">
+                    <?php include('../get/get_internal_console_nj.php');?>
+                </div>
+                <div class="tab-pane fade" id="nav-sku" role="tabpanel" aria-labelledby="nav-sku-tab" tabindex="0">
+                <?php include('../get/get_list_sku_ticket.php'); ?>
                 </div>
             </div>
 
