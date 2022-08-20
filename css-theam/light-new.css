@@ -248,9 +248,9 @@ label#label_file_cme {
     margin: 1px;
 }
 .ts-view.active {
-    background-color: #ebebeb !important;
+    background-color: #ea5a5a !important;
     color: #fcfcfc !important;
-    width: 100%;
+    width: fit-content!important;
 }
 .notifications-li{
     padding: 15px 15px;

@@ -383,10 +383,6 @@ while($row_project = mysqli_fetch_array($result_project)) {
           </div>
         <div style="color:gray;margin-bottom:15px;margin-top:10px;font-size:13px">
         <span>Create by 
-        <input class="form-control form-control-sm" list="datalistOptionsrequestby"  onchange="update_cr_detail('.$id.','.$cr_edit_request_by.')" id="cr_edit_request_by" name="cr_edit_request_by" placeholder="Type to search..." value="'.$request_by.'">
-        <datalist id="datalistOptionsrequestby">
-        '.$username_op.'
-        </datalist>
         '.$request_by_contact.'</span>   
         <span>'.$create_date.'</span>      
         </div>

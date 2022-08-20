@@ -153,7 +153,7 @@ function mapping_department($department){
     }else{
         return "OTHER";
     }
-
+// return department , and if that cant identify need to return an 'OTHER' to to record on 24 EP j
 
 }
 function check_exist_message_id(){
@@ -177,8 +177,6 @@ function check_exist_message_id(){
             $sql_update_clone = "UPDATE add_new_job SET parent= ".$exist_id." where id=".$clone_id ;
             $query_update_parent = mysqli_query($con,$sql_update_clone);
         }
-        
-        
         //chage status and config type for
         $sql_update_parent = "UPDATE add_new_job SET status = 'none',config_type= 'parent' where id=".$exist_id ;
         $query_update_parent = mysqli_query($con,$sql_update_parent);

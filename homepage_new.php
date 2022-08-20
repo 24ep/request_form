@@ -595,10 +595,10 @@ function minimize_nav() {
 function call_edit_add_new_modal(id, brand) {
     Notiflix.Loading.hourglass('Loading...');
     if (id) {
-        $.post("../base/modal/detail_create_new.php", {
+        $.post("../base/page/ns_detail.php", {
             id: id
         }, function(data) {
-            $('#callmodal_request_add_new').html(data);
+            $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
     }

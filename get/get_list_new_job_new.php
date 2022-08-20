@@ -244,13 +244,14 @@ if(isset($_POST["from_post"] )){
               }
               $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 250px;' ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></div>";
               $sub_ticket .= "<div class='col'></div>";
+              $sub_ticket .= "<div class='col'></div>";
               $sub_ticket .= "<div class='col'>".$row_child["sku"]."</div>";
               $sub_ticket .= "<div class='col'></div>";
               $sub_ticket .= "<div class='col'></div>";
               $sub_ticket .= "<div class='col'></div>";
               $sub_ticket .= "<div class='col'></div>";
               $sub_ticket .= "<div class='col'>".$status."</div>";
-              $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm bg-gradient'  data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+              $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm bg-gradient'  onclick='call_edit_add_new_modal(".$row_child["id"].")' >
               Detail </button></div >";
               $i++;
             }
@@ -261,13 +262,14 @@ if(isset($_POST["from_post"] )){
           $sub_ticket .= "<li ".$tr_class.">";
           $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 250px;'><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></div>";
           $sub_ticket .= "<div class='col'></div>";
+          $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col'>".$row_child["sku"]."</div>";
           $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col' >".$status."</div>";
-          $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm bg-gradient' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+          $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm bg-gradient' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
            Detail </button></div>";
           $i++;
           }
