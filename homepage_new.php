@@ -363,8 +363,8 @@ function change_param(key, value) {
     let params = kvp.join('&');
 
     // reload page with new params
-     document.location.search = params;
-    // return params;
+    //  document.location.search = params;
+    return params;
    
 }
 function get_page(page) {
@@ -373,7 +373,7 @@ function get_page(page) {
     var brand_filter =   urlParams.get('brand_filter');
     var user_filter =   urlParams.get('user_filter');
     var param = change_param('page', page);
-    // console.log(param);
+    console.log(param);
     // if (page ===true ) {
         Notiflix.Loading.hourglass('Loading...');
         $.post("base/page/"+page+".php", {
