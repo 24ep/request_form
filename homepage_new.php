@@ -344,7 +344,7 @@ function updateURLpage(pill) {
             window.location.pathname + '?page=' + pill;
         window
             .history
-            .pushState({
+            .replaceState({
                 path: newurl
             }, '', newurl);
     }
