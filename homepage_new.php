@@ -354,7 +354,7 @@ function get_page(page) {
     var urlParams = new URLSearchParams(queryString);
     var brand_filter =   urlParams.get('brand_filter');
     var user_filter =   urlParams.get('user_filter');
-    updateURLpage(page));
+    updateURLpage(page);
 
     // if (page ===true ) {
         Notiflix.Loading.hourglass('Loading...');
