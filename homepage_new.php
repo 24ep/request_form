@@ -370,8 +370,6 @@ function change_param(key, value) {
 function get_page(page) {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
-
-
     var brand_filter =   urlParams.get('brand_filter');
     var user_filter =   urlParams.get('user_filter');
     var param = change_param('page', page);
@@ -396,11 +394,11 @@ if ( urlParams.has('page') && urlParams.get('page') != null ) {
     document.getElementById('nav_'+urlParams.get('page')).click();
     get_page(urlParams.get('page'));
     var url = new URL(window.location.href);
-    url.searchParams.set('page', urlParams.get('page'));
+    // url.searchParams.set('page', urlParams.get('page'));
 }else{
     document.getElementById('nav_dashboard').click();
     get_page('dashboard');
-    url.searchParams.set('page', 'dashboard');
+    // url.searchParams.set('page', 'dashboard');
 }
 
 
