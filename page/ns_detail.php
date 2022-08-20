@@ -155,7 +155,16 @@
 <div class="container-fluid ">
     <div class="row">
         <div class="col-8 mt-3 ">
-           
+        <nav class="p-3 bg-light text-dark bg-gradient shadow-sm  " style="">
+            <div class="container-fluid">
+            <a style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"><small>
+                <ion-icon name="person-outline" style="margin: 0px;"></ion-icon> Contact Person
+            </small></a>
+                <h5><a class="navbar-brand" href="#"><?php echo $follow_up_name; ?> <?php echo $office_tell; ?></a></h5>
+            </div>
+            
+        </nav>
+
             <?php if($config_type=='parent'){?>
 
             <div class="row">
@@ -209,7 +218,7 @@
                                     }
                                         
                                     ?>
-            <h6>Progress</h6>
+            <h6><ion-icon name="podium-outline"></ion-icon><strong>Progress</strong></h6>
             <div class="position-relative" style="margin: 10%!important;margin-top: 50px!important;">
                 <div class="progress" style="height: 5px;">
                     <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
@@ -240,7 +249,7 @@
                     class="position-absolute top-100 start-100 translate-middle btn btn-sm"><strong>Approved</strong><br><?php echo $approved_date; ?></small>
             </div>
             <?php }?>
-            <h6>Comment</h6>
+            <h6><ion-icon name="chatbox-outline"></ion-icon><strong>Progress</strong></h6>
         </div>
         <div class="col-4" style="height: -webkit-fill-available;background-color: white;border-left: solid 1px #fde5e5;z-index: -1;padding: 10px;">
         <h6>
@@ -248,7 +257,7 @@
                                     <strong><?php echo $brand; ?></strong> Note 
                                 </h6>
                                 <div class="container-fluid shadow-sm"
-                                    style="border-radius: 10px;border: 1px solid #f4f4f4;padding: 30px;">
+                                    style="padding: 10px;">
                                     <div id="editorjs"></div>
                                 </div>
                                 <script>
