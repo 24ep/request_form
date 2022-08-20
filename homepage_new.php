@@ -338,82 +338,16 @@ if (!$_SESSION["login_csg"]){
 </html>
 <script>
 function get_page(page) {
-    if (page == "update_content") {
+    // if (page ===true ) {
         Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/update_content.php", {}, function(data) {
+        $.post("base/page/"+page+".php", {}, function(data) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
-    } else if (page == "create_new") {
-        Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/create_new.php", {}, function(data) {
-            $('#col_detail').html(data);
-            Notiflix.Loading.remove();
-        });
-    } else if (page == "account") {
-        Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/account.php", {}, function(data) {
-            $('#col_detail').html(data);
-            Notiflix.Loading.remove();
-        });
-    } else if (page == "dashboard") {
-        Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/dashboard.php", {}, function(data) {
-            $('#col_detail').html(data);
-            Notiflix.Loading.remove();
-        });
-    } else if (page == "datapump_convert") {
-        Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/datapump_convert.php", {}, function(data) {
-            $('#col_detail').html(data);
-            Notiflix.Loading.remove();
-        });
-    } else if (page == "datapump_admin") {
-        Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/datapump_admin.php", {}, function(data) {
-            $('#col_detail').html(data);
-            Notiflix.Loading.remove();
-        });
-    } else if (page == "writer-auto-assign-console") {
-        Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/writer-auto-assign-console.php", {}, function(data) {
-            $('#col_detail').html(data);
-            Notiflix.Loading.remove();
-        });
-    } else if (page == "convert_mapping") {
-        Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/convert_mapping.php", {}, function(data) {
-            $('#col_detail').html(data);
-            Notiflix.Loading.remove();
-        });
-    } else if (page == "wordtohtml") {
-        Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/wordtohtml.php", {}, function(data) {
-            $('#col_detail').html(data);
-            Notiflix.Loading.remove();
-        });
-    } else if (page == "assert") {
-        Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/assert.php", {}, function(data) {
-            $('#col_detail').html(data);
-            Notiflix.Loading.remove();
-        });
-    } else if (page == "notion") {
-        Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/notion.php", {}, function(data) {
-            $('#col_detail').html(data);
-            Notiflix.Loading.remove();
-        });
-    } else if (page == "report") {
-        Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/report.php", {}, function(data) {
-            $('#col_detail').html(data);
-            Notiflix.Loading.remove();
-        });
-    } else {
-        $('#col_detail').html("not avaliable");
-        Notiflix.Loading.remove();
-    }
+    // } else {
+    //     $('#col_detail').html("not avaliable");
+    //     Notiflix.Loading.remove();
+    // }
 }
 //check for page param
 var queryString = window.location.search;
