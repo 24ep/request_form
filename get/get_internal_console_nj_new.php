@@ -25,7 +25,7 @@
     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
 <!-- assign -->
-<form class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
+<form class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <div class="col-6">
             <h6><strong>Person Assignee</strong></h6>
             <small>มอมหมายงานนี้ให้กับบุึลอื่น หรือตัวเอง</small>
@@ -73,7 +73,7 @@
       <div class="accordion-body">
          
     <!-- Itemize send email stamp -->
-    <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
+    <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <div class="col-6">
             <h6><strong>Send Email Stamp</strong></h6>
             <small>ลงบันทึกส่งอีเมลติดตาม (ระบุ tag ticket id บนอีเมลทุกครั้ง)</small>
@@ -106,7 +106,7 @@
     </h2>
     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
-      <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
+      <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <div class="col-6">
             <h6><strong>Need to update contact</strong></h6>
             <small>ใช้ในในกรณีที่ข้อมูลติดต่อร้านค้าหรือจัดซื้อผิด</small>
@@ -136,7 +136,7 @@
     </h2>
     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
-      <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
+      <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <div class="col-6">
             <h6><strong>Get new contact</strong></h6>
             <small>ได้รับ contact ใหม่เปลี่ยน status เป็น pending</small>
@@ -171,7 +171,7 @@
     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
         <!-- cancel confirm not for sale -->
-    <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
+    <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <div class="col-6">
             <h6><strong>Cancel ticket</strong></h6>
             <small>ระบุข้อความยืนยันจากร้านค้าหรือจัดซื้อ
@@ -234,7 +234,7 @@
     </h2>
     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
-      <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
+      <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <h6><strong>Create Sub-Ticket</strong></h6>
         <small>Generate new sub-ticket and convert ticket from buyer to parent ticket</small>
         <form>
@@ -272,7 +272,7 @@
     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
          <!-- start -->
-    <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
+    <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <div class="col-6">
             <h6><strong>Start Checking</strong></h6>
             <small>ลงบันทึกเวลาที่เริ่มตรวจสอบ information/linesheet/duplicate sku</small>
@@ -303,7 +303,7 @@
       <div class="accordion-body">
          <!-- accepted -->
    
-    <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
+    <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <div class="col-6">
             <h6><strong>Complete Checking (Accepted)</strong></h6>
             <small>ลงบันทึกยืนยันตรวจสอบข้อมูลเรียบร้อย พร้อมเปิด job สำหรับ writer </small>
