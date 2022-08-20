@@ -191,7 +191,7 @@ if(isset($_POST["from_post"] )){
       $ticket .= "<div class='col'>".$p_badge."</div>";
       $ticket .= "<div class='col'>".$task_status ."</div>";
       $ticket .= "<div class='col'>";
-      $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='btn btn-dark btn-sm bg-gradient' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row["id"].")' >
+      $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='btn btn-dark btn-sm bg-gradient'  onclick='call_edit_add_new_modal(".$row["id"].")' >
        Detail </button></div>";
       $ticket .=  "</li>";
       //get sub ticket
