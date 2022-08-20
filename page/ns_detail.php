@@ -141,7 +141,7 @@
 <link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
 <script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
 
-<nav class="p-3 bg-light text-dark bg-gradient shadow-sm fixed-top " style="">
+<nav class="p-3 bg-light text-dark bg-gradient shadow-sm  " style="">
     <div class="container-fluid">
     <a style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"><small>
         <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
@@ -208,7 +208,7 @@
                                     }
                                         
                                     ?>
-            <div class="position-relative m-5" style="margin-bottom: 5rem!important;">
+            <div class="position-relative" style="margin: 10%!important;margin-top: 50px!important;">
                 <div class="progress" style="height: 5px;">
                     <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
                         aria-label="Progress" style="width: <?php echo $progress_per; ?>%;"
