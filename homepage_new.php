@@ -338,47 +338,23 @@ if (!$_SESSION["login_csg"]){
 </html>
 <script>
 
-function change_param(key, value) {
-    key = encodeURIComponent(key);
-    value = encodeURIComponent(value);
-
-    // kvp looks like ['key1=value1', 'key2=value2', ...]
-    var kvp = document.location.search.substr(1).split('&');
-    let i=0;
-
-    for(; i<kvp.length; i++){
-        if (kvp[i].startsWith(key + '=')) {
-            let pair = kvp[i].split('=');
-            pair[1] = value;
-            kvp[i] = pair.join('=');
-            break;
-        }
+function updateURLpage(pill) {
+    if (history.pushState) {
+        var newurl = window.location.protocol + "//" + window.location.host +
+            window.location.pathname + '?page=' + pill;
+        window
+            .history
+            .pushState({
+                path: newurl
+            }, '', newurl);
     }
-
-    if(i >= kvp.length){
-        kvp[kvp.length] = [key,value].join('=');
-    }
-
-    // can return this or...
-    let params = kvp.join('&');
-
-    // reload page with new params
-    //  document.location.search = params;
-    return params;
-   
 }
 function get_page(page) {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
     var brand_filter =   urlParams.get('brand_filter');
     var user_filter =   urlParams.get('user_filter');
-    // var param = change_param('page', page);
-    // console.log(param);
-    // Construct URLSearchParams object instance from current URL querystring.
-var queryParams = new URLSearchParams(window.location.search);
- 
-// Set new or modify existing parameter value. 
-queryParams.set("page", page);
+    updateURLpage(page));
 
     // if (page ===true ) {
         Notiflix.Loading.hourglass('Loading...');
