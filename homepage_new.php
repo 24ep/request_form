@@ -341,15 +341,22 @@ if (!$_SESSION["login_csg"]){
 
 </html>
 <script>
-function updateparams(key,page) {
-        // Construct URLSearchParams object instance from current URL querystring.
-        var queryParams = new URLSearchParams(window.location.search);
 
-// Set new or modify existing parameter value. 
-queryParams.set(key, page);
+function updateparams(key, value) {
+    // Construct URLSearchParams object instance from current URL querystring.
+    var queryParams = new URLSearchParams(window.location.search);
 
-// Replace current querystring with the new one.
-history.replaceState(null, null, "?" + queryParams.toString());
+    // Set new or modify existing parameter value.
+    if(value==""){
+        queryParams.delete(key);
+    }
+    else{
+        queryParams.set(key, value);
+    }
+   
+
+    // Replace current querystring with the new one.
+    history.replaceState(null, null, "?" + queryParams.toString());
 }
 
 function get_page(page) {
@@ -357,7 +364,7 @@ function get_page(page) {
     var urlParams = new URLSearchParams(queryString);
     var brand_filter = urlParams.get('brand_filter');
     var user_filter = urlParams.get('user_filter');
-    updateparams('page',page);
+    updateparams('page', page);
 
 
     // if (page ===true ) {
