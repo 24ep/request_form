@@ -14,8 +14,18 @@
     }
 ?>
 
-    <!-- assign -->
-    <form class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
+
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Assign or Take owner
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+<!-- assign -->
+<form class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <div class="col-6">
             <h6><strong>Person Assignee</strong></h6>
             <small>มอมหมายงานนี้ให้กับบุึลอื่น หรือตัวเอง</small>
@@ -49,6 +59,19 @@
         </div>
     </form>
     <!-- end assign -->
+
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Stamp Email send
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+         
     <!-- Itemize send email stamp -->
     <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <div class="col-6">
@@ -69,7 +92,85 @@
         </div>
     </div>
     <!-- end Itemize send email stamp -->
-    <!-- cancel confirm not for sale -->
+      </div>
+    </div>
+  </div>
+  <?php if($status<>"need update contact"){ ?>
+    
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+       Update Contact
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+      <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
+        <div class="col-6">
+            <h6><strong>Need to update contact</strong></h6>
+            <small>ใช้ในในกรณีที่ข้อมูลติดต่อร้านค้าหรือจัดซื้อผิด</small>
+        </div>
+        <div class="col-6">
+            <button onclick="itm_just_status_need_updated_contact(<?php echo $id; ?>);" type="button"
+                class="btn btn-warning btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Need to
+                update contact
+            </button>
+        </div>
+        <div class="row">
+            <div id="itemize_need_to_update_respond">
+                <?php echo $help_cancel." ".$cancel_resone; ?>
+            </div>
+        </div>
+    </div>
+      </div>
+    </div>
+  </div>
+  <?php } ?>
+  <?php if($status=="need update contact"){ ?>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Update contact
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+      <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
+        <div class="col-6">
+            <h6><strong>Get new contact</strong></h6>
+            <small>ได้รับ contact ใหม่เปลี่ยน status เป็น pending</small>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="new_contact_buyer"
+                    style="height: 100px"><?php echo $contact_buyer; ?></textarea>
+                <label for="floatingTextarea2">Contact buyer</label>
+            </div>
+            <div class="form-floating" style="margin-top:10px">
+                <textarea class="form-control" placeholder="Leave a comment here" id="new_contact_vender"
+                    style="height: 100px"><?php echo $contact_vender; ?></textarea>
+                <label for="floatingTextarea2">Contact vender</label>
+            </div>
+        </div>
+        <div class="col-6">
+            <button onclick="itm_just_status_updated_contact(<?php echo $id; ?>);" type="button"
+                class="btn btn-success btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">get
+                contact - change to Pending
+            </button>
+        </div>
+    </div>
+      </div>
+    </div>
+  </div>
+  <?php } ?>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Cancel ticket
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        <!-- cancel confirm not for sale -->
     <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <div class="col-6">
             <h6><strong>Cancel ticket</strong></h6>
@@ -96,51 +197,14 @@
             </div>
         </div>
     </div>
-    <!-- cancel confirm not for sale -->
-    <?php if($status<>"need update contact"){ ?>
-    <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
-        <div class="col-6">
-            <h6><strong>Need to update contact</strong></h6>
-            <small>ใช้ในในกรณีที่ข้อมูลติดต่อร้านค้าหรือจัดซื้อผิด</small>
-        </div>
-        <div class="col-6">
-            <button onclick="itm_just_status_need_updated_contact(<?php echo $id; ?>);" type="button"
-                class="btn btn-warning btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Need to
-                update contact
-            </button>
-        </div>
-        <div class="row">
-            <div id="itemize_need_to_update_respond">
-                <?php echo $help_cancel." ".$cancel_resone; ?>
-            </div>
-        </div>
+      </div>
     </div>
-    <?php } ?>
-    <!-- Get new contact -->
-    <?php if($status=="need update contact"){ ?>
-    <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
-        <div class="col-6">
-            <h6><strong>Get new contact</strong></h6>
-            <small>ได้รับ contact ใหม่เปลี่ยน status เป็น pending</small>
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="new_contact_buyer"
-                    style="height: 100px"><?php echo $contact_buyer; ?></textarea>
-                <label for="floatingTextarea2">Contact buyer</label>
-            </div>
-            <div class="form-floating" style="margin-top:10px">
-                <textarea class="form-control" placeholder="Leave a comment here" id="new_contact_vender"
-                    style="height: 100px"><?php echo $contact_vender; ?></textarea>
-                <label for="floatingTextarea2">Contact vender</label>
-            </div>
-        </div>
-        <div class="col-6">
-            <button onclick="itm_just_status_updated_contact(<?php echo $id; ?>);" type="button"
-                class="btn btn-success btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">get
-                contact - change to Pending
-            </button>
-        </div>
-    </div>
-    <?php } ?>
+  </div>
+</div>
+
+
+   
+
     <!-- normal process -->
     <?php if(strpos($status,"review")!==false){
                         echo '<div class="alert alert-warning" style="border-radius: 0px;" role="alert">
@@ -207,7 +271,7 @@
                                    </div>';
                                 }?>
     <!-- start -->
-    <div class="row g-3  action-block">
+    <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <div class="col-6">
             <h6><strong>Start Checking</strong></h6>
             <small>ลงบันทึกเวลาที่เริ่มตรวจสอบ information/linesheet/duplicate sku</small>
