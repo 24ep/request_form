@@ -6,7 +6,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
 ?>
 <div style="margin-left: 10px;padding: 0px 20px;">
     <div class="tab-content" id="myTabContent">
-        <div class="row align-items-center p-2">
+        <div class="row align-items-center p-3">
             <div class="col-3">
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
@@ -50,7 +50,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                     </span>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-auto">
                 <div class="input-group input-group-sm mb-3">
                     <button class="btn btn-dark btn-sm bg-gradient" style="margin-left:10px" type="button"
                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
