@@ -337,7 +337,7 @@
                     <?php include('../get/get_internal_console_nj.php');?>
                 </div>
                 <div class="tab-pane fade" id="nav-sku" role="tabpanel" aria-labelledby="nav-sku-tab" tabindex="0">
-                <?php include('../get/get_list_sku_ticket.php'); ?>
+                <?php include('../get/get_list_sku_ticket_new.php'); ?>
                 </div>
             </div>
 
