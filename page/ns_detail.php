@@ -145,10 +145,12 @@
     <div class="row">
         <div class="col-8">
             <div class="container-fluid">
-                <a style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="get_page('create_new');><small>
+                <a style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"
+                        onclick="get_page('create_new');">
+                    <small>
                         <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
-                    </small></a>
+                    </small>
+                </a>
                 <h5><a class="navbar-brand" href="#">NS-<?php echo $id." ".$brand." ".$sku." SKUs" ?> </a></h5>
                 <?php echo $dp_tags; ?>
             </div>
@@ -302,8 +304,8 @@
 
             </div>
             
-            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-detail-tab" tabindex="0">...</div>
-            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-sku-tab" tabindex="0">...</div>
+            <div class="tab-pane fade" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab" tabindex="0">...</div>
+            <div class="tab-pane fade" id="nav-sku" role="tabpanel" aria-labelledby="nav-sku-tab" tabindex="0">...</div>
             </div>
             
             
