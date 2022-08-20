@@ -416,10 +416,12 @@ function get_page(page) {
     }
 }
 //check for page param
+var queryString = window.location.search;
+var urlParams = new URLSearchParams(queryString);
 if ( urlParams.has('page')) {
     get_page(urlParams.get('page'));
 }else{
-    et_page('dashboard');
+    get_page('dashboard');
 }
 
 
