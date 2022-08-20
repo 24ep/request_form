@@ -145,7 +145,8 @@
     <div class="row">
         <div class="col-8">
             <div class="container-fluid">
-                <a style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"><small>
+                <a style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                        onclick="get_page('create_new');><small>
                         <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
                     </small></a>
                 <h5><a class="navbar-brand" href="#">NS-<?php echo $id." ".$brand." ".$sku." SKUs" ?> </a></h5>
@@ -287,7 +288,7 @@
                         Detail
                     </button>
                     <button class="nav-link" id="nav-sku-tab" data-bs-toggle="tab" data-bs-target="#nav-sku" type="button" role="tab" aria-controls="nav-sku" aria-selected="false">
-                        SKU
+                        SKU List
                     </button>
                 </div>
             </nav>
