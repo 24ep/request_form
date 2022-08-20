@@ -158,7 +158,7 @@ function filter_update(be) {
         removeParam('user_filter', queryString);
      
     }else{
-        updateURLpage(page);
+        updateURLpage('user_filter',page);
     }
    
 }
