@@ -138,7 +138,7 @@ function filter_update(be) {
         });
     }
         updateparams('user_filter',user_filter);
-        updateparams('user_filter',brand_filter);
+        updateparams('brand_filter',brand_filter);
    
 }
 function update_brand_note(dataoutput, brand) {
