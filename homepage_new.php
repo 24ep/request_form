@@ -341,9 +341,14 @@ if (!$_SESSION["login_csg"]){
 function get_page(page) {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
+    var brand_filter =   urlParams.get('brand_filter');
+    var user_filter =   urlParams.get('user_filter');
     // if (page ===true ) {
         Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/"+page+".php", {}, function(data) {
+        $.post("base/page/"+page+".php", {
+            brand_filter : brand_filter,
+            user_filter : user_filter
+        }, function(data) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
@@ -361,7 +366,7 @@ if ( urlParams.has('page')) {
     url.searchParams.set('page', urlParams.get('page'));
 }else{
     document.getElementById('nav_dashboard').click();
-    get_page(urlParams.get('dashboard'));
+    get_page(urlParams.get('page'));
     url.searchParams.set('page', 'dashboard');
 }
 
