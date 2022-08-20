@@ -273,7 +273,7 @@
         <div class="accordion-item">
     <h2 class="accordion-header" id="flush-heading6">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapse6">
-      <ion-icon name="bonfire-outline"></ion-icon> Stamp Start working
+      <ion-icon name="bonfire-outline"></ion-icon> Stamp Start checking infomation
       </button>
     </h2>
     <div id="flush-collapse6" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
@@ -303,7 +303,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-heading7">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse7" aria-expanded="false" aria-controls="flush-collapse7">
-      <ion-icon name="checkmark-done-circle-outline"></ion-icon> Stamp complete job
+      <ion-icon name="checkmark-done-circle-outline"></ion-icon> Stamp accept job
       </button>
     </h2>
     <div id="flush-collapse7" class="accordion-collapse collapse" aria-labelledby="flush-heading7" data-bs-parent="#accordionFlushExample">
