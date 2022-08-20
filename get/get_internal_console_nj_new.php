@@ -172,7 +172,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-heading4">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
-      <ion-icon name="call-outline"></ion-icon> Cancel ticket
+      <ion-icon name="remove-circle-outline"></ion-icon>Cancel ticket
       </button>
     </h2>
     <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-heading4" data-bs-parent="#accordionFlushExample">
