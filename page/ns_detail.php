@@ -140,19 +140,20 @@
 ?>
 <link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
 <script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
-<a class="m-3 p-3"><small>
+
+<nav class="p-3" style="z-index:-1">
+    <div class="container-fluid">
+    <a class="m-3 p-3"><small>
         <ion-icon name="chevron-back-outline"></ion-icon> Back to list
     </small></a>
-<nav class="navbar navbar-light bg-light" style="z-index:-1">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">NS-<?php echo $id." ".$brand." ".$sku." SKUs" ?> </a>
+        <h5><a class="navbar-brand" href="#">NS-<?php echo $id." ".$brand." ".$sku." SKUs" ?> </a></h5>
 
     </div>
 </nav>
 
 <div class="container-fluid ">
     <div class="row ">
-        <div class="col-10 ">
+        <div class="col-7 ">
             <?php echo $dp_tags; ?>
             <?php if($config_type=='parent'){?>
 
@@ -238,7 +239,7 @@
             </div>
             <?php }?>
         </div>
-        <div class="col-2">
+        <div class="col-5">
         <h6>
                                     <ion-icon name="document-text-outline"></ion-icon>
                                     <strong><?php echo $brand; ?></strong> Note <small
