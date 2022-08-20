@@ -140,13 +140,88 @@
 ?>
 <link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
 <script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
-<nav class="navbar navbar-light bg-light">
+<a><small>Back to list</small></a>
+<nav class="navbar navbar-light bg-light" style="z-index:-1">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">NS-<?php echo $id." ".$brand." ".$sku." SKUs".$dp_tags;?> </a>
+    <a class="navbar-brand" href="#">NS-<?php echo $id." ".$brand." ".$sku." SKUs" ?> </a>
+    <?php echo $dp_tags; ?>
   </div>
 </nav>
 
 <div class="container-fluid ">
 
-
+?php if($config_type=='parent'){?>
+                                <div class="row">
+                                    <div class="col-sm-12 shadow officerassingbox">
+                                        <div id="call_subtask">
+                                            <?php include('../get/get_sub_task_in_task.php'); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <?php }?>
+                                
+                                <?php if($config_type=='task'){?>
+                                    <?php 
+                                    if($status=='checking'){
+                                        $badge_progres_0 = 'btn-success';
+                                        $badge_progres_1 = 'btn-success';
+                                        $badge_progres_2 = 'btn-secondary';
+                                        $badge_progres_3 = 'btn-secondary';
+                                        $badge_progres_4 = 'btn-secondary';
+                                        $progress_per = '30';
+                                    }elseif($status=='accepted' and $approved_date ==''){
+                                        $badge_progres_0 = 'btn-success';
+                                        $badge_progres_1 = 'btn-success';
+                                        $badge_progres_2 = 'btn-success';
+                                        $badge_progres_3 = 'btn-secondary';
+                                        $progress_per = '60';
+                                    }elseif($status=='accepted' and $approved_date <>''){
+                                        $badge_progres_0 = 'btn-success';
+                                        $badge_progres_1 = 'btn-success';
+                                        $badge_progres_2 = 'btn-success';
+                                        $badge_progres_3 = 'btn-success';
+                                        $progress_per = '100';
+                                    }elseif($status=='cancel'){
+                                        $badge_progres_0 = 'btn-secondary';
+                                        $badge_progres_1 = 'btn-secondary';
+                                        $badge_progres_2 = 'btn-secondary';
+                                        $badge_progres_3 = 'btn-secondary';
+                                        $progress_per = '0';
+                                    }elseif($status=='pending'){
+                                        $badge_progres_0 = 'btn-success';
+                                        $badge_progres_1 = 'btn-secondary';
+                                        $badge_progres_2 = 'btn-secondary';
+                                        $badge_progres_3 = 'btn-secondary';
+                                        $progress_per = '0';
+                                    }else{
+                                        $badge_progres_1 = 'btn-secondary';
+                                        $badge_progres_2 = 'btn-secondary';
+                                        $badge_progres_3 = 'btn-secondary';
+                                        $progress_per = '0';
+                                    }
+                                        
+                                    ?>
+                                    <div class="position-relative m-5" style="margin-bottom: 5rem!important;">
+                                    <div class="progress" style="height: 5px;">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-label="Progress" style="width: <?php echo $progress_per; ?>%;" aria-valuenow="<?php echo $progress_per; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm <?php echo $badge_progres_0; ?> rounded-pill" style="width: 2rem; height:2rem;">0</button>
+                                    <small style="top: 50px!important;" class="position-absolute top-100 start-0 translate-middle btn btn-sm"><strong>Request</strong><br><?php echo $create_date; ?></small>
+                                    <button type="button" class="position-absolute top-0 start-30 translate-middle btn btn-sm <?php echo $badge_progres_1; ?> rounded-pill" style="width: 2rem; height:2rem;">1</button>
+                                    <small style="top: 50px!important;" class="position-absolute top-100 start-30 translate-middle btn btn-sm"><strong>Checking</strong> <br><?php echo $accepted_date; ?></small>
+                                    <button type="button" class="position-absolute top-0 start-60 translate-middle btn btn-sm <?php echo $badge_progres_2; ?> rounded-pill" style="width: 2rem; height:2rem;">2</button>
+                                    <small style="top: 50px!important;" class="position-absolute top-100 start-60 translate-middle btn btn-sm"><strong>On-productions</strong> <br><?php echo $job_number; ?></small>
+                                    <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm <?php echo $badge_progres_3; ?> rounded-pill" style="width: 2rem; height:2rem;">3</button>
+                                    <small style="top: 50px!important;" class="position-absolute top-100 start-100 translate-middle btn btn-sm"><strong>Approved</strong><br><?php echo $approved_date; ?></small>
+                                    </div>
+                                <!-- <h6>
+                                    <ion-icon name="color-wand-outline"></ion-icon><strong>Productions Job</strong>
+                                </h6> -->
+                                <!-- <div class="row">
+                                    <div class="col-sm-12">
+                                        <?php// include('../get/get_list_job_cms.php'); ?>
+                                    </div>
+                                </div> -->
+                                <?php }?>
 </div>
