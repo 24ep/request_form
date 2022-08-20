@@ -363,7 +363,8 @@ function change_param(key, value) {
     let params = kvp.join('&');
 
     // reload page with new params
-    document.location.search = params;
+    // document.location.search = params;
+    return params;
    
 }
 function get_page(page) {
@@ -373,16 +374,18 @@ function get_page(page) {
 
     var brand_filter =   urlParams.get('brand_filter');
     var user_filter =   urlParams.get('user_filter');
+    var param = hange_param('page', page);
     // if (page ===true ) {
         Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/"+page+".php", {
+        // $.post("base/page/"+page+".php", {
+            $.post(param, {
             brand_filter : brand_filter,
             user_filter : user_filter
         }, function(data) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
-        // change_param('page', page);
+       
 }
 //check for page param
 var queryString = window.location.search;
