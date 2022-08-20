@@ -374,7 +374,7 @@ function get_page(page) {
 
     var brand_filter =   urlParams.get('brand_filter');
     var user_filter =   urlParams.get('user_filter');
-    var param = hange_param('page', page);
+    var param = change_param('page', page);
     // if (page ===true ) {
         Notiflix.Loading.hourglass('Loading...');
         // $.post("base/page/"+page+".php", {
