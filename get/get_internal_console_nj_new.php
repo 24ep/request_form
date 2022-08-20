@@ -203,19 +203,7 @@
 </div>
 
 
-   
 
-    <!-- normal process -->
-    <?php if(strpos($status,"review")!==false){
-                        echo '<div class="alert alert-warning" style="border-radius: 0px;" role="alert">
-                        <h6 class="alert-heading" style="margin:0px">
-                        <strong>Need more infomation</strong>
-                        </h6><small style="color: gray;">Last reply date : '.$need_more_info_date.'</small>
-                        <p style="font-size:14px;margin-top:10px">
-                            '.$need_more_info_note.'
-                        </p>
-                        </div>';
-                    }?>
     <?php
                     if($start_checking_date<>"" and $start_checking_date<>null){
                         $allow_task_ticket = "disabled";
@@ -235,9 +223,18 @@
                         unset($allow_send_to_traffic);unset($help_traffic);
                     }
                     ?>
-    <?php if(!isset($parent) or $status <> 'accepted'){
+  
+  <?php if(!isset($parent) or $status <> 'accepted'){
                     ?>
-    <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
+<div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+      Create Sub-Ticket
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+      <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <h6><strong>Create Sub-Ticket</strong></h6>
         <small>Generate new sub-ticket and convert ticket from buyer to parent ticket</small>
         <form>
@@ -257,20 +254,24 @@
             </div>
         </form>
     </div>
+      </div>
+    </div>
+  </div>
+
+   
     <?php }else{
-                                    echo "<small>this ticket is sub ticket , so you can't use sub ticket function</small>";
-                                } ?>
+        $notic_sub_ticket_message = "<ion-icon name='alert-circle-outline'></ion-icon> <small>this ticket is sub ticket , so you can't use sub ticket function</small>";
+    } ?>
     <?php if($config_type=="task"){ ?>
-    <!-- Special brand guideline -->
-    <?php if($brand_info_link<>'' or isset($brand_info_link)){
-                                    echo '<div class="alert alert-info" role="alert">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
-                                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                                  </svg>
-                                     สินค้าแบรนด์ '.$brand.' มี Guideline พิเศษของแบรนด์ '.$brand.' เอง กรุณาตรวจสอบ </strong><a style="color:red" href="'.$brand_info_link.'" target="_Blank"><strong>Click here</strong></a> !
-                                   </div>';
-                                }?>
-    <!-- start -->
+        <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Stamp Start working
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+         <!-- start -->
     <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <div class="col-6">
             <h6><strong>Start Checking</strong></h6>
@@ -288,8 +289,20 @@
             <?php echo $help_start." ".$start_checking_date; ?>
         </div>
     </div>
-    <!-- accepted -->
-    <?php  if($start_checking_date<>"" and $start_checking_date<>null ){?>
+      </div>
+    </div>
+  </div>
+  <?php  if($start_checking_date<>"" and $start_checking_date<>null ){?>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Stamp complete job
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+         <!-- accepted -->
+   
     <div class="row m-2 p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <div class="col-6">
             <h6><strong>Complete Checking (Accepted)</strong></h6>
@@ -310,6 +323,10 @@
             <?php echo $help_traffic." ".$accepted_date; ?>
         </div>
     </div>
+      </div>
+    </div>
+  </div>
+   
     <?php } ?>
     <?php if($status == 'waiting traffic'){ ?>
     <hr>
