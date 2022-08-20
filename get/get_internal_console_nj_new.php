@@ -14,7 +14,14 @@
     }
 ?>
 
-
+<?php if($status == 'waiting traffic'){ ?>
+    <hr>
+    <h6><strong>Create Writer & Studio - 24ep</strong></h6>
+    <form action="base/action/action_create_job_cms.php" method="POST" target="_blank">
+        <input type="hidden" id="id_adj" name="id_adj" value="<?php echo  $_POST['id']; ?>">
+        <?php include('../form/form_create_job_cms.php')?>
+    </form>
+    <?php }else{ ?>
 <div class="accordion accordion-flush" id="accordionFlushExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingOne">
@@ -163,12 +170,12 @@
   </div>
   <?php } ?>
   <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+    <h2 class="accordion-header" id="flush-heading4">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
         Cancel ticket
       </button>
     </h2>
-    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+    <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-heading4" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
         <!-- cancel confirm not for sale -->
     <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
@@ -227,12 +234,12 @@
   <?php if(!isset($parent) or $status <> 'accepted'){
                     ?>
 <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+    <h2 class="accordion-header" id="flush-heading5">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
       Create Sub-Ticket
       </button>
     </h2>
-    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+    <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-heading5" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
       <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
         <h6><strong>Create Sub-Ticket</strong></h6>
@@ -264,12 +271,12 @@
     } ?>
     <?php if($config_type=="task"){ ?>
         <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+    <h2 class="accordion-header" id="flush-heading6">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapse6">
         Stamp Start working
       </button>
     </h2>
-    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+    <div id="flush-collapse6" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
          <!-- start -->
     <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
@@ -294,12 +301,12 @@
   </div>
   <?php  if($start_checking_date<>"" and $start_checking_date<>null ){?>
   <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+    <h2 class="accordion-header" id="flush-heading7">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse7" aria-expanded="false" aria-controls="flush-collapse7">
         Stamp complete job
       </button>
     </h2>
-    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+    <div id="flush-collapse7" class="accordion-collapse collapse" aria-labelledby="flush-heading7" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
          <!-- accepted -->
    
@@ -328,13 +335,7 @@
   </div>
    
     <?php } ?>
-    <?php if($status == 'waiting traffic'){ ?>
-    <hr>
-    <h6><strong>Create Writer & Studio - 24ep</strong></h6>
-    <form action="base/action/action_create_job_cms.php" method="POST" target="_blank">
-        <input type="hidden" id="id_adj" name="id_adj" value="<?php echo  $_POST['id']; ?>">
-        <?php include('../form/form_create_job_cms.php')?>
-    </form>
+ 
     <?php } ?>
     <?php } ?>
     </div>
