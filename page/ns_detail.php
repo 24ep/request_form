@@ -143,7 +143,7 @@
 
 <nav class="p-3 bg-light text-dark bg-gradient shadow-sm  ">
     <div class="row">
-        <div class="col-8" style="border-right: 1px solid #e0e0e0;">
+        <div class="col-8">
             <div class="container-fluid">
                 <a style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"><small>
                         <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
@@ -152,7 +152,7 @@
                 <?php echo $dp_tags; ?>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-4"  style="border-left: 1px solid #e0e0e0;">
             <small class="content-assignee-header">Contact person</small>
             <ul class="contact-person-ns">
                 <li style="margin-top: 5px;">
@@ -272,31 +272,37 @@
         <div class="col-4"
             style="height: -webkit-fill-available;background-color: white;border-left: solid 1px #fde5e5;z-index: -1;padding: 10px;">
             
+
+
+
+            
             <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                
                     <button class="nav-link active" id="nav-note-tab" data-bs-toggle="tab" data-bs-target="#nav-note" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
                         <ion-icon name="document-text-outline"></ion-icon>
                         <strong><?php echo $brand; ?></strong> Note
                     </button>
-                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-detail" type="button" role="tab" aria-controls="nav-detail" aria-selected="false">
+                    <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail" type="button" role="tab" aria-controls="nav-detail" aria-selected="false">
                         Detail
                     </button>
-                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-sku" type="button" role="tab" aria-controls="nav-sku" aria-selected="false">
+                    <button class="nav-link" id="nav-sku-tab" data-bs-toggle="tab" data-bs-target="#nav-sku" type="button" role="tab" aria-controls="nav-sku" aria-selected="false">
                         SKU
                     </button>
                 </div>
             </nav>
 
             <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-note" role="tabpanel" aria-labelledby="nav-note-tab">
+            <div class="tab-pane fade show active" id="nav-note" role="tabpanel" aria-labelledby="nav-note-tab" tabindex="0">
 
             <div class="container-fluid " style="padding: 10px;">
                 <div id="editorjs"></div>
             </div>
 
             </div>
-            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-detail-tab">...</div>
-            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-sku-tab">...</div>
+            
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-detail-tab" tabindex="0">...</div>
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-sku-tab" tabindex="0">...</div>
             </div>
             
             
