@@ -499,7 +499,7 @@
 
 <script>
  
-    function insertParam(key, value) {
+    function ns_discover(key, value) {
     key = encodeURIComponent(key);
     value = encodeURIComponent(value);
 
@@ -525,14 +525,8 @@
 
     // reload page with new params
     document.location.search = params;
-    get_page('create_new');
-    filter_update();
+   
 }
-function ns_discover(filter_id,value){
-        // document.getElementById(filter_id).value = value;
-        insertParam(filter_id, value);
-     
-    }
 </script>
 <!-- 
 var url = new URL("http://foo.bar/?x=1&y=2");

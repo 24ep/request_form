@@ -415,7 +415,12 @@ function get_page(page) {
         Notiflix.Loading.remove();
     }
 }
-get_page('dashboard');
+//check for page param
+if ( urlParams.has('page')) {
+    get_page(urlParams.get('page'));
+    filter_update();
+}
+
 
 function update_readed_nt() {
     $.post("base/action/action_update_read_nt.php", {}, function(data) {
