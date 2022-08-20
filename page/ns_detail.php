@@ -204,6 +204,9 @@
                 <li style="margin-top: 5px;">
                     <ion-icon name="call-outline"></ion-icon> <?php echo $request_office_tell; ?>
                 </li>
+                <li style='margin-top: 5px;color: #81a8dd;' >
+                    Take owner <ion-icon name="golf-outline"></ion-icon>
+                </li>
             </ul>
         </div>
         <div class="col-2" style="border-left: 1px solid #e0e0e0;">
