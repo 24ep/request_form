@@ -167,7 +167,7 @@ if (!$_SESSION["login_csg"]){
                 </a>
                 <ul class="dropdown-menu notifications-box shadow overflow-auto">
                     <span>
-                    <ion-icon name="notifications-outline"></ion-icon> <strong>Activity</strong>
+                        <ion-icon name="notifications-outline"></ion-icon> <strong>Activity</strong>
                     </span>
 
                     <div id="get_list_job_update">
@@ -337,24 +337,49 @@ if (!$_SESSION["login_csg"]){
 
 </html>
 <script>
+function ns_discover(key, value) {
+    key = encodeURIComponent(key);
+    value = encodeURIComponent(value);
+
+    // kvp looks like ['key1=value1', 'key2=value2', ...]
+    var kvp = document.location.search.substr(1).split('&');
+    let i = 0;
+
+    for (; i < kvp.length; i++) {
+        if (kvp[i].startsWith(key + '=')) {
+            let pair = kvp[i].split('=');
+            pair[1] = value;
+            kvp[i] = pair.join('=');
+            break;
+        }
+    }
+
+    if (i >= kvp.length) {
+        kvp[kvp.length] = [key, value].join('=');
+    }
+
+    // can return this or...
+    let params = kvp.join('&');
+
+    // reload page with new params
+    document.location.search = params ';
+
+}
+
 function get_page(page) {
     // if (page ===true ) {
-        Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/"+page+".php", {}, function(data) {
-            $('#col_detail').html(data);
-            Notiflix.Loading.remove();
-        });
-    // } else {
-    //     $('#col_detail').html("not avaliable");
-    //     Notiflix.Loading.remove();
-    // }
+    Notiflix.Loading.hourglass('Loading...');
+    $.post("base/page/" + page + ".php", {}, function(data) {
+        $('#col_detail').html(data);
+        Notiflix.Loading.remove();
+    });
 }
 //check for page param
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
-if ( urlParams.has('page')) {
+if (urlParams.has('page')) {
     get_page(urlParams.get('page'));
-}else{
+} else {
     get_page('dashboard');
 }
 
