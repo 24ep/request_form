@@ -176,18 +176,18 @@ if (!$_SESSION["login_csg"]){
                 </ul>
                 <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link active" data-bs-toggle="pill" type="button" role="tab"
-                        aria-selected="false" onclick="get_page('dashboard');">
+                        aria-selected="false" id="nav_dashboard" onclick="get_page('dashboard');">
                         <ion-icon name="home"></ion-icon><span class="main-manu-nav">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                    <a class="main_bra nav-link" id="nav_create_new" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('create_new');">
                         <ion-icon name="rocket"></ion-icon><span class="main-manu-nav">Create New</span>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                    <a class="main_bra nav-link" id="nav_update_content" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('update_content');">
                         <ion-icon name="ticket"></ion-icon><span class="main-manu-nav">Other Requests</span>
                     </a>
@@ -195,13 +195,13 @@ if (!$_SESSION["login_csg"]){
                 <hr class="hr_manu_bra_in">
                 <small class="header_manu_bra">Internals</small>
                 <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                    <a class="main_bra nav-link" id="nav_report" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('report');">
                         <ion-icon name="bar-chart"></ion-icon><span class="main-manu-nav">Reports</span>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                    <a class="main_bra nav-link" id="nav_assert" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('assert');">
                         <ion-icon name="folder-open"></ion-icon><span class="main-manu-nav">Block</span>
                     </a>
@@ -213,7 +213,7 @@ if (!$_SESSION["login_csg"]){
                     </a>
                 </li> -->
                 <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
+                    <a class="main_bra nav-link" id="nav_account" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('account');">
                         <ion-icon name="terminal-outline"></ion-icon><span class="main-manu-nav">Administration</span>
                     </a>
@@ -226,10 +226,10 @@ if (!$_SESSION["login_csg"]){
                     </a>
                     <ul class="dropdown-menu menu-block shadow p3">
                         <small class="header_manu_bra">Datapump</small>
-                        <li><a onclick="get_page('datapump_convert');" class="dropdown-item dp-link" type="button">
+                        <li><a id="nav_datapump_convert" onclick="get_page('datapump_convert');" class="dropdown-item dp-link" type="button">
                                 <ion-icon name="shapes"></ion-icon>Datapump Convert
                             </a></li>
-                        <li><a onclick="get_page('datapump_admin');" class="dropdown-item dp-link" type="button">
+                        <li><a id="nav_datapump_admin" onclick="get_page('datapump_admin');" class="dropdown-item dp-link" type="button">
                                 <ion-icon name="shapes"></ion-icon>Datapump Admin
                             </a></li>
                         <hr class="hr_manu_bra_in">
@@ -262,14 +262,14 @@ if (!$_SESSION["login_csg"]){
                             </a></li>
                         <hr class="hr_manu_bra_in">
                         <small class="header_manu_bra">Ability</small>
-                        <li><a onclick="get_page('writer-auto-assign-console');" class="dropdown-item dp-link"
+                        <li><a id="nav_writer-auto-assign-console" onclick="get_page('writer-auto-assign-console');" class="dropdown-item dp-link"
                                 type="button">
                                 <ion-icon name="shapes"></ion-icon>writer auto-assign console
                             </a></li>
-                        <li><a onclick="get_page('convert_mapping');" class="dropdown-item dp-link" type="button">
+                        <li><a id="nav_convert_mapping" onclick="get_page('convert_mapping');" class="dropdown-item dp-link" type="button">
                                 <ion-icon name="shapes"></ion-icon>Convert Mapping
                             </a></li>
-                        <li><a onclick="get_page('wordtohtml');" class="dropdown-item dp-link" type="button">
+                        <li><a id="nav_wordtohtml"  onclick="get_page('wordtohtml');" class="dropdown-item dp-link" type="button">
                                 <ion-icon name="shapes"></ion-icon>Word to HTML
                             </a></li>
                         <li><a href="https://centrality.workplace.com/" target="_blank" class="dropdown-item dp-link"
@@ -350,7 +350,8 @@ function get_page(page) {
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
 if ( urlParams.has('page')) {
-    get_page(urlParams.get('page'));
+    // get_page(urlParams.get('page'));
+    document.getElementById('nav_'+urlParams.get('page')).click();
 }else{
     get_page('dashboard');
 }
