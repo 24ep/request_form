@@ -418,6 +418,8 @@ function get_page(page) {
 //check for page param
 if ( urlParams.has('page')) {
     get_page(urlParams.get('page'));
+}else{
+    et_page('dashboard');
 }
 
 
