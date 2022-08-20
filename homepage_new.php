@@ -339,12 +339,15 @@ if (!$_SESSION["login_csg"]){
 <script>
     
 function get_page(page) {
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
     // if (page ===true ) {
         Notiflix.Loading.hourglass('Loading...');
         $.post("base/page/"+page+".php", {}, function(data) {
             $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
+        url.searchParams.set('page', urlParams.get('page'));
 }
 //check for page param
 var queryString = window.location.search;
