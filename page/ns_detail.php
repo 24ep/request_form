@@ -313,11 +313,11 @@
                     </button>
                     <button class="nav-link" id="nav-console-tab" data-bs-toggle="tab" data-bs-target="#nav-console"
                         type="button" role="tab" aria-controls="nav-console" aria-selected="false">
-                        Console
+                        <strong>Console</strong>
                     </button>
                     <button class="nav-link" id="nav-sku-tab" data-bs-toggle="tab" data-bs-target="#nav-sku"
                         type="button" role="tab" aria-controls="nav-sku" aria-selected="false">
-                        SKU List
+                        <strong>SKU List</strong>
                     </button>
                 </div>
             </nav>
