@@ -205,13 +205,17 @@
                     <ion-icon name="call-outline"></ion-icon> <?php echo $request_office_tell; ?>
                 </li>
                 <li style='margin-top: 5px;color: #81a8dd;' >
-                    Take owner <ion-icon name="golf-outline"></ion-icon>
+                <ion-icon name="golf-outline"></ion-icon> Take owner 
                 </li>
             </ul>
         </div>
         <div class="col-2" style="border-left: 1px solid #e0e0e0;">
             <small class="content-assignee-header">Contact person</small>
-            <ul class="contact-person-ns">
+            <?php if($follow_up_name=="-"){
+                echo '<button type="button" class="btn btn-sm btn-primary bg-gradient"><ion-icon name="person-outline"></ion-icon> Take officer</button>';
+            }else{
+                ?>
+                <ul class="contact-person-ns">
                 <li style="margin-top: 5px;">
                     <ion-icon name="person-outline"></ion-icon><?php echo $follow_up_name; ?>
                 </li>
@@ -219,6 +223,9 @@
                     <ion-icon name="call-outline"></ion-icon> <?php echo $office_tell; ?>
                 </li>
             </ul>
+            <?php
+            }
+            
         </div>
     </div>
 </nav>
