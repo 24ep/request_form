@@ -354,7 +354,7 @@ if ( urlParams.has('page')) {
     // get_page(urlParams.get('page'));
     document.getElementById('nav_'+urlParams.get('page')).click();
 }else{
-    get_page('dashboard');
+    document.getElementById('nav_dashboard').click();
 }
 
 
