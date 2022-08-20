@@ -15,8 +15,8 @@ if($_POST['id']<>""){
   $result = mysqli_query($con, $query);
     echo 
     "<p>
-    <a href='#' id='download_link' class='badge bg-dark bg-gradient shadow-sm' onClick='javascript:ExcelReport();''>
-    <ion-icon name='code-download-outline'></ion-icon>Export</a>
+    <a href='#' id='download_link' class='badge bg-dark bg-gradient shadow-sm mt-2 p-1' onClick='javascript:ExcelReport();''>
+    <ion-icon name='download-outline'></ion-icon>Export</a>
     </p>";
 
   
