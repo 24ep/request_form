@@ -137,12 +137,8 @@ function filter_update(be) {
             $('#total_page_nj').html(data);
         });
     }
-    if(user_filter==""){
         updateparams('user_filter',user_filter);
-    }
-    if(brand_filter==""){
         updateparams('user_filter',brand_filter);
-    }
    
 }
 function update_brand_note(dataoutput, brand) {
