@@ -342,7 +342,7 @@ function get_page(page) {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
     
-    var search_params = url.searchParams;
+
     var brand_filter =   urlParams.get('brand_filter');
     var user_filter =   urlParams.get('user_filter');
     // if (page ===true ) {
