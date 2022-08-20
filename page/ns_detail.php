@@ -141,21 +141,35 @@
 <link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
 <script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
 
-<nav class="p-3 bg-light text-dark bg-gradient shadow-sm  " style="">
-    <div class="container-fluid">
-    <a style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"><small>
-        <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
-    </small></a>
-        <h5><a class="navbar-brand" href="#">NS-<?php echo $id." ".$brand." ".$sku." SKUs" ?> </a></h5>
-        <?php echo $dp_tags; ?>
+<nav class="p-3 bg-light text-dark bg-gradient shadow-sm  ">
+    <div class="row">
+        <div class="col-8">
+            <div class="container-fluid">
+                <a style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"><small>
+                        <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
+                    </small></a>
+                <h5><a class="navbar-brand" href="#">NS-<?php echo $id." ".$brand." ".$sku." SKUs" ?> </a></h5>
+                <?php echo $dp_tags; ?>
+            </div>
+        </div>
+        <div class="col-4">
+            <small class="content-assignee-header">Contact person</small>
+            <ul class="contact-person-ns">
+                <li style="margin-top: 5px;">
+                    <ion-icon name="person-outline"></ion-icon><?php echo $follow_up_name; ?>
+                </li>
+                <li style="margin-top: 5px;">
+                    <ion-icon name="call-outline"></ion-icon> <?php echo $office_tell; ?>
+                </li>
+            </ul>
+        </div>
     </div>
-    
 </nav>
 
 <div class="container-fluid ">
     <div class="row">
         <div class="col-8 mt-3 ">
-        <nav class="p-3 bg-light text-dark bg-gradient shadow-sm  " style="">
+            <!-- <nav class="p-3 bg-light text-dark bg-gradient shadow-sm  " style="">
             <div class="container-fluid">
             <a style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"><small>
                 <ion-icon name="person-outline" style="margin: 0px;"></ion-icon> Contact Person
@@ -163,7 +177,7 @@
                 <h5><a class="navbar-brand" href="#"><?php echo $follow_up_name; ?> <?php echo $office_tell; ?></a></h5>
             </div>
             
-        </nav>
+        </nav> -->
 
             <?php if($config_type=='parent'){?>
 
@@ -218,7 +232,9 @@
                                     }
                                         
                                     ?>
-            <h6><ion-icon name="podium-outline"></ion-icon><strong>Progress</strong></h6>
+            <h6>
+                <ion-icon name="podium-outline"></ion-icon><strong>Progress</strong>
+            </h6>
             <div class="position-relative" style="margin: 10%!important;margin-top: 50px!important;">
                 <div class="progress" style="height: 5px;">
                     <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
@@ -249,127 +265,128 @@
                     class="position-absolute top-100 start-100 translate-middle btn btn-sm"><strong>Approved</strong><br><?php echo $approved_date; ?></small>
             </div>
             <?php }?>
-            <h6><ion-icon name="chatbox-outline"></ion-icon><strong>Progress</strong></h6>
+            <h6>
+                <ion-icon name="chatbox-outline"></ion-icon><strong>Progress</strong>
+            </h6>
         </div>
-        <div class="col-4" style="height: -webkit-fill-available;background-color: white;border-left: solid 1px #fde5e5;z-index: -1;padding: 10px;">
-        <h6>
-                                    <ion-icon name="document-text-outline"></ion-icon>
-                                    <strong><?php echo $brand; ?></strong> Note 
-                                </h6>
-                                <div class="container-fluid shadow-sm"
-                                    style="padding: 10px;">
-                                    <div id="editorjs"></div>
-                                </div>
-                                <script>
-                                // first define the tools to be made avaliable in the columns
-                                var column_tools = {
-                                    header: Header,
-                                    alert: Alert,
-                                    paragraph: Paragraph,
-                                    delimiter: Delimiter
-                                }
-                                // editor.destroy();
-                                var ImageTool = window.ImageTool;
-                                var editor = new EditorJS({
-                                        placeholder: 'ข้อความที่อยู่ใน block นี้จะแสดงในทุกๆ ticket ของแบรนด์ดังกล่าว',
-                                        onReady: () => {
-                                            console.log('Editor.js is ready to work!');
-                                            new DragDrop(editor);
-                                        },
-                                        onChange: (api, event) => {
-                                            //console.log('<?php //echo $_SESSION['username'];?>have been updated a content in brand note', event)
-                                            editor.save().then((outputData) => {
-                                                // console.log('Article data: ', outputData)
-                                                outputData = JSON.stringify(outputData, null, 4);
-                                                update_brand_note(outputData, '<?php echo $brand; ?>');
-                                            }).catch((error) => {
-                                                console.log('Saving failed: ', error)
-                                            });
-                                        },
-                                        holder: 'editorjs',
-                                        tools: {
-                                            columns: {
-                                                class: editorjsColumns,
-                                                config: {
-                                                    tools: column_tools, // IMPORTANT! ref the column_tools
-                                                }
-                                            },
-                                            header: {
-                                                class: Header,
-                                                config: {
-                                                    placeholder: 'Enter a header',
-                                                    levels: [2, 3, 4],
-                                                    defaultLevel: 3
-                                                }
-                                            },
-                                            list: {
-                                                class: List,
-                                                inlineToolbar: true,
-                                                config: {
-                                                    defaultStyle: 'unordered'
-                                                }
-                                            },
-                                            list: {
-                                                class: NestedList,
-                                                inlineToolbar: true,
-                                            },
-                                            checklist: {
-                                                class: Checklist,
-                                                inlineToolbar: true,
-                                            },
-                                            table: {
-                                                class: Table,
-                                                inlineToolbar: true,
-                                                config: {
-                                                    rows: 2,
-                                                    cols: 3,
-                                                },
-                                            },
-                                            paragraph: {
-                                                class: Paragraph,
-                                                inlineToolbar: true,
-                                            },
-                                            code: CodeTool,
-                                            embed: Embed,
-                                            warning: Warning,
-                                            alert: Alert,
-                                            delimiter: Delimiter,
-                                            underline: Underline,
-                                            code: CodeTool,
-                                            // linkTool: {
-                                            //     class: LinkTool,
-                                            //     config: {
-                                            //         endpoint: 'http://localhost:8008/fetchUrl', // Your backend endpoint for url data fetching,
-                                            //     }
-                                            // },
-                                            // raw: RawTool,
-                                            marker: {
-                                                class: Marker,
-                                                shortcut: 'CMD+SHIFT+M'
-                                            },
-                                            image: {
-                                                class: ImageTool,
-                                                config: {
-                                                    endpoints: {
-                                                        byFile: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_uploadfiles.php', // Your backend file uploader endpoint
-                                                        byUrl: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_uploadfiles.php', // Your endpoint that provides uploading by Url
-                                                    }
-                                                }
-                                            },
-                                            // attaches: {
-                                            //     class: AttachesTool,
-                                            //     config: {
-                                            //         endpoint: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_attachfiles.php'
-                                            //     }
-                                            // },
-                                        },
-                                        <?php if($brand_editor<>""){
+        <div class="col-4"
+            style="height: -webkit-fill-available;background-color: white;border-left: solid 1px #fde5e5;z-index: -1;padding: 10px;">
+            <h6>
+                <ion-icon name="document-text-outline"></ion-icon>
+                <strong><?php echo $brand; ?></strong> Note
+            </h6>
+            <div class="container-fluid shadow-sm" style="padding: 10px;">
+                <div id="editorjs"></div>
+            </div>
+            <script>
+            // first define the tools to be made avaliable in the columns
+            var column_tools = {
+                header: Header,
+                alert: Alert,
+                paragraph: Paragraph,
+                delimiter: Delimiter
+            }
+            // editor.destroy();
+            var ImageTool = window.ImageTool;
+            var editor = new EditorJS({
+                placeholder: 'ข้อความที่อยู่ใน block นี้จะแสดงในทุกๆ ticket ของแบรนด์ดังกล่าว',
+                onReady: () => {
+                    console.log('Editor.js is ready to work!');
+                    new DragDrop(editor);
+                },
+                onChange: (api, event) => {
+                    //console.log('<?php //echo $_SESSION['username'];?>have been updated a content in brand note', event)
+                    editor.save().then((outputData) => {
+                        // console.log('Article data: ', outputData)
+                        outputData = JSON.stringify(outputData, null, 4);
+                        update_brand_note(outputData, '<?php echo $brand; ?>');
+                    }).catch((error) => {
+                        console.log('Saving failed: ', error)
+                    });
+                },
+                holder: 'editorjs',
+                tools: {
+                    columns: {
+                        class: editorjsColumns,
+                        config: {
+                            tools: column_tools, // IMPORTANT! ref the column_tools
+                        }
+                    },
+                    header: {
+                        class: Header,
+                        config: {
+                            placeholder: 'Enter a header',
+                            levels: [2, 3, 4],
+                            defaultLevel: 3
+                        }
+                    },
+                    list: {
+                        class: List,
+                        inlineToolbar: true,
+                        config: {
+                            defaultStyle: 'unordered'
+                        }
+                    },
+                    list: {
+                        class: NestedList,
+                        inlineToolbar: true,
+                    },
+                    checklist: {
+                        class: Checklist,
+                        inlineToolbar: true,
+                    },
+                    table: {
+                        class: Table,
+                        inlineToolbar: true,
+                        config: {
+                            rows: 2,
+                            cols: 3,
+                        },
+                    },
+                    paragraph: {
+                        class: Paragraph,
+                        inlineToolbar: true,
+                    },
+                    code: CodeTool,
+                    embed: Embed,
+                    warning: Warning,
+                    alert: Alert,
+                    delimiter: Delimiter,
+                    underline: Underline,
+                    code: CodeTool,
+                    // linkTool: {
+                    //     class: LinkTool,
+                    //     config: {
+                    //         endpoint: 'http://localhost:8008/fetchUrl', // Your backend endpoint for url data fetching,
+                    //     }
+                    // },
+                    // raw: RawTool,
+                    marker: {
+                        class: Marker,
+                        shortcut: 'CMD+SHIFT+M'
+                    },
+                    image: {
+                        class: ImageTool,
+                        config: {
+                            endpoints: {
+                                byFile: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_uploadfiles.php', // Your backend file uploader endpoint
+                                byUrl: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_uploadfiles.php', // Your endpoint that provides uploading by Url
+                            }
+                        }
+                    },
+                    // attaches: {
+                    //     class: AttachesTool,
+                    //     config: {
+                    //         endpoint: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_attachfiles.php'
+                    //     }
+                    // },
+                },
+                <?php if($brand_editor<>""){
                                                 echo ' data: '.$brand_editor; 
                                             }?>
-                                    }
-                                );
-                                </script>
-                            </div>
+            });
+            </script>
         </div>
     </div>
+</div>
 </div>
