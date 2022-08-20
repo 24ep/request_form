@@ -341,16 +341,15 @@ if (!$_SESSION["login_csg"]){
 
 </html>
 <script>
-function updateURLpage(pill) {
-    if (history.pushState) {
-        var newurl = window.location.protocol + "//" + window.location.host +
-            window.location.pathname + '?page=' + pill;
-        window
-            .history
-            .replaceState({
-                path: newurl
-            }, '', newurl);
-    }
+function updateURLpage(page) {
+        // Construct URLSearchParams object instance from current URL querystring.
+        var queryParams = new URLSearchParams(window.location.search);
+
+// Set new or modify existing parameter value. 
+queryParams.set("page", page);
+
+// Replace current querystring with the new one.
+history.replaceState(null, null, "?" + queryParams.toString());
 }
 
 function get_page(page) {
@@ -358,15 +357,8 @@ function get_page(page) {
     var urlParams = new URLSearchParams(queryString);
     var brand_filter = urlParams.get('brand_filter');
     var user_filter = urlParams.get('user_filter');
-    // updateURLpage(page);
-    // Construct URLSearchParams object instance from current URL querystring.
-    var queryParams = new URLSearchParams(window.location.search);
+    updateURLpage(page);
 
-    // Set new or modify existing parameter value. 
-    queryParams.set("page", page);
-
-    // Replace current querystring with the new one.
-    history.replaceState(null, null, "?" + queryParams.toString());
 
     // if (page ===true ) {
     Notiflix.Loading.hourglass('Loading...');
