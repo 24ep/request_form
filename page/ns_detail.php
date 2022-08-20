@@ -140,30 +140,34 @@
 ?>
 <link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
 <script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
-<a><small>Back to list</small></a>
+<a class="m-3 p-3"><small>
+        <ion-icon name="chevron-back-outline"></ion-icon> Back to list
+    </small></a>
 <nav class="navbar navbar-light bg-light" style="z-index:-1">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">NS-<?php echo $id." ".$brand." ".$sku." SKUs" ?> </a>
-        <?php echo $dp_tags; ?>
+
     </div>
 </nav>
 
 <div class="container-fluid ">
+    <div class="row ">
+        <div class="col-10 ">
+            <?php echo $dp_tags; ?>
+            <?php if($config_type=='parent'){?>
 
-    <?php if($config_type=='parent'){?>
-
-    <div class="row">
-        <div class="col-sm-12 shadow officerassingbox">
-            <div id="call_subtask">
-                <?php include('../get/get_sub_task_in_task.php'); ?>
+            <div class="row">
+                <div class="col-sm-12 shadow officerassingbox">
+                    <div id="call_subtask">
+                        <?php include('../get/get_sub_task_in_task.php'); ?>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <hr>
-    <?php }?>
+            <hr>
+            <?php }?>
 
-    <?php if($config_type=='task'){?>
-    <?php 
+            <?php if($config_type=='task'){?>
+            <?php 
                                     if($status=='checking'){
                                         $badge_progres_0 = 'btn-success';
                                         $badge_progres_1 = 'btn-success';
@@ -203,42 +207,158 @@
                                     }
                                         
                                     ?>
-    <div class="position-relative m-5" style="margin-bottom: 5rem!important;">
-        <div class="progress" style="height: 5px;">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
-                aria-label="Progress" style="width: <?php echo $progress_per; ?>%;"
-                aria-valuenow="<?php echo $progress_per; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="position-relative m-5" style="margin-bottom: 5rem!important;">
+                <div class="progress" style="height: 5px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
+                        aria-label="Progress" style="width: <?php echo $progress_per; ?>%;"
+                        aria-valuenow="<?php echo $progress_per; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <button type="button"
+                    class="position-absolute top-0 start-0 translate-middle btn btn-sm <?php echo $badge_progres_0; ?> rounded-pill"
+                    style="width: 2rem; height:2rem;">0</button>
+                <small style="top: 50px!important;"
+                    class="position-absolute top-100 start-0 translate-middle btn btn-sm"><strong>Request</strong><br><?php echo $create_date; ?></small>
+                <button type="button"
+                    class="position-absolute top-0 start-30 translate-middle btn btn-sm <?php echo $badge_progres_1; ?> rounded-pill"
+                    style="width: 2rem; height:2rem;">1</button>
+                <small style="top: 50px!important;"
+                    class="position-absolute top-100 start-30 translate-middle btn btn-sm"><strong>Checking</strong>
+                    <br><?php echo $accepted_date; ?></small>
+                <button type="button"
+                    class="position-absolute top-0 start-60 translate-middle btn btn-sm <?php echo $badge_progres_2; ?> rounded-pill"
+                    style="width: 2rem; height:2rem;">2</button>
+                <small style="top: 50px!important;"
+                    class="position-absolute top-100 start-60 translate-middle btn btn-sm"><strong>On-productions</strong>
+                    <br><?php echo $job_number; ?></small>
+                <button type="button"
+                    class="position-absolute top-0 start-100 translate-middle btn btn-sm <?php echo $badge_progres_3; ?> rounded-pill"
+                    style="width: 2rem; height:2rem;">3</button>
+                <small style="top: 50px!important;"
+                    class="position-absolute top-100 start-100 translate-middle btn btn-sm"><strong>Approved</strong><br><?php echo $approved_date; ?></small>
+            </div>
+            <?php }?>
         </div>
-        <button type="button"
-            class="position-absolute top-0 start-0 translate-middle btn btn-sm <?php echo $badge_progres_0; ?> rounded-pill"
-            style="width: 2rem; height:2rem;">0</button>
-        <small style="top: 50px!important;"
-            class="position-absolute top-100 start-0 translate-middle btn btn-sm"><strong>Request</strong><br><?php echo $create_date; ?></small>
-        <button type="button"
-            class="position-absolute top-0 start-30 translate-middle btn btn-sm <?php echo $badge_progres_1; ?> rounded-pill"
-            style="width: 2rem; height:2rem;">1</button>
-        <small style="top: 50px!important;"
-            class="position-absolute top-100 start-30 translate-middle btn btn-sm"><strong>Checking</strong>
-            <br><?php echo $accepted_date; ?></small>
-        <button type="button"
-            class="position-absolute top-0 start-60 translate-middle btn btn-sm <?php echo $badge_progres_2; ?> rounded-pill"
-            style="width: 2rem; height:2rem;">2</button>
-        <small style="top: 50px!important;"
-            class="position-absolute top-100 start-60 translate-middle btn btn-sm"><strong>On-productions</strong>
-            <br><?php echo $job_number; ?></small>
-        <button type="button"
-            class="position-absolute top-0 start-100 translate-middle btn btn-sm <?php echo $badge_progres_3; ?> rounded-pill"
-            style="width: 2rem; height:2rem;">3</button>
-        <small style="top: 50px!important;"
-            class="position-absolute top-100 start-100 translate-middle btn btn-sm"><strong>Approved</strong><br><?php echo $approved_date; ?></small>
+        <div class="col-2">
+        <h6>
+                                    <ion-icon name="document-text-outline"></ion-icon>
+                                    <strong><?php echo $brand; ?></strong> Note <small
+                                        style="color:red">ข้อความที่อยู่ใน block นี้จะแสดงในทุกๆ ticket
+                                        ของแบรนด์ดังกล่าว</small>
+                                </h6>
+                                <div class="container-fluid shadow-sm"
+                                    style="border-radius: 10px;border: 1px solid #f4f4f4;padding: 30px;">
+                                    <div id="editorjs"></div>
+                                </div>
+                                <script>
+                                // first define the tools to be made avaliable in the columns
+                                var column_tools = {
+                                    header: Header,
+                                    alert: Alert,
+                                    paragraph: Paragraph,
+                                    delimiter: Delimiter
+                                }
+                                // editor.destroy();
+                                var ImageTool = window.ImageTool;
+                                var editor = new EditorJS({
+                                        placeholder: 'Let`s write commitment and brand guideline together !',
+                                        onReady: () => {
+                                            console.log('Editor.js is ready to work!');
+                                            new DragDrop(editor);
+                                        },
+                                        onChange: (api, event) => {
+                                            //console.log('<?php //echo $_SESSION['username'];?>have been updated a content in brand note', event)
+                                            editor.save().then((outputData) => {
+                                                // console.log('Article data: ', outputData)
+                                                outputData = JSON.stringify(outputData, null, 4);
+                                                update_brand_note(outputData, '<?php echo $brand; ?>');
+                                            }).catch((error) => {
+                                                console.log('Saving failed: ', error)
+                                            });
+                                        },
+                                        holder: 'editorjs',
+                                        tools: {
+                                            columns: {
+                                                class: editorjsColumns,
+                                                config: {
+                                                    tools: column_tools, // IMPORTANT! ref the column_tools
+                                                }
+                                            },
+                                            header: {
+                                                class: Header,
+                                                config: {
+                                                    placeholder: 'Enter a header',
+                                                    levels: [2, 3, 4],
+                                                    defaultLevel: 3
+                                                }
+                                            },
+                                            list: {
+                                                class: List,
+                                                inlineToolbar: true,
+                                                config: {
+                                                    defaultStyle: 'unordered'
+                                                }
+                                            },
+                                            list: {
+                                                class: NestedList,
+                                                inlineToolbar: true,
+                                            },
+                                            checklist: {
+                                                class: Checklist,
+                                                inlineToolbar: true,
+                                            },
+                                            table: {
+                                                class: Table,
+                                                inlineToolbar: true,
+                                                config: {
+                                                    rows: 2,
+                                                    cols: 3,
+                                                },
+                                            },
+                                            paragraph: {
+                                                class: Paragraph,
+                                                inlineToolbar: true,
+                                            },
+                                            code: CodeTool,
+                                            embed: Embed,
+                                            warning: Warning,
+                                            alert: Alert,
+                                            delimiter: Delimiter,
+                                            underline: Underline,
+                                            code: CodeTool,
+                                            // linkTool: {
+                                            //     class: LinkTool,
+                                            //     config: {
+                                            //         endpoint: 'http://localhost:8008/fetchUrl', // Your backend endpoint for url data fetching,
+                                            //     }
+                                            // },
+                                            // raw: RawTool,
+                                            marker: {
+                                                class: Marker,
+                                                shortcut: 'CMD+SHIFT+M'
+                                            },
+                                            image: {
+                                                class: ImageTool,
+                                                config: {
+                                                    endpoints: {
+                                                        byFile: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_uploadfiles.php', // Your backend file uploader endpoint
+                                                        byUrl: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_uploadfiles.php', // Your endpoint that provides uploading by Url
+                                                    }
+                                                }
+                                            },
+                                            // attaches: {
+                                            //     class: AttachesTool,
+                                            //     config: {
+                                            //         endpoint: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_attachfiles.php'
+                                            //     }
+                                            // },
+                                        },
+                                        <?php if($brand_editor<>""){
+                                                echo ' data: '.$brand_editor; 
+                                            }?>
+                                    }
+                                );
+                                </script>
+                            </div>
+        </div>
     </div>
-    <!-- <h6>
-                                    <ion-icon name="color-wand-outline"></ion-icon><strong>Productions Job</strong>
-                                </h6> -->
-    <!-- <div class="row">
-                                    <div class="col-sm-12">
-                                        <?php// include('../get/get_list_job_cms.php'); ?>
-                                    </div>
-                                </div> -->
-    <?php }?>
 </div>
