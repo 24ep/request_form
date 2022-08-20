@@ -10,7 +10,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <div class="col-3">
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
-                    <input type="text" class="form-control" id="brand_filter" onchange="filter_update();"
+                    <input type="text" value="<?php if($_GET["brand_filter"]<>""){echo $_GET["brand_filter"];}else{echo $_SESSION["brand_filter"];}?>" class="form-control" id="brand_filter" onchange="filter_update();"
                         aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
                         placeholder="Dept , Sub Dept , Brand , ID">
                 </div>
@@ -18,7 +18,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <div class="col-3">
                 <div class="input-group input-group-sm mb-3 flex-nowrap">
                     <span class="input-group-text " id="addon-wrapping">Username</span>
-                    <input value="<?php echo $_SESSION["user_filter"];?>" class="form-control"
+                    <input value="<?php if($_GET["user_filter"]<>""){echo $_GET["user_filter"];}else{echo $_SESSION["user_filter"];}?>" class="form-control"
                         list="datalistOptionsuser" id="user_filter" onchange="filter_update();" placeholder="Username"
                         aria-label="Username" aria-describedby="addon-wrapping">
                     <datalist id="datalistOptionsuser">
