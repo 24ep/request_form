@@ -6,8 +6,8 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
 ?>
 <div style="margin-left: 10px;padding: 0px 20px;">
     <div class="tab-content" id="myTabContent">
-        <div class="row align-items-center mb-3">
-            <div class="col-4">
+        <div class="row align-items-center p-2">
+            <div class="col-3">
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
                     <input type="text" class="form-control" id="brand_filter" onchange="filter_update();"
@@ -15,7 +15,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                         placeholder="Dept , Sub Dept , Brand , ID">
                 </div>
             </div>
-            <div class="col-auto">
+            <div class="col-3">
                 <div class="input-group input-group-sm mb-3 flex-nowrap">
                     <span class="input-group-text " id="addon-wrapping">Username</span>
                     <input value="<?php echo $_SESSION["user_filter"];?>" class="form-control"
@@ -34,7 +34,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                     </select>
                 </div>
             </div>
-            <div class="col-1">
+            <div class="col-2">
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
                     <input type="number" class="form-control" 
@@ -50,7 +50,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                     </span>
                 </div>
             </div>
-            <div class="col-auto">
+            <div class="col-3">
                 <div class="input-group input-group-sm mb-3">
                     <button class="btn btn-dark btn-sm bg-gradient" style="margin-left:10px" type="button"
                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
