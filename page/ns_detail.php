@@ -131,20 +131,20 @@
   }
   mysqli_close($con);
   if($request_important=="Urgent"){
-    $dp_tags .= '<span class="badge bg-danger" style="margin: 0px 10px 10px 0px;padding: 8px;">'.$request_important.'</span>';
+    $dp_tags .= '<span class="badge bg-danger bg-gradient shadow-sm" style="margin: 0px 10px 10px 0px;padding: 8px;">'.$request_important.'</span>';
 }
   $tags_array = explode(", ", $tags);
   foreach ($tags_array as $tag) {
-   $dp_tags .= '<span class="badge bg-dark" style="margin: 0px 10px 10px 0px;padding: 8px;">'.$tag.'</span>';
+   $dp_tags .= '<span class="badge bg-dark bg-gradient shadow-sm" style="margin: 0px 10px 10px 0px;padding: 8px;">'.$tag.'</span>';
   }
 ?>
 <link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
 <script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
 
-<nav class="p-3" style="z-index:-1">
+<nav class="p-3 bg-light text-dark bg-gradient shadow-sm fixed-top " style="">
     <div class="container-fluid">
-    <a class="m-3 p-3"><small>
-        <ion-icon name="chevron-back-outline"></ion-icon> Back to list
+    <a style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"><small>
+        <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
     </small></a>
         <h5><a class="navbar-brand" href="#">NS-<?php echo $id." ".$brand." ".$sku." SKUs" ?> </a></h5>
 
@@ -152,8 +152,8 @@
 </nav>
 
 <div class="container-fluid ">
-    <div class="row ">
-        <div class="col-7 ">
+    <div class="row mt-3 ">
+        <div class="col-8 ">
             <?php echo $dp_tags; ?>
             <?php if($config_type=='parent'){?>
 
@@ -239,12 +239,10 @@
             </div>
             <?php }?>
         </div>
-        <div class="col-5">
+        <div class="col-4">
         <h6>
                                     <ion-icon name="document-text-outline"></ion-icon>
-                                    <strong><?php echo $brand; ?></strong> Note <small
-                                        style="color:red">ข้อความที่อยู่ใน block นี้จะแสดงในทุกๆ ticket
-                                        ของแบรนด์ดังกล่าว</small>
+                                    <strong><?php echo $brand; ?></strong> Note 
                                 </h6>
                                 <div class="container-fluid shadow-sm"
                                     style="border-radius: 10px;border: 1px solid #f4f4f4;padding: 30px;">
@@ -261,7 +259,7 @@
                                 // editor.destroy();
                                 var ImageTool = window.ImageTool;
                                 var editor = new EditorJS({
-                                        placeholder: 'Let`s write commitment and brand guideline together !',
+                                        placeholder: 'ข้อความที่อยู่ใน block นี้จะแสดงในทุกๆ ticket ของแบรนด์ดังกล่าว',
                                         onReady: () => {
                                             console.log('Editor.js is ready to work!');
                                             new DragDrop(editor);
