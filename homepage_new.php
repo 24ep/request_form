@@ -396,7 +396,7 @@ if ( urlParams.has('page') && urlParams.get('page') != null ) {
     url.searchParams.set('page', urlParams.get('page'));
 }else{
     document.getElementById('nav_dashboard').click();
-    get_page(urlParams.get('page'));
+    get_page('dashboard');
     url.searchParams.set('page', 'dashboard');
 }
 
