@@ -40,6 +40,10 @@
             anj.trigger_status as trigger_status,
             anj.subject_mail as subject_mail,
             ac.nickname as follow_assign_nickname,
+            ac_request.firstname as request_firstname,
+            ac_request.lastname as request_lastname,
+            ac_request.office_tell as request_office_tell,
+            ac_request.nickname as requst_nickname,
             brand_info.link as brand_info_link,
             brand_editor.body  as brand_editor,
             anj.web_cate as web_cate,
@@ -48,6 +52,8 @@
             FROM all_in_one_project.add_new_job as anj
             left join all_in_one_project.account as ac
             on ac.username = anj.follow_assign_name
+            left join all_in_one_project.account as ac_request
+            on ac_request.username = anj.request_username
             left join all_in_one_project.brand_information as brand_info
             on brand_info.brand = anj.brand
             left join u749625779_cdscontent.job_cms as jc
@@ -60,6 +66,10 @@
       $id = $row['id'];
       $brand = $row['brand'];
       $request_username = $row['request_username'];
+      $request_firstname = $row['request_firstname'];
+      $request_lastname = $row['request_lastname'];
+      $request_nickname = $row['request_nickname'];
+      $request_office_tell = $row['request_office_tell'];
       $create_date = $row['create_date'];
       $request_date= $row['request_date'];
       $update_date = $row['update_date'];
@@ -155,7 +165,18 @@
                 <?php echo $dp_tags; ?>
             </div>
         </div>
-        <div class="col-4"  style="border-left: 1px solid #e0e0e0;">
+        <div class="col-2"  style="border-left: 1px solid #e0e0e0;">
+            <small class="content-assignee-header">Create by</small>
+            <ul class="contact-person-ns">
+                <li style="margin-top: 5px;">
+                    <ion-icon name="person-outline"></ion-icon><?php echo $request_firstname." ".substr($request_lastname,0,2).". ( ".$request_nickname." ) " ?>
+                </li>
+                <li style="margin-top: 5px;">
+                    <ion-icon name="call-outline"></ion-icon> <?php echo $request_office_tell; ?>
+                </li>
+            </ul>
+        </div>
+        <div class="col-2"  style="border-left: 1px solid #e0e0e0;">
             <small class="content-assignee-header">Contact person</small>
             <ul class="contact-person-ns">
                 <li style="margin-top: 5px;">
