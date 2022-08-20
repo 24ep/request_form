@@ -155,7 +155,9 @@ function filter_update(be) {
     }
     if(user_filter==""){
         var queryString = window.location.search;
-        // removeParam('user_filter', queryString);
+        removeParam('user_filter', queryString);
+     
+    }else{
         change_param('user_filter', user_filter);
     }
    
