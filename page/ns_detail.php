@@ -212,7 +212,7 @@
         <div class="col-2" style="border-left: 1px solid #e0e0e0;">
             <small class="content-assignee-header">Contact person</small>
             <?php if($follow_up_name=="-"){
-                echo '<button type="button" class="btn btn-sm btn-primary bg-gradient"><ion-icon name="person-outline"></ion-icon> Take officer</button>';
+                echo '<button type="button" class="btn btn-sm btn-primary m-3 bg-gradient"><ion-icon name="person-outline"></ion-icon> Take officer</button>';
             }else{
                 ?>
                 <ul class="contact-person-ns">
