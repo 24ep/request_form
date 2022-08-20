@@ -217,5 +217,5 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
-
+filter_update();
 </script>
