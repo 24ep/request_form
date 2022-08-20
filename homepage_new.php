@@ -167,7 +167,7 @@ if (!$_SESSION["login_csg"]){
                 </a>
                 <ul class="dropdown-menu notifications-box shadow overflow-auto">
                     <span>
-                    <ion-icon name="notifications-outline"></ion-icon> <strong>Activity</strong>
+                        <ion-icon name="notifications-outline"></ion-icon> <strong>Activity</strong>
                     </span>
 
                     <div id="get_list_job_update">
@@ -181,28 +181,28 @@ if (!$_SESSION["login_csg"]){
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" id="nav_create_new" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="get_page('create_new');">
+                    <a class="main_bra nav-link" id="nav_create_new" data-bs-toggle="pill" type="button" role="tab"
+                        aria-selected="false" onclick="get_page('create_new');">
                         <ion-icon name="rocket"></ion-icon><span class="main-manu-nav">Create New</span>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" id="nav_update_content" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="get_page('update_content');">
+                    <a class="main_bra nav-link" id="nav_update_content" data-bs-toggle="pill" type="button" role="tab"
+                        aria-selected="false" onclick="get_page('update_content');">
                         <ion-icon name="ticket"></ion-icon><span class="main-manu-nav">Other Requests</span>
                     </a>
                 </li>
                 <hr class="hr_manu_bra_in">
                 <small class="header_manu_bra">Internals</small>
                 <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" id="nav_report" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="get_page('report');">
+                    <a class="main_bra nav-link" id="nav_report" data-bs-toggle="pill" type="button" role="tab"
+                        aria-selected="false" onclick="get_page('report');">
                         <ion-icon name="bar-chart"></ion-icon><span class="main-manu-nav">Reports</span>
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" id="nav_assert" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="get_page('assert');">
+                    <a class="main_bra nav-link" id="nav_assert" data-bs-toggle="pill" type="button" role="tab"
+                        aria-selected="false" onclick="get_page('assert');">
                         <ion-icon name="folder-open"></ion-icon><span class="main-manu-nav">Block</span>
                     </a>
                 </li>
@@ -213,8 +213,8 @@ if (!$_SESSION["login_csg"]){
                     </a>
                 </li> -->
                 <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" id="nav_account" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="get_page('account');">
+                    <a class="main_bra nav-link" id="nav_account" data-bs-toggle="pill" type="button" role="tab"
+                        aria-selected="false" onclick="get_page('account');">
                         <ion-icon name="terminal-outline"></ion-icon><span class="main-manu-nav">Administration</span>
                     </a>
                 </li>
@@ -226,10 +226,12 @@ if (!$_SESSION["login_csg"]){
                     </a>
                     <ul class="dropdown-menu menu-block shadow p3">
                         <small class="header_manu_bra">Datapump</small>
-                        <li><a id="nav_datapump_convert" onclick="get_page('datapump_convert');" class="dropdown-item dp-link" type="button">
+                        <li><a id="nav_datapump_convert" onclick="get_page('datapump_convert');"
+                                class="dropdown-item dp-link" type="button">
                                 <ion-icon name="shapes"></ion-icon>Datapump Convert
                             </a></li>
-                        <li><a id="nav_datapump_admin" onclick="get_page('datapump_admin');" class="dropdown-item dp-link" type="button">
+                        <li><a id="nav_datapump_admin" onclick="get_page('datapump_admin');"
+                                class="dropdown-item dp-link" type="button">
                                 <ion-icon name="shapes"></ion-icon>Datapump Admin
                             </a></li>
                         <hr class="hr_manu_bra_in">
@@ -262,14 +264,16 @@ if (!$_SESSION["login_csg"]){
                             </a></li>
                         <hr class="hr_manu_bra_in">
                         <small class="header_manu_bra">Ability</small>
-                        <li><a id="nav_writer-auto-assign-console" onclick="get_page('writer-auto-assign-console');" class="dropdown-item dp-link"
-                                type="button">
+                        <li><a id="nav_writer-auto-assign-console" onclick="get_page('writer-auto-assign-console');"
+                                class="dropdown-item dp-link" type="button">
                                 <ion-icon name="shapes"></ion-icon>writer auto-assign console
                             </a></li>
-                        <li><a id="nav_convert_mapping" onclick="get_page('convert_mapping');" class="dropdown-item dp-link" type="button">
+                        <li><a id="nav_convert_mapping" onclick="get_page('convert_mapping');"
+                                class="dropdown-item dp-link" type="button">
                                 <ion-icon name="shapes"></ion-icon>Convert Mapping
                             </a></li>
-                        <li><a id="nav_wordtohtml"  onclick="get_page('wordtohtml');" class="dropdown-item dp-link" type="button">
+                        <li><a id="nav_wordtohtml" onclick="get_page('wordtohtml');" class="dropdown-item dp-link"
+                                type="button">
                                 <ion-icon name="shapes"></ion-icon>Word to HTML
                             </a></li>
                         <li><a href="https://centrality.workplace.com/" target="_blank" class="dropdown-item dp-link"
@@ -337,7 +341,6 @@ if (!$_SESSION["login_csg"]){
 
 </html>
 <script>
-
 function updateURLpage(pill) {
     if (history.pushState) {
         var newurl = window.location.protocol + "//" + window.location.host +
@@ -349,35 +352,44 @@ function updateURLpage(pill) {
             }, '', newurl);
     }
 }
+
 function get_page(page) {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
-    var brand_filter =   urlParams.get('brand_filter');
-    var user_filter =   urlParams.get('user_filter');
-    updateURLpage(page);
+    var brand_filter = urlParams.get('brand_filter');
+    var user_filter = urlParams.get('user_filter');
+    // updateURLpage(page);
+    // Construct URLSearchParams object instance from current URL querystring.
+    var queryParams = new URLSearchParams(window.location.search);
+
+    // Set new or modify existing parameter value. 
+    queryParams.set("page", page);
+
+    // Replace current querystring with the new one.
+    history.replaceState(null, null, "?" + queryParams.toString());
 
     // if (page ===true ) {
-        Notiflix.Loading.hourglass('Loading...');
-        $.post("base/page/"+page+".php", {
-            brand_filter : brand_filter,
-            user_filter : user_filter
-        }, function(data) {
-            $('#col_detail').html(data);
-            Notiflix.Loading.remove();
-        });
-       
+    Notiflix.Loading.hourglass('Loading...');
+    $.post("base/page/" + page + ".php", {
+        brand_filter: brand_filter,
+        user_filter: user_filter
+    }, function(data) {
+        $('#col_detail').html(data);
+        Notiflix.Loading.remove();
+    });
+
 }
 //check for page param
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
-console.log(queryString );
-if ( urlParams.has('page') && urlParams.get('page') != null ) {
-  
-    document.getElementById('nav_'+urlParams.get('page')).click();
+console.log(queryString);
+if (urlParams.has('page') && urlParams.get('page') != null) {
+
+    document.getElementById('nav_' + urlParams.get('page')).click();
     get_page(urlParams.get('page'));
     var url = new URL(window.location.href);
     // url.searchParams.set('page', urlParams.get('page'));
-}else{
+} else {
     document.getElementById('nav_dashboard').click();
     get_page('dashboard');
     // url.searchParams.set('page', 'dashboard');
