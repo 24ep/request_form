@@ -524,7 +524,7 @@
     let params = kvp.join('&');
 
     // reload page with new params
-    document.location.search = params+'&page=create_new';
+    document.location.search = params';
    
 }
 </script>
