@@ -198,6 +198,7 @@
         </div>
         <div class="col-2 bg-white" style="border-left: 1px solid #e0e0e0;">
             <small class="content-assignee-header">Requested by</small>
+            <div id="contact_person_requester">
             <ul class="contact-person-ns">
                 <li style="margin-top: 5px;">
                     <ion-icon name="person-outline"></ion-icon>
@@ -207,9 +208,10 @@
                     <ion-icon name="call-outline"></ion-icon> <?php echo $request_office_tell; ?>
                 </li>
                 <li style='margin-top: 5px;color: #81a8dd;' >
-                <ion-icon name="golf-outline"></ion-icon> Take owner 
+                <a type="button" onclick="take_ns_requester(<?php echo $id;?>)"><ion-icon name="golf-outline"></ion-icon> Take owner </a>
                 </li>
             </ul>
+            </div>
         </div>
         <div class="col-2" style="border-left: 1px solid #e0e0e0;">
             <small class="content-assignee-header">Contact person</small>
@@ -526,6 +528,16 @@
     // reload page with new params
     document.location.search = params;
    
+}
+function take_ns_requester(id) {
+    if (id) {
+        $.post("../base/action/action_take_na_requester.php", {
+            id: id
+        }, function(data) {
+           $('#contact_person_requester').html(data);
+           Notiflix.Notify.success("owner of NS-"+id+"have been change");
+        });
+    }
 }
 </script>
 <!-- 
