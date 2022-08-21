@@ -340,8 +340,8 @@
 
             <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <button class="nav-link active" id="nav-public-tab" data-bs-toggle="tab" data-bs-target="#nav-public" type="button" role="tab" aria-controls="nav-public" aria-selected="true">Public comment</button>
-    <button class="nav-link" id="nav-internal-tab" data-bs-toggle="tab" data-bs-target="#nav-internal" type="button" role="tab" aria-controls="nav-internal" aria-selected="false">Internal note</button>
+    <button class="nav-link active" id="nav-public-tab" data-bs-toggle="tab" data-bs-target="#nav-public" type="button" role="tab" aria-controls="nav-public" aria-selected="true"><ion-icon name="chatbubble-outline"></ion-icon>Public comment</button>
+    <button class="nav-link" id="nav-internal-tab" data-bs-toggle="tab" data-bs-target="#nav-internal" type="button" role="tab" aria-controls="nav-internal" aria-selected="false"><ion-icon name="text-outline"></ion-icon>Internal note</button>
   </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
@@ -349,7 +349,7 @@
   <div class="tab-pane fade" id="nav-internal" role="tabpanel" aria-labelledby="nav-internal-tab" tabindex="0">
       <!-- internal note -->
 
-      <ul class="list-group list-group-flush" style="background: fixed;">
+      <ul class="list-group list-group-flush m-1" style="background: fixed;">
                             <div id="comment_box_ins">
                                 <div id="call_ticket_comment_ins">
                                     <?php include('../get/get_comment_ins.php'); ?>
@@ -359,8 +359,8 @@
                         <small style="font-weight: bolder;color: #adb5bd;">
                             <ion-icon name="chatbubbles-outline"></ion-icon>Comment
                         </small>
-                        <textarea id="comment_input_ins" style="margin-top:0px;margin-bottom:10px;font-size: 14px;"
-                            class="form-control" placeholder="Leave a comment here..." rows="4"
+                        <textarea id="comment_input_ins" style="font-size: 14px;"
+                            class="form-control mt-2 mb-2" placeholder="Leave a comment here..." rows="4"
                             style="height: 100px"></textarea>
                         <div class="mb-3">
                             <input type="file" id="actual-btn_ins" name="actual-btn_ins[]" multiple hidden />

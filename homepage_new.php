@@ -153,6 +153,7 @@ if (!$_SESSION["login_csg"]){
                 <span id="apps_name">ONLINE CONTENT</span>
             </a>
             <hr class="hr_manu_bra">
+            <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['firstname']; ?>&background=0D8ABC&color=fff&rounded=true" class="img-thumbnail">
             <span class="name_manu_bra"><?php echo $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span>
             <small class="dept_manu_bra"><?php echo $_SESSION['department']; ?></small>
             <hr class="hr_manu_bra">
