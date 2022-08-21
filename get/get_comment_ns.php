@@ -4,7 +4,7 @@
 session_start();
 $id = $_POST['id'];
 $comment = $_POST['comment'];
-function get_comment_ins($id){
+function get_comment_ns($id){
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");

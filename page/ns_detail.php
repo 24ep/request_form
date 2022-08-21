@@ -366,8 +366,8 @@
                     <?php
                     }
                     ?>
-<!-- comment ns -->
-<ul class="list-group list-group-flush m-1" style="background: fixed;">
+                    <!-- comment ns -->
+                    <ul class="list-group list-group-flush m-1" style="background: fixed;">
                         <div id="comment_box_ns">
                             <div id="call_ticket_comment_ns">
                                 <?php include('../get/get_comment_ns.php'); ?>
@@ -389,7 +389,7 @@
                     <button type="button" class="btn btn-outline-primary btn-sm"
                         onClick="comment_ns_id_with_file(<?php echo  $_POST['id']; ?>)">Add
                         comment</button>
-                        <!-- end comment ns -->
+                    <!-- end comment ns -->
                 </div>
                 <div class="tab-pane fade" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab"
                     tabindex="0">
@@ -628,7 +628,8 @@ function ns_discover(key, value) {
     document.location.search = params;
 
     //set status
-    document.getElementById("status_filter").value = 'pending,checking,waiting data,waiting image,waiting traffic,waiting confirm,need update contact';
+    document.getElementById("status_filter").value =
+        'pending,checking,waiting data,waiting image,waiting traffic,waiting confirm,need update contact';
 
 }
 
@@ -642,6 +643,7 @@ function take_ns_requester(id) {
         });
     }
 }
+
 function comment_ns_id_with_file(id) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input_ns").value;
@@ -671,6 +673,7 @@ function comment_ns_id_with_file(id) {
         }
     });
 }
+
 function comment_ins_id_with_file(id) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input_ins").value;
@@ -700,6 +703,7 @@ function comment_ins_id_with_file(id) {
         }
     });
 }
+
 function force_sync_with_ticket(id, bu) {
     var result_checking_sku = document.getElementById("result_checking_sku").value;
     var sku_change = document.getElementById("sku_checking").value;
