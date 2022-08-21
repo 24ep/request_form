@@ -341,11 +341,13 @@
             <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <button class="nav-link active" id="nav-public-tab" data-bs-toggle="tab" data-bs-target="#nav-public" type="button" role="tab" aria-controls="nav-public" aria-selected="true"><ion-icon name="chatbubble-outline"></ion-icon>Public comment</button>
+    <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail" type="button" role="tab" aria-controls="nav-detail" aria-selected="false"><ion-icon name="receipt-outline"></ion-icon>Ticket infomation</button>
     <button class="nav-link" id="nav-internal-tab" data-bs-toggle="tab" data-bs-target="#nav-internal" type="button" role="tab" aria-controls="nav-internal" aria-selected="false"><ion-icon name="text-outline"></ion-icon>Internal note</button>
   </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-public" role="tabpanel" aria-labelledby="nav-public-tab" tabindex="0">...</div>
+  <div class="tab-pane fade show active" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab" tabindex="0">...</div>
   <div class="tab-pane fade" id="nav-internal" role="tabpanel" aria-labelledby="nav-internal-tab" tabindex="0">
       <!-- internal note -->
 
