@@ -141,9 +141,9 @@ if(isset($_POST["from_post"] )){
       $launch_date_c = date_format($launch_date_c,"Y-m-d");
       $launch_date_diff = (strtotime($launch_date_c)-strtotime($current_day))/  ( 60 * 60 * 24 );
       if($launch_date_diff<=0){
-        $p_badge .= '<span class="badge bg-danger bg-gradient  p-2" style="margin-left:5px;background-color: #46088f!important;">Over Launch '.($launch_date_diff*(-1)).' days</span>';
+        $p_badge .= '<span class="badge bg-danger bg-gradient  p-2" style="margin-left:5px;background-color: #46088f!important;"><ion-icon name="warning-outline"></ion-icon> Over Launch '.($launch_date_diff*(-1)).' days</span>';
       }elseif($launch_date_diff<=5){
-        $p_badge .= '<span class="badge bg-danger bg-gradient  p-2" style="margin-left:5px">Launch in '.$launch_date_diff.' days</span>';
+        $p_badge .= '<span class="badge bg-danger bg-gradient  p-2" style="margin-left:5px"><ion-icon name="warning-outline"></ion-icon> Launch in '.$launch_date_diff.' days</span>';
       }
     }
     //  -2 already image
