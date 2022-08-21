@@ -1,5 +1,27 @@
 <?php
 session_start();
+function bg_dept($department){
+    switch ($department) {
+      case "Content Followup": $bg = '336BFF'; break;
+      case "Content Traffic": $bg = '33FF39'; break;
+      case "Content Admin": $bg = '9633FF'; break;
+      case "Content Other": $bg = 'FF3333'; break;
+      case "Content Studio Traffic": $bg = '33FFB5'; break;
+      case "Buyer  Home": $bg = 'FFDA33'; break;
+      case "Buyer Beauty": $bg = 'FF7AD9'; break;
+      case "Buyer Mom and Kids": $bg = 'FFC17A'; break;
+      case "Buyer Fashion": $bg = 'FF7A7A'; break;
+      case "Operation": $bg = '000000'; break;
+      case "Marketing": $bg = '474747'; break;
+      case "Other": $bg = 'ADADAD'; break;
+      case "Brand": $bg = '6E69E7'; break;
+      
+      default: $bg = '000000';
+    }
+    return $bg;
+}
+
+
 if (!$_SESSION["login_csg"]){ 
             Header("Location: login");
     }else{
@@ -154,7 +176,7 @@ if (!$_SESSION["login_csg"]){
             </a>
             <hr class="hr_manu_bra">
             <div style="display: inline-flex;">
-            <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=0D8ABC&color=fff&rounded=true&size=40" class="m-2">
+            <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=<?php echo bg_dept($_SESSION['department']); ?>&color=fff&rounded=true&size=40" class="m-2">
             <div >
             <span class="name_manu_bra" style="place-self: center;"><?php echo $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span>
             <small class="dept_manu_bra" style="place-self: center;"><?php echo $_SESSION['department']; ?></small>
