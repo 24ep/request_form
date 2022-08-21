@@ -76,14 +76,14 @@
                 <button class="nav-link ts-view active" id="pills-list_view_ts-tab" data-bs-toggle="pill"
                     data-bs-target="#pills-list_view_ts" type="button" role="tab" aria-controls="pills-list_view_ts"
                     aria-selected="true">
-                    <ion-icon name="reorder-four-outline"></ion-icon>
+                    <ion-icon name="reorder-four-outline" style="margin:0px"></ion-icon>
                 </button>
             </li>
             <li class="nav-item col m-0" role="presentation">
                 <button class="nav-link ts-view" id="pills-board_view_ts-tab" data-bs-toggle="pill"
                     data-bs-target="#pills-board_view_ts" type="button" role="tab" aria-controls="pills-board_view_ts"
                     aria-selected="false">
-                    <ion-icon name="grid-outline"></ion-icon>
+                    <ion-icon name="grid-outline" style="margin:0px"></ion-icon>
                 </button>
             </li>
         </ul>
