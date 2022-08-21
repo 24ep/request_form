@@ -175,8 +175,8 @@ if (!$_SESSION["login_csg"]){
                 <span id="apps_name">ONLINE CONTENT</span>
             </a>
             <hr class="hr_manu_bra">
-            <div style="display: inline-flex;">
-            <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=<?php echo bg_dept($_SESSION['department']); ?>&color=fff&rounded=true&size=40" class="ms-3">
+            <div class="img-avatar" style="display: inline-flex;">
+            <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=<?php echo bg_dept($_SESSION['department']); ?>&color=fff&rounded=true&size=40" class="ms-3 mb-2">
             <div style="align-self: center;" class="mb-3">
             <span class="name_manu_bra" style="place-self: center;"><?php echo $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span>
             <small class="dept_manu_bra" style="place-self: center;"><?php echo $_SESSION['department']; ?></small>
@@ -496,9 +496,15 @@ function minimize_nav() {
             list_bra[i].className = list_bra[i].className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
         }
 
+      
         document.getElementById("apps_name").className = document.getElementById("apps_name").className.replace(
             /(?:^|\s)hide(?!\S)/g, '');
 
+        var img_avatar = document.getElementsByClassName("img-avatar");
+        for (var i = 0; i < img_avatar.length; i++) {
+            img_avatar[i].className = img_avatar[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        }
+        
         var main_manu_nav = document.getElementsByClassName("main-manu-nav");
         for (var i = 0; i < main_manu_nav.length; i++) {
             console.log('unhide ' + i);
@@ -559,6 +565,10 @@ function minimize_nav() {
         var header_manu_bra = document.getElementsByClassName("header_manu_bra");
         for (var i = 0; i < header_manu_bra.length; i++) {
             header_manu_bra[i].className += " hide";
+        }
+        var img_avatar = document.getElementsByClassName("img-avatar");
+        for (var i = 0; i < img_avatar.length; i++) {
+            img_avatar[i].className += " hide";
         }
 
         var col_detail_main = document.getElementsByClassName("col-10 col_detail_main");
