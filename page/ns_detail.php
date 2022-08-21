@@ -358,9 +358,15 @@
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-public" role="tabpanel" aria-labelledby="nav-public-tab"
                     tabindex="0">
+                    <?php if( $remark<>""){
+                        ?>
                     <div class="alert alert-info m-2 shadow-sm" role="alert">
-                    <ion-icon name="information-circle-outline"></ion-icon><?php echo $remark;?>
+                        <ion-icon name="information-circle-outline"></ion-icon><?php echo $remark;?>
                     </div>
+                    <?php
+                    }
+                    ?>
+
                 </div>
                 <div class="tab-pane fade" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab"
                     tabindex="0">
@@ -610,6 +616,7 @@ function take_ns_requester(id) {
         });
     }
 }
+
 function force_sync_with_ticket(id, bu) {
     var result_checking_sku = document.getElementById("result_checking_sku").value;
     var sku_change = document.getElementById("sku_checking").value;
@@ -684,6 +691,7 @@ function force_sync_with_ticket(id, bu) {
         );
     }
 }
+
 function sku_checking() {
     // sku_checking_result
     var sku_list = document.getElementById("sku_checking").value;
@@ -696,7 +704,6 @@ function sku_checking() {
             });
     }
 }
-
 </script>
 <!-- 
 var url = new URL("http://foo.bar/?x=1&y=2");
