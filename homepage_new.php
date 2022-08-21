@@ -154,9 +154,11 @@ if (!$_SESSION["login_csg"]){
             </a>
             <hr class="hr_manu_bra">
             <div style="display: inline-flex;">
-            <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=0D8ABC&color=fff&rounded=true" class="img-thumbnail">
-            <span class="name_manu_bra"><?php echo $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span>
-            <small class="dept_manu_bra"><?php echo $_SESSION['department']; ?></small>
+            <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=0D8ABC&color=fff&rounded=true&size=40" class="m-2">
+            <div >
+            <span class="name_manu_bra" style="place-self: center;"><?php echo $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span>
+            <small class="dept_manu_bra" style="place-self: center;"><?php echo $_SESSION['department']; ?></small>
+            </div>
             </div>
             <hr class="hr_manu_bra">
             <small class="header_manu_bra">Manu</small>
