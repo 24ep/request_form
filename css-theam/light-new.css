@@ -285,7 +285,7 @@ label#label_file_cme {
     z-index: -1;
 }
 .img-avatar.hide{
-    display : none;
+    display : none!important;
     position : absolute!important;
     z-index: -1;
 }

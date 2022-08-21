@@ -70,16 +70,16 @@
         aria-label="Basic checkbox toggle button group">
         <?php include('../get/get_list_bucket.php'); ?>
 
-        <ul class="nav nav-pills mb-3" id="pills-tab" style="right: 0;position: absolute;padding: 10px 40px;"
+        <ul class="nav nav-pills mb-3 row p-0" id="pills-tab" style="right: 0;position: absolute;padding: 10px 40px;"
             role="tablist">
-            <li class="nav-item" role="presentation">
+            <li class="nav-item col m-0" role="presentation">
                 <button class="nav-link ts-view active" id="pills-list_view_ts-tab" data-bs-toggle="pill"
                     data-bs-target="#pills-list_view_ts" type="button" role="tab" aria-controls="pills-list_view_ts"
                     aria-selected="true">
                     <ion-icon name="reorder-four-outline"></ion-icon>
                 </button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li class="nav-item col m-0" role="presentation">
                 <button class="nav-link ts-view" id="pills-board_view_ts-tab" data-bs-toggle="pill"
                     data-bs-target="#pills-board_view_ts" type="button" role="tab" aria-controls="pills-board_view_ts"
                     aria-selected="false">
