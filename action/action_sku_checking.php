@@ -55,7 +55,7 @@
         }else{
             echo '<div class="alert alert-danger" role="alert">
             ตรวจจพบ sku ด้านล่าง ซ้ำในฐานข้องมูลของ <strong>SERVICE-GATE จำนวน '.$i.' sku <br>
-            เมื่อยืนยัน accept ระบบจะเปลี่ยน ให้ sku เหล่านั้นเป็น sku ของ ticket ที่กด accept</strong>\n
+            เมื่อยืนยันระบบจะทำการผูก sku เหล่านี้เข้ากับ ticket </strong>\n
             <table class="table">
             <thead>
                 <tr>
@@ -73,7 +73,7 @@
             </div>';
             echo '<script>document.getElementById("result_checking_sku").value = "duplicate";</script>';
         }
-        echo '<strong>ปล.การตรวจสอบกับฐานข้อมูล MDC ยังทำไม่เสร็จ</strong>';
+        // echo '<strong>ปล.การตรวจสอบกับฐานข้อมูล MDC ยังทำไม่เสร็จ</strong>';
         echo '<hr>';
 
         // $get_atena_checking = escapeshellcmd("action_sku_checking_mdc_atena.py $sku_list ");
