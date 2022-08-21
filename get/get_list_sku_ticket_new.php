@@ -18,7 +18,7 @@ if($_POST['id']<>""){
     <div class="modal-dialog  modal-lg">
       <div class="modal-content shadow rounded">
         <div class="modal-header">
-          <h5 class="modal-title" id="ns_insertskuLabel">Check and insert SKU list</h5>
+          <h5 class="modal-title" id="ns_insertskuLabel"><ion-icon name="server-outline"></ion-icon>Check and insert SKU list</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
