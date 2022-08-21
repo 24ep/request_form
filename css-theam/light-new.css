@@ -284,6 +284,12 @@ label#label_file_cme {
     position : absolute!important;
     z-index: -1;
 }
+.img-avatar.hide{
+    display : none;
+    position : absolute!important;
+    z-index: -1;
+}
+
 .cr-username-hide{
     display : none;
     position : absolute!important;

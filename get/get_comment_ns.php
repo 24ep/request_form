@@ -23,7 +23,7 @@ function get_comment_ns($id){
             }
         }
       echo   '
-      <li class="list-group-item" style="position: initial;padding-left:0px;border-color: #e9ecef;    border-right-width: 0px;
+      <li class="list-group-item" style="position: initial;padding-left:0px;border-color: #e9ecef;border-right-width: 0px;
       border-left-width: 0px;
       border-top-width: 0px;">
       <div class="ms-2 me-auto">
