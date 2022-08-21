@@ -11,7 +11,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center p-3">
             <div class="col-3">
-                <div class="input-group input-group-sm mb-3">
+                <div class="input-group input-group-sm mb-3 mt-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
                     <input type="text" value="<?php echo $_POST['brand_filter'];?>" class="form-control" id="brand_filter" onchange="filter_update();"
                         aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
@@ -19,7 +19,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                 </div>
             </div>
             <div class="col-3">
-                <div class="input-group input-group-sm mb-3 flex-nowrap">
+                <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap">
                     <span class="input-group-text " id="addon-wrapping">Username</span>
                     <input value="<?php echo $_POST['user_filter'];?>" class="form-control"
                         list="datalistOptionsuser" id="user_filter" onchange="filter_update();" placeholder="Username"
@@ -49,7 +49,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                 </select>
             </div>
             <div class="col-2">
-                <div class="input-group input-group-sm mb-3">
+                <div class="input-group input-group-sm mb-3 mt-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
                     <input type="number" class="form-control" 
                         id="pagenation_input" min=1
@@ -65,7 +65,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                 </div>
             </div>
             <div class="col-auto">
-                <div class="input-group input-group-sm mb-3">
+                <div class="input-group input-group-sm mb-3 mt-3">
                     <button class="btn btn-dark btn-sm bg-gradient" style="margin-left:10px" type="button"
                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                         <ion-icon size="small" name="add-outline"></ion-icon>
