@@ -13,10 +13,30 @@ if($_POST['id']<>""){
   $query = "SELECT sl.sku,sl.create_by,sl.create_date,itm.jda,itm.sbc,itm.department,itm.sub_department,itm.product_name,itm.catalogue,itm.vendor,itm.vendornm,itm.retail 
   FROM sku_list as sl left join itm_datalake as itm on itm.pid = sl.sku   where sl.csg_id = ".$id." ORDER BY sl.id DESC " or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
+  echo '<!-- Modal -->
+  <div class="modal fade" id="ns_insertsku" tabindex="-1" aria-labelledby="ns_insertskuLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ns_insertskuLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>';
     echo 
     "<p>
-    <a href='#' id='download_link' class='badge bg-dark bg-gradient shadow-sm mt-2 p-1' onClick='javascript:ExcelReport();''>
+    <a href='#' id='download_link' class='badge bg-dark bg-gradient shadow-sm mt-2 p-1 pe-3 me-2' onClick='javascript:ExcelReport();''>
     <ion-icon name='download-outline'></ion-icon>Export</a>
+    <a href='#' id='download_link' class='badge bg-primary bg-gradient shadow-sm mt-2 p-1 pe-3 me-2' data-bs-toggle='modal' data-bs-target='#ns_insertsku'>
+    <ion-icon name='push-outline'></ion-icon>Insert SKUs</a>
     </p>";
 
   
