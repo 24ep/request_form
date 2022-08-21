@@ -83,7 +83,7 @@ function listing_ticket_card($result_after_fetch ,$status){
                                                           $officer_display =  explode(",",$row['case_officer']);
                                                           foreach ($officer_display as $officer){
                                                           // $image_profile = profile_image($officer,$row['department'],25,$officer,1);
-                                                          $image_profile = profile_avatar($row['firstname'],$row['username'],$row['department'],25);
+                                                          $image_profile = profile_avatar($officer,$row['department'],25);
                                                             echo '<div class="badge-profile">';
                                                               echo '<div class="col">';
                                                               echo $image_profile;
@@ -124,9 +124,6 @@ function listing_ticket_card($result_after_fetch ,$status){
           ticket.ticket_type as ticket_type,
           pb.color_project as color_project,
           pb.prefix as prefix,
-          ac.firstname as firstname,
-          ac.lastname as ac.lastname,
-          ac.department as ac.department,
           case when ticket.ticket_type like '%Content%' or ticket.ticket_type like '%Status%' then 'Yes' end as contain_content,
           case when ticket.ticket_type like '%Provide%' then 'Yes' end as contain_data,
           case when ticket.ticket_type like '%Image%' then 'Yes' end as contain_studio,
@@ -134,8 +131,6 @@ function listing_ticket_card($result_after_fetch ,$status){
           FROM all_in_one_project.content_request as ticket
           Left join all_in_one_project.project_bucket pb
           on pb.prefix  = ticket.ticket_template
-          Left join all_in_one_project.account ac
-          on ac.username  = ticket.case_officer
           where (".$filter.") and lower(ticket.status) not in ('cancel','routine work','monitor','in-review','close','archive') 
           order by ".$sort_de_status."  limit 500";
          

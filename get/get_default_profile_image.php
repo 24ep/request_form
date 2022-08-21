@@ -45,7 +45,7 @@ if($httpcode==200) {
 
 }
 
-function profile_avatar($firstname,$lastname,$department,$size){
+function profile_avatar($firstname,$department,$size){
     switch ($department) {
         case "Content Followup": $bg = '336BFF'; break;
         case "Content Traffic": $bg = '33FF39'; break;
@@ -63,7 +63,7 @@ function profile_avatar($firstname,$lastname,$department,$size){
         
         default: $bg = '000000';
       }
-        $image = '<img src="https://ui-avatars.com/api/?name='.$firstname.'+'.$lastname.'&background='.$bg.' ?>&color=fff&rounded=true&size='.$size.'" class="ms-3 mb-2">';
+        $image = '<img src="https://ui-avatars.com/api/?name='.$firstname.'&background='.$bg.' ?>&color=fff&rounded=true&length=1&size='.$size.'" class="ms-3 mb-2">';
         return $image;
     
 }
