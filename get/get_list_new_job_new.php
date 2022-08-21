@@ -263,7 +263,7 @@ if(isset($_POST["from_post"] )){
           $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 250px;'><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].") ".$row_child["sku"]."</span></div>";
           $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col'></div>";
-          $sub_ticket .= "<div class='col'>".$row_child["sku"]."</div>";
+          $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col'></div>";
