@@ -39,6 +39,6 @@ function get_comment_ns($id){
   unset($list_file);
       }
   }
-  get_comment_ins($id);
+  get_comment_ns($id);
   mysqli_close($con);
 ?>
