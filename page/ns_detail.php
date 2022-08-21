@@ -336,7 +336,7 @@
                     class="position-absolute top-100 start-100 translate-middle btn btn-sm"><strong>Approved</strong><br><?php echo $approved_date; ?></small>
             </div>
             <?php }?>
-            <hr>
+
 
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
