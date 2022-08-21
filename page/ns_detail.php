@@ -604,6 +604,9 @@ function ns_discover(key, value) {
     // reload page with new params
     document.location.search = params;
 
+    //set status
+    document.getElementById("status_filter").value = 'pending,checking,waiting data,waiting image,waiting traffic,waiting confirm,need update contact';
+
 }
 
 function take_ns_requester(id) {
