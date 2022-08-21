@@ -49,12 +49,12 @@
         if($sku_item_check == " "){
             
             echo '<div class="alert alert-success" role="alert">
-                        ตรวจไม่พบ sku ที่ซ้ำบนระบบ service-gate
+            <ion-icon name="checkmark-done-circle-outline"></ion-icon> ตรวจไม่พบ sku ที่ซ้ำบนระบบ service-gate
                   </div>';
             echo '<script>document.getElementById("result_checking_sku").value = "no_duplicate";</script>';
         }else{
-            echo '<div class="alert alert-danger" role="alert">
-            ตรวจจพบ sku ด้านล่าง ซ้ำในฐานข้องมูลของ <strong>SERVICE-GATE จำนวน '.$i.' sku <br>
+            echo '<div class="alert alert-danger shadow-sm" role="alert">
+            <ion-icon name="warning-outline"></ion-icon>ตรวจจพบ sku ด้านล่าง ซ้ำในฐานข้องมูลของ <strong>SERVICE-GATE จำนวน '.$i.' sku <br>
             เมื่อยืนยันระบบจะทำการผูก sku เหล่านี้เข้ากับ ticket </strong>\n
             <table class="table">
             <thead>
