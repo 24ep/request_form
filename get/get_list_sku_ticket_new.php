@@ -15,24 +15,31 @@ if($_POST['id']<>""){
   $result = mysqli_query($con, $query);
   echo '<!-- Modal -->
   <div class="modal fade" id="ns_insertsku" tabindex="-1" aria-labelledby="ns_insertskuLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
+    <div class="modal-dialog  modal-lg">
+      <div class="modal-content shadow rounded">
         <div class="modal-header">
           <h5 class="modal-title" id="ns_insertskuLabel">Check and insert SKU list</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-        <small>ticket BU : '.$bu.'</small>
-        <textarea style="font-size:12px" oninput="sku_checking()" class="form-control"
-        id="sku_checking" name="sku_accepted"
-        placeholder="ตรวจสอบ IBC ตามตัวอย่างด้านล่าง วางตามตัวอย่างด้านล่าง&#10;&#10;3466644&#10;2443356&#10;2487356"
-        rows="20" style="height: 300px"></textarea>
+        <div class="col-6">
+          <small>Ticket BU : '.$bu.'</small>
+          <textarea style="font-size:12px" oninput="sku_checking()" class="form-control mt-2"
+          id="sku_checking" name="sku_accepted"
+          placeholder="ตรวจสอบ IBC ตามตัวอย่างด้านล่าง วางตามตัวอย่างด้านล่าง&#10;&#10;3466644&#10;2443356&#10;2487356"
+          rows="20" style="height: 300px"></textarea>
         </div>
+        <div class="col-6">
+              <div id="sku_checking_result"></div>
+              <div id="sku_checking_result_force"></div>
+        </div>
+        </div>
+    
         <input type="hidden" id="result_checking_sku" name="result_checking_sku"
          value="">
         <div class="modal-footer">
           <button type="button" style="margin-top:10px"
-          onclick="force_sync_with_ticket('.$id.',&#34;'.$bu.'&#34;)
+          onclick="force_sync_with_ticket('.$id.',&#34;'.$bu.'&#34;)"
           class="btn btn-danger">ยืนยัน เชื่อมต่อ sku ด้านบนกับ ticket NS-
           '.$id.'</button>
         </div>
@@ -94,18 +101,21 @@ if($_POST['id']<>""){
   mysqli_close($con);
   ?>
 
-  <!-- เรียกใช้ javascript สำหรับ export ไฟล์ excel  -->
-<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"  ></script>
-<script src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"  ></script>
+<!-- เรียกใช้ javascript สำหรับ export ไฟล์ excel  -->
+<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+<script src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"></script>
 
 <script>
-function ExcelReport()//function สำหรับสร้าง ไฟล์ excel จากตาราง
+function ExcelReport() //function สำหรับสร้าง ไฟล์ excel จากตาราง
 {
-    var sheet_name="excel_sheet";/* กำหหนดชื่อ sheet ให้กับ excel โดยต้องไม่เกิน 31 ตัวอักษร */
-    var elt = document.getElementById('sku_list_export');/*กำหนดสร้างไฟล์ excel จาก table element ที่มี id ชื่อว่า myTable*/
+    var sheet_name = "excel_sheet"; /* กำหหนดชื่อ sheet ให้กับ excel โดยต้องไม่เกิน 31 ตัวอักษร */
+    var elt = document.getElementById(
+    'sku_list_export'); /*กำหนดสร้างไฟล์ excel จาก table element ที่มี id ชื่อว่า myTable*/
 
     /*------สร้างไฟล์ excel------*/
-    var wb = XLSX.utils.table_to_book(elt, {sheet: sheet_name});
-    XLSX.writeFile(wb,'export.xlsx');//Download ไฟล์ excel จากตาราง html โดยใช้ชื่อว่า report.xlsx
+    var wb = XLSX.utils.table_to_book(elt, {
+        sheet: sheet_name
+    });
+    XLSX.writeFile(wb, 'export.xlsx'); //Download ไฟล์ excel จากตาราง html โดยใช้ชื่อว่า report.xlsx
 }
 </script>
