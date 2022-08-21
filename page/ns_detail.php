@@ -219,6 +219,7 @@
             <small class="content-assignee-header">Contact person</small>
             <div id="contact_person_officer">
                 <?php if($follow_up_name=="-"){
+
                     echo '<button type="button" class="btn btn-sm btn-primary m-3 bg-gradient"><ion-icon name="person-outline"></ion-icon> Take officer</button>';
                 }else{
                     ?>
