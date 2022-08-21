@@ -610,6 +610,80 @@ function take_ns_requester(id) {
         });
     }
 }
+function force_sync_with_ticket(id, bu) {
+    var result_checking_sku = document.getElementById("result_checking_sku").value;
+    var sku_change = document.getElementById("sku_checking").value;
+    // var be_status_on_change = document.getElementById("be_status_on_change").value;
+    if (result_checking_sku == "no_duplicate") {
+        be_status_on_change = "Keep";
+        if (sku_change) {
+            $.post("base/action/action_force_change_csg_id_of_sku.php", {
+                    id: id,
+                    sku_change: sku_change,
+                    be_status_on_change: be_status_on_change,
+                    bu: bu
+                },
+                function(data) {
+                    $('#sku_checking_result_force').html(data);
+                });
+        }
+    } else {
+        Notiflix.Confirm.show(
+            'Found some sku in current database',
+            'Do you want the system do any action with duplicate ticket ?',
+            'Keep duplicate ticket',
+            'Cancel duplicate ticket',
+            // 'Keep that ticket , I will update some sku then replace sku of that ticket by myself.',
+            // 'Cancel that ticket , all sku duplicate and I want to use this ticket to proceed',
+            // 'Close , I will update later',
+            function okCb() {
+                be_status_on_change = "Keep";
+                if (sku_change) {
+                    $.post("base/action/action_force_change_csg_id_of_sku.php", {
+                            id: id,
+                            sku_change: sku_change,
+                            be_status_on_change: be_status_on_change,
+                            bu: bu
+                        },
+                        function(data) {
+                            Notiflix.Report.success(
+                                'Success',
+                                'SKU have updated to CR-' + id,
+                                'Okay',
+                            );
+                            $('#sku_checking_result_force').html(data);
+                        });
+                }
+            },
+            function cancelCb() {
+                be_status_on_change = "cancel";
+                if (sku_change) {
+                    $.post("base/action/action_force_change_csg_id_of_sku.php", {
+                            id: id,
+                            sku_change: sku_change,
+                            be_status_on_change: be_status_on_change,
+                            bu: bu
+                        },
+                        function(data) {
+                            $('#sku_checking_result_force').html(data);
+                            Notiflix.Report.success(
+                                'Success',
+                                'SKU have updated to CR-' + id + ' and duplicate ticket have been cancel',
+                                'Okay',
+                            );
+                        });
+                }
+            }, {
+                width: '500px',
+                cancelButtonColor: '#ffffff',
+                cancelButtonBackground: '#CF142B',
+                clickToClose: true,
+                closeButton: true,
+                backOverlayClickToClose: true,
+            },
+        );
+    }
+}
 </script>
 <!-- 
 var url = new URL("http://foo.bar/?x=1&y=2");
