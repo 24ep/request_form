@@ -337,25 +337,19 @@
             </div>
             <?php }?>
             <hr>
-            <div class="d-flex align-items-start">
-                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <button class="nav-link active" id="v-pills-public-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-public" type="button" role="tab" aria-controls="v-pills-public"
-                        aria-selected="true">
-                        <ion-icon name="chatbox-outline"></ion-icon>Public comment
-                    </button>
-                    <button class="nav-link" id="v-pills-internal-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-internal" type="button" role="tab" aria-controls="v-pills-internal"
-                        aria-selected="false">Internal note</button>
-                </div>
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-public" role="tabpanel"
-                        aria-labelledby="v-pills-public-tab" tabindex="0">...</div>
-                    <div class="tab-pane fade" id="v-pills-internal" role="tabpanel"
-                        aria-labelledby="v-pills-internal-tab" tabindex="0">
-                        <!-- internal note -->
 
-                        <ul class="list-group list-group-flush" style="background: fixed;">
+            <nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-public-tab" data-bs-toggle="tab" data-bs-target="#nav-public" type="button" role="tab" aria-controls="nav-public" aria-selected="true">Public comment</button>
+    <button class="nav-link" id="nav-internal-tab" data-bs-toggle="tab" data-bs-target="#nav-internal" type="button" role="tab" aria-controls="nav-internal" aria-selected="false">Internal note</button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-public" role="tabpanel" aria-labelledby="nav-public-tab" tabindex="0">...</div>
+  <div class="tab-pane fade" id="nav-internal" role="tabpanel" aria-labelledby="nav-internal-tab" tabindex="0">
+      <!-- internal note -->
+
+      <ul class="list-group list-group-flush" style="background: fixed;">
                             <div id="comment_box_ins">
                                 <div id="call_ticket_comment_ins">
                                     <?php include('../get/get_comment_ins.php'); ?>
@@ -378,11 +372,12 @@
                         <button type="button" class="btn btn-outline-primary btn-sm"
                             onClick="comment_ins_id_with_file(<?php echo  $_POST['id']; ?>)">Add
                             comment</button>
-                            
+
                         <!-- end internal note -->
-                    </div>
-                </div>
-            </div>
+  </div>
+</div>
+
+ 
 
 
 
