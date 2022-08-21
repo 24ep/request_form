@@ -339,47 +339,70 @@
             <hr>
 
             <nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <button class="nav-link active" id="nav-public-tab" data-bs-toggle="tab" data-bs-target="#nav-public" type="button" role="tab" aria-controls="nav-public" aria-selected="true"><ion-icon name="chatbubble-outline"></ion-icon>Public comment</button>
-    <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail" type="button" role="tab" aria-controls="nav-detail" aria-selected="false"><ion-icon name="receipt-outline"></ion-icon>Ticket infomation</button>
-    <button class="nav-link" id="nav-internal-tab" data-bs-toggle="tab" data-bs-target="#nav-internal" type="button" role="tab" aria-controls="nav-internal" aria-selected="false"><ion-icon name="text-outline"></ion-icon>Internal note</button>
-  </div>
-</nav>
-<div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-public" role="tabpanel" aria-labelledby="nav-public-tab" tabindex="0">...</div>
-  <div class="tab-pane fade show active" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab" tabindex="0">...</div>
-  <div class="tab-pane fade" id="nav-internal" role="tabpanel" aria-labelledby="nav-internal-tab" tabindex="0">
-      <!-- internal note -->
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-public-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-public" type="button" role="tab" aria-controls="nav-public"
+                        aria-selected="true">
+                        <ion-icon name="chatbubble-outline"></ion-icon>Public comment
+                    </button>
+                    <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail"
+                        type="button" role="tab" aria-controls="nav-detail" aria-selected="false">
+                        <ion-icon name="receipt-outline"></ion-icon>Ticket infomation
+                    </button>
+                    <button class="nav-link" id="nav-internal-tab" data-bs-toggle="tab" data-bs-target="#nav-internal"
+                        type="button" role="tab" aria-controls="nav-internal" aria-selected="false">
+                        <ion-icon name="text-outline"></ion-icon>Internal note
+                    </button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-public" role="tabpanel" aria-labelledby="nav-public-tab"
+                    tabindex="0">
 
-      <ul class="list-group list-group-flush m-1" style="background: fixed;">
-                            <div id="comment_box_ins">
-                                <div id="call_ticket_comment_ins">
-                                    <?php include('../get/get_comment_ins.php'); ?>
-                                </div>
-                            </div>
-                        </ul>
-                        <small style="font-weight: bolder;color: #adb5bd;">
-                            <ion-icon name="chatbubbles-outline"></ion-icon>Comment
-                        </small>
-                        <textarea id="comment_input_ins" style="font-size: 14px;"
-                            class="form-control mt-2 mb-2" placeholder="Leave a comment here..." rows="4"
-                            style="height: 100px"></textarea>
-                        <div class="mb-3">
-                            <input type="file" id="actual-btn_ins" name="actual-btn_ins[]" multiple hidden />
-                            <label id="label_file_ins" name="label_file_ins" for="actual-btn_ins">
-                                <ion-icon name="attach-outline"></ion-icon>Attach file or image
-                            </label>
-                            <span id="file-chosen_ins"> </span>
+                </div>
+                <div class="tab-pane fade show active" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab"
+                    tabindex="0">
+                    <div class="container" style="padding: 20px!important;">
+                        <div class="alert alert-primary" role="alert">
+                            <ion-icon name="color-wand-outline"></ion-icon>
+                            สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ จนกว่า ทาง Content จะทำการ assign
+                            ticket นี้ให้กับทางผู้เกี่ยวข้อง
                         </div>
-                        <button type="button" class="btn btn-outline-primary btn-sm"
-                            onClick="comment_ins_id_with_file(<?php echo  $_POST['id']; ?>)">Add
-                            comment</button>
+                        <?php include('../form/form_request_edit_new.php')?>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-internal" role="tabpanel" aria-labelledby="nav-internal-tab"
+                    tabindex="0">
+                    <!-- internal note -->
 
-                        <!-- end internal note -->
-  </div>
-</div>
+                    <ul class="list-group list-group-flush m-1" style="background: fixed;">
+                        <div id="comment_box_ins">
+                            <div id="call_ticket_comment_ins">
+                                <?php include('../get/get_comment_ins.php'); ?>
+                            </div>
+                        </div>
+                    </ul>
+                    <small style="font-weight: bolder;color: #adb5bd;">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>Comment
+                    </small>
+                    <textarea id="comment_input_ins" style="font-size: 14px;" class="form-control mt-2 mb-2"
+                        placeholder="Leave a comment here..." rows="4" style="height: 100px"></textarea>
+                    <div class="mb-3">
+                        <input type="file" id="actual-btn_ins" name="actual-btn_ins[]" multiple hidden />
+                        <label id="label_file_ins" name="label_file_ins" for="actual-btn_ins">
+                            <ion-icon name="attach-outline"></ion-icon>Attach file or image
+                        </label>
+                        <span id="file-chosen_ins"> </span>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-sm"
+                        onClick="comment_ins_id_with_file(<?php echo  $_POST['id']; ?>)">Add
+                        comment</button>
 
- 
+                    <!-- end internal note -->
+                </div>
+            </div>
+
+
 
 
 
