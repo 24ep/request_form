@@ -31,14 +31,14 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             </div>
 
             
-            <div class="col-2">
+            <!-- <div class="col-2">
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Status</span>
                     <select class="form-select" id="status_filter" onchange="filter_update();">
-                        <?php echo $request_new_status_op;?>
+                        <?php //echo $request_new_status_op;?>
                     </select>
                 </div>
-            </div>
+            </div> -->
             <div class="col-2">
                 <input type="hidden" id="status_filter" name="status_filter" value="">
                 <select  multiple id="status_filter_show" 
@@ -236,7 +236,7 @@ function itm_confirm_cancel(id, status_change) {
     }
 }
 new SlimSelect({
-  select: '#cr_edit_case_officer_show',
+  select: '#status_filter_show',
   closeOnSelect: false,
   allowDeselectOption: true,
   onChange: (info) => {
@@ -249,7 +249,7 @@ new SlimSelect({
       }
      
     }
-    document.getElementById("cr_edit_case_officer").value = input_update;
+    document.getElementById("status_filter").value = input_update;
     
   }
 })
