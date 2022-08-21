@@ -250,7 +250,6 @@ new SlimSelect({
      
     }
     document.getElementById("cr_edit_case_officer").value = input_update;
-    update_cr_detail(<?php echo $id; ?>,<?php echo $cr_edit_case_officer; ?>)
     
   }
 })
