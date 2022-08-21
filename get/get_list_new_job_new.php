@@ -131,9 +131,9 @@ if(isset($_POST["from_post"] )){
     // -1 create date > 5
     $create_date_diff = (strtotime($current_day) - strtotime($create_date))/  ( 60 * 60 * 24 );
     if($create_date_diff>=10){
-      $p_badge .= '<span class="badge bg-danger bg-gradient p-2" style="margin-left:5px;background-color: #46088f!important;">Age > '.$create_date_diff.' Days</span>';
+      $p_badge .= '<span class="badge bg-danger bg-gradient p-2" style="margin-left:5px;background-color: #46088f!important;"><ion-icon name="warning-outline"></ion-icon> Age > '.$create_date_diff.' Days</span>';
     }elseif($create_date_diff>=5){
-      $p_badge .= '<span class="badge bg-danger bg-gradient p-2" style="margin-left:5px">Age > '.$create_date_diff.' Days</span>';
+      $p_badge .= '<span class="badge bg-danger bg-gradient p-2" style="margin-left:5px"> <ion-icon name="warning-outline"></ion-icon> Age > '.$create_date_diff.' Days</span>';
     }elseif($create_date_diff>=3){
       $p_badge .= '<span class="badge bg-warning bg-gradient p-2" style="margin-left:5px">Age > '.$create_date_diff.' Days</span>';
     }
