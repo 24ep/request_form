@@ -68,7 +68,14 @@ if(isset($_POST["from_post"] )){
    }
  }
  if($_SESSION['status_filter']<>""){
-  $status_filter ="anj.status like '%".$_SESSION['status_filter']."%' or anj.status = 'none'";
+  // $array_status = explode(",",$_SESSION['status_filter']);
+  // $array_status_string = "";
+  // foreach ($array_status as $value) {
+  //   $array_status_string = "'".$value."'";
+  // }
+  $status_filter_replaced = str_replace(",","','",$_SESSION['status_filter']);
+  $status_filter_replaced  = "'".$status_filter_replaced ."'";
+  $status_filter ="anj.status in (".$status_filter_replaced.") or anj.status = 'none'";
  }else{
   $status_filter ="1=1";
  }
