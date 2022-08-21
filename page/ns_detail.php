@@ -301,42 +301,56 @@
                                     }
                                         
                                     ?>
-            <h6>
+            <h6 class="ms-5">
                 <ion-icon name="podium-outline"></ion-icon><strong>Progress</strong>
             </h6>
             <div class="position-relative" style="margin: 10%!important;margin-top: 50px!important;">
                 <div class="progress" style="height: 5px;">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success shadow-sm" role="progressbar"
                         aria-label="Progress" style="width: <?php echo $progress_per; ?>%;"
                         aria-valuenow="<?php echo $progress_per; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <button type="button"
-                    class="position-absolute top-0 start-0 translate-middle btn btn-sm <?php echo $badge_progres_0; ?> rounded-pill"
+                    class="position-absolute top-0 start-0 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_0; ?> rounded-pill"
                     style="width: 2rem; height:2rem;">0</button>
                 <small style="top: 50px!important;"
                     class="position-absolute top-100 start-0 translate-middle btn btn-sm"><strong>Request</strong><br><?php echo $create_date; ?></small>
                 <button type="button"
-                    class="position-absolute top-0 start-30 translate-middle btn btn-sm <?php echo $badge_progres_1; ?> rounded-pill"
+                    class="position-absolute top-0 start-30 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_1; ?> rounded-pill"
                     style="width: 2rem; height:2rem;">1</button>
                 <small style="top: 50px!important;"
                     class="position-absolute top-100 start-30 translate-middle btn btn-sm"><strong>Checking</strong>
                     <br><?php echo $accepted_date; ?></small>
                 <button type="button"
-                    class="position-absolute top-0 start-60 translate-middle btn btn-sm <?php echo $badge_progres_2; ?> rounded-pill"
+                    class="position-absolute top-0 start-60 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_2; ?> rounded-pill"
                     style="width: 2rem; height:2rem;">2</button>
                 <small style="top: 50px!important;"
                     class="position-absolute top-100 start-60 translate-middle btn btn-sm"><strong>On-productions</strong>
                     <br><?php echo $job_number; ?></small>
                 <button type="button"
-                    class="position-absolute top-0 start-100 translate-middle btn btn-sm <?php echo $badge_progres_3; ?> rounded-pill"
+                    class="position-absolute top-0 start-100 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_3; ?> rounded-pill"
                     style="width: 2rem; height:2rem;">3</button>
                 <small style="top: 50px!important;"
                     class="position-absolute top-100 start-100 translate-middle btn btn-sm"><strong>Approved</strong><br><?php echo $approved_date; ?></small>
             </div>
             <?php }?>
-            <h6>
-                <ion-icon name="chatbox-outline"></ion-icon><strong>Progress</strong>
+            <hr>
+            <h6 class="ms-5">
+                <ion-icon name="chatbox-outline"></ion-icon><strong>Comment</strong>
             </h6>
+            <div class="d-flex align-items-start">
+            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active" id="v-pills-public-tab" data-bs-toggle="pill" data-bs-target="#v-pills-public" type="button" role="tab" aria-controls="v-pills-public" aria-selected="true">Public</button>
+                <button class="nav-link" id="v-pills-internal-tab" data-bs-toggle="pill" data-bs-target="#v-pills-internal" type="button" role="tab" aria-controls="v-pills-internal" aria-selected="false">Internal</button>
+            </div>
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-public" role="tabpanel" aria-labelledby="v-pills-public-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="v-pills-internal" role="tabpanel" aria-labelledby="v-pills-internal-tab" tabindex="0">...</div>
+            </div>
+            </div>
+
+
+
         </div>
         <div class="col-4"
             style="height: -webkit-fill-available;background-color: white;border-left: solid 1px #fde5e5;margin-top: 2.5px;padding: 10px;">
