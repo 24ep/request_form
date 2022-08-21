@@ -358,9 +358,11 @@
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-public" role="tabpanel" aria-labelledby="nav-public-tab"
                     tabindex="0">
-
+                    <div class="alert alert-info" role="alert">
+                    <ion-icon name="information-circle-outline"></ion-icon><?php echo $remark;?>
+                    </div>
                 </div>
-                <div class="tab-pane fade show active" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab"
+                <div class="tab-pane fade" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab"
                     tabindex="0">
                     <div class="container" style="padding: 20px!important;">
                         <div class="alert alert-primary" role="alert">
