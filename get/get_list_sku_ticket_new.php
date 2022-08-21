@@ -30,6 +30,7 @@ if($_POST['id']<>""){
           rows="20" style="height: 300px"></textarea>
         </div>
         <div class="col-6">
+        <small>Message log</small>
               <div id="sku_checking_result"></div>
               <div id="sku_checking_result_force"></div>
         </div>
@@ -40,7 +41,7 @@ if($_POST['id']<>""){
         <div class="modal-footer">
           <button type="button" style="margin-top:10px"
           onclick="force_sync_with_ticket('.$id.',&#34;'.$bu.'&#34;)"
-          class="btn btn-danger">ยืนยัน เชื่อมต่อ sku ด้านบนกับ ticket NS-
+          class="btn btn-danger bg-gradient  shadow-sm">ยืนยัน เชื่อมต่อ sku ด้านบนกับ ticket NS-
           '.$id.'</button>
         </div>
       </div>

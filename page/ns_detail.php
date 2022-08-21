@@ -684,6 +684,19 @@ function force_sync_with_ticket(id, bu) {
         );
     }
 }
+function sku_checking() {
+    // sku_checking_result
+    var sku_list = document.getElementById("sku_checking").value;
+    if (sku_list) {
+        $.post("base/action/action_sku_checking.php", {
+                sku_list: sku_list
+            },
+            function(data) {
+                $('#sku_checking_result').html(data);
+            });
+    }
+}
+
 </script>
 <!-- 
 var url = new URL("http://foo.bar/?x=1&y=2");
