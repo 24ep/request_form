@@ -40,13 +40,16 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                 </div>
             </div> -->
             <div class="col-2">
-                <input type="hidden" id="status_filter" name="status_filter" value="">
-                <select  multiple id="status_filter_show" 
-                 name="status_filter_show" 
-                 style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
-                 <option data-placeholder="true"></option>
-                 <?php echo $request_new_status_op;?>
-                </select>
+                <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap">
+                    <input type="hidden" id="status_filter" name="status_filter" value="">
+                    <span class="input-group-text " id="addon-wrapping">Status</span>
+                    <select  multiple id="status_filter_show" 
+                    name="status_filter_show" 
+                    style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
+                    <option data-placeholder="true"></option>
+                    <?php echo $request_new_status_op;?>
+                    </select>
+                </div>
             </div>
             <div class="col-2">
                 <div class="input-group input-group-sm mb-3 mt-3">
