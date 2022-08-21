@@ -43,7 +43,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                 <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap">
                     <input  type="hidden" id="status_filter" name="status_filter" value="">
                     <span class="input-group-text " id="addon-wrapping">Status</span>
-                    <select onselect="filter_update();" multiple id="status_filter_show" 
+                    <select  multiple id="status_filter_show" 
                     name="status_filter_show" 
                     style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
                     <option data-placeholder="true"></option>
@@ -253,6 +253,7 @@ new SlimSelect({
      
     }
     document.getElementById("status_filter").value = input_update;
+   filter_update();
     
   }
 })
