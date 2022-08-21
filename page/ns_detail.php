@@ -220,7 +220,7 @@
             <div id="contact_person_officer">
                 <?php if($follow_up_name=="-"){
 
-                    echo '<button type="button" class="btn btn-sm btn-primary m-3 bg-gradient"><ion-icon name="person-outline"></ion-icon> Take officer</button>';
+                    echo '<button type="button" onclick="take_ns_officer('.$id.')" class="btn btn-sm btn-primary m-3 bg-gradient"><ion-icon name="person-outline"></ion-icon> Take officer</button>';
                 }else{
                     ?>
                 <ul class="contact-person-ns">
