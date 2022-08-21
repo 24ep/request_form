@@ -217,22 +217,23 @@
         </div>
         <div class="col-2" style="border-left: 1px solid #e0e0e0;">
             <small class="content-assignee-header">Contact person</small>
-            <?php if($follow_up_name=="-"){
-                echo '<button type="button" class="btn btn-sm btn-primary m-3 bg-gradient"><ion-icon name="person-outline"></ion-icon> Take officer</button>';
-            }else{
+            <div id="contact_person_officer">
+                <?php if($follow_up_name=="-"){
+                    echo '<button type="button" class="btn btn-sm btn-primary m-3 bg-gradient"><ion-icon name="person-outline"></ion-icon> Take officer</button>';
+                }else{
+                    ?>
+                <ul class="contact-person-ns">
+                    <li style="margin-top: 5px;">
+                        <ion-icon name="person-outline"></ion-icon><?php echo $follow_up_name; ?>
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <ion-icon name="call-outline"></ion-icon> <?php echo $office_tell; ?>
+                    </li>
+                </ul>
+                <?php
+                }
                 ?>
-            <ul class="contact-person-ns">
-                <li style="margin-top: 5px;">
-                    <ion-icon name="person-outline"></ion-icon><?php echo $follow_up_name; ?>
-                </li>
-                <li style="margin-top: 5px;">
-                    <ion-icon name="call-outline"></ion-icon> <?php echo $office_tell; ?>
-                </li>
-            </ul>
-            <?php
-            }
-            ?>
-
+            </div>
         </div>
     </div>
 </nav>
@@ -635,11 +636,21 @@ function ns_discover(key, value) {
 
 function take_ns_requester(id) {
     if (id) {
-        $.post("../base/action/action_take_na_requester.php", {
+        $.post("../base/action/action_take_ns_requester.php", {
             id: id
         }, function(data) {
             $('#contact_person_requester').html(data);
             Notiflix.Notify.success("owner of NS-" + id + "have been change");
+        });
+    }
+}
+function take_ns_officer(id) {
+    if (id) {
+        $.post("../base/action/action_take_ns_officer.php", {
+            id: id
+        }, function(data) {
+            $('#contact_person_officer').html(data);
+            Notiflix.Notify.success("officer of NS-" + id + "have been change");
         });
     }
 }
