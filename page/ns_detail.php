@@ -170,47 +170,49 @@
     <div class="row">
         <div class="col-4">
             <div class="container-fluid">
-            <small>
-                <a type="button" style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"
-                    onclick="get_page('create_new');">
-                   
+                <small>
+                    <a type="button" style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"
+                        onclick="get_page('create_new');">
+
                         <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
-                  
-                </a>
+
+                    </a>
                 </small>
                 <h5><a class="navbar-brand" href="#">NS-<?php echo $id." ".$brand." ".$sku." SKUs" ?> </a></h5>
                 <div class="ms-3">
-                <?php echo $dp_tags; ?>
+                    <?php echo $dp_tags; ?>
                 </div>
             </div>
         </div>
         <div class="col-2 bg-white" style="border-left: 1px solid #e0e0e0;">
             <small class="content-assignee-header"><?php echo $request_firstname; ?> also pending</small>
             <ul class="contact-person-ns">
-                    <?php echo $same_owner; ?>
+                <?php echo $same_owner; ?>
             </ul>
         </div>
         <div class="col-2 bg-white" style="border-left: 1px solid #e0e0e0;">
             <small class="content-assignee-header"><?php echo $brand; ?> also pending</small>
             <ul class="contact-person-ns">
-                    <?php echo $same_brand; ?>
+                <?php echo $same_brand; ?>
             </ul>
         </div>
         <div class="col-2 bg-white" style="border-left: 1px solid #e0e0e0;">
             <small class="content-assignee-header">Requested by</small>
             <div id="contact_person_requester">
-            <ul class="contact-person-ns">
-                <li style="margin-top: 5px;">
-                    <ion-icon name="person-outline"></ion-icon>
-                    <?php echo $request_firstname." ".substr($request_lastname,0,2).". ( ".$request_nickname." ) " ?>
-                </li>
-                <li style="margin-top: 5px;">
-                    <ion-icon name="call-outline"></ion-icon> <?php echo $request_office_tell; ?>
-                </li>
-                <li style='margin-top: 5px;color: #81a8dd;' >
-                <a type="button" onclick="take_ns_requester(<?php echo $id;?>)"><ion-icon name="golf-outline"></ion-icon> Take owner </a>
-                </li>
-            </ul>
+                <ul class="contact-person-ns">
+                    <li style="margin-top: 5px;">
+                        <ion-icon name="person-outline"></ion-icon>
+                        <?php echo $request_firstname." ".substr($request_lastname,0,2).". ( ".$request_nickname." ) " ?>
+                    </li>
+                    <li style="margin-top: 5px;">
+                        <ion-icon name="call-outline"></ion-icon> <?php echo $request_office_tell; ?>
+                    </li>
+                    <li style='margin-top: 5px;color: #81a8dd;'>
+                        <a type="button" onclick="take_ns_requester(<?php echo $id;?>)">
+                            <ion-icon name="golf-outline"></ion-icon> Take owner
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="col-2" style="border-left: 1px solid #e0e0e0;">
@@ -219,7 +221,7 @@
                 echo '<button type="button" class="btn btn-sm btn-primary m-3 bg-gradient"><ion-icon name="person-outline"></ion-icon> Take officer</button>';
             }else{
                 ?>
-                <ul class="contact-person-ns">
+            <ul class="contact-person-ns">
                 <li style="margin-top: 5px;">
                     <ion-icon name="person-outline"></ion-icon><?php echo $follow_up_name; ?>
                 </li>
@@ -230,7 +232,7 @@
             <?php
             }
             ?>
-            
+
         </div>
     </div>
 </nav>
@@ -306,8 +308,8 @@
             </h6>
             <div class="position-relative" style="margin: 10%!important;margin-top: 50px!important;">
                 <div class="progress" style="height: 5px;">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success shadow-sm" role="progressbar"
-                        aria-label="Progress" style="width: <?php echo $progress_per; ?>%;"
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success shadow-sm"
+                        role="progressbar" aria-label="Progress" style="width: <?php echo $progress_per; ?>%;"
                         aria-valuenow="<?php echo $progress_per; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <button type="button"
@@ -335,18 +337,51 @@
             </div>
             <?php }?>
             <hr>
-            <h6 class="ms-5">
-                <ion-icon name="chatbox-outline"></ion-icon><strong>Comment</strong>
-            </h6>
             <div class="d-flex align-items-start">
-            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <button class="nav-link active" id="v-pills-public-tab" data-bs-toggle="pill" data-bs-target="#v-pills-public" type="button" role="tab" aria-controls="v-pills-public" aria-selected="true">Public</button>
-                <button class="nav-link" id="v-pills-internal-tab" data-bs-toggle="pill" data-bs-target="#v-pills-internal" type="button" role="tab" aria-controls="v-pills-internal" aria-selected="false">Internal</button>
-            </div>
-            <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-public" role="tabpanel" aria-labelledby="v-pills-public-tab" tabindex="0">...</div>
-                <div class="tab-pane fade" id="v-pills-internal" role="tabpanel" aria-labelledby="v-pills-internal-tab" tabindex="0">...</div>
-            </div>
+                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active" id="v-pills-public-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-public" type="button" role="tab" aria-controls="v-pills-public"
+                        aria-selected="true">
+                        <ion-icon name="chatbox-outline"></ion-icon>Public comment
+                    </button>
+                    <button class="nav-link" id="v-pills-internal-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-internal" type="button" role="tab" aria-controls="v-pills-internal"
+                        aria-selected="false">Internal note</button>
+                </div>
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-public" role="tabpanel"
+                        aria-labelledby="v-pills-public-tab" tabindex="0">...</div>
+                    <div class="tab-pane fade" id="v-pills-internal" role="tabpanel"
+                        aria-labelledby="v-pills-internal-tab" tabindex="0">
+                        <!-- internal note -->
+
+                        <ul class="list-group list-group-flush" style="background: fixed;">
+                            <div id="comment_box_ins">
+                                <div id="call_ticket_comment_ins">
+                                    <?php include('../get/get_comment_ins.php'); ?>
+                                </div>
+                            </div>
+                        </ul>
+                        <small style="font-weight: bolder;color: #adb5bd;">
+                            <ion-icon name="chatbubbles-outline"></ion-icon>Comment
+                        </small>
+                        <textarea id="comment_input_ins" style="margin-top:0px;margin-bottom:10px;font-size: 14px;"
+                            class="form-control" placeholder="Leave a comment here..." rows="4"
+                            style="height: 100px"></textarea>
+                        <div class="mb-3">
+                            <input type="file" id="actual-btn_ins" name="actual-btn_ins[]" multiple hidden />
+                            <label id="label_file_ins" name="label_file_ins" for="actual-btn_ins">
+                                <ion-icon name="attach-outline"></ion-icon>Attach file or image
+                            </label>
+                            <span id="file-chosen_ins"> </span>
+                        </div>
+                        <button type="button" class="btn btn-outline-primary btn-sm"
+                            onClick="comment_ins_id_with_file(<?php echo  $_POST['id']; ?>)">Add
+                            comment</button>
+                            
+                        <!-- end internal note -->
+                    </div>
+                </div>
             </div>
 
 
@@ -393,7 +428,7 @@
                     <?php include('../get/get_internal_console_nj_new.php');?>
                 </div>
                 <div class="tab-pane fade" id="nav-sku" role="tabpanel" aria-labelledby="nav-sku-tab" tabindex="0">
-                <?php include('../get/get_list_sku_ticket_new.php'); ?>
+                    <?php include('../get/get_list_sku_ticket_new.php'); ?>
                 </div>
             </div>
 
@@ -514,16 +549,15 @@
 </div>
 
 <script>
- 
-    function ns_discover(key, value) {
+function ns_discover(key, value) {
     key = encodeURIComponent(key);
     value = encodeURIComponent(value);
 
     // kvp looks like ['key1=value1', 'key2=value2', ...]
     var kvp = document.location.search.substr(1).split('&');
-    let i=0;
+    let i = 0;
 
-    for(; i<kvp.length; i++){
+    for (; i < kvp.length; i++) {
         if (kvp[i].startsWith(key + '=')) {
             let pair = kvp[i].split('=');
             pair[1] = value;
@@ -532,8 +566,8 @@
         }
     }
 
-    if(i >= kvp.length){
-        kvp[kvp.length] = [key,value].join('=');
+    if (i >= kvp.length) {
+        kvp[kvp.length] = [key, value].join('=');
     }
 
     // can return this or...
@@ -541,15 +575,16 @@
 
     // reload page with new params
     document.location.search = params;
-   
+
 }
+
 function take_ns_requester(id) {
     if (id) {
         $.post("../base/action/action_take_na_requester.php", {
             id: id
         }, function(data) {
-           $('#contact_person_requester').html(data);
-           Notiflix.Notify.success("owner of NS-"+id+"have been change");
+            $('#contact_person_requester').html(data);
+            Notiflix.Notify.success("owner of NS-" + id + "have been change");
         });
     }
 }
