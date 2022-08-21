@@ -366,7 +366,30 @@
                     <?php
                     }
                     ?>
-
+<!-- comment ns -->
+<ul class="list-group list-group-flush m-1" style="background: fixed;">
+                        <div id="comment_box_ns">
+                            <div id="call_ticket_comment_ns">
+                                <?php include('../get/get_comment_ns.php'); ?>
+                            </div>
+                        </div>
+                    </ul>
+                    <small style="font-weight: bolder;color: #adb5bd;">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>Comment
+                    </small>
+                    <textarea id="comment_input_ns" style="font-size: 14px;" class="form-control mt-2 mb-2"
+                        placeholder="Leave a comment here..." rows="4" style="height: 100px"></textarea>
+                    <div class="mb-3">
+                        <input type="file" id="actual-btn_ns" name="actual-btn_ns[]" multiple hidden />
+                        <label id="label_file_ns" name="label_file_ns" for="actual-btn_ns">
+                            <ion-icon name="attach-outline"></ion-icon>Attach file or image
+                        </label>
+                        <span id="file-chosen_ns"> </span>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-sm"
+                        onClick="comment_ns_id_with_file(<?php echo  $_POST['id']; ?>)">Add
+                        comment</button>
+                        <!-- end comment ns -->
                 </div>
                 <div class="tab-pane fade" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab"
                     tabindex="0">
@@ -619,7 +642,64 @@ function take_ns_requester(id) {
         });
     }
 }
-
+function comment_ns_id_with_file(id) {
+    var form_data = new FormData();
+    var comment = document.getElementById("comment_input_ns").value;
+    document.getElementById('comment_input_ns').value = ''; //clear value
+    // var files = document.getElementById('actual-btn').files;
+    var ins = document.getElementById('actual-btn_ns').files.length;
+    for (var x = 0; x < ins; x++) {
+        form_data.append("files[]", document.getElementById('actual-btn_ns').files[x]);
+    }
+    // form_data.append("files", files)              // Appending parameter named file with properties of file_field to form_data
+    form_data.append("comment", comment) // Adding extra parameters to form_data
+    form_data.append("id", id)
+    $.ajax({
+        url: "base/action/action_comment_ns.php",
+        dataType: 'text',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data, // Setting the data attribute of ajax with file_data
+        type: 'post',
+        success: function(data) {
+            $('#call_ticket_comment_ns').html(data);
+            document.getElementById('comment_box_ns').scrollBy(0, document.getElementById(
+                "call_ticket_comment_ns").offsetHeight);
+            document.getElementById('actual-btn_ns').value = ''; //clear value
+            fileChosen_bt.textContent = ' + Attach file or image';
+        }
+    });
+}
+function comment_ins_id_with_file(id) {
+    var form_data = new FormData();
+    var comment = document.getElementById("comment_input_ins").value;
+    document.getElementById('comment_input_ins').value = ''; //clear value
+    // var files = document.getElementById('actual-btn').files;
+    var ins = document.getElementById('actual-btn_ins').files.length;
+    for (var x = 0; x < ins; x++) {
+        form_data.append("files[]", document.getElementById('actual-btn_ins').files[x]);
+    }
+    // form_data.append("files", files)              // Appending parameter named file with properties of file_field to form_data
+    form_data.append("comment", comment) // Adding extra parameters to form_data
+    form_data.append("id", id)
+    $.ajax({
+        url: "base/action/action_comment_ins.php",
+        dataType: 'text',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data, // Setting the data attribute of ajax with file_data
+        type: 'post',
+        success: function(data) {
+            $('#call_ticket_comment_ins').html(data);
+            document.getElementById('comment_box_ins').scrollBy(0, document.getElementById(
+                "call_ticket_comment_ins").offsetHeight);
+            document.getElementById('actual-btn_ins').value = ''; //clear value
+            fileChosen_bt.textContent = ' + Attach file or image';
+        }
+    });
+}
 function force_sync_with_ticket(id, bu) {
     var result_checking_sku = document.getElementById("result_checking_sku").value;
     var sku_change = document.getElementById("sku_checking").value;
