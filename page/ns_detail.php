@@ -371,7 +371,7 @@
                 <div class="tab-pane fade" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab"
                     tabindex="0">
                     <div class="container" style="padding: 20px!important;">
-                        <div class="alert alert-primary" role="alert">
+                        <div class="alert alert-primary shadow-sm" role="alert">
                             <ion-icon name="color-wand-outline"></ion-icon>
                             สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ จนกว่า ทาง Content จะทำการ assign
                             ticket นี้ให้กับทางผู้เกี่ยวข้อง

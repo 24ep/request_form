@@ -1,5 +1,8 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.css" rel="stylesheet">
 <?php
 session_start();
+
 include_once('../get/get_option_function.php');
 $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
 $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
@@ -26,6 +29,8 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                     </datalist>
                 </div>
             </div>
+
+            
             <div class="col-2">
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Status</span>
@@ -33,6 +38,15 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                         <?php echo $request_new_status_op;?>
                     </select>
                 </div>
+            </div>
+            <div class="col-2">
+                <input type="hidden" id="status_filter" name="status_filter" value="">
+                <select  multiple id="status_filter_show" 
+                 name="status_filter_show" 
+                 style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
+                 <option data-placeholder="true"></option>
+                 <?php echo $request_new_status_op;?>
+                </select>
             </div>
             <div class="col-2">
                 <div class="input-group input-group-sm mb-3">
@@ -221,5 +235,24 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
+new SlimSelect({
+  select: '#cr_edit_case_officer_show',
+  closeOnSelect: false,
+  allowDeselectOption: true,
+  onChange: (info) => {
+    var input_update ="";
+    for (let i = 0; i < info.length; i++) {
+      if(input_update==""){
+        input_update = info[i].value;
+      }else{
+        input_update = input_update +','+info[i].value;
+      }
+     
+    }
+    document.getElementById("cr_edit_case_officer").value = input_update;
+    update_cr_detail(<?php echo $id; ?>,<?php echo $cr_edit_case_officer; ?>)
+    
+  }
+})
 filter_update();
 </script>

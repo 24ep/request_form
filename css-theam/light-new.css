@@ -404,3 +404,13 @@ label#label_file_cme {
 .ts-board-col-left{
     border-left: 1px solid #e3e2e2;
 }
+.ss-value {
+    background: black;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-weight: 100;
+}
+.ss-multi-selected {
+    background: transparent;
+    border: 0px;
+}
