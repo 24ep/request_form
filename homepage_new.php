@@ -176,8 +176,8 @@ if (!$_SESSION["login_csg"]){
             </a>
             <hr class="hr_manu_bra">
             <div style="display: inline-flex;">
-            <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=<?php echo bg_dept($_SESSION['department']); ?>&color=fff&rounded=true&size=40" class="m-2">
-            <div >
+            <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=<?php echo bg_dept($_SESSION['department']); ?>&color=fff&rounded=true&size=40" class="ms-3">
+            <div style="align-self: center;" class="mb-3">
             <span class="name_manu_bra" style="place-self: center;"><?php echo $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span>
             <small class="dept_manu_bra" style="place-self: center;"><?php echo $_SESSION['department']; ?></small>
             </div>
