@@ -20,7 +20,8 @@ function get_page_account(){
  
  while($row_account = mysqli_fetch_array($result_account)) {
   unset($image_profile);
-  $image_profile = profile_image($row_account['firstname'],$row_account['department'],32,$row_account['case_officer'],1);
+  // $image_profile = profile_image($row_account['firstname'],$row_account['department'],32,$row_account['case_officer'],1);
+  $image_profile = profile_avatar_medium($row_account['firstname'],$row_account['lastname'],$row_account['department'],32);
    if($row_account["status"]=="Enabled"){
     $status ='<span class="badge rounded-pill bg-success">Enabled</span>';
 
