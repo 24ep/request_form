@@ -5,7 +5,7 @@
     include('action_insert_log.php');
 
     date_default_timezone_set("Asia/Bangkok");
-    $sql = "UPDATE  all_in_one_project.add_new_job set request_username = '".$username."'   where id = ".$id;
+    $sql = "UPDATE  all_in_one_project.add_new_job set request_username = '".$_SESSION['username']."'   where id = ".$id;
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
     mysqli_close($con);
