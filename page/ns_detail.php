@@ -790,7 +790,25 @@ function force_sync_with_ticket(id, bu) {
         );
     }
 }
-
+function itemize_send_mail_stamp(id) {
+    let subject_mail = prompt("ระบุ subject mail", '<?php echo $subject_mail; ?>');
+    if (subject_mail == null || subject_mail == "") {
+        alert("user cancel prompt");
+    } else {
+        var comment = "[stamp_send_mail]";
+        // var subject_mail = document.getElementById("itemize_subject_email").value;
+        if (id) {
+            $.post("base/action/action_stamp_send_mail_itemize.php", {
+                    id: id,
+                    comment: comment,
+                    subject_mail: subject_mail
+                },
+                function(data) {
+                    $('#itemize_stamp_respond').html(data);
+                });
+        }
+    }
+}
 function sku_checking() {
     // sku_checking_result
     var sku_list = document.getElementById("sku_checking").value;
