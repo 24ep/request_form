@@ -803,6 +803,40 @@ function sku_checking() {
             });
     }
 }
+
+function split_to_subtask(id) {
+    var sku_task_set = document.getElementById("sku_task_set").value;
+    document.getElementById('bt_create_task').innerHTML =
+        '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Loading...';
+    if (id) {
+        $.post("base/action/action_ns_create_subtask.php", {
+                id: id,
+                sku_task_set: sku_task_set
+            },
+            function(data) {
+                $('#call_subtask').html(data);
+                // alert("Created new sub ticket");
+            });
+        document.getElementById('sku_task_set').value = ''; //clear value
+        document.getElementById('bt_create_task').innerHTML =
+            '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
+    }
+}
+
+function action_assign_follow(id) {
+    var op_follow_assign_name = document.getElementById("op_follow_assign_name").value;
+    if (id) {
+        $.post("base/action/action_assign_follow.php", {
+                id: id,
+                op_follow_assign_name: op_follow_assign_name
+            },
+            function(data) {
+                // $('#call_subtask').html(data);
+                // alert("Assigned !");
+            });
+        alert("Assigned !");
+    }
+}
 </script>
 <!-- 
 var url = new URL("http://foo.bar/?x=1&y=2");
