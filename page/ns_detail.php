@@ -441,7 +441,7 @@
 
         </div>
         <div class="col-4"
-            style="height: -webkit-fill-available;background-color: white;border-left: solid 1px #fde5e5;margin-top: 2.5px;padding: 10px;">
+            style="height: auto;background-color: white;border-left: solid 1px #fde5e5;margin-top: 2.5px;padding: 10px;">
 
 
 
