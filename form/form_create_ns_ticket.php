@@ -74,7 +74,7 @@
                 }
         ?>
             <div class="form-floating mb-3">
-                <input type="date" class="form-control form-control-sm" id="launch_date" placeholder="">
+                <input type="date" class="form-control form-control-sm" min="<?php echo $min_launch_date; ?>" id="launch_date" placeholder="">
                 <label for="launch_date">Launch date</label>
             </div>
             <!-- Tag -->
