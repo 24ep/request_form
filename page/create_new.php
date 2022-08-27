@@ -7,6 +7,11 @@ session_start();
 include_once('../get/get_option_function.php');
 $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
 $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
+$business_type_op = get_option_return_filter("business_type","","single","add_new");
+$production_type_op = get_option_return_filter("production_type","","single","add_new");
+$sub_department_op = get_option_return_filter("sub_department","","single","add_new");
+$bu_op = get_option_return_filter("bu","CDS","single","add_new");
+$tags_op = get_option_return_filter("tags","","multi","add_new");
 ?>
 
 <!-- create Modal -->
