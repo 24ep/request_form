@@ -41,17 +41,17 @@ mysqli_close($con);
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center p-3">
             <div class="col-3">
-                <div class="input-group input-group-sm mb-3 mt-3">
+                <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;" >
                     <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
-                    <input type="text" value="<?php echo $_POST['brand_filter'];?>" class="form-control"
+                    <input type="text" value="<?php echo $_POST['brand_filter'];?>" style="position: inherit;" class="form-control"
                         id="brand_filter" onchange="filter_update();" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-sm" placeholder="Dept , Sub Dept , Brand , ID">
                 </div>
             </div>
             <div class="col-3">
-                <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap">
+                <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap" style="position: inherit;" >
                     <span class="input-group-text " id="addon-wrapping">Username</span>
-                    <input value="<?php echo $_POST['user_filter'];?>" class="form-control" list="datalistOptionsuser"
+                    <input value="<?php echo $_POST['user_filter'];?>" style="position: inherit;" class="form-control" list="datalistOptionsuser"
                         id="user_filter" onchange="filter_update();" placeholder="Username" aria-label="Username"
                         aria-describedby="addon-wrapping">
                     <datalist id="datalistOptionsuser">
@@ -70,8 +70,8 @@ mysqli_close($con);
                 </div>
             </div> -->
             <div class="col-2">
-                <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap">
-                    <input type="hidden" id="status_filter" name="status_filter" value="">
+                <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap" style="position: inherit;" >
+                    <input type="hidden" id="status_filter" style="position: inherit;" name="status_filter" value="">
                     <span class="input-group-text " id="addon-wrapping">Status</span>
                     <select multiple id="status_filter_show" name="status_filter_show"
                         style="border: 0px;font-weight: bold;background-color: transparent;"
@@ -82,9 +82,9 @@ mysqli_close($con);
                 </div>
             </div>
             <div class="col-2">
-                <div class="input-group input-group-sm mb-3 mt-3">
+                <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
-                    <input type="number" class="form-control" id="pagenation_input" min=1
+                    <input type="number" class="form-control" style="position: inherit;" id="pagenation_input" min=1
                         <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
                         value="<?php echo $_SESSION["pagenation"];?>" onchange="filter_update();" placeholder=""
                         aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
