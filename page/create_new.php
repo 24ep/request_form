@@ -3,10 +3,44 @@
 <?php
 session_start();
 
+
 include_once('../get/get_option_function.php');
 $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
 $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
 ?>
+
+<!-- create Modal -->
+<div class="modal fade" id="create_new_ns_modal" tabindex="-1" aria-labelledby="create_new_ns_modalLabel" aria-hidden="true">
+  <div class="modal-dialog shadow rounded">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="create_new_ns_modalLabel">Add new ticket</h5>
+        <small>สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ที่ Request detail จนกว่า ทาง Content จะทำการ assign ticket นี้ให้กับทางผู้เกี่ยวข้อง</small>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="inputPassword6" class="col-form-label"><ion-icon name="medical"></ion-icon>Brand</label>
+                </div>
+                <div class="col-auto">
+                    <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+                <div class="col-auto">
+                    <span id="passwordHelpInline" class="form-text">
+                    ชื่อแบรนด์ต้องตรงกับที่จะขายหน้าเว็บ
+                    </span>
+                </div>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-light bg-gradient" data-bs-dismiss="modal">CANCEL</button>
+        <button type="button" class="btn btn-sm btn-success bg-gradient">SUBMIT</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- create new  -->
 <div style="margin-left: 10px;padding: 0px 20px;">
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center p-3">
@@ -70,10 +104,11 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <div class="col-auto">
                 <div class="input-group input-group-sm mb-3 mt-3">
                     <button class="btn btn-dark btn-sm bg-gradient" style="margin-left:10px" type="button"
-                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    data-bs-toggle="modal" data-bs-target="#create_new_ns_modal">
                         <ion-icon size="small" name="add-outline"></ion-icon>
                         Create New
                     </button>
+              
                 </div>
             </div>
             <!-- </div> -->
