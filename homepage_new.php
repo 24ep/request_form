@@ -114,7 +114,8 @@ if (!$_SESSION["login_csg"]){
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js">
+    </script>
 </head>
 
 <body>
@@ -143,7 +144,7 @@ if (!$_SESSION["login_csg"]){
         </div>
     </div>
 
-    
+
     <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1" id="content_request_canvas"
         aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header" style="    background: #313131;color: white;">
@@ -179,33 +180,37 @@ if (!$_SESSION["login_csg"]){
             </a>
             <hr class="hr_manu_bra">
             <div class="img-avatar" style="display: inline-flex;">
-            <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=<?php echo bg_dept($_SESSION['department']); ?>&color=fff&rounded=true&size=40" class="ms-3 mb-3">
-            <div style="align-self: center;" class="mb-3">
-            <span class="name_manu_bra" style="place-self: center;"><?php echo $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span><br>
-            <small class="dept_manu_bra" style="place-self: center;"><?php echo $_SESSION['department']; ?></small>
-            </div>
+                <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=<?php echo bg_dept($_SESSION['department']); ?>&color=fff&rounded=true&size=40"
+                    class="ms-3 mb-3">
+                <div style="align-self: center;" class="mb-3">
+                    <span class="name_manu_bra"
+                        style="place-self: center;"><?php echo $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span><br>
+                    <small class="dept_manu_bra"
+                        style="place-self: center;"><?php echo $_SESSION['department']; ?></small>
+                </div>
             </div>
             <hr class="hr_manu_bra">
             <small class="header_manu_bra">Manu</small>
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <a class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightactivity" aria-controls="offcanvasRight"
-                    onclick="get_list_update_job();">
+                <a class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightactivity"
+                    aria-controls="offcanvasRight" onclick="get_list_update_job();">
                     <ion-icon name="notifications"></ion-icon><span class="main-manu-nav">Activity</span>
                     <div id="get_count_nt_unread">
                         <?php include('get/get_count_nt_unread.php'); ?>
                     </div>
                 </a>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightactivity" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightactivity"
+                    aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">
-                        <ion-icon name="notifications-outline"></ion-icon> <strong>Activity</strong>
+                            <ion-icon name="notifications-outline"></ion-icon> <strong>Activity</strong>
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                    <div id="get_list_job_update">
-                        <?php include('get/get_list_job_update.php'); ?>
-                    </div>
+                        <div id="get_list_job_update">
+                            <?php include('get/get_list_job_update.php'); ?>
+                        </div>
                     </div>
                 </div>
 
@@ -250,7 +255,7 @@ if (!$_SESSION["login_csg"]){
                         <ion-icon name="book"></ion-icon><span class="main-manu-nav">Notion</span>
                     </a>
                 </li> -->
-              
+
                 <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" id="nav_account" data-bs-toggle="pill" type="button" role="tab"
                         aria-selected="false" onclick="get_page('account');">
@@ -259,22 +264,24 @@ if (!$_SESSION["login_csg"]){
                 </li>
 
                 <li class="nav-item btn-group dropend" role="presentation">
-                    <a class="main_bra nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightproductions" aria-controls="offcanvasRight"
-                        role="tab" aria-selected="false" data-bs-toggle="dropdown">
+                    <a class="main_bra nav-link" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRightproductions" aria-controls="offcanvasRight" role="tab"
+                        aria-selected="false" data-bs-toggle="dropdown">
                         <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Productions</span>
                     </a>
-                
-                  
+
+
                 </li>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightproductions" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightproductions"
+                    aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">
-                        <ion-icon name="storefront-outline"></ion-icon> <strong>Productions</strong>
+                            <ion-icon name="storefront-outline"></ion-icon> <strong>Productions</strong>
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                    <small class="header_manu_bra">Datapump</small>
+                        <small class="header_manu_bra">Datapump</small>
                         <li><a id="nav_datapump_convert" onclick="get_page('datapump_convert');"
                                 class="dropdown-item dp-link" type="button">
                                 <ion-icon name="shapes"></ion-icon>Datapump Convert
@@ -325,15 +332,27 @@ if (!$_SESSION["login_csg"]){
                                 type="button">
                                 <ion-icon name="shapes"></ion-icon>Word to HTML
                             </a></li>
-                      
+
                     </div>
-                    </div>
+                </div>
                 <li class="nav-item btn-group dropend" role="presentation">
-                    <a class="main_bra nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button"
-                        role="tab" aria-selected="false" data-bs-toggle="dropdown">
+                    <a class="main_bra nav-link" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRightquicklink" aria-controls="offcanvasRight" role="tab"
+                        aria-selected="false" data-bs-toggle="dropdown">
                         <ion-icon name="globe"></ion-icon><span class="main-manu-nav">Quicklink</span>
                     </a>
-                    <ul class="dropdown-menu menu-block shadow p3">
+
+
+                </li>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightquicklink"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">
+                            <ion-icon name="storefront-outline"></ion-icon> <strong>Productions</strong>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
                         <small class="header_manu_bra">Central</small>
 
                         <li><a href="http://cnext.centralgroup.com/" target="_blank" class="dropdown-item dp-link"
@@ -360,14 +379,14 @@ if (!$_SESSION["login_csg"]){
                                 type="button">
                                 <ion-icon name="chatbubbles-outline"></ion-icon>Workchat
                             </a></li>
-                    </ul>
+                    </div>
+                </div>
 
-                </li>
                 <?php } ?>
-                
+
                 <hr class="hr_manu_bra_in">
                 <small class="header_manu_bra">Others</small>
-               
+
                 <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
                         <ion-icon name="settings"></ion-icon><span class="main-manu-nav">Settings</span>
@@ -395,19 +414,17 @@ if (!$_SESSION["login_csg"]){
 
 </html>
 <script>
-
 function updateparams(key, value) {
     // Construct URLSearchParams object instance from current URL querystring.
     var queryParams = new URLSearchParams(window.location.search);
 
     // Set new or modify existing parameter value.
-    if(value==""){
+    if (value == "") {
         queryParams.delete(key);
-    }
-    else{
+    } else {
         queryParams.set(key, value);
     }
-   
+
 
     // Replace current querystring with the new one.
     history.replaceState(null, null, "?" + queryParams.toString());
@@ -523,7 +540,7 @@ function minimize_nav() {
             list_bra[i].className = list_bra[i].className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
         }
 
-      
+
         document.getElementById("apps_name").className = document.getElementById("apps_name").className.replace(
             /(?:^|\s)hide(?!\S)/g, '');
 
@@ -531,7 +548,7 @@ function minimize_nav() {
         for (var i = 0; i < img_avatar.length; i++) {
             img_avatar[i].className = img_avatar[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-        
+
         var main_manu_nav = document.getElementsByClassName("main-manu-nav");
         for (var i = 0; i < main_manu_nav.length; i++) {
             console.log('unhide ' + i);
