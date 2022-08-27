@@ -225,12 +225,12 @@ if (!$_SESSION["login_csg"]){
                 ?>
                 <hr class="hr_manu_bra_in">
                 <small class="header_manu_bra">Internals</small>
-                <!-- <li class="nav-item" role="presentation">
+                <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" id="nav_report" data-bs-toggle="pill" type="button" role="tab"
                         aria-selected="false" onclick="get_page('report');">
                         <ion-icon name="bar-chart"></ion-icon><span class="main-manu-nav">Reports</span>
                     </a>
-                </li> -->
+                </li>
                 <!-- <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" id="nav_assert" data-bs-toggle="pill" type="button" role="tab"
                         aria-selected="false" onclick="get_page('assert');">

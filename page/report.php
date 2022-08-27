@@ -6,7 +6,7 @@
     border-radius: 0px 0px 10px 0px;
     z-index: 1;"
 class="shadow-sm span-ifram">https://eor-admin.central.tech/upload</span> -->
-    <iframe src="https://datastudio.google.com/u/0/reporting/e0db1ece-dfb6-4b1f-9b5d-28a282350a51/page/IWuzC/edit"
+    <iframe src="https://datastudio.google.com/embed/reporting/0a77f199-2334-4601-a865-70dfcdf28ec6/page/HaDbB"
     style="
     position: absolute;
     top: 0;
