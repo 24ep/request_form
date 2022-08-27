@@ -255,6 +255,8 @@ label#label_file_cme {
 .notifications-li{
     padding: 15px 15px;
     border-bottom: 1px solid #cec7c7;
+    font-size: small;
+    font-weight: 500;
 }
 .notifications-box.show {
     display: block;
