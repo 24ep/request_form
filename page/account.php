@@ -63,8 +63,22 @@ function get_page_account(){
 return $table;
 }
 $detail = get_page_account();
-echo $detail;
+
 ?>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="accounts-tab" data-bs-toggle="tab" data-bs-target="#accounts-tab-pane" type="button" role="tab" aria-controls="accounts-tab-pane" aria-selected="true">Accounts</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="ol-tab" data-bs-toggle="tab" data-bs-target="#ol-tab-pane" type="button" role="tab" aria-controls="ol-tab-pane" aria-selected="false">Options list</button>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="accounts-tab-pane" role="tabpanel" aria-labelledby="accounts-tab" tabindex="0"><?php echo  $detail; ?></div>
+  <div class="tab-pane fade" id="ol-tab-pane" role="tabpanel" aria-labelledby="ol-tab" tabindex="0">...</div>
+
+</div>
 
 <script>
   $(document).ready( function () {
