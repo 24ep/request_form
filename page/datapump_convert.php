@@ -13,6 +13,7 @@ class="shadow-sm span-ifram">https://cdse-commercecontent.com/base/page_convert_
     bottom: 0;
     width: 100%;
     height: -webkit-fill-available;
+    min-height: 1000px;
     border: none;
     margin: 0;
     width: 100%;

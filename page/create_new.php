@@ -10,7 +10,7 @@ $brand_op = getoption_return_filter_disting("brand","add_new_job","","single","a
 $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
 $business_type_op = get_option_return_filter("business_type","","single","add_new");
 $production_type_op = get_option_return_filter("production_type","","single","add_new");
-$project_type_op = get_option_return_filter("project_type","","single","add_new");
+$project_type_op = get_option_return_filter("project_type","New SKU","single","add_new");
 $sub_department_op = get_option_return_filter("sub_department","","single","add_new");
 $bu_op = get_option_return_filter("bu","CDS","single","add_new");
 $tags_op = get_option_return_filter("tags","","multi","add_new");
@@ -31,7 +31,7 @@ mysqli_close($con);
 <!-- create Modal -->
 <div class="modal fade" id="create_new_ns_modal" tabindex="-1" aria-labelledby="create_new_ns_modalLabel"
     aria-hidden="true">
-    <form class="row g-3" action="../action/action_submit_add_new_job.php" method="POST">
+    <form class="row g-3" >
             <?php include("../form/form_create_ns_ticket.php"); ?>
     </form>
     </div>
@@ -247,7 +247,38 @@ function cancel_ticket(id) {
         });
     }
 }
-
+function action_submit_add_new_job(id) {
+    brand = document.getElementById('brand').value;
+    sub_department = document.getElementById('sub_department').value;
+    sku = document.getElementById('sku').value;
+    production_type = document.getElementById('production_type').value;
+    project_type = document.getElementById('project_type').value;
+    launch_date = document.getElementById('launch_date').value;
+    bu = document.getElementById('bu').value;
+    contact_buyer = document.getElementById('contact_buyer').value;
+    contact_vender = document.getElementById('contact_vender').value;
+    link_info = document.getElementById('link_info').value;
+    remark = document.getElementById('remark').value;
+    // status_change = 'cancel';
+    if (brand) {
+        $.post("../base/action/action_submit_add_new_job.php", {
+            brand: brand,
+            sub_department: sub_department,
+            sku: sku,
+            production_type: production_type,
+            project_type: project_type,
+            launch_date: launch_date,
+            bu : bu ,
+            contact_buyer: contact_buyer,
+            contact_vender: contact_vender,
+            link_info: link_info,
+            remark: remark
+        }, function(data) {
+            // $('#cancel_checking_resault').html(data);
+        });
+    }
+}
+// action_submit_add_new_job
 function itm_confirm_cancel(id, status_change) {
     let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
     if (message == null || message == "") {
