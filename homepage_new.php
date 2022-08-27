@@ -236,7 +236,7 @@ if (!$_SESSION["login_csg"]){
 
                 ?>
                  <hr class="hr_manu_bra_in">
-                <small class="header_manu_bra">24EP</small>
+                <small class="header_manu_bra">Productions</small>
                 <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" id="nav_job_manage" data-bs-toggle="pill" type="button" role="tab"
                         aria-selected="false" onclick="get_page('job_manage');">
@@ -286,18 +286,18 @@ if (!$_SESSION["login_csg"]){
 
                 <li class="nav-item btn-group dropend" role="presentation">
                     <a class="main_bra nav-link" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasRightproductions" aria-controls="offcanvasRight" role="tab"
+                        data-bs-target="#offcanvasRightproductmatain" aria-controls="offcanvasRight" role="tab"
                         aria-selected="false" data-bs-toggle="dropdown">
-                        <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Productions</span>
+                        <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Product mantain</span>
                     </a>
 
 
                 </li>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightproductions"
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightproductmatain"
                     aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">
-                            <ion-icon name="storefront-outline"></ion-icon> <strong>Productions</strong>
+                            <ion-icon name="storefront-outline"></ion-icon> <strong>Product mantain</strong>
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>

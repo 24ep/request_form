@@ -280,10 +280,9 @@ function action_submit_add_new_job() {
             // data,
             // 'Okay',
             // );
-            filter_update();
         });
     }
-    
+    filter_update();
 }
 // action_submit_add_new_job
 function itm_confirm_cancel(id, status_change) {
