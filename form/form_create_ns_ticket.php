@@ -14,14 +14,17 @@
             </small>
             <!-- brand -->
             <div class="form-floating mb-3">
-                <input type="text" class="form-control form-control-sm" id="brand"
+                <input list="brandoptions" type="text" required class="form-control form-control-sm" id="brand"
                     placeholder="ชื่อแบรนด์ต้องตรงกับที่จะขายหน้าเว็บ">
+                <datalist id="brandoptions">
+                <?php echo $brand_op; ?>
+                </datalist>
                 <label for="brand"><strong style="color:red">* </strong>Brand</label>
             </div>
 
             <!-- sub_department -->
             <div class="form-floating mb-3">
-                <select class="form-select form-select-sm" id="sub_department"
+                <select class="form-select form-select-sm" required id="sub_department"
                     aria-label="Floating label select example">
                     <?php echo $sub_department_op; ?>
                 </select>
@@ -29,12 +32,12 @@
             </div>
             <!-- sku -->
             <div class="form-floating mb-3">
-                <input type="number" class="form-control form-control-sm" id="sku" placeholder="">
+                <input type="number" class="form-control form-control-sm"  required id="sku" placeholder="">
                 <label for="sku"><strong style="color:red">* </strong>SKU</label>
             </div>
             <!-- production_type -->
             <div class="form-floating mb-3">
-                <select class="form-select form-select-sm" id="production_type"
+                <select class="form-select form-select-sm" required id="production_type"
                     aria-label="Floating label select example">
                     <?php echo $production_type_op; ?>
                 </select>
@@ -42,7 +45,7 @@
             </div>
             <!-- Project type -->
             <div class="form-floating mb-3">
-                <select class="form-select form-select-sm" id="project_type"
+                <select class="form-select form-select-sm" required id="project_type"
                     aria-label="Floating label select example">
                     <?php echo $project_type_op; ?>
                 </select>
@@ -72,7 +75,7 @@
         ?>
             <div class="form-floating mb-3">
                 <input type="date" class="form-control form-control-sm" id="launch_date" placeholder="">
-                <label for="launch_date"><strong style="color:red">* </strong>Launch date</label>
+                <label for="launch_date">Launch date</label>
             </div>
             <!-- Tag -->
             <div class="form-floating mb-3">
@@ -84,7 +87,7 @@
             </div>
             <!-- Bu -->
             <div class="form-floating mb-3">
-                <select class="form-select form-select-sm" id="bu" aria-label="Floating label select example">
+                <select class="form-select form-select-sm" id="bu" required aria-label="Floating label select example">
                     <?php echo $bu_op; ?>
                 </select>
                 <label for="bu"><strong style="color:red">* </strong>Bussiness unit (BU)</label>
@@ -96,29 +99,16 @@
 
                     <div class="form-floating mb-3">
                         <textarea class="form-control form-control-sm" required id="contact_buyer" name="contact_buyer"
-                            placeholder="
-                    ช่องทางการติดต่อแบรนด์
-                    ซื่อ - นามสกุล
-                    อีเมล
-                    เบอร์โทรติดต่อ
-                    " rows="4" style="height: 100px"><?php echo $get_contact_buyer; ?>
-                
+                         rows="4" style="height: 100px"><?php echo $get_contact_buyer; ?>
                     </textarea>
                         <label for="contact_buyer"><strong style="color:red">* </strong>Contact buyer</label>
                     </div>
-
-
-
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating mb-3">
                         <textarea class="form-control form-control-sm" required id="contact_vender"
-                            name="contact_vender" placeholder="
-                    ช่องทางการติดต่อแบรนด์
-                    ซื่อ - นามสกุล
-                    อีเมล
-                    เบอร์โทรติดต่อ
-                    " rows="4" style="height: 100px"><?php echo $get_contact_buyer; ?>
+                            name="contact_vender" 
+                            rows="4" style="height: 100px"><?php echo $get_contact_buyer; ?>
                 
                     </textarea>
                         <label for="contact_vender"><strong style="color:red">* </strong>Contact vender</label>
@@ -127,7 +117,7 @@
             </div>
             <!-- Link for information -->
             <div class="form-floating mb-3">
-                <input type="text" class="form-control form-control-sm" id="link_info" placeholder="">
+                <input type="text" class="form-control form-control-sm" required id="link_info" placeholder="">
                 <label for="link_info"><strong style="color:red">* </strong>Link for information</label>
             </div>
             <!-- Remark -->
