@@ -413,7 +413,7 @@
                 <div class="tab-pane fade" id="nav-logs" role="tabpanel" aria-labelledby="nav-logs-tab"
                     tabindex="0">
                     <div class="container" style="padding: 20px!important;">
-                        <?php include('../get/get_ns_log_by_id.php')?>
+                        <?php include('../get/get_ns_log.php')?>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-internal" role="tabpanel" aria-labelledby="nav-internal-tab"
