@@ -131,7 +131,6 @@
         <div class="modal-footer">
             <button type="button" class="btn btn-sm btn-light bg-gradient shadow-sm"
                 data-bs-dismiss="modal">CANCEL</button>
-            <button type="submit" class="btn btn-sm btn-success bg-gradient shadow-sm">SUBMIT <ion-icon
-                    name="send-sharp"></ion-icon></button>
+            <button type="submit" class="btn btn-sm btn-success bg-gradient shadow-sm">SUBMIT</button>
         </div>
     </div>
