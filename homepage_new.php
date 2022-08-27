@@ -408,11 +408,11 @@ if (!$_SESSION["login_csg"]){
                 <hr class="hr_manu_bra_in">
                 <small class="header_manu_bra">Others</small>
 
-                <li class="nav-item" role="presentation">
+                <!-- <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
                         <ion-icon name="settings"></ion-icon><span class="main-manu-nav">Settings</span>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="logout()">
