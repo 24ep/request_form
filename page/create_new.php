@@ -277,7 +277,7 @@ function action_submit_add_new_job() {
             // $('#cancel_checking_resault').html(data);
             Notiflix.Report.Success(
             'Success',
-            data;
+            data,
             'Okay',
             );
         });
