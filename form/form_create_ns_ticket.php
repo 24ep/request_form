@@ -122,9 +122,9 @@
             </div>
             <!-- Remark -->
             <div class="form-floating mb-3">
-                <textarea class="form-control form-control-sm" placeholder="Leave a comment here" id="floatingTextarea2"
+                <textarea class="form-control form-control-sm" placeholder="Leave a comment here" id="remark"
                     style="height: 100px"></textarea>
-                <label for="floatingTextarea2">Remark</label>
+                <label for="remark">Remark</label>
             </div>
             <!-- end -->
         </div>
