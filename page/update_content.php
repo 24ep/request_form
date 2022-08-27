@@ -16,22 +16,22 @@
                                                     $squser="";
                                                 }
                                                 ?>
-                <input style="width: 30%;" type="search" style="position: initial!important;" class="form-control" onsearch="search_cr_data();"
+                <input style="width: 30%;position: initial!important;" type="search" style="position: initial!important;" class="form-control" onsearch="search_cr_data();"
                     id="ts_command" name="ts_command"
                     placeholder="leave your ticket number or message have contain in title" aria-label="Username"
                     aria-describedby="basic-addon1" value="<?php echo $sqb; ?>">
                 <span class="input-group-text">Username</span>
-                <input style="width: 10%;" list="qlistoption" style="position: initial!important;" type="text" class="form-control"
+                <input style="width: 10%;position: initial!important;" list="qlistoption" style="position: initial!important;" type="text" class="form-control"
                     onchange="search_cr_username();" id="ts_username" name="ts_username" placeholder="all user"
                     aria-label="Username" aria-describedby="basic-addon1"
                     value="<?php echo $_SESSION["ts_username"];   ?>">
                 <span class="input-group-text">Request for</span>
-                <input style="width: 10%;" list="qlistoption_rf" style="position: initial!important;" type="text" class="form-control"
+                <input style="width: 10%;position: initial!important;" list="qlistoption_rf" style="position: initial!important;" type="text" class="form-control"
                     onchange="search_cr_request_for();" id="ts_request_for" name="ts_request_for" placeholder="all type"
                     aria-label="Request for" aria-describedby="basic-addon1"
                     value="<?php echo $_SESSION["ts_request_for"];  ?>">
                 <span class="input-group-text">status</span>
-                <input style="width: 10%;" list="qlistoption_status" style="position: initial!important;" type="text" class="form-control"
+                <input style="width: 10%;position: initial!important;" list="qlistoption_status" style="position: initial!important;" type="text" class="form-control"
                     onchange="search_cr_status();" id="ts_status" name="ts_status" placeholder="all status"
                     aria-label="status" aria-describedby="basic-addon1" value="<?php echo $_SESSION["ts_status"];  ?>">
                 <form class="d-flex">
