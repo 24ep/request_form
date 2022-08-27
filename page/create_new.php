@@ -9,6 +9,7 @@ $username_op = getoption_return_filter("username","account",$_SESSION["user_filt
 $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
 $business_type_op = get_option_return_filter("business_type","","single","add_new");
 $production_type_op = get_option_return_filter("production_type","","single","add_new");
+$project_type_op = get_option_return_filter("project_type","","single","add_new");
 $sub_department_op = get_option_return_filter("sub_department","","single","add_new");
 $bu_op = get_option_return_filter("bu","CDS","single","add_new");
 $tags_op = get_option_return_filter("tags","","multi","add_new");
@@ -17,11 +18,9 @@ $tags_op = get_option_return_filter("tags","","multi","add_new");
 <!-- create Modal -->
 <div class="modal fade" id="create_new_ns_modal" tabindex="-1" aria-labelledby="create_new_ns_modalLabel"
     aria-hidden="true">
- 
+    <form class="row g-3" action="../action/action_submit_add_new_job.php" method="POST">
             <?php include("../form/form_create_ns_ticket.php"); ?>
-           
-      
-
+    </form>
     </div>
 </div>
 <!-- create new  -->
