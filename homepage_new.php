@@ -188,22 +188,27 @@ if (!$_SESSION["login_csg"]){
             <hr class="hr_manu_bra">
             <small class="header_manu_bra">Manu</small>
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <a class="nav-link" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                <a class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightactivity" aria-controls="offcanvasRight"
                     onclick="get_list_update_job();">
                     <ion-icon name="notifications"></ion-icon><span class="main-manu-nav">Activity</span>
                     <div id="get_count_nt_unread">
                         <?php include('get/get_count_nt_unread.php'); ?>
                     </div>
                 </a>
-                <ul class="dropdown-menu notifications-box shadow overflow-auto">
-                    <span>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightactivity" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">
                         <ion-icon name="notifications-outline"></ion-icon> <strong>Activity</strong>
-                    </span>
-
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
                     <div id="get_list_job_update">
                         <?php include('get/get_list_job_update.php'); ?>
                     </div>
-                </ul>
+                    </div>
+                </div>
+
                 <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link active" data-bs-toggle="pill" type="button" role="tab"
                         aria-selected="false" id="nav_dashboard" onclick="get_page('dashboard');">
