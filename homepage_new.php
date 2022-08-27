@@ -236,7 +236,7 @@ if (!$_SESSION["login_csg"]){
 
                 ?>
                  <hr class="hr_manu_bra_in">
-                <small class="header_manu_bra">Productions</small>
+                <small class="header_manu_bra">Productions (24EP)</small>
                 <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" id="nav_job_manage" data-bs-toggle="pill" type="button" role="tab"
                         aria-selected="false" onclick="get_page('job_manage');">
