@@ -1,5 +1,5 @@
 <div class="container-fluid ">
-            <div class="input-group input-group-sm p-3">
+            <div class="input-group input-group-sm p-3" style="position: initial!important;"> 
                 <span class="input-group-text" id="basic-addon1">
                     <ion-icon style="vertical-align: middle;margin-right: 5px;" name="search-outline">
                     </ion-icon> Search
@@ -16,28 +16,28 @@
                                                     $squser="";
                                                 }
                                                 ?>
-                <input style="width: 30%;" type="search" class="form-control" onsearch="search_cr_data();"
+                <input style="width: 30%;" type="search" style="position: initial!important;" class="form-control" onsearch="search_cr_data();"
                     id="ts_command" name="ts_command"
                     placeholder="leave your ticket number or message have contain in title" aria-label="Username"
                     aria-describedby="basic-addon1" value="<?php echo $sqb; ?>">
                 <span class="input-group-text">Username</span>
-                <input style="width: 10%;" list="qlistoption" type="text" class="form-control"
+                <input style="width: 10%;" list="qlistoption" style="position: initial!important;" type="text" class="form-control"
                     onchange="search_cr_username();" id="ts_username" name="ts_username" placeholder="all user"
                     aria-label="Username" aria-describedby="basic-addon1"
                     value="<?php echo $_SESSION["ts_username"];   ?>">
                 <span class="input-group-text">Request for</span>
-                <input style="width: 10%;" list="qlistoption_rf" type="text" class="form-control"
+                <input style="width: 10%;" list="qlistoption_rf" style="position: initial!important;" type="text" class="form-control"
                     onchange="search_cr_request_for();" id="ts_request_for" name="ts_request_for" placeholder="all type"
                     aria-label="Request for" aria-describedby="basic-addon1"
                     value="<?php echo $_SESSION["ts_request_for"];  ?>">
                 <span class="input-group-text">status</span>
-                <input style="width: 10%;" list="qlistoption_status" type="text" class="form-control"
+                <input style="width: 10%;" list="qlistoption_status" style="position: initial!important;" type="text" class="form-control"
                     onchange="search_cr_status();" id="ts_status" name="ts_status" placeholder="all status"
                     aria-label="status" aria-describedby="basic-addon1" value="<?php echo $_SESSION["ts_status"];  ?>">
                 <form class="d-flex">
                     <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
                     </div>
-                    <button class="btn btn-dark btn-sm " style="margin-left:10px;" type="button"
+                    <button class="btn btn-dark btn-sm " style="margin-left:10px;position: initial!important;" type="button"
                         data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas"
                         aria-controls="offcanvasExample">
                         <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated"
