@@ -263,7 +263,10 @@ if (!$_SESSION["login_csg"]){
                         role="tab" aria-selected="false" data-bs-toggle="dropdown">
                         <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Productions</span>
                     </a>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightproductions" aria-labelledby="offcanvasRightLabel">
+                
+                  
+                </li>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightproductions" aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">
                         <ion-icon name="storefront-outline"></ion-icon> <strong>Productions</strong>
@@ -325,8 +328,6 @@ if (!$_SESSION["login_csg"]){
                       
                     </div>
                     </div>
-                  
-                </li>
                 <li class="nav-item btn-group dropend" role="presentation">
                     <a class="main_bra nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button"
                         role="tab" aria-selected="false" data-bs-toggle="dropdown">
