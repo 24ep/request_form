@@ -12,21 +12,10 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
 <!-- create Modal -->
 <div class="modal fade" id="create_new_ns_modal" tabindex="-1" aria-labelledby="create_new_ns_modalLabel"
     aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content shadow rounded  ">
-            <div class="modal-header">
-                <h5 class="modal-title" id="create_new_ns_modalLabel"><strong>
-                        <ion-icon name="rocket-outline"></ion-icon> Add new ticket
-                    </strong></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <?php include("form_create_ns_ticket.php"); ?>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-sm btn-light bg-gradient shadow-sm"
-                    data-bs-dismiss="modal">CANCEL</button>
-                <button type="button" class="btn btn-sm btn-success bg-gradient shadow-sm">SUBMIT</button>
-            </div>
-        </div>
+ 
+            <?php include("../form/form_create_ns_ticket.php"); ?>
+           
+      
 
     </div>
 </div>
