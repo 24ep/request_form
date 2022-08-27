@@ -14,17 +14,18 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
   <div class="modal-dialog modal-lg">
     <div class="modal-content shadow rounded  ">
       <div class="modal-header">
-        <h5 class="modal-title" id="create_new_ns_modalLabel"><strong><ion-icon name="rocket-outline"></ion-icon> Add new ticket</strong></h5><br>
+        <h5 class="modal-title" id="create_new_ns_modalLabel"><strong><ion-icon name="rocket-outline"></ion-icon> Add new ticket</strong></h5>
+        </br>
         <small>สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ที่ Request detail จนกว่า ทาง Content จะทำการ assign ticket นี้ให้กับทางผู้เกี่ยวข้อง</small>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
             <!-- brand -->
-            <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Brand</label>
+            <div class="row  align-items-center">
+                <div class="col-6">
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">* </strong>Brand</label>
                 </div>
-                <div class="col-auto">
+                <div class="col-6">
                     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
                 </div>
                 <div class="col-auto">
@@ -34,75 +35,69 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
                 </div>
             </div>
             <!-- sub_department -->
-            <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Sub department</label>
+            <div class="row  align-items-center">
+                <div class="col-6">
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">* </strong>Sub department</label>
                 </div>
-                <div class="col-auto">
+                <div class="col-6">
                     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
                 </div>
             </div>
             <!-- sku -->
-            <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>SKU</label>
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">* </strong>SKU</label>
                 </div>
-                <div class="col-auto">
+                <div class="col-6">
                     <input type="number" min=0  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                </div>
-                <div class="col-auto">
                 </div>
             </div>
             <!-- production_type -->
-            <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Production type</label>
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">* </strong>Production type</label>
                 </div>
-                <div class="col-auto">
+                <div class="col-6">
                     <input type="text" min=0  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
                 </div>
-                <div class="col-auto">
-                </div>
+        
             </div>
             <!-- Project type -->
-            <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Project type</label>
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">* </strong>Project type</label>
                 </div>
-                <div class="col-auto">
+                <div class="col-6">
                     <input type="text" min=0  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
                 </div>
-                <div class="col-auto">
-                </div>
+          
             </div>
             <!-- luanch date -->
-            <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Launch date</label>
+            <div class="row  align-items-center">
+                <div class="col-6">
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">* </strong>Launch date</label>
                 </div>
-                <div class="col-auto">
+                <div class="col-6">
                     <input type="number" min=0  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                </div>
-                <div class="col-auto">
                 </div>
             </div>
             <!-- Tag -->
-            <div class="row g-3 align-items-center">
+            <div class="row align-items-center">
                 <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Tags</label>
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">* </strong>Tags</label>
                 </div>
-                <div class="col-auto">
+                <div class="col-6">
                     <input type="number" min=0  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
                 </div>
-                <div class="col-auto">
+                <div class="col-6">
                 </div>
             </div>
             <!-- Bu -->
-            <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Bussiness unit (BU)</label>
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">* </strong>Bussiness unit (BU)</label>
                 </div>
-                <div class="col-auto">
+                <div class="col-6">
                     <input type="number" min=0  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
                 </div>
                 <div class="col-auto">
@@ -111,45 +106,54 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <!-- Contact buyer / Contact vender -->
             <div class="row">
                 <div class="col-md-6">
-                    <label for="text" class="form-label">*Contact Buyer</label>
-                    <textarea class="form-control form-control-sm" required id="contact_buyer" name="contact_buyer"
-                        rows="4"><?php echo $get_contact_buyer; ?></textarea>
-                    <small id="emailhelp" class="form-text text-muted">ช่องทางการติดต่อจัดซื้อ</small>
+                    <label for="text" class="form-label"><strong style="color:red">* </strong>Contact Buyer</label>
+                    <textarea class="form-control form-control-sm" required id="contact_buyer" name="contact_buyer" 
+                    placeholder ="
+                    ช่องทางการติดต่อแบรนด์
+                    ซื่อ - นามสกุล
+                    อีเมล
+                    เบอร์โทรติดต่อ
+                    "
+                        rows="4"><?php echo $get_contact_buyer; ?>
+                
+                    </textarea>
                 </div>
                 <div class="col-md-6">
-                    <label for="text" class="form-label">*Contact Vender</label>
+                    <label for="text" class="form-label"><strong style="color:red">* </strong> Contact Vender</label>
                     <textarea required class="form-control form-control-sm" id="contact_vender" name="contact_vender"
+                    placeholder ="
+                    ช่องทางการติดต่อแบรนด์
+                    ซื่อ - นามสกุล
+                    อีเมล
+                    เบอร์โทรติดต่อ
+                    "
                         rows="4"></textarea>
-                    <small id="emailhelp" class="form-text text-muted">ช่องทางการติดต่อแบรนด์</small>
+
                 </div>
             </div>
             <!-- Link for information -->
-            <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Link for information</label>
+            <div class="row  align-items-center">
+                <div class="col-6">
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">* </strong>Link for information</label>
                 </div>
-                <div class="col-auto">
+                <div class="col-6">
                     <input type="number" min=0  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                </div>
-                <div class="col-auto">
                 </div>
             </div>
             <!-- Remark -->
-            <div class="row g-3 align-items-center">
-                <div class="col-auto">
+            <div class="row  align-items-center">
+                <div class="col-6">
                     <label for="inputPassword6" class="col-form-label">Remark</label>
                 </div>
-                <div class="col-auto">
+                <div class="col-6">
                     <input type="number" min=0  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                </div>
-                <div class="col-auto">
                 </div>
             </div>
             <!-- end -->
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-sm btn-light bg-gradient" data-bs-dismiss="modal">CANCEL</button>
-        <button type="button" class="btn btn-sm btn-success bg-gradient">SUBMIT</button>
+        <button type="button" class="btn btn-sm btn-light bg-gradient shadow-sm" data-bs-dismiss="modal">CANCEL</button>
+        <button type="button" class="btn btn-sm btn-success bg-gradient shadow-sm">SUBMIT</button>
       </div>
     </div>
   </div>
