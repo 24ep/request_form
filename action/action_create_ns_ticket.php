@@ -100,16 +100,16 @@ mysqli_query($con, "SET NAMES 'utf8' ");
                 sent_line_noti("\n• Created new request [ ".$brand." ".$sku." SKUs ]\n----------------------------\n• คุณได้ทำกาส่ง request ขอเปิด job\n• Ticket ID : NS-".$last_id." [ ".$brand." ".$sku." SKUs ]\n• Store : ".$stock_source,$key);
                 send_ms_team("NS-".$id,"New NS-ticket comming","ได้ทำกาส่ง request ขอเปิด job<br>• Ticket ID : NS-".$last_id." [ ".$brand." ".$sku." SKUs ]\n• Store : ".$stock_source);
             }
-        $result='<div class="alert alert-success">already create Request !<strong> ID '.$last_id.'</strong></div>';
+        $result='your ticket have been created ! ID '.$last_id.'';
         // header( "Location: /?tab=v-pills-request_list&result=".$result);
-        // echo $result;
-        echo "<script>
-        Notiflix.Report.success(
-            'Already create Request',
-            'ID NS-'".$last_id.",
-            'Okay',
-            )</script>;
-        ";
+        echo $result;
+        // echo "<script>
+        // Notiflix.Report.success(
+        //     'Already create Request',
+        //     'ID NS-'".$last_id.",
+        //     'Okay',
+        //     )</script>;
+        // ";
 	}else{
         echo "<script>
         Notiflix.Report.failure(

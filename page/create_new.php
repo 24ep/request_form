@@ -274,7 +274,7 @@ function action_submit_add_new_job() {
             link_info: link_info,
             remark: remark
         }, function(data) {
-            // $('#cancel_checking_resault').html(data);
+            $('#cancel_checking_resault').html(data);
             // Notiflix.Report.success(
             // 'Success',
             // data,
