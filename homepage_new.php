@@ -259,11 +259,11 @@ if (!$_SESSION["login_csg"]){
                 </li>
 
                 <li class="nav-item btn-group dropend" role="presentation">
-                    <a class="main_bra nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightactivity" aria-controls="offcanvasRight"
+                    <a class="main_bra nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightproductions" aria-controls="offcanvasRight"
                         role="tab" aria-selected="false" data-bs-toggle="dropdown">
                         <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Productions</span>
                     </a>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightactivity" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightproductions" aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">
                         <ion-icon name="storefront-outline"></ion-icon> <strong>Productions</strong>
