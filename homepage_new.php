@@ -235,6 +235,27 @@ if (!$_SESSION["login_csg"]){
                 <?php if(strpos($_SESSION["department"],'Content')!==false){
 
                 ?>
+                 <hr class="hr_manu_bra_in">
+                <small class="header_manu_bra">24EP</small>
+                <li class="nav-item" role="presentation">
+                    <a class="main_bra nav-link" id="nav_job_manage" data-bs-toggle="pill" type="button" role="tab"
+                        aria-selected="false" onclick="get_page('writer_job_manage');">
+                        <ion-icon name="receipt-outline"></ion-icon><span class="main-manu-nav">Job manage</span>
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="main_bra nav-link" id="nav_job_on_hand" data-bs-toggle="pill" type="button" role="tab"
+                        aria-selected="false" onclick="get_page('writer_job_on_hand');">
+                        <ion-icon name="receipt-outline"></ion-icon><span class="main-manu-nav">Job on hand</span>
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="main_bra nav-link" id="nav_linesheet" data-bs-toggle="pill" type="button" role="tab"
+                        aria-selected="false" onclick="get_page('writer_lineshet');">
+                        <ion-icon name="receipt-outline"></ion-icon><span class="main-manu-nav">Linesheet</span>
+                    </a>
+                </li>
+               
                 <hr class="hr_manu_bra_in">
                 <small class="header_manu_bra">Internals</small>
                 <li class="nav-item" role="presentation">
