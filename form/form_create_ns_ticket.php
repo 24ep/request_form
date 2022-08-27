@@ -77,14 +77,14 @@
                 <input type="date" class="form-control form-control-sm" min="<?php echo $min_launch_date; ?>" id="launch_date" placeholder="">
                 <label for="launch_date">Launch date</label>
             </div>
-            <!-- Tag -->
+            <!-- Tag
             <div class="form-floating mb-3">
                 <select class="form-select form-select-sm" size="3" multiple id="tags[]"
                     aria-label="Floating label select example">
-                    <?php echo $tags_op; ?>
+                    <?php// echo $tags_op; ?>
                 </select>
                 <label for="project_type"><strong style="color:red">* </strong>Tags</label>
-            </div>
+            </div> -->
             <!-- Bu -->
             <div class="form-floating mb-3">
                 <select class="form-select form-select-sm" id="bu" required aria-label="Floating label select example">
