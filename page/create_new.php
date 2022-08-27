@@ -14,7 +14,18 @@ $project_type_op = get_option_return_filter("project_type","","single","add_new"
 $sub_department_op = get_option_return_filter("sub_department","","single","add_new");
 $bu_op = get_option_return_filter("bu","CDS","single","add_new");
 $tags_op = get_option_return_filter("tags","","multi","add_new");
-
+// get_contact_requester
+$query = "SELECT * FROM all_in_one_project.account where username = '".$_SESSION['username']."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
+$result = mysqli_query($con, $query);
+while($row = mysqli_fetch_array($result)) {
+$nickname = $row['nickname'];
+$department = $row['department'];
+$office_tell = $row['office_tell'];
+$work_email = $row['work_email'];
+$get_contact_buyer = $row['firstname']." ".$row['lastname']." ( ".$nickname." )\nEmail: ".$row['work_email']."\nOffice tell: ".$row['office_tell'];
+}
+mysqli_close($con);
+// end
 ?>
 
 <!-- create Modal -->
