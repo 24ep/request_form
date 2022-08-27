@@ -102,7 +102,14 @@ mysqli_query($con, "SET NAMES 'utf8' ");
             }
         $result='<div class="alert alert-success">already create Request !<strong> ID '.$last_id.'</strong></div>';
         // header( "Location: /?tab=v-pills-request_list&result=".$result);
-        echo $result;
+        // echo $result;
+        echo "<script>
+        Notiflix.Report.success(
+            'Already create Request',
+            'ID NS-'".$last_id.",
+            'Okay',
+            )</script>;
+        ";
 	}else{
         echo "<script>
         Notiflix.Report.failure(
