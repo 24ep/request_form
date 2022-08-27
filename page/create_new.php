@@ -10,12 +10,25 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
 ?>
 
 <!-- create Modal -->
-<div class="modal fade" id="create_new_ns_modal" tabindex="-1" aria-labelledby="create_new_ns_modalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    
-        <?php include("form_create_ns_ticket.php"); ?>
-    
-  </div>
+<div class="modal fade" id="create_new_ns_modal" tabindex="-1" aria-labelledby="create_new_ns_modalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content shadow rounded  ">
+            <div class="modal-header">
+                <h5 class="modal-title" id="create_new_ns_modalLabel"><strong>
+                        <ion-icon name="rocket-outline"></ion-icon> Add new ticket
+                    </strong></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <?php include("form_create_ns_ticket.php"); ?>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-light bg-gradient shadow-sm"
+                    data-bs-dismiss="modal">CANCEL</button>
+                <button type="button" class="btn btn-sm btn-success bg-gradient shadow-sm">SUBMIT</button>
+            </div>
+        </div>
+
+    </div>
 </div>
 <!-- create new  -->
 <div style="margin-left: 10px;padding: 0px 20px;">
@@ -24,24 +37,24 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <div class="col-3">
                 <div class="input-group input-group-sm mb-3 mt-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
-                    <input type="text" value="<?php echo $_POST['brand_filter'];?>" class="form-control" id="brand_filter" onchange="filter_update();"
-                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-                        placeholder="Dept , Sub Dept , Brand , ID">
+                    <input type="text" value="<?php echo $_POST['brand_filter'];?>" class="form-control"
+                        id="brand_filter" onchange="filter_update();" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" placeholder="Dept , Sub Dept , Brand , ID">
                 </div>
             </div>
             <div class="col-3">
                 <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap">
                     <span class="input-group-text " id="addon-wrapping">Username</span>
-                    <input value="<?php echo $_POST['user_filter'];?>" class="form-control"
-                        list="datalistOptionsuser" id="user_filter" onchange="filter_update();" placeholder="Username"
-                        aria-label="Username" aria-describedby="addon-wrapping">
+                    <input value="<?php echo $_POST['user_filter'];?>" class="form-control" list="datalistOptionsuser"
+                        id="user_filter" onchange="filter_update();" placeholder="Username" aria-label="Username"
+                        aria-describedby="addon-wrapping">
                     <datalist id="datalistOptionsuser">
                         <?php echo $username_op;?>
                     </datalist>
                 </div>
             </div>
 
-            
+
             <!-- <div class="col-2">
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Status</span>
@@ -52,28 +65,27 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             </div> -->
             <div class="col-2">
                 <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap">
-                    <input  type="hidden" id="status_filter" name="status_filter" value="">
+                    <input type="hidden" id="status_filter" name="status_filter" value="">
                     <span class="input-group-text " id="addon-wrapping">Status</span>
-                    <select  multiple id="status_filter_show" 
-                    name="status_filter_show" 
-                    style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
-                    <option data-placeholder="true"></option>
-                    <?php echo $request_new_status_op;?>
+                    <select multiple id="status_filter_show" name="status_filter_show"
+                        style="border: 0px;font-weight: bold;background-color: transparent;"
+                        aria-label=".form-select-lg example">
+                        <option data-placeholder="true"></option>
+                        <?php echo $request_new_status_op;?>
                     </select>
                 </div>
             </div>
             <div class="col-2">
                 <div class="input-group input-group-sm mb-3 mt-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
-                    <input type="number" class="form-control" 
-                        id="pagenation_input" min=1
+                    <input type="number" class="form-control" id="pagenation_input" min=1
                         <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
                         value="<?php echo $_SESSION["pagenation"];?>" onchange="filter_update();" placeholder=""
                         aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
                         placeholder="Dept , Sub Dept , Brand , ID">
                     <span class="input-group-text" id="inputGroup-sizing-sm">
                         <div id="total_page_nj">
-                        <?php include('../get/get_total_page_nj.php'); ?>
+                            <?php include('../get/get_total_page_nj.php'); ?>
                         </div>
                     </span>
                 </div>
@@ -81,11 +93,11 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <div class="col-auto">
                 <div class="input-group input-group-sm mb-3 mt-3">
                     <button class="btn btn-dark btn-sm bg-gradient" style="margin-left:10px" type="button"
-                    data-bs-toggle="modal" data-bs-target="#create_new_ns_modal">
+                        data-bs-toggle="modal" data-bs-target="#create_new_ns_modal">
                         <ion-icon size="small" name="add-outline"></ion-icon>
                         Create New
                     </button>
-              
+
                 </div>
             </div>
             <!-- </div> -->
@@ -133,11 +145,10 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
         <div class="col" scope="col">Action</div>
     </li>
     <div id="job_list">
-    <?php include('../get/get_list_new_job_new.php'); ?>
+        <?php include('../get/get_list_new_job_new.php'); ?>
     </div>
 </div>
 <script>
-
 function filter_update(be) {
     var user_filter = document.getElementById("user_filter").value
     var status_filter = document.getElementById("status_filter").value
@@ -166,10 +177,11 @@ function filter_update(be) {
             $('#total_page_nj').html(data);
         });
     }
-        updateparams('user_filter',user_filter);
-        updateparams('brand_filter',brand_filter);
-   
+    updateparams('user_filter', user_filter);
+    updateparams('brand_filter', brand_filter);
+
 }
+
 function update_brand_note(dataoutput, brand) {
     $.post("../base/action/action_update_brand_note.php", {
         dataoutput: dataoutput,
@@ -178,6 +190,7 @@ function update_brand_note(dataoutput, brand) {
         // $('#get_list_job_update').html(data);
     });
 }
+
 function start_checking(id) {
     if (id) {
         $.post("../base/action/action_start_checking.php", {
@@ -251,23 +264,23 @@ function itm_confirm_cancel(id, status_change) {
     }
 }
 new SlimSelect({
-  select: '#status_filter_show',
-  closeOnSelect: false,
-  allowDeselectOption: true,
-  onChange: (info) => {
-    var input_update ="";
-    for (let i = 0; i < info.length; i++) {
-      if(input_update==""){
-        input_update = info[i].value;
-      }else{
-        input_update = input_update +','+info[i].value;
-      }
-     
+    select: '#status_filter_show',
+    closeOnSelect: false,
+    allowDeselectOption: true,
+    onChange: (info) => {
+        var input_update = "";
+        for (let i = 0; i < info.length; i++) {
+            if (input_update == "") {
+                input_update = info[i].value;
+            } else {
+                input_update = input_update + ',' + info[i].value;
+            }
+
+        }
+        document.getElementById("status_filter").value = input_update;
+        filter_update();
+
     }
-    document.getElementById("status_filter").value = input_update;
-   filter_update();
-    
-  }
 })
 filter_update();
 </script>
