@@ -280,7 +280,7 @@ if (!$_SESSION["login_csg"]){
                 <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" id="nav_account" data-bs-toggle="pill" type="button" role="tab"
                         aria-selected="false" onclick="get_page('account');">
-                        <ion-icon name="terminal-outline"></ion-icon><span class="main-manu-nav">Administration</span>
+                        <ion-icon name="terminal"></ion-icon><span class="main-manu-nav">Administration</span>
                     </a>
                 </li>
 
@@ -369,7 +369,7 @@ if (!$_SESSION["login_csg"]){
                     aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">
-                            <ion-icon name="storefront-outline"></ion-icon> <strong>Productions</strong>
+                            <ion-icon name="storefront-outline"></ion-icon> <strong>Quicklink</strong>
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
