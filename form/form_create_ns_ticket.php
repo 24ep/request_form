@@ -42,7 +42,28 @@
             </select>
             <label for="project_type"><strong style="color:red">* </strong>Project type</label>
         </div>
-        <!-- luanch date -->
+        <!-- launch date -->
+        <?php
+            //Calculate min date
+            //---set holiday
+                $holiday = array(
+                    // '2017-12-16\T00:00' => 'Victory Day of Bangladesh',
+                    // '2017-12-25\T00:00' => 'Christmas'
+                );
+                $i = 0;
+                $work_day = date("Y-m-d\Th:i"); //---get current day
+                while($i != 1) //---loop 7 day for set min date
+                {
+                    //$work_day = date('Y-m-d\Th:i', strtotime('+1 day', strtotime($work_day))); 
+                        $work_day = date('Y-m-d', strtotime('+1 day', strtotime($work_day)));
+                        $day_name = date('l', strtotime($work_day));
+                        if($day_name != 'Saturday' && $day_name != 'Sunday' && !isset($holiday[$work_day]))
+                        {
+                            $min_launch_date = $work_day;
+                            $i++;
+                        }
+                }
+        ?>
         <div class="form-floating mb-3">
             <input type="date" class="form-control" id="launch_date" placeholder="">
             <label for="launch_date"><strong style="color:red">* </strong>Launch date</label>
