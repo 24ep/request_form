@@ -1,9 +1,9 @@
 <div class="modal-header">
         <h5 class="modal-title" id="create_new_ns_modalLabel"><strong><ion-icon name="rocket-outline"></ion-icon> Add new ticket</strong></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        <small>สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ที่ Request detail จนกว่า ทาง Content จะทำการ assign ticket นี้ให้กับทางผู้เกี่ยวข้อง</small>
       </div>
       <div class="modal-body">
+      <small>สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ที่ Request detail จนกว่า ทาง Content จะทำการ assign ticket นี้ให้กับทางผู้เกี่ยวข้อง</small>
             <!-- brand -->
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" placeholder="ชื่อแบรนด์ต้องตรงกับที่จะขายหน้าเว็บ">

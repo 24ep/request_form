@@ -11,7 +11,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
 
 <!-- create Modal -->
 <div class="modal fade" id="create_new_ns_modal" tabindex="-1" aria-labelledby="create_new_ns_modalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog">
     <div class="modal-content shadow rounded  ">
         <?php include("form_create_ns_ticket.php"); ?>
     </div>
