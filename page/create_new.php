@@ -247,7 +247,7 @@ function cancel_ticket(id) {
         });
     }
 }
-function action_submit_add_new_job(id) {
+function action_submit_add_new_job() {
     brand = document.getElementById('brand').value;
     sub_department = document.getElementById('sub_department').value;
     sku = document.getElementById('sku').value;
@@ -275,6 +275,11 @@ function action_submit_add_new_job(id) {
             remark: remark
         }, function(data) {
             // $('#cancel_checking_resault').html(data);
+            Notiflix.Report.Success(
+            'Success',
+            data;
+            'Okay',
+            );
         });
     }
 }
