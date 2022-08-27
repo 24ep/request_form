@@ -112,8 +112,7 @@ if (!$_SESSION["login_csg"]){
     <script src="https://cdn.jsdelivr.net/npm/editorjs-drag-drop@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@calumk/editorjs-nested-checklist@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script>
-    <!-- dark mode -->
-    <script src="https://cdn.jsdelivr.net/npm/dark-mode-switch@1.0.0/dark-mode-switch.min.js"></script>
+
 </head>
 
 <body>
@@ -355,11 +354,7 @@ if (!$_SESSION["login_csg"]){
                         <ion-icon name="log-out"></ion-icon><span class="main-manu-nav">Logout</span>
                     </a>
                 </li>
-                <div class="form-check form-switch">
-                    <input type="checkbox" class="form-check-input" id="darkSwitch" />
-                    <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
-                    </div>
-                <script src="https://cdn.jsdelivr.net/npm/dark-mode-switch@1.0.0/dark-mode-switch.min.js"></script>
+
             </ul>
         </div>
     </div>
