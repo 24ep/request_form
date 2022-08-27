@@ -259,12 +259,19 @@ if (!$_SESSION["login_csg"]){
                 </li>
 
                 <li class="nav-item btn-group dropend" role="presentation">
-                    <a class="main_bra nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button"
+                    <a class="main_bra nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightactivity" aria-controls="offcanvasRight"
                         role="tab" aria-selected="false" data-bs-toggle="dropdown">
                         <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Productions</span>
                     </a>
-                    <ul class="dropdown-menu menu-block shadow p3">
-                        <small class="header_manu_bra">Datapump</small>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightactivity" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">
+                        <ion-icon name="storefront-outline"></ion-icon> <strong>Productions</strong>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                    <small class="header_manu_bra">Datapump</small>
                         <li><a id="nav_datapump_convert" onclick="get_page('datapump_convert');"
                                 class="dropdown-item dp-link" type="button">
                                 <ion-icon name="shapes"></ion-icon>Datapump Convert
@@ -316,7 +323,9 @@ if (!$_SESSION["login_csg"]){
                                 <ion-icon name="shapes"></ion-icon>Word to HTML
                             </a></li>
                       
-                    </ul>
+                    </div>
+                    </div>
+                  
                 </li>
                 <li class="nav-item btn-group dropend" role="presentation">
                     <a class="main_bra nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button"
