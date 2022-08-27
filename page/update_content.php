@@ -1,12 +1,5 @@
 <div class="container-fluid ">
-    <nav class="navbar">
-        <div class="container-fluid p-0">
-
-        </div>
-    </nav>
-    <nav class="navbar">
-        <form style="width:100%">
-            <div class="input-group input-group-sm mb-3">
+            <div class="input-group input-group-sm p-3">
                 <span class="input-group-text" id="basic-addon1">
                     <ion-icon style="vertical-align: middle;margin-right: 5px;" name="search-outline">
                     </ion-icon> Search
@@ -65,7 +58,7 @@
                 <?php echo $request_cr_status_op; ?>
             </datalist>
         </form>
-    </nav>
+  
     <div class="btn-group btn-group-sm" style="position: inherit;" role="group"
         aria-label="Basic checkbox toggle button group">
         <?php include('../get/get_list_bucket.php'); ?>
@@ -101,7 +94,6 @@
             </div>
         </div>
     </div>
-</div>
 <script>
 function search_cr_data() {
     var input = document.getElementById('ts_command').value.toLowerCase();;
