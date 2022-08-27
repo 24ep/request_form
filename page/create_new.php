@@ -22,7 +22,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <!-- brand -->
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*<strong>Brand</label>
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Brand</label>
                 </div>
                 <div class="col-auto">
                     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
@@ -36,7 +36,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <!-- sub_department -->
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*<strong>Sub department</label>
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Sub department</label>
                 </div>
                 <div class="col-auto">
                     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
@@ -45,7 +45,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <!-- sku -->
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*<strong>SKU</label>
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>SKU</label>
                 </div>
                 <div class="col-auto">
                     <input type="number" min=0  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
@@ -56,7 +56,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <!-- production_type -->
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*<strong>Production type</label>
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Production type</label>
                 </div>
                 <div class="col-auto">
                     <input type="text" min=0  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
@@ -67,7 +67,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <!-- Project type -->
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*<strong>Project type</label>
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Project type</label>
                 </div>
                 <div class="col-auto">
                     <input type="text" min=0  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
@@ -78,7 +78,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <!-- luanch date -->
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*<strong>Launch date</label>
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Launch date</label>
                 </div>
                 <div class="col-auto">
                     <input type="number" min=0  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
@@ -89,7 +89,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <!-- Tag -->
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*<strong>Tags</label>
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Tags</label>
                 </div>
                 <div class="col-auto">
                     <input type="number" min=0  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
@@ -100,7 +100,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <!-- Bu -->
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*<strong>Bussiness unit (BU)</label>
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Bussiness unit (BU)</label>
                 </div>
                 <div class="col-auto">
                     <input type="number" min=0  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
@@ -126,7 +126,7 @@ $request_new_status_op = get_option_return_filter("status",$_SESSION["status_fil
             <!-- Link for information -->
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*<strong>Link for information</label>
+                    <label for="inputPassword6" class="col-form-label"><strong style="color:red">*</strong>Link for information</label>
                 </div>
                 <div class="col-auto">
                     <input type="number" min=0  id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
