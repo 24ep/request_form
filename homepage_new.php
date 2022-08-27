@@ -220,26 +220,30 @@ if (!$_SESSION["login_csg"]){
                         <ion-icon name="ticket"></ion-icon><span class="main-manu-nav">Other Requests</span>
                     </a>
                 </li>
+                <?php if(strpos($_SESSION["department"],'Content')!==false){
+
+                ?>
                 <hr class="hr_manu_bra_in">
                 <small class="header_manu_bra">Internals</small>
-                <li class="nav-item" role="presentation">
+                <!-- <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" id="nav_report" data-bs-toggle="pill" type="button" role="tab"
                         aria-selected="false" onclick="get_page('report');">
                         <ion-icon name="bar-chart"></ion-icon><span class="main-manu-nav">Reports</span>
                     </a>
-                </li>
-                <li class="nav-item" role="presentation">
+                </li> -->
+                <!-- <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" id="nav_assert" data-bs-toggle="pill" type="button" role="tab"
                         aria-selected="false" onclick="get_page('assert');">
                         <ion-icon name="folder-open"></ion-icon><span class="main-manu-nav">Block</span>
                     </a>
-                </li>
+                </li> -->
                 <!-- <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('notion');">
                         <ion-icon name="book"></ion-icon><span class="main-manu-nav">Notion</span>
                     </a>
                 </li> -->
+              
                 <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" id="nav_account" data-bs-toggle="pill" type="button" role="tab"
                         aria-selected="false" onclick="get_page('account');">
@@ -304,14 +308,9 @@ if (!$_SESSION["login_csg"]){
                                 type="button">
                                 <ion-icon name="shapes"></ion-icon>Word to HTML
                             </a></li>
-                        <li><a href="https://centrality.workplace.com/" target="_blank" class="dropdown-item dp-link"
-                                type="button">
-                                <ion-icon name="shapes"></ion-icon>Workchat
-                            </a></li>
+                      
                     </ul>
                 </li>
-                <hr class="hr_manu_bra_in">
-                <small class="header_manu_bra">Others</small>
                 <li class="nav-item btn-group dropend" role="presentation">
                     <a class="main_bra nav-link" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button"
                         role="tab" aria-selected="false" data-bs-toggle="dropdown">
@@ -340,9 +339,18 @@ if (!$_SESSION["login_csg"]){
                                 target="_blank" class="dropdown-item dp-link" type="button">
                                 <ion-icon name="shapes"></ion-icon>Yourtrack
                             </a></li>
+                        <li><a href="https://centrality.workplace.com/" target="_blank" class="dropdown-item dp-link"
+                                type="button">
+                                <ion-icon name="chatbubbles-outline"></ion-icon>Workchat
+                            </a></li>
                     </ul>
 
                 </li>
+                <?php } ?>
+                
+                <hr class="hr_manu_bra_in">
+                <small class="header_manu_bra">Others</small>
+               
                 <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
                         <ion-icon name="settings"></ion-icon><span class="main-manu-nav">Settings</span>
