@@ -467,10 +467,12 @@
                         <ion-icon name="document-text-outline"></ion-icon>
                         <strong><?php echo $brand; ?></strong> Note
                     </button>
+                    <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                     <button class="nav-link" id="nav-console-tab" data-bs-toggle="tab" data-bs-target="#nav-console"
                         type="button" role="tab" aria-controls="nav-console" aria-selected="false">
                         <strong>Console</strong>
                     </button>
+                    <?php } ?>
                     <button class="nav-link" id="nav-sku-tab" data-bs-toggle="tab" data-bs-target="#nav-sku"
                         type="button" role="tab" aria-controls="nav-sku" aria-selected="false">
                         <strong>SKU List</strong>

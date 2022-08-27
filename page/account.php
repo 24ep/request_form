@@ -66,18 +66,15 @@ $detail = get_page_account();
 
 ?>
 
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="accounts-tab" data-bs-toggle="tab" data-bs-target="#accounts-tab-pane" type="button" role="tab" aria-controls="accounts-tab-pane" aria-selected="true">Accounts</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="ol-tab" data-bs-toggle="tab" data-bs-target="#ol-tab-pane" type="button" role="tab" aria-controls="ol-tab-pane" aria-selected="false">Options list</button>
-  </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="accounts-tab-pane" role="tabpanel" aria-labelledby="accounts-tab" tabindex="0"><?php echo  $detail; ?></div>
-  <div class="tab-pane fade" id="ol-tab-pane" role="tabpanel" aria-labelledby="ol-tab" tabindex="0">...</div>
-
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-account-tab" data-bs-toggle="tab" data-bs-target="#nav-account" type="button" role="tab" aria-controls="nav-account" aria-selected="true">Accounts</button>
+    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Options</button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-account" role="tabpanel" aria-labelledby="nav-account-tab" tabindex="0"><?php echo $detail; ?></div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">...</div>
 </div>
 
 <script>

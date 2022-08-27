@@ -422,3 +422,13 @@ label#label_file_cme {
     background: transparent!important;
     border: 0px!important;
 }
+.dataTables_wrapper {
+    position: initial!important;
+    clear: both;
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 .3rem 1rem rgba(0,0,0,.15)!important;
+    margin: 20px!important;
+    /* z-index: -1; */
+}
