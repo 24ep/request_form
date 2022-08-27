@@ -107,7 +107,7 @@ mysqli_close($con);
                 </div>
             </div>
             <!-- </div> -->
-            <div class="col-auto" style="right: 20px;position: absolute;margin-top: 15px;">
+            <!-- <div class="col-auto" style="right: 20px;position: absolute;margin-top: 15px;">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination pagination-sm">
                         <div class="offcanvas offcanvas-start" style="width:90%" tabindex="-1" id="offcanvasExample"
@@ -125,7 +125,7 @@ mysqli_close($con);
                                     <form class="row g-3" action="../action/action_submit_add_new_job.php"
                                         method="POST">
                                         <div id="add_new_job_result"></div>
-                                        <?php include('../form/form_request_add_new.php')?>
+                                        <?php //include('../form/form_request_add_new.php')?>
                                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                             <button type="submit" class="btn btn-dark btn-sm">Submit</button>
                                         </div>
@@ -133,7 +133,7 @@ mysqli_close($con);
                                 </div>
                             </div>
                         </div>
-            </div>
+            </div> -->
             </ul>
             </nav>
         </div>
