@@ -351,10 +351,16 @@
                         type="button" role="tab" aria-controls="nav-detail" aria-selected="false">
                         <ion-icon name="receipt-outline"></ion-icon>Ticket infomation
                     </button>
+                    <button class="nav-link" id="nav-logs-tab" data-bs-toggle="tab" data-bs-target="#nav-logs"
+                        type="button" role="tab" aria-controls="nav-logs" aria-selected="false">
+                        <ion-icon name="time-outline"></ion-icon>Log
+                    </button>
+                    <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                     <button class="nav-link" id="nav-internal-tab" data-bs-toggle="tab" data-bs-target="#nav-internal"
                         type="button" role="tab" aria-controls="nav-internal" aria-selected="false">
                         <ion-icon name="text-outline"></ion-icon>Internal note
                     </button>
+                    <?php }?>
                 </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
@@ -402,6 +408,12 @@
                             ticket นี้ให้กับทางผู้เกี่ยวข้อง
                         </div>
                         <?php include('../form/form_request_edit_new.php')?>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-logs" role="tabpanel" aria-labelledby="nav-logs-tab"
+                    tabindex="0">
+                    <div class="container" style="padding: 20px!important;">
+                        <?php include('../get/get_ns_log_by_id.php')?>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-internal" role="tabpanel" aria-labelledby="nav-internal-tab"
