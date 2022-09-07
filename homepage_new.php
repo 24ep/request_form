@@ -349,6 +349,10 @@ if (!$_SESSION["login_csg"]){
                                 class="dropdown-item dp-link" type="button">
                                 <ion-icon name="shapes"></ion-icon>Convert Mapping
                             </a></li>
+                        <li><a id="nav_powerautomate" onclick="get_page('powerautomate');" class="dropdown-item dp-link"
+                                type="button">
+                                <ion-icon name="shapes"></ion-icon>Power automate
+                        </a></li>
 
                     </div>
                 </div>
