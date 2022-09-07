@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="robots" content="noindex">
+        <meta name="googlebot" content="noindex">
     <title>Content and Studio - Login</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
