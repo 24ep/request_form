@@ -33,6 +33,8 @@ if (!$_SESSION["login_csg"]){
     <!-- set up theam -->
 
     <head>
+        <meta name="robots" content="noindex">
+        <meta name="googlebot" content="noindex">
         <title>Content and Studio - Homepage</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
