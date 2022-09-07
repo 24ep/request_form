@@ -349,10 +349,6 @@ if (!$_SESSION["login_csg"]){
                                 class="dropdown-item dp-link" type="button">
                                 <ion-icon name="shapes"></ion-icon>Convert Mapping
                             </a></li>
-                        <li><a id="nav_wordtohtml" onclick="get_page('wordtohtml');" class="dropdown-item dp-link"
-                                type="button">
-                                <ion-icon name="shapes"></ion-icon>Word to HTML
-                            </a></li>
 
                     </div>
                 </div>
@@ -369,7 +365,7 @@ if (!$_SESSION["login_csg"]){
                     aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">
-                            <ion-icon name="storefront-outline"></ion-icon> <strong>Quicklink</strong>
+                            <ion-icon name="storefront-outline"></ion-icon> <strong>Quicklink & Tools</strong>
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
@@ -400,6 +396,20 @@ if (!$_SESSION["login_csg"]){
                                 type="button">
                                 <ion-icon name="chatbubbles-outline"></ion-icon>Workchat
                             </a></li>
+
+                        <small class="header_manu_bra">Tools</small>
+                        <li><a id="nav_aspose" onclick="get_page('aspose');" class="dropdown-item dp-link"
+                                type="button">
+                                <ion-icon name="shapes"></ion-icon>Aspose
+                            </a></li>
+                        <li><a id="nav_wordtohtml" onclick="get_page('wordtohtml');" class="dropdown-item dp-link"
+                                type="button">
+                                <ion-icon name="shapes"></ion-icon>Word to HTML (WYSIWYG)
+                        </a></li>
+                        <li><a id="nav_markdowneditor" onclick="get_page('markdowneditor');" class="dropdown-item dp-link"
+                                type="button">
+                                <ion-icon name="shapes"></ion-icon>Markdown Editor
+                        </a></li>
                     </div>
                 </div>
 
