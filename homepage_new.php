@@ -48,6 +48,8 @@ if (!$_SESSION["login_csg"]){
 <html lang="en">
 
 <head>
+    <meta name="robots" content="noindex">
+        <meta name="googlebot" content="noindex">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Content Service Gate</title>
