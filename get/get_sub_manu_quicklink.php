@@ -1,48 +1,43 @@
 <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasRightLabel">
-                            <ion-icon name="storefront-outline"></ion-icon> <strong>Quicklink & Tools</strong>
-                        </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body" style="list-style: none;">
-                        <small class="header_manu_bra">Central</small>
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">
+        <ion-icon name="storefront-outline"></ion-icon> <strong>Quicklink & Tools</strong>
+    </h5>
+    <button type="button" class="btn-close" onclick="show_sub_manu('close');"></button>
+</div>
+<div class="offcanvas-body" style="list-style: none;">
+    <small class="header_manu_bra">Central</small>
 
-                        <li><a href="http://cnext.centralgroup.com/" target="_blank" class="dropdown-item dp-link"
-                                type="button">
-                                <ion-icon name="shapes"></ion-icon>Cnext
-                            </a></li>
-                        <li><a href="https://ris6789.central.co.th/arsys/shared/login.jsp?/arsys/" target="_blank"
-                                class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>RIS 6789
-                            </a></li>
-                        <li><a href="https://cenergy.atlassian.net/servicedesk/customer/portals" target="_blank"
-                                class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>CTO JIRA
-                            </a></li>
-                        <li><a href="https://centralgroup-my.sharepoint.com/:f:/g/personal/ton_central_tech/Ek7nHI386MZAgCvU5e1xAvkBJX9gZbW_xE6NYjq8dUgo6g?e=2frs9b"
-                                target="_blank" class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>LAMTON DRIVE
-                            </a></li>
-                        <li><a href="https://cds-content.myjetbrains.com/youtrack/articles/SD-A-21/user-for-content-team"
-                                target="_blank" class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>Yourtrack
-                            </a></li>
-                        <li><a href="https://centrality.workplace.com/" target="_blank" class="dropdown-item dp-link"
-                                type="button">
-                                <ion-icon name="chatbubbles-outline"></ion-icon>Workchat
-                            </a></li>
-                            <hr class="hr_manu_bra_in">
-                        <small class="header_manu_bra">Tools</small>
-                        <li><a id="nav_aspose" onclick="get_page('aspose');" class="dropdown-item dp-link"
-                                type="button">
-                                <ion-icon name="shapes"></ion-icon>Aspose
-                            </a></li>
-                        <li><a id="nav_wordtohtml" onclick="get_page('wordtohtml');" class="dropdown-item dp-link"
-                                type="button">
-                                <ion-icon name="shapes"></ion-icon>Word to HTML (WYSIWYG)
-                            </a></li>
-                        <li><a id="nav_markdowneditor" onclick="get_page('markdowneditor');"
-                                class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>Markdown Editor
-                            </a></li>
-                    </div>
+    <li><a href="http://cnext.centralgroup.com/" target="_blank" class="dropdown-item dp-link" type="button">
+            <ion-icon name="shapes"></ion-icon>Cnext
+        </a></li>
+    <li><a href="https://ris6789.central.co.th/arsys/shared/login.jsp?/arsys/" target="_blank"
+            class="dropdown-item dp-link" type="button">
+            <ion-icon name="shapes"></ion-icon>RIS 6789
+        </a></li>
+    <li><a href="https://cenergy.atlassian.net/servicedesk/customer/portals" target="_blank"
+            class="dropdown-item dp-link" type="button">
+            <ion-icon name="shapes"></ion-icon>CTO JIRA
+        </a></li>
+    <li><a href="https://centralgroup-my.sharepoint.com/:f:/g/personal/ton_central_tech/Ek7nHI386MZAgCvU5e1xAvkBJX9gZbW_xE6NYjq8dUgo6g?e=2frs9b"
+            target="_blank" class="dropdown-item dp-link" type="button">
+            <ion-icon name="shapes"></ion-icon>LAMTON DRIVE
+        </a></li>
+    <li><a href="https://cds-content.myjetbrains.com/youtrack/articles/SD-A-21/user-for-content-team" target="_blank"
+            class="dropdown-item dp-link" type="button">
+            <ion-icon name="shapes"></ion-icon>Yourtrack
+        </a></li>
+    <li><a href="https://centrality.workplace.com/" target="_blank" class="dropdown-item dp-link" type="button">
+            <ion-icon name="chatbubbles-outline"></ion-icon>Workchat
+        </a></li>
+    <hr class="hr_manu_bra_in">
+    <small class="header_manu_bra">Tools</small>
+    <li><a id="nav_aspose" onclick="get_page('aspose');" class="dropdown-item dp-link" type="button">
+            <ion-icon name="shapes"></ion-icon>Aspose
+        </a></li>
+    <li><a id="nav_wordtohtml" onclick="get_page('wordtohtml');" class="dropdown-item dp-link" type="button">
+            <ion-icon name="shapes"></ion-icon>Word to HTML (WYSIWYG)
+        </a></li>
+    <li><a id="nav_markdowneditor" onclick="get_page('markdowneditor');" class="dropdown-item dp-link" type="button">
+            <ion-icon name="shapes"></ion-icon>Markdown Editor
+        </a></li>
+</div>

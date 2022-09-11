@@ -2,7 +2,7 @@
                 <h5 class="offcanvas-title" id="offcanvasRightLabel">
                     <ion-icon name="notifications-outline"></ion-icon> <strong>Activity</strong>
                 </h5>
-                <button type="button" class="btn-close" onclick="show_sub_manu();" ></button>
+                <button type="button" class="btn-close" onclick="show_sub_manu('close');" ></button>
             </div>
             <div class="offcanvas-body">
                 <div id="get_list_job_update">

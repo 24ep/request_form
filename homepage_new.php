@@ -420,7 +420,7 @@ document.getElementById("bt_nav_coll_ex").innerHTML =
     '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
 function show_sub_manu(sub_manu) {
     var active_sub_manu = document.getElementById('active_sub_manu').value;
-    if (active_sub_manu == 'hide') {
+    if (sub_manu != 'Close') {
         //get_sub_manu
         if (sub_manu == 'activity') {
             $.post("base/get/get_sub_manu_activity.php", {}, function(data) {
@@ -436,7 +436,8 @@ function show_sub_manu(sub_manu) {
             });
         }
         //hideshow
-        document.getElementById('active_sub_manu').value = 'show';
+            document.getElementById('active_sub_manu').value = 'show';
+        
         var sub_manu = document.getElementsByClassName("sub_manu");
         var col_detail_main = document.getElementsByClassName("col_detail_main");
         for (var i = 0; i < sub_manu.length; i++) {

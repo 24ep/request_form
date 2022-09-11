@@ -2,7 +2,7 @@
     <h5 class="offcanvas-title" id="offcanvasRightLabel">
         <ion-icon name="storefront-outline"></ion-icon> <strong>Product mantain</strong>
     </h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <button type="button" class="btn-close" onclick="show_sub_manu('close');"  ></button>
 </div>
 <div class="offcanvas-body" style="list-style: none;">
     <small class="header_manu_bra">Datapump</small>
