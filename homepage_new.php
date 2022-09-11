@@ -49,7 +49,7 @@ if (!$_SESSION["login_csg"]){
 
 <head>
     <meta name="robots" content="noindex">
-        <meta name="googlebot" content="noindex">
+    <meta name="googlebot" content="noindex">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Content Service Gate</title>
@@ -136,7 +136,8 @@ if (!$_SESSION["login_csg"]){
         <div id="calloffcanvas_cr">
         </div>
     </div>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="notificationcanvas" aria-labelledby="offcanvasRightLabel" style="position: absolute;">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="notificationcanvas" aria-labelledby="offcanvasRightLabel"
+        style="position: absolute;">
         <div class="offcanvas-header">
             <h5 id="offcanvasRightLabel">Activity</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -170,7 +171,7 @@ if (!$_SESSION["login_csg"]){
 
     <div class="col-2 list_bra shadow">
         <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            
+
             <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
                 class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-dark bg-gradient shadow rounded-pill"
                 style="width: 2rem; height:2rem;padding: 0px;">
@@ -194,7 +195,7 @@ if (!$_SESSION["login_csg"]){
             </div>
             <hr class="hr_manu_bra">
             <small class="header_manu_bra">Form create new product</small>
-                <?php include("get/linesheet_download_alert_bra.php"); ?> 
+            <?php include("get/linesheet_download_alert_bra.php"); ?>
             <hr class="hr_manu_bra">
             <small class="header_manu_bra">Manu</small>
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -205,7 +206,7 @@ if (!$_SESSION["login_csg"]){
                         <?php include('get/get_count_nt_unread.php'); ?>
                     </div>
                 </a>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightactivity"
+                <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightactivity"
                     aria-labelledby="offcanvasRightLabel" style="left: 0;">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">
@@ -215,10 +216,10 @@ if (!$_SESSION["login_csg"]){
                     </div>
                     <div class="offcanvas-body">
                         <div id="get_list_job_update">
-                            <?php include('get/get_list_job_update.php'); ?>
+                            <?php //include('get/get_list_job_update.php'); ?>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link active" data-bs-toggle="pill" type="button" role="tab"
@@ -241,7 +242,7 @@ if (!$_SESSION["login_csg"]){
                 <?php if(strpos($_SESSION["department"],'Content')!==false){
 
                 ?>
-                 <hr class="hr_manu_bra_in">
+                <hr class="hr_manu_bra_in">
                 <small class="header_manu_bra">Productions (24EP)</small>
                 <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" id="nav_job_manage" data-bs-toggle="pill" type="button" role="tab"
@@ -261,7 +262,7 @@ if (!$_SESSION["login_csg"]){
                         <ion-icon name="cloud-upload"></ion-icon><span class="main-manu-nav">Linesheet</span>
                     </a>
                 </li>
-               
+
                 <hr class="hr_manu_bra_in">
                 <small class="header_manu_bra">Internals</small>
                 <li class="nav-item" role="presentation">
@@ -358,7 +359,7 @@ if (!$_SESSION["login_csg"]){
                         <li><a id="nav_powerautomate" onclick="get_page('powerautomate');" class="dropdown-item dp-link"
                                 type="button">
                                 <ion-icon name="shapes"></ion-icon>Power automate
-                        </a></li>
+                            </a></li>
 
                     </div>
                 </div>
@@ -415,11 +416,11 @@ if (!$_SESSION["login_csg"]){
                         <li><a id="nav_wordtohtml" onclick="get_page('wordtohtml');" class="dropdown-item dp-link"
                                 type="button">
                                 <ion-icon name="shapes"></ion-icon>Word to HTML (WYSIWYG)
-                        </a></li>
-                        <li><a id="nav_markdowneditor" onclick="get_page('markdowneditor');" class="dropdown-item dp-link"
-                                type="button">
+                            </a></li>
+                        <li><a id="nav_markdowneditor" onclick="get_page('markdowneditor');"
+                                class="dropdown-item dp-link" type="button">
                                 <ion-icon name="shapes"></ion-icon>Markdown Editor
-                        </a></li>
+                            </a></li>
                     </div>
                 </div>
 
@@ -441,6 +442,19 @@ if (!$_SESSION["login_csg"]){
                 </li>
 
             </ul>
+        </div>
+    </div>
+    <div class="col-2" id="activity_sub_manu" style="display: none">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">
+                <ion-icon name="notifications-outline"></ion-icon> <strong>Activity</strong>
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="get_list_job_update">
+                <?php include('get/get_list_job_update.php'); ?>
+            </div>
         </div>
     </div>
     <div class="col-10 col_detail_main" style="margin-left: auto;font-size: 14px;padding: 0px;">
