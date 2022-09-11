@@ -201,7 +201,7 @@ if (!$_SESSION["login_csg"]){
             <small class="header_manu_bra">Manu</small>
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                 <a class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightactivity"
-                    aria-controls="offcanvasRight" onclick="get_list_update_job();show_sub_manu();">
+                    aria-controls="offcanvasRight" onclick="get_list_update_job();show_sub_manu('activity');">
                     <ion-icon name="notifications"></ion-icon><span class="main-manu-nav">Activity</span>
                     <div id="get_count_nt_unread">
                         <?php include('get/get_count_nt_unread.php'); ?>
@@ -293,137 +293,20 @@ if (!$_SESSION["login_csg"]){
                 </li>
 
                 <li class="nav-item btn-group dropend" role="presentation">
-                    <a class="main_bra nav-link" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasRightproductmatain" aria-controls="offcanvasRight" role="tab"
-                        aria-selected="false" data-bs-toggle="dropdown">
+                    <a class="main_bra nav-link" type="button" onclick="show_sub_manu('product_maintain');" >
                         <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Product mantain</span>
                     </a>
 
 
                 </li>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightproductmatain"
-                    aria-labelledby="offcanvasRightLabel" style="left: 0;">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasRightLabel">
-                            <ion-icon name="storefront-outline"></ion-icon> <strong>Product mantain</strong>
-                        </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <small class="header_manu_bra">Datapump</small>
-                        <li><a id="nav_datapump_convert" onclick="get_page('datapump_convert');"
-                                class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>Datapump Convert
-                            </a></li>
-                        <li><a id="nav_datapump_admin" onclick="get_page('datapump_admin');"
-                                class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>Datapump Admin
-                            </a></li>
-                        <hr class="hr_manu_bra_in">
-                        <small class="header_manu_bra">Backend (PROD)</small>
-                        <li><a href="https://cto-pim.cloud.akeneo.com/" target="_blank" class="dropdown-item dp-link"
-                                type="button">
-                                <ion-icon name="shapes"></ion-icon>PIM
-                            </a></li>
-                        <li><a href="https://backend.central.co.th/gutentag/admin/index/index/key/36f79751536eaff794291a09bb5d1831d1f4453a2819d0d731cde2da72b95ffb/"
-                                target="_blank" class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>MDC
-                            </a></li>
-                        <hr class="hr_manu_bra_in">
-                        <small class="header_manu_bra">Backend (Stagging)</small>
-                        <li><a href="https://uat.central.co.th/th" target="_blank" class="dropdown-item dp-link"
-                                type="button">
-                                <ion-icon name="shapes"></ion-icon>FE
-                            </a></li>
-                        <li><a href="https://eor-admin-uat.central.tech/upload" target="_blank"
-                                class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>DATAPUMP Admin
-                            </a></li>
-                        <li><a href="https://cto-pim-uat.cloud.akeneo.com/user/login" target="_blank"
-                                class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>PIM
-                            </a></li>
-                        <li><a href="https://staging-mdc.central.co.th/admin/admin/index/index/key/84db97aa4de2e2c911fef6db4bab589d9eab2b47811d1d714d7193c2029e299f/"
-                                target="_blank" class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>MDC
-                            </a></li>
-                        <hr class="hr_manu_bra_in">
-                        <small class="header_manu_bra">Ability</small>
-                        <li><a id="nav_writer-auto-assign-console" onclick="get_page('writer-auto-assign-console');"
-                                class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>writer auto-assign console
-                            </a></li>
-                        <li><a id="nav_convert_mapping" onclick="get_page('convert_mapping');"
-                                class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>Convert Mapping
-                            </a></li>
-                        <li><a id="nav_powerautomate" onclick="get_page('powerautomate');" class="dropdown-item dp-link"
-                                type="button">
-                                <ion-icon name="shapes"></ion-icon>Power automate
-                            </a></li>
-
-                    </div>
-                </div>
                 <li class="nav-item btn-group dropend" role="presentation">
-                    <a class="main_bra nav-link" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasRightquicklink" aria-controls="offcanvasRight" role="tab"
-                        aria-selected="false" data-bs-toggle="dropdown">
+                    <a class="main_bra nav-link" type="button" onclick="show_sub_manu('quicklink');">
                         <ion-icon name="globe"></ion-icon><span class="main-manu-nav">Quicklink</span>
                     </a>
 
 
                 </li>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightquicklink"
-                    aria-labelledby="offcanvasRightLabel" style="left: 0;">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasRightLabel">
-                            <ion-icon name="storefront-outline"></ion-icon> <strong>Quicklink & Tools</strong>
-                        </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <small class="header_manu_bra">Central</small>
-
-                        <li><a href="http://cnext.centralgroup.com/" target="_blank" class="dropdown-item dp-link"
-                                type="button">
-                                <ion-icon name="shapes"></ion-icon>Cnext
-                            </a></li>
-                        <li><a href="https://ris6789.central.co.th/arsys/shared/login.jsp?/arsys/" target="_blank"
-                                class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>RIS 6789
-                            </a></li>
-                        <li><a href="https://cenergy.atlassian.net/servicedesk/customer/portals" target="_blank"
-                                class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>CTO JIRA
-                            </a></li>
-                        <li><a href="https://centralgroup-my.sharepoint.com/:f:/g/personal/ton_central_tech/Ek7nHI386MZAgCvU5e1xAvkBJX9gZbW_xE6NYjq8dUgo6g?e=2frs9b"
-                                target="_blank" class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>LAMTON DRIVE
-                            </a></li>
-                        <li><a href="https://cds-content.myjetbrains.com/youtrack/articles/SD-A-21/user-for-content-team"
-                                target="_blank" class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>Yourtrack
-                            </a></li>
-                        <li><a href="https://centrality.workplace.com/" target="_blank" class="dropdown-item dp-link"
-                                type="button">
-                                <ion-icon name="chatbubbles-outline"></ion-icon>Workchat
-                            </a></li>
-
-                        <small class="header_manu_bra">Tools</small>
-                        <li><a id="nav_aspose" onclick="get_page('aspose');" class="dropdown-item dp-link"
-                                type="button">
-                                <ion-icon name="shapes"></ion-icon>Aspose
-                            </a></li>
-                        <li><a id="nav_wordtohtml" onclick="get_page('wordtohtml');" class="dropdown-item dp-link"
-                                type="button">
-                                <ion-icon name="shapes"></ion-icon>Word to HTML (WYSIWYG)
-                            </a></li>
-                        <li><a id="nav_markdowneditor" onclick="get_page('markdowneditor');"
-                                class="dropdown-item dp-link" type="button">
-                                <ion-icon name="shapes"></ion-icon>Markdown Editor
-                            </a></li>
-                    </div>
-                </div>
+               
 
                 <?php } ?>
 
@@ -445,18 +328,8 @@ if (!$_SESSION["login_csg"]){
             </ul>
         </div>
     </div>
-    <div class="col-2 shadow sub_manu hide" id="sub_manu">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasRightLabel">
-                <ion-icon name="notifications-outline"></ion-icon> <strong>Activity</strong>
-            </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div id="get_list_job_update">
-                <?php include('get/get_list_job_update.php'); ?>
-            </div>
-        </div>
+    <div class="col-2 shadow sub_manu hide p-3 bg-dark bg-gradient" id="sub_manu">
+
     </div>
     <div class="col-10 col_detail_main" style="font-size: 14px;padding: 0px;">
         <div id="col_detail">
@@ -583,9 +456,25 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
 <script>
 document.getElementById("bt_nav_coll_ex").innerHTML =
     '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
-function show_sub_manu(){
+function show_sub_manu(sub_manu){
     var active_sub_manu = document.getElementById('active_sub_manu').value;
     if(active_sub_manu == 'hide'){
+        //get_sub_manu
+        if(sub_manu=='activity'){
+            $.post("base/get/get_sub_manu_activity.php", {}, function(data) {
+            $('#sub_manu').html(data);
+            });
+        }else if(sub_manu=='product_mantain'){
+            $.post("base/get/get_sub_manu_product_mantain.php", {}, function(data) {
+            $('#sub_manu').html(data);
+            });
+        }else if(sub_manu=='quicklink'){
+            $.post("base/get/get_sub_manu_quicklink.php", {}, function(data) {
+            $('#sub_manu').html(data);
+            });
+        }
+       
+        //hideshow
         document.getElementById('active_sub_manu').value = 'show';
         var sub_manu = document.getElementsByClassName("sub_manu");
         var col_detail_main = document.getElementsByClassName("col_detail_main");
@@ -607,6 +496,8 @@ function show_sub_manu(){
             col_detail_main[i].className = col_detail_main[i].className.replace(/(?:^|\s)col-8(?!\S)/g, 'col-10');
         }
     }
+
+    
 }
 function minimize_nav() {
     var minimize_manu = document.getElementById('minimize_manu').value;

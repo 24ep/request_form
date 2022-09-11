@@ -259,6 +259,7 @@ label#label_file_cme {
     border-bottom: 1px solid #cec7c7;
     font-size: small;
     font-weight: 500;
+    list-style: none;
 }
 .notifications-box.show {
     display: block;
@@ -368,7 +369,7 @@ label#label_file_cme {
     width: -webkit-fill-available;
 }
 .hr_manu_bra_in.hide{
-    width: -webkit-fill-available;
+    width: 60px;
 }
 .sub_manu.hide{
     display: none;
