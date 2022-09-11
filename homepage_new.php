@@ -281,7 +281,7 @@ if (!$_SESSION["login_csg"]){
                     </li>
                     <li class="nav-item btn-group dropend" role="presentation">
                         <a class="main_bra nav-link" type="button" onclick="show_sub_manu('product_maintain');">
-                            <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Product mantain</span>
+                            <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Product maintain</span>
                         </a>
                     </li>
                     <li class="nav-item btn-group dropend" role="presentation">
@@ -426,8 +426,8 @@ function show_sub_manu(sub_manu) {
             $.post("base/get/get_sub_manu_activity.php", {}, function(data) {
                 $('#sub_manu').html(data);
             });
-        } else if (sub_manu == 'product_mantain') {
-            $.post("base/get/get_sub_manu_product_mantain.php", {}, function(data) {
+        } else if (sub_manu == 'product_maintain') {
+            $.post("base/get/get_sub_manu_product_maintain.php", {}, function(data) {
                 $('#sub_manu').html(data);
             });
         } else if (sub_manu == 'quicklink') {
