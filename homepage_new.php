@@ -193,7 +193,7 @@ if (!$_SESSION["login_csg"]){
                 </div>
             </div>
             <hr class="hr_manu_bra">
-                <?php include("../get/linesheet_download_alert_bra.php"); ?> 
+                <?php include("get/linesheet_download_alert_bra.php"); ?> 
             <hr class="hr_manu_bra">
             <small class="header_manu_bra">Manu</small>
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
