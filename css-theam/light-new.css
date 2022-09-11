@@ -246,7 +246,7 @@ label#label_file_cme {
     margin: unset;
     display: inherit;
     margin: 1px;
-    /* color: white;
+    /* color: white; */
 }
 .ts-view.active {
     background-color: #ea5a5a !important;
