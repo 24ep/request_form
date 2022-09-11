@@ -170,6 +170,7 @@ if (!$_SESSION["login_csg"]){
 
     <div class="col-2 list_bra shadow">
         <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            
             <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
                 class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-dark bg-gradient shadow rounded-pill"
                 style="width: 2rem; height:2rem;padding: 0px;">
@@ -191,6 +192,8 @@ if (!$_SESSION["login_csg"]){
                         style="place-self: center;"><?php echo $_SESSION['department']; ?></small>
                 </div>
             </div>
+            <hr class="hr_manu_bra">
+                <?php include("../get/linesheet_download_alert_bra.php"); ?> 
             <hr class="hr_manu_bra">
             <small class="header_manu_bra">Manu</small>
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
