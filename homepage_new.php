@@ -173,11 +173,12 @@ if (!$_SESSION["login_csg"]){
         <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
             <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
-                class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-dark bg-gradient shadow rounded-pill"
+                class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-secondary  bg-gradient shadow rounded-pill"
                 style="width: 2rem; height:2rem;padding: 0px;">
                 <!-- <ion-icon name="menu-outline" style="margin:0px"></ion-icon> -->
             </button>
             <input type="hidden" id="minimize_manu" name="minimize_manu" value="show">
+            <input type="hidden" id="active_sub_manu" name="active_sub_manu" value="hide">
             <a class="navbar-brand" href="#">
                 <ion-icon name="layers" style="font-size: 20px;margin: 0px;color:#f85d60"></ion-icon>
                 <span id="apps_name">ONLINE CONTENT</span>
@@ -200,7 +201,7 @@ if (!$_SESSION["login_csg"]){
             <small class="header_manu_bra">Manu</small>
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                 <a class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightactivity"
-                    aria-controls="offcanvasRight" onclick="get_list_update_job();">
+                    aria-controls="offcanvasRight" onclick="get_list_update_job();show_sub_manu();">
                     <ion-icon name="notifications"></ion-icon><span class="main-manu-nav">Activity</span>
                     <div id="get_count_nt_unread">
                         <?php include('get/get_count_nt_unread.php'); ?>
@@ -444,7 +445,7 @@ if (!$_SESSION["login_csg"]){
             </ul>
         </div>
     </div>
-    <div class="col-2 activity_sub_manu hide" id="activity_sub_manu">
+    <div class="col-2 shadow sub_manu hide" id="sub_manu">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasRightLabel">
                 <ion-icon name="notifications-outline"></ion-icon> <strong>Activity</strong>
@@ -457,7 +458,7 @@ if (!$_SESSION["login_csg"]){
             </div>
         </div>
     </div>
-    <div class="col-10 col_detail_main" style="margin-left: auto;font-size: 14px;padding: 0px;">
+    <div class="col-10 col_detail_main" style="font-size: 14px;padding: 0px;">
         <div id="col_detail">
         </div>
     </div>
@@ -583,7 +584,29 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
 document.getElementById("bt_nav_coll_ex").innerHTML =
     '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
 function show_sub_manu(){
-    var sub_manu_activity = document.getElementById('sub_manu_activity').value;
+    var active_sub_manu = document.getElementById('active_sub_manu').value;
+    if(active_sub_manu == 'hide'){
+        document.getElementById('active_sub_manu').value = 'show';
+        var sub_manu = document.getElementsByClassName("sub_manu");
+        var col_detail_main = document.getElementsByClassName("col_detail_main");
+        
+        for (var i = 0; i < sub_manu.length; i++) {
+            sub_manu[i].className = sub_manu[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        }
+        for (var i = 0; i < col_detail_main.length; i++) {
+            col_detail_main[i].className = col_detail_main[i].className.replace(/(?:^|\s)col-10(?!\S)/g, 'col-8');
+        }
+    }else{
+        document.getElementById('active_sub_manu').value = 'hide';
+        var col_detail_main = document.getElementsByClassName("col_detail_main");
+        var sub_manu = document.getElementsByClassName("sub_manu");
+        for (var i = 0; i < sub_manu.length; i++) {
+            sub_manu[i].className += " hide";
+        }
+        for (var i = 0; i < col_detail_main.length; i++) {
+            col_detail_main[i].className = col_detail_main[i].className.replace(/(?:^|\s)col-8(?!\S)/g, 'col-10');
+        }
+    }
 }
 function minimize_nav() {
     var minimize_manu = document.getElementById('minimize_manu').value;

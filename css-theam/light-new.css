@@ -12,7 +12,7 @@ body {
     background-color: #ffffff;
     padding-bottom: 100%;
     font-weight: bold;
-    position: fixed;
+    position: relative;
 }
 .navbar-brand{
     font-weight: 900;
@@ -343,13 +343,13 @@ label#label_file_cme {
     border-radius: 20px;
 }
 .top-1_5{
-    top: 1.5%!important;
+    top: 0.55%!important;
 }
 .total_count_dashboard{
     font-size: 50px;
 }
 .mini-nav-col{
-    width: 60px;
+    width: 70px;
 }
 .main-manu-nav.hide {
     display: none;
@@ -369,7 +369,7 @@ label#label_file_cme {
 .hr_manu_bra_in.hide{
     width: -webkit-fill-available;
 }
-.sub_manu_activity.hide{
+.sub_manu.hide{
     display: none;
 }
 #apps_name.hide{
