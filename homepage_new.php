@@ -420,7 +420,7 @@ document.getElementById("bt_nav_coll_ex").innerHTML =
     '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
 function show_sub_manu(sub_manu) {
     var active_sub_manu = document.getElementById('active_sub_manu').value;
-    if (sub_manu != 'Close') {
+    if (sub_manu != 'close') {
         //get_sub_manu
         if (sub_manu == 'activity') {
             $.post("base/get/get_sub_manu_activity.php", {}, function(data) {
