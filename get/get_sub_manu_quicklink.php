@@ -4,7 +4,7 @@
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body">
+                    <div class="offcanvas-body" style="list-style: none;">
                         <small class="header_manu_bra">Central</small>
 
                         <li><a href="http://cnext.centralgroup.com/" target="_blank" class="dropdown-item dp-link"
@@ -31,7 +31,7 @@
                                 type="button">
                                 <ion-icon name="chatbubbles-outline"></ion-icon>Workchat
                             </a></li>
-
+                            <hr class="hr_manu_bra_in">
                         <small class="header_manu_bra">Tools</small>
                         <li><a id="nav_aspose" onclick="get_page('aspose');" class="dropdown-item dp-link"
                                 type="button">
