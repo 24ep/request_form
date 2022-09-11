@@ -419,7 +419,6 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
 document.getElementById("bt_nav_coll_ex").innerHTML =
     '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
 function show_sub_manu(sub_manu) {
-    var active_sub_manu = document.getElementById('active_sub_manu').value;
     if (sub_manu != 'close') {
         //get_sub_manu
         if (sub_manu == 'activity') {
@@ -436,7 +435,6 @@ function show_sub_manu(sub_manu) {
             });
         }
         //hideshow
-            document.getElementById('active_sub_manu').value = 'show';
         
         var sub_manu = document.getElementsByClassName("sub_manu");
         var col_detail_main = document.getElementsByClassName("col_detail_main");
@@ -447,7 +445,6 @@ function show_sub_manu(sub_manu) {
             col_detail_main[i].className = col_detail_main[i].className.replace(/(?:^|\s)col-10(?!\S)/g, 'col-8');
         }
     } else {
-        document.getElementById('active_sub_manu').value = 'hide';
         var col_detail_main = document.getElementsByClassName("col_detail_main");
         var sub_manu = document.getElementsByClassName("sub_manu");
         for (var i = 0; i < sub_manu.length; i++) {
