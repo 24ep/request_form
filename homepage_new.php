@@ -136,7 +136,7 @@ if (!$_SESSION["login_csg"]){
         <div id="calloffcanvas_cr">
         </div>
     </div>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="notificationcanvas" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="notificationcanvas" aria-labelledby="offcanvasRightLabel" style="position: absolute;">
         <div class="offcanvas-header">
             <h5 id="offcanvasRightLabel">Activity</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -300,7 +300,7 @@ if (!$_SESSION["login_csg"]){
 
                 </li>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightproductmatain"
-                    aria-labelledby="offcanvasRightLabel">
+                    aria-labelledby="offcanvasRightLabel" style="position: absolute;">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">
                             <ion-icon name="storefront-outline"></ion-icon> <strong>Product mantain</strong>
@@ -372,7 +372,7 @@ if (!$_SESSION["login_csg"]){
 
                 </li>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightquicklink"
-                    aria-labelledby="offcanvasRightLabel">
+                    aria-labelledby="offcanvasRightLabel" style="position: absolute;">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">
                             <ion-icon name="storefront-outline"></ion-icon> <strong>Quicklink & Tools</strong>
