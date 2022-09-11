@@ -238,14 +238,15 @@ label#label_file_cme {
     right: 0;
 }
 .badge-profile{
-    background: #ecf0f4;
+    background: #ffffff;
     border-radius: 20px;
-    border: solid 1px #dddddd;
+    /* border: solid 1px #dddddd; */
     width: fit-content;
     padding: 2px;
     margin: unset;
     display: inherit;
     margin: 1px;
+    /* color: white;
 }
 .ts-view.active {
     background-color: #ea5a5a !important;

@@ -70,7 +70,7 @@ mysqli_close($con);
                 </div>
             </div> -->
             <div class="col-2">
-                <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap" style="position: inherit;" >
+                <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap" style="position: inherit;border: solid 1px #d9d9d9 !important;" >
                     <input type="hidden" id="status_filter" style="position: inherit;" name="status_filter" value="">
                     <span class="input-group-text " id="addon-wrapping">Status</span>
                     <select multiple id="status_filter_show" name="status_filter_show"
