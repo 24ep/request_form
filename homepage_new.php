@@ -187,7 +187,7 @@ if (!$_SESSION["login_csg"]){
                     class="ms-3 mb-3">
                 <div style="align-self: center;" class="mb-3">
                     <span class="name_manu_bra"
-                        style="place-self: center;"><?php echo $_SESSION['nickname'].' '.$_SESSION['firstname']; ?></span><br>
+                        style="place-self: center;"><?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']; ?></span><br>
                     <small class="dept_manu_bra"
                         style="place-self: center;"><?php echo $_SESSION['department']; ?></small>
                 </div>
