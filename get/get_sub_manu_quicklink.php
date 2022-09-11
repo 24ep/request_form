@@ -4,7 +4,7 @@
     </h5>
     <button type="button" class="btn-close" onclick="show_sub_manu('close');"></button>
 </div>
-<div class="offcanvas-body p-3" style="list-style: none;">
+<div class="offcanvas-body p-0" style="list-style: none;overflow: hidden;">
     <small class="header_manu_bra">Central</small>
 
     <li><a href="http://cnext.centralgroup.com/" target="_blank" class="dropdown-item dp-link" type="button">
