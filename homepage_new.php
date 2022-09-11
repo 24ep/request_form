@@ -193,6 +193,7 @@ if (!$_SESSION["login_csg"]){
                 </div>
             </div>
             <hr class="hr_manu_bra">
+            <small class="header_manu_bra">Form create new product</small>
                 <?php include("get/linesheet_download_alert_bra.php"); ?> 
             <hr class="hr_manu_bra">
             <small class="header_manu_bra">Manu</small>
