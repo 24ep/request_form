@@ -206,7 +206,7 @@ if (!$_SESSION["login_csg"]){
                     </div>
                 </a>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightactivity"
-                    aria-labelledby="offcanvasRightLabel">
+                    aria-labelledby="offcanvasRightLabel" style="left: 0;">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">
                             <ion-icon name="notifications-outline"></ion-icon> <strong>Activity</strong>
@@ -300,7 +300,7 @@ if (!$_SESSION["login_csg"]){
 
                 </li>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightproductmatain"
-                    aria-labelledby="offcanvasRightLabel" style="position: absolute;">
+                    aria-labelledby="offcanvasRightLabel" style="left: 0;">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">
                             <ion-icon name="storefront-outline"></ion-icon> <strong>Product mantain</strong>
@@ -372,7 +372,7 @@ if (!$_SESSION["login_csg"]){
 
                 </li>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightquicklink"
-                    aria-labelledby="offcanvasRightLabel" style="position: absolute;">
+                    aria-labelledby="offcanvasRightLabel" style="left: 0;">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">
                             <ion-icon name="storefront-outline"></ion-icon> <strong>Quicklink & Tools</strong>

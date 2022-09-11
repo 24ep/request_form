@@ -364,10 +364,10 @@ label#label_file_cme {
     display: none;
 }
 .hr_manu_bra.hide{
-    display: none;
+    width: -webkit-fill-available;
 }
 .hr_manu_bra_in.hide{
-    display: none;
+    width: -webkit-fill-available;
 }
 #apps_name.hide{
     display: none;
