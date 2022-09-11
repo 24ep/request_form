@@ -15,13 +15,10 @@ function bg_dept($department){
       case "Marketing": $bg = '474747'; break;
       case "Other": $bg = 'ADADAD'; break;
       case "Brand": $bg = '6E69E7'; break;
-      
       default: $bg = '000000';
     }
     return $bg;
 }
-
-
 if (!$_SESSION["login_csg"]){ 
             Header("Location: login");
     }else{
@@ -46,7 +43,6 @@ if (!$_SESSION["login_csg"]){
      ?>
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta name="robots" content="noindex">
     <meta name="googlebot" content="noindex">
@@ -114,12 +110,10 @@ if (!$_SESSION["login_csg"]){
     <script src="https://cdn.jsdelivr.net/npm/editorjs-drag-drop@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@calumk/editorjs-nested-checklist@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script>
-
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js">
     </script>
 </head>
-
 <body>
     <!-- <nav class="navbar navbar-light bg-light">
         <div class="" style="background:#ff000069;color:white;position: fixed;z-index: 1;">
@@ -146,8 +140,6 @@ if (!$_SESSION["login_csg"]){
             <?php include("get/get_log.php"); ?>
         </div>
     </div>
-
-
     <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1" id="content_request_canvas"
         aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header" style="    background: #313131;color: white;">
@@ -169,45 +161,45 @@ if (!$_SESSION["login_csg"]){
         </div>
     </div>
     <div class="row">
-    <div class="col-2 list_bra shadow">
-        <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-
-            <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
-                class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-secondary  bg-gradient shadow rounded-pill"
-                style="width: 2rem; height:2rem;padding: 0px;">
-                <!-- <ion-icon name="menu-outline" style="margin:0px"></ion-icon> -->
-            </button>
-            <input type="hidden" id="minimize_manu" name="minimize_manu" value="show">
-            <input type="hidden" id="active_sub_manu" name="active_sub_manu" value="hide">
-            <a class="navbar-brand" href="#">
-                <ion-icon name="layers" style="font-size: 20px;margin: 0px;color:#f85d60"></ion-icon>
-                <span id="apps_name">ONLINE CONTENT</span>
-            </a>
-            <hr class="hr_manu_bra">
-            <div class="img-avatar" style="display: inline-flex;">
-                <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=<?php echo bg_dept($_SESSION['department']); ?>&color=fff&rounded=true&size=40"
-                    class="ms-3 mb-3">
-                <div style="align-self: center;" class="mb-3">
-                    <span class="name_manu_bra"
-                        style="place-self: center;"><?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']; ?></span><br>
-                    <small class="dept_manu_bra"
-                        style="place-self: center;"><?php echo $_SESSION['department']; ?></small>
-                </div>
-            </div>
-            <hr class="hr_manu_bra">
-            <small class="header_manu_bra">Form create new product</small>
-            <?php include("get/linesheet_download_alert_bra.php"); ?>
-            <hr class="hr_manu_bra">
-            <small class="header_manu_bra">Manu</small>
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <a class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightactivity"
-                    aria-controls="offcanvasRight" onclick="get_list_update_job();show_sub_manu('activity');">
-                    <ion-icon name="notifications"></ion-icon><span class="main-manu-nav">Activity</span>
-                    <div id="get_count_nt_unread">
-                        <?php include('get/get_count_nt_unread.php'); ?>
-                    </div>
+        <div class="col-2 list_bra shadow">
+            <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
+                    class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-secondary  bg-gradient shadow rounded-pill"
+                    style="width: 2rem; height:2rem;padding: 0px;">
+                    <!-- <ion-icon name="menu-outline" style="margin:0px"></ion-icon> -->
+                </button>
+                <input type="hidden" id="minimize_manu" name="minimize_manu" value="show">
+                <input type="hidden" id="active_sub_manu" name="active_sub_manu" value="hide">
+                <a class="navbar-brand" href="#">
+                    <ion-icon name="layers" style="font-size: 20px;margin: 0px;color:#f85d60"></ion-icon>
+                    <span id="apps_name">ONLINE CONTENT</span>
                 </a>
-                <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightactivity"
+                <hr class="hr_manu_bra">
+                <div class="img-avatar" style="display: inline-flex;">
+                    <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=<?php echo bg_dept($_SESSION['department']); ?>&color=fff&rounded=true&size=40"
+                        class="ms-3 mb-3">
+                    <div style="align-self: center;" class="mb-3">
+                        <span class="name_manu_bra"
+                            style="place-self: center;"><?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']; ?></span><br>
+                        <small class="dept_manu_bra"
+                            style="place-self: center;"><?php echo $_SESSION['department']; ?></small>
+                    </div>
+                </div>
+                <hr class="hr_manu_bra">
+                <small class="header_manu_bra">Form create new product</small>
+                <?php include("get/linesheet_download_alert_bra.php"); ?>
+                <hr class="hr_manu_bra">
+                <small class="header_manu_bra">Manu</small>
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <a class="nav-link" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRightactivity" aria-controls="offcanvasRight"
+                        onclick="get_list_update_job();show_sub_manu('activity');">
+                        <ion-icon name="notifications"></ion-icon><span class="main-manu-nav">Activity</span>
+                        <div id="get_count_nt_unread">
+                            <?php include('get/get_count_nt_unread.php'); ?>
+                        </div>
+                    </a>
+                    <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightactivity"
                     aria-labelledby="offcanvasRightLabel" style="left: 0;">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasRightLabel">
@@ -221,153 +213,131 @@ if (!$_SESSION["login_csg"]){
                         </div>
                     </div>
                 </div> -->
-
-                <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link active" data-bs-toggle="pill" type="button" role="tab"
-                        aria-selected="false" id="nav_dashboard" onclick="get_page('dashboard');">
-                        <ion-icon name="home"></ion-icon><span class="main-manu-nav">Home</span>
-                    </a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" id="nav_create_new" data-bs-toggle="pill" type="button" role="tab"
-                        aria-selected="false" onclick="get_page('create_new');">
-                        <ion-icon name="rocket"></ion-icon><span class="main-manu-nav">Create New</span>
-                    </a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" id="nav_update_content" data-bs-toggle="pill" type="button" role="tab"
-                        aria-selected="false" onclick="get_page('update_content');">
-                        <ion-icon name="ticket"></ion-icon><span class="main-manu-nav">Other Requests</span>
-                    </a>
-                </li>
-                <?php if(strpos($_SESSION["department"],'Content')!==false){
-
+                    <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link active" data-bs-toggle="pill" type="button" role="tab"
+                            aria-selected="false" id="nav_dashboard" onclick="get_page('dashboard');">
+                            <ion-icon name="home"></ion-icon><span class="main-manu-nav">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link" id="nav_create_new" data-bs-toggle="pill" type="button" role="tab"
+                            aria-selected="false" onclick="get_page('create_new');">
+                            <ion-icon name="rocket"></ion-icon><span class="main-manu-nav">Create New</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link" id="nav_update_content" data-bs-toggle="pill" type="button"
+                            role="tab" aria-selected="false" onclick="get_page('update_content');">
+                            <ion-icon name="ticket"></ion-icon><span class="main-manu-nav">Other Requests</span>
+                        </a>
+                    </li>
+                    <?php if(strpos($_SESSION["department"],'Content')!==false){
                 ?>
-                <hr class="hr_manu_bra_in">
-                <small class="header_manu_bra">Productions (24EP)</small>
-                <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" id="nav_job_manage" data-bs-toggle="pill" type="button" role="tab"
-                        aria-selected="false" onclick="get_page('job_manage');">
-                        <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">Job manage</span>
-                    </a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" id="nav_job_on_hand" data-bs-toggle="pill" type="button" role="tab"
-                        aria-selected="false" onclick="get_page('job_on_hand');">
-                        <ion-icon name="receipt"></ion-icon><span class="main-manu-nav">Job on hand</span>
-                    </a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" id="nav_linesheet" data-bs-toggle="pill" type="button" role="tab"
-                        aria-selected="false" onclick="get_page('linesheet');">
-                        <ion-icon name="cloud-upload"></ion-icon><span class="main-manu-nav">Linesheet</span>
-                    </a>
-                </li>
-
-                <hr class="hr_manu_bra_in">
-                <small class="header_manu_bra">Internals</small>
-                <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" id="nav_report" data-bs-toggle="pill" type="button" role="tab"
-                        aria-selected="false" onclick="get_page('report');">
-                        <ion-icon name="bar-chart"></ion-icon><span class="main-manu-nav">Reports</span>
-                    </a>
-                </li>
-                <!-- <li class="nav-item" role="presentation">
+                    <hr class="hr_manu_bra_in">
+                    <small class="header_manu_bra">Productions (24EP)</small>
+                    <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link" id="nav_job_manage" data-bs-toggle="pill" type="button" role="tab"
+                            aria-selected="false" onclick="get_page('job_manage');">
+                            <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">Job manage</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link" id="nav_job_on_hand" data-bs-toggle="pill" type="button" role="tab"
+                            aria-selected="false" onclick="get_page('job_on_hand');">
+                            <ion-icon name="receipt"></ion-icon><span class="main-manu-nav">Job on hand</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link" id="nav_linesheet" data-bs-toggle="pill" type="button" role="tab"
+                            aria-selected="false" onclick="get_page('linesheet');">
+                            <ion-icon name="cloud-upload"></ion-icon><span class="main-manu-nav">Linesheet</span>
+                        </a>
+                    </li>
+                    <hr class="hr_manu_bra_in">
+                    <small class="header_manu_bra">Internals</small>
+                    <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link" id="nav_report" data-bs-toggle="pill" type="button" role="tab"
+                            aria-selected="false" onclick="get_page('report');">
+                            <ion-icon name="bar-chart"></ion-icon><span class="main-manu-nav">Reports</span>
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" id="nav_assert" data-bs-toggle="pill" type="button" role="tab"
                         aria-selected="false" onclick="get_page('assert');">
                         <ion-icon name="folder-open"></ion-icon><span class="main-manu-nav">Block</span>
                     </a>
                 </li> -->
-                <!-- <li class="nav-item" role="presentation">
+                    <!-- <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
                         onclick="get_page('notion');">
                         <ion-icon name="book"></ion-icon><span class="main-manu-nav">Notion</span>
                     </a>
                 </li> -->
-
-                <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" id="nav_account" data-bs-toggle="pill" type="button" role="tab"
-                        aria-selected="false" onclick="get_page('account');">
-                        <ion-icon name="terminal"></ion-icon><span class="main-manu-nav">Administration</span>
-                    </a>
-                </li>
-
-                <li class="nav-item btn-group dropend" role="presentation">
-                    <a class="main_bra nav-link" type="button" onclick="show_sub_manu('product_maintain');" >
-                        <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Product mantain</span>
-                    </a>
-
-
-                </li>
-                <li class="nav-item btn-group dropend" role="presentation">
-                    <a class="main_bra nav-link" type="button" onclick="show_sub_manu('quicklink');">
-                        <ion-icon name="globe"></ion-icon><span class="main-manu-nav">Quicklink</span>
-                    </a>
-
-
-                </li>
-               
-
-                <?php } ?>
-
-                <hr class="hr_manu_bra_in">
-                <small class="header_manu_bra">Others</small>
-
-                <!-- <li class="nav-item" role="presentation">
+                    <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link" id="nav_account" data-bs-toggle="pill" type="button" role="tab"
+                            aria-selected="false" onclick="get_page('account');">
+                            <ion-icon name="terminal"></ion-icon><span class="main-manu-nav">Administration</span>
+                        </a>
+                    </li>
+                    <li class="nav-item btn-group dropend" role="presentation">
+                        <a class="main_bra nav-link" type="button" onclick="show_sub_manu('product_maintain');">
+                            <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Product mantain</span>
+                        </a>
+                    </li>
+                    <li class="nav-item btn-group dropend" role="presentation">
+                        <a class="main_bra nav-link" type="button" onclick="show_sub_manu('quicklink');">
+                            <ion-icon name="globe"></ion-icon><span class="main-manu-nav">Quicklink</span>
+                        </a>
+                    </li>
+                    <?php } ?>
+                    <hr class="hr_manu_bra_in">
+                    <small class="header_manu_bra">Others</small>
+                    <!-- <li class="nav-item" role="presentation">
                     <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
                         <ion-icon name="settings"></ion-icon><span class="main-manu-nav">Settings</span>
                     </a>
                 </li> -->
-                <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab" aria-selected="false"
-                        onclick="logout()">
-                        <ion-icon name="log-out"></ion-icon><span class="main-manu-nav">Logout</span>
-                    </a>
-                </li>
-
-            </ul>
+                    <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab"
+                            aria-selected="false" onclick="logout()">
+                            <ion-icon name="log-out"></ion-icon><span class="main-manu-nav">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="col-2 shadow sub_manu hide p-3 bg-dark bg-gradient" id="sub_manu">
-
-    </div>
-    <div class="col-10 col_detail_main" style="font-size: 14px;padding: 0px;">
-        <div id="col_detail">
+        <div class="col-2 shadow sub_manu hide p-3 bg-white  bg-gradient" id="sub_manu">
         </div>
-    </div>
+        <div class="col-10 col_detail_main" style="font-size: 14px;padding: 0px;">
+            <div id="col_detail">
+            </div>
+        </div>
     </div>
     <!-- </div> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
 </body>
-
 </html>
 <script>
 function updateparams(key, value) {
     // Construct URLSearchParams object instance from current URL querystring.
     var queryParams = new URLSearchParams(window.location.search);
-
     // Set new or modify existing parameter value.
     if (value == "") {
         queryParams.delete(key);
     } else {
         queryParams.set(key, value);
     }
-
-
     // Replace current querystring with the new one.
     history.replaceState(null, null, "?" + queryParams.toString());
 }
-
 function get_page(page) {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
     var brand_filter = urlParams.get('brand_filter');
     var user_filter = urlParams.get('user_filter');
     updateparams('page', page);
-
-
     // if (page ===true ) {
     Notiflix.Loading.hourglass('Loading...');
     $.post("base/page/" + page + ".php", {
@@ -377,14 +347,12 @@ function get_page(page) {
         $('#col_detail').html(data);
         Notiflix.Loading.remove();
     });
-
 }
 //check for page param
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
 console.log(queryString);
 if (urlParams.has('page') && urlParams.get('page') != null) {
-
     document.getElementById('nav_' + urlParams.get('page')).click();
     get_page(urlParams.get('page'));
     var url = new URL(window.location.href);
@@ -394,20 +362,16 @@ if (urlParams.has('page') && urlParams.get('page') != null) {
     get_page('dashboard');
     // url.searchParams.set('page', 'dashboard');
 }
-
-
 function update_readed_nt() {
     $.post("base/action/action_update_read_nt.php", {}, function(data) {
         // $('#project_bucket').html(data);
     });
 }
-
 function get_count_read_nt() {
     $.post("base/get/get_count_nt_unread.php", {}, function(data) {
         $('#get_count_nt_unread').html(data);
     });
 }
-
 function get_list_update_job() {
     $.post("base/get/get_list_job_update.php", {}, function(data) {
         $('#get_list_job_update').html(data);
@@ -416,7 +380,6 @@ function get_list_update_job() {
         get_count_read_nt();
     });
 }
-
 function logout() {
     Notiflix.Confirm.show(
         'Confirm ',
@@ -452,40 +415,37 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 </script>
-
 <script>
 document.getElementById("bt_nav_coll_ex").innerHTML =
     '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
-function show_sub_manu(sub_manu){
+function show_sub_manu(sub_manu) {
     var active_sub_manu = document.getElementById('active_sub_manu').value;
-    if(active_sub_manu == 'hide'){
+    if (active_sub_manu == 'hide') {
         //get_sub_manu
-        if(sub_manu=='activity'){
+        if (sub_manu == 'activity') {
             $.post("base/get/get_sub_manu_activity.php", {}, function(data) {
-            $('#sub_manu').html(data);
+                $('#sub_manu').html(data);
             });
-        }else if(sub_manu=='product_mantain'){
+        } else if (sub_manu == 'product_mantain') {
             $.post("base/get/get_sub_manu_product_mantain.php", {}, function(data) {
-            $('#sub_manu').html(data);
+                $('#sub_manu').html(data);
             });
-        }else if(sub_manu=='quicklink'){
+        } else if (sub_manu == 'quicklink') {
             $.post("base/get/get_sub_manu_quicklink.php", {}, function(data) {
-            $('#sub_manu').html(data);
+                $('#sub_manu').html(data);
             });
         }
-       
         //hideshow
         document.getElementById('active_sub_manu').value = 'show';
         var sub_manu = document.getElementsByClassName("sub_manu");
         var col_detail_main = document.getElementsByClassName("col_detail_main");
-        
         for (var i = 0; i < sub_manu.length; i++) {
             sub_manu[i].className = sub_manu[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
         for (var i = 0; i < col_detail_main.length; i++) {
             col_detail_main[i].className = col_detail_main[i].className.replace(/(?:^|\s)col-10(?!\S)/g, 'col-8');
         }
-    }else{
+    } else {
         document.getElementById('active_sub_manu').value = 'hide';
         var col_detail_main = document.getElementsByClassName("col_detail_main");
         var sub_manu = document.getElementsByClassName("sub_manu");
@@ -496,8 +456,6 @@ function show_sub_manu(sub_manu){
             col_detail_main[i].className = col_detail_main[i].className.replace(/(?:^|\s)col-8(?!\S)/g, 'col-10');
         }
     }
-
-    
 }
 function minimize_nav() {
     var minimize_manu = document.getElementById('minimize_manu').value;
@@ -506,21 +464,16 @@ function minimize_nav() {
         document.getElementById('minimize_manu').value = 'show';
         document.getElementById("bt_nav_coll_ex").innerHTML =
             '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
-
         var list_bra = document.getElementsByClassName("mini-nav-col");
         for (var i = 0; i < list_bra.length; i++) {
             list_bra[i].className = list_bra[i].className.replace(/(?:^|\s)mini-nav-col(?!\S)/g, '');
         }
-
-
         document.getElementById("apps_name").className = document.getElementById("apps_name").className.replace(
             /(?:^|\s)hide(?!\S)/g, '');
-
         var img_avatar = document.getElementsByClassName("img-avatar");
         for (var i = 0; i < img_avatar.length; i++) {
             img_avatar[i].className = img_avatar[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-
         var main_manu_nav = document.getElementsByClassName("main-manu-nav");
         for (var i = 0; i < main_manu_nav.length; i++) {
             console.log('unhide ' + i);
@@ -530,18 +483,14 @@ function minimize_nav() {
         for (var i = 0; i < main_bra.length; i++) {
             main_bra[i].className = main_bra[i].className.replace(/(?:^|\s)minimize(?!\S)/g, '');
         }
-
         var col_detail_main = document.getElementsByClassName("col-10 col_detail_main minimize");
         for (var i = 0; i < col_detail_main.length; i++) {
             col_detail_main[i].className = col_detail_main[i].className.replace(/(?:^|\s)minimize(?!\S)/g, '');
         }
-
-
         var header_manu_bra = document.getElementsByClassName("header_manu_bra");
         for (var i = 0; i < header_manu_bra.length; i++) {
             header_manu_bra[i].className = header_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-
         var name_manu_bra = document.getElementsByClassName("name_manu_bra");
         for (var i = 0; i < name_manu_bra.length; i++) {
             name_manu_bra[i].className = name_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
@@ -550,12 +499,10 @@ function minimize_nav() {
         for (var i = 0; i < dept_manu_bra.length; i++) {
             dept_manu_bra[i].className = dept_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-
         var hr_manu_bra = document.getElementsByClassName("hr_manu_bra");
         for (var i = 0; i < hr_manu_bra.length; i++) {
             hr_manu_bra[i].className = hr_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-
         var hr_manu_bra_in = document.getElementsByClassName("hr_manu_bra_in");
         for (var i = 0; i < hr_manu_bra_in.length; i++) {
             hr_manu_bra_in[i].className = hr_manu_bra_in[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
@@ -568,7 +515,6 @@ function minimize_nav() {
         for (var i = 0; i < list_bra.length; i++) {
             list_bra[i].className += " mini-nav-col";
         }
-
         // document.getElementById("main-manu-nav").className += " hide";
         document.getElementById("apps_name").className += " hide";
         var main_manu_nav = document.getElementsByClassName("main-manu-nav");
@@ -576,8 +522,6 @@ function minimize_nav() {
             console.log('hide ' + i);
             main_manu_nav[i].className += " hide";
         }
-
-
         var header_manu_bra = document.getElementsByClassName("header_manu_bra");
         for (var i = 0; i < header_manu_bra.length; i++) {
             header_manu_bra[i].className += " hide";
@@ -586,43 +530,32 @@ function minimize_nav() {
         for (var i = 0; i < img_avatar.length; i++) {
             img_avatar[i].className += " hide";
         }
-
         var col_detail_main = document.getElementsByClassName("col-10 col_detail_main");
         for (var i = 0; i < col_detail_main.length; i++) {
             col_detail_main[i].className += " minimize";
         }
-
         var main_bra = document.getElementsByClassName("main_bra");
         for (var i = 0; i < main_bra.length; i++) {
             main_bra[i].className += " minimize";
         }
-
         var name_manu_bra = document.getElementsByClassName("name_manu_bra");
         for (var i = 0; i < name_manu_bra.length; i++) {
-
             name_manu_bra[i].className += " hide";
         }
-
         var dept_manu_bra = document.getElementsByClassName("dept_manu_bra");
         for (var i = 0; i < dept_manu_bra.length; i++) {
             dept_manu_bra[i].className += " hide";
         }
-
         var hr_manu_bra = document.getElementsByClassName("hr_manu_bra");
         for (var i = 0; i < hr_manu_bra.length; i++) {
             hr_manu_bra[i].className += " hide";
         }
-
         var hr_manu_bra_in = document.getElementsByClassName("hr_manu_bra_in");
         for (var i = 0; i < hr_manu_bra_in.length; i++) {
             hr_manu_bra_in[i].className += " hide";
         }
-
-
-
     }
 }
-
 function call_edit_add_new_modal(id, brand) {
     Notiflix.Loading.hourglass('Loading...');
     if (id) {
