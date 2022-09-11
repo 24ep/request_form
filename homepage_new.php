@@ -168,7 +168,7 @@ if (!$_SESSION["login_csg"]){
             </div>
         </div>
     </div>
-
+    <div class="row">
     <div class="col-2 list_bra shadow">
         <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
@@ -444,7 +444,7 @@ if (!$_SESSION["login_csg"]){
             </ul>
         </div>
     </div>
-    <div class="col-2" id="activity_sub_manu" style="display: none">
+    <div class="col-2 activity_sub_manu hide" id="activity_sub_manu">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasRightLabel">
                 <ion-icon name="notifications-outline"></ion-icon> <strong>Activity</strong>
@@ -460,6 +460,7 @@ if (!$_SESSION["login_csg"]){
     <div class="col-10 col_detail_main" style="margin-left: auto;font-size: 14px;padding: 0px;">
         <div id="col_detail">
         </div>
+    </div>
     </div>
     <!-- </div> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
@@ -581,7 +582,9 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
 <script>
 document.getElementById("bt_nav_coll_ex").innerHTML =
     '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
-
+function show_sub_manu(){
+    var sub_manu_activity = document.getElementById('sub_manu_activity').value;
+}
 function minimize_nav() {
     var minimize_manu = document.getElementById('minimize_manu').value;
     console.log(minimize_manu);

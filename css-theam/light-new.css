@@ -369,6 +369,9 @@ label#label_file_cme {
 .hr_manu_bra_in.hide{
     width: -webkit-fill-available;
 }
+.sub_manu_activity.hide{
+    display: none;
+}
 #apps_name.hide{
     display: none;
 }
