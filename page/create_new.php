@@ -353,4 +353,21 @@ tippy('#sku', {
   placement: 'right',
   animation: 'fade',
 });
+tippy('#production_type', {
+  content: "<ul><li>Packshort = ถ่ายรูปสินค้าอย่างเดียว</li><li>Model = ถ่ายรูปสินค้าร่สมกับนางแบบ/นายแบบ</li><li>Resize = มีรูปภาพสินค้าอยู่แล้ว แค่ Resize หรือ Retouch เท่านั้น</li><li>No info = ไม่แน่ใจ ให้ทีมติดต่อกลับ</li></ul>",
+  placement: 'right',
+  animation: 'fade',
+});
+tippy('#launch_date', {
+  content: "กำหนดวันขึ้นขายของสินค้า ในกรณีที่ระบุ สินค้าจะถูกปรับ Enable ณ วันที่ระบุเท่านั้น",
+  placement: 'right',
+  animation: 'fade',
+});
+tippy('#link_info', {
+  content: "Link สำหรับ files ข้อมูลของสินค้า และ ไฟล์รูปภาพ",
+  placement: 'right',
+  animation: 'fade',
+});
+
+
 </script>
