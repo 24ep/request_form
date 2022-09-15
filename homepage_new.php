@@ -113,6 +113,8 @@ if (!$_SESSION["login_csg"]){
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js">
     </script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
 </head>
 <body>
     <!-- <nav class="navbar navbar-light bg-light">
@@ -191,7 +193,7 @@ if (!$_SESSION["login_csg"]){
                 <hr class="hr_manu_bra">
                 <small class="header_manu_bra">Manu</small>
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <a class="nav-link" type="button" data-bs-toggle="offcanvas"
+                    <a class="nav-link" id="nav_activity" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasRightactivity" aria-controls="offcanvasRight"
                         onclick="get_list_update_job();show_sub_manu('activity');">
                         <ion-icon name="notifications"></ion-icon><span class="main-manu-nav">Activity</span>
@@ -199,20 +201,6 @@ if (!$_SESSION["login_csg"]){
                             <?php include('get/get_count_nt_unread.php'); ?>
                         </div>
                     </a>
-                    <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightactivity"
-                    aria-labelledby="offcanvasRightLabel" style="left: 0;">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasRightLabel">
-                            <ion-icon name="notifications-outline"></ion-icon> <strong>Activity</strong>
-                        </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <div id="get_list_job_update">
-                            <?php //include('get/get_list_job_update.php'); ?>
-                        </div>
-                    </div>
-                </div> -->
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link active" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" id="nav_dashboard" onclick="get_page('dashboard');">
@@ -280,12 +268,12 @@ if (!$_SESSION["login_csg"]){
                         </a>
                     </li>
                     <li class="nav-item btn-group dropend" role="presentation">
-                        <a class="main_bra nav-link" type="button" onclick="show_sub_manu('product_maintain');">
+                        <a class="main_bra nav-link" id="nav_product_mantain"  type="button" onclick="show_sub_manu('product_maintain');">
                             <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Product maintain</span>
                         </a>
                     </li>
                     <li class="nav-item btn-group dropend" role="presentation">
-                        <a class="main_bra nav-link" type="button" onclick="show_sub_manu('quicklink');">
+                        <a class="main_bra nav-link" id="nav_quicklink" type="button" onclick="show_sub_manu('quicklink');">
                             <ion-icon name="globe"></ion-icon><span class="main-manu-nav">Quicklink</span>
                         </a>
                     </li>
@@ -298,7 +286,7 @@ if (!$_SESSION["login_csg"]){
                     </a>
                 </li> -->
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link" data-bs-toggle="pill" type="button" role="tab"
+                        <a class="main_bra nav-link" id="nav_logout" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="logout()">
                             <ion-icon name="log-out"></ion-icon><span class="main-manu-nav">Logout</span>
                         </a>
@@ -565,5 +553,42 @@ function call_edit_add_new_modal(id, brand) {
         });
     }
 }
+//toolstips manu
+tippy('#nav_activity', {
+  content: "Activity",
+});
+tippy('#nav_dashboard', {
+  content: "dashboard",
+});
+tippy('#nav_create_new', {
+  content: "Create New content",
+});
+tippy('#nav_update_content', {
+  content: "Update a product content",
+});
+tippy('#nav_update_content', {
+  content: "Update a product content",
+});
+tippy('#nav_job_manage', {
+  content: "Job manage",
+});
+tippy('#nav_on_hand', {
+  content: "Job on hand",
+});
+tippy('#nav_linesheet', {
+  content: "Linesheet management",
+});
+tippy('#nav_report', {
+  content: "Report",
+});
+tippy('#nav_product_mantain', {
+  content: "Product mantain",
+});
+tippy('#nav_quicklink', {
+  content: "Product mantain",
+});
+tippy('#nav_logout', {
+  content: "logout",
+});
 </script>
 <?php } ?>
