@@ -329,11 +329,27 @@ filter_update();
 //tooltips
 tippy('#brand_filter', {
   content: "สามารถค้นห้า ticket ของคุณได้ด้วยเลข ID , Department , Sub-Department , Brand ของ Ticket",
-  placement: 'right',
+  placement: 'bottom',
   animation: 'fade',
 });
 tippy('#user_filter', {
   content: "ป้อน username ของคุณ หรือของผู้ที่คุณต้องการค้นหา",
+  placement: 'bottom',
+  animation: 'fade',
+});
+//toolstips create new ticket
+tippy('#brand', {
+  content: "ระบุซื่อแบรนด์ของสินค้าที่ใช้สำหรับขึ้นหน้าเว็บไซด์",
+  placement: 'right',
+  animation: 'fade',
+});
+tippy('#sub_department', {
+  content: "เลือกหมวดหมู่ของสินค้าที่เกี่ยวข้อง",
+  placement: 'right',
+  animation: 'fade',
+});
+tippy('#sku', {
+  content: "ป้อน จำนวน sku ของ ticket",
   placement: 'right',
   animation: 'fade',
 });
