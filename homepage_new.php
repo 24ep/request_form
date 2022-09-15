@@ -44,6 +44,17 @@ if (!$_SESSION["login_csg"]){
 <!doctype html>
 <html lang="en">
 <head>
+    <!-- push notification -->
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "11dbc065-ce6a-4a28-b097-1fe73fa8669c",
+    });
+  });
+</script>
+ <!-- push notification -->
     <meta name="robots" content="noindex">
     <meta name="googlebot" content="noindex">
     <meta charset="utf-8">
