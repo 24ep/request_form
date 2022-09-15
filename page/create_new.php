@@ -326,4 +326,15 @@ new SlimSelect({
     }
 })
 filter_update();
+//tooltips
+tippy('#brand_filter', {
+  content: "สามารถค้นห้า ticket ของคุณได้ด้วยเลข ID , Department , Sub-Department , Brand ของ Ticket",
+  placement: 'right',
+  animation: 'fade',
+});
+tippy('#user_filter', {
+  content: "ป้อน username ของคุณ หรือของผู้ที่คุณต้องการค้นหา",
+  placement: 'right',
+  animation: 'fade',
+});
 </script>
