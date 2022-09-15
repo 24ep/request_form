@@ -44,16 +44,17 @@ if (!$_SESSION["login_csg"]){
 <!doctype html>
 <html lang="en">
 <head>
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <!-- push notification -->
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "11dbc065-ce6a-4a28-b097-1fe73fa8669c",
+    <script>
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+        OneSignal.init({
+        appId: "11dbc065-ce6a-4a28-b097-1fe73fa8669c",
+        });
     });
-  });
-</script>
+    </script>
  <!-- push notification -->
     <meta name="robots" content="noindex">
     <meta name="googlebot" content="noindex">
@@ -67,7 +68,7 @@ if (!$_SESSION["login_csg"]){
     <script src="https://cdn.tiny.cloud/1/cis8560ji58crrbq17zb11gp39qhpn2lka54u0m54s8du1gw/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
