@@ -584,7 +584,7 @@ tippy('#nav_job_manage', {
   placement: 'right',
   animation: 'fade',
 });
-tippy('#nav_on_hand', {
+tippy('#nav_job_on_hand', {
   content: "Job on hand",
   placement: 'right',
   animation: 'fade',
@@ -614,5 +614,12 @@ tippy('#nav_logout', {
   placement: 'right',
   animation: 'fade',
 });
+tippy('#nav_linesheet_download', {
+  content: "Creation Form (Lasest)",
+  placement: 'right',
+  animation: 'fade',
+});
+
+
 </script>
 <?php } ?>
