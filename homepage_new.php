@@ -556,39 +556,63 @@ function call_edit_add_new_modal(id, brand) {
 //toolstips manu
 tippy('#nav_activity', {
   content: "Activity",
+  placement: 'right',
+  animation: 'fade',
 });
 tippy('#nav_dashboard', {
   content: "dashboard",
+  placement: 'right',
+  animation: 'fade',
 });
 tippy('#nav_create_new', {
   content: "Create New content",
+  placement: 'right',
+  animation: 'fade',
 });
 tippy('#nav_update_content', {
   content: "Update a product content",
+  placement: 'right',
+  animation: 'fade',
 });
 tippy('#nav_update_content', {
   content: "Update a product content",
+  placement: 'right',
+  animation: 'fade',
 });
 tippy('#nav_job_manage', {
   content: "Job manage",
+  placement: 'right',
+  animation: 'fade',
 });
 tippy('#nav_on_hand', {
   content: "Job on hand",
+  placement: 'right',
+  animation: 'fade',
 });
 tippy('#nav_linesheet', {
   content: "Linesheet management",
+  placement: 'right',
+  animation: 'fade',
 });
 tippy('#nav_report', {
   content: "Report",
+  placement: 'right',
+  animation: 'fade',
 });
 tippy('#nav_product_mantain', {
   content: "Product mantain",
+  placement: 'right',
+  animation: 'fade',
 });
 tippy('#nav_quicklink', {
   content: "Product mantain",
+  placement: 'right',
+  animation: 'fade',
 });
 tippy('#nav_logout', {
   content: "logout",
+  placement: 'right',
+  animation: 'fade',
 });
 </script>
 <?php } ?>
