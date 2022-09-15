@@ -46,7 +46,7 @@ if (!$_SESSION["login_csg"]){
 <head>
 <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <!-- push notification -->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <!-- <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
     window.OneSignal = window.OneSignal || [];
     OneSignal.push(function() {
@@ -54,7 +54,7 @@ if (!$_SESSION["login_csg"]){
         appId: "11dbc065-ce6a-4a28-b097-1fe73fa8669c",
         });
     });
-    </script>
+    </script> -->
  <!-- push notification -->
     <meta name="robots" content="noindex">
     <meta name="googlebot" content="noindex">
