@@ -619,6 +619,11 @@ tippy('#nav_linesheet_download', {
   placement: 'right',
   animation: 'fade',
 });
+tippy('#nav_accout', {
+  content: "Adminstations",
+  placement: 'right',
+  animation: 'fade',
+});
 
 
 </script>
