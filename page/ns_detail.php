@@ -347,14 +347,7 @@
                         aria-selected="true">
                         <ion-icon name="chatbubble-outline"></ion-icon>Public comment
                     </button>
-                    <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail"
-                        type="button" role="tab" aria-controls="nav-detail" aria-selected="false">
-                        <ion-icon name="receipt-outline"></ion-icon>Ticket infomation
-                    </button>
-                    <button class="nav-link" id="nav-logs-tab" data-bs-toggle="tab" data-bs-target="#nav-logs"
-                        type="button" role="tab" aria-controls="nav-logs" aria-selected="false">
-                        <ion-icon name="time-outline"></ion-icon>Log
-                    </button>
+                  
                     <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                     <button class="nav-link" id="nav-internal-tab" data-bs-toggle="tab" data-bs-target="#nav-internal"
                         type="button" role="tab" aria-controls="nav-internal" aria-selected="false">
@@ -399,23 +392,7 @@
                         comment</button>
                     <!-- end comment ns -->
                 </div>
-                <div class="tab-pane fade" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab"
-                    tabindex="0">
-                    <div class="container" style="padding: 20px!important;">
-                        <div class="alert alert-primary shadow-sm" role="alert">
-                            <ion-icon name="color-wand-outline"></ion-icon>
-                            สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ จนกว่า ทาง Content จะทำการ assign
-                            ticket นี้ให้กับทางผู้เกี่ยวข้อง
-                        </div>
-                        <?php include('../form/form_request_edit_new.php')?>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="nav-logs" role="tabpanel" aria-labelledby="nav-logs-tab"
-                    tabindex="0">
-                    <div class="container" style="padding: 20px!important;">
-                        <?php include('../get/get_ns_log.php?action_table=add_new_job&action_data=csg&action_data_id='.$id )?>
-                    </div>
-                </div>
+  
                 <div class="tab-pane fade" id="nav-internal" role="tabpanel" aria-labelledby="nav-internal-tab"
                     tabindex="0">
                     <!-- internal note -->
@@ -467,6 +444,16 @@
                         <ion-icon name="document-text-outline"></ion-icon>
                         <strong><?php echo $brand; ?></strong> Note
                     </button>
+
+                    <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail"
+                        type="button" role="tab" aria-controls="nav-detail" aria-selected="false">
+                        <ion-icon name="receipt-outline"></ion-icon>Ticket infomation
+                    </button>
+                    <button class="nav-link" id="nav-logs-tab" data-bs-toggle="tab" data-bs-target="#nav-logs"
+                        type="button" role="tab" aria-controls="nav-logs" aria-selected="false">
+                        <ion-icon name="time-outline"></ion-icon>Log
+                    </button>
+                    
                     <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                     <button class="nav-link" id="nav-console-tab" data-bs-toggle="tab" data-bs-target="#nav-console"
                         type="button" role="tab" aria-controls="nav-console" aria-selected="false">
@@ -481,6 +468,24 @@
             </nav>
 
             <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab"
+                    tabindex="0">
+                    <div class="container" style="padding: 20px!important;">
+                        <div class="alert alert-primary shadow-sm" role="alert">
+                            <ion-icon name="color-wand-outline"></ion-icon>
+                            สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ จนกว่า ทาง Content จะทำการ assign
+                            ticket นี้ให้กับทางผู้เกี่ยวข้อง
+                        </div>
+                        <?php include('../form/form_request_edit_new.php')?>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-logs" role="tabpanel" aria-labelledby="nav-logs-tab"
+                    tabindex="0">
+                    <div class="container" style="padding: 20px!important;">
+                        <?php include('../get/get_ns_log.php?action_table=add_new_job&action_data=csg&action_data_id='.$id )?>
+                    </div>
+                </div>
+
                 <div class="tab-pane fade show active" id="nav-note" role="tabpanel" aria-labelledby="nav-note-tab"
                     tabindex="0">
 
