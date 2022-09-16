@@ -447,11 +447,11 @@
 
                     <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail"
                         type="button" role="tab" aria-controls="nav-detail" aria-selected="false">
-                        <ion-icon name="receipt-outline"></ion-icon>Ticket infomation
+                        <ion-icon name="receipt-outline"></ion-icon><strong>Info</strong>
                     </button>
                     <button class="nav-link" id="nav-logs-tab" data-bs-toggle="tab" data-bs-target="#nav-logs"
                         type="button" role="tab" aria-controls="nav-logs" aria-selected="false">
-                        <ion-icon name="time-outline"></ion-icon>Log
+                        <ion-icon name="time-outline"></ion-icon><strong>Log</strong>
                     </button>
                     
                     <?php if(strpos($_SESSION["department"],'Content')!==false){?>
@@ -462,7 +462,7 @@
                     <?php } ?>
                     <button class="nav-link" id="nav-sku-tab" data-bs-toggle="tab" data-bs-target="#nav-sku"
                         type="button" role="tab" aria-controls="nav-sku" aria-selected="false">
-                        <strong>SKU List</strong>
+                        <strong>SKUs</strong>
                     </button>
                 </div>
             </nav>
