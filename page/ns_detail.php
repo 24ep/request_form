@@ -876,27 +876,27 @@ function action_assign_follow(id) {
 }
 
 // toolstip
-tippy('nav-detail-tab', {
+tippy('#nav-detail-tab', {
   content: "Ticket Information",
   placement: 'right',
   animation: 'fade',
 });
-tippy('nav-logs-tab', {
+tippy('#nav-logs-tab', {
   content: "Updated History",
   placement: 'right',
   animation: 'fade',
 });
-tippy('nav-console-tab', {
+tippy('#nav-console-tab', {
   content: "Ticket Control",
   placement: 'right',
   animation: 'fade',
 });
-tippy('nav-sku-tab', {
+tippy('#nav-sku-tab', {
   content: "SKUs list",
   placement: 'right',
   animation: 'fade',
 });
-tippy('nav-note-tab', {
+tippy('#nav-note-tab', {
   content: "Brand Note",
   placement: 'right',
   animation: 'fade',
