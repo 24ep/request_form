@@ -447,22 +447,22 @@
 
                     <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail"
                         type="button" role="tab" aria-controls="nav-detail" aria-selected="false">
-                        <ion-icon name="information-outline"></ion-icon>
+                        <ion-icon name="information-circle"></ion-icon>
                     </button>
                     <button class="nav-link" id="nav-logs-tab" data-bs-toggle="tab" data-bs-target="#nav-logs"
                         type="button" role="tab" aria-controls="nav-logs" aria-selected="false">
-                        <ion-icon name="time-outline"></ion-icon><strong></strong>
+                        <ion-icon name="time"></ion-icon><strong></strong>
                     </button>
                     
                     <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                     <button class="nav-link" id="nav-console-tab" data-bs-toggle="tab" data-bs-target="#nav-console"
                         type="button" role="tab" aria-controls="nav-console" aria-selected="false">
-                        <ion-icon name="game-controller-outline"></ion-icon><strong></strong>
+                        <ion-icon name="game-controller"></ion-icon><strong></strong>
                     </button>
                     <?php } ?>
                     <button class="nav-link" id="nav-sku-tab" data-bs-toggle="tab" data-bs-target="#nav-sku"
                         type="button" role="tab" aria-controls="nav-sku" aria-selected="false">
-                        <ion-icon name="list-outline"></ion-icon><strong>SKUs</strong>
+                        <ion-icon name="list"></ion-icon><strong></strong>
                     </button>
                 </div>
             </nav>
