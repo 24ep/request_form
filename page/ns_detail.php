@@ -447,22 +447,22 @@
 
                     <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail"
                         type="button" role="tab" aria-controls="nav-detail" aria-selected="false">
-                        <ion-icon name="receipt-outline"></ion-icon><strong>Info</strong>
+                        <ion-icon name="information-outline"></ion-icon>
                     </button>
                     <button class="nav-link" id="nav-logs-tab" data-bs-toggle="tab" data-bs-target="#nav-logs"
                         type="button" role="tab" aria-controls="nav-logs" aria-selected="false">
-                        <ion-icon name="time-outline"></ion-icon><strong>Log</strong>
+                        <ion-icon name="time-outline"></ion-icon><strong></strong>
                     </button>
                     
                     <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                     <button class="nav-link" id="nav-console-tab" data-bs-toggle="tab" data-bs-target="#nav-console"
                         type="button" role="tab" aria-controls="nav-console" aria-selected="false">
-                        <strong>Console</strong>
+                        <ion-icon name="game-controller-outline"></ion-icon><strong></strong>
                     </button>
                     <?php } ?>
                     <button class="nav-link" id="nav-sku-tab" data-bs-toggle="tab" data-bs-target="#nav-sku"
                         type="button" role="tab" aria-controls="nav-sku" aria-selected="false">
-                        <strong>SKUs</strong>
+                        <ion-icon name="list-outline"></ion-icon><strong>SKUs</strong>
                     </button>
                 </div>
             </nav>
@@ -874,6 +874,33 @@ function action_assign_follow(id) {
         alert("Assigned !");
     }
 }
+
+// toolstip
+tippy('nav-detail-tab', {
+  content: "Ticket Information",
+  placement: 'right',
+  animation: 'fade',
+});
+tippy('nav-logs-tab', {
+  content: "Updated History",
+  placement: 'right',
+  animation: 'fade',
+});
+tippy('nav-console-tab', {
+  content: "Ticket Control",
+  placement: 'right',
+  animation: 'fade',
+});
+tippy('nav-sku-tab', {
+  content: "SKUs list",
+  placement: 'right',
+  animation: 'fade',
+});
+tippy('nav-note-tab', {
+  content: "Brand Note",
+  placement: 'right',
+  animation: 'fade',
+});
 </script>
 <!-- 
 var url = new URL("http://foo.bar/?x=1&y=2");
@@ -883,3 +910,4 @@ url.searchParams.append('x', 42);
 
 // If your expected result is "http://foo.bar/?x=42&y=2"
 url.searchParams.set('x', 42); -->
+
