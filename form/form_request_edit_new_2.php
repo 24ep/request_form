@@ -110,6 +110,7 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
   return $element;
 }
 function get_list_element($group){
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query = "SELECT * FROM content_service_gate.attribute_entity
     WHERE allow_display = 1 and attribute_function = 'add_new'  and group_attribute = '".$group."' ORDER BY attribute_id ASC" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
@@ -159,7 +160,7 @@ $element_return .= '</ul>';
 
  return $element_return;
 }
-$query = "SELECT group_attribute FROM content_service_gate.attribute_entity
+$query = "SELECT distinct group_attribute FROM content_service_gate.attribute_entity
 WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY attribute_id ASC" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {

@@ -479,8 +479,7 @@
                         <?php include('../form/form_request_edit_new_2.php')?>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="nav-logs" role="tabpanel" aria-labelledby="nav-logs-tab"
-                    tabindex="0">
+                <div class="tab-pane fade" id="nav-logs" role="tabpanel" aria-labelledby="nav-logs-tab" tabindex="0">
                     <div class="container" style="padding: 20px!important;">
                         <?php include('../get/get_ns_log.php?action_table=add_new_job&action_data=csg&action_data_id='.$id )?>
                     </div>
