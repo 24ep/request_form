@@ -878,27 +878,27 @@ function action_assign_follow(id) {
 // toolstip
 tippy('#nav-detail-tab', {
   content: "Ticket Information",
-  placement: 'right',
+  placement: 'top',
   animation: 'fade',
 });
 tippy('#nav-logs-tab', {
   content: "Updated History",
-  placement: 'right',
+  placement: 'top',
   animation: 'fade',
 });
 tippy('#nav-console-tab', {
   content: "Ticket Control",
-  placement: 'right',
+  placement: 'top',
   animation: 'fade',
 });
 tippy('#nav-sku-tab', {
   content: "SKUs list",
-  placement: 'right',
+  placement: 'top',
   animation: 'fade',
 });
 tippy('#nav-note-tab', {
   content: "Brand Note",
-  placement: 'right',
+  placement: 'top',
   animation: 'fade',
 });
 </script>
