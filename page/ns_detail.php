@@ -368,7 +368,7 @@
                         <?php
                     }
                     ?>
-                    <button type="button" href="<?php echo $link_info;?>" target="_blank" class="btn btn-sm btn-primary shadow-sm bg-gradient">Go to information files</button> 
+                    <a type="button" href="<?php echo $link_info;?>" target="_blank" class="btn btn-sm btn-primary shadow-sm bg-gradient">Go to information files</a> 
                     </div>
                    
                     <!-- comment ns -->
