@@ -856,6 +856,7 @@ function form_request_edit_new(id) {
             function(data) {
                 $('#form_request_edit_new_2').html(data);
             });
+            console.log("id:"+id);
 }
 function get_ns_log(action_table,action_data,action_data_id) {
         $.post("base/get/get_ns_log.php", {
