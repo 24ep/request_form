@@ -476,12 +476,16 @@
                             สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ จนกว่า ทาง Content จะทำการ assign
                             ticket นี้ให้กับทางผู้เกี่ยวข้อง
                         </div>
-                        <?php include('../form/form_request_edit_new_2.php')?>
+                        <div id="form_request_edit_new_2">
+                        </div>
+                       
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-logs" role="tabpanel" aria-labelledby="nav-logs-tab" tabindex="0">
                     <div class="container" style="padding: 20px!important;">
-                        <?php include('../get/get_ns_log.php?action_table=add_new_job&action_data=csg&action_data_id='.$id )?>
+                    <div id="get_ns_log">
+                        </div>
+                        
                     </div>
                 </div>
 
@@ -839,6 +843,29 @@ function sku_checking() {
             });
     }
 }
+
+// get_detail_more
+function form_request_edit_new(id) {
+        $.post("base/form/form_request_edit_new_2.php", {
+                id: id
+            },
+            function(data) {
+                $('#form_request_edit_new_2').html(data);
+            });
+}
+function get_ns_log(action_table,action_data,action_data_id) {
+        $.post("base/form/form_request_edit_new_2.php", {
+            action_table: action_table,
+            action_data: action_data,
+            action_data_id: action_data_id
+            },
+            function(data) {
+                $('#get_ns_log').html(data);
+            });
+}
+form_request_edit_new(<?php echo $id; ?>);
+get_ns_log('add_new_job','csg',<?php echo $id; ?>);
+
 
 function split_to_subtask(id) {
     var sku_task_set = document.getElementById("sku_task_set").value;
