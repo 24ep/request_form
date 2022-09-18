@@ -965,7 +965,7 @@ tippy('#requester_pg', {
 //   placement: 'bottom',
 //   animation: 'fade',
 // });
-
+timeago().render(document.querySelectorAll('.timeago'));
 
 
 </script>
