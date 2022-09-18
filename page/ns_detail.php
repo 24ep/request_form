@@ -476,7 +476,7 @@
                             สามาถแก้ไขข้อมูลบางส่วนด้วยตนเองได้ จนกว่า ทาง Content จะทำการ assign
                             ticket นี้ให้กับทางผู้เกี่ยวข้อง
                         </div>
-                        <?php include('../form/form_request_edit_new_2.php?id='.$_POST['id'])?>
+                        <?php include('../form/form_request_edit_new_2.php?')?>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-logs" role="tabpanel" aria-labelledby="nav-logs-tab" tabindex="0">
