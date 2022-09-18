@@ -140,7 +140,7 @@
   while($row = mysqli_fetch_array($result)) {
     $same_owner .= " <li style='margin-top: 5px;' class='text-nowrap' >NS-".$row['id']." ".$row['brand']." ".$row['sku']." SKUs</li>";
   }
-  $same_owner .= " <li style='margin-top: 5px;color: #81a8dd;' class='text-nowrap' ><a type='button' onclick='ns_discover(&#34;user_filter&#34;,&#34;".$request_username."&#34;);' >Discover more <ion-icon name='arrow-forward-outline'></ion-icon></a></li>";
+  $same_owner .= " <li style='margin-top: 5px;color: #81a8dd;' class='text-nowrap' ><a type='button' onclick='ns_discover(&#34;user_filter&#34;,&#34;".$request_username."&#34;);' id='discover_more_requester_bt' >Discover more <ion-icon name='arrow-forward-outline'></ion-icon></a></li>";
   $query = "SELECT * FROM all_in_one_project.add_new_job  where id<> ".$id." and brand = '".$brand."' and status not in ('accepted','cancel') ORDER BY id DESC limit 2" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $same_brand = '';
@@ -148,7 +148,7 @@
    
     $same_brand .= " <li style='margin-top: 5px;' class='text-nowrap' >NS-".$row['id']." ".$row['brand']." ".$row['sku']." SKUs</li>";
   }
-  $same_brand .= " <li style='margin-top: 5px;color: #81a8dd;' class='text-nowrap' ><a type='button' onclick='ns_discover(&#34;brand_filter&#34;,&#34;".$brand."&#34;);' >Discover more <ion-icon name='arrow-forward-outline'></ion-icon></a></li>";
+  $same_brand .= " <li style='margin-top: 5px;color: #81a8dd;' class='text-nowrap' ><a type='button' onclick='ns_discover(&#34;brand_filter&#34;,&#34;".$brand."&#34;);' id='discover_more_brand_bt' >Discover more <ion-icon name='arrow-forward-outline'></ion-icon></a></li>";
   if($follow_up_name==""){
     $follow_up_name = '-';
     $office_tell = '-';
@@ -208,7 +208,7 @@
                         <ion-icon name="call-outline"></ion-icon> <?php echo $request_office_tell; ?>
                     </li>
                     <li style='margin-top: 5px;color: #81a8dd;'>
-                        <a type="button" onclick="take_ns_requester(<?php echo $id;?>)">
+                        <a type="button" id="take_owner_bt" onclick="take_ns_requester(<?php echo $id;?>)">
                             <ion-icon name="golf-outline"></ion-icon> Take owner
                         </a>
                     </li>
@@ -220,7 +220,7 @@
             <div id="contact_person_officer">
                 <?php if($follow_up_name=="-"){
 
-                    echo '<button type="button" onclick="take_ns_officer('.$id.')" class="btn btn-sm btn-primary m-3 bg-gradient"><ion-icon name="person-outline"></ion-icon> Take officer</button>';
+                    echo '<button type="button" id="take_officer_bt" onclick="take_ns_officer('.$id.')" class="btn btn-sm btn-primary m-3 bg-gradient"><ion-icon name="person-outline"></ion-icon> Take officer</button>';
                 }else{
                     ?>
                 <ul class="contact-person-ns">
@@ -317,24 +317,24 @@
                 <button type="button"
                     class="position-absolute top-0 start-0 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_0; ?> rounded-pill"
                     style="width: 2rem; height:2rem;">0</button>
-                <small style="top: 50px!important;"
+                <small id="requester_pg" style="top: 50px!important;"
                     class="position-absolute top-100 start-0 translate-middle btn btn-sm"><strong>Request</strong><br><?php echo $create_date; ?></small>
                 <button type="button"
                     class="position-absolute top-0 start-30 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_1; ?> rounded-pill"
                     style="width: 2rem; height:2rem;">1</button>
-                <small style="top: 50px!important;"
+                <small id="checking_pg" style="top: 50px!important;"
                     class="position-absolute top-100 start-30 translate-middle btn btn-sm"><strong>Checking</strong>
                     <br><?php echo $accepted_date; ?></small>
                 <button type="button"
                     class="position-absolute top-0 start-60 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_2; ?> rounded-pill"
                     style="width: 2rem; height:2rem;">2</button>
-                <small style="top: 50px!important;"
+                <small id="onproduction_pg"  style="top: 50px!important;"
                     class="position-absolute top-100 start-60 translate-middle btn btn-sm"><strong>On-productions</strong>
                     <br><?php echo $job_number; ?></small>
                 <button type="button"
                     class="position-absolute top-0 start-100 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_3; ?> rounded-pill"
                     style="width: 2rem; height:2rem;">3</button>
-                <small style="top: 50px!important;"
+                <small id="approved_pg"  style="top: 50px!important;"
                     class="position-absolute top-100 start-100 translate-middle btn btn-sm"><strong>Approved</strong><br><?php echo $approved_date; ?></small>
             </div>
             <?php }?>
@@ -900,6 +900,40 @@ tippy('#nav-note-tab', {
   placement: 'top',
   animation: 'fade',
 });
+tippy('#discover_more_brand_bt', {
+  content: "ดูงานที่เป็นแบรนด์เดียวกัน",
+  placement: 'bottom',
+  animation: 'fade',
+});
+tippy('#discover_more_requester_bt', {
+  content: "ดูงานที่เป็นถูกสร้างจากผู้ใช้เดียวกัน",
+  placement: 'bottom',
+  animation: 'fade',
+});
+tippy('#take_owner_bt', {
+  content: "เปลี่ยนข้อมูลผู้ใช้ที่สร้าง ticket นี้ให้เป็นชื่อของคุณ",
+  placement: 'bottom',
+  animation: 'fade',
+});
+tippy('#take_officer_bt', {
+  content: "รับงานนี้เข้ามาอยู่ในความดูแลของคุณ",
+  placement: 'bottom',
+  animation: 'fade',
+});
+
+tippy('#requester_pg', {
+  content: "งานนี้ถูกสร้างโดย<?php echo $request_firstname.''.$request_lastname;?> เมื่อวันที่ <?php echo $create_date;?>>",
+  placement: 'bottom',
+  animation: 'fade',
+});
+tippy('#checking_pg', {
+  content: "ทางทีมได้เริ่มตรวจสอบข้อมูลของสินค้า เมื่อวันที่ <?php echo $start_checking_date;?>>",
+  placement: 'bottom',
+  animation: 'fade',
+});
+
+
+
 </script>
 <!-- 
 var url = new URL("http://foo.bar/?x=1&y=2");
