@@ -949,15 +949,15 @@ tippy('#take_officer_bt', {
 });
 
 tippy('#requester_pg', {
-  content: "งานนี้ถูกสร้างโดย<?php echo $request_firstname.''.$request_lastname;?> เมื่อวันที่ <?php echo $create_date;?>>",
+  content: "งานนี้ถูกสร้างโดย <?php echo $request_firstname.' '.$request_lastname;?> เมื่อวันที่ <?php echo $create_date;?>>",
   placement: 'bottom',
   animation: 'fade',
 });
-tippy('#checking_pg', {
-  content: "ทางทีมได้เริ่มตรวจสอบข้อมูลของสินค้า เมื่อวันที่ <?php echo $start_checking_date;?>>",
-  placement: 'bottom',
-  animation: 'fade',
-});
+// tippy('#checking_pg', {
+//   content: "ทางทีมได้เริ่มตรวจสอบข้อมูลของสินค้า เมื่อวันที่ <?php// echo $start_checking_date;?>",
+//   placement: 'bottom',
+//   animation: 'fade',
+// });
 
 
 
