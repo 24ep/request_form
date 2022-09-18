@@ -318,7 +318,8 @@
                     class="position-absolute top-0 start-0 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_0; ?> rounded-pill"
                     style="width: 2rem; height:2rem;">0</button>
                 <small id="requester_pg" style="top: 50px!important;"
-                    class="position-absolute top-100 start-0 translate-middle btn btn-sm"><strong>Request</strong><br><?php echo $create_date; ?></small>
+              
+                    class="position-absolute top-100 start-0 translate-middle btn btn-sm"><strong>Request</strong><br> <span class="timeago" datetime="<?php echo $create_date; ?>"><?php echo $create_date; ?></span></small>
                 <button type="button"
                     class="position-absolute top-0 start-30 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_1; ?> rounded-pill"
                     style="width: 2rem; height:2rem;">1</button>
