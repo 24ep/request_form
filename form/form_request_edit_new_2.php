@@ -1,6 +1,7 @@
 <?php
-$id = $_POST['id'];
+
  session_start();
+ $id = $_POST['id'];
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
   if($site_element=='datetime-local'){
@@ -110,7 +111,7 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
   ';
   return $element;
 }
-function get_list_element($group){
+function get_list_element($group,$id){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query = "SELECT * FROM content_service_gate.attribute_entity
     WHERE allow_display = 1 and attribute_function = 'add_new'  and group_attribute = '".$group."' ORDER BY attribute_id ASC" or die("Error:" . mysqli_error($con));
@@ -175,7 +176,7 @@ while($row = mysqli_fetch_array($result)) {
     echo '   
           <div id="panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading'.str_replace(" ","_",$row['group_attribute']).'">
             <div class="accordion-body" style="padding:0px">';
-            echo get_list_element($row['group_attribute']);
+            echo get_list_element($row['group_attribute'],$id);
       echo '</div>';
     echo '</div>';
   
