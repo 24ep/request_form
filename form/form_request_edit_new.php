@@ -110,6 +110,7 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
   ';
   return $element;
 }
+echo '<div class="accordion accordion-flush" id="accordionFlushExample">';
 $query = "SELECT * FROM content_service_gate.attribute_entity
           WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY sort ASC" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
@@ -152,9 +153,22 @@ $result = mysqli_query($con, $query);
     }
   }
   echo '<div id="call_update_ns_complete"></div>';
-  echo '<ul class="list-group shadow nsdetaillist">';
-  echo $element;
-  echo '</ul>';
+    echo '<div class="accordion-item">';
+      echo '<h2 class="accordion-header" id="flush-heading'.$row["attribute_code"].'">';
+      echo '  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse'.$row["attribute_code"].'" aria-expanded="false" aria-controls="flush-collapse'.$row["attribute_code"].'">
+                '.$row["attribute_label"].'
+              </button>
+            </h2>';
+      echo '<div id="flush-collapse'.$row["attribute_code"].'" class="accordion-collapse collapse" aria-labelledby="flush-heading'.$row["attribute_code"].'" data-bs-parent="#accordionFlush'.$row["attribute_code"].'">
+              <div class="accordion-body">';
+              echo '<ul class="list-group shadow nsdetaillist">';
+              echo $element;
+              echo '</ul>';
+              
+      echo '</div>
+          </div>';
+    echo '</div>';
+  echo '</div>';
 ?>
 <script>
 function update_ns_detail(id, id_name) {
