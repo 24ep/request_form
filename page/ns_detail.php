@@ -867,6 +867,7 @@ function get_ns_log(action_table,action_data,action_data_id) {
             function(data) {
                 $('#get_ns_log').html(data);
             });
+            console.log("action_data_id:"+action_data_id);
 }
 form_request_edit_new(<?php echo $id; ?>);
 get_ns_log('add_new_job','csg',<?php echo $id; ?>);
