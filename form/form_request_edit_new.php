@@ -111,7 +111,7 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
   return $element;
 }
 $query = "SELECT * FROM content_service_gate.attribute_entity
-          WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY attribute_id ASC" or die("Error:" . mysqli_error($con));
+          WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY sort ASC" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
     //--

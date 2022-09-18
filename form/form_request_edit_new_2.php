@@ -164,7 +164,7 @@ $query = "SELECT distinct group_attribute FROM content_service_gate.attribute_en
 WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY attribute_id ASC" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
-    echo "<strong>".$row['group_attribute']."</strong>";
+    echo "<strong>".($row['group_attribute'])."</strong>";
     echo get_list_element($row['group_attribute']);
 }
 
