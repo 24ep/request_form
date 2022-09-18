@@ -168,7 +168,7 @@ $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     echo '<div class="accordion-item">';
     echo '<h2 class="accordion-header" id="panelsStayOpen-heading'.str_replace(" ","_",$row['group_attribute']).'">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'" aria-expanded="true" aria-controls="panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'" aria-expanded="true" aria-controls="panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'">
               '.$row['group_attribute'].'
             </button>
           </h2>';
