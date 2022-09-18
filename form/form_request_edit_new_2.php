@@ -195,7 +195,7 @@ if($row["allow_ex_edit"]==1){
             on anj.id = jc.csg_request_new_id
             left join all_in_one_project.brand_editor as brand_editor
             on brand_editor.brand = anj.brand
-            where anj.id = ".$id ." ORDER BY anj.id DESC " or die("Error:" . mysqli_error($con));
+            where anj.id = ".$id." ORDER BY anj.id DESC " or die("Error:" . mysqli_error($con));
   $result_ticket_info = mysqli_query($con, $query_ticket_info);
   while($row_ticket_info = mysqli_fetch_array($result_ticket_info)) {
       $id = $row_ticket_info['id'];
@@ -248,17 +248,17 @@ if($row["allow_ex_edit"]==1){
   }
 //---
 if($row["site_element"]=="number"){
-  $element .= return_input_box($row["attribute_label"],"number",${$row_ticket_info["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
+  $element .= return_input_box($row["attribute_label"],"number",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
 }elseif($row["site_element"]=="text"){
-$element .= return_input_box($row["attribute_label"],"text",${$row_ticket_info["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
+$element .= return_input_box($row["attribute_label"],"text",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
 }elseif($row["site_element"]=="datetime"){
-$element .= return_input_box($row["attribute_label"],"datetime-local",${$row_ticket_info["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
+$element .= return_input_box($row["attribute_label"],"datetime-local",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
 }elseif($row["site_element"]=="date"){
-$element .= return_input_box($row["attribute_label"],"date",${$row_ticket_info["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
+$element .= return_input_box($row["attribute_label"],"date",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
 }elseif($row["site_element"]=="textarea"){
-$element .= return_textarea_box($row["attribute_label"],"textarea",${$row_ticket_info["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
+$element .= return_textarea_box($row["attribute_label"],"textarea",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
 }elseif($row["site_element"]=="single_select"){
-$element .= return_s_select_box($row["attribute_label"],"single_select",${$row_ticket_info["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"],$allow_edit,$id);
+$element .= return_s_select_box($row["attribute_label"],"single_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"],$allow_edit,$id);
 }elseif($row["site_element"]=="multi_select"){
 $element .= return_m_select_box($row["attribute_label"],"multi_select",${$row_ticket_info["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"],$allow_edit,$id);
 }
