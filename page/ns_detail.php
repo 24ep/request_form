@@ -854,7 +854,7 @@ function form_request_edit_new(id) {
             });
 }
 function get_ns_log(action_table,action_data,action_data_id) {
-        $.post("base/form/form_request_edit_new_2.php", {
+        $.post("base/get/get_ns_log.php", {
             action_table: action_table,
             action_data: action_data,
             action_data_id: action_data_id
