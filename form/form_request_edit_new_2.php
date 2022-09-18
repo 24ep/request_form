@@ -2,7 +2,7 @@
 
  session_start();
  $id = $_POST['id'];
- echo $id;
+
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
   if($site_element=='datetime-local'){
@@ -138,21 +138,129 @@ if($row["allow_ex_edit"]==1){
   $allow_edit = "disabled";
 }
 }
+//------
+  $query_ticket_info = "SELECT
+            anj.id as id,
+            anj.brand as brand,
+            anj.request_username as request_username,
+            anj.create_date as create_date,
+            anj.request_date as request_date,
+            anj.update_date as update_date,
+            anj.production_type as production_type,
+            anj.business_type as business_type,
+            anj.project_type as project_type,
+            anj.stock_source as stock_source,
+            anj.contact_buyer as contact_buyer,
+            anj.contact_vender as contact_vender,
+            anj.launch_date as launch_date,
+            anj.link_info as link_info,
+            anj.remark as remark,
+            anj.department as department,
+            anj.sku as sku,
+            anj.status as status,
+            anj.start_checking_date as start_checking_date,
+            anj.accepted_date as accepted_date,
+            anj.cancel_resone as cancel_resone,
+            anj.need_more_info_date as need_more_info_date,
+            anj.follow_up_by as follow_up_by,
+            anj.bu as bu,
+            anj.tags as tags,
+            anj.online_channel as online_channel,
+            anj.request_important as request_important,
+            anj.follow_assign_name as follow_assign_name,
+            anj.follow_assign_date as follow_assign_date,
+            anj.sub_department as sub_department,
+            anj.parent as parent,
+            anj.config_type as config_type,
+            anj.trigger_status as trigger_status,
+            anj.subject_mail as subject_mail,
+            ac.nickname as follow_assign_nickname,
+            ac_request.firstname as request_firstname,
+            ac_request.lastname as request_lastname,
+            ac_request.office_tell as request_office_tell,
+            ac_request.nickname as request_nickname,
+            brand_info.link as brand_info_link,
+            brand_editor.body  as brand_editor,
+            anj.web_cate as web_cate,
+            jc.approved_date as approved_date,
+            jc.job_number as job_number
+            FROM all_in_one_project.add_new_job as anj
+            left join all_in_one_project.account as ac
+            on ac.username = anj.follow_assign_name
+            left join all_in_one_project.account as ac_request
+            on ac_request.username = anj.request_username
+            left join all_in_one_project.brand_information as brand_info
+            on brand_info.brand = anj.brand
+            left join u749625779_cdscontent.job_cms as jc
+            on anj.id = jc.csg_request_new_id
+            left join all_in_one_project.brand_editor as brand_editor
+            on brand_editor.brand = anj.brand
+            where anj.id = ".$id ." ORDER BY anj.id DESC " or die("Error:" . mysqli_error($con));
+  $result_ticket_info = mysqli_query($con, $query_ticket_info);
+  while($row_ticket_info = mysqli_fetch_array($result_ticket_info)) {
+      $id = $row_ticket_info['id'];
+      $brand = $row_ticket_info['brand'];
+      $request_username = $row_ticket_info['request_username'];
+      $request_firstname = $row_ticket_info['request_firstname'];
+      $request_lastname = $row_ticket_info['request_lastname'];
+      $request_nickname = $row_ticket_info['request_nickname'];
+      $request_office_tell = $row_ticket_info['request_office_tell'];
+      $create_date = $row_ticket_info['create_date'];
+      $request_date= $row_ticket_info['request_date'];
+      $update_date = $row_ticket_info['update_date'];
+      $production_type = $row_ticket_info['production_type'];
+      $business_type = $row_ticket_info['business_type'];
+      $project_type = $row_ticket_info['project_type'];
+      $stock_source = $row_ticket_info['stock_source'];
+      $contact_buyer = $row_ticket_info['contact_buyer'];
+      $contact_vender = $row_ticket_info['contact_vender'];
+      $launch_date = $row_ticket_info['launch_date'];
+      $link_info = $row_ticket_info['link_info'];
+      $remark = $row_ticket_info['remark'];
+      $department = $row_ticket_info['department'];
+      $sku = $row_ticket_info['sku'];
+      $status = $row_ticket_info['status'];
+      $start_checking_date = $row_ticket_info['start_checking_date'];
+      $accepted_date = $row_ticket_info['accepted_date'];
+      $cancel_resone = $row_ticket_info['cancel_resone'];
+      $need_more_info_date = $row_ticket_info['need_more_info_date'];
+      $need_more_info_note = $row_ticket_info['need_more_info_note'];
+      $follow_up_by = $row_ticket_info['follow_up_by'];
+      $bu = $row_ticket_info['bu'];
+      $tags = $row_ticket_info['tags'];
+      $online_channel = $row_ticket_info['online_channel'];
+      $request_important = $row_ticket_info['request_important'];
+      $follow_assign_name = $row_ticket_info['follow_assign_name'];
+      $follow_assign_date = $row_ticket_info['follow_assign_date'];
+      $sub_department = $row_ticket_info['sub_department'];
+      $parent = $row_ticket_info['parent'];
+      $config_type = $row_ticket_info['config_type'];
+      $subject_mail = $row_ticket_info['subject_mail'];
+      $follow_assign_nickname = $row_ticket_info['follow_assign_nickname'];
+      $brand_info_link = $row_ticket_info['brand_info_link'];
+      $web_cate = $row_ticket_info['web_cate'];
+      $brand_editor=$row_ticket_info['brand_editor'];
+      $trigger_status=$row_ticket_info['trigger_status'];
+      $job_number=$row_ticket_info['job_number'];
+      $approved_date=$row_ticket_info['approved_date'];
+      
+
+  }
 //---
 if($row["site_element"]=="number"){
-  $element .= return_input_box($row["attribute_label"],"number",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
+  $element .= return_input_box($row["attribute_label"],"number",${$row_ticket_info["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
 }elseif($row["site_element"]=="text"){
-$element .= return_input_box($row["attribute_label"],"text",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
+$element .= return_input_box($row["attribute_label"],"text",${$row_ticket_info["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
 }elseif($row["site_element"]=="datetime"){
-$element .= return_input_box($row["attribute_label"],"datetime-local",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
+$element .= return_input_box($row["attribute_label"],"datetime-local",${$row_ticket_info["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
 }elseif($row["site_element"]=="date"){
-$element .= return_input_box($row["attribute_label"],"date",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
+$element .= return_input_box($row["attribute_label"],"date",${$row_ticket_info["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
 }elseif($row["site_element"]=="textarea"){
-$element .= return_textarea_box($row["attribute_label"],"textarea",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
+$element .= return_textarea_box($row["attribute_label"],"textarea",${$row_ticket_info["attribute_code"]},"ns_edit_".$row["attribute_code"],$allow_edit,$id);
 }elseif($row["site_element"]=="single_select"){
-$element .= return_s_select_box($row["attribute_label"],"single_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"],$allow_edit,$id);
+$element .= return_s_select_box($row["attribute_label"],"single_select",${$row_ticket_info["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"],$allow_edit,$id);
 }elseif($row["site_element"]=="multi_select"){
-$element .= return_m_select_box($row["attribute_label"],"multi_select",${$row["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"],$allow_edit,$id);
+$element .= return_m_select_box($row["attribute_label"],"multi_select",${$row_ticket_info["attribute_code"]},"ns_edit_".$row["attribute_code"],$row["attribute_id"],$allow_edit,$id);
 }
 }
 $element_return = "";
