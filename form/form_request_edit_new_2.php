@@ -160,13 +160,27 @@ $element_return .= '</ul>';
 
  return $element_return;
 }
+echo '<div class="accordion accordion-flush" id="accordionFlushExample">';
 $query = "SELECT distinct group_attribute FROM content_service_gate.attribute_entity
 WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY attribute_id ASC" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
-    echo "<strong>".($row['group_attribute'])."</strong>";
-    echo get_list_element($row['group_attribute']);
+    echo '<div class="accordion-item">';
+    echo '<h2 class="accordion-header" id="panelsStayOpen-heading'.str_replace(" ","_",$row['group_attribute']).'">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'" aria-expanded="true" aria-controls="panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'">
+              '.$row['group_attribute'].'
+            </button>
+          </h2>';
+    echo '   
+          <div id="panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-heading'.str_replace(" ","_",$row['group_attribute']).'">
+            <div class="accordion-body">';
+            echo get_list_element($row['group_attribute']);
+      echo '</div>';
+    echo '</div>';
+  
+    echo '</div>';
 }
+echo '</div>';
 
 ?>
 <script>
