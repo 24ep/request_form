@@ -1,6 +1,5 @@
 <?php
- session_start();
-$id = $_POST['id'];
+$id = $_POST['action_data_id'];
 $action_table = $_POST['action_table'];
 $actiob_data = $_POST['action_data'];
 $job_number = $_POST['job_number'];
@@ -38,7 +37,7 @@ if($_POST['action_data']=="24ep"){;
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <div class="container-md" style="padding:40px">
+    <div class="container-md" style="padding:10px">
     <h6>log <?php echo "NS-".$id;?></h6>
     <table class="table table-bordered">
       <thead>
