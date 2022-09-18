@@ -359,14 +359,18 @@
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-public" role="tabpanel" aria-labelledby="nav-public-tab"
                     tabindex="0">
+                    
+                    <div class="alert alert-info m-2 shadow-sm" role="alert">
                     <?php if( $remark<>""){
                         ?>
-                    <div class="alert alert-info m-2 shadow-sm" role="alert">
                         <ion-icon name="information-circle-outline"></ion-icon><?php echo $remark;?>
-                    </div>
-                    <?php
+                        <hr>
+                        <?php
                     }
                     ?>
+                    <button type="button" href="<?php echo $link_info;?>" target="_blank" class="btn btn-sm btn-primary bg-gradient">Go to files</button> 
+                    </div>
+                   
                     <!-- comment ns -->
                     <ul class="list-group list-group-flush m-1" style="background: fixed;">
                         <div id="comment_box_ns">
