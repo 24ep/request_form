@@ -360,7 +360,7 @@
                 <div class="tab-pane fade show active" id="nav-public" role="tabpanel" aria-labelledby="nav-public-tab"
                     tabindex="0">
                     
-                    <div class="alert alert-info m-2 shadow-sm" role="alert">
+                    <div class="alert alert-primary m-2 shadow-sm" role="alert">
                     <?php if( $remark<>""){
                         ?>
                         <ion-icon name="information-circle-outline"></ion-icon><?php echo $remark;?>
@@ -368,7 +368,7 @@
                         <?php
                     }
                     ?>
-                    <button type="button" href="<?php echo $link_info;?>" target="_blank" class="btn btn-sm btn-primary bg-gradient">Go to files</button> 
+                    <button type="button" href="<?php echo $link_info;?>" target="_blank" class="btn btn-sm btn-primary shadow-sm bg-gradient">Go to information files</button> 
                     </div>
                    
                     <!-- comment ns -->
