@@ -1,5 +1,5 @@
 <?php
-$id = $_GET['id'];
+ $id = $_GET['id'];
  session_start();
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
@@ -168,12 +168,12 @@ $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     echo '<div class="accordion-item">';
     echo '<h2 class="accordion-header" id="panelsStayOpen-heading'.str_replace(" ","_",$row['group_attribute']).'">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'" aria-expanded="true" aria-controls="panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'" aria-expanded="true" aria-controls="panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'">
               '.$row['group_attribute'].'
             </button>
           </h2>';
     echo '   
-          <div id="panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading'.str_replace(" ","_",$row['group_attribute']).'">
+          <div id="panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-heading'.str_replace(" ","_",$row['group_attribute']).'">
             <div class="accordion-body" style="padding: 0px;">';
             echo get_list_element($row['group_attribute']);
       echo '</div>';
