@@ -155,7 +155,7 @@ $element .= return_m_select_box($row["attribute_label"],"multi_select",${$row["a
 }
 $element_return = "";
 $element_return .= '<div id="call_update_ns_complete"></div>';
-$element_return .= '<ul class="list-group shadow nsdetaillist">';
+$element_return .= '<ul class="list-group list-group-flush">';
 $element_return .= $element;
 $element_return .= '</ul>'; 
 
@@ -163,7 +163,7 @@ $element_return .= '</ul>';
 }
 echo '<div class="accordion accordion-flush" id="accordionFlushExample">';
 $query = "SELECT distinct group_attribute FROM content_service_gate.attribute_entity
-WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY sort ASC" or die("Error:" . mysqli_error($con));
+WHERE allow_display = 1 and attribute_function = 'add_new' ORDER BY sort ASC" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     echo '<div class="accordion-item">';
@@ -174,7 +174,7 @@ while($row = mysqli_fetch_array($result)) {
           </h2>';
     echo '   
           <div id="panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading'.str_replace(" ","_",$row['group_attribute']).'">
-            <div class="accordion-body">';
+            <div class="accordion-body" style="padding:0px">';
             echo get_list_element($row['group_attribute']);
       echo '</div>';
     echo '</div>';
