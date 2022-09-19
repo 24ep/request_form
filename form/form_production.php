@@ -2,6 +2,7 @@
 $id=$_POST['id'];
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 //jet data 24ep
+echo $id;
 $query = "SELECT  * FROM u749625779_cdscontent.job_cms where csg_request_new_id = ".$id or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
@@ -13,7 +14,6 @@ $query = "SELECT  * FROM u749625779_cdscontent.job_cms where csg_request_new_id 
         while($row_column = mysqli_fetch_array($result_column)) {
             ${"jc_".$row_column['COLUMN_NAME']} = $row[$row_column['COLUMN_NAME']];
         }
-     echo ${"jc_".$row_column['COLUMN_NAME']};
     }
 function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
     if($site_element=='datetime-local'){
