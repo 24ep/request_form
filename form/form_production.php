@@ -11,7 +11,7 @@ function get_attribute($attribute_set,$section_group){
     while($row = mysqli_fetch_array($result)) {
         $attribute.= $row['attribute_label'];
     }
-    return $attribute;
+    echo $attribute;
 }
 
 //get attribute section
@@ -25,7 +25,7 @@ function get_attribute_section($attribute_set){
         $section .=  $row['section_group'];
         $section .= get_attribute($attribute_set,$row['section_group']);
     }
-    return  $section;
+    echo  $section;
 }
 
 //get attribute set manu
@@ -40,7 +40,7 @@ $query = "SELECT distinct attribute_set FROM u749625779_cdscontent.job_attribute
   }
   echo'
   <div class="d-flex align-items-start">
-      <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <div class="nav flex-column nav-pills me-3" style="text-align-last: left;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         '.$d_attribute_set.'
       </div>
       <div class="tab-content" id="v-pills-tabContent">
