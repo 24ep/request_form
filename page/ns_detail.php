@@ -305,14 +305,14 @@
                                     }
                                         
                                     ?>
-            <ul class="nav nav-pills mb-3" style="flex-flow: nowrap;width: auto;" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
+            <ul class="nav nav-pills mb-3" style="flex-flow: unset;width: inherit;text-align-last: left;" id="pills-tab" role="tablist">
+                <li class="nav-item" style="width: fit-content;" role="presentation">
                     <button class="nav-link active" id="pills-ticket-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-ticket" type="button" role="tab" aria-controls="pills-ticket"
                         aria-selected="true"><ion-icon name="receipt-outline"></ion-icon>Ticket</button>
                 </li>
                 <!-- <?php //if($accepted_date <> "" and $accepted_date <> null){ ?> -->
-                <li class="nav-item" role="presentation">
+                <li class="nav-item"   style="width: fit-content;"  role="presentation">
                     <button class="nav-link" id="pills-productions-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-productions" type="button" role="tab" aria-controls="pills-productions"
                         aria-selected="false"><ion-icon name="file-tray-stacked-outline"></ion-icon>Productions</button>
