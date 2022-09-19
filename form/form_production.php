@@ -116,7 +116,7 @@ function get_attribute($attribute_set,$section_group){
     $query = "SELECT  * FROM u749625779_cdscontent.job_attribute 
     where allow_display=1 and $attribute_set = '".$attribute_set."' and section_group ='".$section_group."'" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
-    $attribute="";
+    $element="";
     while($row = mysqli_fetch_array($result)) {
         $element.= $row['attribute_label'];
         if($row["attribute_type"]=="number"){
@@ -141,7 +141,7 @@ function get_attribute($attribute_set,$section_group){
 //get attribute section
 function get_attribute_section($attribute_set){
     global $con;
-    $query = "SELECT distinct attribute_section FROM u749625779_cdscontent.job_attribute 
+    $query = "SELECT distinct section_group FROM u749625779_cdscontent.job_attribute 
     where allow_display=1 and attribute_set = '".$attribute_set."'" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     $section="";
