@@ -6,7 +6,7 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
       $current_value = str_replace(" ","T",$current_value);
     }
     $element = '
-    <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
+    <li class="list-group-item m-2 row" style="display: inline-flex; background: #f9fafb">
       <div class="col-3 fw-bold">'.$att_name.'</div>
       <div class="col-9">
         <input
@@ -37,7 +37,7 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
         }
       }
     $element = '
-    <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
+    <li class="list-group-item m-2 row" style="display: inline-flex; background: #f9fafb">
       <div class="col-3 fw-bold">'.$att_name.'</div>
       <div class="col-9">
         <select
@@ -69,7 +69,7 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
         }
       }
     $element = '
-    <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
+    <li class="list-group-item m-2 row" style="display: inline-flex; background: #f9fafb">
       <div class="col-3 fw-bold">'.$att_name.'</div>
       <div class="col-9">
         <select
@@ -91,7 +91,7 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
   }
   function return_textarea_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
     $element = '
-    <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
+    <li class="list-group-item m-2 row" style="display: inline-flex; background: #f9fafb">
       <div class="col-3 fw-bold">'.$att_name.'</div>
       <div class="col-9">
         <textarea
