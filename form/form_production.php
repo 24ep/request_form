@@ -8,8 +8,8 @@ $query = "SELECT  * FROM u749625779_cdscontent.job_cms where csg_request_new_id 
         $query_column = "SELECT `COLUMN_NAME` 
         FROM `INFORMATION_SCHEMA`.`COLUMNS` 
         WHERE `TABLE_SCHEMA`='u749625779_cdscontent' 
-            AND `TABLE_NAME`='job_cms';" or die("Error:" . mysqli_error($con));
-        $result = mysqli_query($con, $query_column);
+            AND `TABLE_NAME`='job_cms'" or die("Error:" . mysqli_error($con));
+        $result_column = mysqli_query($con, $query_column);
         while($row_column = mysqli_fetch_array($result_column)) {
             ${$row_column['COLUMN_NAME']} = $row[$row_column['COLUMN_NAME']];
         }
