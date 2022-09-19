@@ -305,129 +305,163 @@
                                     }
                                         
                                     ?>
-            <h6 class="ms-5">
-                <ion-icon name="podium-outline"></ion-icon><strong>Progress</strong>
-            </h6>
-            <div class="position-relative" style="margin: 10%!important;margin-top: 50px!important;">
-                <div class="progress" style="height: 5px;">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success shadow-sm"
-                        role="progressbar" aria-label="Progress" style="width: <?php echo $progress_per; ?>%;"
-                        aria-valuenow="<?php echo $progress_per; ?>" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <button type="button"
-                    class="position-absolute top-0 start-0 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_0; ?> rounded-pill"
-                    style="width: 2rem; height:2rem;">0</button>
-                <small id="requester_pg" style="top: 50px!important;"
-              
-                    class="position-absolute top-100 start-0 translate-middle btn btn-sm"><strong>Request</strong><br> <span class="timeago" datetime="<?php echo $create_date; ?>"><?php echo $create_date; ?></span></small>
-                <button type="button"
-                    class="position-absolute top-0 start-30 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_1; ?> rounded-pill"
-                    style="width: 2rem; height:2rem;">1</button>
-                <small id="checking_pg" style="top: 50px!important;"
-                    class="position-absolute top-100 start-30 translate-middle btn btn-sm"><strong>Checking</strong>
-                    <br><?php echo $accepted_date; ?></small>
-                <button type="button"
-                    class="position-absolute top-0 start-60 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_2; ?> rounded-pill"
-                    style="width: 2rem; height:2rem;">2</button>
-                <small id="onproduction_pg"  style="top: 50px!important;"
-                    class="position-absolute top-100 start-60 translate-middle btn btn-sm"><strong>On-productions</strong>
-                    <br><?php echo $job_number; ?></small>
-                <button type="button"
-                    class="position-absolute top-0 start-100 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_3; ?> rounded-pill"
-                    style="width: 2rem; height:2rem;">3</button>
-                <small id="approved_pg"  style="top: 50px!important;"
-                    class="position-absolute top-100 start-100 translate-middle btn btn-sm"><strong>Approved</strong><br><?php echo $approved_date; ?></small>
-            </div>
-            <?php }?>
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-ticket-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-ticket" type="button" role="tab" aria-controls="pills-ticket"
+                        aria-selected="true">Ticket</button>
+                </li>
+                <?php if($accepted_date <> "" and $accepted_date <> null){ ?>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-productions-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-productions" type="button" role="tab" aria-controls="pills-productions"
+                        aria-selected="false">Productions detail</button>
+                </li>
+                <?php }?>
+
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-ticket" role="tabpanel"
+                    aria-labelledby="pills-ticket-tab">
+                    <h6 class="ms-5">
+                        <ion-icon name="podium-outline"></ion-icon><strong>Progress</strong>
+                    </h6>
 
 
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <button class="nav-link active" id="nav-public-tab" data-bs-toggle="tab"
-                        data-bs-target="#nav-public" type="button" role="tab" aria-controls="nav-public"
-                        aria-selected="true">
-                        <ion-icon name="chatbubble-outline"></ion-icon>Public comment
-                    </button>
-                  
-                    <?php if(strpos($_SESSION["department"],'Content')!==false){?>
-                    <button class="nav-link" id="nav-internal-tab" data-bs-toggle="tab" data-bs-target="#nav-internal"
-                        type="button" role="tab" aria-controls="nav-internal" aria-selected="false">
-                        <ion-icon name="text-outline"></ion-icon>Internal note
-                    </button>
+                    <div class="position-relative" style="margin: 10%!important;margin-top: 50px!important;">
+                        <div class="progress" style="height: 5px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success shadow-sm"
+                                role="progressbar" aria-label="Progress" style="width: <?php echo $progress_per; ?>%;"
+                                aria-valuenow="<?php echo $progress_per; ?>" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                        <button type="button"
+                            class="position-absolute top-0 start-0 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_0; ?> rounded-pill"
+                            style="width: 2rem; height:2rem;">0</button>
+                        <small id="requester_pg" style="top: 50px!important;"
+                            class="position-absolute top-100 start-0 translate-middle btn btn-sm"><strong>Request</strong><br>
+                            <span class="timeago"
+                                datetime="<?php echo $create_date; ?>"><?php echo $create_date; ?></span></small>
+                        <button type="button"
+                            class="position-absolute top-0 start-30 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_1; ?> rounded-pill"
+                            style="width: 2rem; height:2rem;">1</button>
+                        <small id="checking_pg" style="top: 50px!important;"
+                            class="position-absolute top-100 start-30 translate-middle btn btn-sm"><strong>Checking</strong>
+                            <br><span class="timeago"
+                                datetime="<?php echo $accepted_date; ?>"><?php echo $accepted_date; ?></span></small>
+                        <button type="button"
+                            class="position-absolute top-0 start-60 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_2; ?> rounded-pill"
+                            style="width: 2rem; height:2rem;">2</button>
+                        <small id="onproduction_pg" style="top: 50px!important;"
+                            class="position-absolute top-100 start-60 translate-middle btn btn-sm"><strong>On-productions</strong>
+                            <br><?php echo $job_number; ?></small>
+                        <button type="button"
+                            class="position-absolute top-0 start-100 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_3; ?> rounded-pill"
+                            style="width: 2rem; height:2rem;">3</button>
+                        <small id="approved_pg" style="top: 50px!important;"
+                            class="position-absolute top-100 start-100 translate-middle btn btn-sm"><strong>Approved</strong><br><span
+                                class="timeago"
+                                datetime="<?php echo $approved_date; ?>"><?php echo $approved_date; ?></span></small>
+                    </div>
                     <?php }?>
-                </div>
-            </nav>
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-public" role="tabpanel" aria-labelledby="nav-public-tab"
-                    tabindex="0">
-                    
-                    <div class="alert alert-primary m-2 shadow-sm" role="alert">
-                    <?php if( $remark<>""){
+
+
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-public-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-public" type="button" role="tab" aria-controls="nav-public"
+                                aria-selected="true">
+                                <ion-icon name="chatbubble-outline"></ion-icon>Public comment
+                            </button>
+
+                            <?php if(strpos($_SESSION["department"],'Content')!==false){?>
+                            <button class="nav-link" id="nav-internal-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-internal" type="button" role="tab" aria-controls="nav-internal"
+                                aria-selected="false">
+                                <ion-icon name="text-outline"></ion-icon>Internal note
+                            </button>
+                            <?php }?>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-public" role="tabpanel"
+                            aria-labelledby="nav-public-tab" tabindex="0">
+
+                            <div class="alert alert-primary m-2 shadow-sm" role="alert">
+                                <?php if( $remark<>""){
                         ?>
-                        <ion-icon name="information-circle-outline"></ion-icon><?php echo $remark;?>
-                        <hr>
-                        <?php
+                                <ion-icon name="information-circle-outline"></ion-icon><?php echo $remark;?>
+                                <hr>
+                                <?php
                     }
                     ?>
-                    <a type="button" href="<?php echo $link_info;?>" target="_blank" class="btn btn-sm btn-primary shadow-sm bg-gradient">Go to information files</a> 
-                    </div>
-                   
-                    <!-- comment ns -->
-                    <ul class="list-group list-group-flush m-1" style="background: fixed;">
-                        <div id="comment_box_ns">
-                            <div id="call_ticket_comment_ns">
-                                <?php include('../get/get_comment_ns.php'); ?>
+                                <a type="button" href="<?php echo $link_info;?>" target="_blank"
+                                    class="btn btn-sm btn-primary shadow-sm bg-gradient">Go to information files</a>
                             </div>
-                        </div>
-                    </ul>
-                    <small style="font-weight: bolder;color: #adb5bd;">
-                        <ion-icon name="chatbubbles-outline"></ion-icon>Comment
-                    </small>
-                    <textarea id="comment_input_ns" style="font-size: 14px;" class="form-control mt-2 mb-2"
-                        placeholder="Leave a comment here..." rows="4" style="height: 100px"></textarea>
-                    <div class="mb-3">
-                        <input type="file" id="actual-btn_ns" name="actual-btn_ns[]" multiple hidden />
-                        <label id="label_file_ns" name="label_file_ns" for="actual-btn_ns">
-                            <ion-icon name="attach-outline"></ion-icon>Attach file or image
-                        </label>
-                        <span id="file-chosen_ns"> </span>
-                    </div>
-                    <button type="button" class="btn btn-outline-primary btn-sm"
-                        onClick="comment_ns_id_with_file(<?php echo  $_POST['id']; ?>)">Add
-                        comment</button>
-                    <!-- end comment ns -->
-                </div>
-  
-                <div class="tab-pane fade" id="nav-internal" role="tabpanel" aria-labelledby="nav-internal-tab"
-                    tabindex="0">
-                    <!-- internal note -->
 
-                    <ul class="list-group list-group-flush m-1" style="background: fixed;">
-                        <div id="comment_box_ins">
-                            <div id="call_ticket_comment_ins">
-                                <?php include('../get/get_comment_ins.php'); ?>
+                            <!-- comment ns -->
+                            <ul class="list-group list-group-flush m-1" style="background: fixed;">
+                                <div id="comment_box_ns">
+                                    <div id="call_ticket_comment_ns">
+                                        <?php include('../get/get_comment_ns.php'); ?>
+                                    </div>
+                                </div>
+                            </ul>
+                            <small style="font-weight: bolder;color: #adb5bd;">
+                                <ion-icon name="chatbubbles-outline"></ion-icon>Comment
+                            </small>
+                            <textarea id="comment_input_ns" style="font-size: 14px;" class="form-control mt-2 mb-2"
+                                placeholder="Leave a comment here..." rows="4" style="height: 100px"></textarea>
+                            <div class="mb-3">
+                                <input type="file" id="actual-btn_ns" name="actual-btn_ns[]" multiple hidden />
+                                <label id="label_file_ns" name="label_file_ns" for="actual-btn_ns">
+                                    <ion-icon name="attach-outline"></ion-icon>Attach file or image
+                                </label>
+                                <span id="file-chosen_ns"> </span>
                             </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm"
+                                onClick="comment_ns_id_with_file(<?php echo  $_POST['id']; ?>)">Add
+                                comment</button>
+                            <!-- end comment ns -->
                         </div>
-                    </ul>
-                    <small style="font-weight: bolder;color: #adb5bd;">
-                        <ion-icon name="chatbubbles-outline"></ion-icon>Comment
-                    </small>
-                    <textarea id="comment_input_ins" style="font-size: 14px;" class="form-control mt-2 mb-2"
-                        placeholder="Leave a comment here..." rows="4" style="height: 100px"></textarea>
-                    <div class="mb-3">
-                        <input type="file" id="actual-btn_ins" name="actual-btn_ins[]" multiple hidden />
-                        <label id="label_file_ins" name="label_file_ins" for="actual-btn_ins">
-                            <ion-icon name="attach-outline"></ion-icon>Attach file or image
-                        </label>
-                        <span id="file-chosen_ins"> </span>
-                    </div>
-                    <button type="button" class="btn btn-outline-primary btn-sm"
-                        onClick="comment_ins_id_with_file(<?php echo  $_POST['id']; ?>)">Add
-                        comment</button>
 
-                    <!-- end internal note -->
+                        <div class="tab-pane fade" id="nav-internal" role="tabpanel" aria-labelledby="nav-internal-tab"
+                            tabindex="0">
+                            <!-- internal note -->
+
+                            <ul class="list-group list-group-flush m-1" style="background: fixed;">
+                                <div id="comment_box_ins">
+                                    <div id="call_ticket_comment_ins">
+                                        <?php include('../get/get_comment_ins.php'); ?>
+                                    </div>
+                                </div>
+                            </ul>
+                            <small style="font-weight: bolder;color: #adb5bd;">
+                                <ion-icon name="chatbubbles-outline"></ion-icon>Comment
+                            </small>
+                            <textarea id="comment_input_ins" style="font-size: 14px;" class="form-control mt-2 mb-2"
+                                placeholder="Leave a comment here..." rows="4" style="height: 100px"></textarea>
+                            <div class="mb-3">
+                                <input type="file" id="actual-btn_ins" name="actual-btn_ins[]" multiple hidden />
+                                <label id="label_file_ins" name="label_file_ins" for="actual-btn_ins">
+                                    <ion-icon name="attach-outline"></ion-icon>Attach file or image
+                                </label>
+                                <span id="file-chosen_ins"> </span>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm"
+                                onClick="comment_ins_id_with_file(<?php echo  $_POST['id']; ?>)">Add
+                                comment</button>
+
+                            <!-- end internal note -->
+                        </div>
+                    </div>
+
                 </div>
+                <div class="tab-pane fade" id="pills-productions" role="tabpanel"
+                    aria-labelledby="pills-productions-tab">...</div>
             </div>
+
+
 
 
 
@@ -458,7 +492,7 @@
                         type="button" role="tab" aria-controls="nav-logs" aria-selected="false">
                         <ion-icon name="time-outline"></ion-icon>Logs
                     </button>
-                    
+
                     <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                     <button class="nav-link" id="nav-console-tab" data-bs-toggle="tab" data-bs-target="#nav-console"
                         type="button" role="tab" aria-controls="nav-console" aria-selected="false">
@@ -483,14 +517,14 @@
                         </div>
                         <div id="form_request_edit_new_2">
                         </div>
-                       
+
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-logs" role="tabpanel" aria-labelledby="nav-logs-tab" tabindex="0">
                     <div class="container" style="padding: 20px!important;">
-                    <div id="get_ns_log">
+                        <div id="get_ns_log">
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -672,6 +706,7 @@ function take_ns_requester(id) {
         });
     }
 }
+
 function take_ns_officer(id) {
     if (id) {
         $.post("../base/action/action_take_ns_officer.php", {
@@ -817,6 +852,7 @@ function force_sync_with_ticket(id, bu) {
         );
     }
 }
+
 function itemize_send_mail_stamp(id) {
     let subject_mail = prompt("ระบุ subject mail", '<?php echo $subject_mail; ?>');
     if (subject_mail == null || subject_mail == "") {
@@ -836,6 +872,7 @@ function itemize_send_mail_stamp(id) {
         }
     }
 }
+
 function sku_checking() {
     // sku_checking_result
     var sku_list = document.getElementById("sku_checking").value;
@@ -851,27 +888,28 @@ function sku_checking() {
 
 // get_detail_more
 function form_request_edit_new(id) {
-        $.post("base/form/form_request_edit_new_2.php", {
-                id: id
-            },
-            function(data) {
-                $('#form_request_edit_new_2').html(data);
-            });
-            console.log("id:"+id);
+    $.post("base/form/form_request_edit_new_2.php", {
+            id: id
+        },
+        function(data) {
+            $('#form_request_edit_new_2').html(data);
+        });
+    console.log("id:" + id);
 }
-function get_ns_log(action_table,action_data,action_data_id) {
-        $.post("base/get/get_ns_log.php", {
+
+function get_ns_log(action_table, action_data, action_data_id) {
+    $.post("base/get/get_ns_log.php", {
             action_table: action_table,
             action_data: action_data,
             action_data_id: action_data_id
-            },
-            function(data) {
-                $('#get_ns_log').html(data);
-            });
-            console.log("action_data_id:"+action_data_id);
+        },
+        function(data) {
+            $('#get_ns_log').html(data);
+        });
+    console.log("action_data_id:" + action_data_id);
 }
 form_request_edit_new(<?php echo $id; ?>);
-get_ns_log('add_new_job','csg',<?php echo $id; ?>);
+get_ns_log('add_new_job', 'csg', <?php echo $id; ?>);
 
 
 function split_to_subtask(id) {
@@ -910,64 +948,72 @@ function action_assign_follow(id) {
 
 // toolstip
 tippy('#nav-detail-tab', {
-  content: "Ticket Information",
-  placement: 'top',
-  animation: 'fade',
+    content: "Ticket Information",
+    placement: 'top',
+    animation: 'fade',
 });
 tippy('#nav-logs-tab', {
-  content: "Updated History",
-  placement: 'top',
-  animation: 'fade',
+    content: "Updated History",
+    placement: 'top',
+    animation: 'fade',
 });
 tippy('#nav-console-tab', {
-  content: "Ticket Control",
-  placement: 'top',
-  animation: 'fade',
+    content: "Ticket Control",
+    placement: 'top',
+    animation: 'fade',
 });
 tippy('#nav-sku-tab', {
-  content: "SKUs list",
-  placement: 'top',
-  animation: 'fade',
+    content: "SKUs list",
+    placement: 'top',
+    animation: 'fade',
 });
 tippy('#nav-note-tab', {
-  content: "Brand Note",
-  placement: 'top',
-  animation: 'fade',
+    content: "Brand Note",
+    placement: 'top',
+    animation: 'fade',
 });
 tippy('#discover_more_brand_bt', {
-  content: "ดูงานที่เป็นแบรนด์เดียวกัน",
-  placement: 'bottom',
-  animation: 'fade',
+    content: "ดูงานที่เป็นแบรนด์เดียวกัน",
+    placement: 'bottom',
+    animation: 'fade',
 });
 tippy('#discover_more_requester_bt', {
-  content: "ดูงานที่เป็นถูกสร้างจากผู้ใช้เดียวกัน",
-  placement: 'bottom',
-  animation: 'fade',
+    content: "ดูงานที่เป็นถูกสร้างจากผู้ใช้เดียวกัน",
+    placement: 'bottom',
+    animation: 'fade',
 });
 tippy('#take_owner_bt', {
-  content: "เปลี่ยนข้อมูลผู้ใช้ที่สร้าง ticket นี้ให้เป็นชื่อของคุณ",
-  placement: 'bottom',
-  animation: 'fade',
+    content: "เปลี่ยนข้อมูลผู้ใช้ที่สร้าง ticket นี้ให้เป็นชื่อของคุณ",
+    placement: 'bottom',
+    animation: 'fade',
 });
 tippy('#take_officer_bt', {
-  content: "รับงานนี้เข้ามาอยู่ในความดูแลของคุณ",
-  placement: 'bottom',
-  animation: 'fade',
+    content: "รับงานนี้เข้ามาอยู่ในความดูแลของคุณ",
+    placement: 'bottom',
+    animation: 'fade',
 });
 
 tippy('#requester_pg', {
-  content: "งานนี้ถูกสร้างโดย <?php echo $request_firstname.' '.$request_lastname;?> เมื่อวันที่ <?php echo $create_date;?>>",
-  placement: 'bottom',
-  animation: 'fade',
+    content: "งานนี้ถูกสร้างโดย <?php echo $request_firstname.' '.$request_lastname;?> เมื่อวันที่ <?php echo $create_date;?>>",
+    placement: 'bottom',
+    animation: 'fade',
 });
-// tippy('#checking_pg', {
-//   content: "ทางทีมได้เริ่มตรวจสอบข้อมูลของสินค้า เมื่อวันที่ <?php// echo $start_checking_date;?>",
-//   placement: 'bottom',
-//   animation: 'fade',
-// });
+tippy('#checking_pg', {
+    content: "ทางทีมได้เริ่มตรวจสอบข้อมูลของสินค้า เมื่อวันที่ <?php echo $start_checking_date;?>",
+    placement: 'bottom',
+    animation: 'fade',
+});
+tippy('#onproduction_pg', {
+    content: "ทางทีมได้เริ่มกระบวนการ production เมื่อวันที่ <?php echo $accepted_date;?>",
+    placement: 'bottom',
+    animation: 'fade',
+});
+tippy('#approved_pg', {
+    content: "ทางทีมได้การสร้าง product contant แล้วเมื่อวันที่ <?php echo $approved_date;?> และจะทำการปรับ Enable สินค้าเพื่อขึ้นขายวันที่ <?php echo $launch_date;?> ",
+    placement: 'bottom',
+    animation: 'fade',
+});
 timeago().render(document.querySelectorAll('.timeago'));
-
-
 </script>
 <!-- 
 var url = new URL("http://foo.bar/?x=1&y=2");
@@ -977,4 +1023,3 @@ url.searchParams.append('x', 42);
 
 // If your expected result is "http://foo.bar/?x=42&y=2"
 url.searchParams.set('x', 42); -->
-
