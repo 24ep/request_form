@@ -305,7 +305,7 @@
                                     }
                                         
                                     ?>
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills mb-3" style="flex-flow: nowrap;width: fit-content;" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="pills-ticket-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-ticket" type="button" role="tab" aria-controls="pills-ticket"
@@ -315,7 +315,7 @@
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="pills-productions-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-productions" type="button" role="tab" aria-controls="pills-productions"
-                        aria-selected="false">Productions detail</button>
+                        aria-selected="false">Productions Detail</button>
                 </li>
                 <?php }?>
 
