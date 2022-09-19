@@ -11,7 +11,7 @@ function get_attribute($attribute_set,$section_group){
     while($row = mysqli_fetch_array($result)) {
         $attribute.= $row['attribute_label'];
     }
-    echo $attribute;
+    return $attribute;
 }
 
 //get attribute section
@@ -25,7 +25,7 @@ function get_attribute_section($attribute_set){
         $section .=  $row['section_group'];
         $section .= get_attribute($attribute_set,$row['section_group']);
     }
-    echo  $section;
+    return  $section;
 }
 
 //get attribute set manu
