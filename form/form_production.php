@@ -1,15 +1,139 @@
 <?php
 $id=$_POST['id'];
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
+    if($site_element=='datetime-local'){
+      $current_value = str_replace(" ","T",$current_value);
+    }
+    $element = '
+    <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
+      <div class="col-3 fw-bold">'.$att_name.'</div>
+      <div class="col-9">
+        <input
+          class="form-control form-control-sm"
+          id="'.$code_element.'"
+          name="'.$code_element.'"
+          type="'.$site_element.'"
+          style="border: 0px"
+          value="'.$current_value.'"
+          '.$enable_edit.'
+          onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
+        />
+      </div>
+    </li>
+    ';
+    return $element;
+  }
+  function return_s_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit,$id){
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+      $query_op = "SELECT * FROM content_service_gate.attribute_option
+      WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
+      $result_op = mysqli_query($con, $query_op);
+      while($option = mysqli_fetch_array($result_op)) {
+      if($option["attribute_option"]==$current_value){
+          $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+        }else{
+          $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+        }
+      }
+    $element = '
+    <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
+      <div class="col-3 fw-bold">'.$att_name.'</div>
+      <div class="col-9">
+        <select
+          class="form-select form-select-sm"
+          id="'.$code_element.'"
+          name="'.$code_element.'"
+          style="border: 0px"
+          '.$enable_edit.'
+          onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
+        >
+        '.$option_element.'
+        </select>
+      </div>
+    </li>
+    ';
+    unset($option_element);
+    return $element;
+  }
+  function return_m_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit,$id){
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+      $query_op = "SELECT * FROM content_service_gate.attribute_option
+      WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
+      $result_op = mysqli_query($con, $query_op);
+      while($option = mysqli_fetch_array($result_op)) {
+      if(strpos($current_value ,$option["attribute_option"])!==false){
+          $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+        }else{
+          $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+        }
+      }
+    $element = '
+    <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
+      <div class="col-3 fw-bold">'.$att_name.'</div>
+      <div class="col-9">
+        <select
+          multiple="multiple"
+          class="form-select"
+          id="'.$code_element.'"
+          name="'.$code_element.'"
+          style="border: 0px"
+          '.$enable_edit.'
+          onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
+        >
+        '.$option_element.'
+        </select>
+      </div>
+    </li>
+    ';
+    unset($option_element);
+    return $element;
+  }
+  function return_textarea_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
+    $element = '
+    <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
+      <div class="col-3 fw-bold">'.$att_name.'</div>
+      <div class="col-9">
+        <textarea
+          class="form-control"
+          id="'.$code_element.'"
+          name="'.$code_element.'"
+          style="border: 0px"
+          rows="4"
+          '.$enable_edit.'
+          onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
+        >'.$current_value.'
+        </textarea>
+      </div>
+    </li>
+    ';
+    return $element;
+  }
 //get attribute 
 function get_attribute($attribute_set,$section_group){
     global $con;
+    global $id;
     $query = "SELECT  * FROM u749625779_cdscontent.job_attribute 
     where allow_display=1 and $attribute_set = '".$attribute_set."' and section_group ='".$section_group."'" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     $attribute="";
     while($row = mysqli_fetch_array($result)) {
         $attribute.= $row['attribute_label'];
+        if($row["attribute_label"]=="number"){
+        $element .= return_input_box($row["attribute_label"],"number",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["allow_edit"],$id);
+          }elseif($row["attribute_label"]=="text"){
+          $element .= return_input_box($row["attribute_label"],"text",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["allow_edit"],$id);
+          }elseif($row["attribute_label"]=="datetime"){
+          $element .= return_input_box($row["attribute_label"],"datetime-local",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["allow_edit"],$id);
+          }elseif($row["attribute_label"]=="date"){
+          $element .= return_input_box($row["attribute_label"],"date",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["allow_edit"],$id);
+          }elseif($row["attribute_label"]=="textarea"){
+          $element .= return_textarea_box($row["attribute_label"],"textarea",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["allow_edit"],$id);
+          }elseif($row["attribute_label"]=="single_select"){
+          $element .= return_s_select_box($row["attribute_label"],"single_select",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["attribute_id"],$row["allow_edit"],$id);
+          }elseif($row["attribute_label"]=="multi_select"){
+          $element .= return_m_select_box($row["attribute_label"],"multi_select",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["attribute_id"],$row["allow_edit"],$id);
+          }
     }
     return $attribute;
 }
@@ -17,12 +141,12 @@ function get_attribute($attribute_set,$section_group){
 //get attribute section
 function get_attribute_section($attribute_set){
     global $con;
-    $query = "SELECT  * FROM u749625779_cdscontent.job_attribute 
+    $query = "SELECT distinct attribute_section FROM u749625779_cdscontent.job_attribute 
     where allow_display=1 and attribute_set = '".$attribute_set."'" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     $section="";
     while($row = mysqli_fetch_array($result)) {
-        $section .=  $row['section_group'];
+        $section .=  '<span class="m-3"><strong>'.$row['section_group'].'</strong></span><br>';
         $section .= get_attribute($attribute_set,$row['section_group']);
     }
     return  $section;
