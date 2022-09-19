@@ -153,7 +153,9 @@ function get_attribute_section($attribute_set){
     while($row = mysqli_fetch_array($result)) {
         $section .=  '<span class="m-3" style="font-size: large;border-bottom-style: solid;color:#b11b29;display: flex!important;
         margin: 10px;text-transform: uppercase;"><strong>'.$row['section_group'].'</strong></span><br>';
+        $section .= '<div class="row">';
         $section .= get_attribute($attribute_set,$row['section_group']);
+        $section .= '</div>';
     }
     return  $section;
 }
