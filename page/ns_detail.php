@@ -305,19 +305,19 @@
                                     }
                                         
                                     ?>
-            <ul class="nav nav-pills mb-3" style="flex-flow: nowrap;width: fit-content;" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills mb-3" style="flex-flow: nowrap;width: auto;" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="pills-ticket-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-ticket" type="button" role="tab" aria-controls="pills-ticket"
-                        aria-selected="true">Ticket</button>
+                        aria-selected="true"><ion-icon name="receipt-outline"></ion-icon>Ticket</button>
                 </li>
-                <?php if($accepted_date <> "" and $accepted_date <> null){ ?>
+                <!-- <?php //if($accepted_date <> "" and $accepted_date <> null){ ?> -->
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="pills-productions-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-productions" type="button" role="tab" aria-controls="pills-productions"
-                        aria-selected="false">Productions Detail</button>
+                        aria-selected="false"><ion-icon name="receipt-outline"></ion-icon>Productions Detail</button>
                 </li>
-                <?php }?>
+                <?php// }?>
 
             </ul>
             <div class="tab-content" id="pills-tabContent">
@@ -458,7 +458,13 @@
 
                 </div>
                 <div class="tab-pane fade" id="pills-productions" role="tabpanel"
-                    aria-labelledby="pills-productions-tab">...</div>
+                    aria-labelledby="pills-productions-tab">
+                   <?php if($accepted_date <> "" and $accepted_date <> null){ ?>
+
+                   <?php }else{
+                        echo '<small>The productions stage are not start yet ..</small>';
+                   } ?>
+                </div>
             </div>
 
 
