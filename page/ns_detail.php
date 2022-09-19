@@ -315,7 +315,7 @@
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="pills-productions-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-productions" type="button" role="tab" aria-controls="pills-productions"
-                        aria-selected="false"><ion-icon name="receipt-outline"></ion-icon>Productions Detail</button>
+                        aria-selected="false"><ion-icon name="file-tray-stacked-outline"></ion-icon>Productions</button>
                 </li>
                 <?php// }?>
 
