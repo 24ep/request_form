@@ -135,7 +135,7 @@ function get_attribute($attribute_set,$section_group){
           $element .= return_m_select_box($row["attribute_label"],"multi_select",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["attribute_id"],$row["allow_edit"],$id);
           }
     }
-    return $attribute;
+    return $element;
 }
 
 //get attribute section
