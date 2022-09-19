@@ -151,7 +151,7 @@ function get_attribute_section($attribute_set){
     $result = mysqli_query($con, $query);
     $section="";
     while($row = mysqli_fetch_array($result)) {
-        $section .=  '<span class="m-3" style="font-size: large;border-bottom-style: solid;width: 100%;display: inline-flex;
+        $section .=  '<span class="m-3" style="font-size: large;border-bottom-style: solid;color:#b11b29;display: inline-flex;
         margin: 10px;text-transform: uppercase;"><strong>'.$row['section_group'].'</strong></span><br>';
         $section .= get_attribute($attribute_set,$row['section_group']);
     }
