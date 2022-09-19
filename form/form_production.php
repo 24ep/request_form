@@ -13,7 +13,7 @@ $query = "SELECT  * FROM u749625779_cdscontent.job_cms where csg_request_new_id 
         while($row_column = mysqli_fetch_array($result_column)) {
             ${"jc_".$row_column['COLUMN_NAME']} = $row[$row_column['COLUMN_NAME']];
         }
-        echo  $jc_id;
+        echo  $jc_job_number;
     }
 function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
     if($site_element=='datetime-local'){
