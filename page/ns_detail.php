@@ -460,7 +460,7 @@
                 <div class="tab-pane fade" id="pills-productions" role="tabpanel"
                     aria-labelledby="pills-productions-tab">
                    <?php if($accepted_date <> "" and $accepted_date <> null){ ?>
-
+                            <div id="form_production"></div>
                    <?php }else{
                         echo '<small>The productions stage are not start yet ..</small>';
                    } ?>
@@ -900,8 +900,8 @@ function form_request_edit_new(id) {
         function(data) {
             $('#form_request_edit_new_2').html(data);
         });
-    console.log("id:" + id);
 }
+
 
 function get_ns_log(action_table, action_data, action_data_id) {
     $.post("base/get/get_ns_log.php", {
@@ -914,6 +914,18 @@ function get_ns_log(action_table, action_data, action_data_id) {
         });
     console.log("action_data_id:" + action_data_id);
 }
+
+// get_detail_more
+function form_production(id) {
+    $.post("base/form/form_production.php", {
+            id: id
+        },
+        function(data) {
+            $('#form_production').html(data);
+        });
+    
+}
+form_production(<?php echo $id; ?>);
 form_request_edit_new(<?php echo $id; ?>);
 get_ns_log('add_new_job', 'csg', <?php echo $id; ?>);
 
