@@ -11,7 +11,7 @@ $query = "SELECT  * FROM u749625779_cdscontent.job_cms where csg_request_new_id 
             AND `TABLE_NAME`='job_cms'" or die("Error:" . mysqli_error($con));
         $result_column = mysqli_query($con, $query_column);
         while($row_column = mysqli_fetch_array($result_column)) {
-            ${$row_column['`COLUMN_NAME`']} = $row[$row_column['`COLUMN_NAME`']];
+            ${"jc_".$row_column['COLUMN_NAME']} = $row[$row_column['COLUMN_NAME']];
         }
      
     }
@@ -139,19 +139,19 @@ function get_attribute($attribute_set,$section_group){
             $allow_in_edit = '';
         }
         if($row["attribute_type"]=="number"){
-        $element .= return_input_box($row["attribute_label"],"number",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$allow_in_edit,$id);
+        $element .= return_input_box($row["attribute_label"],"number",${"jc_".$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="text"){
-          $element .= return_input_box($row["attribute_label"],"text",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$allow_in_edit,$id);
+          $element .= return_input_box($row["attribute_label"],"text",${"jc_".$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="datetime"){
-          $element .= return_input_box($row["attribute_label"],"datetime-local",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$allow_in_edit,$id);
+          $element .= return_input_box($row["attribute_label"],"datetime-local",${"jc_".$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="date"){
-          $element .= return_input_box($row["attribute_label"],"date",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$allow_in_edit,$id);
+          $element .= return_input_box($row["attribute_label"],"date",${"jc_".$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="textarea"){
-          $element .= return_textarea_box($row["attribute_label"],"textarea",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$allow_in_edit,$id);
+          $element .= return_textarea_box($row["attribute_label"],"textarea",${"jc_".$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="single_select"){
-          $element .= return_s_select_box($row["attribute_label"],"single_select",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["attribute_id"],$allow_in_edit,$id);
+          $element .= return_s_select_box($row["attribute_label"],"single_select",${"jc_".$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["attribute_id"],$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="multi_select"){
-          $element .= return_m_select_box($row["attribute_label"],"multi_select",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["attribute_id"],$allow_in_edit,$id);
+          $element .= return_m_select_box($row["attribute_label"],"multi_select",${"jc_".$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["attribute_id"],$allow_in_edit,$id);
           }
     }
     return $element;
