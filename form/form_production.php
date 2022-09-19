@@ -17,7 +17,7 @@ function get_attribute($attribute_set,$section_group){
 //get attribute section
 function get_attribute_section($attribute_set){
     global $con;
-    $query = "SELECT  section_group FROM u749625779_cdscontent.job_attribute 
+    $query = "SELECT  * FROM u749625779_cdscontent.job_attribute 
     where allow_display=1 and $attribute_set = '".$attribute_set."'" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     $section="";
@@ -34,8 +34,8 @@ $query = "SELECT distinct attribute_set FROM u749625779_cdscontent.job_attribute
   $d_attribute_set="";
   $d_attribute_section="";
   while($row = mysqli_fetch_array($result)) {
-    $d_attribute_set .=  '  <button class="nav-link" id="v-pills-'.$row['attribute_set'].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.str_replace(" ","_",$row['attribute_set']).'" type="button" role="tab" aria-controls="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" aria-selected="false">'.str_replace(" ","_",$row['attribute_set']).'</button>';
-    $d_attribute_section .= '<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">'.get_attribute_section($row['attribute_set']).'</div>';
+    $d_attribute_set .=  '  <button class="nav-link" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.str_replace(" ","_",$row['attribute_set']).'" type="button" role="tab" aria-controls="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" aria-selected="false">'.str_replace(" ","_",$row['attribute_set']).'</button>';
+    $d_attribute_section .= '<div class="tab-pane fade" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" role="tabpanel" aria-labelledby="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab">'.get_attribute_section($row['attribute_set']).'</div>';
 
   }
   echo'
