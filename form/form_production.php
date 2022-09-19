@@ -119,20 +119,25 @@ function get_attribute($attribute_set,$section_group){
     $element="";
     while($row = mysqli_fetch_array($result)) {
         // $element.= $row['attribute_label'];
+        if($row['allow_in_edit']==0){
+            $allow_in_edit = ' disabled';
+        }else{
+            $allow_in_edit = '';
+        }
         if($row["attribute_type"]=="number"){
-        $element .= return_input_box($row["attribute_label"],"number",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["allow_in_edit"],$id);
+        $element .= return_input_box($row["attribute_label"],"number",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="text"){
-          $element .= return_input_box($row["attribute_label"],"text",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["allow_in_edit"],$id);
+          $element .= return_input_box($row["attribute_label"],"text",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="datetime"){
-          $element .= return_input_box($row["attribute_label"],"datetime-local",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["allow_in_edit"],$id);
+          $element .= return_input_box($row["attribute_label"],"datetime-local",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="date"){
-          $element .= return_input_box($row["attribute_label"],"date",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["allow_in_edit"],$id);
+          $element .= return_input_box($row["attribute_label"],"date",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="textarea"){
-          $element .= return_textarea_box($row["attribute_label"],"textarea",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["allow_in_edit"],$id);
+          $element .= return_textarea_box($row["attribute_label"],"textarea",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="single_select"){
-          $element .= return_s_select_box($row["attribute_label"],"single_select",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["attribute_id"],$row["allow_in_edit"],$id);
+          $element .= return_s_select_box($row["attribute_label"],"single_select",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["attribute_id"],$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="multi_select"){
-          $element .= return_m_select_box($row["attribute_label"],"multi_select",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["attribute_id"],$row["allow_in_edit"],$id);
+          $element .= return_m_select_box($row["attribute_label"],"multi_select",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["attribute_id"],$allow_in_edit,$id);
           }
     }
     return $element;
