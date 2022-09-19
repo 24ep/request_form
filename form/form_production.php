@@ -11,7 +11,7 @@ $query = "SELECT  * FROM u749625779_cdscontent.job_cms where csg_request_new_id 
             AND `TABLE_NAME`='job_cms'" or die("Error:" . mysqli_error($con));
         $result_column = mysqli_query($con, $query_column);
         while($row_column = mysqli_fetch_array($result_column)) {
-            ${$row_column['COLUMN_NAME']} = $row[$row_column['COLUMN_NAME']];
+            ${$row_column['`COLUMN_NAME`']} = $row[$row_column['`COLUMN_NAME`']];
         }
      
     }
