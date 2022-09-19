@@ -118,7 +118,7 @@ function get_attribute($attribute_set,$section_group){
     $result = mysqli_query($con, $query);
     $attribute="";
     while($row = mysqli_fetch_array($result)) {
-        $attribute.= $row['attribute_label'];
+        $element.= $row['attribute_label'];
         if($row["attribute_label"]=="number"){
         $element .= return_input_box($row["attribute_label"],"number",${$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["allow_edit"],$id);
           }elseif($row["attribute_label"]=="text"){
