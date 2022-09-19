@@ -18,7 +18,7 @@ function get_attribute($attribute_set,$section_group){
 function get_attribute_section($attribute_set){
     global $con;
     $query = "SELECT  * FROM u749625779_cdscontent.job_attribute 
-    where allow_display=1 and $attribute_set = '".$attribute_set."'" or die("Error:" . mysqli_error($con));
+    where allow_display=1 and attribute_set = '".$attribute_set."'" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     $section="";
     while($row = mysqli_fetch_array($result)) {
