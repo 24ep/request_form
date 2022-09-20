@@ -151,5 +151,6 @@ if(count_status($_SESSION['username'],'wait')>0 ){
             'รับทราบ',
         );</script>";
 }
+?>
 
 }
