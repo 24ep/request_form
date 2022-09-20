@@ -164,7 +164,7 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
 //get attribute section
 function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$prefix_table){
     global $con;
-    $query = "SELECT distinct section_group FROM ".$database.".job_attribute 
+    $query = "SELECT distinct section_group FROM u749625779_cdscontent.job_attribute 
     where allow_display=1 and attribute_set = '".$attribute_set."' and table='".$table."'" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     $section="";
