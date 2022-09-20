@@ -309,13 +309,13 @@
                 <li class="nav-item" style="width: fit-content;" role="presentation">
                     <button class="nav-link active" id="pills-ticket-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-ticket" type="button" role="tab" aria-controls="pills-ticket"
-                        aria-selected="true"><ion-icon name="receipt-outline"></ion-icon>Ticket</button>
+                        aria-selected="true"><ion-icon name="podium-outline"></ion-icon>Progress</button>
                 </li>
                 <!-- <?php //if($accepted_date <> "" and $accepted_date <> null){ ?> -->
                 <li class="nav-item"   style="width: fit-content;"  role="presentation">
                     <button class="nav-link" id="pills-productions-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-productions" type="button" role="tab" aria-controls="pills-productions"
-                        aria-selected="false"><ion-icon name="file-tray-stacked-outline"></ion-icon>Productions</button>
+                        aria-selected="false"><ion-icon name="file-tray-stacked-outline"></ion-icon>Informations</button>
                 </li>
                 <?php// }?>
 
@@ -323,9 +323,9 @@
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-ticket" role="tabpanel"
                     aria-labelledby="pills-ticket-tab">
-                    <h6 class="ms-5">
+                    <!-- <h6 class="ms-5">
                         <ion-icon name="podium-outline"></ion-icon><strong>Progress</strong>
-                    </h6>
+                    </h6> -->
 
 
                     <div class="position-relative" style="margin: 10%!important;margin-top: 50px!important;">
