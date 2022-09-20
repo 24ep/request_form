@@ -129,7 +129,7 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
           }
       }
 
-    $query = "SELECT  * FROM ".$database.".job_attribute 
+    $query = "SELECT  * FROM u749625779_cdscontent.job_attribute 
     where allow_display=1 and attribute_set = '".$attribute_set."' and section_group ='".$section_group."' and table='".$table."'"  or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     $element="";
