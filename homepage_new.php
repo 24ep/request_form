@@ -175,7 +175,7 @@ if (!$_SESSION["login_csg"]){
         </div>
     </div>
     <div class="row">
-        <div class="col-2 list_bra shadow" onmouseover="minimize_nav();" onmouseout="minimize_nav();">
+        <div class="col-2 list_bra shadow" >
             <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
                     class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-secondary  bg-gradient shadow rounded-pill"
