@@ -193,11 +193,10 @@ $query = "SELECT distinct attribute_set FROM u749625779_cdscontent.job_attribute
   echo'
   <div class="d-flex align-items-start">
       <div class="nav flex-column nav-pills me-3" style="text-align-last: left;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <button class="nav-link" id="v-pills-info-tab" data-bs-toggle="pill" data-bs-target="#v-pills-info" type="button" role="tab" aria-controls="v-pills-info" aria-selected="false">Ticket Info</button>
+  
       '.$d_attribute_set.'
       </div>
       <div class="tab-content" id="v-pills-tabContent">
-      <div class="tab-pane fade" id="v-pills-info" role="tabpanel" aria-labelledby="v-pills-info-tab">
       
       </div>
       '.$d_attribute_section.'
