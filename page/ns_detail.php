@@ -1038,11 +1038,11 @@ timeago().render(document.querySelectorAll('.timeago'));
 <?php
 
 if($status == 'waiting data' or $status =='waiting image'){
-echo "Report.warning(
+echo "<script>Report.warning(
         'Waiting more information',
         'เรียนผู้เกี่ยวข้อง Ticket นี้กำลังรอข้อมูลสินค้าเพิ่มเติมจากผู้เกี่ยวข้อง โปรดดูเพิ่มเติมในช่องแสดงความคิดเห็น <br/> - ขออภัยหากได้ส่งข้อมูลกลับแล้ว -',
         'รับทราบ',
-        );";
+        );</script>";
 }
 ?>
 <!-- 
