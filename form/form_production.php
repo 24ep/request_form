@@ -179,7 +179,7 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
 }
 
 //get attribute set manu
-$query = "SELECT distinct attribute_set FROM u749625779_cdscontent.job_attribute where allow_display=1  order by sort_attribute_set" or die("Error:" . mysqli_error($con));
+$query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix FROM u749625779_cdscontent.job_attribute where allow_display=1  order by sort_attribute_set" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $d_attribute_set="";
   $d_attribute_section="";
@@ -187,7 +187,7 @@ $query = "SELECT distinct attribute_set FROM u749625779_cdscontent.job_attribute
     echo '<div id="call_update_jc_complete"></div>';
     echo '<ul class="list-group">';
     $d_attribute_set .=  '  <button class="nav-link" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.str_replace(" ","_",$row['attribute_set']).'" type="button" role="tab" aria-controls="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" aria-selected="false">'.str_replace(" ","_",$row['attribute_set']).'</button>';
-    $d_attribute_section .= '<div class="tab-pane fade" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" role="tabpanel" aria-labelledby="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab">'.get_attribute_section($row['attribute_set'],$row['attribute_set'],$row['db_name'],$row['primary_key_id'],$row['prefix']).'</div>';
+    $d_attribute_section .= '<div class="tab-pane fade" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" role="tabpanel" aria-labelledby="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab">'.get_attribute_section($row['attribute_set'],$row['table_name'],$row['db_name'],$row['primary_key_id'],$row['prefix']).'</div>';
     echo '</ul>';
   }
   echo'
