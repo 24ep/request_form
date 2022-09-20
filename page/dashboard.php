@@ -144,10 +144,11 @@ function get_list_status($username,$status){
 timeago().render(document.querySelectorAll('.timeago'));
 </script>
 <?php
-if(count_status($_SESSION['username'],'wait')>0 ){
+$count_waiting = count_status($_SESSION['username'],'wait');
+if($count_waiting >0 ){
     echo "<script>Notiflix.Report.warning(
             'Waiting more information',
-            'เรียนคุณ ".$_SESSION['firstname']." ".$_SESSION['lastname']."<br/> คุณมี Ticket ที่กำลังรอข้อมูลเพิ่มเติมอยู่ ".count_status($_SESSION['username'],'wait')."Ticket โปรดดูเพิ่มเติมที่งาน status Waiting information<br/> - ขออภัยหากได้ส่งข้อมูลเพิ่มเติมแล้ว -',
+            'เรียนคุณ ".$_SESSION['firstname']." ".$_SESSION['lastname']."<br/> คุณมี Ticket ที่กำลังรอข้อมูลเพิ่มเติมอยู่ ".$count_waiting ." Ticket โปรดดูเพิ่มเติมที่งาน status Waiting information<br/> - ขออภัยหากได้ส่งข้อมูลเพิ่มเติมแล้ว -',
             'รับทราบ',
         );</script>";
 }
