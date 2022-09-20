@@ -396,7 +396,7 @@
                     }
                     ?>
                                 <a type="button" href="<?php echo $link_info;?>" target="_blank"
-                                    class="btn btn-sm btn-primary shadow-sm bg-gradient">Go to information files</a>
+                                    class="btn btn-sm btn-primary shadow-sm bg-gradient"><ion-icon name="document-outline"></ion-icon>Go to information files</a>
                             </div>
 
                             <!-- comment ns -->
