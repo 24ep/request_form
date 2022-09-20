@@ -179,7 +179,7 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
 }
 
 //get attribute set manu
-$query = "SELECT distinct attribute_set FROM ".$database.".job_attribute where allow_display=1 and  table='".$table."' order by sort_attribute_set" or die("Error:" . mysqli_error($con));
+$query = "SELECT distinct attribute_set FROM u749625779_cdscontent.job_attribute where allow_display=1  order by sort_attribute_set" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $d_attribute_set="";
   $d_attribute_section="";
