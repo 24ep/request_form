@@ -186,7 +186,7 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
   while($row = mysqli_fetch_array($result)) {
     echo '<div id="call_update_jc_complete"></div>';
     echo '<ul class="list-group">';
-    $d_attribute_set .=  '  <button class="nav-link" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.str_replace(" ","_",$row['attribute_set']).'" type="button" role="tab" aria-controls="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" aria-selected="false">'.str_replace(" ","_",$row['attribute_set']).'</button>';
+    $d_attribute_set .=  '  <button class="nav-link" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.str_replace(" ","_",$row['attribute_set']).'" type="button" role="tab" aria-controls="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" aria-selected="false">'.ucwords($row['attribute_set']).'</button>';
     $d_attribute_section .= '<div class="tab-pane fade" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" role="tabpanel" aria-labelledby="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab">'.get_attribute_section($row['attribute_set'],$row['table_name'],$row['db_name'],$row['primary_key_id'],$row['prefix']).'</div>';
     echo '</ul>';
   }
