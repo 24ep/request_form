@@ -28,7 +28,7 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
   function return_s_select_box($att_name,$site_element,$current_value,$code_element,$table_name,$enable_edit,$id){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
       $query_op = "SELECT * FROM content_service_gate.attribute_option
-      WHERE attribute_id = '".$att_name."' and attribute_table = '".$table_name."' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
+      WHERE attribute_code = '".$att_name."' and attribute_table = '".$table_name."' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
       $result_op = mysqli_query($con, $query_op);
       while($option = mysqli_fetch_array($result_op)) {
       if($option["attribute_option"]==$current_value){
