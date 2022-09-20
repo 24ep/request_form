@@ -190,12 +190,22 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
   $result = mysqli_query($con, $query);
   $d_attribute_set="";
   $d_attribute_section="";
+  $i=0;
   while($row = mysqli_fetch_array($result)) {
+    $i++;
+    if($i==1){
+      $active_section_bt = ' active';
+      $active_section_bd = ' show active';
+    }else{
+      $active_section_bt = ' ';
+      $active_section_bd = ' ';
+    }
     echo '<div id="call_update_jc_complete"></div>';
     echo '<ul class="list-group">';
-    $d_attribute_set .=  '  <button style="text-align:-webkit-left" class="nav-link" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.str_replace(" ","_",$row['attribute_set']).'" type="button" role="tab" aria-controls="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" aria-selected="false">'.ucwords($row['attribute_set']).'</button>';
-    $d_attribute_section .= '<div class="tab-pane fade" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" role="tabpanel" aria-labelledby="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab">'.get_attribute_section($row['attribute_set'],$row['table_name'],$row['db_name'],$row['primary_key_id'],$row['prefix']).'</div>';
+    $d_attribute_set .=  '  <button style="text-align:-webkit-left" class="nav-link '.$active_section_bt.'" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.str_replace(" ","_",$row['attribute_set']).'" type="button" role="tab" aria-controls="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" aria-selected="false">'.ucwords($row['attribute_set']).'</button>';
+    $d_attribute_section .= '<div class="tab-pane fade '.$active_section_bd.'" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" role="tabpanel" aria-labelledby="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab">'.get_attribute_section($row['attribute_set'],$row['table_name'],$row['db_name'],$row['primary_key_id'],$row['prefix']).'</div>';
     echo '</ul>';
+    
   }
   echo'
   <div class="d-flex align-items-start">

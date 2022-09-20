@@ -964,6 +964,7 @@ function action_assign_follow(id) {
     }
 }
 
+
 // toolstip
 tippy('#nav-detail-tab', {
     content: "Ticket Information",
