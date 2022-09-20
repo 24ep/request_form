@@ -1033,7 +1033,18 @@ tippy('#approved_pg', {
     animation: 'fade',
 });
 timeago().render(document.querySelectorAll('.timeago'));
+
 </script>
+<?php
+
+if($status == 'waiting data' or $status =='waiting image'){
+echo "Report.warning(
+        'Waiting more information',
+        'เรียนผู้เกี่ยวข้อง Ticket นี้กำลังรอข้อมูลสินค้าเพิ่มเติมจากผู้เกี่ยวข้อง โปรดดูเพิ่มเติมในช่องแสดงความคิดเห็น <br/> - ขออภัยหากได้ส่งข้อมูลกลับแล้ว -',
+        'รับทราบ',
+        );";
+}
+?>
 <!-- 
 var url = new URL("http://foo.bar/?x=1&y=2");
 
