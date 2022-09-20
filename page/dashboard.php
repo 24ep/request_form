@@ -29,9 +29,10 @@ function get_list_status($username,$status){
 }
 ?>
 <div class="container overflow-auto" style="padding:20px 20px 0px 20px">
-<h5 style="    font-weight: 700;margin-bottom: 20px;margin-left: 5px;">Welcome back <?php echo $_SESSION['firstname']?> :)</h5>
+<h5 style="font-weight: 700;margin-bottom: 20px;margin-left: 5px;"><ion-icon name="hand-left-outline"></ion-icon> Hi <?php echo $_SESSION['firstname']?> :)</h5>
+<h6 style="font-weight: 700;margin-bottom: 20px;margin-left: 5px;"><ion-icon name="storefront-outline"></ion-icon>Product creations</h6>
 <!-- <?php //include("../get/linesheet_download_alert_bra.php"); ?> -->
-    <div class="card-group" style="position: absolute;    z-index: -1;width: inherit;">
+    <div class="card-group" style="position: absolute;    z-index: 1;width: inherit;">
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;z-index: -1;">
             <div class="card-header">Pending</div>
