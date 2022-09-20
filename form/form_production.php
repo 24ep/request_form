@@ -25,10 +25,10 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
     ';
     return $element;
   }
-  function return_s_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit,$id){
+  function return_s_select_box($att_name,$site_element,$current_value,$code_element,$table_name,$enable_edit,$id){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
       $query_op = "SELECT * FROM content_service_gate.attribute_option
-      WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
+      WHERE attribute_id = '".$att_name."' and attribute_table = '".$table_name."' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
       $result_op = mysqli_query($con, $query_op);
       while($option = mysqli_fetch_array($result_op)) {
       if($option["attribute_option"]==$current_value){
@@ -57,10 +57,10 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
     unset($option_element);
     return $element;
   }
-  function return_m_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit,$id){
+  function return_m_select_box($att_name,$site_element,$current_value,$code_element,$table_name,$enable_edit,$id){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
       $query_op = "SELECT * FROM content_service_gate.attribute_option
-      WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
+      WHERE attribute_code = '".$att_name."' and attribute_table = '".$table_name."' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
       $result_op = mysqli_query($con, $query_op);
       while($option = mysqli_fetch_array($result_op)) {
       if(strpos($current_value ,$option["attribute_option"])!==false){
@@ -151,11 +151,12 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
           }elseif($row["attribute_type"]=="textarea"){
           $element .= return_textarea_box($row["attribute_label"],"textarea",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="single_select"){
-            $element .= return_input_box($row["attribute_label"],"text",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id);
-        //   $element .= return_s_select_box($row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["attribute_id"],$allow_in_edit,$id);
+            // $element .= return_input_box($row["attribute_label"],"text",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id);
+                                        
+           $element .= return_s_select_box($row["attribute_code"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$table,$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="multi_select"){
-            $element .= return_input_box($row["attribute_label"],"text",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id);
-        //   $element .= return_m_select_box($row["attribute_label"],"multi_select",${$prefix_table."_".$row["attribute_code"]},"jc_edit_".$row["attribute_code"],$row["attribute_id"],$allow_in_edit,$id);
+         //  $element .= return_input_box($row["attribute_label"],"text",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id);
+         $element .= return_m_select_box($row["attribute_code"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$table,$allow_in_edit,$id);
           }
     }
     return $element;
