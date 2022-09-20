@@ -378,8 +378,8 @@ label#label_file_cme {
     display: none;
 }
 .col-10.col_detail_main.minimize{
-    /* width: 96%; */
-    width: auto;
+    width: 95%;
+    /* width: auto; */
 }
 .col-8.col_detail_main.minimize{
     width: 78.5%;
