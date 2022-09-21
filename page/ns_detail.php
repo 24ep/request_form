@@ -349,10 +349,10 @@
                             class="position-absolute top-100 start-30 translate-middle btn btn-sm"><strong>Checking</strong>
                             <br><span class="timeago"
                                 datetime="<?php echo $accepted_date; ?>"><?php echo $accepted_date; ?></span></small>
-                        <button type="button" onclick="copytext('<?php echo $job_number; ?>')"
+                        <button type="button" 
                             class="position-absolute top-0 start-60 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_2; ?> rounded-pill"
                             style="width: 2rem; height:2rem;">2</button>
-                        <small id="onproduction_pg" style="top: 50px!important;"
+                        <small onclick="copytext('<?php echo $job_number; ?>')" id="onproduction_pg" style="top: 50px!important;"
                             class="position-absolute top-100 start-60 translate-middle btn btn-sm"><strong>On-productions</strong>
                             <br><?php echo $job_number; ?></small>
                         <button type="button"
