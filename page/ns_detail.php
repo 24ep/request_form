@@ -349,7 +349,7 @@
                             class="position-absolute top-100 start-30 translate-middle btn btn-sm"><strong>Checking</strong>
                             <br><span class="timeago"
                                 datetime="<?php echo $accepted_date; ?>"><?php echo $accepted_date; ?></span></small>
-                        <button type="button"
+                        <button type="button" onclick="copytext('<?php echo $job_number; ?>')"
                             class="position-absolute top-0 start-60 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_2; ?> rounded-pill"
                             style="width: 2rem; height:2rem;">2</button>
                         <small id="onproduction_pg" style="top: 50px!important;"
@@ -1032,6 +1032,14 @@ tippy('#approved_pg', {
     placement: 'bottom',
     animation: 'fade',
 });
+function copytext(text) {
+  
+     // Copy the text inside the text field
+    navigator.clipboard.writeText(text);
+  
+    // Alert the copied text
+    Notiflix.Notify.success("Copy "+text+" to clipboard !");
+  }
 timeago().render(document.querySelectorAll('.timeago'));
 
 </script>
@@ -1044,6 +1052,7 @@ echo "<script>Notiflix.Report.warning(
         'รับทราบ',
         );</script>";
 }
+
 ?>
 <!-- 
 var url = new URL("http://foo.bar/?x=1&y=2");
