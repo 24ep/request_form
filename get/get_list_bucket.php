@@ -33,7 +33,7 @@
     if(strpos( $_SESSION["prefix_project_sticky"],$row['prefix'])!==false){
         echo '
         <input type="checkbox" class="btn-check"  value="'.$row["prefix"].'"  name="bucket_checking" id="'.$row["prefix"].'" autocomplete="off" checked>
-        <label  onclick="update_project_sticky_badge(&#39;'.$row["prefix"].'&#39;);" class="btn btn-outline-primary btn-sm bk-cr shadow-sm btn-bucket-cr " for="'.$row["prefix"].'" >
+        <label  onclick="update_project_sticky_badge(&#39;'.$row["prefix"].'&#39;);" class="btn btn-outline-dark btn-sm bk-cr shadow-sm btn-bucket-cr " for="'.$row["prefix"].'" >
         '.$row["project_name"].'
         <span class="badge rounded-pill bg-danger">'.$row["count_ticket"].'</span>
         </label>
@@ -41,7 +41,7 @@
     }else{
         echo '
         <input type="checkbox" class="btn-check"  value="'.$row["prefix"].'" name="bucket_checking" id="'.$row["prefix"].'" autocomplete="off">
-        <label  onclick="update_project_sticky_badge(&#39;'.$row["prefix"].'&#39;);" class="btn btn-outline-primary btn-sm bk-cr shadow-sm btn-bucket-cr " for="'.$row["prefix"].'">
+        <label  onclick="update_project_sticky_badge(&#39;'.$row["prefix"].'&#39;);" class="btn btn-outline-dark btn-sm bk-cr shadow-sm btn-bucket-cr " for="'.$row["prefix"].'">
         '.$row["project_name"].'
         <span class="badge rounded-pill bg-danger">'.$row["count_ticket"].'</span>
         </label>
