@@ -17,6 +17,6 @@ class="shadow-sm span-ifram">https://eor-admin.central.tech/upload</span> -->
     margin: 0;
     width: 84%;
     overflow: hidden;
-    z-index: -1;"
+    z-index: 1;"
     title="cto_datapump">
 </iframe>
