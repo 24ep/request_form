@@ -115,7 +115,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                 ?>
 <!-- ui -->
 <li class='row shadow-sm p-2 m-2 rounded bg-white' style='text-align: -webkit-center;align-items: center;'
-    onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
+    onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-card="#detail_cr" data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
     data-bucket="<?php echo $row['prefix'];?>" data-cr-status="<?php echo $row['status'];?>"
     data-cr-request-for="<?php echo $row['ticket_type'];?>" data-cr-id="<?php echo $row['id'];?>"
     data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
@@ -160,7 +160,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
 
     </div>
     <div class="col">
-        <button onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
+        <button onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-card="#detail_cr" data-bs-target="#detail_cr"
             data-bucket="<?php echo $row['prefix'];?>" data-cr-request-for="<?php echo $row['ticket_type'];?>"
             data-cr-id="<?php echo $row['id'];?>" data-cr-status="<?php echo $row['status'];?>"
             data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"

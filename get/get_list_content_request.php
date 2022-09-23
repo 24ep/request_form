@@ -99,8 +99,8 @@ if(isset($_POST["status"])){$_SESSION["status"]= $_POST["status"];}
           }
     echo    '<li class="list-group-item d-flex justify-content-between align-items-start" style="font-size:16px;display: block!important;"   >
                             <div style="margin-left: 10px;margin-top:0px;" >
-                                <div class="fw-bold" data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].')"><strong style="color:red;">'.$row["ticket_template"].'-'.$row["id"].'</strong> '.$row["title"]. $badge .'<div class="float-end status_cr_list">'.$row['status'].'</div></div>
-                                <div data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].')" style="color:gray;font-size:13px;margin-right:20px;margin-bottom:5px">'.$description.'</div>
+                                <div class="fw-bold" data-bs-toggle="offcanvas" data-card="#detail_cr" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].')"><strong style="color:red;">'.$row["ticket_template"].'-'.$row["id"].'</strong> '.$row["title"]. $badge .'<div class="float-end status_cr_list">'.$row['status'].'</div></div>
+                                <div data-bs-toggle="offcanvas" data-card="#detail_cr" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].')" style="color:gray;font-size:13px;margin-right:20px;margin-bottom:5px">'.$description.'</div>
                                 <!--<ion-icon name="chatbubbles-outline" class="icon_ocv"></ion-icon> -->
                                 <small style="color: #adb5bd;font-size:12px;">'.$count_comment_cr.' Comment <strong> | Create by '.$row["request_by"].'</strong></small> <small class="timeago" datetime="'.$row["create_date"].'">'.$row["create_date"].'</small>    
            
