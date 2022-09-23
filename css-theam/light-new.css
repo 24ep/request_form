@@ -272,8 +272,8 @@ label#label_file_cme {
 }
 .btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
     color: #bfbfbf;
-    background-color: #040404;
-    border-color: #e3e3e300;
+    background-color: #222f3e;
+    border-color: #222f3e;
     font-weight: bold;
 }
 .notiflix-loading.nx-with-animation{
@@ -423,7 +423,7 @@ label#label_file_cme {
     border-left: 1px solid #e3e2e2;
 }
 .ss-value {
-    background: black!important;
+    background: #222f3e!important;
     padding: 5px 15px!important;
     border-radius: 15px!important;
     font-weight: 100!important;
