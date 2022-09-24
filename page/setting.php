@@ -153,7 +153,7 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
     global $con;
     global $id;
     //Get data 24ep
-      $query = "SELECT  * FROM ".$database.".".$table." where ".$primary_key_id." = ".$id or die("Error:" . mysqli_error($con));
+      $query = "SELECT  * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."'" or die("Error:" . mysqli_error($con));
       $result = mysqli_query($con, $query);
       while($row = mysqli_fetch_array($result)) {
           $query_column = "SELECT `COLUMN_NAME` 
