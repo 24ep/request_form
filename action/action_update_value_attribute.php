@@ -24,7 +24,7 @@
                 add_participant_with_user($_POST['id'],"add_new_job",$value_change);
             }
         }
-        echo '<script>Notiflix.Notify.success("'.strtoupper($prefix).'-'.$id.' have been updated");</script>';
+        echo strtoupper($prefix).'-'.$id.' have been updated';
         
         insert_log("update ".$table." \n ".$attribute_code." = ".$value_change ,$table,$_POST['id']);
 	}else{

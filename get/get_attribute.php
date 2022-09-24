@@ -200,6 +200,7 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
             },
             function(data) {
                 // $('#call_update_ns_complete').html(data);
+                Notiflix.Notify.success(data);
             });
     }
 }
