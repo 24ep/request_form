@@ -200,7 +200,17 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
             },
             function(data) {
                 // $('#call_update_ns_complete').html(data);
-                Notiflix.Notify.success(data);
+               
+                var data = text.includes("error");
+                if(data==false){
+                  Notiflix.Notify.success(data);
+                }else{
+                  Notiflix.Report.failure(
+                  'Failure',
+                  data,
+                  'Okay',
+                  )
+                }
             });
     }
 }

@@ -29,13 +29,7 @@
         insert_log("update ".$table." \n ".$attribute_code." = ".$value_change ,$table,$_POST['id']);
 	}else{
         insert_log("Update ".$table." fails".$con->error ,$table,$id);
-        echo "<script>
-        Notiflix.Report.failure(
-            'Failure',
-            'Error: " . $sql . "<br/><br/>" . $con->error.",
-            'Okay',
-            )</script>;
-        ";
+        echo "Error: " . $sql . "<br/><br/>" . $con->error;
     }
     mysqli_close($con);
 ?>
