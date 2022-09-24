@@ -248,6 +248,7 @@ function cancel_ticket(id) {
     }
 }
 function action_submit_add_new_job() {
+    Notiflix.Loading.hourglass('Creating new ticket ...');
     brand = document.getElementById('brand').value;
     sub_department = document.getElementById('sub_department').value;
     sku = document.getElementById('sku').value;
@@ -274,6 +275,7 @@ function action_submit_add_new_job() {
             link_info: link_info,
             remark: remark
         }, function(data) {
+            Notiflix.Loading.remove();
             var result = data.includes("Error");
                 if(result==false){
                   Notiflix.Notify.success(data);
