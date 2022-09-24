@@ -490,10 +490,10 @@
                         <strong><?php echo $brand; ?></strong> Note
                     </button>
 
-                    <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail"
+                    <!-- <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail"
                         type="button" role="tab" aria-controls="nav-detail" aria-selected="false">
                         <ion-icon name="information-circle-outline"></ion-icon>Info
-                    </button>
+                    </button> -->
                     <button class="nav-link" id="nav-logs-tab" data-bs-toggle="tab" data-bs-target="#nav-logs"
                         type="button" role="tab" aria-controls="nav-logs" aria-selected="false">
                         <ion-icon name="time-outline"></ion-icon>Logs

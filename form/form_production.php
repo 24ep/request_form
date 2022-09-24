@@ -7,11 +7,11 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
       $current_value = str_replace(" ","T",$current_value);
     }
     $element = '
-    <li class="list-group-item m-2 row" style="display: inline-flex; background: #f9fafb">
+    <li class="list-group-item m-2 row" style="display: inline-flex;">
       <div class="col-3 fw-bold">'.$att_name.'</div>
       <div class="col-9">
         <input
-          class="form-control form-control-sm"
+          class="form-control form-control-sm bg-light"
           id="'.$code_element.'"
           name="'.$code_element.'"
           type="'.$site_element.'"
@@ -44,11 +44,11 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
         }
       
     $element = '
-    <li class="list-group-item m-2 row" style="display: inline-flex; background: #f9fafb">
+    <li class="list-group-item m-2 row" style="display: inline-flex;">
       <div class="col-3 fw-bold">'.$att_name.'</div>
       <div class="col-9">
         <select
-          class="form-select form-select-sm"
+          class="form-select form-select-sm bg-light"
           id="'.$code_element.'"
           name="'.$code_element.'"
           style="border: 0px"
@@ -76,12 +76,12 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
         }
       }
     $element = '
-    <li class="list-group-item m-2 row" style="display: inline-flex; background: #f9fafb">
+    <li class="list-group-item m-2 row" style="display: inline-flex;">
       <div class="col-3 fw-bold">'.$att_name.'</div>
       <div class="col-9">
         <select
           multiple="multiple"
-          class="form-select"
+          class="form-select bg-light"
           id="'.$code_element.'"
           name="'.$code_element.'"
           style="border: 0px"
@@ -98,11 +98,11 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
   }
   function return_textarea_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
     $element = '
-    <li class="list-group-item m-2 row" style="display: inline-flex; background: #f9fafb">
+    <li class="list-group-item m-2 row" style="display: inline-flex;">
       <div class="col-3 fw-bold">'.$att_name.'</div>
       <div class="col-9">
         <textarea
-          class="form-control"
+          class="form-control bg-light"
           id="'.$code_element.'"
           name="'.$code_element.'"
           style="border: 0px"
@@ -203,7 +203,7 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
     echo '<div id="call_update_jc_complete"></div>';
     echo '<ul class="list-group">';
     $d_attribute_set .=  '  <button style="text-align:-webkit-left" class="nav-link '.$active_section_bt.'" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.str_replace(" ","_",$row['attribute_set']).'" type="button" role="tab" aria-controls="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" aria-selected="false">'.ucwords($row['attribute_set']).'</button>';
-    $d_attribute_section .= '<div class="tab-pane fade '.$active_section_bd.'" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" role="tabpanel" aria-labelledby="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab">'.get_attribute_section($row['attribute_set'],$row['table_name'],$row['db_name'],$row['primary_key_id'],$row['prefix']).'</div>';
+    $d_attribute_section .= '<div class="tab-pane fade  shadow-sm bg-white p-3 rounded '.$active_section_bd.'" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" role="tabpanel" aria-labelledby="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab">'.get_attribute_section($row['attribute_set'],$row['table_name'],$row['db_name'],$row['primary_key_id'],$row['prefix']).'</div>';
     echo '</ul>';
     
   }
