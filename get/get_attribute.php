@@ -155,7 +155,7 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
           }elseif($row["attribute_type"]=="textarea"){
           $element .= return_textarea_box($row["attribute_label"],"textarea",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="single_select"){
-           $element .= return_s_select_box($row["attribute_code"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$table,$allow_in_edit,$id);
+           $element .= return_s_select_box($row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$table,$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="multi_select"){
          $element .= return_m_select_box($row["attribute_code"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$table,$allow_in_edit,$id);
           }
