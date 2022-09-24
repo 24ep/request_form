@@ -28,17 +28,29 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
       $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute_option
       WHERE attribute_code = '".$att_name."' and attribute_table = '".$table_name."' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
       $result_op = mysqli_query($con, $query_op);
+      $i=0;
       while($option = mysqli_fetch_array($result_op)) {
-        if($current_value=="" or $current_value==null){
-          $option_element .= "<option selected value=''></option>";
+        if($option["attribute_option_code"]==$current_value){
+            $selectd = 'selected';
         }else{
-          $option_element .= "<option  value=''></option>";
-          if($option["attribute_option_code"]==$current_value){
-            $option_element .= "<option selected value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
-          }else{
-            $option_element .= "<option value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
-          }
-          }
+            $selectd = '';
+        }
+        if($option["attribute_option_code"]<>"" and $i==0){
+            $i++;
+            $option_element .= "<option ".$selectd ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
+        }
+        $option_element .= "<option ".$selectd ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
+        // if($current_value=="" or $current_value==null){
+        //   $option_element .= "<option selected value=''></option>";
+        // }else{
+            
+        //     $option_element .= "<option  value=''></option>";
+        //   if($option["attribute_option_code"]==$current_value){
+        //     $option_element .= "<option selected value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
+        //   }else{
+        //     $option_element .= "<option value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
+        //   }
+        //   }
         }
       
     $element = '
