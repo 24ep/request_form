@@ -9,7 +9,7 @@
    $prefix_table = 'ac';
    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 
-      $query = "SELECT  * FROM ".$database.".".$table." where ".$primary_key_id." = ".$id or die("Error:" . mysqli_error($con));
+      $query = "SELECT  * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."'" or die("Error:" . mysqli_error($con));
       $result = mysqli_query($con, $query);
       while($row = mysqli_fetch_array($result)) {
           $query_column = "SELECT `COLUMN_NAME` 
