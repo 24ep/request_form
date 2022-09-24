@@ -24,7 +24,7 @@
 ?>
 
 
-<nav class="p5 bg-white shadow-sm">
+<nav class="p-3 bg-white shadow-sm">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
     <small  href="#"><?php echo $ac_department; ?></small>
@@ -188,11 +188,8 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
           }elseif($row["attribute_type"]=="textarea"){
           $element .= return_textarea_box($row["attribute_label"],"textarea",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="single_select"){
-            // $element .= return_input_box($row["attribute_label"],"text",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id);
-                                        
            $element .= return_s_select_box($row["attribute_code"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$table,$allow_in_edit,$id);
           }elseif($row["attribute_type"]=="multi_select"){
-         //  $element .= return_input_box($row["attribute_label"],"text",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id);
          $element .= return_m_select_box($row["attribute_code"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$table,$allow_in_edit,$id);
           }
     }
@@ -217,7 +214,7 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
 }
 
 //get attribute set manu
-$query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix FROM u749625779_cdscontent.job_attribute where allow_display= 1 and table_name in ('acount') order by sort_attribute_set" or die("Error:" . mysqli_error($con));
+$query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix FROM u749625779_cdscontent.job_attribute where allow_display= 1 and table_name in ('account') order by sort_attribute_set" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $d_attribute_set="";
   $d_attribute_section="";
