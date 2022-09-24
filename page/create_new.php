@@ -274,7 +274,7 @@ function action_submit_add_new_job() {
             link_info: link_info,
             remark: remark
         }, function(data) {
-            var result = data.includes("error");
+            var result = data.includes("Error");
                 if(result==false){
                   Notiflix.Notify.success(data);
                 }else{
