@@ -37,7 +37,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
         }
         if($option["attribute_option_code"]<>"" and $i==0){
             $i++;
-            $option_element .= "<option ".$selectd ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
+            $option_element .= "<option ".$selectd ." value=''></option>";
         }
         $option_element .= "<option ".$selectd ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
 
