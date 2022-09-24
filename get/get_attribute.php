@@ -16,7 +16,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
           style="border: 0px"
           value="'.$current_value.'"
           '.$enable_edit.'
-          onchange="update_value_attribute('.$id.', &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
+          onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
         />
       </div>
     </li>
@@ -53,7 +53,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
           name="'.$code_element.'"
           style="border: 0px"
           '.$enable_edit.'
-          onchange="update_value_attribute('.$id.', &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
+          onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
         >
         '.$option_element.'
         </select>
@@ -86,7 +86,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
           name="'.$code_element.'"
           style="border: 0px"
           '.$enable_edit.'
-          onchange="update_value_attribute('.$id.', &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
+          onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
         >
         '.$option_element.'
         </select>
@@ -108,7 +108,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
           style="border: 0px"
           rows="4"
           '.$enable_edit.'
-          onchange="update_value_attribute('.$id.', &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
+          onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
         >'.$current_value.'
         </textarea>
       </div>
