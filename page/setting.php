@@ -236,8 +236,8 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
     
   }
   echo'
-  <div class="d-flex align-items-start">
-      <div class="nav flex-column nav-pills me-3" style="text-align-last: left;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+  <div class="d-flex align-items-start pt-4 pe-5 me-5 ms-2">
+      <div class="nav flex-column nav-pills me-4" style="text-align-last: left;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
      
       '.$d_attribute_set.'
       </div>
