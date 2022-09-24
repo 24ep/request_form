@@ -201,8 +201,8 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
             function(data) {
                 // $('#call_update_ns_complete').html(data);
                
-                var data = text.includes("error");
-                if(data==false){
+                var result = data.includes("error");
+                if(result==false){
                   Notiflix.Notify.success(data);
                 }else{
                   Notiflix.Report.failure(
