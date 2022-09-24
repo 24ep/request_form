@@ -459,11 +459,7 @@
                 </div>
                 <div class="tab-pane fade" id="pills-productions" role="tabpanel"
                     aria-labelledby="pills-productions-tab">
-                   <?php if($accepted_date <> "" and $accepted_date <> null){ ?>
                             <div id="form_production"></div>
-                   <?php }else{
-                        echo '<small>The productions stage are not start yet ..</small>';
-                   } ?>
                 </div>
             </div>
 

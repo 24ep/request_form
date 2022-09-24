@@ -1,10 +1,11 @@
 <!-- get accout informations -->
 
 <?php
+ session_start();
    $database = 'all_in_one_project';
    $table = 'account';
    $primary_key_id = 'username';
-   $id=$_SESSION['uesrname'];
+   $id=$_SESSION['username'];
    $prefix_table = 'ac';
    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 
@@ -23,8 +24,9 @@
 ?>
 
 
-<nav class="navbar fixed-top navbar-light bg-white shadow-sm">
+<nav class="p5 bg-white shadow-sm">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
+    <small  href="#"><?php echo $ac_department; ?></small>
   </div>
 </nav>
