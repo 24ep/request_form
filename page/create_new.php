@@ -243,7 +243,17 @@ function cancel_ticket(id) {
             resone_cancel: resone_cancel,
             status_change: status_change
         }, function(data) {
-            $('#cancel_checking_resault').html(data);
+            // $('#cancel_checking_resault').html(data);
+            var result = data.includes("Error");
+                if(result==false){
+                  Notiflix.Notify.success(data);
+                }else{
+                  Notiflix.Report.failure(
+                  'Failure',
+                  data,
+                  'Okay',
+                  )
+                }
         });
     }
 }
