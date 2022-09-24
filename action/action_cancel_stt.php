@@ -24,26 +24,16 @@
                 $key = $row["token_line"];
                 $brand = $row["brand"];
                 $sku = $row["sku"];
-                //echo '<script>alert("'.$key.'");</script>';
             }
             if($key<>"" and $key<>null){
                 sent_line_noti("\n• '".$status_change."'  NS-".$id." [ ".$brand." ".$sku." SKUs ]",$key);
                 //send_ms_team("NS-".$id,$status_change,$brand." ".$sku." SKUs");
             }
-        echo '<script>Notiflix.Notify.success("NS-'.$id.' have been cancel");</script>';
         insert_log("'".$status_change."' Ticket = ".date("Y-m-d H:i:s")." \n status = '".$status_change."'" ,"add_new_job",$id);
-        // echo date("Y-m-d H:i:s");
         echo 'NS-'.$id.' have been cancel already';
 	}else{
         insert_log("'".$status_change."' Ticket faild >".$con->error ,"add_new_job",$id);
         echo 'Error: ' . $sql . '<br>' . $con->error.'';
-        // echo "<script>
-        // Notiflix.Report.failure(
-        //     'Failure',
-        //     'Error: " . $sql . "<br/><br/>" . $con->error.",
-        //     'Okay',
-        //     )</script>;
-        // ";
     }
     mysqli_close($con);
     //header( "location: https://cdse-commercecontent.com/base/homepage.php");
