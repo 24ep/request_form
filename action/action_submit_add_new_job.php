@@ -97,20 +97,21 @@ mysqli_query($con, "SET NAMES 'utf8' ");
                 //echo '<script>alert("'.$key.'");</script>';
             }
             if($key<>"" and $key<>null){
-                sent_line_noti("\n• Created new request [ ".$brand." ".$sku." SKUs ]\n----------------------------\n• คุณได้ทำกาส่ง request ขอเปิด job\n• Ticket ID : NS-".$last_id." [ ".$brand." ".$sku." SKUs ]\n• Store : ".$stock_source,$key);
+                sent_line_noti("\n• คุณได้ทำกาส่ง request ขอเปิด job\n• Ticket ID : NS-".$last_id." [ ".$brand." ".$sku." SKUs ]\n• Store : ".$stock_source,$key);
                 send_ms_team("NS-".$id,"New NS-ticket comming","ได้ทำกาส่ง request ขอเปิด job<br>• Ticket ID : NS-".$last_id." [ ".$brand." ".$sku." SKUs ]\n• Store : ".$stock_source);
             }
-        $result='<div class="alert alert-success">already create Request !<strong> ID '.$last_id.'</strong></div>';
-        header( "Location: /?tab=v-pills-request_list&result=".$result);
+            echo 'Ticket have been create already ! NS-'.$last_id;
+        // $result='<div class="alert alert-success">Ticket have been create already !<strong> ID '.$last_id.'</strong></div>';
+        // header( "Location: /?tab=v-pills-request_list&result=".$result);
 	}else{
-        echo "<script>
-        Notiflix.Report.failure(
-            'Failure',
-            'Error: " . $sql . "<br/><br/>" . $con->error.",
-            'Okay',
-            )</script>;
-        ";
-        echo '<div class="alert alert-danger">Error: ' . $sql . '<hr>' . $con->error.'</div>';
+        // echo "<script>
+        // Notiflix.Report.failure(
+        //     'Failure',
+        //     'Error: " . $sql . "<br/><br/>" . $con->error.",
+        //     'Okay',
+        //     )</script>;
+        // ";
+        echo 'Error: ' . $sql . '<hr>' . $con->error;
     }
     mysqli_close($con);
    // header( "location: https://cdse-commercecontent.com/base/job_manage.php");

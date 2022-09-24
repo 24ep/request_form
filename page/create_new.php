@@ -274,12 +274,16 @@ function action_submit_add_new_job() {
             link_info: link_info,
             remark: remark
         }, function(data) {
-            // $('#cancel_checking_resault').html(data);
-            Notiflix.Report.success(
-            'Success',
-            data,
-            'Okay',
-            );
+            var result = data.includes("error");
+                if(result==false){
+                  Notiflix.Notify.success(data);
+                }else{
+                  Notiflix.Report.failure(
+                  'Failure',
+                  data,
+                  'Okay',
+                  )
+                }
         });
     }
     filter_update();
