@@ -43,8 +43,9 @@ if (!$_SESSION["login_csg"]){
      ?>
 <!doctype html>
 <html lang="en">
+
 <head>
-<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <!-- push notification -->
     <!-- <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
@@ -55,7 +56,7 @@ if (!$_SESSION["login_csg"]){
         });
     });
     </script> -->
- <!-- push notification -->
+    <!-- push notification -->
     <meta name="robots" content="noindex">
     <meta name="googlebot" content="noindex">
     <meta charset="utf-8">
@@ -64,7 +65,8 @@ if (!$_SESSION["login_csg"]){
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" /> -->
-    <link rel="icon" type="image/ocp" href="https://content-service-gate.cdse-commercecontent.com/base/image/tems_logo.ico" />
+    <link rel="icon" type="image/ocp"
+        href="https://content-service-gate.cdse-commercecontent.com/base/image/tems_logo.ico" />
     <!-- textarray -->
     <script src="https://cdn.tiny.cloud/1/cis8560ji58crrbq17zb11gp39qhpn2lka54u0m54s8du1gw/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
@@ -129,6 +131,7 @@ if (!$_SESSION["login_csg"]){
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
 </head>
+
 <body>
     <!-- <nav class="navbar navbar-light bg-light">
         <div class="" style="background:#ff000069;color:white;position: fixed;z-index: 1;">
@@ -176,7 +179,7 @@ if (!$_SESSION["login_csg"]){
         </div>
     </div>
     <div class="row">
-        <div class="col-2 list_bra shadow border-end" >
+        <div class="col-2 list_bra shadow border-end">
             <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
                     class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-secondary  bg-gradient shadow rounded-pill"
@@ -186,17 +189,19 @@ if (!$_SESSION["login_csg"]){
                 <input type="hidden" id="minimize_manu" name="minimize_manu" value="show">
                 <input type="hidden" id="active_sub_manu" name="active_sub_manu" value="hide">
                 <a class="navbar-brand" href="#">
-                    <img id="logo_tems" class="logo_tems" src="base/image/tems_logo_va.svg" alt="" width="auto" height="30">
-                    <img id="logo_tems_minimize" class="logo_tems_minimize hide" src="base/image/tems_logo_minimize.svg" alt="" width="auto" height="30">
+                    <img id="logo_tems" class="logo_tems" src="base/image/tems_logo_va.svg" alt="" width="auto"
+                        height="30">
+                    <img id="logo_tems_minimize" class="logo_tems_minimize hide" src="base/image/tems_logo_minimize.svg"
+                        alt="" width="auto" height="30">
                     <!-- <h3 id="apps_name" style="font-weight: lighter;color: firebrick;"> -->
-                        <!-- <ion-icon name="layers" style="font-size: 40px;margin: 0px;color:#f85d60"></ion-icon> -->
-                        <!-- TEMS -->
-                    <br><small id="apps_name" style= "font-size: small;
+                    <!-- <ion-icon name="layers" style="font-size: 40px;margin: 0px;color:#f85d60"></ion-icon> -->
+                    <!-- TEMS -->
+                    <br><small id="apps_name" style="font-size: small;
                         font-weight: 100;
                         color: gray;">Task executive management system
                     </small>
-                <!-- </h3> -->
-                   
+                    <!-- </h3> -->
+
                 </a>
                 <!-- <hr class="hr_manu_bra">
                 <div class="img-avatar" style="display: inline-flex;">
@@ -285,12 +290,14 @@ if (!$_SESSION["login_csg"]){
                         </a>
                     </li>
                     <li class="nav-item btn-group dropend" role="presentation">
-                        <a class="main_bra nav-link" id="nav_product_mantain"  type="button" onclick="show_sub_manu('product_maintain');">
+                        <a class="main_bra nav-link" id="nav_product_mantain" type="button"
+                            onclick="show_sub_manu('product_maintain');">
                             <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Product maintain</span>
                         </a>
                     </li>
                     <li class="nav-item btn-group dropend" role="presentation">
-                        <a class="main_bra nav-link" id="nav_quicklink" type="button" onclick="show_sub_manu('quicklink');">
+                        <a class="main_bra nav-link" id="nav_quicklink" type="button"
+                            onclick="show_sub_manu('quicklink');">
                             <ion-icon name="globe"></ion-icon><span class="main-manu-nav">Quicklink</span>
                         </a>
                     </li>
@@ -298,9 +305,10 @@ if (!$_SESSION["login_csg"]){
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Others</small>
                     <li class="nav-item" role="presentation">
-                    <a class="main_bra nav-link" id="nav_setting" onclick="get_page('setting');" data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
-                        <ion-icon name="settings"></ion-icon><span class="main-manu-nav">Settings</span>
-                    </a>
+                        <a class="main_bra nav-link" id="nav_setting" onclick="get_page('setting');"
+                            data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
+                            <ion-icon name="settings"></ion-icon><span class="main-manu-nav">Settings</span>
+                        </a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link" id="nav_logout" data-bs-toggle="pill" type="button" role="tab"
@@ -314,7 +322,7 @@ if (!$_SESSION["login_csg"]){
         <div class="col-2 shadow sub_manu hide p-3 bg-white bg-gradient border-end" id="sub_manu">
         </div>
         <div class="col-10 col_detail_main" style="font-size: 14px;padding: 0px;">
-        <?php
+            <?php
 
             $database = 'all_in_one_project';
             $table = 'account';
@@ -338,10 +346,12 @@ if (!$_SESSION["login_csg"]){
             ?>
             <nav class="p-3 bg-white shadow-sm border-bottom">
                 <div class="container-fluid">
-                <img src="https://ui-avatars.com/api/?name=<?php echo $ac_firstname.'+'.$ac_lastname; ?>&background=<?php echo bg_dept($ac_department); ?>&color=fff&rounded=true&size=30"
-                        class="ms-3 mb-3">
+                    <img
+                        src="https://ui-avatars.com/api/?name=<?php echo $ac_firstname.'+'.$ac_lastname; ?>&background=<?php echo bg_dept($ac_department); ?>&color=fff&rounded=true&size=30">
                     <a class="navbar-brand" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
                     <small href="#"><?php echo $ac_department; ?> </small> | <?php echo $ac_role; ?>
+                    <ion-icon onclick="call_model_edit_account('<?php echo $ac_username; ?>')" name="open-outline">
+                    </ion-icon>
                 </div>
             </nav>
             <div id="col_detail">
@@ -353,6 +363,7 @@ if (!$_SESSION["login_csg"]){
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
 </body>
+
 </html>
 <script>
 function updateparams(key, value) {
@@ -367,6 +378,7 @@ function updateparams(key, value) {
     // Replace current querystring with the new one.
     history.replaceState(null, null, "?" + queryParams.toString());
 }
+
 function get_page(page) {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
@@ -397,16 +409,19 @@ if (urlParams.has('page') && urlParams.get('page') != null) {
     get_page('dashboard');
     // url.searchParams.set('page', 'dashboard');
 }
+
 function update_readed_nt() {
     $.post("base/action/action_update_read_nt.php", {}, function(data) {
         // $('#project_bucket').html(data);
     });
 }
+
 function get_count_read_nt() {
     $.post("base/get/get_count_nt_unread.php", {}, function(data) {
         $('#get_count_nt_unread').html(data);
     });
 }
+
 function get_list_update_job() {
     $.post("base/get/get_list_job_update.php", {}, function(data) {
         $('#get_list_job_update').html(data);
@@ -415,6 +430,7 @@ function get_list_update_job() {
         get_count_read_nt();
     });
 }
+
 function logout() {
     Notiflix.Confirm.show(
         'Confirm ',
@@ -453,6 +469,7 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
 <script>
 document.getElementById("bt_nav_coll_ex").innerHTML =
     '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
+
 function show_sub_manu(sub_manu) {
     if (sub_manu != 'close') {
         //get_sub_manu
@@ -470,7 +487,7 @@ function show_sub_manu(sub_manu) {
             });
         }
         //hideshow
-        
+
         var sub_manu = document.getElementsByClassName("sub_manu");
         var col_detail_main = document.getElementsByClassName("col_detail_main");
         for (var i = 0; i < sub_manu.length; i++) {
@@ -490,6 +507,7 @@ function show_sub_manu(sub_manu) {
         }
     }
 }
+
 function minimize_nav() {
     var minimize_manu = document.getElementById('minimize_manu').value;
     console.log(minimize_manu);
@@ -554,8 +572,9 @@ function minimize_nav() {
         // document.getElementById("main-manu-nav").className += " hide";
         document.getElementById("apps_name").className += " hide";
         document.getElementById("logo_tems").className += " hide";
-        document.getElementById("logo_tems_minimize").className = document.getElementById("logo_tems").className.replace(
-            /(?:^|\s)hide(?!\S)/g, '');
+        document.getElementById("logo_tems_minimize").className = document.getElementById("logo_tems").className
+            .replace(
+                /(?:^|\s)hide(?!\S)/g, '');
         var main_manu_nav = document.getElementsByClassName("main-manu-nav");
         for (var i = 0; i < main_manu_nav.length; i++) {
             console.log('hide ' + i);
@@ -595,6 +614,7 @@ function minimize_nav() {
         }
     }
 }
+
 function call_edit_add_new_modal(id, brand) {
     Notiflix.Loading.hourglass('Loading...');
     if (id) {
@@ -608,97 +628,107 @@ function call_edit_add_new_modal(id, brand) {
 }
 //toolstips manu
 tippy('#nav_activity', {
-  content: "Activity",
-  placement: 'right',
-  animation: 'fade',
+    content: "Activity",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#nav_dashboard', {
-  content: "dashboard",
-  placement: 'right',
-  animation: 'fade',
+    content: "dashboard",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#nav_create_new', {
-  content: "Create New content",
-  placement: 'right',
-  animation: 'fade',
+    content: "Create New content",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#nav_update_content', {
-  content: "Update a product content",
-  placement: 'right',
-  animation: 'fade',
+    content: "Update a product content",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#nav_update_content', {
-  content: "Update a product content",
-  placement: 'right',
-  animation: 'fade',
+    content: "Update a product content",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#nav_job_manage', {
-  content: "Job manage",
-  placement: 'right',
-  animation: 'fade',
+    content: "Job manage",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#nav_job_on_hand', {
-  content: "Job on hand",
-  placement: 'right',
-  animation: 'fade',
+    content: "Job on hand",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#nav_linesheet', {
-  content: "Linesheet management",
-  placement: 'right',
-  animation: 'fade',
+    content: "Linesheet management",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#nav_report', {
-  content: "Report",
-  placement: 'right',
-  animation: 'fade',
+    content: "Report",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#nav_product_mantain', {
-  content: "Product mantain",
-  placement: 'right',
-  animation: 'fade',
+    content: "Product mantain",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#nav_quicklink', {
-  content: "Product mantain",
-  placement: 'right',
-  animation: 'fade',
+    content: "Product mantain",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#nav_logout', {
-  content: "logout",
-  placement: 'right',
-  animation: 'fade',
+    content: "logout",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#nav_linesheet_download', {
-  content: "Creation Form (Lasest)",
-  placement: 'right',
-  animation: 'fade',
+    content: "Creation Form (Lasest)",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#nav_accout', {
-  content: "Adminstations",
-  placement: 'right',
-  animation: 'fade',
+    content: "Adminstations",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#nav_setting', {
-  content: "Setting",
-  placement: 'right',
-  animation: 'fade',
+    content: "Setting",
+    placement: 'right',
+    animation: 'fade',
 });
 
-
+function call_model_edit_account(username) {
+    Notiflix.Loading.hourglass('Loading...');
+    if (username) {
+        $.post("../base/page/setting.php", {
+            username: username
+        }, function(data) {
+            $('#model_lg').html(data);
+            Notiflix.Loading.remove();
+        });
+    }
+}
 </script>
 <?php } ?>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div id="model_lg">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="model_lg">
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

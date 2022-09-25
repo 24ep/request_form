@@ -89,15 +89,5 @@ $detail = get_page_account();
 } );
 
 
-function call_model_edit_account(username) {
-    Notiflix.Loading.hourglass('Loading...');
-    if (username) {
-        $.post("../base/page/setting.php", {
-            username: username
-        }, function(data) {
-            $('#model_lg').html(data);
-            Notiflix.Loading.remove();
-        });
-    }
-}
+
 </script>
