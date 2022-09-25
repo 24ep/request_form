@@ -229,7 +229,7 @@ if($status=='inprogress'){
         get_panel_card('jc.retouch_assign_name',$ac_nickname,'jc_job_number','','jc.retouch_complete_date is null and jc.job_status_filter <> "cancel" ','jc_job_status_filter',10);
     }elseif($ac_role=='product_executive'){
         echo '<script>console.log("bbb")</script>';
-        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','jc.approve_date is null and anj.status <> "cancel" ' ,'anj_status',10);
+        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','jc.approved_date is null and anj.status <> "cancel" ' ,'anj_status',10);
     }
 }elseif($status=='pending'){
 
