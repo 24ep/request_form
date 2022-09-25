@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $ac_role = $_POST['ac_role'];
 function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end_key){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
