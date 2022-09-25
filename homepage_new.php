@@ -301,7 +301,7 @@ if (!$_SESSION["login_csg"]){
                 </ul>
             </div>
         </div>
-        <div class="col-2 shadow sub_manu hide p-3 bg-white bg-gradient" id="sub_manu">
+        <div class="col-2 shadow sub_manu hide p-3 bg-white bg-gradient border-end" id="sub_manu">
         </div>
         <div class="col-10 col_detail_main" style="font-size: 14px;padding: 0px;">
         <?php
