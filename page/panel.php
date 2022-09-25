@@ -93,14 +93,16 @@ session_start();
 
 <script>
     // get_detail_more
-function get_list_panel(ac_role,status) {
+function get_list_panel(ac_role,status,ac_username,ac_nickname) {
     $.post("base/get/get_list_panel.php", {
-            ac_role: ac_role
+            ac_role: ac_role,
+            ac_username: ac_username,
+            ac_nickname :ac_nickname
         },
         function(data) {
             $('#get_list_panel_'+status).html(data);
         });
     
 }
-get_list_panel('<?php echo $ac_role; ?>','inprogress')
+get_list_panel('<?php echo $ac_role; ?>','inprogress','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>')
 </script>
