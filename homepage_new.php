@@ -262,6 +262,12 @@ if (!$_SESSION["login_csg"]){
                             <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">24EP </span>
                         </a>
                     </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link" id="nav_job_manage" data-bs-toggle="pill" type="button" role="tab"
+                            aria-selected="false" onclick="get_page('toolkit');">
+                            <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">24EP </span>
+                        </a>
+                    </li>
 <!-- 
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link" id="nav_job_on_hand" data-bs-toggle="pill" type="button" role="tab"
