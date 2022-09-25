@@ -6,7 +6,7 @@ $ac_nickname = $_POST['ac_nickname'];
 $status = $_POST['status'];
 
 function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end_key,$status_key,$create_key,$limit){
-    echo '<script>console.log("sss")</script>';
+    
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query = "SELECT * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."' and ".$end_key."
     order by id ASC limit ".$limit or die("Error:" . mysqli_error($con));
@@ -61,6 +61,7 @@ function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end
     }
 }
 if($status=='inprogress'){
+    echo '<script>console.log("sss")</script>';
     if($ac_role=='follow'){
         get_panel_card('all_in_one_project','add_new_job','follow_up_by',$ac_username ,'id','NS-','accepted_date is null and status <> "cancel" ','status','recive_mail_date',10);
     }elseif($ac_role=='writer'){
