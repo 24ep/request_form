@@ -102,5 +102,5 @@ function get_list_panel(ac_role,status) {
         });
     
 }
-get_list_panel(<?php echo $ac_role; ?>,'inprogress')
+get_list_panel('<?php echo $ac_role; ?>','inprogress')
 </script>
