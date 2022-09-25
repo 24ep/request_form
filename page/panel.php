@@ -22,7 +22,7 @@ session_start();
       }
 ?>
 
-<nav class="p-3 bg-white shadow-sm">
+<nav class="p-3 bg-white shadow-sm border-bottom">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
         <small href="#"><?php echo $ac_department; ?> </small> | <?php echo $ac_role; ?>
@@ -36,13 +36,13 @@ session_start();
 </nav>
 
 <div class="row">
-    <div class="col-3 bg-white shadow-sm pe-0 mt-0 ms-0 m-0 border">
+    <div class="col-3 bg-white shadow-sm pe-0 mt-0  ms-0 m-0 border-end">
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed border-bottom" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        <ion-icon name="star-outline"></ion-icon> Pedding Suggestion
+                        <ion-icon name="star-outline"></ion-icon> Pedding
                     </button>
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse  collapse show" aria-labelledby="flush-headingOne"
@@ -52,7 +52,7 @@ session_start();
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">
-                    <button class="accordion-button collapsed border-bottom" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                         <ion-icon name="star-half-outline"></ion-icon> Inprogress
                     </button>
@@ -69,7 +69,7 @@ session_start();
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed border-bottom" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
                         <ion-icon name="star"></ion-icon> Review
                     </button>
