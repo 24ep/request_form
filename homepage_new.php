@@ -186,7 +186,8 @@ if (!$_SESSION["login_csg"]){
                 <input type="hidden" id="active_sub_manu" name="active_sub_manu" value="hide">
                 <a class="navbar-brand" href="#">
                     <ion-icon name="layers" style="font-size: 20px;margin: 0px;color:#f85d60"></ion-icon>
-                    <span id="apps_name">ONLINE CONTENT</span>
+                    <span id="apps_name">Pems</span>
+                    <small id="apps_name">product executives management system</small>
                 </a>
                 <!-- <hr class="hr_manu_bra">
                 <div class="img-avatar" style="display: inline-flex;">
