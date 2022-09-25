@@ -61,7 +61,7 @@ function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end
     }
 }
 if($status=='inprogress'){
-    echo '<script>console.log("sss")</script>';
+ 
     if($ac_role=='follow'){
         get_panel_card('all_in_one_project','add_new_job','follow_up_by',$ac_username ,'id','NS-','accepted_date is null and status <> "cancel" ','status','recive_mail_date',10);
     }elseif($ac_role=='writer'){
@@ -71,6 +71,7 @@ if($status=='inprogress'){
     }elseif($ac_role=='retoucher'){
         get_panel_card('u749625779_cdscontent','job_cms','retouch_assign_name',$ac_nickname,'job_number','','retouch_complete_date is null and job_status_filter <> "cancel" ','job_status_filter','recive_mail_date',10);
     }elseif($ac_role=='product_executive'){
+        echo '<script>console.log("bbb")</script>';
         get_panel_card('all_in_one_project','add_new_job','follow_up_by',$ac_username ,'id','NS-','accepted_date is null and status <> "cancel" ' ,'status','recive_mail_date',10);
     }
 }elseif($status=='pending'){
