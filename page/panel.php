@@ -59,7 +59,7 @@ session_start();
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
+                    <div class="accordion-body p-0">
                             <div id="get_list_panel_inprogress">
                                 
                             </div>
