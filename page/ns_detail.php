@@ -166,7 +166,7 @@
 <link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
 <script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
 
-<nav class="p-3 bg-white text-dark bg-gradient shadow-sm  ">
+<nav class="p-3 bg-white sticky-top text-dark bg-gradient shadow-sm  ">
     <div class="row">
         <div class="col-4">
             <div class="container-fluid">
