@@ -34,6 +34,9 @@
     <li><a id="nav_aspose" onclick="get_page('aspose');" class="dropdown-item dp-link" type="button">
             <ion-icon name="shapes"></ion-icon>Aspose
         </a></li>
+    <li><a id="nav_toolkit" onclick="get_page('Toolkit');" class="dropdown-item dp-link" type="button">
+            <ion-icon name="shapes"></ion-icon>Toolkit
+        </a></li>
     <li><a id="nav_wordtohtml" onclick="get_page('wordtohtml');" class="dropdown-item dp-link" type="button">
             <ion-icon name="shapes"></ion-icon>Word to HTML (WYSIWYG)
         </a></li>

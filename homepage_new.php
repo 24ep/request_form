@@ -71,6 +71,8 @@ if (!$_SESSION["login_csg"]){
     <script src="https://cdn.tiny.cloud/1/cis8560ji58crrbq17zb11gp39qhpn2lka54u0m54s8du1gw/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+<!-- return to top -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -133,6 +135,7 @@ if (!$_SESSION["login_csg"]){
 </head>
 
 <body>
+<i class="icon-arrow-down"></i>
     <!-- <nav class="navbar navbar-light bg-light">
         <div class="" style="background:#ff000069;color:white;position: fixed;z-index: 1;">
             <a class="navbar-brand" href="#">You are in pre-launch environment</a>
@@ -262,12 +265,7 @@ if (!$_SESSION["login_csg"]){
                             <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">24EP </span>
                         </a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link" id="nav_job_manage" data-bs-toggle="pill" type="button" role="tab"
-                            aria-selected="false" onclick="get_page('toolkit');">
-                            <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">24EP </span>
-                        </a>
-                    </li>
+                  
 <!-- 
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link" id="nav_job_on_hand" data-bs-toggle="pill" type="button" role="tab"
@@ -708,7 +706,11 @@ tippy('#nav_setting', {
     placement: 'right',
     animation: 'fade',
 });
-
+tippy('#nav_toolkit', {
+    content: "All in one tools",
+    placement: 'right',
+    animation: 'fade',
+});
 function call_model_edit_account(username) {
     Notiflix.Loading.hourglass('Loading...');
     if (username) {
@@ -720,7 +722,21 @@ function call_model_edit_account(username) {
         });
     }
 }
+// ===== Scroll to Top ==== 
+$(window).scroll(function() {
+    if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+        $('#return-to-top').fadeIn(200);    // Fade in the arrow
+    } else {
+        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+    }
+});
+$('#return-to-top').click(function() {      // When arrow is clicked
+    $('body,html').animate({
+        scrollTop : 0                       // Scroll to top of body
+    }, 500);
+});
 </script>
+
 <?php } ?>
 
 <!-- Modal -->
