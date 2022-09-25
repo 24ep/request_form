@@ -32,6 +32,7 @@ ion-icon{
 .hr_manu_bra{
     margin-top:0px;
     color: #919191;
+    width: -webkit-fill-available;
 }
 .name_manu_bra{
     margin:0px 20px;
@@ -70,6 +71,7 @@ ion-icon{
     color: #919191;
     margin: 15px 0px;
     width: 100%;
+    width: -webkit-fill-available;
 }
 .new_lob_list{
     background: white;
