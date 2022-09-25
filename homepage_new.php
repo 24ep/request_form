@@ -135,7 +135,7 @@ if (!$_SESSION["login_csg"]){
 </head>
 
 <body>
-<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+<!-- <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a> -->
     <!-- <nav class="navbar navbar-light bg-light">
         <div class="" style="background:#ff000069;color:white;position: fixed;z-index: 1;">
             <a class="navbar-brand" href="#">You are in pre-launch environment</a>
