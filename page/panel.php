@@ -36,7 +36,7 @@ session_start();
 </nav>
 
 <div class="row">
-    <div class="col-3 bg-white shadow-sm">
+    <div class="col-3 bg-white shadow-sm pe-0 mt-0 ms-0 m-0 border">
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
