@@ -453,7 +453,7 @@ label#label_file_cme {
     margin: 20px!important;
     /* z-index: -1; */
 }
-#return-to-top {
+/* #return-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -492,7 +492,7 @@ label#label_file_cme {
 #return-to-top:hover i {
     color: #fff;
     top: 5px;
-}
+} */
 
 
 /* Extra Things */
