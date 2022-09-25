@@ -86,7 +86,9 @@ session_start();
         </div>
     </div>
     <div class="col-7">
+        <div id="panel_detail">
 
+        </div>
     </div>
 
 </div>
@@ -106,4 +108,16 @@ function get_list_panel(ac_role,status,ac_username,ac_nickname) {
     
 }
 get_list_panel('<?php echo $ac_role; ?>','inprogress','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>')
+
+function call_edit_add_new_panel(id, brand) {
+    Notiflix.Loading.hourglass('Loading...');
+    if (id) {
+        $.post("../base/page/ns_detail.php", {
+            id: id
+        }, function(data) {
+            $('#panel_detail').html(data);
+            Notiflix.Loading.remove();
+        });
+    }
+}
 </script>
