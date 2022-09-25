@@ -305,7 +305,6 @@ if (!$_SESSION["login_csg"]){
         </div>
         <div class="col-10 col_detail_main" style="font-size: 14px;padding: 0px;">
         <?php
-            session_start();
 
             $database = 'all_in_one_project';
             $table = 'account';
