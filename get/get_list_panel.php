@@ -31,11 +31,11 @@ function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end
                                 // -1 create date > 5
                                 $create_date_diff = (strtotime($current_day) - strtotime($create_date))/  ( 60 * 60 * 24 );
                                 if($create_date_diff>=10){
-                                $p_badge .= '<span class="badge bg-danger bg-gradient p-2 mb-1" style="margin-left:5px;background-color: #46088f!important;"><ion-icon name="warning-outline"></ion-icon>Age > '.$create_date_diff.' Days</span>';
+                                $p_badge .= '<span class="badge bg-danger bg-gradient shadow-sm rounded p-1 ps-2 pe-2 mb-1" style="margin-left:5px;background-color: #46088f!important;"><ion-icon name="warning-outline"></ion-icon>Age > '.$create_date_diff.' Days</span>';
                                 }elseif($create_date_diff>=5){
-                                $p_badge .= '<span class="badge bg-danger bg-gradient p-2 mb-1" style="margin-left:5px"> <ion-icon name="warning-outline" style="margin"></ion-icon>Age > '.$create_date_diff.' Days</span>';
+                                $p_badge .= '<span class="badge bg-danger bg-gradient shadow-sm rounded p-1 ps-2 pe-2 mb-1" style="margin-left:5px"> <ion-icon name="warning-outline" style="margin"></ion-icon>Age > '.$create_date_diff.' Days</span>';
                                 }elseif($create_date_diff>=3){
-                                $p_badge .= '<span class="badge bg-warning bg-gradient p-2 mb-1" style="margin-left:5px">Age > '.$create_date_diff.' Days</span>';
+                                $p_badge .= '<span class="badge bg-danger bg-gradient shadow-sm rounded p-1 ps-2 pe-2 mb-1" style="margin-left:5px">Age > '.$create_date_diff.' Days</span>';
                                 }
                                 //  launch date
                                 if($row["launch_date"] <> null){
@@ -43,9 +43,9 @@ function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end
                                 $launch_date_c = date_format($launch_date_c,"Y-m-d");
                                 $launch_date_diff = (strtotime($launch_date_c)-strtotime($current_day))/  ( 60 * 60 * 24 );
                                     if($launch_date_diff<=0){
-                                    $p_badge .= '<span class="badge bg-danger bg-gradient  p-2 mb-1" style="margin-left:5px;background-color: #46088f!important;"><ion-icon name="warning-outline"></ion-icon> Over Launch '.($launch_date_diff*(-1)).' days</span>';
+                                    $p_badge .= '<span class="badge bg-danger bg-gradient shadow-sm rounded p-1 ps-2 pe-2 mb-1" style="margin-left:5px;background-color: #46088f!important;"><ion-icon name="warning-outline"></ion-icon> Over Launch '.($launch_date_diff*(-1)).' days</span>';
                                     }elseif($launch_date_diff<=5){
-                                        $p_badge .= '<span class="badge bg-danger bg-gradient  p-2 mb-1" style="margin-left:5px"><ion-icon name="warning-outline"></ion-icon>Launch in '.$launch_date_diff.' days</span>';
+                                        $p_badge .= '<span class="badge bg-danger bg-gradient shadow-sm rounded p-1 ps-2 pe-2 mb-1" style="margin-left:5px"><ion-icon name="warning-outline"></ion-icon>Launch in '.$launch_date_diff.' days</span>';
                                     }
                                 }
                                 echo $p_badge;
