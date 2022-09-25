@@ -33,7 +33,7 @@ $database = 'all_in_one_project';
                     </button>
                 </h2>
                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse  collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                    <div class="accordion-body">
+                    <div class="accordion-body p-0">
                         <div id="get_list_panel_pending">
                          </div>
                         </div>
