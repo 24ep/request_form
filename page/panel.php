@@ -40,7 +40,7 @@ session_start();
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed border-bottom" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                         <ion-icon name="star-outline"></ion-icon> Pedding Suggestion
                     </button>
@@ -52,7 +52,7 @@ session_start();
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed border-bottom" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                         <ion-icon name="star-half-outline"></ion-icon> Inprogress
                     </button>
@@ -69,7 +69,7 @@ session_start();
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed border-bottom" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
                         <ion-icon name="star"></ion-icon> Review
                     </button>
@@ -85,7 +85,7 @@ session_start();
             </div>
         </div>
     </div>
-    <div class="col-7">
+    <div class="col-7 p-0">
         <div id="panel_detail">
 
         </div>
