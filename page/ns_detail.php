@@ -203,6 +203,7 @@
                     <li style="margin-top: 5px;">
                         <ion-icon name="person-outline"></ion-icon>
                         <?php echo $request_firstname." ".substr($request_lastname,0,2).". ( ".$request_nickname." ) " ?>
+                        <ion-icon type="button"  class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="call_model_edit_account('<?php echo $request_username; ?>')" name="open-outline">
                     </li>
                     <li style="margin-top: 5px;">
                         <ion-icon name="call-outline"></ion-icon> <?php echo $request_office_tell; ?>
@@ -226,6 +227,7 @@
                 <ul class="contact-person-ns">
                     <li style="margin-top: 5px;">
                         <ion-icon name="person-outline"></ion-icon><?php echo $follow_up_name; ?>
+                        <ion-icon type="button"  class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="call_model_edit_account('<?php echo $follow_up_by; ?>')" name="open-outline">
                     </li>
                     <li style="margin-top: 5px;">
                         <ion-icon name="call-outline"></ion-icon> <?php echo $office_tell; ?>
