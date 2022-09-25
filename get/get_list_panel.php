@@ -8,8 +8,15 @@ $status = $_POST['status'];
 function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end_key,$status_key,$create_key,$limit){
     
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-    $query = "SELECT * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."' and ".$end_key."
+    // $query = "SELECT * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."' and ".$end_key."
+    // order by id ASC limit ".$limit or die("Error:" . mysqli_error($con));
+
+    $query = "SELECT * FROM all_in_one_project.add_new_job as anj
+    left join u749625779_cdscontent.job_cms as jc 
+    on anj.id = jc.csg_request_new_id 
+    where ".$primary_key_id." = '".$id."' and ".$end_key."
     order by id ASC limit ".$limit or die("Error:" . mysqli_error($con));
+
     echo '<script>console.log("'.$query .'")</script>';
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
@@ -72,7 +79,7 @@ if($status=='inprogress'){
         get_panel_card('u749625779_cdscontent','job_cms','retouch_assign_name',$ac_nickname,'job_number','','retouch_complete_date is null and job_status_filter <> "cancel" ','job_status_filter','recive_mail_date',10);
     }elseif($ac_role=='product_executive'){
         echo '<script>console.log("bbb")</script>';
-        get_panel_card('all_in_one_project','add_new_job','follow_up_by',$ac_username ,'id','NS-','approved_date is null and status <> "cancel" ' ,'status','recive_mail_date',10);
+        get_panel_card('all_in_one_project','add_new_job','follow_up_by',$ac_username ,'id','NS-','jc.approved_date is null and snj.status <> "cancel" ' ,'anj.status','recive_mail_date',10);
     }
 }elseif($status=='pending'){
 
