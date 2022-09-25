@@ -5,7 +5,12 @@
    $database = 'all_in_one_project';
    $table = 'account';
    $primary_key_id = 'username';
-   $id=$_SESSION['username'];
+   if($_POST['username']==""){
+    $id=$_SESSION['username'];
+   }else{
+    $id=$_POST['username'];
+   }
+
    $prefix_table = 'ac';
    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 
