@@ -186,15 +186,15 @@ if (!$_SESSION["login_csg"]){
                 <input type="hidden" id="minimize_manu" name="minimize_manu" value="show">
                 <input type="hidden" id="active_sub_manu" name="active_sub_manu" value="hide">
                 <a class="navbar-brand" href="#">
-                    <img src="base/image/tems_logo_va.svg" alt="" width="auto" height="100">
+                    <img src="base/image/tems_logo_va.svg" alt="" width="auto" height="30">
                     <!-- <h3 id="apps_name" style="font-weight: lighter;color: firebrick;"> -->
                         <!-- <ion-icon name="layers" style="font-size: 40px;margin: 0px;color:#f85d60"></ion-icon> -->
                         <!-- TEMS -->
-                    <!-- <br><small id="apps_name" style= "font-size: small;
+                    <br><small id="apps_name" style= "font-size: small;
                         font-weight: 100;
-                        white-space: break-spaces;
                         color: gray;">Task executive management system
-                    </small></h3> -->
+                    </small>
+                <!-- </h3> -->
                    
                 </a>
                 <!-- <hr class="hr_manu_bra">
