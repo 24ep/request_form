@@ -162,12 +162,23 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
         anj.mail_conversation_id as anj_mail_conversation_id,
         anj.mail_message_id as anj_mail_message_id,
         anj.mail_internet_message_id as anj_mail_internet_message_id,
-        anj.mail_lastest_message_id as anj_mail_lastest_message_id
+        anj.mail_lastest_message_id as anj_mail_lastest_message_id,
+        CASE 
+         when TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 <= 3 then 0
+         when jc.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 <= 5  then 1
+         when jc.upload_image_date is not null and  anj.launch_date is null and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 10 then 2
+         when jc.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 < 5 and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 10 then 3
+         when TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 < 4 then 4
+         when anj.launch_date is null and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 9 and lower(anj.project_type ) like '%new%' then 5
+         when TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 < 10  then 6
+         when anj.launch_date is null and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 9 and lower(anj.project_type ) like '%item%' then 7
+         when anj.launch_date is not null then 8
+        else 9 end as piority
      FROM all_in_one_project.add_new_job as anj
     left join u749625779_cdscontent.job_cms as jc 
     on anj.id = jc.csg_request_new_id 
     where ".$primary_key_id." = '".$id."' and ".$end_key."
-    order by anj.id ASC limit ".$limit or die("Error:" . mysqli_error($con));
+    order piority ASC,anj.launch_date is null ,anj.launch_date ASC,anj.create_date ASC,anj.sku DESC limit ".$limit or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
         
@@ -220,19 +231,32 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
 if($status=='inprogress'){
  
     if($ac_role=='follow'){
-        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','anj.accepted_date is null and anj.status <> "cancel" ','status',10);
+        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','anj.accepted_date is null and anj.status not like "%cancel%" ','status',10);
     }elseif($ac_role=='writer'){
-        get_panel_card('jc.content_assign_name',$ac_nickname,'jc_job_number','','jc.content_complete_date is null and  jc.job_status_filter <> "cancel"','jc_job_status_filter',10);
+        get_panel_card('jc.content_assign_name',$ac_nickname,'jc_job_number','','jc.content_complete_date is null and  jc.job_status_filter not like "%cancel%"','jc_job_status_filter',10);
     }elseif($ac_role=='shooter'){
-        get_panel_card('jc.shoot_assign_name',$ac_nickname,'jc_job_number','','jc.shoot_complete_date is null and jc.job_status_filter <> "cancel" ','jc_job_status_filter',10);
+        get_panel_card('jc.shoot_assign_name',$ac_nickname,'jc_job_number','','jc.shoot_complete_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',10);
     }elseif($ac_role=='retoucher'){
-        get_panel_card('jc.retouch_assign_name',$ac_nickname,'jc_job_number','','jc.retouch_complete_date is null and jc.job_status_filter <> "cancel" ','jc_job_status_filter',10);
+        get_panel_card('jc.retouch_assign_name',$ac_nickname,'jc_job_number','','jc.retouch_complete_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',10);
     }elseif($ac_role=='product_executive'){
-        echo '<script>console.log("bbb")</script>';
-        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','jc.approved_date is null and anj.status <> "cancel" ' ,'anj_status',10);
+        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','jc.approved_date is null and anj.status not like "%cancel%" ' ,'anj_status',10);
+    }elseif($ac_role=='approver'){
+        get_panel_card('','','jc_job_number','','jc.approved_date is null and anj.status not like "%cancel%" ' ,'anj_status',10);
     }
 }elseif($status=='pending'){
-
+    if($ac_role=='follow'){
+        get_panel_card('', '','anj_id','NS-','anj.start_checking_date is null and anj.status not like "%cancel%" ','status',1);
+    }elseif($ac_role=='writer'){
+        get_panel_card('', '','jc_job_number','','jc.content_start_date is null and  jc.job_status_filter not like "%cancel%"','jc_job_status_filter',1);
+    }elseif($ac_role=='shooter'){
+        get_panel_card('', '','jc_job_number','','jc.shoot_start_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',1);
+    }elseif($ac_role=='retoucher'){
+        get_panel_card('', '','jc_job_number','','jc.retouch_start_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',1);
+    }elseif($ac_role=='product_executive'){
+        get_panel_card('', '','anj_id','NS-','jc.start_checking_date is null and anj.status not like "%cancel%" ' ,'anj_status',1);
+    }elseif($ac_role=='approver'){
+        get_panel_card('','','jc_job_number','','jc.approved_date is null and anj.status not like "%cancel%" ' ,'anj_status',1);
+    }
 }
 
 
