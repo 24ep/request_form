@@ -25,7 +25,13 @@ session_start();
 <nav class="p-3 bg-white shadow-sm">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
-        <small href="#"><?php echo $ac_department; ?> | <?php echo $ac_role; ?> </small>
+        <small href="#"><?php echo $ac_department; ?> </small> |
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected><?php echo $ac_role; ?></option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
     </div>
 </nav>
 
@@ -54,7 +60,7 @@ session_start();
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
                     data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                            <div id="get_list_panel_checking">
+                            <div id="get_list_panel_inprogress">
                                 
                             </div>
 
@@ -87,14 +93,14 @@ session_start();
 
 <script>
     // get_detail_more
-function get_list_panel(ac_department,status) {
+function get_list_panel(ac_role,status) {
     $.post("base/get/get_list_panel.php", {
-            ac_department: ac_department
+            ac_role: ac_role
         },
         function(data) {
             $('#get_list_panel_'+status).html(data);
         });
     
 }
-get_list_panel(<?php echo $ac_department; ?>,'checking')
+get_list_panel(<?php echo $ac_role; ?>,'inprogress')
 </script>
