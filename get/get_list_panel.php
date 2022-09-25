@@ -9,7 +9,7 @@ function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query = "SELECT * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."' and ".$end_key."
     order by id ASC limit ".$limit or die("Error:" . mysqli_error($con));
-    echo '<script>consol.log("'.$query .'")</script>';
+    echo '<script>console.log("'.$query .'")</script>';
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
         
