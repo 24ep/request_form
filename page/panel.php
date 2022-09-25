@@ -37,7 +37,7 @@ session_start();
 
 <div class="row">
     <div class="col-3 bg-white shadow-sm pe-0 mt-0  ms-0 m-0 border-end">
-        <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
                     <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0" type="button" data-bs-toggle="collapse"
