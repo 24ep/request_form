@@ -45,7 +45,7 @@ session_start();
                         <ion-icon name="star-outline"></ion-icon> Pedding Suggestion
                     </button>
                 </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                <div id="flush-collapseOne" class="accordion-collapse  collapse show" aria-labelledby="flush-headingOne"
                     data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">....</div>
                 </div>
@@ -57,7 +57,7 @@ session_start();
                         <ion-icon name="star-half-outline"></ion-icon> Inprogress
                     </button>
                 </h2>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                <div id="flush-collapseTwo" class="accordion-collapse  collapse show" aria-labelledby="flush-headingTwo"
                     data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body p-0">
                             <div id="get_list_panel_inprogress">
@@ -74,7 +74,7 @@ session_start();
                         <ion-icon name="star-half-outline"></ion-icon> Review
                     </button>
                 </h2>
-                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                <div id="flush-collapseThree" class="accordion-collapse  collapse show" aria-labelledby="flush-headingThree"
                     data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
                         the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
