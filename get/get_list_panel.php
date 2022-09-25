@@ -12,7 +12,7 @@ function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end
     while($row = mysqli_fetch_array($result)) {
         
          ?>
-<div class="p-3 border-bottom" onclick=" call_edit_add_new_panel(<?php echo $id; ?>,'<?php echo $row['brand']; ?>')">
+<div class="p-3 border-bottom" onclick=" call_edit_add_new_panel(<?php echo $row['id']; ?>,'<?php echo $row['brand']; ?>')">
     <div class="row">
         <div class="col">
             <ul class="list-group list-group-flush">
