@@ -32,18 +32,18 @@
     <hr class="hr_manu_bra_in">
     <small class="header_manu_bra">Tools</small>
     <li><a id="nav_aspose" onclick="get_page('aspose');" class="dropdown-item dp-link" type="button">
-            <ion-icon name="shapes"></ion-icon>Aspose
+    <img class="me-2" src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://products.aspose.app/cells/family/&size=16">Aspose
         </a></li>
     <li><a id="nav_toolkit" onclick="get_page('Toolkit');" class="dropdown-item dp-link" type="button">
-            <ion-icon name="shapes"></ion-icon>Toolkit
+    <img class="me-2" src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://10015.io/&size=16">Toolkit
         </a></li>
     <li><a id="nav_graphwords" onclick="get_page('graphwords');" class="dropdown-item dp-link" type="button">
-        <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://graphwords.com/&size=16">graphwords
+        <img class="me-2" src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://graphwords.com/&size=16">graphwords
         </a></li>
     <li><a id="nav_wordtohtml" onclick="get_page('wordtohtml');" class="dropdown-item dp-link" type="button">
-            <ion-icon name="shapes"></ion-icon>Word to HTML (WYSIWYG)
+    <img class="me-2" src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://wordhtml.com/&size=16">Word to HTML (WYSIWYG)
         </a></li>
     <li><a id="nav_markdowneditor" onclick="get_page('markdowneditor');" class="dropdown-item dp-link" type="button">
-            <ion-icon name="shapes"></ion-icon>Markdown Editor
+    <img class="me-2" src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://stackedit.io/app#/&size=16">Markdown Editor
         </a></li>
 </div>
