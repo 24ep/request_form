@@ -167,7 +167,7 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
     left join u749625779_cdscontent.job_cms as jc 
     on anj.id = jc.csg_request_new_id 
     where ".$primary_key_id." = '".$id."' and ".$end_key."
-    order by id ASC limit ".$limit or die("Error:" . mysqli_error($con));
+    order by anj,.id ASC limit ".$limit or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
         
@@ -220,7 +220,7 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
 if($status=='inprogress'){
  
     if($ac_role=='follow'){
-        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','anj.accepted_date is null and status <> "cancel" ','status',10);
+        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','anj.accepted_date is null and anj.status <> "cancel" ','status',10);
     }elseif($ac_role=='writer'){
         get_panel_card('jc.content_assign_name',$ac_nickname,'jc_job_number','','jc.content_complete_date is null and  jc.job_status_filter <> "cancel"','jc_job_status_filter',10);
     }elseif($ac_role=='shooter'){
