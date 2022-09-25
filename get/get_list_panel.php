@@ -4,9 +4,8 @@ $ac_role = $_POST['ac_role'];
 function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query = "SELECT * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."'
-    order by id ASC limit 1" or die("Error:" . mysqli_error($con));
+    order by id ASC limit 10" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
-    $section="";
     while($row = mysqli_fetch_array($result)) {
         
          ?>
