@@ -249,7 +249,7 @@ if (!$_SESSION["login_csg"]){
                     <?php if(strpos($_SESSION["department"],'Content')!==false){
                 ?>
                     <hr class="hr_manu_bra_in">
-                    <small class="header_manu_bra">Productions (24EP)</small>
+                    <small class="header_manu_bra">Production</small>
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link" id="nav_panel" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('panel');">
@@ -259,10 +259,10 @@ if (!$_SESSION["login_csg"]){
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link" id="nav_job_manage" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('job_manage');">
-                            <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">Job manage</span>
+                            <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">24EP </span>
                         </a>
                     </li>
-
+<!-- 
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link" id="nav_job_on_hand" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('job_on_hand');">
@@ -274,7 +274,7 @@ if (!$_SESSION["login_csg"]){
                             aria-selected="false" onclick="get_page('linesheet');">
                             <ion-icon name="cloud-upload"></ion-icon><span class="main-manu-nav">Linesheet</span>
                         </a>
-                    </li>
+                    </li> -->
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Internals</small>
                     <li class="nav-item" role="presentation">
