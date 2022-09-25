@@ -85,7 +85,7 @@ session_start();
             </div>
         </div>
     </div>
-    <div class="col-7 p-0">
+    <div class="col-9 p-0">
         <div id="panel_detail">
 
         </div>
