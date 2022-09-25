@@ -1,6 +1,6 @@
 <!--  -->
 <?php
-
+  session_start();
 $database = 'all_in_one_project';
             $table = 'account';
             $primary_key_id = 'username';
