@@ -186,7 +186,8 @@ if (!$_SESSION["login_csg"]){
                 <input type="hidden" id="minimize_manu" name="minimize_manu" value="show">
                 <input type="hidden" id="active_sub_manu" name="active_sub_manu" value="hide">
                 <a class="navbar-brand" href="#">
-                    <img src="base/image/tems_logo_va.svg" alt="" width="auto" height="30">
+                    <img id="logo_tems" class="logo_tems" src="base/image/tems_logo_va.svg" alt="" width="auto" height="30">
+                    <img id="logo_tems_minimize" class="logo_tems_minimize hide" src="base/image/tems_logo_minimize.svg" alt="" width="auto" height="30">
                     <!-- <h3 id="apps_name" style="font-weight: lighter;color: firebrick;"> -->
                         <!-- <ion-icon name="layers" style="font-size: 40px;margin: 0px;color:#f85d60"></ion-icon> -->
                         <!-- TEMS -->
@@ -500,6 +501,9 @@ function minimize_nav() {
         }
         document.getElementById("apps_name").className = document.getElementById("apps_name").className.replace(
             /(?:^|\s)hide(?!\S)/g, '');
+        document.getElementById("logo_tems_minimize").className = document.getElementById("logo_tems").className.replace(
+            /(?:^|\s)hide(?!\S)/g, '');
+        document.getElementById("logo_tems").className += " hide";
         var img_avatar = document.getElementsByClassName("img-avatar");
         for (var i = 0; i < img_avatar.length; i++) {
             img_avatar[i].className = img_avatar[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
@@ -547,6 +551,9 @@ function minimize_nav() {
         }
         // document.getElementById("main-manu-nav").className += " hide";
         document.getElementById("apps_name").className += " hide";
+        document.getElementById("logo_tems_minimize").className += " hide";
+        document.getElementById("logo_tems").className = document.getElementById("logo_tems").className.replace(
+            /(?:^|\s)hide(?!\S)/g, '');
         var main_manu_nav = document.getElementsByClassName("main-manu-nav");
         for (var i = 0; i < main_manu_nav.length; i++) {
             console.log('hide ' + i);

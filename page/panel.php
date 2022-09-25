@@ -53,7 +53,7 @@ $database = 'all_in_one_project';
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingThree">
                 <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
-                        <ion-icon name="star"></ion-icon> Review
+                        <ion-icon name="star"></ion-icon> Waiting for more information
                     </button>
                 </h2>
                 <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingThree">
@@ -87,6 +87,7 @@ function get_list_panel(ac_role,status,ac_username,ac_nickname) {
     
 }
 get_list_panel('<?php echo $ac_role; ?>','inprogress','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>')
+get_list_panel('<?php echo $ac_role; ?>','waiting','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>')
 
 function call_edit_add_new_panel(id, brand) {
     Notiflix.Loading.hourglass('Loading...');

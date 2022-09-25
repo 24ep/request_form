@@ -289,6 +289,7 @@ label#label_file_cme {
     position : absolute!important;
     z-index: -1;
 }
+
 .img-avatar.hide{
     display : none!important;
     position : absolute!important;
@@ -350,9 +351,17 @@ label#label_file_cme {
 .total_count_dashboard{
     font-size: 50px;
 }
+
 .mini-nav-col{
     width: 70px;
 }
+.logo_tems_minimize.hide{
+    display: none;
+}
+.logo_tems.hide{
+    display: none;
+}
+
 .main-manu-nav.hide {
     display: none;
 }
