@@ -14,7 +14,7 @@ function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end
         
          ?>
 <div class="p-3 border-bottom"
-    onclick=" call_edit_add_new_panel(<?php echo $row['id']; ?>,'<?php echo $row['brand']; ?>')">
+    onclick="call_edit_add_new_panel(<?php echo $row['id']; ?>,'<?php echo $row['brand']; ?>')">
     <div class="row">
         <div class="col">
             <ul class="list-group list-group-flush">
@@ -60,7 +60,7 @@ function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end
 }
 if($status=='inprogress'){
     if($ac_role=='follow'){
-        get_panel_card('all_in_one_project','add_new_job','follow_up_by',$ac_username ,'id','NS-','accepted_date is null ','status','recive_mail_date',10);
+        get_panel_card('all_in_one_project','add_new_job','follow_up_by',$ac_username ,'id','NS-','accepted_date is null and status <> "cancel" ','status','recive_mail_date',10);
     }elseif($ac_role=='writer'){
         get_panel_card('u749625779_cdscontent','job_cms','content_assign_name',$ac_nickname,'job_number','','content_complete_date is null and status <> "cancel"','job_status_filter','recive_mail_date',10);
     }elseif($ac_role=='shooter'){
