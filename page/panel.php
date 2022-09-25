@@ -26,12 +26,12 @@ session_start();
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
         <small href="#"><?php echo $ac_department; ?> </small> |
-        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+        <!-- <select class="form-select form-select-sm" aria-label=".form-select-sm example">
             <option selected><?php echo $ac_role; ?></option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
-        </select>
+        </select> -->
     </div>
 </nav>
 
