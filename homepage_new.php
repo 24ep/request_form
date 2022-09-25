@@ -61,7 +61,7 @@ if (!$_SESSION["login_csg"]){
     <meta name="googlebot" content="noindex">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Content Service Gate</title>
+    <title>TEMS | Task Executive Management System</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" /> -->
