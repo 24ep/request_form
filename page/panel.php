@@ -1,5 +1,6 @@
 <?php
 session_start();
+
    $database = 'all_in_one_project';
    $table = 'account';
    $primary_key_id = 'username';
@@ -24,7 +25,7 @@ session_start();
 <nav class="p-3 bg-white shadow-sm">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
-        <small href="#"><?php echo $ac_department; ?></small>
+        <small href="#"><?php echo $ac_department; ?> | <?php echo $ac_role; ?> </small>
     </div>
 </nav>
 
@@ -40,8 +41,7 @@ session_start();
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
-                        the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                    <div class="accordion-body">....</div>
                 </div>
             </div>
             <div class="accordion-item">
@@ -53,9 +53,12 @@ session_start();
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
-                        the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
-                        this being filled with some actual content.</div>
+                    <div class="accordion-body">
+                            <div id="get_list_panel_checking">
+                                
+                            </div>
+
+                    </div>
                 </div>
             </div>
             <div class="accordion-item">
@@ -81,3 +84,17 @@ session_start();
     </div>
 
 </div>
+
+<script>
+    // get_detail_more
+function get_list_panel(ac_department,status) {
+    $.post("base/get/get_list_panel.php", {
+            ac_department: ac_department
+        },
+        function(data) {
+            $('#get_list_panel_'+status).html(data);
+        });
+    
+}
+get_list_panel(<?php echo $ac_department; ?>,'checking')
+</script>
