@@ -253,7 +253,7 @@ if (!$_SESSION["login_csg"]){
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link" id="nav_panel" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('panel');">
-                            <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">Panel</span>
+                            <ion-icon name="grid-outline"></ion-icon><span class="main-manu-nav">Panel</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
