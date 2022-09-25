@@ -5,7 +5,7 @@ $ac_username = $_POST['ac_username'];
 $ac_nickname = $_POST['ac_nickname'];
 function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end_key,$status_key,$create_key){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-    $query = "SELECT ".$title.",brand,sku,id,".$status_key.",".$create_key." FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."' and ".$end_key."
+    $query = "SELECT * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."' and ".$end_key."
     order by id ASC limit 10" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {

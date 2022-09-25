@@ -97,7 +97,8 @@ function get_list_panel(ac_role,status,ac_username,ac_nickname) {
     $.post("base/get/get_list_panel.php", {
             ac_role: ac_role,
             ac_username: ac_username,
-            ac_nickname :ac_nickname
+            ac_nickname :ac_nickname,
+            status:status
         },
         function(data) {
             $('#get_list_panel_'+status).html(data);
