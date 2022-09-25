@@ -3,6 +3,7 @@ session_start();
 $ac_role = $_POST['ac_role'];
 $ac_username = $_POST['ac_username'];
 $ac_nickname = $_POST['ac_nickname'];
+$status = $_POST['status'];
 function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end_key,$status_key,$create_key){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query = "SELECT * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."' and ".$end_key."
