@@ -501,9 +501,9 @@ function minimize_nav() {
         }
         document.getElementById("apps_name").className = document.getElementById("apps_name").className.replace(
             /(?:^|\s)hide(?!\S)/g, '');
-        document.getElementById("logo_tems_minimize").className = document.getElementById("logo_tems").className.replace(
+        document.getElementById("logo_tems").className = document.getElementById("logo_tems").className.replace(
             /(?:^|\s)hide(?!\S)/g, '');
-        document.getElementById("logo_tems").className += " hide";
+        document.getElementById("logo_tems_minimize").className += " hide";
         var img_avatar = document.getElementsByClassName("img-avatar");
         for (var i = 0; i < img_avatar.length; i++) {
             img_avatar[i].className = img_avatar[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
@@ -551,8 +551,8 @@ function minimize_nav() {
         }
         // document.getElementById("main-manu-nav").className += " hide";
         document.getElementById("apps_name").className += " hide";
-        document.getElementById("logo_tems_minimize").className += " hide";
-        document.getElementById("logo_tems").className = document.getElementById("logo_tems").className.replace(
+        document.getElementById("logo_tems").className += " hide";
+        document.getElementById("logo_tems_minimize").className = document.getElementById("logo_tems").className.replace(
             /(?:^|\s)hide(?!\S)/g, '');
         var main_manu_nav = document.getElementsByClassName("main-manu-nav");
         for (var i = 0; i < main_manu_nav.length; i++) {
