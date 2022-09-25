@@ -167,7 +167,7 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
     left join u749625779_cdscontent.job_cms as jc 
     on anj.id = jc.csg_request_new_id 
     where ".$primary_key_id." = '".$id."' and ".$end_key."
-    order by anj,.id ASC limit ".$limit or die("Error:" . mysqli_error($con));
+    order by anj.id ASC limit ".$limit or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
         
