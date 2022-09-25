@@ -4,50 +4,41 @@
 
 <div class="row">
     <div class="col-3 bg-white shadow-sm pe-0 mt-0  ms-0 m-0 border-end">
-        <div class="accordion" id="accordionFlushExample">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
             <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                         <ion-icon name="star-outline"></ion-icon> Pedding
                     </button>
                 </h2>
-                <div id="flush-collapseOne" class="accordion-collapse  collapse show" aria-labelledby="flush-headingOne"
-                    data-bs-parent="#accordionFlushExample">
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse  collapse show" aria-labelledby="panelsStayOpen-headingOne">
                     <div class="accordion-body">....</div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">
-                    <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
                         <ion-icon name="star-half-outline"></ion-icon> Inprogress
                     </button>
                 </h2>
-                <div id="flush-collapseTwo" class="accordion-collapse  collapse show" aria-labelledby="flush-headingTwo"
-                    data-bs-parent="#accordionFlushExample">
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse  collapse show" aria-labelledby="panelsStayOpen-headingTwo">
                     <div class="accordion-body p-0">
-                            <div id="get_list_panel_inprogress">
-                                
-                            </div>
-
+                        <div id="get_list_panel_inprogress">
+                         </div>
                     </div>
                 </div>
+             
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
                         <ion-icon name="star"></ion-icon> Review
                     </button>
                 </h2>
-                <div id="flush-collapseThree" class="accordion-collapse  collapse show" aria-labelledby="flush-headingThree"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
-                        the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
-                        exciting happening here in terms of content, but just filling up the space to make it look, at
-                        least at first glance, a bit more representative of how this would look in a real-world
-                        application.</div>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingThree">
+                    <div class="accordion-body p-0">
+                      ....
+                    </div>
                 </div>
             </div>
         </div>
