@@ -37,7 +37,7 @@ function get_page_account(){
     $value_account .= '<td style="text-align-last: left;"><ion-icon class="icon-mg" name="mail-outline"></ion-icon>'.$row_account["work_email"].'<br><ion-icon class="icon-mg" name="call-outline"></ion-icon>'.$row_account["office_tell"].'</td>';
     $value_account .= '<td>'.$status.'</td>';
     $value_account .= '<td>'.$row_account["department"].'</td>';
-    $value_account .= '<td><button type="button" onclick="call_model_edit_account('.$row_account["username"].')" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal"><ion-icon name="pencil-outline"></ion-icon></button></td>';
+    $value_account .= '<td><button type="button" onclick="call_model_edit_account(&#39;'.$row_account["username"].'&#39;)" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal"><ion-icon name="pencil-outline"></ion-icon></button></td>';
     $value_account .= '</tr>';
 }
 
