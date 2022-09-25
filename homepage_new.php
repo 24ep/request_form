@@ -186,11 +186,11 @@ if (!$_SESSION["login_csg"]){
                 <input type="hidden" id="active_sub_manu" name="active_sub_manu" value="hide">
                 <a class="navbar-brand" href="#">
                     
-                    <h3 id="apps_name"><ion-icon name="layers" style="font-size: 40px;margin: 0px;color:#f85d60"></ion-icon>Tapems
-                    <br><small id="apps_name" style= font-size: small;
+                    <h3 id="apps_name"><ion-icon name="layers" style="font-size: 40px;margin: 0px;color:#f85d60"></ion-icon>Tems
+                    <br><small id="apps_name" style= "font-size: small;
                         font-weight: 100;
                         white-space: break-spaces;
-                        color: gray;">Task and product executive management system
+                        color: gray;">Task executive management system
                     </small></h3>
                    
                 </a>
