@@ -236,11 +236,18 @@ if (!$_SESSION["login_csg"]){
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Productions (24EP)</small>
                     <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link" id="nav_panel" data-bs-toggle="pill" type="button" role="tab"
+                            aria-selected="false" onclick="get_page('panel');">
+                            <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">Panel</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link" id="nav_job_manage" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('job_manage');">
                             <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">Job manage</span>
                         </a>
                     </li>
+
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link" id="nav_job_on_hand" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('job_on_hand');">
