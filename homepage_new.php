@@ -348,7 +348,7 @@ if (!$_SESSION["login_csg"]){
                 <div class="container-fluid">
                     <img
                         src="https://ui-avatars.com/api/?name=<?php echo $ac_firstname.'+'.$ac_lastname; ?>&background=<?php echo bg_dept($ac_department); ?>&color=fff&rounded=true&size=30">
-                    <a class="navbar-brand" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
+                    <a class="navbar-brand ms-1" style="" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
                     <small href="#"><?php echo $ac_department; ?> </small> | <?php echo $ac_role; ?>
                     <ion-icon onclick="call_model_edit_account('<?php echo $ac_username; ?>')" name="open-outline">
                     </ion-icon>
@@ -725,7 +725,7 @@ function call_model_edit_account(username) {
                 <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body bg-light">
                 <div id="model_lg">
                 </div>
             </div>
