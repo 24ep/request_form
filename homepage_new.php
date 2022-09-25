@@ -338,6 +338,8 @@ if (!$_SESSION["login_csg"]){
             ?>
             <nav class="p-3 bg-white shadow-sm border-bottom">
                 <div class="container-fluid">
+                <img src="https://ui-avatars.com/api/?name=<?php echo $ac_firstname.'+'.$ac_lastname; ?>&background=<?php echo bg_dept($ac_department); ?>&color=fff&rounded=true&size=30"
+                        class="ms-3 mb-3">
                     <a class="navbar-brand" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
                     <small href="#"><?php echo $ac_department; ?> </small> | <?php echo $ac_role; ?>
                 </div>
