@@ -153,5 +153,3 @@ if($count_waiting > 0 ){
             );</script>";
 }
 ?>
-
-}
