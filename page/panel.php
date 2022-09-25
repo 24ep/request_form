@@ -71,7 +71,7 @@ session_start();
                 <h2 class="accordion-header" id="flush-headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                        <ion-icon name="star-half-outline"></ion-icon> Review
+                        <ion-icon name="star"></ion-icon> Review
                     </button>
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse  collapse show" aria-labelledby="flush-headingThree"
