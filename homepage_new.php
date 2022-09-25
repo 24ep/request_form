@@ -186,7 +186,7 @@ if (!$_SESSION["login_csg"]){
                 <input type="hidden" id="minimize_manu" name="minimize_manu" value="show">
                 <input type="hidden" id="active_sub_manu" name="active_sub_manu" value="hide">
                 <a class="navbar-brand" href="#">
-                    <img src="/image/tems_logo.svg" alt="" width="30" height="24">
+                    <img src="base/image/tems_logo.svg" alt="" width="auto" height="100">
                     <!-- <h3 id="apps_name" style="font-weight: lighter;color: firebrick;"> -->
                         <!-- <ion-icon name="layers" style="font-size: 40px;margin: 0px;color:#f85d60"></ion-icon> -->
                         <!-- TEMS -->
