@@ -38,7 +38,7 @@
             <ion-icon name="shapes"></ion-icon>Toolkit
         </a></li>
     <li><a id="nav_graphwords" onclick="get_page('graphwords');" class="dropdown-item dp-link" type="button">
-            <ion-icon name="shapes"></ion-icon>graphwords
+        <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://graphwords.com/&size=16">graphwords
         </a></li>
     <li><a id="nav_wordtohtml" onclick="get_page('wordtohtml');" class="dropdown-item dp-link" type="button">
             <ion-icon name="shapes"></ion-icon>Word to HTML (WYSIWYG)
