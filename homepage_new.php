@@ -188,7 +188,7 @@ if (!$_SESSION["login_csg"]){
                     <ion-icon name="layers" style="font-size: 20px;margin: 0px;color:#f85d60"></ion-icon>
                     <span id="apps_name">ONLINE CONTENT</span>
                 </a>
-                <hr class="hr_manu_bra">
+                <!-- <hr class="hr_manu_bra">
                 <div class="img-avatar" style="display: inline-flex;">
                     <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=<?php echo bg_dept($_SESSION['department']); ?>&color=fff&rounded=true&size=40"
                         class="ms-3 mb-3">
@@ -198,7 +198,7 @@ if (!$_SESSION["login_csg"]){
                         <small class="dept_manu_bra"
                             style="place-self: center;"><?php echo $_SESSION['department']; ?></small>
                     </div>
-                </div>
+                </div> -->
                 <hr class="hr_manu_bra">
                 <small class="header_manu_bra">Form create new product</small>
                 <?php include("get/linesheet_download_alert_bra.php"); ?>
