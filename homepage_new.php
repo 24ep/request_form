@@ -63,7 +63,8 @@ if (!$_SESSION["login_csg"]){
     <title>Content Service Gate</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" />
+    <!-- <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" /> -->
+    <link rel="icon" type="image/ocp" href="https://content-service-gate.cdse-commercecontent.com/base/image/tems_logo.ico" />
     <!-- textarray -->
     <script src="https://cdn.tiny.cloud/1/cis8560ji58crrbq17zb11gp39qhpn2lka54u0m54s8du1gw/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
@@ -185,15 +186,15 @@ if (!$_SESSION["login_csg"]){
                 <input type="hidden" id="minimize_manu" name="minimize_manu" value="show">
                 <input type="hidden" id="active_sub_manu" name="active_sub_manu" value="hide">
                 <a class="navbar-brand" href="#">
-                    
-                    <h3 id="apps_name" style="font-weight: lighter;color: firebrick;">
+                    <img src="/image/tems_logo.svg" alt="" width="30" height="24">
+                    <!-- <h3 id="apps_name" style="font-weight: lighter;color: firebrick;"> -->
                         <!-- <ion-icon name="layers" style="font-size: 40px;margin: 0px;color:#f85d60"></ion-icon> -->
-                        TEMS
-                    <br><small id="apps_name" style= "font-size: small;
+                        <!-- TEMS -->
+                    <!-- <br><small id="apps_name" style= "font-size: small;
                         font-weight: 100;
                         white-space: break-spaces;
                         color: gray;">Task executive management system
-                    </small></h3>
+                    </small></h3> -->
                    
                 </a>
                 <!-- <hr class="hr_manu_bra">
