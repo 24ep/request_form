@@ -21,7 +21,6 @@ $database = 'all_in_one_project';
                     }
                 }
             ?>
-?>
 
 
 <div class="row">
