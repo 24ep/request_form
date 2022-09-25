@@ -5,30 +5,180 @@ $ac_username = $_POST['ac_username'];
 $ac_nickname = $_POST['ac_nickname'];
 $status = $_POST['status'];
 
-function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end_key,$status_key,$create_key,$limit){
+function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,$limit){
     
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     // $query = "SELECT * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."' and ".$end_key."
     // order by id ASC limit ".$limit or die("Error:" . mysqli_error($con));
 
-    $query = "SELECT * FROM all_in_one_project.add_new_job as anj
+    $query = "SELECT 
+        jc.id as jc_id,
+        jc.job_number as jc_job_number,
+        jc.job_type as jc_job_type,
+        jc.department as jc_department,
+        jc.sub_department as jc_sub_department,
+        jc.brand as jc_brand,
+        jc.sku as jc_sku,
+        jc.job_status_filter as jc_job_status_filter,
+        jc.production_type as jc_production_type,
+        jc.product_type as jc_product_type,
+        jc.transfer_type as jc_transfer_type,
+        jc.product_sorting as jc_product_sorting,
+        jc.store as jc_store,
+        jc.luanch_date as jc_luanch_date,
+        jc.product_website as jc_product_website,
+        jc.bu as jc_bu,
+        jc.traffic as jc_traffic,
+        jc.date_run_job_traffic as jc_date_run_job_traffic,
+        jc.recive_linesheet_date as jc_recive_linesheet_date,
+        jc.recive_mail_date as jc_recive_mail_date,
+        jc.product_sell_type as jc_product_sell_type,
+        jc.total_cancel_sku as jc_total_cancel_sku,
+        jc.cancel_date as jc_cancel_date,
+        jc.wrong_data_linesheet as jc_wrong_data_linesheet,
+        jc.enable_product as jc_enable_product,
+        jc.shoots_piece_style as jc_shoots_piece_style,
+        jc.studio_sku as jc_studio_sku,
+        jc.product_check_by as jc_product_check_by,
+        jc.recive_item_date as jc_recive_item_date,
+        jc.upload_image_by as jc_upload_image_by,
+        jc.upload_image_date as jc_upload_image_date,
+        jc.check_image as jc_check_image,
+        jc.linesheeter_queue_date as jc_linesheeter_queue_date,
+        jc.linesheeter_assign_name as jc_linesheeter_assign_name,
+        jc.linesheeter_assign_date as jc_linesheeter_assign_date,
+        jc.linesheeter_start_date as jc_linesheeter_start_date,
+        jc.linesheeter_complete_date as jc_linesheeter_complete_date,
+        jc.linesheeter_make_data as jc_linesheeter_make_data,
+        jc.content_assign_date as jc_content_assign_date,
+        jc.content_assign_name as jc_content_assign_name,
+        jc.content_queue_date as jc_content_queue_date,
+        jc.content_start_date as jc_content_start_date,
+        jc.content_complete_date as jc_content_complete_date,
+        jc.content_translate as jc_content_translate,
+        jc.shoots_assign_name as jc_shoots_assign_name,
+        jc.shoots_assign_date as jc_shoots_assign_date,
+        jc.shoots_day_1 as jc_shoots_day_1,
+        jc.shoots_day_2 as jc_shoots_day_2,
+        jc.shoots_day_3 as jc_shoots_day_3,
+        jc.shoots_start_date as jc_shoots_start_date,
+        jc.shoots_complete_date as jc_shoots_complete_date,
+        jc.retouch_assign_name as jc_retouch_assign_name,
+        jc.retouch_assign_date as jc_retouch_assign_date,
+        jc.retouch_piece_style as jc_retouch_piece_style,
+        jc.retouch_day_1 as jc_retouch_day_1,
+        jc.retouch_day_2 as jc_retouch_day_2,
+        jc.retouch_day_3 as jc_retouch_day_3,
+        jc.retouch_start_date as jc_retouch_start_date,
+        jc.retouch_complete_date as jc_retouch_complete_date,
+        jc.approved_by as jc_approved_by,
+        jc.approved_date as jc_approved_date,
+        jc.approved_complete_sku as jc_approved_complete_sku,
+        jc.approved_editing_status as jc_approved_editing_status,
+        jc.approved_edited_date as jc_approved_edited_date,
+        jc.approved_decline_date as jc_approved_decline_date,
+        jc.approved_content_attribute_set as jc_approved_content_attribute_set,
+        jc.approved_content_bullet as jc_approved_content_bullet,
+        jc.approved_content_categories as jc_approved_content_categories,
+        jc.approved_content_description as jc_approved_content_description,
+        jc.approved_content_grouping as jc_approved_content_grouping,
+        jc.approved_content_photo as jc_approved_content_photo,
+        jc.approved_content_product_name as jc_approved_content_product_name,
+        jc.approved_buyer_bullet as jc_approved_buyer_bullet,
+        jc.approved_buyer_categories as jc_approved_buyer_categories,
+        jc.approved_buyer_description as jc_approved_buyer_description,
+        jc.approved_buyer_grouping as jc_approved_buyer_grouping,
+        jc.approved_buyer_photo as jc_approved_buyer_photo,
+        jc.approved_buyer_product_name as jc_approved_buyer_product_name,
+        jc.approved_decline_remark as jc_approved_decline_remark,
+        jc.approved_no_kpi_attribute_set as jc_approved_no_kpi_attribute_set,
+        jc.approved_no_kpi_bullet as jc_approved_no_kpi_bullet,
+        jc.approved_no_kpi_categories as jc_approved_no_kpi_categories,
+        jc.approved_no_kpi_description as jc_approved_no_kpi_description,
+        jc.approved_no_kpi_grouping as jc_approved_no_kpi_grouping,
+        jc.approved_no_kpi_photo as jc_approved_no_kpi_photo,
+        jc.approved_no_kpi_product_name as jc_approved_no_kpi_product_name,
+        jc.remark as jc_remark,
+        jc.create_at as jc_create_at,
+        jc.last_update_at as jc_last_update_at,
+        jc.duplicate_sku_in_mdc as jc_duplicate_sku_in_mdc,
+        jc.wrong_data_sku as jc_wrong_data_sku,
+        jc.datapump as jc_datapump,
+        jc.itemmize_type as jc_itemmize_type,
+        jc.job_status_fillter as jc_job_status_fillter,
+        jc.csg_request_new_id as jc_csg_request_new_id,
+        jc.pre_content_assign_name as jc_pre_content_assign_name,
+        jc.ref_ticket_cto as jc_ref_ticket_cto,
+        jc.ref_ticket_support as jc_ref_ticket_support,
+        jc.lock_content_assign_name as jc_lock_content_assign_name,
+        jc.approved_assign_name as jc_approved_assign_name,
+        jc.approved_assign_date as jc_approved_assign_date,
+        jc.approved_assign_by as jc_approved_assign_by,
+        jc.datapump_success_date as jc_datapump_success_date,
+        anj.id as anj_id,
+        anj.brand as anj_brand,
+        anj.department as anj_department,
+        anj.sku as anj_sku,
+        anj.production_type as anj_production_type,
+        anj.project_type as anj_project_type,
+        anj.business_type as anj_business_type,
+        anj.link_info as anj_link_info,
+        anj.launch_date as anj_launch_date,
+        anj.stock_source as anj_stock_source,
+        anj.contact_buyer as anj_contact_buyer,
+        anj.contact_vender as anj_contact_vender,
+        anj.remark as anj_remark,
+        anj.request_username as anj_request_username,
+        anj.job_id as anj_job_id,
+        anj.create_date as anj_create_date,
+        anj.update_date as anj_update_date,
+        anj.new_brand as anj_new_brand,
+        anj.status as anj_status,
+        anj.start_checking_date as anj_start_checking_date,
+        anj.follow_up_by as anj_follow_up_by,
+        anj.accepted_date as anj_accepted_date,
+        anj.need_more_info_note as anj_need_more_info_note,
+        anj.need_more_info_date as anj_need_more_info_date,
+        anj.need_more_status as anj_need_more_status,
+        anj.online_channel as anj_online_channel,
+        anj.bu as anj_bu,
+        anj.request_important as anj_request_important,
+        anj.tags as anj_tags,
+        anj.reply_back_info_date as anj_reply_back_info_date,
+        anj.participant as anj_participant,
+        anj.internal_note as anj_internal_note,
+        anj.cancel_resone as anj_cancel_resone,
+        anj.config_type as anj_config_type,
+        anj.parent as anj_parent,
+        anj.follow_assign_name as anj_follow_assign_name,
+        anj.follow_assign_date as anj_follow_assign_date,
+        anj.sub_department as anj_sub_department,
+        anj.subject_mail as anj_subject_mail,
+        anj.cancel_date as anj_cancel_date,
+        anj.trigger_status as anj_trigger_status,
+        anj.job_cms_data_sync as anj_job_cms_data_sync,
+        anj.web_cate as anj_web_cate,
+        anj.request_date as anj_request_date,
+        anj.mail_conversation_id as anj_mail_conversation_id,
+        anj.mail_message_id as anj_mail_message_id,
+        anj.mail_internet_message_id as anj_mail_internet_message_id,
+        anj.mail_lastest_message_id as anj_mail_lastest_message_id
+     FROM all_in_one_project.add_new_job as anj
     left join u749625779_cdscontent.job_cms as jc 
     on anj.id = jc.csg_request_new_id 
     where ".$primary_key_id." = '".$id."' and ".$end_key."
     order by id ASC limit ".$limit or die("Error:" . mysqli_error($con));
-
-    echo '<script>console.log("'.$query .'")</script>';
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
         
          ?>
 <div class="p-3 border-bottom"
-    onclick="call_edit_add_new_panel(<?php echo $row['id']; ?>,'<?php echo $row['brand']; ?>')">
+    onclick="call_edit_add_new_panel(<?php echo $row['anj_id']; ?>,'<?php echo $row['anj_brand']; ?>')">
     <div class="row">
         <div class="col">
             <ul class="list-group list-group-flush">
                 <li class="" style="list-style: none"><strong><?php echo $prefix.$row[$title];?></strong></li>
-                <li class="" style="list-style: none"><?php echo $row['brand']." ".$row['sku'];?> SKUs</li>
+                <li class="" style="list-style: none"><?php echo $row['anj_brand']." ".$row['anj_sku'];?> SKUs</li>
                 <li class="" style="list-style: none"><span><?php echo $row[$status_key];?></span></li>
             </ul>
         </div>
@@ -37,7 +187,7 @@ function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end
                             //priority_badge
                                 $current_day = date("Y-m-d");
                                 $p_badge="";
-                                $create_date = date_create($row[$create_key]);
+                                $create_date = date_create($row['anj_create_date']);
                                 $create_date = date_format($create_date,"Y-m-d");
                                 // -1 create date > 5
                                 $create_date_diff = (strtotime($current_day) - strtotime($create_date))/  ( 60 * 60 * 24 );
@@ -49,8 +199,8 @@ function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end
                                 $p_badge .= '<span class="badge bg-danger bg-gradient shadow-sm rounded p-1 ps-2 pe-2 mb-1" style="margin-left:5px">Age > '.$create_date_diff.' Days</span>';
                                 }
                                 //  launch date
-                                if($row["launch_date"] <> null){
-                                $launch_date_c = date_create($row["launch_date"]);
+                                if($row["anj_launch_date"] <> null){
+                                $launch_date_c = date_create($row["anj_launch_date"]);
                                 $launch_date_c = date_format($launch_date_c,"Y-m-d");
                                 $launch_date_diff = (strtotime($launch_date_c)-strtotime($current_day))/  ( 60 * 60 * 24 );
                                     if($launch_date_diff<=0){
@@ -70,16 +220,16 @@ function get_panel_card($database,$table,$primary_key_id,$id,$title,$prefix,$end
 if($status=='inprogress'){
  
     if($ac_role=='follow'){
-        get_panel_card('all_in_one_project','add_new_job','follow_up_by',$ac_username ,'id','NS-','accepted_date is null and status <> "cancel" ','status','recive_mail_date',10);
+        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','anj.accepted_date is null and status <> "cancel" ','status',10);
     }elseif($ac_role=='writer'){
-        get_panel_card('u749625779_cdscontent','job_cms','content_assign_name',$ac_nickname,'job_number','','content_complete_date is null and status <> "cancel"','job_status_filter','recive_mail_date',10);
+        get_panel_card('jc.content_assign_name',$ac_nickname,'jc_job_number','','jc.content_complete_date is null and  jc.job_status_filter <> "cancel"','jc_job_status_filter',10);
     }elseif($ac_role=='shooter'){
-        get_panel_card('u749625779_cdscontent','job_cms','shoot_assign_name',$ac_nickname,'job_number','','shoot_complete_date is null and job_status_filter <> "cancel" ','job_status_filter','recive_mail_date',10);
+        get_panel_card('jc.shoot_assign_name',$ac_nickname,'jc_job_number','','jc.shoot_complete_date is null and jc.job_status_filter <> "cancel" ','jc_job_status_filter',10);
     }elseif($ac_role=='retoucher'){
-        get_panel_card('u749625779_cdscontent','job_cms','retouch_assign_name',$ac_nickname,'job_number','','retouch_complete_date is null and job_status_filter <> "cancel" ','job_status_filter','recive_mail_date',10);
+        get_panel_card('jc.retouch_assign_name',$ac_nickname,'jc_job_number','','jc.retouch_complete_date is null and jc.job_status_filter <> "cancel" ','jc_job_status_filter',10);
     }elseif($ac_role=='product_executive'){
         echo '<script>console.log("bbb")</script>';
-        get_panel_card('all_in_one_project','add_new_job','follow_up_by',$ac_username ,'id','NS-','jc.approved_date is null and snj.status <> "cancel" ' ,'anj.status','recive_mail_date',10);
+        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','jc.approve_date is null and anj.status <> "cancel" ' ,'anj_status',10);
     }
 }elseif($status=='pending'){
 
