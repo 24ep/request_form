@@ -349,14 +349,14 @@ if (!$_SESSION["login_csg"]){
                 }
             ?>
             <nav class="p-3 bg-white shadow-sm border-bottom">
-                <div class="container-fluid d-flex" style="align-items: center;">
+                <div class="container-fluid d-flex" style="align-items: center;height: 40px;">
                     <img
                         src="https://ui-avatars.com/api/?name=<?php echo $ac_firstname.'+'.$ac_lastname; ?>&background=<?php echo bg_dept($ac_department); ?>&color=fff&rounded=true&size=30">
                     <a class="navbar-brand ms-1" style="" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
                     <small href="#"><?php echo $ac_department; ?> </small> | <?php echo $ac_role; ?>
                     <ion-icon type="button"  class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="call_model_edit_account('<?php echo $ac_username; ?>')" name="open-outline">
                 </ion-icon>
-                <input class="form-control form-control-sm" style="inline-size: unset;" type="text" placeholder="Search .. " aria-label=".form-control-sm example">    
+                <input class="form-control form-control-sm rounded-pill" style="inline-size: unset;width: 300px;" type="text" placeholder="Search .. " aria-label=".form-control-sm example">    
                 </div>
             </nav>
             <div id="col_detail">
