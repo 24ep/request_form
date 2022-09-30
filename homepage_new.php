@@ -355,8 +355,8 @@ if (!$_SESSION["login_csg"]){
                     <a class="navbar-brand ms-1" style="" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
                     <small href="#"><?php echo $ac_department; ?> </small> | <?php echo $ac_role; ?>
                     <ion-icon type="button"  class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="call_model_edit_account('<?php echo $ac_username; ?>')" name="open-outline">
-                    <input class="form-control form-control-sm" type="text" placeholder="Search .. " aria-label=".form-control-sm example">    
                 </ion-icon>
+                <input class="form-control form-control-sm" type="text" placeholder="Search .. " aria-label=".form-control-sm example">    
                 </div>
             </nav>
             <div id="col_detail">
