@@ -358,7 +358,7 @@ if (!$_SESSION["login_csg"]){
                 </ion-icon>
                 <div class="dropdown">
                 <input class="form-control form-control-sm rounded-pill " data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false" style="inline-size: unset;width: 300px;" type="text" placeholder="Search .. " aria-label=".form-control-sm example">    
-                <form  class="dropdown-menu">
+                <form  class="dropdown-menu p-4">
                     Searching ..
                 </form>    
                 </div>
