@@ -163,7 +163,7 @@ if (!$_SESSION["login_csg"]){
     </div> -->
     <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1" id="content_request_canvas"
         aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header" style="    background: #313131;color: white;">
+        <div class="offcanvas-header" style="background: #313131;color: white;">
             <h5 class="offcanvas-title" id="offcanvasExampleLabel" style="padding-left:50px;font-weight: bold;">
                 <ion-icon style="margin-right:10px" name="add-circle-outline">
                 </ion-icon>Request Creation
@@ -355,7 +355,8 @@ if (!$_SESSION["login_csg"]){
                     <a class="navbar-brand ms-1" style="" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
                     <small href="#"><?php echo $ac_department; ?> </small> | <?php echo $ac_role; ?>
                     <ion-icon type="button"  class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="call_model_edit_account('<?php echo $ac_username; ?>')" name="open-outline">
-                    </ion-icon>
+                    <input class="form-control form-control-sm" type="text" placeholder="Search .. " aria-label=".form-control-sm example">    
+                </ion-icon>
                 </div>
             </nav>
             <div id="col_detail">
