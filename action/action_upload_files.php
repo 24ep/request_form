@@ -16,12 +16,10 @@ include('action_add_participant.php');
 include('action_insert_log.php');
 // include("connect.php");
 $id = $_GET["id"];
-$ticket_type = "content_request";
-$comment = str_replace("'","''",$_POST["comment"]);
+$ticket_type = "add_new_job";
 $dt= new DateTime();
 $dt_formate = $dt->format('Y-m-d H:i:s');
 $nickname = $_SESSION["username"];
-$send_type= $_POST["send_type"];
 //check size file
 
 date_default_timezone_set("Asia/Bangkok");
@@ -29,22 +27,8 @@ $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project
 mysqli_query($con, "SET NAMES 'utf8' ");
 
   //add comment
-  	$sql = "INSERT INTO comment (
-    ticket_id,
-      comment,
-      ticket_type,
-      comment_by
-    )
-      VALUES(
-        ".$id.",
-        '".$comment."',
-        '".$ticket_type."',
-        '".$nickname."'
-      )";
-      $query = mysqli_query($con,$sql);
-          //create forder
-          $last_id = $con->insert_id;
-          $fullpath = '../../attachment/csg/attachments/ns/'.$last_id."/";
+  	
+          $fullpath = '../../attachment/csg/attachments/ns/'.$id."/";
           if (!file_exists($fullpath)) {
             mkdir($fullpath, 0777, true);
           }
@@ -75,7 +59,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
                     '".$file_type."',
                     '".$is_image."',
                     '".$_SESSION["username"]."',
-                    '".$last_id."',
+                    '".$id."',
                     'ticket_files'
                     )";
                 $query = mysqli_query($con,$sql);
