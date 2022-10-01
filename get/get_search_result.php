@@ -9,7 +9,7 @@ $query = "SELECT anj.id  from all_in_one_project.add_new_job anj where anj.id='"
 $result = mysqli_query($con, $query);
 echo "<ul>";
 while($row = mysqli_fetch_array($result)) {
-    echo "<li>NS-ID : ".$row['id']."  <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_edit_add_new_modal('".$row['id']."')' name='open-outline'>  </li>";
+    echo "<li>NS-ID : ".$row['id']."  <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_add_new('".$row['id']."')' name='open-outline'>  </li>";
 }
 //---
 $query = "SELECT jc.job_number from u749625779_cdscontent.job_cms jc where jc.job_number like '%".$input."%'" or die("Error:" . mysqli_error($con));

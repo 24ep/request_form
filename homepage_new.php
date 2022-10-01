@@ -732,6 +732,17 @@ function call_model_edit_account(username) {
         });
     }
 }
+function call_model_edit_add_new(id) {
+    Notiflix.Loading.hourglass('Loading...');
+    if (id) {
+        $.post("../base/page/ns_detail.php", {
+            id: id
+        }, function(data) {
+            $('#model_lg').html(data);
+            Notiflix.Loading.remove();
+        });
+    }
+}
 function search() {
     var input = document.getElementById('input_search').value;
     // Notiflix.Loading.hourglass('Loading...');
