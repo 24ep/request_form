@@ -204,10 +204,10 @@ function get_username_option($current_username){
     while($row = mysqli_fetch_array($result)) {
       if(in_array($row['username'],$current_username_list)){
         $option_set .= '<option value="'.$row['username'].'" selected>
-        '.$row['nickname'].' - '.$row['firstname'].' '.$row['lastname'].' ('.$row['username'].')</option>';
+        '.$row['nickname'].' - '.$row['firstname'].' '.substr($row['lastname'],0,1).'.</option>';
       }else{
         $option_set .= '<option value="'.$row['username'].'">
-        '.$row['nickname'].' - '.$row['firstname'].' '.$row['lastname'].' ('.$row['username'].')</option>';
+        '.$row['nickname'].' - '.$row['firstname'].' '.substr($row['lastname'],0,1).'.<option>';
       }
     }
     return $option_set ;
@@ -457,36 +457,13 @@ while($row_project = mysqli_fetch_array($result_project)) {
         $cr_edit_effective_date = "'cr_edit_effective_date'";
         $cr_edit_content_request_reson= "'cr_edit_content_request_reson'";
         $cr_edit_request_by= "'cr_edit_request_by'";
-echo "<script>console.log('".$_SESSION["department"]."');</script>";
+// echo "<script>console.log('".$_SESSION["department"]."');</script>";
         if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
             echo '<select class="form-select form-select-lg mt-2" id="cr_edit_status" name="cr_edit_status" onchange="update_cr_detail('.$id.','.$cr_edit_status.')" style="border: 0px;font-weight: bold;padding-left: 0.6rem;font-size: xx-large;background-color: transparent;" aria-label=".form-select-lg example">
             '.$cr_op.'
             </select>';
             ?>
 <?php
-            // echo '
-            // <div class="row" >
-            //   <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>'.$sj.' Owner</strong></div>|
-            //   <div class="col" style=" padding-left: 25px;text-align-last: right;">
-            //   <select class="form-select form-select-sm" data-live-search="true"  id="cr_edit_case_officer"  name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')"  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
-            //   '.$username_op .'
-            //   </select>
-            //   </div>
-            // </div>';
-
-            // echo '
-            // <div class="row" >
-            //   <div class="col" style=" padding-left: 25px;text-align-last: left;"><strong>'.$sj.' Owner</strong></div>|
-            //   <div class="col " style=" padding-left: 25px;text-align-last: right;">
-            //   <div class="directorist-select directorist-select-multi" id="multiSelect" data-isSearch="true" 
-            //   data-multiSelect="['.$username_op_set.']" data-max="9">
-            //     <select  data-live-search="true"  id="cr_edit_case_officer" 
-            //      name="cr_edit_case_officer" onchange="update_cr_detail('.$id.','.$cr_edit_case_officer.')" 
-            //      style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
-            //     '.$username_op .'
-            //     </select>
-            //   </div>
-            // </div>';
 
             echo '
             <div class="row" >
