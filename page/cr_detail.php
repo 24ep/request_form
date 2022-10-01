@@ -381,14 +381,15 @@ while($row_project = mysqli_fetch_array($result_project)) {
               <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
           </div>
-        <div style="color:gray;margin-bottom:15px;margin-top:10px;font-size:13px">
-        <small>
-                    <a type="button" style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"
-                        onclick="get_page(&#39;content_request&#39;);">
-                        <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
+          <small>
+          <a type="button" style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"
+              onclick="get_page(&#39;content_request&#39;);">
+              <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
 
-                    </a>
-                </small>
+          </a>
+      </small>
+        <div style="color:gray;margin-bottom:15px;margin-top:10px;font-size:13px">
+   
         <span>Create by 
         '.$request_by_contact.'</span>   
         <span>'.$create_date.'</span>      
