@@ -367,7 +367,7 @@ function get_project_model(id) {
 function cr_id_toggle(id) {
     Notiflix.Loading.hourglass('Loading...');
     if (id) {
-        $.post("base/get/get_content_request_detail.php", {
+        $.post("base/page/cr_detail.php", {
             id: id
         }, function(data) {
             // $('#calloffcanvas_cr').html(data);

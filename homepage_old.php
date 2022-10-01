@@ -640,7 +640,7 @@ function call_edit_add_new_modal(id, brand) {
 function cr_id_toggle(id) {
     Notiflix.Loading.hourglass('Loading...');
     if (id) {
-        $.post("base/get/get_content_request_detail.php", {
+        $.post("base/page/get_content_request_detail.php", {
             id: id
         }, function(data) {
             $('#calloffcanvas_cr').html(data);
