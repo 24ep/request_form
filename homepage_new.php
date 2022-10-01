@@ -141,16 +141,16 @@ if (!$_SESSION["login_csg"]){
             <a class="navbar-brand" href="#">You are in pre-launch environment</a>
         </div>
     </nav> -->
-    <div class="offcanvas offcanvas-start overflow-auto" role="dialog" tabindex="-1" id="edit_add_new"
+    <!-- <div class="offcanvas offcanvas-start overflow-auto" role="dialog" tabindex="-1" id="edit_add_new"
         style="width:100%" aria-labelledby="offcanvasExampleLabel">
         <div id="callmodal_request_add_new" style="height: 100%;"></div>
-    </div>
+    </div> -->
     <!-- offcanvas detail cr -->
-    <div class="offcanvas offcanvas-start" tabindex="0" id="detail_cr" style="width:100%"
+    <!-- <div class="offcanvas offcanvas-start" tabindex="0" id="detail_cr" style="width:100%"
         aria-labelledby="offcanvasExampleLabel">
         <div id="calloffcanvas_cr">
         </div>
-    </div>
+    </div> -->
     <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="notificationcanvas" aria-labelledby="offcanvasRightLabel"
         style="position: absolute;">
         <div class="offcanvas-header">
