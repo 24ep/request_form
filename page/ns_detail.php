@@ -995,6 +995,7 @@ function copytext(text) {
 
 document.addEventListener('FilePond:processfile', (e) => {
     Notiflix.Notify.success('The file had been uploaded');
+    get_files(<?php echo $id; ?>);
     // console.log('FilePond ready for use', e.detail);
 
     // get create method reference
