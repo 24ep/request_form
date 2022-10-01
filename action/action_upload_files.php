@@ -15,7 +15,7 @@ include('action_send_line_api.php');
 include('action_add_participant.php');
 include('action_insert_log.php');
 // include("connect.php");
-$id = $_POST["id"];
+$id = $_GET["id"];
 $ticket_type = "content_request";
 $comment = str_replace("'","''",$_POST["comment"]);
 $dt= new DateTime();
