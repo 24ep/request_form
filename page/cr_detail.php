@@ -382,7 +382,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
           </div>
           <small>
           <a type="button" style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"
-              onclick="get_page(&#39;content_request&#39;);">
+              onclick="get_page(&#39;update_content&#39;);">
               <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
 
           </a>
