@@ -6,8 +6,8 @@ to a file pond, configured with attributes
     <script>
   FilePond.parse(document.body);
   FilePond.setOptions({
-    allowDrop: false,
-    allowReplace: false,
+    allowDrop: true,
+    allowReplace: true,
     instantUpload: false,
     allowReoder:true,
     allowMultiple:true,
