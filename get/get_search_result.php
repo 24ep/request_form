@@ -13,15 +13,13 @@ on jc.csg_request_new_id = anj.id
 where anj.id=".$input." or jc.job_number like '%".$input."%' or sl.sku like '%".$input."%'" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
-    $sku = $row['sku']; 
-    $id = $row['id']; 
-    $job_number = $row['job_number']; 
+    echo "<ul>";
+    echo "<li>SKU : ".$row['sku']."</li>";
+    echo "<li>NS-ID : ".$row['id']."</li>";
+    echo "<li>job_number : ".$row['job_number']."</li>";
+    echo "</ul>";
 
 }
-echo "<ul>";
-echo "<li>SKU : ".$sku."</li>";
-echo "<li>NS-ID : ".$id."</li>";
-echo "<li>job_number : ".$job_number."</li>";
-echo "</ul>";
+
 
 ?>
