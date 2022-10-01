@@ -13,7 +13,6 @@ group by anj.id , jc.job_number , jc.job_status_filter , anj.status" or die("Err
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     echo "<ul>";
-    echo "<li>SKU : ".$row['sku']."</li>";
     echo "<li>NS-ID : ".$row['id']."</li>";
     echo "<li>job_number : ".$row['job_number']."</li>";
     echo "</ul>";
