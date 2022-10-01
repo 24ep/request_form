@@ -4,8 +4,9 @@
     // include("insert_log.php");
     $id=$_POST["id"]; 
     $file_path = $_POST["path"];
+
     $file_name = $_POST["name"];
-    $file = $file_path.$file_name ;
+    $file = 'public_html'.$file_path.$file_name ;
 //remove form FTP
 $ftp_server = "ftp://content-service-gate.cdse-commercecontent.com";
 $ftp_conn = ftp_connect($ftp_server) or die("Error : Could not connect to $ftp_server");
