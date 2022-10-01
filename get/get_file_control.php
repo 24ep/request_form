@@ -37,6 +37,8 @@ $result = mysqli_query($con, $query);
             <span class="badge rounded-pill bg-primary">'.$row['file_group'].'</span>
             <a type="button" target="_blank" href="'.$row['file_path'].$row['file_name'].'">
             <ion-icon name="cloud-download-outline" style="right: 10px;position: absolute;top: 12px;"></ion-icon>
+            </a>
+            <a type="button">
             <ion-icon name="trash-outline" style="right: 200px;position: absolute;top: 12px;"></ion-icon>
             </a>
         </li>';
