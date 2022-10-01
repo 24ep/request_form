@@ -36,10 +36,10 @@ $result = mysqli_query($con, $query);
             <span>'.$row['file_name'].'</span>
             <span class="badge rounded-pill bg-primary">'.$row['file_group'].'</span>
             <a type="button" target="_blank" href="'.$row['file_path'].$row['file_name'].'">
-            <ion-icon name="cloud-download-outline" style="right: 10px;position: absolute;top: 12px;"></ion-icon>
+            <ion-icon name="cloud-download-outline" style="right: 40px;position: absolute;top: 12px;"></ion-icon>
             </a>
             <a type="button" onclick="remove_file('.$row['id'].')">
-            <ion-icon name="trash-outline" style="right: 200px;position: absolute;top: 12px;"></ion-icon>
+            <ion-icon name="trash-outline" style="right: 10px;position: absolute;top: 12px;"></ion-icon>
             </a>
         </li>';
     }
