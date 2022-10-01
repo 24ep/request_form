@@ -6,7 +6,7 @@ FilePond.parse(document.body);
 FilePond.setOptions({
     allowDrop: true,
     allowReplace: true,
-    instantUpload: false,
+    instantUpload: true,
     allowReoder: true,
     allowMultiple: false,
     allowRemove: true,
