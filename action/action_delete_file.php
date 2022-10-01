@@ -24,7 +24,7 @@ if (ftp_delete($ftp_conn, $file))
   }
 else
   {
-    echo 'Could not connect to '.$ftp_server;
+    echo 'Erro : Could not connect to '.$ftp_server;
   }
 //noti
 
