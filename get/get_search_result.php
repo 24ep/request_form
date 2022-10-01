@@ -17,6 +17,12 @@ $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     echo "<li>Job Number : ".$row['job_number']."</li>";
 }
+//---
+$query = "SELECT cr.id from all_in_one_project.content_request cr where cr.id = '".$input."'" or die("Error:" . mysqli_error($con));
+$result = mysqli_query($con, $query);
+while($row = mysqli_fetch_array($result)) {
+    echo "<li>CR-ID : ".$row['id']."</li>";
+}
 echo "</ul>";
 
 
