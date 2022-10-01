@@ -502,6 +502,10 @@
                         type="button" role="tab" aria-controls="nav-console" aria-selected="false">
                         <ion-icon name="game-controller-outline"></ion-icon>Control
                     </button>
+                    <button class="nav-link" id="nav-files-tab" data-bs-toggle="tab" data-bs-target="#nav-files"
+                        type="button" role="tab" aria-controls="nav-files" aria-selected="false">
+                        <ion-icon name="folder-open-outline"></ion-icon>files
+                    </button>
                     <?php } ?>
                     <button class="nav-link" id="nav-sku-tab" data-bs-toggle="tab" data-bs-target="#nav-sku"
                         type="button" role="tab" aria-controls="nav-sku" aria-selected="false">
@@ -531,7 +535,13 @@
 
                     </div>
                 </div>
+                <div class="tab-pane fade" id="nav-files" role="tabpanel" aria-labelledby="nav-files-tab" tabindex="0">
+                    <div class="container" style="padding: 20px!important;">
+                        <div id="get_files">
+                        </div>
 
+                    </div>
+                </div>
                 <div class="tab-pane fade show active" id="nav-note" role="tabpanel" aria-labelledby="nav-note-tab"
                     tabindex="0">
 
@@ -911,6 +921,14 @@ function get_ns_log(action_table, action_data, action_data_id) {
             $('#get_ns_log').html(data);
         });
     console.log("action_data_id:" + action_data_id);
+}
+function get_files(id) {
+    $.post("base/get/get_file_control.php", {
+            id: id
+        },
+        function(data) {
+            $('#get_files').html(data);
+        });
 }
 
 // get_detail_more
