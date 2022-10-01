@@ -944,6 +944,7 @@ function form_production(id) {
 form_production(<?php echo $id; ?>);
 form_request_edit_new(<?php echo $id; ?>);
 get_ns_log('add_new_job', 'csg', <?php echo $id; ?>);
+get_files(<?php echo $id; ?>);
 
 
 function split_to_subtask(id) {
