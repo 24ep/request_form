@@ -35,12 +35,12 @@ mysqli_query($con, "SET NAMES 'utf8' ");
          
           // upload image
           foreach($_FILES['filepond--browser-6dakaxstp']['tmp_name'] as $key => $val){
-            $file_name = $_FILES['filepond--browser-6dakaxstp']['name'][$key];
-            $file_size =$_FILES['filepond--browser-6dakaxstp']['size'][$key];
-            $file_tmp =$_FILES['filepond--browser-6dakaxstp']['tmp_name'][$key];
-            $file_type=$_FILES['filepond--browser-6dakaxstp']['type'][$key];
+            $file_name = $_FILES['files']['name'][$key];
+            $file_size =$_FILES['files']['size'][$key];
+            $file_tmp =$_FILES['files']['tmp_name'][$key];
+            $file_type=$_FILES['files']['type'][$key];
             $is_image = is_image($file_tmp);
-            if(isset($_FILES["filepond--browser-6dakaxstp"])){
+            if(isset($_FILES["files"])){
                 if ($file_name <> ""  ) { 
                 $sql = "INSERT INTO attachment (
                     file_name,
