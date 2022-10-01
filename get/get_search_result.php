@@ -18,9 +18,10 @@ while($row = mysqli_fetch_array($result)) {
     $job_number = $row['job_number']; 
 
 }
-
-echo "<span>SKU : ".$sku."</span>";
-echo "<span>NS-ID : ".$id."</span>";
-echo "<span>job_number : ".$job_number."</span>";
+echo "<ul>";
+echo "<li>SKU : ".$sku."</li>";
+echo "<li>NS-ID : ".$id."</li>";
+echo "<li>job_number : ".$job_number."</li>";
+echo "</ul>";
 
 ?>
