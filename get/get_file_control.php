@@ -1,6 +1,6 @@
 
 <?php session_start();?>
-<input type="file" class="filepond"  id="files" name="files">
+<input type="file" class="filepond"  id="files" name="files[]">
 <script>
 FilePond.parse(document.body);
 FilePond.setOptions({
