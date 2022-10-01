@@ -2,10 +2,10 @@
 The classic file input element we'll enhance
 to a file pond, configured with attributes
 -->
-<input type="file" class="filepond" name="filepond" multiple data-allow-reorder="true" data-max-file-size="2MB"
-    data-max-files="5">
+<!-- <input type="file" class="filepond" name="filepond" multiple data-allow-reorder="true" data-max-file-size="2MB"
+    data-max-files="5"> -->
 
-    <script>
+    <!-- <script>
   FilePond.parse(document.body);
 //   FilePond.registerPlugin(
 //   FilePondPluginImagePreview,
@@ -15,4 +15,13 @@ to a file pond, configured with attributes
 // );
 
 
-  </script>
+  </script> -->
+  <input type="file" />
+
+<script>
+    // Get a reference to the file input element
+    const inputElement = document.querySelector('input[type="file"]');
+
+    // Create a FilePond instance
+    const pond = FilePond.create(inputElement);
+</script>
