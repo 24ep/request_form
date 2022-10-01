@@ -52,6 +52,7 @@ $result = mysqli_query($con, $query);
         }, function(data) {
             // $('#model_lg').html(data);
             Notiflix.Notify.success(data);
+            get_files(<?php echo $id; ?>);
         });
 }
 </script>
