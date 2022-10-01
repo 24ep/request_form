@@ -5,7 +5,7 @@
     $id=$_POST["id"]; 
     $file_path = $_POST["path"];
     $file_name = $_POST["name"];
-    $file = "base/".$file_path.$file_name ;
+    $file = $file_path.$file_name ;
 //remove form FTP
 $ftp_server = "https://156.67.217.3";
 $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
