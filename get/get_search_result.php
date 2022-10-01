@@ -21,7 +21,7 @@ while($row = mysqli_fetch_array($result)) {
 $query = "SELECT cr.id from all_in_one_project.content_request cr where cr.id = '".$input."'" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
-    echo "<li>CR-ID : ".$row['id']." <ion-icon name='open-outline'></ion-icon> </li>";
+    echo "<li>CR-ID : ".$row['id']."  <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_content_request(&#39;".$row['id']."&#39)' name='open-outline'>  </li>";
 }
 //---
 $query = "SELECT sl.sku,sl.csg_id from all_in_one_project.sku_list sl where sl.sku = '".$input."'" or die("Error:" . mysqli_error($con));
