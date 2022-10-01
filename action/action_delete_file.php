@@ -2,12 +2,10 @@
 //remove form sql
     session_start();
     date_default_timezone_set("Asia/Bangkok");
-    include("insert_log.php");
-    $id=$_POST["id"];
-    $job_number=$_POST["job_number"];
+    // include("insert_log.php");
+    $id=$_POST["id"]; 
     $file_path = $_POST["path"];
     $file_name = $_POST["name"];
-    $row = $_POST["row"];
     $file = "base/".$file_path.$file_name ;
 //remove form FTP
 $ftp_server = "ftp.content-service-gate.cdse-commercecontent.com";

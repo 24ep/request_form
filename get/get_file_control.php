@@ -38,7 +38,7 @@ $result = mysqli_query($con, $query);
             <a type="button" target="_blank" href="'.$row['file_path'].$row['file_name'].'">
             <ion-icon name="cloud-download-outline" style="right: 40px;position: absolute;top: 12px;"></ion-icon>
             </a>
-            <a type="button" onclick="remove_file('.$row['id'].')">
+            <a type="button" onclick="remove_file('.$row['id'].',&#39;'.$row['file_path'].'&#39;,&#39;'.$row['file_name'].'&#39;)">
             <ion-icon name="trash-outline" style="right: 10px;position: absolute;top: 12px;"></ion-icon>
             </a>
         </li>';
@@ -46,9 +46,11 @@ $result = mysqli_query($con, $query);
   echo '</ul>';
 ?>
 <script>
-    function remove_file(id) {
+    function remove_file(id,path,name) {
         $.post("../base/action/action_delete_file.php", {
-            id: id
+            id: id,
+            path:path,
+            name:name
         }, function(data) {
             // $('#model_lg').html(data);
             Notiflix.Notify.success(data);
