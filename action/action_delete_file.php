@@ -17,10 +17,10 @@ $login = ftp_login($ftp_conn, 'admin_base_csg', '@aA417528639');
 if (ftp_delete($ftp_conn, $file))
   {
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-    $sql_start =   "DELETE FROM attachment WHERE id=".$id;
+    $sql_start =   "DELETE FROM all_in_one_project.attachment WHERE id=".$id;
     $query_start = mysqli_query($con,$sql_start);
 	if($query_start) {
-        echo 'Done';
+        echo 'The files had been deleted';
 	}else{
         echo 'Error: ' . $sql_start . '<br>' . $con->error;
     }
