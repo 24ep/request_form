@@ -26,7 +26,7 @@ FilePond.setOptions({
 <?php
 include("./connect.php");
 //get list file attachment
-$query = "SELECT * FROM attactment WHERE ticket_type = 'ticket_files' and ticket_id = ".$_POST['id']." ORDER BY id ASC" or die("Error:" . mysqli_error($con));
+$query = "SELECT * FROM all_in_one_project.attachment  WHERE ticket_type = 'ticket_files' and ticket_id = ".$_POST['id']." ORDER BY id ASC" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
   echo '<ul class="list-group list-group-flush">';
     while($row = mysqli_fetch_array($result)) {
