@@ -4,7 +4,7 @@ $input = $_POST['input'];
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
-$query = "SELECT  sl.sku , anj.id , jc.job_number , jc.job_status_filter , jc.status
+$query = "SELECT  sl.sku , anj.id , jc.job_number , jc.job_status_filter , anj.status
 FROM all_in_one_project.sku_list as sl
 left join all_in_one_project.add_new_job anj 
 on sl.csg_id = anj.id 
