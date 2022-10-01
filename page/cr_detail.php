@@ -195,7 +195,7 @@ function get_image_cr($id){
 function get_username_option($current_username){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
-    $query = "SELECT * FROM account where status <> 'Disabled' ORDER BY username asc " or die("Error:" . mysqli_error($con));
+    $query = "SELECT * FROM account  ORDER BY username asc " or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     $current_username_list = explode(',', $current_username);
     if($current_username=="unassign"){
