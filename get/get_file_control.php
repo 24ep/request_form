@@ -13,6 +13,7 @@ to a file pond, configured with attributes
   <textarea class="form-control" placeholder="Leave a remark here" id="floatingTextarea2" style="height: 100px"></textarea>
   <label for="floatingTextarea2">Remark</label>
 </div> -->
+<?php session_start();?>
 <input type="file" class="filepond"  name="filepond">
 <script>
 FilePond.parse(document.body);
@@ -27,7 +28,7 @@ FilePond.setOptions({
     maxFiles: '2MB',
     server: {
         url: 'http://content-service-gate.cdse-commercecontent.com/',
-        process: 'base/action/action_upload_files.php?id='+$_POST['id'],
+        process: 'base/action/action_upload_files.php?id='+<?php echo $_POST['id']; ?>,
         // revert: './revert.php',
         // restore: './restore.php?id=',
         // fetch: './fetch.php?data=',
