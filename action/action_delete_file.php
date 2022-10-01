@@ -26,7 +26,7 @@ if (ftp_delete($ftp_conn, $file))
   }
 else
   {
-    echo 'Error form FTP : ' . $sql_start . '<br>' . $ftp_conn->error;
+    echo 'Error upload files';
   }
 //noti
 
