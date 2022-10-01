@@ -1,18 +1,4 @@
-<!--
-The classic file input element we'll enhance
-to a file pond, configured with attributes
--->
-<!-- <span>Please select file type<span>
-<select class="form-select" aria-label="file_type">
-  <option value="original" selected>Original</option>
-  <option value="cleaned">Cleaned</option>
-  <option value="template">Template</option>
-  <option value="other">Other</option>
-</select>
-<div class="form-floating">
-  <textarea class="form-control" placeholder="Leave a remark here" id="floatingTextarea2" style="height: 100px"></textarea>
-  <label for="floatingTextarea2">Remark</label>
-</div> -->
+
 <?php session_start();?>
 <input type="file" class="filepond"  id="files" name="files">
 <script>

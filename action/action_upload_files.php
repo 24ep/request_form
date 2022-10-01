@@ -1,5 +1,4 @@
 <?php
- 
   function is_image($path)
   {
       $a = getimagesize($path);
@@ -21,18 +20,14 @@ $dt= new DateTime();
 $dt_formate = $dt->format('Y-m-d H:i:s');
 $nickname = $_SESSION["username"];
 //check size file
-
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
-
   //add comment
-  	
           $fullpath = '../../attachment/csg/attachments/ns/'.$id."/";
           if (!file_exists($fullpath)) {
             mkdir($fullpath, 0777, true);
           }
-         
           // upload image
           foreach($_FILES['files']['tmp_name'] as $key => $val){
             $file_name = $_FILES['files']['name'][$key];
