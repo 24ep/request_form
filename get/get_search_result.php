@@ -14,7 +14,6 @@ while($row = mysqli_fetch_array($result)) {
 //---
 $query = "SELECT jc.job_number from u749625779_cdscontent.job_cms jc where jc.job_number like '%".$input."%'" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
-echo "<ul>";
 while($row = mysqli_fetch_array($result)) {
     echo "<li>Job Number : ".$row['job_number']."</li>";
 }
