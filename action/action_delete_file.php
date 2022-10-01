@@ -7,7 +7,7 @@
     $file_name = $_POST["name"];
     $file = "base/".$file_path.$file_name ;
 //remove form FTP
-$ftp_server = "ftp.content-service-gate.cdse-commercecontent.com";
+$ftp_server = "156.67.217.3";
 $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
 $login = ftp_login($ftp_conn, 'admin_base_csg', '@aA417528639');
 // try to delete file
