@@ -34,7 +34,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
           }
          
           // upload image
-          foreach($_FILES['filepond--browser-6dakaxstp']['tmp_name'] as $key => $val){
+          foreach($_FILES['files']['tmp_name'] as $key => $val){
             $file_name = $_FILES['files']['name'][$key];
             $file_size =$_FILES['files']['size'][$key];
             $file_tmp =$_FILES['files']['tmp_name'][$key];
