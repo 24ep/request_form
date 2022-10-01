@@ -10,7 +10,7 @@ left join all_in_one_project.add_new_job anj
 on sl.csg_id = anj.id 
 left join u749625779_cdscontent.job_cms jc 
 on jc.csg_request_new_id = anj.id 
-where anj.id=".$input." or jc.job_number like '%".$input."%' or sl.sku like '%".$input."%'" or die("Error:" . mysqli_error($con));
+where anj.id='".$input."' or jc.job_number like '%".$input."%' or sl.sku like '%".$input."%'" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     echo "<ul>";
