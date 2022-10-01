@@ -644,6 +644,7 @@ function cr_id_toggle(id) {
             id: id
         }, function(data) {
             $('#calloffcanvas_cr').html(data);
+            col_detail
             Notiflix.Loading.remove();
         });
     }

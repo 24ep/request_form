@@ -370,7 +370,8 @@ function cr_id_toggle(id) {
         $.post("base/get/get_content_request_detail.php", {
             id: id
         }, function(data) {
-            $('#calloffcanvas_cr').html(data);
+            // $('#calloffcanvas_cr').html(data);
+            $('#col_detail').html(data);
             Notiflix.Loading.remove();
         });
     }
