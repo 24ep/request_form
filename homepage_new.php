@@ -803,3 +803,18 @@ $('#return-to-top').click(function() {      // When arrow is clicked
         </div>
     </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalsm" tabindex="-1" aria-labelledby="exampleModalLabelsm" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content rounded shadow">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabelsm"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg-light">
+                <div id="model_sm">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
