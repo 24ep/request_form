@@ -24,7 +24,7 @@ while($row = mysqli_fetch_array($result)) {
     echo "<li>CR-ID : ".$row['id']." <ion-icon name='open-outline'></ion-icon> </li>";
 }
 //---
-$query = "SELECT sl.sku from all_in_one_project.sku_list sl where sl.sku like '%".$input."%'" or die("Error:" . mysqli_error($con));
+$query = "SELECT sl.sku from all_in_one_project.sku_list sl where sl.sku = '".$input."'" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     echo "<li>SKU : ".$row['sku']." <ion-icon name='open-outline'></ion-icon> </li>";
