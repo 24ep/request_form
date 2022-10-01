@@ -108,7 +108,6 @@
       $trigger_status=$row['trigger_status'];
       $job_number=$row['job_number'];
       $approved_date=$row['approved_date'];
-      
     //stamp color status
     if($row["status"]=="pending"){
     $status_style = 'style="background: #a9a9a94f;color:#8f8f8f"';
@@ -145,7 +144,6 @@
   $result = mysqli_query($con, $query);
   $same_brand = '';
   while($row = mysqli_fetch_array($result)) {
-   
     $same_brand .= " <li style='margin-top: 5px;' class='text-nowrap' >NS-".$row['id']." ".$row['brand']." ".$row['sku']." SKUs</li>";
   }
   $same_brand .= " <li style='margin-top: 5px;color: #81a8dd;' class='text-nowrap' ><a type='button' onclick='ns_discover(&#34;brand_filter&#34;,&#34;".$brand."&#34;);' id='discover_more_brand_bt' >Discover more <ion-icon name='arrow-forward-outline'></ion-icon></a></li>";
@@ -165,7 +163,6 @@
 ?>
 <link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
 <script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
-
 <nav class="p-3 bg-white text-dark bg-gradient shadow-sm  ">
     <div class="row">
         <div class="col-4">
@@ -173,9 +170,7 @@
                 <small>
                     <a type="button" style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"
                         onclick="get_page('create_new');">
-
                         <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
-
                     </a>
                 </small>
                 <h5><a class="navbar-brand" href="#">NS-<?php echo $id." ".$brand." ".$sku." SKUs" ?> </a></h5>
@@ -203,7 +198,9 @@
                     <li style="margin-top: 5px;">
                         <ion-icon name="person-outline"></ion-icon>
                         <?php echo $request_firstname." ".substr($request_lastname,0,2).". ( ".$request_nickname." ) " ?>
-                        <ion-icon type="button"  class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="call_model_edit_account('<?php echo $request_username; ?>')" name="open-outline">
+                        <ion-icon type="button" class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
+                            onclick="call_model_edit_account('<?php echo $request_username; ?>')" name="open-outline">
                     </li>
                     <li style="margin-top: 5px;">
                         <ion-icon name="call-outline"></ion-icon> <?php echo $request_office_tell; ?>
@@ -220,14 +217,15 @@
             <small class="content-assignee-header">Contact person</small>
             <div id="contact_person_officer">
                 <?php if($follow_up_name=="-"){
-
                     echo '<button type="button" id="take_officer_bt" onclick="take_ns_officer('.$id.')" class="btn btn-sm btn-primary m-3 bg-gradient"><ion-icon name="person-outline"></ion-icon> Take officer</button>';
                 }else{
                     ?>
                 <ul class="contact-person-ns">
                     <li style="margin-top: 5px;">
                         <ion-icon name="person-outline"></ion-icon><?php echo $follow_up_name; ?>
-                        <ion-icon type="button"  class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="call_model_edit_account('<?php echo $follow_up_by; ?>')" name="open-outline">
+                        <ion-icon type="button" class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
+                            onclick="call_model_edit_account('<?php echo $follow_up_by; ?>')" name="open-outline">
                     </li>
                     <li style="margin-top: 5px;">
                         <ion-icon name="call-outline"></ion-icon> <?php echo $office_tell; ?>
@@ -240,7 +238,6 @@
         </div>
     </div>
 </nav>
-
 <div class="container-fluid ">
     <div class="row">
         <div class="col-8 mt-3 ">
@@ -251,11 +248,8 @@
             </small></a>
                 <h5><a class="navbar-brand" href="#"><?php echo $follow_up_name; ?> <?php echo $office_tell; ?></a></h5>
             </div>
-            
         </nav> -->
-
             <?php if($config_type=='parent'){?>
-
             <div class="row">
                 <div class="col-sm-12 shadow officerassingbox">
                     <div id="call_subtask">
@@ -265,7 +259,6 @@
             </div>
             <hr>
             <?php }?>
-
             <?php if($config_type=='task'){?>
             <?php 
                                     if($status=='checking'){
@@ -305,22 +298,26 @@
                                         $badge_progres_3 = 'btn-secondary';
                                         $progress_per = '0';
                                     }
-                                        
                                     ?>
-            <ul class="nav nav-pills mb-3 " style="flex-flow: unset;font-weight: bolder;width: 100%;width: inherit;text-align-last: left;" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills mb-3 "
+                style="flex-flow: unset;font-weight: bolder;width: 100%;width: inherit;text-align-last: left;"
+                id="pills-tab" role="tablist">
                 <li class="nav-item" style="width: fit-content;" role="presentation">
                     <button class="nav-link active" id="pills-ticket-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-ticket" type="button" role="tab" aria-controls="pills-ticket"
-                        aria-selected="true"><ion-icon name="podium-outline"></ion-icon>Progress</button>
+                        aria-selected="true">
+                        <ion-icon name="podium-outline"></ion-icon>Progress
+                    </button>
                 </li>
                 <!-- <?php //if($accepted_date <> "" and $accepted_date <> null){ ?> -->
-                <li class="nav-item"   style="width: fit-content;"  role="presentation">
+                <li class="nav-item" style="width: fit-content;" role="presentation">
                     <button class="nav-link" id="pills-productions-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-productions" type="button" role="tab" aria-controls="pills-productions"
-                        aria-selected="false"><ion-icon name="file-tray-stacked-outline"></ion-icon>Informations</button>
+                        aria-selected="false">
+                        <ion-icon name="file-tray-stacked-outline"></ion-icon>Informations
+                    </button>
                 </li>
                 <?php// }?>
-
             </ul>
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-ticket" role="tabpanel"
@@ -328,8 +325,6 @@
                     <!-- <h6 class="ms-5">
                         <ion-icon name="podium-outline"></ion-icon><strong>Progress</strong>
                     </h6> -->
-
-
                     <div class="position-relative" style="margin: 10%!important;margin-top: 50px!important;">
                         <div class="progress" style="height: 5px;">
                             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success shadow-sm"
@@ -351,10 +346,11 @@
                             class="position-absolute top-100 start-30 translate-middle btn btn-sm"><strong>Checking</strong>
                             <br><span class="timeago"
                                 datetime="<?php echo $accepted_date; ?>"><?php echo $accepted_date; ?></span></small>
-                        <button type="button" 
+                        <button type="button"
                             class="position-absolute top-0 start-60 translate-middle btn btn-sm shadow-sm <?php echo $badge_progres_2; ?> rounded-pill"
                             style="width: 2rem; height:2rem;">2</button>
-                        <small onclick="copytext('<?php echo $job_number; ?>')" id="onproduction_pg" style="top: 50px!important;"
+                        <small onclick="copytext('<?php echo $job_number; ?>')" id="onproduction_pg"
+                            style="top: 50px!important;"
                             class="position-absolute top-100 start-60 translate-middle btn btn-sm"><strong>On-productions</strong>
                             <br><?php echo $job_number; ?></small>
                         <button type="button"
@@ -366,8 +362,6 @@
                                 datetime="<?php echo $approved_date; ?>"><?php echo $approved_date; ?></span></small>
                     </div>
                     <?php }?>
-
-
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
                             <button class="nav-link active" id="nav-public-tab" data-bs-toggle="tab"
@@ -375,7 +369,6 @@
                                 aria-selected="true">
                                 <ion-icon name="chatbubble-outline"></ion-icon>Public comment
                             </button>
-
                             <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                             <button class="nav-link" id="nav-internal-tab" data-bs-toggle="tab"
                                 data-bs-target="#nav-internal" type="button" role="tab" aria-controls="nav-internal"
@@ -388,7 +381,6 @@
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-public" role="tabpanel"
                             aria-labelledby="nav-public-tab" tabindex="0">
-
                             <div class="alert alert-primary m-2 shadow-sm" role="alert">
                                 <?php if( $remark<>""){
                         ?>
@@ -398,9 +390,10 @@
                     }
                     ?>
                                 <a type="button" href="<?php echo $link_info;?>" target="_blank"
-                                    class="btn btn-sm btn-primary shadow-sm bg-gradient"><ion-icon name="document-outline"></ion-icon>Go to information files</a>
+                                    class="btn btn-sm btn-primary shadow-sm bg-gradient">
+                                    <ion-icon name="document-outline"></ion-icon>Go to information files
+                                </a>
                             </div>
-
                             <!-- comment ns -->
                             <ul class="list-group list-group-flush m-1" style="background: fixed;">
                                 <div id="comment_box_ns">
@@ -426,11 +419,9 @@
                                 comment</button>
                             <!-- end comment ns -->
                         </div>
-
                         <div class="tab-pane fade" id="nav-internal" role="tabpanel" aria-labelledby="nav-internal-tab"
                             tabindex="0">
                             <!-- internal note -->
-
                             <ul class="list-group list-group-flush m-1" style="background: fixed;">
                                 <div id="comment_box_ins">
                                     <div id="call_ticket_comment_ins">
@@ -453,41 +444,25 @@
                             <button type="button" class="btn btn-outline-primary btn-sm"
                                 onClick="comment_ins_id_with_file(<?php echo  $_POST['id']; ?>)">Add
                                 comment</button>
-
                             <!-- end internal note -->
                         </div>
                     </div>
-
                 </div>
                 <div class="tab-pane fade" id="pills-productions" role="tabpanel"
                     aria-labelledby="pills-productions-tab">
-                            <div id="form_production"></div>
+                    <div id="form_production"></div>
                 </div>
             </div>
-
-
-
-
-
-
-
         </div>
         <div class="col-4"
             style="height: auto;background-color: white;border-left: solid 1px #fde5e5;margin-top: 2.5px;padding: 10px;">
-
-
-
-
-
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-
                     <button class="nav-link active" id="nav-note-tab" data-bs-toggle="tab" data-bs-target="#nav-note"
                         type="button" role="tab" aria-controls="nav-note" aria-selected="true">
                         <ion-icon name="document-text-outline"></ion-icon>
                         <strong><?php echo $brand; ?></strong> Note
                     </button>
-
                     <!-- <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail"
                         type="button" role="tab" aria-controls="nav-detail" aria-selected="false">
                         <ion-icon name="information-circle-outline"></ion-icon>Info
@@ -496,7 +471,6 @@
                         type="button" role="tab" aria-controls="nav-logs" aria-selected="false">
                         <ion-icon name="time-outline"></ion-icon>Logs
                     </button>
-
                     <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                     <button class="nav-link" id="nav-console-tab" data-bs-toggle="tab" data-bs-target="#nav-console"
                         type="button" role="tab" aria-controls="nav-console" aria-selected="false">
@@ -513,7 +487,6 @@
                     </button>
                 </div>
             </nav>
-
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab"
                     tabindex="0">
@@ -525,32 +498,26 @@
                         </div>
                         <div id="form_request_edit_new_2">
                         </div>
-
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-logs" role="tabpanel" aria-labelledby="nav-logs-tab" tabindex="0">
                     <div class="container" style="padding: 20px!important;">
                         <div id="get_ns_log">
                         </div>
-
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-files" role="tabpanel" aria-labelledby="nav-files-tab" tabindex="0">
                     <div class="container" style="padding: 20px!important;">
                         <div id="get_files">
                         </div>
-
                     </div>
                 </div>
                 <div class="tab-pane fade show active" id="nav-note" role="tabpanel" aria-labelledby="nav-note-tab"
                     tabindex="0">
-
                     <div class="container-fluid " style="padding: 10px;">
                         <div id="editorjs"></div>
                     </div>
-
                 </div>
-
                 <div class="tab-pane fade" id="nav-console" role="tabpanel" aria-labelledby="nav-console-tab"
                     tabindex="0">
                     <?php include('../get/get_internal_console_nj_new.php');?>
@@ -559,10 +526,6 @@
                     <?php include('../get/get_list_sku_ticket_new.php'); ?>
                 </div>
             </div>
-
-
-
-
             <script>
             // first define the tools to be made avaliable in the columns
             var column_tools = {
@@ -675,16 +638,13 @@
     </div>
 </div>
 </div>
-
 <script>
 function ns_discover(key, value) {
     key = encodeURIComponent(key);
     value = encodeURIComponent(value);
-
     // kvp looks like ['key1=value1', 'key2=value2', ...]
     var kvp = document.location.search.substr(1).split('&');
     let i = 0;
-
     for (; i < kvp.length; i++) {
         if (kvp[i].startsWith(key + '=')) {
             let pair = kvp[i].split('=');
@@ -693,23 +653,17 @@ function ns_discover(key, value) {
             break;
         }
     }
-
     if (i >= kvp.length) {
         kvp[kvp.length] = [key, value].join('=');
     }
-
     // can return this or...
     let params = kvp.join('&');
-
     // reload page with new params
     document.location.search = params;
-
     //set status
     document.getElementById("status_filter").value =
         'pending,checking,waiting data,waiting image,waiting traffic,waiting confirm,need update contact';
-
 }
-
 function take_ns_requester(id) {
     if (id) {
         $.post("../base/action/action_take_ns_requester.php", {
@@ -720,7 +674,6 @@ function take_ns_requester(id) {
         });
     }
 }
-
 function take_ns_officer(id) {
     if (id) {
         $.post("../base/action/action_take_ns_officer.php", {
@@ -731,7 +684,6 @@ function take_ns_officer(id) {
         });
     }
 }
-
 function comment_ns_id_with_file(id) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input_ns").value;
@@ -761,7 +713,6 @@ function comment_ns_id_with_file(id) {
         }
     });
 }
-
 function comment_ins_id_with_file(id) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input_ins").value;
@@ -791,7 +742,6 @@ function comment_ins_id_with_file(id) {
         }
     });
 }
-
 function force_sync_with_ticket(id, bu) {
     var result_checking_sku = document.getElementById("result_checking_sku").value;
     var sku_change = document.getElementById("sku_checking").value;
@@ -866,7 +816,6 @@ function force_sync_with_ticket(id, bu) {
         );
     }
 }
-
 function itemize_send_mail_stamp(id) {
     let subject_mail = prompt("ระบุ subject mail", '<?php echo $subject_mail; ?>');
     if (subject_mail == null || subject_mail == "") {
@@ -886,7 +835,6 @@ function itemize_send_mail_stamp(id) {
         }
     }
 }
-
 function sku_checking() {
     // sku_checking_result
     var sku_list = document.getElementById("sku_checking").value;
@@ -899,7 +847,6 @@ function sku_checking() {
             });
     }
 }
-
 // get_detail_more
 function form_request_edit_new(id) {
     $.post("base/form/form_request_edit_new_2.php", {
@@ -909,8 +856,6 @@ function form_request_edit_new(id) {
             $('#form_request_edit_new_2').html(data);
         });
 }
-
-
 function get_ns_log(action_table, action_data, action_data_id) {
     $.post("base/get/get_ns_log.php", {
             action_table: action_table,
@@ -930,7 +875,6 @@ function get_files(id) {
             $('#get_files').html(data);
         });
 }
-
 // get_detail_more
 function form_production(id) {
     $.post("base/form/form_production.php", {
@@ -939,14 +883,11 @@ function form_production(id) {
         function(data) {
             $('#form_production').html(data);
         });
-    
 }
 form_production(<?php echo $id; ?>);
 form_request_edit_new(<?php echo $id; ?>);
 get_ns_log('add_new_job', 'csg', <?php echo $id; ?>);
 get_files(<?php echo $id; ?>);
-
-
 function split_to_subtask(id) {
     var sku_task_set = document.getElementById("sku_task_set").value;
     document.getElementById('bt_create_task').innerHTML =
@@ -965,7 +906,6 @@ function split_to_subtask(id) {
             '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
     }
 }
-
 function action_assign_follow(id) {
     var op_follow_assign_name = document.getElementById("op_follow_assign_name").value;
     if (id) {
@@ -980,8 +920,6 @@ function action_assign_follow(id) {
         alert("Assigned !");
     }
 }
-
-
 // toolstip
 tippy('#nav-detail-tab', {
     content: "Ticket Information",
@@ -1028,7 +966,6 @@ tippy('#take_officer_bt', {
     placement: 'bottom',
     animation: 'fade',
 });
-
 tippy('#requester_pg', {
     content: "งานนี้ถูกสร้างโดย <?php echo $request_firstname.' '.$request_lastname;?> เมื่อวันที่ <?php echo $create_date;?>>",
     placement: 'bottom',
@@ -1050,18 +987,14 @@ tippy('#approved_pg', {
     animation: 'fade',
 });
 function copytext(text) {
-  
-     // Copy the text inside the text field
+    // Copy the text inside the text field
     navigator.clipboard.writeText(text);
-  
     // Alert the copied text
-    Notiflix.Notify.success("Copy "+text+" to clipboard !");
-  }
+    Notiflix.Notify.success("Copy " + text + " to clipboard !");
+}
 timeago().render(document.querySelectorAll('.timeago'));
-
 </script>
 <?php
-
 if($status == 'waiting data' or $status =='waiting image'){
 echo "<script>Notiflix.Report.warning(
         'Waiting more information',
@@ -1069,13 +1002,10 @@ echo "<script>Notiflix.Report.warning(
         'รับทราบ',
         );</script>";
 }
-
 ?>
 <!-- 
 var url = new URL("http://foo.bar/?x=1&y=2");
-
 // If your expected result is "http://foo.bar/?x=1&y=2&x=42"
 url.searchParams.append('x', 42);
-
 // If your expected result is "http://foo.bar/?x=42&y=2"
 url.searchParams.set('x', 42); -->

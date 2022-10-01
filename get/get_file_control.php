@@ -11,6 +11,7 @@ FilePond.setOptions({
     allowMultiple: false,
     allowRemove: true,
     maxFiles: 5,
+    name:'files',
     maxFiles: '2MB',
     server: {
         url: 'https://content-service-gate.cdse-commercecontent.com/',
