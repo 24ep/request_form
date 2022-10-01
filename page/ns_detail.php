@@ -999,7 +999,16 @@ function remove_file(id,path,name) {
             name:name
         }, function(data) {
             // $('#model_lg').html(data);
-            Notiflix.Notify.success(data);
+            var result = data.includes("Error");
+                if(result==false){
+                  Notiflix.Notify.success(data);
+                }else{
+                  Notiflix.Report.failure(
+                  'Failure',
+                  data,
+                  'Okay',
+                  )
+                }
             get_files(<?php echo $id; ?>);
         });
 }
