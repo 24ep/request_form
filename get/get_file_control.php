@@ -46,15 +46,5 @@ $result = mysqli_query($con, $query);
   echo '</ul>';
 ?>
 <script>
-    function remove_file(id,path,name) {
-        $.post("../base/action/action_delete_file.php", {
-            id: id,
-            path:path,
-            name:name
-        }, function(data) {
-            // $('#model_lg').html(data);
-            Notiflix.Notify.success(data);
-            get_files(<?php echo $id; ?>);
-        });
-}
+   
 </script>

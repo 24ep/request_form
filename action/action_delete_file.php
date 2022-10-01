@@ -1,7 +1,6 @@
 <?php
 //remove form sql
     session_start();
-    date_default_timezone_set("Asia/Bangkok");
     // include("insert_log.php");
     $id=$_POST["id"]; 
     $file_path = $_POST["path"];
@@ -14,6 +13,7 @@ $login = ftp_login($ftp_conn, 'admin_base_csg', '@aA417528639');
 // try to delete file
 if (ftp_delete($ftp_conn, $file))
   {
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $sql_start =   "DELETE FROM attachment WHERE id=".$id;
     $query_start = mysqli_query($con,$sql_start);
 	if($query_start) {
