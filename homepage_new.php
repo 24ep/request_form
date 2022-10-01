@@ -735,7 +735,7 @@ function search_result() {
     var input = document.getElementById('input_search').value;
     // Notiflix.Loading.hourglass('Loading...');
     if (input) {
-        $.post("../base/get/search_result.php", {
+        $.post("../base/get/get_search_result.php", {
             input: input
         }, function(data) {
             $('#search_result').html(data);
