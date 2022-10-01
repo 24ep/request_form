@@ -24,7 +24,7 @@ FilePond.setOptions({
 
 </script>
 <?php
-include("./connect.php");
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 //get list file attachment
 $query = "SELECT * FROM all_in_one_project.attachment  WHERE ticket_type = 'ticket_files' and ticket_id = ".$_POST['id']." ORDER BY id ASC" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
