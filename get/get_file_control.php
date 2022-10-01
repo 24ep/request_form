@@ -45,6 +45,3 @@ $result = mysqli_query($con, $query);
     }
   echo '</ul>';
 ?>
-<script>
-   
-</script>
