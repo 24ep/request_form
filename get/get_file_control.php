@@ -8,7 +8,7 @@ FilePond.setOptions({
     allowReplace: true,
     instantUpload: true,
     allowReoder: true,
-    allowMultiple: false,
+    allowMultiple: true,
     allowRemove: true,
     maxFiles: 5,
     name:'files',
