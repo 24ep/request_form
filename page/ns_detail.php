@@ -992,6 +992,14 @@ function copytext(text) {
     // Alert the copied text
     Notiflix.Notify.success("Copy " + text + " to clipboard !");
 }
+
+document.addEventListener('FilePond:processfile', (e) => {
+    console.log('FilePond ready for use', e.detail);
+
+    // get create method reference
+    const { create } = e.detail;
+});
+
 timeago().render(document.querySelectorAll('.timeago'));
 </script>
 <?php

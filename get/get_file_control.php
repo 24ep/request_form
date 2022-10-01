@@ -30,7 +30,13 @@ $query = "SELECT * FROM all_in_one_project.attachment  WHERE ticket_type = 'tick
 $result = mysqli_query($con, $query);
   echo '<ul class="list-group list-group-flush">';
     while($row = mysqli_fetch_array($result)) {
-        echo '<li class="list-group-item"> <ion-icon name="document-outline"></ion-icon><span>'.$row['file_name'].'</span><span class="badge rounded-pill bg-primary">'.$row['file_group'].'</span><ion-icon name="cloud-download-outline"></ion-icon></li>';
+        echo '
+        <li class="list-group-item p-2 bg-dark bg-gradien text-white rounded shadow-sm"> 
+            <ion-icon name="document-outline"></ion-icon>
+            <span>'.$row['file_name'].'</span>
+            <span class="badge rounded-pill bg-primary">'.$row['file_group'].'</span>
+            <a type="button" href="'.$row['file_path'].'"><ion-icon name="cloud-download-outline" style="right: 10px;position: absolute;top: 12px;"></ion-icon></a>
+        </li>';
     }
   echo '</ul>';
 ?>
