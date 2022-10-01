@@ -743,6 +743,18 @@ function call_model_edit_add_new(id) {
         });
     }
 }
+function call_model_edit_content_request(id) {
+    Notiflix.Loading.hourglass('Loading...');
+    if (id) {
+        $.post("../base/get/get_content_request_detail.php", {
+            id: id
+        }, function(data) {
+            $('#model_lg').html(data);
+            Notiflix.Loading.remove();
+        });
+    }
+}
+
 function search() {
     var input = document.getElementById('input_search').value;
     // Notiflix.Loading.hourglass('Loading...');

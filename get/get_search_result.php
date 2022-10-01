@@ -12,10 +12,10 @@ while($row = mysqli_fetch_array($result)) {
     echo "<li>NS-ID : ".$row['id']."  <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_add_new(&#39;".$row['id']."&#39)' name='open-outline'>  </li>";
 }
 //---
-$query = "SELECT jc.job_number from u749625779_cdscontent.job_cms jc where jc.job_number like '%".$input."%'" or die("Error:" . mysqli_error($con));
+$query = "SELECT jc.job_number ,  jc.csg_request_new_id  from u749625779_cdscontent.job_cms jc where jc.job_number like '%".$input."%'" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
-    echo "<li>Job Number : ".$row['job_number']." <ion-icon name='open-outline'></ion-icon> </li>";
+    echo "<li>Job Number : ".$row['job_number']." <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_add_new(&#39;".$row['id']."&#39)' name='open-outline'>  </li>";
 }
 //---
 $query = "SELECT cr.id from all_in_one_project.content_request cr where cr.id = '".$input."'" or die("Error:" . mysqli_error($con));
@@ -24,10 +24,10 @@ while($row = mysqli_fetch_array($result)) {
     echo "<li>CR-ID : ".$row['id']." <ion-icon name='open-outline'></ion-icon> </li>";
 }
 //---
-$query = "SELECT sl.sku from all_in_one_project.sku_list sl where sl.sku = '".$input."'" or die("Error:" . mysqli_error($con));
+$query = "SELECT sl.sku,sl.csg_id from all_in_one_project.sku_list sl where sl.sku = '".$input."'" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
-    echo "<li>SKU : ".$row['sku']." <ion-icon name='open-outline'></ion-icon> </li>";
+    echo "<li>SKU : ".$row['sku']." <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_add_new(&#39;".$row['csg_id']."&#39)' name='open-outline'>  </li>";
 }
 echo "</ul>";
 
