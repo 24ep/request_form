@@ -14,7 +14,7 @@ to a file pond, configured with attributes
   <label for="floatingTextarea2">Remark</label>
 </div> -->
 <?php session_start();?>
-<input type="file" class="filepond"  id="files" name="filepond">
+<input type="file" class="filepond"  id="files" name="files">
 <script>
 FilePond.parse(document.body);
 FilePond.setOptions({
