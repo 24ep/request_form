@@ -7,7 +7,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 //---
 $query = "SELECT anj.id  from all_in_one_project.add_new_job anj where anj.id='".$input."'" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
-echo "<ul>";
+echo "<ul style='list-style: unset;padding: 0px;font-weight: bold;color: #1b2c52;'>";
 while($row = mysqli_fetch_array($result)) {
     echo "<li>NS-ID : ".$row['id']."  <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_add_new(&#39;".$row['id']."&#39)' name='open-outline'>  </li>";
 }
