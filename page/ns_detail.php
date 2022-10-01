@@ -307,7 +307,7 @@
                                     }
                                         
                                     ?>
-            <ul class="nav nav-pills mb-3" style="flex-flow: unset;width: inherit;text-align-last: left;" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills mb-3 bg-white rounded p-2 shadow-sm" style="flex-flow: unset;font-weight: bolder;width: 100%;width: inherit;text-align-last: left;" id="pills-tab" role="tablist">
                 <li class="nav-item" style="width: fit-content;" role="presentation">
                     <button class="nav-link active" id="pills-ticket-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-ticket" type="button" role="tab" aria-controls="pills-ticket"
