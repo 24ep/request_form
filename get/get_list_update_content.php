@@ -160,18 +160,18 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
 
     </div>
     <div class="col">
-        <!-- <button onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-card="#detail_cr" data-bs-target="#detail_cr"
-            data-bucket="<?php echo $row['prefix'];?>" data-cr-request-for="<?php echo $row['ticket_type'];?>"
-            data-cr-id="<?php echo $row['id'];?>" data-cr-status="<?php echo $row['status'];?>"
-            data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
-            data-cr-title="<?php echo strtolower($row['title']);?>" aria-controls="offcanvasExample" type="button"
-            class="btn btn-dark btn-sm">Detail</button> -->
-          <button onclick="call_model_edit_content_request(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-card="#detail_cr" data-bs-target="#detail_cr"
+        <button onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-card="#detail_cr" data-bs-target="#detail_cr"
             data-bucket="<?php echo $row['prefix'];?>" data-cr-request-for="<?php echo $row['ticket_type'];?>"
             data-cr-id="<?php echo $row['id'];?>" data-cr-status="<?php echo $row['status'];?>"
             data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
             data-cr-title="<?php echo strtolower($row['title']);?>" aria-controls="offcanvasExample" type="button"
             class="btn btn-dark btn-sm">Detail</button>
+          <!-- <button onclick="call_model_edit_content_request(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-card="#detail_cr" data-bs-target="#detail_cr"
+            data-bucket="<?php echo $row['prefix'];?>" data-cr-request-for="<?php echo $row['ticket_type'];?>"
+            data-cr-id="<?php echo $row['id'];?>" data-cr-status="<?php echo $row['status'];?>"
+            data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
+            data-cr-title="<?php echo strtolower($row['title']);?>" aria-controls="offcanvasExample" type="button"
+            class="btn btn-dark btn-sm">Detail</button> -->
     </div>
 </li>
 <!-- ui -->
