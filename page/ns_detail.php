@@ -994,10 +994,11 @@ function copytext(text) {
 }
 
 document.addEventListener('FilePond:processfile', (e) => {
-    console.log('FilePond ready for use', e.detail);
+    Notiflix.Notify.success('The file had been uploaded');
+    // console.log('FilePond ready for use', e.detail);
 
     // get create method reference
-    const { create } = e.detail;
+    // const { create } = e.detail;
 });
 
 timeago().render(document.querySelectorAll('.timeago'));
