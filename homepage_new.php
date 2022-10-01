@@ -357,7 +357,7 @@ if (!$_SESSION["login_csg"]){
                     <ion-icon type="button"  class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="call_model_edit_account('<?php echo $ac_username; ?>')" name="open-outline">
                 </ion-icon>
                 <div class="dropdown">
-                <input class="form-control form-control-sm rounded-pill" id="input_search" onsearch="search_result();" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false" style="inline-size: unset;width: 300px;" type="text" placeholder="Search .. " aria-label=".form-control-sm example">    
+                <input class="form-control form-control-sm rounded-pill" id="input_search" onchange="search_result();" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false" style="inline-size: unset;width: 300px;" type="text" placeholder="Search .. " aria-label=".form-control-sm example">    
                 <form  class="dropdown-menu p-4">
                     Search
                     <div id="search_result">
