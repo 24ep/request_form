@@ -993,7 +993,7 @@ function copytext(text) {
     Notiflix.Notify.success("Copy " + text + " to clipboard !");
 }
 
-document.addEventListener('FilePond:processfile', (e) => {
+document.addEventListener('FilePond:processfiles', (e) => {
     Notiflix.Notify.success('The file had been uploaded');
     get_files(<?php echo $id; ?>);
     // console.log('FilePond ready for use', e.detail);
