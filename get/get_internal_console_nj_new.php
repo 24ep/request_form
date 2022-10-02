@@ -223,7 +223,7 @@
                   <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_content_complete_date; ?> > writing <?php echo $bt_content_start_date; ?> </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_shoots_complete_date; ?>> Shoots <?php echo $bt_shoots_start_date; ?> </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_retouch_complete_date; ?>> Retouch <?php echo $bt_retouch_start_date; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_uploadimage_date; ?>> Upload image <?php echo $bt_upload_image_date; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_upload_image_date; ?>> Upload image <?php echo $bt_upload_image_date; ?> </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_approved_date; ?> > QC <?php echo $bt_approved_date; ?> </li>
                 </ul>
             </div>
