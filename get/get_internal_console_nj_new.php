@@ -201,9 +201,9 @@
             <ul class="list-group">
                   <li class="list-group-item d-flex justify-content-between align-items-center"> Checking <?php echo $bt_start_checking_date; ?> </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center"> writing <?php echo $bt_content_start_date; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> Shoots <?php echo $bt_shoot_start_date; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> Shoots <?php echo $bt_shoots_start_date; ?> </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center"> Retouch <?php echo $bt_retouch_start_date; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> Retouch <?php echo $bt_upload_image_date; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> Upload image <?php echo $bt_upload_image_date; ?> </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center"> QC <?php echo $bt_approved_date; ?> </li>
                 </ul>
             </div>
