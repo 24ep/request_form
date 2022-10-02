@@ -243,11 +243,11 @@ if($status=='inprogress'){
     if($ac_role=='follow'){
         get_panel_card('1', '1','anj_id','NS-','anj.status  like "%pending%"','status',1);
     }elseif($ac_role=='writer'){
-        get_panel_card('1', '1','jc_job_number','','jc.transfer_type like "%data%" and anj.jc.job_number is not null and jc.content_start_date is null and jc.job_status_filter not like "%cancel%"','jc_job_status_filter',1);
+        get_panel_card('1', '1','jc_job_number','','lower(jc.transfer_type) like "%data%" and anj.jc.job_number is not null and jc.content_start_date is null and jc.job_status_filter not like "%cancel%"','jc_job_status_filter',1);
     }elseif($ac_role=='shooter'){
-        get_panel_card('1', '1','jc_job_number','','jc.transfer_type like "%photo%" and jc.job_number is not null and jc.shoot_start_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',1);
+        get_panel_card('1', '1','jc_job_number','','lower(jc.transfer_type) like "%photo%" and jc.job_number is not null and jc.shoot_start_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',1);
     }elseif($ac_role=='retoucher'){
-        get_panel_card('1', '1','jc_job_number','','jc.shoot_complete_date is not null and jc.transfer_type like "%photo%" and jc.job_number is not null and jc.retouch_start_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',1);
+        get_panel_card('1', '1','jc_job_number','','jc.shoot_complete_date is not null and lower(jc.transfer_type) like "%photo%" and jc.job_number is not null and jc.retouch_start_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',1);
     }elseif($ac_role=='product_executive'){
         get_panel_card('1', '1','anj_id','NS-','anj.status  like "%pending%" ' ,'anj_status',1);
     }elseif($ac_role=='approver'){
