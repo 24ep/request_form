@@ -2,8 +2,12 @@
 
 function return_input_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
     if($site_element=='datetime-local'){
-      $current_value = date('Y-m-d H:i:s',strtotime($current_value));
-      $current_value = str_replace(" ","T",$current_value);
+      if($current_value <> null){
+        $current_value = date('Y-m-d H:i:s',strtotime($current_value));
+        $current_value = str_replace(" ","T",$current_value);
+      }
+      
+      
       
     }
     $element = '
