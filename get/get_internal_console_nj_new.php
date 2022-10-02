@@ -278,22 +278,26 @@
                     <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_accepted_date; ?>>
                         Checking <?php echo $bt_start_checking_date; ?>
                         <input type="hidden" id="cs_edit_start_checking_date" value="CURRENT_TIMESTAMP">
+                        <input type="hidden" id="cs_edit_accepted_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_status" value="<?php echo $status_change_to;?>">
                         <input type="hidden" id="cs_edit_follow_up_by" value="<?php echo $_SESSION['username'];?>">
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_content_complete_date; ?>>
                         writing <?php echo $bt_content_start_date; ?> 
                         <input type="hidden" id="cs_edit_content_start_date" value="CURRENT_TIMESTAMP">
+                        <input type="hidden" id="cs_edit_content_complete_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_content_assign_name" value="<?php echo $_SESSION['nickname'];?>">
                       </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_shoots_complete_date; ?>>
                         Shoots <?php echo $bt_shoots_start_date; ?> 
                         <input type="hidden" id="cs_edit_shoots_start_date" value="CURRENT_TIMESTAMP">
+                        <input type="hidden" id="cs_edit_shoots_complete_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_shoots_assign_name" value="<?php echo $_SESSION['nickname'];?>">
                       </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_retouch_complete_date; ?>>
                         Retouch <?php echo $bt_retouch_start_date; ?> 
                         <input type="hidden" id="cs_edit_retouch_start_date" value="CURRENT_TIMESTAMP">
+                        <input type="hidden" id="cs_edit_retouch_complete_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_retouch_assign_name" value="<?php echo $_SESSION['nickname'];?>">
                       </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
