@@ -13,7 +13,6 @@
         unset($help_cancel);
     }
 ?>
-
 <?php if($status == 'waiting traffic'){ ?>
 <hr>
 <h6><strong>Create Writer & Studio - 24ep</strong></h6>
@@ -33,7 +32,6 @@
         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
             data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-
                 <!-- Itemize send email stamp -->
                 <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
                     <div class="col-6">
@@ -57,7 +55,6 @@
             </div>
         </div>
     </div>
-
     <?php
                     if($start_checking_date<>"" and $start_checking_date<>null){
                         $allow_task_ticket = "disabled";
@@ -77,7 +74,6 @@
                         unset($allow_send_to_traffic);unset($help_traffic);
                     }
                     ?>
-
     <?php if(!isset($parent) or $status <> 'accepted'){
                     ?>
     <div class="accordion-item">
@@ -107,15 +103,12 @@
                                     <ion-icon name="color-wand-outline"></ion-icon>Create Sub-ticket
                                 </button>
                             </div>
-
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
-
     <?php }else{
         $notic_sub_ticket_message = "<ion-icon name='alert-circle-outline'></ion-icon> <small>this ticket is sub ticket , so you can't use sub ticket function</small>";
     } ?>
@@ -163,20 +156,12 @@
             data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
                 <!-- accepted -->
-
                 <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
                     <div class="col-6">
                         <h6><strong>Complete Checking (Accepted)</strong></h6>
                         <small>ลงบันทึกยืนยันตรวจสอบข้อมูลเรียบร้อย พร้อมเปิด job สำหรับ writer </small>
                     </div>
                     <div class="col-6">
-                        <!-- <div>
-                                            <label style="margin-top:5px;margin-bottom:5px" for="sku_accepted"></label>
-                                            <textarea style="font-size:12px" class="form-control" id="sku_accepted"
-                                                name="sku_accepted"
-                                                placeholder="Copy IBC column จาก excel วางตามตัวอย่างด้านล่าง&#10;&#10;3466644&#10;2443356&#10;2487356"
-                                                rows="5" style="height: 100px"></textarea>
-                                        </div> -->
                         <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
                             class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?>
                             style="width: 100%;margin-top:5px">accept</button>
@@ -188,9 +173,28 @@
             </div>
         </div>
     </div>
-
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading8">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapse8">
+                <ion-icon name="checkmark-done-circle-outline"></ion-icon> Stamp accept job
+            </button>
+        </h2>
+        <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <?php $bt = '<span class="badge bg-primary rounded-pill">Start</span>';?>
+            <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> Checking <?php echo $bt; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> wriing <?php echo $bt; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> shoots <?php echo $bt; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> retouch <?php echo $bt; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> QC <?php echo $bt; ?> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <?php } ?>
-
     <?php } ?>
     <?php } ?>
 </div>
