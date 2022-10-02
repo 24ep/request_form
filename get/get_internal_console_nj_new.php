@@ -223,6 +223,7 @@
                 $bt_shoots_complete_date = '<button 
                 onclick="
                 update_value_attribute('.$id.', &#39;shoots_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                "
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($retouch_start_date == null){
@@ -230,11 +231,13 @@
                 onclick="
                 update_value_attribute('.$id.', &#39;retouch_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;retouch_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                "
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">start</button>';
               }else{
                 $bt_retouch_start_date = '<button 
                 onclick="
                 update_value_attribute('.$id.', &#39;retouch_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                "
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($upload_image_date == null){
@@ -242,6 +245,7 @@
                 onclick="
                 update_value_attribute('.$id.', &#39;upload_image_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;upload_image_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                "
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Uploaded</button>';
               }
               if($approved_date == null){
@@ -250,6 +254,7 @@
                 onclick="
                 update_value_attribute('.$id.', &#39;approved_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;approved_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                "
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded" style="right: 90px;position: absolute;">Approve</button>
                 <button class="btn btn-sm btn-outline-danger shadow-sm bg-gradient rounded">Reject</button>';
               }
