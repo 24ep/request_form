@@ -27,7 +27,7 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
         if($row_stc[$row['set_complete_attribute']]<>""){
             $section_badge = '<ion-icon style="color:green" name="checkmark-circle-outline"></ion-icon>';
         }else{
-            $section_badge = '<ion-icon style="color:yellow" name="ellipse-outline"></ion-icon>';
+            $section_badge = '<ion-icon style="color:#d39c00" name="ellipse-outline"></ion-icon>';
         }
       }
       
