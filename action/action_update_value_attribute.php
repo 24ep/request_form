@@ -13,7 +13,12 @@
     include('action_insert_log.php');
     include("action_send_linenotify.php");
     date_default_timezone_set("Asia/Bangkok");
-    $sql = "UPDATE ".$database.".".$table." SET ".$attribute_code." = '".str_replace("'","''",$value_change)."'  WHERE ".$primary_key_id."='".$id."'";
+    if($value_change==''){
+        $sql = "UPDATE ".$database.".".$table." SET ".$attribute_code." = null  WHERE ".$primary_key_id."='".$id."'";
+    }else{
+        $sql = "UPDATE ".$database.".".$table." SET ".$attribute_code." = '".str_replace("'","''",$value_change)."'  WHERE ".$primary_key_id."='".$id."'";
+    }
+    
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
 	if($query) {
