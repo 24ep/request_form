@@ -190,13 +190,13 @@
                 $bt_start_checking_date = '<button 
                   onclick="
                   update_value_attribute('.$id.', &#39;cs_edit_start_checking_date&#39; , &#39;cs&#39; , &#39;all_in_one_prject&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
-                  update_value_attribute('.$id.', &#39;cs_edit_follow_up_by&#39; , &#39;cs&#39; , &#39;all_in_one_prject&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                  update_value_attribute('.$id.', &#39;cs_edit_follow_up_by&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                   "
                   class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">start</button>';
               }else{
                 $bt_start_checking_date = '<button 
                 onclick="
-                update_value_attribute('.$id.', &#39;cs_edit_start_complete_date&#39; , &#39;cs&#39; , &#39;all_in_one_prject&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                update_value_attribute('.$id.', &#39;cs_edit_start_complete_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                 "
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">complete</button>';
               }
