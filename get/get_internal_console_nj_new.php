@@ -184,7 +184,7 @@
             data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
               <?php
-              $tasks = ['start_checking_date','content_start_date','shoot_start_date','retouch_start_date','upload_image_date','approved_date'];
+              $tasks = ['start_checking_date','content_start_date','shoots_start_date','retouch_start_date','upload_image_date','approved_date'];
               //checking
               foreach ($tasks as $task) {
                 if(${$task} == null){
