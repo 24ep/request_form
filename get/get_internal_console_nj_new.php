@@ -194,10 +194,10 @@
                   ${'bt_'.$task}  = '<button class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
                 }
               }
-              if($upload_image_date <> null){
+              if($upload_image_date == null){
                 $bt_upload_image_date = '<button class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Uploaded</button>';
               }
-              if($approved_date <> null){
+              if($approved_date == null){
                 $bt_approved_date = '
                 <button class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Approve</button>
                 <button class="btn btn-sm btn-outline-danger shadow-sm bg-gradient rounded">Reject</button>';
