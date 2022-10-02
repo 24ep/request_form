@@ -184,13 +184,33 @@
             data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
               <?php
-              $tasks = ['start_checking_date','content_start_date','shoots_start_date','retouch_start_date','upload_image_date','approved_date'];
-              //checking
+               //start task
+              $tasks = ['start_checking_date','content_start_date','shoots_start_date','retouch_start_date'];
+             
               foreach ($tasks as $task) {
                 if(${$task} == null){
-                  ${'bt_'.$task} = '<button class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Start</span>';
+                  ${'bt_'.$task} = '<button class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Start</button>';
                 }else{
-                  ${'bt_'.$task}  = '<button class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</span>';
+                  ${'bt_'.$task}  = '<button class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
+                }
+              }
+              if($upload_image_date <> null){
+                $bt_upload_image_date = '<button class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Uploaded</button>';
+              }
+              if($approved_date <> null){
+                $bt_approved_date = '
+                <button class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Approve</button>
+                <button class="btn btn-sm btn-outline-danger shadow-sm bg-gradient rounded">Reject</button>';
+              }
+              
+              //complete_task
+              $tasks = ['accepted_date','content_complete_date','shoots_complete_date','retouch_complete_date'];
+             
+              foreach ($tasks as $task) {
+                if(${$task} == null){
+                  ${'bt_'.$task} = 'style="display:block"';
+                }else{
+                  ${'bt_'.$task}  = 'style="display:none"';
                 }
               }
              
@@ -199,12 +219,12 @@
               
               ?>
             <ul class="list-group">
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> Checking <?php echo $bt_start_checking_date; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> writing <?php echo $bt_content_start_date; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> Shoots <?php echo $bt_shoots_start_date; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> Retouch <?php echo $bt_retouch_start_date; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> Upload image <?php echo $bt_upload_image_date; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> QC <?php echo $bt_approved_date; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_accepted_date; ?>> Checking <?php echo $bt_start_checking_date; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_content_complete_date; ?> > writing <?php echo $bt_content_start_date; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_shoots_complete_date; ?>> Shoots <?php echo $bt_shoots_start_date; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_retouch_complete_date; ?>> Retouch <?php echo $bt_retouch_start_date; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_uploadimage_date; ?>> Upload image <?php echo $bt_upload_image_date; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_approved_date; ?> > QC <?php echo $bt_approved_date; ?> </li>
                 </ul>
             </div>
         </div>
