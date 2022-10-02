@@ -253,6 +253,8 @@
                         Upload image <?php echo $bt_upload_image; ?> 
                         <input type="hidden" id="cs_edit_upload_image_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_upload_image_by" value="<?php echo $_SESSION['nickname'];?>">
+                        <input type="hidden" id="cs_edit_upload_image_by" value="<?php echo $_SESSION['nickname'];?>"
+                        <input type="hidden" id="cs_edit_check_image" value="Yes">
                       </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         QC <?php echo $bt_approve; ?> </li>
