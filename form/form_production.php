@@ -33,7 +33,7 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
         }
       }
       if($j==0){
-        $section_badge = '<ion-icon style="color:#d39c00" name="remove-circle-outline"></ion-icon>';
+        $section_badge = '<ion-icon style="color:#c9c9c9" name="remove-circle-outline"></ion-icon>';
       }
       
     }
