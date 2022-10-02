@@ -52,8 +52,8 @@
             jc.luanch_date as luanchdate,
             jc.content_start_date as content_start_date,
             jc.content_complete_date as content_complete_date,
-            jc.shoots_start_date as shoot_start_date,
-            jc.shoots_complete_date as shoot_complete_date,
+            jc.shoots_start_date as shoots_start_date,
+            jc.shoots_complete_date as shoots_complete_date,
             jc.retouch_start_date as retouch_start_date,
             jc.retouch_complete_date as retouch_complete_date,
             jc.upload_image_date as upload_image_date
