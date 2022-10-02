@@ -113,68 +113,7 @@
         $notic_sub_ticket_message = "<ion-icon name='alert-circle-outline'></ion-icon> <small>this ticket is sub ticket , so you can't use sub ticket function</small>";
     } ?>
     <?php if($config_type=="task"){ ?>
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-heading6">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapse6">
-                <ion-icon name="bonfire-outline"></ion-icon> Stamp Start checking infomation
-            </button>
-        </h2>
-        <div id="flush-collapse6" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-            data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-                <!-- start -->
-                <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
-                    <div class="col-6">
-                        <h6><strong>Start Checking</strong></h6>
-                        <small>ลงบันทึกเวลาที่เริ่มตรวจสอบ information/linesheet/duplicate sku</small>
-                    </div>
-                    <div class="col-6">
-                        <?php
-                                           echo ' <button onclick="start_checking('.$id.');"
-                                           type="button"
-                                           class="btn btn-primary btn-sm" '.$allow_task_ticket.'
-                                           style="width: 100%;">Start</button>';
-                                        ?>
-                    </div>
-                    <div class="row">
-                        <?php echo $help_start." ".$start_checking_date; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php  if($start_checking_date<>"" and $start_checking_date<>null ){?>
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-heading7">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapse7" aria-expanded="false" aria-controls="flush-collapse7">
-                <ion-icon name="checkmark-done-circle-outline"></ion-icon> Stamp accept job
-            </button>
-        </h2>
-        <div id="flush-collapse7" class="accordion-collapse collapse" aria-labelledby="flush-heading7"
-            data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-                <!-- accepted -->
-                <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
-                    <div class="col-6">
-                        <h6><strong>Complete Checking (Accepted)</strong></h6>
-                        <small>ลงบันทึกยืนยันตรวจสอบข้อมูลเรียบร้อย พร้อมเปิด job สำหรับ writer </small>
-                    </div>
-                    <div class="col-6">
-                        <button onclick="accepted_stt(<?php echo $id; ?>);" type="button"
-                            class="btn btn-success  btn-sm" <?php echo $allow_send_to_traffic; ?>
-                            style="width: 100%;margin-top:5px">accept</button>
-                    </div>
-                    <div class="row">
-                        <?php echo $help_traffic." ".$accepted_date; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-   
-    <?php } ?>
+
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-heading8">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -209,6 +148,7 @@
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_accepted_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_status&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                action_transfer_to_job_cms();
                 "
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Accept</button>';
               }
@@ -327,14 +267,38 @@
     <?php } ?>
 </div>
 <script>
-function action_stamp(id, attribute_date, attribute_name, name_stamp, table, database) {
-    $.post("base/action/action_stamp.php", {
-            id: id,
-            attribute_date: attribute_date,
-            attribute_name: attribute_name,
-            name_stamp: name_stamp,
-            table: table,
-            database: database
+function action_transfer_to_job_cms() {
+  
+  csg_request_new_id = document.getElementById('anj_edit_id').value;
+  bu = document.getElementById('anj_edit_bu').value;
+  transfer_type = "Data and Photo";
+  production_type = document.getElementById('anj_edit_production_type').value;
+  department = document.getElementById('anj_edit_department').value;
+  sub_department = document.getElementById('anj_edit_sub_department').value;
+  luanch_date = document.getElementById('anj_edit_launch_date').value;
+  sku = document.getElementById('anj_edit_sku').value;
+  product_sell_type = "Normall";
+  // product_sorting = "Product";
+  job_status_filter = "Continue"
+  brand = document.getElementById('anj_edit_brand').value;
+  product_web_site = document.getElementById('anj_edit_online_channel').value;
+  recive_mail_date = document.getElementById('anj_edit_create_date').value;
+  project_type = document.getElementById('anj_edit_project_type').value;
+    $.post("base/action/action_create_job_cms_new.php", {
+            csg_request_new_id: csg_request_new_id,
+            bu: bu,
+            transfer_type: transfer_type,
+            production_type: production_type,
+            department: department,
+            sub_department: sub_department,
+            luanch_date:luanch_date,
+            sku:sku,
+            product_sell_type:product_sell_type,
+            job_status_filter:job_status_filter,
+            brand:brand,
+            product_web_site:product_web_site,
+            recive_mail_date:recive_mail_date,
+            project_type:project_type
         },
         function(data) {
             // $('#form_production').html(data);
