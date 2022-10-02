@@ -214,7 +214,7 @@
                 <button class="btn btn-sm btn-outline-danger shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>Reject</button>';
               }
               //complete_task
-              $tasks = ['accepted_date','content_complete_date','shoots_complete_date','retouch_complete_date'];
+              $tasks = ['accepted_date','content_complete_date','shoots_complete_date','retouch_complete_date','upload_image_date'];
               foreach ($tasks as $task) {
                 if(${$task} == null){
                   ${'bt_'.$task} = '';
@@ -249,7 +249,7 @@
                         <input type="hidden" id="cs_edit_retouch_complete_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_retouch_assign_name" value="<?php echo $_SESSION['nickname'];?>">
                       </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_upload_image_date; ?>>
                         Upload image <?php echo $bt_upload_image; ?> 
                         <input type="hidden" id="cs_edit_upload_image_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_upload_image_by" value="<?php echo $_SESSION['nickname'];?>">
