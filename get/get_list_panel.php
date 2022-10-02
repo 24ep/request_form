@@ -8,9 +8,6 @@ $status = $_POST['status'];
 function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,$limit){
     
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-    // $query = "SELECT * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."' and ".$end_key."
-    // order by id ASC limit ".$limit or die("Error:" . mysqli_error($con));
-
     $query = "SELECT 
         jc.id as jc_id,
         jc.job_number as jc_job_number,
@@ -229,33 +226,46 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
     }
 }
 if($status=='inprogress'){
- 
     if($ac_role=='follow'){
-        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','anj.accepted_date is null and anj.status not like "%cancel%" ','status',10);
+        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','anj.accepted_date is null and anj.status not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%"','status',10);
     }elseif($ac_role=='writer'){
-        get_panel_card('jc.content_assign_name',$ac_nickname,'jc_job_number','','jc.content_complete_date is null and  jc.job_status_filter not like "%cancel%"','jc_job_status_filter',10);
+        get_panel_card('jc.content_assign_name',$ac_nickname,'jc_job_number','','jc.content_complete_date is null and  jc.job_status_filter not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%"','jc_job_status_filter',10);
     }elseif($ac_role=='shooter'){
-        get_panel_card('jc.shoot_assign_name',$ac_nickname,'jc_job_number','','jc.shoot_complete_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',10);
+        get_panel_card('jc.shoot_assign_name',$ac_nickname,'jc_job_number','','jc.shoot_complete_date is null and jc.job_status_filter not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%"','jc_job_status_filter',10);
     }elseif($ac_role=='retoucher'){
-        get_panel_card('jc.retouch_assign_name',$ac_nickname,'jc_job_number','','jc.retouch_complete_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',10);
+        get_panel_card('jc.retouch_assign_name',$ac_nickname,'jc_job_number','','jc.retouch_complete_date is null and jc.job_status_filter not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%"','jc_job_status_filter',10);
     }elseif($ac_role=='product_executive'){
-        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','jc.approved_date is null and anj.status not like "%cancel%" ' ,'anj_status',10);
+        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','jc.approved_date is null and anj.status not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%" ' ,'anj_status',10);
     }elseif($ac_role=='approver'){
-        get_panel_card('','','jc_job_number','','jc.approved_date is null and anj.status not like "%cancel%" ' ,'anj_status',10);
+        get_panel_card('1','1','jc_job_number','','jc.approved_date is null and anj.status not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%"' ,'anj_status',10);
     }
 }elseif($status=='pending'){
     if($ac_role=='follow'){
         get_panel_card('1', '1','anj_id','NS-','anj.status  like "%pending%"','status',1);
     }elseif($ac_role=='writer'){
-        get_panel_card('1', '1','jc_job_number','','jc.content_start_date is null and  jc.job_status_filter not like "%cancel%"','jc_job_status_filter',1);
+        get_panel_card('1', '1','jc_job_number','','jc.transfer_type like "%data%" and anj.jc.job_number is not null and jc.content_start_date is null and jc.job_status_filter not like "%cancel%"','jc_job_status_filter',1);
     }elseif($ac_role=='shooter'){
-        get_panel_card('1', '1','jc_job_number','','jc.shoot_start_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',1);
+        get_panel_card('1', '1','jc_job_number','','jc.transfer_type like "%photo%" and jc.job_number is not null and jc.shoot_start_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',1);
     }elseif($ac_role=='retoucher'){
-        get_panel_card('1', '1','jc_job_number','','jc.retouch_start_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',1);
+        get_panel_card('1', '1','jc_job_number','','jc.shoot_complete_date is not null and jc.transfer_type like "%photo%" and jc.job_number is not null and jc.retouch_start_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',1);
     }elseif($ac_role=='product_executive'){
         get_panel_card('1', '1','anj_id','NS-','anj.status  like "%pending%" ' ,'anj_status',1);
     }elseif($ac_role=='approver'){
-        get_panel_card('1','1','jc_job_number','','jc.approved_date is null and anj.status not like "%cancel%" ' ,'anj_status',1);
+        get_panel_card('1','1','jc_job_number','','jc.job_number is not null and jc.approved_date is null and anj.status not like "%cancel%" ' ,'anj_status',1);
+    }
+}elseif($status=='waiting'){
+    if($ac_role=='follow'){
+        get_panel_card('1', '1','anj_id','NS-','anj.status  like "%wait%"','status',1);
+    }elseif($ac_role=='writer'){
+        get_panel_card('1', '1','jc_job_number','','  (jc.job_status_filter  like "%wait%" or or anj.status  like "%wait%")','jc_job_status_filter',1);
+    }elseif($ac_role=='shooter'){
+        get_panel_card('1', '1','jc_job_number','','(jc.job_status_filter  like "%wait%" or anj.status  like "%wait%" )','jc_job_status_filter',1);
+    }elseif($ac_role=='retoucher'){
+        get_panel_card('1', '1','jc_job_number','',' (jc.job_status_filter  like "%wait%" or anj.status  like "%wait%" )','jc_job_status_filter',1);
+    }elseif($ac_role=='product_executive'){
+        get_panel_card('1', '1','anj_id','NS-','anj.status  like "%wait%" ' ,'anj_status',1);
+    }elseif($ac_role=='approver'){
+        get_panel_card('1','1','jc_job_number','',' (jc.job_status_filter  like "%wait%" or anj.status nt like "%wait%") ' ,'anj_status',1);
     }
 }
 
