@@ -48,7 +48,8 @@
             brand_editor.body  as brand_editor,
             anj.web_cate as web_cate,
             jc.approved_date as approved_date,
-            jc.job_number as job_number
+            jc.job_number as job_number,
+            jc.luanchdate as luanchdate
             FROM all_in_one_project.add_new_job as anj
             left join all_in_one_project.account as ac
             on ac.username = anj.follow_assign_name
@@ -64,6 +65,7 @@
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
       $id = $row['id'];
+      $luanchdate=$['luanchdate'];
       $brand = $row['brand'];
       $request_username = $row['request_username'];
       $request_firstname = $row['request_firstname'];
@@ -1032,6 +1034,13 @@ echo "<script>Notiflix.Report.warning(
         'รับทราบ',
         );</script>";
 }
+if($status == 'accepted' and $approved_date <> ''){
+    echo "<script>Notiflix.Report.Success(
+            'The job had been approved',
+            'เรียนผู้เกี่ยวข้อง Ticket นี้ได้รับการดำเนินการสร้างข้อมูลเนื้อหาบนระบบหลังบ้านเรียบร้อยแล้ว โดยสินค้าขึ้นแสดงบนหน้าว็บ ณ วันที่ ".$luanchdate."<br/><strong> - อย่างไรก็ตามหากท่านต้องการแก้ไขข้อมูลสินค้าสามารถเปิด เปิด ticket เพิ่มเติมได้</strong>',
+            'รับทราบ',
+            );</script>";
+    }
 ?>
 <!-- 
 var url = new URL("http://foo.bar/?x=1&y=2");
