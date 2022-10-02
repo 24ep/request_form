@@ -118,7 +118,7 @@
         <h2 class="accordion-header" id="flush-heading8">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapse8">
-                <ion-icon name="checkmark-done-circle-outline"></ion-icon> Job activity
+                <ion-icon name="file-tray-stacked-outline"></ion-icon> Tasks
             </button>
         </h2>
         <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8"
