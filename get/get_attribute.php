@@ -7,12 +7,13 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
         $current_value = str_replace(" ","T",$current_value);
       }
       
-      
-      
+      if($enable_edit==''){
+        $badge_edit_lv = '<ion-icon color="gray" name="pencil-outline"></ion-icon>';
+      }
     }
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
-      <div class="col-3 fw-bold">'.$att_name.'</div>
+      <div class="col-3 fw-bold">'.$att_name.$badge_edit_lv.' </div>
       <div class="col-9">
         <input
           class="form-control form-control-sm bg-light"
@@ -31,6 +32,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
   }
   function return_s_select_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+   
       $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute_option
       WHERE attribute_code = '".$att_code."' and attribute_table = '".$table."' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
       $result_op = mysqli_query($con, $query_op);
@@ -48,10 +50,12 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
         $option_element .= "<option ".$selectd ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
 
         }
-      
+        if($enable_edit==''){
+          $badge_edit_lv = '<ion-icon color="gray" name="pencil-outline"></ion-icon>';
+        }
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
-      <div class="col-3 fw-bold">'.$att_name.'</div>
+      <div class="col-3 fw-bold">'.$att_name.$badge_edit_lv.'</div>
       <div class="col-9">
         <select
           class="form-select form-select-sm bg-light"
@@ -81,9 +85,12 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
           $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
         }
       }
+      if($enable_edit==''){
+        $badge_edit_lv = '<ion-icon color="gray" name="pencil-outline"></ion-icon>';
+      }
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
-      <div class="col-3 fw-bold">'.$att_name.'</div>
+      <div class="col-3 fw-bold">'.$att_name.$badge_edit_lv.'</div>
       <div class="col-9">
         <select
           multiple="multiple"
@@ -103,9 +110,12 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
     return $element;
   }
   function return_textarea_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
+    if($enable_edit==''){
+      $badge_edit_lv = '<ion-icon color="gray" name="pencil-outline"></ion-icon>';
+    }
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
-      <div class="col-3 fw-bold">'.$att_name.'</div>
+      <div class="col-3 fw-bold">'.$att_name.$badge_edit_lv.'</div>
       <div class="col-9">
         <textarea
           class="form-control bg-light"
@@ -178,6 +188,7 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
     where allow_display=1 and attribute_set = '".$attribute_set."' and table_name='".$table."' order by sort_section ASC" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     $section="";
+
     while($row = mysqli_fetch_array($result)) {
         $section .=  '<span class="m-3" style="font-size: large;border-bottom-style: solid;color:#7f7879;display: flex!important;
         margin: 10px;text-transform: uppercase;"><strong>'.$row['section_group'].'</strong></span><br>';
