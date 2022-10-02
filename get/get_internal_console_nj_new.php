@@ -177,21 +177,21 @@
         <h2 class="accordion-header" id="flush-heading8">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapse8">
-                <ion-icon name="checkmark-done-circle-outline"></ion-icon> Stamp accept job
+                <ion-icon name="checkmark-done-circle-outline"></ion-icon> Job activity
             </button>
         </h2>
         <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8"
             data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
               <?php
-              $bt = '<button class="btn btn-primary shadow-sm bg-gradient rounded-pill">Start</span>';
+              $bt = '<button class="btn btn-sm btn-primary shadow-sm bg-gradient rounded-pill">Start</span>';
               
               ?>
             <ul class="list-group">
                   <li class="list-group-item d-flex justify-content-between align-items-center"> Checking <?php echo $bt; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> wriing <?php echo $bt; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> shoots <?php echo $bt; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> retouch <?php echo $bt; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> writing <?php echo $bt; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> Shoots <?php echo $bt; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> Retouch <?php echo $bt; ?> </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center"> QC <?php echo $bt; ?> </li>
                 </ul>
             </div>
@@ -201,3 +201,9 @@
     <?php } ?>
     <?php } ?>
 </div>
+
+<script>
+  function action_stamp(id,attribute_date,attribute_name,name_stamp,table,database){
+
+  }
+</script>
