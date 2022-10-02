@@ -187,7 +187,7 @@
             <div class="accordion-body p-0">
                 <?php
                   if($job_number == null or $job_number == ""){
-                    $text_start_jc = "NOT CREATE JOB YET";
+                    $text_start_jc = "<ion-icon name='warning-outline'></ion-icon> NON CREATE A JOB YET";
                     $bt_disabled_jc = "disabled";
                   }else{
                     $text_start_jc = "start";
