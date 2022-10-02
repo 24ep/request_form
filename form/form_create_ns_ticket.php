@@ -33,7 +33,7 @@
             <!-- sku -->
             <div class="form-floating mb-3">
                 <input type="number" class="form-control form-control-sm"  required id="sku" placeholder="">
-                <label for="sku"><strong style="color:red">* </strong>SKU</label>
+                <label for="sku"><strong style="color:red">* </strong>Total SKUs</label>
             </div>
             <!-- production_type -->
             <div class="form-floating mb-3">
@@ -75,7 +75,7 @@
         ?>
             <div class="form-floating mb-3">
                 <input type="date" class="form-control form-control-sm" min="<?php echo $min_launch_date; ?>" id="launch_date" placeholder="">
-                <label for="launch_date">Launch date</label>
+                <label for="launch_date">Launch date (Optional)</label>
             </div>
             <!-- Tag
             <div class="form-floating mb-3">
