@@ -217,6 +217,9 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
                 var result = data.includes("Error");
                 if(result==false){
                   Notiflix.Notify.success(data);
+                  if(prefix=="cs"){
+                    call_edit_add_new_modal(id);
+                  }
                 }else{
                   Notiflix.Report.failure(
                   'Failure',
