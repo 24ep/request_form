@@ -319,9 +319,7 @@
                         <ion-icon name="file-tray-stacked-outline"></ion-icon>Informations
                     </button>
                 </li>
-                <?php if($_SESSION['department']=='Content Admin'){
-
-                    ?>
+                <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                         <button class="btn btn-success me-md-2" type="button">Approved</button>
                                         <button class="btn btn-danger" type="button">Reject</button>
