@@ -102,73 +102,8 @@
       </div>
     </div>
   </div>
-  <?php if($status<>"need update contact"){ ?>
-    
 
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-      <ion-icon name="call-outline"></ion-icon> Update Contact
-      </button>
-    </h2>
-    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
-      <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
-        <div class="col-6">
-            <h6><strong>Need to update contact</strong></h6>
-            <small>ใช้ในในกรณีที่ข้อมูลติดต่อร้านค้าหรือจัดซื้อผิด</small>
-        </div>
-        <div class="col-6">
-            <button onclick="itm_just_status_need_updated_contact(<?php echo $id; ?>);" type="button"
-                class="btn btn-warning btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">Need to
-                update contact
-            </button>
-        </div>
-        <div class="row">
-            <div id="itemize_need_to_update_respond">
-                <?php echo $help_cancel." ".$cancel_resone; ?>
-            </div>
-        </div>
-    </div>
-      </div>
-    </div>
-  </div>
-  <?php } ?>
-  <?php if($status=="need update contact"){ ?>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-      <ion-icon name="call-outline"></ion-icon> Update contact
-      </button>
-    </h2>
-    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
-      <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
-        <div class="col-6">
-            <h6><strong>Get new contact</strong></h6>
-            <small>ได้รับ contact ใหม่เปลี่ยน status เป็น pending</small>
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="new_contact_buyer"
-                    style="height: 100px"><?php echo $contact_buyer; ?></textarea>
-                <label for="floatingTextarea2">Contact buyer</label>
-            </div>
-            <div class="form-floating" style="margin-top:10px">
-                <textarea class="form-control" placeholder="Leave a comment here" id="new_contact_vender"
-                    style="height: 100px"><?php echo $contact_vender; ?></textarea>
-                <label for="floatingTextarea2">Contact vender</label>
-            </div>
-        </div>
-        <div class="col-6">
-            <button onclick="itm_just_status_updated_contact(<?php echo $id; ?>);" type="button"
-                class="btn btn-success btn-sm" <?php echo $allow_cancel; ?> style="width: 100%;margin-top:5px">get
-                contact - change to Pending
-            </button>
-        </div>
-    </div>
-      </div>
-    </div>
-  </div>
-  <?php } ?>
+
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-heading4">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
