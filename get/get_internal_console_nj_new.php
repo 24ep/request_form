@@ -135,7 +135,7 @@
 
               if($start_checking_date == null){
                 $status_change_to = "checking";
-                $bt_start_checking_date = '<button 
+                $bt_checking = '<button 
                   onclick="
                   update_value_attribute('.$id.', &#39;cs_edit_start_checking_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                   update_value_attribute('.$id.', &#39;cs_edit_follow_up_by&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
@@ -144,7 +144,7 @@
                   class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Checking</button>';
               }else{
                 $status_change_to = "accepted";
-                $bt_start_checking_date = '<button 
+                $bt_checking = '<button 
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_accepted_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_status&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
@@ -154,49 +154,49 @@
               }
               if($content_start_date == null){
               
-                $bt_content_start_date = '<button 
+                $bt_content = '<button 
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_content_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_content_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>'.$text_start_jc.'</button>';
               }else{
-                $bt_content_start_date = '<button 
+                $bt_content = '<button 
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_content_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($shoots_start_date == null){
-                $bt_shoots_start_date = '<button 
+                $bt_shoots = '<button 
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_shoots_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_shoots_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded"'.$bt_disabled_jc.'>'.$text_start_jc.'</button>';
               }else{
-                $bt_shoots_complete_date = '<button 
+                $bt_shoots= '<button 
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_shoots_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($retouch_start_date == null){
-                $bt_retouch_start_date = '<button 
+                $bt_retouch = '<button 
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_retouch_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_retouch_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>'.$text_start_jc.'</button>';
               }else{
-                $bt_retouch_start_date = '<button 
+                $bt_retouch = '<button 
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_retouch_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($upload_image_date == null){
-                $bt_upload_image_date = '<button
+                $bt_upload_image = '<button
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_upload_image_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_upload_image_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
@@ -204,7 +204,7 @@
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded" '.$bt_disabled_jc.' >Uploaded</button>';
               }
               if($approved_date == null){
-                $bt_approved_date = '
+                $bt_approve = '
                 <button 
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_approved_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
@@ -225,37 +225,37 @@
               ?>
                 <ul class="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_accepted_date; ?>>
-                        Checking <?php echo $bt_start_checking_date; ?>
+                        Checking <?php echo $bt_checking; ?>
                         <input type="hidden" id="cs_edit_start_checking_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_accepted_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_status" value="<?php echo $status_change_to;?>">
                         <input type="hidden" id="cs_edit_follow_up_by" value="<?php echo $_SESSION['username'];?>">
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_content_complete_date; ?>>
-                        writing <?php echo $bt_content_start_date; ?> 
+                        writing <?php echo $bt_content; ?> 
                         <input type="hidden" id="cs_edit_content_start_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_content_complete_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_content_assign_name" value="<?php echo $_SESSION['nickname'];?>">
                       </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_shoots_complete_date; ?>>
-                        Shoots <?php echo $bt_shoots_start_date; ?> 
+                        Shoots <?php echo $bt_shoots; ?> 
                         <input type="hidden" id="cs_edit_shoots_start_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_shoots_complete_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_shoots_assign_name" value="<?php echo $_SESSION['nickname'];?>">
                       </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_retouch_complete_date; ?>>
-                        Retouch <?php echo $bt_retouch_start_date; ?> 
+                        Retouch <?php echo $bt_retouch; ?> 
                         <input type="hidden" id="cs_edit_retouch_start_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_retouch_complete_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_retouch_assign_name" value="<?php echo $_SESSION['nickname'];?>">
                       </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Upload image <?php echo $bt_upload_image_date; ?> 
+                        Upload image <?php echo $bt_upload_image; ?> 
                         <input type="hidden" id="cs_edit_upload_image_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_upload_image_by" value="<?php echo $_SESSION['nickname'];?>">
                       </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                        QC <?php echo $bt_approved_date; ?> </li>
+                        QC <?php echo $bt_approve; ?> </li>
                         <input type="hidden" id="cs_edit_approved_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_approved_by" value="<?php echo $_SESSION['nickname'];?>">
                         <input type="hidden" id="cs_edit_approved_editing_status" value="approved">
