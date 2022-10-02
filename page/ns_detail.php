@@ -1035,7 +1035,7 @@ echo "<script>Notiflix.Report.warning(
         );</script>";
 }
 if($status == 'accepted' and $approved_date <> ''){
-    echo "<script>Notiflix.Report.Success(
+    echo "<script>Notiflix.Report.success(
             'The job had been approved',
             'เรียนผู้เกี่ยวข้อง Ticket นี้ได้รับการดำเนินการสร้างข้อมูลเนื้อหาบนระบบหลังบ้านเรียบร้อยแล้ว โดยสินค้าขึ้นแสดงบนหน้าว็บ ณ วันที่ ".$luanchdate."<br/><strong> - อย่างไรก็ตามหากท่านต้องการแก้ไขข้อมูลสินค้าสามารถเปิด <a>เปิด ticket เพิ่มเติม</a>ได้</strong>',
             'รับทราบ',
