@@ -297,8 +297,7 @@ function action_transfer_to_job_cms() {
             job_status_filter:job_status_filter,
             brand:brand,
             product_web_site:product_web_site,
-            recive_mail_date:recive_mail_date,
-            project_type:project_type
+            recive_mail_date:recive_mail_date
         },
         function(data) {
             // $('#form_production').html(data);
