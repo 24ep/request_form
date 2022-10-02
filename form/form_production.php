@@ -23,16 +23,16 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
     if($row['set_complete_attribute'] <> ""){
       $query_stc = "SELECT ".$row['set_complete_attribute']." FROM ".$row['db_name'].".".$row['table_name']." where ".$row['primary_key_id']." =".$id or die("Error:" . mysqli_error($con));
       $result_stc = mysqli_query($con, $query_stc);
-      $i=0;
+      $j=0;
       while($row_stc = mysqli_fetch_array($result_stc)) {
-        $i++;
+        $j++;
         if($row_stc[$row['set_complete_attribute']]<>"" and $row_stc[$row['set_complete_attribute']]<>null ){
             $section_badge = '<ion-icon style="color:green" name="checkmark-circle-outline"></ion-icon>';
         }else{
             $section_badge = '<ion-icon style="color:#d39c00" name="ellipse-outline"></ion-icon>';
         }
       }
-      if($i==0){
+      if($j==0){
         $section_badge = '<ion-icon style="color:#d39c00" name="remove-circle-outline"></ion-icon>';
       }
       
