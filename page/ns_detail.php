@@ -322,12 +322,12 @@
          
         
             </ul>
-            <?php if(strpos($_SESSION["department"],'Content')!==false){?>
+            <!-- <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                         <button class="btn btn-sm  btn-success bg-gradient me-md-2 shadow-sm " type="button">Approved</button>
                                         <button class="btn btn-sm  btn-danger bg-gradient shadow-sm " type="button">Reject</button>
                                     </div>
-                    <?php } ?>
+                    <?php } ?> -->
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-ticket" role="tabpanel"
                     aria-labelledby="pills-ticket-tab">
