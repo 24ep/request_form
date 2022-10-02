@@ -186,6 +186,14 @@
             data-bs-parent="#accordionFlushExample">
             <div class="accordion-body p-0">
                 <?php
+                  if($job_number == null or $job_number == ""){
+                    $text_start_jc = "waiting";
+                    $bt_disabled_jc = "disabled";
+                  }else{
+                    $text_start_jc = "start";
+                    $bt_disabled_jc = "";
+                  }
+
               if($start_checking_date == null){
                 $status_change_to = "checking";
                 $bt_start_checking_date = '<button 
@@ -205,12 +213,13 @@
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Accept</button>';
               }
               if($content_start_date == null){
+              
                 $bt_content_start_date = '<button 
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_content_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_content_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
-                class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">start</button>';
+                class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>'.$text_start_jc.'</button>';
               }else{
                 $bt_content_start_date = '<button 
                 onclick="
@@ -224,7 +233,7 @@
                 update_value_attribute('.$id.', &#39;cs_edit_shoots_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_shoots_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
-                class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">start</button>';
+                class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded"'.$bt_disabled_jc.'>'.$text_start_jc.'</button>';
               }else{
                 $bt_shoots_complete_date = '<button 
                 onclick="
@@ -238,7 +247,7 @@
                 update_value_attribute('.$id.', &#39;cs_edit_retouch_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_retouch_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
-                class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">start</button>';
+                class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>'.$text_start_jc.'</button>';
               }else{
                 $bt_retouch_start_date = '<button 
                 onclick="
@@ -252,7 +261,7 @@
                 update_value_attribute('.$id.', &#39;cs_edit_upload_image_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_upload_image_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
-                class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Uploaded</button>';
+                class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded" '.$bt_disabled_jc.' >Uploaded</button>';
               }
               if($approved_date == null){
                 $bt_approved_date = '
@@ -261,8 +270,8 @@
                 update_value_attribute('.$id.', &#39;cs_edit_approved_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_approved_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
-                class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded" style="right: 90px;position: absolute;">Approve</button>
-                <button class="btn btn-sm btn-outline-danger shadow-sm bg-gradient rounded">Reject</button>';
+                class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded" style="right: 90px;position: absolute;" '.$bt_disabled_jc.' >Approve</button>
+                <button class="btn btn-sm btn-outline-danger shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>Reject</button>';
               }
               //complete_task
               $tasks = ['accepted_date','content_complete_date','shoots_complete_date','retouch_complete_date'];
