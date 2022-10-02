@@ -23,11 +23,11 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
     if($row['set_complete_attribute'] <> ""){
       $query_stc = "SELECT ".$row['set_complete_attribute']." FROM u749625779_cdscontent.job_cms where csg_request_new_id =".$id or die("Error:" . mysqli_error($con));
       $result_stc = mysqli_query($con, $query_stc);
-      while($row_stc = mysqli_fetch_array($result)) {
+      while($row_stc = mysqli_fetch_array($result_stc)) {
         if($row_stc[$row['set_complete_attribute']]<>""){
             $section_badge = '<ion-icon style="color:green" name="checkmark-circle-outline"></ion-icon>';
         }else{
-            $section_badge = '<ion-icon name="ellipse-outline"></ion-icon>';
+            $section_badge = '';
         }
       }
       
