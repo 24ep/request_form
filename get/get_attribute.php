@@ -8,7 +8,9 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       }
       
       if($enable_edit==''){
-        $badge_edit_lv = '<ion-icon color="gray" name="pencil-outline"></ion-icon>';
+        $badge_edit_lv = '<ion-icon style="color:#707684"name="color-wand-outline"></ion-icon>';
+      }else{
+        $badge_edit_lv  ='';
       }
     }
     $element = '
@@ -51,7 +53,9 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
 
         }
         if($enable_edit==''){
-          $badge_edit_lv = '<ion-icon color="gray" name="pencil-outline"></ion-icon>';
+          $badge_edit_lv = '<ion-icon style="color:#707684"name="color-wand-outline"></ion-icon>';
+        }else{
+          $badge_edit_lv  ='';
         }
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
@@ -86,7 +90,9 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
         }
       }
       if($enable_edit==''){
-        $badge_edit_lv = '<ion-icon color="gray" name="pencil-outline"></ion-icon>';
+        $badge_edit_lv = '<ion-icon style="color:#707684"name="color-wand-outline"></ion-icon>';
+      }else{
+        $badge_edit_lv  ='';
       }
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
@@ -111,7 +117,9 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
   }
   function return_textarea_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
     if($enable_edit==''){
-      $badge_edit_lv = '<ion-icon color="gray" name="pencil-outline"></ion-icon>';
+      $badge_edit_lv = '<ion-icon style="color:#707684"name="color-wand-outline"></ion-icon>';
+    }else{
+      $badge_edit_lv  ='';
     }
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
