@@ -188,9 +188,9 @@
               //checking
               foreach ($tasks as $task) {
                 if(${$task} == null){
-                  ${'bt_'.$task} = '<button class="btn btn-sm btn-primary shadow-sm bg-gradient rounded">Start</span>';
+                  ${'bt_'.$task} = '<button class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Start</span>';
                 }else{
-                  ${'bt_'.$task}  = '<button class="btn btn-sm btn-success shadow-sm bg-gradient rounded">Complete</span>';
+                  ${'bt_'.$task}  = '<button class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</span>';
                 }
               }
              
