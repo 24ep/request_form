@@ -324,8 +324,8 @@
             </ul>
             <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <button class="btn btn-sm  btn-success me-md-2" type="button">Approved</button>
-                                        <button class="btn btn-sm  btn-danger" type="button">Reject</button>
+                                        <button class="btn btn-sm  btn-success bg-gradient me-md-2 shadow-sm " type="button">Approved</button>
+                                        <button class="btn btn-sm  btn-danger bg-gradient shadow-sm " type="button">Reject</button>
                                     </div>
                     <?php } ?>
             <div class="tab-content" id="pills-tabContent">
