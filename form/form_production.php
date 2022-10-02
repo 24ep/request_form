@@ -29,7 +29,7 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
         }else{
             $section_badge = '<ion-icon name="ellipse-outline"></ion-icon>';
         }
-
+      }
       
     }
     $d_attribute_set .=  '  <button style="text-align:-webkit-left" class="nav-link '.$active_section_bt.'" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.str_replace(" ","_",$row['attribute_set']).'" type="button" role="tab" aria-controls="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" aria-selected="false">'.ucwords($row['attribute_set']).$section_badge.'</button>';
