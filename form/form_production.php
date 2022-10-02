@@ -21,7 +21,7 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
     echo '<div id="call_update_jc_complete"></div>';
     echo '<ul class="list-group">';
     if($row['set_complete_attribute'] <> ""){
-      $query_stc = "SELECT ".$row['set_complete_attribute']." FROM ".$row['db_name'].".".$row['table_name']." where csg_request_new_id =".$id or die("Error:" . mysqli_error($con));
+      $query_stc = "SELECT ".$row['set_complete_attribute']." FROM ".$row['db_name'].".".$row['table_name']." where ".$row['primary_key_id']." =".$id or die("Error:" . mysqli_error($con));
       $result_stc = mysqli_query($con, $query_stc);
       while($row_stc = mysqli_fetch_array($result_stc)) {
         if($row_stc[$row['set_complete_attribute']]<>""){
