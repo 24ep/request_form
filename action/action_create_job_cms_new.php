@@ -38,7 +38,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
     )
 	VALUES (
                         'New',
-                        '".$_POST["id"]."',
+                        '".$_POST["csg_request_new_id"]."',
                         '".$job_number_laset."',
                         '".$_POST["bu"]."',
                         '".$_POST["transfer_type"]."',
