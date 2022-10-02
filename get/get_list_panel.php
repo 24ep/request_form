@@ -227,7 +227,7 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
 }
 if($status=='inprogress'){
     if($ac_role=='follow'){
-        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','anj.accepted_date is null and anj.status not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%"','status',10);
+        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','anj.accepted_date is null and anj.status not like "%cancel%" and anj.status not like "%wait%"','status',10);
     }elseif($ac_role=='writer'){
         get_panel_card('jc.content_assign_name',$ac_nickname,'jc_job_number','','jc.content_complete_date is null and  jc.job_status_filter not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%"','jc_job_status_filter',10);
     }elseif($ac_role=='shooter'){
