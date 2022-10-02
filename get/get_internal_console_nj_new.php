@@ -187,18 +187,22 @@
             <div class="accordion-body p-0">
                 <?php
               if($start_checking_date == null){
+                $status_change_to = "checking";
                 $bt_start_checking_date = '<button 
                   onclick="
                   update_value_attribute('.$id.', &#39;cs_edit_start_checking_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                   update_value_attribute('.$id.', &#39;cs_edit_follow_up_by&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                  update_value_attribute('.$id.', &#39;cs_edit_status&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                   "
-                  class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">start</button>';
+                  class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Checking</button>';
               }else{
+                $status_change_to = "accepted";
                 $bt_start_checking_date = '<button 
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_start_complete_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                update_value_attribute('.$id.', &#39;cs_edit_status&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                 "
-                class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">complete</button>';
+                class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Accept</button>';
               }
               if($content_start_date == null){
                 $bt_content_start_date = '<button 
@@ -274,6 +278,7 @@
                     <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_accepted_date; ?>>
                         Checking <?php echo $bt_start_checking_date; ?>
                         <input type="hidden" id="cs_edit_start_checking_date" value="CURRENT_TIMESTAMP">
+                        <input type="hidden" id="cs_edit_status" value="<?php echo $status_change_to;?>">
                         <input type="hidden" id="cs_edit_follow_up_by" value="<?php echo $_SESSION['username'];?>">
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_content_complete_date; ?>>
