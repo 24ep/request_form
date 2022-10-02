@@ -183,7 +183,10 @@
         <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8"
             data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-              <?php $bt = '<span class="badge bg-primary rounded-pill">Start</span>';?>
+              <?php
+              $bt = '<button class="btn btn-primary shadow-sm bg-gradient rounded-pill">Start</span>';
+              
+              ?>
             <ul class="list-group">
                   <li class="list-group-item d-flex justify-content-between align-items-center"> Checking <?php echo $bt; ?> </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center"> wriing <?php echo $bt; ?> </li>
