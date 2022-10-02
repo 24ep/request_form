@@ -27,7 +27,7 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
         if($row_stc[$row['set_complete_attribute']]<>""){
             $section_badge = '<ion-icon style="color:green" name="checkmark-circle-outline"></ion-icon>';
         }else{
-            $section_badge = '';
+            $section_badge = '<ion-icon style="color:yellow" name="ellipse-outline"></ion-icon>';
         }
       }
       
@@ -39,7 +39,7 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
   }
   echo'
   <div class="d-flex align-items-start">
-      <div class="nav flex-column nav-pills me-3 pe-4 p-2 bg-white shadow-sm rounded" style="text-align-last: left;font-weight: 600;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <div class="nav flex-column nav-pills me-3 pe-4 p-2 bg-white shadow-sm rounded" style="min-width: 200px;text-align-last: left;font-weight: 600;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
      
       '.$d_attribute_set.'
       </div>
