@@ -319,14 +319,15 @@
                         <ion-icon name="file-tray-stacked-outline"></ion-icon>Informations
                     </button>
                 </li>
-                <?php if(strpos($_SESSION["department"],'Content')!==false){?>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <button class="btn btn-success me-md-2" type="button">Approved</button>
-                                        <button class="btn btn-danger" type="button">Reject</button>
-                                    </div>
-                    <?php } ?>
+         
         
             </ul>
+            <?php if(strpos($_SESSION["department"],'Content')!==false){?>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <button class="btn btn-sm  btn-success me-md-2" type="button">Approved</button>
+                                        <button class="btn btn-sm  btn-danger" type="button">Reject</button>
+                                    </div>
+                    <?php } ?>
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-ticket" role="tabpanel"
                     aria-labelledby="pills-ticket-tab">
