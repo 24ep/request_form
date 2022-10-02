@@ -34,7 +34,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
                         job_status_filter,
                         brand,
                         product_website,
-                        recive_ticket_date,
+                        recive_mail_date,
                         project_type
     )
 	VALUES (
@@ -53,7 +53,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
                         '".$_POST["job_status_filter"]."',
                         '".$_POST["brand"]."',
                         '".$_POST["product_website"]."',
-                        '".$_POST["recive_ticket_date"]."',
+                        '".$_POST["recive_mail_date"]."',
                         '".$_POST["project_type"]."'
 
     )";
