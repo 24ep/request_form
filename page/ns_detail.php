@@ -65,7 +65,7 @@
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
       $id = $row['id'];
-      $luanchdate=$['luanchdate'];
+      $luanchdate=$row['luanchdate'];
       $brand = $row['brand'];
       $request_username = $row['request_username'];
       $request_firstname = $row['request_firstname'];
