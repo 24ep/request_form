@@ -24,7 +24,7 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
       $query_stc = "SELECT ".$row['set_complete_attribute']." FROM ".$row['db_name'].".".$row['table_name']." where ".$row['primary_key_id']." =".$id or die("Error:" . mysqli_error($con));
       $result_stc = mysqli_query($con, $query_stc);
       while($row_stc = mysqli_fetch_array($result_stc)) {
-        if($row_stc[$row['set_complete_attribute']]<>""){
+        if($row_stc[$row['set_complete_attribute']]<>"" and $row_stc[$row['set_complete_attribute']]<>null ){
             $section_badge = '<ion-icon style="color:green" name="checkmark-circle-outline"></ion-icon>';
         }else{
             $section_badge = '<ion-icon style="color:#d39c00" name="ellipse-outline"></ion-icon>';
