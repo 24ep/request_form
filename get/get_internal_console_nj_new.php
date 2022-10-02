@@ -187,69 +187,69 @@
               if($start_checking_date == null){
                 $bt_start_checking_date = '<button 
                   onclick="
-                  update_value_attribute('.$id.', "start_checking_date" , "cs" , "all_in_one_prject" , "add_new_job" , "id");
-                  update_value_attribute('.$id.', "follow_up_by" , "cs" , "all_in_one_prject" , "add_new_job" , "id");
+                  update_value_attribute('.$id.', &#39;start_checking_date&#39; , &#39;cs&#39; , &#39;all_in_one_prject&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                  update_value_attribute('.$id.', &#39;follow_up_by&#39; , &#39;cs&#39; , &#39;all_in_one_prject&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                   "
                   class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">start</button>';
               }else{
                 $bt_start_checking_date = '<button 
                 onclick="
-                update_value_attribute('.$id.', "start_complete_date" , "cs" , "all_in_one_prject" , "add_new_job" , "id");
+                update_value_attribute('.$id.', &#39;start_complete_date&#39; , &#39;cs&#39; , &#39;all_in_one_prject&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                 "
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">complete</button>';
               }
               if($content_start_date == null){
                 $bt_content_start_date = '<button 
                 onclick="
-                update_value_attribute('.$id.', "content_start_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
-                update_value_attribute('.$id.', "content_assign_name" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                update_value_attribute('.$id.', &#39;content_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                update_value_attribute('.$id.', &#39;content_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">start</button>';
               }else{
                 $bt_content_start_date = '<button 
                 onclick="
-                update_value_attribute('.$id.', "content_complete_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                update_value_attribute('.$id.', &#39;content_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($shoots_start_date == null){
                 $bt_shoots_start_date = '<button 
                 onclick="
-                update_value_attribute('.$id.', "shoots_start_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
-                update_value_attribute('.$id.', "shoots_assign_name" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                update_value_attribute('.$id.', &#39;shoots_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                update_value_attribute('.$id.', &#39;shoots_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">start</button>';
               }else{
                 $bt_shoots_complete_date = '<button 
                 onclick="
-                update_value_attribute('.$id.', "shoots_complete_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                update_value_attribute('.$id.', &#39;shoots_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($retouch_start_date == null){
                 $bt_retouch_start_date = '<button 
                 onclick="
-                update_value_attribute('.$id.', "retouch_start_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
-                update_value_attribute('.$id.', "retouch_assign_name" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                update_value_attribute('.$id.', &#39;retouch_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                update_value_attribute('.$id.', &#39;retouch_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">start</button>';
               }else{
                 $bt_retouch_start_date = '<button 
                 onclick="
-                update_value_attribute('.$id.', "retouch_complete_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                update_value_attribute('.$id.', &#39;retouch_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($upload_image_date == null){
                 $bt_upload_image_date = '<button
                 onclick="
-                update_value_attribute('.$id.', "upload_image_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
-                update_value_attribute('.$id.', "upload_image_by" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                update_value_attribute('.$id.', &#39;upload_image_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                update_value_attribute('.$id.', &#39;upload_image_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Uploaded</button>';
               }
               if($approved_date == null){
                 $bt_approved_date = '
                 <button 
                 onclick="
-                update_value_attribute('.$id.', "approved_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
-                update_value_attribute('.$id.', "approved_by" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                update_value_attribute('.$id.', &#39;approved_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                update_value_attribute('.$id.', &#39;approved_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded" style="right: 90px;position: absolute;">Approve</button>
                 <button class="btn btn-sm btn-outline-danger shadow-sm bg-gradient rounded">Reject</button>';
               }
