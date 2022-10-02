@@ -161,15 +161,15 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
         anj.mail_internet_message_id as anj_mail_internet_message_id,
         anj.mail_lastest_message_id as anj_mail_lastest_message_id,
         CASE 
-         when TIMESTAMPDIFF( day ,CURRENT_DATE(),case when jc.luanch_date is not null then jc.luanch_date else anj.launch_date end)+1 <= 3 then 0
-         when jc.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),case when jc.luanch_date is not null then jc.luanch_date else anj.launch_date end)+1 <= 5  then 1
-         when jc.upload_image_date is not null and  case when jc.luanch_date is not null then jc.luanch_date else anj.launch_date end is null and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 10 then 2
-         when jc.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),case when jc.luanch_date is not null then jc.luanch_date else anj.launch_date end anj.launch_date)+1 < 5 and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 10 then 3
-         when TIMESTAMPDIFF( day ,CURRENT_DATE(),case when jc.luanch_date is not null then jc.luanch_date else anj.launch_date end)+1 < 4 then 4
+         when TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 <= 3 then 0
+         when jc.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 <= 5  then 1
+         when jc.upload_image_date is not null and  anj.launch_date is null and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 10 then 2
+         when jc.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 < 5 and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 10 then 3
+         when TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 < 4 then 4
          when anj.launch_date is null and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 9 and lower(anj.project_type ) like '%new%' then 5
-         when TIMESTAMPDIFF( day ,CURRENT_DATE(),case when jc.luanch_date is not null then jc.luanch_date else anj.launch_date end)+1 < 10  then 6
-         when case when jc.luanch_date is not null then jc.luanch_date else anj.launch_date end is null and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 9 and lower(anj.project_type ) like '%item%' then 7
-         when case when jc.luanch_date is not null then jc.luanch_date else anj.launch_date end is not null then 8
+         when TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 < 10  then 6
+         when anj.launch_date is null and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 9 and lower(anj.project_type ) like '%item%' then 7
+         when anj.launch_date is not null then 8
         else 9 end as piority
      FROM all_in_one_project.add_new_job as anj
     left join u749625779_cdscontent.job_cms as jc 
