@@ -7,11 +7,12 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
         $current_value = str_replace(" ","T",$current_value);
       }
       
-      if($enable_edit==''){
-        $badge_edit_lv = '<ion-icon style="color:#707684"name="color-wand-outline"></ion-icon>';
-      }else{
-        $badge_edit_lv  ='';
-      }
+     
+    }
+    if($enable_edit==''){
+      $badge_edit_lv = '<ion-icon style="color:#707684" name="color-wand-outline"></ion-icon>';
+    }else{
+      $badge_edit_lv  ='';
     }
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
