@@ -173,6 +173,8 @@
             </div>
         </div>
     </div>
+   
+    <?php } ?>
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-heading8">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -303,7 +305,6 @@
             </div>
         </div>
     </div>
-    <?php } ?>
     <?php } ?>
     <?php } ?>
 </div>
