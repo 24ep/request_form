@@ -49,7 +49,14 @@
             anj.web_cate as web_cate,
             jc.approved_date as approved_date,
             jc.job_number as job_number,
-            jc.luanch_date as luanchdate
+            jc.luanch_date as luanchdate,
+            jc.content_start_date as content_start_date,
+            jc.content_complete_date as content_complete_date,
+            jc.shoot_start_date as shoot_start_date,
+            jc.shoot_complete_date as shoot_complete_date,
+            jc.retouch_start_date as retouch_start_date,
+            jc.retouch_complete_date as retouch_complete_date,
+            jc.upload_image_date as upload_image_date
             FROM all_in_one_project.add_new_job as anj
             left join all_in_one_project.account as ac
             on ac.username = anj.follow_assign_name
@@ -110,6 +117,13 @@
       $trigger_status=$row['trigger_status'];
       $job_number=$row['job_number'];
       $approved_date=$row['approved_date'];
+      $content_start_date = $row['content_start_date'];
+      $content_complete_date = $row['content_complete_date'];
+      $shoot_start_date = $row['shoot_start_date'];
+      $shoot_complete_date = $row['shoot_complete_date'];
+      $retouch_start_date = $row['retouch_start_date'];
+      $retouch_complete_date = $row['retouch_complete_date'];
+      $upload_image_date = $row['upload_image_date'];
     //stamp color status
     if($row["status"]=="pending"){
     $status_style = 'style="background: #a9a9a94f;color:#8f8f8f"';

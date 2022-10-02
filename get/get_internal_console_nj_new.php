@@ -184,15 +184,28 @@
             data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
               <?php
-              $bt = '<button class="btn btn-sm btn-primary shadow-sm bg-gradient rounded-pill">Start</span>';
+              $tasks = array();
+              $tasks = ['start_checking_date','content_start_date','shoot_start_date','retouch_start_date','upload_image_date','approved_date'];
+              //checking
+              foreach ($tasks as $task) {
+                if(${$task} == null){
+                  ${'bt_'.$task} = '<button class="btn btn-sm btn-primary shadow-sm bg-gradient rounded">Start</span>';
+                }else{
+                  ${'bt_'.$task}  = '<button class="btn btn-sm btn-success shadow-sm bg-gradient rounded">Complete</span>';
+                }
+              }
+             
+              
+              
               
               ?>
             <ul class="list-group">
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> Checking <?php echo $bt; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> writing <?php echo $bt; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> Shoots <?php echo $bt; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> Retouch <?php echo $bt; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center"> QC <?php echo $bt; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> Checking <?php echo $bt_start_checking_date; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> writing <?php echo $bt_content_start_date; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> Shoots <?php echo $bt_shoot_start_date; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> Retouch <?php echo $bt_retouch_start_date; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> Retouch <?php echo $bt_upload_image_date; ?> </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center"> QC <?php echo $bt_approved_date; ?> </li>
                 </ul>
             </div>
         </div>
