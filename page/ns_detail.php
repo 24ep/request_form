@@ -319,7 +319,7 @@
                         <ion-icon name="file-tray-stacked-outline"></ion-icon>Informations
                     </button>
                 </li>
-                <?php if($_GET['page']=='panel'){
+                <?php if($_SESSION['department']=='Content'){
 
                     ?>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
