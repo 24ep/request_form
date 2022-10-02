@@ -208,7 +208,7 @@
              
               foreach ($tasks as $task) {
                 if(${$task} == null){
-                  ${'bt_'.$task} = 'style="display:block!important"';
+                  ${'bt_'.$task} = '';
                 }else{
                   ${'bt_'.$task}  = 'style="display:none!important"';
                 }
