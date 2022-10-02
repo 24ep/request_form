@@ -152,6 +152,15 @@
                 "
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Accept</button>';
               }
+              if($recive_item_date == null){
+                $bt_recive_item = '<button 
+                  onclick="
+                  update_value_attribute('.$id.', &#39;cs_edit_recive_item_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                  update_value_attribute('.$id.', &#39;cs_edit_product_check_by&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                  update_value_attribute('.$id.', &#39;cs_edit_studio_sku&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                  "
+                  class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Recived</button>';
+              }
               if($content_start_date == null){
               
                 $bt_content = '<button 
@@ -214,7 +223,7 @@
                 <button class="btn btn-sm btn-outline-danger shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>Reject</button>';
               }
               //complete_task
-              $tasks = ['accepted_date','content_complete_date','shoots_complete_date','retouch_complete_date','upload_image_date'];
+              $tasks = ['accepted_date','content_complete_date','shoots_complete_date','retouch_complete_date','upload_image_date','recive_item_date'];
               foreach ($tasks as $task) {
                 if(${$task} == null){
                   ${'bt_'.$task} = '';
@@ -236,7 +245,13 @@
                         <input type="hidden" id="cs_edit_content_start_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_content_complete_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_content_assign_name" value="<?php echo $_SESSION['nickname'];?>">
-                      </li>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_recive_item_date; ?>>
+                        Recive Item <?php echo $bt_recive_item; ?> 
+                        <input type="hidden" id="cs_edit_recive_item_date" value="CURRENT_TIMESTAMP">
+                        <input type="hidden" id="cs_edit_studio_sku" value="<?php echo $sku;?>">
+                        <input type="hidden" id="cs_edit_product_check_by" value="<?php echo $_SESSION['nickname'];?>">
+                    </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_shoots_complete_date; ?>>
                         Shoots <?php echo $bt_shoots; ?> 
                         <input type="hidden" id="cs_edit_shoots_start_date" value="CURRENT_TIMESTAMP">
