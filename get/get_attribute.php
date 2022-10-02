@@ -2,7 +2,7 @@
 
 function return_input_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
     if($site_element=='datetime-local'){
-      $current_value = str_replace(" ","T",strtotime($current_value));
+      $current_value = date('Y-M-DTH:i:s',strtotime($current_value));
       
     }
     $element = '
