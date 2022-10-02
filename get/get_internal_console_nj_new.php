@@ -155,9 +155,9 @@
               if($recive_item_date == null){
                 $bt_recive_item = '<button 
                   onclick="
-                  update_value_attribute('.$id.', &#39;cs_edit_recive_item_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
-                  update_value_attribute('.$id.', &#39;cs_edit_product_check_by&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
-                  update_value_attribute('.$id.', &#39;cs_edit_studio_sku&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                  update_value_attribute('.$id.', &#39;cs_edit_recive_item_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                  update_value_attribute('.$id.', &#39;cs_edit_product_check_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                  update_value_attribute('.$id.', &#39;cs_edit_studio_sku&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                   "
                   class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Recived</button>';
               }
@@ -223,7 +223,7 @@
                 <button class="btn btn-sm btn-outline-danger shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>Reject</button>';
               }
               //complete_task
-              $tasks = ['accepted_date','content_complete_date','shoots_complete_date','retouch_complete_date','upload_image_date','recive_item_date'];
+              $tasks = ['accepted_date','content_complete_date','shoots_complete_date','retouch_complete_date','upload_image_date','recive_item_date','approved_date'];
               foreach ($tasks as $task) {
                 if(${$task} == null){
                   ${'bt_'.$task} = '';
@@ -271,7 +271,7 @@
                         <input type="hidden" id="cs_edit_upload_image_by" value="<?php echo $_SESSION['nickname'];?>"
                         <input type="hidden" id="cs_edit_check_image" value="Yes">
                       </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li class="list-group-item d-flex justify-content-between align-items-center"  <?php echo $bt_approved_date; ?>>
                         QC <?php echo $bt_approve; ?> </li>
                         <input type="hidden" id="cs_edit_approved_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_approved_by" value="<?php echo $_SESSION['nickname'];?>">
