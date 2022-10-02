@@ -62,6 +62,6 @@ mysqli_query($con, "SET NAMES 'utf8' ");
         insert_log("Create new job_cms ".$job_number_laset,"job_cms",$_POST["id"]);
         echo $job_number_laset." have been created ";
     }else{
-        echo 'Error :'.$sql;
+        echo 'Error :'.$con->error;
     }
 ?>
