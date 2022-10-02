@@ -193,6 +193,13 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
   function update_value_attribute(id, attribute_code , prefix , database , table , primary_key_id) {
     var attribute_code = attribute_code;
     var value_change = document.getElementById(attribute_code).value;
+    if(value_change=="CURRENT_TIMESTAMP"){
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date+' '+time;
+        value_change = dateTime;
+    }
     if (id) {
         $.post("base/action/action_update_value_attribute.php", {
                 id: id,

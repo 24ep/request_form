@@ -183,29 +183,78 @@
         <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8"
             data-bs-parent="#accordionFlushExample">
             <div class="accordion-body p-0">
-              <?php
-               //start task
-              $tasks = ['start_checking_date','content_start_date','shoots_start_date','retouch_start_date'];
-             
-              foreach ($tasks as $task) {
-                if(${$task} == null){
-                  ${'bt_'.$task} = '<button class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Start</button>';
-                }else{
-                  ${'bt_'.$task}  = '<button class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
-                }
+                <?php
+              if($start_checking_date == null){
+                $bt_start_checking_date = '<button 
+                  onclick="
+                  update_value_attribute('.$id.', "start_checking_date" , "cs" , "all_in_one_prject" , "add_new_job" , "id");
+                  update_value_attribute('.$id.', "follow_up_by" , "cs" , "all_in_one_prject" , "add_new_job" , "id");
+                  "
+                  class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">start</button>';
+              }else{
+                $bt_start_checking_date = '<button 
+                onclick="
+                update_value_attribute('.$id.', "start_complete_date" , "cs" , "all_in_one_prject" , "add_new_job" , "id");
+                "
+                class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">complete</button>';
+              }
+              if($content_start_date == null){
+                $bt_content_start_date = '<button 
+                onclick="
+                update_value_attribute('.$id.', "content_start_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                update_value_attribute('.$id.', "content_assign_name" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                "
+                class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">start</button>';
+              }else{
+                $bt_content_start_date = '<button 
+                onclick="
+                update_value_attribute('.$id.', "content_complete_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                "
+                class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
+              }
+              if($shoots_start_date == null){
+                $bt_shoots_start_date = '<button 
+                onclick="
+                update_value_attribute('.$id.', "shoots_start_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                update_value_attribute('.$id.', "shoots_assign_name" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                "
+                class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">start</button>';
+              }else{
+                $bt_shoots_complete_date = '<button 
+                onclick="
+                update_value_attribute('.$id.', "shoots_complete_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
+              }
+              if($retouch_start_date == null){
+                $bt_retouch_start_date = '<button 
+                onclick="
+                update_value_attribute('.$id.', "retouch_start_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                update_value_attribute('.$id.', "retouch_assign_name" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">start</button>';
+              }else{
+                $bt_retouch_start_date = '<button 
+                onclick="
+                update_value_attribute('.$id.', "retouch_complete_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($upload_image_date == null){
-                $bt_upload_image_date = '<button class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Uploaded</button>';
+                $bt_upload_image_date = '<button
+                onclick="
+                update_value_attribute('.$id.', "upload_image_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                update_value_attribute('.$id.', "upload_image_by" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Uploaded</button>';
               }
               if($approved_date == null){
                 $bt_approved_date = '
-                <button class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Approve</button>
+                <button 
+                onclick="
+                update_value_attribute('.$id.', "approved_date" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                update_value_attribute('.$id.', "approved_by" , "cs" , "u749625779_cdscontent" , "job_cms" , "csg_request_new_id");
+                class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded" style="right: 90px;position: absolute;">Approve</button>
                 <button class="btn btn-sm btn-outline-danger shadow-sm bg-gradient rounded">Reject</button>';
               }
-              
               //complete_task
               $tasks = ['accepted_date','content_complete_date','shoots_complete_date','retouch_complete_date'];
-             
               foreach ($tasks as $task) {
                 if(${$task} == null){
                   ${'bt_'.$task} = '';
@@ -213,18 +262,38 @@
                   ${'bt_'.$task}  = 'style="display:none!important"';
                 }
               }
-             
-              
-              
-              
               ?>
-            <ul class="list-group">
-                  <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_accepted_date; ?>> Checking <?php echo $bt_start_checking_date; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_content_complete_date; ?> > writing <?php echo $bt_content_start_date; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_shoots_complete_date; ?>> Shoots <?php echo $bt_shoots_start_date; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_retouch_complete_date; ?>> Retouch <?php echo $bt_retouch_start_date; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center" > Upload image <?php echo $bt_upload_image_date; ?> </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center"  > QC <?php echo $bt_approved_date; ?> </li>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_accepted_date; ?>>
+                        Checking <?php echo $bt_start_checking_date; ?>
+                        <input type="hidden" id="cs_edit_start_checking_date" value="CURRENT_TIMESTAMP">
+                        <input type="hidden" id="cs_edit_follow_up_by" value="<?php echo $_SESSION['username'];?>">
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_content_complete_date; ?>>
+                        writing <?php echo $bt_content_start_date; ?> 
+                        <input type="hidden" id="cs_edit_content_start_date" value="CURRENT_TIMESTAMP">
+                        <input type="hidden" id="cs_edit_content_assign_name" value="<?php echo $_SESSION['nickname'];?>">
+                      </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_shoots_complete_date; ?>>
+                        Shoots <?php echo $bt_shoots_start_date; ?> 
+                        <input type="hidden" id="cs_edit_shoots_start_date" value="CURRENT_TIMESTAMP">
+                        <input type="hidden" id="cs_edit_shoots_assign_name" value="<?php echo $_SESSION['nickname'];?>">
+                      </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_retouch_complete_date; ?>>
+                        Retouch <?php echo $bt_retouch_start_date; ?> 
+                        <input type="hidden" id="cs_edit_retouch_start_date" value="CURRENT_TIMESTAMP">
+                        <input type="hidden" id="cs_edit_retouch_assign_name" value="<?php echo $_SESSION['nickname'];?>">
+                      </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Upload image <?php echo $bt_upload_image_date; ?> 
+                        <input type="hidden" id="cs_edit_upload_image_date" value="CURRENT_TIMESTAMP">
+                        <input type="hidden" id="cs_edit_upload_image_by" value="<?php echo $_SESSION['nickname'];?>">
+                      </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        QC <?php echo $bt_approved_date; ?> </li>
+                        <input type="hidden" id="cs_edit_approved_date" value="CURRENT_TIMESTAMP">
+                        <input type="hidden" id="cs_edit_approved_by" value="<?php echo $_SESSION['nickname'];?>"
+                        <input type="hidden" id="cs_edit_approved_editing_status" value="approved">
                 </ul>
             </div>
         </div>
@@ -233,9 +302,28 @@
     <?php } ?>
     <?php } ?>
 </div>
-
 <script>
-  function action_stamp(id,attribute_date,attribute_name,name_stamp,table,database){
-
-  }
+function action_stamp(id, attribute_date, attribute_name, name_stamp, table, database) {
+    $.post("base/action/action_stamp.php", {
+            id: id,
+            attribute_date: attribute_date,
+            attribute_name: attribute_name,
+            name_stamp: name_stamp,
+            table: table,
+            database: database
+        },
+        function(data) {
+            // $('#form_production').html(data);
+            var result = data.includes("Error");
+            if (result == false) {
+                Notiflix.Notify.success(data);
+            } else {
+                Notiflix.Report.failure(
+                    'Failure',
+                    data,
+                    'Okay',
+                )
+            }
+        });
+}
 </script>
