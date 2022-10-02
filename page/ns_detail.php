@@ -311,7 +311,7 @@
                         <ion-icon name="podium-outline"></ion-icon>Progress
                     </button>
                 </li>
-                <!-- <?php //if($accepted_date <> "" and $accepted_date <> null){ ?> -->
+
                 <li class="nav-item" style="width: fit-content;" role="presentation">
                     <button class="nav-link" id="pills-productions-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-productions" type="button" role="tab" aria-controls="pills-productions"
@@ -319,7 +319,12 @@
                         <ion-icon name="file-tray-stacked-outline"></ion-icon>Informations
                     </button>
                 </li>
-                <?php// }?>
+                <?php if($_GET[])
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-success me-md-2" type="button">Approved</button>
+                    <button class="btn btn-danger" type="button">Reject</button>
+                </div>
+        
             </ul>
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-ticket" role="tabpanel"
