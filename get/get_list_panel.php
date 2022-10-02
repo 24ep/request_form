@@ -251,7 +251,7 @@ if($status=='inprogress'){
     }elseif($ac_role=='product_executive'){
         get_panel_card('1', '1','anj_id','NS-','anj.status  like "%pending%" ' ,'anj_status',1);
     }elseif($ac_role=='approver'){
-        get_panel_card('1','1','jc_job_number','','jc.job_status_filter = "Continue" and (jc.upload_image_date is not null or lower(jc.transfer_type) not like "%photo%") and  (jc.content_complete_date is not null or lower(transfer_type) not like "%data%") and jc.job_number is not null and jc.approved_date is null and anj.status not like "%cancel%" ' ,'jc_job_status_filter',10);
+        get_panel_card('1','1','jc_job_number','','jc.job_status_filter = "Continue" and (jc.upload_image_date is not null or lower(jc.transfer_type) not like "%photo%") and  (jc.content_complete_date is not null or lower(jc.transfer_type) not like "%data%") and jc.job_number is not null and jc.approved_date is null and anj.status not like "%cancel%" ' ,'jc_job_status_filter',10);
     }
 }elseif($status=='waiting'){
     if($ac_role=='follow'){
