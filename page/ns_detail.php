@@ -543,7 +543,10 @@
                 </div>
                 <div class="tab-pane fade" id="nav-console" role="tabpanel" aria-labelledby="nav-console-tab"
                     tabindex="0">
+                    <div id="get_internal_console_nj_new">
                     <?php include('../get/get_internal_console_nj_new.php');?>
+                    </div>
+                    
                 </div>
                 <div class="tab-pane fade" id="nav-sku" role="tabpanel" aria-labelledby="nav-sku-tab" tabindex="0">
                     <?php include('../get/get_list_sku_ticket_new.php'); ?>
@@ -907,6 +910,7 @@ function form_production(id) {
             $('#form_production').html(data);
         });
 }
+
 form_production(<?php echo $id; ?>);
 form_request_edit_new(<?php echo $id; ?>);
 get_ns_log('add_new_job', 'csg', <?php echo $id; ?>);
