@@ -124,7 +124,7 @@
             <div class="form-floating mb-3">
                 <textarea class="form-control form-control-sm" placeholder="Leave a comment here" id="remark"
                     style="height: 100px"></textarea>
-                <label for="remark">Remark</label>
+                <label for="remark">Remark (Optional)</label>
             </div>
             <!-- end -->
         </div>
