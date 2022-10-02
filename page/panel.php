@@ -61,7 +61,8 @@ $database = 'all_in_one_project';
                 </h2>
                 <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingThree">
                     <div class="accordion-body p-0">
-                      ....
+                    <div id="get_list_panel_waiting">
+                         </div>
                     </div>
                 </div>
             </div>
@@ -91,6 +92,7 @@ function get_list_panel(ac_role,status,ac_username,ac_nickname) {
 }
 get_list_panel('<?php echo $ac_role; ?>','inprogress','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
 get_list_panel('<?php echo $ac_role; ?>','pending','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
+get_list_panel('<?php echo $ac_role; ?>','waiting','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
 
 function call_edit_add_new_panel(id, brand) {
     Notiflix.Loading.hourglass('Loading...');
