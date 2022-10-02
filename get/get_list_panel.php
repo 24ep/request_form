@@ -164,7 +164,7 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
          when TIMESTAMPDIFF( day ,CURRENT_DATE(),case when jc.luanch_date is not null then jc.luanch_date else anj.launch_date end)+1 <= 3 then 0
          when jc.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),case when jc.luanch_date is not null then jc.luanch_date else anj.launch_date end)+1 <= 5  then 1
          when jc.upload_image_date is not null and  case when jc.luanch_date is not null then jc.luanch_date else anj.launch_date end is null and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 10 then 2
-         when jc.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),case when jc.luanch_date is not null then jc.luanch_date else anj.launch_date endanj.launch_date)+1 < 5 and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 10 then 3
+         when jc.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),case when jc.luanch_date is not null then jc.luanch_date else anj.launch_date end anj.launch_date)+1 < 5 and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 10 then 3
          when TIMESTAMPDIFF( day ,CURRENT_DATE(),case when jc.luanch_date is not null then jc.luanch_date else anj.launch_date end)+1 < 4 then 4
          when anj.launch_date is null and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 9 and lower(anj.project_type ) like '%new%' then 5
          when TIMESTAMPDIFF( day ,CURRENT_DATE(),case when jc.luanch_date is not null then jc.luanch_date else anj.launch_date end)+1 < 10  then 6
