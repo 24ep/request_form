@@ -319,11 +319,14 @@
                         <ion-icon name="file-tray-stacked-outline"></ion-icon>Informations
                     </button>
                 </li>
-                <?php if($_GET[])
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-success me-md-2" type="button">Approved</button>
-                    <button class="btn btn-danger" type="button">Reject</button>
-                </div>
+                <?php if($_GET['page']=='panel'){
+
+                    ?>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <button class="btn btn-success me-md-2" type="button">Approved</button>
+                                        <button class="btn btn-danger" type="button">Reject</button>
+                                    </div>
+                    <?php } ?>
         
             </ul>
             <div class="tab-content" id="pills-tabContent">
