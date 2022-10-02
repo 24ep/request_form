@@ -281,7 +281,7 @@ function action_transfer_to_job_cms() {
   // product_sorting = "Product";
   job_status_filter = "Continue"
   brand = document.getElementById('anj_edit_brand').value;
-  product_web_site = document.getElementById('anj_edit_online_channel').value;
+  product_website = document.getElementById('anj_edit_online_channel').value;
   recive_mail_date = document.getElementById('anj_edit_create_date').value;
   project_type = document.getElementById('anj_edit_project_type').value;
     $.post("base/action/action_create_job_cms_new.php", {

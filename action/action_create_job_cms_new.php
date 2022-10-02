@@ -33,7 +33,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
                         product_sorting,
                         job_status_filter,
                         brand,
-                        product_web_site,
+                        product_website,
                         recive_ticket_date,
                         project_type
     )
@@ -52,7 +52,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
                         '".$_POST["product_sorting"]."',
                         '".$_POST["job_status_filter"]."',
                         '".$_POST["brand"]."',
-                        '".$_POST["product_web_site"]."',
+                        '".$_POST["product_website"]."',
                         '".$_POST["recive_ticket_date"]."',
                         '".$_POST["project_type"]."'
 
