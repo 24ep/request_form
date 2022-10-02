@@ -182,7 +182,7 @@
         </h2>
         <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8"
             data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
+            <div class="accordion-body p-0">
               <?php
                //start task
               $tasks = ['start_checking_date','content_start_date','shoots_start_date','retouch_start_date'];
