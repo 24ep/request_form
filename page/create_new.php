@@ -289,8 +289,8 @@ function action_submit_add_new_job() {
             Notiflix.Loading.remove();
             var result = data.includes("Error");
                 if(result==false){
-                  Notiflix.Notify.success(data);
-                  
+                  Notiflix.Notify.success("Ticket have been create already ! NS-"+data);
+                  snapshot_data("all_in_one_project","add_new_job","id",data,"add_new_job");
                 }else{
                   Notiflix.Report.failure(
                   'Failure',

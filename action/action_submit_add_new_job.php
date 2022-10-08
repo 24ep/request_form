@@ -97,24 +97,10 @@
             if($key<>"" and $key<>null){
                 sent_line_noti("\n• คุณได้ทำกาส่ง request ขอเปิด job\n• Ticket ID : NS-".$last_id." [ ".$brand." ".$sku." SKUs ]\n• Store : ".$stock_source,$key);
             }
-            echo 'Ticket have been create already ! NS-'.$last_id;
+            echo $last_id;
 	}else{
         echo 'Error: ' . $sql . '<hr>' . $con->error;
     }
     mysqli_close($con);
     
 ?>
-<script>
-    function snapshot_data(database,table,primary_key_id,id,ticket_type){
-    $.post("../base/action/action_data_snapshot.php", {
-                database: database,
-                table: table,
-                primary_key_id: primary_key_id,
-                id:id,
-                ticket_type:ticket_type
-            }, function(data) {
-                Notiflix.Notify.success(data);
-            });
-    }
-    snapshot_data("all_in_one_project","add_new_job","id",<?php echo $last_id ?>,"add_new_job");
-</script>
