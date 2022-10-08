@@ -15,8 +15,8 @@ if($_POST['action_data']=="24ep"){;
     //    <td>'.$row["action_from_user"].'</td>
     //  </tr>';
     $tr .= "<li>";
-    $tr .= $row["action_from_user"]."<br>";
-    $tr .= "<small>".$row["action_date"]."</small>"."<br>";
+    $tr .= "<strong>".$row["action_from_user"]."</strong>";
+    $tr .= " <small class='ms-1'>".$row["action_date"]."</small>"."<br>";
     $tr .= $row["value_change"]."<br>";
     $tr .= "</li>";
     
@@ -31,10 +31,11 @@ if($_POST['action_data']=="24ep"){;
     //    <td>'.$row["action"].'</td>
     //    <td>'.$row["action_by"].'</td>
     //  </tr>';
-    $tr .= "<li>";
-    $tr .= $row["action_by"]."<br>";
-    $tr .= "<small>".$row["action_date"]."</small>"."<br>";
-    $tr .= $row["action"]."<br>";
+    $action = str_replace("{snapshot}","<span class='badge rounded-pill bg-primary' >Snapshot</span>",$row["action"]);
+    $tr .= "<li class='list-group-item' >";
+    $tr .= "<strong>".$row["action_by"]."</strong>";
+    $tr .= " <small class='ms-1'>".$row["action_date"]."</small>"."<br>";
+    $tr .=   $action."<br>";
     $tr .= "</li>";
   }
 }
