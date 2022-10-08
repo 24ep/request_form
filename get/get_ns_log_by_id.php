@@ -15,9 +15,11 @@ if($_GET['action_data']=="24ep"){;
     //    <td>'.$row["value_change"].'</td>
     //    <td>'.$row["action_from_user"].'</td>
     //  </tr>';
-    $tr .= $row["action_from_user"];
-    $tr .= "<small>".$row["action_date"]."</small>";
-    $tr .= $row["value_change"];
+    $tr .= "<li>";
+    $tr .= $row["action_from_user"]."</br>";
+    $tr .= "<small>".$row["action_date"]."</small></br>";
+    $tr .= $row["value_change"]."</br>";
+    $tr .= "</li>";
   }
 }elseif($_GET['action_data']=="csg"){
   $query = "SELECT * FROM all_in_one_project.log where action_table='".$action_table."' and action_data_id =".$id or die("Error:" . mysqli_error($con));
@@ -29,9 +31,11 @@ if($_GET['action_data']=="24ep"){;
     //    <td>'.$row["action"].'</td>
     //    <td>'.$row["action_by"].'</td>
     //  </tr>';
+     $tr .= "<li>";
      $tr .= $row["action_by"];
      $tr .= "<small>".$row["action_date"]."</small>";
      $tr .= $row["action"];
+     $tr .= "</li>";
   }
 }
 ?>
