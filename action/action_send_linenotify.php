@@ -100,7 +100,7 @@ function sendline($id,$value_name,$value_change,$prefix){
   
       $list_users = substr($list_user_push,1);
       echo $list_users;
-      webpush($list_user_push,$text_update,$id,$callback_url);
+      webpush($list_users,$text_update,$id,$callback_url);
       
 }
 
