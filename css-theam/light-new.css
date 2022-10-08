@@ -19,7 +19,7 @@ body {
     width: inherit;
     color: black;
     background-color: #ffffff;
-    /* height: -webkit-fill-available; */
+    height: -webkit-fill-available;
 }
 .navbar-brand{
     font-weight: 900;
