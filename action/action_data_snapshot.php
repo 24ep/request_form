@@ -17,7 +17,10 @@ while($row = mysqli_fetch_array($result)) {
     $result_column = mysqli_query($con, $query_column);
     $comment .= "{snapshot}</br>";
     while($row_column = mysqli_fetch_array($result_column)) {
-        $comment .= $row_column['COLUMN_NAME']." = ".$row[$row_column['COLUMN_NAME']]."</br>";
+        if($row[$row_column['COLUMN_NAME']] <> null){
+            $comment .= $row_column['COLUMN_NAME']." = ".$row[$row_column['COLUMN_NAME']]."</br>";
+        }
+       
     }
 }
 
