@@ -61,6 +61,7 @@ echo $response;
 
 }
 function sendline($id,$value_name,$value_change,$prefix){
+    
         if($prefix=='ANJ' or $prefix=='JC'){
                 $callback_url  = 'https://content-service-gate.cdse-commercecontent.com/?env=poojaroonwit&page=create_new&brand_filter='.$id;
                 $prefix_post = 'NS';
@@ -69,6 +70,7 @@ function sendline($id,$value_name,$value_change,$prefix){
             $callback_url  = 'https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='.$id;
             $prefix_post = 'CR';
     }
+    $text_update = "\n".$prefix_post."-".$id." \n".$_SESSION["nickname"]." have been update ".$value_name." to ".$value_change;
       //send to line
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
@@ -88,8 +90,9 @@ function sendline($id,$value_name,$value_change,$prefix){
                   $list_user_push .= ',"'.$row["username"].'"';
               }
               if($key<>"" and $key<>null){
-                $text_update = "\n".$prefix_post."-".$id." ".$topic."  \n".$_SESSION["nickname"]." have been update ".$value_name." to ".$value_change;
+                
                 sent_line_notify($text_update,$key);
+                echo $text_update;
                 //send_ms_team($prefix."-".$id,$topic,$_SESSION["nickname"]." changed ".$value_name." to ".$value_change);  
                
                 
