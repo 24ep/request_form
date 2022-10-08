@@ -1,7 +1,7 @@
 <?php
   session_start();
-  include("../get/get_default_profile_image.php");
-  include("../action/action_send_linenotify.php");
+//   include("../get/get_default_profile_image.php");
+//   include("../action/action_send_linenotify.php");
   $nickname = $_SESSION["nickname"];
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
