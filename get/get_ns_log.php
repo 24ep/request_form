@@ -1,5 +1,4 @@
 <?php
-include_once("get_default_profile_image.php");
 $id = $_POST['action_data_id'];
 $action_table = $_POST['action_table'];
 $actiob_data = $_POST['action_data'];
