@@ -257,7 +257,18 @@ function cancel_ticket(id) {
         });
     }
 }
+function snapshot_data(database,table,primary_key_id,id,ticket_type){
 
+$.post("../base/action/action_data_snapshot.php", {
+            database: database,
+            table: table,
+            primary_key_id: primary_key_id,
+            id:id,
+            ticket_type:ticket_type
+        }, function(data) {
+            Notiflix.Notify.success(data);
+        });
+}
 function action_submit_add_new_job() {
     Notiflix.Loading.hourglass('Creating new ticket ...');
     brand = document.getElementById('brand').value;

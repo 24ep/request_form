@@ -47,7 +47,7 @@
         }
 
         if($_POST["brand"]<>""){ $insert_head .= "brand";$insert_value .= "'".str_replace("'","''",$_POST["brand"])."'";}
-        //if($department_cal<>""){ $insert_head .= ",department";$insert_value .= ",'".$department_cal."'";}
+        if($department_cal<>""){ $insert_head .= ",department";$insert_value .= ",'".$department_cal."'";}
         if($_POST["sub_department"]<>""){ $insert_head .= ",sub_department";$insert_value .= ",'".$_POST["sub_department"]."'";}
         if($_POST["web_cate"]<>""){ $insert_head .= ",web_cate";$insert_value .= ",'".$_POST["web_cate"]."'";}
         if($department_cal<>""){ $insert_head .= ",department";$insert_value .= ",'".$department_cal."'";}
@@ -93,6 +93,7 @@
                 $brand = $row["brand"];
                 $sku = $row["sku"];
                 $stock_source = $row["stock_source"];
+                //echo '<script>alert("'.$key.'");</script>';
             }
             if($key<>"" and $key<>null){
                 sent_line_noti("\n• คุณได้ทำกาส่ง request ขอเปิด job\n• Ticket ID : NS-".$last_id." [ ".$brand." ".$sku." SKUs ]\n• Store : ".$stock_source,$key);
