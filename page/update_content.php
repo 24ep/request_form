@@ -1,5 +1,5 @@
 <?php 
-  include_once("../get/get_default_profile_image.php");
+  include("../get/get_default_profile_image.php");
   include("../get/action_send_linenotify.php");
 ?>
 <div class="container-fluid ">

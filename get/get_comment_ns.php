@@ -29,9 +29,10 @@ function get_comment_ns($id){
       border-left-width: 0px;
       border-top-width: 0px;">
       <div class="ms-2 me-auto">
-      <div >
+      <div class="d-flex m-2"      >
     '.$image_profile.'
-          <div class="fw-bold">'.$row['comment_by'].'</div><small style="color:gray">Comment '.$row['comment_date'].'</small>
+          <div class="fw-bold ms-2 me-2">'.$row['comment_by'].'</div>
+          <br><small style="color:gray">Comment '.$row['comment_date'].'</small>
       </div>
       <div style="margin-right: 7px;">'.$list_file.'</div>
           <p>'.$row['comment'].'</p>
