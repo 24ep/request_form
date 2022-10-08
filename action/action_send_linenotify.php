@@ -85,12 +85,13 @@ function sendline($id,$value_name,$value_change,$prefix){
           $result =  mysqli_query($con, $query);
               while($row = mysqli_fetch_array($result)) {
                   $key = $row["token_line"];
+                  $list_user_push .= ',"'.$row["username"].'"';
               }
               if($key<>"" and $key<>null){
                 $text_update = "\n".$prefix_post."-".$id." ".$topic."  \n".$_SESSION["nickname"]." have been update ".$value_name." to ".$value_change;
                 sent_line_notify($text_update,$key);
                 //send_ms_team($prefix."-".$id,$topic,$_SESSION["nickname"]." changed ".$value_name." to ".$value_change);  
-                $list_user_push .= ',"'.$row["username"].'"';
+               
                 
             }
          }
