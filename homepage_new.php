@@ -223,7 +223,7 @@ if (!$_SESSION["login_csg"]){
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link" id="nav_create_new" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('create_new');">
-                            <ion-icon name="rocket"></ion-icon><span class="main-manu-nav">New Product</span>
+                            <ion-icon name="rocket"></ion-icon><span class="main-manu-nav">New Products</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
