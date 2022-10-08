@@ -71,7 +71,7 @@ if (!$_SESSION["login_csg"]){
     <script src="https://cdn.tiny.cloud/1/cis8560ji58crrbq17zb11gp39qhpn2lka54u0m54s8du1gw/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
-<!-- return to top -->
+    <!-- return to top -->
     <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -135,12 +135,22 @@ if (!$_SESSION["login_csg"]){
     </script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
-    <script src="base/webpush/main.js"></script>
-    
+
+    <!-- subsc -->
+    <script async custom-element="amp-web-push" src="https://cdn.ampproject.org/v0/amp-web-push-0.1.js"></script>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    <meta name="viewport" content="width=device-width">
+
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- subsc -->
+
 </head>
 
 <body>
-<!-- <button class="js-push-btn" style="display: none;">
+    <!-- <button class="js-push-btn" style="display: none;">
         Subscribe Push Messaging
 </button> -->
 
@@ -166,7 +176,8 @@ if (!$_SESSION["login_csg"]){
     </div>
     <div class="row" style="--bs-gutter-x: 0rem;">
         <div class="col-2 list_bra">
-            <div class="nav flex-column nav-pills nav_list_bra border-end" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <div class="nav flex-column nav-pills nav_list_bra border-end" id="v-pills-tab" role="tablist"
+                aria-orientation="vertical">
                 <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
                     class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-secondary  bg-gradient shadow rounded-pill"
                     style="width: 2rem; height:2rem;padding: 0px;z-index: 1;top: 95px!important;">
@@ -229,7 +240,7 @@ if (!$_SESSION["login_csg"]){
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link" id="nav_update_content" data-bs-toggle="pill" type="button"
                             role="tab" aria-selected="false" onclick="get_page('update_content');">
-                            <ion-icon name="ticket"></ion-icon><span class="main-manu-nav">Update Content</span> 
+                            <ion-icon name="ticket"></ion-icon><span class="main-manu-nav">Update Content</span>
                         </a>
                     </li>
                     <?php if(strpos($_SESSION["department"],'Content')!==false){
@@ -248,8 +259,8 @@ if (!$_SESSION["login_csg"]){
                             <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">24EP </span>
                         </a>
                     </li>
-                  
-<!-- 
+
+                    <!-- 
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link" id="nav_job_on_hand" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('job_on_hand');">
@@ -306,7 +317,8 @@ if (!$_SESSION["login_csg"]){
                 </ul>
             </div>
         </div>
-        <div class="col-2 shadow sub_manu hide p-0 bg-white bg-gradient border-end" id="sub_manu" style="margin-left: inherit;">
+        <div class="col-2 shadow sub_manu hide p-0 bg-white bg-gradient border-end" id="sub_manu"
+            style="margin-left: inherit;">
         </div>
         <div class="col-10 col_detail_main" style="font-size: 14px;padding: 0px;margin-left: inherit;">
             <?php
@@ -337,19 +349,24 @@ if (!$_SESSION["login_csg"]){
                         src="https://ui-avatars.com/api/?name=<?php echo $ac_firstname.'+'.$ac_lastname; ?>&background=<?php echo bg_dept($ac_department); ?>&color=fff&rounded=true&size=30">
                     <a class="navbar-brand ms-1" style="" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
                     <small href="#"><?php echo $ac_department; ?> </small> | <?php echo $ac_role; ?>
-                    <ion-icon type="button"  class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="call_model_edit_account('<?php echo $ac_username; ?>')" name="open-outline">
-                </ion-icon>
-                <div class="dropdown">
-                <input type=search class="form-control form-control-sm rounded-pill" id="input_search" onchange="search()" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false" style="inline-size: unset;width: 300px;" type="text" placeholder="Search .. " aria-label=".form-control-sm example">    
-                <form  class="dropdown-menu p-4" style="width:500px">
-                    <span id="search_input" class="bg-light text-secondary p-1 ps-2 pn-2 rounded "></span>
-                    <hr>
-                    <div id="search_result">
+                    <ion-icon type="button" class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" onclick="call_model_edit_account('<?php echo $ac_username; ?>')"
+                        name="open-outline">
+                    </ion-icon>
+                    <div class="dropdown">
+                        <input type=search class="form-control form-control-sm rounded-pill" id="input_search"
+                            onchange="search()" data-bs-auto-close="outside" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="inline-size: unset;width: 300px;" type="text"
+                            placeholder="Search .. " aria-label=".form-control-sm example">
+                        <form class="dropdown-menu p-4" style="width:500px">
+                            <span id="search_input" class="bg-light text-secondary p-1 ps-2 pn-2 rounded "></span>
+                            <hr>
+                            <div id="search_result">
 
+                            </div>
+                        </form>
                     </div>
-                </form>    
                 </div>
-            </div>
             </nav>
             <div id="col_detail">
             </div>
@@ -704,6 +721,7 @@ tippy('#nav_toolkit', {
     placement: 'right',
     animation: 'fade',
 });
+
 function call_model_edit_account(username) {
     Notiflix.Loading.hourglass('Loading...');
     if (username) {
@@ -715,6 +733,7 @@ function call_model_edit_account(username) {
         });
     }
 }
+
 function call_model_edit_add_new(id) {
     Notiflix.Loading.hourglass('Loading...');
     if (id) {
@@ -726,6 +745,7 @@ function call_model_edit_add_new(id) {
         });
     }
 }
+
 function call_model_edit_content_request(id) {
     Notiflix.Loading.hourglass('Loading...');
     if (id) {
@@ -799,15 +819,15 @@ function search() {
     </div>
 </div>
 <script id="script">
-    var s = document.createElement("script")
-    s.src = "https://notix.io/ent/current/enot.min.js"
-    s.onload = function (sdk) {
-        sdk.startInstall({
-            appId: "10052dd0063417a1645897f10306381",
-            loadSettings: true,
-            user: "<?php echo $_SESSION['username']; ?>",
-            disableConsoleDebug: true
-        })
-    }
-    document.head.append(s)
+var s = document.createElement("script")
+s.src = "https://notix.io/ent/current/enot.min.js"
+s.onload = function(sdk) {
+    sdk.startInstall({
+        appId: "10052dd0063417a1645897f10306381",
+        loadSettings: true,
+        user: "<?php echo $_SESSION['username']; ?>",
+        disableConsoleDebug: true
+    })
+}
+document.head.append(s)
 </script>
