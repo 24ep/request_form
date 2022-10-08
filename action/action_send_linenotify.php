@@ -61,11 +61,11 @@ curl_close($curl);
 
 }
 function sendline($id,$value_name,$value_change,$prefix){
-        if($prefix=='anj' or $prefix=='jc'){
+        if($prefix=='ANJ' or $prefix=='JC'){
                 $callback_url  = 'https://content-service-gate.cdse-commercecontent.com/?env=poojaroonwit&page=create_new&brand_filter='.$id;
                 $prefix_post = 'NS';
         }
-        if($prefix=='cr'){
+        if($prefix=='CR'){
             $callback_url  = 'https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='.$id;
             $prefix_post = 'CR';
     }
