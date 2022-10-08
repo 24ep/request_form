@@ -137,14 +137,14 @@ if (!$_SESSION["login_csg"]){
     <script src="https://unpkg.com/tippy.js@6"></script>
 
     <!-- subsc -->
-    <script async custom-element="amp-web-push" src="https://cdn.ampproject.org/v0/amp-web-push-0.1.js"></script>
+    <!-- <script async custom-element="amp-web-push" src="https://cdn.ampproject.org/v0/amp-web-push-0.1.js"></script>
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
 
     <meta name="viewport" content="width=device-width">
 
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script> -->
     <!-- subsc -->
 
 </head>

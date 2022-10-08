@@ -74,7 +74,7 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
 ';
 
 ?>
-<amp-web-push
+<!-- <amp-web-push
         id="amp-web-push"
         layout="nodisplay"
         helper-iframe-url="/notix-amp-frame.htm"
@@ -99,4 +99,4 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
     <button on="tap:amp-web-push.unsubscribe">
         Unsubscribe from Notifications
     </button>
-</amp-web-push-widget>
+</amp-web-push-widget> -->
