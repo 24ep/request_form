@@ -62,7 +62,7 @@ curl_close($curl);
 }
 function sendline($id,$value_name,$value_change,$prefix){
     
-        if($prefix=='ANJ' or $prefix=='JC'){
+        if($prefix=='ANJ' or $prefix=='JC' or $prefix=='NS'){
                 $callback_url  = 'https://content-service-gate.cdse-commercecontent.com/?env=poojaroonwit&page=create_new&prefix=NS&direct='.$id;
                 $prefix_post = 'NS';
         }
@@ -70,8 +70,8 @@ function sendline($id,$value_name,$value_change,$prefix){
             $callback_url  = 'https://content-service-gate.cdse-commercecontent.com/?env=poojaroonwit&page=update_content&prefix=CR&direct='.$id;
             $prefix_post = 'CR';
     }
-    $text_update = "\n".$prefix_post."-".$id." \n".$_SESSION["nickname"]." have been update ".$value_name." to ".$value_change;
-    $text_update_web_push =  $prefix_post."-".$id." ".$_SESSION["nickname"]." have been update ".$value_name." to ".$value_change;
+    $text_update = "\n".$prefix_post."-".$id." \n".$_SESSION["nickname"]." have been update ".$value_name." = ".$value_change;
+    $text_update_web_push =  $prefix_post."-".$id." ".$_SESSION["nickname"]." have been update ".$value_name." = ".$value_change;
     //send to line
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");

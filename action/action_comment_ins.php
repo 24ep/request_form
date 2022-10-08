@@ -103,29 +103,6 @@ if($comment<>'' or $file_size <>0){
   include('../get/get_comment_ins.php');
   mysqli_close($con);
    //send to line
-   date_default_timezone_set("Asia/Bangkok");
-   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-   mysqli_query($con, "SET NAMES 'utf8' ");
-   $query = "SELECT  * FROM add_new_job  WHERE id = ".$id
-   or die("Error:" . mysqli_error($con));
-   $result =  mysqli_query($con, $query);
-       while($row = mysqli_fetch_array($result)) {
-           $follow_up_by = $row["follow_up_by"];
-           $traffic = $row["traffic"];
-       }
-       $sent_to = [$follow_up_by,$traffic];
-       foreach ($sent_to as $sent_to_username) {
-         if($sent_to_username<>$_SESSION["username"]){
-          $query = "SELECT  * FROM account where username = '".$sent_to_username."'" or die("Error:" . mysqli_error($con));
-          $result =  mysqli_query($con, $query);
-              while($row = mysqli_fetch_array($result)) {
-                  $key = $row["token_line"];
-              }
-              if($key<>"" and $key<>null){
-                sent_line_noti("\nNS-".$id." [ ".$brand." ".$sku." SKUs ]\n----------------------------\n".$_SESSION["nickname"]." has comment (internal) : \n".$comment,$key);
-                send_ms_team("NS-".$id,$brand." ".$sku." SKUs",$_SESSION["nickname"]." has (internal) : <br>".$comment);
-              }
-         }
-      }
+   sendline($id,"internal note",$comment,'NS');
       mysqli_close($con);
 ?>
