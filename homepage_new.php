@@ -135,7 +135,11 @@ if (!$_SESSION["login_csg"]){
     </script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
-
+      <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.css" media="print" onload="this.media='all'">
+    <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.js"></script>
+        <!-- body content ... -->
+        <script defer src="base/js/cookieconsent-init.js"></script>
     <!-- subsc -->
     <!-- <script async custom-element="amp-web-push" src="https://cdn.ampproject.org/v0/amp-web-push-0.1.js"></script>
 
