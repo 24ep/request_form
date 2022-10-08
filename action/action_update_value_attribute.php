@@ -29,7 +29,7 @@
                 add_participant_with_user($_POST['id'],"add_new_job",$value_change);
             }
         }
-        if($prefix=='ANJ' or $prefix=='jc'){
+        if($prefix=='ANJ' or $prefix=='JC'){
             $al_prefix = 'NS';
         }
         echo strtoupper($al_prefix).'-'.$id.' have been updated';
