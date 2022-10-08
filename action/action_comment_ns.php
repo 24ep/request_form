@@ -104,6 +104,5 @@ if($comment<>'' or $file_size <>0){
   include('../get/get_comment_ns.php');
   mysqli_close($con);
    //send to line
-   sendline($id,"comment",$comment,'NS');
-      mysqli_close($con);
+  sendline($id,"comment",$comment,'NS');
 ?>
