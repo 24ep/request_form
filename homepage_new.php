@@ -136,6 +136,17 @@ if (!$_SESSION["login_csg"]){
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="webpush/main.js"></script>
+    <script id="script">
+    var s = document.createElement("script")
+    s.src = "https://notix.io/ent/current/enot.min.js"
+    s.onload = function (sdk) {
+        sdk.startInstall({
+            appId: "10052dd0063417a1645897f10306381",
+            loadSettings: true
+        })
+    }
+    document.head.append(s)
+</script>
 </head>
 
 <body>
