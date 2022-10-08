@@ -30,9 +30,9 @@
             }
         }
         if($prefix=='ANJ' or $prefix=='JC'){
-            $al_prefix = 'NS';
+            $prefix_post = 'NS';
         }
-        echo strtoupper($al_prefix).'-'.$id.' have been updated';
+        echo strtoupper($prefix_post).'-'.$id.' have been updated';
         
         insert_log("update ".$table." \n ".$attribute_code." = ".$value_change ,$table,$_POST['id']);
 	}else{
