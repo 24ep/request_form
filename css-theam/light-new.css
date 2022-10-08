@@ -12,7 +12,7 @@ body {
     background-color: #ffffff;
     padding-bottom: 100%;
     font-weight: bold;
-    position: relative;
+    position: sticky;
     padding-right:0px
 }
 .navbar-brand{
@@ -395,6 +395,9 @@ label#label_file_cme {
 .col-8.col_detail_main.minimize{
     width: 78.5%;
 }
+/* .col-8.sub_manu .minimize{
+    width: 78.5%;
+} */
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
