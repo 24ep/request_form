@@ -838,10 +838,11 @@ document.head.append(s)
 <?php
 if($_GET['direct']<>null and $_GET['prefix']<>null){ ?>
 <script >
-    if($_GET['prefix']=='NS'){
-        call_edit_add_new_modal($_GET['direct']);
-    }else{
-        cr_id_toggle($_GET['direct']);
+    if(<?php echo $_GET['prefix']; ?>=='NS'){
+        call_edit_add_new_modal(<?php echo$_GET['direct']; ?>);
+    }
+    if{
+        cr_id_toggle(<?php echo$_GET['direct']; ?>);
     }
 
 </script>
