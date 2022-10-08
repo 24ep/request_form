@@ -61,9 +61,11 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
 
     function list_ts_non_status($filter,$ts_command_limit ,$status){
         if(strpos($filter,"ticket.status = 'Close'")!==false){
-          $sort_de_status="-ticket.effective_date DESC ,ticket.id DESC ";
+          // $sort_de_status="-ticket.effective_date DESC ,ticket.id DESC ";
+          $sort_de_status= "ticket.id DESC";
         }else{
-          $sort_de_status="-ticket.effective_date DESC ,ticket.case_officer ASC, ticket.id ASC";
+          // $sort_de_status="-ticket.effective_date DESC ,ticket.case_officer ASC, ticket.id ASC";
+          $sort_de_status= "ticket.id DESC";
         }
         $i=1;
         //--
