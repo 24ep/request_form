@@ -1,5 +1,3 @@
-
-
 <?php
  session_start();
  function sent_line_notify($message,$key){
@@ -26,7 +24,51 @@
     //send MS team API
     
 }
+function webpush($users,$text,$id,$callback_url){
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'http://notix.io/api/send?app=10052dd0063417a1645897f10306381',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{
+    "message" :{
+        "text": "'.$text.'",
+        "title": "Ticket update",
+        "url": "'.$callback_url.'"
+    },
+    "target":{
+        "user":['.$users.']
+    }
+
+}',
+  CURLOPT_HTTPHEADER => array(
+    'Authorization-Token: 2d8b30b2e7d8a1a25d05a7246c1401cd53cdba425af72114',
+    'Content-Type: application/json'
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+echo $response;
+
+}
 function sendline($id,$value_name,$value_change,$prefix){
+        if($prefix=='anj' or $prefix=='jc'){
+                $callback_url  = 'https://content-service-gate.cdse-commercecontent.com/?env=poojaroonwit&page=create_new&brand_filter='.$id;
+                $prefix_post = 'NS';
+        }
+        if($prefix=='cr'){
+            $callback_url  = 'https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='.$id;
+            $prefix_post = 'CR';
+    }
       //send to line
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
@@ -45,11 +87,18 @@ function sendline($id,$value_name,$value_change,$prefix){
                   $key = $row["token_line"];
               }
               if($key<>"" and $key<>null){
-                sent_line_notify("\n".$prefix."-".$id." ".$topic."  \n".$_SESSION["nickname"]." have been update ".$value_name." to ".$value_change,$key);
+                $text_update = "\n".$prefix_post."-".$id." ".$topic."  \n".$_SESSION["nickname"]." have been update ".$value_name." to ".$value_change;
+                sent_line_notify($text_update,$key);
                 //send_ms_team($prefix."-".$id,$topic,$_SESSION["nickname"]." changed ".$value_name." to ".$value_change);  
+                $list_user_push .= ',"'.$row["username"].'"';
+                
             }
          }
       }
+
+      
+      $list_user_push = substr($list_user_push,1);
+      webpush($list_user_push,$text_update,$id,$callback_url);
 }
 
 ?>
