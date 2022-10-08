@@ -36,40 +36,39 @@
             }
         };
     //calculate job number
-//get department
+    //get department
         date_default_timezone_set("Asia/Bangkok");
-        $con_map_sub_dept = mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
+        $con_map_sub_dept = mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
         mysqli_query($con_map_sub_dept, "SET NAMES 'utf8' ");
-        $query_map_sub_dept = "SELECT * FROM mapping_dept_subdept where sub_department = '".$_POST["sub_department"]."'";
+        $query_map_sub_dept = "SELECT * FROM content_service_gate.mapping_dept_subdept where sub_department = '".$_POST["sub_department"]."'";
         $result_map_sub_dept =  mysqli_query($con_map_sub_dept, $query_map_sub_dept);
         while($row_map_sub_dept = mysqli_fetch_array($result_map_sub_dept)) {
             $department_cal = $row_map_sub_dept["department"];
         }
 
-
-if($_POST["brand"]<>""){ $insert_head .= "brand";$insert_value .= "'".str_replace("'","''",$_POST["brand"])."'";}
-// if($_POST["department"]<>""){ $insert_head .= ",department";$insert_value .= ",'".$_POST["department"]."'";}
-if($_POST["sub_department"]<>""){ $insert_head .= ",sub_department";$insert_value .= ",'".$_POST["sub_department"]."'";}
-if($_POST["web_cate"]<>""){ $insert_head .= ",web_cate";$insert_value .= ",'".$_POST["web_cate"]."'";}
-if($department_cal<>""){ $insert_head .= ",department";$insert_value .= ",'".$department_cal."'";}
-if($_POST["sku"]<>""){ $insert_head .= ",sku";$insert_value .= ",'".$_POST["sku"]."'";}
-if($_POST["production_type"]<>""){ $insert_head .= ",production_type";$insert_value .= ",'".$_POST["production_type"]."'";}
-if($_POST["business_type"]<>""){ $insert_head .= ",business_type";$insert_value .= ",'".$_POST["business_type"]."'";}
-if($_POST["project_type"]<>""){ $insert_head .= ",project_type";$insert_value .= ",'".$_POST["project_type"]."'";}
-if($_POST["launch_date"]<>""){ $insert_head .= ",launch_date";$insert_value .= ",'".$_POST["launch_date"]."'";}
-if($sum_store<>""){ $insert_head .= ",stock_source";$insert_value .= ",'".$sum_store."'";}
-if($_POST["bu"]<>""){ $insert_head .= ",bu";$insert_value .= ",'".$_POST["bu"]."'";}
-if($sum_product_website<>""){ $insert_head .= ",online_channel";$insert_value .= ",'".$sum_product_website."'";}
-if($_POST["contact_buyer"]<>""){ $insert_head .= ",contact_buyer";$insert_value .= ",'".str_replace("'","''",$_POST["contact_buyer"])."'";}
-if($_POST["contact_vender"]<>""){ $insert_head .= ",contact_vender";$insert_value .= ",'".str_replace("'","''",$_POST["contact_vender"])."'";}
-if($_POST["link_info"]<>""){ $insert_head .= ",link_info";$insert_value .= ",'".$_POST["link_info"]."'";}
-if($_POST["remark"]<>""){ $insert_head .= ",remark";$insert_value .= ",'".$_POST["remark"]."'";}
-if($_SESSION["username"]<>""){ $insert_head .= ",request_username";$insert_value .= ",'".$_SESSION["username"]."'";}
-if($_POST["request_important"]<>""){ $insert_head .= ",request_important";$insert_value .= ",'".$_POST["request_important"]."'";}
-if($sum_tags<>""){ $insert_head .= ",tags";$insert_value .= ",'".$sum_tags."'";}
-date_default_timezone_set("Asia/Bangkok");
-$con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-mysqli_query($con, "SET NAMES 'utf8' ");
+        if($_POST["brand"]<>""){ $insert_head .= "brand";$insert_value .= "'".str_replace("'","''",$_POST["brand"])."'";}
+        if($department_cal<>""){ $insert_head .= ",department";$insert_value .= ",'".$department_cal."'";}
+        if($_POST["sub_department"]<>""){ $insert_head .= ",sub_department";$insert_value .= ",'".$_POST["sub_department"]."'";}
+        if($_POST["web_cate"]<>""){ $insert_head .= ",web_cate";$insert_value .= ",'".$_POST["web_cate"]."'";}
+        if($department_cal<>""){ $insert_head .= ",department";$insert_value .= ",'".$department_cal."'";}
+        if($_POST["sku"]<>""){ $insert_head .= ",sku";$insert_value .= ",'".$_POST["sku"]."'";}
+        if($_POST["production_type"]<>""){ $insert_head .= ",production_type";$insert_value .= ",'".$_POST["production_type"]."'";}
+        if($_POST["business_type"]<>""){ $insert_head .= ",business_type";$insert_value .= ",'".$_POST["business_type"]."'";}
+        if($_POST["project_type"]<>""){ $insert_head .= ",project_type";$insert_value .= ",'".$_POST["project_type"]."'";}
+        if($_POST["launch_date"]<>""){ $insert_head .= ",launch_date";$insert_value .= ",'".$_POST["launch_date"]."'";}
+        if($sum_store<>""){ $insert_head .= ",stock_source";$insert_value .= ",'".$sum_store."'";}
+        if($_POST["bu"]<>""){ $insert_head .= ",bu";$insert_value .= ",'".$_POST["bu"]."'";}
+        if($sum_product_website<>""){ $insert_head .= ",online_channel";$insert_value .= ",'".$sum_product_website."'";}
+        if($_POST["contact_buyer"]<>""){ $insert_head .= ",contact_buyer";$insert_value .= ",'".str_replace("'","''",$_POST["contact_buyer"])."'";}
+        if($_POST["contact_vender"]<>""){ $insert_head .= ",contact_vender";$insert_value .= ",'".str_replace("'","''",$_POST["contact_vender"])."'";}
+        if($_POST["link_info"]<>""){ $insert_head .= ",link_info";$insert_value .= ",'".$_POST["link_info"]."'";}
+        if($_POST["remark"]<>""){ $insert_head .= ",remark";$insert_value .= ",'".$_POST["remark"]."'";}
+        if($_SESSION["username"]<>""){ $insert_head .= ",request_username";$insert_value .= ",'".$_SESSION["username"]."'";}
+        if($_POST["request_important"]<>""){ $insert_head .= ",request_important";$insert_value .= ",'".$_POST["request_important"]."'";}
+        if($sum_tags<>""){ $insert_head .= ",tags";$insert_value .= ",'".$sum_tags."'";}
+        date_default_timezone_set("Asia/Bangkok");
+        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+        mysqli_query($con, "SET NAMES 'utf8' ");
 	$sql = "INSERT INTO add_new_job (
 	".$insert_head."
     )
@@ -98,21 +97,14 @@ mysqli_query($con, "SET NAMES 'utf8' ");
             }
             if($key<>"" and $key<>null){
                 sent_line_noti("\n• คุณได้ทำกาส่ง request ขอเปิด job\n• Ticket ID : NS-".$last_id." [ ".$brand." ".$sku." SKUs ]\n• Store : ".$stock_source,$key);
-                //send_ms_team("NS-".$id,"New NS-ticket comming","ได้ทำกาส่ง request ขอเปิด job<br>• Ticket ID : NS-".$last_id." [ ".$brand." ".$sku." SKUs ]\n• Store : ".$stock_source);
             }
             echo 'Ticket have been create already ! NS-'.$last_id;
-        // $result='<div class="alert alert-success">Ticket have been create already !<strong> ID '.$last_id.'</strong></div>';
-        // header( "Location: /?tab=v-pills-request_list&result=".$result);
 	}else{
-        // echo "<script>
-        // Notiflix.Report.failure(
-        //     'Failure',
-        //     'Error: " . $sql . "<br/><br/>" . $con->error.",
-        //     'Okay',
-        //     )</script>;
-        // ";
         echo 'Error: ' . $sql . '<hr>' . $con->error;
     }
     mysqli_close($con);
-   // header( "location: https://cdse-commercecontent.com/base/job_manage.php");
+    
 ?>
+<script>
+    snapshot_data("all_in_one_project","add_new_job","id",<?php echo $last_id ?>,"add_new_job");
+</script>

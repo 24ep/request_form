@@ -103,13 +103,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
         $result='your ticket have been created ! ID '.$last_id.'';
         // header( "Location: /?tab=v-pills-request_list&result=".$result);
         echo $result;
-        // echo "<script>
-        // Notiflix.Report.success(
-        //     'Already create Request',
-        //     'ID NS-'".$last_id.",
-        //     'Okay',
-        //     )</script>;
-        // ";
+    
 	}else{
         echo "<script>
         Notiflix.Report.failure(
@@ -118,8 +112,8 @@ mysqli_query($con, "SET NAMES 'utf8' ");
             'Okay',
             )</script>;
         ";
-        // echo '<div class="alert alert-danger">Error: ' . $sql . '<hr>' . $con->error.'</div>';
     }
     mysqli_close($con);
-   // header( "location: https://cdse-commercecontent.com/base/job_manage.php");
+    
 ?>
+
