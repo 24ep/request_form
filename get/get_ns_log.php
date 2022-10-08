@@ -14,9 +14,11 @@ if($_POST['action_data']=="24ep"){;
     //    <td>'.$row["value_change"].'</td>
     //    <td>'.$row["action_from_user"].'</td>
     //  </tr>';
+    $tr .= "<li>";
     $tr .= $row["action_from_user"]."<br>";
     $tr .= "<small>".$row["action_date"]."</small>"."<br>";
     $tr .= $row["value_change"]."<br>";
+    $tr .= "</li>";
     
   }
 }elseif($_POST['action_data']=="csg"){
@@ -29,9 +31,11 @@ if($_POST['action_data']=="24ep"){;
     //    <td>'.$row["action"].'</td>
     //    <td>'.$row["action_by"].'</td>
     //  </tr>';
+    $tr .= "<li>";
     $tr .= $row["action_by"]."<br>";
     $tr .= "<small>".$row["action_date"]."</small>"."<br>";
     $tr .= $row["action"]."<br>";
+    $tr .= "</li>";
   }
 }
 
