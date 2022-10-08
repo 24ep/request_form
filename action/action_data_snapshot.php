@@ -15,18 +15,20 @@ while($row = mysqli_fetch_array($result)) {
     WHERE `TABLE_SCHEMA`='".$database."' 
         AND `TABLE_NAME`='".$table."'" or die("Error:" . mysqli_error($con));
     $result_column = mysqli_query($con, $query_column);
-    $comment .= "{snapshot}</br>";
+    $comment .= "{snapshot} 
+    ";
     while($row_column = mysqli_fetch_array($result_column)) {
-        $comment .= $row_column['COLUMN_NAME']." = ".$row[$row_column['COLUMN_NAME']]."</br>";
+        $comment .= $row_column['COLUMN_NAME']." = ".$row[$row_column['COLUMN_NAME']]." 
+        ";
     }
 }
 
 //insert to comment
-$sql = "INSERT INTO all_in_one_project.comment (
-      ticket_id,
-      comment,
-      ticket_type,
-      comment_by
+$sql = "INSERT INTO all_in_one_project.log (
+      action_data_id,
+      action,
+      action_table,
+      action_by
     )
       VALUES(
         ".$id.",
