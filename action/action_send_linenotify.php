@@ -97,8 +97,9 @@ function sendline($id,$value_name,$value_change,$prefix){
          }
       }
 
-      echo $list_user_push;
+  
       $list_user_push = substr($list_user_push,0,1);
+      echo $list_user_push;
       webpush($list_user_push,$text_update,$id,$callback_url);
       
 }
