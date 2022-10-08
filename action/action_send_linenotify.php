@@ -39,7 +39,7 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
     "message" :{
-        "text": "test",
+        "text": "'.$text.'",
         "title": "Ticket updated",
         "url": "'.$callback_url.'"
     },
@@ -71,7 +71,8 @@ function sendline($id,$value_name,$value_change,$prefix){
             $prefix_post = 'CR';
     }
     $text_update = "\n".$prefix_post."-".$id." \n".$_SESSION["nickname"]." have been update ".$value_name." to ".$value_change;
-      //send to line
+    $text_update_web_push =  $prefix_post."-".$id." ".$_SESSION["nickname"]." have been update ".$value_name." to ".$value_change;
+    //send to line
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT  * FROM add_new_job  WHERE id = ".$id or die("Error:" . mysqli_error($con));
@@ -103,7 +104,7 @@ function sendline($id,$value_name,$value_change,$prefix){
   
       $list_users = substr($list_user_push,1);
       echo $list_users;
-      webpush($list_users,$text_update,$id,$callback_url);
+      webpush($list_users,$text_update_web_push,$id,$callback_url);
       
 }
 
