@@ -805,7 +805,8 @@ function search() {
         sdk.startInstall({
             appId: "10052dd0063417a1645897f10306381",
             loadSettings: true,
-            user: "<?php echo $_SESSION['username']; ?>"
+            user: "<?php echo $_SESSION['username']; ?>",
+            disableConsoleDebug: true
         })
     }
     document.head.append(s)
