@@ -135,9 +135,13 @@ if (!$_SESSION["login_csg"]){
     </script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="js/web_push.js"></script>
 </head>
 
 <body>
+<button class="js-push-btn" style="display: none;">
+        Subscribe Push Messaging
+</button>
 <!-- <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a> -->
     <!-- <nav class="navbar navbar-light bg-light">
         <div class="" style="background:#ff000069;color:white;position: fixed;z-index: 1;">
