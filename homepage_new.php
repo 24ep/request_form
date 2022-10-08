@@ -136,49 +136,14 @@ if (!$_SESSION["login_csg"]){
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="webpush/main.js"></script>
-    <script id="script">
-    var s = document.createElement("script")
-    s.src = "https://notix.io/ent/current/enot.min.js"
-    s.onload = function (sdk) {
-        sdk.startInstall({
-            appId: "10052dd0063417a1645897f10306381",
-            loadSettings: true
-        })
-    }
-    document.head.append(s)
-</script>
+    
 </head>
 
 <body>
 <button class="js-push-btn" style="display: none;">
         Subscribe Push Messaging
 </button>
-<!-- <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a> -->
-    <!-- <nav class="navbar navbar-light bg-light">
-        <div class="" style="background:#ff000069;color:white;position: fixed;z-index: 1;">
-            <a class="navbar-brand" href="#">You are in pre-launch environment</a>
-        </div>
-    </nav> -->
-    <!-- <div class="offcanvas offcanvas-start overflow-auto" role="dialog" tabindex="-1" id="edit_add_new"
-        style="width:100%" aria-labelledby="offcanvasExampleLabel">
-        <div id="callmodal_request_add_new" style="height: 100%;"></div>
-    </div> -->
-    <!-- offcanvas detail cr -->
-    <!-- <div class="offcanvas offcanvas-start" tabindex="0" id="detail_cr" style="width:100%"
-        aria-labelledby="offcanvasExampleLabel">
-        <div id="calloffcanvas_cr">
-        </div>
-    </div> -->
-    <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="notificationcanvas" aria-labelledby="offcanvasRightLabel"
-        style="position: absolute;">
-        <div class="offcanvas-header">
-            <h5 id="offcanvasRightLabel">Activity</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <?php// include("get/get_log.php"); ?>
-        </div>
-    </div> -->
+
     <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1" id="content_request_canvas"
         aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header" style="background: #313131;color: white;">
@@ -833,3 +798,14 @@ function search() {
         </div>
     </div>
 </div>
+<script id="script">
+    var s = document.createElement("script")
+    s.src = "https://notix.io/ent/current/enot.min.js"
+    s.onload = function (sdk) {
+        sdk.startInstall({
+            appId: "10052dd0063417a1645897f10306381",
+            loadSettings: true
+        })
+    }
+    document.head.append(s)
+</script>
