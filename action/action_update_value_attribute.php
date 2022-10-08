@@ -22,8 +22,11 @@
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
 	if($query) {
-        if( $table == 'add_new_job'){
-            sendline($id,$attribute_code,$value_change,strtoupper($prefix));
+        if( $table == 'add_new_job'){ //send notify only status of ticket have been update
+            if($attribute_code=='status'){ //send notify only status of ticket have been update
+                sendline($id,$attribute_code,$value_change,strtoupper($prefix));
+            }
+           
             add_participant($_POST['id'],"add_new_job");
             if($attribute_code=="follow_assign_name"){
                 add_participant_with_user($_POST['id'],"add_new_job",$value_change);
