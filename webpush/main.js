@@ -135,7 +135,7 @@ function subscribeUserToPush() {
 function updateSubscriptionOnServer(subscription = null, subscribe = true) {
     return new Promise(function (resolve, reject) {
         let extra = (subscribe)? '?subscribe': '?unsubscribe';
-        fetch('save-subscription.php'+extra, {
+        fetch('base/webpush/save-subscription.php'+extra, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
