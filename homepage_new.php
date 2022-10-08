@@ -804,7 +804,7 @@ function search() {
     s.onload = function (sdk) {
         sdk.startInstall({
             appId: "10052dd0063417a1645897f10306381",
-            loadSettings: true
+            loadSettings: true,
             user: "<?php echo $_SESSION['username']; ?>"
         })
     }
