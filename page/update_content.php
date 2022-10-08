@@ -1,6 +1,6 @@
 <?php 
-  include("../get/get_default_profile_image.php");
-  include("../get/action_send_linenotify.php");
+//   include("../get/get_default_profile_image.php");
+//   include("../get/action_send_linenotify.php");
 ?>
 <div class="container-fluid ">
     <div class="input-group input-group-sm p-3" style="position: initial!important;">
