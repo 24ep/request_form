@@ -35,7 +35,7 @@ function get_comment_ns($id){
           <br><small style="color:gray">Comment '.$row['comment_date'].'</small>
       </div>
       <div style="margin-right: 7px;">'.$list_file.'</div>
-          <p>'.$row['comment'].'</p>
+          <p class="m-2">'.$row['comment'].'</p>
           <div class="baguetteBoxFour gallery">'.$list_image.'</div>
       </div>
       </li>';
