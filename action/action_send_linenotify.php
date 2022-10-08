@@ -39,9 +39,9 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
     "message" :{
-        "text": "test",
+        "text": "'.$text.'",
         "title": "Ticket updated",
-        "url": "https://content-service-gate.cdse-commercecontent.com/?env=poojaroonwit&page=create_new"
+        "url": "'.$callback_url.'"
     },
     "target":{
         "user":['.$users.']
