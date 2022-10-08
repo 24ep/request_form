@@ -15,8 +15,9 @@ while($row = mysqli_fetch_array($result)) {
     WHERE `TABLE_SCHEMA`='".$database."' 
         AND `TABLE_NAME`='".$table."'" or die("Error:" . mysqli_error($con));
     $result_column = mysqli_query($con, $query_column);
+    $comment .= "{snapshot}</br>";
     while($row_column = mysqli_fetch_array($result_column)) {
-        $comment .= "{snapshot}".$row_column['COLUMN_NAME']." = ".$row[$row_column['COLUMN_NAME']]."</br>";
+        $comment .= $row_column['COLUMN_NAME']." = ".$row[$row_column['COLUMN_NAME']]."</br>";
     }
 }
 
