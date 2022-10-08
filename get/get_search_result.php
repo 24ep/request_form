@@ -5,7 +5,7 @@ date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 //---
-$query = "SELECT anj.id  from all_in_one_project.add_new_job anj where anj.id='".$input."'" or die("Error:" . mysqli_error($con));
+$query = "SELECT anj.id , anj.brand from all_in_one_project.add_new_job anj where anj.id='".$input."'" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 echo "<ul style='list-style: unset;padding: 0px;font-weight: bold;color: #1b2c52;'>";
 while($row = mysqli_fetch_array($result)) {
@@ -18,7 +18,7 @@ while($row = mysqli_fetch_array($result)) {
     echo "<li>Job Number : ".$row['job_number']." <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_add_new(&#39;".$row['csg_request_new_id']."&#39)' name='open-outline'>  </li>";
 }
 //---
-$query = "SELECT cr.id from all_in_one_project.content_request cr where cr.id = '".$input."' or cr.title like '%".$input."%'  limit 10" or die("Error:" . mysqli_error($con));
+$query = "SELECT cr.id,cr.title from all_in_one_project.content_request cr where cr.id = '".$input."' or cr.title like '%".$input."%'  limit 10" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     echo "<li>CR-".$row['id']." ".$row['title']."  <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_content_request(&#39;".$row['id']."&#39)' name='open-outline'>  </li>";
