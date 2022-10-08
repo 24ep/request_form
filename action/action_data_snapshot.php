@@ -21,7 +21,7 @@ while($row = mysqli_fetch_array($result)) {
 }
 
 //insert to comment
-$sql = "INSERT INTO comment (
+$sql = "INSERT INTO all_in_one_project.comment (
       ticket_id,
       comment,
       ticket_type,
@@ -36,4 +36,10 @@ $sql = "INSERT INTO comment (
       $query = mysqli_query($con,$sql);
 
       mysqli_close($con);
+      if($query){
+        echo "Snapshort ID:".$id ;
+      }else{
+        echo "Error: error Snapshort ID:".$id."$con->error";
+      }
+    
 ?>
