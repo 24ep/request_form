@@ -9,63 +9,63 @@ if($_GET['action_data']=="24ep"){;
   $query = "SELECT * FROM u749625779_cdscontent.log_cms where action_at_table='".$action_table."' and job_number ='".$job_number."'" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
-     $tr .= 
-     '<tr>
-       <td>'.$row["action_date"].'</td>
-       <td>'.$row["value_change"].'</td>
-       <td>'.$row["action_from_user"].'</td>
-     </tr>';
+    //  $tr .= 
+    //  '<tr>
+    //    <td>'.$row["action_date"].'</td>
+    //    <td>'.$row["value_change"].'</td>
+    //    <td>'.$row["action_from_user"].'</td>
+    //  </tr>';
+    $tr .= $row["action_from_user"];
+    $tr .= "<small>".$row["action_date"]."</small>";
+    $tr .= $row["value_change"];
   }
 }elseif($_GET['action_data']=="csg"){
   $query = "SELECT * FROM all_in_one_project.log where action_table='".$action_table."' and action_data_id =".$id or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
-     $tr .= 
-     '<tr>
-       <td>'.$row["action_date"].'</td>
-       <td>'.$row["action"].'</td>
-       <td>'.$row["action_by"].'</td>
-     </tr>';
+    //  $tr .= 
+    //  '<tr>
+    //    <td>'.$row["action_date"].'</td>
+    //    <td>'.$row["action"].'</td>
+    //    <td>'.$row["action_by"].'</td>
+    //  </tr>';
+     $tr .= $row["action_by"];
+     $tr .= "<small>".$row["action_date"]."</small>";
+     $tr .= $row["action"];
   }
 }
-
-
 ?>
-
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>log NS-<?php echo $id;?></title>
-  </head>
-  <body style="font-size:14px">
-    
-
+</head>
+<body style="font-size:14px">
     <!-- Optional JavaScript; choose one of the two! -->
-
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
     <div class="container-md" style="padding:40px">
-    <h6>log <?php echo "NS-".$id;?></h6>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">action date</th>
-          <th scope="col">action</th>
-          <th scope="col">action by</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php echo $tr; ?>
-      </tbody>
-    </table>
+        <h6>log <?php echo "NS-".$id;?></h6>
+        <!-- <table class="table table-bordered"> -->
+            <!-- <thead>
+                <tr>
+                    <th scope="col">action date</th>
+                    <th scope="col">action</th>
+                    <th scope="col">action by</th>
+                </tr>
+            </thead> -->
+            <!-- <tbody> -->
+                <?php echo $tr; ?>
+            <!-- </tbody>
+        </table> -->
     </div>
-
-  </body>
+</body>
 </html>
