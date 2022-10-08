@@ -42,7 +42,7 @@ mysqli_close($con);
         <div class="row align-items-center p-3">
             <div class="col-3">
                 <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;" >
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Filter</span>
                     <input type="text" value="<?php echo $_POST['brand_filter'];?>" style="position: inherit;" class="form-control"
                         id="brand_filter" onchange="filter_update();" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-sm" placeholder="Dept , Sub Dept , Brand , ID">

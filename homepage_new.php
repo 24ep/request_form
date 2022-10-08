@@ -186,7 +186,7 @@ if (!$_SESSION["login_csg"]){
     </div>
     <div class="row" style="--bs-gutter-x: 0rem;">
         <div class="col-2 list_bra shadow border-end">
-            <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical" style="position: fixed;width: inherit;">
                 <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
                     class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-secondary  bg-gradient shadow rounded-pill"
                     style="width: 2rem; height:2rem;padding: 0px;z-index: 1;top: 95px!important;">
@@ -351,7 +351,7 @@ if (!$_SESSION["login_csg"]){
                     }
                 }
             ?>
-            <nav class="p-3 bg-white shadow-sm border-bottom">
+            <nav class="p-3 bg-white shadow-sm border-bottom stickey-top">
                 <div class="container-fluid d-flex" style="align-items: center;height: 40px;">
                     <img
                         src="https://ui-avatars.com/api/?name=<?php echo $ac_firstname.'+'.$ac_lastname; ?>&background=<?php echo bg_dept($ac_department); ?>&color=fff&rounded=true&size=30">
