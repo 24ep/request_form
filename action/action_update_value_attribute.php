@@ -11,7 +11,7 @@
  session_start();
     include("connect.php");
     include('action_insert_log.php');
-    include("action_send_linenotify.php");
+    // include("action_send_linenotify.php");
     date_default_timezone_set("Asia/Bangkok");
     if($value_change==''){
         $sql = "UPDATE ".$database.".".$table." SET ".$attribute_code." = null  WHERE ".$primary_key_id."='".$id."'";
