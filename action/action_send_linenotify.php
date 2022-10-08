@@ -41,7 +41,7 @@ curl_setopt_array($curl, array(
     "message" :{
         "text": "'.$text.'",
         "title": "Ticket updated",
-        "url": "https://content-service-gate.cdse-commercecontent.com/?env=poojaroonwit&page=create_new"
+        "url": "https://content-service-gate.cdse-commercecontent.com"
     },
     "target":{
         "user":['.$users.']
