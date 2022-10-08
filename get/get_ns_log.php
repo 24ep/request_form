@@ -1,5 +1,5 @@
 <?php
-  // include("get_default_profile_image.php");
+  include("get_default_profile_image.php");
 $id = $_POST['action_data_id'];
 $action_table = $_POST['action_table'];
 $actiob_data = $_POST['action_data'];
@@ -15,9 +15,9 @@ if($_POST['action_data']=="24ep"){;
     //    <td>'.$row["value_change"].'</td>
     //    <td>'.$row["action_from_user"].'</td>
     //  </tr>';
-    // $image_profile = profile_avatar($row["action_from_user"],$row['department'],25);
+    $image_profile = profile_avatar($row["action_from_user"],$row['department'],25);
     $tr .= "<li class='list-group-item list-group-item border-bottom p-2' >";
-    // $tr .=  $image_profile;
+    $tr .=  $image_profile;
     $tr .= "<strong>".$row["action_from_user"]."</strong>";
     $tr .= " <small class='ms-1'>".$row["action_date"]."</small>"."<br>";
     $tr .= $row["value_change"]."<br>";
@@ -34,10 +34,10 @@ if($_POST['action_data']=="24ep"){;
     //    <td>'.$row["action"].'</td>
     //    <td>'.$row["action_by"].'</td>
     //  </tr>';
-    // $image_profile = profile_avatar($row["action_from_user"],$row['department'],25);
+    $image_profile = profile_avatar($row["action_from_user"],$row['department'],25);
     $action = str_replace("{snapshot}","<span class='badge rounded-pill bg-primary' >Snapshot</span>",$row["action"]);
     $tr .= "<li class='list-group-item list-group-item border-bottom p-2' >";
-    // $tr .=  $image_profile;
+    $tr .=  $image_profile;
     $tr .= "<strong>".$row["action_by"]."</strong>";
     $tr .= " <small class='ms-1'>".$row["action_date"]."</small>"."<br>";
     $tr .=   $action."<br>";
