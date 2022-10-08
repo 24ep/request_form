@@ -351,7 +351,7 @@ if (!$_SESSION["login_csg"]){
                     }
                 }
             ?>
-            <nav class="p-3 bg-white shadow-sm border-bottom stickey-top">
+            <nav class="p-3 bg-white shadow-sm border-bottom sticky-top">
                 <div class="container-fluid d-flex" style="align-items: center;height: 40px;">
                     <img
                         src="https://ui-avatars.com/api/?name=<?php echo $ac_firstname.'+'.$ac_lastname; ?>&background=<?php echo bg_dept($ac_department); ?>&color=fff&rounded=true&size=30">
