@@ -40,7 +40,7 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS =>'{
     "message" :{
         "text": "'.$text.'",
-        "title": "Ticket update",
+        "title": "Ticket updated",
         "url": "'.$callback_url.'"
     },
     "target":{
