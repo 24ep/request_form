@@ -14,9 +14,9 @@ if($_POST['action_data']=="24ep"){;
     //    <td>'.$row["value_change"].'</td>
     //    <td>'.$row["action_from_user"].'</td>
     //  </tr>';
-    $tr .= $row["action_from_user"];
-    $tr .= "<small>".$row["action_date"]."</small>";
-    $tr .= $row["value_change"];
+    $tr .= $row["action_from_user"]."<br>";
+    $tr .= "<small>".$row["action_date"]."</small>"."<br>";
+    $tr .= $row["value_change"]."<br>";
     
   }
 }elseif($_POST['action_data']=="csg"){
@@ -29,9 +29,9 @@ if($_POST['action_data']=="24ep"){;
     //    <td>'.$row["action"].'</td>
     //    <td>'.$row["action_by"].'</td>
     //  </tr>';
-    $tr .= $row["action_by"];
-    $tr .= "<small>".$row["action_date"]."</small>";
-    $tr .= $row["action"];
+    $tr .= $row["action_by"]."<br>";
+    $tr .= "<small>".$row["action_date"]."</small>"."<br>";
+    $tr .= $row["action"]."<br>";
   }
 }
 
@@ -46,17 +46,17 @@ if($_POST['action_data']=="24ep"){;
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <div class="container-md" style="padding:10px">
     <h6>log <?php echo "NS-".$id;?></h6>
-    <table class="table table-bordered">
-      <thead>
+    <!-- <table class="table table-bordered"> -->
+      <!-- <thead>
         <tr>
           <th scope="col">action date</th>
           <th scope="col">action</th>
           <th scope="col">action by</th>
         </tr>
-      </thead>
-      <tbody>
+      </thead> -->
+      <!-- <tbody> -->
         <?php echo $tr; ?>
-      </tbody>
-    </table>
+      <!-- </tbody> -->
+    <!-- </table> -->
     </div>
 
