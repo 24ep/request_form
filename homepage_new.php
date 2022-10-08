@@ -140,9 +140,9 @@ if (!$_SESSION["login_csg"]){
 </head>
 
 <body>
-<button class="js-push-btn" style="display: none;">
+<!-- <button class="js-push-btn" style="display: none;">
         Subscribe Push Messaging
-</button>
+</button> -->
 
     <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1" id="content_request_canvas"
         aria-labelledby="offcanvasExampleLabel">
