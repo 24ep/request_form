@@ -8,23 +8,30 @@ if($_POST['action_data']=="24ep"){;
   $query = "SELECT * FROM u749625779_cdscontent.log_cms where action_at_table='".$action_table."' and job_number ='".$job_number."'" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
-     $tr .= 
-     '<tr>
-       <td>'.$row["action_date"].'</td>
-       <td>'.$row["value_change"].'</td>
-       <td>'.$row["action_from_user"].'</td>
-     </tr>';
+    //  $tr .= 
+    //  '<tr>
+    //    <td>'.$row["action_date"].'</td>
+    //    <td>'.$row["value_change"].'</td>
+    //    <td>'.$row["action_from_user"].'</td>
+    //  </tr>';
+    $tr .= $row["action_from_user"];
+    $tr .= "<small>".$row["action_date"]."</small>";
+    $tr .= $row["value_change"];
+    
   }
 }elseif($_POST['action_data']=="csg"){
   $query = "SELECT * FROM all_in_one_project.log where action_table='".$action_table."' and action_data_id =".$id or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
-     $tr .= 
-     '<tr>
-       <td>'.$row["action_date"].'</td>
-       <td>'.$row["action"].'</td>
-       <td>'.$row["action_by"].'</td>
-     </tr>';
+    //  $tr .= 
+    //  '<tr>
+    //    <td>'.$row["action_date"].'</td>
+    //    <td>'.$row["action"].'</td>
+    //    <td>'.$row["action_by"].'</td>
+    //  </tr>';
+    $tr .= $row["action_by"];
+    $tr .= "<small>".$row["action_date"]."</small>";
+    $tr .= $row["action"];
   }
 }
 
