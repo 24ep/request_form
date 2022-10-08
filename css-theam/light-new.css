@@ -14,6 +14,13 @@ body {
     position: sticky;
     padding-right:0px
 }
+.nav_list_bra{
+    position: fixed;
+    width: inherit;
+    color: black;
+    background-color: #ffffff;
+    height: -webkit-fill-available;
+}
 .navbar-brand{
     font-weight: 900;
     margin: 20px 15px;
