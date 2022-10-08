@@ -32,9 +32,9 @@ if($_GET['action_data']=="24ep"){;
     //    <td>'.$row["action_by"].'</td>
     //  </tr>';
      $tr .= "<li>";
-     $tr .= $row["action_by"];
-     $tr .= "<small>".$row["action_date"]."</small>";
-     $tr .= $row["action"];
+     $tr .= $row["action_by"]."</br>";
+     $tr .= "<small>".$row["action_date"]."</small>"."</br>";
+     $tr .= $row["action"]."</br>";
      $tr .= "</li>";
   }
 }
