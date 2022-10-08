@@ -328,7 +328,7 @@ if (!$_SESSION["login_csg"]){
         </div>
         <div class="col-2 shadow sub_manu hide p-0 bg-white bg-gradient border-end" id="sub_manu" style="margin-left: inherit;">
         </div>
-        <div class="col-10 col_detail_main overflow-auto" style="font-size: 14px;padding: 0px;margin-left: inherit;">
+        <div class="col-10 col_detail_main" style="font-size: 14px;padding: 0px;margin-left: inherit;">
             <?php
 
             $database = 'all_in_one_project';
