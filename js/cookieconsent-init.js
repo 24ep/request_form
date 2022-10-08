@@ -50,6 +50,7 @@ cc.run({
                 }
             },
             settings_modal: {
+                position: 'left', 
                 title: 'Cookie preferences',
                 save_settings_btn: 'Save settings',
                 accept_all_btn: 'Accept all',
@@ -105,6 +106,15 @@ cc.run({
                             readonly: false
                         }
                     }, {
+                        title: 'Push Mesage cookies',
+                        description: 'These cookies collect you device information and also push mesage to you if you are participants of any ticket',
+                        toggle: {
+                            value: 'Notix.io',
+                            enabled: false,
+                            readonly: false
+                        }
+                    },
+                    {
                         title: 'More information',
                         description: 'For any queries in relation to our policy on cookies and your choices, please <a class="cc-link" href="#yourcontactpage">contact us</a>.',
                     }

@@ -92,7 +92,7 @@ function sendline($id,$value_name,$value_change,$prefix){
               if($key<>"" and $key<>null){
                 
                 sent_line_notify($text_update,$key);
-                echo $text_update;
+                // echo $text_update;
                 //send_ms_team($prefix."-".$id,$topic,$_SESSION["nickname"]." changed ".$value_name." to ".$value_change);  
                
                 
