@@ -23,7 +23,7 @@ function get_comment_ns($id){
                 $list_file .= '<a type="button" href="'.$herf.'" style="margin-right:8px;margin-bottom:5px;font-size: 12px;border-color: #7ec1a2;"class="btn btn-outline-success btn-sm "><ion-icon name="document-outline" style="font-size: 12px;"></ion-icon>'.$row_attach['file_name'].'</a>';
             }
         }
-        // $image_profile  = profile_avatar($row['comment_by'],"",25);
+        $image_profile  = profile_avatar($row['comment_by'],"",25);
       echo   '
       <li class="list-group-item" style="position: initial;padding-left:0px;border-color: #e9ecef;border-right-width: 0px;
       border-left-width: 0px;
