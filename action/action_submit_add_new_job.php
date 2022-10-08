@@ -105,5 +105,16 @@
     
 ?>
 <script>
+    function snapshot_data(database,table,primary_key_id,id,ticket_type){
+    $.post("../base/action/action_data_snapshot.php", {
+                database: database,
+                table: table,
+                primary_key_id: primary_key_id,
+                id:id,
+                ticket_type:ticket_type
+            }, function(data) {
+                Notiflix.Notify.success(data);
+            });
+    }
     snapshot_data("all_in_one_project","add_new_job","id",<?php echo $last_id ?>,"add_new_job");
 </script>
