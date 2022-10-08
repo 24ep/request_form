@@ -11,7 +11,7 @@ window.addEventListener('load', function () {
     if (!('PushManager' in window)) {
         return;
     }
-    navigator.serviceWorker.register('sw.js')
+    navigator.serviceWorker.register('base/sw.js')
     .then(function(registration){
         serviceWorkerRegistration = registration;
         pushButton.style.display = "block";
