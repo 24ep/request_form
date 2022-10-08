@@ -13,7 +13,7 @@ session_start();
 // include('action_send_line_api.php');
 include('action_add_participant.php');
 include('action_insert_log.php');
-// include("action_send_linenotify.php");
+include("action_send_linenotify.php");
 $id = $_POST["id"];
 $ticket_type = "add_new";
 $comment = str_replace("'","''",$_POST["comment"]);
