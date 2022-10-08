@@ -63,11 +63,11 @@ echo $response;
 function sendline($id,$value_name,$value_change,$prefix){
     
         if($prefix=='ANJ' or $prefix=='JC'){
-                $callback_url  = 'https://content-service-gate.cdse-commercecontent.com/?env=poojaroonwit&page=create_new&brand_filter='.$id;
+                $callback_url  = 'https://content-service-gate.cdse-commercecontent.com/?env=poojaroonwit&page=create_new&prefix=NS&direct='.$id;
                 $prefix_post = 'NS';
         }
         if($prefix=='CR'){
-            $callback_url  = 'https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='.$id;
+            $callback_url  = 'https://content-service-gate.cdse-commercecontent.com/?env=poojaroonwit&page=update_content&prefix=CR&direct='.$id;
             $prefix_post = 'CR';
     }
     $text_update = "\n".$prefix_post."-".$id." \n".$_SESSION["nickname"]." have been update ".$value_name." to ".$value_change;
