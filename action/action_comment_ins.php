@@ -103,6 +103,6 @@ if($comment<>'' or $file_size <>0){
   include('../get/get_comment_ins.php');
   mysqli_close($con);
    //send to line
-   sendline($id,"internal note",$comment,'NS');
+  //  sendline($id,"internal note",$comment,'NS');
       mysqli_close($con);
 ?>
