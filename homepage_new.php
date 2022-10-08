@@ -135,7 +135,7 @@ if (!$_SESSION["login_csg"]){
     </script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
-    <script src="js/web_push.js"></script>
+    <script src="webpush/main.js"></script>
 </head>
 
 <body>
