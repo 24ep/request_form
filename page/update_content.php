@@ -1,8 +1,9 @@
 <div class="container-fluid ">
     <div class="input-group input-group-sm p-3" style="position: initial!important;">
         <span class="input-group-text" id="basic-addon1">
-            <ion-icon style="vertical-align: middle;margin-right: 5px;" name="search-outline">
-            </ion-icon> Search
+            <ion-icon style="vertical-align: middle;margin-right: 5px;" name="filter-circle-outline">
+            
+            </ion-icon> Filter
         </span>
         <?php 
             if($_SESSION["ts_query_input"]<>""){

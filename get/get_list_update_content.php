@@ -99,7 +99,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         on pb.prefix  = ticket.ticket_template
         -- and ticket.status not in ('archive','cancel')
         where ".$ts_filter."  and lower(ticket.status) not in ('cancel','archive')
-         order by ticket.status desc ,".$sort_de_status."  limit 300";
+         order by ".$sort_de_status."  limit 300";
         $result = mysqli_query($con, $query);
         
         echo "  <li class='row mb-3' style='color: #b3b3b3;font-weight: 600;text-align-last: center;'>
