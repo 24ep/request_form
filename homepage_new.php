@@ -229,7 +229,7 @@ if (!$_SESSION["login_csg"]){
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link" id="nav_update_content" data-bs-toggle="pill" type="button"
                             role="tab" aria-selected="false" onclick="get_page('update_content');">
-                            <ion-icon name="ticket"></ion-icon><span class="main-manu-nav">Other Requests</span>
+                            <ion-icon name="ticket"></ion-icon><span class="main-manu-nav">Edit Requests</span>
                         </a>
                     </li>
                     <?php if(strpos($_SESSION["department"],'Content')!==false){
