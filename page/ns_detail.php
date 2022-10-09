@@ -50,6 +50,7 @@
             brand_info.link as brand_info_link,
             brand_editor.body  as brand_editor,
             anj.web_cate as web_cate,
+            jc.id as jc_id,
             jc.approved_date as approved_date,
             jc.job_number as job_number,
             jc.luanch_date as luanchdate,
@@ -74,6 +75,7 @@
             where anj.id = ".$_POST['id']." ORDER BY anj.id DESC " or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
+      $jc_id = $row['jc_id'];
       $id = $row['id'];
       $luanchdate=$row['luanchdate'];
       $brand = $row['brand'];
