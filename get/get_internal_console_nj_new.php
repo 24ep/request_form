@@ -170,7 +170,12 @@
                 "
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>'.$text_start_jc.'</button>';
               }else{
-                $bt_content = '<button 
+                $bt_content = '
+                <button   data-bs-toggle="modal" data-bs-target="#exampleModal"
+                onclick="convert_to_akeneo_template('.$id.'&#39;,&#39;'.$job_number.'&#39;,&#39;'.$launch_date.'&#39;,&#39;'.$content_assign_name.'&#39;)"
+                class="btn btn-sm btn-outline-info shadow-sm bg-gradient rounded">Convert to PIM template</button>
+                
+                <button 
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_content_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
@@ -240,6 +245,7 @@
                         <input type="hidden" id="cs_edit_status" value="<?php echo $status_change_to;?>">
                         <input type="hidden" id="cs_edit_follow_up_by" value="<?php echo $_SESSION['username'];?>">
                     </li>
+           
                     <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_content_complete_date; ?>>
                         writing <?php echo $bt_content; ?> 
                         <input type="hidden" id="cs_edit_content_start_date" value="CURRENT_TIMESTAMP">
@@ -315,6 +321,27 @@ function action_transfer_to_job_cms() {
             brand:brand,
             product_web_site:product_web_site,
             recive_mail_date:recive_mail_date
+        },
+        function(data) {
+            // $('#form_production').html(data);
+            var result = data.includes("Error");
+            if (result == false) {
+                Notiflix.Notify.success(data);
+            } else {
+                Notiflix.Report.failure(
+                    'Failure',
+                    data,
+                    'Okay',
+                )
+            }
+        });
+}
+function convert_to_akeneo_template(id,job_number,launch_date,content_assign_name){
+    $.post("base/convert/interface.php", {
+        id:id,
+        job_number:job_number,
+        launch_date:launch_date,
+        content_assign_name:content_assign_name
         },
         function(data) {
             // $('#form_production').html(data);
