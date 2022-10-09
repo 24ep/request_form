@@ -68,12 +68,13 @@ function get_value($crid,$col_re,$db){
                                     '.$option_function.'
                             </select>
                           </div>
-                          <div class="col-auto">
-                            <small id="'.$row_pim["code"].'HelpInline" class="text-muted" style="margin-left:10px">
-                                '.$row_pim["help_info"].'
-                            </small>
-                        </div>
+                        
                       </div>';
+                //       <div class="col-auto">
+                //       <small id="'.$row_pim["code"].'HelpInline" class="text-muted" style="margin-left:10px">
+                //           '.$row_pim["help_info"].'
+                //       </small>
+                //   </div>
     unset($option_function);
   }
   $get_setting_pim_convert_function =  $setting_form;
