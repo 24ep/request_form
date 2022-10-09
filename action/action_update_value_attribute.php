@@ -23,7 +23,7 @@
     $query = mysqli_query($con,$sql);
 	if($query) {
         if( $table == 'add_new_job'){ //send notify only status of ticket have been update
-            if($attribute_code=='status'){ //send notify only status of ticket have been update
+            if($attribute_code=='status' or $attribute_code=='comment'){ //send notify only status of ticket have been update
                 sendline($id,$attribute_code,$value_change,strtoupper($prefix));
             }
            
