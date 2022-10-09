@@ -105,5 +105,5 @@ if($comment<>'' or $file_size <>0){
   include('../get/get_comment_cr.php');
   mysqli_close($con);
    //send to line
-   sendline($id,"comment",$comment,'CR');
+   sendline($id,"comment",strip_tags($comment),'CR');
 ?>
