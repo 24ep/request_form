@@ -19,6 +19,19 @@ function bg_dept($department){
     }
     return $bg;
 }
+function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
+    $con_cr= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con_cr));
+    mysqli_query($con_cr, "SET NAMES 'utf8' ");
+    $query_cr = "SELECT * FROM ".$db.".".$table." where ".$primary_key_id." = '".$crid."' ORDER BY id DESC" or die("Error:" . mysqli_error($con_cr));
+    $result_cr = mysqli_query($con_cr, $query_cr);
+    while($row_cr = mysqli_fetch_array($result_cr)) {
+       
+                $current_cr = $row_cr[$col_re];
+  
+    }
+    mysqli_close($con_cr);
+    return $current_cr;
+}
 if (!$_SESSION["login_csg"]){ 
             Header("Location: login");
     }else{
@@ -181,7 +194,7 @@ if (!$_SESSION["login_csg"]){
     <div class="row" style="--bs-gutter-x: 0rem;">
         <div class="col-2 list_bra">
             <div class="nav flex-column nav-pills nav_list_bra border-end" 
-                style="background-color: <?php echo $manu_shade; ?>" 
+                style="background-color: <?php echo get_value_main($_SESSION['username'],"manu_shade","all_in_one_project","account","username"); ?>" 
              id="v-pills-tab" role="tablist"
                 aria-orientation="vertical">
                 <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"

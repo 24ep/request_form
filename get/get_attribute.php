@@ -34,6 +34,40 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
     return $element;
   }
   
+  function return_input_color($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
+    if($site_element=='datetime-local'){
+      if($current_value <> null){
+        $current_value = date('Y-m-d H:i:s',strtotime($current_value));
+        $current_value = str_replace(" ","T",$current_value);
+      }
+      
+     
+    }
+    if($enable_edit==''){
+      $badge_edit_lv = '<ion-icon style="color:#707684" name="color-wand-outline"></ion-icon>';
+    }else{
+      $badge_edit_lv  ='';
+    }
+    $element = '
+    <li class="list-group-item m-2 row" style="display: inline-flex;">
+      <div class="col-3 fw-bold">'.$att_name.$badge_edit_lv.' </div>
+      <div class="col-9">
+        <input
+          class="form-control form-control-color"
+          id="'.$code_element.'"
+          name="'.$code_element.'"
+          type="'.$site_element.'"
+          style="border: 0px"
+          value="'.$current_value.'"
+          '.$enable_edit.'
+          onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
+        />
+      </div>
+    </li>
+    ';
+    return $element;
+  }
+  
   function return_s_select_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
    
@@ -174,8 +208,10 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
         }
         if($row["attribute_type"]=="number"){
         $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"number",${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
-          }elseif($row["attribute_type"]=="text" or $row["attribute_type"]=="color" ){
+          }elseif($row["attribute_type"]=="text"){
           $element .= return_input_box($row["attribute_code"],$row["attribute_label"],$row["attribute_type"],${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
+          }elseif($row["attribute_type"]=="color" ){
+            $element .= return_input_color($row["attribute_code"],$row["attribute_label"],$row["attribute_type"],${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
           }elseif($row["attribute_type"]=="datetime"){
           $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"datetime-local",${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
           }elseif($row["attribute_type"]=="date"){
