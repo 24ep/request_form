@@ -262,7 +262,7 @@ catch(err) {
     Notiflix.Loading.remove();
     Notiflix.Report.failure(
             'Failure',
-            err,
+            err.message,
             'Okay',
             )
 }
