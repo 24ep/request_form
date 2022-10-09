@@ -140,7 +140,10 @@ session_start();
     }
         add_participant($_POST['id'],"content_request");
         insert_log("update ticket \n ".$value_name." = ".$value_change ,"content_request",$_POST['id']);
-        sendline($_POST['id'],"update ".$value_name." = ",$value_change ,'CR');
+        if($value_name=='status'){
+          sendline($_POST['id'],"update ".$value_name." = ",$value_change ,'CR');
+        }
+        
         // echo '<script>
         //  document.getElementById("toast_ms").innerHTML =  "Updated Ticket ID '.htmlspecialchars($ticket_template,  ENT_QUOTES, 'UTF-8').'-'.htmlspecialchars($_POST['id'],  ENT_QUOTES, 'UTF-8').'";
         //  var toastLiveExample = document.getElementById("liveToast_cr");
