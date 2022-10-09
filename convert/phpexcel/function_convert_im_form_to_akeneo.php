@@ -207,5 +207,165 @@ echo '<script>console.log("start2");</script>';
             }
         }
     }
+    echo '<script>console.log("Draf Template Success..");</script>';
+    //-Read Linesheet ----------------------------------------
+    $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($tmpfname);
+    echo '<script>console.log("Load '.$sheet_name.' Complete - IOFactory:tmpfname..");</script>';
+    $ws_linesheet = $spreadsheet->getSheetByName($sheet_name); //อ่านขอมูจาก sheet แรก
+    echo '<script>console.log("Getting '.$sheet_name.' ..");</script>';
+    $form_version = $ws_linesheet->getCell("B2")->getValue();
+    $lastRowImform = $ws_linesheet->getHighestRow();
+    $lastColumnImform  = $ws_linesheet->getHighestColumn();
+    $lastColumnIndexImform = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($lastColumnImform);
+    //-check row header im form
+    for ($row = 1; $row <= $lastRowImform; $row++)
+    {
+        $target_row = $ws_linesheet->getCellByColumnAndRow(1, $row)->getValue(); // loop หา row ทีมีคำ่า item ใน column แก
+        if($target_row=="No"){
+            $header_row = $row;
+            break;
+        }
+    }
+    for ($row = 0; $row <= $lastRowImform; $row++)
+    {
+        $target_row = $ws_linesheet->getCellByColumnAndRow(1, $row)->getValue(); // loop หา row ทีมีคำ่า item ใน column แก
+        if($target_row=="item"){
+            $im_form_code_row = $row;
+            break;
+        }
+    }
+    unset($target_row);
+    unset($row);
+    //-set Im form spacific column IM form
+    for ($column = 1; $column <= $lastColumnIndexImform; $column++)
+    {
+     $target_column = $ws_linesheet->getCellByColumnAndRow($column, $im_form_code_row)->getValue();
+     $target_column = trim($target_column ," ");
+    //  global ${"IMFORM_column_number_$target_column"};
+     ${"IMFORM_column_number_$target_column"} = $column;
    
+     if($target_column==""){
+       $lastColumnIndexImform = $column-1;
+       break;
+     }
+    }
+      //debug  funciton name - individul transfer 22.1 to 22.2
+      if( $form_version=="New omni linesheet Version ONE 22.1"){
+        //clone
+          $IMFORM_column_number_product_name_en_clone= $IMFORM_column_number_product_name_th;
+          $IMFORM_column_number_product_name_th_clone= $IMFORM_column_number_product_name_en;
+          $IMFORM_column_number_product_detail_en_clone= $IMFORM_column_number_product_detail_th;
+          $IMFORM_column_number_product_detail_th_clone= $IMFORM_column_number_product_detail_en;
+        //past clone
+          $IMFORM_column_number_product_name_en= $IMFORM_column_number_product_name_en_clone;
+          $IMFORM_column_number_product_name_th= $IMFORM_column_number_product_name_th_clone;
+          $IMFORM_column_number_product_detail_en= $IMFORM_column_number_product_detail_en_clone;
+          $IMFORM_column_number_product_detail_th= $IMFORM_column_number_product_detail_th_clone;
+
+          $IMFORM_column_number_group_name= $IMFORM_column_number_product_name_en_clone;
+      
+      }
+      //END -debug  funciton name - individul transfer 22.1 to 22.2
+    unset($target_column);
+    unset($column);
+    // - lookup linesheet to template
+    echo '</div><div class="col-6">';
+    echo '<script>console.log("header Row : '.$header_row.'");</script>';
+    //- set last row IM form
+    $ws_template = $export_workbook->getSheetByName('Template');
+    $lastRow_template =   $ws_template->getHighestRow();
+    $lastColumn_template  =   $ws_template->getHighestColumn();
+    $lastColumnIndex_template = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($lastColumn_template);
+    echo '<script>console.log("Last row sheet / data : '.$lastRowImform.'/'.$lastRow_template.'");</script>';
+    echo '<script>console.log("Last column im form : '.$lastColumnIndexImform.'");</script>';
+    // - set one selection value
+    $store_stock = $ws_linesheet->getCell("CP6")->getValue();
+    //-set Im form spacific column Template
+    for($col_template = 1; $col_template  <=  $lastColumnIndex_template  ; $col_template++){
+        $column_header_template_pim_code = $ws_template->getCellByColumnAndRow($col_template, 1)->getValue(); // read linesheet code from template
+        $column_header_template = $ws_template->getCellByColumnAndRow($col_template, 2)->getValue(); // read linesheet code from template
+        $column_header_template_ls_type = $ws_template->getCellByColumnAndRow($col_template, 3)->getValue(); // read linesheet type from template
+        $column_header_template_att_trans = $ws_template->getCellByColumnAndRow($col_template, 4)->getValue(); // read linesheet dropdown lookup translate
+        $column_header_template_split_trans = $ws_template->getCellByColumnAndRow($col_template, 5)->getValue(); // read linesheet split_trans header
+        ${"TEMPLATE_column_number_$column_header_template_pim_code"} = $col_template;
+        // @ - enrich date
+        // - array type
+        if($column_header_template_ls_type=="array"){
+            // loop row im form
+            for ($column_ls = 1; $column_ls <= $lastColumnIndexImform+1; $column_ls++) 
+            {
+               $column_header_linesheet = $ws_linesheet->getCellByColumnAndRow($column_ls,  $im_form_code_row)->getValue();
+                if($column_header_linesheet <> "" and $column_header_template <> ""){
+                   $column_header_template_replace_location = str_replace($location_ls_code_en,"",$column_header_template);
+                   $column_header_template_replace_location = str_replace($location_ls_code_th,"",$column_header_template_replace_location);                
+                     if($column_header_linesheet == $column_header_template or $column_header_linesheet == $column_header_template_replace_location){
+                       //loop row template in loop IM form
+                       for($row_template = $lastRow_template+1; $row_template <= $lastRowImform-$header_row+$lastRow_template;$row_template++){
+                           $row_get_ls = $header_row+$row_template-$lastRow_template;
+                           $target_cell = $ws_linesheet->getCellByColumnAndRow($column_ls, $row_get_ls)->getValue();
+                        
+                           if($target_cell<>null and substr( $target_cell, 0, 1 ) <> "="){
+                                //special condition - gender
+                                  if($column_header_linesheet=="gender_value"){
+                                    $target_cell = convert_gender();
+                                  }
+
+                                  //debug  funciton name - individul transfer 22.1 to 22.2
+                                  if( $form_version=="New omni linesheet Version ONE 22.1"){
+                                    if($column_header_linesheet=="product_name_en"){
+                                      $target_cell = $ws_linesheet->getCellByColumnAndRow($IMFORM_column_number_product_name_en, $row_get_ls)->getValue();
+                                    }
+
+                                  }
+                                   
+                                //end
+                               if($column_header_template_att_trans=="Yes"){ //lookup th > en value
+                                 $query_att_trans = "SELECT * FROM pim_attr_convert_option_lu where linesheet_code = '".$column_header_template."' or linesheet_code = '".$column_header_template_replace_location."'" or die("Error:" . mysqli_error($con));
+                                 $result_att_trans = mysqli_query($con, $query_att_trans);
+                                     while($row_att_trans= mysqli_fetch_array($result_att_trans)) {
+                                             if($row_att_trans["option_th"]==$target_cell ){
+                                                $export_workbook ->getActiveSheet()->setCellValueByColumnAndRow($col_template,$row_template,convert_BooleanText_to_Boolean($row_att_trans["option_code"]));
+                                             }
+                                      }
+                               }elseif($column_header_template_split_trans=="Yes"){ //split th en
+                                    $export_workbook ->getActiveSheet()->setCellValueByColumnAndRow($col_template,$row_template,convert_BooleanText_to_Boolean($target_cell));
+                               }else{ 
+                                    $export_workbook ->getActiveSheet()->setCellValueByColumnAndRow($col_template,$row_template,convert_BooleanText_to_Boolean($target_cell));
+                            }
+                           }
+                        } // end loop row template
+                     }
+                 }
+            }
+        }
+        if($column_header_template_ls_type=="range"){
+            for($row_template = $lastRow_template+1; $row_template <= $lastRowImform-$header_row+$lastRow_template;$row_template++){
+                $target_cell = $ws_linesheet->getCell($column_header_template)->getValue();
+                if($target_cell<>null and substr( $target_cell, 0, 1 ) <> "="){
+                   $export_workbook ->getActiveSheet()->setCellValueByColumnAndRow($col_template,$row_template,convert_BooleanText_to_Boolean($target_cell));
+                }
+            }
+          }
+        if($column_header_template_ls_type=="convert_setting"){
+            for($row_template = $lastRow_template+1; $row_template <= $lastRowImform-$header_row+$lastRow_template;$row_template++){
+                $target_cell = $_POST[$column_header_template];
+                if($target_cell<>null and substr( $target_cell, 0, 1 ) <> "="){
+                    $export_workbook ->getActiveSheet()->setCellValueByColumnAndRow($col_template,$row_template,$target_cell);
+                }
+            }
+        }
+        if($column_header_template_ls_type=="function"){
+            for($row_template = $lastRow_template+1; $row_template <= $lastRowImform-$header_row+$lastRow_template;$row_template++){
+                $row_get_ls = $header_row+$row_template-$lastRow_template;
+                $column_header_template = $ws_template->getCellByColumnAndRow($col_template, 2)->getValue();
+                $target_value = call_user_func($column_header_template);
+               
+                $export_workbook ->getActiveSheet()->setCellValueByColumnAndRow($col_template,$row_template,$target_value);
+            }
+        }
+    }
+   
+    unset($col_template);
+   
+    
 ?>
