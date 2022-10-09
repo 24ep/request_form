@@ -20,14 +20,10 @@
     ));
     $response = curl_exec($curl);
     curl_close($curl);
-
     //send MS team API
-    
 }
 function webpush($users,$text,$id,$callback_url){
-
 $curl = curl_init();
-
 curl_setopt_array($curl, array(
   CURLOPT_URL => 'http://notix.io/api/send?app=10052dd0063417a1645897f10306381',
   CURLOPT_RETURNTRANSFER => true,
@@ -46,22 +42,17 @@ curl_setopt_array($curl, array(
     "target":{
         "user":['.$users.']
     }
-
 }',
   CURLOPT_HTTPHEADER => array(
     'Authorization-Token: 2d8b30b2e7d8a1a25d05a7246c1401cd53cdba425af72114',
     'Content-Type: application/json'
   ),
 ));
-
 $response = curl_exec($curl);
-
 curl_close($curl);
 // echo $response;
-
 }
 function sendline($id,$value_name,$value_change,$prefix){
-    
         if($prefix=='ANJ' or $prefix=='JC' or $prefix=='NS'){
                 $callback_url  = 'https://content-service-gate.cdse-commercecontent.com/?env=poojaroonwit&page=create_new&prefix=NS&direct='.$id;
                 $prefix_post = 'NS';
@@ -75,27 +66,21 @@ function sendline($id,$value_name,$value_change,$prefix){
     //send to line
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","") or die("Error: " . mysqli_error($con));
     if($prefix=='ANJ' or $prefix=='NS'){
-
       mysqli_query($con, "SET NAMES 'utf8' ");
       $query = "SELECT  * FROM all_in_one_project.add_new_job  WHERE id = ".$id or die("Error:" . mysqli_error($con));
       $result =  mysqli_query($con, $query);
       while($row = mysqli_fetch_array($result)) {
           $participant = $row["participant"];
-          $topic = $row["title"];
       }
-
     }  
     if($prefix=='CR'){
-     
       mysqli_query($con, "SET NAMES 'utf8' ");
       $query = "SELECT  * FROM all_in_one_project.content_request  WHERE id = ".$id or die("Error:" . mysqli_error($con));
       $result =  mysqli_query($con, $query);
       while($row = mysqli_fetch_array($result)) {
           $participant = $row["participant"];
-          $topic = $row["title"];
       }
     }
-      
        $sent_to = explode(",",$participant);
        foreach ($sent_to as $sent_to_username) {
          if($sent_to_username<>$_SESSION["username"] or $_SESSION["username"] =='poojaroonwit'){
@@ -106,22 +91,12 @@ function sendline($id,$value_name,$value_change,$prefix){
                   $list_user_push .= ',"'.$row["username"].'"';
               }
               if($key<>"" and $key<>null){
-                
                 sent_line_notify($text_update,$key);
-                // echo $text_update;
                 //send_ms_team($prefix."-".$id,$topic,$_SESSION["nickname"]." changed ".$value_name." to ".$value_change);  
-               
-                
             }
          }
       }
-
-  
       $list_users = substr($list_user_push,1);
-
       webpush($list_users,$text_update_web_push,$id,$callback_url);
-      
 }
-
-
 ?>
