@@ -272,9 +272,5 @@ echo '<script>console.log("start2");</script>';
     echo '</div><div class="col-6">';
     echo '<script>console.log("header Row : '.$header_row.'");</script>';
     //- set last row IM form
-    $ws_template = $export_workbook->getSheetByName('Template');
-    $lastRow_template =   $ws_template->getHighestRow();
-    $lastColumn_template  =   $ws_template->getHighestColumn();
-    $lastColumnIndex_template = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($lastColumn_template);
-   
+    
 ?>
