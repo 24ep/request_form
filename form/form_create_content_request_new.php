@@ -234,7 +234,7 @@ function SelectedBucket() {
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 function submit_cr_form(id) {
-    Loading.hourglass('Create a ticket ..');
+    Notiflix.Loading.hourglass('Create a ticket ..');
     var form_data = new FormData();
     var cr_title = document.getElementById("cr_title").value;
     var cr_description = document.getElementById("cr_description").value;
