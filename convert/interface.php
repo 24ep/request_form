@@ -87,12 +87,12 @@ function get_value($crid,$col_re,$db){
         Template <strong><?php echo $job_number; ?></strong> ID <strong><?php echo $id; ?></strong> | Writer by <strong>
             <?php echo $content_assign_name; ?> </strong>
     </h6>
-    <div class="custom-file mb-2">
-        <label for="linesheet_akeneo_file" class="form-label">IM-FORM</label>
+    <div class="custom-file mb-2 mt-2">
+
         <input type="file" class="form-control form-control-sm custom-file-input" id="linesheet_akeneo_file"
             name="linesheet_akeneo_file" aria-describedby="linesheet_akeneo_file" style="opacity: 1;width:80%">
     </div>
-
+    <hr>
 
     <form id="pre_convert_form">
         <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
@@ -191,7 +191,8 @@ function get_value($crid,$col_re,$db){
                 <?php echo $get_setting_pim_convert_function; ?>
     </form>
     <hr>
-    <button type="button" onclick="convert()" class="btn btn btn-danger bg-gradient " style="position: absolute;border:none">
+    <button type="button" onclick="convert()" class="btn btn btn-danger bg-gradient "
+        style="position: absolute;border:none">
         <ion-icon name="sync-outline"></ion-icon>Convert to Template
     </button>
     <small>Have a good day, :> </small>
@@ -215,56 +216,55 @@ function changed_parent() {
 
 function convert(id) {
     try {
-    Notiflix.Loading.hourglass('Converting , pls wait ...');
-    var form_data = new FormData();
+        Notiflix.Loading.hourglass('Converting , pls wait ...');
+        var form_data = new FormData();
 
-    const onlyInputs = document.querySelectorAll('#pre_convert_form input');
-    // const formElements = Array.from(form.elements);
+        const onlyInputs = document.querySelectorAll('#pre_convert_form input');
+        // const formElements = Array.from(form.elements);
 
-    onlyInputs.forEach(input => {
-        // var element = document.getElementById(element).value;
-        console.log(input.id  + "=>" + input.value);
-        form_data.append(input.id, input.value)
-        
-    });
+        onlyInputs.forEach(input => {
+            // var element = document.getElementById(element).value;
+            console.log(input.id + "=>" + input.value);
+            form_data.append(input.id, input.value)
 
-    const onlySelects = document.querySelectorAll('#pre_convert_form select');
-    // const formElements = Array.from(form.elements);
+        });
 
-    onlySelects.forEach(select => {
-        // var element = document.getElementById(element).value;
-        console.log(select.id + "=>" + select.value);
-        form_data.append(select.id, select.value)
-        
-    });
+        const onlySelects = document.querySelectorAll('#pre_convert_form select');
+        // const formElements = Array.from(form.elements);
 
-    // var count_files = document.getElementById('linesheet_akeneo_file').files.length;
-    // for (var x = 0; x < count_files; x++) {
-    //     form_data.append("linesheet_akeneo_file", document.getElementById('linesheet_akeneo_file').files[x]);
-    // }
-    form_data.append("linesheet_akeneo_file", document.getElementById('linesheet_akeneo_file').files[0]);
-   
-    $.ajax({
-        url: "base/convert/phpexcel/function_convert_im_form_to_akeneo.php",
-        dataType: 'text',
-        cache: false,
-        contentType: false,
-        processData: false,
-        data: form_data, // Setting the data attribute of ajax with file_data
-        type: 'post',
-        success: function(data) {
-            $('#model_lg').html(data);
-            Notiflix.Loading.remove();
-        }
-    });
-}
-catch(err) {
-    Notiflix.Loading.remove();
-    Notiflix.Report.failure(
+        onlySelects.forEach(select => {
+            // var element = document.getElementById(element).value;
+            console.log(select.id + "=>" + select.value);
+            form_data.append(select.id, select.value)
+
+        });
+
+        // var count_files = document.getElementById('linesheet_akeneo_file').files.length;
+        // for (var x = 0; x < count_files; x++) {
+        //     form_data.append("linesheet_akeneo_file", document.getElementById('linesheet_akeneo_file').files[x]);
+        // }
+        form_data.append("linesheet_akeneo_file", document.getElementById('linesheet_akeneo_file').files[0]);
+
+        $.ajax({
+            url: "base/convert/phpexcel/function_convert_im_form_to_akeneo.php",
+            dataType: 'text',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data, // Setting the data attribute of ajax with file_data
+            type: 'post',
+            success: function(data) {
+                $('#model_lg').html(data);
+                Notiflix.Loading.remove();
+            }
+        });
+    } catch (err) {
+        Notiflix.Loading.remove();
+        Notiflix.Report.failure(
             'Failure',
             err.message,
             'Okay',
-            )
-}
+        )
+    }
 }
 </script>
