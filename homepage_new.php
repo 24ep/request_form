@@ -19,19 +19,7 @@ function bg_dept($department){
     }
     return $bg;
 }
-function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
-    $con_cr= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con_cr));
-    mysqli_query($con_cr, "SET NAMES 'utf8' ");
-    $query_cr = "SELECT * FROM ".$db.".".$table." where ".$primary_key_id." = '".$crid."' ORDER BY id DESC" or die("Error:" . mysqli_error($con_cr));
-    $result_cr = mysqli_query($con_cr, $query_cr);
-    while($row_cr = mysqli_fetch_array($result_cr)) {
-       
-                $current_cr = $row_cr[$col_re];
-  
-    }
-    mysqli_close($con_cr);
-    return $current_cr;
-}
+
 if (!$_SESSION["login_csg"]){ 
             Header("Location: login");
     }else{
@@ -148,11 +136,12 @@ if (!$_SESSION["login_csg"]){
     </script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
-      <!-- Cookie Consent -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.css" media="print" onload="this.media='all'">
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.css"
+        media="print" onload="this.media='all'">
     <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.js"></script>
-        <!-- body content ... -->
-        <script defer src="base/js/cookieconsent-init.js"></script>
+    <!-- body content ... -->
+    <script defer src="base/js/cookieconsent-init.js"></script>
     <!-- subsc -->
     <!-- <script async custom-element="amp-web-push" src="https://cdn.ampproject.org/v0/amp-web-push-0.1.js"></script>
 
@@ -165,22 +154,45 @@ if (!$_SESSION["login_csg"]){
     <!-- subsc -->
 
     <!-- preferance -->
-    <style>
-   
-        .nav-link-preferance{
-            color: <?php echo get_value_main($_SESSION['username'],"manu_front_color","all_in_one_project","account","username");?>;
-        }
-        .nav_list_bra-preferance{
-            background: <?php echo get_value_main($_SESSION['username'],"manu_shade","all_in_one_project","account","username");?>;
-        }
-        .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-            color: <?php echo get_value_main($_SESSION['username'],"primary_front_button_selected","all_in_one_project","account","username");?>;
-            border: solid 1px  <?php echo get_value_main($_SESSION['username'],"primary_border_button_slected","all_in_one_project","account","username");?>;
-        }
-        .nav-pills .nav-link {
-            color: <?php echo get_value_main($_SESSION['username'],"manu_front_color","all_in_one_project","account","username");?>;
-        }
+    <?php
+function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
+    $con_cr= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con_cr));
+    mysqli_query($con_cr, "SET NAMES 'utf8' ");
+    $query_cr = "SELECT * FROM ".$db.".".$table." where ".$primary_key_id." = '".$crid."' ORDER BY id DESC" or die("Error:" . mysqli_error($con_cr));
+    $result_cr = mysqli_query($con_cr, $query_cr);
+    while($row_cr = mysqli_fetch_array($result_cr)) {
+       
+                $current_cr = $row_cr[$col_re];
+  
+    }
+    mysqli_close($con_cr);
+    return $current_cr;
+}
 
+?>
+    <style>
+    .nav-link-preferance {
+        color: <?php echo get_value_main($_SESSION['username'], "manu_front_color", "all_in_one_project", "account", "username");
+        ?>;
+    }
+
+    .nav_list_bra-preferance {
+        background: <?php echo get_value_main($_SESSION['username'], "manu_shade", "all_in_one_project", "account", "username");
+        ?>;
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+        color: <?php echo get_value_main($_SESSION['username'], "primary_front_button_selected", "all_in_one_project", "account", "username");
+        ?>;
+        border: solid 1px <?php echo get_value_main($_SESSION['username'], "primary_border_button_slected", "all_in_one_project", "account", "username");
+        ?>;
+    }
+
+    .nav-pills .nav-link {
+        color: <?php echo get_value_main($_SESSION['username'], "manu_front_color", "all_in_one_project", "account", "username");
+        ?>;
+    }
     </style>
 
 </head>
@@ -212,9 +224,8 @@ if (!$_SESSION["login_csg"]){
     </div>
     <div class="row" style="--bs-gutter-x: 0rem;">
         <div class="col-2 list_bra">
-            <div class="nav flex-column nav-pills nav_list_bra nav_list_bra-preferance border-end" 
-             id="v-pills-tab" role="tablist"
-                aria-orientation="vertical">
+            <div class="nav flex-column nav-pills nav_list_bra nav_list_bra-preferance border-end" id="v-pills-tab"
+                role="tablist" aria-orientation="vertical">
                 <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
                     class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-secondary  bg-gradient shadow rounded-pill"
                     style="width: 2rem; height:2rem;padding: 0px;z-index: 1;top: 95px!important;">
@@ -263,20 +274,20 @@ if (!$_SESSION["login_csg"]){
                         </div>
                     </a>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance active" data-bs-toggle="pill" type="button" role="tab"
-                            aria-selected="false" id="nav_dashboard" onclick="get_page('dashboard');">
+                        <a class="main_bra nav-link nav-link-preferance active" data-bs-toggle="pill" type="button"
+                            role="tab" aria-selected="false" id="nav_dashboard" onclick="get_page('dashboard');">
                             <ion-icon name="home"></ion-icon><span class="main-manu-nav">Home</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_create_new" data-bs-toggle="pill" type="button" role="tab"
-                            aria-selected="false" onclick="get_page('create_new');">
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_create_new" data-bs-toggle="pill"
+                            type="button" role="tab" aria-selected="false" onclick="get_page('create_new');">
                             <ion-icon name="rocket"></ion-icon><span class="main-manu-nav">New Products</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_update_content" data-bs-toggle="pill" type="button"
-                            role="tab" aria-selected="false" onclick="get_page('update_content');">
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_update_content" data-bs-toggle="pill"
+                            type="button" role="tab" aria-selected="false" onclick="get_page('update_content');">
                             <ion-icon name="ticket"></ion-icon><span class="main-manu-nav">Update Content</span>
                         </a>
                     </li>
@@ -285,14 +296,14 @@ if (!$_SESSION["login_csg"]){
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Production</small>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_panel" data-bs-toggle="pill" type="button" role="tab"
-                            aria-selected="false" onclick="get_page('panel');">
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_panel" data-bs-toggle="pill"
+                            type="button" role="tab" aria-selected="false" onclick="get_page('panel');">
                             <ion-icon name="grid"></ion-icon><span class="main-manu-nav">Job On Hand</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_job_manage" data-bs-toggle="pill" type="button" role="tab"
-                            aria-selected="false" onclick="get_page('job_manage');">
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_job_manage" data-bs-toggle="pill"
+                            type="button" role="tab" aria-selected="false" onclick="get_page('job_manage');">
                             <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">24EP </span>
                         </a>
                     </li>
@@ -313,14 +324,14 @@ if (!$_SESSION["login_csg"]){
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Internals</small>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_report" data-bs-toggle="pill" type="button" role="tab"
-                            aria-selected="false" onclick="get_page('report');">
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_report" data-bs-toggle="pill"
+                            type="button" role="tab" aria-selected="false" onclick="get_page('report');">
                             <ion-icon name="bar-chart"></ion-icon><span class="main-manu-nav">Reports</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_account" data-bs-toggle="pill" type="button" role="tab"
-                            aria-selected="false" onclick="get_page('account');">
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_account" data-bs-toggle="pill"
+                            type="button" role="tab" aria-selected="false" onclick="get_page('account');">
                             <ion-icon name="terminal"></ion-icon><span class="main-manu-nav">Administration</span>
                         </a>
                     </li>
@@ -346,8 +357,8 @@ if (!$_SESSION["login_csg"]){
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_logout" data-bs-toggle="pill" type="button" role="tab"
-                            aria-selected="false" onclick="logout()">
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_logout" data-bs-toggle="pill"
+                            type="button" role="tab" aria-selected="false" onclick="logout()">
                             <ion-icon name="log-out"></ion-icon><span class="main-manu-nav">Logout</span>
                         </a>
                     </li>
@@ -870,14 +881,13 @@ document.head.append(s)
 </script>
 <?php
 if($_GET['direct']<>null and $_GET['prefix']<>null){ ?>
-<script >
-    if(<?php echo $_GET['prefix']; ?>=='NS'){
-        call_edit_add_new_modal(<?php echo$_GET['direct']; ?>);
-    }
-    if{
-        cr_id_toggle(<?php echo$_GET['direct']; ?>);
-    }
-
+<script>
+if (<?php echo $_GET['prefix']; ?> == 'NS') {
+    call_edit_add_new_modal(<?php echo$_GET['direct']; ?>);
+}
+if {
+    cr_id_toggle(<?php echo$_GET['direct']; ?>);
+}
 </script>
 <?php
 }

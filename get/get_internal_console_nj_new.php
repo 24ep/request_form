@@ -220,7 +220,7 @@
                         Send email stamp
                         <button onclick="itemize_send_mail_stamp(<?php echo $id; ?>);" 
                         type="button" class="btn btn-primary btn-sm"
-                        style="width: 100%;">Save</button>
+                        >Save</button>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_content_complete_date; ?>>
                         writing <?php echo $bt_content; ?> 

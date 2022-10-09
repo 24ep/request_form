@@ -1,4 +1,46 @@
 <?php
+function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
+    $con_cr= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con_cr));
+    mysqli_query($con_cr, "SET NAMES 'utf8' ");
+    $query_cr = "SELECT * FROM ".$db.".".$table." where ".$primary_key_id." = '".$crid."' ORDER BY id DESC" or die("Error:" . mysqli_error($con_cr));
+    $result_cr = mysqli_query($con_cr, $query_cr);
+    while($row_cr = mysqli_fetch_array($result_cr)) {
+       
+                $current_cr = $row_cr[$col_re];
+  
+    }
+    mysqli_close($con_cr);
+    return $current_cr;
+}
+
+?>
+    <style>
+    .nav-link-preferance {
+        color: <?php echo get_value_main($_SESSION['username'], "manu_front_color", "all_in_one_project", "account", "username");
+        ?>;
+    }
+
+    .nav_list_bra-preferance {
+        background: <?php echo get_value_main($_SESSION['username'], "manu_shade", "all_in_one_project", "account", "username");
+        ?>;
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+        color: <?php echo get_value_main($_SESSION['username'], "primary_front_button_selected", "all_in_one_project", "account", "username");
+        ?>;
+        border: solid 1px <?php echo get_value_main($_SESSION['username'], "primary_border_button_slected", "all_in_one_project", "account", "username");
+        ?>;
+    }
+
+    .nav-pills .nav-link {
+        color: <?php echo get_value_main($_SESSION['username'], "manu_front_color", "all_in_one_project", "account", "username");
+        ?>;
+    }
+    </style>
+
+
+<?php
   session_start();
 //   include("../get/get_default_profile_image.php");
 //   include("../action/action_send_linenotify.php");
