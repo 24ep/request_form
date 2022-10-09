@@ -64,7 +64,7 @@ function sendline($id,$value_name,$value_change,$prefix){
     $text_update = "\n".$prefix_post."-".$id." \n".$_SESSION["nickname"]." have been update ".$value_name." = ".$value_change;
     $text_update_web_push =  $prefix_post."-".$id." ".$_SESSION["nickname"]." have been update ".$value_name." = ".$value_change;
     //send to line
-    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     if($prefix=='ANJ' or $prefix=='NS'){
       mysqli_query($con, "SET NAMES 'utf8' ");
       $query = "SELECT  * FROM all_in_one_project.add_new_job  WHERE id = ".$id or die("Error:" . mysqli_error($con));
