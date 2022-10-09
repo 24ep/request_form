@@ -220,9 +220,9 @@ function convert(id) {
     var form_data = new FormData();
 
     const form = document.querySelectorAll('#pre_convert_form input');
-    const formElements = Array.from(form.elements);
+    // const formElements = Array.from(form.elements);
 
-    formElements.forEach(element => {
+    onlyInputs.forEach(input => {
         // var element = document.getElementById(element).value;
         console.log(element + "=>" + document.getElementById(element).value);
         form_data.append(element, document.getElementById(element).value)
