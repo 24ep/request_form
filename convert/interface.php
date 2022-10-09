@@ -41,14 +41,14 @@ function get_value($crid,$col_re,$db){
                                 <small id="'.$row_pim["linesheet_code"].'HelpInline" class="text-muted">
                                     '.$row_pim["help_des_attribute"].'
                                 </small>
-                                </div>
+                            </div>
                         </div>
                       ';
     }
   }
   $get_setting_pim_convert =  $setting_form;
   unset($setting_form);
-  $query_pim = "SELECT * FROM pim_function_convert_control " or die("Error:" . mysqli_error($con_pim));
+  $query_pim = "SELECT * FROM u749625779_cdscontent,pim_function_convert_control " or die("Error:" . mysqli_error($con_pim));
   $result_pim = mysqli_query($con_pim, $query_pim);
   while($row_pim= mysqli_fetch_array($result_pim)) {
       $array_option = explode(',',$row_pim["more_option"] );
@@ -60,18 +60,18 @@ function get_value($crid,$col_re,$db){
           }
         }
       $setting_form .= '<div class="row g-3 align-items-center">
-                        <div class="col-auto">
-                          <label for="'.$row_pim["code"].'" style="width:100px;justify-content:left;">'.$row_pim["code"].'</label>
+                            <div class="col-auto">
+                                <label for="'.$row_pim["code"].'" style="width:100px;justify-content:left;">'.$row_pim["code"].'</label>
+                            </div>
+                          <div class="col-auto">
+                            <select class="form-control form-control-sm" id="'.$row_pim["code"].'" name="'.$row_pim["code"].'">
+                                    '.$option_function.'
+                            </select>
                           </div>
                           <div class="col-auto">
-                          <select class="form-control form-control-sm" id="'.$row_pim["code"].'" name="'.$row_pim["code"].'">
-                                '.$option_function.'
-                          </select>
-                          </div>
-                          <div class="col-auto">
-                          <small id="'.$row_pim["code"].'HelpInline" class="text-muted" style="margin-left:10px">
-                            '.$row_pim["help_info"].'
-                          </small>
+                            <small id="'.$row_pim["code"].'HelpInline" class="text-muted" style="margin-left:10px">
+                                '.$row_pim["help_info"].'
+                            </small>
                         </div>
                       </div>';
     unset($option_function);
@@ -80,8 +80,8 @@ function get_value($crid,$col_re,$db){
     unset($setting_form);
   //-end getting------------------------------------------------------
     ?>
-<h6 class="modal-title ps-6" id="staticBackdropLabel">Convert <strong style="color:#dc3545"> IM Form </strong> to <strong
-        style="color:#663399">PIM</strong>
+<h6 class="modal-title ps-6" id="staticBackdropLabel">Convert <strong style="color:#dc3545"> IM Form </strong> to
+    <strong style="color:#663399">PIM</strong>
     Template <strong><?php echo $job_number; ?></strong> ID <strong><?php echo $id; ?></strong> | Writer by <strong>
         <?php echo $content_assign_name; ?> </strong>
 </h6>
@@ -92,68 +92,84 @@ function get_value($crid,$col_re,$db){
 <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
 <input type="hidden" id="job_number" name="job_number" value="<?php echo $job_number; ?>">
 <div class="row p-5">
-    <div class="col-5">
+    <div class="col-6">
         <?php echo $get_setting_pim_convert; ?>
     </div>
-    <div class="col-7">
-        <div class="form-inline" style="margin-bottom: 5px;">
-            <div class="form-group">
+    <div class="col-6">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
                 <label style="width:100px;justify-content:left;">skutype</label>
+            </div>
+            <div class="col-auto">
                 <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
                     aria-describedby="typeHelpInline" id="skutype" name="skutype" value="GR" oninput="changed_parent()">
             </div>
         </div>
-        <div class="form-inline" style="margin-bottom: 5px;">
-            <div class="form-group">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
                 <label style="width:100px;justify-content:left;">BU Create</label>
+            </div>
+            <div class="col-auto">
                 <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
                     aria-describedby="typeHelpInline" id="bu_create" name="bu_create" value="CDS"
                     oninput="changed_parent()">
             </div>
         </div>
-        <div class="form-inline" style="margin-bottom: 5px;">
-            <div class="form-group">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
                 <label style="width:100px;justify-content:left;">User ID</label>
+            </div>
+            <div class="col-auto">
                 <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
                     aria-describedby="typeHelpInline" id="ug_id" name="ug_id"
                     value="<?php echo sprintf("%02d", $_SESSION["group_id"]); ?>" oninput="changed_parent()">
             </div>
         </div>
-        <div class="form-inline" style="margin-bottom: 5px;">
-            <div class="form-group">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
                 <label style="width:100px;justify-content:left;">Year</label>
+            </div>
+            <div class="col-auto">
                 <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
                     aria-describedby="typeHelpInline" id="g_year" name="g_year" value="<?php echo date("y"); ?>"
                     oninput="changed_parent()">
             </div>
         </div>
-        <div class="form-inline" style="margin-bottom: 5px;">
-            <div class="form-group">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
                 <label style="width:100px;justify-content:left;">Month</label>
+            </div>
+            <div class="col-auto">
                 <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
                     aria-describedby="typeHelpInline" id="g_month" name="g_month" value="<?php echo date("m"); ?>"
                     oninput="changed_parent()">
             </div>
         </div>
-        <div class="form-inline" style="margin-bottom: 5px;">
-            <div class="form-group">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
                 <label style="width:100px;justify-content:left;">Running (4 DG)</label>
+            </div>
+            <div class="col-auto">
                 <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
                     aria-describedby="typeHelpInline" id="g_running" name="g_running" value="" placeholder="XXXX"
                     oninput="changed_parent()">
             </div>
         </div>
-        <div class="form-inline" style="margin-bottom: 5px;">
-            <div class="form-group">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
                 <label style="width:100px;justify-content:left;">Parent : </label>
+            </div>
+            <div class="col-auto">
                 <input style="width:250px;border: 0px;font-weight: bold;" readonly type="text"
                     class="form-control  form-control-sm mx-sm-3" id="parent" name="parent" value="">
             </div>
         </div>
         <hr>
-        <div class="form-inline" style="margin-bottom: 5px;">
-            <div class="form-group">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
                 <label style="width:100px;justify-content:left;">Sheet Name</label>
+            </div>
+            <div class="col-auto">
                 <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
                     aria-describedby="typeHelpInline" id="sheet_name" name="sheet_name" value="IM FORM"
                     placeholder="work sheet name in excel">
