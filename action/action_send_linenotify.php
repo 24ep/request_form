@@ -53,7 +53,7 @@ curl_close($curl);
 // echo $response;
 }
 function sendline($id,$value_name,$value_change,$prefix){
-        if($prefix=='ANJ' or $prefix=='JC' or $prefix=='NS'){
+        if($prefix=='ANJ' or $prefix=='JC' or $prefix=='NS' or $prefix=='CS'){
                 $callback_url  = 'https://content-service-gate.cdse-commercecontent.com/?env=poojaroonwit&page=create_new&prefix=NS&direct='.$id;
                 $prefix_post = 'NS';
         }
@@ -65,7 +65,7 @@ function sendline($id,$value_name,$value_change,$prefix){
     $text_update_web_push =  $prefix_post."-".$id." ".$_SESSION["nickname"]." have been update ".$value_name." = ".$value_change;
     //send to line
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-    if($prefix=='ANJ' or $prefix=='NS'){
+    if($prefix=='ANJ' or $prefix=='NS' or $prefix=='CS'){
       mysqli_query($con, "SET NAMES 'utf8' ");
       $query = "SELECT  * FROM all_in_one_project.add_new_job  WHERE id = ".$id or die("Error:" . mysqli_error($con));
       $result =  mysqli_query($con, $query);

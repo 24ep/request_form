@@ -32,7 +32,7 @@
                 add_participant_with_user($_POST['id'],"add_new_job",$value_change);
             }
         }
-        if(strtoupper($prefix)=='ANJ' or strtoupper($prefix)=='JC'){
+        if(strtoupper($prefix)=='ANJ' or strtoupper($prefix)=='JC' or strtoupper($prefix)=='CS'){
             $prefix_post = 'NS';
         }else{
             $prefix_post = $prefix;
