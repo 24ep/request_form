@@ -1,5 +1,6 @@
 <?php
 session_start();
+echo '<script>console.log("start");</script>';
 // include("../../insert_log.php");
 include("function_attribute.php");
 include('Parsedown.php');
@@ -18,6 +19,7 @@ function convert_BooleanText_to_Boolean($BooleanText){
     }
 }
 //start
+echo '<script>console.log("start1");</script>';
 $time_start = microtime(true);
 // Record file to FTP
 $request = "record";
@@ -60,12 +62,12 @@ $use_markdown_engine = $_POST["use_markdown_engine"];
 if($use_markdown_engine=="Yes"){
   $Parsedown = new Parsedown();
 }
-
+echo '<script>console.log("start2");</script>';
 ?>
 
 <div class="container-fluid" style="margin:35px;margin-bottom:15px;">
     <div class="row">
-        <?php echo "<p style='margin-left:15px'>Generate <strong style='color:#8e44ad'>Akeneo</strong> Template for <strong>".$job_number."</strong> id <strong>".$id."</strong></p>"; ?>
+        <?php echo "<p style='margin-left:15px'>Generate <strong style='color:#8e44ad'>PIM </strong> Template for <strong>".$job_number."</strong> id <strong>".$id."</strong></p>"; ?>
     </div>
     <div class="row">
         <div class="col-6">
@@ -109,6 +111,7 @@ if($use_markdown_engine=="Yes"){
                             $upload_file_result = $con->error;
                 }
                 }
+                echo '<script>console.log("start3");</script>';
       move_uploaded_file($file_tmp,$fullpath.$file_name);
       echo '<script>console.log("'.$upload_file_result.'");</script>';
     $tmpfname = $fullpath.$file_name;
