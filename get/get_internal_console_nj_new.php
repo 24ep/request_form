@@ -345,16 +345,16 @@ function convert_to_akeneo_template(id,job_number,launch_date,content_assign_nam
         },
         function(data) {
             // $('#form_production').html(data);
-            var result = data.includes("Error");
-            if (result == false) {
-                Notiflix.Notify.success(data);
-            } else {
-                Notiflix.Report.failure(
-                    'Failure',
-                    data,
-                    'Okay',
-                )
-            }
+            // var result = data.includes("Error");
+            // if (result == false) {
+            //     Notiflix.Notify.success(data);
+            // } else {
+            //     Notiflix.Report.failure(
+            //         'Failure',
+            //         data,
+            //         'Okay',
+            //     )
+            // }
         });
 }
 </script>
