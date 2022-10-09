@@ -11,7 +11,7 @@
     $count =  $row['count_id'];
   }
   if($count > 0){
-    echo '<span class="position-absolute translate-middle badge rounded-pill bg-danger" style="left: 35px;top: 10px;">  
+    echo '<span class="position-absolute translate-middle badge rounded-pill bg-danger" style="left: 35px;">  
     '.$count.'
     <span class="visually-hidden">unread messages</span>
     </span>';
