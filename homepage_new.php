@@ -180,7 +180,9 @@ if (!$_SESSION["login_csg"]){
     </div>
     <div class="row" style="--bs-gutter-x: 0rem;">
         <div class="col-2 list_bra">
-            <div class="nav flex-column nav-pills nav_list_bra border-end" id="v-pills-tab" role="tablist"
+            <div class="nav flex-column nav-pills nav_list_bra border-end" 
+                style="background-color: <?php echo $manu_shade; ?>" 
+             id="v-pills-tab" role="tablist"
                 aria-orientation="vertical">
                 <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
                     class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-secondary  bg-gradient shadow rounded-pill"
