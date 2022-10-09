@@ -30,7 +30,7 @@ function get_value($crid,$col_re,$db){
         $setting_value = $row_pim["default_setting"];
       }
       $setting_form .= '
-                        <div class="row g-3 align-items-center mb-2">
+                        <div class="row align-items-center mb-2">
                             <div class="col-auto">
                                 <label for="'.$row_pim["linesheet_code"].'" style="width:100px;justify-content:left;">'.$row_pim["linesheet_code"].'</label>
                             </div>
@@ -59,7 +59,7 @@ function get_value($crid,$col_re,$db){
               $option_function .= "<option>".$option."</option>";
           }
         }
-      $setting_form .= '<div class="row g-3 align-items-center mb-2">
+      $setting_form .= '<div class="row align-items-center mb-2">
                             <div class="col-auto">
                                 <label for="'.$row_pim["code"].'" style="width:100px;justify-content:left;">'.$row_pim["code"].'</label>
                             </div>
@@ -96,7 +96,7 @@ function get_value($crid,$col_re,$db){
         <?php echo $get_setting_pim_convert; ?>
     </div>
     <div class="col-6">
-        <div class="row g-3 align-items-center mb-2">
+        <div class="row  align-items-center mb-2">
             <div class="col-auto">
                 <label style="width:100px;justify-content:left;">skutype</label>
             </div>
@@ -105,7 +105,7 @@ function get_value($crid,$col_re,$db){
                     aria-describedby="typeHelpInline" id="skutype" name="skutype" value="GR" oninput="changed_parent()">
             </div>
         </div>
-        <div class="row g-3 align-items-center mb-2">
+        <div class="row  align-items-center mb-2">
             <div class="col-auto">
                 <label style="width:100px;justify-content:left;">BU Create</label>
             </div>
@@ -115,7 +115,7 @@ function get_value($crid,$col_re,$db){
                     oninput="changed_parent()">
             </div>
         </div>
-        <div class="row g-3 align-items-center mb-2">
+        <div class="row  align-items-center mb-2">
             <div class="col-auto">
                 <label style="width:100px;justify-content:left;">User ID</label>
             </div>
@@ -125,7 +125,7 @@ function get_value($crid,$col_re,$db){
                     value="<?php echo sprintf("%02d", $_SESSION["group_id"]); ?>" oninput="changed_parent()">
             </div>
         </div>
-        <div class="row g-3 align-items-center mb-2">
+        <div class="row  align-items-center mb-2">
             <div class="col-auto">
                 <label style="width:100px;justify-content:left;">Year</label>
             </div>
@@ -135,7 +135,7 @@ function get_value($crid,$col_re,$db){
                     oninput="changed_parent()" >
             </div>
         </div>
-        <div class="row g-3 align-items-center mb-2">
+        <div class="row  align-items-center mb-2">
             <div class="col-auto">
                 <label style="width:100px;justify-content:left;">Month</label>
             </div>
@@ -145,7 +145,7 @@ function get_value($crid,$col_re,$db){
                     oninput="changed_parent()">
             </div>
         </div>
-        <div class="row g-3 align-items-center mb-2">
+        <div class="row  align-items-center mb-2">
             <div class="col-auto">
                 <label style="width:100px;justify-content:left;">Running (4 DG)</label>
             </div>
@@ -155,7 +155,7 @@ function get_value($crid,$col_re,$db){
                     oninput="changed_parent()">
             </div>
         </div>
-        <div class="row g-3 align-items-center mb-2">
+        <div class="row  align-items-center mb-2">
             <div class="col-auto">
                 <label style="width:100px;justify-content:left;">Parent : </label>
             </div>
@@ -165,7 +165,7 @@ function get_value($crid,$col_re,$db){
             </div>
         </div>
         <hr>
-        <div class="row g-3 align-items-center mb-2">
+        <div class="row  align-items-center mb-2">
             <div class="col-auto">
                 <label style="width:100px;justify-content:left;">Sheet Name</label>
             </div>
