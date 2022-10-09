@@ -90,12 +90,12 @@
     <?php if($config_type=="task"){ ?>
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-heading8">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
                 data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapse8">
                 <ion-icon name="file-tray-stacked-outline"></ion-icon> Tasks
             </button>
         </h2>
-        <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8"
+        <div id="flush-collapse8" class="accordion-collapse collapse show" aria-labelledby="flush-heading8"
             data-bs-parent="#accordionFlushExample">
             <div class="accordion-body p-0">
                 <?php
