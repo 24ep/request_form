@@ -337,6 +337,7 @@ function action_transfer_to_job_cms() {
         });
 }
 function convert_to_akeneo_template(id,job_number,launch_date,content_assign_name){
+    Notiflix.Loading.hourglass('Loading...');
     $.post("base/convert/interface.php", {
         id:id,
         job_number:job_number,
@@ -344,17 +345,8 @@ function convert_to_akeneo_template(id,job_number,launch_date,content_assign_nam
         content_assign_name:content_assign_name
         },
         function(data) {
-            // $('#form_production').html(data);
-            // var result = data.includes("Error");
-            // if (result == false) {
-            //     Notiflix.Notify.success(data);
-            // } else {
-            //     Notiflix.Report.failure(
-            //         'Failure',
-            //         data,
-            //         'Okay',
-            //     )
-            // }
+            $('#model_lg').html(data);
+            Notiflix.Loading.remove();
         });
 }
 </script>
