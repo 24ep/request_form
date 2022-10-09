@@ -11,7 +11,8 @@
       return false;
   }
 session_start();
-include('action_send_line_api.php');
+// include('action_send_line_api.php');
+include("action_send_linenotify.php");
 include('action_add_participant.php');
 include('action_insert_log.php');
 // include("connect.php");
