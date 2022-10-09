@@ -191,9 +191,8 @@ function get_value($crid,$col_re,$db){
                 <?php echo $get_setting_pim_convert_function; ?>
     </form>
     <hr>
-    <button type="button" onclick="convert()" class="btn btn btn-danger" style="position: absolute;border:none">
-        <ion-icon name="sync-outline"></ion-icon>Convert
-        to Template
+    <button type="button" onclick="convert()" class="btn btn btn-danger bg-gradient " style="position: absolute;border:none">
+        <ion-icon name="sync-outline"></ion-icon>Convert to Template
     </button>
     <small>Have a good day, :> </small>
 </div>
