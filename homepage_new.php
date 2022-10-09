@@ -178,7 +178,7 @@ if (!$_SESSION["login_csg"]){
             border: solid 1px  <?php echo get_value_main($_SESSION['username'],"primary_border_button_eslected","all_in_one_project","account","username");?>;
         }
         .nav-pills .nav-link {
-            color: #7a7a7a;
+            color: <?php echo get_value_main($_SESSION['username'],"manu_front_color","all_in_one_project","account","username");?>;
         }
 
     </style>
