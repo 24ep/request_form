@@ -1,4 +1,5 @@
 <?php
+include("action_send_linenotify.php");
 function bb_confirm_ticket($id ,$user_id,$detail,$status){
     $curl = curl_init();
     curl_setopt_array($curl, array(
@@ -139,23 +140,24 @@ session_start();
     }
         add_participant($_POST['id'],"content_request");
         insert_log("update ticket \n ".$value_name." = ".$value_change ,"content_request",$_POST['id']);
-        echo '<script>
-         document.getElementById("toast_ms").innerHTML =  "Updated Ticket ID '.htmlspecialchars($ticket_template,  ENT_QUOTES, 'UTF-8').'-'.htmlspecialchars($_POST['id'],  ENT_QUOTES, 'UTF-8').'";
-         var toastLiveExample = document.getElementById("liveToast_cr");
-         var toast = new bootstrap.Toast(toastLiveExample);
-         toast.show();</script>';
-          if($value_name=='status' and $value_change<>'Close' and $value_change<>'Cancel'){
-            echo '<script>
-             var child_c = document.getElementById("crid_'.$_POST["id"].'");
-             var parent_c = document.getElementById("ul_'.$value_change.'");
-             parent_c.appendChild(child_c);	
-            </script>';
-          }elseif($value_name=='status' and ( $value_change=='Close' or $value_change=='Cancel') ){
-            echo '<script>
-            var child_c = document.getElementById("crid_'.htmlspecialchars($_POST["id"],  ENT_QUOTES, 'UTF-8').'");
-            child_c.parentNode.removeChild(child_c);
-           </script>';
-          }
+        sendline($_POST['id'],"update ".$value_name." = ",$value_change ,'CR');
+        // echo '<script>
+        //  document.getElementById("toast_ms").innerHTML =  "Updated Ticket ID '.htmlspecialchars($ticket_template,  ENT_QUOTES, 'UTF-8').'-'.htmlspecialchars($_POST['id'],  ENT_QUOTES, 'UTF-8').'";
+        //  var toastLiveExample = document.getElementById("liveToast_cr");
+        //  var toast = new bootstrap.Toast(toastLiveExample);
+        //  toast.show();</script>';
+        //   if($value_name=='status' and $value_change<>'Close' and $value_change<>'Cancel'){
+        //     echo '<script>
+        //      var child_c = document.getElementById("crid_'.$_POST["id"].'");
+        //      var parent_c = document.getElementById("ul_'.$value_change.'");
+        //      parent_c.appendChild(child_c);	
+        //     </script>';
+        //   }elseif($value_name=='status' and ( $value_change=='Close' or $value_change=='Cancel') ){
+        //     echo '<script>
+        //     var child_c = document.getElementById("crid_'.htmlspecialchars($_POST["id"],  ENT_QUOTES, 'UTF-8').'");
+        //     child_c.parentNode.removeChild(child_c);
+        //    </script>';
+        //   }
 	}else{
         insert_log("update ticket faild".$con->error ,"content_request",$id);
         echo "<script>
