@@ -239,8 +239,8 @@ function convert(id) {
         
     });
 
-
-    for (var x = 0; x < ins; x++) {
+    var count_files = document.getElementById('linesheet_akeneo_file').files.length;
+    for (var x = 0; x < count_files; x++) {
         form_data.append("files[]", document.getElementById('linesheet_akeneo_file').files[x]);
     }
    
