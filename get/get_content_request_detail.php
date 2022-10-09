@@ -830,11 +830,11 @@ function off_overlay() {
 }
 ?>
 <script>
-// baguetteBox.run('.baguetteBoxFour', {
-//     buttons: false
-// });
+baguetteBox.run('.baguetteBoxFour', {
+    buttons: false
+});
 
-// baguetteBox.run('.baguetteBoxFour'); //preview image
+baguetteBox.run('.baguetteBoxFour'); //preview image
 // pureScriptSelect('#multiSelect'); //multi select
 new SlimSelect({
   select: '#cr_edit_case_officer_show',
@@ -857,6 +857,8 @@ new SlimSelect({
 })
 
 
+
 </script>
+
 
 
