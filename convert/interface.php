@@ -218,13 +218,14 @@ function convert(id) {
     Notiflix.Loading.hourglass('Converting , pls wait ...');
     var form_data = new FormData();
 
-    const form = document.getElementById('pre_convert_form');
+    const form = document.getElementById('#pre_convert_form input');
     const formElements = Array.from(form.elements);
 
     formElements.forEach(element => {
         // var element = document.getElementById(element).value;
-        form_data.append(element, document.getElementById(element).value)
         console.log(element + "=>" + document.getElementById(element).value);
+        form_data.append(element, document.getElementById(element).value)
+        
     });
 
 
