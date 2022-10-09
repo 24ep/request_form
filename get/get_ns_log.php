@@ -36,6 +36,7 @@ if($_POST['action_data']=="24ep"){;
     //  </tr>';
     $image_profile = profile_avatar($row["action_by"],$row['department'],25);
     $action = str_replace("{snapshot}","<span class='badge rounded-pill bg-primary me-1' >Snapshot</span><br>",$row["action"]);
+    $action = str_replace("{add_new_job} ","<span class='badge rounded-pill bg-dark m-1' >NS</span><br>",$action);
     $action = str_replace("update ","<span class='badge rounded-pill bg-dark m-1' >Update</span><br>",$action);
     $action = str_replace("New comment","<span class='badge rounded-pill bg-secondary m-1' >Comment</span><br>",$action);
     $action = str_replace("add_new_job","<span class='badge rounded-pill bg-primary m-1' >NS</span><br>",$action);
