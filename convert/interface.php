@@ -61,10 +61,10 @@ function get_value($crid,$col_re,$db){
         }
       $setting_form .= '<div class="row align-items-center mb-2">
                             <div class="col-auto">
-                                <label for="'.$row_pim["code"].'" style="width:100px;justify-content:left;">'.$row_pim["code"].'</label>
+                                <label for="'.$row_pim["code"].'" style="justify-content:left;">'.$row_pim["code"].'</label>
                             </div>
                           <div class="col-auto">
-                            <select class="form-control form-control-sm" id="'.$row_pim["code"].'" name="'.$row_pim["code"].'">
+                            <select class="form-select form-select-sm" id="'.$row_pim["code"].'" name="'.$row_pim["code"].'">
                                     '.$option_function.'
                             </select>
                           </div>
@@ -81,14 +81,15 @@ function get_value($crid,$col_re,$db){
     unset($setting_form);
   //-end getting------------------------------------------------------
     ?>
-<h6 class="modal-title ps-6" id="staticBackdropLabel">Convert <strong style="color:#dc3545"> IM Form </strong> to
+<div class="bg-white p-5">
+<h6 class="modal-title " id="staticBackdropLabel">Convert <strong style="color:#dc3545"> IM Form </strong> to
     <strong style="color:#663399">PIM</strong>
     Template <strong><?php echo $job_number; ?></strong> ID <strong><?php echo $id; ?></strong> | Writer by <strong>
         <?php echo $content_assign_name; ?> </strong>
 </h6>
-<div class="custom-file mb-1 ps-6">
+<div class="custom-file mb-2">
 <label for="linesheet_akeneo_file" class="form-label">IM-FORM</label>
-    <input type="file" class="form-control custom-file-input" id="linesheet_akeneo_file" name="linesheet_akeneo_file"
+    <input type="file" class="form-control form-control-sm custom-file-input" id="linesheet_akeneo_file" name="linesheet_akeneo_file"
         aria-describedby="linesheet_akeneo_file" style="opacity: 1;width:80%">
 </div>
 
@@ -188,11 +189,13 @@ function get_value($crid,$col_re,$db){
         <small><strong>Function control</strong></small>
         <?php echo $get_setting_pim_convert_function; ?>
         <hr>
+        <button type="submit" class="btn btn btn-success" style="position: absolute;background:#FF0000;border:none"><ion-icon name="sync-outline"></ion-icon>Convert
+    to Template</button>
         <small>Have a good day, :> </small>
     </div>
 </div>
-<button type="submit" class="btn btn btn-success" style="position: absolute;background:#FF0000;border:none">Convert
-    to Template</button>
+</div>
+
 <?php mysqli_close($con_pim); ?>
 <script>
 changed_parent();
