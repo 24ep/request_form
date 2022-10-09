@@ -22,11 +22,11 @@ $time_start = microtime(true);
 // Record file to FTP
 $request = "record";
 $file_content_type =  "cleaned_description";
-$fullpath = '../../../attachment/base/'.$_POST["job_number"].'/Cleaned/';
+$fullpath = '../../attachment/'.$_POST["job_number"].'/Cleaned/';
 mkdir($fullpath, 0777, true);
-$fullpath_normal = '../../../attachment/base/'.$_POST["job_number"].'/Cleaned/';
+$fullpath_normal = '../../attachment/'.$_POST["job_number"].'/Cleaned/';
 mkdir($fullpath, 0777, true);
-$fullpath_normal_template = '../../../attachment/base/'.$_POST["job_number"].'/Template/';
+$fullpath_normal_template = '../../attachment/'.$_POST["job_number"].'/Template/';
 mkdir($fullpath_normal_template, 0777, true);
 // get varliable from input form
 $parents = array();
@@ -62,25 +62,6 @@ if($use_markdown_engine=="Yes"){
 }
 
 ?>
-
-<style>
-body {
-    font-family: 'Prompt', sans-serif;
-    font-size: 14px;
-    vertical-align: middle;
-}
-
-a {
-    color: gray;
-    text-decoration: auto;
-}
-
-a:hover {
-    color: black;
-    text-decoration: auto;
-    font-weight: bold;
-}
-</style>
 
 <div class="container-fluid" style="margin:35px;margin-bottom:15px;">
     <div class="row">
@@ -602,7 +583,7 @@ a:hover {
     $file_name_without_type = str_replace("Cleaned","Template",$file_name_without_type);
     $file_name_without_type = str_replace("Clean","Template",$file_name_without_type);
     $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($export_workbook);
-    $writer->save('../../../attachment/base/'.$_POST["job_number"].'/Template/'.$file_name_without_type.".xlsx");
+    $writer->save('../../attachment/'.$_POST["job_number"].'/Template/'.$file_name_without_type.".xlsx");
     //export model template
     if(!empty($parents)){
       $path_parts_modal = pathinfo($fullpath.$file_name);
@@ -614,7 +595,7 @@ a:hover {
       $file_name_without_type_modal = str_replace("Cleaned","Modal",$file_name_without_type_modal);
       $file_name_without_type_modal = str_replace("Clean","Modal",$file_name_without_type_modal);
       $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($export_modal_workbook);
-      $writer->save('../../../attachment/base/'.$_POST["job_number"].'/Template/'.$file_name_without_type_modal.".xlsx");
+      $writer->save('../../attachment/'.$_POST["job_number"].'/Template/'.$file_name_without_type_modal.".xlsx");
       }
     //export shade template
     $path_parts_shade = pathinfo($fullpath.$file_name);
@@ -626,7 +607,7 @@ a:hover {
         $file_name_without_type_shade = str_replace("Cleaned","Shade",$file_name_without_type_shade);
         $file_name_without_type_shade = str_replace("Clean","Shade",$file_name_without_type_shade);
         $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($export_shade_wb);
-        $writer->save('../../../attachment/base/'.$_POST["job_number"].'/Template/'.$file_name_without_type_shade.".xlsx");
+        $writer->save('../../attachment/'.$_POST["job_number"].'/Template/'.$file_name_without_type_shade.".xlsx");
     //export ungroup template
     $path_parts_ug = pathinfo($fullpath.$file_name);
     $file_name_without_type_ug = $path_parts_ug['filename'];
@@ -637,7 +618,7 @@ a:hover {
     $file_name_without_type_ug = str_replace("Cleaned","Ungroup",$file_name_without_type_ug);
     $file_name_without_type_ug = str_replace("Clean","Ungroup",$file_name_without_type_ug);
     $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($export_ungroup_workbook);
-    $writer->save('../../../attachment/base/'.$_POST["job_number"].'/Template/'.$file_name_without_type_ug.".xlsx");
+    $writer->save('../../attachment/'.$_POST["job_number"].'/Template/'.$file_name_without_type_ug.".xlsx");
     //Time End Stamp
     $time_end = microtime(true);
     $execution_time = ($time_end - $time_start)/60;
@@ -649,12 +630,12 @@ a:hover {
               </div>
               <hr style="margin:5px">
               </div>';
-            echo '<strong style="margin-left:50px;"><a href="../../../attachment/base/'.$_POST["job_number"].'/Template/'.$file_name_without_type.'.xlsx" class="btn btn-primary btn-sm"  style="margin-bottom:15px" > <ion-icon name="cloud-download-outline" style="margin-right: 1px;"></ion-icon> Download Child Template</a></strong>';
-            echo '<strong style="margin-left:5px;"><a href="../../../attachment/base/'.$_POST["job_number"].'/Template/'.$file_name_without_type_ug.'.xlsx" class="btn btn-danger btn-sm"  style="margin-bottom:15px;background:#1b528e;border-color:#1b528e;" > <ion-icon name="cloud-download-outline" style="margin-right: 1px;"></ion-icon> Download Ungroup Template</a></strong>';
+            echo '<strong style="margin-left:50px;"><a href="../../attachment/'.$_POST["job_number"].'/Template/'.$file_name_without_type.'.xlsx" class="btn btn-primary btn-sm"  style="margin-bottom:15px" > <ion-icon name="cloud-download-outline" style="margin-right: 1px;"></ion-icon> Download Child Template</a></strong>';
+            echo '<strong style="margin-left:5px;"><a href="../../attachment/'.$_POST["job_number"].'/Template/'.$file_name_without_type_ug.'.xlsx" class="btn btn-danger btn-sm"  style="margin-bottom:15px;background:#1b528e;border-color:#1b528e;" > <ion-icon name="cloud-download-outline" style="margin-right: 1px;"></ion-icon> Download Ungroup Template</a></strong>';
           if(!empty($parents)){
-            echo '<strong style="margin-left:5px;"><a href="../../../attachment/base/'.$_POST["job_number"].'/Template/'.$file_name_without_type_modal.'.xlsx" class="btn btn-secondary btn-sm"  style="margin-bottom:15px;background:#32673e;border-color:#32673e;" > <ion-icon name="cloud-download-outline" style="margin-right: 1px;"></ion-icon> Download Parents Template</a></strong>';
+            echo '<strong style="margin-left:5px;"><a href="../../attachment/'.$_POST["job_number"].'/Template/'.$file_name_without_type_modal.'.xlsx" class="btn btn-secondary btn-sm"  style="margin-bottom:15px;background:#32673e;border-color:#32673e;" > <ion-icon name="cloud-download-outline" style="margin-right: 1px;"></ion-icon> Download Parents Template</a></strong>';
           }
-          echo '<strong style="margin-left:5px;"><a href="../../../attachment/base/'.$_POST["job_number"].'/Template/'.$file_name_without_type_shade.'.xlsx" class="btn btn-info btn-sm"  style="margin-bottom:15px;background:#060e17;border-color:#060e17;" > <ion-icon name="cloud-download-outline" style="margin-right: 1px;"></ion-icon> Download Shade Template</a></strong>';
+          echo '<strong style="margin-left:5px;"><a href="../../attachment/'.$_POST["job_number"].'/Template/'.$file_name_without_type_shade.'.xlsx" class="btn btn-info btn-sm"  style="margin-bottom:15px;background:#060e17;border-color:#060e17;" > <ion-icon name="cloud-download-outline" style="margin-right: 1px;"></ion-icon> Download Shade Template</a></strong>';
       //remove file linesheet from ftp
         if($_POST["record_linesheet"]=="No"){
           $ftp_server = "156.67.217.3";
@@ -670,7 +651,7 @@ a:hover {
           $ftp_server = "156.67.217.3";
           $ftp_conn = ftp_connect($ftp_server) or die("Remove template Could not connect to $ftp_server");
           $login = ftp_login($ftp_conn, 'admin_convert_module', 'a417528639');
-          ftp_delete($ftp_conn,"../../../attachment/base/".$_POST["job_number"]."/Template/".$file_name_without_type.'.xlsx');
+          ftp_delete($ftp_conn,"../../attachment/".$_POST["job_number"]."/Template/".$file_name_without_type.'.xlsx');
           unset($ftp_server);
           unset($ftp_conn);
           unset($login);
