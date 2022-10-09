@@ -18,5 +18,17 @@ function convert_BooleanText_to_Boolean($BooleanText){
        return $BooleanText;
     }
 }
+//start
+echo '<script>console.log("start1");</script>';
+$time_start = microtime(true);
+// Record file to FTP
+$request = "record";
+$file_content_type =  "cleaned_description";
+$fullpath = '../../attachment/'.$_POST["job_number"].'/Cleaned/';
+mkdir($fullpath, 0777, true);
+$fullpath_normal = '../../attachment/'.$_POST["job_number"].'/Cleaned/';
+mkdir($fullpath, 0777, true);
+$fullpath_normal_template = '../../attachment/'.$_POST["job_number"].'/Template/';
+mkdir($fullpath_normal_template, 0777, true);
 
 ?>
