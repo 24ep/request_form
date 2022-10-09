@@ -167,9 +167,13 @@ if (!$_SESSION["login_csg"]){
     <!-- preferance -->
     <style>
    
-        .nav-link{
+        .nav-link-preferance{
             color: <?php echo get_value_main($_SESSION['username'],"manu_front_color","all_in_one_project","account","username");?>;
         }
+        .nav_list_bra-preferance{
+            background: <?php echo get_value_main($_SESSION['username'],"manu_shade","all_in_one_project","account","username");?>;
+        }
+
     </style>
 
 </head>
@@ -201,8 +205,7 @@ if (!$_SESSION["login_csg"]){
     </div>
     <div class="row" style="--bs-gutter-x: 0rem;">
         <div class="col-2 list_bra">
-            <div class="nav flex-column nav-pills nav_list_bra border-end" 
-                style="background-color: <?php echo get_value_main($_SESSION['username'],"manu_shade","all_in_one_project","account","username"); ?>" 
+            <div class="nav flex-column nav-pills nav_list_bra nav_list_bra-preferance border-end" 
              id="v-pills-tab" role="tablist"
                 aria-orientation="vertical">
                 <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
@@ -244,7 +247,7 @@ if (!$_SESSION["login_csg"]){
                 <hr class="hr_manu_bra">
                 <small class="header_manu_bra">Manu</small>
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <a class="nav-link" id="nav_activity" type="button" data-bs-toggle="offcanvas"
+                    <a class="nav-link nav-link-preferance" id="nav_activity" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasRightactivity" aria-controls="offcanvasRight"
                         onclick="get_list_update_job();show_sub_manu('activity');">
                         <ion-icon name="notifications"></ion-icon><span class="main-manu-nav">Activity</span>
@@ -253,19 +256,19 @@ if (!$_SESSION["login_csg"]){
                         </div>
                     </a>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link active" data-bs-toggle="pill" type="button" role="tab"
+                        <a class="main_bra nav-link nav-link-preferance active" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" id="nav_dashboard" onclick="get_page('dashboard');">
                             <ion-icon name="home"></ion-icon><span class="main-manu-nav">Home</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link" id="nav_create_new" data-bs-toggle="pill" type="button" role="tab"
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_create_new" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('create_new');">
                             <ion-icon name="rocket"></ion-icon><span class="main-manu-nav">New Products</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link" id="nav_update_content" data-bs-toggle="pill" type="button"
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_update_content" data-bs-toggle="pill" type="button"
                             role="tab" aria-selected="false" onclick="get_page('update_content');">
                             <ion-icon name="ticket"></ion-icon><span class="main-manu-nav">Update Content</span>
                         </a>
@@ -275,13 +278,13 @@ if (!$_SESSION["login_csg"]){
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Production</small>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link" id="nav_panel" data-bs-toggle="pill" type="button" role="tab"
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_panel" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('panel');">
                             <ion-icon name="grid"></ion-icon><span class="main-manu-nav">Job On Hand</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link" id="nav_job_manage" data-bs-toggle="pill" type="button" role="tab"
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_job_manage" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('job_manage');">
                             <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">24EP </span>
                         </a>
@@ -289,13 +292,13 @@ if (!$_SESSION["login_csg"]){
 
                     <!-- 
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link" id="nav_job_on_hand" data-bs-toggle="pill" type="button" role="tab"
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_job_on_hand" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('job_on_hand');">
                             <ion-icon name="receipt"></ion-icon><span class="main-manu-nav">Job on hand</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link" id="nav_linesheet" data-bs-toggle="pill" type="button" role="tab"
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_linesheet" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('linesheet');">
                             <ion-icon name="cloud-upload"></ion-icon><span class="main-manu-nav">Linesheet</span>
                         </a>
@@ -303,25 +306,25 @@ if (!$_SESSION["login_csg"]){
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Internals</small>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link" id="nav_report" data-bs-toggle="pill" type="button" role="tab"
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_report" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('report');">
                             <ion-icon name="bar-chart"></ion-icon><span class="main-manu-nav">Reports</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link" id="nav_account" data-bs-toggle="pill" type="button" role="tab"
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_account" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('account');">
                             <ion-icon name="terminal"></ion-icon><span class="main-manu-nav">Administration</span>
                         </a>
                     </li>
                     <li class="nav-item btn-group dropend" role="presentation">
-                        <a class="main_bra nav-link" id="nav_product_mantain" type="button"
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_product_mantain" type="button"
                             onclick="show_sub_manu('product_maintain');">
                             <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Product maintain</span>
                         </a>
                     </li>
                     <li class="nav-item btn-group dropend" role="presentation">
-                        <a class="main_bra nav-link" id="nav_quicklink" type="button"
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_quicklink" type="button"
                             onclick="show_sub_manu('quicklink');">
                             <ion-icon name="globe"></ion-icon><span class="main-manu-nav">Quicklink</span>
                         </a>
@@ -330,13 +333,13 @@ if (!$_SESSION["login_csg"]){
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Others</small>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link" id="nav_setting" onclick="get_page('setting');"
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_setting" onclick="get_page('setting');"
                             data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
                             <ion-icon name="settings"></ion-icon><span class="main-manu-nav">Settings</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link" id="nav_logout" data-bs-toggle="pill" type="button" role="tab"
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_logout" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="logout()">
                             <ion-icon name="log-out"></ion-icon><span class="main-manu-nav">Logout</span>
                         </a>
@@ -574,7 +577,7 @@ function minimize_nav() {
             console.log('unhide ' + i);
             main_manu_nav[i].className = main_manu_nav[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-        var main_bra = document.getElementsByClassName("main_bra nav-link minimize");
+        var main_bra = document.getElementsByClassName("main_bra nav-link nav-link-preferance minimize");
         for (var i = 0; i < main_bra.length; i++) {
             main_bra[i].className = main_bra[i].className.replace(/(?:^|\s)minimize(?!\S)/g, '');
         }
