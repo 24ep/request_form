@@ -93,9 +93,11 @@ function get_value($crid,$col_re,$db){
 <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
 <input type="hidden" id="job_number" name="job_number" value="<?php echo $job_number; ?>">
 <div class="row p-5">
+    <small><strong>Job Setting</strong></small>
     <div class="col-6">
         <?php echo $get_setting_pim_convert; ?>
     </div>
+    <small><strong>Grouping</strong></small>
     <div class="col-6">
         <div class="row  align-items-center mb-2">
             <div class="col-auto">
@@ -177,6 +179,7 @@ function get_value($crid,$col_re,$db){
             </div>
         </div>
         <hr>
+        <small><strong>Function control</strong></small>
         <?php echo $get_setting_pim_convert_function; ?>
         <hr>
         <small>Have a good day, :> </small>
