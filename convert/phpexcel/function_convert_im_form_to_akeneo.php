@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../../insert_log.php");
+// include("../../insert_log.php");
 include("function_attribute.php");
 include('Parsedown.php');
 function readableBytes($bytes) {
@@ -62,27 +62,7 @@ if($use_markdown_engine=="Yes"){
 }
 
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" />
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="css/main.css"> -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.16/css/bootstrap-select.min.css"
-        integrity="sha256-g19F2KOr/H58l6XdI/rhCdEK3NmB8OILHwP/QYBQ8M4=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400&display=swap" rel="stylesheet">
-    <script src="https://cdn.tiny.cloud/1/x6i3idiwxi5im5lrctziief94gk97rbt6qj3isc1g85bfaiv/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
-    <title>Template Generate
-        <?php echo $job_number; ?></title>
+
     <style>
     body {
         font-family: 'Prompt', sans-serif;
@@ -99,8 +79,7 @@ if($use_markdown_engine=="Yes"){
         font-weight: bold;
     }
     </style>
-</head>
-<body>
+
     <div class="container-fluid" style="margin:35px;margin-bottom:15px;">
         <div class="row">
             <?php echo "<p style='margin-left:15px'>Generate <strong style='color:#8e44ad'>Akeneo</strong> Template for <strong>".$job_number."</strong> id <strong>".$id."</strong></p>"; ?>
@@ -721,13 +700,4 @@ if($use_markdown_engine=="Yes"){
         //grouping
         //todo $count_group
 ?>
-</body>
-<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-</script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-</script>
-</html>
+

@@ -191,7 +191,7 @@ function get_value($crid,$col_re,$db){
                 <?php echo $get_setting_pim_convert_function; ?>
     </form>
     <hr>
-    <button type="submit" onclick="convert()" class="btn btn btn-danger" style="position: absolute;border:none">
+    <button type="button" onclick="convert()" class="btn btn btn-danger" style="position: absolute;border:none">
         <ion-icon name="sync-outline"></ion-icon>Convert
         to Template
     </button>
