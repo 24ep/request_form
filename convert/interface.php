@@ -239,10 +239,11 @@ function convert(id) {
         
     });
 
-    var count_files = document.getElementById('linesheet_akeneo_file').files.length;
-    for (var x = 0; x < count_files; x++) {
-        form_data.append("linesheet_akeneo_file", document.getElementById('linesheet_akeneo_file').files[x]);
-    }
+    // var count_files = document.getElementById('linesheet_akeneo_file').files.length;
+    // for (var x = 0; x < count_files; x++) {
+    //     form_data.append("linesheet_akeneo_file", document.getElementById('linesheet_akeneo_file').files[x]);
+    // }
+    form_data.append("linesheet_akeneo_file", document.getElementById('linesheet_akeneo_file').files[0]);
    
     $.ajax({
         url: "base/convert/phpexcel/function_convert_im_form_to_akeneo.php",
