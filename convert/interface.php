@@ -215,6 +215,7 @@ function changed_parent() {
 }
 
 function convert(id) {
+    try {
     Notiflix.Loading.hourglass('Converting , pls wait ...');
     var form_data = new FormData();
 
@@ -246,5 +247,14 @@ function convert(id) {
             Notiflix.Loading.remove();
         }
     });
+}
+catch(err) {
+    Notiflix.Loading.remove();
+    Notiflix.Report.failure(
+            'Failure',
+            err,
+            'Okay',
+            )
+}
 }
 </script>
