@@ -80,7 +80,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
   }
   function return_m_select_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-      $query_op = "SELECT * FROM job_attribute_option.job_attribute_option
+      $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute_option
       WHERE attribute_code = '".$att_code."' and attribute_table = '".$table."' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
       $result_op = mysqli_query($con, $query_op);
       while($option = mysqli_fetch_array($result_op)) {
