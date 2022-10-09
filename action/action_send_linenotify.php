@@ -73,14 +73,29 @@ function sendline($id,$value_name,$value_change,$prefix){
     $text_update = "\n".$prefix_post."-".$id." \n".$_SESSION["nickname"]." have been update ".$value_name." = ".$value_change;
     $text_update_web_push =  $prefix_post."-".$id." ".$_SESSION["nickname"]." have been update ".$value_name." = ".$value_change;
     //send to line
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-        mysqli_query($con, "SET NAMES 'utf8' ");
-        $query = "SELECT  * FROM add_new_job  WHERE id = ".$id or die("Error:" . mysqli_error($con));
-        $result =  mysqli_query($con, $query);
-        while($row = mysqli_fetch_array($result)) {
-            $participant = $row["participant"];
-            $topic = $row["title"];
-        }
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","") or die("Error: " . mysqli_error($con));
+    if($prefix=='ANJ' or $prefix=='NS'){
+
+      mysqli_query($con, "SET NAMES 'utf8' ");
+      $query = "SELECT  * FROM all_in_one_project.add_new_job  WHERE id = ".$id or die("Error:" . mysqli_error($con));
+      $result =  mysqli_query($con, $query);
+      while($row = mysqli_fetch_array($result)) {
+          $participant = $row["participant"];
+          $topic = $row["title"];
+      }
+
+    }  
+    if($prefix=='CR'){
+     
+      mysqli_query($con, "SET NAMES 'utf8' ");
+      $query = "SELECT  * FROM all_in_one_project.content_request  WHERE id = ".$id or die("Error:" . mysqli_error($con));
+      $result =  mysqli_query($con, $query);
+      while($row = mysqli_fetch_array($result)) {
+          $participant = $row["participant"];
+          $topic = $row["title"];
+      }
+    }
+      
        $sent_to = explode(",",$participant);
        foreach ($sent_to as $sent_to_username) {
          if($sent_to_username<>$_SESSION["username"] or $_SESSION["username"] =='poojaroonwit'){
