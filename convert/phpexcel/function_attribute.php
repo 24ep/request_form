@@ -341,7 +341,6 @@ function categories(){
   ".$query_set_occasion
   or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
-  echo '<script>console.log("'.$query.'");</script>';
   while($row= mysqli_fetch_array($result)) {
     $n_cate_id_cds .= ",".$row["category_path_id_cds"];
   }

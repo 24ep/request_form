@@ -1,6 +1,5 @@
 <?php
 session_start();
-echo '<script>console.log("start");</script>';
 // include("../../../insert_log.php");
 include("function_attribute.php");
 include('Parsedown.php');
@@ -19,7 +18,6 @@ function convert_BooleanText_to_Boolean($BooleanText){
     }
 }
 //start
-echo '<script>console.log("start1");</script>';
 $time_start = microtime(true);
 // Record file to FTP
 $request = "record";
@@ -58,13 +56,10 @@ $shade_generate_en = array();
 $shade_generate_th = array();
 $shade_generate_hex_cod = array();
 $use_markdown_engine = $_POST["use_markdown_engine"];
-
 if($use_markdown_engine=="Yes"){
   $Parsedown = new Parsedown();
 }
-echo '<script>console.log("start2");</script>';
 ?>
-
 <div class="container-fluid" style="margin:35px;margin-bottom:15px;">
     <div class="row">
         <?php echo "<p style='margin-left:15px'>Generate <strong style='color:#8e44ad'>PIM </strong> Template for <strong>".$job_number."</strong> id <strong>".$id."</strong></p>"; ?>
@@ -111,9 +106,7 @@ echo '<script>console.log("start2");</script>';
                             $upload_file_result = $con->error;
                 }
                 }
-                echo '<script>console.log("start3");</script>';
       move_uploaded_file($file_tmp,$fullpath.$file_name);
-      echo '<script>console.log("'.$upload_file_result.'");</script>';
     $tmpfname = $fullpath.$file_name;
     echo '<script>console.log("'.$tmpfname.'");</script>';
     //setting template --------
@@ -243,7 +236,6 @@ echo '<script>console.log("start2");</script>';
      $target_column = trim($target_column ," ");
     //  global ${"IMFORM_column_number_$target_column"};
      ${"IMFORM_column_number_$target_column"} = $column;
-   
      if($target_column==""){
        $lastColumnIndexImform = $column-1;
        break;
@@ -261,9 +253,7 @@ echo '<script>console.log("start2");</script>';
           $IMFORM_column_number_product_name_th= $IMFORM_column_number_product_name_th_clone;
           $IMFORM_column_number_product_detail_en= $IMFORM_column_number_product_detail_en_clone;
           $IMFORM_column_number_product_detail_th= $IMFORM_column_number_product_detail_th_clone;
-
           $IMFORM_column_number_group_name= $IMFORM_column_number_product_name_en_clone;
-      
       }
       //END -debug  funciton name - individul transfer 22.1 to 22.2
     unset($target_column);
@@ -303,21 +293,17 @@ echo '<script>console.log("start2");</script>';
                        for($row_template = $lastRow_template+1; $row_template <= $lastRowImform-$header_row+$lastRow_template;$row_template++){
                            $row_get_ls = $header_row+$row_template-$lastRow_template;
                            $target_cell = $ws_linesheet->getCellByColumnAndRow($column_ls, $row_get_ls)->getValue();
-                        
                            if($target_cell<>null and substr( $target_cell, 0, 1 ) <> "="){
                                 //special condition - gender
                                   if($column_header_linesheet=="gender_value"){
                                     $target_cell = convert_gender();
                                   }
-
                                   //debug  funciton name - individul transfer 22.1 to 22.2
                                   if( $form_version=="New omni linesheet Version ONE 22.1"){
                                     if($column_header_linesheet=="product_name_en"){
                                       $target_cell = $ws_linesheet->getCellByColumnAndRow($IMFORM_column_number_product_name_en, $row_get_ls)->getValue();
                                     }
-
                                   }
-                                   
                                 //end
                                if($column_header_template_att_trans=="Yes"){ //lookup th > en value
                                  $query_att_trans = "SELECT * FROM pim_attr_convert_option_lu where linesheet_code = '".$column_header_template."' or linesheet_code = '".$column_header_template_replace_location."'" or die("Error:" . mysqli_error($con));
@@ -359,14 +345,11 @@ echo '<script>console.log("start2");</script>';
                 $row_get_ls = $header_row+$row_template-$lastRow_template;
                 $column_header_template = $ws_template->getCellByColumnAndRow($col_template, 2)->getValue();
                 $target_value = call_user_func($column_header_template);
-               
                 $export_workbook ->getActiveSheet()->setCellValueByColumnAndRow($col_template,$row_template,$target_value);
             }
         }
     }
-   
     unset($col_template);
-   
     // create parent tempalte ---------------
         if(!empty($parents)){
           $export_modal_workbook = new Spreadsheet();
@@ -433,7 +416,6 @@ echo '<script>console.log("start2");</script>';
                         }
                         if(strpos($col_modal_name,"name-th_TH")!==false){
                           $value = $ws_linesheet->getCellByColumnAndRow($IMFORM_column_number_product_name_th, $header_row+$row_child_template-$lastRow_template)->getValue(); // hard code
-                          
                         }
                         if(strpos($col_modal_name,"name-en_US")!==false){
                           $value = $ws_linesheet->getCellByColumnAndRow($IMFORM_column_number_product_name_en, $header_row+$row_child_template-$lastRow_template)->getValue(); // hard code
@@ -456,11 +438,9 @@ echo '<script>console.log("start2");</script>';
                             $value = "shade_size_default";
                           }
                         }
-                    
                         $export_modal_workbook->getActiveSheet()->setCellValueByColumnAndRow($col_modal_template,$row_parent, $value );
                       }
                 }
-                
             }
             $row_parent++;
           } 
@@ -480,7 +460,6 @@ echo '<script>console.log("start2");</script>';
                 array_push($col_remove,$col_n["pim_code"]."-en_US-CDS");
                 array_push($col_remove,$col_n["pim_code"]."-en_US-RBS");
           }
-           
       } 
         // remove $col_remove col child template
          if($_POST["replace_emptry_data"]=="Yes"){
@@ -503,7 +482,6 @@ echo '<script>console.log("start2");</script>';
                }
           }   
         }
-      
        // remove blank col child template
          if($_POST["replace_emptry_data"]=="Yes"){
           for($col_template = $lastColumnIndex_template ; $col_template >1 ; $col_template--){
@@ -532,7 +510,6 @@ echo '<script>console.log("start2");</script>';
               }
             }
           }
- 
     // shade template generate
     $export_shade_wb= new Spreadsheet();
     $export_shade_wb->getActiveSheet()->setTitle('shade_template');
@@ -540,16 +517,13 @@ echo '<script>console.log("start2");</script>';
     $export_shade_wb->getActiveSheet()->setCellValueByColumnAndRow(2,1,"code");
     $export_shade_wb->getActiveSheet()->setCellValueByColumnAndRow(3,1,"label-en_US");
     $export_shade_wb->getActiveSheet()->setCellValueByColumnAndRow(4,1,"label-th_TH");
-      
     for($shade_template_row = 2; $shade_template_row  <=  count($shade_generate_code ); $shade_template_row++)
     {
       $export_shade_wb->getActiveSheet()->setCellValueByColumnAndRow(1,$shade_template_row,"color_shade");
       $export_shade_wb->getActiveSheet()->setCellValueByColumnAndRow(2,$shade_template_row,strtolower($shade_generate_code[$shade_template_row-1]));
       $export_shade_wb->getActiveSheet()->setCellValueByColumnAndRow(3,$shade_template_row,$shade_generate_en[$shade_template_row-1]);
       $export_shade_wb->getActiveSheet()->setCellValueByColumnAndRow(4,$shade_template_row,$shade_generate_th[$shade_template_row-1]);
-
     }
- 
     //remove setting row before export
     if($_POST["replace_setting_data"]=="Yes"){
         $i = $lastRow_template;
@@ -558,14 +532,12 @@ echo '<script>console.log("start2");</script>';
         $i--;
         }
     }
-  
     //create un-group file
      $export_ungroup_workbook = new Spreadsheet();
      $export_ungroup_workbook->getActiveSheet()->setTitle('ungroup_template');
      $export_ungroup_workbook->getActiveSheet()->setCellValueByColumnAndRow(1,1,"sku");
      $export_ungroup_workbook->getActiveSheet()->setCellValueByColumnAndRow(2,1,"parent");
      $export_ungroup_workbook->getActiveSheet()->setCellValueByColumnAndRow(3,1,"manual_grouping");
-
     for($row_child_template = 2; $row_child_template  <=  $lastRowImform; $row_child_template++)
     {
         $child_sku_template = $ws_template->getCellByColumnAndRow(1, $row_child_template)->getValue();
@@ -574,7 +546,6 @@ echo '<script>console.log("start2");</script>';
             $export_ungroup_workbook->getActiveSheet()->setCellValueByColumnAndRow(3,$row_child_template,1);
         }
     }
-    
     //export function ---------------------------------------------------
     //export child template
     $path_parts = pathinfo($fullpath.$file_name);
