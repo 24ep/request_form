@@ -35,14 +35,15 @@ if($_POST['action_data']=="24ep"){;
     //    <td>'.$row["action_by"].'</td>
     //  </tr>';
     $image_profile = profile_avatar($row["action_by"],$row['department'],25);
-    $action = str_replace("{snapshot}","<span class='badge rounded-pill bg-primary me-1' >Snapshot</span>",$row["action"]);
-    $action = str_replace("update ","<span class='badge rounded-pill bg-dark m-1' >Update</span>",$action);
-    $action = str_replace("New comment","<span class='badge rounded-pill bg-secondary m-1' >Comment</span>",$action);
+    $action = str_replace("{snapshot}","<span class='badge rounded-pill bg-primary me-1' >Snapshot</span><br>",$row["action"]);
+    $action = str_replace("update ","<span class='badge rounded-pill bg-dark m-1' >Update</span><br>",$action);
+    $action = str_replace("New comment","<span class='badge rounded-pill bg-secondary m-1' >Comment</span><br>",$action);
+    $action = str_replace("add_new_job","<span class='badge rounded-pill bg-primary m-1' >NS</span><br>",$action);
     $tr .= "<li class='list-group-item list-group-item border-bottom p-2' >";
     $tr .=  $image_profile;
     $tr .= "<strong class='ms-2'>".$row["action_by"]."</strong>";
     $tr .= " <small class='ms-1'>".$row["action_date"]."</small>"."<br>";
-    $tr .=   "<span class='ms-2'>".$action."</span><br>";
+    $tr .=   "<span class='mt-1'>".$action."</span><br>";
     $tr .= "</li>";
   }
 }
