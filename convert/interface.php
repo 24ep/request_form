@@ -41,6 +41,7 @@ function get_value($crid,$col_re,$db){
                                 <small id="'.$row_pim["linesheet_code"].'HelpInline" class="text-muted">
                                     '.$row_pim["help_des_attribute"].'
                                 </small>
+                                </div>
                         </div>
                       ';
     }
