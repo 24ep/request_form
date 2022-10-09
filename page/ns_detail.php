@@ -1,5 +1,4 @@
 <?php
-
   session_start();
 //   include("../get/get_default_profile_image.php");
 //   include("../action/action_send_linenotify.php");
@@ -331,12 +330,9 @@
                         aria-selected="true">
                         <ion-icon name="podium-outline"></ion-icon>Progress
                         <!-- status -->
-
-
                         <!-- end status -->
                     </button>
                 </li>
-
                 <li class="nav-item" style="width: fit-content;" role="presentation">
                     <button class="nav-link" id="pills-productions-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-productions" type="button" role="tab" aria-controls="pills-productions"
@@ -344,8 +340,6 @@
                         <ion-icon name="file-tray-stacked-outline"></ion-icon>Informations
                     </button>
                 </li>
-
-
             </ul>
             <!-- <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -415,21 +409,29 @@
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-public" role="tabpanel"
                             aria-labelledby="nav-public-tab" tabindex="0">
-                            <div class="alert alert-primary m-2 shadow-sm" role="alert">
+                            <div class="alert alert-light m-2 shadow-sm" role="alert">
                                 <?php if( $remark<>""){
                         ?>
                                 <ion-icon name="information-circle-outline"></ion-icon><?php echo $remark;?>
                                 <hr>
                                 <?php
                     }
+                    else{
+                        ?>
+                                <ion-icon name="information-circle-outline"></ion-icon><small>Have no any remark from
+                                    requester.</small>
+                                <hr>
+                                <?php
+                    }
                     ?>
                                 <a type="button" href="<?php echo $link_info;?>" target="_blank"
-                                    class="btn btn-sm btn-primary shadow-sm bg-gradient">
-                                    <ion-icon name="document-outline"></ion-icon>Go to information files
+                                    class="btn btn-sm btn-dark shadow-sm bg-gradient">
+                                    <ion-icon name="attach-outline"></ion-icon>Go to files information
                                 </a>
                             </div>
                             <!-- comment ns -->
-                            <ul class="list-group list-group-flush m-1" style="background: fixed;">
+                            <ul class="list-group list-group-flush m-1"
+                                style="background: fixed;--bs-list-group-bg: #fff0;">
                                 <div id="comment_box_ns">
                                     <div id="call_ticket_comment_ns">
                                         <?php include('../get/get_comment_ns.php'); ?>
@@ -456,7 +458,8 @@
                         <div class="tab-pane fade" id="nav-internal" role="tabpanel" aria-labelledby="nav-internal-tab"
                             tabindex="0">
                             <!-- internal note -->
-                            <ul class="list-group list-group-flush m-1" style="background: fixed;">
+                            <ul class="list-group list-group-flush m-1"
+                                style="background: fixed;--bs-list-group-bg: #fff0;">
                                 <div id="comment_box_ins">
                                     <div id="call_ticket_comment_ins">
                                         <?php include('../get/get_comment_ins.php'); ?>
@@ -557,7 +560,6 @@
                     <div id="get_internal_console_nj_new">
                         <?php include('../get/get_internal_console_nj_new.php');?>
                     </div>
-
                 </div>
                 <div class="tab-pane fade" id="nav-sku" role="tabpanel" aria-labelledby="nav-sku-tab" tabindex="0">
                     <?php include('../get/get_list_sku_ticket_new.php'); ?>
@@ -873,9 +875,7 @@ function itemize_send_mail_stamp(id) {
         function cancelCb(clientAnswer) {
             //nothing
             // alert("user cancel prompt");
-        }, {
-
-        },
+        }, {},
     );
     // let subject_mail = prompt("ระบุ subject mail", '<?php echo $subject_mail; ?>');
     if (subject_mail == null || subject_mail == "") {
@@ -947,7 +947,6 @@ function form_production(id) {
             $('#form_production').html(data);
         });
 }
-
 form_production(<?php echo $id; ?>);
 form_request_edit_new(<?php echo $id; ?>);
 get_ns_log('add_new_job', 'csg', <?php echo $id; ?>);
@@ -1080,16 +1079,13 @@ function remove_file(id, path, name) {
         get_files(<?php echo $id; ?>);
     });
 }
-
 document.addEventListener('FilePond:processfiles', (e) => {
     Notiflix.Notify.success('The file had been uploaded');
     get_files(<?php echo $id; ?>);
     // console.log('FilePond ready for use', e.detail);
-
     // get create method reference
     // const { create } = e.detail;
 });
-
 timeago().render(document.querySelectorAll('.timeago'));
 </script>
 <?php
