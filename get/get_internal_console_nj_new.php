@@ -171,7 +171,7 @@
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>'.$text_start_jc.'</button>';
               }else{
                 $bt_content = '
-                <button   data-bs-toggle="modal" data-bs-target="#exampleModal"
+                <button   data-bs-toggle="modal" data-bs-target="#exampleModal" style="right: 110px;position: absolute;"
                 onclick="convert_to_akeneo_template('.$jc_id.',&#39;'.$job_number.'&#39;,&#39;'.$launch_date.'&#39;,&#39;'.$content_assign_name.'&#39;)"
                 class="btn btn-sm btn-outline-info shadow-sm bg-gradient rounded">Convert to PIM template</button>
                 
