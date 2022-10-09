@@ -224,6 +224,7 @@ function convert(id) {
 
     onlyInputs.forEach(input => {
         // var element = document.getElementById(element).value;
+        console.log(input + "=>" + input);
         console.log(input + "=>" + document.getElementById(input).value);
         form_data.append(input, document.getElementById(input).value)
         
