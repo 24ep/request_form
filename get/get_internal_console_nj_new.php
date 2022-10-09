@@ -319,7 +319,7 @@ function action_transfer_to_job_cms() {
             product_sell_type:product_sell_type,
             job_status_filter:job_status_filter,
             brand:brand,
-            product_web_site:product_web_site,
+            product_website:product_website,
             recive_mail_date:recive_mail_date
         },
         function(data) {
