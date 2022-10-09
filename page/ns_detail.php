@@ -56,6 +56,7 @@
             jc.luanch_date as luanchdate,
             jc.content_start_date as content_start_date,
             jc.content_complete_date as content_complete_date,
+            jc.content_assign_name as content_assign_name,
             jc.shoots_start_date as shoots_start_date,
             jc.shoots_complete_date as shoots_complete_date,
             jc.retouch_start_date as retouch_start_date,
@@ -124,6 +125,7 @@
       $approved_date=$row['approved_date'];
       $content_start_date = $row['content_start_date'];
       $content_complete_date = $row['content_complete_date'];
+      $content_assign_name = $row['content_complete_date'];
       $shoots_start_date = $row['shoots_start_date'];
       $shoots_complete_date = $row['shoots_complete_date'];
       $retouch_start_date = $row['retouch_start_date'];
