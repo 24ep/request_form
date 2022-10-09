@@ -218,7 +218,7 @@ function convert(id) {
     Notiflix.Loading.hourglass('Converting , pls wait ...');
     var form_data = new FormData();
 
-    const form = document.getElementById('#pre_convert_form input');
+    const form = document.querySelectorAll('#pre_convert_form input');
     const formElements = Array.from(form.elements);
 
     formElements.forEach(element => {
