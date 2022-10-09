@@ -86,7 +86,7 @@ function get_value($crid,$col_re,$db){
     Template <strong><?php echo $job_number; ?></strong> ID <strong><?php echo $id; ?></strong> | Writer by <strong>
         <?php echo $content_assign_name; ?> </strong>
 </h6>
-<div class="custom-file mb-3">
+<div class="custom-file mb-1 ps-6">
 <label for="linesheet_akeneo_file" class="form-label">IM-FORM</label>
     <input type="file" class="form-control custom-file-input" id="linesheet_akeneo_file" name="linesheet_akeneo_file"
         aria-describedby="linesheet_akeneo_file" style="opacity: 1;width:80%">
