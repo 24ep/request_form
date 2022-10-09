@@ -84,10 +84,10 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       WHERE attribute_code = '".$att_code."' and attribute_table = '".$table."' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
       $result_op = mysqli_query($con, $query_op);
       while($option = mysqli_fetch_array($result_op)) {
-      if(strpos($current_value ,$option["attribute_option"])!==false){
-          $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+      if(strpos($current_value ,$option["attribute_option_code"])!==false){
+          $option_element .= "<option selected value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
         }else{
-          $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+          $option_element .= "<option value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
         }
       }
       if($enable_edit==''){
