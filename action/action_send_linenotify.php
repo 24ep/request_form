@@ -84,7 +84,7 @@ function sendline($id,$value_name,$value_change,$prefix){
        $sent_to = explode(",",$participant);
        foreach ($sent_to as $sent_to_username) {
          if($sent_to_username<>$_SESSION["username"] or $_SESSION["username"] =='poojaroonwit'){
-          $query = "SELECT  * FROM account where username = '".$sent_to_username."'" or die("Error:" . mysqli_error($con));
+          $query = "SELECT  * FROM all_in_one_project.account where username = '".$sent_to_username."'" or die("Error:" . mysqli_error($con));
           $result =  mysqli_query($con, $query);
               while($row = mysqli_fetch_array($result)) {
                   $key = $row["token_line"];
