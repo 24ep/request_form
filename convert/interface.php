@@ -81,119 +81,122 @@ function get_value($crid,$col_re,$db){
     unset($setting_form);
   //-end getting------------------------------------------------------
     ?>
-<div class="bg-white p-5">
-<h6 class="modal-title " id="staticBackdropLabel">Convert <strong style="color:#dc3545"> IM Form </strong> to
-    <strong style="color:#663399">PIM</strong>
-    Template <strong><?php echo $job_number; ?></strong> ID <strong><?php echo $id; ?></strong> | Writer by <strong>
-        <?php echo $content_assign_name; ?> </strong>
-</h6>
-<div class="custom-file mb-2">
-<label for="linesheet_akeneo_file" class="form-label">IM-FORM</label>
-    <input type="file" class="form-control form-control-sm custom-file-input" id="linesheet_akeneo_file" name="linesheet_akeneo_file"
-        aria-describedby="linesheet_akeneo_file" style="opacity: 1;width:80%">
-</div>
-
-
-
-<input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
-<input type="hidden" id="job_number" name="job_number" value="<?php echo $job_number; ?>">
-<div class="row p-5">
-  
-    <div class="col-6">
-    <small><strong>Job Setting</strong></small>
-        <?php echo $get_setting_pim_convert; ?>
+<div class="p-5">
+    <h6 class="modal-title " id="staticBackdropLabel">Convert <strong style="color:#dc3545"> IM Form </strong> to
+        <strong style="color:#663399">PIM</strong>
+        Template <strong><?php echo $job_number; ?></strong> ID <strong><?php echo $id; ?></strong> | Writer by <strong>
+            <?php echo $content_assign_name; ?> </strong>
+    </h6>
+    <div class="custom-file mb-2">
+        <label for="linesheet_akeneo_file" class="form-label">IM-FORM</label>
+        <input type="file" class="form-control form-control-sm custom-file-input" id="linesheet_akeneo_file"
+            name="linesheet_akeneo_file" aria-describedby="linesheet_akeneo_file" style="opacity: 1;width:80%">
     </div>
-   
-    <div class="col-6">
-    <small><strong>Grouping</strong></small>
-        <div class="row  align-items-center mb-2">
-            <div class="col-auto">
-                <label style="width:100px;justify-content:left;">skutype</label>
-            </div>
-            <div class="col-auto">
-                <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
-                    aria-describedby="typeHelpInline" id="skutype" name="skutype" value="GR" oninput="changed_parent()">
-            </div>
+
+
+
+    <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
+    <input type="hidden" id="job_number" name="job_number" value="<?php echo $job_number; ?>">
+    <div class="row mt-2">
+
+        <div class="col-6">
+            <small><strong>Job Setting</strong></small>
+            <?php echo $get_setting_pim_convert; ?>
         </div>
-        <div class="row  align-items-center mb-2">
-            <div class="col-auto">
-                <label style="width:100px;justify-content:left;">BU Create</label>
+
+        <div class="col-6">
+            <small><strong>Grouping</strong></small>
+            <div class="row  align-items-center mb-2">
+                <div class="col-auto">
+                    <label style="width:100px;justify-content:left;">skutype</label>
+                </div>
+                <div class="col-auto">
+                    <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
+                        aria-describedby="typeHelpInline" id="skutype" name="skutype" value="GR"
+                        oninput="changed_parent()">
+                </div>
             </div>
-            <div class="col-auto">
-                <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
-                    aria-describedby="typeHelpInline" id="bu_create" name="bu_create" value="CDS"
-                    oninput="changed_parent()">
+            <div class="row  align-items-center mb-2">
+                <div class="col-auto">
+                    <label style="width:100px;justify-content:left;">BU Create</label>
+                </div>
+                <div class="col-auto">
+                    <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
+                        aria-describedby="typeHelpInline" id="bu_create" name="bu_create" value="CDS"
+                        oninput="changed_parent()">
+                </div>
             </div>
+            <div class="row  align-items-center mb-2">
+                <div class="col-auto">
+                    <label style="width:100px;justify-content:left;">User ID</label>
+                </div>
+                <div class="col-auto">
+                    <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
+                        aria-describedby="typeHelpInline" id="ug_id" name="ug_id"
+                        value="<?php echo sprintf("%02d", $_SESSION["group_id"]); ?>" oninput="changed_parent()">
+                </div>
+            </div>
+            <div class="row  align-items-center mb-2">
+                <div class="col-auto">
+                    <label style="width:100px;justify-content:left;">Year</label>
+                </div>
+                <div class="col-auto">
+                    <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
+                        aria-describedby="typeHelpInline" id="g_year" name="g_year" value="<?php echo date("y"); ?>"
+                        oninput="changed_parent()">
+                </div>
+            </div>
+            <div class="row  align-items-center mb-2">
+                <div class="col-auto">
+                    <label style="width:100px;justify-content:left;">Month</label>
+                </div>
+                <div class="col-auto">
+                    <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
+                        aria-describedby="typeHelpInline" id="g_month" name="g_month" value="<?php echo date("m"); ?>"
+                        oninput="changed_parent()">
+                </div>
+            </div>
+            <div class="row  align-items-center mb-2">
+                <div class="col-auto">
+                    <label style="width:100px;justify-content:left;">Running (4 DG)</label>
+                </div>
+                <div class="col-auto">
+                    <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
+                        aria-describedby="typeHelpInline" id="g_running" name="g_running" value="" placeholder="XXXX"
+                        oninput="changed_parent()">
+                </div>
+            </div>
+            <div class="row  align-items-center mb-2">
+                <div class="col-auto">
+                    <label style="width:100px;justify-content:left;">Parent : </label>
+                </div>
+                <div class="col-auto">
+                    <input style="width:250px;border: 0px;font-weight: bold;" readonly type="text"
+                        class="form-control  form-control-sm mx-sm-3" id="parent" name="parent" value="">
+                </div>
+            </div>
+            <hr>
+            <div class="row  align-items-center mb-2">
+                <div class="col-auto">
+                    <label style="width:100px;justify-content:left;">Sheet Name</label>
+                </div>
+                <div class="col-auto">
+                    <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
+                        aria-describedby="typeHelpInline" id="sheet_name" name="sheet_name" value="IM FORM"
+                        placeholder="work sheet name in excel">
+                </div>
+            </div>
+            <hr>
+            <small><strong>Function control</strong></small>
+            <?php echo $get_setting_pim_convert_function; ?>
+            <hr>
+            <button type="submit" class="btn btn btn-success" style="position: absolute;background:#FF0000;border:none">
+                <ion-icon name="sync-outline"></ion-icon>Convert
+                to Template
+            </button>
+            <small>Have a good day, :> </small>
         </div>
-        <div class="row  align-items-center mb-2">
-            <div class="col-auto">
-                <label style="width:100px;justify-content:left;">User ID</label>
-            </div>
-            <div class="col-auto">
-                <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
-                    aria-describedby="typeHelpInline" id="ug_id" name="ug_id"
-                    value="<?php echo sprintf("%02d", $_SESSION["group_id"]); ?>" oninput="changed_parent()">
-            </div>
-        </div>
-        <div class="row  align-items-center mb-2">
-            <div class="col-auto">
-                <label style="width:100px;justify-content:left;">Year</label>
-            </div>
-            <div class="col-auto">
-                <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
-                    aria-describedby="typeHelpInline" id="g_year" name="g_year" value="<?php echo date("y"); ?>"
-                    oninput="changed_parent()" >
-            </div>
-        </div>
-        <div class="row  align-items-center mb-2">
-            <div class="col-auto">
-                <label style="width:100px;justify-content:left;">Month</label>
-            </div>
-            <div class="col-auto">
-                <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
-                    aria-describedby="typeHelpInline" id="g_month" name="g_month" value="<?php echo date("m"); ?>"
-                    oninput="changed_parent()">
-            </div>
-        </div>
-        <div class="row  align-items-center mb-2">
-            <div class="col-auto">
-                <label style="width:100px;justify-content:left;">Running (4 DG)</label>
-            </div>
-            <div class="col-auto">
-                <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
-                    aria-describedby="typeHelpInline" id="g_running" name="g_running" value="" placeholder="XXXX"
-                    oninput="changed_parent()">
-            </div>
-        </div>
-        <div class="row  align-items-center mb-2">
-            <div class="col-auto">
-                <label style="width:100px;justify-content:left;">Parent : </label>
-            </div>
-            <div class="col-auto">
-                <input style="width:250px;border: 0px;font-weight: bold;" readonly type="text"
-                    class="form-control  form-control-sm mx-sm-3" id="parent" name="parent" value="">
-            </div>
-        </div>
-        <hr>
-        <div class="row  align-items-center mb-2">
-            <div class="col-auto">
-                <label style="width:100px;justify-content:left;">Sheet Name</label>
-            </div>
-            <div class="col-auto">
-                <input style="width:250px" type="text" class="form-control  form-control-sm mx-sm-3"
-                    aria-describedby="typeHelpInline" id="sheet_name" name="sheet_name" value="IM FORM"
-                    placeholder="work sheet name in excel">
-            </div>
-        </div>
-        <hr>
-        <small><strong>Function control</strong></small>
-        <?php echo $get_setting_pim_convert_function; ?>
-        <hr>
-        <button type="submit" class="btn btn btn-success" style="position: absolute;background:#FF0000;border:none"><ion-icon name="sync-outline"></ion-icon>Convert
-    to Template</button>
-        <small>Have a good day, :> </small>
     </div>
-</div>
 </div>
 
 <?php mysqli_close($con_pim); ?>
