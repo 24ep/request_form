@@ -344,8 +344,8 @@
                         <ion-icon name="file-tray-stacked-outline"></ion-icon>Informations
                     </button>
                 </li>
-         
-        
+
+
             </ul>
             <!-- <?php if(strpos($_SESSION["department"],'Content')!==false){?>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -555,9 +555,9 @@
                 <div class="tab-pane fade" id="nav-console" role="tabpanel" aria-labelledby="nav-console-tab"
                     tabindex="0">
                     <div id="get_internal_console_nj_new">
-                    <?php include('../get/get_internal_console_nj_new.php');?>
+                        <?php include('../get/get_internal_console_nj_new.php');?>
                     </div>
-                    
+
                 </div>
                 <div class="tab-pane fade" id="nav-sku" role="tabpanel" aria-labelledby="nav-sku-tab" tabindex="0">
                     <?php include('../get/get_list_sku_ticket_new.php'); ?>
@@ -701,6 +701,7 @@ function ns_discover(key, value) {
     document.getElementById("status_filter").value =
         'pending,checking,waiting data,waiting image,waiting traffic,waiting confirm,need update contact';
 }
+
 function take_ns_requester(id) {
     if (id) {
         $.post("../base/action/action_take_ns_requester.php", {
@@ -711,6 +712,7 @@ function take_ns_requester(id) {
         });
     }
 }
+
 function take_ns_officer(id) {
     if (id) {
         $.post("../base/action/action_take_ns_officer.php", {
@@ -721,6 +723,7 @@ function take_ns_officer(id) {
         });
     }
 }
+
 function comment_ns_id_with_file(id) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input_ns").value;
@@ -750,6 +753,7 @@ function comment_ns_id_with_file(id) {
         }
     });
 }
+
 function comment_ins_id_with_file(id) {
     var form_data = new FormData();
     var comment = document.getElementById("comment_input_ins").value;
@@ -779,6 +783,7 @@ function comment_ins_id_with_file(id) {
         }
     });
 }
+
 function force_sync_with_ticket(id, bu) {
     var result_checking_sku = document.getElementById("result_checking_sku").value;
     var sku_change = document.getElementById("sku_checking").value;
@@ -853,10 +858,28 @@ function force_sync_with_ticket(id, bu) {
         );
     }
 }
+
 function itemize_send_mail_stamp(id) {
-    let subject_mail = prompt("ระบุ subject mail", '<?php echo $subject_mail; ?>');
+    Notiflix.Confirm.prompt(
+        'Email Stamp',
+        'Wait your subkect email',
+        '<?php echo $subject_mail; ?>',
+        'Stamp',
+        'Later',
+        function okCb(clientAnswer) {
+            alert('Client answer is: ' + clientAnswer);
+            let subject_mail = clientAnswer
+        },
+        function cancelCb(clientAnswer) {
+            //nothing
+            // alert("user cancel prompt");
+        }, {
+
+        },
+    );
+    // let subject_mail = prompt("ระบุ subject mail", '<?php echo $subject_mail; ?>');
     if (subject_mail == null || subject_mail == "") {
-        alert("user cancel prompt");
+        // alert("user cancel prompt");
     } else {
         var comment = "[stamp_send_mail]";
         // var subject_mail = document.getElementById("itemize_subject_email").value;
@@ -872,6 +895,7 @@ function itemize_send_mail_stamp(id) {
         }
     }
 }
+
 function sku_checking() {
     // sku_checking_result
     var sku_list = document.getElementById("sku_checking").value;
@@ -893,6 +917,7 @@ function form_request_edit_new(id) {
             $('#form_request_edit_new_2').html(data);
         });
 }
+
 function get_ns_log(action_table, action_data, action_data_id) {
     $.post("base/get/get_ns_log.php", {
             action_table: action_table,
@@ -904,6 +929,7 @@ function get_ns_log(action_table, action_data, action_data_id) {
         });
     console.log("action_data_id:" + action_data_id);
 }
+
 function get_files(id) {
     $.post("base/get/get_file_control.php", {
             id: id
@@ -926,6 +952,7 @@ form_production(<?php echo $id; ?>);
 form_request_edit_new(<?php echo $id; ?>);
 get_ns_log('add_new_job', 'csg', <?php echo $id; ?>);
 get_files(<?php echo $id; ?>);
+
 function split_to_subtask(id) {
     var sku_task_set = document.getElementById("sku_task_set").value;
     document.getElementById('bt_create_task').innerHTML =
@@ -944,6 +971,7 @@ function split_to_subtask(id) {
             '<ion-icon name="checkmark-done-outline"></ion-icon> Success !!';
     }
 }
+
 function action_assign_follow(id) {
     var op_follow_assign_name = document.getElementById("op_follow_assign_name").value;
     if (id) {
@@ -1024,31 +1052,33 @@ tippy('#approved_pg', {
     placement: 'bottom',
     animation: 'fade',
 });
+
 function copytext(text) {
     // Copy the text inside the text field
     navigator.clipboard.writeText(text);
     // Alert the copied text
     Notiflix.Notify.success("Copy " + text + " to clipboard !");
 }
-function remove_file(id,path,name) {
-        $.post("../base/action/action_delete_file.php", {
-            id: id,
-            path:path,
-            name:name
-        }, function(data) {
-            // $('#model_lg').html(data);
-            var result = data.includes("Error");
-                if(result==false){
-                  Notiflix.Notify.success(data);
-                }else{
-                  Notiflix.Report.failure(
-                  'Failure',
-                  data,
-                  'Okay',
-                  )
-                }
-            get_files(<?php echo $id; ?>);
-        });
+
+function remove_file(id, path, name) {
+    $.post("../base/action/action_delete_file.php", {
+        id: id,
+        path: path,
+        name: name
+    }, function(data) {
+        // $('#model_lg').html(data);
+        var result = data.includes("Error");
+        if (result == false) {
+            Notiflix.Notify.success(data);
+        } else {
+            Notiflix.Report.failure(
+                'Failure',
+                data,
+                'Okay',
+            )
+        }
+        get_files(<?php echo $id; ?>);
+    });
 }
 
 document.addEventListener('FilePond:processfiles', (e) => {

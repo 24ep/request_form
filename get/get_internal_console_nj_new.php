@@ -29,31 +29,6 @@
                 <ion-icon name="mail-outline"></ion-icon> Stamp Email send
             </button>
         </h2>
-        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-            data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-                <!-- Itemize send email stamp -->
-                <div class="row  p-3  bg-dark text-light rounded bg-gradient shadow-sm">
-                    <div class="col-6">
-                        <h6><strong>Send Email Stamp</strong></h6>
-                        <small>ลงบันทึกส่งอีเมลติดตาม (ระบุ tag ticket id บนอีเมลทุกครั้ง)</small>
-                    </div>
-                    <div class="col-6">
-                        <?php
-                                                echo ' <button onclick="itemize_send_mail_stamp('.$id.');"
-                                                type="button"
-                                                class="btn btn-primary btn-sm"
-                                                style="width: 100%;">Save</button>';
-               ?>
-                    </div>
-                    <div class="row">
-                        <div id="itemize_stamp_respond">
-                        </div>
-                    </div>
-                </div>
-                <!-- end Itemize send email stamp -->
-            </div>
-        </div>
     </div>
     <?php
                     if($start_checking_date<>"" and $start_checking_date<>null){
@@ -113,7 +88,6 @@
         $notic_sub_ticket_message = "<ion-icon name='alert-circle-outline'></ion-icon> <small>this ticket is sub ticket , so you can't use sub ticket function</small>";
     } ?>
     <?php if($config_type=="task"){ ?>
-
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-heading8">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -132,7 +106,6 @@
                     $text_start_jc = "start";
                     $bt_disabled_jc = "";
                   }
-
               if($start_checking_date == null){
                 $status_change_to = "checking";
                 $bt_checking = '<button 
@@ -162,7 +135,6 @@
                   class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Recived</button>';
               }
               if($content_start_date == null){
-              
                 $bt_content = '<button 
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_content_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
@@ -174,7 +146,6 @@
                 <button   data-bs-toggle="modal" data-bs-target="#exampleModal" style="right: 110px;position: absolute;"
                 onclick="convert_to_akeneo_template('.$jc_id.',&#39;'.$job_number.'&#39;,&#39;'.$launch_date.'&#39;,&#39;'.$content_assign_name.'&#39;)"
                 class="btn btn-sm btn-outline-dark shadow-sm bg-gradient rounded">Convert to PIM template</button>
-                
                 <button 
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_content_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
@@ -245,7 +216,12 @@
                         <input type="hidden" id="cs_edit_status" value="<?php echo $status_change_to;?>">
                         <input type="hidden" id="cs_edit_follow_up_by" value="<?php echo $_SESSION['username'];?>">
                     </li>
-           
+                    <li class="list-group-item d-flex justify-content-between align-items-center" >
+                        Send email stamp
+                        <button onclick="itemize_send_mail_stamp(<?php echo $id; ?>);" 
+                        type="button" class="btn btn-primary btn-sm"
+                        style="width: 100%;">Save</button>
+                    </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_content_complete_date; ?>>
                         writing <?php echo $bt_content; ?> 
                         <input type="hidden" id="cs_edit_content_start_date" value="CURRENT_TIMESTAMP">
@@ -291,7 +267,6 @@
 </div>
 <script>
 function action_transfer_to_job_cms() {
-  
   csg_request_new_id = document.getElementById('anj_edit_id').value;
   bu = document.getElementById('anj_edit_bu').value;
   transfer_type = "Data and Photo";
