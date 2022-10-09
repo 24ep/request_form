@@ -173,6 +173,10 @@ if (!$_SESSION["login_csg"]){
         .nav_list_bra-preferance{
             background: <?php echo get_value_main($_SESSION['username'],"manu_shade","all_in_one_project","account","username");?>;
         }
+        .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+            color: <?php echo get_value_main($_SESSION['username'],"primary_front_button","all_in_one_project","account","username");?>;
+            border: solid 1px  <?php echo get_value_main($_SESSION['username'],"primary_border_button","all_in_one_project","account","username");?>;
+        }
 
     </style>
 
