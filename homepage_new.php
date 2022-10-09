@@ -164,6 +164,14 @@ if (!$_SESSION["login_csg"]){
     <script async src="https://cdn.ampproject.org/v0.js"></script> -->
     <!-- subsc -->
 
+    <!-- preferance -->
+    <style>
+   
+        .nav-link{
+            color: <?php echo get_value_main($_SESSION['username'],"manu_front_color","all_in_one_project","account","username");?>;
+        }
+    </style>
+
 </head>
 
 <body>
