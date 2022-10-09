@@ -63,30 +63,32 @@ if($use_markdown_engine=="Yes"){
 
 ?>
 
-    <style>
-    body {
-        font-family: 'Prompt', sans-serif;
-        font-size: 14px;
-        vertical-align: middle;
-    }
-    a {
-        color: gray;
-        text-decoration: auto;
-    }
-    a:hover {
-        color: black;
-        text-decoration: auto;
-        font-weight: bold;
-    }
-    </style>
+<style>
+body {
+    font-family: 'Prompt', sans-serif;
+    font-size: 14px;
+    vertical-align: middle;
+}
 
-    <div class="container-fluid" style="margin:35px;margin-bottom:15px;">
-        <div class="row">
-            <?php echo "<p style='margin-left:15px'>Generate <strong style='color:#8e44ad'>Akeneo</strong> Template for <strong>".$job_number."</strong> id <strong>".$id."</strong></p>"; ?>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <?php
+a {
+    color: gray;
+    text-decoration: auto;
+}
+
+a:hover {
+    color: black;
+    text-decoration: auto;
+    font-weight: bold;
+}
+</style>
+
+<div class="container-fluid" style="margin:35px;margin-bottom:15px;">
+    <div class="row">
+        <?php echo "<p style='margin-left:15px'>Generate <strong style='color:#8e44ad'>Akeneo</strong> Template for <strong>".$job_number."</strong> id <strong>".$id."</strong></p>"; ?>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <?php
                 //setup connection
                 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","u749625779_cdscontent") or die("Error: " . mysqli_error($con));
                 mysqli_query($con, "SET NAMES 'utf8' ");
@@ -700,4 +702,3 @@ if($use_markdown_engine=="Yes"){
         //grouping
         //todo $count_group
 ?>
-
