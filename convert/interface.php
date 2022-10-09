@@ -48,7 +48,7 @@ function get_value($crid,$col_re,$db){
   }
   $get_setting_pim_convert =  $setting_form;
   unset($setting_form);
-  $query_pim = "SELECT * FROM u749625779_cdscontent,pim_function_convert_control " or die("Error:" . mysqli_error($con_pim));
+  $query_pim = "SELECT * FROM u749625779_cdscontent.pim_function_convert_control " or die("Error:" . mysqli_error($con_pim));
   $result_pim = mysqli_query($con_pim, $query_pim);
   while($row_pim= mysqli_fetch_array($result_pim)) {
       $array_option = explode(',',$row_pim["more_option"] );
