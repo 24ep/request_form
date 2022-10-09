@@ -175,7 +175,7 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
         if($row["attribute_type"]=="number"){
         $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"number",${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
           }elseif($row["attribute_type"]=="text" or $row["attribute_type"]=="color" ){
-          $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"text",${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
+          $element .= return_input_box($row["attribute_code"],$row["attribute_label"],$row["attribute_type"],${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
           }elseif($row["attribute_type"]=="datetime"){
           $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"datetime-local",${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
           }elseif($row["attribute_type"]=="date"){
