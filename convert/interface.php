@@ -219,13 +219,23 @@ function convert(id) {
     Notiflix.Loading.hourglass('Converting , pls wait ...');
     var form_data = new FormData();
 
-    const form = document.querySelectorAll('#pre_convert_form input');
+    const onlyInputs = document.querySelectorAll('#pre_convert_form input');
     // const formElements = Array.from(form.elements);
 
     onlyInputs.forEach(input => {
         // var element = document.getElementById(element).value;
-        console.log(element + "=>" + document.getElementById(element).value);
-        form_data.append(element, document.getElementById(element).value)
+        console.log(input + "=>" + document.getElementById(input).value);
+        form_data.append(input, document.getElementById(input).value)
+        
+    });
+
+    const onlySelects = document.querySelectorAll('#pre_convert_form select');
+    // const formElements = Array.from(form.elements);
+
+    onlySelects.forEach(select => {
+        // var element = document.getElementById(element).value;
+        console.log(select + "=>" + document.getElementById(select).value);
+        form_data.append(select, document.getElementById(select).value)
         
     });
 
