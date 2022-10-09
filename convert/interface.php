@@ -92,10 +92,7 @@ function get_value($crid,$col_re,$db){
         aria-describedby="linesheet_akeneo_file" style="opacity: 1;width:80%">
 </div>
 
-<div class="mb-3">
-  <label for="formFile" class="form-label">Default file input example</label>
-  <input class="form-control" type="file" id="formFile">
-</div>
+
 
 <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
 <input type="hidden" id="job_number" name="job_number" value="<?php echo $job_number; ?>">
