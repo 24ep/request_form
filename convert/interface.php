@@ -79,7 +79,7 @@ function get_value($crid,$col_re,$db){
     unset($setting_form);
   //-end getting------------------------------------------------------
     ?>
-<h6 class="modal-title" id="staticBackdropLabel">Convert <strong style="color:#dc3545"> IM Form </strong> to <strong
+<h6 class="modal-title ps-6" id="staticBackdropLabel">Convert <strong style="color:#dc3545"> IM Form </strong> to <strong
         style="color:#663399">PIM</strong>
     Template <strong><?php echo $job_number; ?></strong> ID <strong><?php echo $id; ?></strong> | Writer by <strong>
         <?php echo $content_assign_name; ?> </strong>
@@ -90,7 +90,7 @@ function get_value($crid,$col_re,$db){
 </div>
 <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
 <input type="hidden" id="job_number" name="job_number" value="<?php echo $job_number; ?>">
-<div class="row">
+<div class="row p-5">
     <div class="col-5">
         <?php echo $get_setting_pim_convert; ?>
     </div>
