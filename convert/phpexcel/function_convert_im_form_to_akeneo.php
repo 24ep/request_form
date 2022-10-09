@@ -30,5 +30,37 @@ $fullpath_normal = '../../attachment/'.$_POST["job_number"].'/Cleaned/';
 mkdir($fullpath, 0777, true);
 $fullpath_normal_template = '../../attachment/'.$_POST["job_number"].'/Template/';
 mkdir($fullpath_normal_template, 0777, true);
+// get varliable from input form
+$parents = array();
+$childs = array();
+$shade_generate = array();
+$job_number = $_POST["job_number"];
+$launch_date  = $_POST["launch_date"];
+$id = $_POST["id"];
+$status_file = "Complete";
+$nickname = $_SESSION["nickname"];
+$skutype = $_POST["skutype"];
+$bu_create = $_POST["bu_create"];
+$ug_id = $_POST["ug_id"];
+$g_year = $_POST["g_year"];
+$g_month = $_POST["g_month"];
+$g_running = $_POST["g_running"];
+$allow_cod = $_POST["allow_cod"];
+$allow_installment = $_POST["allow_installment"];
+$parent_no_running = $skutype.$bu_create.$ug_id.$g_year.$g_month;
+$check_loop = 0;
+$header_get_categories_cds = "category_path_id_cds"; // system will get value [category] from this column in db
+$header_get_categories_rbs = "category_path_id_rbs"; // system will get value [category] from this column in db
+$sheet_name = $_POST["sheet_name"];
+$bu_ticket = $_POST["bu"];
+$shade_generate_code = array();
+$shade_generate_en = array();
+$shade_generate_th = array();
+$shade_generate_hex_cod = array();
+$use_markdown_engine = $_POST["use_markdown_engine"];
+
+if($use_markdown_engine=="Yes"){
+  $Parsedown = new Parsedown();
+}
 
 ?>
