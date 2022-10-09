@@ -175,7 +175,7 @@ if (!$_SESSION["login_csg"]){
         }
         .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
             color: <?php echo get_value_main($_SESSION['username'],"primary_front_button_selected","all_in_one_project","account","username");?>;
-            border: solid 1px  <?php echo get_value_main($_SESSION['username'],"primary_border_button_eslected","all_in_one_project","account","username");?>;
+            border: solid 1px  <?php echo get_value_main($_SESSION['username'],"primary_border_button_slected","all_in_one_project","account","username");?>;
         }
         .nav-pills .nav-link {
             color: <?php echo get_value_main($_SESSION['username'],"manu_front_color","all_in_one_project","account","username");?>;
