@@ -179,7 +179,7 @@
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_content_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
-                class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
+                class="btn btn-sm btn-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($shoots_start_date == null){
                 $bt_shoots = '<button 
@@ -193,7 +193,7 @@
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_shoots_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
-                class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
+                class="btn btn-sm btn-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($retouch_start_date == null){
                 $bt_retouch = '<button 
@@ -207,7 +207,7 @@
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_retouch_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
-                class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Complete</button>';
+                class="btn btn-sm btn-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($upload_image_date == null){
                 $bt_upload_image = '<button
@@ -224,7 +224,7 @@
                 update_value_attribute('.$id.', &#39;cs_edit_approved_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_approved_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
-                class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded" style="right: 90px;position: absolute;" '.$bt_disabled_jc.' >Approve</button>
+                class="btn btn-sm btn-success shadow-sm bg-gradient rounded" style="right: 90px;position: absolute;" '.$bt_disabled_jc.' >Approve</button>
                 <button class="btn btn-sm btn-outline-danger shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>Reject</button>';
               }
               //complete_task
