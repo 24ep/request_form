@@ -20,7 +20,10 @@ body {
     color: black;
     background-color: #ffffff;
     height: -webkit-fill-available;
-    overflow: auto;
+    align-content: start;
+
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .navbar-brand{
     font-weight: 900;
@@ -363,7 +366,7 @@ label#label_file_cme {
 }
 
 .mini-nav-col{
-    width: 3.3%;
+    width: 4%;
 }
 .logo_tems_minimize.hide{
     display: none;
@@ -397,7 +400,7 @@ label#label_file_cme {
     display: none;
 }
 .col-10.col_detail_main.minimize{
-    width: 96.7%;
+    width: 96.4%;
     /* width: auto; */
 }
 .col-8.col_detail_main.minimize{
