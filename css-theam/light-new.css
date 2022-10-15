@@ -20,6 +20,7 @@ body {
     color: black;
     background-color: #ffffff;
     height: -webkit-fill-available;
+    overflow: auto;
 }
 .navbar-brand{
     font-weight: 900;
