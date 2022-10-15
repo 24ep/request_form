@@ -21,7 +21,6 @@ body {
     background-color: #ffffff;
     height: -webkit-fill-available;
     align-content: start;
-
     overflow-x: hidden;
     overflow-y: auto;
 }

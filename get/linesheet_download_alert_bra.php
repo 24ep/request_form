@@ -8,7 +8,7 @@ $sql="SELECT * FROM file_manage WHERE job_number='LACF-INDEX' and file_type='Lin
         $row = mysqli_fetch_array($results);
     }
     echo '
-    <a style="width: fit-content;font-weight: 100;color: #b53441;" id="nav_linesheet_download" class="nav-link mb-3" type="button" href="https://cdse-commercecontent.com/base/'.$row["file_path"].$row["file_name"].'" >
+    <a style="width: fit-content;font-weight: 100;color: #b53441;" id="nav_linesheet_download" class="nav-link" type="button" href="https://cdse-commercecontent.com/base/'.$row["file_path"].$row["file_name"].'" >
         <ion-icon name="cloud-download"></ion-icon><span class="main-manu-nav">'.$row["file_name"].'</span>
     </a>
     ';
