@@ -293,14 +293,9 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     </li>
                     <?php if(strpos($_SESSION["department"],'Content')!==false){
                 ?>
-                    <hr class="hr_manu_bra_in">
-                    <small class="header_manu_bra">Production</small>
-                    <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_panel" data-bs-toggle="pill"
-                            type="button" role="tab" aria-selected="false" onclick="get_page('panel');">
-                            <ion-icon name="grid"></ion-icon><span class="main-manu-nav">Job On Hand</span>
-                        </a>
-                    </li>
+                    <!-- <hr class="hr_manu_bra_in">
+                    <small class="header_manu_bra">Production</small> -->
+                   
                     <!-- <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_job_manage" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('job_manage');">
@@ -323,16 +318,10 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     </li> -->
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Internals</small>
-                    <!-- <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_report" data-bs-toggle="pill"
-                            type="button" role="tab" aria-selected="false" onclick="get_page('report');">
-                            <ion-icon name="bar-chart"></ion-icon><span class="main-manu-nav">Reports</span>
-                        </a>
-                    </li> -->
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_account" data-bs-toggle="pill"
-                            type="button" role="tab" aria-selected="false" onclick="get_page('account');">
-                            <ion-icon name="terminal"></ion-icon><span class="main-manu-nav">Configurable</span>
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_panel" data-bs-toggle="pill"
+                            type="button" role="tab" aria-selected="false" onclick="get_page('panel');">
+                            <ion-icon name="grid"></ion-icon><span class="main-manu-nav">Job On Hand</span>
                         </a>
                     </li>
                     <li class="nav-item btn-group dropend" role="presentation">
@@ -341,6 +330,20 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                             <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Product Administrations</span>
                         </a>
                     </li>
+                    <!-- <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_report" data-bs-toggle="pill"
+                            type="button" role="tab" aria-selected="false" onclick="get_page('report');">
+                            <ion-icon name="bar-chart"></ion-icon><span class="main-manu-nav">Reports</span>
+                        </a>
+                    </li> -->
+
+                    <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_account" data-bs-toggle="pill"
+                            type="button" role="tab" aria-selected="false" onclick="get_page('account');">
+                            <ion-icon name="terminal"></ion-icon><span class="main-manu-nav">Configurable</span>
+                        </a>
+                    </li>
+                   
                     <li class="nav-item btn-group dropend" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_quicklink" type="button"
                             onclick="show_sub_manu('quicklink');">
