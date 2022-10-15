@@ -22,14 +22,6 @@
 </form>
 <?php }else{ ?>
 <div class="accordion accordion-flush" id="accordionFlushExample">
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                <ion-icon name="mail-outline"></ion-icon> Stamp Email send
-            </button>
-        </h2>
-    </div>
     <?php
                     if($start_checking_date<>"" and $start_checking_date<>null){
                         $allow_task_ticket = "disabled";
@@ -90,8 +82,8 @@
     <?php if($config_type=="task"){ ?>
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-heading8">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapse8">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse8"
+                aria-expanded="false" aria-controls="flush-collapse8">
                 <ion-icon name="file-tray-stacked-outline"></ion-icon> Tasks
             </button>
         </h2>
@@ -209,55 +201,64 @@
               }
               ?>
                 <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_accepted_date; ?>>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"
+                        <?php echo $bt_accepted_date; ?>>
                         Checking <?php echo $bt_checking; ?>
                         <input type="hidden" id="cs_edit_start_checking_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_accepted_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_status" value="<?php echo $status_change_to;?>">
                         <input type="hidden" id="cs_edit_follow_up_by" value="<?php echo $_SESSION['username'];?>">
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center" >
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
                         Send email stamp
-                        <button onclick="itemize_send_mail_stamp(<?php echo $id; ?>);" 
-                        type="button" class="btn btn-primary btn-sm"
-                        >Save</button>
+                        <button onclick="itemize_send_mail_stamp(<?php echo $id; ?>);" type="button"
+                            class="btn btn-primary btn-sm">Save</button>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_content_complete_date; ?>>
-                        writing <?php echo $bt_content; ?> 
+                    <li class="list-group-item d-flex justify-content-between align-items-center"
+                        <?php echo $bt_content_complete_date; ?>>
+                        writing <?php echo $bt_content; ?>
                         <input type="hidden" id="cs_edit_content_start_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_content_complete_date" value="CURRENT_TIMESTAMP">
-                        <input type="hidden" id="cs_edit_content_assign_name" value="<?php echo $_SESSION['nickname'];?>">
+                        <input type="hidden" id="cs_edit_content_assign_name"
+                            value="<?php echo $_SESSION['nickname'];?>">
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_recive_item_date; ?>>
-                        Recive Item <?php echo $bt_recive_item; ?> 
+                    <li class="list-group-item d-flex justify-content-between align-items-center"
+                        <?php echo $bt_recive_item_date; ?>>
+                        Recive Item <?php echo $bt_recive_item; ?>
                         <input type="hidden" id="cs_edit_recive_item_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_studio_sku" value="<?php echo $sku;?>">
                         <input type="hidden" id="cs_edit_product_check_by" value="<?php echo $_SESSION['nickname'];?>">
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_shoots_complete_date; ?>>
-                        Shoots <?php echo $bt_shoots; ?> 
+                    <li class="list-group-item d-flex justify-content-between align-items-center"
+                        <?php echo $bt_shoots_complete_date; ?>>
+                        Shoots <?php echo $bt_shoots; ?>
                         <input type="hidden" id="cs_edit_shoots_start_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_shoots_complete_date" value="CURRENT_TIMESTAMP">
-                        <input type="hidden" id="cs_edit_shoots_assign_name" value="<?php echo $_SESSION['nickname'];?>">
-                      </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_retouch_complete_date; ?>>
-                        Retouch <?php echo $bt_retouch; ?> 
+                        <input type="hidden" id="cs_edit_shoots_assign_name"
+                            value="<?php echo $_SESSION['nickname'];?>">
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"
+                        <?php echo $bt_retouch_complete_date; ?>>
+                        Retouch <?php echo $bt_retouch; ?>
                         <input type="hidden" id="cs_edit_retouch_start_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_retouch_complete_date" value="CURRENT_TIMESTAMP">
-                        <input type="hidden" id="cs_edit_retouch_assign_name" value="<?php echo $_SESSION['nickname'];?>">
-                      </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center" <?php echo $bt_upload_image_date; ?>>
-                        Upload image <?php echo $bt_upload_image; ?> 
+                        <input type="hidden" id="cs_edit_retouch_assign_name"
+                            value="<?php echo $_SESSION['nickname'];?>">
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"
+                        <?php echo $bt_upload_image_date; ?>>
+                        Upload image <?php echo $bt_upload_image; ?>
                         <input type="hidden" id="cs_edit_upload_image_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_upload_image_by" value="<?php echo $_SESSION['nickname'];?>">
                         <input type="hidden" id="cs_edit_upload_image_by" value="<?php echo $_SESSION['nickname'];?>"
-                        <input type="hidden" id="cs_edit_check_image" value="Yes">
-                      </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center"  <?php echo $bt_approved_date; ?>>
+                            <input type="hidden" id="cs_edit_check_image" value="Yes">
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"
+                        <?php echo $bt_approved_date; ?>>
                         QC <?php echo $bt_approve; ?> </li>
-                        <input type="hidden" id="cs_edit_approved_date" value="CURRENT_TIMESTAMP">
-                        <input type="hidden" id="cs_edit_approved_by" value="<?php echo $_SESSION['nickname'];?>">
-                        <input type="hidden" id="cs_edit_approved_editing_status" value="approved">
+                    <input type="hidden" id="cs_edit_approved_date" value="CURRENT_TIMESTAMP">
+                    <input type="hidden" id="cs_edit_approved_by" value="<?php echo $_SESSION['nickname'];?>">
+                    <input type="hidden" id="cs_edit_approved_editing_status" value="approved">
                 </ul>
             </div>
         </div>
@@ -267,21 +268,21 @@
 </div>
 <script>
 function action_transfer_to_job_cms() {
-  csg_request_new_id = document.getElementById('anj_edit_id').value;
-  bu = document.getElementById('anj_edit_bu').value;
-  transfer_type = "Data and Photo";
-  production_type = document.getElementById('anj_edit_production_type').value;
-  department = document.getElementById('anj_edit_department').value;
-  sub_department = document.getElementById('anj_edit_sub_department').value;
-  luanch_date = document.getElementById('anj_edit_launch_date').value;
-  sku = document.getElementById('anj_edit_sku').value;
-  product_sell_type = "Normall";
-  // product_sorting = "Product";
-  job_status_filter = "Continue"
-  brand = document.getElementById('anj_edit_brand').value;
-  product_website = document.getElementById('anj_edit_online_channel').value;
-  recive_mail_date = document.getElementById('anj_edit_create_date').value;
-  project_type = document.getElementById('anj_edit_project_type').value;
+    csg_request_new_id = document.getElementById('anj_edit_id').value;
+    bu = document.getElementById('anj_edit_bu').value;
+    transfer_type = "Data and Photo";
+    production_type = document.getElementById('anj_edit_production_type').value;
+    department = document.getElementById('anj_edit_department').value;
+    sub_department = document.getElementById('anj_edit_sub_department').value;
+    luanch_date = document.getElementById('anj_edit_launch_date').value;
+    sku = document.getElementById('anj_edit_sku').value;
+    product_sell_type = "Normall";
+    // product_sorting = "Product";
+    job_status_filter = "Continue"
+    brand = document.getElementById('anj_edit_brand').value;
+    product_website = document.getElementById('anj_edit_online_channel').value;
+    recive_mail_date = document.getElementById('anj_edit_create_date').value;
+    project_type = document.getElementById('anj_edit_project_type').value;
     $.post("base/action/action_create_job_cms_new.php", {
             csg_request_new_id: csg_request_new_id,
             bu: bu,
@@ -289,13 +290,13 @@ function action_transfer_to_job_cms() {
             production_type: production_type,
             department: department,
             sub_department: sub_department,
-            luanch_date:luanch_date,
-            sku:sku,
-            product_sell_type:product_sell_type,
-            job_status_filter:job_status_filter,
-            brand:brand,
-            product_website:product_website,
-            recive_mail_date:recive_mail_date
+            luanch_date: luanch_date,
+            sku: sku,
+            product_sell_type: product_sell_type,
+            job_status_filter: job_status_filter,
+            brand: brand,
+            product_website: product_website,
+            recive_mail_date: recive_mail_date
         },
         function(data) {
             // $('#form_production').html(data);
@@ -311,13 +312,14 @@ function action_transfer_to_job_cms() {
             }
         });
 }
-function convert_to_akeneo_template(id,job_number,launch_date,content_assign_name){
+
+function convert_to_akeneo_template(id, job_number, launch_date, content_assign_name) {
     Notiflix.Loading.hourglass('Loading...');
     $.post("base/convert/interface.php", {
-        id:id,
-        job_number:job_number,
-        launch_date:launch_date,
-        content_assign_name:content_assign_name
+            id: id,
+            job_number: job_number,
+            launch_date: launch_date,
+            content_assign_name: content_assign_name
         },
         function(data) {
             $('#model_lg').html(data);
