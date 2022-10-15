@@ -251,7 +251,7 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
 function update_value_attribute(id, attribute_code, prefix, database, table, primary_key_id) {
     var isMulti = document.getElementById(attribute_code).multiple;
     console.log(isMulti)
-    if (isMulti == TRUE) {
+    if (isMulti == true) {
         var selected = [];
         for (var option of document.getElementById(attribute_code).options) {
             if (option.selected) {
