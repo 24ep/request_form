@@ -439,7 +439,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                                 aria-selected="true">
                                 <ion-icon name="chatbubble-outline"></ion-icon>Public comment
                             </button>
-                            <?php if(strpos($_SESSION["department"],'Content')!==false){?>
+                            <?php if(strpos($_SESSION["permission"],'ps_cr_internal_note')!==false){?>
                             <button class="nav-link" id="nav-internal-tab" data-bs-toggle="tab"
                                 data-bs-target="#nav-internal" type="button" role="tab" aria-controls="nav-internal"
                                 aria-selected="false">
