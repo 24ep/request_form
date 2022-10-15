@@ -30,6 +30,9 @@ if((mysqli_fetch_array($result) === null)){
         $_SESSION["department"]=$row["department"];
         $_SESSION["page_view"]="";
         $_SESSION['pf_theme']=$row["pf_theme"];
+        $_SESSION['role']=$row["role"];
+        $_SESSION['permission']=$row["permission"];
+
     }
     $_SESSION["cr_status_filter"] ="Pending";
     $_SESSION['login_csg']=true;
