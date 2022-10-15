@@ -323,12 +323,12 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     </li> -->
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Internals</small>
-                    <li class="nav-item" role="presentation">
+                    <!-- <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_report" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('report');">
                             <ion-icon name="bar-chart"></ion-icon><span class="main-manu-nav">Reports</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_account" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('account');">
@@ -338,13 +338,13 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     <li class="nav-item btn-group dropend" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_product_mantain" type="button"
                             onclick="show_sub_manu('product_maintain');">
-                            <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Product maintain</span>
+                            <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Product Administrations</span>
                         </a>
                     </li>
                     <li class="nav-item btn-group dropend" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_quicklink" type="button"
                             onclick="show_sub_manu('quicklink');">
-                            <ion-icon name="globe"></ion-icon><span class="main-manu-nav">Quicklink</span>
+                            <ion-icon name="globe"></ion-icon><span class="main-manu-nav">Quick-link</span>
                         </a>
                     </li>
                     <?php } ?>
