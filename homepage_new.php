@@ -287,7 +287,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                             <ion-icon name="ticket"></ion-icon><span class="main-manu-nav">Update Content</span>
                         </a>
                     </li>
-                    <?php if(strpos($_SESSION["permissiom"],'ps_internal')!==false){
+                    <?php if(strpos($_SESSION["permission"],'ps_internal')!==false){
                 ?>
                     <!-- <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Production</small> -->
