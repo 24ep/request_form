@@ -9,25 +9,25 @@ $query = "SELECT anj.id , anj.brand from all_in_one_project.add_new_job anj wher
 $result = mysqli_query($con, $query);
 echo "<ul style='list-style: unset;padding: 0px;font-weight: bold;color: #1b2c52;'>";
 while($row = mysqli_fetch_array($result)) {
-    echo "<li>NS-".$row['id']." ".$row['brand']."  <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_add_new(&#39;".$row['id']."&#39)' name='open-outline'>  </li>";
+    echo "<li class='p-2 bg-light shadow-sm'>NS-".$row['id']." ".$row['brand']."  <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_add_new(&#39;".$row['id']."&#39)' name='open-outline'>  </li>";
 }
 //---
 $query = "SELECT jc.job_number ,  jc.csg_request_new_id  from u749625779_cdscontent.job_cms jc where jc.job_number like '%".$input."%' limit 3" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
-    echo "<li>Job Number : ".$row['job_number']." <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_add_new(&#39;".$row['csg_request_new_id']."&#39)' name='open-outline'>  </li>";
+    echo "<li class='p-2 bg-light shadow-sm'>Job Number : ".$row['job_number']." <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_add_new(&#39;".$row['csg_request_new_id']."&#39)' name='open-outline'>  </li>";
 }
 //---
 $query = "SELECT cr.id,cr.title from all_in_one_project.content_request cr where cr.id = '".$input."' or cr.title like '%".$input."%'  limit 10" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
-    echo "<li>CR-".$row['id']." ".$row['title']."  <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_content_request(&#39;".$row['id']."&#39)' name='open-outline'>  </li>";
+    echo "<li class='p-2 bg-light shadow-sm' >CR-".$row['id']." ".$row['title']."  <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_content_request(&#39;".$row['id']."&#39)' name='open-outline'>  </li>";
 }
 //---
 $query = "SELECT sl.sku,sl.csg_id from all_in_one_project.sku_list sl where sl.sku = '".$input."' limit 3" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
-    echo "<li>SKU : ".$row['sku']." <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_add_new(&#39;".$row['csg_id']."&#39)' name='open-outline'>  </li>";
+    echo "<li class='p-2 bg-light shadow-sm'>SKU : ".$row['sku']." <ion-icon type='button'  class='btn btn-outline-dark border-0 btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='call_model_edit_add_new(&#39;".$row['csg_id']."&#39)' name='open-outline'>  </li>";
 }
 echo "</ul>";
 
