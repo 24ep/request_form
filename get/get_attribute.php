@@ -207,6 +207,8 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
         }else{
             $allow_in_edit = '';
         }
+    
+
         if($row["attribute_type"]=="number"){
         $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"number",${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
           }elseif($row["attribute_type"]=="text"){
