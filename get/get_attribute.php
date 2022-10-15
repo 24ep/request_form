@@ -221,7 +221,7 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
           }elseif($row["attribute_type"]=="single_select"){
            $element .= return_s_select_box($row["attribute_code"],$row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
           }elseif($row["attribute_type"]=="multi_select"){
-         $element .= return_m_select_box($row["attribute_code"],$row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
+         $element .= return_m_select_box($row["attribute_code"],$row["attribute_label"],"multi_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
           }
     }
     return $element;
@@ -247,14 +247,26 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
 
 ?>
 <script>
-  function update_value_attribute(id, attribute_code , prefix , database , table , primary_key_id) {
+function update_value_attribute(id, attribute_code, prefix, database, table, primary_key_id) {
+    var isMulti = document.getElementById(attribute_code).multiple;
+    if (isMulti == TRUE) {
+        var selected = [];
+        for (var option of document.getElementById(attribute_code).options) {
+            if (option.selected) {
+                selected.push(option.value);
+            }
+        }
+      var value_change = selected.toString();
+    }else{
+      var value_change = document.getElementById(attribute_code).value;
+    }
     var attribute_code = attribute_code;
-    var value_change = document.getElementById(attribute_code).value;
-    if(value_change=="CURRENT_TIMESTAMP"){
+  
+    if (value_change == "CURRENT_TIMESTAMP") {
         var today = new Date();
-        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date+' '+time;
+        var dateTime = date + ' ' + time;
         value_change = dateTime;
     }
     if (id) {
@@ -262,27 +274,27 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
                 id: id,
                 value_change: value_change,
                 attribute_code: attribute_code,
-                prefix : prefix, 
-                database : database,
-                table : table,
-                primary_key_id:primary_key_id
+                prefix: prefix,
+                database: database,
+                table: table,
+                primary_key_id: primary_key_id
 
             },
             function(data) {
                 // $('#call_update_ns_complete').html(data);
-               
+
                 var result = data.includes("Error");
-                if(result==false){
-                  Notiflix.Notify.success(data);
-                  if(prefix=="cs"){
-                    call_edit_add_new_modal(id);
-                  }
-                }else{
-                  Notiflix.Report.failure(
-                  'Failure',
-                  data,
-                  'Okay',
-                  )
+                if (result == false) {
+                    Notiflix.Notify.success(data);
+                    if (prefix == "cs") {
+                        call_edit_add_new_modal(id);
+                    }
+                } else {
+                    Notiflix.Report.failure(
+                        'Failure',
+                        data,
+                        'Okay',
+                    )
                 }
             });
     }
