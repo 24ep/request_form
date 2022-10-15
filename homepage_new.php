@@ -226,11 +226,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
         <div class="col-2 list_bra">
             <div class="nav nav-pills nav_list_bra nav_list_bra-preferance border-end" id="v-pills-tab"
                 role="tablist" aria-orientation="vertical">
-                <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
-                    class="position-absolute top-1_5 start-100 translate-middle btn btn-sm btn-secondary  bg-gradient shadow rounded-pill"
-                    style="width: 2rem; height:2rem;padding: 0px;z-index: 1;top: 95px!important;">
-                    <!-- <ion-icon name="menu-outline" style="margin:0px"></ion-icon> -->
-                </button>
+               
                 <input type="hidden" id="minimize_manu" name="minimize_manu" value="show">
                 <input type="hidden" id="active_sub_manu" name="active_sub_manu" value="hide">
                 <a class="navbar-brand" href="#">
@@ -372,6 +368,11 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
             style="margin-left: inherit;">
         </div>
         <div class="col-10 col_detail_main" style="font-size: 14px;padding: 0px;margin-left: inherit;">
+        <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
+                    class="position-absolute top-1_5 start-0 translate-middle btn btn-sm btn-secondary  bg-gradient shadow rounded-pill"
+                    style="width: 2rem; height:2rem;padding: 0px;z-index: 1;top: 95px!important;">
+                    <!-- <ion-icon name="menu-outline" style="margin:0px"></ion-icon> -->
+                </button>
             <?php
 
             $database = 'all_in_one_project';
