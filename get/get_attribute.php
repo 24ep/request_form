@@ -201,6 +201,7 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
     $element="";
     while($row = mysqli_fetch_array($result)) {
         // $element.= $row['attribute_label'];
+        // if(strpos($_SESSION["permissiom"],'ps_internal')!==false
         if($row['allow_in_edit']==0){
             $allow_in_edit = ' disabled';
         }else{
@@ -249,6 +250,7 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
 <script>
 function update_value_attribute(id, attribute_code, prefix, database, table, primary_key_id) {
     var isMulti = document.getElementById(attribute_code).multiple;
+    console.log(isMulti)
     if (isMulti == TRUE) {
         var selected = [];
         for (var option of document.getElementById(attribute_code).options) {
