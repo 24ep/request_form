@@ -327,7 +327,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     <li class="nav-item btn-group dropend" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_product_mantain" type="button"
                             onclick="show_sub_manu('product_maintain');">
-                            <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">Product Administrations</span>
+                            <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">CMS</span>
                         </a>
                     </li>
                     <!-- <li class="nav-item" role="presentation">
