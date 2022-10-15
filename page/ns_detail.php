@@ -542,19 +542,19 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                         <ion-icon name="document-text-outline"></ion-icon>
                         <strong><?php echo $brand; ?></strong> Note
                     </button>
-                    <!-- <button class="nav-link" id="nav-detail-tab" data-bs-toggle="tab" data-bs-target="#nav-detail"
-                        type="button" role="tab" aria-controls="nav-detail" aria-selected="false">
-                        <ion-icon name="information-circle-outline"></ion-icon>Info
-                    </button> -->
+                    <?php if(strpos($_SESSION["permission"],'ps_ns_logs')!==false){?>
                     <button class="nav-link" id="nav-logs-tab" data-bs-toggle="tab" data-bs-target="#nav-logs"
                         type="button" role="tab" aria-controls="nav-logs" aria-selected="false">
                         <ion-icon name="time-outline"></ion-icon>Logs
                     </button>
-                    <?php if(strpos($_SESSION["department"],'Content')!==false){?>
+                    <?php } ?>
+                    <?php if(strpos($_SESSION["permission"],'ps_ns_function')!==false){?>
                     <button class="nav-link" id="nav-console-tab" data-bs-toggle="tab" data-bs-target="#nav-console"
                         type="button" role="tab" aria-controls="nav-console" aria-selected="false">
-                        <ion-icon name="game-controller-outline"></ion-icon>Control
+                        <ion-icon name="game-controller-outline"></ion-icon>Function
                     </button>
+                    <?php } ?>
+                    <?php if(strpos($_SESSION["permission"],'pr_ticket_files')!==false){?>
                     <button class="nav-link" id="nav-files-tab" data-bs-toggle="tab" data-bs-target="#nav-files"
                         type="button" role="tab" aria-controls="nav-files" aria-selected="false">
                         <ion-icon name="folder-open-outline"></ion-icon>files
