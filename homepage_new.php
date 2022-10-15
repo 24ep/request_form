@@ -301,12 +301,12 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                             <ion-icon name="grid"></ion-icon><span class="main-manu-nav">Job On Hand</span>
                         </a>
                     </li>
-                    <li class="nav-item" role="presentation">
+                    <!-- <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_job_manage" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('job_manage');">
                             <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">24EP </span>
                         </a>
-                    </li>
+                    </li> -->
 
                     <!-- 
                     <li class="nav-item" role="presentation">
