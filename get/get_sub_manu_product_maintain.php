@@ -1,6 +1,6 @@
 <div class="offcanvas-header">
     <h5 class="offcanvas-title m-3" id="offcanvasRightLabel">
-        <ion-icon name="storefront-outline"></ion-icon> <strong>Product mantain</strong>
+        <ion-icon name="storefront-outline"></ion-icon> <strong>CMS</strong>
     </h5>
     <button type="button" class="btn-close p-4" onclick="show_sub_manu('close');"  ></button>
 </div>
