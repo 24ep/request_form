@@ -61,7 +61,7 @@
 <?php 
 
        function getoption_return_edit_job($col,$table,$select_option,$sorm,$database) {
-        include("connect.php");
+        include("base/connect.php");
         //    $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
         //    mysqli_query($con, "SET NAMES 'utf8' ");
            $query = "SELECT * FROM ".$database.".".$table." ORDER BY id asc" or die("Error:" . mysqli_error($con));
