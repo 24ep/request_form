@@ -1,6 +1,6 @@
 <?php
  include("send_verify.php");
- //send_verify_email($_SESSION['username'],$_SESSION['work_email'],$_SESSION['firstname'],$_SESSION['lastname']);
+ send_verify_email($_SESSION['username'],$_SESSION['work_email'],$_SESSION['firstname'],$_SESSION['lastname']);
 
 ?>
 <!DOCTYPE html
@@ -658,7 +658,7 @@
                                                     <td align="left" class="body text-dark-gray">
                                                         We’ve recently send an email to you, Could You Please find our email in your inbox then verify first.
                                                         <br>
-                                                        Your Email : <?php echo $_GET['email'];?>
+                                                        Your Email : <strong> <?php echo $_GET['email'];?> </strong>
                                                     </td>
                                                 </tr>
                                                 <!-- End Text -->
