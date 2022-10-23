@@ -32,6 +32,7 @@ if((mysqli_fetch_array($result) === null)){
         $_SESSION['pf_theme']=$row["pf_theme"];
         $_SESSION['role']=$row["role"];
         $_SESSION['permission']=$row["permission"];
+        $_SESSION['verify_code']=$row["verify_code"];
 
     }
     $_SESSION["cr_status_filter"] ="Pending";
