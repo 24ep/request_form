@@ -8,7 +8,7 @@ $query = mysqli_query($con,$sql);
 if((mysqli_fetch_array($result) === null)){
     echo 'verify uncomplete';
 }else{
-    $sql  = "UPDATE account SET verify_code = 'verifide' WHERE username='".$username."'";
+    $sql  = "UPDATE account SET verify_code = 'verified' WHERE username='".$username."'";
 	$query = mysqli_query($con,$sql);
     echo 'verify complete';
 }
