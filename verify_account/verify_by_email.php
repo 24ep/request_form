@@ -18,6 +18,7 @@ while($row = mysqli_fetch_array($result)) {
             echo  $con->error;
         }
     }else{
+        echo  $con->error;
         echo 'verify uncomplete';
     }
 }
