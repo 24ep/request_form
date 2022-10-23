@@ -177,6 +177,7 @@ if($verify_code=="verified"){
     echo 'console.log("account verified")';
 }else{
     Header("Location: https://content-service-gate.cdse-commercecontent.com/base/verify_account/waiting_verify.php?email=".$_SESSION['work_email']);
+    exit();
 }
 ?>
     <style>
