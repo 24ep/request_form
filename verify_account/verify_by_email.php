@@ -10,8 +10,13 @@ if((mysqli_fetch_array($query) === null)){
 }else{
     $sql  = "UPDATE account SET verify_code = 'verified' WHERE username='".$username."'";
 	$query = mysqli_query($con,$sql);
+    if($query){
     // echo 'verify complete';
     $_SESSION['verify_code'] = 'verified';
     Header("Location: https://content-service-gate.cdse-commercecontent.com/");
+    }else{
+        echo  $con->error;
+    }
+
 }
 ?>
