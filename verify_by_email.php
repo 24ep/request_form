@@ -10,14 +10,19 @@ while($row = mysqli_fetch_array($result)) {
  
         $sql_update  = "UPDATE account SET verify_code = 'verified' WHERE verify_code='".$verify_code."'";
         $query_update = mysqli_query($con_update,$sql_update);
-        $verify_code = 'verified';
+        $verify_code_verified = 'verified';
         
    
 }
-$_SESSION['verify_code'] =$verify_code;
+$_SESSION['verify_code'] = $verify_code_verified;
+
+if($_SESSION['verify_code']  == 'verified'){
+    Header("Location: https://content-service-gate.cdse-commercecontent.com/");
+}else{
 echo $_SESSION['verify_code'] ."<br>";
 echo $verify_code;
-//Header("Location: https://content-service-gate.cdse-commercecontent.com/");
+}
+
 exit();
 // echo  $con->error;
 // echo $verify_code;
