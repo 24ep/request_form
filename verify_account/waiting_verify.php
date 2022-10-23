@@ -680,8 +680,8 @@ session_start();
                                                                 <tr>
                                                                     <td align="left"
                                                                         class="button-bg button-bg-secondary">
-                                                                        <button type="button" onclick="change_email_address();" class="button button-secondary">Change your
-                                                                            email address</button>
+                                                                        <a type="button" onclick="change_email_address();" class="button button-secondary">Change your
+                                                                            email address</a>
 
                                                                     </td>
                                                                 </tr>
