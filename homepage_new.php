@@ -23,6 +23,13 @@ function bg_dept($department){
 if (!$_SESSION["login_csg"]){ 
             Header("Location: login");
     }else{
+        if($_SESSION['verify_code']=="verified"){
+            echo 'console.log("account verified")';
+        }else{
+            include("verify_account/send_verify.php");
+            send_verify_email($_SESSION['username'],$_SESSION['work_email'],$_SESSION['firstname'],$_SESSION['lastname']);
+            header("Location: https://content-service-gate.cdse-commercecontent.com/base/verify_account/waiting_verify.php?email=".$_SESSION['work_email']);
+        }
     include_once('get/get_option_function.php');
         $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
         $username_op_cr = getoption_return_filter("username","account",$_SESSION["user_cr_filter"],"single","all_in_one_project");
@@ -156,13 +163,7 @@ if (!$_SESSION["login_csg"]){
     <!-- preferance -->
 
     <?php
-    if($_SESSION['verify_code']=="verified"){
-        echo 'console.log("account verified")';
-    }else{
-        include("verify_account/send_verify.php");
-        send_verify_email($_SESSION['username'],$_SESSION['work_email'],$_SESSION['firstname'],$_SESSION['lastname']);
-        header("Location: https://content-service-gate.cdse-commercecontent.com/base/verify_account/waiting_verify.php?email=".$_SESSION['work_email']);
-    }
+   
 function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
     $con_cr= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con_cr));
     mysqli_query($con_cr, "SET NAMES 'utf8' ");
