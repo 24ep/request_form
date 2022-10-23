@@ -14,7 +14,8 @@ while($row = mysqli_fetch_array($result)) {
         
    
 }
-Header("Location: https://content-service-gate.cdse-commercecontent.com/");
+echo $_SESSION['verify_code'];
+//Header("Location: https://content-service-gate.cdse-commercecontent.com/");
 exit();
 // echo  $con->error;
 // echo $verify_code;
