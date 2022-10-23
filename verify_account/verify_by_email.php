@@ -13,7 +13,7 @@ while($row = mysqli_fetch_array($result)) {
         if($query_update){
         // echo 'verify complete';
         $_SESSION['verify_code'] = 'verified';
-        //Header("Location: https://content-service-gate.cdse-commercecontent.com/");
+        Header("Location: https://content-service-gate.cdse-commercecontent.com/");
         }else{
             echo  $con->error;
         }
