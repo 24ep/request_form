@@ -22,7 +22,7 @@ session_start();
     <!--[if mso]>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <![endif]-->
-    <title>Please Verify Email Address</title>
+    <title>Please verify Email Address</title>
     <style type="text/css">
     /* === Custom Fonts === */
     /* Add your fonts here via imports */
