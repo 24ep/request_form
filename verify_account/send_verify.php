@@ -2,7 +2,7 @@
 
 
 $username = $_GET['username'];
-$email = $_GET['email'];
+$email = $_GET['work_email'];
 $firstname = $_GET['firstname'];
 $lastname = $_GET['lastname'];
 
