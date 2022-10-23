@@ -1,6 +1,6 @@
 <?php
  include("send_verify.php");
- send_verify_email($_SESSION['username'],$_SESSION['work_email'],$_SESSION['firstname'],$_SESSION['lastname']);
+ //send_verify_email($_SESSION['username'],$_SESSION['work_email'],$_SESSION['firstname'],$_SESSION['lastname']);
 
 ?>
 <!DOCTYPE html
