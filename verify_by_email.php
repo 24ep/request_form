@@ -10,11 +10,11 @@ while($row = mysqli_fetch_array($result)) {
  
         $sql_update  = "UPDATE account SET verify_code = 'verified' WHERE verify_code='".$verify_code."'";
         $query_update = mysqli_query($con_update,$sql_update);
-        $_SESSION['verify_code'] = 'verified';
+        $verify_code = 'verified';
         
    
 }
-echo $_SESSION['verify_code'];
+$_SESSION['verify_code'] =$verify_code;
 //Header("Location: https://content-service-gate.cdse-commercecontent.com/");
 exit();
 // echo  $con->error;
