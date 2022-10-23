@@ -1,7 +1,7 @@
 <?php
 chdir("..");
 session_start();
- include("send_verify/send_verify.php");
+ include("verify_account/send_verify.php");
  include("get/get_attribute.php");
  send_verify_email($_SESSION['username'],$_SESSION['work_email'],$_SESSION['firstname'],$_SESSION['lastname']);
 
