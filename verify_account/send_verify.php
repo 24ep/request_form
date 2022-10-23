@@ -44,6 +44,7 @@ $lastname = $_GET['lastname'];
         // echo $response;
             }
     
-  
+            header("Location: https://content-service-gate.cdse-commercecontent.com/base/verify_account/waiting_verify.php?email=".$_SESSION['work_email'],TRUE, 301);
+            exit();
 
 ?>
