@@ -17,7 +17,7 @@ while($row = mysqli_fetch_array($result)) {
         echo 'verify uncomplete';
     }
 }
-// echo  $con->error;
-// echo $sql;
+echo  $con->error;
+echo $verify_code;
 
 ?>
