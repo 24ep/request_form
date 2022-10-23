@@ -6,7 +6,7 @@ $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project
 $con_update= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 $sql  = "SELECT username,verify_code from account WHERE username='".$username."'";
-$query = mysqli_query($con,$sql);
+$result = mysqli_query($con,$sql);
 while($row = mysqli_fetch_array($result)) {
     if($row['verify_code']==$verify_code){
         $sql_update  = "UPDATE account SET verify_code = 'verified' WHERE username='".$username."'";
@@ -19,6 +19,6 @@ while($row = mysqli_fetch_array($result)) {
     }
 }
 // echo  $con->error;
-echo $verify_code;
+// echo $verify_code;
 
 ?>
