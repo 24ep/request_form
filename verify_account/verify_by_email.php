@@ -4,7 +4,7 @@ $username = $_GET['username'];
 $verify_code = $_GET['verify_code'];
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
-$sql  = "SELECT username,verify_code from account WHERE username='".$username;
+$sql  = "SELECT username,verify_code from account WHERE username='".$username."'";
 $query = mysqli_query($con,$sql);
 while($row = mysqli_fetch_array($result)) {
     if($row['verify_code']==$verify_code){
