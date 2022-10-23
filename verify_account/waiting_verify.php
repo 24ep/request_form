@@ -14,8 +14,8 @@ session_start();
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="x-apple-disable-message-reformatting" />
-    <link rel="stylesheet" href="../base/action/notiflix/dist/notiflix-3.2.5.min.css" />
-    <script src="../base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
+    <link rel="stylesheet" href="https://content-service-gate.cdse-commercecontent.com/base/action/notiflix/dist/notiflix-3.2.5.min.css" />
+    <script src="https://content-service-gate.cdse-commercecontent.com/base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
     <!--[if mso]>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <![endif]-->
