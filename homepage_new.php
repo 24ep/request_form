@@ -161,8 +161,7 @@ if (!$_SESSION["login_csg"]){
     }else{
         include("verify_account/send_verify.php");
         send_verify_email($_SESSION['username'],$_SESSION['work_email'],$_SESSION['firstname'],$_SESSION['lastname']);
-        header("Location: https://content-service-gate.cdse-commercecontent.com/base/verify_account/waiting_verify.php?email=".$_SESSION['work_email'],TRUE, 301);
-        exit();
+        
     }
 function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
     $con_cr= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con_cr));
