@@ -23,7 +23,11 @@ function bg_dept($department){
 if (!$_SESSION["login_csg"]){ 
             Header("Location: login");
     }else{
-      
+        if($_SESSION['verify_code']=="verified"){
+            echo 'console.log("account verified")';
+        }else{
+            Header("Location: https://content-service-gate.cdse-commercecontent.com/base/verify_account/waiting_verify.php?email=".$_SESSION['work_email']);
+        }
     include_once('get/get_option_function.php');
         $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
         $username_op_cr = getoption_return_filter("username","account",$_SESSION["user_cr_filter"],"single","all_in_one_project");
@@ -172,14 +176,8 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
     return $current_cr;
 }
 
-$verify_code = get_value_main($_SESSION['username'], "verify_code", "all_in_one_project", "account", "username");
-if($verify_code=="verified"){
-    echo 'console.log("account verified")';
-}else{
-    
-exit();
-Header("Location: https://content-service-gate.cdse-commercecontent.com/base/verify_account/waiting_verify.php?email=".$_SESSION['work_email']);
-}
+// $verify_code = get_value_main($_SESSION['username'], "verify_code", "all_in_one_project", "account", "username");
+
 ?>
     <style>
     .nav-link-preferance {
