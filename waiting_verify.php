@@ -667,7 +667,7 @@ session_start();
                                                         We’ve recently send an email to you, Could You Please find our
                                                         email in your inbox then verify first.
                                                         <br>
-                                                        Your Email : <strong> <?php echo $_GET['email'];?> </strong>
+                                                        Your Email : <strong> <?php echo $_SESSION['work_email'];?> </strong>
                                                     </td>
                                                 </tr>
                                                 <!-- End Text -->

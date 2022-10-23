@@ -1,6 +1,6 @@
 <?php 
     session_start();
-$verify_code = $_GET['verify_code'];
+$verify_code = htmlspecialchars($_GET['verify_code'],  ENT_QUOTES, 'UTF-8');
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 $con_update= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
