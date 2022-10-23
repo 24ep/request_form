@@ -804,7 +804,8 @@
 </html>
 
 <script>
-Notiflix.Confirm.ask(
+    function change_email_address(){
+        Notiflix.Confirm.ask(
         'Change your Email',
         'Please fill a new email that you want to change',
         'The system will send an verify email to you again.',
@@ -817,4 +818,7 @@ Notiflix.Confirm.ask(
             // alert('😪 ...');
         }
 )
+
+    }
+
 </script>
