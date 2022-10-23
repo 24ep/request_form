@@ -1,4 +1,5 @@
 <?php 
+    session_start();
 $username = $_GET['username'];
 $verify_code = $_GET['verify_code'];
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -13,7 +14,7 @@ if((mysqli_fetch_array($query) === null)){
     if($query){
     // echo 'verify complete';
     $_SESSION['verify_code'] = 'verified';
-    //Header("Location: https://content-service-gate.cdse-commercecontent.com/");
+    Header("Location: https://content-service-gate.cdse-commercecontent.com/");
     }else{
         echo  $con->error;
     }
