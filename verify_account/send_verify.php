@@ -4,28 +4,28 @@ $email = $_GET['email'];
 $firstname = $_GET['firstname'];
 $lastname = $_GET['lastname'];
 
-// 1. หลังจากที่ยูสเซอร์ป้อนข้อมูลหน้าฟอร์มและ submit มา สร้างตัวเลขสุ่มขึ้นมาชุดหนึ่งเพื่อเป็น verify code 
+// // 1. หลังจากที่ยูสเซอร์ป้อนข้อมูลหน้าฟอร์มและ submit มา สร้างตัวเลขสุ่มขึ้นมาชุดหนึ่งเพื่อเป็น verify code 
 
-    // สร้างรหัสสุ่ม 
+//     // สร้างรหัสสุ่ม 
     
-    //1.สร้างชุดตัวอักษรตั้งแต่ a-z 
-    $arr_a_z = range( "a" , "z" );
+//     //1.สร้างชุดตัวอักษรตั้งแต่ a-z 
+//     $arr_a_z = range( "a" , "z" );
     
-    //2.สร้างชุดตัวอักษรตั้งแต่ A-Z 
-    $arr_A_Z = range( "A" , "Z" );
+//     //2.สร้างชุดตัวอักษรตั้งแต่ A-Z 
+//     $arr_A_Z = range( "A" , "Z" );
     
-    //3.สร้างชุดตัวอักษรตั้งแต่ 0-9 
-    $arr_0_9 = range( 0 , 9 ); 
+//     //3.สร้างชุดตัวอักษรตั้งแต่ 0-9 
+//     $arr_0_9 = range( 0 , 9 ); 
     
-    //4.เอาชุดตัวอักษรทั้ง 3 มารวมกัน 
-    $arr_a_9 = array_merge( $arr_a_z , $arr_A_Z , $arr_0_9 ) ; 
-    $str_a_9 = implode( $arr_a_9 ) ; 
+//     //4.เอาชุดตัวอักษรทั้ง 3 มารวมกัน 
+//     $arr_a_9 = array_merge( $arr_a_z , $arr_A_Z , $arr_0_9 ) ; 
+//     $str_a_9 = implode( $arr_a_9 ) ; 
     
-    //5.ทำการสับเปลี่ยนตำแหน่งตัวอักษร 
-    $str_a_9 = str_shuffle( $str_a_9 ) ; 
+//     //5.ทำการสับเปลี่ยนตำแหน่งตัวอักษร 
+//     $str_a_9 = str_shuffle( $str_a_9 ) ; 
     
     //6.ตัดเอามาแค่ 10 ตัวอักษร 
-    $member_verify_code = substr( $str_a_9 , 0 , 10 ) ; 
+    $member_verify_code =  uniqid($username);
     
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
