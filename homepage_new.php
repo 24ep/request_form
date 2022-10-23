@@ -26,9 +26,7 @@ if (!$_SESSION["login_csg"]){
         if($_SESSION['verify_code']=="verified"){
             echo 'console.log("account verified")';
         }else{
-            include("verify_account/send_verify.php");
-            send_verify_email($_SESSION['username'],$_SESSION['work_email'],$_SESSION['firstname'],$_SESSION['lastname']);
-            header("Location: https://content-service-gate.cdse-commercecontent.com/base/verify_account/waiting_verify.php?email=".$_SESSION['work_email']);
+            Header("Location: https://content-service-gate.cdse-commercecontent.com/base/verify_account/waiting_verify.php?email=".$_SESSION['work_email']);
         }
     include_once('get/get_option_function.php');
         $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
