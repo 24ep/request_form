@@ -23,5 +23,6 @@ while($row = mysqli_fetch_array($result)) {
     }
 }
 echo  $con->error;
+echo 'dddd';
 
 ?>
