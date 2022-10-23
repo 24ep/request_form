@@ -1,7 +1,7 @@
 <?php
 session_start();
  include("send_verify.php");
- include("get/get_attribute.php");
+ include("../get/get_attribute.php");
  send_verify_email($_SESSION['username'],$_SESSION['work_email'],$_SESSION['firstname'],$_SESSION['lastname']);
 
 ?>
@@ -815,8 +815,10 @@ session_start();
         'Confirm',
         'Later',
         function okCb(clientAnswer) {
-            document.getElementById('ac_edit_work_email').valu = clientAnswer;
-            update_value_attribute(<?php echo $_SESSION['username']; ?>, 'work_email', 'ac', 'all_in_one_project', 'account', 'username');
+            document.getElementById('ac_edit_work_email').value = clientAnswer;
+            sessionStorage.work_email = clientAnswer;
+     
+            update_value_attribute('<?php echo $_SESSION['username']; ?>', 'work_email', 'ac', 'all_in_one_project', 'account', 'username');
         },
         function cancelCb() {
             // alert('😪 ...');
