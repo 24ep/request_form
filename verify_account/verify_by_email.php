@@ -22,5 +22,6 @@ while($row = mysqli_fetch_array($result)) {
         echo 'verify uncomplete';
     }
 }
+echo  $con->error;
 
 ?>
