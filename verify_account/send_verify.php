@@ -1,4 +1,6 @@
 <?php 
+
+
 $username = $_GET['username'];
 $email = $_GET['email'];
 $firstname = $_GET['firstname'];
