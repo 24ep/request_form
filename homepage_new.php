@@ -24,7 +24,7 @@ if (!$_SESSION["login_csg"]){
             Header("Location: login");
     }else{
         if($_SESSION['verify_code']=="verified"){
-            echo 'console.log("account verified")';
+            echo '<script>console.log("account verified")</script>';
         }else{
             Header("Location: https://content-service-gate.cdse-commercecontent.com/verify?email=".$_SESSION['work_email']);
         }
