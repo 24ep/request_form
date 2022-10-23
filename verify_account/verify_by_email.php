@@ -10,19 +10,14 @@ while($row = mysqli_fetch_array($result)) {
     if($row['verify_code']==$verify_code){
         $sql_update  = "UPDATE account SET verify_code = 'verified' WHERE username='".$username."'";
         $query_update = mysqli_query($con,$sql_update);
-        if($query_update){
-        // echo 'verify complete';
         $_SESSION['verify_code'] = 'verified';
         Header("Location: https://content-service-gate.cdse-commercecontent.com/");
-        }else{
-            echo  $con->error;
-        }
     }else{
         echo  $con->error;
         echo 'verify uncomplete';
     }
 }
-echo  $con->error;
-echo $sql;
+// echo  $con->error;
+// echo $sql;
 
 ?>
