@@ -1,6 +1,9 @@
 <?php 
 $usernmae = $_GET['username'];
 $email = $_GET['email'];
+$firstname = $_GET['firstname'];
+$lastname = $_GET['lastname'];
+
 // 1. หลังจากที่ยูสเซอร์ป้อนข้อมูลหน้าฟอร์มและ submit มา สร้างตัวเลขสุ่มขึ้นมาชุดหนึ่งเพื่อเป็น verify code 
 
     // สร้างรหัสสุ่ม 
@@ -42,15 +45,42 @@ $email = $_GET['email'];
         
         // mail($to, $subject, $body,$headers) ; 
 
-        $to      = $email;
-        $subject = 'the subject';
-        $message = 'hello';
-        $headers = 'From: webmaster@example.com'       . "\r\n" .
-                     'Reply-To: webmaster@example.com' . "\r\n" .
-                     'X-Mailer: PHP/' . phpversion();
+        // $to      = $email;
+        // $subject = 'the subject';
+        // $message = 'hello';
+        // $headers = 'From: webmaster@example.com'       . "\r\n" .
+        //              'Reply-To: webmaster@example.com' . "\r\n" .
+        //              'X-Mailer: PHP/' . phpversion();
     
-        mail($to, $subject, $message, $headers);
-    }
+        // mail($to, $subject, $message, $headers);
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://prod-08.southeastasia.logic.azure.com:443/workflows/16760d582d694c7581adcf0277bdc4c5/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=S64_L44V-KM-StYFFY-s_0Ot1Lm2O3A9LLw4U166qG0',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS =>'{
+            "username":"'.$username.'",
+            "verify_code":"'.$verify_code.'",
+            "firstname":"'.$firstname.'",
+            "lastname":"'.$lastname.'",
+            "email":"'.$email.'"
+        }',
+        CURLOPT_HTTPHEADER => array(
+            'Content-Type: application/json'
+        ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        // echo $response;
+            }
     
   
 
