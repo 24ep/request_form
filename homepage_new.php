@@ -160,7 +160,7 @@ if (!$_SESSION["login_csg"]){
         echo 'console.log("account verified")';
     }else{
         include("verify_account/send_verify.php?username=".$_SESSION['username']."&email=".$_SESSION['work_email']."&firstname=".$_SESSION['firstname']."&lastname=".$_SESSION['lastname']);
-        header("Location: https://content-service-gate.cdse-commercecontent.com/base/verify_account/waiting_verify.php?email=".$_SESSION['work_email']);
+        header("Location: https://content-service-gate.cdse-commercecontent.com/base/verify_account/waiting_verify.php?email=".$_SESSION['work_email'],TRUE, 301);
         exit();
     }
 function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
