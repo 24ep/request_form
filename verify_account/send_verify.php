@@ -1,11 +1,12 @@
 <?php 
 
 
-$username = $_GET['username'];
-$email = $_GET['work_email'];
-$firstname = $_GET['firstname'];
-$lastname = $_GET['lastname'];
+// $username = $_GET['username'];
+// $email = $_GET['work_email'];
+// $firstname = $_GET['firstname'];
+// $lastname = $_GET['lastname'];
 
+function send_verify_email($username,$email,$firstname,$lastname){
     $member_verify_code =  uniqid($username);
     
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -43,8 +44,10 @@ $lastname = $_GET['lastname'];
         curl_close($curl);
         // echo $response;
             }
+}
+
     
-            header("Location: https://content-service-gate.cdse-commercecontent.com/base/verify_account/waiting_verify.php?email=".$_SESSION['work_email'],TRUE, 301);
-            exit();
+    
+        
 
 ?>
