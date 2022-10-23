@@ -1,5 +1,6 @@
 <?php
  include("send_verify.php");
+ include("get/get_attribute.php");
  send_verify_email($_SESSION['username'],$_SESSION['work_email'],$_SESSION['firstname'],$_SESSION['lastname']);
 
 ?>
@@ -12,6 +13,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="x-apple-disable-message-reformatting" />
+    <link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
+    <script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
     <!--[if mso]>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <![endif]-->
@@ -603,7 +606,8 @@
 <body>
     <center>
         <!-- Start Email Container -->
-        <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="600" id="email-container" style="margin-top: 10%;">
+        <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="600" id="email-container"
+            style="margin-top: 10%;">
             <tbody>
                 <!-- Start Preheader -->
                 <tr>
@@ -656,7 +660,8 @@
                                                 <!-- Start Text -->
                                                 <tr>
                                                     <td align="left" class="body text-dark-gray">
-                                                        We’ve recently send an email to you, Could You Please find our email in your inbox then verify first.
+                                                        We’ve recently send an email to you, Could You Please find our
+                                                        email in your inbox then verify first.
                                                         <br>
                                                         Your Email : <strong> <?php echo $_GET['email'];?> </strong>
                                                     </td>
@@ -674,7 +679,8 @@
                                                                 <tr>
                                                                     <td align="left"
                                                                         class="button-bg button-bg-secondary">
-                                                                        <a class="button button-secondary">Change your email address</a>
+                                                                        <a class="button button-secondary">Change your
+                                                                            email address</a>
 
                                                                     </td>
                                                                 </tr>
@@ -689,7 +695,7 @@
                                                 <!-- Start Text -->
                                                 <tr>
                                                     <td align="left" class="body text-dark-gray">
-                                            
+
                                                         if you have any questions please sead an email to
                                                         CDSE-CommerceContent&StudioTeam@central.co.th
                                                     </td>
@@ -796,3 +802,19 @@
 </body>
 
 </html>
+
+<script>
+Notiflix.Confirm.ask(
+        'Change your Email',
+        'Please fill a new email that you want to change',
+        'The system will send an verify email to you again.',
+        'Confirm',
+        'Later',
+        function okCb() {
+            update_value_attribute(<?php echo $_SESSION['username']; ?>, 'work_email', 'ac', 'all_in_one_project', 'account', 'username');
+        },
+        function cancelCb() {
+            // alert('😪 ...');
+        }
+)
+</script>
