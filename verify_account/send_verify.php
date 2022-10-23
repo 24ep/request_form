@@ -37,7 +37,7 @@ $email = $_GET['email'];
         $headers .= "Content-Type: text/html; charset=UTF-8 \r\n" ; 
         $headers .= "From: CSG <noreply@cdse-commercecontent.com>\r\n" ; 
         $body = "<a href=https://content-service-gate.cdse-commercecontent.com/base/verify_accout/verify_by_email.php?
-                        member_id={$member_id}&member_verify_code={$member_verify_code}>
+                        username=".$username."&verify_code=".$member_verify_code.">
                         คลิกเพื่อยันยัน</a>" ; 
         
         @mail($to, $subject, $body,$headers) ; 
