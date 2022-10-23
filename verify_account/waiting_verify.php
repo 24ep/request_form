@@ -679,7 +679,7 @@
                                                                 <tr>
                                                                     <td align="left"
                                                                         class="button-bg button-bg-secondary">
-                                                                        <a class="button button-secondary">Change your
+                                                                        <a type="button" onclick="change_email_address()" class="button button-secondary">Change your
                                                                             email address</a>
 
                                                                     </td>
