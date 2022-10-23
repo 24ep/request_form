@@ -33,26 +33,7 @@ $lastname = $_GET['lastname'];
 	$query = mysqli_query($con,$sql);
     if($query){
         $member_id = $con->insert_id;
-          // 3. ส่ง verify code ไปทางอีเมล์ 
-        // $to = $email ; 
-        // $subject = "Verify By Email" ; 
-        // $headers = "MIME-Version: 1.0\r\n" ; 
-        // $headers .= "Content-Type: text/html; charset=UTF-8 \r\n" ; 
-        // $headers .= "From: CSG <noreply@cdse-commercecontent.com>\r\n" ; 
-        // $body = "<a href=https://content-service-gate.cdse-commercecontent.com/base/verify_account/verify_by_email.php?
-        //                 username=".$username."&verify_code=".$member_verify_code.">
-        //                 คลิกเพื่อยันยัน</a>" ; 
-        
-        // mail($to, $subject, $body,$headers) ; 
-
-        // $to      = $email;
-        // $subject = 'the subject';
-        // $message = 'hello';
-        // $headers = 'From: webmaster@example.com'       . "\r\n" .
-        //              'Reply-To: webmaster@example.com' . "\r\n" .
-        //              'X-Mailer: PHP/' . phpversion();
-    
-        // mail($to, $subject, $message, $headers);
+  
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
