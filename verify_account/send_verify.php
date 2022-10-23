@@ -26,7 +26,7 @@ $lastname = $_GET['lastname'];
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS =>'{
             "username":"'.$username.'",
-            "verify_code":"'.$verify_code.'",
+            "verify_code":"'.$member_verify_code.'",
             "firstname":"'.$firstname.'",
             "lastname":"'.$lastname.'",
             "email":"'.$email.'"
