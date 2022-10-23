@@ -668,8 +668,8 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td align="left"
-                                                                        class="button-bg button-bg-light">
-                                                                        <a class="button button-light">Change your email address</a>
+                                                                        class="button-bg button-bg-secondary">
+                                                                        <a class="button button-secondary">Change your email address</a>
 
                                                                     </td>
                                                                 </tr>
