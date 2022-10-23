@@ -14,6 +14,8 @@ session_start();
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="x-apple-disable-message-reformatting" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
     <link rel="stylesheet" href="https://content-service-gate.cdse-commercecontent.com/base/action/notiflix/dist/notiflix-3.2.5.min.css" />
     <script src="https://content-service-gate.cdse-commercecontent.com/base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
     <!--[if mso]>
