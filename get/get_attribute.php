@@ -29,6 +29,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
           onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
         />
       </div>
+      
     </li>
     ';
     return $element;
