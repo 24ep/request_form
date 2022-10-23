@@ -598,7 +598,7 @@
 <body>
     <center>
         <!-- Start Email Container -->
-        <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="600" id="email-container">
+        <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="600" id="email-container" style="margin-top: 10%;">
             <tbody>
                 <!-- Start Preheader -->
                 <tr>
@@ -641,7 +641,7 @@
                                                 <!-- Start Text -->
                                                 <tr>
                                                     <td align="left" class="headline-two text-dark-gray">
-                                                        Verify your email address.
+                                                        Please Verify your email address.
                                                     </td>
                                                 </tr>
                                                 <!-- End Text -->
@@ -652,6 +652,8 @@
                                                 <tr>
                                                     <td align="left" class="body text-dark-gray">
                                                         We’ve recently send an email to you, Could You Please find our email in your inbox then verify first.
+                                                        <br>
+                                                        Your Email : <?php echo $_GET['email'];?>
                                                     </td>
                                                 </tr>
                                                 <!-- End Text -->
@@ -666,7 +668,7 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td align="left"
-                                                                        class="button-bg button-bg-primary">
+                                                                        class="button-bg button-bg-light">
                                                                         <a class="button button-light">Change your email address</a>
 
                                                                     </td>
@@ -768,9 +770,9 @@
                                 </tr>
                                 <tr>
                                     <td align="left" class="body text-secondary">
-                                        This service just a part of Omnichannel - Digital Content
+                                        <!-- This service just a part of Omnichannel - Digital Content
                                         <br />
-                                        CDS-Digital Content / Photoshooting
+                                        CDS-Digital Content / Photoshooting -->
                                         <!-- <a href="https://www.example.com" class="body text-primary">Unsubscribe</a> | <a href="https://www.example.com" class="body text-primary">Privacy Policy</a> | <a href="https://www.example.com" class="body text-primary">Support</a> -->
                                     </td>
                                 </tr>
