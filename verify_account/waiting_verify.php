@@ -682,6 +682,7 @@ session_start();
                                                                         class="button-bg button-bg-secondary">
                                                                         <a type="button" onclick="change_email_address();" class="button button-secondary">Change your
                                                                             email address</a>
+                                                                            <input type="hidden" id="ac_edit_work_email" name="ac_edit_work_email" value="">
 
                                                                     </td>
                                                                 </tr>
@@ -806,13 +807,15 @@ session_start();
 
 <script>
     function change_email_address(){
-        Notiflix.Confirm.ask(
+        
+        Notiflix.Confirm.prompt(
         'Change your Email',
         'Please fill a new email that you want to change',
-        'The system will send an verify email to you again.',
+        'youremail@central.co.th',
         'Confirm',
         'Later',
-        function okCb() {
+        function okCb(clientAnswer) {
+            document.getElementById('ac_edit_work_email').valu = clientAnswer;
             update_value_attribute(<?php echo $_SESSION['username']; ?>, 'work_email', 'ac', 'all_in_one_project', 'account', 'username');
         },
         function cancelCb() {
