@@ -154,6 +154,7 @@ if (!$_SESSION["login_csg"]){
     <!-- subsc -->
 
     <!-- preferance -->
+
     <?php
 function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
     $con_cr= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con_cr));
@@ -224,9 +225,9 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
     </div>
     <div class="row" style="--bs-gutter-x: 0rem;">
         <div class="col-2 list_bra">
-            <div class="nav nav-pills nav_list_bra nav_list_bra-preferance border-end" id="v-pills-tab"
-                role="tablist" aria-orientation="vertical">
-               
+            <div class="nav nav-pills nav_list_bra nav_list_bra-preferance border-end" id="v-pills-tab" role="tablist"
+                aria-orientation="vertical">
+
                 <input type="hidden" id="minimize_manu" name="minimize_manu" value="show">
                 <input type="hidden" id="active_sub_manu" name="active_sub_manu" value="hide">
                 <a class="navbar-brand" href="#">
@@ -291,7 +292,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                 ?>
                     <!-- <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Production</small> -->
-                   
+
                     <!-- <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_job_manage" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('job_manage');">
@@ -339,7 +340,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                             <ion-icon name="terminal"></ion-icon><span class="main-manu-nav">Configuration</span>
                         </a>
                     </li>
-                   
+
                     <li class="nav-item btn-group dropend" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_quicklink" type="button"
                             onclick="show_sub_manu('quicklink');">
@@ -368,11 +369,11 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
             style="margin-left: inherit;">
         </div>
         <div class="col-10 col_detail_main" style="font-size: 14px;padding: 0px;margin-left: inherit;">
-                <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
-                    class="position-absolute top-1_5 translate-middle btn btn-sm btn-secondary  bg-gradient shadow rounded-pill"
-                    style="width: 2rem; height:2rem;padding: 0px;z-index: 1;top: 95px!important;position:fixed!important">
-                    <!-- <ion-icon name="menu-outline" style="margin:0px"></ion-icon> -->
-                </button>
+            <button type="button" id="bt_nav_coll_ex" onclick="minimize_nav();"
+                class="position-absolute top-1_5 translate-middle btn btn-sm btn-secondary  bg-gradient shadow rounded-pill"
+                style="width: 2rem; height:2rem;padding: 0px;z-index: 1;top: 95px!important;position:fixed!important">
+                <!-- <ion-icon name="menu-outline" style="margin:0px"></ion-icon> -->
+            </button>
             <?php
 
             $database = 'all_in_one_project';
