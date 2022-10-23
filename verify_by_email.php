@@ -20,7 +20,7 @@ if($_SESSION['verify_code']  == 'verified'){
     Header("Location: https://content-service-gate.cdse-commercecontent.com/");
 }else{
 echo $_SESSION['verify_code'] ."<br>";
-echo $verify_code;
+echo $verify_code_verified;
 }
 
 exit();
