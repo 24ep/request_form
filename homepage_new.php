@@ -172,7 +172,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
     return $current_cr;
 }
 
-$verify_code = get_value_main($_SESSION['userame'], "verify_code", "all_in_one_project", "account", "username");
+$verify_code = get_value_main($_SESSION['username'], "verify_code", "all_in_one_project", "account", "username");
 if($verify_code=="verified"){
     echo 'console.log("account verified")';
 }else{
