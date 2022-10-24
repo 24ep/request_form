@@ -132,7 +132,7 @@ function interval_run(){
     get_list_panel('<?php echo $ac_role; ?>','revised','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
 }
 
-setInterval(interval_run,60000); //"update" is the function that is run
+setInterval(interval_run,30000); //"update" is the function that is run
 
 
 function call_edit_add_new_panel(id, brand) {
