@@ -105,7 +105,7 @@ $database = 'all_in_one_project';
 <script>
     // get_detail_more
 function get_list_panel(ac_role,status,ac_username,ac_nickname) {
-    Notiflix.Loading.hourglass('Loading task on status : '+status+' ...');
+    //Notiflix.Loading.hourglass('Loading task on status : '+status+' ...');
     $.post("base/get/get_list_panel.php", {
             ac_role: ac_role,
             ac_username: ac_username,
@@ -114,7 +114,7 @@ function get_list_panel(ac_role,status,ac_username,ac_nickname) {
         },
         function(data) {
             $('#get_list_panel_'+status).html(data);
-            Notiflix.Loading.remove();
+            //Notiflix.Loading.remove();
         });
     
 }
@@ -137,7 +137,7 @@ var time = new Date(),
     secondsRemaining = (60 - time.getSeconds()) * 1000;
 
 setTimeout(function() {
-    setInterval(interval_run, 30000);
+    setInterval(interval_run, 10000);
 }, secondsRemaining);
 
 
