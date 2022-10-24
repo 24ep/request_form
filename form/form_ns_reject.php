@@ -4,7 +4,7 @@ include('../get/get_attribute.php');
 
 ?>
 
-<h5>Recject</h5>
+<h5><strong><ion-icon name="warning-outline"></ion-icon> REJECT</strong></h5>
 <div class="row bg-white">
     <ul class="list-group">
         <?php
