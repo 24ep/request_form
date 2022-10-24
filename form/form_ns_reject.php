@@ -1,6 +1,6 @@
--<?php
+<?php
 $id = $_POST['id'];
-include('../get/get_attribute');
+include('../get/get_attribute.php');
 ?>
 
 <h5>Recject</h5>
@@ -17,9 +17,9 @@ echo return_s_select_box('approved_editing_status','reject status',"single_selec
 <script>
 function ns_reject(id){
     // document.getElementById('approved_edited_date').value = Date.now();
-    approved_decline_remark = document.getElementById('rj_edit_approved_decline_remark').value
-    approved_editing_status = document.getElementById('rj_edit_approved_editing_status').value
-    approved_edited_date = document.getElementById('rj_edit_approved_edited_date').value
+    approved_decline_remark = document.getElementById('rj_edit_approved_decline_remark').value;
+    approved_editing_status = document.getElementById('rj_edit_approved_editing_status').value;
+    approved_edited_date = document.getElementById('rj_edit_approved_edited_date').value;
 
     update_value_attribute(id, 'rj_edit_approved_decline_remark', 'rj', 'u749625779_cdscontent', 'job_cms', 'csg_request_new_id');
     update_value_attribute(id, 'rj_edit_approved_editing_status', 'rj', 'u749625779_cdscontent', 'job_cms', 'csg_request_new_id');
