@@ -66,6 +66,32 @@ $database = 'all_in_one_project';
                     </div>
                 </div>
             </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading4">
+                <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse4" aria-expanded="true" aria-controls="panelsStayOpen-collapse4">
+                        <ion-icon name="warning-outline"></ion-icon> Waiting for Revise
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapse4" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-heading4">
+                    <div class="accordion-body p-0">
+                    <div id="get_list_panel_revise">
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading5">
+                <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse5" aria-expanded="true" aria-controls="panelsStayOpen-collapse5">
+                        <ion-icon name="sync-outline"></ion-icon> Revised
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapse5" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-heading5">
+                    <div class="accordion-body p-0">
+                    <div id="get_list_panel_revised">
+                         </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="col-9 p-0">
@@ -95,6 +121,8 @@ function get_list_panel(ac_role,status,ac_username,ac_nickname) {
 get_list_panel('<?php echo $ac_role; ?>','inprogress','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
 get_list_panel('<?php echo $ac_role; ?>','pending','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
 get_list_panel('<?php echo $ac_role; ?>','waiting','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
+get_list_panel('<?php echo $ac_role; ?>','revise','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
+get_list_panel('<?php echo $ac_role; ?>','revised','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
 
 function call_edit_add_new_panel(id, brand) {
     Notiflix.Loading.hourglass('Loading...');
