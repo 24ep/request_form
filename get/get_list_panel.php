@@ -15,6 +15,8 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
         anj.launch_date as anj_launch_date,
         anj.create_date as anj_create_date,
         anj.status as anj_status,
+        jc.job_status_filter as jc_job_status_filter,
+        jc.job_number as jc_job_number,
         CASE 
          when TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 <= 3 then 0
          when jc.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 <= 5  then 1
