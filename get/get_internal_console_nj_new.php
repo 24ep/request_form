@@ -188,7 +188,7 @@
                 update_value_attribute('.$id.', &#39;cs_edit_approved_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
                 class="btn btn-sm btn-success shadow-sm bg-gradient rounded" style="right: 90px;position: absolute;" '.$bt_disabled_jc.' >Approve</button>
-                <button class="btn btn-sm btn-outline-danger shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>Reject (ยังไม่เสร็จ)</button>';
+                <button class="btn btn-sm btn-outline-danger shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>Reject</button>';
               }
               //complete_task
               $tasks = ['accepted_date','content_complete_date','shoots_complete_date','retouch_complete_date','upload_image_date','recive_item_date','approved_date'];
@@ -320,6 +320,16 @@ function convert_to_akeneo_template(id, job_number, launch_date, content_assign_
             job_number: job_number,
             launch_date: launch_date,
             content_assign_name: content_assign_name
+        },
+        function(data) {
+            $('#model_lg').html(data);
+            Notiflix.Loading.remove();
+        });
+}
+function form_reject(id) {
+    Notiflix.Loading.hourglass('Loading...');
+    $.post("base/form/form_ns_reject.php", {
+            id: id
         },
         function(data) {
             $('#model_lg').html(data);
