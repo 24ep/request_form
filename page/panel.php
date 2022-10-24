@@ -118,6 +118,11 @@ function get_list_panel(ac_role,status,ac_username,ac_nickname) {
         });
     
 }
+    get_list_panel('<?php echo $ac_role; ?>','pending','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
+    get_list_panel('<?php echo $ac_role; ?>','inprogress','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
+    get_list_panel('<?php echo $ac_role; ?>','waiting','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
+    get_list_panel('<?php echo $ac_role; ?>','revise','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
+    get_list_panel('<?php echo $ac_role; ?>','revised','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
 function interval_run(){
     get_list_panel('<?php echo $ac_role; ?>','pending','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
     get_list_panel('<?php echo $ac_role; ?>','inprogress','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
