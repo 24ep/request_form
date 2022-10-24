@@ -118,12 +118,6 @@ function get_list_panel(ac_role,status,ac_username,ac_nickname) {
         });
     
 }
-
-var time = new Date();
-var currentHour = time.getHours();
-var currentMinute = time.getMinutes();
-
-
 function interval_run(){
     get_list_panel('<?php echo $ac_role; ?>','pending','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
     get_list_panel('<?php echo $ac_role; ?>','inprogress','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
@@ -132,7 +126,12 @@ function interval_run(){
     get_list_panel('<?php echo $ac_role; ?>','revised','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
 }
 
-setInterval(interval_run,30000); //"update" is the function that is run
+var time = new Date(),
+    secondsRemaining = (60 - time.getSeconds()) * 1000;
+
+setTimeout(function() {
+    setInterval(interval_run, 30000);
+}, secondsRemaining);
 
 
 function call_edit_add_new_panel(id, brand) {
