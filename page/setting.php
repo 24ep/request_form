@@ -74,29 +74,3 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
 ';
 
 ?>
-<!-- <amp-web-push
-        id="amp-web-push"
-        layout="nodisplay"
-        helper-iframe-url="/notix-amp-frame.htm"
-        permission-dialog-url="/notix-amp-permission-dialog.htm"
-        service-worker-url="/sw.enot.js?appId=10052dd0063417a1645897f10306381"
-></amp-web-push>
-
-
-<amp-web-push-widget visibility="unsubscribed"
-                     layout="fixed"
-                     width="500"
-                     height="70">
-    <button on="tap:amp-web-push.subscribe">
-        Subscribe to Notifications
-    </button>
-</amp-web-push-widget>
-
-<amp-web-push-widget visibility="subscribed"
-                     layout="fixed"
-                     width="500"
-                     height="180">
-    <button on="tap:amp-web-push.unsubscribe">
-        Unsubscribe from Notifications
-    </button>
-</amp-web-push-widget> -->
