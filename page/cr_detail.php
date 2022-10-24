@@ -3,6 +3,7 @@
 .multiple-select_cr_edit .ms-choice {
     border: 0px;
 }
+
 label#label_file {
     color: #adb5bd;
     font-size: 12px;
@@ -426,7 +427,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <textarea id="comment_input_cr" name="comment_input_cr" type="text" placeholder="Type message"></textarea>
        ';
        ?>
-       <?php
+<?php
         echo '
         <div class="mb-3">
           <input type="file" id="actual-btn" name="actual-btn[]" multiple hidden/>
@@ -615,6 +616,7 @@ actualBtn.addEventListener('change', function() {
     }
     fileChosen_bt.textContent = ' Selected file : ' + file_name;
 })
+
 function comment_cr_id(id) {
     //var comment = document.getElementById("comment_input_cr").value;
     var myIFrame = document.getElementById("comment_input_cr_ifr");
@@ -633,6 +635,7 @@ function comment_cr_id(id) {
             });
     }
 }
+
 function add_cr_list(id, ticket_template) {
     if (ticket_template == "CR") {
         var sku = document.getElementById("cr_edit_sku").value;
@@ -652,6 +655,7 @@ function add_cr_list(id, ticket_template) {
             });
     }
 }
+
 function remove_cr_list(list_id, ticket_id) {
     if (list_id) {
         $.post("base/action/action_remove_checklist_cr.php", {
@@ -666,6 +670,7 @@ function remove_cr_list(list_id, ticket_id) {
             });
     }
 }
+
 function comment_cr_id_with_file(id) {
     var form_data = new FormData();
     // var comment = document.getElementById("comment_input_cr").value;
@@ -698,6 +703,7 @@ function comment_cr_id_with_file(id) {
         }
     });
 }
+
 function update_cr_detail(id, id_name) {
     var id_name = id_name;
     var value_change = document.getElementById(id_name).value;
@@ -713,6 +719,7 @@ function update_cr_detail(id, id_name) {
             });
     }
 }
+
 function update_cl_detail(id, id_name) {
     var id_name = id_name;
     var value_change = document.getElementById(id_name + '_' + id).value;
@@ -728,8 +735,9 @@ function update_cl_detail(id, id_name) {
             });
     }
 }
-function EditDetailTicket(){
-  var disabled = document.getElementById("cr_edit_title").disabled;
+
+function EditDetailTicket() {
+    var disabled = document.getElementById("cr_edit_title").disabled;
     if (disabled) {
         document.getElementById("cr_edit_title").disabled = false;
         document.getElementById("EditDetailTicket").style.display = 'none';
@@ -737,38 +745,44 @@ function EditDetailTicket(){
         document.getElementById("SaveDetailTicket").style.display = 'inline';
         document.getElementById("CancelDetailTicket").disabled = false;
         document.getElementById("CancelDetailTicket").style.display = 'inline';
-        document.getElementById("cr_edit_title").className = document.getElementById("cr_edit_title").className.replace(/(?:^|\s)input-cr-inactive(?!\S)/g, 'input-cr-active');
-    }
-    else {
+        document.getElementById("cr_edit_title").className = document.getElementById("cr_edit_title").className.replace(
+            /(?:^|\s)input-cr-inactive(?!\S)/g, 'input-cr-active');
+    } else {
         document.getElementById("cr_edit_title").disabled = true;
         document.getElementById("EditDetailTicket").style.display = 'inline';
         document.getElementById("SaveDetailTicket").disabled = true;
         document.getElementById("SaveDetailTicket").style.display = 'none';
         document.getElementById("CancelDetailTicket").disabled = true;
         document.getElementById("CancelDetailTicket").style.display = 'none';
-        document.getElementById("cr_edit_title").className = document.getElementById("cr_edit_title").className.replace(/(?:^|\s)input-cr-active(?!\S)/g, 'input-cr-inactive');
+        document.getElementById("cr_edit_title").className = document.getElementById("cr_edit_title").className.replace(
+            /(?:^|\s)input-cr-active(?!\S)/g, 'input-cr-inactive');
     }
 }
-function SaveDetailTicket(id){
-  update_cr_detail(id,'cr_edit_title');
-  document.getElementById("cr_edit_title").disabled = true;
-  document.getElementById("EditDetailTicket").style.display = 'inline';
-  document.getElementById("SaveDetailTicket").style.display = 'none';
-  document.getElementById("CancelDetailTicket").style.display = 'none';
-  document.getElementById("cr_edit_title").className = document.getElementById("cr_edit_title").className.replace(/(?:^|\s)input-cr-active(?!\S)/g, 'input-cr-inactive');
+
+function SaveDetailTicket(id) {
+    update_cr_detail(id, 'cr_edit_title');
+    document.getElementById("cr_edit_title").disabled = true;
+    document.getElementById("EditDetailTicket").style.display = 'inline';
+    document.getElementById("SaveDetailTicket").style.display = 'none';
+    document.getElementById("CancelDetailTicket").style.display = 'none';
+    document.getElementById("cr_edit_title").className = document.getElementById("cr_edit_title").className.replace(
+        /(?:^|\s)input-cr-active(?!\S)/g, 'input-cr-inactive');
 }
-function CancelDetailTicket(id){
-  document.getElementById("cr_edit_title").disabled = true;
-  document.getElementById("EditDetailTicket").style.display = 'inline';
-  document.getElementById("SaveDetailTicket").style.display = 'none';
-  document.getElementById("CancelDetailTicket").style.display = 'none';
-  document.getElementById("cr_edit_title").className = document.getElementById("cr_edit_title").className.replace(/(?:^|\s)input-cr-active(?!\S)/g, 'input-cr-inactive');
+
+function CancelDetailTicket(id) {
+    document.getElementById("cr_edit_title").disabled = true;
+    document.getElementById("EditDetailTicket").style.display = 'inline';
+    document.getElementById("SaveDetailTicket").style.display = 'none';
+    document.getElementById("CancelDetailTicket").style.display = 'none';
+    document.getElementById("cr_edit_title").className = document.getElementById("cr_edit_title").className.replace(
+        /(?:^|\s)input-cr-active(?!\S)/g, 'input-cr-inactive');
 }
 </script>
 <script>
 var elements = document.getElementsByClassName('window-full');
 var windowheight = window.innerHeight + "px";
 fullheight(elements);
+
 function fullheight(elements) {
     for (let el in elements) {
         if (elements.hasOwnProperty(el)) {
@@ -783,13 +797,39 @@ window.onresize = function(event) {
 <script>
 </script>
 <script>
+// baguetteBox.run('.baguetteBoxFour', {
+//     buttons: false
+// });
+
+// baguetteBox.run('.baguetteBoxFour'); //preview image
+// pureScriptSelect('#multiSelect'); //multi select
+new SlimSelect({
+    select: '#cr_edit_case_officer_show',
+    closeOnSelect: false,
+    allowDeselectOption: true,
+    onChange: (info) => {
+        var input_update = "";
+        for (let i = 0; i < info.length; i++) {
+            if (input_update == "") {
+                input_update = info[i].value;
+            } else {
+                input_update = input_update + ',' + info[i].value;
+            }
+
+        }
+        document.getElementById("cr_edit_case_officer").value = input_update;
+        update_cr_detail(<?php echo $id; ?>, <?php echo $cr_edit_case_officer; ?>)
+
+    }
+})
+</script>
+<script>
 $(function() {
     $(".multiple-select_cr_edit").multipleSelect()
 });
-if(tinyMCE.get('comment_input_cr')){
-  tinymce.remove('#comment_input_cr');
-}else{
-}
+if (tinyMCE.get('comment_input_cr')) {
+    tinymce.remove('#comment_input_cr');
+} else {}
 load_tiny_comment();
 </script>
 <?php if( $direct == 'external'){
@@ -806,34 +846,3 @@ function off_overlay() {
 </html>';
 }
 ?>
-<script>
-// baguetteBox.run('.baguetteBoxFour', {
-//     buttons: false
-// });
-
-// baguetteBox.run('.baguetteBoxFour'); //preview image
-// pureScriptSelect('#multiSelect'); //multi select
-new SlimSelect({
-  select: '#cr_edit_case_officer_show',
-  closeOnSelect: false,
-  allowDeselectOption: true,
-  onChange: (info) => {
-    var input_update ="";
-    for (let i = 0; i < info.length; i++) {
-      if(input_update==""){
-        input_update = info[i].value;
-      }else{
-        input_update = input_update +','+info[i].value;
-      }
-     
-    }
-    document.getElementById("cr_edit_case_officer").value = input_update;
-    update_cr_detail(<?php echo $id; ?>,<?php echo $cr_edit_case_officer; ?>)
-    
-  }
-})
-
-
-</script>
-
-
