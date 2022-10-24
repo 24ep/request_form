@@ -8,7 +8,7 @@ $status = $_POST['status'];
 function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,$limit){
     
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-    $query = "SELECT jc.* , anj.*
+    $query = "SELECT jc.* , anj.* ,
         CASE 
          when TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 <= 3 then 0
          when jc.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 <= 5  then 1
