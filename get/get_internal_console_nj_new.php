@@ -188,7 +188,7 @@
                 update_value_attribute('.$id.', &#39;cs_edit_approved_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
                 class="btn btn-sm btn-success shadow-sm bg-gradient rounded" style="right: 90px;position: absolute;" '.$bt_disabled_jc.' >Approve</button>
-                <button onclick="form_reject('.$id.')" class="btn btn-sm btn-outline-danger shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>Reject</button>';
+                <button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="form_reject('.$id.')" class="btn btn-sm btn-outline-danger shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>Reject</button>';
               }
               //complete_task
               $tasks = ['accepted_date','content_complete_date','shoots_complete_date','retouch_complete_date','upload_image_date','recive_item_date','approved_date'];
