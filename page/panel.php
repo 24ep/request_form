@@ -29,7 +29,7 @@ $database = 'all_in_one_project';
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                     <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                        <ion-icon name="star-outline"></ion-icon> Pedding <span class="badge bg-danger rounded-pill bg-gradient ms-2">Suggestion</span>
+                        <ion-icon name="star-outline"></ion-icon> Peding <span class="badge bg-danger rounded-pill bg-gradient ms-2">Suggestion</span>
                     </button>
                 </h2>
                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse  collapse show" aria-labelledby="panelsStayOpen-headingOne">
