@@ -3,6 +3,7 @@
 session_start();
  include("verify_account/send_verify.php");
  include("get/get_attribute.php");
+ $work_email = $GET['work_email'];
  send_verify_email($_SESSION['username'],$_SESSION['work_email'],$_SESSION['firstname'],$_SESSION['lastname']);
 
 ?>
@@ -821,6 +822,7 @@ session_start();
             document.getElementById('ac_edit_work_email').value = clientAnswer;
             // sessionStorage.work_email = clientAnswer;
             '<%Session["work_email"] = "' + clientAnswer + '"; %>';
+            sessionStorage.setItem('work_email', clientAnswer);
      
             update_value_attribute('<?php echo $_SESSION['username']; ?>', 'ac_edit_work_email', 'ac', 'all_in_one_project', 'account', 'username');
             window.location.href ='https://content-service-gate.cdse-commercecontent.com/verify?email='+clientAnswer;
