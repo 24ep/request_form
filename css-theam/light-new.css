@@ -323,11 +323,11 @@ label#label_file_cme {
     position : absolute!important;
     z-index: -1;
 }
-.cr_detail_with_attachment{
-    /* color:gray;
+/* .cr_detail_with_attachment{
+   color:gray;
     border-bottom: solid 5px #adadad;
-    padding: 0px 10px; */
-}
+    padding: 0px 10px; 
+} */
 .cr_hr_detail{
     margin-bottom:5px;
     color: #dee2e6;
