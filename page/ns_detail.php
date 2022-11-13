@@ -712,7 +712,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                 },
                 <?php if($brand_editor<>"")
                 {
-                    echo ' data: '.html_entity_decode($brand_editor, ENT_QUOTES); 
+                    echo ' data: '.$brand_editor; 
                 }?>
             });
             </script>
