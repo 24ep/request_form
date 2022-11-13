@@ -627,7 +627,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     //console.log('<?php //echo $_SESSION['username'];?>have been updated a content in brand note', event)
                     editor.save().then((outputData) => {
                         // console.log('Article data: ', outputData)
-                        outputData = encode64(JSON.stringify(outputData, null, 4));
+                        outputData = JSON.stringify(outputData, null, 4);
                         update_brand_note(outputData, '<?php echo $brand; ?>');
                     }).catch((error) => {
                         console.log('Saving failed: ', error)

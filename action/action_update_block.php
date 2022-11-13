@@ -1,7 +1,7 @@
 <?php
     session_start();
     include("connect.php");
-    $dataoutput = base64_decode($_POST['dataoutput']'');
+    $dataoutput = $_POST['dataoutput'];
     $id = $_POST['id'];
 
     date_default_timezone_set("Asia/Bangkok");
