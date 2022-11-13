@@ -5,7 +5,7 @@ date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 //---
-$query = "SELECT anj.id , anj.brand from all_in_one_project.add_new_job anj where anj.id='".$input."' or concat('CR-',anj.id) = '".$input."'" or die("Error:" . mysqli_error($con));
+$query = "SELECT anj.id , anj.brand from all_in_one_project.add_new_job anj where lower(anj.brand) like lower('%".$input."%') or anj.id='".$input."' or concat('CR-',anj.id) = '".$input."'" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 echo "<ul style='list-style: unset;padding: 0px;font-weight: bold;color: #1b2c52;'>";
 while($row = mysqli_fetch_array($result)) {
