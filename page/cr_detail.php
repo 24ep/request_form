@@ -186,9 +186,10 @@ function get_image_cr($id){
       $list_image.=  ' <div class="thumbnail">
       <a href="'.$herf .'" target="_blank">
       <figure class="figure">
-        <img src="'.$herf .'" class="img-thumbnail img-fluid" alt="'.$row["file_name"].'  " style="object-fit:cover;width:100px;height:100px;">
-      <figcaption class="figure-caption text-end">'.$row["file_name"].'</figcaption></a></div>';
+        <img src="'.$herf .'" class="img-thumbnail img-fluid" alt="'.$row["file_name"].'  " style="object-fit:cover;width:100px;height:100px;">';
+     
     }
+    // <figcaption class="figure-caption text-end">'.$row["file_name"].'</figcaption></a></div>';
     $list_image.= '</div>';
       return $list_image;
 }
@@ -382,7 +383,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
             </div>
           </div>
           <small>
-          <a type="button" style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"
+          <a type="button" style="text-decoration: none;color: gray;"
               onclick="get_page(&#39;update_content&#39;);">
               <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
 
@@ -547,16 +548,19 @@ while($row_project = mysqli_fetch_array($result_project)) {
               '.$content_request_reson_op.'
               </datalist>
               </div>
-            </div>
-            <div class="mb-3 row">
-            <label for="exampleDataList" class="col-sm-3 col-form-label">Request by</label>
-            <div class="col-sm-9">
-            <input class="form-control form-control-sm" list="datalistOptionsrequestby"  onchange="update_cr_detail('.$id.','.$cr_edit_request_by.')" id="cr_edit_request_by" name="cr_edit_request_by" placeholder="Type to search..." value="'.$request_by.'">
-              <datalist id="datalistOptionsrequestby">
-              '.$username_op.'
-              </datalist>
-            </div>
-            </div>
+            </div>';
+            // echo'
+            // <div class="mb-3 row">
+            // <label for="exampleDataList" class="col-sm-3 col-form-label">Request by</label>
+            // <div class="col-sm-9">
+            // <input class="form-control form-control-sm" list="datalistOptionsrequestby"  
+            // onchange="update_cr_detail('.$id.','.$cr_edit_request_by.')" id="cr_edit_request_by" name="cr_edit_request_by" placeholder="Type to search..." value="'.$request_by.'">
+            //   <datalist id="datalistOptionsrequestby">
+            //   '.$username_op.'
+            //   </datalist>
+            // </div>
+            // </div>';
+            echo'
             <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Internal note</label>
             <textarea id="cr_edit_note" name="cr_edit_note" onchange="update_cr_detail('.$id.','.$cr_edit_note.')"  class="form-control"  rows="5">'.$note.'</textarea>

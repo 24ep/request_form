@@ -466,6 +466,9 @@ label#label_file_cme {
     margin: 20px!important;
     /* z-index: -1; */
 }
+.tox-tinymce {
+    border-radius: 10px;
+}
 /* #return-to-top {
     position: fixed;
     bottom: 20px;
