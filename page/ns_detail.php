@@ -620,7 +620,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
             var editor = new EditorJS({
                 placeholder: 'ข้อความที่อยู่ใน block นี้จะแสดงในทุกๆ ticket ของแบรนด์ดังกล่าว',
                 onReady: () => {
-                    console.log('Editor.js is ready to work!');
+                    //console.log('Editor.js is ready to work!');
                     new DragDrop(editor);
                 },
                 onChange: (api, event) => {
@@ -710,9 +710,10 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     //     }
                     // },
                 },
-                <?php if($brand_editor<>""){
-                                                echo ' data: '.$brand_editor; 
-                                            }?>
+                <?php if($brand_editor<>"")
+                {
+                    echo ' data: '.htmlspecialchars($brand_editor); 
+                }?>
             });
             </script>
         </div>
