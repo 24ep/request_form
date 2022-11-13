@@ -628,7 +628,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     editor.save().then((outputData) => {
                         // console.log('Article data: ', outputData)
                         outputData = JSON.stringify(outputData, null, 4);
-                        update_brand_note(outputData, '<?php echo $brand; ?>');
+                        update_brand_note(htmlspecialchars(outputData,ENT_QUOTES), '<?php echo $brand; ?>');
                     }).catch((error) => {
                         console.log('Saving failed: ', error)
                     });
@@ -712,7 +712,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                 },
                 <?php if($brand_editor<>"")
                 {
-                    echo ' data: '.$brand_editor; 
+                    echo ' data: '.html_entity_decode($brand_editor, ENT_QUOTES); 
                 }?>
             });
             </script>
