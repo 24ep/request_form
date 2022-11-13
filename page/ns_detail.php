@@ -672,7 +672,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     table: {
                         class: Table,
                         inlineToolbar: true,
-                        useSingleQuotes : true
+                        useSingleQuotes : true,
                         config: {
                             rows: 2,
                             cols: 3,
