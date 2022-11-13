@@ -627,7 +627,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     //console.log('<?php //echo $_SESSION['username'];?>have been updated a content in brand note', event)
                     editor.save().then((outputData) => {
                         // console.log('Article data: ', outputData)
-                        outputData = JSON.stringify(outputData, null, 4);
+                        outputData = encode64(JSON.stringify(outputData, null, 4));
                         update_brand_note(outputData, '<?php echo $brand; ?>');
                     }).catch((error) => {
                         console.log('Saving failed: ', error)
@@ -639,7 +639,6 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                         class: editorjsColumns,
                         config: {
                             tools: column_tools, // IMPORTANT! ref the column_tools
-                            useSingleQuotes : true
                         }
                     },
                     header: {
@@ -647,32 +646,27 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                         config: {
                             placeholder: 'Enter a header',
                             levels: [2, 3, 4],
-                            defaultLevel: 3,
-                            useSingleQuotes : true
+                            defaultLevel: 3
                         }
                     },
                     list: {
                         class: List,
                         inlineToolbar: true,
                         config: {
-                            defaultStyle: 'unordered',
-                            useSingleQuotes : true
+                            defaultStyle: 'unordered'
                         }
                     },
                     list: {
                         class: NestedList,
                         inlineToolbar: true,
-                        useSingleQuotes : true
                     },
                     checklist: {
                         class: Checklist,
                         inlineToolbar: true,
-                        useSingleQuotes : true
                     },
                     table: {
                         class: Table,
                         inlineToolbar: true,
-                        useSingleQuotes : true,
                         config: {
                             rows: 2,
                             cols: 3,
@@ -681,7 +675,6 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     paragraph: {
                         class: Paragraph,
                         inlineToolbar: true,
-                        useSingleQuotes : true
                     },
                     code: CodeTool,
                     embed: Embed,
@@ -699,8 +692,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     // raw: RawTool,
                     marker: {
                         class: Marker,
-                        shortcut: 'CMD+SHIFT+M',
-                        useSingleQuotes : true
+                        shortcut: 'CMD+SHIFT+M'
                     },
                     image: {
                         class: ImageTool,
@@ -708,8 +700,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                             endpoints: {
                                 byFile: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_uploadfiles.php', // Your backend file uploader endpoint
                                 byUrl: 'https://content-service-gate.cdse-commercecontent.com/base/action/action_endpoint_uploadfiles.php', // Your endpoint that provides uploading by Url
-                            },
-                            useSingleQuotes : true
+                            }
                         }
                     },
                     // attaches: {
@@ -721,7 +712,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                 },
                 <?php if($brand_editor<>"")
                 {
-                    echo ' data: '.$brand_editor; 
+                    echo ' data: '.html_entity_decode($brand_editor, ENT_QUOTES); 
                 }?>
             });
             </script>
