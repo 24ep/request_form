@@ -541,7 +541,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
             <hr>
             <small style="display:block"><strong style="color:gray">Internal</strong></small>
             <div class="mb-3 row">
-            <label for="exampleDataList" class="col-sm-3 col-form-label">Update reason</label>
+            <label for="exampleDataList" class="col-sm-3 col-form-label">Origins</label>
             <div class="col-sm-9">
             <input class="form-control form-control-sm" list="datalistOptions"  onchange="update_cr_detail('.$id.','.$cr_edit_content_request_reson.')" id="cr_edit_content_request_reson" name="cr_edit_content_request_reson" placeholder="Type to search..." value="'.$content_request_reson.'">
               <datalist id="datalistOptions">
