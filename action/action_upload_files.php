@@ -31,10 +31,23 @@ mysqli_query($con, "SET NAMES 'utf8' ");
           // upload image
           foreach($_FILES['files']['tmp_name'] as $key => $val){
             $file_name = $_FILES['files']['name'][$key];
-            $file_size =$_FILES['files']['size'][$key];
-            $file_tmp =$_FILES['files']['tmp_name'][$key];
-            $file_type=$_FILES['files']['type'][$key];
-            $is_image = is_image($file_tmp);
+            $file_size = $_FILES['files']['size'][$key];
+            $file_tmp  = $_FILES['files']['tmp_name'][$key];
+            $file_type = $_FILES['files']['type'][$key];
+            $is_image  = is_image($file_tmp);
+
+            if(strpos($file_name,'xlsm')!==false and strpos(strtolower($file_name),'_cleaned')!==true){
+              $file_group = 'Original' ;
+            }elseif(strpos($file_name,'xlsm')!==false and strpos(strtolower($file_name),'xlsm')===true){
+              $file_group = 'Cleaned' ;
+            }elseif(strpos(strtolower($file_name),'modal')===true){
+              $file_group = 'ModelTemplate' ;
+            }elseif(strpos(strtolower($file_name),'template')===true){
+              $file_group = 'ModelTemplate' ;
+            }else{
+              $file_group = 'Other' ;
+            }
+
             if(isset($_FILES["files"])){
                 if ($file_name <> ""  ) { 
                 $sql = "INSERT INTO attachment (
@@ -45,7 +58,8 @@ mysqli_query($con, "SET NAMES 'utf8' ");
                     is_image,
                     file_owner,
                     ticket_id,
-                    ticket_type
+                    ticket_type,
+                    file_group
                     )
                     VALUES(
                     '".$file_name."',
@@ -55,7 +69,8 @@ mysqli_query($con, "SET NAMES 'utf8' ");
                     '".$is_image."',
                     '".$_SESSION["username"]."',
                     '".$id."',
-                    'ticket_files'
+                    'ticket_files',
+                    '".$file_group."'
                     )";
                 $query = mysqli_query($con,$sql);
                 move_uploaded_file($file_tmp,$fullpath.$file_name);
