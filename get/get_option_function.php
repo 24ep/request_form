@@ -176,5 +176,7 @@
           $option_element .= "<option ".$selectd ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
   
           }
+          mysqli_close($con);
+          return $option_element;
     }
 ?>
