@@ -7,7 +7,7 @@ function badge_status($status){
   }elseif($status=="checking"  ){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#ffc107;border:#ffc107 solid 1px;width: 100%;">checking</button>';
   }elseif( $status=="on-productions"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#ff9a59;border:#ff9a59 solid 1px;width: 100%;">on-production</button>';
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#ff9a59;border:#ff9a59 solid 1px;width: 100%;">on-productions</button>';
   }elseif($status=="approved"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#7befb2;border:#7befb2 solid 1px;width: 100%;">'.$status.'</button>';
   }elseif($status=="waiting confirm"){
