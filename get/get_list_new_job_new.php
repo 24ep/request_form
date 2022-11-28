@@ -219,7 +219,7 @@ if(isset($_POST["from_post"] )){
             $ticket_role = role_user($row_child["request_username"],$row_child["follow_up_by"]);
             // $status = badge_status($row_child['status']);
           if($row_child['status']=="on-productions" and $row_child['trigger_status'] <> "on-productions"){
-            $status=badge_status("on-production");
+            $status=badge_status("on-productions");
           }elseif($row_child['status']=="on-productions" and $row_child['trigger_status'] == "on-productions"){
             $status=badge_status("on-productions");
           }else{
