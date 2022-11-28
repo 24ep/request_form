@@ -259,6 +259,7 @@
                     <input type="hidden" id="cs_edit_approved_date" value="CURRENT_TIMESTAMP">
                     <input type="hidden" id="cs_edit_approved_by" value="<?php echo $_SESSION['nickname'];?>">
                     <input type="hidden" id="cs_edit_approved_editing_status" value="approved">
+                    <!-- <input type="hidden" id="cs_edit_status" value="approved"> -->
                 </ul>
             </div>
         </div>
