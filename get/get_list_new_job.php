@@ -7,8 +7,8 @@ function badge_status($status){
   }elseif($status=="checking"  ){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ffff7e;color:#997300;border:#ffff7e">checking</button>';
   }elseif( $status=="on-production"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ff9a59;color:white;border:#ff9a59">on-production</button>';
-  }elseif($status=="accepted" or $status=="on-productions"){
+    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ff9a59;color:white;border:#ff9a59">on-productions</button>';
+  }elseif($status=="approved" ){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #7befb2;color:#115636;border:#115636">'.$status.'</button>';
   }elseif($status=="waiting confirm"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #499CF7;color:#093f8e;border:#499CF7">waiting confirm</button>';
@@ -104,9 +104,9 @@ if(isset($_POST["from_post"] )){
   // echo '<script>console.log("'.htmlspecialchars(stripslashes(str_replace(array("\r", "\n"), '', var_export($query, true)))).'")</script>';
   while($row = mysqli_fetch_array($result)) {
     $ticket_role = role_user($row["request_username"],$row["follow_up_by"]);
-    if($row['status']=="accepted" and $row['trigger_status'] <> "on-productions"){
-      $status=badge_status("on-production");
-    }elseif($row['status']=="accepted" and $row['trigger_status'] == "on-productions"){
+    if($row['status']=="on-productions" and $row['trigger_status'] <> "on-productions"){
+      $status=badge_status("on-productions");
+    }elseif($row['status']=="on-productions" and $row['trigger_status'] == "on-productions"){
       $status=badge_status("on-productions");
     }else{
       $status =badge_status($row['status']);
@@ -205,9 +205,9 @@ if(isset($_POST["from_post"] )){
         while($row_child = mysqli_fetch_array($result_child)) {
             $ticket_role = role_user($row_child["request_username"],$row_child["follow_up_by"]);
             // $status = badge_status($row_child['status']);
-          if($row_child['status']=="accepted" and $row_child['trigger_status'] <> "on-productions"){
+          if($row_child['status']=="on-productions" and $row_child['trigger_status'] <> "on-productions"){
             $status=badge_status("on-production");
-          }elseif($row_child['status']=="accepted" and $row_child['trigger_status'] == "on-productions"){
+          }elseif($row_child['status']=="on-productions" and $row_child['trigger_status'] == "on-productions"){
             $status=badge_status("on-productions");
           }else{
             $status =badge_status($row_child['status']);

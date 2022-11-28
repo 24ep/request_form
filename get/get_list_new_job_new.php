@@ -6,9 +6,9 @@ function badge_status($status){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#5f9ee5;border:#5f9ee5 solid 1px;width: 100%;">pending</button>';
   }elseif($status=="checking"  ){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#ffc107;border:#ffc107 solid 1px;width: 100%;">checking</button>';
-  }elseif( $status=="on-production"){
+  }elseif( $status=="on-productions"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#ff9a59;border:#ff9a59 solid 1px;width: 100%;">on-production</button>';
-  }elseif($status=="on-productions" or $status=="on-productions"){
+  }elseif($status=="approved"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#7befb2;border:#7befb2 solid 1px;width: 100%;">'.$status.'</button>';
   }elseif($status=="waiting confirm"){
     $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#499CF7;border:#499CF7 solid 1px;width: 100%;">waiting confirm</button>';
@@ -112,7 +112,7 @@ if(isset($_POST["from_post"] )){
   while($row = mysqli_fetch_array($result)) {
     $ticket_role = role_user($row["request_username"],$row["follow_up_by"]);
     if($row['status']=="on-productions" and $row['trigger_status'] <> "on-productions"){
-      $status=badge_status("on-production");
+      $status=badge_status("on-productions");
     }elseif($row['status']=="on-productions" and $row['trigger_status'] == "on-productions"){
       $status=badge_status("on-productions");
     }else{
