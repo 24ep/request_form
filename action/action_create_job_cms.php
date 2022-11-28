@@ -90,7 +90,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
          $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
          mysqli_query($con, "SET NAMES 'utf8' ");
          //chage status to accept
-         $sql = "UPDATE add_new_job SET status = 'accepted'  WHERE id=".$_POST["id_adj"];
+         $sql = "UPDATE add_new_job SET status = 'on-productions'  WHERE id=".$_POST["id_adj"];
          $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
          $query = mysqli_query($con,$sql);
         //get key

@@ -106,7 +106,7 @@ function get_list_status($username,$status){
             <div class="row card-body text-light" style="flex: 0;">
                 <div class="ps-3">
                     <div class="total_count_dashboard">
-                        <?php $count_pending = count_status($_SESSION['username'],'accepted');
+                        <?php $count_pending = count_status($_SESSION['username'],'on-productions');
                           echo $count_pending;
                     ?>
                         <small class="unit_count_dashboard" style="font-size: small;">Ticket</small>
@@ -115,7 +115,7 @@ function get_list_status($username,$status){
                 </div>
                 <div class="ps-3">
                     <ul class="list-group list-group-flush overflow-auto" style="max-height: 100px;">
-                        <?php $list = get_list_status($_SESSION['username'],'accepted');
+                        <?php $list = get_list_status($_SESSION['username'],'on-productions');
                           echo $list;
                     ?>
 

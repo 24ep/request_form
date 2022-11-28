@@ -6,11 +6,11 @@
   $query = "SELECT * FROM u749625779_cdscontent.job_cms as job 
   left join all_in_one_project.add_new_job as request 
   ON job.csg_request_new_id = request.id
-  WHERE job.approved_editing_status <> 'approved' and job.job_status_filter <> 'cancel'  and request.request_username = '".$_SESSION['username']."' ";
+  WHERE job.approved_editing_status <> 'on-productions' and job.job_status_filter <> 'cancel'  and request.request_username = '".$_SESSION['username']."' ";
 $query_count = "SELECT count(*)  as total FROM u749625779_cdscontent.job_cms as job 
 left join all_in_one_project.add_new_job as request 
 ON job.csg_request_new_id = request.id
-WHERE job.approved_editing_status <> 'approved' and job.job_status_filter <> 'cancel' and request.request_username = '".$_SESSION['username']."' ";
+WHERE job.approved_editing_status <> 'on-productions' and job.job_status_filter <> 'cancel' and request.request_username = '".$_SESSION['username']."' ";
   $result = mysqli_query($con, $query);
   $result_count = mysqli_query($con, $query_count);
   $data=mysqli_fetch_assoc($result_count);
@@ -67,7 +67,7 @@ WHERE job.approved_editing_status <> 'approved' and job.job_status_filter <> 'ca
 //         $sql="SELECT count(*) FROM u749625779_cdscontent.job_cms as job 
 //         left join all_in_one_project.add_new_job as request 
 //         ON job.csg_request_new_id = request.id
-//         WHERE job.approved_editing_status <> 'approved' and request.request_username = '".$_SESSION['username']."' ";
+//         WHERE job.approved_editing_status <> 'on-productions' and request.request_username = '".$_SESSION['username']."' ";
 //         $result=mysqli_query($con,$sql);
 //         $data=mysqli_fetch_assoc($result);
 //         $count = $data['total'];

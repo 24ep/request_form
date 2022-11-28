@@ -129,7 +129,7 @@ function get_bt_comment($id){
 }
 $bt_comment_type = get_bt_comment($id);
 get_comment($id);
-// if($status =='accepted'){
+// if($status =='on-productions'){
 //     echo '<small style="text-align: center;color:#b7b5b5;">This ticket had been accepted. if you have a comment content team also get notification but status will not change to waiting confirm</small>';
 // }
 echo '<script>

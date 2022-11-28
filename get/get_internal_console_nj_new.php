@@ -41,7 +41,7 @@
                         unset($allow_send_to_traffic);unset($help_traffic);
                     }
                     ?>
-    <?php if(!isset($parent) or $status <> 'accepted'){
+    <?php if(!isset($parent) or $status <> 'on-productions'){
                     ?>
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-heading5">
@@ -108,7 +108,7 @@
                   "
                   class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Checking</button>';
               }else{
-                $status_change_to = "accepted";
+                $status_change_to = "on-productions";
                 $bt_checking = '<button 
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_accepted_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
@@ -258,7 +258,7 @@
                         QC <?php echo $bt_approve; ?> </li>
                     <input type="hidden" id="cs_edit_approved_date" value="CURRENT_TIMESTAMP">
                     <input type="hidden" id="cs_edit_approved_by" value="<?php echo $_SESSION['nickname'];?>">
-                    <input type="hidden" id="cs_edit_approved_editing_status" value="approved">
+                    <input type="hidden" id="cs_edit_approved_editing_status" value="on-productions">
                 </ul>
             </div>
         </div>

@@ -76,7 +76,7 @@ $send_type= $_POST["send_type"];
     $comment_to_nmi =str_replace('#accepted','',$comment);
     $sql = "UPDATE add_new_job SET 
     accepted_date = CURRENT_TIMESTAMP,
-    status = 'accepted'  WHERE id=".$id;
+    status = 'on-productions'  WHERE id=".$id;
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
   }

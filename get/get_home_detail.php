@@ -71,7 +71,7 @@ function count_status($username,$status){
             <div class="card-body text-secondary">
                 <div class="total_count_dashboard">
                     <?php
-                        $count_checking =  count_status($_SESSION['username'],'accepted');
+                        $count_checking =  count_status($_SESSION['username'],'on-productions');
                         echo $count_checking;
                     ?>
                 </div>

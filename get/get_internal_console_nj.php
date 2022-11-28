@@ -27,7 +27,7 @@
                       $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
                     $query = "SELECT account.username as username,account.nickname as nickname,account.department as department,account.status as status ,sum(new_job.sku) as backlog_sku
                                             FROM account as account
-                                            left join add_new_job as new_job on account.username = new_job.follow_assign_name and new_job.status <> 'accepted' and  new_job.status like '%cancel%' and new_job.status <> 'none'
+                                            left join add_new_job as new_job on account.username = new_job.follow_assign_name and new_job.status <> 'on-productions' and  new_job.status like '%cancel%' and new_job.status <> 'none'
                                             group by account.username
                                             having (account.department like '%Content%' and account.status = 'Enabled') or account.username ='".$follow_assign_name."'" or die("Error:" . mysqli_error($con));
                                             $result = mysqli_query($con, $query);
@@ -171,7 +171,7 @@
                         unset($allow_send_to_traffic);unset($help_traffic);
                     }
                     ?>
-    <?php if(!isset($parent) or $status <> 'accepted'){
+    <?php if(!isset($parent) or $status <> 'on-productions'){
                     ?>
     <div class="row g-3 action-block">
         <h6><strong>Create Sub-Ticket</strong></h6>

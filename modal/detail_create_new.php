@@ -104,7 +104,7 @@
     $status_style = 'style="background: #a9a9a94f;color:#8f8f8f"';
     }elseif($row["status"]=="checking"){
         $status_style = 'style="background: #ffff7e;color:#997300"';
-    }elseif($row["status"]=="accepted"){
+    }elseif($row["status"]=="on-productions"){
         $status_style = 'style="background: #7befb2;color:#115636"';
     }elseif($row["status"]=="waiting confirm"){
         $status_style = 'style="background: #499CF7;color:#093f8e"';
@@ -253,13 +253,13 @@
                                         $badge_progres_3 = 'btn-secondary';
                                         $badge_progres_4 = 'btn-secondary';
                                         $progress_per = '30';
-                                    }elseif($status=='accepted' and $approved_date ==''){
+                                    }elseif($status=='on-productions' and $approved_date ==''){
                                         $badge_progres_0 = 'btn-success';
                                         $badge_progres_1 = 'btn-success';
                                         $badge_progres_2 = 'btn-success';
                                         $badge_progres_3 = 'btn-secondary';
                                         $progress_per = '60';
-                                    }elseif($status=='accepted' and $approved_date <>''){
+                                    }elseif($status=='on-productions' and $approved_date <>''){
                                         $badge_progres_0 = 'btn-success';
                                         $badge_progres_1 = 'btn-success';
                                         $badge_progres_2 = 'btn-success';

@@ -158,7 +158,7 @@ ion-icon {
     $status_style = 'style="background: #a9a9a94f;color:#8f8f8f"';
     }elseif($row["status"]=="checking"){
         $status_style = 'style="background: #ffff7e;color:#997300"';
-    }elseif($row["status"]=="accepted"){
+    }elseif($row["status"]=="on-productions"){
         $status_style = 'style="background: #7befb2;color:#115636"';
     }elseif($row["status"]=="waiting confirm"){
         $status_style = 'style="background: #499CF7;color:#093f8e"';

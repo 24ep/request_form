@@ -333,7 +333,7 @@ function categories(){
       }
   }
   $query = "SELECT * FROM pim_cate_convert_condition 
-  where review_status = 'Approved' and
+  where review_status = 'on-productions' and
   ".$query_set_department." and 
   ".$query_set_sub_department." and  
   ".$query_set_gender." and 
@@ -349,7 +349,7 @@ function categories(){
       $query_set_boutique_department =  "boutique_department = '".$boutique_categories."'";
       $query_set_boutique_sub_department =  "boutique_sub_department = '".$boutique_sub_categories."'";
       $query = "SELECT * FROM pim_cate_convert_condition 
-      where review_status = 'Approved' and ".$query_set_boutique_department." and ".$query_set_boutique_sub_department
+      where review_status = 'on-productions' and ".$query_set_boutique_department." and ".$query_set_boutique_sub_department
       or die("Error:" . mysqli_error($con));
       $result = mysqli_query($con, $query);
       while($row= mysqli_fetch_array($result)) {
@@ -360,7 +360,7 @@ function categories(){
   if($gift_sub_categories<>""){
     $query_set_gift_sub_department =  "gift_sub_department = '".$gift_sub_categories."'";
     $query = "SELECT * FROM pim_cate_convert_condition 
-    where review_status = 'Approved' and ".$query_set_gift_sub_department
+    where review_status = 'on-productions' and ".$query_set_gift_sub_department
     or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row= mysqli_fetch_array($result)) {
@@ -414,7 +414,7 @@ function family(){
       }
   }
   $query = "SELECT * FROM pim_cate_convert_condition 
-  where review_status = 'Approved' and ".$query_set_department." and 
+  where review_status = 'on-productions' and ".$query_set_department." and 
   ".$query_set_sub_department." and  
   ".$query_set_gender." and 
   ".$query_set_age." and
@@ -446,7 +446,7 @@ function translate_size_to_th($size){
 }
 function look_up_label($excel_value,$return_col,$linesheet_code){
   global $con;
-  $query_att_trans = "SELECT * FROM pim_attr_convert_option_lu where review_status = 'Approved' and linesheet_code = '".$linesheet_code."'" or die("Error:" . mysqli_error($con));
+  $query_att_trans = "SELECT * FROM pim_attr_convert_option_lu where review_status = 'on-productions' and linesheet_code = '".$linesheet_code."'" or die("Error:" . mysqli_error($con));
     $result_att_trans = mysqli_query($con, $query_att_trans);
     while($row_att_trans= mysqli_fetch_array($result_att_trans)) {
        if($row_att_trans["input_option"]==$excel_value ){

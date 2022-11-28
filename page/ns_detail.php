@@ -177,7 +177,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
     $status_style = 'style="background: #a9a9a94f;color:#8f8f8f"';
     }elseif($row["status"]=="checking"){
         $status_style = 'style="background: #ffff7e;color:#997300"';
-    }elseif($row["status"]=="accepted"){
+    }elseif($row["status"]=="on-productions"){
         $status_style = 'style="background: #7befb2;color:#115636"';
     }elseif($row["status"]=="waiting confirm"){
         $status_style = 'style="background: #499CF7;color:#093f8e"';
@@ -197,14 +197,14 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
     $office_tell = $row['office_tell'];
     $work_email = $row['work_email'];
   }
-  $query = "SELECT * FROM all_in_one_project.add_new_job  where id<> ".$id." and request_username = '".$request_username."' and status not in ('accepted','cancel') ORDER BY id DESC limit 2" or die("Error:" . mysqli_error($con));
+  $query = "SELECT * FROM all_in_one_project.add_new_job  where id<> ".$id." and request_username = '".$request_username."' and status not in ('on-productions','cancel') ORDER BY id DESC limit 2" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $same_owner = '';
   while($row = mysqli_fetch_array($result)) {
     $same_owner .= " <li style='margin-top: 5px;' class='text-nowrap' >NS-".$row['id']." ".$row['brand']." ".$row['sku']." SKUs</li>";
   }
   $same_owner .= " <li style='margin-top: 5px;color: #81a8dd;' class='text-nowrap' ><a type='button' onclick='ns_discover(&#34;user_filter&#34;,&#34;".$request_username."&#34;);' id='discover_more_requester_bt' >Discover more <ion-icon name='arrow-forward-outline'></ion-icon></a></li>";
-  $query = "SELECT * FROM all_in_one_project.add_new_job  where id<> ".$id." and brand = '".$brand."' and status not in ('accepted','cancel') ORDER BY id DESC limit 2" or die("Error:" . mysqli_error($con));
+  $query = "SELECT * FROM all_in_one_project.add_new_job  where id<> ".$id." and brand = '".$brand."' and status not in ('on-productions','cancel') ORDER BY id DESC limit 2" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $same_brand = '';
   while($row = mysqli_fetch_array($result)) {
@@ -332,13 +332,13 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                                         $badge_progres_3 = 'btn-secondary';
                                         $badge_progres_4 = 'btn-secondary';
                                         $progress_per = '30';
-                                    }elseif($status=='accepted' and $approved_date ==''){
+                                    }elseif($status=='on-productions' and $approved_date ==''){
                                         $badge_progres_0 = 'btn-success';
                                         $badge_progres_1 = 'btn-success';
                                         $badge_progres_2 = 'btn-success';
                                         $badge_progres_3 = 'btn-secondary';
                                         $progress_per = '60';
-                                    }elseif($status=='accepted' and $approved_date <>''){
+                                    }elseif($status=='on-productions' and $approved_date <>''){
                                         $badge_progres_0 = 'btn-success';
                                         $badge_progres_1 = 'btn-success';
                                         $badge_progres_2 = 'btn-success';
@@ -1131,7 +1131,7 @@ echo "<script>Notiflix.Report.warning(
         'รับทราบ',
         );</script>";
 }
-if($status == 'accepted' and $approved_date <> null){
+if($status == 'on-productions' and $approved_date <> null){
     echo "<script>Notiflix.Report.success(
             'The job had been approved',
             'เรียนผู้เกี่ยวข้อง Ticket นี้ได้รับการดำเนินการสร้างข้อมูลเนื้อหาบนระบบหลังบ้านเรียบร้อยแล้ว โดยสินค้าขึ้นแสดงบนหน้าว็บ ณ วันที่ ".$luanchdate."<br/><br/><strong> - อย่างไรก็ตามหากท่านต้องการแก้ไขข้อมูลสินค้าสามารถเปิด <a>เปิด ticket เพิ่มเติม</a>ได้</strong>',
