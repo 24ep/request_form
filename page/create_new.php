@@ -7,7 +7,8 @@ session_start();
 include_once('../get/get_option_function.php');
 $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
 $brand_op = getoption_return_filter_disting("brand","add_new_job","","single","all_in_one_project");
-$request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
+// $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
+$request_new_status_op = get_option_attribute_entity("status","add_new_job",$_SESSION["status_filter"])
 $business_type_op = get_option_return_filter("business_type","","single","add_new");
 $production_type_op = get_option_return_filter("production_type","","single","add_new");
 $project_type_op = get_option_return_filter("project_type","New SKU","single","add_new");
