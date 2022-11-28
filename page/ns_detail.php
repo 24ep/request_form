@@ -383,18 +383,10 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     </button>
                 </li>
             </ul>
-            <!-- <?php if(strpos($_SESSION["department"],'Content')!==false){?>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <button class="btn btn-sm  btn-success bg-gradient me-md-2 shadow-sm " type="button">Approved</button>
-                                        <button class="btn btn-sm  btn-danger bg-gradient shadow-sm " type="button">Reject</button>
-                                    </div>
-                    <?php } ?> -->
+            <?php }?>
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-ticket" role="tabpanel"
                     aria-labelledby="pills-ticket-tab">
-                    <!-- <h6 class="ms-5">
-                        <ion-icon name="podium-outline"></ion-icon><strong>Progress</strong>
-                    </h6> -->
                     <div class="position-relative" style="margin: 10%!important;margin-top: 50px!important;">
                         <div class="progress" style="height: 5px;">
                             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success shadow-sm"
@@ -431,7 +423,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                                 class="timeago"
                                 datetime="<?php echo $approved_date; ?>"><?php echo $approved_date; ?></span></small>
                     </div>
-                    <?php }?>
+                    <!-- <?php //}?> -->
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
                             <button class="nav-link active" id="nav-public-tab" data-bs-toggle="tab"

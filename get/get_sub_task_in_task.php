@@ -66,11 +66,11 @@
 if($subtask<>""){
 ?>
 
-<h6><strong>Sub ticket</strong> - <small class="card-text">Contact person</small></h6>
+<h6><strong>Sub-Ticket</strong></h6>
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th scope="col">id</th>
+            <th scope="col">ID</th>
             <th scope="col">sku</th>
             <th scope="col">status</th>
             <th scope="col">contact person</th>
