@@ -40,9 +40,9 @@ mysqli_query($con, "SET NAMES 'utf8' ");
               $file_group = 'Original' ;
             }elseif(strpos($file_name,'xlsm')!==false and strpos(strtolower($file_name),'_cleaned')===true){
               $file_group = 'Cleaned' ;
-            }elseif(strpos(strtolower($file_name),'modal')===true){
+            }elseif(strpos(strtolower($file_name),'modal')!==false){
               $file_group = 'ModelTemplate' ;
-            }elseif(strpos(strtolower($file_name),'template')===true){
+            }elseif(strpos(strtolower($file_name),'template')===false){
               $file_group = 'ModelTemplate' ;
             }else{
               $file_group = 'Other' ;
