@@ -137,7 +137,7 @@ var time = new Date(),
     secondsRemaining = (60 - time.getSeconds()) * 1000;
 
 setTimeout(function() {
-    setInterval(interval_run, 15000);
+    setInterval(interval_run, 150000);
 }, secondsRemaining);
 
 
