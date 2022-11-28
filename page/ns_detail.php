@@ -315,7 +315,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
         </nav> -->
             <?php if($config_type=='parent'){?>
             <div class="row">
-                <div class="col-sm-12 shadow officerassingbox">
+                <div class="officerassingbox">
                     <div id="call_subtask">
                         <?php include('../get/get_sub_task_in_task.php'); ?>
                     </div>
