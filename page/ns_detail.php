@@ -323,7 +323,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
             </div>
             <hr>
             <?php }?>
-            <?php if($config_type=='task'){?>
+            <?php //if($config_type=='task'){?>
             <?php 
                                     if($status=='checking'){
                                         $badge_progres_0 = 'btn-success';
@@ -383,7 +383,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     </button>
                 </li>
             </ul>
-            <?php }?>
+            <?php//}?>
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-ticket" role="tabpanel"
                     aria-labelledby="pills-ticket-tab">
