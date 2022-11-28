@@ -38,7 +38,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 
             if(strpos($file_name,'xlsm')!==false and strpos(strtolower($file_name),'_cleaned')!==true){
               $file_group = 'Original' ;
-            }elseif(strpos($file_name,'xlsm')!==false and strpos(strtolower($file_name),'xlsm')===true){
+            }elseif(strpos($file_name,'xlsm')!==false and strpos(strtolower($file_name),'_cleaned')===true){
               $file_group = 'Cleaned' ;
             }elseif(strpos(strtolower($file_name),'modal')===true){
               $file_group = 'ModelTemplate' ;
