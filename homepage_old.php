@@ -187,6 +187,19 @@ if (!$_SESSION["login_csg"]){
                 $sty_col = "padding: 20px;padding-left:80px";
            }
            ?>
+           <!-- nav here -->
+           <nav class="navbar sticky-top navbar-danger bg-danger">
+                <marquee>
+                    <span class="navbar-text" >
+                            'เปิดรับ ticket สำหรับสร้างสินค้าใหม่ขึ้นบน Online platform วันสุดท้าย ในวันจันทร์ ที่ 14 ธันวาคม 2565 สำหรับงานที่มีการเปิด Ticket มาหลังวันที่ดังกล่าว จะเริ่มดำเนินการในวันที่ 3 มกราคม 2566 เป็นต้นไป'
+                    </span>
+                </marquee>
+            </nav>
+
+
+           <!-- nav here -->
+
+
             <div class="<?php echo  $full_col;?>  overflow-auto" style="<?php echo  $sty_col;?>">
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- style="margin-top:15px" -->
