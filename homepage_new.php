@@ -211,7 +211,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
         Subscribe Push Messaging
 </button> -->
       <!-- nav here -->
-      <nav class="navbar sticky-top navbar-danger bg-danger">
+      <nav class="navbar sticky-top navbar-danger bg-danger" style="place-content: center;">
                 <!-- <marquee> -->
                     <span class="navbar-text" style="color:white;font-size: 16px;">
                             เปิดรับ Ticket สร้างสินค้าใหม่ขึ้นบนเว็บไซต์ จนถึง<strong>วันจันทร์ที่ 14 ธันวาคม 2565</strong> หากเปิด Ticket มาหลังวันที่ดังกล่าว จะเริ่มดำเนินการในวันที่ 3 มกราคม 2566 เป็นต้นไป
