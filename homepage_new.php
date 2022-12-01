@@ -212,15 +212,14 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
 </button> -->
       <!-- nav here -->
       <nav class="navbar sticky-top navbar-danger bg-danger">
-                <marquee>
-                    <span class="navbar-text" style="color:white" >
-                            เปิดรับ ticket สำหรับสร้างสินค้าใหม่ขึ้นบน Online platform วันสุดท้าย ในวันจันทร์ ที่ 14 ธันวาคม 2565 สำหรับงานที่มีการเปิด Ticket มาหลังวันที่ดังกล่าว จะเริ่มดำเนินการในวันที่ 3 มกราคม 2566 เป็นต้นไป'
+                <!-- <marquee> -->
+                    <span class="navbar-text" style="color:white;font-size: 16px;">
+                            เปิดรับ Ticket สร้างสินค้าใหม่ขึ้นบนเว็บไซต์ จนถึง<strong>วันจันทร์ที่ 14 ธันวาคม 2565</strong> หากเปิด Ticket มาหลังวันที่ดังกล่าว จะเริ่มดำเนินการในวันที่ 3 มกราคม 2566 เป็นต้นไป
                     </span>
-                </marquee>
-            </nav>
+                <!-- </marquee> -->
+                </nav>
 
-
-           <!-- nav here -->
+        <!-- nav here -->
 
     <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1" id="content_request_canvas"
         aria-labelledby="offcanvasExampleLabel">
