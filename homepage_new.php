@@ -213,8 +213,8 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
       <!-- nav here -->
       <nav class="navbar sticky-top navbar-danger bg-danger">
                 <marquee>
-                    <span class="navbar-text" >
-                            'เปิดรับ ticket สำหรับสร้างสินค้าใหม่ขึ้นบน Online platform วันสุดท้าย ในวันจันทร์ ที่ 14 ธันวาคม 2565 สำหรับงานที่มีการเปิด Ticket มาหลังวันที่ดังกล่าว จะเริ่มดำเนินการในวันที่ 3 มกราคม 2566 เป็นต้นไป'
+                    <span class="navbar-text" style="color:white" >
+                            เปิดรับ ticket สำหรับสร้างสินค้าใหม่ขึ้นบน Online platform วันสุดท้าย ในวันจันทร์ ที่ 14 ธันวาคม 2565 สำหรับงานที่มีการเปิด Ticket มาหลังวันที่ดังกล่าว จะเริ่มดำเนินการในวันที่ 3 มกราคม 2566 เป็นต้นไป'
                     </span>
                 </marquee>
             </nav>
