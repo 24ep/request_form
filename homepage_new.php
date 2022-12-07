@@ -334,8 +334,8 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     <hr class="hr_manu_bra_in">
                     <small class="header_manu_bra">Internals</small>
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_panel" data-bs-toggle="pill"
-                            type="button" role="tab" aria-selected="false" onclick="get_page('panel');">
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_job_on_hand" data-bs-toggle="pill"
+                            type="button" role="tab" aria-selected="false" onclick="get_page('nav_job_on_hand');">
                             <ion-icon name="grid"></ion-icon><span class="main-manu-nav">Job On Hand</span>
                         </a>
                     </li>
