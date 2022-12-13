@@ -74,7 +74,7 @@ $detail = get_page_account();
 </nav>
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-account" role="tabpanel" aria-labelledby="nav-account-tab" tabindex="0"><?php echo $detail; ?></div>
-  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+  <div class="tab-pane fade" style="overflow: auto;" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
     <?php include('site_config.php'); ?>
   </div>
 </div>
