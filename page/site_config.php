@@ -2,12 +2,12 @@
 $assigned_log_id = $_POST["id"];
 session_start();
 date_default_timezone_set("Asia/Bangkok");
-$con= mysqli_connect("localhost","cdse_admin","@aA417528639","auto_assign") or die("Error: " . mysqli_error($con));
+$con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 
 //get column 
 function get_column(){
-    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","auto_assign") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $table = 'job_attribute';
     $query = "SELECT `COLUMN_NAME` 
