@@ -86,7 +86,7 @@ mysqli_close($con);
 
 
 
-<script>
+<!-- <script>
   $(document).ready( function () {
   $('#st_attribute_config').DataTable({
         lengthMenu: [
@@ -99,4 +99,4 @@ mysqli_close($con);
 
 
 
-</script>
+</script> -->
