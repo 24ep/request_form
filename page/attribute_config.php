@@ -85,7 +85,7 @@ mysqli_close($con);
 <script> -->
 
 
-<!-- 
+
 <script>
   $(document).ready( function () {
   $('#st_attribute_config').DataTable({
@@ -99,4 +99,4 @@ mysqli_close($con);
 
 
 
-</script> -->
+</script>
