@@ -35,7 +35,7 @@ echo '
 
                         </div>
 ';
-echo '<table class="table table-bordered" id="st_attribute_config"  name="st_attribute_config">
+echo '<table class="table table-bordered" id="filter name="st_attribute_config">
 <thead>
     <tr>
       '.$th.'
