@@ -50,7 +50,7 @@ while($row = mysqli_fetch_array($result)) {
                 type="text" 
                 id="'.$row_col['COLUMN_NAME'].'_'.$row['id'].'" 
                 name="'.$row_col['COLUMN_NAME'].'_'.$row['id'].'" 
-                value="'.$row_col['COLUMN_NAME'].'">
+                value="'.$row[$row_col['COLUMN_NAME']].'">
         </td>';
         // value="'.$row["'".$row_col['COLUMN_NAME']."'"].'">
    }
