@@ -26,6 +26,15 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 $query = "SELECT *
 FROM u749625779_cdscontent.".$table.";" or die("Error:" . mysqli_error());
 $result =  mysqli_query($con, $query);
+echo '
+                        <div style="margin-bottom: 20px;">
+
+                            <input type="text" id="filter0" placeholder="Filter By Name">
+                            <input type="text" id="filter1" placeholder="Filter By Email">
+                            <input type="text" id="filter2" placeholder="Filter By Status">
+
+                        </div>
+';
 echo '<table class="table table-bordered" id="st_attribute_config"  name="st_attribute_config">
 <thead>
     <tr>
@@ -100,3 +109,5 @@ mysqli_close($con);
 
 
 </script> -->
+
+<script src="TableFilter.min.js" defer></script>
