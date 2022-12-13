@@ -6,7 +6,7 @@ $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " .
 mysqli_query($con, "SET NAMES 'utf8' ");
 
 //get column 
-function get_column(){
+
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $table = 'job_attribute';
@@ -18,8 +18,7 @@ function get_column(){
     while($row = mysqli_fetch_array($result)) {
         $th .= '<th scope="col">'.$row['COLUMN_NAME'].'</th>';
     }
-    return $th;
-}
+
 
 //get table 1 
 
