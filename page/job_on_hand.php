@@ -23,8 +23,8 @@ $database = 'all_in_one_project';
             ?>
 
 
-<div class="row">
-    <div class="col-3 bg-white shadow-sm pe-0 mt-0  ms-0 m-0 border-end">
+<div class="row job_on_hand_list" >
+    <div class="col-3 bg-white shadow-sm pe-0 ps-0 mt-0  ms-0 m-0 border-end">
         <div class="accordion" id="accordionPanelsStayOpenExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
