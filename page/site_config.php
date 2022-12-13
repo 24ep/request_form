@@ -48,9 +48,9 @@ while($row = mysqli_fetch_array($result)) {
        <td>
         <input class="form-control" 
                 type="text" 
-                id="'.$row_col['COLUMN_NAME'].'" 
-                name="'.$row_col['COLUMN_NAME'].'" 
-                value="'.$row_col["'".$row['COLUMN_NAME']."'"].'">
+                id="'.$row['id'].'_'.$row_col['COLUMN_NAME'].'" 
+                name="'.$row['id'].'_'.$row_col['COLUMN_NAME'].'" 
+                value="'.$row["'".$row_col['COLUMN_NAME']."'"].'">
         </td>';
    }
 
