@@ -1,4 +1,4 @@
 <?php
-echo shell_exec('wmic DISKDRIVE GET SerialNumber 2>&1');
+echo shell_exec('wmic bios get serialnumber 2>&1');
 
 ?>
