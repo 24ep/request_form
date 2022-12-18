@@ -240,7 +240,7 @@ echo '</div>';
 <script>
   function properties_form(){
     var id = document.getElementById('id').value;
-    var table_name = document.getElementById('table_name').value;
+    var table_name = "'job_attribute'";
     
 
         $.post("base/form/form_attribute.php", {
