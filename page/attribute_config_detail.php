@@ -38,7 +38,7 @@ where attribute_code='".$attribute_code."'"  or die("Error:" . mysqli_error());
 $result =  mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) { 
 
-    $attribute_option_row = ' <tr>
+    $attribute_option_row .= ' <tr>
     <th>'. $row['attribute_option_code'].'</th>
     <td>'. $row['attribute_option_label'].'</td>
     <td><ion-icon name="create-outline"></ion-icon></td>
@@ -155,6 +155,7 @@ echo '
         </tr>
     </thead>
   <tbody>
+  '.$attribute_option_row .'
   </tbody>
     </table>
     
