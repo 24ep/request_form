@@ -10,7 +10,7 @@ $result =  mysqli_query($con, $query);
 
 while($row = mysqli_fetch_array($result)) {
 $attribute .= '
-    <tr>
+    <tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
       <th scope="col">'.$row['attribute_label'].'</th>
       <th >'.$row['attribute_code'].'</th>
       <th >'.$row['description'].'</th>
@@ -24,7 +24,7 @@ $attribute .= '
 
 echo '<table class="table table-bordered" id="st_attribute_config" name="st_attribute_config">
 <thead>
-    <tr>
+    <tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
       <th scope="col">Attribute Label</th>
       <th scope="col">Attribute Code</th>
       <th scope="col">Description</th>
