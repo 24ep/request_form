@@ -6,28 +6,12 @@ $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " .
 mysqli_query($con, "SET NAMES 'utf8' ");
 
 
-//get column 
-
-// $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-// mysqli_query($con, "SET NAMES 'utf8' ");
-// $query = "SELECT `COLUMN_NAME` 
-// FROM `INFORMATION_SCHEMA`.`COLUMNS` 
-// WHERE `TABLE_SCHEMA`='u749625779_cdscontent' 
-//     AND `TABLE_NAME`='job_attribute';" or die("Error:" . mysqli_error());
-// $result =  mysqli_query($con, $query);
-// while($row = mysqli_fetch_array($result)) {
-//         $COLUMN_NAME= $row['COLUMN_NAME'];
-    
-
-
-// }
-
-
+echo '<div class="container-md">';
 echo '
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Configurable</a></li>
-    <li class="breadcrumb-item" aria-current="page">Attribute</li>
+    <li class="breadcrumb-item">Configurable</li>
+    <li class="breadcrumb-item">Attribute</li>
     <li class="breadcrumb-item active" aria-current="page">'.$attribute_code.'</li>
     </ol>
 </nav>
@@ -123,6 +107,8 @@ echo '
 </div>
 ';
 
+
+echo '</div>';
 
 
 ?>
