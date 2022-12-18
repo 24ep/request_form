@@ -1,4 +1,16 @@
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Attribute</a>
+    <form class="d-flex">
+      
+      <button class="btn btn-outline-success" type="submit">Create new attribute</button>
+    </form>
+  </div>
+</nav>
+
 <?php
+
 session_start();
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
