@@ -32,7 +32,18 @@ while($row = mysqli_fetch_array($result)) {
 
 }
 
+$query = "SELECT 
+FROM u749625779_cdscontent.job_attribute_option;
+where attribute_code='".$attribute_code."'"  or die("Error:" . mysqli_error());
+$result =  mysqli_query($con, $query);
+while($row = mysqli_fetch_array($result)) { 
 
+    $attribute_option_row = ' <tr>
+    <th>'. $row['attribute_option_code'].'</th>
+    <td>'. $row['attribute_option_label'].'</td>
+    <td><ion-icon name="create-outline"></ion-icon></td>
+  </tr>';
+}
 echo '<div class="container-md p-4">';
 echo '
 <nav aria-label="breadcrumb">
@@ -130,8 +141,24 @@ echo '
             <label for="set_complete_attribute" class="form-label">Set complete attribute</label>
             <input type="text" class="form-control" id="set_complete_attribute" placeholder="" value="'.$set_complete_attribute.'">
         </div>
+    </div>';
+    //options
+    echo '
+    <div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">
+
+    <table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">Option Code</th>
+        <th scope="col">Option label</th>
+        <th scope="col">Remove</th>
+        </tr>
+    </thead>
+  <tbody>
+  </tbody>
+    </table>
+    
     </div>
-    <div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">...</div>
     <div class="tab-pane fade" id="v-pills-historical" role="tabpanel" aria-labelledby="v-pills-historical-tab">...</div>
 
   </div>
