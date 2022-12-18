@@ -77,10 +77,14 @@ echo '
   </div>
   <div class="tab-content ps-4 pe-4 container-xl" id="v-pills-tabContent">
     <div class="tab-pane fade show active" id="v-pills-properties" role="tabpanel" aria-labelledby="v-pills-properties-tab">
-
+    <input type="hidden" class="form-control" id="id" placeholder="" value="'.$id.'">
+    <input type="hidden" class="form-control" id="table_name" placeholder="" value="'.$table_name.'">
+        <div id="properties_form">
+        
         ';
-        include('../from/from_value.php');
+       
     echo '
+    </div>
     </div>';
 
 //     <div class="mb-3">
@@ -229,6 +233,27 @@ echo '</div>';
 //             });
     
 //   }
+
+  
+</script>
+
+<script>
+  function properties_form(){
+    var id = document.getElementById('id').value;
+    var table_name = document.getElementById('table_name').value;
+    
+
+        $.post("base/form/form_attribute.php", {
+            id : id,
+            table_name : table_name
+
+            },
+            function(data) {
+                $('#properties_form').html(data);
+            });
+    
+  }
+  properties_form();
 
   
 </script>
