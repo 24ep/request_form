@@ -6,7 +6,7 @@ $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " .
 mysqli_query($con, "SET NAMES 'utf8' ");
 
 
-echo '<div class="container-md">';
+echo '<div class="container-md p-4">';
 echo '
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -23,12 +23,12 @@ echo '<hr>';
 
 echo '
 <div class="d-flex align-items-start">
-  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+  <div class="nav flex-column nav-pills pe-4 border-end" style="text-align-last: left;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     <button class="nav-link active" id="v-pills-properties-tab" data-bs-toggle="pill" data-bs-target="#v-pills-properties" type="button" role="tab" aria-controls="v-pills-properties" aria-selected="true">Properties</button>
     <button class="nav-link" id="v-pills-options-tab" data-bs-toggle="pill" data-bs-target="#v-pills-options" type="button" role="tab" aria-controls="v-pills-options" aria-selected="false">Options</button>
     <button class="nav-link" id="v-pills-historical-tab" data-bs-toggle="pill" data-bs-target="#v-pills-historical" type="button" role="tab" aria-controls="v-pills-historical" aria-selected="false">Historical</button>
   </div>
-  <div class="tab-content" id="v-pills-tabContent">
+  <div class="tab-content ps-5 pe-5 container-xl" id="v-pills-tabContent">
     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
     <h5><strong>General</strong></h5>
     <div class="mb-3">
