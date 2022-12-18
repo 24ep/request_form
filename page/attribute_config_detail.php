@@ -44,7 +44,8 @@ echo '
 </nav>
 ';
 
-echo '<h4><strong>'.$attribute_code.'<strong></h4>';
+echo '<h4><strong>'.$attribute_labelt.'<strong></h4>';
+echo '<small>'.$description.'</small>';
 echo '<hr>';
 
 
