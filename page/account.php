@@ -9,6 +9,17 @@
     box-shadow: 0 .3rem 1rem rgba(0,0,0,.15)!important;
 }
 </style>
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Account</a>
+    <form class="d-flex">
+      
+      <button class="btn btn-outline-success disabled">Create new account</button>
+    </form>
+  </div>
+</nav>
+
 <?php
  session_start();
  include_once("../get/get_default_profile_image.php");

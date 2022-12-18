@@ -4,7 +4,7 @@
     <a class="navbar-brand">Attribute</a>
     <form class="d-flex">
       
-      <button class="btn btn-outline-success" type="submit">Create new attribute</button>
+      <button class="btn btn-outline-success" onclick="attribute_detail_page('','','create')" >Create new attribute</button>
     </form>
   </div>
 </nav>
@@ -28,7 +28,7 @@ $attribute .= '
       <th >'.$row['attribute_type'].'</th>
       <th >'.$row['attribute_set'].'</th>
       <th >'.$row['description'].'</th>
-      <th onclick="attribute_detail_page(&#39;'.$row['attribute_code'].'&#39,&#39;'.$row['table_name'].'&#39)">
+      <th onclick="attribute_detail_page(&#39;'.$row['attribute_code'].'&#39,&#39;'.$row['table_name'].'&#39,&#39;update&#39;)">
       <button type="button" class="btn"><ion-icon name="create-outline"></ion-icon></button></th>
     </tr>
 ';
@@ -53,11 +53,12 @@ echo '</tbody>
 </table>';
 ?>
 <script>
-  function attribute_detail_page(attribute_code,table_name){
+  function attribute_detail_page(attribute_code,table_name,action){
     // var value_change = document.getElementById(id_name).value;
         $.post("base/page/attribute_config_detail.php", {
                 attribute_code: attribute_code,
-                table_name: table_name
+                table_name: table_name,
+                action:action
             },
             function(data) {
                 $('#nav-attribute').html(data);
