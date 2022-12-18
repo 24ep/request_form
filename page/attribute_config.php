@@ -56,7 +56,7 @@ echo '</tbody>
   function attribute_detail_page(id,attribute_code,table_name,action){
     // create new attribute
 
-    if(action='create'){
+    if(action=='create'){
       Notiflix.Confirm.prompt(
       'Which attribute code ?',
       'Option code may contain only letters, numbers and underscores',
