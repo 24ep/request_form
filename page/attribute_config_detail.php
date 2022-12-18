@@ -35,7 +35,7 @@ while($row = mysqli_fetch_array($result)) {
 
 $query = "SELECT *
 FROM u749625779_cdscontent.job_attribute_option;
-where attribute_code='".$attribute_code."'  and table_name = '".$table_name."'"  or die("Error:" . mysqli_error());
+where attribute_code='".$attribute_code."'  and attribute_table = '".$table_name."'"  or die("Error:" . mysqli_error());
 $result =  mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) { 
 
