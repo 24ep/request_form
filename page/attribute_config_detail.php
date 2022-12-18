@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+$id = $_POST['id'];
 $attribute_code = $_POST['attribute_code'];
 $table_name = $_POST['table_name'];
 date_default_timezone_set("Asia/Bangkok");
@@ -75,79 +77,83 @@ echo '
   </div>
   <div class="tab-content ps-4 pe-4 container-xl" id="v-pills-tabContent">
     <div class="tab-pane fade show active" id="v-pills-properties" role="tabpanel" aria-labelledby="v-pills-properties-tab">
-    <h5><strong>General</strong></h5>
-    <div class="mb-3">
-            <label for="attribute_code" class="form-label">Attribute Code</label>
-            <input type="text" class="form-control" id="attribute_code" placeholder="" value="'.$attribute_code.'">
-        </div>
 
-        <div class="mb-3">
-            <label for="attribute_label" class="form-label">Attribute label</label>
-            <input type="text" class="form-control" id="attribute_label" placeholder="" value="'.$attribute_label.'">
-        </div>
-
-        <div class="mb-3">
-            <label for="attribute_type" class="form-label">Attribute Type</label>
-            <input type="text" class="form-control" id="attribute_type" placeholder="" value="'.$attribute_type.'">
-        </div>
-
-        <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <input type="text" class="form-control" id="description" placeholder="" value="'.$description.'">
-        </div>
-        <hr>
-        <h5><strong>Group</strong></h5>
-
-        <div class="mb-3">
-            <label for="section_group" class="form-label">Section Group</label>
-            <input type="text" class="form-control" id="section_group" placeholder="" value="'.$section_group.'">
-        </div>
-        <div class="mb-3">
-            <label for="attribute_set" class="form-label">Attribute Set</label>
-            <input type="text" class="form-control" id="attribute_set" placeholder="" value="'.$attribute_set.'">
-        </div>
-
-        <hr>
-        <h5><strong>Permission</strong></h5>
-
-        <div class="mb-3">
-            <label for="allow_display" class="form-label">Allow Display</label>
-            <input type="text" class="form-control" id="allow_display" placeholder="" value="'.$allow_display.'">
-        </div>
-
-        <div class="mb-3">
-            <label for="allow_edit" class="form-label">Allow Edit</label>
-            <input type="text" class="form-control" id="allow_edit" placeholder="" value="'.$allow_in_edit.'">
-        </div>
-
-        <hr>
-        <h5><strong>Database Config</strong></h5>
-
-        <div class="mb-3">
-            <label for="table_name" class="form-label">Data Table name</label>
-            <input type="text" class="form-control" id="table_name" placeholder="" value="'.$table_name.'">
-        </div>
-
-        <div class="mb-3">
-            <label for="db_name" class="form-label">Database name</label>
-            <input type="text" class="form-control" id="db_name" placeholder="" value="'.$db_name.'">
-        </div>
-        
-        <div class="mb-3">
-            <label for="primary_key_id" class="form-label">Primary key id</label>
-            <input type="text" class="form-control" id="primary_key_id" placeholder="" value="'.$primary_key_id.'">
-        </div>
-
-        <div class="mb-3">
-            <label for="prefix" class="form-label">Prefix</label>
-            <input type="text" class="form-control" id="prefix" placeholder="" value="'.$prefix.'">
-        </div>
-
-        <div class="mb-3">
-            <label for="set_complete_attribute" class="form-label">Set complete attribute</label>
-            <input type="text" class="form-control" id="set_complete_attribute" placeholder="" value="'.$set_complete_attribute.'">
-        </div>
+        ';
+        include('../from/from_value.php');
+    echo '
     </div>';
+
+//     <div class="mb-3">
+//     <label for="attribute_code" class="form-label">Attribute Code</label>
+//     <input type="text" class="form-control" id="attribute_code" placeholder="" value="'.$attribute_code.'">
+// </div>
+
+// <div class="mb-3">
+//     <label for="attribute_label" class="form-label">Attribute label</label>
+//     <input type="text" class="form-control" id="attribute_label" placeholder="" value="'.$attribute_label.'">
+// </div>
+
+// <div class="mb-3">
+//     <label for="attribute_type" class="form-label">Attribute Type</label>
+//     <input type="text" class="form-control" id="attribute_type" placeholder="" value="'.$attribute_type.'">
+// </div>
+
+// <div class="mb-3">
+//     <label for="description" class="form-label">Description</label>
+//     <input type="text" class="form-control" id="description" placeholder="" value="'.$description.'">
+// </div>
+// <hr>
+// <h5><strong>Group</strong></h5>
+
+// <div class="mb-3">
+//     <label for="section_group" class="form-label">Section Group</label>
+//     <input type="text" class="form-control" id="section_group" placeholder="" value="'.$section_group.'">
+// </div>
+// <div class="mb-3">
+//     <label for="attribute_set" class="form-label">Attribute Set</label>
+//     <input type="text" class="form-control" id="attribute_set" placeholder="" value="'.$attribute_set.'">
+// </div>
+
+// <hr>
+// <h5><strong>Permission</strong></h5>
+
+// <div class="mb-3">
+//     <label for="allow_display" class="form-label">Allow Display</label>
+//     <input type="text" class="form-control" id="allow_display" placeholder="" value="'.$allow_display.'">
+// </div>
+
+// <div class="mb-3">
+//     <label for="allow_edit" class="form-label">Allow Edit</label>
+//     <input type="text" class="form-control" id="allow_edit" placeholder="" value="'.$allow_in_edit.'">
+// </div>
+
+// <hr>
+// <h5><strong>Database Config</strong></h5>
+
+// <div class="mb-3">
+//     <label for="table_name" class="form-label">Data Table name</label>
+//     <input type="text" class="form-control" id="table_name" placeholder="" value="'.$table_name.'">
+// </div>
+
+// <div class="mb-3">
+//     <label for="db_name" class="form-label">Database name</label>
+//     <input type="text" class="form-control" id="db_name" placeholder="" value="'.$db_name.'">
+// </div>
+
+// <div class="mb-3">
+//     <label for="primary_key_id" class="form-label">Primary key id</label>
+//     <input type="text" class="form-control" id="primary_key_id" placeholder="" value="'.$primary_key_id.'">
+// </div>
+
+// <div class="mb-3">
+//     <label for="prefix" class="form-label">Prefix</label>
+//     <input type="text" class="form-control" id="prefix" placeholder="" value="'.$prefix.'">
+// </div>
+
+// <div class="mb-3">
+//     <label for="set_complete_attribute" class="form-label">Set complete attribute</label>
+//     <input type="text" class="form-control" id="set_complete_attribute" placeholder="" value="'.$set_complete_attribute.'">
+// </div>
     //options
     echo '
     <div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">
@@ -183,3 +189,46 @@ echo '</div>';
 
 
 ?>
+<script>
+//   function update_attribute(){
+//     //var id = document.getElementById('id').value;
+//         var attribute_code = document.getElementById('attribute_code').value;
+//         var attribute_label = document.getElementById('attribute_label').value;
+//         var description = document.getElementById('description').value;
+//         var attribute_set = document.getElementById('attribute_set').value;
+//         var section_group = document.getElementById('section_group').value;
+//         var attribute_type = document.getElementById('attribute_type').value;
+//         var allow_display = document.getElementById('allow_display').value;
+//         var allow_in_edit = document.getElementById('allow_in_edit').value;
+//         var table_name = document.getElementById('table_name').value;
+//         var db_name = document.getElementById('db_name').value;
+//         var primary_key_id = document.getElementById('primary_key_id').value;
+//         var prefix = document.getElementById('prefix').value;
+//         var set_complete_attribute = document.getElementById('set_complete_attribute').value;
+
+
+//         $.post("base/action/update_attribute.php", {
+//             id : id,
+//             attribute_code : attribute_code,
+//             attribute_label : attribute_label,
+//             description : description,
+//             attribute_set : attribute_set,
+//             section_group : section_group,
+//             attribute_type : attribute_type,
+//             allow_display : allow_display,
+//             allow_in_edit : allow_in_edit,
+//             table_name : table_name,
+//             db_name : db_name,
+//             primary_key_id : primary_key_id,
+//             prefix : prefix,
+//             set_complete_attribute : set_complete_attribute
+
+//             },
+//             function(data) {
+//                 $('#nav-attribute').html(data);
+//             });
+    
+//   }
+
+  
+</script>
