@@ -4,7 +4,7 @@ date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 
-$query = "SELECT attribute_code
+$query = "SELECT attribute_code,attribute_label,description
 FROM u749625779_cdscontent.job_attribute;" or die("Error:" . mysqli_error());
 $result =  mysqli_query($con, $query);
 
@@ -14,7 +14,8 @@ $attribute .= '
       <th scope="col">'.$row['attribute_code'].'</th>
       <th scope="col">'.$row['attribute_label'].'</th>
       <th scope="col">'.$row['description'].'</th>
-      <th scope="col" onclick="attribute_detail_page(&#39;'.$row['attribute_code'].'&#39;)">'.$row['Edit'].'</th>
+      <th scope="col" onclick="attribute_detail_page(&#39;'.$row['attribute_code'].'&#39;)">
+      <button type="button" class="btn btn-dark"><ion-icon name="create-outline"></ion-icon></button></th>
     </tr>
 ';
   
