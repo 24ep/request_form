@@ -54,7 +54,31 @@ echo '</tbody>
 ?>
 <script>
   function attribute_detail_page(id,attribute_code,table_name,action){
-    // var value_change = document.getElementById(id_name).value;
+    // create new attribute
+
+    if(action='create'){
+      Notiflix.Confirm.prompt(
+      'Which attribute code ?',
+      'Option code may contain only letters, numbers and underscores',
+      '',
+      'Create',
+      'Cancel',
+          function okCb(clientAnswer) {
+            var attribute_code = clientAnswer;
+          },
+          function cancelCb(clientAnswer) {
+            // alert('Client answer was: ' + clientAnswer);
+          },
+        
+    );
+    }
+   
+
+    //end
+
+
+
+
         $.post("base/page/attribute_config_detail.php", {
                 id:id,
                 attribute_code: attribute_code,

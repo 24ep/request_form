@@ -1,6 +1,10 @@
 <?php
 session_start();
+//create new attribute
 
+
+
+// end create new attribute
 $id = $_POST['id'];
 $attribute_code = $_POST['attribute_code'];
 $table_name = $_POST['table_name'];
@@ -119,11 +123,6 @@ echo '
 </div>
 ';
 
-if($_POST['action']=='update'){
-    echo '<button type="button" class="btn btn-primary">Update</button>';
-}else{
-    echo '<button type="button" class="btn btn-primary">Create</button>';
-}
 
 
 echo '</div>';
