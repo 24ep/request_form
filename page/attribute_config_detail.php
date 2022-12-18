@@ -1,7 +1,7 @@
 <?php
 session_start();
 $attribute_code = $_POST['attribute_code'];
-$table_name = $_POST['attribute_code'];
+$table_name = $_POST['table_name'];
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
