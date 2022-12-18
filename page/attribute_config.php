@@ -65,21 +65,7 @@ echo '</tbody>
       'Cancel',
           function okCb(clientAnswer) {
             var attribute_code = clientAnswer;
-          },
-          function cancelCb(clientAnswer) {
-            // alert('Client answer was: ' + clientAnswer);
-          },
-        
-    );
-    }
-   
-
-    //end
-
-
-
-
-        $.post("base/page/attribute_config_detail.php", {
+            $.post("base/page/attribute_config_detail.php", {
                 id:id,
                 attribute_code: attribute_code,
                 table_name: table_name,
@@ -88,6 +74,31 @@ echo '</tbody>
             function(data) {
                 $('#nav-attribute').html(data);
             });
+          },
+          function cancelCb(clientAnswer) {
+            // alert('Client answer was: ' + clientAnswer);
+          },
+        
+    );
+    }else{
+      $.post("base/page/attribute_config_detail.php", {
+                id:id,
+                attribute_code: attribute_code,
+                table_name: table_name,
+                action:action
+            },
+            function(data) {
+                $('#nav-attribute').html(data);
+            });
+      
+    }
+   
+
+    //end
+
+
+
+      
     
   }
 
