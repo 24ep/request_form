@@ -69,6 +69,7 @@ echo '
     if($attribute_type=='multiselect' or $attribute_type=='single_select'){
         echo '<button class="nav-link" id="v-pills-options-tab" data-bs-toggle="pill" data-bs-target="#v-pills-options" type="button" role="tab" aria-controls="v-pills-options" aria-selected="false">Options</button>';
     }
+    echo '
     
     <button class="nav-link" id="v-pills-historical-tab" data-bs-toggle="pill" data-bs-target="#v-pills-historical" type="button" role="tab" aria-controls="v-pills-historical" aria-selected="false">Historical</button>
   </div>
