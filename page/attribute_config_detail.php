@@ -16,7 +16,7 @@ if($_POST['action']=='create'){
           attribute_code
         )
           VALUES(
-            ".$attribute_code."'
+            '".$attribute_code."'
           )";
           $query = mysqli_query($con,$sql);
           $id = $con->insert_id;
