@@ -9,7 +9,7 @@ FROM u749625779_cdscontent.job_attribute;" or die("Error:" . mysqli_error());
 $result =  mysqli_query($con, $query);
 
 while($row = mysqli_fetch_array($result)) {
-echo '
+$attribute .= '
     <tr>
       <th scope="col">'.$row['attribute_code'].'</th>
       <th scope="col">'.$row['attribute_label'].'</th>
@@ -31,7 +31,7 @@ echo '<table class="table table-bordered" id="filter name="st_attribute_config">
     </tr>
 </thead>
 <tbody>';
-
+echo $attribute ;
 echo '</tbody>
 </table>';
 ?>

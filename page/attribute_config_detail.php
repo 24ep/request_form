@@ -5,11 +5,21 @@ date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 
-$query = "SELECT 
-FROM u749625779_cdscontent.job_attribute;" or die("Error:" . mysqli_error());
-$result =  mysqli_query($con, $query);
 
+//get column 
+
+$con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+mysqli_query($con, "SET NAMES 'utf8' ");
+$query = "SELECT `COLUMN_NAME` 
+FROM `INFORMATION_SCHEMA`.`COLUMNS` 
+WHERE `TABLE_SCHEMA`='u749625779_cdscontent' 
+    AND `TABLE_NAME`='job_attribute';" or die("Error:" . mysqli_error());
+$result =  mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
+    $COLUMN_NAME= $row['COLUMN_NAME'];
+    
+
+
 }
 
 
