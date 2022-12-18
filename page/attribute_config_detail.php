@@ -124,6 +124,7 @@ echo '
     </thead>
   <tbody>
   '.$attribute_option_row .'
+  <button type="button" class="btn btn-dark btn-sm">Add Option</button>
   </tbody>
     </table>
     
