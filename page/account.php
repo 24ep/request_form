@@ -16,7 +16,7 @@
  session_start();
  include_once("../get/get_default_profile_image.php");
 function get_page_account(){
-  <nav class="navbar navbar-light bg-light">
+  echo '<nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand">Account</a>
     <form class="d-flex">
@@ -24,7 +24,7 @@ function get_page_account(){
       <button class="btn btn-outline-success disabled">Create new account</button>
     </form>
   </div>
-</nav>
+</nav>';
  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
  $query_account = "SELECT * FROM all_in_one_project.account" or die("Error:" . mysqli_error($con));
  $result_account = mysqli_query($con, $query_account);
