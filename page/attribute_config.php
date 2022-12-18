@@ -14,6 +14,7 @@ $attribute .= '
       <th scope="col">'.$row['attribute_label'].'</th>
       <th >'.$row['attribute_code'].'</th>
       <th >'.$row['attribute_type'].'</th>
+      <th >'.$row['attribute_set'].'</th>
       <th >'.$row['description'].'</th>
       <th onclick="attribute_detail_page(&#39;'.$row['attribute_code'].'&#39;)">
       <button type="button" class="btn"><ion-icon name="create-outline"></ion-icon></button></th>
@@ -28,7 +29,8 @@ echo '<table class="table" id="st_attribute_config" name="st_attribute_config">
     <tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
       <th scope="col">Attribute Label</th>
       <th scope="col">Attribute Code</th>
-      <th scope="col">Attribute type</th>
+      <th scope="col">Type</th>
+      <th scope="col">Set</th>
       <th scope="col">Description</th>
       <th scope="col">Edit</th>
     </tr>
