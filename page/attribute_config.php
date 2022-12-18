@@ -22,7 +22,7 @@ $attribute .= '
 }
 
 
-echo '<table class="table table-bordered" id="st_attribute_config" name="st_attribute_config">
+echo '<table class="table" id="st_attribute_config" name="st_attribute_config">
 <thead>
     <tr style="text-align-last: left;border: solid #dee2e6 1px;background-color: transparent;">
       <th scope="col">Attribute Label</th>
