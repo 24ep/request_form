@@ -48,15 +48,7 @@ function get_page_account(){
 
 ?>
 <?php
-  echo '<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand">Account</a>
-    <form class="d-flex">
-      
-      <button class="btn btn-outline-success disabled">Create new account</button>
-    </form>
-  </div>
-</nav>';
+ 
  $table =  '<table class="table" id="st_account_tb"  name="st_account_tb" >
 <thead>
     <tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
@@ -86,7 +78,16 @@ $detail = get_page_account();
   </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-account" role="tabpanel" aria-labelledby="nav-account-tab" tabindex="0"><?php echo $detail; ?></div>
+  <div class="tab-pane fade show active" id="nav-account" role="tabpanel" aria-labelledby="nav-account-tab" tabindex="0"><nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Account</a>
+    <div class="d-flex">
+      
+      <button class="btn btn-outline-success disabled">Create new account</button>
+    </div>
+  </div>
+</nav>  
+  <?php echo $detail; ?></div>
   <div class="tab-pane fade" style="overflow: auto;" id="nav-attribute" role="tabpanel" aria-labelledby="nav-attribute-tab" tabindex="0">
     <?php include('attribute_config.php'); ?>
   </div>
