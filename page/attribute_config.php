@@ -14,7 +14,7 @@ echo '
       <th scope="col">'.$row['attribute_code'].'</th>
       <th scope="col">'.$row['attribute_label'].'</th>
       <th scope="col">'.$row['description'].'</th>
-      <th scope="col">'.$row['Edit'].'</th>
+      <th scope="col" onclick="attribute_detail_page(&#39;'.$row['attribute_code'].'&#39;)">'.$row['Edit'].'</th>
     </tr>
 ';
   
@@ -35,3 +35,18 @@ echo '<table class="table table-bordered" id="filter name="st_attribute_config">
 echo '</tbody>
 </table>';
 ?>
+<script>
+  function attribute_detail_page(attribute_code){
+    // var value_change = document.getElementById(id_name).value;
+    if (id) {
+        $.post("base/page/attribute_config_detail.php", {
+                attribute_code: attribute_code
+            },
+            function(data) {
+                $('#nav-attribute').html(data);
+            });
+    }
+  }
+
+  
+</script>
