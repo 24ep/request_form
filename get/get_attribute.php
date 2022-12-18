@@ -10,13 +10,15 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
      
     }
     if($enable_edit==''){
-      $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px" name="color-wand-outline"></ion-icon>';
-    }else{
+      // $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px" name="color-wand-outline"></ion-icon>';
       $badge_edit_lv  ='';
+    }else{
+      // $badge_edit_lv  ='';
+      $badge_edit_lv  ='style="color:#C0C0C0"';
     }
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
-      <div class="col-3 fw-bold">'.$att_name.$badge_edit_lv.' </div>
+      <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.' </div>
       <div class="col-9">
         <input
           class="form-control form-control-sm bg-light"
@@ -45,13 +47,15 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
      
     }
     if($enable_edit==''){
-      $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px" name="color-wand-outline"></ion-icon>';
-    }else{
+      // $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px" name="color-wand-outline"></ion-icon>';
       $badge_edit_lv  ='';
+    }else{
+      // $badge_edit_lv  ='';
+      $badge_edit_lv  ='style="color:#C0C0C0"';
     }
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
-      <div class="col-3 fw-bold">'.$att_name.$badge_edit_lv.' </div>
+      <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.' </div>
       <div class="col-9">
         <input
           class="form-control form-control-color"
@@ -90,13 +94,15 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
 
         }
         if($enable_edit==''){
-          $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px" name="color-wand-outline"></ion-icon>';
-        }else{
+          // $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px" name="color-wand-outline"></ion-icon>';
           $badge_edit_lv  ='';
+        }else{
+          // $badge_edit_lv  ='';
+          $badge_edit_lv  ='style="color:#C0C0C0"';
         }
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
-      <div class="col-3 fw-bold">'.$att_name.$badge_edit_lv.'</div>
+      <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
       <div class="col-9">
         <select
           class="form-select form-select-sm bg-light"
@@ -127,13 +133,15 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
         }
       }
       if($enable_edit==''){
-        $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px" name="color-wand-outline"></ion-icon>';
-      }else{
+        // $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px" name="color-wand-outline"></ion-icon>';
         $badge_edit_lv  ='';
+      }else{
+        // $badge_edit_lv  ='';
+        $badge_edit_lv  ='style="color:#C0C0C0"';
       }
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
-      <div class="col-3 fw-bold">'.$att_name.$badge_edit_lv.'</div>
+      <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
       <div class="col-9">
         <select
           multiple="multiple"
@@ -154,13 +162,15 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
   }
   function return_textarea_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
     if($enable_edit==''){
-      $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px"name="color-wand-outline"></ion-icon>';
-    }else{
+      // $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px"name="color-wand-outline"></ion-icon>';
       $badge_edit_lv  ='';
+    }else{
+      // $badge_edit_lv  ='';
+      $badge_edit_lv  ='style="color:#C0C0C0"';
     }
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
-      <div class="col-3 fw-bold">'.$att_name.$badge_edit_lv.'</div>
+      <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
       <div class="col-9">
         <textarea
           class="form-control bg-light"
