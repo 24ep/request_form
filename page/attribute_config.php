@@ -15,7 +15,7 @@ $attribute .= '
       <th >'.$row['attribute_code'].'</th>
       <th >'.$row['description'].'</th>
       <th onclick="attribute_detail_page(&#39;'.$row['attribute_code'].'&#39;)">
-      <button type="button" class="btn btn-dark"><ion-icon name="create-outline"></ion-icon></button></th>
+      <button type="button" class="btn"><ion-icon name="create-outline"></ion-icon></button></th>
     </tr>
 ';
   
@@ -24,7 +24,7 @@ $attribute .= '
 
 echo '<table class="table table-bordered" id="st_attribute_config" name="st_attribute_config">
 <thead>
-    <tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
+    <tr style="text-align-last: left;border: solid #dee2e6 1px;background-color: transparent;">
       <th scope="col">Attribute Label</th>
       <th scope="col">Attribute Code</th>
       <th scope="col">Description</th>
