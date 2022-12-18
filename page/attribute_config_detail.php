@@ -1,12 +1,13 @@
 <?php
 session_start();
 $attribute_code = $_POST['attribute_code'];
+$table_name = $_POST['attribute_code'];
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 
 $query = "SELECT *
-FROM u749625779_cdscontent.job_attribute where attribute_code='".$attribute_code."'"  or die("Error:" . mysqli_error());
+FROM u749625779_cdscontent.job_attribute where attribute_code='".$attribute_code."' and table_name = '".$table_name."'"  or die("Error:" . mysqli_error());
 $result =  mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     $id=$row['id'];
@@ -32,9 +33,9 @@ while($row = mysqli_fetch_array($result)) {
 
 }
 
-$query = "SELECT 
+$query = "SELECT *
 FROM u749625779_cdscontent.job_attribute_option;
-where attribute_code='".$attribute_code."'"  or die("Error:" . mysqli_error());
+where attribute_code='".$attribute_code."'  and table_name = '".$table_name."'"  or die("Error:" . mysqli_error());
 $result =  mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) { 
 
