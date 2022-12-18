@@ -56,7 +56,7 @@ echo '</tbody>
   function attribute_detail_page(id,attribute_code,table_name,action){
     // var value_change = document.getElementById(id_name).value;
         $.post("base/page/attribute_config_detail.php", {
-                id:id;
+                id:id,
                 attribute_code: attribute_code,
                 table_name: table_name,
                 action:action
