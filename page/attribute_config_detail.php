@@ -172,7 +172,11 @@ echo '
 </div>
 ';
 
-
+if($_POST['action']=='update'){
+    echo '<button type="button" class="btn btn-primary">Update</button>';
+}else{
+    echo '<button type="button" class="btn btn-primary">Create</button>';
+}
 
 
 echo '</div>';
