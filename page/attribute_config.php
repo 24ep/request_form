@@ -4,7 +4,7 @@
     <a class="navbar-brand">Attribute</a>
     <div class="d-flex">
       
-      <button class="btn btn-outline-success" onclick="attribute_detail_page('','','create')" >Create new attribute</button>
+      <button class="btn btn-outline-success" onclick="attribute_detail_page('','','','create')" >Create new attribute</button>
     </div>
   </div>
 </nav>

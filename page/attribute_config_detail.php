@@ -124,9 +124,10 @@ echo '
     </thead>
   <tbody>
   '.$attribute_option_row .'
-  <button type="button" class="btn btn-dark btn-sm">Add Option</button>
+  
   </tbody>
     </table>
+    <button type="button" class="btn btn-dark btn-sm">Add Option</button>
     
     </div>
     <div class="tab-pane fade" id="v-pills-historical" role="tabpanel" aria-labelledby="v-pills-historical-tab">...</div>
