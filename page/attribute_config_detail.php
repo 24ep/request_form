@@ -243,7 +243,7 @@ echo '</div>';
     var table_name = "'job_attribute'";
     
 
-        $.post("base/form/form_attribute.php", {
+        $.post("base/form/form_value.php", {
             id : id,
             table_name : table_name
 
