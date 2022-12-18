@@ -68,7 +68,7 @@ echo '
     <button class="nav-link" id="v-pills-historical-tab" data-bs-toggle="pill" data-bs-target="#v-pills-historical" type="button" role="tab" aria-controls="v-pills-historical" aria-selected="false">Historical</button>
   </div>
   <div class="tab-content ps-4 pe-4 container-xl" id="v-pills-tabContent">
-    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+    <div class="tab-pane fade show active" id="v-pills-properties" role="tabpanel" aria-labelledby="v-pills-properties-tab">
     <h5><strong>General</strong></h5>
     <div class="mb-3">
             <label for="attribute_code" class="form-label">Attribute Code</label>
