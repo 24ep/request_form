@@ -975,8 +975,10 @@ function get_files(id) {
 }
 // get_detail_more
 function form_production(id) {
-    $.post("base/form/form_production.php", {
-            id: id
+    var table_name = "'add_new_job','job_cms'";
+    $.post("base/form/form_value.php", {
+            id: id,
+            table_name
         },
         function(data) {
             $('#form_production').html(data);
