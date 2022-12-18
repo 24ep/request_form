@@ -2,10 +2,10 @@
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand">Attribute</a>
-    <form class="d-flex">
+    <div class="d-flex">
       
       <button class="btn btn-outline-success" onclick="attribute_detail_page('','','create')" >Create new attribute</button>
-    </form>
+    </div>
   </div>
 </nav>
 
