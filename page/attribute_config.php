@@ -4,7 +4,7 @@ date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 
-$query = "SELECT attribute_code,attribute_label,description
+$query = "SELECT attribute_code,attribute_label,description,attribute_set,attribute_type,table_name
 FROM u749625779_cdscontent.job_attribute;" or die("Error:" . mysqli_error());
 $result =  mysqli_query($con, $query);
 
@@ -16,7 +16,7 @@ $attribute .= '
       <th >'.$row['attribute_type'].'</th>
       <th >'.$row['attribute_set'].'</th>
       <th >'.$row['description'].'</th>
-      <th onclick="attribute_detail_page(&#39;'.$row['attribute_code'].'&#39;)">
+      <th onclick="attribute_detail_page(&#39;'.$row['attribute_code'].'&#39,&#39;'.$row['table_name'].'&#39)">
       <button type="button" class="btn"><ion-icon name="create-outline"></ion-icon></button></th>
     </tr>
 ';
@@ -41,10 +41,11 @@ echo '</tbody>
 </table>';
 ?>
 <script>
-  function attribute_detail_page(attribute_code){
+  function attribute_detail_page(attribute_code,table_name){
     // var value_change = document.getElementById(id_name).value;
         $.post("base/page/attribute_config_detail.php", {
-                attribute_code: attribute_code
+                attribute_code: attribute_code,
+                table_name: table_name
             },
             function(data) {
                 $('#nav-attribute').html(data);
