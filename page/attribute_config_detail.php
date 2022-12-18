@@ -17,22 +17,20 @@ echo '
 </nav>
 ';
 
-echo '<h6>'.$attribute_code.'</h6>';
+echo '<h4><strong>'.$attribute_code.'<strong></h4>';
 echo '<hr>';
 
 
 echo '
-<nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <button class="nav-link active" id="nav-properties-tab" data-bs-toggle="tab" data-bs-target="#nav-properties" type="button" role="tab" aria-controls="nav-properties" aria-selected="true">Properties</button>
-    <button class="nav-link" id="nav-options-tab" data-bs-toggle="tab" data-bs-target="#nav-options" type="button" role="tab" aria-controls="nav-options" aria-selected="false">Options</button>
-    <button class="nav-link" id="nav-historical-tab" data-bs-toggle="tab" data-bs-target="#nav-historical" type="button" role="tab" aria-controls="nav-historical" aria-selected="false">Historical</button>
+<div class="d-flex align-items-start">
+  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <button class="nav-link active" id="v-pills-properties-tab" data-bs-toggle="pill" data-bs-target="#v-pills-properties" type="button" role="tab" aria-controls="v-pills-properties" aria-selected="true">Properties</button>
+    <button class="nav-link" id="v-pills-options-tab" data-bs-toggle="pill" data-bs-target="#v-pills-options" type="button" role="tab" aria-controls="v-pills-options" aria-selected="false">Options</button>
+    <button class="nav-link" id="v-pills-historical-tab" data-bs-toggle="pill" data-bs-target="#v-pills-historical" type="button" role="tab" aria-controls="v-pills-historical" aria-selected="false">Historical</button>
   </div>
-</nav>
-<div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-properties" role="tabpanel" aria-labelledby="nav-properties-tab">
-  
-        <div class="mb-3">
+  <div class="tab-content" id="v-pills-tabContent">
+    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+    <div class="mb-3">
             <label for="attribute_code" class="form-label">Attribute Code</label>
             <input type="text" class="form-control" id="attribute_code" placeholder="" value="">
         </div>
@@ -100,12 +98,15 @@ echo '
             <label for="set_complete_attribute" class="form-label">Set complete attribute</label>
             <input type="text" class="form-control" id="set_complete_attribute" placeholder="" value="">
         </div>
-  
+    </div>
+    <div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">...</div>
+    <div class="tab-pane fade" id="v-pills-historical" role="tabpanel" aria-labelledby="v-pills-historical-tab">...</div>
+
   </div>
-  <div class="tab-pane fade" id="nav-options" role="tabpanel" aria-labelledby="nav-options-tab">...</div>
-  <div class="tab-pane fade" id="nav-historical" role="tabpanel" aria-labelledby="nav-historical-tab">...</div>
 </div>
 ';
+
+
 
 
 echo '</div>';
