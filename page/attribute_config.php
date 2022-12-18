@@ -22,7 +22,7 @@ $attribute .= '
 }
 
 
-echo '<table class="table table-bordered" id="filter name="st_attribute_config">
+echo '<table class="table table-bordered" id="st_attribute_config" name="st_attribute_config">
 <thead>
     <tr>
       <th scope="col">Attribute Code</th>
@@ -50,4 +50,20 @@ echo '</tbody>
   }
 
   
+</script>
+
+
+<script>
+  $(document).ready( function () {
+  $('#st_attribute_config').DataTable({
+        lengthMenu: [
+            [10,20, 50, 100, -1],
+            [10, 20,50, 100, 'All'],
+        ],
+    });
+
+} );
+
+
+
 </script>
