@@ -30,6 +30,7 @@ echo '
   </div>
   <div class="tab-content" id="v-pills-tabContent">
     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+    <h5><strong>General</strong></h5>
     <div class="mb-3">
             <label for="attribute_code" class="form-label">Attribute Code</label>
             <input type="text" class="form-control" id="attribute_code" placeholder="" value="">
@@ -50,6 +51,7 @@ echo '
             <input type="text" class="form-control" id="description" placeholder="" value="">
         </div>
         <hr>
+        <h5><strong>Group</strong></h5>
 
         <div class="mb-3">
             <label for="section_group" class="form-label">Section Group</label>
@@ -61,6 +63,7 @@ echo '
         </div>
 
         <hr>
+        <h5><strong>Permission</strong></h5>
 
         <div class="mb-3">
             <label for="allow_display" class="form-label">Allow Display</label>
@@ -73,6 +76,7 @@ echo '
         </div>
 
         <hr>
+        <h5><strong>Database Config</strong></h5>
 
         <div class="mb-3">
             <label for="table_name" class="form-label">Data Table name</label>
