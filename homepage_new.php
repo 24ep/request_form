@@ -67,12 +67,12 @@ if (!$_SESSION["login_csg"]){
     <meta name="googlebot" content="noindex">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TEMS | Task Executive Management System</title>
+    <title>TMS | Task Management System</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" /> -->
     <link rel="icon" type="image/ocp"
-        href="https://content-service-gate.cdse-commercecontent.com/base/image/tems_logo.ico" />
+        href="https://content-service-gate.cdse-commercecontent.com/base/image/tem_logo.ico" />
     <!-- textarray -->
     <script src="https://cdn.tiny.cloud/1/cis8560ji58crrbq17zb11gp39qhpn2lka54u0m54s8du1gw/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
@@ -249,16 +249,16 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                 <input type="hidden" id="minimize_manu" name="minimize_manu" value="show">
                 <input type="hidden" id="active_sub_manu" name="active_sub_manu" value="hide">
                 <a class="navbar-brand" href="#">
-                    <img id="logo_tems" class="logo_tems" src="base/image/tems_logo_va.svg" alt="" width="auto"
+                    <img id="logo_tems" class="logo_tems" src="base/image/tms_logo_va.svg" alt="" width="auto"
                         height="30">
-                    <img id="logo_tems_minimize" class="logo_tems_minimize hide" src="base/image/tems_logo_minimize.svg"
+                    <img id="logo_tems_minimize" class="logo_tems_minimize hide" src="base/image/tms_logo_minimize.svg"
                         alt="" width="auto" height="30">
                     <!-- <h3 id="apps_name" style="font-weight: lighter;color: firebrick;"> -->
                     <!-- <ion-icon name="layers" style="font-size: 40px;margin: 0px;color:#f85d60"></ion-icon> -->
                     <!-- TEMS -->
                     <br><small id="apps_name" style="font-size: small;
                         font-weight: 100;
-                        color: gray;">Task executive management system
+                        color: gray;">Task Management System
                     </small>
                     <!-- </h3> -->
 
