@@ -261,7 +261,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     <!-- TEMS -->
                     <br><small id="apps_name" style="font-size: small;
                         font-weight: 100;
-                        color: gray;">Task Management System
+                        color: gray;">System
                     </small>
                     <!-- </h3> -->
 
