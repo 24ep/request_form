@@ -254,7 +254,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     <img id="logo_tems_minimize" class="logo_tems_minimize hide" src="base/image/tms_logo_minimize.svg"
                         alt="" width="auto" height="30"> -->
 
-                    <h5 id="logo_tems" class="logo_tems fw-bold">Task Management</h5>
+                    <h5 id="logo_tems" class="logo_tems fw-bold m-0">Task Management</h5>
                     <h5 id="logo_tems_minimize" class="fw-bold logo_tems_minimize hide" >TMS</h5>
                     <!-- <h3 id="apps_name" style="font-weight: lighter;color: firebrick;"> -->
                     <!-- <ion-icon name="layers" style="font-size: 40px;margin: 0px;color:#f85d60"></ion-icon> -->
