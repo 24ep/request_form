@@ -64,7 +64,7 @@ while($row = mysqli_fetch_array($result)) {
     data-bs-target="#exampleModal" onclick="form_attribute_option('. $row['id'].')" class="btn btn-dark btn-sm">
     <ion-icon name="create-outline"></ion-icon></button>
     <button type="button"  class="btn btn-danger btn-sm">
-    <ion-icon name="trash-outline"></ion-icon></button>
+    <ion-icon name="trash-outline" style="margin: 0;"></ion-icon></button>
     </td>
 
     
