@@ -478,7 +478,19 @@ label#label_file_cme {
         border: 0px;
         margin-left: auto;
     }
+
+.logo_tems {
+
+  color: #86578a;
+  background-image: -webkit-linear-gradient(0deg, #86578a 0%,#681287 33%,#03a9f4 67%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px #27272757;
 }
+
+
 /* #return-to-top {
     position: fixed;
     bottom: 20px;
