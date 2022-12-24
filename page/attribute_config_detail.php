@@ -60,7 +60,7 @@ while($row = mysqli_fetch_array($result)) {
     <th>'. $row['attribute_option_code'].'</th>
     <td>'. $row['attribute_option_label'].'</td>
     <td>
-    <button type="button" data-bs-toggle="modal"
+    <button type="button" data-bs-toggle="modal" style="margin: 0;"
     data-bs-target="#exampleModal" onclick="form_attribute_option('. $row['id'].')" class="btn btn-dark btn-sm">
     <ion-icon name="create-outline"></ion-icon></button>
     <button type="button"  class="btn btn-danger btn-sm">
