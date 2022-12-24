@@ -93,17 +93,6 @@ echo '
 
     //options
     echo '
-    <div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">
-
-    <table class="table table-striped" id="option_list">
-    <thead>
-        <tr>
-        <th scope="col">Option Code</th>
-        <th scope="col">Option label</th>
-        <th scope="col">Edit</th>
-        </tr>
-    </thead>
-  <tbody>
   <div id="attirbute_option_list">
   ';
 
@@ -112,8 +101,7 @@ echo '
 
   echo '
   </div>
-  </tbody>
-    </table>
+
     ';
     ?>
 
@@ -170,7 +158,30 @@ function properties_form(){
   properties_form();
 
 
+  function get_attribute_option_list() {
+    properties_form().then(() => {
+      var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
+      var table_name =  document.getElementById('ja_edit_table_name').value;
+  
 
+      $.post("base/get/get_attribute_option_config_detail.php", {
+                attribute_code : attribute_code,
+                table_name : table_name
+            },
+            function(data) {
+              $('#attirbute_option_list').html(data);
+
+            });
+  });
+
+    
+    }
+
+
+    window.onload = function() {
+      get_attribute_option_list();
+};
+  
 
 
   
@@ -269,27 +280,6 @@ function delete_option(db,table,id,primary_key_id) {
     
 }
 
-function get_attribute_option_list() {
-    properties_form().then(() => {
-      var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
-      var table_name =  document.getElementById('ja_edit_table_name').value;
-  
-
-      $.post("base/get/get_attribute_option_config_detail.php", {
-                attribute_code : attribute_code,
-                table_name : table_name
-            },
-            function(data) {
-              $('#attirbute_option_list').html(data);
-
-            });
-  });
-
-    
-    }
-
-
-  get_attribute_option_list();
 
   
 </script>

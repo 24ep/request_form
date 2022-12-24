@@ -29,5 +29,18 @@ while($row = mysqli_fetch_array($result)) {
 
 
 }
+echo ' <div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">
+
+<table class="table table-striped" id="option_list">
+<thead>
+    <tr>
+    <th scope="col">Option Code</th>
+    <th scope="col">Option label</th>
+    <th scope="col">Edit</th>
+    </tr>
+</thead>
+<tbody>';
 echo $attribute_option_row ;
+echo '  </tbody>
+</table>';
 ?>
