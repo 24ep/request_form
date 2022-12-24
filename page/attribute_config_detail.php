@@ -159,7 +159,7 @@ function properties_form(){
 
 
   function get_attribute_option_list() {
-    properties_form().then(() => {
+  
       var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
       var table_name =  document.getElementById('ja_edit_table_name').value;
   
@@ -172,7 +172,7 @@ function properties_form(){
               $('#attirbute_option_list').html(data);
 
             });
-  });
+
 
     
     }
