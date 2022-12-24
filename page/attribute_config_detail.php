@@ -60,10 +60,10 @@ while($row = mysqli_fetch_array($result)) {
     <th>'. $row['attribute_option_code'].'</th>
     <td>'. $row['attribute_option_label'].'</td>
     <td>
-    <button type="button" data-bs-toggle="modal" style="margin: 0;"
+    <button type="button" data-bs-toggle="modal" 
     data-bs-target="#exampleModal" onclick="form_attribute_option('. $row['id'].')" class="btn btn-dark btn-sm">
-    <ion-icon name="create-outline"></ion-icon></button>
-    <button type="button"  class="btn btn-danger btn-sm">
+    <ion-icon name="create-outline" style="margin: 0;></ion-icon></button>
+    <button type="button"  class="btn btn-danger btn-sm" onclick="delete_option(&#39;u74&#39;,&#39;job_attribute_option&#39;,'. $row['id'].',&#39;id&#39;)" >
     <ion-icon name="trash-outline" style="margin: 0;"></ion-icon></button>
     </td>
 
@@ -229,6 +229,32 @@ function add_new_option(db,table) {
 
            
         
+}
+
+//
+function delete_option(db,table,id,primary_key_id) {
+
+  Notiflix.Confirm.show(
+      'Confirm',
+      'Do you want to remove an option?',
+      'Yes',
+      'No',
+        function okCb() {
+          $.post("base/action/action_delete_record.php", {
+              table : table,
+              db : db,
+              id : id,
+              primary_key_id : primary_key_id
+            },
+            function(data) {
+                form_attribute_option(data);
+            });
+        },
+        function cancelCb() {
+          //nothing
+        },
+  );  
+    
 }
 
 
