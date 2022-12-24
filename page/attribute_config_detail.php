@@ -93,16 +93,9 @@ echo '
 
     //options
     echo '
-  <div id="attirbute_option_list">
+  <div id="attirbute_option_list"> </div>
   ';
 
-
-
-
-  echo '
-  </div>
-
-    ';
     ?>
 
 
