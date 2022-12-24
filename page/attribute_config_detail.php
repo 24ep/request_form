@@ -134,7 +134,7 @@ echo '
     <button 
             type="button"
             class="btn btn-dark btn-sm" 
-            onclick="add_new_option('job_attribute_option')"
+            onclick="add_new_option('u749625779_cdscontent','job_attribute_option')"
     >
             Add Option
     </button>
@@ -188,10 +188,11 @@ echo '</div>';
         });
 }
 //
-function add_new_option(table) {
+function add_new_option(db,table) {
 
     $.post("base/action/action_insert_new_record.php", {
-          table : table
+          table : table,
+          db : db
         },
         function(data) {
           form_attribute_option(data);
