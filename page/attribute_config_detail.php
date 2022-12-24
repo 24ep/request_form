@@ -148,7 +148,7 @@ echo '</div>';
 <script>
 
   
-async function properties_form(){
+function properties_form(){
     var id = document.getElementById('id').value;
     var table_name = "'job_attribute'";
     
@@ -166,28 +166,26 @@ async function properties_form(){
   properties_form();
 
 
-  async function get_attribute_option_list() {
-    await properties_form();
-    var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
-    var table_name =  document.getElementById('ja_edit_table_name').value;
-      $.post("base/get/get_attribute_option_config_detail.php", {
-              attribute_code : attribute_code,
-              table_name : table_name
-          },
-          function(data) {
-            $('#attirbute_option_list').html(data);
+  function get_attribute_option_list() {
+    properties_form().then(() => {
+      var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
+      var table_name =  document.getElementById('ja_edit_table_name').value;
 
-          });
+      $.post("base/get/get_attribute_option_config_detail.php", {
+                attribute_code : attribute_code,
+                table_name : table_name
+            },
+            function(data) {
+              $('#attirbute_option_list').html(data);
+
+            });
+  });
+
+    
     }
 
 
-    get_attribute_option_list();
-
-
-
-
-
-
+  get_attribute_option_list();
 
 
   
