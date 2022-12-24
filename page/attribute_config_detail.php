@@ -165,11 +165,11 @@ echo '</div>';
   }
   properties_form();
 
+
+function get_attribute_option_list() {
+
   var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
   var table_name =  document.getElementById('ja_edit_table_name').value;
-
- function get_attribute_option_list(attribute_code,table_name) {
-
     $.post("base/get/get_attribute_option_config_detail.php", {
             attribute_code : attribute_code,
             table_name : table_name
@@ -178,8 +178,16 @@ echo '</div>';
           $('#attirbute_option_list').html(data);
 
         });
-}
-get_attribute_option_list(attribute_code,table_name);
+  }
+
+  properties_form().then(() => {
+    get_attribute_option_list(attribute_code,table_name);
+  });
+
+
+
+
+
   
 function insert_attribute_option_config(id){
 
