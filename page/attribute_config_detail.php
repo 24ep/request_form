@@ -130,7 +130,7 @@ echo '</div>';
 
   
 function properties_form(){
-  return new Promise((resolve, reject) => {
+ 
     var id = document.getElementById('id').value;
     var table_name = "'job_attribute'";
     
@@ -143,8 +143,7 @@ function properties_form(){
             function(data) {
                 $('#properties_form').html(data);
             });
-    resolve();
-  });
+ 
  
     
   }
