@@ -170,26 +170,7 @@ function properties_form(){
   properties_form();
 
 
-  function get_attribute_option_list() {
-    properties_form().then(() => {
-      var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
-      var table_name =  document.getElementById('ja_edit_table_name').value;
 
-      $.post("base/get/get_attribute_option_config_detail.php", {
-                attribute_code : attribute_code,
-                table_name : table_name
-            },
-            function(data) {
-              $('#attirbute_option_list').html(data);
-
-            });
-  });
-
-    
-    }
-
-
-  get_attribute_option_list();
 
 
   
@@ -288,6 +269,27 @@ function delete_option(db,table,id,primary_key_id) {
     
 }
 
+function get_attribute_option_list() {
+    properties_form().then(() => {
+      var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
+      var table_name =  document.getElementById('ja_edit_table_name').value;
+  
+
+      $.post("base/get/get_attribute_option_config_detail.php", {
+                attribute_code : attribute_code,
+                table_name : table_name
+            },
+            function(data) {
+              $('#attirbute_option_list').html(data);
+
+            });
+  });
+
+    
+    }
+
+
+  get_attribute_option_list();
 
   
 </script>
