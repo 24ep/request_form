@@ -194,7 +194,7 @@ function add_new_option(table) {
             table_name : table_name
         },
         function(data) {
-          form_attribute_option(data)ว
+          form_attribute_option(data);
         });
 
 }
