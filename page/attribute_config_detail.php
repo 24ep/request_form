@@ -167,9 +167,9 @@ var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
 var table_name =  document.getElementById('ja_edit_table_name').value;
 var db_name =  document.getElementById('ja_edit_db_name').value;
 
-console.log(attribute_code);
-console.log(table_name);
-console.log(db_name);
+console.log('pass : ' + attribute_code);
+console.log('pass : ' + table_name);
+console.log('pass : ' + db_name);
 
 document.getElementById('jao_edit_attribute_code').value = attribute_code;
 document.getElementById('jao_edit_table_name').value = table_name;
