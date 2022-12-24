@@ -146,6 +146,8 @@ echo '</div>';
 
 
 <script>
+
+  
     function properties_form(){
     var id = document.getElementById('id').value;
     var table_name = "'job_attribute'";
@@ -162,21 +164,22 @@ echo '</div>';
     
   }
   properties_form();
- function get_attribute_option_list() {
 
-var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
-var table_name =  document.getElementById('ja_edit_table_name').value;
+  var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
+  var table_name =  document.getElementById('ja_edit_table_name').value;
 
-$.post("base/get/get_attribute_option_config_detail.php", {
-        attribute_code : attribute_code,
-        table_name : table_name
-    },
-    function(data) {
-      $('#attirbute_option_list').html(data);
+ function get_attribute_option_list(attribute_code,table_name) {
 
-    });
+    $.post("base/get/get_attribute_option_config_detail.php", {
+            attribute_code : attribute_code,
+            table_name : table_name
+        },
+        function(data) {
+          $('#attirbute_option_list').html(data);
+
+        });
 }
-get_attribute_option_list();
+get_attribute_option_list(attribute_code,table_name);
   
 function insert_attribute_option_config(id){
 
