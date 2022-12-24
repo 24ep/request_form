@@ -8,8 +8,12 @@
     mysqli_query($con, "SET NAMES 'utf8' ");
     $sql = "DELETE FROM ".$db.".".$table." where ".$primary_key_id." = ".$id;
     $query = mysqli_query($con,$sql);
-
+    if($query){
+        echo $id;
+    }else{
+        echo 'Error : '.$con->error;
+    }
     // $last_id = $con->insert_id;
-     echo $id;
+     
 
 ?>

@@ -248,11 +248,21 @@ function delete_option(db,table,id,primary_key_id) {
               primary_key_id : primary_key_id
             },
             function(data) {
+              if (!value.startsWith("error")) {
                 Notiflix.Notify.success('Option id ' + data+' have been remove');
-                // Get a reference to the div element
-                var div = document.getElementById('attribute_option_id_'+data);
+                 // Get a reference to the div element
+                 var div = document.getElementById('attribute_option_id_'+data);
                 
                 div.remove();
+              }else{
+                Notiflix.Report.failure(
+                  'Remove Failure',
+                  data,
+                  'Okay',
+                  );
+              }
+                
+               
             });
         },
         function cancelCb() {
