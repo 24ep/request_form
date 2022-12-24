@@ -146,6 +146,22 @@ echo '</div>';
 
 
 <script>
+    function properties_form(){
+    var id = document.getElementById('id').value;
+    var table_name = "'job_attribute'";
+    
+
+        $.post("base/form/form_value.php", {
+            id : id,
+            table_name : table_name
+
+            },
+            function(data) {
+                $('#properties_form').html(data);
+            });
+    
+  }
+  properties_form();
  function get_attribute_option_list() {
 
 var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
@@ -179,22 +195,7 @@ get_attribute_option_list();
 
 }
 
-  function properties_form(){
-    var id = document.getElementById('id').value;
-    var table_name = "'job_attribute'";
-    
 
-        $.post("base/form/form_value.php", {
-            id : id,
-            table_name : table_name
-
-            },
-            function(data) {
-                $('#properties_form').html(data);
-            });
-    
-  }
-  properties_form();
 
  
 
