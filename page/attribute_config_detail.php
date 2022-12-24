@@ -251,11 +251,7 @@ function delete_option(db,table,id,primary_key_id) {
                 // Get a reference to the div element
                 var div = document.getElementById('attribute_option_id_'+data);
                 
-                // Get a reference to the parent element
-                var parent = div.parentNode;
-                
-                // Remove the div element from the DOM
-                parent.removeChild(div);
+                div.remove();
             });
         },
         function cancelCb() {
