@@ -129,7 +129,24 @@ echo '</div>';
 
 <script>
 
+function get_attribute_option_list() {
   
+  var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
+  var table_name =  document.getElementById('ja_edit_table_name').value;
+
+
+  $.post("base/get/get_attribute_option_config_detail.php", {
+            attribute_code : attribute_code,
+            table_name : table_name
+        },
+        function(data) {
+          $('#attirbute_option_list').html(data);
+
+        });
+
+
+
+}
 function properties_form(){
  
     var id = document.getElementById('id').value;
@@ -143,6 +160,7 @@ function properties_form(){
             },
             function(data) {
                 $('#properties_form').html(data);
+                get_attribute_option_list();
             });
  
  
@@ -151,29 +169,12 @@ function properties_form(){
   properties_form();
 
 
-  function get_attribute_option_list() {
-  
-      var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
-      var table_name =  document.getElementById('ja_edit_table_name').value;
   
 
-      $.post("base/get/get_attribute_option_config_detail.php", {
-                attribute_code : attribute_code,
-                table_name : table_name
-            },
-            function(data) {
-              $('#attirbute_option_list').html(data);
 
-            });
-
-
-    
-    }
-
-
-    window.onload = function() {
-      get_attribute_option_list();
-};
+//     window.onload = function() {
+//       get_attribute_option_list();
+// };
   
 
 
