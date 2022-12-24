@@ -191,7 +191,7 @@ echo '</div>';
 function add_new_option(table) {
 
     $.post("base/action/action_insert_new_record.php", {
-            table_name : table_name
+          table : table
         },
         function(data) {
           form_attribute_option(data);
