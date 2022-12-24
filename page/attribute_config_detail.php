@@ -64,7 +64,7 @@ while($row = mysqli_fetch_array($result)) {
     data-bs-target="#exampleModal" onclick="form_attribute_option('. $row['id'].')" class="btn btn-dark btn-sm">
     <ion-icon name="create-outline" style="margin: 0;"></ion-icon></button>
 
-    <button type="button"  class="btn btn-danger btn-sm" onclick="delete_option(&#39;u74&#39;,&#39;job_attribute_option&#39;,'. $row['id'].',&#39;id&#39;)" >
+    <button type="button"  class="btn btn-danger btn-sm" onclick="delete_option(&#39;u749625779_cdscontent&#39;,&#39;job_attribute_option&#39;,'. $row['id'].',&#39;id&#39;)" >
     <ion-icon name="trash-outline" style="margin: 0;"></ion-icon></button>
     </td>
 
