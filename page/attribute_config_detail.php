@@ -161,7 +161,7 @@ echo '</div>';
 <script>
 
   
-function insert_attribute_option_config(){
+function insert_attribute_option_config(id){
 
 var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
 var table_name =  document.getElementById('ja_edit_table_name').value;
@@ -174,6 +174,10 @@ console.log('pass : ' + db_name);
 document.getElementById('jao_edit_attribute_code').value = attribute_code;
 document.getElementById('jao_edit_attribute_table').value = table_name;
 document.getElementById('jao_edit_db_name').value = db_name;
+
+update_value_attribute(id, 'jao_edit_attribute_code' , 'jao' , 'u749625779_cdscontent' , 'job_attribute_option' , 'id')
+update_value_attribute(id, 'jao_edit_attribute_table' , 'jao' , 'u749625779_cdscontent' , 'job_attribute_table' , 'id')
+update_value_attribute(id, 'jao_edit_db_name' , 'jao' , 'u749625779_cdscontent' , 'job_db_name' , 'id')
 }
 
   function properties_form(){
@@ -204,7 +208,7 @@ document.getElementById('jao_edit_db_name').value = db_name;
         function(data) {
             $('#model_lg').html(data);
             Notiflix.Loading.remove();
-            insert_attribute_option_config();
+            insert_attribute_option_config(id);
         });
 }
 
