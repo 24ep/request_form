@@ -93,6 +93,7 @@ echo '
 
     //options
     echo '
+    <div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">
   <div id="attirbute_option_list"> </div>
   ';
 

@@ -29,7 +29,7 @@ while($row = mysqli_fetch_array($result)) {
 
 
 }
-echo ' <div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">
+echo ' 
 
 <table class="table table-striped" id="option_list">
 <thead>
