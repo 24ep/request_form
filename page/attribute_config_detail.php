@@ -198,13 +198,11 @@ function add_new_option(db,table) {
         },
         function(data) {
 
+          
+          form_attribute_option(data);
           document.getElementById('jao_edit_attribute_code').value = document.getElementById('ja_edit_attribute_code').value;
           document.getElementById('jao_edit_table_name').value = document.getElementById('ja_edit_table_name').value;
           document.getElementById('jao_edit_db_name').value = document.getElementById('ja_edit_db_name').value;
-
-          
-          
-          form_attribute_option(data);
         });
 
            
