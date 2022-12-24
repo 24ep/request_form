@@ -135,6 +135,8 @@ echo '
             type="button"
             class="btn btn-dark btn-sm" 
             onclick="add_new_option('u749625779_cdscontent','job_attribute_option')"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
     >
             Add Option
     </button>
