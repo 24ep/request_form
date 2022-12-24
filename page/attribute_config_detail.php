@@ -192,9 +192,9 @@ echo '</div>';
 
 function insert_attribute_option_config(){
 
-          var attribute_code =  document.getElementById('attribute_code').value;
-          var table_name =  document.getElementById('table_name').value;
-          var db_name =  document.getElementById('db_name').value;
+          var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
+          var table_name =  document.getElementById('ja_edit_table_name').value;
+          var db_name =  document.getElementById('ja_edit_db_name').value;
 
           document.getElementById('jao_edit_attribute_code').value = attribute_code;
           document.getElementById('jao_edit_table_name').value = table_name;
