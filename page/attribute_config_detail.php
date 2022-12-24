@@ -50,33 +50,6 @@ while($row = mysqli_fetch_array($result)) {
 
 }
 
-function get_attribute_option{
-
-  $query = "SELECT *
-  FROM u749625779_cdscontent.job_attribute_option
-  where attribute_code='".$attribute_code."'  and attribute_table = '".$table_name."'"  or die("Error:" . mysqli_error());
-  $result =  mysqli_query($con, $query);
-  while($row = mysqli_fetch_array($result)) { 
-
-      $attribute_option_row .= ' <tr id="attribute_option_id_'.$row['id'].'">
-      <th>'. $row['attribute_option_code'].'</th>
-      <td>'. $row['attribute_option_label'].'</td>
-      <td>
-      <button type="button" data-bs-toggle="modal" 
-      data-bs-target="#exampleModal" onclick="form_attribute_option('. $row['id'].')" class="btn btn-dark btn-sm">
-      <ion-icon name="create-outline" style="margin: 0;"></ion-icon></button>
-
-      <button type="button"  class="btn btn-danger btn-sm" onclick="delete_option(&#39;u749625779_cdscontent&#39;,&#39;job_attribute_option&#39;,'. $row['id'].',&#39;id&#39;)" >
-      <ion-icon name="trash-outline" style="margin: 0;"></ion-icon></button>
-      </td>
-
-      
-    </tr>';
-
-    return $attribute_option_row ;
-  }
-
-}
 
 echo '<div class="container-md p-4">';
 echo '
@@ -131,12 +104,14 @@ echo '
         </tr>
     </thead>
   <tbody>
+  <div id="attirbute_option_list">
   ';
 
-  echo get_attribute_option;
+
+
 
   echo '
-  
+  </div>
   </tbody>
     </table>
     ';
@@ -171,7 +146,21 @@ echo '</div>';
 
 
 <script>
+ function get_attribute_option_list() {
 
+var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
+var table_name =  document.getElementById('ja_edit_table_name').value;
+
+$.post("base/get/get_attribute_option_config_detail.php", {
+        attribute_code : attribute_code,
+        table_name : table_name
+    },
+    function(data) {
+      $('#attirbute_option_list').html(data);
+
+    });
+}
+get_attribute_option_list();
   
 function insert_attribute_option_config(id){
 
@@ -186,22 +175,7 @@ document.getElementById('jao_edit_db_name').value = db_name;
 update_value_attribute(id, 'jao_edit_attribute_code' , 'jao' , 'u749625779_cdscontent' , 'job_attribute_option' , 'id');
 update_value_attribute(id, 'jao_edit_attribute_table' , 'jao' , 'u749625779_cdscontent' , 'job_attribute_option' , 'id');
 update_value_attribute(id, 'jao_edit_db_name' , 'jao' , 'u749625779_cdscontent' , 'job_attribute_option' , 'id');
-
-// // Insert to table
-//   // Get a reference to the table element
-//   var table = document.getElementById('option_list');
-  
-//   // Insert a new row at the end of the table
-//   var newRow = table.insertRow(-1);
-  
-//   // Insert cells into the new row
-//   var cell1 = newRow.insertCell(0);
-//   var cell2 = newRow.insertCell(1);
-//   var cell2 = newRow.insertCell(1);
-  
-//   // Set the content of the cells
-//   cell1.innerHTML = 'Cell 3';
-//   cell2.innerHTML = 'Cell 4';
+get_attribute_option_list();
 
 }
 
@@ -221,6 +195,8 @@ update_value_attribute(id, 'jao_edit_db_name' , 'jao' , 'u749625779_cdscontent' 
     
   }
   properties_form();
+
+ 
 
   function form_attribute_option(id) {
     // var id = document.getElementById('id').value;
