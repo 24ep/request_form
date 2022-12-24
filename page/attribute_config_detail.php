@@ -175,9 +175,9 @@ document.getElementById('jao_edit_attribute_code').value = attribute_code;
 document.getElementById('jao_edit_attribute_table').value = table_name;
 document.getElementById('jao_edit_db_name').value = db_name;
 
-update_value_attribute(id, 'jao_edit_attribute_code' , 'jao' , 'u749625779_cdscontent' , 'job_attribute_option' , 'id')
-update_value_attribute(id, 'jao_edit_attribute_table' , 'jao' , 'u749625779_cdscontent' , 'job_attribute_table' , 'id')
-update_value_attribute(id, 'jao_edit_db_name' , 'jao' , 'u749625779_cdscontent' , 'job_db_name' , 'id')
+update_value_attribute(id, 'jao_edit_attribute_code' , 'jao' , 'u749625779_cdscontent' , 'job_attribute_option' , 'id');
+update_value_attribute(id, 'jao_edit_attribute_table' , 'jao' , 'u749625779_cdscontent' , 'job_attribute_table' , 'id');
+update_value_attribute(id, 'jao_edit_db_name' , 'jao' , 'u749625779_cdscontent' , 'job_db_name' , 'id');
 }
 
   function properties_form(){
