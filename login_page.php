@@ -68,7 +68,7 @@
                                 }
                 ?>
     <div class="container-lg row" style="margin: 0px;padding: 0px;width: 100%;max-width: 100%;">
-        <div class="col" style="background: firebrick;">
+        <div class="col" style="background-color: firebrick;background-image: linear-gradient(225deg,#960000,#b94a67);">
             <h6 style="margin: 50px;font-weight: 900;color: #f9fafb;">CONTENT SERVICE GATE</h6>
             <div class="container-sm"
                 style="width: fit-content;margin: initial;margin-left: 50px;height: unset;color: #ffffff;">

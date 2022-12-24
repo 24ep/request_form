@@ -127,8 +127,20 @@ echo '
   
   </tbody>
     </table>
-    <button type="button" class="btn btn-dark btn-sm">Add Option</button>
+    ';
+    ?>
+
+
+    <button 
+            type="button"
+            class="btn btn-dark btn-sm" 
+            onclick="form_attribute_option(add_new_option('job_attribute_option'))"
+    >
+            Add Option
+    </button>
     
+    <?php
+    echo '
     </div>
     <div class="tab-pane fade" id="v-pills-historical" role="tabpanel" aria-labelledby="v-pills-historical-tab">...</div>
 
@@ -175,6 +187,15 @@ echo '</div>';
             Notiflix.Loading.remove();
         });
 }
+//
+function add_new_option(table) {
 
+    $.post("base/action/action_insert_new_record.php", {
+            table_name : table_name
+        },
+        function(data) {
+          return data;
+        });
+}
   
 </script>
