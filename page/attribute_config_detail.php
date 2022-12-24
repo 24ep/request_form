@@ -159,6 +159,23 @@ echo '</div>';
 
 
 <script>
+
+  
+function insert_attribute_option_config(){
+
+var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
+var table_name =  document.getElementById('ja_edit_table_name').value;
+var db_name =  document.getElementById('ja_edit_db_name').value;
+
+console.log(attribute_code);
+console.log(table_name);
+console.log(db_name);
+
+document.getElementById('jao_edit_attribute_code').value = attribute_code;
+document.getElementById('jao_edit_table_name').value = table_name;
+document.getElementById('jao_edit_db_name').value = db_name;
+}
+
   function properties_form(){
     var id = document.getElementById('id').value;
     var table_name = "'job_attribute'";
@@ -187,23 +204,10 @@ echo '</div>';
         function(data) {
             $('#model_lg').html(data);
             Notiflix.Loading.remove();
+            insert_attribute_option_config();
         });
 }
 
-function insert_attribute_option_config(){
-
-          var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
-          var table_name =  document.getElementById('ja_edit_table_name').value;
-          var db_name =  document.getElementById('ja_edit_db_name').value;
-
-          console.log(attribute_code);
-          console.log(table_name);
-          console.log(db_name);
-
-          document.getElementById('jao_edit_attribute_code').value = attribute_code;
-          document.getElementById('jao_edit_table_name').value = table_name;
-          document.getElementById('jao_edit_db_name').value = db_name;
-}
 //
 function add_new_option(db,table) {
 
@@ -215,7 +219,7 @@ function add_new_option(db,table) {
 
           
           form_attribute_option(data);
-          insert_attribute_option_config();
+          
           
         });
 
