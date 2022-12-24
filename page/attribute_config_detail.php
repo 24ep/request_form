@@ -56,7 +56,7 @@ where attribute_code='".$attribute_code."'  and attribute_table = '".$table_name
 $result =  mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) { 
 
-    $attribute_option_row .= ' <tr>
+    $attribute_option_row .= ' <tr id="attribute_option_id_'.$row['id'].'">
     <th>'. $row['attribute_option_code'].'</th>
     <td>'. $row['attribute_option_label'].'</td>
     <td>
@@ -247,7 +247,15 @@ function delete_option(db,table,id,primary_key_id) {
               primary_key_id : primary_key_id
             },
             function(data) {
-                form_attribute_option(data);
+                Notiflix.Notify.success('Option id' + data+' have been remove');
+                // Get a reference to the div element
+                var div = document.getElementById('attribute_option_id_'+data);
+                
+                // Get a reference to the parent element
+                var parent = div.parentNode;
+                
+                // Remove the div element from the DOM
+                parent.removeChild(div);
             });
         },
         function cancelCb() {

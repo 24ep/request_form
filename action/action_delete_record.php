@@ -10,6 +10,6 @@
     $query = mysqli_query($con,$sql);
 
     // $last_id = $con->insert_id;
-    // echo $last_id;
+     echo $id;
 
 ?>
