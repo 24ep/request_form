@@ -189,6 +189,12 @@ echo '</div>';
             Notiflix.Loading.remove();
         });
 }
+
+function insert_attribute_option_config(){
+          document.getElementById('jao_edit_attribute_code').value = document.getElementById('ja_edit_attribute_code').value;
+          document.getElementById('jao_edit_table_name').value = document.getElementById('ja_edit_table_name').value;
+          document.getElementById('jao_edit_db_name').value = document.getElementById('ja_edit_db_name').value;
+}
 //
 function add_new_option(db,table) {
 
@@ -200,13 +206,14 @@ function add_new_option(db,table) {
 
           
           form_attribute_option(data);
-          document.getElementById('jao_edit_attribute_code').value = document.getElementById('ja_edit_attribute_code').value;
-          document.getElementById('jao_edit_table_name').value = document.getElementById('ja_edit_table_name').value;
-          document.getElementById('jao_edit_db_name').value = document.getElementById('ja_edit_db_name').value;
+          insert_attribute_option_config();
+          
         });
 
            
         
 }
+
+
   
 </script>
