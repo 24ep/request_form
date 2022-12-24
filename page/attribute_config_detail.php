@@ -50,27 +50,34 @@ while($row = mysqli_fetch_array($result)) {
 
 }
 
-$query = "SELECT *
-FROM u749625779_cdscontent.job_attribute_option
-where attribute_code='".$attribute_code."'  and attribute_table = '".$table_name."'"  or die("Error:" . mysqli_error());
-$result =  mysqli_query($con, $query);
-while($row = mysqli_fetch_array($result)) { 
+function get_attribute_option{
 
-    $attribute_option_row .= ' <tr id="attribute_option_id_'.$row['id'].'">
-    <th>'. $row['attribute_option_code'].'</th>
-    <td>'. $row['attribute_option_label'].'</td>
-    <td>
-    <button type="button" data-bs-toggle="modal" 
-    data-bs-target="#exampleModal" onclick="form_attribute_option('. $row['id'].')" class="btn btn-dark btn-sm">
-    <ion-icon name="create-outline" style="margin: 0;"></ion-icon></button>
+  $query = "SELECT *
+  FROM u749625779_cdscontent.job_attribute_option
+  where attribute_code='".$attribute_code."'  and attribute_table = '".$table_name."'"  or die("Error:" . mysqli_error());
+  $result =  mysqli_query($con, $query);
+  while($row = mysqli_fetch_array($result)) { 
 
-    <button type="button"  class="btn btn-danger btn-sm" onclick="delete_option(&#39;u749625779_cdscontent&#39;,&#39;job_attribute_option&#39;,'. $row['id'].',&#39;id&#39;)" >
-    <ion-icon name="trash-outline" style="margin: 0;"></ion-icon></button>
-    </td>
+      $attribute_option_row .= ' <tr id="attribute_option_id_'.$row['id'].'">
+      <th>'. $row['attribute_option_code'].'</th>
+      <td>'. $row['attribute_option_label'].'</td>
+      <td>
+      <button type="button" data-bs-toggle="modal" 
+      data-bs-target="#exampleModal" onclick="form_attribute_option('. $row['id'].')" class="btn btn-dark btn-sm">
+      <ion-icon name="create-outline" style="margin: 0;"></ion-icon></button>
 
-    
-  </tr>';
+      <button type="button"  class="btn btn-danger btn-sm" onclick="delete_option(&#39;u749625779_cdscontent&#39;,&#39;job_attribute_option&#39;,'. $row['id'].',&#39;id&#39;)" >
+      <ion-icon name="trash-outline" style="margin: 0;"></ion-icon></button>
+      </td>
+
+      
+    </tr>';
+
+    return $attribute_option_row ;
+  }
+
 }
+
 echo '<div class="container-md p-4">';
 echo '
 <nav aria-label="breadcrumb">
@@ -115,7 +122,7 @@ echo '
     echo '
     <div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">
 
-    <table class="table table-striped">
+    <table class="table table-striped" id="option_list">
     <thead>
         <tr>
         <th scope="col">Option Code</th>
@@ -124,7 +131,11 @@ echo '
         </tr>
     </thead>
   <tbody>
-  '.$attribute_option_row .'
+  ';
+
+  echo get_attribute_option;
+
+  echo '
   
   </tbody>
     </table>
@@ -168,10 +179,6 @@ var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
 var table_name =  document.getElementById('ja_edit_table_name').value;
 var db_name =  document.getElementById('ja_edit_db_name').value;
 
-console.log('pass : ' + attribute_code);
-console.log('pass : ' + table_name);
-console.log('pass : ' + db_name);
-
 document.getElementById('jao_edit_attribute_code').value = attribute_code;
 document.getElementById('jao_edit_attribute_table').value = table_name;
 document.getElementById('jao_edit_db_name').value = db_name;
@@ -179,6 +186,23 @@ document.getElementById('jao_edit_db_name').value = db_name;
 update_value_attribute(id, 'jao_edit_attribute_code' , 'jao' , 'u749625779_cdscontent' , 'job_attribute_option' , 'id');
 update_value_attribute(id, 'jao_edit_attribute_table' , 'jao' , 'u749625779_cdscontent' , 'job_attribute_option' , 'id');
 update_value_attribute(id, 'jao_edit_db_name' , 'jao' , 'u749625779_cdscontent' , 'job_attribute_option' , 'id');
+
+// // Insert to table
+//   // Get a reference to the table element
+//   var table = document.getElementById('option_list');
+  
+//   // Insert a new row at the end of the table
+//   var newRow = table.insertRow(-1);
+  
+//   // Insert cells into the new row
+//   var cell1 = newRow.insertCell(0);
+//   var cell2 = newRow.insertCell(1);
+//   var cell2 = newRow.insertCell(1);
+  
+//   // Set the content of the cells
+//   cell1.innerHTML = 'Cell 3';
+//   cell2.innerHTML = 'Cell 4';
+
 }
 
   function properties_form(){
@@ -248,7 +272,7 @@ function delete_option(db,table,id,primary_key_id) {
               primary_key_id : primary_key_id
             },
             function(data) {
-              if (!value.startsWith("Error")) {
+              if (!data.startsWith("Error")) {
                 Notiflix.Notify.success('Option id ' + data+' have been remove');
                  // Get a reference to the div element
                  var div = document.getElementById('attribute_option_id_'+data);
