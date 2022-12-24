@@ -134,7 +134,7 @@ echo '
     <button 
             type="button"
             class="btn btn-dark btn-sm" 
-            onclick="form_attribute_option(add_new_option('job_attribute_option'))"
+            onclick="add_new_option('job_attribute_option')"
     >
             Add Option
     </button>
@@ -194,8 +194,9 @@ function add_new_option(table) {
             table_name : table_name
         },
         function(data) {
-          return data;
+          form_attribute_option(data)ว
         });
+
 }
   
 </script>
