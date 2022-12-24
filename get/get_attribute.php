@@ -250,8 +250,13 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
     $section="";
 
     while($row = mysqli_fetch_array($result)) {
-        $section .=  '<span class="m-3" style="font-size: large;border-bottom-style: solid;color:#7f7879;display: flex!important;
-        margin: 10px;text-transform: uppercase;"><strong>'.$row['section_group'].'</strong></span><br>';
+        $section .=  '<span class="shadow-sm ps-3 pt-1 pb-1 rounded m-0" style="font-size: large;
+        color: #4c4b4b;
+        background: #dbdbdb;
+        display: flex!important;
+        text-transform: capitalize;
+        margin: 0!important;
+        "><strong>'.$row['section_group'].'</strong></span><br>';
         $section .= '<div class="row m-2">';
         $section .= get_attribute($attribute_set,$row['section_group'],$table,$database,$primary_key_id,$prefix_table);
         $section .= '</div>';
