@@ -172,7 +172,7 @@ console.log('pass : ' + table_name);
 console.log('pass : ' + db_name);
 
 document.getElementById('jao_edit_attribute_code').value = attribute_code;
-document.getElementById('jao_edit_table_name').value = table_name;
+document.getElementById('jao_edit_attribute_table').value = table_name;
 document.getElementById('jao_edit_db_name').value = db_name;
 }
 
