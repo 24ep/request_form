@@ -6,7 +6,6 @@ $table_name = $_POST['table_name'];
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
-
 $query = "SELECT *
 FROM u749625779_cdscontent.job_attribute where attribute_code='".$attribute_code."' and table_name = '".$table_name."'"  or die("Error:" . mysqli_error());
 $result =  mysqli_query($con, $query);
@@ -111,7 +110,6 @@ function get_attribute_option_list() {
           $('#attirbute_option_list').html(data);
         });
 }
-
 function properties_form(){
     var id = document.getElementById('id').value;
     var table_name = "'job_attribute'";
@@ -125,7 +123,6 @@ function properties_form(){
             });
   }
   properties_form();
-
 function insert_attribute_option_config(id){
 var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
 var table_name =  document.getElementById('ja_edit_table_name').value;
@@ -178,7 +175,7 @@ function delete_option(db,table,id,primary_key_id) {
             },
             function(data) {
               if (!data.startsWith("Error")) {
-                Notiflix.Notify.success('Option id ' + data+' have been remove');
+                Notiflix.Notify.success('Option id ' + data+' have been removed');
                  // Get a reference to the div element
                 var div = document.getElementById('attribute_option_id_'+data);
                 div.remove();
@@ -202,8 +199,6 @@ function release_attribute(){
   var column = document.getElementById('ja_edit_attribute_code').value;
   var type = document.getElementById('ja_edit_attribute_type').value;
   var id = document.getElementById('ja_edit_id').value;
-  
-
   $.post("base/action/action_alter_column.php", {
           table : table,
           db : db,
@@ -220,8 +215,6 @@ function release_attribute(){
                 document.getElementById('release_attribute_bt').hidden = true;
                 document.getElementById('ja_edit_release_attribute').value = 1 ;
                 update_value_attribute(id, 'ja_edit_release_attribute' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id');
-                    
-                
               }else{
                 Notiflix.Report.failure(
                   'Release Failure',

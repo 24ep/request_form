@@ -24,14 +24,20 @@ $result =  mysqli_query($con, $query);
 
 while($row = mysqli_fetch_array($result)) {
 $attribute .= '
-    <tr style="text-align-last: left;border: solid #dee2e6 1px;background-color: transparent;">
+    <tr style="text-align-last: left;border: solid #dee2e6 1px;background-color: transparent;" id="attribute_code_id_'.$row['id'].'">
       <th scope="col">'.$row['attribute_label'].'</th>
       <th >'.$row['attribute_code'].'</th>
       <th >'.$row['attribute_type'].'</th>
       <th >'.$row['attribute_set'].'</th>
+      <th >'.$row['table_name'].'</th>
       <th >'.$row['description'].'</th>
-      <th onclick="attribute_detail_page(&#39;'.$row['id'].'&#39,&#39;'.$row['attribute_code'].'&#39,&#39;'.$row['table_name'].'&#39,&#39;update&#39;)">
-      <button type="button" class="btn"><ion-icon name="create-outline"></ion-icon></button></th>
+      <th>
+      <button type="button" class="btn btn-dark btn-sm" onclick="attribute_detail_page(&#39;'.$row['id'].'&#39,&#39;'.$row['attribute_code'].'&#39,&#39;'.$row['table_name'].'&#39,&#39;update&#39;)"
+      ><ion-icon name="create-outline" style="margin: 0;"></ion-icon></button>
+      
+      <button type="button"  class="btn btn-danger btn-sm" onclick="delete_attribute(&#39;'.$row['db_name'].'&#39;,&#39;'.$row['attribute_table'].'&#39;,'. $row['id'].',&#39;'.$row['primary_key_id'].'&#39;)" >
+      <ion-icon name="trash-outline" style="margin: 0;"></ion-icon></button>
+      </th>
     </tr>
 ';
   
@@ -45,6 +51,7 @@ echo '<table class="table" id="st_attribute_config" name="st_attribute_config">
       <th scope="col">Attribute Code</th>
       <th scope="col">Type</th>
       <th scope="col">Set</th>
+      <th scope="col">Table</th>
       <th scope="col">Description</th>
       <th scope="col">Edit</th>
     </tr>
@@ -81,6 +88,39 @@ function add_new_attribute(db,table) {
       });
 }
   
+function delete_attribute(db,table,id,primary_key_id) {
+  Notiflix.Confirm.show(
+      'Confirm',
+      'Do you want to remove an attribute?',
+      'Yes',
+      'No',
+        function okCb() {
+          $.post("base/action/action_delete_record.php", {
+              table : table,
+              db : db,
+              id : id,
+              primary_key_id : primary_key_id
+            },
+            function(data) {
+              if (!data.startsWith("Error")) {
+                Notiflix.Notify.success('Attribute id ' + data+' have been removed');
+                 // Get a reference to the div element
+                var div = document.getElementById('attribute_code_id_'+data);
+                div.remove();
+              }else{
+                Notiflix.Report.failure(
+                  'Remove Failure',
+                  data,
+                  'Okay',
+                  );
+              }
+            });
+        },
+        function cancelCb() {
+          //nothing
+        },
+  );  
+}
 </script>
 
 
