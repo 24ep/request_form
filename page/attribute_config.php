@@ -5,7 +5,7 @@
     <div class="d-flex">
       
       <!-- <button class="btn btn-outline-success" onclick="attribute_detail_page('','','','create')" >Create new attribute</button> -->
-      <button class="btn btn-outline-success" onclick="add_new_attribute('u749625779_cdscontent','job_attribute')" >Create new attribute</button>
+      <button class="btn btn-outline-success" onclick="add_new_attribute('u749625779_cdscontent','job_attribute')" ><ion-icon name="add-outline"></ion-icon>Create new attribute</button>
       
     </div>
   </div>

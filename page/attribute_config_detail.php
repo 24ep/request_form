@@ -71,7 +71,7 @@ echo '
             id="release_attribute_bt"
             onclick="release_attribute()"
     >
-            Release Attribute
+    <ion-icon name="rocket-outline"></ion-icon>    Release Attribute
     </button>
     <?php
     }
@@ -90,7 +90,7 @@ echo '
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
     >
-            Add Option
+    <ion-icon name="add-outline"></ion-icon> Add Option
     </button>
     <?php
     echo '
