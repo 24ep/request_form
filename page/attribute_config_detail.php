@@ -166,7 +166,7 @@ function add_new_option(db,table) {
 function delete_option(db,table,id,primary_key_id) {
   Notiflix.Confirm.show(
       'Confirm',
-      'Do you want to remove an option?',
+      'Do you want to remove an option id '+id+'?',
       'Yes',
       'No',
         function okCb() {

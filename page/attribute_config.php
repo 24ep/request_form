@@ -94,7 +94,7 @@ function delete_attribute(db,table,id,primary_key_id,release_attribute,column) {
   var primary_key_id_record = "id";
   Notiflix.Confirm.show(
       'Confirm',
-      'Do you want to remove an attribute?',
+      'Do you want to remove an attribute '+column+' ?',
       'Yes',
       'No',
         function okCb() {
