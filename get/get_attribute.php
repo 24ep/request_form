@@ -60,7 +60,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.' </div>
       <div class="col-9">
         <input
-          class="form-control form-control-color border-white'.$require.'"
+          class="form-control form-control-color border-white '.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
           type="'.$site_element.'"
