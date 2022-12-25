@@ -213,7 +213,7 @@ function release_attribute(){
           if (!data.startsWith("Error")) {
                 Notiflix.Report.success(
                     'Released',
-                    'Attribute '+column+ ' have beean released',
+                    'Attribute '+column+ ' have been released',
                     'Okay',
                     );
                 document.getElementById('release_attribute_bt').hidden = true;
