@@ -108,6 +108,9 @@ $.post("base/action/action_alter_delete_column.php", {
 }
   
 function delete_attribute(db,table,id,primary_key_id,release_attribute,column) {
+  var table_record = "job_attribute";
+  var db_record = "u749625779_cdscontent";
+  var primary_key_id_record = "id";
   Notiflix.Confirm.show(
       'Confirm',
       'Do you want to remove an attribute?',
@@ -115,10 +118,10 @@ function delete_attribute(db,table,id,primary_key_id,release_attribute,column) {
       'No',
         function okCb() {
           $.post("base/action/action_delete_record.php", {
-              table : table,
-              db : db,
+            table_record : table_record,
+            db_record : db_record,
               id : id,
-              primary_key_id : primary_key_id
+              primary_key_id_record : primary_key_id_record
             },
             function(data) {
               if (!data.startsWith("Error")) {
