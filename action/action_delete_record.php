@@ -11,7 +11,7 @@
     if($query){
         echo $id;
     }else{
-        echo 'Error : '.$con->error;
+        echo 'Error : '.$sql." ".$con->error;
     }
     // $last_id = $con->insert_id;
      
