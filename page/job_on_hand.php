@@ -28,7 +28,7 @@ $database = 'all_in_one_project';
         <div class="accordion" id="accordionPanelsStayOpenExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                    <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0" style="background: #ebebeb;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                         <ion-icon name="star-outline"></ion-icon> Pending <span class="badge bg-danger rounded-pill bg-gradient ms-2">Suggestion</span>
                     </button>
                 </h2>
@@ -41,7 +41,7 @@ $database = 'all_in_one_project';
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">
-                <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  style="background: #ebebeb;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
                         <ion-icon name="star-half-outline"></ion-icon> Inprogress
                     </button>
                 </h2>
@@ -55,7 +55,7 @@ $database = 'all_in_one_project';
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+                <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  style="background: #ebebeb;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
                         <ion-icon name="star"></ion-icon> Waiting for more information
                     </button>
                 </h2>
@@ -68,7 +68,7 @@ $database = 'all_in_one_project';
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading4">
-                <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse4" aria-expanded="true" aria-controls="panelsStayOpen-collapse4">
+                <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  style="background: #ebebeb;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse4" aria-expanded="true" aria-controls="panelsStayOpen-collapse4">
                         <ion-icon name="warning-outline"></ion-icon> Waiting for Revise
                     </button>
                 </h2>
@@ -81,7 +81,7 @@ $database = 'all_in_one_project';
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-heading5">
-                <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse5" aria-expanded="true" aria-controls="panelsStayOpen-collapse5">
+                <button class="accordion-button collapsed border-bottom bg-light bg-gradient fw-bold rounded-0"  style="background: #ebebeb;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse5" aria-expanded="true" aria-controls="panelsStayOpen-collapse5">
                         <ion-icon name="sync-outline"></ion-icon> Revised
                     </button>
                 </h2>
