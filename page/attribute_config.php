@@ -118,8 +118,8 @@ function delete_attribute(db,table,id,primary_key_id,release_attribute,column) {
       'No',
         function okCb() {
           $.post("base/action/action_delete_record.php", {
-            table : table_record,
-            db : db_record,
+              table : table_record,
+              db : db_record,
               id : id,
               primary_key_id : primary_key_id_record
             },
