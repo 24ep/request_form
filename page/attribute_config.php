@@ -34,7 +34,7 @@ $attribute .= '
       <button type="button" class="btn btn-dark btn-sm" onclick="attribute_detail_page(&#39;'.$row['id'].'&#39,&#39;'.$row['attribute_code'].'&#39,&#39;'.$row['table_name'].'&#39,&#39;update&#39;)"
       ><ion-icon name="create-outline" style="margin: 0;"></ion-icon></button>
       
-      <button type="button"  class="btn btn-danger btn-sm" onclick="delete_attribute(&#39;'.$row['db_name'].'&#39;,&#39;'.$row['attribute_table'].'&#39;,'. $row['id'].',&#39;'.$row['primary_key_id'].'&#39;)" >
+      <button type="button"  class="btn btn-danger btn-sm" onclick="delete_attribute(&#39;'.$row['db_name'].'&#39;,&#39;'.$row['attribute_table'].'&#39;,'. $row['id'].',&#39;'.$row['primary_key_id'].'&#39;,&#39;'.$row['release_attribute'].'&#39;,&#39;'.$row['attribute_code'].'&#39;)" >
       <ion-icon name="trash-outline" style="margin: 0;"></ion-icon></button>
       </th>
     </tr>
@@ -85,8 +85,29 @@ function add_new_attribute(db,table) {
           
       });
 }
+
+function alter_delete_attribute(db,table,column) {
+
+$.post("base/action/action_alter_delete_column.php", {
+      table : table,
+      db : db,
+      column : column
+    },
+    function(data) {
+      if (!data.startsWith("Error")) {
+                Notiflix.Report.success('Attribute ' + column+' have been removed');
+              }else{
+                Notiflix.Report.failure(
+                  'Remove Failure',
+                  data,
+                  'Okay',
+                  );
+              }
+        
+    });
+}
   
-function delete_attribute(db,table,id,primary_key_id) {
+function delete_attribute(db,table,id,primary_key_id,release_attribute,column) {
   Notiflix.Confirm.show(
       'Confirm',
       'Do you want to remove an attribute?',
@@ -101,10 +122,13 @@ function delete_attribute(db,table,id,primary_key_id) {
             },
             function(data) {
               if (!data.startsWith("Error")) {
-                Notiflix.Notify.success('Attribute id ' + data+' have been removed');
+                Notiflix.Notify.success('Attribute  ' + column+' have been removed');
                  // Get a reference to the div element
                 var div = document.getElementById('attribute_code_id_'+data);
                 div.remove();
+                if(release_attribute==1){
+                    alter_delete_attribute(db,table,column);
+                }
               }else{
                 Notiflix.Report.failure(
                   'Remove Failure',
