@@ -5,7 +5,7 @@
     $type = $_POST['type'];
 
     if($type=='number'){
-        $db_type = 'INT';
+        $db_type = 'int';
     }elseif($type=='datetime'){
         $db_type = 'DATETIME';
     }else{
