@@ -494,3 +494,8 @@ select:disabled {
     opacity: 1;
     color: #b6b6b6;
 }
+
+
+.form-select.is-invalid, .was-validated .form-select:invalid {
+    border-color: #dc3545!important;
+}

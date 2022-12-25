@@ -23,11 +23,10 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.' </div>
       <div class="col-9">
         <input
-          class="form-control form-control-sm bg-light '.$require.'"
+          class="form-control form-control-sm bg-light border-white '.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
           type="'.$site_element.'"
-          style="border: 0px"
           value="'.$current_value.'"
           '.$enable_edit.'
           onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
@@ -61,11 +60,10 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.' </div>
       <div class="col-9">
         <input
-          class="form-control form-control-color '.$require.'"
+          class="form-control form-control-color border-white'.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
           type="'.$site_element.'"
-          style="border: 0px"
           value="'.$current_value.'"
           '.$enable_edit.'
           onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
@@ -110,10 +108,9 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
       <div class="col-9">
         <select
-          class="form-select form-select-sm bg-light '.$require.'"
+          class="form-select form-select-sm bg-light border-white'.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
-          style="border: 0px"
           '.$enable_edit.'
           onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
         >
@@ -150,15 +147,14 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
         $require = '';
       }
     $element = '
-    <li class="list-group-item m-2 row" style="display: inline-flex;">
+    <li class="list-group-item m-2 row " style="display: inline-flex;">
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
       <div class="col-9">
         <select
           multiple="multiple"
-          class="form-select bg-light '.$require.'"
+          class="form-select bg-light border-white '.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
-          style="border: 0px"
           '.$enable_edit.'
           onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
         >
@@ -188,10 +184,9 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
       <div class="col-9">
         <textarea
-          class="form-control bg-light '.$require.'"
+          class="form-control bg-light border-white '.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
-          style="border: 0px"
           rows="4"
           '.$enable_edit.'
           onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
