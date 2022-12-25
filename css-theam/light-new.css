@@ -492,7 +492,7 @@ label#label_file_cme {
 
 select:disabled {
     opacity: 1;
-    color: #b6b6b6;
+    color: #c4c4c4!important;
 }
 
 
