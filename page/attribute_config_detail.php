@@ -218,7 +218,7 @@ function release_attribute(){
                     );
                 document.getElementById('release_attribute_bt').hidden = true;
                     
-                }
+                
               }else{
                 Notiflix.Report.failure(
                   'Release Failure',
