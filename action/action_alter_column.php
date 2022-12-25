@@ -18,7 +18,4 @@
     $sql = "ALTER TABLE ".$db.".".$table." ADD COLUMN ".$column." ".$db_type;
     $query = mysqli_query($con,$sql);
 
-    $last_id = $con->insert_id;
-    echo $last_id;
-
 ?>
