@@ -18,7 +18,7 @@ date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 
-$query = "SELECT attribute_code,attribute_label,description,attribute_set,attribute_type,table_name,id
+$query = "SELECT *
 FROM u749625779_cdscontent.job_attribute;" or die("Error:" . mysqli_error());
 $result =  mysqli_query($con, $query);
 
