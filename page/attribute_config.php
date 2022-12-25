@@ -100,7 +100,7 @@ function add_new_attribute(db,table) {
         db : db
       },
       function(data) {
-          attribute_detail_page(data,'',table,'create')
+          attribute_detail_page(data,'',table,'create');
       });
 }
   
