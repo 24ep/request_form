@@ -75,6 +75,8 @@ echo '</tbody>
             },
             function(data) {
                 $('#nav-attribute').html(data);
+                // update_value_attribute(id, 'ja_edit_attribute_code' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id');
+               
             });
           },
           function cancelCb(clientAnswer) {
@@ -103,6 +105,7 @@ function add_new_attribute(db,table) {
       },
       function(data) {
           attribute_detail_page(data,'',table,'create');
+          
       });
 }
   

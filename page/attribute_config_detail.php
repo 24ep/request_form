@@ -1,8 +1,5 @@
 <?php
 session_start();
-
-
-
 $id = $_POST['id'];
 $attribute_code = $_POST['attribute_code'];
 $table_name = $_POST['table_name'];
@@ -10,19 +7,19 @@ date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 
-//create new attribute
-if($_POST['action']=='create'){
-        $sql = "INSERT INTO job_attribute (
-          attribute_code
-        )
-          VALUES(
-            '".$attribute_code."'
-          )";
-          $query = mysqli_query($con,$sql);
-          $id = $con->insert_id;
-}
+// //create new attribute
+// if($_POST['action']=='create'){
+//         $sql = "INSERT INTO job_attribute (
+//           attribute_code
+//         )
+//           VALUES(
+//             '".$attribute_code."'
+//           )";
+//           $query = mysqli_query($con,$sql);
+//           $id = $con->insert_id;
+// }
 
-// end create new attribute
+// // end create new attribute
 $query = "SELECT *
 FROM u749625779_cdscontent.job_attribute where attribute_code='".$attribute_code."' and table_name = '".$table_name."'"  or die("Error:" . mysqli_error());
 $result =  mysqli_query($con, $query);
