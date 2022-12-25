@@ -28,7 +28,6 @@ $attribute .= '
       <th scope="col">'.$row['attribute_label'].'</th>
       <th >'.$row['attribute_code'].'</th>
       <th >'.$row['attribute_type'].'</th>
-      <th >'.$row['attribute_set'].'</th>
       <th >'.$row['table_name'].'</th>
       <th >'.$row['description'].'</th>
       <th>
@@ -50,7 +49,6 @@ echo '<table class="table" id="st_attribute_config" name="st_attribute_config">
       <th scope="col">Attribute Label</th>
       <th scope="col">Attribute Code</th>
       <th scope="col">Type</th>
-      <th scope="col">Set</th>
       <th scope="col">Table</th>
       <th scope="col">Description</th>
       <th scope="col">Edit</th>
