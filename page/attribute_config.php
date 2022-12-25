@@ -1,27 +1,20 @@
-
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand">Attribute</a>
     <div class="d-flex">
-      
       <!-- <button class="btn btn-outline-success" onclick="attribute_detail_page('','','','create')" >Create new attribute</button> -->
       <button class="btn btn-outline-success" onclick="add_new_attribute('u749625779_cdscontent','job_attribute')" ><ion-icon name="add-outline"></ion-icon>Create new attribute</button>
-      
     </div>
   </div>
 </nav>
-
 <?php
-
 session_start();
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
-
 $query = "SELECT *
 FROM u749625779_cdscontent.job_attribute;" or die("Error:" . mysqli_error());
 $result =  mysqli_query($con, $query);
-
 while($row = mysqli_fetch_array($result)) {
 $attribute .= '
     <tr style="text-align-last: left;border: solid #dee2e6 1px;background-color: transparent;" id="attribute_code_id_'.$row['id'].'">
@@ -33,16 +26,12 @@ $attribute .= '
       <th>
       <button type="button" class="btn btn-dark btn-sm" onclick="attribute_detail_page(&#39;'.$row['id'].'&#39,&#39;'.$row['attribute_code'].'&#39,&#39;'.$row['table_name'].'&#39,&#39;update&#39;)"
       ><ion-icon name="create-outline" style="margin: 0;"></ion-icon></button>
-      
       <button type="button"  class="btn btn-danger btn-sm" onclick="delete_attribute(&#39;'.$row['db_name'].'&#39;,&#39;'.$row['table_name'].'&#39;,'. $row['id'].',&#39;'.$row['primary_key_id'].'&#39;,&#39;'.$row['release_attribute'].'&#39;,&#39;'.$row['attribute_code'].'&#39;)" >
       <ion-icon name="trash-outline" style="margin: 0;"></ion-icon></button>
       </th>
     </tr>
 ';
-  
 }
-
-
 echo '<table class="table" id="st_attribute_config" name="st_attribute_config">
 <thead>
     <tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
@@ -71,23 +60,17 @@ echo '</tbody>
             function(data) {
                 $('#nav-attribute').html(data);
             }); 
-      
   }
-
 function add_new_attribute(db,table) {
-
   $.post("base/action/action_insert_new_record.php", {
         table : table,
         db : db
       },
       function(data) {
           attribute_detail_page(data,'',table,'create');
-          
       });
 }
-
 function alter_delete_attribute(db,table,column) {
-
 $.post("base/action/action_alter_delete_column.php", {
       table : table,
       db : db,
@@ -103,10 +86,8 @@ $.post("base/action/action_alter_delete_column.php", {
                   'Okay',
                   );
               }
-        
     });
 }
-  
 function delete_attribute(db,table,id,primary_key_id,release_attribute,column) {
   var table_record = "job_attribute";
   var db_record = "u749625779_cdscontent";
@@ -147,8 +128,6 @@ function delete_attribute(db,table,id,primary_key_id,release_attribute,column) {
   );  
 }
 </script>
-
-
 <script>
   $(document).ready( function () {
   $('#st_attribute_config').DataTable({
@@ -157,9 +136,5 @@ function delete_attribute(db,table,id,primary_key_id,release_attribute,column) {
             [10, 20,50, 100, 'All'],
         ],
     });
-
 } );
-
-
-
 </script>

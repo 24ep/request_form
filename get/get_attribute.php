@@ -1,13 +1,10 @@
 <?php 
-
 function return_input_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
     if($site_element=='datetime-local'){
       if($current_value <> null){
         $current_value = date('Y-m-d H:i:s',strtotime($current_value));
         $current_value = str_replace(" ","T",$current_value);
       }
-      
-     
     }
     if($enable_edit==''){
       // $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px" name="color-wand-outline"></ion-icon>';
@@ -31,20 +28,16 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
           onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
         />
       </div>
-      
     </li>
     ';
     return $element;
   }
-  
   function return_input_color($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
     if($site_element=='datetime-local'){
       if($current_value <> null){
         $current_value = date('Y-m-d H:i:s',strtotime($current_value));
         $current_value = str_replace(" ","T",$current_value);
       }
-      
-     
     }
     if($enable_edit==''){
       // $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px" name="color-wand-outline"></ion-icon>';
@@ -72,10 +65,8 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
     ';
     return $element;
   }
-  
   function return_s_select_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-   
       $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute_option
       WHERE attribute_code = '".$att_code."' and attribute_table = '".$table."' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
       $result_op = mysqli_query($con, $query_op);
@@ -91,7 +82,6 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
             $option_element .= "<option ".$selectd ." value=''></option>";
         }
         $option_element .= "<option ".$selectd ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
-
         }
         if($enable_edit==''){
           // $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px" name="color-wand-outline"></ion-icon>';
@@ -189,7 +179,6 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
   }
 //get attribute 
 function get_attribute($attribute_set,$section_group,$table,$database,$primary_key_id,$prefix_table){
-    
     global $con;
     global $id;
     //Get data 24ep
@@ -205,7 +194,6 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
               ${$prefix_table."_".$row_column['COLUMN_NAME']} = $row[$row_column['COLUMN_NAME']];
           }
       }
-
     $query = "SELECT  * FROM u749625779_cdscontent.job_attribute 
     where allow_display=1 and attribute_set = '".$attribute_set."' and section_group ='".$section_group."' and table_name='".$table."'"  or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
@@ -218,8 +206,6 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
         }else{
             $allow_in_edit = '';
         }
-    
-
         if($row["attribute_type"]=="number"){
             $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"number",${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
           }elseif($row["attribute_type"]=="text"){
@@ -240,7 +226,6 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
     }
     return $element;
 }
-
 //get attribute section
 function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$prefix_table){
     global $con;
@@ -248,7 +233,6 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
     where allow_display=1 and attribute_set = '".$attribute_set."' and table_name='".$table."' order by sort_section ASC" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     $section="";
-
     while($row = mysqli_fetch_array($result)) {
         $section .=  '<span class="shadow-sm ps-3 pt-1 pb-1 rounded m-0" style="font-size: medium;
         color: #4c4b4b;
@@ -263,7 +247,6 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
     }
     return  $section;
 }
-
 ?>
 <script>
 function update_value_attribute(id, attribute_code, prefix, database, table, primary_key_id) {
@@ -281,7 +264,6 @@ function update_value_attribute(id, attribute_code, prefix, database, table, pri
         var value_change = document.getElementById(attribute_code).value;
     }
     var attribute_code = attribute_code;
-
     if (value_change == "CURRENT_TIMESTAMP") {
         var today = new Date();
         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -298,11 +280,9 @@ function update_value_attribute(id, attribute_code, prefix, database, table, pri
                 database: database,
                 table: table,
                 primary_key_id: primary_key_id
-
             },
             function(data) {
                 // $('#call_update_ns_complete').html(data);
-
                 var result = data.includes("Error");
                 if (result == false) {
                     Notiflix.Notify.success(data);
