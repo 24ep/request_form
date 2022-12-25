@@ -89,19 +89,20 @@ echo '</tbody>
             },
             function(data) {
                 $('#nav-attribute').html(data);
-            });
-      
-    }
-   
-
-    //end
-
-
-
-      
-    
+            }); 
+    }   
   }
 
+function add_new_attribute(db,table) {
+
+  $.post("base/action/action_insert_new_record.php", {
+        table : table,
+        db : db
+      },
+      function(data) {
+          attribute_detail_page(data,'',table,'create')
+      });
+}
   
 </script>
 
