@@ -1,5 +1,5 @@
 <?php 
-function return_input_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
+function return_input_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id,$require){
     if($site_element=='datetime-local'){
       if($current_value <> null){
         $current_value = date('Y-m-d H:i:s',strtotime($current_value));
@@ -13,12 +13,19 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       // $badge_edit_lv  ='';
       $badge_edit_lv  ='style="color:#C0C0C0"';
     }
+
+    if($require==1){
+      $require = 'is-invalid';
+    }else{
+      $require = '';
+    }
+
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.' </div>
       <div class="col-9">
         <input
-          class="form-control form-control-sm bg-light"
+          class="form-control form-control-sm bg-light '.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
           type="'.$site_element.'"
@@ -32,7 +39,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
     ';
     return $element;
   }
-  function return_input_color($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
+  function return_input_color($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id,$require){
     if($site_element=='datetime-local'){
       if($current_value <> null){
         $current_value = date('Y-m-d H:i:s',strtotime($current_value));
@@ -46,12 +53,18 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       // $badge_edit_lv  ='';
       $badge_edit_lv  ='style="color:#C0C0C0"';
     }
+
+    if($require==1){
+      $require = 'is-invalid';
+    }else{
+      $require = '';
+    }
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.' </div>
       <div class="col-9">
         <input
-          class="form-control form-control-color"
+          class="form-control form-control-color '.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
           type="'.$site_element.'"
@@ -65,7 +78,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
     ';
     return $element;
   }
-  function return_s_select_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
+  function return_s_select_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id,$require){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
       $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute_option
       WHERE attribute_code = '".$att_code."' and attribute_table = '".$table."' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
@@ -90,12 +103,19 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
           // $badge_edit_lv  ='';
           $badge_edit_lv  ='style="color:#C0C0C0"';
         }
+
+        if($require==1){
+          $require = 'is-invalid';
+        }else{
+          $require = '';
+        }
+
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
       <div class="col-9">
         <select
-          class="form-select form-select-sm bg-light"
+          class="form-select form-select-sm bg-light '.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
           style="border: 0px"
@@ -110,7 +130,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
     unset($option_element);
     return $element;
   }
-  function return_m_select_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
+  function return_m_select_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id,$require){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
       $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute_option
       WHERE attribute_code = '".$att_code."' and attribute_table = '".$table."' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
@@ -129,13 +149,20 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
         // $badge_edit_lv  ='';
         $badge_edit_lv  ='style="color:#C0C0C0"';
       }
+
+      if($require==1){
+        $require = 'is-invalid';
+      }else{
+        $require = '';
+      }
+
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
       <div class="col-9">
         <select
           multiple="multiple"
-          class="form-select bg-light"
+          class="form-select bg-light '.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
           style="border: 0px"
@@ -150,7 +177,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
     unset($option_element);
     return $element;
   }
-  function return_textarea_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id){
+  function return_textarea_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id,$require){
     if($enable_edit==''){
       // $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px"name="color-wand-outline"></ion-icon>';
       $badge_edit_lv  ='';
@@ -158,12 +185,19 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       // $badge_edit_lv  ='';
       $badge_edit_lv  ='style="color:#C0C0C0"';
     }
+
+    if($require==1){
+      $require = 'is-invalid';
+    }else{
+      $require = '';
+    }
+
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
       <div class="col-9">
         <textarea
-          class="form-control bg-light"
+          class="form-control bg-light '.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
           style="border: 0px"
@@ -207,21 +241,21 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
             $allow_in_edit = '';
         }
         if($row["attribute_type"]=="number"){
-            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"number",${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
+            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"number",${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
           }elseif($row["attribute_type"]=="text"){
-            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],$row["attribute_type"],${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
+            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],$row["attribute_type"],${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
           }elseif($row["attribute_type"]=="color" ){
-            $element .= return_input_color($row["attribute_code"],$row["attribute_label"],$row["attribute_type"],${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
+            $element .= return_input_color($row["attribute_code"],$row["attribute_label"],$row["attribute_type"],${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
           }elseif($row["attribute_type"]=="datetime"){
-            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"datetime-local",${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
+            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"datetime-local",${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
           }elseif($row["attribute_type"]=="date"){
-            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"date",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
+            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"date",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
           }elseif($row["attribute_type"]=="textarea"){
-            $element .= return_textarea_box($row["attribute_code"],$row["attribute_label"],"textarea",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
+            $element .= return_textarea_box($row["attribute_code"],$row["attribute_label"],"textarea",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
           }elseif($row["attribute_type"]=="single_select"){
-            $element .= return_s_select_box($row["attribute_code"],$row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
+            $element .= return_s_select_box($row["attribute_code"],$row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
           }elseif($row["attribute_type"]=="multi_select"){
-            $element .= return_m_select_box($row["attribute_code"],$row["attribute_label"],"multi_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"]);
+            $element .= return_m_select_box($row["attribute_code"],$row["attribute_label"],"multi_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
           }
     }
     return $element;
