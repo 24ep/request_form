@@ -51,7 +51,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       // $badge_edit_lv  ='';
       $badge_edit_lv  ='style="color:#C0C0C0"';
     }
-    if($require==1){
+    if($require==1 and $current_value==''){
       $require = 'is-invalid';
     }else{
       $require = '';
@@ -100,7 +100,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
           // $badge_edit_lv  ='';
           $badge_edit_lv  ='style="color:#C0C0C0"';
         }
-        if($require==1){
+        if($require==1 and $current_value==''){
           $require = 'is-invalid';
         }else{
           $require = '';
@@ -144,7 +144,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
         // $badge_edit_lv  ='';
         $badge_edit_lv  ='style="color:#C0C0C0"';
       }
-      if($require==1){
+      if($require==1 and $current_value==''){
         $require = 'is-invalid';
       }else{
         $require = '';
@@ -178,7 +178,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       // $badge_edit_lv  ='';
       $badge_edit_lv  ='style="color:#C0C0C0"';
     }
-    if($require==1){
+    if($require==1 and $current_value==''){
       $require = 'is-invalid';
     }else{
       $require = '';
@@ -224,8 +224,7 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
     $result = mysqli_query($con, $query);
     $element="";
     while($row = mysqli_fetch_array($result)) {
-        // $element.= $row['attribute_label'];
-        // if(strpos($_SESSION["permissiom"],'ps_internal')!==false
+  
         if($row['allow_in_edit']==0){
             $allow_in_edit = ' disabled';
         }else{
