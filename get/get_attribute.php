@@ -232,21 +232,21 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
             $allow_in_edit = '';
         }
         if($row["attribute_type"]=="number"){
-            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"number",${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
+            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"number",${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
           }elseif($row["attribute_type"]=="text"){
-            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],$row["attribute_type"],${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
+            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],$row["attribute_type"],${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
           }elseif($row["attribute_type"]=="color" ){
-            $element .= return_input_color($row["attribute_code"],$row["attribute_label"],$row["attribute_type"],${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
+            $element .= return_input_color($row["attribute_code"],$row["attribute_label"],$row["attribute_type"],${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
           }elseif($row["attribute_type"]=="datetime"){
-            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"datetime-local",${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
+            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"datetime-local",${$row["prefix"]."_".$row["attribute_code"]},$row["prefix"]."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
           }elseif($row["attribute_type"]=="date"){
-            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"date",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
+            $element .= return_input_box($row["attribute_code"],$row["attribute_label"],"date",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
           }elseif($row["attribute_type"]=="textarea"){
-            $element .= return_textarea_box($row["attribute_code"],$row["attribute_label"],"textarea",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
+            $element .= return_textarea_box($row["attribute_code"],$row["attribute_label"],"textarea",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
           }elseif($row["attribute_type"]=="single_select"){
-            $element .= return_s_select_box($row["attribute_code"],$row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
+            $element .= return_s_select_box($row["attribute_code"],$row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
           }elseif($row["attribute_type"]=="multi_select"){
-            $element .= return_m_select_box($row["attribute_code"],$row["attribute_label"],"multi_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_attribute"]);
+            $element .= return_m_select_box($row["attribute_code"],$row["attribute_label"],"multi_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
           }
     }
     return $element;
