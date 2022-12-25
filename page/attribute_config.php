@@ -57,34 +57,6 @@ echo '</tbody>
 <script>
   function attribute_detail_page(id,attribute_code,table_name,action){
     // create new attribute
-
-    if(action=='create'){
-      Notiflix.Confirm.prompt(
-      'Which attribute code ?',
-      'Option code may contain only letters, numbers and underscores',
-      '',
-      'Create',
-      'Cancel',
-          function okCb(clientAnswer) {
-            var attribute_code = clientAnswer;
-            $.post("base/page/attribute_config_detail.php", {
-                id:id,
-                attribute_code: attribute_code,
-                table_name: table_name,
-                action:action
-            },
-            function(data) {
-                $('#nav-attribute').html(data);
-                // update_value_attribute(id, 'ja_edit_attribute_code' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id');
-               
-            });
-          },
-          function cancelCb(clientAnswer) {
-            // alert('Client answer was: ' + clientAnswer);
-          },
-        
-    );
-    }else{
       $.post("base/page/attribute_config_detail.php", {
                 id:id,
                 attribute_code: attribute_code,
@@ -94,7 +66,7 @@ echo '</tbody>
             function(data) {
                 $('#nav-attribute').html(data);
             }); 
-    }   
+      
   }
 
 function add_new_attribute(db,table) {

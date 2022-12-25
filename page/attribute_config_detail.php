@@ -194,9 +194,6 @@ get_attribute_option_list();
 }
 
 
-
- 
-
   function form_attribute_option(id) {
     // var id = document.getElementById('id').value;
     var table_name = "'job_attribute_option'";
