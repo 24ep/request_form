@@ -11,7 +11,7 @@
     $query = mysqli_query($con,$sql);
 
     if(!$query){
-        echo 'Error:'.$con->error;
+        echo 'Error:'.$sql." ".$con->error;
     }
 
 ?>
