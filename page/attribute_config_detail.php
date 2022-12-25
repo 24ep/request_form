@@ -218,7 +218,7 @@ function release_attribute(){
                     'Okay',
                     );
                 document.getElementById('release_attribute_bt').hidden = true;
-                document.getElementById('ja_edit_id').value = 1 ;
+                document.getElementById('ja_edit_release_attribute').value = 1 ;
                 update_value_attribute(id, 'ja_edit_release_attribute' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id');
                     
                 
