@@ -5,7 +5,7 @@
     $type = $_POST['type'];
 
     if($type=='number'){
-        $db_type = 'INT(30)';
+        $db_type = 'INT';
     }elseif($type=='datetime'){
         $db_type = 'DATETIME';
     }else{
@@ -17,5 +17,9 @@
     mysqli_query($con, "SET NAMES 'utf8' ");
     $sql = "ALTER TABLE ".$db.".".$table." ADD COLUMN ".$column." ".$db_type;
     $query = mysqli_query($con,$sql);
+
+    if(!$query){
+        echo 'Error:'.$con->error;
+    }
 
 ?>
