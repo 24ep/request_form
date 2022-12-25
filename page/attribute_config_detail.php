@@ -30,6 +30,7 @@ while($row = mysqli_fetch_array($result)) {
     $action_bt=$row['action_bt'];
     $set_complete_attribute=$row['set_complete_attribute'];
     $important=$row['important'];
+    $release_attribute=$row['release_attribute'];
 }
 echo '<div class="container-md p-4">';
 echo '
@@ -62,6 +63,7 @@ echo '
         ';
     echo '
     </div>';
+    if($release_attribute<>'1' ){
     ?>
     <button 
             type="button"
@@ -72,6 +74,7 @@ echo '
             Release Attribute
     </button>
     <?php
+    }
     echo '
     </div>';
     //options
