@@ -197,13 +197,13 @@ function delete_option(db,table,id,primary_key_id) {
   );  
 }
 function release_attribute(){
-  var table = document.getElementById('ja_edit_table_name');
-  var db = document.getElementById('ja_edit_db_name');
-  var column = document.getElementById('ja_edit_attribute_code');
-  var type = document.getElementById('ja_edit_attribute_type');
+  var table = document.getElementById('ja_edit_table_name').value;
+  var db = document.getElementById('ja_edit_db_name').value;
+  var column = document.getElementById('ja_edit_attribute_code').value;
+  var type = document.getElementById('ja_edit_attribute_type').value;
   
 
-  $.post("base/action/action_insert_new_record.php", {
+  $.post("base/action/action_alter_column.php", {
           table : table,
           db : db,
           column : column,
