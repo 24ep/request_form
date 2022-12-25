@@ -62,7 +62,7 @@ echo '
         <div id="properties_form">
         ';
     echo '
-    </div>;'
+    </div>';
     ?>
     <button 
             type="button"
