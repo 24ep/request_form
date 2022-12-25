@@ -13,13 +13,11 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       // $badge_edit_lv  ='';
       $badge_edit_lv  ='style="color:#C0C0C0"';
     }
-
     if($require==1){
       $require = 'is-invalid';
     }else{
       $require = '';
     }
-
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.' </div>
@@ -53,7 +51,6 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       // $badge_edit_lv  ='';
       $badge_edit_lv  ='style="color:#C0C0C0"';
     }
-
     if($require==1){
       $require = 'is-invalid';
     }else{
@@ -103,13 +100,11 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
           // $badge_edit_lv  ='';
           $badge_edit_lv  ='style="color:#C0C0C0"';
         }
-
         if($require==1){
           $require = 'is-invalid';
         }else{
           $require = '';
         }
-
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
@@ -149,13 +144,11 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
         // $badge_edit_lv  ='';
         $badge_edit_lv  ='style="color:#C0C0C0"';
       }
-
       if($require==1){
         $require = 'is-invalid';
       }else{
         $require = '';
       }
-
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
@@ -185,13 +178,11 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       // $badge_edit_lv  ='';
       $badge_edit_lv  ='style="color:#C0C0C0"';
     }
-
     if($require==1){
       $require = 'is-invalid';
     }else{
       $require = '';
     }
-
     $element = '
     <li class="list-group-item m-2 row" style="display: inline-flex;">
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
