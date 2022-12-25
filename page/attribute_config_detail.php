@@ -7,19 +7,6 @@ date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
 
-// //create new attribute
-// if($_POST['action']=='create'){
-//         $sql = "INSERT INTO job_attribute (
-//           attribute_code
-//         )
-//           VALUES(
-//             '".$attribute_code."'
-//           )";
-//           $query = mysqli_query($con,$sql);
-//           $id = $con->insert_id;
-// }
-
-// // end create new attribute
 $query = "SELECT *
 FROM u749625779_cdscontent.job_attribute where attribute_code='".$attribute_code."' and table_name = '".$table_name."'"  or die("Error:" . mysqli_error());
 $result =  mysqli_query($con, $query);
@@ -44,10 +31,7 @@ while($row = mysqli_fetch_array($result)) {
     $action_bt=$row['action_bt'];
     $set_complete_attribute=$row['set_complete_attribute'];
     $important=$row['important'];
-
 }
-
-
 echo '<div class="container-md p-4">';
 echo '
 <nav aria-label="breadcrumb">
@@ -58,22 +42,17 @@ echo '
     </ol>
 </nav>
 ';
-
 echo '<h4><strong>'.$attribute_label.'<strong></h4>';
 echo '<small>'.$description.'</small>';
 echo '<hr>';
-
-
 echo '
 <div class="d-flex align-items-start">
   <div class="nav flex-column nav-pills pe-4 border-end" style="text-align-last: left;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     <button class="nav-link active" id="v-pills-properties-tab" data-bs-toggle="pill" data-bs-target="#v-pills-properties" type="button" role="tab" aria-controls="v-pills-properties" aria-selected="true">Properties</button>';
-
     if($attribute_type=='multiselect' or $attribute_type=='single_select'){
         echo '<button class="nav-link" id="v-pills-options-tab" data-bs-toggle="pill" data-bs-target="#v-pills-options" type="button" role="tab" aria-controls="v-pills-options" aria-selected="false">Options</button>';
     }
     echo '
-    
     <button class="nav-link" id="v-pills-historical-tab" data-bs-toggle="pill" data-bs-target="#v-pills-historical" type="button" role="tab" aria-controls="v-pills-historical" aria-selected="false">Historical</button>
   </div>
   <div class="tab-content ps-4 pe-4 container-xl" id="v-pills-tabContent">
@@ -81,22 +60,27 @@ echo '
     <input type="hidden" class="form-control" id="id" placeholder="" value="'.$id.'">
     <input type="hidden" class="form-control" id="table_name" placeholder="" value="'.$table_name.'">
         <div id="properties_form">
-        
         ';
-       
     echo '
-    </div>
+    </div>;'
+    ?>
+    <button 
+            type="button"
+            class="btn btn-success btn-sm" 
+            id="release_attribute_bt"
+            onclick="release_attribute()"
+    >
+            Release Attribute
+    </button>
+    <?php
+    echo '
     </div>';
-
     //options
     echo '
     <div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">
   <div id="attirbute_option_list"> </div>
   ';
-
     ?>
-
-
     <button 
             type="button"
             class="btn btn-dark btn-sm" 
@@ -106,94 +90,54 @@ echo '
     >
             Add Option
     </button>
-    
     <?php
     echo '
     </div>
     <div class="tab-pane fade" id="v-pills-historical" role="tabpanel" aria-labelledby="v-pills-historical-tab">...</div>
-
   </div>
 </div>
 ';
-
-
-
 echo '</div>';
-
-
 ?>
-
-
 <script>
-
 function get_attribute_option_list() {
-  
   var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
   var table_name =  document.getElementById('ja_edit_table_name').value;
-
-
   $.post("base/get/get_attribute_option_config_detail.php", {
             attribute_code : attribute_code,
             table_name : table_name
         },
         function(data) {
           $('#attirbute_option_list').html(data);
-
         });
-
-
-
 }
+
 function properties_form(){
- 
     var id = document.getElementById('id').value;
     var table_name = "'job_attribute'";
-    
-
         $.post("base/form/form_value.php", {
             id : id,
             table_name : table_name
-
             },
             function(data) {
                 $('#properties_form').html(data);
                 get_attribute_option_list();
             });
- 
- 
-    
   }
   properties_form();
 
-
-  
-
-
-//     window.onload = function() {
-//       get_attribute_option_list();
-// };
-  
-
-
-  
 function insert_attribute_option_config(id){
-
 var attribute_code =  document.getElementById('ja_edit_attribute_code').value;
 var table_name =  document.getElementById('ja_edit_table_name').value;
 var db_name =  document.getElementById('ja_edit_db_name').value;
-
 document.getElementById('jao_edit_attribute_code').value = attribute_code;
 document.getElementById('jao_edit_attribute_table').value = table_name;
 document.getElementById('jao_edit_db_name').value = db_name;
-
 update_value_attribute(id, 'jao_edit_attribute_code' , 'jao' , 'u749625779_cdscontent' , 'job_attribute_option' , 'id');
 update_value_attribute(id, 'jao_edit_attribute_table' , 'jao' , 'u749625779_cdscontent' , 'job_attribute_option' , 'id');
 update_value_attribute(id, 'jao_edit_db_name' , 'jao' , 'u749625779_cdscontent' , 'job_attribute_option' , 'id');
 get_attribute_option_list();
-
 }
-
-
   function form_attribute_option(id) {
     // var id = document.getElementById('id').value;
     var table_name = "'job_attribute_option'";
@@ -208,29 +152,18 @@ get_attribute_option_list();
             insert_attribute_option_config(id);
         });
 }
-
 //
 function add_new_option(db,table) {
-
     $.post("base/action/action_insert_new_record.php", {
           table : table,
           db : db
         },
         function(data) {
-
-          
           form_attribute_option(data);
-          
-          
         });
-
-           
-        
 }
-
 //
 function delete_option(db,table,id,primary_key_id) {
-
   Notiflix.Confirm.show(
       'Confirm',
       'Do you want to remove an option?',
@@ -247,8 +180,7 @@ function delete_option(db,table,id,primary_key_id) {
               if (!data.startsWith("Error")) {
                 Notiflix.Notify.success('Option id ' + data+' have been remove');
                  // Get a reference to the div element
-                 var div = document.getElementById('attribute_option_id_'+data);
-                
+                var div = document.getElementById('attribute_option_id_'+data);
                 div.remove();
               }else{
                 Notiflix.Report.failure(
@@ -257,17 +189,43 @@ function delete_option(db,table,id,primary_key_id) {
                   'Okay',
                   );
               }
-                
-               
             });
         },
         function cancelCb() {
           //nothing
         },
   );  
-    
 }
-
-
+function release_attribute(){
+  var table = document.getElementById('ja_edit_table_name');
+  var db = document.getElementById('ja_edit_db_name');
+  var column = document.getElementById('ja_edit_attribute_code');
+  var type = document.getElementById('ja_edit_attribute_type');
   
+
+  $.post("base/action/action_insert_new_record.php", {
+          table : table,
+          db : db,
+          column : column,
+          type : type
+        },
+        function(data) {
+          if (!data.startsWith("Error")) {
+                Notiflix.Report.success(
+                    'Released',
+                    'Attribute '+column+ ' have beean released',
+                    'Okay',
+                    );
+                document.getElementById('release_attribute_bt').hidden = true;
+                    
+                }
+              }else{
+                Notiflix.Report.failure(
+                  'Release Failure',
+                  data,
+                  'Okay',
+                  );
+              }
+        });
+}
 </script>
