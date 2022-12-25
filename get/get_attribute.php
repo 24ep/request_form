@@ -253,7 +253,7 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
     $result = mysqli_query($con, $query);
     $section="";
     while($row = mysqli_fetch_array($result)) {
-        $section .=  '<span class="shadow-sm ps-3 pt-1 pb-1 rounded m-0" style="font-size: medium;
+        $section .=  '<span class="shadow-sm ps-3 pt-1 pb-1 rounded m-0 bg-gray bg-gradient" style="font-size: medium;
         color: #4c4b4b;
         background: #dbdbdb;
         display: flex!important;
