@@ -34,7 +34,7 @@ $attribute .= '
       <button type="button" class="btn btn-dark btn-sm" onclick="attribute_detail_page(&#39;'.$row['id'].'&#39,&#39;'.$row['attribute_code'].'&#39,&#39;'.$row['table_name'].'&#39,&#39;update&#39;)"
       ><ion-icon name="create-outline" style="margin: 0;"></ion-icon></button>
       
-      <button type="button"  class="btn btn-danger btn-sm" onclick="delete_attribute(&#39;'.$row['db_name'].'&#39;,&#39;'.$row['attribute_table'].'&#39;,'. $row['id'].',&#39;'.$row['primary_key_id'].'&#39;,&#39;'.$row['release_attribute'].'&#39;,&#39;'.$row['attribute_code'].'&#39;)" >
+      <button type="button"  class="btn btn-danger btn-sm" onclick="delete_attribute(&#39;'.$row['db_name'].'&#39;,&#39;'.$row['table_name'].'&#39;,'. $row['id'].',&#39;'.$row['primary_key_id'].'&#39;,&#39;'.$row['release_attribute'].'&#39;,&#39;'.$row['attribute_code'].'&#39;)" >
       <ion-icon name="trash-outline" style="margin: 0;"></ion-icon></button>
       </th>
     </tr>
