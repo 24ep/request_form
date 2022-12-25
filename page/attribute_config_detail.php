@@ -201,6 +201,7 @@ function release_attribute(){
   var db = document.getElementById('ja_edit_db_name').value;
   var column = document.getElementById('ja_edit_attribute_code').value;
   var type = document.getElementById('ja_edit_attribute_type').value;
+  var id = document.getElementById('ja_edit_id').value;
   
 
   $.post("base/action/action_alter_column.php", {
@@ -217,6 +218,8 @@ function release_attribute(){
                     'Okay',
                     );
                 document.getElementById('release_attribute_bt').hidden = true;
+                document.getElementById('ja_edit_id').value = 1 ;
+                update_value_attribute(id, 'ja_edit_release_attribute' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id');
                     
                 
               }else{
