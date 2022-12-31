@@ -173,10 +173,18 @@ echo'<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 </ul>';
 
 echo '<div class="tab-content" id="pills-tabContent">
-<div class="tab-pane fade show active" id="pills-waiting_buyer" role="tabpanel" aria-labelledby="pills-waiting_buyer-tab" tabindex="0">'.listing_ticket_card( $result_after_fetch,'Waiting Buyer').'</div>
-<div class="tab-pane fade" id="pills-execution" role="tabpanel" aria-labelledby="pills-execution-tab" tabindex="0">'.listing_ticket_card( $result_after_fetch,'Waiting Execution').'</div>
-<div class="tab-pane fade" id="pills-cto" role="tabpanel" aria-labelledby="pills-cto-tab" tabindex="0">'.listing_ticket_card( $result_after_fetch,'Waiting CTO').'</div>
-</div>';
+<div class="tab-pane fade show active" id="pills-waiting_buyer" role="tabpanel" aria-labelledby="pills-waiting_buyer-tab" tabindex="0">';
+listing_ticket_card( $result_after_fetch,'Waiting Buyer');
+echo '</div>';
+
+echo '<div class="tab-pane fade" id="pills-execution" role="tabpanel" aria-labelledby="pills-execution-tab" tabindex="0">';
+listing_ticket_card( $result_after_fetch,'Waiting Execution');
+echo '</div>';
+
+echo '<div class="tab-pane fade" id="pills-cto" role="tabpanel" aria-labelledby="pills-cto-tab" tabindex="0">';
+listing_ticket_card( $result_after_fetch,'Waiting CTO');
+echo '</div>';
+echo '</div>';
 
 echo '</div>';
 
