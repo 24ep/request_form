@@ -35,7 +35,7 @@ function listing_ticket_card($result_after_fetch ,$status){
 
     if(strtolower($row['status'])==strtolower($status)){
       ?>
-      <li class="row shadow-sm rounded mb-3 p-4 pt-3 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
+      <li class="row shadow-sm rounded mb-4 p-4 pt-3 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
       onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
       data-card="#detail_cr" data-bucket="<?php echo $row['prefix'];?>" data-cr-status="<?php echo $row['status'];?>"
       data-cr-request-for="<?php echo $row['ticket_type'];?>" data-cr-id="<?php echo $row['id'];?>"
