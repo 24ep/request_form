@@ -252,7 +252,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     <!-- <img id="logo_tems" class="logo_tems" src="base/image/tms_logo_va.svg" alt="" width="auto"
                         height="30">-->
 
-                    <img id="logo_tems_minimize" class="logo_tems_minimize hide" src="base/image/sg_logo_minimize.svg"
+                    <img id="logo_tems_minimize" class="logo_tems_minimize hide" src="base/image/sg_logo_minimize.png"
                         alt="" width="auto" height="30">
 
                     <h5 id="logo_tems" class="logo_tems fw-bold m-0" style="position: absolute;">ServiceGate</h5>
