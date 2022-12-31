@@ -1,7 +1,7 @@
 
 body {
-    background-color: #f8f9fa;
-/*   
+    background-color: #F3F3F2;
+/*
     font-family: 'Mulish', sans-serif;
     font-family: 'Quicksand', sans-serif; */
     font-family: 'Prompt', sans-serif;
@@ -46,7 +46,7 @@ ion-icon{
 }
 .name_manu_bra{
     margin:0px 20px;
-    
+
 }
 .dept_manu_bra{
     margin:0px 0px 10px 20px;
@@ -227,7 +227,7 @@ label#label_file_cme {
 .start-100 {
     left: 100%!important;
 }
-  
+
 .icon-mg{
     margin-right: 10px!important;
     margin-bottom: 5px!important;
@@ -326,7 +326,7 @@ label#label_file_cme {
 /* .cr_detail_with_attachment{
    color:gray;
     border-bottom: solid 5px #adadad;
-    padding: 0px 10px; 
+    padding: 0px 10px;
 } */
 .cr_hr_detail{
     margin-bottom:5px;
@@ -410,22 +410,22 @@ label#label_file_cme {
 } */
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #d8d8d8;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(218, 112, 112); 
+  background: rgb(155 155 155);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(124, 27, 27); 
+  background: rgb(124, 27, 27);
 }
 
 .npd-card-bording-priority-urgent{
@@ -481,8 +481,8 @@ label#label_file_cme {
 
 .logo_tems, .logo_tems_minimize {
 
-  color: #86578a;
-  background-image: -webkit-linear-gradient(0deg, #86578a 0%,#681287 33%,#03a9f4 67%);
+  color: #ed0808;
+  background-image: -webkit-linear-gradient(0deg, #ff8181 0%,#ed0808 33%,#b98985 67%);
   background-clip: text;
   -webkit-background-clip: text;
   text-fill-color: transparent;

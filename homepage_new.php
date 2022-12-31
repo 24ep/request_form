@@ -20,7 +20,7 @@ function bg_dept($department){
     return $bg;
 }
 
-if (!$_SESSION["login_csg"]){ 
+if (!$_SESSION["login_csg"]){
             Header("Location: login");
     }else{
         if($_SESSION['verify_code']=="verified"){
@@ -67,7 +67,7 @@ if (!$_SESSION["login_csg"]){
     <meta name="googlebot" content="noindex">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TMS | Task Management System</title>
+    <title>SG | Service gate</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" /> -->
@@ -161,16 +161,16 @@ if (!$_SESSION["login_csg"]){
     <!-- preferance -->
 
     <?php
-   
+
 function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
     $con_cr= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con_cr));
     mysqli_query($con_cr, "SET NAMES 'utf8' ");
     $query_cr = "SELECT * FROM ".$db.".".$table." where ".$primary_key_id." = '".$crid."' ORDER BY id DESC" or die("Error:" . mysqli_error($con_cr));
     $result_cr = mysqli_query($con_cr, $query_cr);
     while($row_cr = mysqli_fetch_array($result_cr)) {
-       
+
                 $current_cr = $row_cr[$col_re];
-  
+
     }
     mysqli_close($con_cr);
     return $current_cr;
@@ -254,14 +254,14 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     <img id="logo_tems_minimize" class="logo_tems_minimize hide" src="base/image/tms_logo_minimize.svg"
                         alt="" width="auto" height="30"> -->
 
-                    <h5 id="logo_tems" class="logo_tems fw-bold m-0" style="position: absolute;">Task Management</h5>
-                    <h5 id="logo_tems_minimize" class="fw-bold logo_tems_minimize hide" >TMS</h5>
+                    <h5 id="logo_tems" class="logo_tems fw-bold m-0" style="position: absolute;">ServiceGate</h5>
+                    <h5 id="logo_tems_minimize" class="fw-bold logo_tems_minimize hide" >SG</h5>
                     <!-- <h3 id="apps_name" style="font-weight: lighter;color: firebrick;"> -->
                     <!-- <ion-icon name="layers" style="font-size: 40px;margin: 0px;color:#f85d60"></ion-icon> -->
                     <!-- TEMS -->
                     <br><small id="apps_name" style="font-size: small;
                         font-weight: 100;
-                        color: gray;">System
+                        color: gray;">Task management system
                     </small>
                     <!-- </h3> -->
 
@@ -321,7 +321,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                         </a>
                     </li> -->
 
-                    <!-- 
+                    <!--
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_job_on_hand" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('job_on_hand');">
@@ -407,9 +407,9 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                 $query = "SELECT  * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."'" or die("Error:" . mysqli_error($con));
                 $result = mysqli_query($con, $query);
                 while($row = mysqli_fetch_array($result)) {
-                    $query_column = "SELECT `COLUMN_NAME` 
-                    FROM `INFORMATION_SCHEMA`.`COLUMNS` 
-                    WHERE `TABLE_SCHEMA`='".$database."' 
+                    $query_column = "SELECT `COLUMN_NAME`
+                    FROM `INFORMATION_SCHEMA`.`COLUMNS`
+                    WHERE `TABLE_SCHEMA`='".$database."'
                         AND `TABLE_NAME`='".$table."'" or die("Error:" . mysqli_error($con));
                     $result_column = mysqli_query($con, $query_column);
                     while($row_column = mysqli_fetch_array($result_column)) {
@@ -845,7 +845,7 @@ function search() {
         });
     }
 }
-// // ===== Scroll to Top ==== 
+// // ===== Scroll to Top ====
 // $(window).scroll(function() {
 //     if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
 //         $('#return-to-top').fadeIn(200);    // Fade in the arrow
