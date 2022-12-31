@@ -72,7 +72,7 @@ if (!$_SESSION["login_csg"]){
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" /> -->
     <link rel="icon" type="image/ocp"
-        href="https://content-service-gate.cdse-commercecontent.com/base/image/tem_logo.ico" />
+        href="https://content-service-gate.cdse-commercecontent.com/base/image/sg_logo_minimize.ico" />
     <!-- textarray -->
     <script src="https://cdn.tiny.cloud/1/cis8560ji58crrbq17zb11gp39qhpn2lka54u0m54s8du1gw/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
