@@ -211,13 +211,13 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
         Subscribe Push Messaging
 </button> -->
       <!-- nav here -->
-      <nav class="navbar sticky-top navbar-danger bg-danger" style="place-content: center;">
+      <!-- <nav class="navbar sticky-top navbar-danger bg-danger" style="place-content: center;"> -->
                 <!-- <marquee> -->
-                    <span class="navbar-text" style="color:white;font-size: 16px;">
+                    <!-- <span class="navbar-text" style="color:white;font-size: 16px;">
                             เปิดรับ Ticket สร้างสินค้าใหม่ขึ้นบนเว็บไซต์ จนถึง<strong>วันพุธที่ 14 ธันวาคม 2565</strong> หากเปิด Ticket มาหลังวันที่ดังกล่าว จะเริ่มดำเนินการในวันที่ 3 มกราคม 2566 เป็นต้นไป
-                    </span>
+                    </span> -->
                 <!-- </marquee> -->
-                </nav>
+                <!-- </nav> -->
 
         <!-- nav here -->
 
@@ -919,10 +919,10 @@ if {
 }
 
 ?>
-<script>
+<!-- <script>
 Notiflix.Report.warning(
 'แจ้งปิดรับงาน',
 'เปิดรับ Ticket สร้างสินค้าใหม่ขึ้นบนเว็บไซต์ จนถึง<strong>วันพุธที่ 14 ธันวาคม 2565</strong>  <br/><br/> หากเปิด Ticket มาหลังวันที่ดังกล่าว จะเริ่มดำเนินการในวันที่ 3 มกราคม 2566 เป็นต้นไป',
 'รับทราบ',
 );
-</script>
+</script> -->
