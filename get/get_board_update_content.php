@@ -161,13 +161,13 @@ echo' <div class="col ts-board-col-left" id="col_waiting"  >
 $result = mysqli_query($con, $query);
 $result_after_fetch =$result;
 echo'<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-<li class="nav-item" role="presentation">
+<li class="nav-item" role="presentation" style="width: fit-content;">
   <button class="nav-link active" id="pills-waiting_buyer-tab" data-bs-toggle="pill" data-bs-target="#pills-waiting_buyer" type="button" role="tab" aria-controls="pills-waiting_buyer" aria-selected="true">Buyer</button>
 </li>
-<li class="nav-item" role="presentation">
+<li class="nav-item" role="presentation" style="width: fit-content;">
   <button class="nav-link" id="pills-execution-tab" data-bs-toggle="pill" data-bs-target="#pills-execution" type="button" role="tab" aria-controls="pills-execution" aria-selected="false">Execution</button>
 </li>
-<li class="nav-item" role="presentation">
+<li class="nav-item" role="presentation" style="width: fit-content;">
   <button class="nav-link" id="pills-cto-tab" data-bs-toggle="pill" data-bs-target="#pills-cto" type="button" role="tab" aria-controls="pills-cto" aria-selected="false">CTO</button>
 </li>
 </ul>';
