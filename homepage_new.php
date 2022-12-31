@@ -423,7 +423,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     <img
                         src="https://ui-avatars.com/api/?name=<?php echo $ac_firstname.'+'.$ac_lastname; ?>&background=<?php echo bg_dept($ac_department); ?>&color=fff&rounded=true&size=30">
                     <a class="navbar-brand ms-1" style="" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
-                    <small href="#"><?php echo $ac_department; ?> </small> | <?php echo $ac_role; ?>
+                    <small href="#"><?php echo $ac_department; ?> | <?php echo $ac_role; ?></small>
                     <ion-icon type="button" class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal"
                         data-bs-target="#exampleModal" onclick="call_model_edit_account('<?php echo $ac_username; ?>')"
                         name="open-outline">
