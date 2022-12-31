@@ -250,12 +250,13 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                 <input type="hidden" id="active_sub_manu" name="active_sub_manu" value="hide">
                 <a class="navbar-brand" href="#">
                     <!-- <img id="logo_tems" class="logo_tems" src="base/image/tms_logo_va.svg" alt="" width="auto"
-                        height="30">
-                    <img id="logo_tems_minimize" class="logo_tems_minimize hide" src="base/image/tms_logo_minimize.svg"
-                        alt="" width="auto" height="30"> -->
+                        height="30">-->
+
+                    <img id="logo_tems_minimize" class="logo_tems_minimize hide" src="base/image/sg_logo_minimize.svg"
+                        alt="" width="auto" height="30">
 
                     <h5 id="logo_tems" class="logo_tems fw-bold m-0" style="position: absolute;">ServiceGate</h5>
-                    <h5 id="logo_tems_minimize" class="fw-bold logo_tems_minimize hide" >SG</h5>
+                    <!-- <h5 id="logo_tems_minimize" class="fw-bold logo_tems_minimize hide" >SG</h5> -->
                     <!-- <h3 id="apps_name" style="font-weight: lighter;color: firebrick;"> -->
                     <!-- <ion-icon name="layers" style="font-size: 40px;margin: 0px;color:#f85d60"></ion-icon> -->
                     <!-- TEMS -->
