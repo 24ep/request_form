@@ -157,7 +157,7 @@ while($row_status = mysqli_fetch_array($result_status)) {
 }
 //getting status=waiting
 echo' <div class="col ts-board-col-left" id="col_waiting"  >
-<small class="row m-3" style="font-weight: 900;">Waiting</small>';
+<h6 class="row m-3" style="font-weight: 900;">Waiting</h6>';
 
 echo'<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 <li class="nav-item" role="presentation" style="width: fit-content;">
