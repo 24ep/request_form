@@ -445,6 +445,7 @@ function shipping_methods(){
       }
     }
     function look_up_label($excel_value,$return_col,$linesheet_code){
+      echo '<script>console.log("lookup_label_function_'.,$linesheet_code.'")</script>';
       global $con;
       $query_att_trans = "SELECT * FROM pim_attr_convert_option_lu where review_status = 'Approved' and linesheet_code = '".$linesheet_code."'" or die("Error:" . mysqli_error($con));
       $result_att_trans = mysqli_query($con, $query_att_trans);
