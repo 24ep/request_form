@@ -135,7 +135,7 @@ if($_POST["record_linesheet"]=="Yes"){
     //- Create template export file
     $export_workbook = new Spreadsheet();
     $export_workbook->getActiveSheet()->setTitle('Template');
-    $query_att_trans = "SELECT * FROM pim_attr_convert_option_lu " or die("Error:" . mysqli_error($con));
+    $query_att_trans = "SELECT * FROM pim_attr_convert_option_lu where review_status == 'Approved'  " or die("Error:" . mysqli_error($con));
     $result_att_trans = mysqli_query($con, $query_att_trans);
     $query = "SELECT * FROM pim_attribute_convert_im_form where is_create_first = 'Yes'" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
