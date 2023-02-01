@@ -13,8 +13,8 @@
 
 
 <?php
- session_start();
- include_once("../get/get_default_profile_image.php");
+session_start();
+include_once("../get/get_default_profile_image.php");
 function get_page_account(){
 
  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
@@ -47,7 +47,7 @@ function get_page_account(){
 ?>
 <?php
 
- $table =  '<table class="table" id="st_account_tb"  name="st_account_tb" >
+ $table =  '<table class="table" id="st_account_tb" name="st_account_tb" >
 <thead>
     <tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
       <th style="text-align-last: center;" scope="col">ID</th>
