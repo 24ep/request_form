@@ -31,7 +31,7 @@ $result = mysqli_query($con, $query);
   echo '<ul class="list-group list-group-flush">';
     while($row = mysqli_fetch_array($result)) {
         echo '
-        <li class="list-group-item p-2 bg-secondary bg-gradient text-white rounded shadow-sm mb-1"> 
+        <li class="list-group-item p-2 bg-secondary bg-gradient text-white rounded shadow-sm mb-1">
             <ion-icon name="document-outline"></ion-icon>
             <span>'.$row['file_name'].'</span>
             <span class="badge rounded-pill bg-primary">'.$row['file_group'].'</span>
@@ -45,3 +45,6 @@ $result = mysqli_query($con, $query);
     }
   echo '</ul>';
 ?>
+
+
+<!--  -->

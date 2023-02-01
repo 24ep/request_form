@@ -20,7 +20,7 @@ function get_page_account(){
  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
  $query_account = "SELECT * FROM all_in_one_project.account" or die("Error:" . mysqli_error($con));
  $result_account = mysqli_query($con, $query_account);
- 
+
  while($row_account = mysqli_fetch_array($result_account)) {
   unset($image_profile);
   // $image_profile = profile_image($row_account['firstname'],$row_account['department'],32,$row_account['case_officer'],1);
@@ -48,7 +48,7 @@ function get_page_account(){
 
 ?>
 <?php
- 
+
  $table =  '<table class="table" id="st_account_tb"  name="st_account_tb" >
 <thead>
     <tr style="text-align-last: center;border: solid #dee2e6 1px;background-color: transparent;">
@@ -75,6 +75,7 @@ $detail = get_page_account();
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <button class="nav-link active" id="nav-account-tab" data-bs-toggle="tab" data-bs-target="#nav-account" type="button" role="tab" aria-controls="nav-account" aria-selected="true">Accounts</button>
     <button class="nav-link" id="nav-attribute-tab" data-bs-toggle="tab" data-bs-target="#nav-attribute" type="button" role="tab" aria-controls="nav-attribute" aria-selected="false">Attribute</button>
+    <button class="nav-link" id="nav-attribute-tab" data-bs-toggle="tab" data-bs-target="#nav-attribute" type="button" role="tab" aria-controls="nav-attribute" aria-selected="false">L/ine</button>
   </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
@@ -82,11 +83,11 @@ $detail = get_page_account();
   <div class="container-fluid">
     <a class="navbar-brand">Account</a>
     <div class="d-flex">
-      
+
       <button class="btn btn-outline-success disabled">Create new account</button>
     </div>
   </div>
-</nav>  
+</nav>
   <?php echo $detail; ?></div>
   <div class="tab-pane fade" style="overflow: auto;" id="nav-attribute" role="tabpanel" aria-labelledby="nav-attribute-tab" tabindex="0">
     <?php include('attribute_config.php'); ?>
