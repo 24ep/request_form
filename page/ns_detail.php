@@ -5,9 +5,9 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
     $query_cr = "SELECT * FROM ".$db.".".$table." where ".$primary_key_id." = '".$crid."' ORDER BY id DESC" or die("Error:" . mysqli_error($con_cr));
     $result_cr = mysqli_query($con_cr, $query_cr);
     while($row_cr = mysqli_fetch_array($result_cr)) {
-       
+
                 $current_cr = $row_cr[$col_re];
-  
+
     }
     mysqli_close($con_cr);
     return $current_cr;
@@ -324,7 +324,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
             <hr>
             <?php }?>
             <?php //if($config_type=='task'){?>
-            <?php 
+            <?php
                                     if($status=='checking'){
                                         $badge_progres_0 = 'btn-success';
                                         $badge_progres_1 = 'btn-success';
@@ -339,6 +339,12 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                                         $badge_progres_3 = 'btn-secondary';
                                         $progress_per = '60';
                                     }elseif($status=='on-productions' and $approved_date <>''){
+                                        $badge_progres_0 = 'btn-success';
+                                        $badge_progres_1 = 'btn-success';
+                                        $badge_progres_2 = 'btn-success';
+                                        $badge_progres_3 = 'btn-success';
+                                        $progress_per = '100';
+                                    }elseif($status=='approved' and $approved_date <>''){
                                         $badge_progres_0 = 'btn-success';
                                         $badge_progres_1 = 'btn-success';
                                         $badge_progres_2 = 'btn-success';
@@ -704,7 +710,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                 },
                 <?php if($brand_editor<>"")
                 {
-                    echo ' data: '.$brand_editor; 
+                    echo ' data: '.$brand_editor;
                 }?>
             });
             </script>
@@ -1141,7 +1147,7 @@ if($status == 'on-productions' and $approved_date <> null){
             );</script>";
     }
 ?>
-<!-- 
+<!--
 var url = new URL("http://foo.bar/?x=1&y=2");
 // If your expected result is "http://foo.bar/?x=1&y=2&x=42"
 url.searchParams.append('x', 42);
