@@ -100,7 +100,7 @@
                   }
               if($start_checking_date == null){
                 $status_change_to = "checking";
-                $bt_checking = '<button 
+                $bt_checking = '<button
                   onclick="
                   update_value_attribute('.$id.', &#39;cs_edit_start_checking_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                   update_value_attribute('.$id.', &#39;cs_edit_follow_up_by&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
@@ -109,7 +109,7 @@
                   class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Checking</button>';
               }else{
                 $status_change_to = "on-productions";
-                $bt_checking = '<button 
+                $bt_checking = '<button
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_accepted_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_status&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
@@ -118,7 +118,7 @@
                 class="btn btn-sm btn-outline-success shadow-sm bg-gradient rounded">Accept</button>';
               }
               if($recive_item_date == null){
-                $bt_recive_item = '<button 
+                $bt_recive_item = '<button
                   onclick="
                   update_value_attribute('.$id.', &#39;cs_edit_recive_item_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                   update_value_attribute('.$id.', &#39;cs_edit_product_check_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
@@ -127,7 +127,7 @@
                   class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Recived</button>';
               }
               if($content_start_date == null){
-                $bt_content = '<button 
+                $bt_content = '<button
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_content_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_content_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
@@ -138,35 +138,35 @@
                 <button   data-bs-toggle="modal" data-bs-target="#exampleModal" style="right: 110px;position: absolute;"
                 onclick="convert_to_akeneo_template('.$jc_id.',&#39;'.$job_number.'&#39;,&#39;'.$launch_date.'&#39;,&#39;'.$content_assign_name.'&#39;)"
                 class="btn btn-sm btn-outline-dark shadow-sm bg-gradient rounded">Convert to PIM template</button>
-                <button 
+                <button
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_content_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
                 class="btn btn-sm btn-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($shoots_start_date == null){
-                $bt_shoots = '<button 
+                $bt_shoots = '<button
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_shoots_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_shoots_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded"'.$bt_disabled_jc.'>'.$text_start_jc.'</button>';
               }else{
-                $bt_shoots= '<button 
+                $bt_shoots= '<button
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_shoots_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
                 class="btn btn-sm btn-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($retouch_start_date == null){
-                $bt_retouch = '<button 
+                $bt_retouch = '<button
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_retouch_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_retouch_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>'.$text_start_jc.'</button>';
               }else{
-                $bt_retouch = '<button 
+                $bt_retouch = '<button
                 onclick="
                 update_value_attribute('.$id.', &#39;cs_edit_retouch_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 "
@@ -182,8 +182,9 @@
               }
               if($approved_date == null){
                 $bt_approve = '
-                <button 
+                <button
                 onclick="
+                align_stage_status(&#39;approved&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_approved_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_approved_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_status&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
@@ -337,5 +338,10 @@ function form_reject(id) {
             $('#model_lg').html(data);
             Notiflix.Loading.remove();
         });
+}
+
+function align_stage_status(status){
+    document.getElementById('cs_edit_status').value = status;
+
 }
 </script>

@@ -70,7 +70,7 @@ $detail = get_page_account();
 ?>
 
 <nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <div class="nav nav-tabs shadow-sm bg-white" id="nav-tab" role="tablist">
     <button class="nav-link active" id="nav-account-tab" data-bs-toggle="tab" data-bs-target="#nav-account" type="button" role="tab" aria-controls="nav-account" aria-selected="true">Accounts</button>
     <button class="nav-link" id="nav-attribute-tab" data-bs-toggle="tab" data-bs-target="#nav-attribute" type="button" role="tab" aria-controls="nav-attribute" aria-selected="false">Attribute</button>
     <button class="nav-link" id="nav-app_version_control-tab" data-bs-toggle="tab" data-bs-target="#nav-app_version_control" type="button" role="tab" aria-controls="nav-app_version_control" aria-selected="false">App version control</button>
