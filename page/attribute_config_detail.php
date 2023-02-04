@@ -36,8 +36,8 @@ echo '<div class="container-md p-4">';
 echo '
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-    <li class="breadcrumb-item">Configurable</li>
-    <li class="breadcrumb-item">Attribute</li>
+    <li class="breadcrumb-item"><a onclick="get_page(&#39;configurable&#39;)">Configurable</a></li>
+    <li class="breadcrumb-item"><a onclick="get_attribute_config(&#39;'.$table_name.'&#39;)">'.$table_name.'</a></li>
     <li class="breadcrumb-item active" aria-current="page">'.$attribute_code.'</li>
     </ol>
 </nav>
@@ -65,9 +65,9 @@ echo '
     </div>';
     if($release_attribute<>'1' ){
     ?>
-    <button 
+    <button
             type="button"
-            class="btn btn-success btn-sm" 
+            class="btn btn-success btn-sm"
             id="release_attribute_bt"
             onclick="release_attribute()"
     >
@@ -83,9 +83,9 @@ echo '
   <div id="attirbute_option_list"> </div>
   ';
     ?>
-    <button 
+    <button
             type="button"
-            class="btn btn-dark btn-sm" 
+            class="btn btn-dark btn-sm"
             onclick="add_new_option('u749625779_cdscontent','job_attribute_option')"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
@@ -194,7 +194,7 @@ function delete_option(db,table,id,primary_key_id) {
         function cancelCb() {
           //nothing
         },
-  );  
+  );
 }
 function release_attribute(){
   var table = document.getElementById('ja_edit_table_name').value;

@@ -92,15 +92,3 @@ for ($i=0; $i < $length_configurable_session_map; $i++) {
 ?>
 
 
-
-<script>
-function get_attribute_config(table) {
-    Notiflix.Loading.hourglass('Loading...');
-    $.post("base/page/attribute_config.php", {
-        table:table
-    }, function(data) {
-        $('#col_detail').html(data);
-        Notiflix.Loading.remove();
-    });
-}
-</script>

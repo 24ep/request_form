@@ -484,6 +484,15 @@ function get_page(page) {
         Notiflix.Loading.remove();
     });
 }
+function get_attribute_config(table) {
+    Notiflix.Loading.hourglass('Loading...');
+    $.post("base/page/attribute_config.php", {
+        table:table
+    }, function(data) {
+        $('#col_detail').html(data);
+        Notiflix.Loading.remove();
+    });
+}
 //check for page param then goto the page
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
