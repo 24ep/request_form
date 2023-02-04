@@ -530,7 +530,7 @@ select:disabled {
     border:#ff9a59 solid 1px;
     width: 100%
 }
-.status-on-productions{
+.status-approved{
     background: transparent;
     color:#7befb2;
     border:#7befb2 solid 1px;
