@@ -69,14 +69,14 @@ $configurable_map = array (
 $length_configurable_session_map = count($configurable_session_map);
 $length_configurable_map = count($configurable_map);
 for ($i=0; $i < $length_configurable_session_map; $i++) {
-    echo '<hr><h4>'.$configurable_session_map[$i].'</h4>
+    echo '<h5 class="bg-gradient header_configurable bg-secondary shadow-sm bg-opacity-50"">'.$configurable_session_map[$i].'</h5>
     <div class="row row-cols-1 row-cols-md-3 g-4 m-3">';
     for ($j=0; $j  < $length_configurable_map; $j++) {
         if($configurable_session_map[$i]==$configurable_map[$j]['session']){
             echo '
             <div class="col" onclick="'.$configurable_map[$j]['function'].'(&#39;'.$configurable_map[$j]['table'].'&#39;)">
-                <div class="card p-3">
-                    <ion-icon name="'.$configurable_map[$j]['icon'].'" style="font-size: 50px;color: #ababab;"></ion-icon>
+                <div class="card p-3 shadow-sm border-0">
+                    <ion-icon name="'.$configurable_map[$j]['icon'].'" style="font-size: 50px;color: #ababab;margin:0px 15px;"></ion-icon>
                     <div class="card-body">
                         <h5 class="card-title">'.$configurable_map[$j]['title'].'</h5>
                         <p class="card-text">'.$configurable_map[$j]['description'].'</p>

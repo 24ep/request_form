@@ -584,3 +584,8 @@ select:disabled {
     background-color: #ff0000;
     color: white;
 }
+.header_configurable{
+    font-weight: bold;
+    padding: 20px 30px;
+    color: white;
+}
