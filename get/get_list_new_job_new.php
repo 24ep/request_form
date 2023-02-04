@@ -111,19 +111,8 @@ if(isset($_POST["from_post"] )){
   // echo '<script>console.log("'.htmlspecialchars(stripslashes(str_replace(array("\r", "\n"), '', var_export($query, true)))).'")</script>';
   while($row = mysqli_fetch_array($result)) {
     $ticket_role = role_user($row["request_username"],$row["follow_up_by"]);
-    if($row['status']=="on-productions" and $row['trigger_status'] <> "on-productions"){
-      $status=badge_status("on-productions");
-    }elseif($row['status']=="on-productions" and $row['trigger_status'] == "on-productions"){
-      $status=badge_status("on-productions");
-    }else{
-      $status =badge_status($row['status']);
-    }
-    //important badge
-    if($row['request_important']=="Urgent"){
-      $ri_style = '<span class="badge rounded bg-danger" style="margin-left:5px">'.$row['request_important'].'</span>';
-    }else{
-      $ri_style = '<span class="badge rounded bg-secondary" style="margin-left:5px">'.$row['request_important'].'</span>';
-    }
+
+
     //launch date
     if($row['launch_date']<>""){
       $launch_date = date('d/m/y',strtotime($row['launch_date']));
@@ -182,7 +171,7 @@ if(isset($_POST["from_post"] )){
       $subtask_sum = $row["sku"];
     }
 
-    if(strpos($task_status,"on-productions")!==false or strpos($task_status,"Cancel")!==false ){
+    if(strpos($task_status,"approved")!==false or strpos($task_status,"Cancel")!==false ){
       $p_badge = "";
     }
       if(!isset($ticket)){$ticket="";}
@@ -192,10 +181,8 @@ if(isset($_POST["from_post"] )){
       $ticket .= "<div class='col'>".$row["department"]."</div>";
       $ticket .= "<div class='col'>".$row["brand"]."</div>";
       $ticket .= "<div class='col'>".$subtask_sum."</div>";
-      // $ticket .= "<td>".$ri_style ."</td>";
       $ticket .= "<div class='col'>".$row["production_type"]."</div>";
       $ticket .= "<div class='col'>".$row["project_type"]."</div>";
-      // $ticket .= "<td>".$row["business_type"]."</td>";
       $ticket .= "<div class='col'>".$launch_date."</div>";
       $ticket .= "<div class='col'>".$p_badge."</div>";
       $ticket .= "<div class='col'>".$task_status ."</div>";
