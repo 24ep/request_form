@@ -24,19 +24,19 @@ $table = $_POST['table'];
 
 function badge_attribute_type($type){
   if($type=='text'){
-    return '<span class="modern-badge-green">Free Text</span>'
+    return '<span class="modern-badge-green">Free Text</span>';
   }elseif($type=='number'){
-    return '<span class="modern-badge-green">Number only</span>'
+    return '<span class="modern-badge-green">Number only</span>';
   }elseif($type=='datetime'){
-    return '<span class="modern-badge-blue">DateTime</span>'
+    return '<span class="modern-badge-blue">DateTime</span>';
   }elseif($type=='date'){
-    return '<span class="modern-badge-blue">Date</span>'
+    return '<span class="modern-badge-blue">Date</span>';
   }elseif($type=='single_select'){
-    return '<span class="modern-badge-purple">Simple Select</span>'
+    return '<span class="modern-badge-purple">Simple Select</span>';
   }elseif($type=='multiselect'){
-    return '<span class="modern-badge-purple">Multiple Select</span>'
+    return '<span class="modern-badge-purple">Multiple Select</span>';
   }elseif($type=='textarea'){
-    return '<span class="modern-badge-green">Text Area</span>'
+    return '<span class="modern-badge-green">Text Area</span>';
   }
 
 }
