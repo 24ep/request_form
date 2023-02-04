@@ -357,7 +357,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     </li> -->
 
                     <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_configulable" data-bs-toggle="pill"
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_configurable" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('configurable');">
                             <ion-icon name="terminal"></ion-icon><span class="main-menu-nav">Configuration</span>
                         </a>
