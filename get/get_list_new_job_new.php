@@ -171,7 +171,7 @@ if(isset($_POST["from_post"] )){
       $subtask_sum = $row["sku"];
     }
 
-    if(strpos($task_status,"approved")!==false or strpos($task_status,"Cancel")!==false ){
+    if(strpos($task_status,"on-productions")!==false or strpos($task_status,"Cancel")!==false ){
       $p_badge = "";
     }
       if(!isset($ticket)){$ticket="";}
@@ -181,8 +181,10 @@ if(isset($_POST["from_post"] )){
       $ticket .= "<div class='col'>".$row["department"]."</div>";
       $ticket .= "<div class='col'>".$row["brand"]."</div>";
       $ticket .= "<div class='col'>".$subtask_sum."</div>";
+      // $ticket .= "<td>".$ri_style ."</td>";
       $ticket .= "<div class='col'>".$row["production_type"]."</div>";
       $ticket .= "<div class='col'>".$row["project_type"]."</div>";
+      // $ticket .= "<td>".$row["business_type"]."</td>";
       $ticket .= "<div class='col'>".$launch_date."</div>";
       $ticket .= "<div class='col'>".$p_badge."</div>";
       $ticket .= "<div class='col'>".$task_status ."</div>";
