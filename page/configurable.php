@@ -7,7 +7,7 @@ $configurable_map = array (
         'session'=>'General Settings',
         'icon'=>'people',
         'table'=>'account',
-        'title'=>' accounts',
+        'title'=>'Accounts management',
         'function'=>'get_page',
         'description'=>'Manage any register account in system'),
     array(
@@ -32,7 +32,7 @@ $configurable_map = array (
         'function'=>'get_attribute_config',
         'description'=>'Manage attribute of new product update (CR,DP ticket)'),
     array(
-          'session'=>'Tools Settings',
+          'session'=>'Tools Setting',
           'icon'=>'apps',
           'table'=>'app_version_control',
           'title'=>'LinesheetApp',
