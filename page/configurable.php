@@ -7,7 +7,7 @@ $configurable_map = array (
         'session'=>'General Settings',
         'icon'=>'people',
         'table'=>'account',
-        'title'=>'ServiceGate accounts',
+        'title'=>' accounts',
         'function'=>'get_page',
         'description'=>'Manage any register account in system'),
     array(

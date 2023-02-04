@@ -1,3 +1,20 @@
+<nav class="navbar p-3 pb-0 m-0 bg-secondary bg-opacity-25 text-secondary  m-0">
+  <div class="container-fluid">
+  <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a onclick="get_page('configurable')">Configurable</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Account management</li>
+        </ol>
+    </nav>
+
+    <div class="d-flex">
+      <!-- <button class="btn btn-outline-success" onclick="attribute_detail_page('','','','create')" >Create new attribute</button> -->
+
+    </div>
+  </div>
+</nav>
+<h5 class="p-2 ps-4 pb-4 bg-secondary bg-opacity-25 text-secondary  m-0" style="text-transform: uppercase"><strong>Account management</strong></h5>
+
 
 <?php
 session_start();
@@ -65,3 +82,17 @@ $detail = get_page_account();
   </div>
 
   <?php echo $detail; ?>
+  <script>
+  $(document).ready( function () {
+  $('#st_account_tb').DataTable({
+        lengthMenu: [
+            [10,20, 50, 100, -1],
+            [10, 20,50, 100, 'All'],
+        ],
+    });
+
+} );
+
+
+
+</script>
