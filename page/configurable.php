@@ -40,14 +40,14 @@ $configurable_map = array (
           'description'=>'Manage lineshetAPP'),
     array(
           'session'=>'Tools Setting',
-          'icon'=>'settings',
+          'icon'=>'swap-horizontal',
           'table'=>'convert_mapping',
           'title'=>'Convert Mapping',
           'function'=>'get_page',
           'description'=>'Manage an converting of linesheet to PIM template')
     array(
             'session'=>'Tools Setting',
-            'icon'=>'settings',
+            'icon'=>'cube',
             'table'=>'powerautomate',
             'title'=>'Power Automate',
             'function'=>'get_page',
