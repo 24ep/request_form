@@ -30,7 +30,7 @@ function send_ms_team($id,$topic,$value){
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://prod-25.southeastasia.logic.azure.com:443/workflows/6683912c94e248a0bf848420c48f5268/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=-Us9nlVGaxLV00rS-KIM50SRwmgLbfunjrLMT0t-9FA',
+  CURLOPT_URL => 'https://prod-25.southeastasia.logic.azure.com:443/workflows/6683912c94e248a0bf848420c48f5268/triggers/menual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmenual%2Frun&sv=1.0&sig=-Us9nlVGaxLV00rS-KIM50SRwmgLbfunjrLMT0t-9FA',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,

@@ -183,7 +183,7 @@ a#logo_badge {
     width: auto;
     border-radius: 10px;
 }
-.ns_detail_manubox{
+.ns_detail_menu_box{
     margin-top: 25px;
     border-right: 1px #2b2929;
     border-right-style: double;
@@ -198,7 +198,7 @@ a#logo_badge {
 .ns_detail_jobtable{
     border: 1px solid #262626;
 }
-.nsdetaillist{
+.ns_detail_list{
     padding: 10px;
     background: Black;
 }

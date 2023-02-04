@@ -148,7 +148,7 @@ class Drawing
     /**
      * Create a new image from file. By alexander at alexauto dot nl.
      *
-     * @see http://www.php.net/manual/en/function.imagecreatefromwbmp.php#86214
+     * @see http://www.php.net/menual/en/function.imagecreatefromwbmp.php#86214
      *
      * @param string $p_sFile Path to Windows DIB (BMP) image
      *

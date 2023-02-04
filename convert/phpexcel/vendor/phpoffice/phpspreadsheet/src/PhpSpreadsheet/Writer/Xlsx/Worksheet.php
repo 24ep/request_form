@@ -938,7 +938,7 @@ class Worksheet extends WriterPart
         if (!empty($aRowBreaks)) {
             $objWriter->startElement('rowBreaks');
             $objWriter->writeAttribute('count', count($aRowBreaks));
-            $objWriter->writeAttribute('manualBreakCount', count($aRowBreaks));
+            $objWriter->writeAttribute('menualBreakCount', count($aRowBreaks));
 
             foreach ($aRowBreaks as $cell) {
                 $coords = Coordinate::coordinateFromString($cell);
@@ -956,7 +956,7 @@ class Worksheet extends WriterPart
         if (!empty($aColumnBreaks)) {
             $objWriter->startElement('colBreaks');
             $objWriter->writeAttribute('count', count($aColumnBreaks));
-            $objWriter->writeAttribute('manualBreakCount', count($aColumnBreaks));
+            $objWriter->writeAttribute('menualBreakCount', count($aColumnBreaks));
 
             foreach ($aColumnBreaks as $cell) {
                 $coords = Coordinate::coordinateFromString($cell);

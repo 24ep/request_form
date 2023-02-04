@@ -19,7 +19,7 @@ function send_verify_email($username,$email,$firstname,$lastname){
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://prod-08.southeastasia.logic.azure.com:443/workflows/16760d582d694c7581adcf0277bdc4c5/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=S64_L44V-KM-StYFFY-s_0Ot1Lm2O3A9LLw4U166qG0',
+        CURLOPT_URL => 'https://prod-08.southeastasia.logic.azure.com:443/workflows/16760d582d694c7581adcf0277bdc4c5/triggers/menual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmenual%2Frun&sv=1.0&sig=S64_L44V-KM-StYFFY-s_0Ot1Lm2O3A9LLw4U166qG0',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,

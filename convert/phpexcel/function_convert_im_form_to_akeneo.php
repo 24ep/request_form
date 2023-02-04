@@ -476,7 +476,7 @@ if($_POST["record_linesheet"]=="Yes"){
       if($break_remove_parent<>TRUE){
         for($col_template = $lastColumnIndex_template ; $col_template >1 ; $col_template--){
           $header = $ws_template->getCellByColumnAndRow($col_template, 1)->getValue();
-          if(in_array($header,$col_remove) and !empty($parents) and $header <> "manual_grouping"){
+          if(in_array($header,$col_remove) and !empty($parents) and $header <> "menual_grouping"){
             $export_workbook ->getActiveSheet()->removeColumnByIndex($col_template);
           }
         }
@@ -537,7 +537,7 @@ if($_POST["record_linesheet"]=="Yes"){
     $export_ungroup_workbook->getActiveSheet()->setTitle('ungroup_template');
     $export_ungroup_workbook->getActiveSheet()->setCellValueByColumnAndRow(1,1,"sku");
     $export_ungroup_workbook->getActiveSheet()->setCellValueByColumnAndRow(2,1,"parent");
-    $export_ungroup_workbook->getActiveSheet()->setCellValueByColumnAndRow(3,1,"manual_grouping");
+    $export_ungroup_workbook->getActiveSheet()->setCellValueByColumnAndRow(3,1,"menual_grouping");
     for($row_child_template = 2; $row_child_template  <=  $lastRowImform; $row_child_template++)
     {
       $child_sku_template = $ws_template->getCellByColumnAndRow(1, $row_child_template)->getValue();

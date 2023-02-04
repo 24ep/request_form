@@ -245,7 +245,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 - Detect double-encoded xml in the Security scanner, and reject as suspicious.
 - This change also broadens the scope of the `libxml_disable_entity_loader` setting when reading XML-based formats, so that it is enabled while the xml is being parsed and not simply while it is loaded.
-  On some versions of PHP, this can cause problems because it is not thread-safe, and can affect other PHP scripts running on the same server. This flag is set to true when instantiating a loader, and back to its original setting when the Reader is no longer in scope, or manually unset.
+  On some versions of PHP, this can cause problems because it is not thread-safe, and can affect other PHP scripts running on the same server. This flag is set to true when instantiating a loader, and back to its original setting when the Reader is no longer in scope, or menually unset.
 - Provide a check to identify whether libxml_disable_entity_loader is thread-safe or not.
 
   `XmlScanner::threadSafeLibxmlDisableEntityLoaderAvailability()`

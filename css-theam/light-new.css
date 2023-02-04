@@ -40,20 +40,20 @@ ion-icon{
 /* .nav-link{
     color:black;
 } */
-.hr_manu_bra{
+.hr_menu_bra{
     margin-top:0px;
     color: #919191;
     width: -webkit-fill-available;
 }
-.name_manu_bra{
+.name_menu_bra{
     margin:0px 20px;
 
 }
-.dept_manu_bra{
+.dept_menu_bra{
     margin:0px 0px 10px 20px;
     font-weight: 200;
 }
-.header_manu_bra{
+.header_menu_bra{
     font-weight: 900;
     margin:0px 20px;
     font-size: 12px;
@@ -78,7 +78,7 @@ ion-icon{
 .main_bra.minimize.nav-link.active {
     width: auto;
 }
-.hr_manu_bra_in{
+.hr_menu_bra_in{
     color: #919191;
     margin: 15px 0px;
     width: 100%;
@@ -97,12 +97,12 @@ ion-icon{
     color: #7e7e7e!important;
     border-color: #c1c1c1!important;
 }
-.ns_detail_manubox{
+.ns_detail_menu_box{
     border-right: 1px white;
     border-right-style: double;
     height: auto;padding-top: 20px
 }
-.nsdetaillist{
+.ns_detail_list{
     padding: 10px;
     background: white;
 }
@@ -118,7 +118,7 @@ ion-icon{
     color: #aaaaaa;
     margin-left: 15px;
 }
-.ns_detail_manubox {
+.ns_detail_menu_box {
     background: #efefef;
     border-radius: 10px;
     margin-top: 10px;
@@ -233,10 +233,10 @@ label#label_file_cme {
     margin-right: 10px!important;
     margin-bottom: 5px!important;
   }
-.card-unassin-bt{
+.card-unassign-bt{
     padding-top:3px;padding-right: 0px;padding-left: 10px;
 }
-.card-unassin-eft{
+.card-unassign-eft{
     padding-top:3px;text-align: right;padding-right: 0px;
 }
 .card-col-image-profile{
@@ -375,25 +375,25 @@ label#label_file_cme {
     display: none;
 }
 
-.main-manu-nav.hide {
+.main-menu-nav.hide {
     display: none;
 }
-.header_manu_bra.hide{
+.header_menu_bra.hide{
     display: none;
 }
-.name_manu_bra.hide {
+.name_menu_bra.hide {
     display: none;
 }
-.dept_manu_bra.hide {
+.dept_menu_bra.hide {
     display: none;
 }
-.hr_manu_bra.hide{
+.hr_menu_bra.hide{
     width: -webkit-fill-available;
 }
-.hr_manu_bra_in.hide{
+.hr_menu_bra_in.hide{
     width: 60px;
 }
-.sub_manu.hide{
+.sub_menu.hide{
     display: none;
 }
 #apps_name.hide{
@@ -406,7 +406,7 @@ label#label_file_cme {
 .col-8.col_detail_main.minimize{
     width: 78.5%;
 }
-/* .col-8.sub_manu .minimize{
+/* .col-8.sub_menu .minimize{
     width: 78.5%;
 } */
 /* width */
@@ -429,21 +429,22 @@ label#label_file_cme {
   background: rgb(124, 27, 27);
 }
 
-.npd-card-bording-priority-urgent{
+.npd-card-border-priority-urgent{
     border-left: #dc3545 solid 8px;
 }
-.npd-card-bording-priority-high{
+.npd-card-border-priority-high{
     border-left: #f396bf solid 8px;
 }
-.npd-card-bording-priority-medium{
+.npd-card-border-priority-medium{
     border-left: #f396bf solid 8px;
 }
-.npd-card-bording-priority-low{
+.npd-card-border-priority-low{
     border-left: #ccc solid 8px;
 }
-.npd-card-bording-priority-default{
+.npd-card-border-priority-default{
     border-left: #ccc solid 8px;
 }
+
 .ts-board-col-left{
     border-left: 1px solid #e3e2e2;
 }
@@ -507,4 +508,67 @@ select:disabled {
 
 .form-select.is-invalid, .was-validated .form-select:invalid {
     border-color: #dc3545!important;
+}
+
+/* status */
+.status-pending{
+    background: transparent;
+    color:#5f9ee5;
+    border:#5f9ee5 solid 1px;
+    width: 100%
+}
+
+.status-checking{
+    background: transparent;
+    color:#ffc107;
+    border:#ffc107 solid 1px;
+    width: 100%
+}
+.status-on-productions{
+    background: transparent;
+    color:#ff9a59;
+    border:#ff9a59 solid 1px;
+    width: 100%
+}
+.status-on-productions{
+    background: transparent;
+    color:#7befb2;
+    border:#7befb2 solid 1px;
+    width: 100%
+}
+.status-waiting-confirm{
+    background: transparent;
+    color:#499CF7;
+    border:#499CF7 solid 1px;
+    width: 100%
+}
+.status-waiting-image{
+    background: transparent;
+    color:#FE7A6F;
+    border:#FE7A6F solid 1px;
+    width: 100%
+}
+.status-waiting-data{
+    background: transparent;
+    color:#FE7A6F;
+    border:#FE7A6F solid 1px;
+    width: 100%
+}
+.status-waiting-traffic{
+    background: transparent;
+    color:#ea79f7;
+    border:#ea79f7 solid 1px;
+    width: 100%
+}
+.status-cancel{
+    background: transparent;
+    color:#efefef;
+    border:#efefef solid 1px;
+    width: 100%
+}
+.status-other{
+    background: transparent;
+    color:#a9a9a94f;
+    border:#a9a9a94f solid 1px;
+    width: 100%
 }

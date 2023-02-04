@@ -1401,7 +1401,7 @@ class Chart extends WriterPart
         $objWriter->startElement('c:layout');
 
         if ($layout !== null) {
-            $objWriter->startElement('c:manualLayout');
+            $objWriter->startElement('c:menualLayout');
 
             $layoutTarget = $layout->getLayoutTarget();
             if ($layoutTarget !== null) {

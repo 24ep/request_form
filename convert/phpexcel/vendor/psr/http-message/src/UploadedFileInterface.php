@@ -86,7 +86,7 @@ interface UploadedFileInterface
      * Implementations SHOULD return the value stored in the "error" key of
      * the file in the $_FILES array.
      *
-     * @see http://php.net/manual/en/features.file-upload.errors.php
+     * @see http://php.net/menual/en/features.file-upload.errors.php
      * @return int One of PHP's UPLOAD_ERR_XXX constants.
      */
     public function getError();

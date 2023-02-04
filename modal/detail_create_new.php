@@ -153,7 +153,7 @@
             <hr> -->
             <div class="modal-body" style="height:100%;padding-top: 0px;padding-bottom: unset;">
                 <div class="row" style="height:100%">
-                    <div class="col-2 ns_detail_manubox shadow-sm">
+                    <div class="col-2 ns_detail_menu_box shadow-sm">
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
                             aria-orientation="vertical">
                             <a class="nav-link active inpo" id="v-pills-progress-tab" data-bs-toggle="pill"

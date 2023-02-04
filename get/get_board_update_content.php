@@ -35,7 +35,7 @@ function listing_ticket_card($result_after_fetch ,$status){
 
     if(strtolower($row['status'])==strtolower($status)){
       ?>
-      <li class="row shadow-sm rounded mb-4 p-3 pt-3 bg-white position-relative npd-card-bording-priority-<?php echo strtolower($row['piority']); ?>"
+      <li class="row shadow-sm rounded mb-4 p-3 pt-3 bg-white position-relative npd-card-border-priority-<?php echo strtolower($row['piority']); ?>"
       onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-bs-target="#detail_cr"
       data-card="#detail_cr" data-bucket="<?php echo $row['prefix'];?>" data-cr-status="<?php echo $row['status'];?>"
       data-cr-request-for="<?php echo $row['ticket_type'];?>" data-cr-id="<?php echo $row['id'];?>"
@@ -71,10 +71,10 @@ function listing_ticket_card($result_after_fetch ,$status){
       $ef_badge = "";
       $image_profile = "";
       if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
-        echo '<div class="col card-unassin-bt" >';
+        echo '<div class="col card-unassign-bt" >';
         echo  '<a type="button" class="btn btn-sm btn-outline-secondary" style="border-radius: 15px;">Unassign</a>';
         echo '</div>';
-        echo '<div class="col card-unassin-eft" >';
+        echo '<div class="col card-unassign-eft" >';
         echo  badge_due_date($row["effective_date"]);
         echo '</div>';
       }else{

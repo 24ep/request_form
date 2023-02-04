@@ -2,10 +2,10 @@
     <h5 class="offcanvas-title m-3" id="offcanvasRightLabel">
         <ion-icon name="storefront-outline"></ion-icon> <strong>Quicklink & Tools</strong>
     </h5>
-    <button type="button" class="btn-close p-4" onclick="show_sub_manu('close');"></button>
+    <button type="button" class="btn-close p-4" onclick="show_sub_menu('close');"></button>
 </div>
 <div class="offcanvas-body p-0" style="list-style: none;overflow: hidden;">
-    <small class="header_manu_bra">Central</small>
+    <small class="header_menu_bra">Central</small>
 
     <li><a href="http://cnext.centralgroup.com/" target="_blank" class="dropdown-item dp-link" type="button">
             <ion-icon name="shapes"></ion-icon>Cnext
@@ -29,8 +29,8 @@
     <li><a href="https://centrality.workplace.com/" target="_blank" class="dropdown-item dp-link" type="button">
             <ion-icon name="chatbubbles-outline"></ion-icon>Workchat
         </a></li>
-    <hr class="hr_manu_bra_in">
-    <small class="header_manu_bra">Tools</small>
+    <hr class="hr_menu_bra_in">
+    <small class="header_menu_bra">Tools</small>
     <li><a id="nav_aspose" onclick="get_page('aspose');" class="dropdown-item dp-link" type="button">
     <img class="me-2" src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://products.aspose.app/cells/family/&size=16">Aspose
         </a></li>

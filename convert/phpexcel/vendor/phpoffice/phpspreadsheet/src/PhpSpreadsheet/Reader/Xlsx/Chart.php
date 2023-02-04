@@ -246,10 +246,10 @@ class Chart
 
     private static function chartLayoutDetails($chartDetail, $namespacesChartMeta)
     {
-        if (!isset($chartDetail->manualLayout)) {
+        if (!isset($chartDetail->menualLayout)) {
             return null;
         }
-        $details = $chartDetail->manualLayout->children($namespacesChartMeta['c']);
+        $details = $chartDetail->menualLayout->children($namespacesChartMeta['c']);
         if ($details === null) {
             return null;
         }

@@ -136,7 +136,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                         $ef_badge = "";
                         $image_profile = "";
                         if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
-                            echo '<div class="col card-unassin-bt" >';
+                            echo '<div class="col card-unassign-bt" >';
                             echo  '<a type="button" class="btn btn-sm btn-outline-secondary" style="border-radius: 15px;">Unassign</a>';
                             echo '</div>';
                         }else{

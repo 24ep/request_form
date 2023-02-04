@@ -282,19 +282,19 @@ ion-icon {
     color:#8f8f8f;
     border:#8f8f8f;
 }
-.npd-card-bording-priority-urgent{
+.npd-card-border-priority-urgent{
     border-left: #dc3545 solid 8px;
 }
-.npd-card-bording-priority-high{
+.npd-card-border-priority-high{
     border-left: #f396bf solid 8px;
 }
-.npd-card-bording-priority-medium{
+.npd-card-border-priority-medium{
     border-left: #f396bf solid 8px;
 }
-.npd-card-bording-priority-low{
+.npd-card-border-priority-low{
     border-left: #ccc solid 8px;
 }
-.npd-card-bording-priority-default{
+.npd-card-border-priority-default{
     border-left: #ccc solid 8px;
 }
 .ts-board-col-left{
@@ -338,12 +338,12 @@ table.dataTable.no-footer {
     width: auto;
     border-radius: 10px;
 }
-.ns_detail_manubox{
+.ns_detail_menu_box{
     border-right: 1px white;
     border-right-style: double;
     height: auto;padding-top: 20px
 }
-.nsdetaillist{
+.ns_detail_list{
     padding: 10px;
     background: white;
 }
@@ -400,10 +400,10 @@ table.dataTable.no-footer {
     margin-right: 10px!important;
     margin-bottom: 5px!important;
   }
-.card-unassin-bt{
+.card-unassign-bt{
     padding-top:3px;padding-right: 0px;padding-left: 10px;
 }
-.card-unassin-eft{
+.card-unassign-eft{
     padding-top:3px;text-align: right;padding-right: 0px;
 }
 .card-col-image-profile{
@@ -565,7 +565,7 @@ table.dataTable.no-footer {
     color: #aaaaaa;
     margin-left: 15px;
 }
-.ns_detail_manubox {
+.ns_detail_menu_box {
     background: #efefef;
     border-radius: 10px;
     margin-top: 10px;

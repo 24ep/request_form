@@ -181,12 +181,12 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
 ?>
     <style>
     .nav-link-preferance {
-        color: <?php echo get_value_main($_SESSION['username'], "manu_front_color", "all_in_one_project", "account", "username");
+        color: <?php echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
         ?>;
     }
 
     .nav_list_bra-preferance {
-        background: <?php echo get_value_main($_SESSION['username'], "manu_shade", "all_in_one_project", "account", "username");
+        background: <?php echo get_value_main($_SESSION['username'], "menu_shade", "all_in_one_project", "account", "username");
         ?>;
     }
 
@@ -199,7 +199,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
     }
 
     .nav-pills .nav-link {
-        color: <?php echo get_value_main($_SESSION['username'], "manu_front_color", "all_in_one_project", "account", "username");
+        color: <?php echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
         ?>;
     }
     </style>
@@ -246,8 +246,8 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
             <div class="nav nav-pills nav_list_bra nav_list_bra-preferance border-end" id="v-pills-tab" role="tablist"
                 aria-orientation="vertical">
 
-                <input type="hidden" id="minimize_manu" name="minimize_manu" value="show">
-                <input type="hidden" id="active_sub_manu" name="active_sub_manu" value="hide">
+                <input type="hidden" id="minimize_menu" name="minimize_menu" value="show">
+                <input type="hidden" id="active_sub_menu" name="active_sub_menu" value="hide">
                 <a class="navbar-brand" href="#">
                     <!-- <img id="logo_tems" class="logo_tems" src="base/image/tms_logo_va.svg" alt="" width="auto"
                         height="30">-->
@@ -267,27 +267,27 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     <!-- </h3> -->
 
                 </a>
-                <!-- <hr class="hr_manu_bra">
+                <!-- <hr class="hr_menu_bra">
                 <div class="img-avatar" style="display: inline-flex;">
                     <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=<?php echo bg_dept($_SESSION['department']); ?>&color=fff&rounded=true&size=40"
                         class="ms-3 mb-3">
                     <div style="align-self: center;" class="mb-3">
-                        <span class="name_manu_bra"
+                        <span class="name_menu_bra"
                             style="place-self: center;"><?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']; ?></span><br>
-                        <small class="dept_manu_bra"
+                        <small class="dept_menu_bra"
                             style="place-self: center;"><?php echo $_SESSION['department']; ?></small>
                     </div>
                 </div> -->
-                <hr class="hr_manu_bra">
-                <small class="header_manu_bra">Form create new product</small>
+                <hr class="hr_menu_bra">
+                <small class="header_menu_bra">Form create new product</small>
                 <?php include("get/linesheet_download_alert_bra.php"); ?>
-                <hr class="hr_manu_bra">
-                <small class="header_manu_bra">Manu</small>
+                <hr class="hr_menu_bra">
+                <small class="header_menu_bra">menu</small>
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <a class="nav-link nav-link-preferance" id="nav_activity" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasRightactivity" aria-controls="offcanvasRight"
-                        onclick="get_list_update_job();show_sub_manu('activity');">
-                        <ion-icon name="notifications"></ion-icon><span class="main-manu-nav">Activity</span>
+                        onclick="get_list_update_job();show_sub_menu('activity');">
+                        <ion-icon name="notifications"></ion-icon><span class="main-menu-nav">Activity</span>
                         <div id="get_count_nt_unread">
                             <?php include('get/get_count_nt_unread.php'); ?>
                         </div>
@@ -295,30 +295,30 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance active" data-bs-toggle="pill" type="button"
                             role="tab" aria-selected="false" id="nav_dashboard" onclick="get_page('dashboard');">
-                            <ion-icon name="home"></ion-icon><span class="main-manu-nav">Home</span>
+                            <ion-icon name="home"></ion-icon><span class="main-menu-nav">Home</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_create_new" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('create_new');">
-                            <ion-icon name="rocket"></ion-icon><span class="main-manu-nav">New Products</span>
+                            <ion-icon name="rocket"></ion-icon><span class="main-menu-nav">New Products</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_update_content" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('update_content');">
-                            <ion-icon name="ticket"></ion-icon><span class="main-manu-nav">Update Content</span>
+                            <ion-icon name="ticket"></ion-icon><span class="main-menu-nav">Update Content</span>
                         </a>
                     </li>
                     <?php if(strpos($_SESSION["permission"],'ps_internal')!==false){
                 ?>
-                    <!-- <hr class="hr_manu_bra_in">
-                    <small class="header_manu_bra">Production</small> -->
+                    <!-- <hr class="hr_menu_bra_in">
+                    <small class="header_menu_bra">Production</small> -->
 
                     <!-- <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_job_manage" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('job_manage');">
-                            <ion-icon name="file-tray-stacked"></ion-icon><span class="main-manu-nav">24EP </span>
+                            <ion-icon name="file-tray-stacked"></ion-icon><span class="main-menu-nav">24EP </span>
                         </a>
                     </li> -->
 
@@ -326,68 +326,68 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_job_on_hand" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('job_on_hand');">
-                            <ion-icon name="receipt"></ion-icon><span class="main-manu-nav">Job on hand</span>
+                            <ion-icon name="receipt"></ion-icon><span class="main-menu-nav">Job on hand</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_linesheet" data-bs-toggle="pill" type="button" role="tab"
                             aria-selected="false" onclick="get_page('linesheet');">
-                            <ion-icon name="cloud-upload"></ion-icon><span class="main-manu-nav">Linesheet</span>
+                            <ion-icon name="cloud-upload"></ion-icon><span class="main-menu-nav">Linesheet</span>
                         </a>
                     </li> -->
-                    <hr class="hr_manu_bra_in">
-                    <small class="header_manu_bra">Internals</small>
+                    <hr class="hr_menu_bra_in">
+                    <small class="header_menu_bra">Internals</small>
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_job_on_hand" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('job_on_hand');">
-                            <ion-icon name="grid"></ion-icon><span class="main-manu-nav">Job On Hand</span>
+                            <ion-icon name="grid"></ion-icon><span class="main-menu-nav">Job On Hand</span>
                         </a>
                     </li>
                     <li class="nav-item btn-group dropend" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_product_mantain" type="button"
-                            onclick="show_sub_manu('product_maintain');">
-                            <ion-icon name="storefront"></ion-icon><span class="main-manu-nav">CMS</span>
+                            onclick="show_sub_menu('product_maintain');">
+                            <ion-icon name="storefront"></ion-icon><span class="main-menu-nav">CMS</span>
                         </a>
                     </li>
                     <!-- <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_report" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('report');">
-                            <ion-icon name="bar-chart"></ion-icon><span class="main-manu-nav">Reports</span>
+                            <ion-icon name="bar-chart"></ion-icon><span class="main-menu-nav">Reports</span>
                         </a>
                     </li> -->
 
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_account" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('account');">
-                            <ion-icon name="terminal"></ion-icon><span class="main-manu-nav">Configuration</span>
+                            <ion-icon name="terminal"></ion-icon><span class="main-menu-nav">Configuration</span>
                         </a>
                     </li>
 
                     <li class="nav-item btn-group dropend" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_quicklink" type="button"
-                            onclick="show_sub_manu('quicklink');">
-                            <ion-icon name="globe"></ion-icon><span class="main-manu-nav">Quick-link</span>
+                            onclick="show_sub_menu('quicklink');">
+                            <ion-icon name="globe"></ion-icon><span class="main-menu-nav">Quick-link</span>
                         </a>
                     </li>
                     <?php } ?>
-                    <hr class="hr_manu_bra_in">
-                    <small class="header_manu_bra">Others</small>
+                    <hr class="hr_menu_bra_in">
+                    <small class="header_menu_bra">Others</small>
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_setting" onclick="get_page('setting');"
                             data-bs-toggle="pill" type="button" role="tab" aria-selected="false">
-                            <ion-icon name="settings"></ion-icon><span class="main-manu-nav">Settings</span>
+                            <ion-icon name="settings"></ion-icon><span class="main-menu-nav">Settings</span>
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_logout" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="logout()">
-                            <ion-icon name="log-out"></ion-icon><span class="main-manu-nav">Logout</span>
+                            <ion-icon name="log-out"></ion-icon><span class="main-menu-nav">Logout</span>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="col-2 shadow sub_manu hide p-0 bg-white bg-gradient border-end" id="sub_manu"
+        <div class="col-2 shadow sub_menu hide p-0 bg-white bg-gradient border-end" id="sub_menu"
             style="margin-left: inherit;">
         </div>
         <div class="col-10 col_detail_main" style="font-size: 14px;padding: 0px;margin-left: inherit;">
@@ -559,37 +559,37 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
 document.getElementById("bt_nav_coll_ex").innerHTML =
     '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
 
-function show_sub_manu(sub_manu) {
-    if (sub_manu != 'close') {
-        //get_sub_manu
-        if (sub_manu == 'activity') {
-            $.post("base/get/get_sub_manu_activity.php", {}, function(data) {
-                $('#sub_manu').html(data);
+function show_sub_menu(sub_menu) {
+    if (sub_menu != 'close') {
+        //get_sub_menu
+        if (sub_menu == 'activity') {
+            $.post("base/get/get_sub_menu_activity.php", {}, function(data) {
+                $('#sub_menu').html(data);
             });
-        } else if (sub_manu == 'product_maintain') {
-            $.post("base/get/get_sub_manu_product_maintain.php", {}, function(data) {
-                $('#sub_manu').html(data);
+        } else if (sub_menu == 'product_maintain') {
+            $.post("base/get/get_sub_menu_product_maintain.php", {}, function(data) {
+                $('#sub_menu').html(data);
             });
-        } else if (sub_manu == 'quicklink') {
-            $.post("base/get/get_sub_manu_quicklink.php", {}, function(data) {
-                $('#sub_manu').html(data);
+        } else if (sub_menu == 'quicklink') {
+            $.post("base/get/get_sub_menu_quicklink.php", {}, function(data) {
+                $('#sub_menu').html(data);
             });
         }
         //hideshow
 
-        var sub_manu = document.getElementsByClassName("sub_manu");
+        var sub_menu = document.getElementsByClassName("sub_menu");
         var col_detail_main = document.getElementsByClassName("col_detail_main");
-        for (var i = 0; i < sub_manu.length; i++) {
-            sub_manu[i].className = sub_manu[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        for (var i = 0; i < sub_menu.length; i++) {
+            sub_menu[i].className = sub_menu[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
         for (var i = 0; i < col_detail_main.length; i++) {
             col_detail_main[i].className = col_detail_main[i].className.replace(/(?:^|\s)col-10(?!\S)/g, 'col-8');
         }
     } else {
         var col_detail_main = document.getElementsByClassName("col_detail_main");
-        var sub_manu = document.getElementsByClassName("sub_manu");
-        for (var i = 0; i < sub_manu.length; i++) {
-            sub_manu[i].className += " hide";
+        var sub_menu = document.getElementsByClassName("sub_menu");
+        for (var i = 0; i < sub_menu.length; i++) {
+            sub_menu[i].className += " hide";
         }
         for (var i = 0; i < col_detail_main.length; i++) {
             col_detail_main[i].className = col_detail_main[i].className.replace(/(?:^|\s)col-8(?!\S)/g, 'col-10');
@@ -598,10 +598,10 @@ function show_sub_manu(sub_manu) {
 }
 
 function minimize_nav() {
-    var minimize_manu = document.getElementById('minimize_manu').value;
-    console.log(minimize_manu);
-    if (minimize_manu == 'hide') {
-        document.getElementById('minimize_manu').value = 'show';
+    var minimize_menu = document.getElementById('minimize_menu').value;
+    console.log(minimize_menu);
+    if (minimize_menu == 'hide') {
+        document.getElementById('minimize_menu').value = 'show';
         document.getElementById("bt_nav_coll_ex").innerHTML =
             '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
         var list_bra = document.getElementsByClassName("mini-nav-col");
@@ -617,10 +617,10 @@ function minimize_nav() {
         for (var i = 0; i < img_avatar.length; i++) {
             img_avatar[i].className = img_avatar[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-        var main_manu_nav = document.getElementsByClassName("main-manu-nav");
-        for (var i = 0; i < main_manu_nav.length; i++) {
+        var main_menu_nav = document.getElementsByClassName("main-menu-nav");
+        for (var i = 0; i < main_menu_nav.length; i++) {
             console.log('unhide ' + i);
-            main_manu_nav[i].className = main_manu_nav[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
+            main_menu_nav[i].className = main_menu_nav[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
         var main_bra = document.getElementsByClassName("main_bra nav-link nav-link-preferance minimize");
         for (var i = 0; i < main_bra.length; i++) {
@@ -630,48 +630,48 @@ function minimize_nav() {
         for (var i = 0; i < col_detail_main.length; i++) {
             col_detail_main[i].className = col_detail_main[i].className.replace(/(?:^|\s)minimize(?!\S)/g, '');
         }
-        var header_manu_bra = document.getElementsByClassName("header_manu_bra");
-        for (var i = 0; i < header_manu_bra.length; i++) {
-            header_manu_bra[i].className = header_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        var header_menu_bra = document.getElementsByClassName("header_menu_bra");
+        for (var i = 0; i < header_menu_bra.length; i++) {
+            header_menu_bra[i].className = header_menu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-        var name_manu_bra = document.getElementsByClassName("name_manu_bra");
-        for (var i = 0; i < name_manu_bra.length; i++) {
-            name_manu_bra[i].className = name_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        var name_menu_bra = document.getElementsByClassName("name_menu_bra");
+        for (var i = 0; i < name_menu_bra.length; i++) {
+            name_menu_bra[i].className = name_menu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-        var dept_manu_bra = document.getElementsByClassName("dept_manu_bra");
-        for (var i = 0; i < dept_manu_bra.length; i++) {
-            dept_manu_bra[i].className = dept_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        var dept_menu_bra = document.getElementsByClassName("dept_menu_bra");
+        for (var i = 0; i < dept_menu_bra.length; i++) {
+            dept_menu_bra[i].className = dept_menu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-        var hr_manu_bra = document.getElementsByClassName("hr_manu_bra");
-        for (var i = 0; i < hr_manu_bra.length; i++) {
-            hr_manu_bra[i].className = hr_manu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        var hr_menu_bra = document.getElementsByClassName("hr_menu_bra");
+        for (var i = 0; i < hr_menu_bra.length; i++) {
+            hr_menu_bra[i].className = hr_menu_bra[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
-        var hr_manu_bra_in = document.getElementsByClassName("hr_manu_bra_in");
-        for (var i = 0; i < hr_manu_bra_in.length; i++) {
-            hr_manu_bra_in[i].className = hr_manu_bra_in[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
+        var hr_menu_bra_in = document.getElementsByClassName("hr_menu_bra_in");
+        for (var i = 0; i < hr_menu_bra_in.length; i++) {
+            hr_menu_bra_in[i].className = hr_menu_bra_in[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
         }
     } else {
-        document.getElementById('minimize_manu').value = 'hide';
+        document.getElementById('minimize_menu').value = 'hide';
         document.getElementById("bt_nav_coll_ex").innerHTML =
             '<ion-icon name="chevron-forward-outline" style="margin:0px;color:white"></ion-icon>';
         var list_bra = document.getElementsByClassName("list_bra");
         for (var i = 0; i < list_bra.length; i++) {
             list_bra[i].className += " mini-nav-col";
         }
-        // document.getElementById("main-manu-nav").className += " hide";
+        // document.getElementById("main-menu-nav").className += " hide";
         document.getElementById("apps_name").className += " hide";
         document.getElementById("logo_tems").className += " hide";
         document.getElementById("logo_tems_minimize").className = document.getElementById("logo_tems").className
             .replace(
                 /(?:^|\s)hide(?!\S)/g, '');
-        var main_manu_nav = document.getElementsByClassName("main-manu-nav");
-        for (var i = 0; i < main_manu_nav.length; i++) {
+        var main_menu_nav = document.getElementsByClassName("main-menu-nav");
+        for (var i = 0; i < main_menu_nav.length; i++) {
             console.log('hide ' + i);
-            main_manu_nav[i].className += " hide";
+            main_menu_nav[i].className += " hide";
         }
-        var header_manu_bra = document.getElementsByClassName("header_manu_bra");
-        for (var i = 0; i < header_manu_bra.length; i++) {
-            header_manu_bra[i].className += " hide";
+        var header_menu_bra = document.getElementsByClassName("header_menu_bra");
+        for (var i = 0; i < header_menu_bra.length; i++) {
+            header_menu_bra[i].className += " hide";
         }
         var img_avatar = document.getElementsByClassName("img-avatar");
         for (var i = 0; i < img_avatar.length; i++) {
@@ -685,21 +685,21 @@ function minimize_nav() {
         for (var i = 0; i < main_bra.length; i++) {
             main_bra[i].className += " minimize";
         }
-        var name_manu_bra = document.getElementsByClassName("name_manu_bra");
-        for (var i = 0; i < name_manu_bra.length; i++) {
-            name_manu_bra[i].className += " hide";
+        var name_menu_bra = document.getElementsByClassName("name_menu_bra");
+        for (var i = 0; i < name_menu_bra.length; i++) {
+            name_menu_bra[i].className += " hide";
         }
-        var dept_manu_bra = document.getElementsByClassName("dept_manu_bra");
-        for (var i = 0; i < dept_manu_bra.length; i++) {
-            dept_manu_bra[i].className += " hide";
+        var dept_menu_bra = document.getElementsByClassName("dept_menu_bra");
+        for (var i = 0; i < dept_menu_bra.length; i++) {
+            dept_menu_bra[i].className += " hide";
         }
-        var hr_manu_bra = document.getElementsByClassName("hr_manu_bra");
-        for (var i = 0; i < hr_manu_bra.length; i++) {
-            hr_manu_bra[i].className += " hide";
+        var hr_menu_bra = document.getElementsByClassName("hr_menu_bra");
+        for (var i = 0; i < hr_menu_bra.length; i++) {
+            hr_menu_bra[i].className += " hide";
         }
-        var hr_manu_bra_in = document.getElementsByClassName("hr_manu_bra_in");
-        for (var i = 0; i < hr_manu_bra_in.length; i++) {
-            hr_manu_bra_in[i].className += " hide";
+        var hr_menu_bra_in = document.getElementsByClassName("hr_menu_bra_in");
+        for (var i = 0; i < hr_menu_bra_in.length; i++) {
+            hr_menu_bra_in[i].className += " hide";
         }
     }
 }
@@ -715,7 +715,7 @@ function call_edit_add_new_modal(id, brand) {
         });
     }
 }
-//toolstips manu
+//toolstips menu
 tippy('#nav_activity', {
     content: "Activity",
     placement: 'right',

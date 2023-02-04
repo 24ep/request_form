@@ -16,12 +16,12 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
 ?>
     <style>
     .nav-link-preferance {
-        color: <?php echo get_value_main($_SESSION['username'], "manu_front_color", "all_in_one_project", "account", "username");
+        color: <?php echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
         ?>;
     }
 
     .nav_list_bra-preferance {
-        background: <?php echo get_value_main($_SESSION['username'], "manu_shade", "all_in_one_project", "account", "username");
+        background: <?php echo get_value_main($_SESSION['username'], "menu_shade", "all_in_one_project", "account", "username");
         ?>;
     }
 
@@ -34,7 +34,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
     }
 
     .nav-pills .nav-link {
-        color: <?php echo get_value_main($_SESSION['username'], "manu_front_color", "all_in_one_project", "account", "username");
+        color: <?php echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
         ?>;
     }
     </style>

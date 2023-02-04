@@ -152,7 +152,7 @@ $result = mysqli_query($con, $query);
     }
   }
   echo '<div id="call_update_ns_complete"></div>';
-  echo '<ul class="list-group shadow nsdetaillist">';
+  echo '<ul class="list-group shadow ns_detail_list">';
   echo $element;
   echo '</ul>';
 ?>

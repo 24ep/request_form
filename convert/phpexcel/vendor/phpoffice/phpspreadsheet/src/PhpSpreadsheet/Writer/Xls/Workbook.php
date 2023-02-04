@@ -629,7 +629,7 @@ class Workbook extends BIFFwriter
                 $rowmin = $repeat[0] - 1;
                 $rowmax = $repeat[1] - 1;
 
-                // construct formula data manually
+                // construct formula data menually
                 $formulaData = pack('Cv', 0x29, 0x17); // tMemFunc
                 $formulaData .= pack('Cvvvvv', 0x3B, $i, 0, 65535, $colmin, $colmax); // tArea3d
                 $formulaData .= pack('Cvvvvv', 0x3B, $i, $rowmin, $rowmax, 0, 255); // tArea3d
@@ -659,7 +659,7 @@ class Workbook extends BIFFwriter
                     $rowmax = 65535;
                 }
 
-                // construct formula data manually because parser does not recognize absolute 3d cell references
+                // construct formula data menually because parser does not recognize absolute 3d cell references
                 $formulaData = pack('Cvvvvv', 0x3B, $i, $rowmin, $rowmax, $colmin, $colmax);
 
                 // store the DEFINEDNAME record
@@ -686,7 +686,7 @@ class Workbook extends BIFFwriter
                     $print_colmin = Coordinate::columnIndexFromString($printAreaRect[0][0]) - 1;
                     $print_colmax = Coordinate::columnIndexFromString($printAreaRect[1][0]) - 1;
 
-                    // construct formula data manually because parser does not recognize absolute 3d cell references
+                    // construct formula data menually because parser does not recognize absolute 3d cell references
                     $formulaData .= pack('Cvvvvv', 0x3B, $i, $print_rowmin, $print_rowmax, $print_colmin, $print_colmax);
 
                     if ($j > 0) {
