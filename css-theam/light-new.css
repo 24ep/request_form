@@ -580,6 +580,22 @@ select:disabled {
     background-color:#ffcbcb;
      color: red
 }
+.modern-badge-yellow{
+    background-color:#ebedc5;
+     color: #eef151
+}
+.modern-badge-blue{
+    background-color:#c5e7ed;
+     color: #615bd1
+}
+.modern-badge-pink{
+    background-color:#edc5e7;
+     color: #f160cf
+}
+.modern-badge-green{
+    background-color:#d2edc5;
+     color: #71f160
+}
 .normal-badge-red{
     background-color: #ff0000;
     color: white;

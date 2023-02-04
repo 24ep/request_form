@@ -21,6 +21,25 @@ $table = $_POST['table'];
 <h5></h5>
 
 <?php
+
+function badge_attribute_type($type){
+  if($type=='text'){
+    return '<span class="modern-badge-green">Free Text</span>'
+  }elseif($type=='number'){
+    return '<span class="modern-badge-green">Number only</span>'
+  }elseif($type=='datetime'){
+    return '<span class="modern-badge-blue">DateTime</span>'
+  }elseif($type=='date'){
+    return '<span class="modern-badge-blue">Date</span>'
+  }elseif($type=='single_select'){
+    return '<span class="modern-badge-purple">Simple Select</span>'
+  }elseif($type=='multiselect'){
+    return '<span class="modern-badge-purple">Multiple Select</span>'
+  }elseif($type=='textarea'){
+    return '<span class="modern-badge-green">Text Area</span>'
+  }
+
+}
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
@@ -31,7 +50,7 @@ $attribute .= '
     <tr style="text-align-last: left;border: solid #dee2e6 1px;background-color: transparent;" id="attribute_code_id_'.$row['id'].'">
       <th scope="col">'.$row['attribute_label'].'</th>
       <th >'.$row['attribute_code'].'</th>
-      <th >'.$row['attribute_type'].'</th>
+      <th >'.badge_attribute_type($row['attribute_type']).'</th>
       <th>
       <button type="button" class="btn btn-dark btn-sm" onclick="attribute_detail_page(&#39;'.$row['id'].'&#39,&#39;'.$row['attribute_code'].'&#39,&#39;'.$row['table_name'].'&#39,&#39;update&#39;)"
       ><ion-icon name="create-outline" style="margin: 0;"></ion-icon></button>
