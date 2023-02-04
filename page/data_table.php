@@ -72,7 +72,7 @@ for ($i=0; $i < $length_configurable_session_map; $i++) {
     echo '<hr><h4>'.$configurable_session_map[$i].'</h4>
     <div class="row row-cols-1 row-cols-md-3 g-4 m-3">';
     for ($j=0; $j  < $length_configurable_map; $j++) {
-        if($configurable_session_map[$i]==$configurable_map[$j][0]){
+        if($configurable_session_map[$i]==$configurable_map[$j]['session']){
             echo '
             <div class="col" onclick="'.$configurable_map[$j]['function'].'(&#39;'.$configurable_map[$j]['table'].'&#39;)">
                 <div class="card p-3">
