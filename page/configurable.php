@@ -65,7 +65,7 @@ $configurable_map = array (
         'table'=>'job_attribute_option',
         'title'=>'Attribute option setting',
         'function'=>'get_attribute_config',
-        'description'=>'Manage an attribute of config table'),
+        'description'=>'Manage an attribute of config table')
 
 );
 $length_configurable_session_map = count($configurable_session_map);
