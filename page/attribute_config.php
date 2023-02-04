@@ -12,13 +12,13 @@ $table = $_POST['table'];
           <li class="breadcrumb-item active" aria-current="page"><?php echo $table; ?></li>
         </ol>
     </nav>
-    <a class="navbar-brand">Attribute</a>
     <div class="d-flex">
       <!-- <button class="btn btn-outline-success" onclick="attribute_detail_page('','','','create')" >Create new attribute</button> -->
       <button class="btn btn-outline-success" onclick="add_new_attribute('u749625779_cdscontent','job_attribute')" ><ion-icon name="add-outline"></ion-icon>Create new attribute</button>
     </div>
   </div>
 </nav>
+<h5></h5>
 
 <?php
 date_default_timezone_set("Asia/Bangkok");

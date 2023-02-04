@@ -13,7 +13,7 @@ Table setting
 -->
 
 <?php
-$configurable_session_map = array("General Settings","Table settings");
+$configurable_session_map = array("General Settings","Table Settings");
 //  session |icon | table | header | description
 $configurable_map = array (
     array(
