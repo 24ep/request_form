@@ -21,8 +21,8 @@
     <div class="card p-3">
     <ion-icon name="ticket" style="font-size: 80px;color: #ababab;"></ion-icon>
       <div class="card-body">
-        <h5 class="card-title">Content Request table (</h5>
-        <p class="card-text">CR-Ticket, DP-Ticket - Manage an attribtue of content-request ticket</p>
+        <h5 class="card-title">Content Request table </h5>
+        <p class="card-text">CR-Ticket, DP-Ticket - Manage an attribute of content-request ticket</p>
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@
     <ion-icon name="settings" style="font-size: 80px;color: #ababab;"></ion-icon>
       <div class="card-body">
         <h5 class="card-title">Attribute config table</h5>
-        <p class="card-text">Manage an attribtue of config table</p>
+        <p class="card-text">Manage an attribute of config table</p>
       </div>
     </div>
   </div>
