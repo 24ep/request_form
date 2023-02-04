@@ -1,19 +1,6 @@
 
-<!--
-General setting
-- Account
-- App version confontrol
-- add new job attribtue
-- job_cms attribute
-- content request attribute
-Table setting
-- attribute setting
-- attribute option setting
-
--->
-
 <?php
-$configurable_session_map = array("General Settings","Table Settings");
+$configurable_session_map = array("General Settings","Tools Setting","Table Settings");
 //  session |icon | table | header | description
 $configurable_map = array (
     array(
@@ -23,13 +10,6 @@ $configurable_map = array (
         'title'=>'ServiceGate accounts',
         'function'=>'get_page',
         'description'=>'Manage any register account in system'),
-    array(
-        'session'=>'General Settings',
-        'icon'=>'apps',
-        'table'=>'app_version_control',
-        'title'=>'LinesheetApp',
-        'function'=>'get_page',
-        'description'=>'Manage lineshetAPP'),
     array(
         'session'=>'General Settings',
         'icon'=>'rocket',
@@ -52,6 +32,27 @@ $configurable_map = array (
         'function'=>'get_attribute_config',
         'description'=>'Manage attribute of new product update (CR,DP ticket)'),
     array(
+          'session'=>'Tools Settings',
+          'icon'=>'apps',
+          'table'=>'app_version_control',
+          'title'=>'LinesheetApp',
+          'function'=>'get_page',
+          'description'=>'Manage lineshetAPP'),
+    array(
+          'session'=>'Tools Setting',
+          'icon'=>'settings',
+          'table'=>'convert_mapping',
+          'title'=>'Convert Mapping',
+          'function'=>'get_page',
+          'description'=>'Manage an converting of linesheet to PIM template')
+    array(
+            'session'=>'Tools Setting',
+            'icon'=>'settings',
+            'table'=>'powerautomate',
+            'title'=>'Power Automate',
+            'function'=>'get_page',
+            'description'=>'Manage an automation workflows for create new job (auto generate new ticket from email)')
+    array(
         'session'=>'Table Settings',
         'icon'=>'settings',
         'table'=>'job_attribute',
@@ -64,7 +65,8 @@ $configurable_map = array (
         'table'=>'job_attribute_option',
         'title'=>'Attribute option setting',
         'function'=>'get_attribute_config',
-        'description'=>'Manage an attribute of config table')
+        'description'=>'Manage an attribute of config table'),
+
 );
 $length_configurable_session_map = count($configurable_session_map);
 $length_configurable_map = count($configurable_map);
