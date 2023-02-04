@@ -3,25 +3,25 @@ session_start();
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error( $con));
 function badge_status($status){
   if($status=="pending"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#5f9ee5;border:#5f9ee5 solid 1px;width: 100%;">pending</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1shadow-sm" style="background: transparent;color:#5f9ee5;border:#5f9ee5 solid 1px;width: 100%;">pending</span>';
   }elseif($status=="checking"  ){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#ffc107;border:#ffc107 solid 1px;width: 100%;">checking</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#ffc107;border:#ffc107 solid 1px;width: 100%;">checking</span>';
   }elseif( $status=="on-productions"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#ff9a59;border:#ff9a59 solid 1px;width: 100%;">on-productions</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#ff9a59;border:#ff9a59 solid 1px;width: 100%;">on-productions</button>';
   }elseif($status=="approved"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#7befb2;border:#7befb2 solid 1px;width: 100%;">'.$status.'</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#7befb2;border:#7befb2 solid 1px;width: 100%;">'.$status.'</button>';
   }elseif($status=="waiting confirm"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#499CF7;border:#499CF7 solid 1px;width: 100%;">waiting confirm</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#499CF7;border:#499CF7 solid 1px;width: 100%;">waiting confirm</span>';
   }elseif($status=="waiting image"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#FE7A6F;border:#FE7A6F solid 1px;width: 100%;">waiting image</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#FE7A6F;border:#FE7A6F solid 1px;width: 100%;">waiting image</button>';
   }elseif($status=="waiting data"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#FE7A6F;border:#FE7A6F solid 1px;width: 100%;">waiting data</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#FE7A6F;border:#FE7A6F solid 1px;width: 100%;">waiting data</button>';
   }elseif($status=="waiting traffic"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#ea79f7;border:#ea79f7 solid 1px;width: 100%;">waiting traffic</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#ea79f7;border:#ea79f7 solid 1px;width: 100%;">waiting traffic</button>';
   }elseif($status=="cancel"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#efefef;border:#efefef solid 1px;width: 100%;">Cancel</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#efefef;border:#efefef solid 1px;width: 100%;">Cancel</button>';
   }else{
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: transparent;color:#a9a9a94f;border:#a9a9a94f solid 1px;width: 100%;">'.$status.'</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#a9a9a94f;border:#a9a9a94f solid 1px;width: 100%;">'.$status.'</span>';
   }
 return $status;
 }
@@ -120,9 +120,9 @@ if(isset($_POST["from_post"] )){
     }
     //important badge
     if($row['request_important']=="Urgent"){
-      $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row['request_important'].'</span>';
+      $ri_style = '<span class="badge rounded bg-danger" style="margin-left:5px">'.$row['request_important'].'</span>';
     }else{
-      $ri_style = '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">'.$row['request_important'].'</span>';
+      $ri_style = '<span class="badge rounded bg-secondary" style="margin-left:5px">'.$row['request_important'].'</span>';
     }
     //launch date
     if($row['launch_date']<>""){
@@ -138,11 +138,11 @@ if(isset($_POST["from_post"] )){
     // -1 create date > 5
     $create_date_diff = (strtotime($current_day) - strtotime($create_date))/  ( 60 * 60 * 24 );
     if($create_date_diff>=10){
-      $p_badge .= '<span class="badge bg-danger bg-gradient rounded-pill p-1 ps-3 pe-3 mb-1" style="margin-left:5px;background-color: #46088f!important;"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
+      $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1" style="background-color: #d8c5ed!important;color: #673ab7;"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
     }elseif($create_date_diff>=5){
-      $p_badge .= '<span class="badge bg-danger bg-gradient rounded-pill p-1 ps-3 pe-3 mb-1" style="margin-left:5px"> <ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
+      $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1" style="background-color: #ffcbcb; color: red"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
     }elseif($create_date_diff>=3){
-      $p_badge .= '<span class="badge bg-danger bg-gradient rounded-pill p-1 ps-3 pe-3 mb-1" style="margin-left:5px">Age > '.$create_date_diff.' Days</span>';
+      $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1">Age > '.$create_date_diff.' Days</span>';
     }
     //  launch date
     if($row["launch_date"] <> null){
@@ -150,9 +150,9 @@ if(isset($_POST["from_post"] )){
       $launch_date_c = date_format($launch_date_c,"Y-m-d");
       $launch_date_diff = (strtotime($launch_date_c)-strtotime($current_day))/  ( 60 * 60 * 24 );
       if($launch_date_diff<=0){
-        $p_badge .= '<span class="badge bg-danger bg-gradient rounded-pill p-1 ps-3 pe-3 mb-1" style="margin-left:5px;background-color: #46088f!important;"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon> Over Launch '.($launch_date_diff*(-1)).' days</span>';
+        $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1" style="background-color: #d8c5ed!important;color: #673ab7;"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon> Over Launch '.($launch_date_diff*(-1)).' days</span>';
       }elseif($launch_date_diff<=5){
-        $p_badge .= '<span class="badge bg-danger bg-gradient rounded-pill p-1 ps-3 pe-3 mb-1" style="margin-left:5px"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Launch in '.$launch_date_diff.' days</span>';
+        $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1" style="background-color: #ffcbcb; color: red"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Launch in '.$launch_date_diff.' days</span>';
       }
     }
     //  -2 already image
@@ -200,7 +200,7 @@ if(isset($_POST["from_post"] )){
       $ticket .= "<div class='col'>".$p_badge."</div>";
       $ticket .= "<div class='col'>".$task_status ."</div>";
       $ticket .= "<div class='col'>";
-      $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='btn btn-dark btn-sm bg-gradient'  onclick='call_edit_add_new_modal(".$row["id"].")' >
+      $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3'  onclick='call_edit_add_new_modal(".$row["id"].")' >
        Detail </button></div>";
       $ticket .=  "</li>";
       //get sub ticket
@@ -260,7 +260,7 @@ if(isset($_POST["from_post"] )){
               $sub_ticket .= "<div class='col'></div>";
               $sub_ticket .= "<div class='col'></div>";
               $sub_ticket .= "<div class='col'>".$status."</div>";
-              $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm bg-gradient'  onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+              $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3'  onclick='call_edit_add_new_modal(".$row_child["id"].")' >
               Detail </button></div >";
               $i++;
             }
@@ -278,7 +278,7 @@ if(isset($_POST["from_post"] )){
           $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col' >".$status."</div>";
-          $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm bg-gradient' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+          $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
            Detail </button></div>";
           $i++;
           }
