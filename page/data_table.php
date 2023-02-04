@@ -37,7 +37,7 @@
   </div>
   <div class="col">
     <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+    <ion-icon name="grid-outline"></ion-icon>
       <div class="card-body">
         <h5 class="card-title">Attribute config</h5>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
