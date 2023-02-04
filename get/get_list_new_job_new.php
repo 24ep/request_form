@@ -126,7 +126,7 @@ if(isset($_POST["from_post"] )){
     }elseif($create_date_diff>=5){
       $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1" style="background-color: #ffcbcb; color: red"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
     }elseif($create_date_diff>=3){
-      $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1">Age > '.$create_date_diff.' Days</span>';
+      $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1" style="background-color: #d8c5ed; color: 673ab7">Age > '.$create_date_diff.' Days</span>';
     }
     //  launch date
     if($row["launch_date"] <> null){
