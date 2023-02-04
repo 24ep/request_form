@@ -44,14 +44,14 @@ $configurable_map = array (
           'table'=>'convert_mapping',
           'title'=>'Convert Mapping',
           'function'=>'get_page',
-          'description'=>'Manage an converting of linesheet to PIM template')
+          'description'=>'Manage an converting of linesheet to PIM template'),
     array(
             'session'=>'Tools Setting',
             'icon'=>'cube',
             'table'=>'powerautomate',
             'title'=>'Power Automate',
             'function'=>'get_page',
-            'description'=>'Manage an automation workflows for create new job (auto generate new ticket from email)')
+            'description'=>'Manage an automation workflows for create new job (auto generate new ticket from email)'),
     array(
         'session'=>'Table Settings',
         'icon'=>'settings',
