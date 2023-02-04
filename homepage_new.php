@@ -249,14 +249,14 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                 <input type="hidden" id="minimize_menu" name="minimize_menu" value="show">
                 <input type="hidden" id="active_sub_menu" name="active_sub_menu" value="hide">
                 <a class="navbar-brand" href="#">
-                    <!-- <img id="logo_tems" class="logo_tems" src="base/image/tms_logo_va.svg" alt="" width="auto"
+                    <!-- <img id="logo" class="logo" src="base/image/tms_logo_va.svg" alt="" width="auto"
                         height="30">-->
 
-                    <img id="logo_tems_minimize" class="logo_tems_minimize hide" src="base/image/sg_logo_minimize.ico"
+                    <img id="logo_minimize" class="logo_minimize hide" src="base/image/sg_logo_minimize.ico"
                         alt="" width="auto" height="30">
 
-                    <h5 id="logo_tems" class="logo_tems fw-bold m-0" style="position: absolute;">ServiceGate</h5>
-                    <!-- <h5 id="logo_tems_minimize" class="fw-bold logo_tems_minimize hide" >SG</h5> -->
+                    <h5 id="logo" class="logo fw-bold m-0" style="position: absolute;">ServiceGate</h5>
+                    <!-- <h5 id="logo_minimize" class="fw-bold logo_minimize hide" >SG</h5> -->
                     <!-- <h3 id="apps_name" style="font-weight: lighter;color: firebrick;"> -->
                     <!-- <ion-icon name="layers" style="font-size: 40px;margin: 0px;color:#f85d60"></ion-icon> -->
                     <!-- TEMS -->
@@ -610,9 +610,9 @@ function minimize_nav() {
         }
         document.getElementById("apps_name").className = document.getElementById("apps_name").className.replace(
             /(?:^|\s)hide(?!\S)/g, '');
-        document.getElementById("logo_tems").className = document.getElementById("logo_tems").className.replace(
+        document.getElementById("logo").className = document.getElementById("logo").className.replace(
             /(?:^|\s)hide(?!\S)/g, '');
-        document.getElementById("logo_tems_minimize").className += " hide";
+        document.getElementById("logo_minimize").className += " hide";
         var img_avatar = document.getElementsByClassName("img-avatar");
         for (var i = 0; i < img_avatar.length; i++) {
             img_avatar[i].className = img_avatar[i].className.replace(/(?:^|\s)hide(?!\S)/g, '');
@@ -660,8 +660,8 @@ function minimize_nav() {
         }
         // document.getElementById("main-menu-nav").className += " hide";
         document.getElementById("apps_name").className += " hide";
-        document.getElementById("logo_tems").className += " hide";
-        document.getElementById("logo_tems_minimize").className = document.getElementById("logo_tems").className
+        document.getElementById("logo").className += " hide";
+        document.getElementById("logo_minimize").className = document.getElementById("logo").className
             .replace(
                 /(?:^|\s)hide(?!\S)/g, '');
         var main_menu_nav = document.getElementsByClassName("main-menu-nav");

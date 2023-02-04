@@ -11,13 +11,13 @@ function badge_status($status){
   }elseif($status=="approved"){
     $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-approved" style="min-width: 115px;">approved</button>';
   }elseif($status=="waiting confirm"){
-    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-wating-confirm" style="min-width: 115px;">waiting confirm</span>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-confirm" style="min-width: 115px;">waiting confirm</span>';
   }elseif($status=="waiting image"){
     $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-image" style="min-width: 115px;">waiting image</button>';
   }elseif($status=="waiting data"){
     $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-data" style="min-width: 115px;">waiting data</button>';
   }elseif($status=="waiting traffic"){
-    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-traffix" style="min-width: 115px;">waiting traffic</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-traffic" style="min-width: 115px;">waiting traffic</button>';
   }elseif($status=="cancel"){
     $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-cancel" style="min-width: 115px;">Cancel</button>';
   }else{
@@ -152,7 +152,7 @@ if(isset($_POST["from_post"] )){
       $data_sum=mysqli_fetch_assoc($result_sum);
       //show warning for parent !=sum of sub ticket sku
       if($row["sku"]<>$data_sum['total']){
-        $badge_alert_sku = "<a data-bs-toggle='tooltip' data-bs-placement='top' title='จำนวน SKU ของ ticket แม่ไม่ตรงกับลูก'><ion-icon name='alert-circle-outline' style='color:red!important'  ></ion-icon></a>";
+        $badge_alert_sku = "<a data-bs-toggle='tooltip' data-bs-placement='top' title='number of sku in parent ticket not equls sum of childs ticket sku'><ion-icon name='alert-circle-outline' style='color:red!important'  ></ion-icon></a>";
       }else{
         $badge_alert_sku = "";
       }

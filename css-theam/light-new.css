@@ -368,10 +368,10 @@ label#label_file_cme {
 .mini-nav-col{
     width: 4%;
 }
-.logo_tems_minimize.hide{
+.logo_minimize.hide{
     display: none;
 }
-.logo_tems.hide{
+.logo.hide{
     display: none;
 }
 
@@ -484,13 +484,13 @@ label#label_file_cme {
         margin-left: auto;
     }
 
-.logo_tems, .logo_tems_minimize {
+.logo, .logo_minimize {
 
   color: #ed0808;
   background-image: -webkit-linear-gradient(0deg, #ff8181 0%,#ed0808 33%,#b98985 67%);
   background-clip: text;
   -webkit-background-clip: text;
-  text-fill-color: transparent;
+  /* text-fill-color: transparent; */
   -webkit-text-fill-color: transparent;
   /* text-shadow: 1px 1px 2px #27272757; */
 }
