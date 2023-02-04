@@ -3,25 +3,25 @@ session_start();
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error( $con));
 function badge_status($status){
   if($status=="pending"){
-    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1shadow-sm" style="background: transparent;color:#5f9ee5;border:#5f9ee5 solid 1px;width: 100%;">pending</span>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1shadow-sm" style="background: transparent;color:#5f9ee5;border:#5f9ee5 solid 1px;width: 100%;min-width: 115px;">pending</span>';
   }elseif($status=="checking"  ){
-    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#ffc107;border:#ffc107 solid 1px;width: 100%;">checking</span>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#ffc107;border:#ffc107 solid 1px;width: 100%;min-width: 115px;">checking</span>';
   }elseif( $status=="on-productions"){
-    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#ff9a59;border:#ff9a59 solid 1px;width: 100%;">on-productions</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#ff9a59;border:#ff9a59 solid 1px;width: 100%;min-width: 115px;">on-productions</button>';
   }elseif($status=="approved"){
-    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#7befb2;border:#7befb2 solid 1px;width: 100%;">'.$status.'</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#7befb2;border:#7befb2 solid 1px;width: 100%;min-width: 115px;">'.$status.'</button>';
   }elseif($status=="waiting confirm"){
-    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#499CF7;border:#499CF7 solid 1px;width: 100%;">waiting confirm</span>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#499CF7;border:#499CF7 solid 1px;width: 100%;min-width: 115px;">waiting confirm</span>';
   }elseif($status=="waiting image"){
-    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#FE7A6F;border:#FE7A6F solid 1px;width: 100%;">waiting image</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#FE7A6F;border:#FE7A6F solid 1px;width: 100%;min-width: 115px;">waiting image</button>';
   }elseif($status=="waiting data"){
-    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#FE7A6F;border:#FE7A6F solid 1px;width: 100%;">waiting data</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#FE7A6F;border:#FE7A6F solid 1px;width: 100%;min-width: 115px;">waiting data</button>';
   }elseif($status=="waiting traffic"){
-    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#ea79f7;border:#ea79f7 solid 1px;width: 100%;">waiting traffic</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#ea79f7;border:#ea79f7 solid 1px;width: 100%;min-width: 115px;">waiting traffic</button>';
   }elseif($status=="cancel"){
-    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#efefef;border:#efefef solid 1px;width: 100%;">Cancel</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#efefef;border:#efefef solid 1px;width: 100%;min-width: 115px;">Cancel</button>';
   }else{
-    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#a9a9a94f;border:#a9a9a94f solid 1px;width: 100%;">'.$status.'</span>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm" style="background: transparent;color:#a9a9a94f;border:#a9a9a94f solid 1px;width: 100%;min-width: 115px;">'.$status.'</span>';
   }
 return $status;
 }
@@ -186,7 +186,7 @@ if(isset($_POST["from_post"] )){
       $ticket .= "<div class='col'>".$row["project_type"]."</div>";
       // $ticket .= "<td>".$row["business_type"]."</td>";
       $ticket .= "<div class='col'>".$launch_date."</div>";
-      $ticket .= "<div class='col'>".$p_badge."</div>";
+      $ticket .= "<div class='col' style='min-width: 160px;'>".$p_badge."</div>";
       $ticket .= "<div class='col'>".$task_status ."</div>";
       $ticket .= "<div class='col'>";
       $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3'  onclick='call_edit_add_new_modal(".$row["id"].")' >
