@@ -68,11 +68,6 @@ if(isset($_POST["from_post"] )){
    }
  }
  if($_SESSION['status_filter']<>""){
-  // $array_status = explode(",",$_SESSION['status_filter']);
-  // $array_status_string = "";
-  // foreach ($array_status as $value) {
-  //   $array_status_string = "'".$value."'";
-  // }
   $status_filter_replaced = str_replace(",","','",$_SESSION['status_filter']);
   $status_filter_replaced  = "'".$status_filter_replaced ."'";
   $status_filter ="anj.status in (".$status_filter_replaced.") or anj.status = 'none'";
@@ -181,10 +176,7 @@ if(isset($_POST["from_post"] )){
       $ticket .= "<div class='col'>".$row["department"]."</div>";
       $ticket .= "<div class='col'>".$row["brand"]."</div>";
       $ticket .= "<div class='col'>".$subtask_sum."</div>";
-      // $ticket .= "<td>".$ri_style ."</td>";
       $ticket .= "<div class='col'>".$row["production_type"]."</div>";
-      $ticket .= "<div class='col'>".$row["project_type"]."</div>";
-      // $ticket .= "<td>".$row["business_type"]."</td>";
       $ticket .= "<div class='col'>".$launch_date."</div>";
       $ticket .= "<div class='col' style='min-width: 160px;'>".$p_badge."</div>";
       $ticket .= "<div class='col' style='min-width: 140px;'>".$task_status ."</div>";
@@ -242,7 +234,6 @@ if(isset($_POST["from_post"] )){
               $sub_ticket .= "<div class='col'></div>";
               $sub_ticket .= "<div class='col'></div>";
               $sub_ticket .= "<div class='col'></div>";
-              $sub_ticket .= "<div class='col'></div>";
               $sub_ticket .= "<div class='col'>".$status."</div>";
               $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3'  onclick='call_edit_add_new_modal(".$row_child["id"].")' >
               Detail </button></div >";
@@ -254,7 +245,6 @@ if(isset($_POST["from_post"] )){
           if(!isset($tr_class)){$tr_class="";}
           $sub_ticket .= "<li ".$tr_class.">";
           $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 250px;'><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].") ".$row_child["sku"]." SKUs</span></div>";
-          $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col'></div>";
           $sub_ticket .= "<div class='col'></div>";

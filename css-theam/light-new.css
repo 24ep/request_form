@@ -463,6 +463,13 @@ label#label_file_cme {
     background: white;
     padding: 30px;
 }
+.header_list_add_new{
+    color: #8b8b8b;
+    font-weight: 600;
+    text-align-last: center;
+    /* text-transform: uppercase; */
+    /* white-space: nowrap; */
+}
 .tox-tinymce {
     border-radius: 10px;
 }

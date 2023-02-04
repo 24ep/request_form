@@ -7,7 +7,6 @@ session_start();
 include_once('../get/get_option_function.php');
 $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
 $brand_op = getoption_return_filter_disting("brand","add_new_job","","single","all_in_one_project");
-// $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
 $request_new_status_op = get_option_attribute_entity("status","add_new_job",$_SESSION["status_filter"]);
 $business_type_op = get_option_return_filter("business_type","","single","add_new");
 $production_type_op = get_option_return_filter("production_type","","single","add_new");
@@ -61,15 +60,6 @@ mysqli_close($con);
                 </div>
             </div>
 
-
-            <!-- <div class="col-2">
-                <div class="input-group input-group-sm mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Status</span>
-                    <select class="form-select" id="status_filter" onchange="filter_update();">
-                        <?php //echo $request_new_status_op;?>
-                    </select>
-                </div>
-            </div> -->
             <div class="col-2">
                 <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap" style="position: inherit;border: solid 1px #d9d9d9 !important;" >
                     <input type="hidden" id="status_filter" style="position: inherit;" name="status_filter" value="">
@@ -139,13 +129,12 @@ mysqli_close($con);
             </nav>
         </div>
     </div>
-    <li class="row mb-3" style="color: #b3b3b3;font-weight: 600;text-align-last: center;">
+    <li class="row mb-3 header_list_add_new">
         <div class="col" scope="col">Ticket ID</div>
         <div class="col" scope="col">Department</div>
         <div class="col" scope="col">Brand</div>
         <div class="col" scope="col">SKU</div>
-        <div class="col" scope="col">Production request</div>
-        <div class="col" scope="col">Project-type</div>
+        <div class="col" scope="col">Production</div>
         <div class="col" scope="col">launch date</div>
         <div class="col" scope="col">Badge</div>
         <div class="col" scope="col">Status</div>
