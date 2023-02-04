@@ -532,8 +532,8 @@ select:disabled {
 }
 .status-approved{
     background: transparent;
-    color:#7befb2;
-    border:#7befb2 solid 1px;
+    color:#32f28c;
+    border:#32f28c solid 1px;
     width: 100%
 }
 .status-waiting-confirm{
