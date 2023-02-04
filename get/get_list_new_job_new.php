@@ -166,7 +166,7 @@ if(isset($_POST["from_post"] )){
       $subtask_sum = $row["sku"];
     }
 
-    if(strpos($task_status,"approved")!==false or strpos($task_status,"Cancel")!==false ){
+    if(strpos($task_status,"approved")!==false or strpos($task_status,"Cancel")!==false  or $row["config_type"]!=='parent' ){
       $p_badge = "";
     }
       if(!isset($ticket)){$ticket="";}
