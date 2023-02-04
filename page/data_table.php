@@ -14,30 +14,65 @@ Table setting
 
 <?php
 $configurable_session_map = array("general_setting","table_setting");
-//  session | table | header | description
+//  session |icon | table | header | description
 $configurable_map = array (
-    array("general_setting",'account','ServiceGate accounts','Manage any register account in system'),
-    array("general_setting",'app_version_control', 'LinesheetApp version controls','Manage lineshetAPP'),
-    array("general_setting",'add_new_job', 'add_new_job','manage attribute of new product creation (NS ticket)'),
-    array("general_setting",'job_cms', 'job_cms','manage attribute of new product creation (production job)'),
-    array("general_setting",'content_request','content_request','manage attribute of new product update (CR,DP ticket)'),
-    array("table_setting",'job_attribute','attribute setting','Manage an attribute of config table'),
-    array("table_setting",'job_attribute_option','attribute option setting','Manage an attribute options of config table')
+    array(
+        'session'=>'general_setting',
+        'icon'=>'apps',
+        'table'=>'app_version_control',
+        'title'=>'LinesheetApp',
+        'description'=>'Manage lineshetAPP'),
+    array(
+        'session'=>'general_setting',
+        'icon'=>'people',
+        'table'=>'account',
+        'title'=>'ServiceGate accounts',
+        'description'=>'Manage any register account in system'),
+    array(
+        'session'=>'general_setting',
+        'icon'=>'rocket',
+        'table'=>'add_new_job',
+        'title'=>'add_new_job',
+        'description'=>'Manage attribute of new product creation (NS ticket)'),
+    array(
+        'session'=>'general_setting',
+        'icon'=>'grid',
+        'table'=>'job_cms',
+        'title'=>'job_cms',
+        'description'=>'manage attribute of new product creation (production job)'),
+    array(
+        'session'=>'general_setting',
+        'icon'=>'ticket',
+        'table'=>'content_request',
+        'title'=>'content_request',
+        'description'=>'Manage attribute of new product update (CR,DP ticket)'),
+    array(
+        'session'=>'settings',
+        'icon'=>'settings',
+        'table'=>'job_attribute',
+        'title'=>'Attribute setting',
+        'description'=>'Manage an attribute of config table'),
+    array(
+        'session'=>'settings',
+        'icon'=>'settings',
+        'table'=>'job_attribute_option',
+        'title'=>'Attribute option setting',
+        'description'=>'Manage an attribute of config table')
 );
 $length_configurable_session_map = count($configurable_session_map);
 $length_configurable_map = count($configurable_map);
 for ($i=0; $i < $length_configurable_session_map; $i++) {
-    echo '<hr><h4>'.$length_configurable_session_map[$i].'</h4>
+    echo '<hr><h4>'.$configurable_session_map[$i].'</h4>
     <div class="row row-cols-1 row-cols-md-3 g-4 m-3">';
     for ($j=0; $j  < $length_configurable_map; $j++) {
         if($configurable_session_map[$i]==$configurable_map[$j][0]){
             echo '
-            <div class="col" onclick="get_attribute_config(&#39;'.$configurable_map[$j][1].'&#39;)">
+            <div class="col" onclick="get_attribute_config(&#39;'.$configurable_map[$j]['table'].'&#39;)">
                 <div class="card p-3">
-                    <ion-icon name="people" style="font-size: 50px;color: #ababab;"></ion-icon>
+                    <ion-icon name="'.$configurable_map[$j]['icon'].'" style="font-size: 50px;color: #ababab;"></ion-icon>
                     <div class="card-body">
-                        <h5 class="card-title">'.$configurable_map[$j][2].'</h5>
-                        <p class="card-text">'.$configurable_map[$j][3].'</p>
+                        <h5 class="card-title">'.$configurable_map[$j]['title'].'</h5>
+                        <p class="card-text">'.$configurable_map[$j]['description'].'</p>
                     </div>
                 </div>
             </div>
