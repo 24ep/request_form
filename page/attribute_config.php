@@ -1,6 +1,17 @@
-
+<?php
+session_start();
+$table = $_POST['table'];
+?>
 <nav class="navbar navbar-light bg-white">
   <div class="container-fluid">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Configurable</a></li>
+          <li class="breadcrumb-item"><a href="#">Attribute</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><?php echo $table; ?></li>
+        </ol>
+    </nav>
     <a class="navbar-brand">Attribute</a>
     <div class="d-flex">
       <!-- <button class="btn btn-outline-success" onclick="attribute_detail_page('','','','create')" >Create new attribute</button> -->
@@ -8,9 +19,8 @@
     </div>
   </div>
 </nav>
+
 <?php
-session_start();
-$table = $_POST['table'];
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
