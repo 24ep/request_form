@@ -74,7 +74,6 @@ $detail = get_page_account();
 ?>
 
   <div class="container-fluid">
-    <a class="navbar-brand">Account</a>
     <div class="d-flex">
 
       <!-- <button class="btn btn-outline-success disabled">Create new account</button> -->
