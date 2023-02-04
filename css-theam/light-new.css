@@ -572,3 +572,11 @@ select:disabled {
     border:#a9a9a94f solid 1px;
     width: 100%
 }
+.modern-badge-purple{
+    background-color:#d8c5ed;
+     color: #673ab7
+}
+.modern-badge-red{
+    background-color:#ffcbcb;
+     color: red
+}
