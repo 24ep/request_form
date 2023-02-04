@@ -14,8 +14,7 @@ $table = $_POST['table'];
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
-$query = "SELECT *
-FROM u749625779_cdscontent.job_attribute where table_name = '".$table."'"; or die("Error:" . mysqli_error());
+$query = "SELECT * FROM u749625779_cdscontent.job_attribute where table_name = '".$table."';" or die("Error:" . mysqli_error());
 $result =  mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
 $attribute .= '
