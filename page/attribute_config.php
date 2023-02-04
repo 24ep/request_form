@@ -7,8 +7,7 @@ $table = $_POST['table'];
   <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Configurable</a></li>
-          <li class="breadcrumb-item"><a href="#">Attribute</a></li>
+          <li class="breadcrumb-item"><a onclick="get_page('configurable')">Configurable</a></li>
           <li class="breadcrumb-item active" aria-current="page"><?php echo $table; ?></li>
         </ol>
     </nav>
@@ -19,7 +18,7 @@ $table = $_POST['table'];
     </div>
   </div>
 </nav>
-<h5 class="p-2 ps-4 bg-secondary bg-opacity-25 text-secondary  m-0"><strong><?php echo $table;?></strong></h5>
+<h5 class="p-2 ps-4 pb-4 bg-secondary bg-opacity-25 text-secondary  m-0" style="text-transform: uppercase"><strong><?php echo $table;?></strong></h5>
 
 
 
