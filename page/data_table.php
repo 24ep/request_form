@@ -18,45 +18,52 @@ $configurable_session_map = array("general_setting","table_setting");
 $configurable_map = array (
     array(
         'session'=>'general_setting',
-        'icon'=>'apps',
-        'table'=>'app_version_control',
-        'title'=>'LinesheetApp',
-        'description'=>'Manage lineshetAPP'),
-    array(
-        'session'=>'general_setting',
         'icon'=>'people',
         'table'=>'account',
         'title'=>'ServiceGate accounts',
+        'function'=>'get_page',
         'description'=>'Manage any register account in system'),
+    array(
+        'session'=>'general_setting',
+        'icon'=>'apps',
+        'table'=>'app_version_control',
+        'title'=>'LinesheetApp',
+        'function'=>'get_page',
+        'description'=>'Manage lineshetAPP'),
     array(
         'session'=>'general_setting',
         'icon'=>'rocket',
         'table'=>'add_new_job',
         'title'=>'add_new_job',
+        'function'=>'get_attribute_config',
         'description'=>'Manage attribute of new product creation (NS ticket)'),
     array(
         'session'=>'general_setting',
         'icon'=>'grid',
         'table'=>'job_cms',
         'title'=>'job_cms',
+        'function'=>'get_attribute_config',
         'description'=>'manage attribute of new product creation (production job)'),
     array(
         'session'=>'general_setting',
         'icon'=>'ticket',
         'table'=>'content_request',
         'title'=>'content_request',
+        'function'=>'get_attribute_config',
         'description'=>'Manage attribute of new product update (CR,DP ticket)'),
     array(
         'session'=>'settings',
         'icon'=>'settings',
         'table'=>'job_attribute',
         'title'=>'Attribute setting',
+        'function'=>'get_attribute_config',
         'description'=>'Manage an attribute of config table'),
     array(
         'session'=>'settings',
         'icon'=>'settings',
         'table'=>'job_attribute_option',
         'title'=>'Attribute option setting',
+        'function'=>'get_attribute_config',
         'description'=>'Manage an attribute of config table')
 );
 $length_configurable_session_map = count($configurable_session_map);
@@ -67,7 +74,7 @@ for ($i=0; $i < $length_configurable_session_map; $i++) {
     for ($j=0; $j  < $length_configurable_map; $j++) {
         if($configurable_session_map[$i]==$configurable_map[$j][0]){
             echo '
-            <div class="col" onclick="get_attribute_config(&#39;'.$configurable_map[$j]['table'].'&#39;)">
+            <div class="col" onclick="'.$configurable_map[$j]['function'].'(&#39;'.$configurable_map[$j]['table'].'&#39;)">
                 <div class="card p-3">
                     <ion-icon name="'.$configurable_map[$j]['icon'].'" style="font-size: 50px;color: #ababab;"></ion-icon>
                     <div class="card-body">
