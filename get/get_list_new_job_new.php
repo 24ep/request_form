@@ -123,10 +123,8 @@ if(isset($_POST["from_post"] )){
     $create_date_diff = (strtotime($current_day) - strtotime($create_date))/  ( 60 * 60 * 24 );
     if($create_date_diff>=10){
       $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1" style="background-color: #d8c5ed!important;color: #673ab7;"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
-    }elseif($create_date_diff>=5){
-      $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1" style="background-color: #ffcbcb; color: red"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
     }elseif($create_date_diff>=3){
-      $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1" style="background-color: #d8c5ed; color: 673ab7">Age > '.$create_date_diff.' Days</span>';
+      $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1" style="background-color: #ffcbcb; color: red"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
     }
     //  launch date
     if($row["launch_date"] <> null){
@@ -154,6 +152,7 @@ if(isset($_POST["from_post"] )){
       $query_sum="SELECT sum(sku) as total from add_new_job where parent = ".$row["id"];
       $result_sum = mysqli_query($con, $query_sum);
       $data_sum=mysqli_fetch_assoc($result_sum);
+      //show warning for parent !=sum of sub ticket sku
       if($row["sku"]<>$data_sum['total']){
         $badge_alert_sku = "<a data-bs-toggle='tooltip' data-bs-placement='top' title='จำนวน SKU ของ ticket แม่ไม่ตรงกับลูก'><ion-icon name='alert-circle-outline' style='color:red!important'  ></ion-icon></a>";
       }else{
@@ -166,7 +165,8 @@ if(isset($_POST["from_post"] )){
       $subtask_sum = $row["sku"];
     }
 
-    if(strpos($task_status,"approved")!==false or strpos($task_status,"Cancel")!==false  or $row["config_type"]!=='parent' ){
+    // except badge display for status below
+    if(strpos($task_status,"approved")!==false or strpos($task_status,"Cancel")!==false  or $row["config_type"]=='parent' ){
       $p_badge = "";
     }
       if(!isset($ticket)){$ticket="";}
