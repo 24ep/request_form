@@ -77,12 +77,12 @@ $detail = get_page_account();
   </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-account" role="tabpanel" aria-labelledby="nav-account-tab" tabindex="0"><nav class="navbar navbar-light bg-light">
+  <div class="tab-pane fade show active" id="nav-account" role="tabpanel" aria-labelledby="nav-account-tab" tabindex="0"><nav class="navbar navbar-light bg-white">
   <div class="container-fluid">
     <a class="navbar-brand">Account</a>
     <div class="d-flex">
 
-      <button class="btn btn-outline-success disabled">Create new account</button>
+      <!-- <button class="btn btn-outline-success disabled">Create new account</button> -->
     </div>
   </div>
 </nav>

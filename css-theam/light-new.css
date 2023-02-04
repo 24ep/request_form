@@ -1,4 +1,5 @@
 
+
 body {
     background-color: #F3F3F2;
 /*
@@ -460,10 +461,10 @@ label#label_file_cme {
     position: initial!important;
     clear: both;
     background: white;
-    padding: 50px;
-    border-radius: 10px;
-    box-shadow: 0 .3rem 1rem rgba(0,0,0,.15)!important;
-    margin: 20px!important;
+    padding: 30px;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 .3rem 1rem rgba(0,0,0,.15)!important; */
+    /* margin: 20px!important; */
     /* z-index: -1; */
 }
 .tox-tinymce {

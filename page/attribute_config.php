@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light bg-white">
   <div class="container-fluid">
     <a class="navbar-brand">Attribute</a>
     <div class="d-flex">
@@ -22,7 +22,6 @@ $attribute .= '
       <th >'.$row['attribute_code'].'</th>
       <th >'.$row['attribute_type'].'</th>
       <th >'.$row['table_name'].'</th>
-      <th >'.$row['description'].'</th>
       <th>
       <button type="button" class="btn btn-dark btn-sm" onclick="attribute_detail_page(&#39;'.$row['id'].'&#39,&#39;'.$row['attribute_code'].'&#39,&#39;'.$row['table_name'].'&#39,&#39;update&#39;)"
       ><ion-icon name="create-outline" style="margin: 0;"></ion-icon></button>
@@ -39,7 +38,6 @@ echo '<table class="table" id="st_attribute_config" name="st_attribute_config">
       <th scope="col">Attribute Code</th>
       <th scope="col">Type</th>
       <th scope="col">Table</th>
-      <th scope="col">Description</th>
       <th scope="col">Edit</th>
     </tr>
 </thead>
@@ -59,7 +57,7 @@ echo '</tbody>
             },
             function(data) {
                 $('#nav-attribute').html(data);
-            }); 
+            });
   }
 function add_new_attribute(db,table) {
   $.post("base/action/action_insert_new_record.php", {
@@ -125,7 +123,7 @@ function delete_attribute(db,table,id,primary_key_id,release_attribute,column) {
         function cancelCb() {
           //nothing
         },
-  );  
+  );
 }
 </script>
 <script>

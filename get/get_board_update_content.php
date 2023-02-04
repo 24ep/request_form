@@ -146,7 +146,7 @@ while($row_status = mysqli_fetch_array($result_status)) {
   if($i>0){$ts_board_col_left = "ts-board-col-left";}
   $ticket_status=$row_status["attribute_option_code"];
 
-  echo' <div class="col '.$ts_board_col_left.'" id="col_'.$ticket_status.'"  >
+  echo' <div class="col-4 '.$ts_board_col_left.'" id="col_'.$ticket_status.'"  >
   <h6 class="row m-3" style="font-weight: 900;">'.$ticket_status.'</h6>';
   $result = mysqli_query($con, $query);
   $result_after_fetch =$result;
@@ -156,7 +156,7 @@ while($row_status = mysqli_fetch_array($result_status)) {
 
 }
 //getting status=waiting
-echo' <div class="col ts-board-col-left" id="col_waiting"  >
+echo' <div class="col-4 ts-board-col-left" id="col_waiting"  >
 <h6 class="row m-3" style="font-weight: 900;">Waiting</h6>';
 
 echo'<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
