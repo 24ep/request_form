@@ -187,7 +187,7 @@ if(isset($_POST["from_post"] )){
       // $ticket .= "<td>".$row["business_type"]."</td>";
       $ticket .= "<div class='col'>".$launch_date."</div>";
       $ticket .= "<div class='col' style='min-width: 160px;'>".$p_badge."</div>";
-      $ticket .= "<div class='col'>".$task_status ."</div>";
+      $ticket .= "<div class='col' style='min-width: 140px;'>".$task_status ."</div>";
       $ticket .= "<div class='col'>";
       $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3'  onclick='call_edit_add_new_modal(".$row["id"].")' >
        Detail </button></div>";
@@ -206,14 +206,9 @@ if(isset($_POST["from_post"] )){
         $i = 1;
         while($row_child = mysqli_fetch_array($result_child)) {
             $ticket_role = role_user($row_child["request_username"],$row_child["follow_up_by"]);
-            // $status = badge_status($row_child['status']);
-          if($row_child['status']=="on-productions" and $row_child['trigger_status'] <> "on-productions"){
-            $status=badge_status("on-productions");
-          }elseif($row_child['status']=="on-productions" and $row_child['trigger_status'] == "on-productions"){
-            $status=badge_status("on-productions");
-          }else{
+
             $status =badge_status($row_child['status']);
-          }
+
             //important
           if($i<$subtask_count){
             $th_class = "class='col tree_lift p-3'";
