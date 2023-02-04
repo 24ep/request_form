@@ -111,7 +111,7 @@ if(isset($_POST["from_post"] )){
   // echo '<script>console.log("'.htmlspecialchars(stripslashes(str_replace(array("\r", "\n"), '', var_export($query, true)))).'")</script>';
   while($row = mysqli_fetch_array($result)) {
     $ticket_role = role_user($row["request_username"],$row["follow_up_by"]);
-
+    $status =badge_status($row['status']);
 
     //launch date
     if($row['launch_date']<>""){
@@ -171,7 +171,7 @@ if(isset($_POST["from_post"] )){
       $subtask_sum = $row["sku"];
     }
 
-    if(strpos($task_status,"on-productions")!==false or strpos($task_status,"Cancel")!==false ){
+    if(strpos($task_status,"approved")!==false or strpos($task_status,"Cancel")!==false ){
       $p_badge = "";
     }
       if(!isset($ticket)){$ticket="";}
