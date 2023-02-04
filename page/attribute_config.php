@@ -2,9 +2,17 @@
 session_start();
 $table = $_POST['table'];
 ?>
-<nav class="navbar navbar-light bg-white">
+<nav class="navbar p-3 pb-0 m-0 bg-secondary bg-opacity-25 text-secondary  m-0">
   <div class="container-fluid">
-      <nav aria-label="breadcrumb">
+
+    <h5 class="p-2 ps-4 bg-secondary bg-opacity-25 text-secondary  m-0"><strong><?php echo $table;?></strong></h5>
+    <div class="d-flex">
+      <!-- <button class="btn btn-outline-success" onclick="attribute_detail_page('','','','create')" >Create new attribute</button> -->
+      <button class="btn btn-secondary shadow-sm" onclick="add_new_attribute('u749625779_cdscontent','job_attribute')" ><ion-icon name="add-outline"></ion-icon>Create new attribute</button>
+    </div>
+  </div>
+</nav>
+<nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
           <li class="breadcrumb-item"><a href="#">Configurable</a></li>
@@ -12,13 +20,7 @@ $table = $_POST['table'];
           <li class="breadcrumb-item active" aria-current="page"><?php echo $table; ?></li>
         </ol>
     </nav>
-    <div class="d-flex">
-      <!-- <button class="btn btn-outline-success" onclick="attribute_detail_page('','','','create')" >Create new attribute</button> -->
-      <button class="btn btn-outline-success" onclick="add_new_attribute('u749625779_cdscontent','job_attribute')" ><ion-icon name="add-outline"></ion-icon>Create new attribute</button>
-    </div>
-  </div>
-</nav>
-<h5></h5>
+
 
 <?php
 
