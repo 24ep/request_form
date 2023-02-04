@@ -484,7 +484,7 @@ function get_page(page) {
         Notiflix.Loading.remove();
     });
 }
-//check for page param
+//check for page param then goto the page
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
 console.log(queryString);
