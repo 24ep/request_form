@@ -87,7 +87,7 @@ echo '</tbody>
                 action:action
             },
             function(data) {
-                $('#nav-attribute').html(data);
+                $('#col_detail').html(data);
             });
   }
 function add_new_attribute(db,table) {
