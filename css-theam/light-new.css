@@ -580,3 +580,7 @@ select:disabled {
     background-color:#ffcbcb;
      color: red
 }
+.normal-badge-red{
+    background-color: #ff0000;
+    color: white;
+}

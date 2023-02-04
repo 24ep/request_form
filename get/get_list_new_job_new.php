@@ -130,7 +130,7 @@ if(isset($_POST["from_post"] )){
       $launch_date_c = date_format($launch_date_c,"Y-m-d");
       $launch_date_diff = (strtotime($launch_date_c)-strtotime($current_day))/  ( 60 * 60 * 24 );
       if($launch_date_diff<=0){
-        $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1 modern-badge-red" ></span><ion-icon name="warning-outline" style="margin: 0;"></ion-icon> Over Launch '.($launch_date_diff*(-1)).' days</span>';
+        $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1 modern-badge-red" ><ion-icon name="warning-outline" style="margin: 0;"></ion-icon> Over Launch '.($launch_date_diff*(-1)).' days</span>';
       }elseif($launch_date_diff<=5){
         $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1 modern-badge-purple" ><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Launch in '.$launch_date_diff.' days</span>';
       }
