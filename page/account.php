@@ -1,12 +1,10 @@
 
 <style>
 .dataTables_wrapper {
-    position: relative;
+    position: initial!important;
     clear: both;
     background: white;
-    padding: 50px;
-    border-radius: 10px;
-    box-shadow: 0 .3rem 1rem rgba(0,0,0,.15)!important;
+    padding: 30px;
 }
 </style>
 

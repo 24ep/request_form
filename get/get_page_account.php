@@ -2,12 +2,10 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 <style>
 .dataTables_wrapper {
-    position: relative;
+    position: initial!important;
     clear: both;
     background: white;
-    padding: 50px;
-    border-radius: 10px;
-    box-shadow: 0 .3rem 1rem rgba(0,0,0,.15)!important;
+    padding: 30px;
 }
 </style>
 <?php
@@ -17,7 +15,7 @@ function get_page_account(){
  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
  $query_account = "SELECT * FROM all_in_one_project.account" or die("Error:" . mysqli_error($con));
  $result_account = mysqli_query($con, $query_account);
- 
+
  while($row_account = mysqli_fetch_array($result_account)) {
   unset($image_profile);
   // $image_profile = profile_image($row_account['firstname'],$row_account['department'],32,$row_account['case_officer'],1);
