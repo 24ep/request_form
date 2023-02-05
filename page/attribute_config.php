@@ -107,7 +107,7 @@ function add_new_attribute(db,table,target_tb,target_db,target_prefix) {
       },
       function(data) {
           attribute_detail_page(data,'',table,'create');
-          bypass_table_information(data,target_tb,target_db,target_prefix)
+          bypass_table_information(data,target_tb,target_db,target_prefix);
 
 
       });
