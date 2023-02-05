@@ -34,7 +34,7 @@ FilePond.setOptions({
     },
 });
 
-document.getElementById('files').hidden = false;
+document.getElementById('files').hidden = true;
 function enable_upload_files(){
     if(document.getElementById('version_update').value == 'major_change' || document.getElementById('version_update').value == 'minor_change'){
         document.getElementById('files').hidden = false;
