@@ -9,13 +9,13 @@ $target_prefix = $_POST['target_prefix'];
   <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a onclick="get_page('configurable')">Configurable</a></li>
-          <li class="breadcrumb-item active" aria-current="page"><?php echo $table; ?></li>
+          <li class="breadcrumb-item active" aria-current="page"><?php echo $target_tb; ?></li>
         </ol>
     </nav>
 
     <div class="d-flex">
       <!-- <button class="btn btn-outline-success" onclick="attribute_detail_page('','','','create')" >Create new attribute</button> -->
-      <button class="btn btn-secondary shadow-sm" onclick="add_new_attribute('u749625779_cdscontent','job_attribute',target_tb,target_db,target_prefix)" ><ion-icon name="add-outline"></ion-icon>Create new attribute</button>
+      <button class="btn btn-secondary shadow-sm" onclick="add_new_attribute('u749625779_cdscontent','job_attribute',$target_tb,$target_db,$target_prefix)" ><ion-icon name="add-outline"></ion-icon>Create new attribute</button>
     </div>
   </div>
 </nav>
