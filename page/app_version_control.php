@@ -15,7 +15,7 @@ FilePond.setOptions({
     maxFileSize:'2MB',
     server: {
         url: 'https://content-service-gate.cdse-commercecontent.com/',
-        process: 'base/action/action_upload_files.php?id='+<?php echo $_POST['id']; ?>
+        process: 'base/action/action_upload_files.php'
         // revert: './revert.php',
         // restore: './restore.php?id=',
         // fetch: './fetch.php?data=',
