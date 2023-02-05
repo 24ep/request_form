@@ -15,7 +15,7 @@ $target_prefix = $_POST['target_prefix'];
 
     <div class="d-flex">
       <!-- <button class="btn btn-outline-success" onclick="attribute_detail_page('','','','create')" >Create new attribute</button> -->
-      <button class="btn btn-secondary shadow-sm" onclick="add_new_attribute('u749625779_cdscontent','job_attribute',$target_tb,$target_db,$target_prefix)" ><ion-icon name="add-outline"></ion-icon>Create new attribute</button>
+      <button class="btn btn-secondary shadow-sm" onclick="add_new_attribute('u749625779_cdscontent','job_attribute','<?php echo $target_tb; ?>','<?php echo $target_db; ?>','<?php echo $target_prefix; ?>')" ><ion-icon name="add-outline"></ion-icon>Create new attribute</button>
     </div>
   </div>
 </nav>
