@@ -15,7 +15,7 @@ $target_prefix = $_POST['target_prefix'];
 
     <div class="d-flex">
       <!-- <button class="btn btn-outline-success" onclick="attribute_detail_page('','','','create')" >Create new attribute</button> -->
-      <button class="btn btn-secondary shadow-sm" onclick="add_new_attribute('u749625779_cdscontent','job_attribute');bypass_table_information('<?php echo $target_tb; ?>','<?php echo $target_db; ?>','<?php echo $target_prefix; ?>');" ><ion-icon name="add-outline"></ion-icon>Create new attribute</button>
+      <button class="btn btn-secondary shadow-sm" onclick="add_new_attribute('u749625779_cdscontent','job_attribute','<?php echo $target_tb; ?>','<?php echo $target_db; ?>','<?php echo $target_prefix; ?>');" ><ion-icon name="add-outline"></ion-icon>Create new attribute</button>
     </div>
   </div>
 </nav>
@@ -90,8 +90,8 @@ echo '</tbody>
                 $('#col_detail').html(data);
             });
   }
-  function bypass_table_information(target_tb,target_db,target_prefix){
-  document.getElementById('ja_edit_table_name').value = target_tb;
+  function bypass_table_information(data,target_tb,target_db,target_prefix){
+          document.getElementById('ja_edit_table_name').value = target_tb;
           document.getElementById('ja_edit_db_name').value = target_db;
           document.getElementById('ja_edit_prefix').value = target_prefix;
           update_value_attribute(data, 'ja_edit_table_name' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id');
@@ -99,7 +99,7 @@ echo '</tbody>
           update_value_attribute(data, 'ja_edit_prefix' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id');
 
 }
-function add_new_attribute(db,table) {
+function add_new_attribute(db,table,target_tb,target_db,target_prefix) {
 
   $.post("base/action/action_insert_new_record.php", {
         table : table,
@@ -107,6 +107,7 @@ function add_new_attribute(db,table) {
       },
       function(data) {
           attribute_detail_page(data,'',table,'create');
+          bypass_table_information(data,target_tb,target_db,target_prefix)
 
 
       });
