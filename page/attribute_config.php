@@ -98,16 +98,14 @@ function add_new_attribute(db,table,target_tb,target_db,target_prefix) {
       },
       function(data) {
           attribute_detail_page(data,'',table,'create');
-          console.log(target_tb);
-          console.log(target_db);
-          console.log(target_prefix);
-          document.getElementById('ja_edit_table_name').value = target_tb;
+
+      });
+      document.getElementById('ja_edit_table_name').value = target_tb;
           document.getElementById('ja_edit_db_name').value = target_db;
           document.getElementById('ja_edit_prefix').value = target_prefix;
           update_value_attribute(data, 'ja_edit_table_name' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id');
           update_value_attribute(data, 'ja_edit_db_name' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id');
           update_value_attribute(data, 'ja_edit_prefix' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id');
-      });
 
 }
 function alter_delete_attribute(db,table,column) {
