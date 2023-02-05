@@ -1,7 +1,7 @@
 
 
 <div class="form-floating mb-3">
-  <select class="form-select" id="version_update" aria-label="Floating label select example">
+  <select class="form-select" onchange="enable_upload_files()" id="version_update" aria-label="Floating label select example">
   <option value="bug_fix" selected>Bug fixed / add option / add attribute</option>
     <option value="major_change">Major Change - changed core</option>
     <option value="minor_change">Minor change - add new function</option>
@@ -36,7 +36,7 @@ FilePond.setOptions({
 
 document.getElementById('files').hidden = false;
 function enable_upload_files(){
-    if(document.getElementById('version_update').value == 'major_change'||document.getElementById('version_update').value == 'minor_change'|){
+    if(document.getElementById('version_update').value == 'major_change' || document.getElementById('version_update').value == 'minor_change'){
         document.getElementById('files').hidden = false;
     }else{
         document.getElementById('files').hidden = true;
