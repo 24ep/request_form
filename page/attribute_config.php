@@ -1,6 +1,8 @@
 <?php
 session_start();
-$table = $_POST['table'];
+$target_tb = $_POST['target_tb'];
+$target_db = $_POST['target_db'];
+$target_prefix = $_POST['target_prefix'];
 ?>
 <nav class="navbar p-3 pb-0 m-0 bg-secondary bg-opacity-25 text-secondary  m-0">
   <div class="container-fluid">
@@ -13,11 +15,11 @@ $table = $_POST['table'];
 
     <div class="d-flex">
       <!-- <button class="btn btn-outline-success" onclick="attribute_detail_page('','','','create')" >Create new attribute</button> -->
-      <button class="btn btn-secondary shadow-sm" onclick="add_new_attribute('u749625779_cdscontent','job_attribute')" ><ion-icon name="add-outline"></ion-icon>Create new attribute</button>
+      <button class="btn btn-secondary shadow-sm" onclick="add_new_attribute('u749625779_cdscontent','job_attribute',target_tb,target_db,target_prefix)" ><ion-icon name="add-outline"></ion-icon>Create new attribute</button>
     </div>
   </div>
 </nav>
-<h5 class="p-2 ps-4 pb-4 bg-secondary bg-opacity-25 text-secondary  m-0" style="text-transform: uppercase"><strong><?php echo $table;?></strong></h5>
+<h5 class="p-2 ps-4 pb-4 bg-secondary bg-opacity-25 text-secondary  m-0" style="text-transform: uppercase"><strong><?php echo $target_tb;?></strong></h5>
 
 
 
@@ -44,7 +46,7 @@ function badge_attribute_type($type){
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
-$query = "SELECT * FROM u749625779_cdscontent.job_attribute where table_name = '".$table."';" or die("Error:" . mysqli_error());
+$query = "SELECT * FROM u749625779_cdscontent.job_attribute where table_name = '".$target_tb."';" or die("Error:" . mysqli_error());
 $result =  mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
 $attribute .= '
@@ -88,13 +90,19 @@ echo '</tbody>
                 $('#col_detail').html(data);
             });
   }
-function add_new_attribute(db,table) {
+function add_new_attribute(db,table,target_tb,target_db,target_prefix) {
   $.post("base/action/action_insert_new_record.php", {
         table : table,
         db : db
       },
       function(data) {
           attribute_detail_page(data,'',table,'create');
+          document.getElementById('ja_edit_table_name').value = target_tb;
+          document.getElementById('ja_edit_db_name').value = target_db;
+          document.getElementById('ja_edit_prefix').value = target_prefix;
+          update_value_attribute(data, 'ja_edit_table_name' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id')
+          update_value_attribute(data, 'ja_edit_db_name' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id')
+          update_value_attribute(data, 'ja_edit_prefix' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id')
       });
 }
 function alter_delete_attribute(db,table,column) {

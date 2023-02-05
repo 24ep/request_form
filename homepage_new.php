@@ -484,10 +484,12 @@ function get_page(page) {
         Notiflix.Loading.remove();
     });
 }
-function get_attribute_config(table) {
+function get_attribute_config(target_tb,target_db,target_prefix) {
     Notiflix.Loading.hourglass('Loading...');
     $.post("base/page/attribute_config.php", {
-        table:table
+        target_tb:target_tb,
+        target_db:target_db,
+        target_prefix:target_prefix
     }, function(data) {
         $('#col_detail').html(data);
         Notiflix.Loading.remove();
