@@ -1,4 +1,4 @@
-<?php 
+<?php
 function return_input_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id,$require){
     if($site_element=='datetime-local'){
       if($current_value <> null){
@@ -23,7 +23,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.' </div>
       <div class="col-9">
         <input
-          class="form-control form-control-sm bg-light border-white '.$require.'"
+          class="form-control form-control-sm bg-light '.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
           type="'.$site_element.'"
@@ -60,7 +60,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.' </div>
       <div class="col-9">
         <input
-          class="form-control form-control-color border-white '.$require.'"
+          class="form-control form-control-color '.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
           type="'.$site_element.'"
@@ -108,7 +108,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
       <div class="col-9">
         <select
-          class="form-select form-select-sm bg-light border-white '.$require.'"
+          class="form-select form-select-sm bg-light '.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
           '.$enable_edit.'
@@ -152,7 +152,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       <div class="col-9">
         <select
           multiple="multiple"
-          class="form-select bg-light border-white '.$require.'"
+          class="form-select bg-light '.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
           '.$enable_edit.'
@@ -184,7 +184,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
       <div class="col-9">
         <textarea
-          class="form-control bg-light border-white '.$require.'"
+          class="form-control bg-light '.$require.'"
           id="'.$code_element.'"
           name="'.$code_element.'"
           rows="4"
@@ -197,7 +197,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
     ';
     return $element;
   }
-//get attribute 
+//get attribute
 function get_attribute($attribute_set,$section_group,$table,$database,$primary_key_id,$prefix_table){
     global $con;
     global $id;
@@ -205,21 +205,21 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
       $query = "SELECT  * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."'" or die("Error:" . mysqli_error($con));
       $result = mysqli_query($con, $query);
       while($row = mysqli_fetch_array($result)) {
-          $query_column = "SELECT `COLUMN_NAME` 
-          FROM `INFORMATION_SCHEMA`.`COLUMNS` 
-          WHERE `TABLE_SCHEMA`='".$database."' 
+          $query_column = "SELECT `COLUMN_NAME`
+          FROM `INFORMATION_SCHEMA`.`COLUMNS`
+          WHERE `TABLE_SCHEMA`='".$database."'
               AND `TABLE_NAME`='".$table."'" or die("Error:" . mysqli_error($con));
           $result_column = mysqli_query($con, $query_column);
           while($row_column = mysqli_fetch_array($result_column)) {
               ${$prefix_table."_".$row_column['COLUMN_NAME']} = $row[$row_column['COLUMN_NAME']];
           }
       }
-    $query = "SELECT  * FROM u749625779_cdscontent.job_attribute 
+    $query = "SELECT  * FROM u749625779_cdscontent.job_attribute
     where allow_display=1 and attribute_set = '".$attribute_set."' and section_group ='".$section_group."' and table_name='".$table."'"  or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     $element="";
     while($row = mysqli_fetch_array($result)) {
-  
+
         if($row['allow_in_edit']==0){
             $allow_in_edit = ' disabled';
         }else{
@@ -248,7 +248,7 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
 //get attribute section
 function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$prefix_table){
     global $con;
-    $query = "SELECT distinct section_group FROM u749625779_cdscontent.job_attribute 
+    $query = "SELECT distinct section_group FROM u749625779_cdscontent.job_attribute
     where allow_display=1 and attribute_set = '".$attribute_set."' and table_name='".$table."' order by sort_section ASC" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     $section="";
