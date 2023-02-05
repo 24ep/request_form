@@ -7,7 +7,7 @@
     </ol>
     </nav>
     <div class="d-flex">
-    <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Release new version</button>
+    <button class="btn btn-secondary shadow-sm" onclick="call_release_new_app_version()" data-bs-toggle="modal" data-bs-target="#exampleModal">Release new version</button>
     </div>
   </div>
 </nav>
