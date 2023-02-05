@@ -22,7 +22,7 @@ FilePond.setOptions({
   <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
     <option value="major_change" selected>Major Change - changed core</option>
     <option value="minor_change">Minor change - add new function</option>
-    <option value="bug_fix">Bug fixed</option>
+    <option value="bug_fix">Bug fixed / add option / add attribute</option>
   </select>
   <label for="floatingSelect">Version update</label>
 </div>
