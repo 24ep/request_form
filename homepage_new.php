@@ -128,6 +128,7 @@ if (!$_SESSION["login_csg"]){
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/underline@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/attaches@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/editorjs-style@latest"></script>
+    
     <!-- <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@calumk/editorjs-columns@latest"></script>
