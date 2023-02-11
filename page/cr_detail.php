@@ -80,8 +80,8 @@ if($id=="" or $id == null){
   right: 0;
   bottom: 0;
   background-color: #0000002e;
-  z-index: 2; 
-  cursor: pointer; 
+  z-index: 2;
+  cursor: pointer;
 }
   </style>
   </head>
@@ -92,7 +92,7 @@ if($id=="" or $id == null){
   font-size: 20px;
   text-align: -webkit-center;
   top: 100;
-  margin: 25%;">  
+  margin: 25%;">
   <h1>View only, please login</h1>
     <a href="https://content-service-gate.cdse-commercecontent.com/login?redirect=https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='.$id.'" class="btn btn-danger">Login</a>
     <a href="https://content-service-gate.cdse-commercecontent.com/signup" target="_blank" class="btn btn-dark">Register</a>
@@ -136,7 +136,7 @@ function return_option_edit_cr($current_value,$attr_id){
         $option_element = "<option selected value='unassign'>unassign</option>";
       }
     }
-    
+
     while($option = mysqli_fetch_array($result_op)) {
       if($option["attribute_option"]==$current_value){
           $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
@@ -158,14 +158,14 @@ function get_attachment_cr($id){
   <ul class="list-group mt-2">';
     while($row = mysqli_fetch_array($result)) {
       $herf = str_replace("../..",'../..',$row['file_path'].$row['file_name']);
-      $list_attchment.=  ' <li class="list-group-item d-flex justify-content-between align-items-left" style="border:0px;padding:0px;margin-top:5px;background: transparent;" > 
+      $list_attchment.=  ' <li class="list-group-item d-flex justify-content-between align-items-left" style="border:0px;padding:0px;margin-top:5px;background: transparent;" >
                               <a href="'.$herf.'" download="'.$row['file_name'].'" class="btn btn-secondary btn-sm ">
                                 <ion-icon style="color:white;margin-right:5px"name="document-attach-outline"></ion-icon>'.$row["file_name"].'
                               </a>
                            </li>';
       $pass = true;
 
-      
+
     }
     $list_attchment.= '</ul>';
     if(!isset($pass)){$pass=false;}
@@ -258,7 +258,7 @@ function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
                 }else{
                   $option_set = '<option value=""></option>';
                 }
-                
+
               }
               $loop_in_null=true;
             }
@@ -336,7 +336,7 @@ $result = mysqli_query($con, $query);
       }else{
         $allow_requester_noti = "";
       }
-     
+
       if($row['line_user_id']<> null and $row['line_user_id']<> "" ){
         if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
           $request_by_contact = $request_by." | ".$row['firstname']." ".$row['lastname']." ( ".$request_by_nickname." ) | ".$row['work_email']. " ".$allow_requester_noti;
@@ -352,17 +352,17 @@ $result = mysqli_query($con, $query);
 $con_project= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con_project, "SET NAMES 'utf8' ");
 $query_project = "SELECT *
-FROM all_in_one_project.project_bucket 
+FROM all_in_one_project.project_bucket
 where prefix='".$ticket_template."'" or die("Error:" . mysqli_error($con));
 $result_project = mysqli_query($con_project, $query_project);
 while($row_project = mysqli_fetch_array($result_project)) {
   $color_project = $row_project["color_project"];
   $project_name = $row_project["project_name"];
 }
-    echo ' 
+    echo '
     <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
-        <div class="modal-content">              
+        <div class="modal-content">
           <div class="modal-body">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <img src="" class="imagepreview" style="width: 100%;" >
@@ -371,7 +371,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
       </div>
     </div>
         <div id="call_update_complete"></div>
-        <div class="offcanvas-body"  style="padding:0px;z-index:1"> 
+        <div class="offcanvas-body"  style="padding:0px;z-index:1">
         <div class="row window-full overflow-auto" style="margin-bottom: 0px;padding-left:20px;background: white;">
         <div class="col-8" style="border-right:1px solid  #ebedef;padding: 1rem 1rem;">
           <div class="text-white bg-success toast align-items-center top-5 start-50 translate-middle-x fade hide" role="alert" aria-atomic="true" data-bs-delay="2000" aria-live="assertive" id="liveToast_cr" style="position: absolute; top: 0; right: 0;margin-top:10px;margin-right:10px">
@@ -390,10 +390,10 @@ while($row_project = mysqli_fetch_array($result_project)) {
           </a>
       </small>
         <div style="color:gray;margin-bottom:15px;margin-top:10px;font-size:13px">
-   
-        <span>Create by 
-        '.$request_by_contact.'</span>   
-        <span>'.$create_date.'</span>      
+
+        <span>Create by
+        '.$request_by_contact.'</span>
+        <span>'.$create_date.'</span>
         </div>
         <span class="badge bg-primary" style="background-color:'.$color_project.'!important;margin-bottom:15px;padding:8px 15px;">'.$project_name.'</span>
         <button class="badge bg-light text-dark" style="border: solid 1px gainsboro;" onclick="prompt(&#39Press Ctrl + C, then Enter to copy to clipboard&#39,&#39https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id='.$id.'&#39)"><ion-icon name="share-social-outline"></ion-icon>Copie ticket URL</button>
@@ -404,27 +404,27 @@ while($row_project = mysqli_fetch_array($result_project)) {
         <label for="staticEmail" class="col-sm-2 col-form-label" style="width: fit-content;padding: 0px 5px 5px 15px;">
         <strong style="color:'.$color_project.'!important;font-size: smaller;border-bottom: solid 3px;">'.$ticket_template.'-'.$id .'</strong></label>
           <div class="col-sm-10">
-            <input class="input-cr-inactive" id="cr_edit_title" name="cr_edit_title" 
+            <input class="input-cr-inactive" id="cr_edit_title" name="cr_edit_title"
             type="text" disabled value="'.$title.'">
           </div>
         </div>
-   
+
         <form method="post">
         <div class="des_cr" id="des_cr_inline" >
         <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Description</strong></small>
         '.$description.$list_attachment.$list_image.'</div></form>
-        
+
         <hr class="cr_hr_detail">
         <small style="font-weight: bolder;color: #adb5bd;margin-bottom:5px">Comment</small>
         <ul  class="list-group list-group-flush" style="background: fixed;">
         <div id="comment_box_cr">
         <div id="call_ticket_comment_cr">
-        '; 
+        ';
         include('https://content-service-gate.cdse-commercecontent.com/base/get/get_comment_cr.php?id='.$id);
         echo '
         </div>
         </div>
-        </ul> 
+        </ul>
         <textarea id="comment_input_cr" name="comment_input_cr" type="text" placeholder="Type message"></textarea>
        ';
        ?>
@@ -472,8 +472,8 @@ while($row_project = mysqli_fetch_array($result_project)) {
               <span style="padding: 0px 0px 5px 25px;"><strong>'.$sj.' Owner</strong></span>
               <div class="col " style=" padding-left: 25px;text-align-last: right;">
                 <input type="hidden" id="cr_edit_case_officer" name="cr_edit_case_officer" value="'.$case_officer.'">
-                <select  multiple id="cr_edit_case_officer_show" 
-                 name="cr_edit_case_officer_show" 
+                <select  multiple id="cr_edit_case_officer_show"
+                 name="cr_edit_case_officer_show"
                  style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
                  <option data-placeholder="true"></option>
                  '.$username_op_mul.'
@@ -482,13 +482,13 @@ while($row_project = mysqli_fetch_array($result_project)) {
             </div>';
 
             // echo '
-            //     <div class="directorist-select directorist-select-multi" id="multiSelect" data-max="50" 
-            //         data-isSearch="true" data-multiSelect="['.$username_op_set.']" style="position: relative!important; z-index: 1!important;" >               
+            //     <div class="directorist-select directorist-select-multi" id="multiSelect" data-max="50"
+            //         data-isSearch="true" data-multiSelect="['.$username_op_set.']" style="position: relative!important; z-index: 1!important;" >
             //         <input value="['.$set_participant.']" type="hidden">
             //     </div>
             // ';
             echo '<hr>';
-            // $set_participant 
+            // $set_participant
             // end contact
             // ---check list
              ?>
@@ -517,7 +517,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
             echo '
             <ul class="list-group">
             <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">Ticket CTO</div><div class="col-6">
-            <input class="form-control form-control-sm" id="cr_edit_cto_ref" name="cr_edit_cto_ref" onchange="update_cr_detail('.$id.','.$cr_edit_ref_cto.')" type="text" style="border: 0px;" placeholder="Default input" aria-label="default input example" value="'.$cto_ref.'"> 
+            <input class="form-control form-control-sm" id="cr_edit_cto_ref" name="cr_edit_cto_ref" onchange="update_cr_detail('.$id.','.$cr_edit_ref_cto.')" type="text" style="border: 0px;" placeholder="Default input" aria-label="default input example" value="'.$cto_ref.'">
             </div>
             </li>
             <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">Request for</div><div class="col-6">
@@ -526,16 +526,16 @@ while($row_project = mysqli_fetch_array($result_project)) {
             </select>
             </div></li>
             <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">SKUs</div><div class="col-6">
-            <input class="form-control form-control-sm" id="cr_edit_sku" name="cr_edit_sku" onchange="update_cr_detail('.$id.','.$cr_edit_sku.')" type="text" style="border: 0px;" placeholder="" aria-label="default input example" value="'.$sku.'"> 
+            <input class="form-control form-control-sm" id="cr_edit_sku" name="cr_edit_sku" onchange="update_cr_detail('.$id.','.$cr_edit_sku.')" type="text" style="border: 0px;" placeholder="" aria-label="default input example" value="'.$sku.'">
             </div>
             </li>
             <li class="list-group-item" style="display: inline-flex;background: #dee2e6;"><div class="col-6 fw-bold ">Effective date</div><div class="col-6">
-            <input class="form-control form-control-sm" id="cr_edit_effective_date" name="cr_edit_effective_date" onchange="update_cr_detail('.$id.','.$cr_edit_effective_date.')" type="datetime-local" style="border: 0px;" placeholder="" aria-label="default input example" value="'.$effective_date_edit.'"> 
+            <input class="form-control form-control-sm" id="cr_edit_effective_date" name="cr_edit_effective_date" onchange="update_cr_detail('.$id.','.$cr_edit_effective_date.')" type="datetime-local" style="border: 0px;" placeholder="" aria-label="default input example" value="'.$effective_date_edit.'">
             </div></li>
             </ul>
             <br>';
       }
-            
+
             if($ticket_template<>"PJ"){
             echo '
             <hr>
@@ -553,7 +553,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
             // <div class="mb-3 row">
             // <label for="exampleDataList" class="col-sm-3 col-form-label">Request by</label>
             // <div class="col-sm-9">
-            // <input class="form-control form-control-sm" list="datalistOptionsrequestby"  
+            // <input class="form-control form-control-sm" list="datalistOptionsrequestby"
             // onchange="update_cr_detail('.$id.','.$cr_edit_request_by.')" id="cr_edit_request_by" name="cr_edit_request_by" placeholder="Type to search..." value="'.$request_by.'">
             //   <datalist id="datalistOptionsrequestby">
             //   '.$username_op.'
@@ -567,7 +567,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
             </div>';
             }
         }else{
-           echo '<h4 style="font-weight: 900;padding-left: 0rem;font-size: xxx-large;background-color: transparent;">'.$status.'</h4>'; 
+           echo '<h4 style="font-weight: 900;padding-left: 0rem;font-size: xxx-large;background-color: transparent;">'.$status.'</h4>';
                ?>
 <hr>
 <div class="col">
@@ -578,7 +578,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
     <?php     include('https://content-service-gate.cdse-commercecontent.com/base/get/get_checklist_cr.php?id='.$id.'&department='.$_SESSION["department"]); ?>
 </ul>
 <?php
-           echo '  
+           echo '
            <hr>
            <ul class="list-group list-group shadow-sm border-0 rounded bg-white">
            <li class="list-group-item border-0 border-bottom" style="display: inline-flex;"><div class="col-6 fw-bold ">Assign</div><div class="col-6">'.$case_officer.'</div></li>
@@ -594,8 +594,8 @@ while($row_project = mysqli_fetch_array($result_project)) {
            <br>';
         }
         echo '</div>
-              </div>  
-              </div>                     
+              </div>
+              </div>
           </div>';
     }
 ?>
@@ -809,10 +809,13 @@ window.onresize = function(event) {
 // pureScriptSelect('#multiSelect'); //multi select
 new SlimSelect({
     select: '#cr_edit_case_officer_show',
-    closeOnSelect: false,
-    allowDeselectOption: true,
-    onChange: (info) => {
-        var input_update = "";
+    settings: {
+      closeOnSelect: false,
+      allowDeselectOption: true
+    },
+    events: {
+    afterChange: (info) => {
+      var input_update = "";
         for (let i = 0; i < info.length; i++) {
             if (input_update == "") {
                 input_update = info[i].value;
@@ -823,8 +826,8 @@ new SlimSelect({
         }
         document.getElementById("cr_edit_case_officer").value = input_update;
         update_cr_detail(<?php echo $id; ?>, <?php echo $cr_edit_case_officer; ?>)
-
     }
+  }
 })
 </script>
 <script>
@@ -837,7 +840,7 @@ if (tinyMCE.get('comment_input_cr')) {
 load_tiny_comment();
 </script>
 <?php if( $direct == 'external'){
-echo ' 
+echo '
 <script>
 function on_overlay() {
   document.getElementById("overlay").style.display = "block";

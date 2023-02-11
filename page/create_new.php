@@ -327,9 +327,12 @@ function itm_confirm_cancel(id, status_change) {
 }
 new SlimSelect({
     select: '#status_filter_show',
-    closeOnSelect: false,
+    settings: {
+        closeOnSelect: false,
     allowDeselectOption: true,
-    onChange: (info) => {
+    },
+    events: {
+    afterChange: (info) => {
         var input_update = "";
         for (let i = 0; i < info.length; i++) {
             if (input_update == "") {
@@ -341,8 +344,8 @@ new SlimSelect({
         }
         document.getElementById("status_filter").value = input_update;
         filter_update();
-
     }
+  }
 })
 filter_update();
 //tooltips

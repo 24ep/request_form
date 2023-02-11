@@ -1,6 +1,6 @@
     <?php
 session_start();
-if (!$_SESSION["login_csg"]){ 
+if (!$_SESSION["login_csg"]){
             Header("Location: login");
     }else{
     include_once('get/get_option_function.php');
@@ -78,8 +78,8 @@ if (!$_SESSION["login_csg"]){
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
         </script>
         <!-- multi-select -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.js"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/slim-select@latest/dist/slimselect.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/slim-select@latest/dist/slimselect.css" />
         </link>
         <link rel="stylesheet" type="text/css"
             href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/light.css">
@@ -126,7 +126,7 @@ if (!$_SESSION["login_csg"]){
         <script src="https://cdn.jsdelivr.net/npm/editorjs-drag-drop@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/@calumk/editorjs-nested-checklist@latest"></script>
         <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script>
-        
+
         <!-- <script src="https://cdn.jsdelivr.net/npm/codex.editor.header@2.0.4/dist/bundle.js"></script> -->
         <!-- <script src="https://cdn.jsdelivr.net/npm/@editorjs/raw"></script> -->
     </head>
@@ -384,7 +384,7 @@ if (!$_SESSION["login_csg"]){
                                                     </ion-icon>
                                                     New Ticket
                                                 </button>
-                                           
+
                                             </form>
                                         </div>
                                     </nav>
@@ -396,7 +396,7 @@ if (!$_SESSION["login_csg"]){
                                                         name="search-outline">
                                                     </ion-icon> Search
                                                 </span>
-                                                <?php 
+                                                <?php
                                                 if($_SESSION["ts_query_input"]<>""){
                                                     $sqb = $_SESSION["ts_query_input"];
                                                 }else{
@@ -772,7 +772,7 @@ function search_cr_data() {
         for (var card of SearchInputQuery) {
             card.className = card.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
         }
-        
+
         //show id equal
         var SearchInputQuery = document.querySelectorAll('[data-cr-id="' + input + '"]');
         for (var card of SearchInputQuery) {
@@ -1133,7 +1133,7 @@ function filter_update(be) {
     }
 }
     </script>
-    <?php 
+    <?php
                 $tab_select = $_GET["tab"];
                 echo '<script>select_current_tab("'.$tab_select.'");</script>';
                 ?>
