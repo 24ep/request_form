@@ -330,7 +330,10 @@ try {
     status_filter_show_object.destroy()
 }
 catch{
-    var status_filter_show_object = new SlimSelect({
+
+//nothing todogit c
+}
+var status_filter_show_object = new SlimSelect({
     select: '#status_filter_show',
     settings: {
         closeOnSelect: false,
@@ -352,8 +355,6 @@ catch{
     }
   }
 })
-
-}
 
 
 filter_update();
