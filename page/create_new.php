@@ -325,11 +325,12 @@ function itm_confirm_cancel(id, status_change) {
         }
     }
 }
+
 new SlimSelect({
     select: '#status_filter_show',
     settings: {
         closeOnSelect: false,
-    allowDeselectOption: true,
+        allowDeselectOption: true
     },
     events: {
     afterChange: (info) => {
@@ -347,6 +348,7 @@ new SlimSelect({
     }
   }
 })
+
 filter_update();
 //tooltips
 tippy('#brand_filter', {
