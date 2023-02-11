@@ -474,7 +474,7 @@ while($row_project = mysqli_fetch_array($result_project)) {
                 <input type="hidden" id="cr_edit_case_officer" name="cr_edit_case_officer" value="'.$case_officer.'">
                 <select  multiple id="cr_edit_case_officer_show"
                  name="cr_edit_case_officer_show"
-                 style="border: 0px;font-weight: bold;background-color: transparent;" aria-label=".form-select-lg example">
+                aria-label=".form-select-lg example">
                  <option data-placeholder="true"></option>
                  '.$username_op_mul.'
                 </select>
