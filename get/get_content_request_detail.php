@@ -817,7 +817,7 @@ new SlimSelect({
   select: '#cr_edit_case_officer_show',
   settings: {
     closeOnSelect: false,
-    allowDeselectOption: true
+    allowDeselectOption: true,
   },
   events: {
     afterChange: (info) => {

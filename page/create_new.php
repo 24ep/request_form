@@ -330,7 +330,7 @@ new SlimSelect({
     select: '#status_filter_show',
     settings: {
         closeOnSelect: false,
-        allowDeselectOption: true
+        allowDeselectOption: true,
     },
     events: {
     afterChange: (info) => {
