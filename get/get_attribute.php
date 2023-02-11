@@ -117,11 +117,6 @@ function return_s_select_box($att_code,$att_name,$site_element,$current_value,$c
   '.$option_element.'
   </select>
   </div>
-  <script>
-  new SlimSelect({
-    select: "#'.$code_element.'"
-  })
-  </script>
   </li>
   ';
   unset($option_element);
@@ -323,3 +318,9 @@ function update_value_attribute(id, attribute_code, prefix, database, table, pri
     }
   }
   </script>
+
+<script>
+   new SlimSelect({
+    select: 'document.querySelectorAll("select,input")'
+  })
+</script>
