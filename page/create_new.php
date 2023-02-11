@@ -326,7 +326,10 @@ function itm_confirm_cancel(id, status_change) {
     }
 }
 
-new SlimSelect({
+try {
+    status_filter_show_object.destroy()
+}
+var status_filter_show_object = new SlimSelect({
     select: '#status_filter_show',
     settings: {
         closeOnSelect: false,
