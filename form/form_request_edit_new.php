@@ -54,12 +54,7 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
     </div>
   </li>
   ';
-  $element .= "
-  <script>
-  new SlimSelect({
-    select: '#".$code_element."'
-  })
-  </script>";
+
   unset($option_element);
   return $element;
 }
