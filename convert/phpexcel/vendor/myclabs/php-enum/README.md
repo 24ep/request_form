@@ -94,7 +94,7 @@ $action = Action::VIEW();
 $action = Action::EDIT();
 ```
 
-Static method helpers are implemented using [`__callStatic()`](http://www.php.net/menual/en/language.oop5.overloading.php#object.callstatic).
+Static method helpers are implemented using [`__callStatic()`](http://www.php.net/manual/en/language.oop5.overloading.php#object.callstatic).
 
 If you care about IDE autocompletion, you can either implement the static methods yourself:
 

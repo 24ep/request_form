@@ -41,7 +41,7 @@ class SheetViews extends BaseParserClass
             $zoomScale = (int) ($this->sheetViewXml['zoomScale']);
             if ($zoomScale <= 0) {
                 // setZoomScale will throw an Exception if the scale is less than or equals 0
-                // that is OK when menually creating documents, but we should be able to read all documents
+                // that is OK when manually creating documents, but we should be able to read all documents
                 $zoomScale = 100;
             }
 
@@ -52,7 +52,7 @@ class SheetViews extends BaseParserClass
             $zoomScaleNormal = (int) ($this->sheetViewXml['zoomScaleNormal']);
             if ($zoomScaleNormal <= 0) {
                 // setZoomScaleNormal will throw an Exception if the scale is less than or equals 0
-                // that is OK when menually creating documents, but we should be able to read all documents
+                // that is OK when manually creating documents, but we should be able to read all documents
                 $zoomScaleNormal = 100;
             }
 
