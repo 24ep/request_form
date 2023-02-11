@@ -119,7 +119,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
       </div>
     </li>
     ';
-    $element.= "
+    $element .= "
     <script>
     new SlimSelect({
       select: '#".$code_element."'
