@@ -329,7 +329,8 @@ function itm_confirm_cancel(id, status_change) {
 try {
     status_filter_show_object.destroy()
 }
-var status_filter_show_object = new SlimSelect({
+catch{
+    var status_filter_show_object = new SlimSelect({
     select: '#status_filter_show',
     settings: {
         closeOnSelect: false,
@@ -351,6 +352,9 @@ var status_filter_show_object = new SlimSelect({
     }
   }
 })
+
+}
+
 
 filter_update();
 //tooltips
