@@ -1,5 +1,5 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.css" rel="stylesheet">
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.css" rel="stylesheet"> -->
 <?php
 session_start();
 
@@ -330,8 +330,7 @@ try {
     status_filter_show_object.destroy()
 }
 catch{
-
-//nothing todogit c
+//nothing todo
 }
 var status_filter_show_object = new SlimSelect({
     select: '#status_filter_show',
