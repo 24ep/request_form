@@ -322,6 +322,6 @@ function update_value_attribute(id, attribute_code, prefix, database, table, pri
 <script>
    new SlimSelect({
     // select: document.querySelectorAll(".select-slim")
-    select: document.querySelectorAll('input[type="select"]');
+    select: document.querySelectorAll('input[type="select"]')
   })
 </script>
