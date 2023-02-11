@@ -65,7 +65,7 @@ mysqli_close($con);
                     <input type="hidden" id="status_filter" style="position: inherit;" name="status_filter" value="">
                     <span class="input-group-text " id="addon-wrapping">Status</span>
                     <select multiple id="status_filter_show" name="status_filter_show"
-                        style="border: 0px;font-weight: bold;background-color: transparent;"
+                        style="border: 0px;"
                         aria-label=".form-select-lg example">
                         <option data-placeholder="true"></option>
                         <?php echo $request_new_status_op;?>
