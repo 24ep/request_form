@@ -56,6 +56,12 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
     </div>
   </li>
   ';
+  $element .= "
+  <script>
+  new SlimSelect({
+    select: '#".$code_element."'
+  })
+  </script>";
   unset($option_element);
   return $element;
 }
@@ -125,7 +131,7 @@ if(strpos($_SESSION["department"],"Content")!==false){
   }else{
     $allow_edit = "disabled";
   }
- 
+
 }else{
 if($row["allow_ex_edit"]==1){
   //check assign name
@@ -243,7 +249,7 @@ if($row["allow_ex_edit"]==1){
       $trigger_status=$row_ticket_info['trigger_status'];
       $job_number=$row_ticket_info['job_number'];
       $approved_date=$row_ticket_info['approved_date'];
-      
+
 
   }
 //---
@@ -267,7 +273,7 @@ $element_return = "";
 $element_return .= '<div id="call_update_ns_complete"></div>';
 $element_return .= '<ul class="list-group list-group-flush">';
 $element_return .= $element;
-$element_return .= '</ul>'; 
+$element_return .= '</ul>';
 
  return $element_return;
 }
@@ -282,13 +288,13 @@ while($row = mysqli_fetch_array($result)) {
               '.$row['group_attribute'].'
             </button>
           </h2>';
-    echo '   
+    echo '
           <div id="panelsStayOpen-collapse'.str_replace(" ","_",$row['group_attribute']).'" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading'.str_replace(" ","_",$row['group_attribute']).'">
             <div class="accordion-body" style="padding:0px">';
             echo get_list_element($row['group_attribute'],$id);
       echo '</div>';
     echo '</div>';
-  
+
     echo '</div>';
 }
 echo '</div>';

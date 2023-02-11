@@ -54,6 +54,12 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
     </div>
   </li>
   ';
+  $element .= "
+  <script>
+  new SlimSelect({
+    select: '#".$code_element."'
+  })
+  </script>";
   unset($option_element);
   return $element;
 }
@@ -121,7 +127,7 @@ $result = mysqli_query($con, $query);
         }else{
           $allow_edit = "disabled";
         }
-       
+
     }else{
       if($row["allow_ex_edit"]==1){
         //check assign name
