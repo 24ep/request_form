@@ -1,6 +1,6 @@
 
 <?php
-$configurable_session_map = array("General Settings","Tools Setting","Table Settings");
+$configurable_session_map = array("General Settings","Table Setting","Tools Setting","Table Settings");
 //  session |icon | table | header | description
 $configurable_map = array (
     array(
@@ -13,7 +13,7 @@ $configurable_map = array (
         'function'=>'get_page',
         'description'=>'Manage any register account in system'),
     array(
-        'session'=>'General Settings',
+        'session'=>'Table Setting',
         'icon'=>'rocket',
         'table'=>'add_new_job',
         'database'=>'all_in_one_project',
@@ -22,7 +22,7 @@ $configurable_map = array (
         'function'=>'get_attribute_config',
         'description'=>'Manage attribute of new product creation (NS ticket)'),
     array(
-        'session'=>'General Settings',
+        'session'=>'Table Setting',
         'icon'=>'grid',
         'table'=>'job_cms',
         'title'=>'job_cms',
@@ -31,7 +31,7 @@ $configurable_map = array (
         'function'=>'get_attribute_config',
         'description'=>'manage attribute of new product creation (production job)'),
     array(
-        'session'=>'General Settings',
+        'session'=>'Table Setting',
         'icon'=>'ticket',
         'table'=>'content_request',
         'database'=>'all_in_one_project',
@@ -39,6 +39,15 @@ $configurable_map = array (
         'title'=>'content_request',
         'function'=>'get_attribute_config',
         'description'=>'Manage attribute of new product update (CR,DP ticket)'),
+    array(
+        'session'=>'Table Setting',
+        'icon'=>'ticket',
+        'table'=>'account',
+        'database'=>'all_in_one_project',
+        'prefix'=>'cr',
+        'title'=>'account',
+        'function'=>'get_attribute_config',
+        'description'=>'Manage attribute of register accounts'),
     array(
           'session'=>'Tools Setting',
           'icon'=>'apps',
