@@ -41,7 +41,7 @@ $configurable_map = array (
         'description'=>'Manage attribute of new product update (CR,DP ticket)'),
     array(
         'session'=>'Table Setting',
-        'icon'=>'ticket',
+        'icon'=>'people',
         'table'=>'account',
         'database'=>'all_in_one_project',
         'prefix'=>'cr',
