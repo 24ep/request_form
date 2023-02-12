@@ -157,7 +157,7 @@ function return_m_select_box($att_code,$att_name,$site_element,$current_value,$c
   <div class="col-9">
   <select
   multiple="multiple"
-  class="form-select bg-light '.$require.'"
+  class="'.$require.'"
   id="'.$code_element.'"
   name="'.$code_element.'"
   '.$enable_edit.'
@@ -166,6 +166,11 @@ function return_m_select_box($att_code,$att_name,$site_element,$current_value,$c
   '.$option_element.'
   </select>
   </div>
+  <script>
+  new SlimSelect({
+    select: "#'.$code_element.'"
+  })
+  </script>
   </li>
   ';
   unset($option_element);
