@@ -168,7 +168,10 @@ function return_m_select_box($att_code,$att_name,$site_element,$current_value,$c
   </div>
   <script>
   new SlimSelect({
-    select: "#'.$code_element.'"
+    select: "#'.$code_element.'",
+    setting : {
+      selectAll: true
+    }
   })
   </script>
   </li>
