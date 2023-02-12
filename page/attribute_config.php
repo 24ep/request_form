@@ -42,6 +42,8 @@ function badge_attribute_type($type){
     return '<span class="badge p-2 w-100 rounded modern-badge-green">Text Area</span>';
   }elseif($type=='password'){
     return '<span class="badge p-2 w-100 rounded modern-badge-green">password</span>';
+  }elseif($type=='color'){
+    return '<span class="badge p-2 w-100 rounded modern-badge-green">color</span>';
   }
 
 }
