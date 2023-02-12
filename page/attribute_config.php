@@ -36,10 +36,12 @@ function badge_attribute_type($type){
     return '<span class="badge p-2 w-100 rounded modern-badge-blue">Date</span>';
   }elseif($type=='single_select'){
     return '<span class="badge p-2 w-100 rounded modern-badge-purple">Simple Select</span>';
-  }elseif($type=='multiselect'){
+  }elseif($type=='multi_select'){
     return '<span class="badge p-2 w-100 rounded modern-badge-purple">Multiple Select</span>';
   }elseif($type=='textarea'){
     return '<span class="badge p-2 w-100 rounded modern-badge-green">Text Area</span>';
+  }elseif($type=='password'){
+    return '<span class="badge p-2 w-100 rounded modern-badge-green">password</span>';
   }
 
 }
