@@ -30,7 +30,7 @@ while($row = mysqli_fetch_array($result)) {
     <a class="nav-link" onclick="get_list_job_on_hand('<?php echo $ac_role; ?>', 'revised', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');">Revised</a>
 </nav>
 <div class="row job_on_hand_list">
-    <div class="col-3 bg-white shadow-sm pe-0 ps-0 mt-0  ms-0 m-0 border-end">
+    <div class="col-3 bg-secondary bg-opacity-10 shadow-sm pe-0 ps-0 mt-0  ms-0 m-0 border-end">
         <div id="get_list_job_on_hand">
         </div>
     </div>
@@ -45,7 +45,7 @@ while($row = mysqli_fetch_array($result)) {
 <script>
 // get_detail_more
 function get_list_job_on_hand(ac_role, status, ac_username, ac_nickname) {
-    $.post("base/get/get_list_job_on_hand.php", {
+    $.post("base/get/get_list_on_hand.php", {
             ac_role: ac_role,
             ac_username: ac_username,
             ac_nickname: ac_nickname,
