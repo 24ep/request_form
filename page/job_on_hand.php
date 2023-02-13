@@ -11,9 +11,9 @@ $database = 'all_in_one_project';
                 $query = "SELECT  * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."'" or die("Error:" . mysqli_error($con));
                 $result = mysqli_query($con, $query);
                 while($row = mysqli_fetch_array($result)) {
-                    $query_column = "SELECT `COLUMN_NAME` 
-                    FROM `INFORMATION_SCHEMA`.`COLUMNS` 
-                    WHERE `TABLE_SCHEMA`='".$database."' 
+                    $query_column = "SELECT `COLUMN_NAME`
+                    FROM `INFORMATION_SCHEMA`.`COLUMNS`
+                    WHERE `TABLE_SCHEMA`='".$database."'
                         AND `TABLE_NAME`='".$table."'" or die("Error:" . mysqli_error($con));
                     $result_column = mysqli_query($con, $query_column);
                     while($row_column = mysqli_fetch_array($result_column)) {
@@ -51,7 +51,7 @@ $database = 'all_in_one_project';
                          </div>
                     </div>
                 </div>
-             
+
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingThree">
@@ -115,7 +115,7 @@ function get_list_job_on_hand(ac_role,status,ac_username,ac_nickname) {
             $('#get_list_job_on_hand_'+status).html(data);
             //Notiflix.Loading.remove();
         });
-    
+
 }
     get_list_job_on_hand('<?php echo $ac_role; ?>','pending','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
     get_list_job_on_hand('<?php echo $ac_role; ?>','inprogress','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
@@ -129,7 +129,7 @@ function interval_run(){
     get_list_job_on_hand('<?php echo $ac_role; ?>','waiting','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
     get_list_job_on_hand('<?php echo $ac_role; ?>','revise','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
     get_list_job_on_hand('<?php echo $ac_role; ?>','revised','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
-   
+
 }
 
 var time = new Date(),
