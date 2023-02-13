@@ -29,7 +29,7 @@ while($row = mysqli_fetch_array($result)) {
     <a class="nav-link" onclick="get_list_job_on_hand('<?php echo $ac_role; ?>', 'revise', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');">Revise</a>
     <a class="nav-link" onclick="get_list_job_on_hand('<?php echo $ac_role; ?>', 'revised', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');">Revised</a>
 
-    <div class="position-absolute top-50 end-0 translate-middle-y">
+    <div class="position-absolute end-0 me-3">
         <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
             <option selected>Open this select menu</option>
             <option value="1">One</option>
