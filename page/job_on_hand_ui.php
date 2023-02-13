@@ -28,6 +28,15 @@ while($row = mysqli_fetch_array($result)) {
     <a class="nav-link" onclick="get_list_job_on_hand('<?php echo $ac_role; ?>', 'waiting', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');">Waiting</a>
     <a class="nav-link" onclick="get_list_job_on_hand('<?php echo $ac_role; ?>', 'revise', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');">Revise</a>
     <a class="nav-link" onclick="get_list_job_on_hand('<?php echo $ac_role; ?>', 'revised', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');">Revised</a>
+
+    <div class="position-absolute top-50 end-0 translate-middle-y">
+        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
 </nav>
 <div class="row job_on_hand_list">
     <div class="col-3 bg-secondary bg-opacity-10 shadow-sm pe-0 ps-0 mt-0  ms-0 m-0 border-end">
