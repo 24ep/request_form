@@ -281,53 +281,53 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
 ?>
 <script>
 function update_value_attribute(id, attribute_code, prefix, database, table, primary_key_id) {
-  var isMulti = document.getElementById(attribute_code).multiple;
-  console.log(isMulti)
-  if (isMulti == true) {
-    var selected = [];
-    for (var option of document.getElementById(attribute_code).options) {
-      if (option.selected) {
-        selected.push(option.value);
-      }
-    }
-    var value_change = selected.toString();
-  } else {
-    var value_change = document.getElementById(attribute_code).value;
-  }
-  var attribute_code = attribute_code;
-  if (value_change == "CURRENT_TIMESTAMP") {
-    var today = new Date();
-    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var dateTime = date + ' ' + time;
-    value_change = dateTime;
-  }
-  if (id) {
-    $.post("base/action/action_update_value_attribute.php", {
-      id: id,
-      value_change: value_change,
-      attribute_code: attribute_code,
-      prefix: prefix,
-      database: database,
-      table: table,
-      primary_key_id: primary_key_id
-    },
-    function(data) {
-      // $('#call_update_ns_complete').html(data);
-      var result = data.includes("Error");
-      if (result == false) {
-        Notiflix.Notify.success(data);
-        if (prefix == "cs") {
-          call_edit_add_new_modal(id);
+    var isMulti = document.getElementById(attribute_code).multiple;
+    console.log(isMulti)
+    if (isMulti == true) {
+        var selected = [];
+        for (var option of document.getElementById(attribute_code).options) {
+            if (option.selected) {
+                selected.push(option.value);
+            }
         }
-      } else {
-        Notiflix.Report.failure(
-          'Failure',
-          data,
-          'Okay',
-          )
-        }
-      });
+        var value_change = selected.toString();
+    } else {
+        var value_change = document.getElementById(attribute_code).value;
     }
-  }
-  </script>
+    var attribute_code = attribute_code;
+    if (value_change == "CURRENT_TIMESTAMP") {
+        var today = new Date();
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date + ' ' + time;
+        value_change = dateTime;
+    }
+    if (id) {
+        $.post("base/action/action_update_value_attribute.php", {
+                id: id,
+                value_change: value_change,
+                attribute_code: attribute_code,
+                prefix: prefix,
+                database: database,
+                table: table,
+                primary_key_id: primary_key_id
+            },
+            function(data) {
+                // $('#call_update_ns_complete').html(data);
+                var result = data.includes("Error");
+                if (result == false) {
+                    Notiflix.Notify.success(data);
+                    if (prefix == "cs") {
+                        call_edit_add_new_modal(id);
+                    }
+                } else {
+                    Notiflix.Report.failure(
+                        'Failure',
+                        data,
+                        'Okay',
+                    )
+                }
+            });
+    }
+}
+</script>

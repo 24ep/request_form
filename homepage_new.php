@@ -2,51 +2,50 @@
 session_start();
 function bg_dept($department){
     switch ($department) {
-      case "Content Followup": $bg = '336BFF'; break;
-      case "Content Traffic": $bg = '33FF39'; break;
-      case "Content Admin": $bg = '9633FF'; break;
-      case "Content Other": $bg = 'FF3333'; break;
-      case "Content Studio Traffic": $bg = '33FFB5'; break;
-      case "Buyer  Home": $bg = 'FFDA33'; break;
-      case "Buyer Beauty": $bg = 'FF7AD9'; break;
-      case "Buyer Mom and Kids": $bg = 'FFC17A'; break;
-      case "Buyer Fashion": $bg = 'FF7A7A'; break;
-      case "Operation": $bg = '000000'; break;
-      case "Marketing": $bg = '474747'; break;
-      case "Other": $bg = 'ADADAD'; break;
-      case "Brand": $bg = '6E69E7'; break;
-      default: $bg = '000000';
+        case "Content Followup": $bg = '336BFF'; break;
+        case "Content Traffic": $bg = '33FF39'; break;
+        case "Content Admin": $bg = '9633FF'; break;
+        case "Content Other": $bg = 'FF3333'; break;
+        case "Content Studio Traffic": $bg = '33FFB5'; break;
+        case "Buyer  Home": $bg = 'FFDA33'; break;
+        case "Buyer Beauty": $bg = 'FF7AD9'; break;
+        case "Buyer Mom and Kids": $bg = 'FFC17A'; break;
+        case "Buyer Fashion": $bg = 'FF7A7A'; break;
+        case "Operation": $bg = '000000'; break;
+        case "Marketing": $bg = '474747'; break;
+        case "Other": $bg = 'ADADAD'; break;
+        case "Brand": $bg = '6E69E7'; break;
+        default: $bg = '000000';
     }
     return $bg;
 }
-
 if (!$_SESSION["login_csg"]){
-            Header("Location: login");
+    Header("Location: login");
+}else{
+    if($_SESSION['verify_code']=="verified"){
+        echo '<script>console.log("account verified")</script>';
     }else{
-        if($_SESSION['verify_code']=="verified"){
-            echo '<script>console.log("account verified")</script>';
-        }else{
-            Header("Location: https://content-service-gate.cdse-commercecontent.com/verify?work_email=".$_SESSION['work_email']);
-        }
+        Header("Location: https://content-service-gate.cdse-commercecontent.com/verify?work_email=".$_SESSION['work_email']);
+    }
     include_once('get/get_option_function.php');
-        $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
-        $username_op_cr = getoption_return_filter("username","account",$_SESSION["user_cr_filter"],"single","all_in_one_project");
-        $request_for_op = get_option_return_filter("ticket_type","","single","content_request");
-        $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
-        $request_cr_status_op = get_option_return_filter("status","","single","content_request");
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-        mysqli_query($con, "SET NAMES 'utf8' ");
-        $query = "SELECT * FROM all_in_one_project.account where username = '".$_SESSION['username']."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
-        $result = mysqli_query($con, $query);
-        while($row = mysqli_fetch_array($result)) {
+    $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
+    $username_op_cr = getoption_return_filter("username","account",$_SESSION["user_cr_filter"],"single","all_in_one_project");
+    $request_for_op = get_option_return_filter("ticket_type","","single","content_request");
+    $request_new_status_op = get_option_return_filter("status",$_SESSION["status_filter"],"single","add_new");
+    $request_cr_status_op = get_option_return_filter("status","","single","content_request");
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+    mysqli_query($con, "SET NAMES 'utf8' ");
+    $query = "SELECT * FROM all_in_one_project.account where username = '".$_SESSION['username']."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
+    $result = mysqli_query($con, $query);
+    while($row = mysqli_fetch_array($result)) {
         $nickname = $row['nickname'];
         $department = $row['department'];
         $office_tell = $row['office_tell'];
         $work_email = $row['work_email'];
         $get_contact_buyer = $row['firstname']." ".$row['lastname']." ( ".$nickname." )\nEmail: ".$row['work_email']."\nOffice tell: ".$row['office_tell'];
-        }
-        mysqli_close($con);
-     ?>
+    }
+    mysqli_close($con);
+    ?>
 <!doctype html>
 <html lang="en">
 
@@ -58,7 +57,7 @@ if (!$_SESSION["login_csg"]){
     window.OneSignal = window.OneSignal || [];
     OneSignal.push(function() {
         OneSignal.init({
-        appId: "11dbc065-ce6a-4a28-b097-1fe73fa8669c",
+            appId: "11dbc065-ce6a-4a28-b097-1fe73fa8669c",
         });
     });
     </script> -->
@@ -79,7 +78,6 @@ if (!$_SESSION["login_csg"]){
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
     <!-- return to top -->
     <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
-
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -90,10 +88,8 @@ if (!$_SESSION["login_csg"]){
     <!-- multi-select -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.css" rel="stylesheet"> -->
-
     <script src="https://unpkg.com/slim-select@latest/dist/slimselect.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/slim-select@latest/dist/slimselect.css" />
-
     <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
     <!-- file upload -->
     <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
@@ -132,7 +128,6 @@ if (!$_SESSION["login_csg"]){
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/underline@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/attaches@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/editorjs-style@latest"></script>
-
     <!-- <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@calumk/editorjs-columns@latest"></script>
@@ -154,36 +149,26 @@ if (!$_SESSION["login_csg"]){
     <script defer src="base/js/cookieconsent-init.js"></script>
     <!-- subsc -->
     <!-- <script async custom-element="amp-web-push" src="https://cdn.ampproject.org/v0/amp-web-push-0.1.js"></script>
-
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-
     <meta name="viewport" content="width=device-width">
-
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-    <script async src="https://cdn.ampproject.org/v0.js"></script> -->
+        <script async src="https://cdn.ampproject.org/v0.js"></script> -->
     <!-- subsc -->
-
     <!-- preferance -->
-
     <?php
-
-function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
-    $con_cr= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con_cr));
-    mysqli_query($con_cr, "SET NAMES 'utf8' ");
-    $query_cr = "SELECT * FROM ".$db.".".$table." where ".$primary_key_id." = '".$crid."' ORDER BY id DESC" or die("Error:" . mysqli_error($con_cr));
-    $result_cr = mysqli_query($con_cr, $query_cr);
-    while($row_cr = mysqli_fetch_array($result_cr)) {
-
+        function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
+            $con_cr= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con_cr));
+            mysqli_query($con_cr, "SET NAMES 'utf8' ");
+            $query_cr = "SELECT * FROM ".$db.".".$table." where ".$primary_key_id." = '".$crid."' ORDER BY id DESC" or die("Error:" . mysqli_error($con_cr));
+            $result_cr = mysqli_query($con_cr, $query_cr);
+            while($row_cr = mysqli_fetch_array($result_cr)) {
                 $current_cr = $row_cr[$col_re];
-
-    }
-    mysqli_close($con_cr);
-    return $current_cr;
-}
-
-// $verify_code = get_value_main($_SESSION['username'], "verify_code", "all_in_one_project", "account", "username");
-
-?>
+            }
+            mysqli_close($con_cr);
+            return $current_cr;
+        }
+        // $verify_code = get_value_main($_SESSION['username'], "verify_code", "all_in_one_project", "account", "username");
+        ?>
     <style>
     .nav-link-preferance {
         color: <?php echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
@@ -208,23 +193,9 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
         ?>;
     }
     </style>
-
 </head>
 
 <body>
-    <!-- <button class="js-push-btn" style="display: none;">
-        Subscribe Push Messaging
-</button> -->
-      <!-- nav here -->
-      <!-- <nav class="navbar sticky-top navbar-danger bg-danger" style="place-content: center;"> -->
-                <!-- <marquee> -->
-                    <!-- <span class="navbar-text" style="color:white;font-size: 16px;">
-                            เปิดรับ Ticket สร้างสินค้าใหม่ขึ้นบนเว็บไซต์ จนถึง<strong>วันพุธที่ 14 ธันวาคม 2565</strong> หากเปิด Ticket มาหลังวันที่ดังกล่าว จะเริ่มดำเนินการในวันที่ 3 มกราคม 2566 เป็นต้นไป
-                    </span> -->
-                <!-- </marquee> -->
-                <!-- </nav> -->
-
-        <!-- nav here -->
 
     <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1" id="content_request_canvas"
         aria-labelledby="offcanvasExampleLabel">
@@ -250,39 +221,35 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
         <div class="col-2 list_bra">
             <div class="nav nav-pills nav_list_bra nav_list_bra-preferance border-end" id="v-pills-tab" role="tablist"
                 aria-orientation="vertical">
-
                 <input type="hidden" id="minimize_menu" name="minimize_menu" value="show">
                 <input type="hidden" id="active_sub_menu" name="active_sub_menu" value="hide">
                 <a class="navbar-brand" href="#">
                     <!-- <img id="logo" class="logo" src="base/image/tms_logo_va.svg" alt="" width="auto"
-                        height="30">-->
-
-                    <img id="logo_minimize" class="logo_minimize hide" src="base/image/sg_logo_minimize.ico"
-                        alt="" width="auto" height="30">
-
+        height="30">-->
+                    <img id="logo_minimize" class="logo_minimize hide" src="base/image/sg_logo_minimize.ico" alt=""
+                        width="auto" height="30">
                     <h5 id="logo" class="logo fw-bold m-0" style="position: absolute;">ServiceGate</h5>
                     <!-- <h5 id="logo_minimize" class="fw-bold logo_minimize hide" >SG</h5> -->
                     <!-- <h3 id="apps_name" style="font-weight: lighter;color: firebrick;"> -->
                     <!-- <ion-icon name="layers" style="font-size: 40px;margin: 0px;color:#f85d60"></ion-icon> -->
                     <!-- TEMS -->
                     <br><small id="apps_name" style="font-size: small;
-                        font-weight: 100;
-                        color: gray;">Task management system
+        font-weight: 100;
+        color: gray;">Task management system
                     </small>
                     <!-- </h3> -->
-
                 </a>
                 <!-- <hr class="hr_menu_bra">
-                <div class="img-avatar" style="display: inline-flex;">
-                    <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=<?php echo bg_dept($_SESSION['department']); ?>&color=fff&rounded=true&size=40"
-                        class="ms-3 mb-3">
-                    <div style="align-self: center;" class="mb-3">
-                        <span class="name_menu_bra"
-                            style="place-self: center;"><?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']; ?></span><br>
-                        <small class="dept_menu_bra"
-                            style="place-self: center;"><?php echo $_SESSION['department']; ?></small>
-                    </div>
-                </div> -->
+        <div class="img-avatar" style="display: inline-flex;">
+        <img src="https://ui-avatars.com/api/?name=<?php echo $_SESSION['firstname'].'+'.$_SESSION['lastname']; ?>&background=<?php echo bg_dept($_SESSION['department']); ?>&color=fff&rounded=true&size=40"
+        class="ms-3 mb-3">
+        <div style="align-self: center;" class="mb-3">
+        <span class="name_menu_bra"
+        style="place-self: center;"><?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']; ?></span><br>
+        <small class="dept_menu_bra"
+        style="place-self: center;"><?php echo $_SESSION['department']; ?></small>
+        </div>
+        </div> -->
                 <hr class="hr_menu_bra">
                 <small class="header_menu_bra">Form create new product</small>
                 <?php include("get/linesheet_download_alert_bra.php"); ?>
@@ -316,30 +283,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                         </a>
                     </li>
                     <?php if(strpos($_SESSION["permission"],'ps_internal')!==false){
-                ?>
-                    <!-- <hr class="hr_menu_bra_in">
-                    <small class="header_menu_bra">Production</small> -->
-
-                    <!-- <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_job_manage" data-bs-toggle="pill"
-                            type="button" role="tab" aria-selected="false" onclick="get_page('job_manage');">
-                            <ion-icon name="file-tray-stacked"></ion-icon><span class="main-menu-nav">24EP </span>
-                        </a>
-                    </li> -->
-
-                    <!--
-                    <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_job_on_hand" data-bs-toggle="pill" type="button" role="tab"
-                            aria-selected="false" onclick="get_page('job_on_hand');">
-                            <ion-icon name="receipt"></ion-icon><span class="main-menu-nav">Job on hand</span>
-                        </a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_linesheet" data-bs-toggle="pill" type="button" role="tab"
-                            aria-selected="false" onclick="get_page('linesheet');">
-                            <ion-icon name="cloud-upload"></ion-icon><span class="main-menu-nav">Linesheet</span>
-                        </a>
-                    </li> -->
+            ?>
                     <hr class="hr_menu_bra_in">
                     <small class="header_menu_bra">Internals</small>
                     <li class="nav-item" role="presentation">
@@ -348,26 +292,24 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                             <ion-icon name="grid"></ion-icon><span class="main-menu-nav">Job On Hand</span>
                         </a>
                     </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_job_on_hand_ui" data-bs-toggle="pill"
+                            type="button" role="tab" aria-selected="false" onclick="get_page('job_on_hand_ui');">
+                            <ion-icon name="grid"></ion-icon><span class="main-menu-nav">Job On Hand (UI)</span>
+                        </a>
+                    </li>
                     <li class="nav-item btn-group dropend" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_product_mantain" type="button"
                             onclick="show_sub_menu('product_maintain');">
                             <ion-icon name="storefront"></ion-icon><span class="main-menu-nav">CMS</span>
                         </a>
                     </li>
-                    <!-- <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_report" data-bs-toggle="pill"
-                            type="button" role="tab" aria-selected="false" onclick="get_page('report');">
-                            <ion-icon name="bar-chart"></ion-icon><span class="main-menu-nav">Reports</span>
-                        </a>
-                    </li> -->
-
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_configurable" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('configurable');">
                             <ion-icon name="terminal"></ion-icon><span class="main-menu-nav">Configuration</span>
                         </a>
                     </li>
-
                     <li class="nav-item btn-group dropend" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_quicklink" type="button"
                             onclick="show_sub_menu('quicklink');">
@@ -402,26 +344,24 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                 <!-- <ion-icon name="menu-outline" style="margin:0px"></ion-icon> -->
             </button>
             <?php
-
             $database = 'all_in_one_project';
             $table = 'account';
             $primary_key_id = 'username';
             $id=$_SESSION['username'];
             $prefix_table = 'ac';
             $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-
-                $query = "SELECT  * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."'" or die("Error:" . mysqli_error($con));
-                $result = mysqli_query($con, $query);
-                while($row = mysqli_fetch_array($result)) {
-                    $query_column = "SELECT `COLUMN_NAME`
-                    FROM `INFORMATION_SCHEMA`.`COLUMNS`
-                    WHERE `TABLE_SCHEMA`='".$database."'
-                        AND `TABLE_NAME`='".$table."'" or die("Error:" . mysqli_error($con));
-                    $result_column = mysqli_query($con, $query_column);
-                    while($row_column = mysqli_fetch_array($result_column)) {
-                        ${$prefix_table."_".$row_column['COLUMN_NAME']} = $row[$row_column['COLUMN_NAME']];
-                    }
+            $query = "SELECT  * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."'" or die("Error:" . mysqli_error($con));
+            $result = mysqli_query($con, $query);
+            while($row = mysqli_fetch_array($result)) {
+                $query_column = "SELECT `COLUMN_NAME`
+                FROM `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE `TABLE_SCHEMA`='".$database."'
+                AND `TABLE_NAME`='".$table."'" or die("Error:" . mysqli_error($con));
+                $result_column = mysqli_query($con, $query_column);
+                while($row_column = mysqli_fetch_array($result_column)) {
+                    ${$prefix_table."_".$row_column['COLUMN_NAME']} = $row[$row_column['COLUMN_NAME']];
                 }
+            }
             ?>
             <nav class="p-3 bg-white shadow-sm border-bottom sticky-top">
                 <div class="container-fluid d-flex" style="align-items: center;height: 40px;">
@@ -442,7 +382,6 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
                             <span id="search_input" class="bg-light text-secondary p-1 ps-2 pn-2 rounded "></span>
                             <hr>
                             <div id="search_result">
-
                             </div>
                         </form>
                     </div>
@@ -489,12 +428,13 @@ function get_page(page) {
         Notiflix.Loading.remove();
     });
 }
-function get_attribute_config(target_tb,target_db,target_prefix) {
+
+function get_attribute_config(target_tb, target_db, target_prefix) {
     Notiflix.Loading.hourglass('Loading...');
     $.post("base/page/attribute_config.php", {
-        target_tb:target_tb,
-        target_db:target_db,
-        target_prefix:target_prefix
+        target_tb: target_tb,
+        target_db: target_db,
+        target_prefix: target_prefix
     }, function(data) {
         $('#col_detail').html(data);
         Notiflix.Loading.remove();
@@ -592,7 +532,6 @@ function show_sub_menu(sub_menu) {
             });
         }
         //hideshow
-
         var sub_menu = document.getElementsByClassName("sub_menu");
         var col_detail_main = document.getElementsByClassName("col_detail_main");
         for (var i = 0; i < sub_menu.length; i++) {
@@ -862,23 +801,8 @@ function search() {
         });
     }
 }
-// // ===== Scroll to Top ====
-// $(window).scroll(function() {
-//     if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
-//         $('#return-to-top').fadeIn(200);    // Fade in the arrow
-//     } else {
-//         $('#return-to-top').fadeOut(200);   // Else fade out the arrow
-//     }
-// });
-// $('#return-to-top').click(function() {      // When arrow is clicked
-//     $('body,html').animate({
-//         scrollTop : 0                       // Scroll to top of body
-//     }, 500);
-// });
 </script>
-
 <?php } ?>
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -923,7 +847,7 @@ s.onload = function(sdk) {
 document.head.append(s)
 </script>
 <?php
-if($_GET['direct']<>null and $_GET['prefix']<>null){ ?>
+                            if($_GET['direct']<>null and $_GET['prefix']<>null){ ?>
 <script>
 if (<?php echo $_GET['prefix']; ?> == 'NS') {
     call_edit_add_new_modal(<?php echo$_GET['direct']; ?>);
@@ -933,13 +857,12 @@ if {
 }
 </script>
 <?php
-}
-
-?>
+                            }
+                            ?>
 <!-- <script>
-Notiflix.Report.warning(
-'แจ้งปิดรับงาน',
-'เปิดรับ Ticket สร้างสินค้าใหม่ขึ้นบนเว็บไซต์ จนถึง<strong>วันพุธที่ 14 ธันวาคม 2565</strong>  <br/><br/> หากเปิด Ticket มาหลังวันที่ดังกล่าว จะเริ่มดำเนินการในวันที่ 3 มกราคม 2566 เป็นต้นไป',
-'รับทราบ',
-);
-</script> -->
+                            Notiflix.Report.warning(
+                                'แจ้งปิดรับงาน',
+                                'เปิดรับ Ticket สร้างสินค้าใหม่ขึ้นบนเว็บไซต์ จนถึง<strong>วันพุธที่ 14 ธันวาคม 2565</strong>  <br/><br/> หากเปิด Ticket มาหลังวันที่ดังกล่าว จะเริ่มดำเนินการในวันที่ 3 มกราคม 2566 เป็นต้นไป',
+                                'รับทราบ',
+                            );
+                            </script> -->
