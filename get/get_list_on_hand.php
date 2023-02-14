@@ -14,6 +14,9 @@ while($row = mysqli_fetch_array($result)) {
 
 function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,$limit){
 
+    if($id<>null){
+        $id = "'".$id."'";
+    }
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query = "SELECT
     anj.id as anj_id,
@@ -38,7 +41,7 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
     FROM all_in_one_project.add_new_job as anj
     left join u749625779_cdscontent.job_cms as jc
     on anj.id = jc.csg_request_new_id
-    where ".$primary_key_id." = '".$id."' and ".$end_key."
+    where ".$primary_key_id." = ".$id." and ".$end_key."
     order by piority ASC,anj.launch_date is null ,anj.launch_date ASC,anj.create_date ASC,anj.sku DESC limit ".$limit or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
@@ -90,79 +93,97 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
 <?php
     }
 }
-if($status=='inprogress'){
-    if($ac_role=='follow'){
-        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','anj.accepted_date is null and anj.status not like "%cancel%" and anj.status not like "%wait%"','status',10);
-    }elseif($ac_role=='writer'){
-        get_panel_card('jc.content_assign_name',$ac_nickname,'jc_job_number','','jc.content_complete_date is null and jc.content_start_date is not null and  jc.job_status_filter not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%"','jc_job_status_filter',10);
-    }elseif($ac_role=='shooter'){
-        get_panel_card('jc.shoot_assign_name',$ac_nickname,'jc_job_number','','jc.shoot_complete_date is null and jc.job_status_filter not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%"','jc_job_status_filter',10);
-    }elseif($ac_role=='retoucher'){
-        get_panel_card('jc.retouch_assign_name',$ac_nickname,'jc_job_number','','jc.retouch_complete_date is null and jc.job_status_filter not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%"','jc_job_status_filter',10);
-    }elseif($ac_role=='product_executive' or $ac_role== 'developer'){
-        get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','jc.approved_date is null and anj.status not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%" ' ,'anj_status',10);
-    }elseif($ac_role=='approver'){
-        get_panel_card('jc.approved_assign_name',$ac_nickname,'jc_job_number','','jc.approved_date is null and anj.status not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%"' ,'jc_job_status_filter',10);
-    }
-}elseif($status=='pending'){
-    if($ac_role=='follow'){
-        get_panel_card('1', '1','anj_id','NS-','anj.status  like "%pending%"','status',10);
-    }elseif($ac_role=='writer'){
-        get_panel_card('1', '1','jc_job_number','','lower(jc.transfer_type) like "%data%" and jc.job_number is not null and jc.content_start_date is null and jc.job_status_filter not like "%cancel%"','jc_job_status_filter',100);
-    }elseif($ac_role=='shooter'){
-        get_panel_card('1', '1','jc_job_number','','lower(jc.transfer_type) like "%photo%" and jc.job_number is not null and jc.shoot_start_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',100);
-    }elseif($ac_role=='retoucher'){
-        get_panel_card('1', '1','jc_job_number','','jc.shoot_complete_date is not null and lower(jc.transfer_type) like "%photo%" and jc.job_number is not null and jc.retouch_start_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',100);
-    }elseif($ac_role=='product_executive' or $ac_role== 'developer'){
-        get_panel_card('1', '1','anj_id','NS-','anj.status  like "%pending%" ' ,'anj_status',100);
-    }elseif($ac_role=='approver'){
-        get_panel_card('1','1','jc_job_number','','jc.job_status_filter = "Continue" and (jc.upload_image_date is not null or lower(jc.transfer_type) not like "%photo%") and  (jc.content_complete_date is not null or lower(jc.transfer_type) not like "%data%") and jc.job_number is not null and jc.approved_date is null and anj.status not like "%cancel%" ' ,'jc_job_status_filter',10);
-    }
-}elseif($status=='waiting'){
-    if($ac_role=='follow'){
-        get_panel_card('anj.follow_up_by', $ac_username,'anj_id','NS-','anj.status  like "%wait%"','status',100);
-    }elseif($ac_role=='writer'){
-        get_panel_card('jc.content_assign_name',$ac_nickname,'jc_job_number','','  (jc.job_status_filter  like "%wait%" or anj.status  like "%wait%")','jc_job_status_filter',100);
-    }elseif($ac_role=='shooter'){
-        get_panel_card('jc.shoot_assign_name',$ac_nickname,'jc_job_number','','(jc.job_status_filter  like "%wait%" or anj.status  like "%wait%" )','jc_job_status_filter',100);
-    }elseif($ac_role=='retoucher'){
-        get_panel_card('jc.retouch_assign_name',$ac_nickname,'jc_job_number','',' (jc.job_status_filter  like "%wait%" or anj.status  like "%wait%" )','jc_job_status_filter',100);
-    }elseif($ac_role=='product_executive' or $ac_role== 'developer'){
-        get_panel_card('anj.follow_up_by',$ac_username,'anj_id','NS-','anj.status  like "%wait%" ' ,'anj_status',100);
-    }elseif($ac_role=='approver'){
-        get_panel_card('jc.approved_by',$ac_nickname,'jc_job_number','',' (jc.job_status_filter  like "%wait%" or anj.status nt like "%wait%") ' ,'jc_job_status_filter',100);
-    }
+//new card algoritum
+if($status<>'pending'){
+    $ac_nickname = null
 }
-elseif($status=='revise'){
-    if($ac_role=='follow'){
-        //get_panel_card('1', '1','anj_id','NS-','anj.status  like "%wait%"','status',100);
-    }elseif($ac_role=='writer'){
-        get_panel_card('anj.follow_up_by', $ac_username,'jc_job_number','','  (jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "content_editing" )','jc_job_status_filter',100);
-    }elseif($ac_role=='shooter'){
-        //get_panel_card('1', '1','jc_job_number','','(jc.job_status_filter  like "%wait%" or anj.status  like "%wait%" )','jc_job_status_filter',100);
-    }elseif($ac_role=='retoucher'){
-        get_panel_card('1', '1','jc_job_number','',' (jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "studio_editing" )','jc_job_status_filter',100);
-    }elseif($ac_role=='product_executive' or $ac_role== 'developer'){
-        get_panel_card('1', '1','anj_id','NS-','jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "%editing%" ' ,'anj_status',100);
-    }elseif($ac_role=='approver'){
-        get_panel_card('1','1','jc_job_number','',' (jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "content_editing") ' ,'jc_job_status_filter',100);
-    }
+if($ac_role=='follow'){
+    get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','anj.status = "'.$status.'"','status',100);
+}elseif($ac_role=='writer'){
+    get_panel_card('jc.content_assign_name',$ac_nickname ,'anj_id','NS-','anj.status = "'.$status.'"','status',100);
+}elseif($ac_role=='shooter'){
+    get_panel_card('jc.shoot_assign_name',$ac_nickname ,'anj_id','NS-','anj.status = "'.$status.'"','status',100);
+}elseif($ac_role=='retoucher'){
+    get_panel_card('jc.retouch_assign_name',$ac_nickname ,'anj_id','NS-','anj.status = "'.$status.'"','status',100);
+}elseif($ac_role=='product_executive' or $ac_role== 'developer'){
+    get_panel_card('1','1' ,'anj_id','NS-','anj.status = "'.$status.'"','status',100);
+}elseif($ac_role=='approver'){
+    get_panel_card('jc.approved_by',$ac_nickname ,'anj_id','NS-','anj.status = "'.$status.'"','status',100);
 }
-elseif($status=='revised'){
-    if($ac_role=='follow'){
-        //get_panel_card('1', '1','anj_id','NS-','anj.status  like "%wait%"','status',100);
-    }elseif($ac_role=='writer'){
-        get_panel_card('1', '1','jc_job_number','','  (jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "edited" )','jc_job_status_filter',100);
-    }elseif($ac_role=='shooter'){
-        //get_panel_card('1', '1','jc_job_number','','(jc.job_status_filter  like "%wait%" or anj.status  like "%wait%" )','jc_job_status_filter',100);
-    }elseif($ac_role=='retoucher'){
-        get_panel_card('1', '1','jc_job_number','',' (jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "edited" )','jc_job_status_filter',100);
-    }elseif($ac_role=='product_executive' or $ac_role== 'developer'){
-        get_panel_card('1', '1','anj_id','NS-','jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "edited"' ,'anj_status',100);
-    }elseif($ac_role=='approver'){
-        get_panel_card('1','1','jc_job_number','',' (jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "edited") ' ,'jc_job_status_filter',100);
-    }
-}
+// //old
+// if($status=='inprogress'){
+//     if($ac_role=='follow'){
+//         get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','anj.accepted_date is null and anj.status not like "%cancel%" and anj.status not like "%wait%"','status',10);
+//     }elseif($ac_role=='writer'){
+//         get_panel_card('jc.content_assign_name',$ac_nickname,'jc_job_number','','jc.content_complete_date is null and jc.content_start_date is not null and  jc.job_status_filter not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%"','jc_job_status_filter',10);
+//     }elseif($ac_role=='shooter'){
+//         get_panel_card('jc.shoot_assign_name',$ac_nickname,'jc_job_number','','jc.shoot_complete_date is null and jc.job_status_filter not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%"','jc_job_status_filter',10);
+//     }elseif($ac_role=='retoucher'){
+//         get_panel_card('jc.retouch_assign_name',$ac_nickname,'jc_job_number','','jc.retouch_complete_date is null and jc.job_status_filter not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%"','jc_job_status_filter',10);
+//     }elseif($ac_role=='product_executive' or $ac_role== 'developer'){
+//         get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','jc.approved_date is null and anj.status not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%" ' ,'anj_status',10);
+//     }elseif($ac_role=='approver'){
+//         get_panel_card('jc.approved_assign_name',$ac_nickname,'jc_job_number','','jc.approved_date is null and anj.status not like "%cancel%" and jc.job_status_filter not like "%wait%" and anj.status not like "%wait%"' ,'jc_job_status_filter',10);
+//     }
+// }elseif($status=='pending'){
+//     if($ac_role=='follow'){
+//         get_panel_card('1', '1','anj_id','NS-','anj.status  like "%pending%"','status',10);
+//     }elseif($ac_role=='writer'){
+//         get_panel_card('1', '1','jc_job_number','','lower(jc.transfer_type) like "%data%" and jc.job_number is not null and jc.content_start_date is null and jc.job_status_filter not like "%cancel%"','jc_job_status_filter',100);
+//     }elseif($ac_role=='shooter'){
+//         get_panel_card('1', '1','jc_job_number','','lower(jc.transfer_type) like "%photo%" and jc.job_number is not null and jc.shoot_start_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',100);
+//     }elseif($ac_role=='retoucher'){
+//         get_panel_card('1', '1','jc_job_number','','jc.shoot_complete_date is not null and lower(jc.transfer_type) like "%photo%" and jc.job_number is not null and jc.retouch_start_date is null and jc.job_status_filter not like "%cancel%" ','jc_job_status_filter',100);
+//     }elseif($ac_role=='product_executive' or $ac_role== 'developer'){
+//         get_panel_card('1', '1','anj_id','NS-','anj.status  like "%pending%" ' ,'anj_status',100);
+//     }elseif($ac_role=='approver'){
+//         get_panel_card('1','1','jc_job_number','','jc.job_status_filter = "Continue" and (jc.upload_image_date is not null or lower(jc.transfer_type) not like "%photo%") and  (jc.content_complete_date is not null or lower(jc.transfer_type) not like "%data%") and jc.job_number is not null and jc.approved_date is null and anj.status not like "%cancel%" ' ,'jc_job_status_filter',10);
+//     }
+// }elseif($status=='waiting'){
+//     if($ac_role=='follow'){
+//         get_panel_card('anj.follow_up_by', $ac_username,'anj_id','NS-','anj.status  like "%wait%"','status',100);
+//     }elseif($ac_role=='writer'){
+//         get_panel_card('jc.content_assign_name',$ac_nickname,'jc_job_number','','  (jc.job_status_filter  like "%wait%" or anj.status  like "%wait%")','jc_job_status_filter',100);
+//     }elseif($ac_role=='shooter'){
+//         get_panel_card('jc.shoot_assign_name',$ac_nickname,'jc_job_number','','(jc.job_status_filter  like "%wait%" or anj.status  like "%wait%" )','jc_job_status_filter',100);
+//     }elseif($ac_role=='retoucher'){
+//         get_panel_card('jc.retouch_assign_name',$ac_nickname,'jc_job_number','',' (jc.job_status_filter  like "%wait%" or anj.status  like "%wait%" )','jc_job_status_filter',100);
+//     }elseif($ac_role=='product_executive' or $ac_role== 'developer'){
+//         get_panel_card('anj.follow_up_by',$ac_username,'anj_id','NS-','anj.status  like "%wait%" ' ,'anj_status',100);
+//     }elseif($ac_role=='approver'){
+//         get_panel_card('jc.approved_by',$ac_nickname,'jc_job_number','',' (jc.job_status_filter  like "%wait%" or anj.status nt like "%wait%") ' ,'jc_job_status_filter',100);
+//     }
+// }
+// elseif($status=='revise'){
+//     if($ac_role=='follow'){
+//         //get_panel_card('1', '1','anj_id','NS-','anj.status  like "%wait%"','status',100);
+//     }elseif($ac_role=='writer'){
+//         get_panel_card('anj.follow_up_by', $ac_username,'jc_job_number','','  (jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "content_editing" )','jc_job_status_filter',100);
+//     }elseif($ac_role=='shooter'){
+//         //get_panel_card('1', '1','jc_job_number','','(jc.job_status_filter  like "%wait%" or anj.status  like "%wait%" )','jc_job_status_filter',100);
+//     }elseif($ac_role=='retoucher'){
+//         get_panel_card('1', '1','jc_job_number','',' (jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "studio_editing" )','jc_job_status_filter',100);
+//     }elseif($ac_role=='product_executive' or $ac_role== 'developer'){
+//         get_panel_card('1', '1','anj_id','NS-','jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "%editing%" ' ,'anj_status',100);
+//     }elseif($ac_role=='approver'){
+//         get_panel_card('1','1','jc_job_number','',' (jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "content_editing") ' ,'jc_job_status_filter',100);
+//     }
+// }
+// elseif($status=='revised'){
+//     if($ac_role=='follow'){
+//         //get_panel_card('1', '1','anj_id','NS-','anj.status  like "%wait%"','status',100);
+//     }elseif($ac_role=='writer'){
+//         get_panel_card('1', '1','jc_job_number','','  (jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "edited" )','jc_job_status_filter',100);
+//     }elseif($ac_role=='shooter'){
+//         //get_panel_card('1', '1','jc_job_number','','(jc.job_status_filter  like "%wait%" or anj.status  like "%wait%" )','jc_job_status_filter',100);
+//     }elseif($ac_role=='retoucher'){
+//         get_panel_card('1', '1','jc_job_number','',' (jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "edited" )','jc_job_status_filter',100);
+//     }elseif($ac_role=='product_executive' or $ac_role== 'developer'){
+//         get_panel_card('1', '1','anj_id','NS-','jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "edited"' ,'anj_status',100);
+//     }elseif($ac_role=='approver'){
+//         get_panel_card('1','1','jc_job_number','',' (jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "edited") ' ,'jc_job_status_filter',100);
+//     }
+// }
 
 
 ?>
