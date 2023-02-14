@@ -117,6 +117,7 @@ function get_list_job_on_hand(ac_role,status,ac_username,ac_nickname) {
         });
 
 }
+
     get_list_job_on_hand('<?php echo $ac_role; ?>','pending','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
     get_list_job_on_hand('<?php echo $ac_role; ?>','inprogress','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
     get_list_job_on_hand('<?php echo $ac_role; ?>','waiting','<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');

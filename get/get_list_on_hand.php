@@ -2,8 +2,15 @@
 session_start();
 $ac_role = $_POST['ac_role'];
 $ac_username = $_POST['ac_username'];
-$ac_nickname = $_POST['ac_nickname'];
 $status = $_POST['status'];
+
+//get username
+$con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+$query = "SELECT * FROM all_in_one_project.account where username='".$ac_username."'" or die("Error:" . mysqli_error($con));
+$result = mysqli_query($con, $query);
+while($row = mysqli_fetch_array($result)) {
+    $ac_nickname = $row['nickname'];
+}
 
 function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,$limit){
 

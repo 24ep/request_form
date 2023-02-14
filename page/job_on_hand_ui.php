@@ -27,19 +27,19 @@ $role_op = get_option("role",$_SESSION["role"],"single");
 ?>
 
 <nav class="nav p-2 bg-light shadow" style="border-bottom: 1px solid #e3e3e3;">
-    <a class="nav-link active" aria-current="page" onclick="get_list_job_on_hand('<?php echo $ac_role; ?>', 'pending', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');">Pending</a>
-    <a class="nav-link" onclick="get_list_job_on_hand('<?php echo $ac_role; ?>', 'inprogress', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');">Inprogress</a>
-    <a class="nav-link" onclick="get_list_job_on_hand('<?php echo $ac_role; ?>', 'waiting', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');">Waiting</a>
-    <a class="nav-link" onclick="get_list_job_on_hand('<?php echo $ac_role; ?>', 'revise', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');">Revise</a>
-    <a class="nav-link" onclick="get_list_job_on_hand('<?php echo $ac_role; ?>', 'revised', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');">Revised</a>
+    <a class="nav-link active" aria-current="page" onclick="get_list_job_on_hand('pending');">Pending</a>
+    <a class="nav-link" onclick="get_list_job_on_hand('inprogress');">Inprogress</a>
+    <a class="nav-link" onclick="get_list_job_on_hand('waiting');">Waiting</a>
+    <a class="nav-link" onclick="get_list_job_on_hand('revise');">Revise</a>
+    <a class="nav-link" onclick="get_list_job_on_hand('revised');">Revised</a>
 
-    <div class="position-absolute end-0 me-3" style="margin-right: 150px;width: 300px;">
-        <select class="form-select" id="username_on_hand" aria-label="Floating label select example">
+    <div class="position-absolute end-0 me-3" style="margin-right: 150px!important;width: 300px;">
+        <select  id="username_on_hand">
             <?php echo $username_op;?>
         </select>
     </div>
     <div class="position-absolute end-0 me-3">
-        <select class="form-select" id="role_on_hand" aria-label="Floating label select example">
+        <select id="role_on_hand">
         <?php echo $role_op;?>
         </select>
     </div>
@@ -59,11 +59,12 @@ $role_op = get_option("role",$_SESSION["role"],"single");
 
 <script>
 // get_detail_more
-function get_list_job_on_hand(ac_role, status, ac_username, ac_nickname) {
+function get_list_job_on_hand(status) {
+    ac_username = document.getElementById('username_on_hand').value();
+    ac_role = document.getElementById('role_on_hand').value();
     $.post("base/get/get_list_on_hand.php", {
             ac_role: ac_role,
             ac_username: ac_username,
-            ac_nickname: ac_nickname,
             status: status
         },
         function(data) {
@@ -72,14 +73,16 @@ function get_list_job_on_hand(ac_role, status, ac_username, ac_nickname) {
 
 }
 
-get_list_job_on_hand('<?php echo $ac_role; ?>', 'pending', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
+
+
+get_list_job_on_hand( 'pending');
 
 function interval_run() {
-    get_list_job_on_hand('<?php echo $ac_role; ?>', 'pending', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
-    get_list_job_on_hand('<?php echo $ac_role; ?>', 'inprogress', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
-    get_list_job_on_hand('<?php echo $ac_role; ?>', 'waiting', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
-    get_list_job_on_hand('<?php echo $ac_role; ?>', 'revise', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
-    get_list_job_on_hand('<?php echo $ac_role; ?>', 'revised', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');
+    get_list_job_on_hand( 'pending');
+    get_list_job_on_hand( 'inprogress');
+    get_list_job_on_hand( 'waiting');
+    get_list_job_on_hand( 'revise');
+    get_list_job_on_hand( 'revised');
 }
 // interval_run();
 
