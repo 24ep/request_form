@@ -60,8 +60,8 @@ $role_op = get_option("role",$_SESSION["role"],"single");
 <script>
 // get_detail_more
 function get_list_job_on_hand(status) {
-    ac_username = document.getElementById('username_on_hand').value();
-    ac_role = document.getElementById('role_on_hand').value();
+    ac_username = document.getElementById('username_on_hand').value;
+    ac_role = document.getElementById('role_on_hand').value;
     $.post("base/get/get_list_on_hand.php", {
             ac_role: ac_role,
             ac_username: ac_username,
@@ -105,7 +105,6 @@ function call_edit_add_new_panel(id, brand) {
         });
     }
 }
-
 
   new SlimSelect({
     select: "#username_on_hand"
