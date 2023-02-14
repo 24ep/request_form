@@ -1,6 +1,6 @@
 <?php
  session_start();
- 
+
  function getoption_return_filter_disting($col,$table,$select_option,$sorm,$database) {
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
@@ -55,7 +55,7 @@
     }
     mysqli_close($con);
     return $option_set;
-    
+
     }
  function getoption_return_filter($col,$table,$select_option,$sorm,$database) {
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
@@ -111,14 +111,14 @@
     }
     mysqli_close($con);
     return $option_set;
-    
+
     }
 
     function get_option_return_filter($attribute_code,$default_option,$select_type,$function){
         $option_set="";
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
-        $query = "SELECT 
+        $query = "SELECT
         attribute_option.option_id as option_id,
         attribute_option.attribute_id as attribute_id,
         attribute_option.attribute_option as attribute_option,
@@ -126,8 +126,8 @@
         attribute_entity.attribute_code as attribute_code
         FROM content_service_gate.attribute_option as attribute_option
         left join content_service_gate.attribute_entity as attribute_entity
-        on attribute_option.attribute_id = attribute_entity.attribute_id 
-        where attribute_entity.attribute_code =  '".$attribute_code."' and attribute_option.function='".$function."' 
+        on attribute_option.attribute_id = attribute_entity.attribute_id
+        where attribute_entity.attribute_code =  '".$attribute_code."' and attribute_option.function='".$function."'
         ORDER BY option_id asc" or die("Error:" . mysqli_error($con));
         $result = mysqli_query($con, $query);
             if($select_type=="multi"){
@@ -154,7 +154,39 @@
             }
             mysqli_close($con);
             return $option_set;
-        
+
+    }
+    function get_option($attribute_code,$default_option,$select_type){
+        $option_set="";
+        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
+        mysqli_query($con, "SET NAMES 'utf8' ");
+        $query = "SELECT * FROM u749625779_cdscontent.job_attribute_option where attribute_code =  '".$attribute_code."'" or die("Error:" . mysqli_error($con));
+        $result = mysqli_query($con, $query);
+            if($select_type=="multi"){
+                while($row = mysqli_fetch_array($result)) {
+                $array_default = explode(', ', $default_option);
+                foreach($array_default as $option)
+                  {
+                    if($option==$row["attribute_option_code"]){
+                        $option_set .= '<option selected value="'.$row["attribute_option_code"].'">'.$row["attribute_option_label"].'</option>';
+                    }else{
+                        $option_set .= '<option value="'.$row["attribute_option_code"].'">'.$row["attribute_option_label"].'</option>';
+                    }
+                  }
+                }
+            }else{
+                $option_set .= '<option value=""></option>';
+                while($row = mysqli_fetch_array($result)) {
+                    if($default_option==$row["attribute_option_code"]){
+                        $option_set .= '<option selected value="'.$row["attribute_option_code"].'">'.$row["attribute_option_label"].'</option>';
+                    }else{
+                        $option_set .= '<option value="'.$row["attribute_option_code"].'">'.$row["attribute_option_label"].'</option>';
+                    }
+                }
+            }
+            mysqli_close($con);
+            return $option_set;
+
     }
 
     function get_option_attribute_entity($att_code,$table,$current_value){
@@ -174,7 +206,7 @@
               $option_element .= "<option ".$selectd ." value=''></option>";
           }
           $option_element .= "<option ".$selectd ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
-  
+
           }
           mysqli_close($con);
           return $option_element;

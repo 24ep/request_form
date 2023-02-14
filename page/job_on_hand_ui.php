@@ -22,7 +22,8 @@ while($row = mysqli_fetch_array($result)) {
 }
 
 include_once('../get/get_option_function.php');
-$username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
+$username_op = getoption_return_filter("username","account",$_SESSION["username"],"single","all_in_one_project");
+$role_op = get_option("role",$_SESSION["role"],"single");
 ?>
 
 <nav class="nav p-2 bg-light shadow" style="border-bottom: 1px solid #e3e3e3;">
@@ -32,13 +33,14 @@ $username_op = getoption_return_filter("username","account",$_SESSION["user_filt
     <a class="nav-link" onclick="get_list_job_on_hand('<?php echo $ac_role; ?>', 'revise', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');">Revise</a>
     <a class="nav-link" onclick="get_list_job_on_hand('<?php echo $ac_role; ?>', 'revised', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');">Revised</a>
 
-    <div class="position-absolute end-0 me-3">
-        <select class="form-select" id="username" aria-label="Floating label select example">
-<?php echo $username_op;?>
+    <div class="position-absolute end-0 me-3" style="margin-right: 150px;width: 300px;">
+        <select class="form-select" id="username_on_hand" aria-label="Floating label select example">
+            <?php echo $username_op;?>
         </select>
     </div>
     <div class="position-absolute end-0 me-3">
-        <select class="form-select" id="role" aria-label="Floating label select example">
+        <select class="form-select" id="role_on_hand" aria-label="Floating label select example">
+        <?php echo $role_op;?>
         </select>
     </div>
 </nav>
@@ -101,4 +103,13 @@ function call_edit_add_new_panel(id, brand) {
     }
 }
 
-</script>
+
+  new SlimSelect({
+    select: "#username_on_hand"
+  })
+
+  new SlimSelect({
+    select: "#role_on_hand"
+  })
+  </script>
+
