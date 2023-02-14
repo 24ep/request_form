@@ -120,24 +120,24 @@ if($status=='inprogress'){
     }
 }elseif($status=='waiting'){
     if($ac_role=='follow'){
-        get_panel_card('1', '1','anj_id','NS-','anj.status  like "%wait%"','status',100);
+        get_panel_card('anj.follow_up_by', $ac_username,'anj_id','NS-','anj.status  like "%wait%"','status',100);
     }elseif($ac_role=='writer'){
-        get_panel_card('1', '1','jc_job_number','','  (jc.job_status_filter  like "%wait%" or anj.status  like "%wait%")','jc_job_status_filter',100);
+        get_panel_card('jc.content_assign_name',$ac_nickname,'jc_job_number','','  (jc.job_status_filter  like "%wait%" or anj.status  like "%wait%")','jc_job_status_filter',100);
     }elseif($ac_role=='shooter'){
-        get_panel_card('1', '1','jc_job_number','','(jc.job_status_filter  like "%wait%" or anj.status  like "%wait%" )','jc_job_status_filter',100);
+        get_panel_card('jc.shoot_assign_name',$ac_nickname,'jc_job_number','','(jc.job_status_filter  like "%wait%" or anj.status  like "%wait%" )','jc_job_status_filter',100);
     }elseif($ac_role=='retoucher'){
-        get_panel_card('1', '1','jc_job_number','',' (jc.job_status_filter  like "%wait%" or anj.status  like "%wait%" )','jc_job_status_filter',100);
+        get_panel_card('jc.retouch_assign_name',$ac_nickname,'jc_job_number','',' (jc.job_status_filter  like "%wait%" or anj.status  like "%wait%" )','jc_job_status_filter',100);
     }elseif($ac_role=='product_executive' or $ac_role== 'developer'){
-        get_panel_card('1', '1','anj_id','NS-','anj.status  like "%wait%" ' ,'anj_status',100);
+        get_panel_card('anj.follow_up_by',$ac_username,'anj_id','NS-','anj.status  like "%wait%" ' ,'anj_status',100);
     }elseif($ac_role=='approver'){
-        get_panel_card('1','1','jc_job_number','',' (jc.job_status_filter  like "%wait%" or anj.status nt like "%wait%") ' ,'jc_job_status_filter',100);
+        get_panel_card('jc.approved_by',$ac_nickname,'jc_job_number','',' (jc.job_status_filter  like "%wait%" or anj.status nt like "%wait%") ' ,'jc_job_status_filter',100);
     }
 }
 elseif($status=='revise'){
     if($ac_role=='follow'){
         //get_panel_card('1', '1','anj_id','NS-','anj.status  like "%wait%"','status',100);
     }elseif($ac_role=='writer'){
-        get_panel_card('1', '1','jc_job_number','','  (jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "content_editing" )','jc_job_status_filter',100);
+        get_panel_card('anj.follow_up_by', $ac_username,'jc_job_number','','  (jc.job_status_filter  like "%Continue%" and jc.approved_editing_status like "content_editing" )','jc_job_status_filter',100);
     }elseif($ac_role=='shooter'){
         //get_panel_card('1', '1','jc_job_number','','(jc.job_status_filter  like "%wait%" or anj.status  like "%wait%" )','jc_job_status_filter',100);
     }elseif($ac_role=='retoucher'){
