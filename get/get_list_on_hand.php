@@ -94,7 +94,7 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
     }
 }
 //new card algoritum
-if($status<>'pending'){
+if($status=='pending'){
     $ac_nickname = null
 }
 if($ac_role=='follow'){
