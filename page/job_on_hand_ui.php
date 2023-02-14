@@ -27,9 +27,8 @@ $role_op = get_option("role",$_SESSION["role"],"single");
 ?>
 
 <nav class="nav p-2 bg-light shadow" style="border-bottom: 1px solid #e3e3e3;">
-    <a class="nav-link active" aria-current="page" onclick="get_list_job_on_hand('pending');">Pending</a>
-    <a class="nav-link" onclick="get_list_job_on_hand('Checking');">Checking</a>
-    <a class="nav-link" onclick="get_list_job_on_hand('On-productions');">On-productions</a>
+    <a class="nav-link active" aria-current="page" onclick="get_list_job_on_hand('pending');">Pending for <span id="stage"></span></a>
+    <a class="nav-link" onclick="get_list_job_on_hand('Inprogress');">Inprogress</a>
     <a class="nav-link" onclick="get_list_job_on_hand('waiting');">Waiting information</a>
     <a class="nav-link" onclick="get_list_job_on_hand('waiting');">Waiting for approve</a>
     <a class="nav-link" onclick="get_list_job_on_hand('revise');">Rejected</a>
@@ -61,6 +60,9 @@ $role_op = get_option("role",$_SESSION["role"],"single");
 
 <script>
 // get_detail_more
+function on_stage_change(){
+
+}
 function get_list_job_on_hand(status) {
     ac_username = document.getElementById('username_on_hand').value;
     ac_role = document.getElementById('role_on_hand').value;
@@ -77,7 +79,7 @@ function get_list_job_on_hand(status) {
 
 
 
-get_list_job_on_hand( 'pending');
+get_list_job_on_hand('pending');
 
 function interval_run() {
     get_list_job_on_hand( 'pending');

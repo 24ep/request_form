@@ -6,9 +6,9 @@ $ac_nickname = $_POST['ac_nickname'];
 $status = $_POST['status'];
 
 function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,$limit){
-    
+
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-    $query = "SELECT 
+    $query = "SELECT
         anj.id as anj_id,
         anj.brand as anj_brand,
         anj.sku as anj_sku,
@@ -17,7 +17,7 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
         anj.status as anj_status,
         jc.job_status_filter as jc_job_status_filter,
         jc.job_number as jc_job_number,
-        CASE 
+        CASE
          when TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 <= 3 then 0
          when jc.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 <= 5  then 1
          when jc.upload_image_date is not null and  anj.launch_date is null and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 10 then 2
@@ -29,13 +29,13 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
          when anj.launch_date is not null then 8
         else 9 end as piority
      FROM all_in_one_project.add_new_job as anj
-    left join u749625779_cdscontent.job_cms as jc 
-    on anj.id = jc.csg_request_new_id 
+    left join u749625779_cdscontent.job_cms as jc
+    on anj.id = jc.csg_request_new_id
     where ".$primary_key_id." = '".$id."' and ".$end_key."
     order by piority ASC,anj.launch_date is null ,anj.launch_date ASC,anj.create_date ASC,anj.sku DESC limit ".$limit or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
-        
+
          ?>
 <div class="p-3 border-bottom"
     onclick="call_edit_add_new_panel(<?php echo $row['anj_id']; ?>,'<?php echo $row['anj_brand']; ?>')">
@@ -49,7 +49,7 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
             </ul>
         </div>
         <div class="col">
-            <?php 
+            <?php
                             //priority_badge
                                 $current_day = date("Y-m-d");
                                 $p_badge="";
