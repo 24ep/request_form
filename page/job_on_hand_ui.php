@@ -20,6 +20,9 @@ while($row = mysqli_fetch_array($result)) {
         ${$prefix_table."_".$row_column['COLUMN_NAME']} = $row[$row_column['COLUMN_NAME']];
     }
 }
+
+include_once('../get/get_option_function.php');
+$username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
 ?>
 
 <nav class="nav p-2 bg-light shadow" style="border-bottom: 1px solid #e3e3e3;">
@@ -30,11 +33,12 @@ while($row = mysqli_fetch_array($result)) {
     <a class="nav-link" onclick="get_list_job_on_hand('<?php echo $ac_role; ?>', 'revised', '<?php echo $ac_username; ?>','<?php echo $ac_nickname; ?>');">Revised</a>
 
     <div class="position-absolute end-0 me-3">
-        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+        <select class="form-select" id="username" aria-label="Floating label select example">
+<?php echo $username_op;?>
+        </select>
+    </div>
+    <div class="position-absolute end-0 me-3">
+        <select class="form-select" id="role" aria-label="Floating label select example">
         </select>
     </div>
 </nav>
@@ -96,4 +100,5 @@ function call_edit_add_new_panel(id, brand) {
         });
     }
 }
+
 </script>
