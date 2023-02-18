@@ -56,7 +56,7 @@ $role_op = get_option("role",$_SESSION["role"],"single");
     </div>
 
 </div>
-<input type="hide" id="selected_status">
+<input type="hidden" id="selected_status">
 <script>
 // get_detail_more
 // function on_stage_change(){
