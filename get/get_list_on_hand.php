@@ -3,7 +3,6 @@ session_start();
 $ac_role = $_POST['ac_role'];
 $ac_username = $_POST['ac_username'];
 $status = $_POST['status'];
-
 //get username
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 $query = "SELECT * FROM all_in_one_project.account where username='".$ac_username."'" or die("Error:" . mysqli_error($con));
@@ -11,9 +10,8 @@ $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     $ac_nickname = $row['nickname'];
 }
-
-function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,$limit){
-
+//
+function get_panel_card($primary_key_id,$id,$end_key,$limit){
     if($id<>null){
         $id = "'".$id."'";
     }
@@ -45,17 +43,15 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
     order by piority ASC,anj.launch_date is null ,anj.launch_date ASC,anj.create_date ASC,anj.sku DESC limit ".$limit or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
-
         ?>
 <div class="p-3 border-bottom rounded shadow-sm bg-white m-2"
     onclick="call_edit_add_new_panel(<?php echo $row['anj_id']; ?>,'<?php echo $row['anj_brand']; ?>')">
     <div class="row">
         <div class="col">
             <ul class="list-group list-group-flush">
-                <li class="" style="list-style: none"><strong><?php echo $prefix.$row[$title];?></strong></li>
+                <li class="" style="list-style: none"><strong><?php echo 'NS-'.$row['anj_id'];?></strong></li>
                 <li class="" style="list-style: none"><?php echo $row['anj_brand']." ".$row['anj_sku'];?> SKUs</li>
-                <li class="" style="list-style: none"><span><?php echo $row[$status_key];?></span></li>
-                <li class="" style="list-style: none"><span><?php echo $row['status'];?></span></li>
+                <li class="" style="list-style: none"><span><?php echo $row['anj_status'];?></span></li>
             </ul>
         </div>
         <div class="col">
@@ -93,97 +89,125 @@ function get_panel_card($primary_key_id,$id,$title,$prefix,$end_key,$status_key,
 <?php
     }
 }
-// defind status per stage
+// define status per stage
 $configurable_map = array (
-    array(
-        'ac_role'=>'follow',
-        'status'=>'pending',
-        'filter'=>'ac.status = "pending"'),
-    array(
-        'ac_role'=>'follow',
-        'status'=>'inprogress',
-        'filter'=>'ac.status = "checking"'
-    ),
-    array(
-        'ac_role'=>'follow',
-        'status'=>'waiting for other stage',
-        'filter'=>'anj.accept_date is not null and jc.approved_by is null'
-    ),
-    array(
-        'ac_role'=>'writer',
-        'status'=>'pending',
-        'filter'=>'jc.content_assign_name is null'
-    ),
-    array(
-        'ac_role'=>'writer',
-        'status'=>'inprogress',
-        'filter'=>'jc.content_start_date is not null and jc.content_complete_date is null'
-    ),
-    array(
-        'ac_role'=>'shoot',
-        'status'=>'waiting for other stage',
-        'filter'=>'jc.content_complete_date is null and jc.approved_by is null'
-    ),
-    array(
-        'ac_role'=>'recive_item',
-        'status'=>'pending',
-        'filter'=>'jc.recive_item_date is null '
-    ),
-    array(
-        'ac_role'=>'shoot',
-        'status'=>'pending',
-        'filter'=>'jc.shoot_assign_name is null '
-    ),
-    array(
-        'ac_role'=>'shoot',
-        'status'=>'inprogress',
-        'filter'=>'jc.shoot_start_date is not null and jc.shoot_complete_date is null'
-    ),
-    array(
-        'ac_role'=>'shoot',
-        'status'=>'waiting for other stage',
-        'filter'=>'jc.shoot_complete_date is null and jc.approved_by is null'
-    ),
-    array(
-        'ac_role'=>'retouch',
-        'status'=>'pending',
-        'filter'=>'jc.retouch_assign_name is null'
-    ),
-    array(
-        'ac_role'=>'retouch',
-        'status'=>'inprogress',
-        'filter'=>'jc.retouch_start_date is not null and jc.retouch_complete_date is null'
-    ),
-    array(
-        'ac_role'=>'retouch',
-        'status'=>'waiting for other stage',
-        'filter'=>'jc.retouch_complete_date is null and jc.approved_by is null'
-    ),
-    array(
-        'ac_role'=>'image_uploader',
-        'status'=>'pending',
-        'filter'=>'jc.retouch_complete_date is null and jc.upload_image = "Yes"'
-    )
+        array(
+            'ac_role'=>'follow',
+            'status'=>'pending',
+            'filter'=>'ac.status = "pending"'),
+            'key_stage'=>'anj.follow_up_by',
+            'key_name'=>$ac_username
+        array(
+            'ac_role'=>'follow',
+            'status'=>'inprogress',
+            'filter'=>'ac.status = "checking"',
+            'key_stage'=>'anj.follow_up_by',
+            'key_name'=>$ac_username
+        ),
+        array(
+            'ac_role'=>'follow',
+            'status'=>'waiting',
+            'filter'=>'ac.status like "%wait%"',
+            'key_stage'=>'anj.follow_up_by',
+            'key_name'=>$ac_username
+        ),
+        array(
+            'ac_role'=>'follow',
+            'status'=>'waiting for other stage',
+            'filter'=>'anj.accept_date is not null and jc.approved_by is null',
+            'key_stage'=>'anj.follow_up_by',
+            'key_name'=>$ac_username
+        ),
+        array(
+            'ac_role'=>'writer',
+            'status'=>'pending',
+            'filter'=>'jc.content_start_date is null',
+            'key_stage'=>'jc.content_assign_name',
+            'key_name'=>$ac_nickname
+        ),
+        array(
+            'ac_role'=>'writer',
+            'status'=>'inprogress',
+            'filter'=>'jc.content_start_date is not null and jc.content_complete_date is null',
+            'key_stage'=>'jc.content_assign_name',
+            'key_name'=>$ac_nickname
+        ),
+        array(
+            'ac_role'=>'shoot',
+            'status'=>'waiting for other stage',
+            'filter'=>'jc.shoot_complete_date is null and jc.approved_by is null',
+            'key_stage'=>'jc.shoot_assign_name',
+            'key_name'=>$ac_nickname
+        ),
+        array(
+            'ac_role'=>'recive_item',
+            'status'=>'pending',
+            'filter'=>'jc.recive_item_date is null ',
+            'key_stage'=>'jc.shoot_assign_name',
+            'key_name'=>$ac_nickname
+        ),
+        array(
+            'ac_role'=>'shoot',
+            'status'=>'pending',
+            'filter'=>'jc.shoot_assign_name is null ',
+            'key_stage'=>'jc.shoot_assign_name',
+            'key_name'=>$ac_nickname
+        ),
+        array(
+            'ac_role'=>'shoot',
+            'status'=>'inprogress',
+            'filter'=>'jc.shoot_start_date is not null and jc.shoot_complete_date is null',
+            'key_stage'=>'jc.shoot_assign_name',
+            'key_name'=>$ac_nickname
+        ),
+        array(
+            'ac_role'=>'shoot',
+            'status'=>'waiting for other stage',
+            'filter'=>'jc.shoot_complete_date is null and jc.approved_by is null',
+            'key_stage'=>'jc.shoot_assign_name',
+            'key_name'=>$ac_nickname
+        ),
+        array(
+            'ac_role'=>'retouch',
+            'status'=>'pending',
+            'filter'=>'jc.retouch_assign_name is null',
+            'key_stage'=>'jc.retouch_assign_name',
+            'key_name'=>$ac_nickname
+        ),
+        array(
+            'ac_role'=>'retouch',
+            'status'=>'inprogress',
+            'filter'=>'jc.retouch_start_date is not null and jc.retouch_complete_date is null',
+            'key_stage'=>'jc.retouch_assign_name',
+            'key_name'=>$ac_nickname
+        ),
+        array(
+            'ac_role'=>'retouch',
+            'status'=>'waiting for other stage',
+            'filter'=>'jc.retouch_complete_date is null and jc.approved_by is null',
+            'key_stage'=>'jc.retouch_assign_name',
+            'key_name'=>$ac_nickname
+        ),
+        array(
+            'ac_role'=>'image_uploader',
+            'status'=>'pending',
+            'filter'=>'jc.retouch_complete_date is null and jc.upload_image = "Yes"',
+            'key_stage'=>'jc.retouch_assign_name',
+            'key_name'=>$ac_nickname
+            )
+     )
+//
+$length_configurable_map = count($configurable_map);
+for ($j=0; $j  < $length_configurable_map; $j++) {
+    $ac_role_config = $configurable_map[$j]['ac_role'];
+    $status_config = $configurable_map[$j]['status'];
+    $key_stage = $configurable_map[$j]['key_stage'];
+    $key_name = $configurable_map[$j]['key_stage'];
 
-    )
+    if( $ac_role_config ==  $ac_role and $status ==$status_config){
+        get_panel_card($key_stage ,$key_name ,$configurable_map[$j]['filter'],100);
+    }
 
-//new card algoritum
-if($status=='pending'){
-    $ac_nickname = null
 }
-if($ac_role=='follow'){
-    get_panel_card('anj.follow_up_by',$ac_username ,'anj_id','NS-','anj.status = "'.$status.'"','status',100);
-}elseif($ac_role=='writer'){
-    get_panel_card('jc.content_assign_name',$ac_nickname ,'jc_job_number','','anj.status = "'.$status.'"','status',100);
-}elseif($ac_role=='shooter'){
-    get_panel_card('jc.shoot_assign_name',$ac_nickname ,'jc_job_number','','anj.status = "'.$status.'"','status',100);
-}elseif($ac_role=='retoucher'){
-    get_panel_card('jc.retouch_assign_name',$ac_nickname ,'jc_job_number','','anj.status = "'.$status.'"','status',100);
-}elseif($ac_role=='product_executive' or $ac_role== 'developer'){
-    get_panel_card('1','1' ,'anj_id','NS-','anj.status = "'.$status.'"','status',100);
-}elseif($ac_role=='approver'){
-    get_panel_card('jc.approved_by',$ac_nickname ,'jc_job_number','','anj.status = "'.$status.'"','status',100);
-}
 
-
-?>
+            ?>
