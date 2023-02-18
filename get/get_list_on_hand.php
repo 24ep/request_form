@@ -43,6 +43,7 @@ function count_ticket_per_status($primary_key_id,$id,$end_key,$limit,$status){
         $person_key = $primary_key_id." = '".$id."'";
     }
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+    $result = mysqli_query($con, $query);
     $query = "
     SELECT count(*) as count_ticket FROM all_in_one_project.add_new_job as anj
     left join u749625779_cdscontent.job_cms as jc
@@ -53,7 +54,7 @@ function count_ticket_per_status($primary_key_id,$id,$end_key,$limit,$status){
     }
     ?>
      <script>
-        document.getElementById("<?php echo 'c_'.$status; ?>").innerHTML = "<?php echo $count; ?>;
+        document.getElementById("<?php echo 'c_'.$status; ?>").innerHTML = "<?php echo $count; ?>";
     </script>;
 <?php
 
