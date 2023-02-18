@@ -43,7 +43,7 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
     FROM all_in_one_project.add_new_job as anj
     left join u749625779_cdscontent.job_cms as jc
     on anj.id = jc.csg_request_new_id
-    where ".$person_key." and ".$end_key."
+    where (".$person_key.") and (".$end_key.")
     order by piority ASC,anj.launch_date is null ,anj.launch_date ASC,anj.create_date ASC,anj.sku DESC limit ".$limit or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     echo $person_key." and ".$end_key;
