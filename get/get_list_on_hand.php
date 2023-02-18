@@ -80,10 +80,10 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
                 <li class="" style="list-style: none"><?php echo $row['anj_brand']." ".$row['anj_sku'];?> SKUs</li>
 
             </ul>
-        <div class="col-2">
+        <div class="col-3">
             <?php echo badge_status($row['anj_status']);?>
         </div>
-        <div class="col-10">
+        <div class="col-9">
             <?php
         //priority_badge
         $current_day = date("Y-m-d");
