@@ -12,11 +12,12 @@ while($row = mysqli_fetch_array($result)) {
 }
 //
 function get_panel_card($primary_key_id,$id,$end_key,$limit){
-    if($id<>null){
-        $person_key = $primary_key_id." = '".$id."'";
+    if($id=='null'){
+        $person_key = $primary_key_id." is null ";
+
     }
     else{
-        $person_key = $primary_key_id." is null ";
+        $person_key = $primary_key_id." = '".$id."'";
     }
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query = "SELECT
