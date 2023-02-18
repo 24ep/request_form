@@ -97,7 +97,7 @@ $configurable_map = array (
             'status'=>'pending',
             'filter'=>'ac.status = "pending"',
             'key_stage'=>'anj.follow_up_by',
-            'key_name'=>$ac_username
+            'key_name'=>''
         ),
         array(
             'ac_role'=>'follow',
@@ -125,7 +125,7 @@ $configurable_map = array (
             'status'=>'pending',
             'filter'=>'jc.content_start_date is null',
             'key_stage'=>'jc.content_assign_name',
-            'key_name'=>$ac_nickname
+            'key_name'=>''
         ),
         array(
             'ac_role'=>'writer',
@@ -145,15 +145,15 @@ $configurable_map = array (
             'ac_role'=>'recive_item',
             'status'=>'pending',
             'filter'=>'jc.recive_item_date is null ',
-            'key_stage'=>'jc.shoot_assign_name',
-            'key_name'=>$ac_nickname
+            'key_stage'=>'',
+            'key_name'=>''
         ),
         array(
             'ac_role'=>'shoot',
             'status'=>'pending',
             'filter'=>'jc.shoot_assign_name is null ',
             'key_stage'=>'jc.shoot_assign_name',
-            'key_name'=>$ac_nickname
+            'key_name'=>''
         ),
         array(
             'ac_role'=>'shoot',
@@ -173,8 +173,8 @@ $configurable_map = array (
             'ac_role'=>'retouch',
             'status'=>'pending',
             'filter'=>'jc.retouch_assign_name is null',
-            'key_stage'=>'jc.retouch_assign_name',
-            'key_name'=>$ac_nickname
+            'key_stage'=>'',
+            'key_name'=>''
         ),
         array(
             'ac_role'=>'retouch',
@@ -194,8 +194,8 @@ $configurable_map = array (
             'ac_role'=>'image_uploader',
             'status'=>'pending',
             'filter'=>'jc.retouch_complete_date is null and jc.upload_image = "Yes"',
-            'key_stage'=>'jc.retouch_assign_name',
-            'key_name'=>$ac_nickname
+            'key_stage'=>'',
+            'key_name'=>''
             )
         );
 //
