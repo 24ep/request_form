@@ -54,6 +54,7 @@ function count_ticket_per_status($primary_key_id,$id,$end_key,$limit,$status){
     }
     ?>
      <script>
+        console.log("<?php echo $count; ?>");
         document.getElementById("<?php echo 'c_'.$status; ?>").innerHTML = "<?php echo $count; ?>";
     </script>;
 <?php
