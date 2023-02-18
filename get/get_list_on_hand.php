@@ -99,21 +99,21 @@ $configurable_map = array (
         array(
             'ac_role'=>'follow',
             'status'=>'pending',
-            'filter'=>'ac.status = "pending"',
+            'filter'=>'jc.status = "pending"',
             'key_stage'=>'anj.follow_up_by',
             'key_name'=>'null'
         ),
         array(
             'ac_role'=>'follow',
             'status'=>'inprogress',
-            'filter'=>'ac.status = "checking"',
+            'filter'=>'jc.status = "checking"',
             'key_stage'=>'anj.follow_up_by',
             'key_name'=>$ac_username
         ),
         array(
             'ac_role'=>'follow',
             'status'=>'waiting',
-            'filter'=>'ac.status like "%wait%"',
+            'filter'=>'jc.status like "%wait%"',
             'key_stage'=>'anj.follow_up_by',
             'key_name'=>$ac_username
         ),
