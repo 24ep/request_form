@@ -94,9 +94,10 @@ $configurable_map = array (
         array(
             'ac_role'=>'follow',
             'status'=>'pending',
-            'filter'=>'ac.status = "pending"'),
+            'filter'=>'ac.status = "pending"',
             'key_stage'=>'anj.follow_up_by',
             'key_name'=>$ac_username
+        ),
         array(
             'ac_role'=>'follow',
             'status'=>'inprogress',
