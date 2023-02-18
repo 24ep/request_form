@@ -227,6 +227,18 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
 ?>
 <link rel="stylesheet" href="base/action/notiflix/dist/notiflix-3.2.5.min.css" />
 <script src="base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
+<?php
+if($parent<>""){
+echo '
+<nav class="navbar bg-body-tertiary">
+  <form class="container-fluid justify-content-start">
+    <button class="btn btn-sm btn-outline-light" type="button">< go to parent ticket (NS-'.$parent.')</button>
+  </form>
+</nav>
+';
+}
+
+?>
 <nav class="p-3 bg-white text-dark bg-gradient shadow-sm  ">
     <div class="row">
         <div class="col-4">
