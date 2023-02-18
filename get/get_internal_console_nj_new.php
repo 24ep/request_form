@@ -41,7 +41,7 @@
                         unset($allow_send_to_traffic);unset($help_traffic);
                     }
                     ?>
-    <?php if(!isset($parent) or $status <> 'on-productions'){
+    <?php if($parent=='' and ($accepted_date == '' or $accepted_date == null)){
                     ?>
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-heading5">
