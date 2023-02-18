@@ -13,7 +13,10 @@ while($row = mysqli_fetch_array($result)) {
 //
 function get_panel_card($primary_key_id,$id,$end_key,$limit){
     if($id<>null){
-        $id = "'".$id."'";
+        $person_key = $primary_key_id." = '".$id."'";
+    }
+    else{
+        $person_key = $primary_key_id." is null ";
     }
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query = "SELECT
@@ -39,10 +42,10 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
     FROM all_in_one_project.add_new_job as anj
     left join u749625779_cdscontent.job_cms as jc
     on anj.id = jc.csg_request_new_id
-    where ".$primary_key_id." = ".$id." and ".$end_key."
+    where ".$person_key." and ".$end_key."
     order by piority ASC,anj.launch_date is null ,anj.launch_date ASC,anj.create_date ASC,anj.sku DESC limit ".$limit or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
-    echo $primary_key_id." = ".$id." and ".$end_key;
+    echo $person_key." and ".$end_key;
     while($row = mysqli_fetch_array($result)) {
         ?>
 <div class="p-3 border-bottom rounded shadow-sm bg-white m-2"
