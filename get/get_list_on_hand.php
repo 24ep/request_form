@@ -204,7 +204,7 @@ for ($j=0; $j  < $length_configurable_map; $j++) {
     $ac_role_config = $configurable_map[$j]['ac_role'];
     $status_config = $configurable_map[$j]['status'];
     $key_stage = $configurable_map[$j]['key_stage'];
-    $key_name = $configurable_map[$j]['key_stage'];
+    $key_name = $configurable_map[$j]['key_name'];
 
 
     if( $ac_role_config ==  $ac_role and $status ==$status_config){
