@@ -1,4 +1,28 @@
 <?php
+function badge_status($status){
+    if($status=="pending"){
+      $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-pending" style="min-width: 115px;">pending</span>';
+    }elseif($status=="checking"  ){
+      $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-checking" style="min-width: 115px;">checking</span>';
+    }elseif( $status=="on-productions"){
+      $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-on-productions" style="min-width: 115px;">on-productions</button>';
+    }elseif($status=="approved"){
+      $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-approved" style="min-width: 115px;">approved</button>';
+    }elseif($status=="waiting confirm"){
+      $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-confirm" style="min-width: 115px;">waiting confirm</span>';
+    }elseif($status=="waiting image"){
+      $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-image" style="min-width: 115px;">waiting image</button>';
+    }elseif($status=="waiting data"){
+      $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-data" style="min-width: 115px;">waiting data</button>';
+    }elseif($status=="waiting traffic"){
+      $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-traffic" style="min-width: 115px;">waiting traffic</button>';
+    }elseif($status=="cancel"){
+      $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-cancel" style="min-width: 115px;">Cancel</button>';
+    }else{
+      $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-other" style="min-width: 115px;">'.$status.'</span>';
+    }
+    return $status;
+  }
 session_start();
 $ac_role = $_POST['ac_role'];
 $ac_username = $_POST['ac_username'];
@@ -56,7 +80,7 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
             <ul class="list-group list-group-flush">
                 <li class="" style="list-style: none"><strong><?php echo 'NS-'.$row['anj_id'];?></strong></li>
                 <li class="" style="list-style: none"><?php echo $row['anj_brand']." ".$row['anj_sku'];?> SKUs</li>
-                <li class="" style="list-style: none"><span><?php echo $row['anj_status'];?></span></li>
+                <li class="" style="list-style: none"><span><?php echo badge_status($row['anj_status']);?></span></li>
             </ul>
         </div>
         <div class="col">
