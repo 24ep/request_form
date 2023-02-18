@@ -36,6 +36,12 @@ while($row = mysqli_fetch_array($result)) {
 }
 
 function count_ticket_per_status($primary_key_id,$id,$end_key,$limit,$status){
+    if($id=='null'){
+        $person_key = $primary_key_id." is null ";
+    }
+    else{
+        $person_key = $primary_key_id." = '".$id."'";
+    }
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query = "
     SELECT count(*) as count_ticket FROM all_in_one_project.add_new_job as anj
