@@ -65,7 +65,7 @@ $role_op = get_option("role",$_SESSION["role"],"single");
 
 function get_list_job_on_hand(status) {
     if(status=='current_status'){
-         document.getElementById('selected_status').value = status;
+        status = document.getElementById('selected_status').value ;
     }
     ac_username = document.getElementById('username_on_hand').value;
     ac_role = document.getElementById('role_on_hand').value;
