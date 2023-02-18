@@ -98,7 +98,7 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
     $result = mysqli_query($con, $query);
     ?>
     <script>
-        console.log('<?php echo $person_key." and ".$end_key;?>');
+        console.log("<?php echo $person_key." and ".$end_key;?>");
     </script> <?php
     while($row = mysqli_fetch_array($result)) {
         ?>
