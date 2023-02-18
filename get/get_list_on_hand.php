@@ -35,7 +35,7 @@ while($row = mysqli_fetch_array($result)) {
     $ac_nickname = $row['nickname'];
 }
 
-function count_ticket_per_status($primary_key_id,$id,$end_key,$limit,$status){
+function count_ticket_per_status($primary_key_id,$id,$end_key,$status){
     if($id=='null'){
         $person_key = $primary_key_id." is null ";
     }
@@ -284,7 +284,7 @@ for ($j=0; $j  < $length_configurable_map; $j++) {
     $key_name = $configurable_map[$j]['key_name'];
     if( $ac_role_config ==  $ac_role and $status ==$status_config){
         get_panel_card($key_stage ,$key_name ,$configurable_map[$j]['filter'],100);
-        count_ticket_per_status($primary_key_id,$id,$end_key,$limit,$status,$configurable_map[$j]['status']);
+        count_ticket_per_status($key_stage,$key_name,$configurable_map[$j]['status'],$status);
     }
 }
 ?>
