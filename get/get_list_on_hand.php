@@ -204,10 +204,24 @@ $configurable_map = array (
         array(
             'ac_role'=>'approve',
             'status'=>'pending',
-            'filter'=>'jc.upload_image_date is not null and jc.content_complete_date is not null',
+            'filter'=>'jc.approved_date is not null and jc.approve_editing_status ="correct"',
             'key_stage'=>'jc.approve_by',
             'key_name'=>'null'
-        )
+        ),
+        array(
+            'ac_role'=>'writer',
+            'status'=>'rejected',
+            'filter'=>'jc.approved_editing_status  in ("content_studio_editing","content_editing")',
+            'key_stage'=>'jc.approve_by',
+            'key_name'=>'null'
+        ),
+        array(
+            'ac_role'=>'retouch',
+            'status'=>'rejected',
+            'filter'=>'jc.approved_editing_status  in ("content_studio_editing","studio_editing")',
+            'key_stage'=>'jc.approve_by',
+            'key_name'=>'null'
+        ),
         );
 //
 $length_configurable_map = count($configurable_map);
