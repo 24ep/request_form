@@ -1,25 +1,25 @@
 <?php
 function badge_status($status){
     if($status=="pending"){
-        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-pending" style="min-width: 115px;">pending</span>';
+        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-pending" style="min-width: fit-content;">pending</span>';
     }elseif($status=="checking"  ){
-        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-checking" style="min-width: 115px;">checking</span>';
+        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-checking" style="min-width: fit-content;">checking</span>';
     }elseif( $status=="on-productions"){
-        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-on-productions" style="min-width: 115px;">on-productions</button>';
+        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-on-productions" style="min-width: fit-content;">on-productions</button>';
     }elseif($status=="approved"){
-        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-approved" style="min-width: 115px;">approved</button>';
+        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-approved" style="min-width: fit-content;">approved</button>';
     }elseif($status=="waiting confirm"){
-        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-confirm" style="min-width: 115px;">waiting confirm</span>';
+        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-confirm" style="min-width: fit-content;">waiting confirm</span>';
     }elseif($status=="waiting image"){
-        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-image" style="min-width: 115px;">waiting image</button>';
+        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-image" style="min-width: fit-content;">waiting image</button>';
     }elseif($status=="waiting data"){
-        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-data" style="min-width: 115px;">waiting data</button>';
+        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-data" style="min-width: fit-content;">waiting data</button>';
     }elseif($status=="waiting traffic"){
-        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-traffic" style="min-width: 115px;">waiting traffic</button>';
+        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-traffic" style="min-width: fit-content;">waiting traffic</button>';
     }elseif($status=="cancel"){
-        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-cancel" style="min-width: 115px;">Cancel</button>';
+        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-cancel" style="min-width: fit-content;">Cancel</button>';
     }else{
-        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-other" style="min-width: 115px;">'.$status.'</span>';
+        $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-other" style="min-width: fit-content;">'.$status.'</span>';
     }
     return $status;
 }
@@ -75,15 +75,15 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
 <div class="p-3 border-bottom rounded shadow-sm bg-white m-2"
     onclick="call_edit_add_new_panel(<?php echo $row['anj_id']; ?>,'<?php echo $row['anj_brand']; ?>')">
     <div class="row">
-            <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush ms-3 mb-2">
                 <li class="" style="list-style: none"><strong><?php echo 'NS-'.$row['anj_id'];?></strong></li>
                 <li class="" style="list-style: none"><?php echo $row['anj_brand']." ".$row['anj_sku'];?> SKUs</li>
 
             </ul>
-        <div class="col-3">
+        <div class="col-2">
             <?php echo badge_status($row['anj_status']);?>
         </div>
-        <div class="col-9">
+        <div class="col-10">
             <?php
         //priority_badge
         $current_day = date("Y-m-d");
@@ -93,9 +93,9 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
         // -1 create date > 5
         $create_date_diff = (strtotime($current_day) - strtotime($create_date))/  ( 60 * 60 * 24 );
         if($create_date_diff>=10){
-            $p_badge .= '<span class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 ms-2 modern-badge-red"><ion-icon name="warning-outline" style="font-size:12px;margin:0px"></ion-icon>Age > '.$create_date_diff.' Days</span>';
+            $p_badge .= '<span class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 ms-2 ms-3 modern-badge-red"><ion-icon name="warning-outline" style="font-size:12px;margin:0px"></ion-icon>Age > '.$create_date_diff.' Days</span>';
         }elseif($create_date_diff>=3){
-            $p_badge .= '<span class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 ms-2 modern-badge-purple"><ion-icon name="warning-outline" style="font-size:12px;margin:0px;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
+            $p_badge .= '<span class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 ms-2 ms-3 modern-badge-purple"><ion-icon name="warning-outline" style="font-size:12px;margin:0px;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
         }
         //  launch date
         if($row["anj_launch_date"] <> null){
@@ -103,9 +103,9 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
             $launch_date_c = date_format($launch_date_c,"Y-m-d");
             $launch_date_diff = (strtotime($launch_date_c)-strtotime($current_day))/  ( 60 * 60 * 24 );
             if($launch_date_diff<=0){
-                $p_badge .= '<span class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 normal-badge-red" ><ion-icon name="warning-outline" style="font-size:12px;margin:0px"></ion-icon> Over Launch '.($launch_date_diff*(-1)).' days</span>';
+                $p_badge .= '<span class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 ms-3 normal-badge-red" ><ion-icon name="warning-outline" style="font-size:12px;margin:0px"></ion-icon> Over Launch '.($launch_date_diff*(-1)).' days</span>';
             }elseif($launch_date_diff<=5){
-                $p_badge .= '<span class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 modern-badge-purple" ><ion-icon name="warning-outline" style="font-size:12px;margin:0px"></ion-icon>Launch in '.$launch_date_diff.' days</span>';
+                $p_badge .= '<span class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 ms-3 modern-badge-purple" ><ion-icon name="warning-outline" style="font-size:12px;margin:0px"></ion-icon>Launch in '.$launch_date_diff.' days</span>';
             }
         }
         echo $p_badge;
