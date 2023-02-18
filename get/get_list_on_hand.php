@@ -282,10 +282,10 @@ for ($j=0; $j  < $length_configurable_map; $j++) {
     $status_config = $configurable_map[$j]['status'];
     $key_stage = $configurable_map[$j]['key_stage'];
     $key_name = $configurable_map[$j]['key_name'];
-    count_ticket_per_status($key_stage,$key_name,$configurable_map[$j]['filter'],$status);
+
     if( $ac_role_config ==  $ac_role and $status ==$status_config){
         get_panel_card($key_stage ,$key_name ,$configurable_map[$j]['filter'],100);
-
+        count_ticket_per_status($key_stage,$key_name,$configurable_map[$j]['filter'],$status);
     }
 }
 ?>
