@@ -34,12 +34,12 @@ $role_op = get_option("role",$_SESSION["role"],"single");
     <a class="nav-link" onclick="get_list_job_on_hand('rejected');">Rejected<span id="c_rejected"></span></a>
 
     <div class="position-absolute end-0 me-3 mt-1" style="margin-right: 100px!important;width: 300px;">
-        <select  id="username_on_hand" onclick="get_list_job_on_hand('current_status')">
+        <select  id="username_on_hand" onchange="get_list_job_on_hand('current_status');">
             <?php echo $username_op;?>
         </select>
     </div>
     <div class="position-absolute end-0 me-3 mt-1">
-        <select id="role_on_hand" onclick="get_list_job_on_hand('current_status')">
+        <select id="role_on_hand" onchange="get_list_job_on_hand('current_status');">
         <?php echo $role_op;?>
         </select>
     </div>
@@ -65,7 +65,7 @@ $role_op = get_option("role",$_SESSION["role"],"single");
 
 function get_list_job_on_hand(status) {
     if(status=='current_status'){
-        status=  document.getElementById('selected_status').value = status;
+         document.getElementById('selected_status').value = status;
     }
     ac_username = document.getElementById('username_on_hand').value;
     ac_role = document.getElementById('role_on_hand').value;
