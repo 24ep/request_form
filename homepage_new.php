@@ -292,12 +292,6 @@ if (!$_SESSION["login_csg"]){
                             <ion-icon name="grid"></ion-icon><span class="main-menu-nav">Job On Hand</span>
                         </a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_job_on_hand_ui" data-bs-toggle="pill"
-                            type="button" role="tab" aria-selected="false" onclick="get_page('job_on_hand_ui');">
-                            <ion-icon name="grid"></ion-icon><span class="main-menu-nav">Job On Hand (UI)</span>
-                        </a>
-                    </li>
                     <li class="nav-item btn-group dropend" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_product_mantain" type="button"
                             onclick="show_sub_menu('product_maintain');">
