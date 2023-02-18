@@ -230,9 +230,10 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
 <?php
 if($parent<>""){
 echo '
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar bg-secondary bg-gradient shadow-sm  bg-opacity-50">
   <form class="container-fluid justify-content-start">
-    <button class="btn btn-sm btn-outline-light" type="button">< go to parent ticket (NS-'.$parent.')</button>
+    <button class="btn btn-sm" type="button" onclick="call_edit_add_new_modal('.$parent.')"><ion-icon name="chevron-back-outline"></ion-icon>
+     Go to parent ticket (NS-'.$parent.')</button>
   </form>
 </nav>
 ';
