@@ -171,7 +171,7 @@
                         unset($allow_send_to_traffic);unset($help_traffic);
                     }
                     ?>
-    <?php if(!isset($parent) or $status <> 'on-productions'){
+    <?php if(!isset($parent) and ($accepted_date == '' or $accepted_date == )){
                     ?>
     <div class="row g-3 action-block">
         <h6><strong>Create Sub-Ticket</strong></h6>
