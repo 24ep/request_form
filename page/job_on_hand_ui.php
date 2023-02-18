@@ -60,9 +60,9 @@ $role_op = get_option("role",$_SESSION["role"],"single");
 
 <script>
 // get_detail_more
-function on_stage_change(){
+// function on_stage_change(){
 
-}
+// }
 function get_list_job_on_hand(status) {
     ac_username = document.getElementById('username_on_hand').value;
     ac_role = document.getElementById('role_on_hand').value;
