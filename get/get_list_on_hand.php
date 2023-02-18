@@ -80,10 +80,10 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
                 <li class="" style="list-style: none"><?php echo $row['anj_brand']." ".$row['anj_sku'];?> SKUs</li>
 
             </ul>
-        <div class="col">
+        <div class="col-3">
             <?php echo badge_status($row['anj_status']);?>
         </div>
-        <div class="col">
+        <div class="col-9">
             <?php
         //priority_badge
         $current_day = date("Y-m-d");
@@ -93,9 +93,9 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
         // -1 create date > 5
         $create_date_diff = (strtotime($current_day) - strtotime($create_date))/  ( 60 * 60 * 24 );
         if($create_date_diff>=10){
-            $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1 modern-badge-red"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
+            $p_badge .= '<span class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 ms-2 modern-badge-red"><ion-icon name="warning-outline" style="font-size:12px;margin:0px"></ion-icon>Age > '.$create_date_diff.' Days</span>';
         }elseif($create_date_diff>=3){
-            $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1 modern-badge-purple"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
+            $p_badge .= '<span class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 ms-2 modern-badge-purple"><ion-icon name="warning-outline" style="font-size:12px;margin:0px;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
         }
         //  launch date
         if($row["anj_launch_date"] <> null){
@@ -103,9 +103,9 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
             $launch_date_c = date_format($launch_date_c,"Y-m-d");
             $launch_date_diff = (strtotime($launch_date_c)-strtotime($current_day))/  ( 60 * 60 * 24 );
             if($launch_date_diff<=0){
-                $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1 normal-badge-red" ><ion-icon name="warning-outline" style="margin: 0;"></ion-icon> Over Launch '.($launch_date_diff*(-1)).' days</span>';
+                $p_badge .= '<span class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 normal-badge-red" ><ion-icon name="warning-outline" style="font-size:12px;margin:0px"></ion-icon> Over Launch '.($launch_date_diff*(-1)).' days</span>';
             }elseif($launch_date_diff<=5){
-                $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1 modern-badge-purple" ><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Launch in '.$launch_date_diff.' days</span>';
+                $p_badge .= '<span class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 modern-badge-purple" ><ion-icon name="warning-outline" style="font-size:12px;margin:0px"></ion-icon>Launch in '.$launch_date_diff.' days</span>';
             }
         }
         echo $p_badge;
