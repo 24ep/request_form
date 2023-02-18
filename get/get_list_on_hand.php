@@ -196,7 +196,7 @@ $configurable_map = array (
             'key_stage'=>'jc.retouch_assign_name',
             'key_name'=>$ac_nickname
             )
-     )
+        );
 //
 $length_configurable_map = count($configurable_map);
 for ($j=0; $j  < $length_configurable_map; $j++) {
