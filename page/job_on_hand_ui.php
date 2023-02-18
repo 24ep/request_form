@@ -28,7 +28,7 @@ $role_op = get_option("role",$_SESSION["role"],"single");
 
 <nav class="nav p-2 bg-light shadow" style="border-bottom: 1px solid #e3e3e3;">
     <a class="nav-link active" aria-current="page" onclick="get_list_job_on_hand('pending');">Pending for <span id="stage"></span></a>
-    <a class="nav-link" onclick="get_list_job_on_hand('Inprogress');">Inprogress</a>
+    <a class="nav-link" onclick="get_list_job_on_hand('inprogress');">Inprogress</a>
     <a class="nav-link" onclick="get_list_job_on_hand('waiting');">Waiting information</a>
     <a class="nav-link" onclick="get_list_job_on_hand('waiting for other stage');">Waiting for approve</a>
     <a class="nav-link" onclick="get_list_job_on_hand('revise');">Rejected</a>
