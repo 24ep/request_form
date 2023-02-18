@@ -34,6 +34,22 @@ $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     $ac_nickname = $row['nickname'];
 }
+
+function count_ticket_per_status($primary_key_id,$id,$end_key,$limit,$status){
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+    $query = "
+    SELECT count(*) as count_ticket FROM all_in_one_project.add_new_job as anj
+    left join u749625779_cdscontent.job_cms as jc
+    on anj.id = jc.csg_request_new_id
+    where (".$person_key.") and (".$end_key.")" or die("Error:" . mysqli_error($con));
+    while($row = mysqli_fetch_array($result)) {
+        $count = $row['count_ticket'];
+    }
+    return $count;
+    echo '<script>
+        document.getElementById("c_'.$status.'").innerHTML = '.$count .';
+    </script>';
+}
 //
 function get_panel_card($primary_key_id,$id,$end_key,$limit){
     if($id=='null'){
@@ -254,6 +270,7 @@ for ($j=0; $j  < $length_configurable_map; $j++) {
     $key_name = $configurable_map[$j]['key_name'];
     if( $ac_role_config ==  $ac_role and $status ==$status_config){
         get_panel_card($key_stage ,$key_name ,$configurable_map[$j]['filter'],100);
+        count_ticket_per_status($primary_key_id,$id,$end_key,$limit,$status,$configurable_map[$j]['status'],);
     }
 }
 ?>

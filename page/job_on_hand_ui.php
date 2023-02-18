@@ -27,11 +27,11 @@ $role_op = get_option("role",$_SESSION["role"],"single");
 ?>
 
 <nav class="nav p-2 bg-light shadow" style="border-bottom: 1px solid #e3e3e3;">
-    <a class="nav-link" onclick="get_list_job_on_hand('pending');">Pending<span id="stage"></span></a>
-    <a class="nav-link" onclick="get_list_job_on_hand('inprogress');">Inprogress</a>
-    <a class="nav-link" onclick="get_list_job_on_hand('waiting');">Waiting information</a>
-    <a class="nav-link" onclick="get_list_job_on_hand('waiting for other stage');">Waiting for other stage</a>
-    <a class="nav-link" onclick="get_list_job_on_hand('rejected');">Rejected</a>
+    <a class="nav-link" onclick="get_list_job_on_hand('pending');">Pending<span id="c_pending"></span></a>
+    <a class="nav-link" onclick="get_list_job_on_hand('inprogress');">Inprogress<span id="c_inprogress"></span></a>
+    <a class="nav-link" onclick="get_list_job_on_hand('waiting');">Waiting information<span id="c_waiting"></span></a>
+    <a class="nav-link" onclick="get_list_job_on_hand('waiting for other stage');">Waiting for other stage<span id="c_waiting for other stage"></span></a>
+    <a class="nav-link" onclick="get_list_job_on_hand('rejected');">Rejected<span id="c_rejected"></span></a>
 
     <div class="position-absolute end-0 me-3 mt-1" style="margin-right: 150px!important;width: 300px;">
         <select  id="username_on_hand">
@@ -78,14 +78,15 @@ function get_list_job_on_hand(status) {
 
 
 
+
 get_list_job_on_hand('pending');
 
 function interval_run() {
-    get_list_job_on_hand( 'pending');
-    get_list_job_on_hand( 'inprogress');
-    get_list_job_on_hand( 'waiting');
-    get_list_job_on_hand( 'revise');
-    get_list_job_on_hand( 'revised');
+    get_list_job_on_hand('pending');
+    get_list_job_on_hand('inprogress');
+    get_list_job_on_hand('waiting');
+    get_list_job_on_hand('revise');
+    get_list_job_on_hand('revised');
 }
 // interval_run();
 
