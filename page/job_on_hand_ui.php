@@ -27,18 +27,18 @@ $role_op = get_option("role",$_SESSION["role"],"single");
 ?>
 
 <nav class="nav p-2 bg-light shadow" style="border-bottom: 1px solid #e3e3e3;">
-    <a class="nav-link" onclick="get_list_job_on_hand('pending');">Pending for <span id="stage"></span></a>
+    <a class="nav-link" onclick="get_list_job_on_hand('pending');">Pending<span id="stage"></span></a>
     <a class="nav-link" onclick="get_list_job_on_hand('inprogress');">Inprogress</a>
     <a class="nav-link" onclick="get_list_job_on_hand('waiting');">Waiting information</a>
     <a class="nav-link" onclick="get_list_job_on_hand('waiting for other stage');">Waiting for other stage</a>
     <a class="nav-link" onclick="get_list_job_on_hand('rejected');">Rejected</a>
 
-    <div class="position-absolute end-0 me-3" style="margin-right: 150px!important;width: 300px;">
+    <div class="position-absolute end-0 me-3 mt-1" style="margin-right: 150px!important;width: 300px;">
         <select  id="username_on_hand">
             <?php echo $username_op;?>
         </select>
     </div>
-    <div class="position-absolute end-0 me-3">
+    <div class="position-absolute end-0 me-3 mt-1">
         <select id="role_on_hand">
         <?php echo $role_op;?>
         </select>
