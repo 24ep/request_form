@@ -207,6 +207,8 @@ for ($j=0; $j  < $length_configurable_map; $j++) {
     $key_name = $configurable_map[$j]['key_stage'];
 
     if( $ac_role_config ==  $ac_role and $status ==$status_config){
+echo  $ac_role_config ;
+echo $status_config;
         get_panel_card($key_stage ,$key_name ,$configurable_map[$j]['filter'],100);
     }
 
