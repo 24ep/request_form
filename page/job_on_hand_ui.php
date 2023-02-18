@@ -44,7 +44,7 @@ $role_op = get_option("role",$_SESSION["role"],"single");
         </select>
     </div>
 </nav>
-<div class="row job_on_hand_list">
+<div class="row job_on_hand_list" style="--bs-gutter-x: auto;">
     <div class="col-3 bg-secondary bg-opacity-10 shadow-sm pe-0 ps-0 mt-0  ms-0 m-0 border-end">
         <div id="get_list_job_on_hand" class="bg-light bg-opacity-25 shadow-sm">
         </div>
