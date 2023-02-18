@@ -150,21 +150,21 @@ $configurable_map = array (
         array(
             'ac_role'=>'writer',
             'status'=>'pending',
-            'filter'=>'jc.content_start_date is null and anj.status ="on-production"',
+            'filter'=>'jc.content_start_date is null and anj.status ="on-productions"',
             'key_stage'=>'jc.content_assign_name',
             'key_name'=>'null'
         ),
         array(
             'ac_role'=>'writer',
             'status'=>'inprogress',
-            'filter'=>'jc.content_start_date is not null and jc.content_complete_date is null and anj.status ="on-production"',
+            'filter'=>'jc.content_start_date is not null and jc.content_complete_date is null and anj.status ="on-productions"',
             'key_stage'=>'jc.content_assign_name',
             'key_name'=>$ac_nickname
         ),
         array(
             'ac_role'=>'shoot',
             'status'=>'waiting for other stage',
-            'filter'=>'jc.shoot_complete_date is null and jc.approved_by is null and anj.status ="on-production"',
+            'filter'=>'jc.shoot_complete_date is null and jc.approved_by is null and anj.status ="on-productions"',
             'key_stage'=>'jc.shoot_assign_name',
             'key_name'=>$ac_nickname
         ),
@@ -178,28 +178,28 @@ $configurable_map = array (
         array(
             'ac_role'=>'shoot',
             'status'=>'pending',
-            'filter'=>'jc.shoot_assign_name is null and anj.status ="on-production"',
+            'filter'=>'jc.shoot_assign_name is null and anj.status ="on-productions"',
             'key_stage'=>'jc.shoot_assign_name',
             'key_name'=>'null'
         ),
         array(
             'ac_role'=>'shoot',
             'status'=>'inprogress',
-            'filter'=>'jc.shoot_start_date is not null and jc.shoot_complete_date is null and anj.status ="on-production"',
+            'filter'=>'jc.shoot_start_date is not null and jc.shoot_complete_date is null and anj.status ="on-productions"',
             'key_stage'=>'jc.shoot_assign_name',
             'key_name'=>$ac_nickname
         ),
         array(
             'ac_role'=>'shoot',
             'status'=>'waiting for other stage',
-            'filter'=>'jc.shoot_complete_date is null and jc.approved_by is null and anj.status ="on-production"',
+            'filter'=>'jc.shoot_complete_date is null and jc.approved_by is null and anj.status ="on-productions"',
             'key_stage'=>'jc.shoot_assign_name',
             'key_name'=>$ac_nickname
         ),
         array(
             'ac_role'=>'retouch',
             'status'=>'pending',
-            'filter'=>'jc.shoot_complete_date is not null and jc.retouch_assign_name is null  and anj.status ="on-production"',
+            'filter'=>'jc.shoot_complete_date is not null and jc.retouch_assign_name is null  and anj.status ="on-productions"',
             'key_stage'=>'jc.retouch_assign_name',
             'key_name'=>'null'
         ),
