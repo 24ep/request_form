@@ -94,7 +94,7 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
     where (".$person_key.") and (".$end_key.")
     order by priority ASC,anj.launch_date is null ,anj.launch_date ASC,anj.create_date ASC,anj.sku DESC limit ".$limit or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
-    echo "<script>console.log('".$person_key." and ".$end_key."');</script>";
+    echo "<script>console.log(".$person_key." and ".$end_key.");</script>";
     while($row = mysqli_fetch_array($result)) {
         ?>
 <div class="p-3 border-bottom rounded shadow-sm bg-white m-2"
