@@ -45,10 +45,12 @@ function count_ticket_per_status($primary_key_id,$id,$end_key,$limit,$status){
     while($row = mysqli_fetch_array($result)) {
         $count = $row['count_ticket'];
     }
-    return $count;
-    echo '<script>
-        document.getElementById("c_'.$status.'").innerHTML = '.$count .';
-    </script>';
+    ?>
+     <script>
+        document.getElementById("<?php echo 'c_'.$status; ?>").innerHTML = <?php echo $count; ?>";
+    </script>;
+<?php
+
 }
 //
 function get_panel_card($primary_key_id,$id,$end_key,$limit){
@@ -85,7 +87,7 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
     where (".$person_key.") and (".$end_key.")
     order by priority ASC,anj.launch_date is null ,anj.launch_date ASC,anj.create_date ASC,anj.sku DESC limit ".$limit or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
-    echo "<script>console.log(".$person_key." and ".$end_key.");</script>";
+    echo "<script>console.log('".$person_key." and ".$end_key."');</script>";
     while($row = mysqli_fetch_array($result)) {
         ?>
 <div class="p-3 border-bottom rounded shadow-sm bg-white m-2"
