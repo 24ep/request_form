@@ -39,12 +39,12 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
     when TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 < 10  then 6
     when anj.launch_date is null and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 9 and lower(anj.project_type ) like '%item%' then 7
     when anj.launch_date is not null then 8
-    else 9 end as piority
+    else 9 end as priority
     FROM all_in_one_project.add_new_job as anj
     left join u749625779_cdscontent.job_cms as jc
     on anj.id = jc.csg_request_new_id
     where (".$person_key.") and (".$end_key.")
-    order by piority ASC,anj.launch_date is null ,anj.launch_date ASC,anj.create_date ASC,anj.sku DESC limit ".$limit or die("Error:" . mysqli_error($con));
+    order by priority ASC,anj.launch_date is null ,anj.launch_date ASC,anj.create_date ASC,anj.sku DESC limit ".$limit or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     echo $person_key." and ".$end_key;
     while($row = mysqli_fetch_array($result)) {
@@ -69,11 +69,9 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
         // -1 create date > 5
         $create_date_diff = (strtotime($current_day) - strtotime($create_date))/  ( 60 * 60 * 24 );
         if($create_date_diff>=10){
-            $p_badge .= '<span class="badge bg-danger bg-gradient shadow-sm rounded p-1 ps-2 pe-2 mb-1" style="margin-left:5px;background-color: #8b47db!important;"><ion-icon name="warning-outline"></ion-icon>Age > '.$create_date_diff.' Days</span>';
-        }elseif($create_date_diff>=5){
-            $p_badge .= '<span class="badge bg-danger bg-gradient shadow-sm rounded p-1 ps-2 pe-2 mb-1" style="margin-left:5px"> <ion-icon name="warning-outline" style="margin"></ion-icon>Age > '.$create_date_diff.' Days</span>';
+        $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1 modern-badge-red"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
         }elseif($create_date_diff>=3){
-            $p_badge .= '<span class="badge bg-danger bg-gradient shadow-sm rounded p-1 ps-2 pe-2 mb-1" style="margin-left:5px">Age > '.$create_date_diff.' Days</span>';
+        $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1 modern-badge-purple"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
         }
         //  launch date
         if($row["anj_launch_date"] <> null){
@@ -81,11 +79,12 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
             $launch_date_c = date_format($launch_date_c,"Y-m-d");
             $launch_date_diff = (strtotime($launch_date_c)-strtotime($current_day))/  ( 60 * 60 * 24 );
             if($launch_date_diff<=0){
-                $p_badge .= '<span class="badge bg-danger bg-gradient shadow-sm rounded p-1 ps-2 pe-2 mb-1" style="margin-left:5px;background-color: #8b47db!important;"><ion-icon name="warning-outline"></ion-icon> Over Launch '.($launch_date_diff*(-1)).' days</span>';
-            }elseif($launch_date_diff<=5){
-                $p_badge .= '<span class="badge bg-danger bg-gradient shadow-sm rounded p-1 ps-2 pe-2 mb-1" style="margin-left:5px"><ion-icon name="warning-outline"></ion-icon>Launch in '.$launch_date_diff.' days</span>';
-            }
+                $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1 normal-badge-red" ><ion-icon name="warning-outline" style="margin: 0;"></ion-icon> Over Launch '.($launch_date_diff*(-1)).' days</span>';
+                }elseif($launch_date_diff<=5){
+                $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1 modern-badge-purple" ><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Launch in '.$launch_date_diff.' days</span>';
+                }
         }
+
         echo $p_badge;
         ?>
         </div>
