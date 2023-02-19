@@ -11,7 +11,7 @@ function text($attribute_code,$attribute_label){
 }
 
 
-$filter = array("brand","id","status","accepted_date");
+$filter = array("brand","id","status","accepted_date","producti");
 $filter_string = implode("','",$filter);
 $filter_where =  "'".$filter_string."'";
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
