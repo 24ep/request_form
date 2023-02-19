@@ -94,20 +94,20 @@ mysqli_close($con);
 <script>
 function getFilterInputValues() {
   var pagenation_input = document.getElementById("pagenation_input").value
-  const filterPrefix = "filter_";
-  const inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`);
-  const inputValues = {};
+  var filterPrefix = "filter_";
+  var inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`);
+  var inputValues = {};
 
   inputs.forEach(input => {
-    const name = input.getAttribute("attribute_code");
-    const value = input.value;
+    var name = input.getAttribute("attribute_code");
+    var value = input.value;
     if (value !== null && value !== "") {
         const formattedValue = `${name} = '${value}'`;
         inputValues[name] = formattedValue;
     }
   });
 
-  const outputValues = Object.values(inputValues).join(" and ");
+  var outputValues = Object.values(inputValues).join(" and ");
   console.log(outputValues);
 //   return `Filter values: ${outputValues}`;
     $.post("../base/get/get_list_ns.php", {
