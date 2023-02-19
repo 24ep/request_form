@@ -34,20 +34,19 @@ function get_attribute_list_filter(){
     $result_op = mysqli_query($con, $query_op);
     $i=0;
     while($option = mysqli_fetch_array($result_op)) {
-        if($option["attribute_option_code"]==$current_value){
+        if($option["attribute_code"]==$current_value){
         $selected = 'selected';
         }else{
         $selected = '';
         }
-        if($option["attribute_option_code"]<>"" and $i==0){
+        if($option["attribute_code"]<>"" and $i==0){
         $i++;
         $option_element .= "<option ".$selected ." value=''></option>";
         }
-        $option_element .= "<option ".$selected ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
+        $option_element .= "<option ".$selected ." value='".$option["attribute_code"]."'>".$option["attribute_label"]."</option>";
     }
     $input = '
     <div class="col">
-    <label for="floatingInputValue">'.$attribute_label.'</label>
         <select multiple  id="list_of_filter" class="bg-dark shadow-sm">
         '.$option_element.'
         </select>
@@ -59,7 +58,7 @@ function get_attribute_list_filter(){
       settings: {
         maxValuesShown: 0,
         maxValuesMessage: "{number} filter selected",
-        paceholderText: "Add more filter",
+        paceholderText: "Add more filter"
       }
     })
     </script>
