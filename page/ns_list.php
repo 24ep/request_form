@@ -81,10 +81,10 @@ function get_attribute_list_filter(){
 <!-- create new  -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5">
     <div class="row">
-        <div class="col-3">
+        <div class="col-6">
             <?php echo get_attribute_list_filter(); ?>
             </div>
-        <div class="col-3">
+        <div class="col-6">
                     <button class="btn btn-dark btn-sm bg-gradient" style="margin-left:10px" type="button"
                         data-bs-toggle="modal" data-bs-target="#create_new_ns_modal">
                         <ion-icon size="small" name="add-outline"></ion-icon>
