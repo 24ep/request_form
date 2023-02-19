@@ -115,7 +115,7 @@ function get_attribute_list_filter(){
                 </div>
                 <button type="button" class="btn btn-dark btn-sm" onclick="getFilterInputValues()">Apply</button>
             </div>
-       
+
 
             </ul>
             </nav>
