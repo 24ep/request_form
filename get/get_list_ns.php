@@ -76,10 +76,11 @@ function gen_cancel_style($status){
 }
 $start_item =  ($_POST['pagenation_input'] -1 )* 30;
 $filter = $_POST['filter'];
+
 $query = "SELECT * FROM add_new_job as anj where (".$filter.")
  and anj.parent is null ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item
 or die("Error:" . mysqli_error($con));
-
+echo $query;
 date_default_timezone_set("Asia/Bangkok");
 mysqli_query($con, "SET NAMES 'utf8' ");
 $result = mysqli_query($con, $query);
