@@ -13,23 +13,14 @@ function datepick($attribute_code,$attribute_label){
             ],
             zIndex: 10,
             plugins: [
-                "AmpPlugin",
                 "RangePlugin"
             ],
-            AmpPlugin: {
-                dropdown: {
-                    months: true,
-                    years: true,
-                    maxYear: 2500
-                },
-                resetButton: true
-            },
             RangePlugin: {
                 tooltipNumber(num) {
                     return num - 1;
                   },
                   locale: {
-                    one: "night",
+                    one: "day",
                     other: "days",
                   },
             },
