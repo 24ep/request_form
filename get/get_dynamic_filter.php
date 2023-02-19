@@ -25,9 +25,9 @@ function datepick($attribute_code,$attribute_label){
                 resetButton: true
             },
             RangePlugin: {
-                RangePlugin: {
+
                     delimiter: " AND "
-                },
+
                 tooltipNumber(num) {
                     return num - 1;
                   },
