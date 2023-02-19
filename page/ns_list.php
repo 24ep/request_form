@@ -89,7 +89,7 @@ mysqli_close($con);
         <div class="col" scope="col">Action</div>
     </li>
     <div id="job_list">
-        <?php include('../get/get_list_new_job_new.php'); ?>
+        <?php include('../get/get_list_ns.php'); ?>
     </div>
 </div>
 <script>
