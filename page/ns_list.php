@@ -142,12 +142,12 @@ function getFilterInputValues() {
 
 
 getFilterInputValues();
-document.getElementById("filter").onchange = function() {
-    getFilterInputValues();
-  }
+
 
   var filterPrefix = "filter_";
-  var inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`).onchange = function() {
+  document.querySelectorAll(`input[id^="${filterPrefix}"]).onchange = function() {
+    getFilterInputValues();
+  }
 
 function filter_update(be) {
         var pagenation_input = document.getElementById("pagenation_input").value
