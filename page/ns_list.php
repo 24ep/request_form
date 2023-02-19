@@ -197,11 +197,13 @@ function getFilterInputValues() {
 getFilterInputValues();
 
 function get_filter_attribute(){
-    var value = document.getElementById("list_of_filter").value
+    var input = document.getElementById("list_of_filter").value
+
+    var selectedOptions = Array.from(input.options).filter(option => option.selected);
+    var value = selectedOptions.map(option => option.value).join("','");
     console.log(value);
-    // var selectedOptions = Array.from(input.options).filter(option => option.selected);
-    // value = selectedOptions.map(option => option.value).join("','");
-    dynamic_filter = "'"+value+"'"
+    dynamic_filter = "'"+value+"'";
+
     $.post("../base/get/get_dynamic_filter.php", {
         dynamic_filter:dynamic_filter
     }, function(data) {
