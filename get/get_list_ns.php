@@ -169,8 +169,8 @@ while($row = mysqli_fetch_array($result)) {
                 // unset($tr_class);
             }
             //check status of brand ticket match with filter or not
-            if($filter<>""){
-                if(strpos($filter, "status in ('".$row_child["status"]."'_") !== false){
+            if($_POST['outputValues']<>""){
+                if(strpos($_POST['outputValues'], "status in ('".$row_child["status"]."'") !== false){
                     //data row
                     if(isset($sub_ticket)){
                         if(isset($tr_class)){
@@ -212,7 +212,7 @@ while($row = mysqli_fetch_array($result)) {
             }
         }
     }
-    if($_SESSION['status_filter']<>""){
+    if(strpos($_POST['outputValues'], "status") !== false){
         if($row["config_type"]=="parent"){
             if( isset($sub_ticket)){
                 echo $ticket.$sub_ticket;
