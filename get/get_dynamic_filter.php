@@ -1,7 +1,7 @@
 <?php
 function datepick($attribute_code,$attribute_label){
     $input = '
-    <div class="col">
+    <div class="col-md-3">
     <label for="floatingInputValue">'.$attribute_label.'</label>
         <input  class="form-control form-control-sm" attribute_type="date" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onfocusout="getFilterInputValues()">
     </div>
@@ -80,7 +80,7 @@ function simple_select($attribute_code,$attribute_label,$type){
         $option_element .= "<option ".$selected ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
     }
     $input = '
-    <div class="col-md-4">
+    <div class="col">
     <label for="floatingInputValue">'.$attribute_label.'</label>
         <select '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
         '.$option_element.'
@@ -98,7 +98,7 @@ function simple_select($attribute_code,$attribute_label,$type){
 }
 
 
-$filter = array("brand","id","status","accepted_date","production_type");
+$filter = array("brand","id","status","launch_date","production_type","dept","subdept");
 $filter_string = implode("','",$filter);
 $filter_where =  "'".$filter_string."'";
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
