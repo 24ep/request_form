@@ -144,10 +144,10 @@ function getFilterInputValues() {
 getFilterInputValues();
 
 
-  var filterPrefix = "filter_";
-  document.querySelectorAll(`input[id^="${filterPrefix}"]).onchange = function() {
-    getFilterInputValues();
-  }
+//   var filterPrefix = "filter_";
+//   document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`).onchange = function() {
+//     getFilterInputValues();
+//   }
 
 function filter_update(be) {
         var pagenation_input = document.getElementById("pagenation_input").value
