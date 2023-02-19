@@ -1,9 +1,10 @@
 <?php
 function text($attribute_code,$attribute_label){
     $input = '
-    <div class="form-floating col-md-4">
+    <div class="col-md-4">
+    <label for="floatingInputValue">'.$attribute_label.'</label>
         <input type="text" class="form-control" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
-        <label for="floatingInputValue">'.$attribute_label.'</label>
+
     </div>
     ';
 
@@ -11,9 +12,9 @@ function text($attribute_code,$attribute_label){
 }
 function number($attribute_code,$attribute_label){
     $input = '
-    <div class="form-floating col-md-4">
-        <input type="number" class="form-control" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+    <div class="col-md-4">
         <label for="floatingInputValue">'.$attribute_label.'</label>
+        <input type="number" class="form-control" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
     </div>
     ';
 
@@ -40,11 +41,12 @@ function simple_select($attribute_code,$attribute_label,$type){
         $option_element .= "<option ".$selected ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
     }
     $input = '
-    <div class="form-floating col-md-4">
-        <select  '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+    <div class="col-md-4">
+    <label for="floatingInputValue">'.$attribute_label.'</label>
+        <select '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
         '.$option_element.'
         </select>
-        <label for="floatingInputValue">'.$attribute_label.'</label>
+
     </div>
     <script>
     new SlimSelect({
@@ -65,7 +67,7 @@ $query = "SELECT * FROM u749625779_cdscontent.job_attribute where table_name = '
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     if($row['attribute_type']=='single_select'){
-       echo  simple_select($row['attribute_code'],$row['attribute_label'],'');
+       echo  simple_select($row['attribute_code'],$row['attribute_label'],'multiple');
     }elseif($row['attribute_type']=='multiselect'){
         echo simple_select($row['attribute_code'],$row['attribute_label'],'multiple');
     }elseif($row['attribute_type']=='number'){
