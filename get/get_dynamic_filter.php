@@ -1,5 +1,5 @@
 <?php
-function date($attribute_code,$attribute_label){
+function datepick($attribute_code,$attribute_label){
     $input = '
     <div class="col-md-4">
     <label for="floatingInputValue">'.$attribute_label.'</label>
@@ -102,7 +102,7 @@ while($row = mysqli_fetch_array($result)) {
     }elseif($row['attribute_type']=='number'){
        echo  number($row['attribute_code'],$row['attribute_label']);
     }elseif($row['attribute_type']=='datetime'){
-        echo date($row['attribute_code'],$row['attribute_label']);
+        echo datepick($row['attribute_code'],$row['attribute_label']);
     }else{
         echo text($row['attribute_code'],$row['attribute_label']);
     }
