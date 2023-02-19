@@ -81,6 +81,11 @@ function get_attribute_list_filter(){
 <!-- create new  -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
     <?php echo get_attribute_list_filter(); ?>
+                    <button class="btn btn-dark btn-sm bg-gradient" style="margin-left:10px" type="button"
+                        data-bs-toggle="modal" data-bs-target="#create_new_ns_modal">
+                        <ion-icon size="small" name="add-outline"></ion-icon>
+                        Create New
+                    </button>
 </div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container-fluid">
@@ -94,7 +99,7 @@ function get_attribute_list_filter(){
 <div style="margin-left: 10px;padding: 0px 20px;">
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center p-3">
-            <div class="col-2">
+            <div class="col">
                 <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
                     <input type="number" class="form-control" style="position: inherit;" id="pagenation_input" min=1
@@ -110,16 +115,7 @@ function get_attribute_list_filter(){
                 </div>
                 <button type="button" class="btn btn-dark btn-sm" onclick="getFilterInputValues()">Apply</button>
             </div>
-            <div class="col-auto">
-                <div class="input-group input-group-sm mb-3 mt-3">
-                    <button class="btn btn-dark btn-sm bg-gradient" style="margin-left:10px" type="button"
-                        data-bs-toggle="modal" data-bs-target="#create_new_ns_modal">
-                        <ion-icon size="small" name="add-outline"></ion-icon>
-                        Create New
-                    </button>
-
-                </div>
-            </div>
+       
 
             </ul>
             </nav>
