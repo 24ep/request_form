@@ -41,7 +41,13 @@ mysqli_close($con);
 <div style="margin-left: 10px;padding: 0px 20px;">
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center p-3">
-
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        test
+                    </div>
+                </nav>
+            </div>
             <div class="col-2">
                 <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
