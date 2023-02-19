@@ -2,7 +2,7 @@
 function text($attribute_code,$attribute_label){
     $input = '
     <div class="form-floating col-md-4">
-        <input type="text" class="form-control" id="filter_'.$attribute_code.'">
+        <input type="text" class="form-control" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
         <label for="floatingInputValue">'.$attribute_label.'</label>
     </div>
     ';
@@ -12,7 +12,7 @@ function text($attribute_code,$attribute_label){
 function number($attribute_code,$attribute_label){
     $input = '
     <div class="form-floating col-md-4">
-        <input type="number" class="form-control" id="filter_'.$attribute_code.'">
+        <input type="number" class="form-control" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
         <label for="floatingInputValue">'.$attribute_label.'</label>
     </div>
     ';
@@ -41,7 +41,7 @@ function simple_select($attribute_code,$attribute_label){
     }
     $input = '
     <div class="form-floating col-md-4">
-        <select class="form-select" id="'.$attribute_code.'">
+        <select class="form-select" id="'.$attribute_code.'" onchange="getFilterInputValues()">
         '.$option_element.'
         </select>
         <label for="floatingInputValue">'.$attribute_label.'</label>
