@@ -74,9 +74,9 @@ function gen_cancel_style($status){
     }
     return $style_cancel;
 }
-$start_item =  ($_POST['pagenation'] -1 )* 30;
-$filter = "";
-$query = "SELECT * FROM add_new_job as anj where (".$status_filter.")
+$start_item =  ($_POST['pagenation_input'] -1 )* 30;
+$filter = $_POST['filter'];
+$query = "SELECT * FROM add_new_job as anj where (".$filter.")
  and anj.parent is null ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item
 or die("Error:" . mysqli_error($con));
 

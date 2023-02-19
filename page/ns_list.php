@@ -94,6 +94,7 @@ mysqli_close($con);
 </div>
 <script>
 function getFilterInputValues() {
+  var pagenation_input = document.getElementById("pagenation_input").value
   const filterPrefix = "filter_";
   const inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`);
   const inputValues = {};
@@ -109,9 +110,15 @@ function getFilterInputValues() {
 
   const outputValues = Object.values(inputValues).join(" and ");
   console.log(outputValues);
-  return `Filter values: ${outputValues}`;
+//   return `Filter values: ${outputValues}`;
+    $.post("../base/get/get_list_ns.php", {
+        pagenation_input: pagenation_input,
+        outputValues:outputValues
+    }, function(data) {
+        $('#job_list').html(data);
+    });
 }
-
+getFilterInputValues()
 
 
 function filter_update(be) {
