@@ -1,5 +1,5 @@
 <?php
-function text($attribute_code,attribute_label){
+function text($attribute_code,$attribute_label){
     $input = '
     <div class="form-floating">
         <input type="email" class="form-control" id="filter_'.$attribute_code.'">
