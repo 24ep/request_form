@@ -113,6 +113,7 @@ function getFilterInputValues() {
     if (value !== null && value !== "") {
         if( type=='date'){
             value = value.replace(" ", "");
+            value = value.replace(" ", "");
             value = value.replace("AND", "' AND '");
             var formattedValue = `${name} BETWEEN '${value}'`;
         }else if(input.type=='text'){
@@ -141,7 +142,12 @@ function getFilterInputValues() {
 
 
 getFilterInputValues();
+document.getElementById("filter").onchange = function() {
+    getFilterInputValues();
+  }
 
+  var filterPrefix = "filter_";
+  var inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`).onchange = function() {
 
 function filter_update(be) {
         var pagenation_input = document.getElementById("pagenation_input").value
