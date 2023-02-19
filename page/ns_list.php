@@ -100,6 +100,7 @@ function getFilterInputValues() {
 
   inputs.forEach(input => {
     var name = input.getAttribute("attribute_code");
+    var type = input.getAttribute("type");
     var value = input.value;
 
     if (input.type === "select-multiple") {
@@ -110,12 +111,18 @@ function getFilterInputValues() {
 
 
     if (value !== null && value !== "") {
-        var formattedValue = `${name} in ('${value}')`;
+        if(type=='date'){
+            var formattedValue = `${name} in ('${value}')`;
+        }else if(type=='text'){
+            var formattedValue = `${name} = '${value}'`;
+        }else if(input.type === "select-multiple"){
+            var formattedValue = `${name} in ('${value}')`;
+        }
+
         inputValues[name] = formattedValue;
         updateparams(name, value);
     }
   });
-
 
   var outputValues = Object.values(inputValues).join(" and ");
   console.log(outputValues);
