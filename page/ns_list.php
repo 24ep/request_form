@@ -80,27 +80,18 @@ function get_attribute_list_filter(){
 </div>
 <!-- create new  -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5">
-    <?php echo get_attribute_list_filter(); ?>
-
-                <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
-                    <input type="number" class="form-control" style="position: inherit;" id="pagenation_input" min=1
-                        <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
-                        value="<?php echo $_SESSION["pagenation"];?>" onchange="getFilterInputValues()" placeholder=""
-                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-                        placeholder="Dept , Sub Dept , Brand , ID">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">
-                        <div id="total_page_nj">
-                            <?php include('../get/get_total_page_nj.php'); ?>
-                        </div>
-                    </span>
-                </div>
-
+    <div class="row">
+        <div class="col-3">
+            <?php echo get_attribute_list_filter(); ?>
+            </div>
+        <div class="col-3">
                     <button class="btn btn-dark btn-sm bg-gradient" style="margin-left:10px" type="button"
                         data-bs-toggle="modal" data-bs-target="#create_new_ns_modal">
                         <ion-icon size="small" name="add-outline"></ion-icon>
                         Create New
                     </button>
+        </div>
+     </div>
 </nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5">
 
@@ -114,7 +105,22 @@ function get_attribute_list_filter(){
 <div style="margin-left: 10px;padding: 0px 20px;">
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center p-3">
-            <div class="col">
+        <div class="col-2">
+        <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
+                    <input type="number" class="form-control" style="position: inherit;" id="pagenation_input" min=1
+                        <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
+                        value="<?php echo $_SESSION["pagenation"];?>" onchange="getFilterInputValues()" placeholder=""
+                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                        placeholder="Dept , Sub Dept , Brand , ID">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">
+                        <div id="total_page_nj">
+                            <?php include('../get/get_total_page_nj.php'); ?>
+                        </div>
+                    </span>
+                </div>
+                </div>
+            <div class="col-2">
 
                 <button type="button" class="btn btn-dark btn-sm" onclick="getFilterInputValues()">Apply</button>
             </div>
