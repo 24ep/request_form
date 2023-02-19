@@ -98,7 +98,7 @@ function simple_select($attribute_code,$attribute_label,$type){
 }
 
 
-$filter = array("brand","id","status","launch_date","production_type","dept","subdept");
+$filter = array("brand","id","status","launch_date","production_type","dept","subdept","request_");
 $filter_string = implode("','",$filter);
 $filter_where =  "'".$filter_string."'";
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
@@ -112,6 +112,8 @@ while($row = mysqli_fetch_array($result)) {
     }elseif($row['attribute_type']=='number'){
        echo  number($row['attribute_code'],$row['attribute_label']);
     }elseif($row['attribute_type']=='datetime'){
+        echo datepick($row['attribute_code'],$row['attribute_label']);
+    }elseif($row['attribute_type']=='date'){
         echo datepick($row['attribute_code'],$row['attribute_label']);
     }else{
         echo text($row['attribute_code'],$row['attribute_label']);
