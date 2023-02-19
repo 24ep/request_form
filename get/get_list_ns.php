@@ -78,7 +78,7 @@ $start_item =  ($_POST['pagenation_input'] -1 )* 30;
 $filter = $_POST['filter'];
 
 if($filter==''){
-    $filter=
+    $filter='1=1';
 }
 
 $query = "SELECT * FROM add_new_job as anj where (".$filter.")
