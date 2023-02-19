@@ -41,7 +41,7 @@ function simple_select($attribute_code,$attribute_label){
     }
     $input = '
     <div class="form-floating col-md-4">
-        <select class="form-select" id="'.$attribute_code.'" onchange="getFilterInputValues()">
+        <select class="form-select" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
         '.$option_element.'
         </select>
         <label for="floatingInputValue">'.$attribute_label.'</label>

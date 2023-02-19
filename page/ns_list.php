@@ -99,7 +99,7 @@ function getFilterInputValues() {
   const inputValues = {};
 
   inputs.forEach(input => {
-    const name = input.getAttribute("name");
+    const name = input.getAttribute("id");
     const value = input.value;
     const formattedValue = `${name} = '${value}'`;
     inputValues[name] = formattedValue;
