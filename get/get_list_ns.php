@@ -83,7 +83,7 @@ if($filter==''){
 //count item
 
 $query = "SELECT count(*) as count_item FROM add_new_job as anj where (".$filter.")
- and anj.parent is null ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item
+ and (anj.parent is null or  ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item
 or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
@@ -170,7 +170,7 @@ while($row = mysqli_fetch_array($result)) {
             }
             //check status of brand ticket match with filter or not
             if($_POST['outputValues']<>""){
-                if(strpos($_POST['outputValues'], "status in ('".$row_child["status"]."'") !== false){
+                if(strpos($_POST['outputValues'], "status in ('".$row_child["status"]) !== false){
                     //data row
                     if(isset($sub_ticket)){
                         if(isset($tr_class)){
