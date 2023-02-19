@@ -59,7 +59,8 @@ function get_attribute_list_filter(){
       settings: {
         maxValuesShown: 0,
         maxValuesMessage: "{number} filter selected",
-      },
+        paceholderText: "Add more filter",
+      }
     })
     </script>
     ';
