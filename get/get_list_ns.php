@@ -82,8 +82,7 @@ if($filter==''){
 }
 //count item
 
-$query = "SELECT count(*) as count_item FROM add_new_job as anj where ((".$filter.")
- and anj.parent is null) or config_type = 'parent'  ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item
+$query = "SELECT count(*) as count_item FROM add_new_job as anj where (".$filter.") ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item
 or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
