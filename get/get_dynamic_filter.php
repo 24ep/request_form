@@ -1,7 +1,7 @@
 <?php
 function datepick($attribute_code,$attribute_label){
     $input = '
-    <div class="col-md-3">
+    <div class="col">
     <label for="floatingInputValue">'.$attribute_label.'</label>
         <input  class="form-control form-control-sm" attribute_type="date" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onfocusout="getFilterInputValues()">
     </div>
