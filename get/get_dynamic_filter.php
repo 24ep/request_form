@@ -1,7 +1,7 @@
 <?php
 function text($attribute_code,$attribute_label){
     $input = '
-    <div class="form-floating col-md-4">
+    <div class="form-floating col">
         <input type="text" class="form-control" id="filter_'.$attribute_code.'">
         <label for="floatingInputValue">'.$attribute_label.'</label>
     </div>
@@ -11,7 +11,7 @@ function text($attribute_code,$attribute_label){
 }
 
 
-$filter = array("brand","id","status","accepted_date","producti");
+$filter = array("brand","id","status","accepted_date","production_type");
 $filter_string = implode("','",$filter);
 $filter_where =  "'".$filter_string."'";
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
