@@ -75,7 +75,7 @@ function gen_cancel_style($status){
     return $style_cancel;
 }
 $start_item =  ($_POST['pagenation_input'] -1 )* 30;
-$filter = $_POST['filter'];
+$filter = $_POST['outputValues'];
 
 if($filter==''){
     $filter='1=1';
