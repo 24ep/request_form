@@ -46,12 +46,12 @@ function get_attribute_list_filter(){
         $option_element .= "<option ".$selected ." value='".$option["attribute_code"]."'>".$option["attribute_label"]."</option>";
     }
     $input = '
-    <div class="col">
-        <select multiple  id="list_of_filter" class="bg-dark shadow-sm">
+
+        <select multiple  id="list_of_filter" class="bg-secondary shadow-sm">
         '.$option_element.'
         </select>
 
-    </div>
+
     <script>
     new SlimSelect({
       select: "#list_of_filter",
