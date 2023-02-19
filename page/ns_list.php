@@ -41,38 +41,7 @@ mysqli_close($con);
 <div style="margin-left: 10px;padding: 0px 20px;">
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center p-3">
-            <div class="col-3">
-                <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;" >
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Filter</span>
-                    <input type="text" value="<?php echo $_POST['brand_filter'];?>" style="position: inherit;" class="form-control"
-                        id="brand_filter" onchange="filter_update();" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-sm" placeholder="Dept , Sub Dept , Brand , ID">
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap" style="position: inherit;" >
-                    <span class="input-group-text " id="addon-wrapping">Username</span>
-                    <input value="<?php echo $_POST['user_filter'];?>" style="position: inherit;" class="form-control" list="datalistOptionsuser"
-                        id="user_filter" onchange="filter_update();" placeholder="Username" aria-label="Username"
-                        aria-describedby="addon-wrapping">
-                    <datalist id="datalistOptionsuser">
-                        <?php echo $username_op;?>
-                    </datalist>
-                </div>
-            </div>
 
-            <div class="col-2">
-                <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap" style="position: inherit;border: solid 1px #d9d9d9 !important;" >
-                    <input type="hidden" id="status_filter" style="position: inherit;" name="status_filter" value="">
-                    <span class="input-group-text " id="addon-wrapping">Status</span>
-                    <select multiple id="status_filter_show" name="status_filter_show"
-                        style="border: 0px;"
-                        aria-label=".form-select-lg example">
-                        <option data-placeholder="true"></option>
-                        <?php echo $request_new_status_op;?>
-                    </select>
-                </div>
-            </div>
             <div class="col-2">
                 <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
