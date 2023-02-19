@@ -89,7 +89,10 @@ function simple_select($attribute_code,$attribute_label,$type){
     </div>
     <script>
     new SlimSelect({
-      select: "#filter_'.$attribute_code.'"
+      select: "#filter_'.$attribute_code.'",
+      settings: {
+        placeholderText: ""
+      }
     })
     </script>
     ';
