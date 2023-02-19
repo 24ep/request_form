@@ -12,6 +12,10 @@ function datepick($attribute_code,$attribute_label){
                 "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css"
             ],
             zIndex: 10,
+            plugins: [
+                "AmpPlugin",
+                "RangePlugin"
+            ],
             AmpPlugin: {
                 dropdown: {
                     months: true,
