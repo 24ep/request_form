@@ -47,7 +47,7 @@ function get_attribute_list_filter(){
     }
     $input = '
 
-        <select multiple  id="list_of_filter" class="bg-secondary shadow-sm">
+        <select multiple  id="list_of_filter" class="border-0 shadow-sm">
         '.$option_element.'
         </select>
 
@@ -80,16 +80,15 @@ function get_attribute_list_filter(){
 </div>
 <!-- create new  -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-    <div class="row">
-
     <?php echo get_attribute_list_filter(); ?>
-    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container-fluid">
 
         <div class="row g-3 align-items-center" id="dynamic_filter">
 
         </div>
-        <button type="button" class="btn btn-dark btn-sm" onclick="getFilterInputValues()">Apply</button>
+
     </div>
 </nav>
 <div style="margin-left: 10px;padding: 0px 20px;">
@@ -109,6 +108,7 @@ function get_attribute_list_filter(){
                         </div>
                     </span>
                 </div>
+                <button type="button" class="btn btn-dark btn-sm" onclick="getFilterInputValues()">Apply</button>
             </div>
             <div class="col-auto">
                 <div class="input-group input-group-sm mb-3 mt-3">
