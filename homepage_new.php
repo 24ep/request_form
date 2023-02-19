@@ -284,6 +284,7 @@ if (!$_SESSION["login_csg"]){
                     </li>
 
 
+
                     <?php if(strpos($_SESSION["permission"],'ps_internal')!==false){
             ?>
                     <hr class="hr_menu_bra_in">
@@ -312,6 +313,12 @@ if (!$_SESSION["login_csg"]){
                             <ion-icon name="globe"></ion-icon><span class="main-menu-nav">Quick-link</span>
                         </a>
                     </li>
+                    <li class="nav-item" role="presentation">
+                            <a class="main_bra nav-link nav-link-preferance" id="nav_ns_list" data-bs-toggle="pill"
+                                type="button" role="tab" aria-selected="false" onclick="get_page('ns_list');">
+                                <ion-icon name="rocket"></ion-icon><span class="main-menu-nav">New Products dev</span>
+                            </a>
+                        </li>
                     <?php } ?>
                     <hr class="hr_menu_bra_in">
                     <small class="header_menu_bra">Others</small>
