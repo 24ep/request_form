@@ -6,22 +6,28 @@ function datepick($attribute_code,$attribute_label){
         <input class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
     </div>
     <script>
-      const picker = new easepick.create({
-        element: document.getElementById("filter_'.$attribute_code.'"),
-        css: [
-          "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css",
-        ],
-        plugins: ["RangePlugin"],
-        RangePlugin: {
-          tooltipNumber(num) {
-            return num - 1;
-          },
-          locale: {
-            one: "day",
-            other: "days",
-          },
-        },
-      });
+        const picker = new easepick.create({
+            element: "#filter_'.$attribute_code.'",
+            css: [
+                "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css"
+            ],
+            zIndex: 10,
+            AmpPlugin: {
+                dropdown: {
+                    months: true,
+                    years: true,
+                    maxYear: 2500
+                },
+                resetButton: true
+            },
+            RangePlugin: {
+                repick: true
+            },
+            plugins: [
+                "AmpPlugin",
+                "RangePlugin"
+            ]
+        })
     </script>
     ';
 
