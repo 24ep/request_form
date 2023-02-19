@@ -102,9 +102,12 @@ function getFilterInputValues() {
     var name = input.getAttribute("attribute_code");
     var value = input.value;
     if (value !== null && value !== "") {
-        const formattedValue = `${name} in ('${value}')`;
+        var formattedValue = `${name} in ('${value}')`;
         inputValues[name] = formattedValue;
         updateparams(name, value);
+        if(name='status'){
+            formattedValue = formattedValue +'or config_type = ''";
+        }
     }
   });
 
