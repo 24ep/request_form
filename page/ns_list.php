@@ -47,7 +47,7 @@ function get_attribute_list_filter(){
     }
     $input = '
 
-        <select multiple  id="list_of_filter" class="border-0 shadow-sm">
+        <select multiple  id="list_of_filter" class="border-0 shadow-sm" onchange="get_filter_attribute()">
         '.$option_element.'
         </select>
 
