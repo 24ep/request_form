@@ -56,9 +56,10 @@ function get_attribute_list_filter(){
     new SlimSelect({
       select: "#list_of_filter",
       settings: {
-        maxValuesShown: 0,
+        maxValuesShown: 1,
         maxValuesMessage: "{number} filter selected",
-        paceholderText: "Add more filter"
+        paceholderText: "Add more filter",
+        maxSelected: 10,
       }
     })
     </script>
@@ -84,7 +85,7 @@ function get_attribute_list_filter(){
     <?php echo get_attribute_list_filter(); ?>
     </div>
     <div class="container-fluid">
-     
+
         <div class="row g-3 align-items-center" id="dynamic_filter">
 
         </div>
