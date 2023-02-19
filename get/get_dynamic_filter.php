@@ -103,7 +103,8 @@ function simple_select($attribute_code,$attribute_label,$type){
 
 
 $dynamic_filter = $_POST['dynamic_filter'];
-$filter = array("brand","id","status","launch_date","production_type","dept","subdept","request_username","follow_up_by");
+$filter = explode(',', $dynamic_filter);
+// $filter = array("brand","id","status","launch_date","production_type","dept","subdept","request_username","follow_up_by");
 $filter_string = implode("','",$filter);
 $filter_where =  "'".$filter_string."'";
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
