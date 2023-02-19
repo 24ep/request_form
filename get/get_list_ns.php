@@ -92,7 +92,7 @@ while($row = mysqli_fetch_array($result)) {
 echo '<small>Result found : '.$count_item .'</small>';
 $page_count = $count_item / 30;
 ?>
-<script>document.getElementById('total_page_nj').value = $page_count </script>
+<script>document.getElementById('total_page_nj').innerHTML = $page_count </script>
 
 <?php
 //get list
