@@ -1,5 +1,5 @@
 <?php
-function text($attribute_code,$attribute_label){
+function date($attribute_code,$attribute_label){
     $input = '
     <div class="col-md-4">
     <label for="floatingInputValue">'.$attribute_label.'</label>
@@ -18,8 +18,8 @@ function text($attribute_code,$attribute_label){
             return num - 1;
           },
           locale: {
-            one: "night",
-            other: "nights",
+            one: "day",
+            other: "days",
           },
         },
       });
@@ -28,7 +28,7 @@ function text($attribute_code,$attribute_label){
 
     return $input;
 }
-function date($attribute_code,$attribute_label){
+function text($attribute_code,$attribute_label){
     $input = '
     <div class="col-md-4">
     <label for="floatingInputValue">'.$attribute_label.'</label>
@@ -101,6 +101,8 @@ while($row = mysqli_fetch_array($result)) {
         echo simple_select($row['attribute_code'],$row['attribute_label'],'multiple');
     }elseif($row['attribute_type']=='number'){
        echo  number($row['attribute_code'],$row['attribute_label']);
+    }elseif($row['attribute_type']=='datetime'){
+        echo date($row['attribute_code'],$row['attribute_label']);
     }else{
         echo text($row['attribute_code'],$row['attribute_label']);
     }
