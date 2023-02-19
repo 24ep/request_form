@@ -94,21 +94,22 @@ mysqli_close($con);
 </div>
 <script>
 function getFilterInputValues() {
-  const prefix = "filter_";
-  const inputs = document.querySelectorAll(`input[id^="${prefix}"]`);
+  const filterPrefix = "filter_";
+  const inputs = document.querySelectorAll(`input[id^="${filterPrefix}"]`);
   const inputValues = {};
 
   inputs.forEach(input => {
-    const id = input.getAttribute('id');
+    const name = input.getAttribute("name");
     const value = input.value;
     const formattedValue = `${name} = '${value}'`;
     inputValues[name] = formattedValue;
   });
 
-  console.log(inputValues);
-  return inputValues;
-
+  const outputValues = Object.values(inputValues).join(" and ");
+  console.log(outputValues);
+  return `Filter values: ${outputValues}`;
 }
+
 
 
 function filter_update(be) {
