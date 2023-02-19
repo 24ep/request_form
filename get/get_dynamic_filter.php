@@ -3,7 +3,36 @@ function text($attribute_code,$attribute_label){
     $input = '
     <div class="col-md-4">
     <label for="floatingInputValue">'.$attribute_label.'</label>
-        <input type="text" class="form-control" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+        <input class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+
+    </div>
+    <script>
+      const picker = new easepick.create({
+        element: document.getElementById("filter_'.$attribute_code.'"),
+        css: [
+          "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css",
+        ],
+        plugins: ["RangePlugin"],
+        RangePlugin: {
+          tooltipNumber(num) {
+            return num - 1;
+          },
+          locale: {
+            one: "night",
+            other: "nights",
+          },
+        },
+      });
+    </script>
+    ';
+
+    return $input;
+}
+function date($attribute_code,$attribute_label){
+    $input = '
+    <div class="col-md-4">
+    <label for="floatingInputValue">'.$attribute_label.'</label>
+        <input type="text" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
 
     </div>
     ';
@@ -14,7 +43,7 @@ function number($attribute_code,$attribute_label){
     $input = '
     <div class="col-md-4">
         <label for="floatingInputValue">'.$attribute_label.'</label>
-        <input type="number" class="form-control" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+        <input type="number" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
     </div>
     ';
 
