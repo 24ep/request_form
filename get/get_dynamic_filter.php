@@ -13,6 +13,7 @@ function datepick($attribute_code,$attribute_label){
             ],
             zIndex: 10,
             plugins: [
+                "AmpPlugin",
                 "RangePlugin"
             ],
             AmpPlugin: {
