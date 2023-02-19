@@ -52,7 +52,7 @@ mysqli_close($con);
                     <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
                     <input type="number" class="form-control" style="position: inherit;" id="pagenation_input" min=1
                         <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
-                        value="<?php echo $_SESSION["pagenation"];?>" onchange="filter_update();" placeholder=""
+                        value="<?php echo $_SESSION["pagenation"];?>" onchange="getFilterInputValues()" placeholder=""
                         aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
                         placeholder="Dept , Sub Dept , Brand , ID">
                     <span class="input-group-text" id="inputGroup-sizing-sm">
