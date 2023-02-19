@@ -95,7 +95,7 @@ mysqli_close($con);
 <script>
 function getFilterInputValues() {
   const filterPrefix = "filter_";
-  const inputs = document.querySelectorAll(`input[name^="${filterPrefix}"], select[name^="${filterPrefix}"]`);
+  const inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`);
   const inputValues = {};
 
   inputs.forEach(input => {
