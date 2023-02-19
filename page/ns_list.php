@@ -54,7 +54,7 @@ function get_attribute_list_filter(){
     </div>
     <script>
     new SlimSelect({
-      select: "#filter_'.$attribute_code.'",
+      select: "#list_of_filter",
       settings: {
         maxValuesShown: 0,
         maxValuesMessage: "{number} filter selected",
