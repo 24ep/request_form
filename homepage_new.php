@@ -282,15 +282,7 @@ if (!$_SESSION["login_csg"]){
                             <ion-icon name="ticket"></ion-icon><span class="main-menu-nav">Update Content</span>
                         </a>
                     </li>
-                    <?php if(strpos($_SESSION["username"],'poojaroonwit')!==false){
-                    ?>
-                        <li class="nav-item" role="presentation">
-                            <a class="main_bra nav-link nav-link-preferance" id="nav_ns_list" data-bs-toggle="pill"
-                                type="button" role="tab" aria-selected="false" onclick="get_page('ns_list');">
-                                <ion-icon name="rocket"></ion-icon><span class="main-menu-nav">New Products dev</span>
-                            </a>
-                        </li>
-                    <?php}?>
+
 
                     <?php if(strpos($_SESSION["permission"],'ps_internal')!==false){
             ?>
