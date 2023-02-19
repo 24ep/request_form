@@ -100,7 +100,7 @@ function getFilterInputValues() {
 
   inputs.forEach(input => {
     var name = input.getAttribute("attribute_code");
-    var type = input.getAttribute("type");
+    // var type = input.getAttribute("type");
     var value = input.value;
 
     if (input.type === "select-multiple") {
@@ -111,9 +111,9 @@ function getFilterInputValues() {
 
 
     if (value !== null && value !== "") {
-        if(type=='date'){
-            var formattedValue = `${name} in ('${value}')`;
-        }else if(type=='text'){
+        if(input.type=='date'){
+            var formattedValue = `${name} BETWEEN '${value}'`;
+        }else if(input.type=='text'){
             var formattedValue = `${name} = '${value}'`;
         }else if(input.type === "select-multiple"){
             var formattedValue = `${name} in ('${value}')`;
