@@ -2,7 +2,7 @@
 function text($attribute_code,$attribute_label){
     $input = '
     <div class="form-floating col-md-4">
-        <input type="text" class="form-control" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+        <input type="text" class="form-control" attribute_code="" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
         <label for="floatingInputValue">'.$attribute_label.'</label>
     </div>
     ';
