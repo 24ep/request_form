@@ -97,8 +97,8 @@ $page_count = $count_item / 30;
 <?php
 //get list
 
-$query = "SELECT * FROM add_new_job as anj where (".$filter.")
- and anj.parent is null ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item
+$query = "SELECT * FROM add_new_job as anj where )(".$filter.")
+ and anj.parent is null ) or config_type = 'parent' ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item
 or die("Error:" . mysqli_error($con));
 echo $query;
 date_default_timezone_set("Asia/Bangkok");
@@ -212,7 +212,7 @@ while($row = mysqli_fetch_array($result)) {
             }
         }
     }
-    if(strpos($_POST['outputValues'], "status") !== false){
+
         if($row["config_type"]=="parent"){
             if( isset($sub_ticket)){
                 echo $ticket.$sub_ticket;
@@ -224,13 +224,7 @@ while($row = mysqli_fetch_array($result)) {
                 if(isset($ticket)){ echo $ticket;}
             }
         }
-    }else{
-        if(isset($sub_ticket)){
-            echo $ticket.$sub_ticket;
-        }else{
-            if(isset($ticket)){ echo $ticket;}
-        }
-    }
+
     unset($ticket);
     unset($sub_ticket);
     unset($status);
