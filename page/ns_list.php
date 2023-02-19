@@ -80,7 +80,7 @@ function get_attribute_list_filter(){
 <!-- create new  -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container-fluid">
-
+<?php get_attribute_list_filter(); ?>
         <div class="row g-3 align-items-center" id="dynamic_filter">
 
         </div>
