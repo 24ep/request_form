@@ -169,8 +169,8 @@ while($row = mysqli_fetch_array($result)) {
                 // unset($tr_class);
             }
             //check status of brand ticket match with filter or not
-            if($_SESSION['status_filter']<>""){
-                if($row_child["status"]==$_SESSION['status_filter']){
+            if($filter<>""){
+                if(strpos($filter, "status in ('".$row_child["status"]."'_") !== false){
                     //data row
                     if(isset($sub_ticket)){
                         if(isset($tr_class)){
