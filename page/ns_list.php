@@ -79,10 +79,10 @@ function get_attribute_list_filter(){
     </div>
 </div>
 <!-- create new  -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5">
     <?php echo get_attribute_list_filter(); ?>
 
-    <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;">
+                <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
                     <input type="number" class="form-control" style="position: inherit;" id="pagenation_input" min=1
                         <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
@@ -95,21 +95,21 @@ function get_attribute_list_filter(){
                         </div>
                     </span>
                 </div>
-                
+
                     <button class="btn btn-dark btn-sm bg-gradient" style="margin-left:10px" type="button"
                         data-bs-toggle="modal" data-bs-target="#create_new_ns_modal">
                         <ion-icon size="small" name="add-outline"></ion-icon>
                         Create New
                     </button>
 </nav>
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5">
+
 
         <div class="row g-3 align-items-center" id="dynamic_filter">
 
         </div>
 
-    </div>
+
 </nav>
 <div style="margin-left: 10px;padding: 0px 20px;">
     <div class="tab-content" id="myTabContent">
