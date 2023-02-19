@@ -24,7 +24,49 @@ $work_email = $row['work_email'];
 $get_contact_buyer = $row['firstname']." ".$row['lastname']." ( ".$nickname." )\nEmail: ".$row['work_email']."\nOffice tell: ".$row['office_tell'];
 }
 mysqli_close($con);
-// end
+
+
+function get_attribute_list_filter(){
+    $current_value = "";
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+    $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute_
+    WHERE attribute_table = 'add_new_job' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
+    $result_op = mysqli_query($con, $query_op);
+    $i=0;
+    while($option = mysqli_fetch_array($result_op)) {
+        if($option["attribute_option_code"]==$current_value){
+        $selected = 'selected';
+        }else{
+        $selected = '';
+        }
+        if($option["attribute_option_code"]<>"" and $i==0){
+        $i++;
+        $option_element .= "<option ".$selected ." value=''></option>";
+        }
+        $option_element .= "<option ".$selected ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
+    }
+    $input = '
+    <div class="col">
+    <label for="floatingInputValue">'.$attribute_label.'</label>
+        <select multiple  id="list_of_filter" class="bg-dark shadow-sm">
+        '.$option_element.'
+        </select>
+
+    </div>
+    <script>
+    new SlimSelect({
+      select: "#filter_'.$attribute_code.'",
+      settings: {
+        maxValuesShown: 0,
+        maxValuesMessage: "{number} filter selected",
+      },
+    })
+    </script>
+    ';
+
+    return $input;
+}
+
 ?>
 
 <!-- create Modal -->
@@ -38,10 +80,11 @@ mysqli_close($con);
 <!-- create new  -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container-fluid">
-        Filter
+
         <div class="row g-3 align-items-center" id="dynamic_filter">
 
         </div>
+        <button type="button" class="btn btn-dark btn-sm" onclick="getFilterInputValues()">Apply</button>
     </div>
 </nav>
 <div style="margin-left: 10px;padding: 0px 20px;">
