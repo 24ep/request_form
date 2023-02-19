@@ -1,4 +1,5 @@
 <?php
+session_start();
 function datepick($attribute_code,$attribute_label){
     $input = '
     <div class="col-md-3">
@@ -101,6 +102,7 @@ function simple_select($attribute_code,$attribute_label,$type){
 }
 
 
+$dynamic_filter = $_POST['dynamic_filter'];
 $filter = array("brand","id","status","launch_date","production_type","dept","subdept","request_username","follow_up_by");
 $filter_string = implode("','",$filter);
 $filter_where =  "'".$filter_string."'";

@@ -80,7 +80,7 @@ function get_attribute_list_filter(){
 </div>
 <!-- create new  -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5">
-    <div class="row">
+    <div class="row" style="width:100%">
         <div class="col-6">
             <?php echo get_attribute_list_filter(); ?>
             </div>
@@ -196,7 +196,17 @@ function getFilterInputValues() {
 
 getFilterInputValues();
 
-
+function get_filter_attribute(){
+    var input = document.getElementById("list_of_filter").value
+    var selectedOptions = Array.from(input.options).filter(option => option.selected);
+    value = selectedOptions.map(option => option.value).join("','");
+    dynamic_filter = "'"+value+"'"
+    $.post("../base/get/get_dynamic_filter.php", {
+        dynamic_filter:dynamic_filter
+    }, function(data) {
+        $('#dynamic_filter').html(data);
+    });
+}
 
 
 function filter_update(be) {
