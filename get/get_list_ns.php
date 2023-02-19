@@ -123,12 +123,11 @@ while($row = mysqli_fetch_array($result)) {
         $subtask_sum = $row["sku"]." S(".$data_sum['total'].") ".$badge_alert_sku ;
     }else{
         $tr_class = "class='row shadow-sm p-2 mb-2 rounded ".$style_cancel."' style='background: white;align-items: center;text-align-last: center;'";
-        $task_status = $status ;
+        $task_status = badge_status($row["status"]) ;
         $subtask_sum = $row["sku"];
     }
 
-    $status = badge_status($task_status);
-    $p_badge = alert_badge($row['create_date'],$row['launch_date'],$task_status,$row["config_type"]);
+    $p_badge = alert_badge($row['create_date'],$row['launch_date'],$row["status"],$row["config_type"]);
     $style_cancel =  gen_cancel_style($row['status']);
 
     if(!isset($ticket)){$ticket="";}
@@ -141,7 +140,7 @@ while($row = mysqli_fetch_array($result)) {
     $ticket .= "<div class='col'>".$row["production_type"]."</div>";
     $ticket .= "<div class='col'>".display_launch_date($row["launch_date"])."</div>";
     $ticket .= "<div class='col' style='min-width: 160px;'>".$p_badge."</div>";
-    $ticket .= "<div class='col' style='min-width: 140px;'>".$status."</div>";
+    $ticket .= "<div class='col' style='min-width: 140px;'>".$task_status."</div>";
     $ticket .= "<div class='col'>";
     $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3'  onclick='call_edit_add_new_modal(".$row["id"].")' >
     Detail </button></div>";
