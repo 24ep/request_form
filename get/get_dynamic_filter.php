@@ -1,7 +1,7 @@
 <?php
 function datepick($attribute_code,$attribute_label){
     $input = '
-    <div class="col">
+    <div class="col-md-3">
     <label for="floatingInputValue">'.$attribute_label.'</label>
         <input  class="form-control form-control-sm" attribute_type="date" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onfocusout="getFilterInputValues()">
     </div>
@@ -40,7 +40,7 @@ function datepick($attribute_code,$attribute_label){
 }
 function text($attribute_code,$attribute_label){
     $input = '
-    <div class="col">
+    <div class="col-md-3">
     <label for="floatingInputValue">'.$attribute_label.'</label>
         <input type="text" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
 
@@ -51,7 +51,7 @@ function text($attribute_code,$attribute_label){
 }
 function number($attribute_code,$attribute_label){
     $input = '
-    <div class="col">
+    <div class="col-md-3">
         <label for="floatingInputValue">'.$attribute_label.'</label>
         <input type="number" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
     </div>
@@ -80,7 +80,7 @@ function simple_select($attribute_code,$attribute_label,$type){
         $option_element .= "<option ".$selected ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
     }
     $input = '
-    <div class="col">
+    <div class="col-md-3">
     <label for="floatingInputValue">'.$attribute_label.'</label>
         <select '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
         '.$option_element.'
