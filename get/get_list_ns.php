@@ -80,6 +80,22 @@ $filter = $_POST['outputValues'];
 if($filter==''){
     $filter='1=1';
 }
+//count item
+
+$query = "SELECT count(*) as count_item FROM add_new_job as anj where (".$filter.")
+ and anj.parent is null ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item
+or die("Error:" . mysqli_error($con));
+$result = mysqli_query($con, $query);
+while($row = mysqli_fetch_array($result)) {
+    $count_item = $row['count_item'];
+}
+echo '<small>Result found : '.$count_item .'</small>';
+$page_count = $count_item / 30;
+?>
+<script>document.getElementById('total_page_nj').value = $page_count </script>
+
+<?php
+//get list
 
 $query = "SELECT * FROM add_new_job as anj where (".$filter.")
  and anj.parent is null ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item

@@ -104,6 +104,7 @@ function getFilterInputValues() {
     if (value !== null && value !== "") {
         const formattedValue = `${name} = '${value}'`;
         inputValues[name] = formattedValue;
+        updateparams(name, value);
     }
   });
 
