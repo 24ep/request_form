@@ -1,7 +1,7 @@
 <?php
 function text($attribute_code,$attribute_label){
     $input = '
-    <div class="form-floating ">
+    <div class="form-floating col-md-4">
         <input type="email" class="form-control" id="filter_'.$attribute_code.'">
         <label for="floatingInputValue">'.$attribute_label.'</label>
     </div>
