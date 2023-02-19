@@ -103,9 +103,9 @@ function simple_select($attribute_code,$attribute_label,$type){
 
 
 $dynamic_filter = $_POST['dynamic_filter'];
-$filter = explode(',', $dynamic_filter);
+// $filter = explode(',', $dynamic_filter);
 // $filter = array("brand","id","status","launch_date","production_type","dept","subdept","request_username","follow_up_by");
-$filter_string = implode("','",$filter);
+$filter_string = implode("','",$dynamic_filter);
 $filter_where =  "'".$filter_string."'";
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 $query = "SELECT * FROM u749625779_cdscontent.job_attribute where table_name = 'add_new_job' and attribute_code in (".$filter_where.")" or die("Error:" . mysqli_error($con));
