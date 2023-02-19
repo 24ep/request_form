@@ -104,7 +104,7 @@ function getFilterInputValues() {
 
     if (input.type === "select-multiple") {
       // handle multi-select element
-      const selectedOptions = Array.from(input.options).filter(option => option.selected);
+      var selectedOptions = Array.from(input.options).filter(option => option.selected);
       value = selectedOptions.map(option => option.value).join(",");
     }
 
