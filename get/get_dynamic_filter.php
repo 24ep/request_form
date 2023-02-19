@@ -21,6 +21,7 @@ function number($attribute_code,$attribute_label){
 }
 
 function simple_select($attribute_code,$attribute_label){
+    $current_value = "";
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute_option
     WHERE attribute_code = '".$attribute_code."' and attribute_table = 'add_new_job' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
