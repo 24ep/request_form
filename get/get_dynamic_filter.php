@@ -22,15 +22,11 @@ function datepick($attribute_code,$attribute_label){
                     years: true,
                     maxYear: 2500
                 },
-                resetButton: true
+                resetButton: true,
+                darkMode: false
             },
             RangePlugin: {
-
-                    delimiter: " AND "
-
-                tooltipNumber(num) {
-                    return num - 1;
-                  },
+                delimiter: " AND ",
                   locale: {
                     one: "day",
                     other: "days",
