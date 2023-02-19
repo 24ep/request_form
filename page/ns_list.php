@@ -118,7 +118,7 @@ function getFilterInputValues() {
         $('#job_list').html(data);
     });
 }
-getFilterInputValues()
+getFilterInputValues();
 
 
 function filter_update(be) {
