@@ -1,4 +1,5 @@
-
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.css" rel="stylesheet"> -->
 <script src="https://unpkg.com/slim-select@latest/dist/slimselect.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/slim-select@latest/dist/slimselect.css" />
 <?php
@@ -37,16 +38,57 @@ mysqli_close($con);
     </form>
     </div>
 </div>
-<!-- dynamic filters-->
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-
-  </div>
-</nav>
 <!-- create new  -->
 <div style="margin-left: 10px;padding: 0px 20px;">
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center p-3">
+            <div class="col-3">
+                <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;" >
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Filter</span>
+                    <input type="text" value="<?php echo $_POST['brand_filter'];?>" style="position: inherit;" class="form-control"
+                        id="brand_filter" onchange="filter_update();" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" placeholder="Dept , Sub Dept , Brand , ID">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap" style="position: inherit;" >
+                    <span class="input-group-text " id="addon-wrapping">Username</span>
+                    <input value="<?php echo $_POST['user_filter'];?>" style="position: inherit;" class="form-control" list="datalistOptionsuser"
+                        id="user_filter" onchange="filter_update();" placeholder="Username" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                    <datalist id="datalistOptionsuser">
+                        <?php echo $username_op;?>
+                    </datalist>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="input-group input-group-sm mb-3 mt-3 flex-nowrap" style="position: inherit;border: solid 1px #d9d9d9 !important;" >
+                    <input type="hidden" id="status_filter" style="position: inherit;" name="status_filter" value="">
+                    <span class="input-group-text " id="addon-wrapping">Status</span>
+                    <select multiple id="status_filter_show" name="status_filter_show"
+                        style="border: 0px;"
+                        aria-label=".form-select-lg example">
+                        <option data-placeholder="true"></option>
+                        <?php echo $request_new_status_op;?>
+                    </select>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
+                    <input type="number" class="form-control" style="position: inherit;" id="pagenation_input" min=1
+                        <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
+                        value="<?php echo $_SESSION["pagenation"];?>" onchange="filter_update();" placeholder=""
+                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                        placeholder="Dept , Sub Dept , Brand , ID">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">
+                        <div id="total_page_nj">
+                            <?php include('../get/get_total_page_nj.php'); ?>
+                        </div>
+                    </span>
+                </div>
+            </div>
             <div class="col-auto">
                 <div class="input-group input-group-sm mb-3 mt-3">
                     <button class="btn btn-dark btn-sm bg-gradient" style="margin-left:10px" type="button"
@@ -57,6 +99,34 @@ mysqli_close($con);
 
                 </div>
             </div>
+            <!-- </div> -->
+            <!-- <div class="col-auto" style="right: 20px;position: absolute;margin-top: 15px;">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination pagination-sm">
+                        <div class="offcanvas offcanvas-start" style="width:90%" tabindex="-1" id="offcanvasExample"
+                            aria-labelledby="offcanvasExampleLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasExampleLabel" style="padding-left:50px">
+                                    <ion-icon style="margin-right:10px" name="add-circle-outline">
+                                    </ion-icon>Request add new job
+                                </h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="container-md" style="padding:0px 80px 0px 80px;">
+                                    <form class="row g-3" action="../action/action_submit_add_new_job.php"
+                                        method="POST">
+                                        <div id="add_new_job_result"></div>
+                                        <?php //include('../form/form_request_add_new.php')?>
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                            <button type="submit" class="btn btn-dark btn-sm">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+            </div> -->
             </ul>
             </nav>
         </div>
