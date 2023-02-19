@@ -112,8 +112,8 @@ function getFilterInputValues() {
 
     if (value !== null && value !== "") {
         if( type=='date'){
-            value.replace("and", "' and '");
             value.replace(" ", "");
+            value.replace("and", "' and '");
             var formattedValue = `${name} BETWEEN '${value}'`;
         }else if(input.type=='text'){
             var formattedValue = `${name} = '${value}'`;
