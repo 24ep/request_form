@@ -21,13 +21,14 @@ function datepick($attribute_code,$attribute_label){
                 resetButton: true
             },
             RangePlugin: {
-                repick: true
+                tooltipNumber(num) {
+                    return num - 1;
+                  },
+                  locale: {
+                    one: "night",
+                    other: "days",
+                  },
             },
-
-            plugins: [
-                "AmpPlugin",
-                "RangePlugin"
-            ]
         })
     </script>
     ';
