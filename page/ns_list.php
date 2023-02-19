@@ -29,7 +29,7 @@ mysqli_close($con);
 function get_attribute_list_filter(){
     $current_value = "";
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-    $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute_
+    $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute
     WHERE attribute_table = 'add_new_job' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
     $result_op = mysqli_query($con, $query_op);
     $i=0;
