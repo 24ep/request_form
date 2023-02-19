@@ -197,9 +197,10 @@ function getFilterInputValues() {
 getFilterInputValues();
 
 function get_filter_attribute(){
-    var input = document.getElementById("list_of_filter").value
-    var selectedOptions = Array.from(input.options).filter(option => option.selected);
-    value = selectedOptions.map(option => option.value).join("','");
+    var value = document.getElementById("list_of_filter").value
+    console.log(value);
+    // var selectedOptions = Array.from(input.options).filter(option => option.selected);
+    // value = selectedOptions.map(option => option.value).join("','");
     dynamic_filter = "'"+value+"'"
     $.post("../base/get/get_dynamic_filter.php", {
         dynamic_filter:dynamic_filter
