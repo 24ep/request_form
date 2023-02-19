@@ -318,7 +318,7 @@ if (!$_SESSION["login_csg"]){
                     <li class="nav-item" role="presentation">
                             <a class="main_bra nav-link nav-link-preferance" id="nav_ns_list" data-bs-toggle="pill"
                                 type="button" role="tab" aria-selected="false" onclick="get_page('ns_list');">
-                                <ion-icon name="rocket"></ion-icon><span class="main-menu-nav">New Products <small class="badge rounded-pill badge-primary">Beta<small></span>
+                                <ion-icon name="rocket"></ion-icon><span class="main-menu-nav">New Products - beta></span>
                             </a>
                         </li>
                     <?php } ?>
