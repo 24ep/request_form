@@ -117,7 +117,7 @@ function getFilterInputValues() {
             value = value.replace("AND", "' AND '");
             var formattedValue = `${name} BETWEEN '${value}'`;
         }else if(input.type=='text'){
-            var formattedValue = `${name} = '${value}'`;
+            var formattedValue = `${name} = lower('${value}')`;
         }else if(input.type=='number'){
             var formattedValue = `${name} = ${value}`;
         }else if(input.type === "select-multiple"){
