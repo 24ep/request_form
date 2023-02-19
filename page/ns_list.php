@@ -3,8 +3,6 @@
     <link rel="stylesheet" href="https://unpkg.com/slim-select@latest/dist/slimselect.css" />
 <?php
 session_start();
-
-
 include_once('../get/get_option_function.php');
 $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
 $brand_op = getoption_return_filter_disting("brand","add_new_job","","single","all_in_one_project");
@@ -38,16 +36,16 @@ mysqli_close($con);
     </div>
 </div>
 <!-- create new  -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+        Filter
+            <div id="dynamic_filter">
+            </div>
+    </div>
+</nav>
 <div style="margin-left: 10px;padding: 0px 20px;">
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center p-3">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="container-fluid">
-                        test
-                    </div>
-                </nav>
-            </div>
             <div class="col-2">
                 <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
@@ -157,6 +155,17 @@ function accepted_stt(id) {
         });
     }
 }
+function dynamic_filter() {
+        // sku_accepted = document.getElementById('sku_accepted').value;
+        $.post("../base/get/get_dynamic_filter.php", {
+            // sku_accepted: sku_accepted
+        }, function(data) {
+            $('#dynamic_filter').html(data);
+        });
+
+}
+dynamic_filter();
+
 
 function cancel_stt(id, status_change) {
     resone_cancel = document.getElementById('resone_cancel').value;
