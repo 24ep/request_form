@@ -101,8 +101,10 @@ function getFilterInputValues() {
   inputs.forEach(input => {
     const name = input.getAttribute("id");
     const value = input.value;
-    const formattedValue = `${name} = '${value}'`;
-    inputValues[name] = formattedValue;
+    if (value !== null && value !== "") {
+        const formattedValue = `${name} = '${value}'`;
+        inputValues[name] = formattedValue;
+    }
   });
 
   const outputValues = Object.values(inputValues).join(" and ");
