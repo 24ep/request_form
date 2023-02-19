@@ -97,7 +97,7 @@ $page_count = $count_item / 30;
 <?php
 //get list
 
-$query = "SELECT * FROM add_new_job as anj where )(".$filter.")
+$query = "SELECT * FROM add_new_job as anj where ((".$filter.")
  and anj.parent is null ) or config_type = 'parent' ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item
 or die("Error:" . mysqli_error($con));
 echo $query;
