@@ -105,9 +105,6 @@ function getFilterInputValues() {
         var formattedValue = `${name} in ('${value}')`;
         inputValues[name] = formattedValue;
         updateparams(name, value);
-        if(name='status'){
-            formattedValue = formattedValue +"or config_type = 'parent'";
-        }
     }
   });
 
