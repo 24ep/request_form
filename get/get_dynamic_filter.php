@@ -1,7 +1,7 @@
 <?php
 function datepick($attribute_code,$attribute_label){
     $input = '
-    <div class="col-md-4">
+    <div class="col">
     <label for="floatingInputValue">'.$attribute_label.'</label>
         <input  class="form-control form-control-sm" attribute_type="date" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onfocusout="getFilterInputValues()">
     </div>
@@ -40,7 +40,7 @@ function datepick($attribute_code,$attribute_label){
 }
 function text($attribute_code,$attribute_label){
     $input = '
-    <div class="col-md-4">
+    <div class="col">
     <label for="floatingInputValue">'.$attribute_label.'</label>
         <input type="text" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
 
@@ -51,7 +51,7 @@ function text($attribute_code,$attribute_label){
 }
 function number($attribute_code,$attribute_label){
     $input = '
-    <div class="col-md-4">
+    <div class="col">
         <label for="floatingInputValue">'.$attribute_label.'</label>
         <input type="number" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
     </div>
