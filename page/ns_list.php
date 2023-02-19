@@ -30,7 +30,7 @@ function get_attribute_list_filter(){
     $current_value = "";
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute
-    WHERE attribute_table = 'add_new_job' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
+    WHERE table = 'add_new_job' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
     $result_op = mysqli_query($con, $query_op);
     $i=0;
     while($option = mysqli_fetch_array($result_op)) {
@@ -80,7 +80,10 @@ function get_attribute_list_filter(){
 <!-- create new  -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container-fluid">
-<?php echo get_attribute_list_filter(); ?>
+        <div class="row">
+
+        <?php echo get_attribute_list_filter(); ?>
+        </div>
         <div class="row g-3 align-items-center" id="dynamic_filter">
 
         </div>
