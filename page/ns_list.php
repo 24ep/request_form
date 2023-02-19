@@ -39,8 +39,10 @@ mysqli_close($con);
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container-fluid">
         Filter
+        <div class="row g-3 align-items-center">
             <div id="dynamic_filter">
             </div>
+        </div>
     </div>
 </nav>
 <div style="margin-left: 10px;padding: 0px 20px;">
