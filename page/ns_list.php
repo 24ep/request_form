@@ -101,12 +101,21 @@ function getFilterInputValues() {
   inputs.forEach(input => {
     var name = input.getAttribute("attribute_code");
     var value = input.value;
+
+    if (input.type === "select-multiple") {
+      // handle multi-select element
+      const selectedOptions = Array.from(input.options).filter(option => option.selected);
+      value = selectedOptions.map(option => option.value).join(",");
+    }
+
+
     if (value !== null && value !== "") {
         var formattedValue = `${name} in ('${value}')`;
         inputValues[name] = formattedValue;
         updateparams(name, value);
     }
   });
+
 
   var outputValues = Object.values(inputValues).join(" and ");
   console.log(outputValues);
@@ -118,6 +127,8 @@ function getFilterInputValues() {
         $('#job_list').html(data);
     });
 }
+
+
 getFilterInputValues();
 
 
