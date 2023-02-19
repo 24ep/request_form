@@ -59,7 +59,7 @@ $query = "SELECT * FROM u749625779_cdscontent.job_attribute where table_name = '
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     if($row['attribute_type']=='single_select'){
-       echo  simple_select($attribute_code,$attribute_label);
+       echo  simple_select($row['attribute_code'],$row['attribute_label']);
     }elseif($row['attribute_type']=='number'){
        echo  number($row['attribute_code'],$row['attribute_label']);
     }else{
