@@ -86,7 +86,7 @@ function get_attribute_list_filter(){
                         <ion-icon size="small" name="add-outline"></ion-icon>
                         Create New
                     </button>
-</div>
+</nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container-fluid">
 
