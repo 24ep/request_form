@@ -451,8 +451,11 @@ label#label_file_cme {
 .ss-value {
     background: #222f3e!important;
     padding: 5px 15px!important;
-    border-radius: 15px!important;
+    /* border-radius: 15px!important; */
     font-weight: 100!important;
+}
+.ss-max{
+
 }
 .ss-multi-selected {
     background: transparent!important;
