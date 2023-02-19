@@ -3,7 +3,7 @@ function datepick($attribute_code,$attribute_label){
     $input = '
     <div class="col-md-4">
     <label for="floatingInputValue">'.$attribute_label.'</label>
-        <input type="date" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+        <input class="form-control form-control-sm" attribute_type="date" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
     </div>
     <script>
         const picker = new easepick.create({
