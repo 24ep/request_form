@@ -103,6 +103,7 @@ function simple_select($attribute_code,$attribute_label,$type){
 
 
 $dynamic_filter = $_POST['dynamic_filter'];
+echo $dynamic_filter;
 // $filter = explode(',', $dynamic_filter);
 // $filter = array("brand","id","status","launch_date","production_type","dept","subdept","request_username","follow_up_by");
 // $filter_string = implode("','",$dynamic_filter);

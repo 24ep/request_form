@@ -60,6 +60,7 @@ function get_attribute_list_filter(){
         maxValuesMessage: "{number} filter selected",
         paceholderText: "Add more filter",
         maxSelected: 10,
+        allowDeselect: true
       }
     })
     </script>
