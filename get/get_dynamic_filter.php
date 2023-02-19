@@ -60,8 +60,8 @@ $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     if($row['attribute_type']=='single_select'){
        echo  simple_select($attribute_code,$attribute_label);
-    }elseif($row['attribute_type']=='single_select'){
-       echo  number($attribute_code,$attribute_label);
+    }elseif($row['attribute_type']=='number'){
+       echo  number($row['attribute_code'],$row['attribute_label']);
     }else{
         echo text($row['attribute_code'],$row['attribute_label']);
     }
