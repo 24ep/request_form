@@ -34,7 +34,7 @@ function get_attribute_list_filter(){
     $result_op = mysqli_query($con, $query_op);
     $i=0;
     while($option = mysqli_fetch_array($result_op)) {
-        if($option["attribute_code"]==$current_value){
+        if($option["default_filter_grid"]==1){
         $selected = 'selected';
         }else{
         $selected = '';
