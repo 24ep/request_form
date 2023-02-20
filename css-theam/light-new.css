@@ -455,7 +455,8 @@ label#label_file_cme {
     font-weight: 100!important;
 }
 .ss-max{
-
+    background: #222f3e!important;
+    padding: 5px 15px!important;
 }
 .ss-multi-selected {
     background: transparent!important;

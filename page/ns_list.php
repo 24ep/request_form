@@ -80,12 +80,15 @@ function get_attribute_list_filter(){
     </div>
 </div>
 <!-- create new  -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5" style="    border-bottom: 1px #e1dede solid;">
     <div class="row" style="width:100%">
+        <div class="col-2">
+            <span>Dynamic Filter</span>
+        </div>
         <div class="col-6">
             <?php echo get_attribute_list_filter(); ?>
             </div>
-        <div class="col-6">
+        <div class="col-4">
                     <button class="btn btn-dark btn-sm bg-gradient" style="margin-left:10px" type="button"
                         data-bs-toggle="modal" data-bs-target="#create_new_ns_modal">
                         <ion-icon size="small" name="add-outline"></ion-icon>
@@ -97,7 +100,7 @@ function get_attribute_list_filter(){
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5">
 
 
-        <div class="row g-3 align-items-center" id="dynamic_filter">
+        <div class="row g-3 align-items-center" id="dynamic_filter" style="width: 100%;">
 
         </div>
 
