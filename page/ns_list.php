@@ -82,8 +82,8 @@ function get_attribute_list_filter(){
 <!-- create new  -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5" style="    border-bottom: 1px #e1dede solid;">
     <div class="row" style="width:100%">
-        <div style="width:auto">
-            <strong>Dynamic Filter</strong>
+        <div style="width:auto;place-self: center;">
+        <ion-icon name="filter-outline"></ion-icon><strong>Dynamic Filter</strong>
         </div>
         <div style="width:auto">
             <?php echo get_attribute_list_filter(); ?>
