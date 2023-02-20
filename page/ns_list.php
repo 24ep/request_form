@@ -41,9 +41,9 @@ function get_attribute_list_filter(){
         }
         if($option["attribute_code"]<>"" and $i==0){
         $i++;
-        $option_element .= "<option ".$selected ." value=''></option>";
+        $option_element .= "<option ".$selected ." class='color: #ffffff;' value=''></option>";
         }
-        $option_element .= "<option ".$selected ." value='".$option["attribute_code"]."'>".$option["attribute_label"]."</option>";
+        $option_element .= "<option ".$selected ." class='color: #ffffff;' value='".$option["attribute_code"]."'>".$option["attribute_label"]."</option>";
     }
     $input = '
 
