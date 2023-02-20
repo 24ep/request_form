@@ -47,7 +47,7 @@ function get_attribute_list_filter(){
     }
     $input = '
 
-        <select multiple  id="list_of_filter" class="border-0 shadow-sm" onchange="get_filter_attribute()">
+        <select multiple  id="list_of_filter" class="border-0 shadow-sm bg-dark" onchange="get_filter_attribute()">
         '.$option_element.'
         </select>
 
@@ -80,7 +80,7 @@ function get_attribute_list_filter(){
     </div>
 </div>
 <!-- create new  -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5" style="    border-bottom: 1px #e1dede solid;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5" style="border-bottom: 1px #e1dede solid;">
     <div class="row" style="width:100%">
         <div style="width:auto;place-self: center;">
         <ion-icon name="filter-outline"></ion-icon><strong>Dynamic Filter</strong>
@@ -98,13 +98,14 @@ function get_attribute_list_filter(){
      </div>
 </nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5">
-
-
         <div class="row g-3 align-items-center" id="dynamic_filter" style="width: 100%;">
 
         </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5">
+        <div class="row g-3 align-items-center" id="filter_selected" style="width: 100%;">
 
-
+        </div>
 </nav>
 <div style="margin-left: 10px;padding: 0px 20px;">
     <div class="tab-content" id="myTabContent">
