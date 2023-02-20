@@ -220,6 +220,7 @@ function get_filter_attribute(){
         $('#dynamic_filter').html(data);
     });
 }
+get_filter_attribute();
 
 
 function filter_update(be) {
@@ -275,16 +276,16 @@ function accepted_stt(id) {
         });
     }
 }
-function dynamic_filter() {
-        // sku_accepted = document.getElementById('sku_accepted').value;
-        $.post("../base/get/get_dynamic_filter.php", {
-            // sku_accepted: sku_accepted
-        }, function(data) {
-            $('#dynamic_filter').html(data);
-        });
+// function dynamic_filter() {
+//         // sku_accepted = document.getElementById('sku_accepted').value;
+//         $.post("../base/get/get_dynamic_filter.php", {
+//             // sku_accepted: sku_accepted
+//         }, function(data) {
+//             $('#dynamic_filter').html(data);
+//         });
 
-}
-dynamic_filter();
+// }
+// dynamic_filter();
 
 
 function cancel_stt(id, status_change) {
