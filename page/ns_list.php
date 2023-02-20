@@ -82,16 +82,16 @@ function get_attribute_list_filter(){
 <!-- create new  -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5" style="    border-bottom: 1px #e1dede solid;">
     <div class="row" style="width:100%">
-        <div class="col-2">
-            <span>Dynamic Filter</span>
+        <div style="width:auto">
+            <strong>Dynamic Filter</strong>
         </div>
-        <div class="col-6">
+        <div style="width:auto">
             <?php echo get_attribute_list_filter(); ?>
             </div>
-        <div class="col-4">
+        <div style="width:auto">
                     <button class="btn btn-dark btn-sm bg-gradient" style="margin-left:10px" type="button"
                         data-bs-toggle="modal" data-bs-target="#create_new_ns_modal">
-                        <ion-icon size="small" name="add-outline"></ion-icon>
+                        <ion-icon size="small" name="add-outline" style="font-size:12px"></ion-icon>
                         Create New
                     </button>
         </div>
