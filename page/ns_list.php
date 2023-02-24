@@ -89,7 +89,7 @@ function get_attribute_list_filter(){
             <?php echo get_attribute_list_filter(); ?>
             </div>
             <div style="width:auto">
-                <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;">
+                <div class="input-group input-group-sm" style="position: inherit;">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
                         <input type="number" class="form-control" style="position: inherit;" id="pagenation_input" min=1
                             <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
