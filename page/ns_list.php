@@ -202,7 +202,7 @@ function getFilterInputValues() {
             var formattedValue = `${name} BETWEEN '${value}'`;
         }else if(input.type=='text'){
             value = value.toLowerCase();
-            var formattedValue = `lower(${name}) like '%${value}%'`;
+            var formattedValue = `${name} like '%${value}%'`;
         }else if(input.type=='number'){
             var formattedValue = `${name} = ${value}`;
         }else if(input.type === "select-multiple"){
