@@ -97,9 +97,9 @@ $page_count = $count_item / 30;
 //get list
 
 $query = "SELECT * FROM add_new_job as anj where ((".$filter.")
- and anj.parent is null ) or config_type = 'parent' ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item
+ and anj.parent is null ) or config_type = 'parent' ORDER BY anj.config_type DESC ,anj.id DESC LIMIT 30 OFFSET ".$start_item
 or die("Error:" . mysqli_error($con));
-echo $query;
+// echo $query;
 date_default_timezone_set("Asia/Bangkok");
 mysqli_query($con, "SET NAMES 'utf8' ");
 $result = mysqli_query($con, $query);

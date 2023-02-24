@@ -154,12 +154,12 @@ Create New
         </div>
 </div>
 <script>
-function update_applyed_filter(){
-//clear selected
+// function update_applyed_filter(){
+// //clear selected
 
-//add new filter
+// //add new filter
 
-}
+// }
 
 
 function getFilterInputValues() {
