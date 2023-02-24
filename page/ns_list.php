@@ -201,7 +201,8 @@ function getFilterInputValues() {
             value = value.replace("AND", "' AND '");
             var formattedValue = `${name} BETWEEN '${value}'`;
         }else if(input.type=='text'){
-            var formattedValue = `lower(${name}) = lower('${value}')`;
+            value = value.toLowerCase();
+            var formattedValue = `lower(${name}) like '%${value}%'`;
         }else if(input.type=='number'){
             var formattedValue = `${name} = ${value}`;
         }else if(input.type === "select-multiple"){
