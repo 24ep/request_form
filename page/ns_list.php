@@ -154,6 +154,14 @@ Create New
         </div>
 </div>
 <script>
+function update_applyed_filter(){
+//clear selected
+
+//add new filter
+
+}
+
+
 function getFilterInputValues() {
   var pagenation_input = document.getElementById("pagenation_input").value
   var filterPrefix = "filter_";
@@ -189,6 +197,9 @@ function getFilterInputValues() {
         inputValues[name] = formattedValue;
         updateparams(name, value);
     }
+
+//create all display
+
   });
 
   var outputValues = Object.values(inputValues).join(" and ");
@@ -281,16 +292,6 @@ function accepted_stt(id) {
         });
     }
 }
-// function dynamic_filter() {
-//         // sku_accepted = document.getElementById('sku_accepted').value;
-//         $.post("../base/get/get_dynamic_filter.php", {
-//             // sku_accepted: sku_accepted
-//         }, function(data) {
-//             $('#dynamic_filter').html(data);
-//         });
-
-// }
-// dynamic_filter();
 
 
 function cancel_stt(id, status_change) {
