@@ -116,11 +116,12 @@ function get_attribute_list_filter(){
         <div class="row g-3 align-items-center" id="dynamic_filter" style="width: 100%;">
 
         </div>
+        <button type="button" class="btn btn-dark btn-sm" onclick="getFilterInputValues()">Apply filter</button>
 </nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5">
         <div class="row g-3 align-items-center" id="filter_selected" style="width: 100%;">
 
-        <button type="button" class="btn btn-dark btn-sm" onclick="getFilterInputValues()">Apply filter</button>
+
         </div>
 
 </nav>
