@@ -63,7 +63,7 @@
                 $work_day = date("Y-m-d\Th:i"); //---get current day
                 while($i != 1) //---loop 7 day for set min date
                 {
-                    //$work_day = date('Y-m-d\Th:i', strtotime('+1 day', strtotime($work_day))); 
+                     //$work_day = date('Y-m-d\Th:i', strtotime('+1 day', strtotime($work_day)));
                         $work_day = date('Y-m-d', strtotime('+1 day', strtotime($work_day)));
                         $day_name = date('l', strtotime($work_day));
                         if($day_name != 'Saturday' && $day_name != 'Sunday' && !isset($holiday[$work_day]))
@@ -107,9 +107,9 @@
                 <div class="col-md-6">
                     <div class="form-floating mb-3">
                         <textarea class="form-control form-control-sm" required id="contact_vender"
-                            name="contact_vender" 
+                            name="contact_vender"
                             rows="4" style="height: 100px"><?php echo $get_contact_buyer; ?>
-                
+
                     </textarea>
                         <label for="contact_vender"><strong style="color:red">* </strong>Contact vender</label>
                     </div>

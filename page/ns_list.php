@@ -89,7 +89,7 @@ function get_attribute_list_filter(){
             <?php echo get_attribute_list_filter(); ?>
             </div>
         <div style="width:auto">
-                    <button class="btn btn-dark btn-sm bg-gradient" style="margin-left:10px" type="button"
+                    <button class="btn btn-dark btn-sm bg-gradient"  type="button"
                         data-bs-toggle="modal" data-bs-target="#create_new_ns_modal">
                         <ion-icon size="small" name="add-outline" style="font-size:12px"></ion-icon>
                         Create New
@@ -106,6 +106,7 @@ function get_attribute_list_filter(){
         <div class="row g-3 align-items-center" id="filter_selected" style="width: 100%;">
 
         </div>
+        <button type="button" class="btn btn-dark btn-sm" onclick="getFilterInputValues()">Apply filter</button>
 </nav>
 <div style="margin-left: 10px;padding: 0px 20px;">
     <div class="tab-content" id="myTabContent">
@@ -125,10 +126,7 @@ function get_attribute_list_filter(){
                     </span>
                 </div>
                 </div>
-            <div class="col-2">
 
-                <button type="button" class="btn btn-dark btn-sm" onclick="getFilterInputValues()">Apply</button>
-            </div>
 
 
             </ul>
