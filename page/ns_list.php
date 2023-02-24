@@ -104,11 +104,12 @@ function get_attribute_list_filter(){
                 </div>
             </div>
         <div style="width:auto">
-                    <button class="btn btn-dark btn-sm bg-gradient"  type="button"
-                        data-bs-toggle="modal" data-bs-target="#create_new_ns_modal">
-                        <ion-icon size="small" name="add-outline" style="font-size:12px"></ion-icon>
-                        Create New
-                    </button>
+        <button class="btn btn-danger btn-sm bg-gradient position-absolute " type="button" data-bs-toggle="modal" data-bs-target="#create_new_ns_modal" style="
+    right: 55px;
+">
+<ion-icon size="small" name="add-outline" style="font-size:12px" role="img" class="md icon-small hydrated" aria-label="add outline"></ion-icon>
+Create New
+</button>
         </div>
      </div>
 </nav>
