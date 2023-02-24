@@ -208,7 +208,7 @@ function getFilterInputValues() {
         }
 
         inputValues[name] = formattedValue;
-        updateparams("filter_"+name, value);
+        updateparams("par_"+name, value);
     }
 
 //create all display
