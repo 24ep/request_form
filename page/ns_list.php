@@ -162,16 +162,27 @@ Create New
 // }
 function clearParams() {
   const queryParams = new URLSearchParams(window.location.search);
-  queryParams.delete('page');
+  const pageParam = queryParams.get('page');
 
-  let urlWithoutParams = window.location.origin + window.location.pathname;
+  // Delete all query parameters
+  queryParams.forEach((value, key) => {
+    if (key !== 'page') {
+      queryParams.delete(key);
+    }
+  });
+
+  // Add the "page" parameter back if it was present
+  if (pageParam !== null) {
+    queryParams.set('page', pageParam);
+  }
+
+  const urlWithoutParams = window.location.origin + window.location.pathname;
   if (queryParams.toString()) {
     urlWithoutParams += '?' + queryParams.toString();
   }
 
   window.history.replaceState({}, document.title, urlWithoutParams);
 }
-
 
 
 
