@@ -478,7 +478,15 @@ label#label_file_cme {
 .tox-tinymce {
     border-radius: 10px;
 }
-
+.ss-main .ss-values .ss-value .ss-value-delete {
+    display: contents;
+    align-items: center;
+    height: var(--ss-spacing-l);
+    width: var(--ss-spacing-l);
+    padding: var(--ss-spacing-s) var(--ss-spacing-m);
+    cursor: pointer;
+    border-left: solid 1px #d2d2d2;
+}
 .job_on_hand_list{
         /* position: fixed; */
         width: -webkit-fill-available;

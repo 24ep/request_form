@@ -41,9 +41,9 @@ function get_attribute_list_filter(){
         }
         if($option["attribute_code"]<>"" and $i==0){
         $i++;
-        $option_element .= "<option ".$selected ." class='color: #ffffff;' value=''></option>";
+        $option_element .= "<option ".$selected ." style='color: #ffffff;' value=''></option>";
         }
-        $option_element .= "<option ".$selected ." class='color: #ffffff;' value='".$option["attribute_code"]."'>".$option["attribute_label"]."</option>";
+        $option_element .= "<option ".$selected ." style='color: #ffffff;' value='".$option["attribute_code"]."'>".$option["attribute_label"]."</option>";
     }
     $input = '
 
@@ -85,8 +85,23 @@ function get_attribute_list_filter(){
         <div style="width:auto;place-self: center;">
         <ion-icon name="filter-outline"></ion-icon><strong>Dynamic Filter</strong>
         </div>
-        <div style="width:auto">
+            <div style="width:auto">
             <?php echo get_attribute_list_filter(); ?>
+            </div>
+            <div style="width:auto">
+                <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
+                        <input type="number" class="form-control" style="position: inherit;" id="pagenation_input" min=1
+                            <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
+                            value="<?php echo $_SESSION["pagenation"];?>" onchange="getFilterInputValues()" placeholder=""
+                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                            placeholder="Dept , Sub Dept , Brand , ID">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">
+                            <div id="total_page_nj">
+                                <?php include('../get/get_total_page_nj.php'); ?>
+                            </div>
+                        </span>
+                </div>
             </div>
         <div style="width:auto">
                     <button class="btn btn-dark btn-sm bg-gradient"  type="button"
@@ -112,19 +127,7 @@ function get_attribute_list_filter(){
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center p-3">
         <div class="col-2">
-        <div class="input-group input-group-sm mb-3 mt-3" style="position: inherit;">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
-                    <input type="number" class="form-control" style="position: inherit;" id="pagenation_input" min=1
-                        <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
-                        value="<?php echo $_SESSION["pagenation"];?>" onchange="getFilterInputValues()" placeholder=""
-                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-                        placeholder="Dept , Sub Dept , Brand , ID">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">
-                        <div id="total_page_nj">
-                            <?php include('../get/get_total_page_nj.php'); ?>
-                        </div>
-                    </span>
-                </div>
+
                 </div>
 
 
