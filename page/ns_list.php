@@ -161,8 +161,8 @@ Create New
 
 // }
 function clearParams() {
-  const queryParams = new URLSearchParams(window.location.search);
-  const pageParam = queryParams.get('page');
+    let  queryParams = new URLSearchParams(window.location.search);
+    let  pageParam = queryParams.get('page');
 
   // Delete all query parameters
   queryParams.forEach((value, key) => {
