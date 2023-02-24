@@ -272,11 +272,17 @@ if (!$_SESSION["login_csg"]){
                             <ion-icon name="home"></ion-icon><span class="main-menu-nav">Home</span>
                         </a>
                     </li>
-                    <li class="nav-item" role="presentation">
+                    <!-- <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_create_new" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('create_new');">
                             <ion-icon name="rocket"></ion-icon><span class="main-menu-nav">New Products</span>
                         </a>
+                    </li> -->
+                    <li class="nav-item" role="presentation">
+                            <a class="main_bra nav-link nav-link-preferance" id="nav_ns_list" data-bs-toggle="pill"
+                                type="button" role="tab" aria-selected="false" onclick="get_page('ns_list');">
+                                <ion-icon name="rocket"></ion-icon><span class="main-menu-nav">New Products</span>
+                            </a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_update_content" data-bs-toggle="pill"
@@ -315,12 +321,7 @@ if (!$_SESSION["login_csg"]){
                             <ion-icon name="globe"></ion-icon><span class="main-menu-nav">Quick-link</span>
                         </a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                            <a class="main_bra nav-link nav-link-preferance" id="nav_ns_list" data-bs-toggle="pill"
-                                type="button" role="tab" aria-selected="false" onclick="get_page('ns_list');">
-                                <ion-icon name="rocket"></ion-icon><span class="main-menu-nav">New Products - beta</span>
-                            </a>
-                        </li>
+
                     <?php } ?>
                     <hr class="hr_menu_bra_in">
                     <small class="header_menu_bra">Others</small>

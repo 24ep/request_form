@@ -88,7 +88,7 @@ $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     $count_item = $row['count_item'];
 }
-echo '<small>Result found : '.$count_item .'</small>';
+echo '<small style="color: #b9b9b9;">Result found : '.$count_item .'</small>';
 $page_count = $count_item / 30;
 ?>
 <script>document.getElementById('total_page_nj').innerHTML = "<?php echo ceil($page_count); ?>" </script>

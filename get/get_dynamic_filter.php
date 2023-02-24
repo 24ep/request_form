@@ -128,7 +128,7 @@ while($row = mysqli_fetch_array($result)) {
 }
 echo '
 <div class="col-md-3">
-<button type="button" class="btn btn-dark btn-sm" onclick="getFilterInputValues()">Apply filter</button>
+<button type="button" class="btn btn-dark btn-sm mt-3" onclick="getFilterInputValues()">Apply Filter</button>
 </div>';
 
 
