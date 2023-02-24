@@ -176,7 +176,7 @@ function clearParams() {
     queryParams.set('page', pageParam);
   }
 
-  const urlWithoutParams = window.location.origin + window.location.pathname;
+  let urlWithoutParams = window.location.origin + window.location.pathname;
   if (queryParams.toString()) {
     urlWithoutParams += '?' + queryParams.toString();
   }
