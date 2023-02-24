@@ -126,6 +126,7 @@ while($row = mysqli_fetch_array($result)) {
     }
 
 }
+echo '<button type="button" class="btn btn-dark btn-sm" onclick="getFilterInputValues()">Apply filter</button>';
 
 
 ?>
