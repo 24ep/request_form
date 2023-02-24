@@ -160,17 +160,17 @@ Create New
 // //add new filter
 
 // }
-function clearParams() {
-  const queryParams = new URLSearchParams(window.location.search);
-  queryParams.delete("page");
+// function clearParams() {
+//   const queryParams = new URLSearchParams(window.location.search);
+//   queryParams.delete("page");
 
-  const urlWithoutParams = window.location.origin + window.location.pathname;
-  if (queryParams.toString()) {
-    urlWithoutParams += '?' + queryParams.toString();
-  }
+//   const urlWithoutParams = window.location.origin + window.location.pathname;
+//   if (queryParams.toString()) {
+//     urlWithoutParams += '?' + queryParams.toString();
+//   }
 
-  window.history.replaceState({}, document.title, urlWithoutParams);
-}
+//   window.history.replaceState({}, document.title, urlWithoutParams);
+// }
 
 // Example usage: clear all parameters except for "page"
 
@@ -179,7 +179,7 @@ function getFilterInputValues() {
   var filterPrefix = "filter_";
   var inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`);
   var inputValues = {};
-  clearParams();
+//   clearParams();
 
   inputs.forEach(input => {
     var name = input.getAttribute("attribute_code");
