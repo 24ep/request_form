@@ -28,31 +28,31 @@ $role_op = get_option("role",$_SESSION["role"],"single");
 
 <nav class="nav p-2 bg-light shadow" style="border-bottom: 1px solid #e3e3e3;">
     <ul class="nav nav-pills" id="pills-tab" role="tablist">
-        <li role="presentation" class="m-2 border-end" onclick="get_list_job_on_hand('pending');">
+        <li role="presentation" class="pe-3 ps-3 border-end align-self-center" onclick="get_list_job_on_hand('pending');">
             <button class="nav-link nav-task active" data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
                 Pending
                 <span id="c_pending" class="badge text-bg-dark ms-2"></span>
             </button>
         </li>
-        <li role="presentation" class="m-2 border-end" onclick="get_list_job_on_hand('inprogress');">
+        <li role="presentation" class="pe-3 ps-3 border-end align-self-center" onclick="get_list_job_on_hand('inprogress');">
             <button class="nav-link nav-task" data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
                 Inprogress
                 <span id="c_inprogress" class="badge text-bg-dark ms-2"></span>
             </button>
         </li>
-        <li role="presentation" class="m-2 border-end" onclick="get_list_job_on_hand('waiting');">
+        <li role="presentation" class="pe-3 ps-3 border-end align-self-center" onclick="get_list_job_on_hand('waiting');">
             <button class="nav-link nav-task" data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
                 Waiting information
                 <span id="c_waiting" class="badge text-bg-dark ms-2"></span>
             </button>
         </li>
-        <li role="presentation" class="m-2 border-end" onclick="get_list_job_on_hand('waiting for other stage');">
+        <li role="presentation" class="pe-3 ps-3 border-end align-self-center" onclick="get_list_job_on_hand('waiting for other stage');">
             <button class="nav-link nav-task" data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
                 Waiting for other stage
                 <span id="c_waiting for other stage" class="badge text-bg-dark ms-2"></span>
             </button>
         </li>
-        <li role="presentation" class="m-2 border-end" onclick="get_list_job_on_hand('rejected');">
+        <li role="presentation" class="pe-3 ps-3 border-end align-self-center" onclick="get_list_job_on_hand('rejected');">
             <button class="nav-link nav-task" data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
                 Rejected
                 <span id="c_rejected" class="badge text-bg-dark ms-2"></span>
