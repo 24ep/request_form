@@ -156,10 +156,11 @@ while($row_status = mysqli_fetch_array($result_status)) {
 
 }
 //getting status=waiting
-echo' <div class="col-4 ts-board-col-left" id="col_waiting"  >
-<h6 class="row m-3" style="font-weight: 900;">Waiting</h6>';
+echo' <div class="col-4 ts-board-col-left" id="col_waiting"  >';
 
-echo'<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+echo'<ul class="nav nav-pills mb-3 align-items-center" id="pills-tab" role="tablist">
+<h6 class="row m-3" style="font-weight: 900;">Waiting</h6>
 <li class="nav-item" role="presentation" style="width: fit-content;">
   <button class="nav-link active" id="pills-waiting_buyer-tab" data-bs-toggle="pill" data-bs-target="#pills-waiting_buyer" type="button" role="tab" aria-controls="pills-waiting_buyer" aria-selected="true">Buyer</button>
 </li>
