@@ -35,25 +35,25 @@ $role_op = get_option("role",$_SESSION["role"],"single");
             </button>
         </li>
         <li role="presentation" class="nav-task" onclick="get_list_job_on_hand('inprogress');">
-            <button class="nav-link active" data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
+            <button class="nav-link " data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
                 Inprogress
                 <span id="c_inprogress" class="badge text-bg-dark ms-2"></span>
             </button>
         </li>
         <li role="presentation" class="nav-task" onclick="get_list_job_on_hand('waiting');">
-            <button class="nav-link active" data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
+            <button class="nav-link " data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
                 Waiting information
                 <span id="c_waiting" class="badge text-bg-dark ms-2"></span>
             </button>
         </li>
         <li role="presentation" class="nav-task" onclick="get_list_job_on_hand('waiting for other stage');">
-            <button class="nav-link active" data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
+            <button class="nav-link " data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
                 Waiting for other stage
                 <span id="c_waiting for other stage" class="badge text-bg-dark ms-2"></span>
             </button>
         </li>
         <li role="presentation" class="nav-task" onclick="get_list_job_on_hand('rejected');">
-            <button class="nav-link active" data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
+            <button class="nav-link " data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
                 Rejected
                 <span id="c_rejected" class="badge text-bg-dark ms-2"></span>
             </button>
