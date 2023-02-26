@@ -196,6 +196,11 @@ if (!$_SESSION["login_csg"]){
         color: <?php echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
         ?>;
     }
+
+    .header_menu_bra{
+        color: <?php echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
+        ?>!important;
+    }
     </style>
 </head>
 
