@@ -615,7 +615,7 @@ echo '
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-sku" role="tabpanel" aria-labelledby="nav-sku-tab" tabindex="0">
-                    <?php include('../get/get_list_sku_ticket_new.php'); ?>
+                    <?php include('../get/get_list_sku_ticket.php'); ?>
                 </div>
             </div>
             <script>
