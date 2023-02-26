@@ -143,7 +143,7 @@ mysqli_close($con);
         <div class="col" scope="col">Action</div>
     </li>
     <div id="job_list">
-        <?php include('../get/get_list_new_job_new.php'); ?>
+        <?php include('../get/get_list_new_job.php'); ?>
     </div>
 </div>
 <script>
@@ -154,7 +154,7 @@ function filter_update(be) {
     var brand_filter = document.getElementById("brand_filter").value
     var from_post = true;
     if (from_post) {
-        $.post("../base/get/get_list_new_job_new.php", {
+        $.post("../base/get/get_list_new_job.php", {
             user_filter: user_filter,
             status_filter: status_filter,
             from_post: from_post,

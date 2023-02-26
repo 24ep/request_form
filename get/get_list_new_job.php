@@ -3,29 +3,28 @@ session_start();
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error( $con));
 function badge_status($status){
   if($status=="pending"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">pending</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-pending" style="min-width: 115px;">pending</span>';
   }elseif($status=="checking"  ){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ffff7e;color:#997300;border:#ffff7e">checking</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-checking" style="min-width: 115px;">checking</span>';
   }elseif( $status=="on-productions"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ff9a59;color:white;border:#ff9a59">on-productions</button>';
-  }elseif($status=="approved" ){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #7befb2;color:#115636;border:#115636">'.$status.'</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-on-productions" style="min-width: 115px;">on-productions</button>';
+  }elseif($status=="approved"){
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-approved" style="min-width: 115px;">approved</button>';
   }elseif($status=="waiting confirm"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #499CF7;color:#093f8e;border:#499CF7">waiting confirm</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-confirm" style="min-width: 115px;">waiting confirm</span>';
   }elseif($status=="waiting image"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting image</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-image" style="min-width: 115px;">waiting image</button>';
   }elseif($status=="waiting data"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #FE7A6F;color:#a80c1b;border:#FE7A6F">waiting data</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-data" style="min-width: 115px;">waiting data</button>';
   }elseif($status=="waiting traffic"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #ea79f7;color:#6a2e71;border:#ea79f7">waiting traffic</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-traffic" style="min-width: 115px;">waiting traffic</button>';
   }elseif($status=="cancel"){
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #efefef;color:#dddddd;border:#ea79f7">Cancel</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-cancel" style="min-width: 115px;">Cancel</button>';
   }else{
-    $status = '<button type="button" class="btn btn-secondary btn-sm shadow-sm" style="background: #a9a9a94f;color:#8f8f8f;border:#8f8f8f">'.$status.'</button>';
+    $status = '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-other" style="min-width: 115px;">'.$status.'</span>';
   }
-return $status;
+  return $status;
 }
-
 function role_user($request_username,$follow_up_by){
   // session_start();
   if($_SESSION['username']==$request_username){
@@ -42,81 +41,71 @@ if(isset($_GET["fopenticket"])){
 }
 if(isset($_POST["from_post"] )){
   if($_POST["from_post"] ==true ){
-  $_SESSION["user_filter"] = $_POST["user_filter"];
-  $_SESSION["status_filter"] = $_POST["status_filter"];
-  $_SESSION['pagenation'] = $_POST["pagenation_input"];
-  $_SESSION['brand_filter'] = $_POST["brand_filter"];
-}}
+    $_SESSION["user_filter"] = $_POST["user_filter"];
+    $_SESSION["status_filter"] = $_POST["status_filter"];
+    $_SESSION['pagenation'] = $_POST["pagenation_input"];
+    $_SESSION['brand_filter'] = $_POST["brand_filter"];
+  }}
   $start_item =  ($_SESSION['pagenation'] -1 )* 30;
- if(strpos($_SESSION["page_view"],'Followup')!==false){
-  if($_SESSION['user_filter']<>""){
-    $position_filter = "lower(anj.participant) like lower('%,".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('".$_SESSION["user_filter"].",%') or  lower(anj.participant) = lower('".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('%,".$_SESSION["user_filter"].",%')";
-   }else{
-    $position_filter = "(anj.follow_up_by ='' or anj.follow_up_by is null)";
-   }
- }elseif(strpos($_SESSION["page_view"],'Buyer')!==false){
-  if($_SESSION['user_filter']<>""){
-    $position_filter = "lower(anj.participant) like lower('%,".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('".$_SESSION["user_filter"].",%') or  lower(anj.participant) = lower('".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('%,".$_SESSION["user_filter"].",%')";
-   }else{
-    $position_filter ="(anj.request_username ='' or anj.request_username is null)";
-   }
- }else{
-  if($_SESSION['user_filter']<>""){
-    $position_filter = "lower(anj.participant) like lower('%,".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('".$_SESSION["user_filter"].",%') or  lower(anj.participant) = lower('".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('%,".$_SESSION["user_filter"].",%')";
-   }else{
-    $position_filter ="1=1";
-   }
- }
- if($_SESSION['status_filter']<>""){
-  $status_filter ="anj.status like '%".$_SESSION['status_filter']."%' or anj.status = 'none'";
- }else{
-  $status_filter ="1=1";
- }
- if($_SESSION['brand_filter']<>""){
-   if(is_numeric($_SESSION['brand_filter'])){
-    $query_parent = "SELECT parent from all_in_one_project.add_new_job where id = ".$_SESSION['brand_filter'] or die("Error:" . mysqli_error($con));
-    $result = mysqli_query($con, $query_parent);
-    while($row = mysqli_fetch_array($result)) {
-      $brand_filter_id_lu = $row["parent"];
-    }
-    if(isset($brand_filter_id_lu)){
-      $brand_filter =" anj.id = ".str_replace('NS-','',$_SESSION['brand_filter'])." or  anj.id =".$brand_filter_id_lu ;
+  if(strpos($_SESSION["page_view"],'Followup')!==false){
+    if($_SESSION['user_filter']<>""){
+      $position_filter = "lower(anj.participant) like lower('%,".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('".$_SESSION["user_filter"].",%') or  lower(anj.participant) = lower('".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('%,".$_SESSION["user_filter"].",%')";
     }else{
-      $brand_filter =" anj.id = ".str_replace('NS-','',$_SESSION['brand_filter']);
+      $position_filter = "(anj.follow_up_by ='' or anj.follow_up_by is null)";
     }
-   }else{
-    $brand_filter =" ( anj.brand like '%".$_SESSION['brand_filter']."%' or anj.department like '%".$_SESSION['brand_filter']."%' or anj.sub_department like '%".$_SESSION['brand_filter']."%') ";
-   }
- }else{
-  $brand_filter ="1=1";
- }
- //set_query
- if(isset($_SESSION['fopenticket'])){
-  $query = "SELECT * FROM add_new_job as anj where anj.id =".$_SESSION['fopenticket']."  ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error($con));
-  unset($_SESSION['fopenticket']);
- }else{
-  $query = "SELECT * FROM add_new_job as anj where ((".$status_filter.") and (".$brand_filter.")
-         and (".$position_filter.")) and anj.parent is null ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error($con));
- }
+  }elseif(strpos($_SESSION["page_view"],'Buyer')!==false){
+    if($_SESSION['user_filter']<>""){
+      $position_filter = "lower(anj.participant) like lower('%,".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('".$_SESSION["user_filter"].",%') or  lower(anj.participant) = lower('".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('%,".$_SESSION["user_filter"].",%')";
+    }else{
+      $position_filter ="(anj.request_username ='' or anj.request_username is null)";
+    }
+  }else{
+    if($_SESSION['user_filter']<>""){
+      $position_filter = "lower(anj.participant) like lower('%,".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('".$_SESSION["user_filter"].",%') or  lower(anj.participant) = lower('".$_SESSION["user_filter"]."') or  lower(anj.participant) like lower('%,".$_SESSION["user_filter"].",%')";
+    }else{
+      $position_filter ="1=1";
+    }
+  }
+  if($_SESSION['status_filter']<>""){
+    $status_filter_replaced = str_replace(",","','",$_SESSION['status_filter']);
+    $status_filter_replaced  = "'".$status_filter_replaced ."'";
+    $status_filter ="anj.status in (".$status_filter_replaced.") or anj.status = 'none'";
+  }else{
+    $status_filter ="1=1";
+  }
+  if($_SESSION['brand_filter']<>""){
+    if(is_numeric($_SESSION['brand_filter'])){
+      $query_parent = "SELECT parent from all_in_one_project.add_new_job where id = ".$_SESSION['brand_filter'] or die("Error:" . mysqli_error($con));
+      $result = mysqli_query($con, $query_parent);
+      while($row = mysqli_fetch_array($result)) {
+        $brand_filter_id_lu = $row["parent"];
+      }
+      if(isset($brand_filter_id_lu)){
+        $brand_filter =" anj.id = ".str_replace('NS-','',$_SESSION['brand_filter'])." or  anj.id =".$brand_filter_id_lu ;
+      }else{
+        $brand_filter =" anj.id = ".str_replace('NS-','',$_SESSION['brand_filter']);
+      }
+    }else{
+      $brand_filter =" ( anj.brand like '%".$_SESSION['brand_filter']."%' or anj.department like '%".$_SESSION['brand_filter']."%' or anj.sub_department like '%".$_SESSION['brand_filter']."%') ";
+    }
+  }else{
+    $brand_filter ="1=1";
+  }
+  //set_query
+  if(isset($_SESSION['fopenticket'])){
+    $query = "SELECT * FROM add_new_job as anj where anj.id =".$_SESSION['fopenticket']."  ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error($con));
+    unset($_SESSION['fopenticket']);
+  }else{
+    $query = "SELECT * FROM add_new_job as anj where ((".$status_filter.") and (".$brand_filter.")
+    and (".$position_filter.")) and anj.parent is null ORDER BY anj.id DESC LIMIT 30 OFFSET ".$start_item  or die("Error:" . mysqli_error($con));
+  }
   date_default_timezone_set("Asia/Bangkok");
   mysqli_query($con, "SET NAMES 'utf8' ");
   $result = mysqli_query($con, $query);
   // echo '<script>console.log("'.htmlspecialchars(stripslashes(str_replace(array("\r", "\n"), '', var_export($query, true)))).'")</script>';
   while($row = mysqli_fetch_array($result)) {
     $ticket_role = role_user($row["request_username"],$row["follow_up_by"]);
-    if($row['status']=="on-productions" and $row['trigger_status'] <> "on-productions"){
-      $status=badge_status("on-productions");
-    }elseif($row['status']=="on-productions" and $row['trigger_status'] == "on-productions"){
-      $status=badge_status("on-productions");
-    }else{
-      $status =badge_status($row['status']);
-    }
-    //important badge
-    if($row['request_important']=="Urgent"){
-      $ri_style = '<span class="badge rounded-pill bg-danger" style="margin-left:5px">'.$row['request_important'].'</span>';
-    }else{
-      $ri_style = '<span class="badge rounded-pill bg-secondary" style="margin-left:5px">'.$row['request_important'].'</span>';
-    }
+    $status =badge_status($row['status']);
     //launch date
     if($row['launch_date']<>""){
       $launch_date = date('d/m/y',strtotime($row['launch_date']));
@@ -130,20 +119,20 @@ if(isset($_POST["from_post"] )){
     $create_date = date_format($create_date,"Y-m-d");
     // -1 create date > 5
     $create_date_diff = (strtotime($current_day) - strtotime($create_date))/  ( 60 * 60 * 24 );
-    if($create_date_diff>=5){
-      $p_badge .= '<span class="badge rounded-pill bg-warning" style="margin-left:5px">Age > '.$create_date_diff.' Days</span>';
-    }elseif($create_date_diff>=5){
-      $p_badge .= '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Age > '.$create_date_diff.' Days</span>';
+    if($create_date_diff>=10){
+      $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1 modern-badge-red"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
+    }elseif($create_date_diff>=3){
+      $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1 modern-badge-purple"><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Age > '.$create_date_diff.' Days</span>';
     }
     //  launch date
     if($row["launch_date"] <> null){
       $launch_date_c = date_create($row["launch_date"]);
       $launch_date_c = date_format($launch_date_c,"Y-m-d");
       $launch_date_diff = (strtotime($launch_date_c)-strtotime($current_day))/  ( 60 * 60 * 24 );
-      if($launch_date_diff<=3){
-        $p_badge .= '<span class="badge rounded-pill bg-danger" style="margin-left:5px">Launch in '.$launch_date_diff.' days</span>';
+      if($launch_date_diff<=0){
+        $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1 normal-badge-red" ><ion-icon name="warning-outline" style="margin: 0;"></ion-icon> Over Launch '.($launch_date_diff*(-1)).' days</span>';
       }elseif($launch_date_diff<=5){
-        $p_badge .= '<span class="badge rounded-pill bg-warning" style="margin-left:5px">Launch in '.$launch_date_diff.' days</span>';
+        $p_badge .= '<span class="badge rounded p-1 ps-3 pe-3 mb-1 ml-1 modern-badge-purple" ><ion-icon name="warning-outline" style="margin: 0;"></ion-icon>Launch in '.$launch_date_diff.' days</span>';
       }
     }
     //  -2 already image
@@ -156,142 +145,132 @@ if(isset($_POST["from_post"] )){
     //config_type
     if($row["config_type"]=="parent"){
       //set style
-      $tr_class = "class='sub-ticket shadow-sm p-3 mb-5 rounded ".$style_cancel."' style='background: white;'";
+      $tr_class = "class='row sub-ticket shadow-sm p-2 mb-0 rounded ".$style_cancel."' style='background: white;align-items: center;text-align-last: center;'";
       $task_status = '';
       $query_sum="SELECT sum(sku) as total from add_new_job where parent = ".$row["id"];
       $result_sum = mysqli_query($con, $query_sum);
       $data_sum=mysqli_fetch_assoc($result_sum);
+      //show warning for parent !=sum of sub ticket sku
       if($row["sku"]<>$data_sum['total']){
-        $badge_alert_sku = "<a data-bs-toggle='tooltip' data-bs-placement='top' title='จำนวน SKU ของ ticket แม่ไม่ตรงกับลูก'><ion-icon name='alert-circle-outline' style='color:red!important'  ></ion-icon></a>";
+        $badge_alert_sku = "<a data-bs-toggle='tooltip' data-bs-placement='top' title='number of sku in parent ticket not equls sum of childs ticket sku'><ion-icon name='alert-circle-outline' style='color:red!important'  ></ion-icon></a>";
       }else{
         $badge_alert_sku = "";
       }
       $subtask_sum = $row["sku"]." S(".$data_sum['total'].") ".$badge_alert_sku ;
     }else{
-      $tr_class = "class='shadow-sm p-3 mb-5 rounded ".$style_cancel."' style='background: white;'";
+      $tr_class = "class='row shadow-sm p-2 mb-2 rounded ".$style_cancel."' style='background: white;align-items: center;text-align-last: center;'";
       $task_status = $status ;
       $subtask_sum = $row["sku"];
     }
-      if(!isset($ticket)){$ticket="";}
-      if(!isset($tr_class)){$tr_class="";}
-      $ticket .= "<tr  ".$tr_class." >";
-      $ticket .= "<th scope='row' class='new_lob_list' >NS-".$row["id"]."</th>";
-      $ticket .= "<td>".$row["department"]."</td>";
-      $ticket .= "<td>".$row["brand"]."</td>";
-      $ticket .= "<td>".$subtask_sum."</td>";
-      // $ticket .= "<td>".$ri_style ."</td>";
-      $ticket .= "<td>".$row["production_type"]."</td>";
-      $ticket .= "<td>".$row["project_type"]."</td>";
-      // $ticket .= "<td>".$row["business_type"]."</td>";
-      $ticket .= "<td>".$launch_date."</td>";
-      $ticket .= "<td>".$p_badge."</td>";
-      $ticket .= "<td>".$task_status ."</td>";
-      $ticket .= "<td>";
-      $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row["id"].")' >
-       Detail </button></td>";
-      $ticket .=  "</tr>";
-      //get sub ticket
-      $query_count="SELECT count(*) as total from add_new_job where parent = ".$row["id"];
-      $result_count = mysqli_query($con, $query_count);
-      $data_count=mysqli_fetch_assoc($result_count);
-      $subtask_count = $data_count['total'];
-      if(isset($subtask_count) and $subtask_count <> 0 and $subtask_count <>null){
-        $query_child = "SELECT * FROM add_new_job where parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error($con));
-        date_default_timezone_set("Asia/Bangkok");
-        // $con_get_list= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con_get_list));
-        mysqli_query($con, "SET NAMES 'utf8' ");
-        $result_child = mysqli_query($con, $query_child);
-        $i = 1;
-        while($row_child = mysqli_fetch_array($result_child)) {
-            $ticket_role = role_user($row_child["request_username"],$row_child["follow_up_by"]);
-            // $status = badge_status($row_child['status']);
-          if($row_child['status']=="on-productions" and $row_child['trigger_status'] <> "on-productions"){
-            $status=badge_status("on-productions");
-          }elseif($row_child['status']=="on-productions" and $row_child['trigger_status'] == "on-productions"){
-            $status=badge_status("on-productions");
-          }else{
-            $status =badge_status($row_child['status']);
-          }
-            //important
-          if($i<$subtask_count){
-            $th_class = "class='tree_lift'";
-            $tr_class = "class='sub-ticket'";
-          }else{
-            $th_class = "class='tree_lift_end'";
-            unset($tr_class);
-          }
-          //check status of brand ticket match with filter or not
-          if($_SESSION['status_filter']<>""){
-            if($row_child["status"]==$_SESSION['status_filter']){
-              //data row
-              if(isset($sub_ticket)){
-                if(isset($tr_class)){
-                  $sub_ticket .= "<tr ".$tr_class.">";
-                }else{
-                  $sub_ticket .= "<tr >";
-                }
-              }else{
-                if(isset($tr_class)){
-                  $sub_ticket = "<tr ".$tr_class.">";
-                }else{
-                  $sub_ticket = "<tr >";
-                }
-              }
-              $sub_ticket .= "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></th>";
-              $sub_ticket .= "<td></td>";
-              $sub_ticket .= "<td></td>";
-              $sub_ticket .= "<td>".$row_child["sku"]."</td>";
-              $sub_ticket .= "<td></td>";
-              $sub_ticket .= "<td></td>";
-              $sub_ticket .= "<td></td>";
-              $sub_ticket .= "<td></td>";
-              $sub_ticket .= "<td>".$status."</td>";
-              $sub_ticket .= "<td>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
-              Detail </button></td>";
-              $i++;
-            }
-          }else{
-               //data row
-          if(!isset($sub_ticket)){$sub_ticket ="";}
-          if(!isset($tr_class)){$tr_class="";}
-          $sub_ticket .= "<tr ".$tr_class.">";
-          $sub_ticket .= "<th scope='row' ".$th_class." ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].")</span></th>";
-          $sub_ticket .= "<td></td>";
-          $sub_ticket .= "<td></td>";
-          $sub_ticket .= "<td>".$row_child["sku"]."</td>";
-          $sub_ticket .= "<td></td>";
-          $sub_ticket .= "<td></td>";
-          $sub_ticket .= "<td></td>";
-          $sub_ticket .= "<td></td>";
-          $sub_ticket .= "<td  >".$status."</td>";
-          $sub_ticket .= "<td>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='btn btn-dark btn-sm' data-bs-toggle='offcanvas' data-bs-target='#edit_add_new' aria-controls='offcanvasExample' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
-           Detail </button></td>";
-          $i++;
-          }
+    // except badge display for status below
+    if(strpos($task_status,"approved")!==false or strpos($task_status,"Cancel")!==false  or $row["config_type"]=='parent' ){
+      $p_badge = "";
+    }
+    if(!isset($ticket)){$ticket="";}
+    if(!isset($tr_class)){$tr_class="";}
+    $ticket .= "<li  ".$tr_class." >";
+    $ticket .= "<div scope='row' class='col new_lob_list' ><strong>NS-".$row["id"]."</strong></div>";
+    $ticket .= "<div class='col'>".$row["department"]."</div>";
+    $ticket .= "<div class='col'>".$row["brand"]."</div>";
+    $ticket .= "<div class='col'>".$subtask_sum."</div>";
+    $ticket .= "<div class='col'>".$row["production_type"]."</div>";
+    $ticket .= "<div class='col'>".$launch_date."</div>";
+    $ticket .= "<div class='col' style='min-width: 160px;'>".$p_badge."</div>";
+    $ticket .= "<div class='col' style='min-width: 140px;'>".$task_status ."</div>";
+    $ticket .= "<div class='col'>";
+    $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3'  onclick='call_edit_add_new_modal(".$row["id"].")' >
+    Detail </button></div>";
+    $ticket .=  "</li>";
+    //get sub ticket
+    $query_count="SELECT count(*) as total from add_new_job where parent = ".$row["id"];
+    $result_count = mysqli_query($con, $query_count);
+    $data_count=mysqli_fetch_assoc($result_count);
+    $subtask_count = $data_count['total'];
+    if(isset($subtask_count) and $subtask_count <> 0 and $subtask_count <>null){
+      $query_child = "SELECT * FROM add_new_job where parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error($con));
+      date_default_timezone_set("Asia/Bangkok");
+      // $con_get_list= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con_get_list));
+      mysqli_query($con, "SET NAMES 'utf8' ");
+      $result_child = mysqli_query($con, $query_child);
+      $i = 1;
+      while($row_child = mysqli_fetch_array($result_child)) {
+        $ticket_role = role_user($row_child["request_username"],$row_child["follow_up_by"]);
+        $status =badge_status($row_child['status']);
+        //important
+        if($i<$subtask_count){
+          $th_class = "class='col tree_lift p-3'";
+          $tr_class = "class='row sub-ticket mb-0'";
+        }else{
+          $th_class = "class='col tree_lift_end p-3'";
+          $tr_class = "class='row mb-2' style='align-items: center;'";
+          // unset($tr_class);
         }
-      }
-      if($_SESSION['status_filter']<>""){
-        if($row["config_type"]=="parent"){
-          if( isset($sub_ticket)){
-            echo $ticket.$sub_ticket;
+        //check status of brand ticket match with filter or not
+        if($_SESSION['status_filter']<>""){
+          if($row_child["status"]==$_SESSION['status_filter']){
+            //data row
+            if(isset($sub_ticket)){
+              if(isset($tr_class)){
+                $sub_ticket .= "<li ".$tr_class.">";
+              }else{
+                $sub_ticket .= "<li class='row mb-2'>";
+              }
+            }else{
+              if(isset($tr_class)){
+                $sub_ticket = "<li ".$tr_class.">";
+              }else{
+                $sub_ticket = "<li class='row mb-2' >";
+              }
+            }
+            $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 380px;' ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].") ".$row_child["sku"]." SKUs</span></div>";
+            $sub_ticket .= "<div class='col'></div>";
+            $sub_ticket .= "<div class='col'></div>";
+            $sub_ticket .= "<div class='col'></div>";
+            $sub_ticket .= "<div class='col'></div>";
+            $sub_ticket .= "<div class='col'>".$status."</div>";
+            $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3'  onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+            Detail </button></div >";
+            $i++;
           }
         }else{
-          if(isset($sub_ticket)){
-            echo $ticket.$sub_ticket;
-          }else{
-            if(isset($ticket)){ echo $ticket;}
-          }
+          //data row
+          if(!isset($sub_ticket)){$sub_ticket ="";}
+          if(!isset($tr_class)){$tr_class="";}
+          $sub_ticket .= "<li ".$tr_class.">";
+          $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 380px;'><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].") ".$row_child["sku"]." SKUs</span></div>";
+          $sub_ticket .= "<div class='col'></div>";
+          $sub_ticket .= "<div class='col'></div>";
+          $sub_ticket .= "<div class='col'></div>";
+          $sub_ticket .= "<div class='col'></div>";
+          $sub_ticket .= "<div class='col' >".$status."</div>";
+          $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+          Detail </button></div>";
+          $i++;
         }
-       }else{
+      }
+    }
+    if($_SESSION['status_filter']<>""){
+      if($row["config_type"]=="parent"){
+        if( isset($sub_ticket)){
+          echo $ticket.$sub_ticket;
+        }
+      }else{
         if(isset($sub_ticket)){
           echo $ticket.$sub_ticket;
         }else{
           if(isset($ticket)){ echo $ticket;}
         }
-       }
-       unset($ticket);
-       unset($sub_ticket);
-       unset($status);
+      }
+    }else{
+      if(isset($sub_ticket)){
+        echo $ticket.$sub_ticket;
+      }else{
+        if(isset($ticket)){ echo $ticket;}
+      }
+    }
+    unset($ticket);
+    unset($sub_ticket);
+    unset($status);
   }
   mysqli_close($con);
   ?>
