@@ -14,30 +14,30 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
 }
 
 ?>
-    <style>
+    <!-- <style>
     .nav-link-preferance {
-        color: <?php echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
+        color: <?php //echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
         ?>;
     }
 
     .nav_list_bra-preferance {
-        background: <?php echo get_value_main($_SESSION['username'], "menu_shade", "all_in_one_project", "account", "username");
+        background: <?php //echo get_value_main($_SESSION['username'], "menu_shade", "all_in_one_project", "account", "username");
         ?>;
     }
 
     .nav-pills .nav-link.active,
     .nav-pills .show>.nav-link {
-        color: <?php echo get_value_main($_SESSION['username'], "primary_front_button_selected", "all_in_one_project", "account", "username");
+        color: <?php //echo get_value_main($_SESSION['username'], "primary_front_button_selected", "all_in_one_project", "account", "username");
         ?>;
-        border: solid 1px <?php echo get_value_main($_SESSION['username'], "primary_border_button_slected", "all_in_one_project", "account", "username");
+        border: solid 1px <?php// echo get_value_main($_SESSION['username'], "primary_border_button_slected", "all_in_one_project", "account", "username");
         ?>;
     }
 
     .nav-pills .nav-link {
-        color: <?php echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
+        color: <?php //echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
         ?>;
     }
-    </style>
+    </style> -->
 
 
 <?php

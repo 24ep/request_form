@@ -233,10 +233,7 @@ if (!$_SESSION["login_csg"]){
                     <img id="logo_minimize" class="logo_minimize hide" src="base/image/sg_logo_minimize.ico" alt=""
                         width="auto" height="30">
                     <h5 id="logo" class="logo fw-bold m-0" style="position: absolute;">ServiceGate</h5>
-                    <!-- <h5 id="logo_minimize" class="fw-bold logo_minimize hide" >SG</h5> -->
-                    <!-- <h3 id="apps_name" style="font-weight: lighter;color: firebrick;"> -->
-                    <!-- <ion-icon name="layers" style="font-size: 40px;margin: 0px;color:#f85d60"></ion-icon> -->
-                    <!-- TEMS -->
+
                     <br><small id="apps_name" style="font-size: small;
         font-weight: 100;
         color: gray;">Task management system
