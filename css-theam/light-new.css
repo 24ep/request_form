@@ -617,3 +617,10 @@ select:disabled {
     padding: 20px 30px;
     color: white;
 }
+.nav-task{
+    color: #414144;
+    font-weight: 600;
+    background: transparent;
+    border: 0px;
+    border-right: 1px solid #e6e6e6;
+}
