@@ -20,29 +20,7 @@
     $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
     $query = mysqli_query($con,$sql);
 	if($query) {
-            //send to line
-            // $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-            // mysqli_query($con, "SET NAMES 'utf8' ");
-            // $query = "SELECT  * FROM add_new_job  WHERE id = ".$id or die("Error:" . mysqli_error($con));
-            // $result =  mysqli_query($con, $query);
-            //     while($row = mysqli_fetch_array($result)) {
-            //         $participant = $row["participant"];
-            //         $topic = $row["title"];
-            //     }
-            //         $sent_to = explode(",",$participant);
-            //         foreach ($sent_to as $sent_to_username) {
-            //             if($sent_to_username<>$_SESSION["username"]){
-            //             $query = "SELECT  * FROM account where username = '".$sent_to_username."'" or die("Error:" . mysqli_error($con));
-            //             $result =  mysqli_query($con, $query);
-            //                 while($row = mysqli_fetch_array($result)) {
-            //                     $key = $row["token_line"];
-            //                 }
-            //                 if($key<>"" and $key<>null){
-            //                     sent_line_noti("\nNS-".$id." ".$topic."  \n----------------------------\n".$_SESSION["nickname"]." changed ".$value_name." to ".$value_change,$key);
-            //                     send_ms_team("NS-".$id,$topic,$_SESSION["nickname"]." changed ".$value_name." to ".$value_change);  
-            //                 }
-            //             }
-            //         }
+
         echo '<script>Notiflix.Notify.success("NS-'.$id.' have been updated");</script>';
         add_participant($_POST['id'],"add_new_job");
         if($value_name=="follow_assign_name"){
