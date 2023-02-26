@@ -34,7 +34,7 @@ $role_op = get_option("role",$_SESSION["role"],"single");
         <li role="presentation" class="nav-item nav-task" onclick="get_list_job_on_hand('waiting for other stage');">Waiting for other stage<span id="c_waiting for other stage" class="badge text-bg-dark ms-2"></span></a>
         <li role="presentation" class="nav-item nav-task" onclick="get_list_job_on_hand('rejected');">Rejected<span id="c_rejected" class="badge text-bg-dark ms-2"></span></li>
     </ul>
-    <div class="position-absolute end-0 me-3 mt-1" style="margin-right: 100px!important;width: 300px;">
+    <div class="position-absolute end-0 me-3 mt-1" style="margin-right: 120px!important;">
         <select  id="username_on_hand" onchange="get_list_job_on_hand('current_status');">
             <?php echo $username_op;?>
         </select>
