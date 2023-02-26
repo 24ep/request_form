@@ -478,7 +478,7 @@ label#label_file_cme {
     border-radius: 10px;
 }
 .ss-main .ss-values .ss-value .ss-value-delete {
-    display: contents;
+    display: contents!important;
     align-items: center;
     height: var(--ss-spacing-l);
     width: var(--ss-spacing-l);
