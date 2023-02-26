@@ -1,4 +1,4 @@
-<?php  
+<?php
  session_start();
 // include_once('get_count_status.php');
 include("../connect.php");
@@ -20,8 +20,8 @@ function get_list_status($username,$status){
     $result = mysqli_query($con, $sql);
     $list="";
     while($row = mysqli_fetch_array($result)) {
-        $list .= '<li type="button" onclick="call_edit_add_new_modal('.$row["id"].')" 
-          class="list-group-item bg-transparent text-light p-1 text-nowrap" 
+        $list .= '<li type="button" onclick="call_edit_add_new_modal('.$row["id"].')"
+          class="list-group-item bg-transparent text-light p-1 text-nowrap"
          style="font-size: smaller;width: 150px;"><strong style="color: #f85d60;">NS-'.$row["id"].'</strong> '.$row["brand"].' '.$row["sku"].' SKU</li>';
     }
     // mysqli_close($con);
@@ -31,7 +31,6 @@ function get_list_status($username,$status){
 <div class="container overflow-auto" style="padding:20px 20px 0px 20px">
 <!-- <h5 style="font-weight: 700;margin-bottom: 20px;margin-left: 5px;"><ion-icon name="hand-left-outline"></ion-icon> Hi <?php //echo $_SESSION['firstname']?> :)</h5> -->
 <h6 style="font-weight: 700;margin-bottom: 20px;margin-left: 5px;"><ion-icon name="storefront-outline"></ion-icon>New Products</h6>
-<!-- <?php //include("../get/linesheet_download_alert_bra.php"); ?> -->
     <div class="card-group" style="position: absolute;z-index: 1;width: inherit;">
         <div class="card text-light shadow-sm bg-dark bg-gradient mb-3"
             style="max-width: 18rem;margin-top:0px;margin-right:10px;border: 0px solid #dee2e6;z-index: -1;">
@@ -125,20 +124,7 @@ function get_list_status($username,$status){
         </div>
     </div>
 
-    <!-- <hr> -->
-    <!-- <h6>Brand Report</h6><small>updated one time everyday 7 am</small>
-    <div class="row">
-    <iframe width="100%" height="100%" 
-    src="https://datastudio.google.com/embed/reporting/b90ee0e2-066f-4a82-a210-6ce8c514947d/page/p_m13q7ei0qc" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div> -->
-    <!-- <div class="row">
-        <div class="col-8" style="border-right: 1px solid #efecec;">
-            <?php include("../get/get_list_job_cms_dashboard.php"); ?>
-        </div>
-        <div class="col-4">
-            <?php include("../get/get_list_message_log.php"); ?>
-        </div>
-    </div> -->
+
 </div>
 <script>
 timeago().render(document.querySelectorAll('.timeago'));

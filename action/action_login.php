@@ -38,7 +38,7 @@ if((mysqli_fetch_array($result) === null)){
     }
     $_SESSION["cr_status_filter"] ="Pending";
     $_SESSION['login_csg']=true;
- 
+
     $_SESSION['pagenation'] = 1;
     $_SESSION["user_filter"] = $username;
     $internal_role = array("Content Admin", "Content Traffic", "Content Followup", "Content Studio Traffic");
@@ -52,16 +52,9 @@ if((mysqli_fetch_array($result) === null)){
     $_SESSION["request_status"] = "pending";
     $request_by = $_SESSION["username"];
     insert_log("login success | username ".$username,"account",0);
-    if($_GET["redirect"]<>"" and $_GET["redirect"]<>null){
-        $redirect =  $_GET["redirect"];
-        if($redirect=="cr_detail"){
-            $getid=htmlspecialchars($_GET['id']);
-            header( "Location: https://content-service-gate.cdse-commercecontent.com/base/get/get_content_request_detail.php?id=".$getid);
-        }
-        
-    }else{
-        header("Location: /?");
-    }
-    
+
+    header("Location: /?");
+
+
 }
 ?>
