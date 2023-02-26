@@ -61,12 +61,12 @@ $role_op = get_option("role",$_SESSION["role"],"single");
     </ul>
 
     <div class="position-absolute end-0 me-3 mt-1" style="margin-right: 120px!important;">
-        <select id="username_on_hand" onchange="get_list_job_on_hand('current_status');">
+        <select id="username_on_hand" class="align-self-center" onchange="get_list_job_on_hand('current_status');">
             <?php echo $username_op;?>
         </select>
     </div>
     <div class="position-absolute end-0 me-3 mt-1">
-        <select id="role_on_hand" onchange="get_list_job_on_hand('current_status');">
+        <select id="role_on_hand" class="align-self-center" onchange="get_list_job_on_hand('current_status');">
             <?php echo $role_op;?>
         </select>
     </div>
