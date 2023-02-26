@@ -188,6 +188,8 @@ if (!$_SESSION["login_csg"]){
         ?>;
         border: solid 1px <?php echo get_value_main($_SESSION['username'], "primary_border_button_slected", "all_in_one_project", "account", "username");
         ?>;
+        background:<?php echo get_value_main($_SESSION['username'], "background_selected_button", "all_in_one_project", "account", "username");
+        ?>;
     }
 
     .nav-pills .nav-link {
