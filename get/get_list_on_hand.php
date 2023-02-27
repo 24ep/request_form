@@ -259,7 +259,7 @@ $configurable_map = array (
         'filter'=>'jc.approved_date is null and jc.approved_editing_status ="correct"
                    and anj.status = "on-productions"
                    and (
-                    (anj.production_type = "Data only" and anj.content_complete_date is not null ) or
+                    (anj.production_type = "Data only" and jc.content_complete_date is not null ) or
                     (anj.production_type <> "Data only" and jc.content_complete_date is not null and
                     jc.upload_image_date is not null)
                    )',
