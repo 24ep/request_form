@@ -458,7 +458,7 @@ function action_submit_add_new_job_new() {
 
         for (var i = 0; i < elementIds.length; i++) {
             var element = document.getElementById(elementIds[i]);
-            console.log(element.value)
+            console.log(elementIds[i]+" = "+ element.value)
             if (element.value ===''){
 
                 missingValues.push(document.getElementById(elementIds[i]));
