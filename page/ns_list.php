@@ -437,7 +437,7 @@ function action_submit_add_new_job() {
     filter_update();
 }
 function action_submit_add_new_job_new() {
-    Notiflix.Loading.hourglass('Creating new ticket ...');
+
     var brand = document.getElementById('brand');
     var sub_department = document.getElementById('sub_department');
     var sku = document.getElementById('sku');
@@ -462,6 +462,7 @@ function action_submit_add_new_job_new() {
     }
 
     if (missingValues.length === 0) {
+        Notiflix.Loading.hourglass('Creating new ticket ...');
         // If no missing values, send data to server
         $.post("../base/action/action_submit_add_new_job.php", {
             brand: brand.value,
@@ -479,9 +480,11 @@ function action_submit_add_new_job_new() {
             Notiflix.Loading.remove();
             var result = data.includes("Error");
             if(result==false){
+                Notiflix.Loading.remove();
                 Notiflix.Notify.success("Ticket has been created already! NS-"+data);
                 snapshot_data("all_in_one_project","add_new_job","id",data,"add_new_job");
             } else {
+                Notiflix.Loading.remove();
                 Notiflix.Report.failure(
                     'Failure',
                     data,
@@ -489,9 +492,7 @@ function action_submit_add_new_job_new() {
                 )
             }
         });
-    } else {
-        // If missing values, do not send data to server
-        Notiflix.Loading.remove();
+
     }
     filter_update();
 }
