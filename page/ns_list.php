@@ -471,6 +471,7 @@ function action_submit_add_new_job_new() {
         console.log(elementIds[i] + " = " + element.value)
         document.getElementById(elementIds[i]).classList.remove('is-invalid');
         document.getElementById(elementIds[i]).classList.remove('is-valid');
+        document.getElementById('errorMsg').remove();
         if (element.value === '') {
 
             missingValues.push(document.getElementById(elementIds[i]));
@@ -479,6 +480,7 @@ function action_submit_add_new_job_new() {
             var errorMsg = document.createElement('small');
             errorMsg.innerText = 'This field is required';
             errorMsg.style.color = 'red';
+            errorMsg.id = 'errorMsg';
             document.getElementById(elementIds[i]).parentNode.insertBefore(errorMsg, element.nextSibling);
         } else {
 
