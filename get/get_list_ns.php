@@ -145,12 +145,12 @@ while($row = mysqli_fetch_array($result)) {
     Detail </button></div>";
     $ticket .=  "</li>";
     //get sub ticket
-    $query_count="SELECT count(*) as total from add_new_job where parent = ".$row["parent"];
+    $query_count="SELECT count(*) as total from add_new_job where parent = ".$row["id"];
     $result_count = mysqli_query($con, $query_count);
     $data_count=mysqli_fetch_assoc($result_count);
     $subtask_count = $data_count['total'];
     if(isset($subtask_count) and $subtask_count <> 0 and $subtask_count <>null){
-        $query_child = "SELECT * FROM add_new_job where (".$filter.") and parent = ".$row["parent"]." order by id ASC"  or die("Error:" . mysqli_error($con));
+        $query_child = "SELECT * FROM add_new_job where  parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error($con));
         date_default_timezone_set("Asia/Bangkok");
         // $con_get_list= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con_get_list));
         mysqli_query($con, "SET NAMES 'utf8' ");
