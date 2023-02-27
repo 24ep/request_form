@@ -1,6 +1,5 @@
-
 <script src="https://unpkg.com/slim-select@latest/dist/slimselect.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/slim-select@latest/dist/slimselect.css" />
+<link rel="stylesheet" href="https://unpkg.com/slim-select@latest/dist/slimselect.css" />
 <?php
 session_start();
 include_once('../get/get_option_function.php');
@@ -74,86 +73,85 @@ function get_attribute_list_filter(){
 <!-- create Modal -->
 <div class="modal fade" id="create_new_ns_modal" tabindex="-1" aria-labelledby="create_new_ns_modalLabel"
     aria-hidden="true">
-    <form class="row g-3" >
-            <?php include("../form/form_create_ns_ticket.php"); ?>
+    <form class="row g-3">
+        <?php include("../form/form_create_ns_ticket.php"); ?>
     </form>
-    </div>
+</div>
 </div>
 <!-- create Modal -->
 <div class="modal fade" id="create_new_ns_modal_new" tabindex="-1" aria-labelledby="create_new_ns_modal_newLabel"
     aria-hidden="true">
-    <form class="row g-3" >
-            <?php include("../form/form_create_ns_ticket_new.php"); ?>
+    <form class="row g-3">
+        <?php include("../form/form_create_ns_ticket_new.php"); ?>
     </form>
-    </div>
+</div>
 </div>
 <!-- create new  -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5" style="border-bottom: 1px #e1dede solid;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5"
+    style="border-bottom: 1px #e1dede solid;">
     <div class="row" style="width:100%">
         <div style="width:auto;place-self: center;">
-        <ion-icon name="filter-outline"></ion-icon><strong>Dynamic Filter</strong>
+            <ion-icon name="filter-outline"></ion-icon><strong>Dynamic Filter</strong>
         </div>
-            <div style="width:auto">
-            <?php echo get_attribute_list_filter(); ?>
-            </div>
-            <div style="width:auto">
-                <div class="input-group input-group-sm" style="position: inherit;">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
-                        <input type="number" class="form-control" style="position: inherit;" id="pagenation_input" min=1
-                            <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
-                            value="<?php echo $_SESSION["pagenation"];?>" onchange="getFilterInputValues()" placeholder=""
-                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-                            placeholder="Dept , Sub Dept , Brand , ID">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">
-                            <div id="total_page_nj">
-                                <?php include('../get/get_total_page_nj.php'); ?>
-                            </div>
-                        </span>
-                </div>
-            </div>
         <div style="width:auto">
-        <button class="btn btn-danger btn-sm bg-gradient position-absolute "
-        type="button" data-bs-toggle="modal" data-bs-target="#create_new_ns_modal"
-        style=" right: 55px;">
-            <ion-icon size="small" name="add-outline" style="font-size:12px"
-            role="img" class="md icon-small hydrated" aria-label="add outline">
-            </ion-icon>
-            Create New
-        </button>
-        <?php if($_SESSION['username']=='poojaroonwit'){ ?>
-                <button class="btn btn-danger btn-sm bg-gradient position-absolute "
-            type="button" data-bs-toggle="modal" data-bs-target="#create_new_ns_modal_new"
-            style=" right: 55px;">
-                <ion-icon size="small" name="add-outline" style="font-size:12px"
-                role="img" class="md icon-small hydrated" aria-label="add outline">
+            <?php echo get_attribute_list_filter(); ?>
+        </div>
+        <div style="width:auto">
+            <div class="input-group input-group-sm" style="position: inherit;">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
+                <input type="number" class="form-control" style="position: inherit;" id="pagenation_input" min=1
+                    <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
+                    value="<?php echo $_SESSION["pagenation"];?>" onchange="getFilterInputValues()" placeholder=""
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                    placeholder="Dept , Sub Dept , Brand , ID">
+                <span class="input-group-text" id="inputGroup-sizing-sm">
+                    <div id="total_page_nj">
+                        <?php include('../get/get_total_page_nj.php'); ?>
+                    </div>
+                </span>
+            </div>
+        </div>
+        <div style="width:auto">
+            <button class="btn btn-danger btn-sm bg-gradient position-absolute " type="button" data-bs-toggle="modal"
+                data-bs-target="#create_new_ns_modal" style=" right: 55px;">
+                <ion-icon size="small" name="add-outline" style="font-size:12px" role="img"
+                    class="md icon-small hydrated" aria-label="add outline">
+                </ion-icon>
+                Create New
+            </button>
+            <?php if($_SESSION['username']=='poojaroonwit'){ ?>
+            <button class="btn btn-danger btn-sm bg-gradient position-absolute " type="button" data-bs-toggle="modal"
+                data-bs-target="#create_new_ns_modal_new" style=" right: 55px;">
+                <ion-icon size="small" name="add-outline" style="font-size:12px" role="img"
+                    class="md icon-small hydrated" aria-label="add outline">
                 </ion-icon>
                 Create New 2
             </button>
-        <?php
+            <?php
         }
         ?>
         </div>
-     </div>
+    </div>
 </nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5">
-        <div class="row g-3 align-items-center" id="dynamic_filter" style="width: 100%;">
+    <div class="row g-3 align-items-center" id="dynamic_filter" style="width: 100%;">
 
-        </div>
+    </div>
 
 </nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5">
-        <div class="row g-3 align-items-center" id="filter_selected" style="width: 100%;">
+    <div class="row g-3 align-items-center" id="filter_selected" style="width: 100%;">
 
 
-        </div>
+    </div>
 
 </nav>
 <div style="margin-left: 10px;padding: 0px 20px;">
     <div class="tab-content" id="myTabContent">
         <div class="row align-items-center p-3">
-        <div class="col-2">
+            <div class="col-2">
 
-                </div>
+            </div>
 
 
 
@@ -173,7 +171,7 @@ function get_attribute_list_filter(){
         <div class="col" scope="col">Action</div>
     </li>
     <div id="job_list">
-        </div>
+    </div>
 </div>
 <script>
 // function update_applyed_filter(){
@@ -183,79 +181,79 @@ function get_attribute_list_filter(){
 
 // }
 function clearParams() {
-    let  queryParams = new URLSearchParams(window.location.search);
-    let  pageParam = queryParams.get('page');
+    let queryParams = new URLSearchParams(window.location.search);
+    let pageParam = queryParams.get('page');
 
-  // Delete all query parameters
-  queryParams.forEach((value, key) => {
-    if (key !== 'page') {
-      queryParams.delete(key);
+    // Delete all query parameters
+    queryParams.forEach((value, key) => {
+        if (key !== 'page') {
+            queryParams.delete(key);
+        }
+    });
+
+    // Add the "page" parameter back if it was present
+    if (pageParam !== null) {
+        queryParams.set('page', pageParam);
     }
-  });
 
-  // Add the "page" parameter back if it was present
-  if (pageParam !== null) {
-    queryParams.set('page', pageParam);
-  }
+    let urlWithoutParams = window.location.origin + window.location.pathname;
+    if (queryParams.toString()) {
+        urlWithoutParams += '?' + queryParams.toString();
+    }
 
-  let urlWithoutParams = window.location.origin + window.location.pathname;
-  if (queryParams.toString()) {
-    urlWithoutParams += '?' + queryParams.toString();
-  }
-
-  window.history.replaceState({}, document.title, urlWithoutParams);
+    window.history.replaceState({}, document.title, urlWithoutParams);
 }
 
 
 
 function getFilterInputValues() {
-  var pagenation_input = document.getElementById("pagenation_input").value
-  var filterPrefix = "filter_";
-  var inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`);
-  var inputValues = {};
-  clearParams();
+    var pagenation_input = document.getElementById("pagenation_input").value
+    var filterPrefix = "filter_";
+    var inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`);
+    var inputValues = {};
+    clearParams();
 
-  inputs.forEach(input => {
-    var name = input.getAttribute("attribute_code");
-    var type = input.getAttribute("attribute_type");
-    var value = input.value;
+    inputs.forEach(input => {
+        var name = input.getAttribute("attribute_code");
+        var type = input.getAttribute("attribute_type");
+        var value = input.value;
 
-    if (input.type === "select-multiple") {
-      // handle multi-select element
-      var selectedOptions = Array.from(input.options).filter(option => option.selected);
-      value = selectedOptions.map(option => option.value).join("','");
-    }
-
-
-    if (value !== null && value !== "") {
-        if( type=='date'){
-            value = value.replace(" ", "");
-            value = value.replace(" ", "");
-            value = value.replace("AND", "' AND '");
-            var formattedValue = `${name} BETWEEN '${value}'`;
-        }else if(input.type=='text'){
-            value = value.toLowerCase();
-            var formattedValue = `${name} like '%${value}%'`;
-        }else if(input.type=='number'){
-            var formattedValue = `${name} = ${value}`;
-        }else if(input.type === "select-multiple"){
-            var formattedValue = `${name} in ('${value}')`;
+        if (input.type === "select-multiple") {
+            // handle multi-select element
+            var selectedOptions = Array.from(input.options).filter(option => option.selected);
+            value = selectedOptions.map(option => option.value).join("','");
         }
 
-        inputValues[name] = formattedValue;
-        updateparams("par_"+name, value);
-    }
 
-//create all display
+        if (value !== null && value !== "") {
+            if (type == 'date') {
+                value = value.replace(" ", "");
+                value = value.replace(" ", "");
+                value = value.replace("AND", "' AND '");
+                var formattedValue = `${name} BETWEEN '${value}'`;
+            } else if (input.type == 'text') {
+                value = value.toLowerCase();
+                var formattedValue = `${name} like '%${value}%'`;
+            } else if (input.type == 'number') {
+                var formattedValue = `${name} = ${value}`;
+            } else if (input.type === "select-multiple") {
+                var formattedValue = `${name} in ('${value}')`;
+            }
 
-  });
+            inputValues[name] = formattedValue;
+            updateparams("par_" + name, value);
+        }
 
-  var outputValues = Object.values(inputValues).join(" and ");
-  console.log(outputValues);
-//   return `Filter values: ${outputValues}`;
+        //create all display
+
+    });
+
+    var outputValues = Object.values(inputValues).join(" and ");
+    console.log(outputValues);
+    //   return `Filter values: ${outputValues}`;
     $.post("../base/get/get_list_ns.php", {
         pagenation_input: pagenation_input,
-        outputValues:outputValues
+        outputValues: outputValues
     }, function(data) {
         $('#job_list').html(data);
     });
@@ -264,13 +262,12 @@ function getFilterInputValues() {
 
 getFilterInputValues();
 
-function get_filter_attribute(){
+function get_filter_attribute() {
 
     var selected = [];
-    for (var option of document.getElementById('list_of_filter').options)
-    {
+    for (var option of document.getElementById('list_of_filter').options) {
         if (option.selected) {
-            selected.push("'"+option.value+"'");
+            selected.push("'" + option.value + "'");
 
         }
     }
@@ -279,7 +276,7 @@ function get_filter_attribute(){
     // dynamic_filter = "'"+value+"'";
 
     $.post("../base/get/get_dynamic_filter.php", {
-        dynamic_filter:dynamic_filter
+        dynamic_filter: dynamic_filter
     }, function(data) {
         $('#dynamic_filter').html(data);
     });
@@ -288,23 +285,23 @@ get_filter_attribute();
 
 
 function filter_update(be) {
-        var pagenation_input = document.getElementById("pagenation_input").value
+    var pagenation_input = document.getElementById("pagenation_input").value
 
-        $.post("../base/get/get_list_ns.php", {
-            pagenation_input: pagenation_input
-        }, function(data) {
-            $('#job_list').html(data);
-        });
+    $.post("../base/get/get_list_ns.php", {
+        pagenation_input: pagenation_input
+    }, function(data) {
+        $('#job_list').html(data);
+    });
 
-        $.post("../base/get/get_total_page_nj.php", {
-            user_filter: user_filter,
-            status_filter: status_filter,
-            from_post: from_post,
-            pagenation_input: pagenation_input,
-            brand_filter: brand_filter
-        }, function(data) {
-            $('#total_page_nj').html(data);
-        });
+    $.post("../base/get/get_total_page_nj.php", {
+        user_filter: user_filter,
+        status_filter: status_filter,
+        from_post: from_post,
+        pagenation_input: pagenation_input,
+        brand_filter: brand_filter
+    }, function(data) {
+        $('#total_page_nj').html(data);
+    });
     updateparams('user_filter', user_filter);
     updateparams('brand_filter', brand_filter);
 
@@ -368,30 +365,32 @@ function cancel_ticket(id) {
         }, function(data) {
             // $('#cancel_checking_resault').html(data);
             var result = data.includes("Error");
-                if(result==false){
-                  Notiflix.Notify.success(data);
-                }else{
-                  Notiflix.Report.failure(
-                  'Failure',
-                  data,
-                  'Okay',
-                  )
-                }
+            if (result == false) {
+                Notiflix.Notify.success(data);
+            } else {
+                Notiflix.Report.failure(
+                    'Failure',
+                    data,
+                    'Okay',
+                )
+            }
         });
     }
 }
-function snapshot_data(database,table,primary_key_id,id,ticket_type){
 
-$.post("../base/action/action_data_snapshot.php", {
-            database: database,
-            table: table,
-            primary_key_id: primary_key_id,
-            id:id,
-            ticket_type:ticket_type
-        }, function(data) {
-            Notiflix.Notify.success(data);
-        });
+function snapshot_data(database, table, primary_key_id, id, ticket_type) {
+
+    $.post("../base/action/action_data_snapshot.php", {
+        database: database,
+        table: table,
+        primary_key_id: primary_key_id,
+        id: id,
+        ticket_type: ticket_type
+    }, function(data) {
+        Notiflix.Notify.success(data);
+    });
 }
+
 function action_submit_add_new_job() {
     Notiflix.Loading.hourglass('Creating new ticket ...');
     brand = document.getElementById('brand').value;
@@ -414,7 +413,7 @@ function action_submit_add_new_job() {
             production_type: production_type,
             project_type: project_type,
             launch_date: launch_date,
-            bu : bu ,
+            bu: bu,
             contact_buyer: contact_buyer,
             contact_vender: contact_vender,
             link_info: link_info,
@@ -422,16 +421,16 @@ function action_submit_add_new_job() {
         }, function(data) {
             Notiflix.Loading.remove();
             var result = data.includes("Error");
-                if(result==false){
-                  Notiflix.Notify.success("Ticket have been create already ! NS-"+data);
-                  snapshot_data("all_in_one_project","add_new_job","id",data,"add_new_job");
-                }else{
-                  Notiflix.Report.failure(
-                  'Failure',
-                  data,
-                  'Okay',
-                  )
-                }
+            if (result == false) {
+                Notiflix.Notify.success("Ticket have been create already ! NS-" + data);
+                snapshot_data("all_in_one_project", "add_new_job", "id", data, "add_new_job");
+            } else {
+                Notiflix.Report.failure(
+                    'Failure',
+                    data,
+                    'Okay',
+                )
+            }
         });
     }
     filter_update();
@@ -439,39 +438,51 @@ function action_submit_add_new_job() {
 
 function action_submit_add_new_job_new() {
     Notiflix.Loading.hourglass('Creating new ticket ...');
-    var brand = document.getElementById('brand');
-    var sub_department = document.getElementById('sub_department');
-    var sku = document.getElementById('sku');
-    var production_type = document.getElementById('production_type');
-    var project_type = document.getElementById('project_type');
-    var launch_date = document.getElementById('launch_date');
-    var bu = document.getElementById('bu');
-    var contact_buyer = document.getElementById('contact_buyer');
-    var contact_vender = document.getElementById('contact_vender');
-    var link_info = document.getElementById('link_info');
-    var remark = document.getElementById('remark');
+    var brand = document.getElementById('init_brand');
+    var sub_department = document.getElementById('init_sub_department');
+    var sku = document.getElementById('init_sku');
+    var production_type = document.getElementById('init_production_type');
+    var project_type = document.getElementById('init_project_type');
+    var launch_date = document.getElementById('init_launch_date');
+    var bu = document.getElementById('init_bu');
+    var contact_buyer = document.getElementById('init_contact_buyer');
+    var contact_vender = document.getElementById('init_contact_vender');
+    var link_info = document.getElementById('init_link_info');
+    var remark = document.getElementById('init_remark');
 
-    var elementIds = ['brand', 'sub_department', 'sku', 'production_type', 'project_type', 'launch_date', 'bu', 'contact_buyer', 'contact_vender', 'link_info', 'remark'];
+    var elementIds = [
+        'init_brand',
+        'init_sub_department',
+        'init_sku',
+        'init_production_type',
+        'init_project_type',
+        'init_launch_date',
+        'init_bu',
+        'init_contact_buyer',
+        'init_contact_vender',
+        'init_link_info',
+        'init_remark'
+    ];
     var missingValues = [];
 
     // Check for missing values and add red small text next to input fields
 
-        for (var i = 0; i < elementIds.length; i++) {
-            var element = document.getElementById(elementIds[i]);
-            console.log(elementIds[i]+" = "+ element.value)
-            if (element.value ===''){
+    for (var i = 0; i < elementIds.length; i++) {
+        var element = document.getElementById(elementIds[i]);
+        console.log(elementIds[i] + " = " + element.value)
+        if (element.value === '') {
 
-                missingValues.push(document.getElementById(elementIds[i]));
-                document.getElementById(elementIds[i]).classList.add('is-invalid');
-                // var errorMsg = document.createElement('small');
-                // errorMsg.innerText = 'This field is required';
-                // errorMsg.style.color = 'red';
-                // document.getElementById(elementIds[i]).parentNode.insertBefore(errorMsg, element.nextSibling);
-            }else{
+            missingValues.push(document.getElementById(elementIds[i]));
+            document.getElementById(elementIds[i]).classList.add('is-invalid');
+            var errorMsg = document.createElement('small');
+            errorMsg.innerText = 'This field is required';
+            errorMsg.style.color = 'red';
+            document.getElementById(elementIds[i]).parentNode.insertBefore(errorMsg, element.nextSibling);
+        } else {
 
-                document.getElementById(elementIds[i]).classList.add('is-valid');
-            }
+            document.getElementById(elementIds[i]).classList.add('is-valid');
         }
+    }
 
 
 
@@ -484,7 +495,7 @@ function action_submit_add_new_job_new() {
             production_type: production_type.value,
             project_type: project_type.value,
             launch_date: launch_date.value,
-            bu : bu.value,
+            bu: bu.value,
             contact_buyer: contact_buyer.value,
             contact_vender: contact_vender.value,
             link_info: link_info.value,
@@ -492,9 +503,9 @@ function action_submit_add_new_job_new() {
         }, function(data) {
             Notiflix.Loading.remove();
             var result = data.includes("Error");
-            if(result==false){
-                Notiflix.Notify.success("Ticket has been created already! NS-"+data);
-                snapshot_data("all_in_one_project","add_new_job","id",data,"add_new_job");
+            if (result == false) {
+                Notiflix.Notify.success("Ticket has been created already! NS-" + data);
+                snapshot_data("all_in_one_project", "add_new_job", "id", data, "add_new_job");
             } else {
                 Notiflix.Report.failure(
                     'Failure',
@@ -542,9 +553,8 @@ function itm_confirm_cancel(id, status_change) {
 
 try {
     status_filter_show_object.destroy()
-}
-catch{
-//nothing todo
+} catch {
+    //nothing todo
 }
 var status_filter_show_object = new SlimSelect({
     select: '#status_filter_show',
@@ -553,67 +563,65 @@ var status_filter_show_object = new SlimSelect({
         allowDeselectOption: true,
     },
     events: {
-    afterChange: (info) => {
-        var input_update = "";
-        for (let i = 0; i < info.length; i++) {
-            if (input_update == "") {
-                input_update = info[i].value;
-            } else {
-                input_update = input_update + ',' + info[i].value;
-            }
+        afterChange: (info) => {
+            var input_update = "";
+            for (let i = 0; i < info.length; i++) {
+                if (input_update == "") {
+                    input_update = info[i].value;
+                } else {
+                    input_update = input_update + ',' + info[i].value;
+                }
 
+            }
+            document.getElementById("status_filter").value = input_update;
+            filter_update();
         }
-        document.getElementById("status_filter").value = input_update;
-        filter_update();
     }
-  }
 })
 
 
 filter_update();
 //tooltips
 tippy('#brand_filter', {
-  content: "สามารถค้นห้า ticket ของคุณได้ด้วยเลข ID , Department , Sub-Department , Brand ของ Ticket",
-  placement: 'bottom',
-  animation: 'fade',
+    content: "สามารถค้นห้า ticket ของคุณได้ด้วยเลข ID , Department , Sub-Department , Brand ของ Ticket",
+    placement: 'bottom',
+    animation: 'fade',
 });
 tippy('#user_filter', {
-  content: "ป้อน username ของคุณ หรือของผู้ที่คุณต้องการค้นหา",
-  placement: 'bottom',
-  animation: 'fade',
+    content: "ป้อน username ของคุณ หรือของผู้ที่คุณต้องการค้นหา",
+    placement: 'bottom',
+    animation: 'fade',
 });
 //toolstips create new ticket
 tippy('#brand', {
-  content: "ระบุซื่อแบรนด์ของสินค้าที่ใช้สำหรับขึ้นหน้าเว็บไซด์",
-  placement: 'right',
-  animation: 'fade',
+    content: "ระบุซื่อแบรนด์ของสินค้าที่ใช้สำหรับขึ้นหน้าเว็บไซด์",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#sub_department', {
-  content: "เลือกหมวดหมู่ของสินค้าที่เกี่ยวข้อง",
-  placement: 'right',
-  animation: 'fade',
+    content: "เลือกหมวดหมู่ของสินค้าที่เกี่ยวข้อง",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#sku', {
-  content: "ป้อน จำนวน sku ของ ticket",
-  placement: 'right',
-  animation: 'fade',
+    content: "ป้อน จำนวน sku ของ ticket",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#production_type', {
-  content: "<ul><li>Packshort = ถ่ายรูปสินค้าอย่างเดียว</li><li>Model = ถ่ายรูปสินค้าร่สมกับนางแบบ/นายแบบ</li><li>Resize = มีรูปภาพสินค้าอยู่แล้ว แค่ Resize หรือ Retouch เท่านั้น</li><li>No info = ไม่แน่ใจ ให้ทีมติดต่อกลับ</li></ul>",
-  placement: 'right',
-  animation: 'fade',
-  allowHTML: true,
+    content: "<ul><li>Packshort = ถ่ายรูปสินค้าอย่างเดียว</li><li>Model = ถ่ายรูปสินค้าร่สมกับนางแบบ/นายแบบ</li><li>Resize = มีรูปภาพสินค้าอยู่แล้ว แค่ Resize หรือ Retouch เท่านั้น</li><li>No info = ไม่แน่ใจ ให้ทีมติดต่อกลับ</li></ul>",
+    placement: 'right',
+    animation: 'fade',
+    allowHTML: true,
 });
 tippy('#launch_date', {
-  content: "กำหนดวันขึ้นขายของสินค้า ในกรณีที่ระบุ สินค้าจะถูกปรับ Enable ณ วันที่ระบุเท่านั้น",
-  placement: 'right',
-  animation: 'fade',
+    content: "กำหนดวันขึ้นขายของสินค้า ในกรณีที่ระบุ สินค้าจะถูกปรับ Enable ณ วันที่ระบุเท่านั้น",
+    placement: 'right',
+    animation: 'fade',
 });
 tippy('#link_info', {
-  content: "Link สำหรับ files ข้อมูลของสินค้า และ ไฟล์รูปภาพ",
-  placement: 'right',
-  animation: 'fade',
+    content: "Link สำหรับ files ข้อมูลของสินค้า และ ไฟล์รูปภาพ",
+    placement: 'right',
+    animation: 'fade',
 });
-
-
 </script>
