@@ -465,15 +465,15 @@ function action_submit_add_new_job_new() {
     var missingValues = [];
 
     // Check for missing values and add red small text next to input fields
-
+    if(document.getElementById('errorMsg')){
+            document.getElementById('errorMsg').remove();
+    }
     for (var i = 0; i < elementIds.length; i++) {
         var element = document.getElementById(elementIds[i]);
         console.log(elementIds[i] + " = " + element.value)
         document.getElementById(elementIds[i]).classList.remove('is-invalid');
         document.getElementById(elementIds[i]).classList.remove('is-valid');
-        if(document.getElementById('errorMsg')){
-            document.getElementById('errorMsg').remove();
-        }
+
 
         if (element.value === '') {
 
