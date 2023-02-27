@@ -11,7 +11,7 @@
       function displayLaunchDates() {
         // Query the database for launch dates and their associated SKUs
         const url = '../../base/action/action_query_data_json.php';
-        const query = `SELECT launch_date, SUM(sku) FROM all_in_one_project.add_new_job WHERE status NOT IN ('approved', 'cancel') AND status NOT LIKE '%cancel%' AND config_type = 'task' GROUP BY launch_date ORDER BY launch_date ASC`;
+        const query = "SELECT launch_date, SUM(sku) FROM all_in_one_project.add_new_job WHERE status NOT IN ('approved', 'cancel') AND status NOT LIKE '%cancel%' AND config_type = 'task' GROUP BY launch_date ORDER BY launch_date ASC";
 
         fetch(`${url}?query=${encodeURIComponent(query)}`)
           .then(response => response.json())
