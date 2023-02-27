@@ -457,7 +457,7 @@ function action_submit_add_new_job_new() {
     for (var i = 0; i < inputs.length; i++) {
         if (inputs[i].value === '') {
             missingValues.push(inputs[i]);
-            inputs[i].classList.add('in-valid');
+            inputs[i].classList.add(' in-valid');
         }
     }
 
