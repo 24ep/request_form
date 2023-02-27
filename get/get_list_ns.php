@@ -166,7 +166,7 @@ while($row = mysqli_fetch_array($result)) {
     if(isset($subtask_count) and $subtask_count <> 0 and $subtask_count <>null){
         $query_child = "SELECT * FROM add_new_job where  parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error($con));
         date_default_timezone_set("Asia/Bangkok");
-        // $con_get_list= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con_get_list));
+
         mysqli_query($con, "SET NAMES 'utf8' ");
         $result_child = mysqli_query($con, $query_child);
         $i = 1;
@@ -207,6 +207,20 @@ while($row = mysqli_fetch_array($result)) {
                     $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3'  onclick='call_edit_add_new_modal(".$row_child["id"].")' >
                     Detail </button></div >";
                     $i++;
+                }else{
+                      //data row
+                if(!isset($sub_ticket)){$sub_ticket ="";}
+                if(!isset($tr_class)){$tr_class="";}
+                $sub_ticket .= "<li ".$tr_class.">";
+                $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 380px;'><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].") ".$row_child["sku"]." SKUs</span></div>";
+                $sub_ticket .= "<div class='col'></div>";
+                $sub_ticket .= "<div class='col'></div>";
+                $sub_ticket .= "<div class='col'></div>";
+                $sub_ticket .= "<div class='col'></div>";
+                $sub_ticket .= "<div class='col' >".$status."</div>";
+                $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+                Detail </button></div>";
+                $i++;
                 }
             }else{
                 //data row
