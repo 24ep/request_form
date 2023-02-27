@@ -464,6 +464,8 @@ function action_submit_add_new_job_new() {
                 errorMsg.innerText = 'This field is required';
                 errorMsg.style.color = 'red';
                 element.parentNode.insertBefore(errorMsg, element.nextSibling);
+            }else{
+                element.classList.add('is-valid');
             }
         }
 
