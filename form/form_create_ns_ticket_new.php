@@ -65,6 +65,7 @@
                 {
                      //$work_day = date('Y-m-d\Th:i', strtotime('+1 day', strtotime($work_day)));
                         $work_day = date('Y-m-d', strtotime('+1 day', strtotime($work_day)));
+                        $max_launch_date = date('Y-m-d', strtotime('+30 day', strtotime($work_day)));
                         $day_name = date('l', strtotime($work_day));
                         if($day_name != 'Saturday' && $day_name != 'Sunday' && !isset($holiday[$work_day]))
                         {
@@ -74,8 +75,8 @@
                 }
         ?>
             <div class="form-floating mb-3">
-                <input type="date" class="form-control form-control-sm" min="<?php echo $min_launch_date; ?>" id="launch_date" placeholder="">
-                <label for="launch_date">Launch date (Optional)</label>
+                <input type="date" class="form-control form-control-sm" min="<?php echo $min_launch_date; ?>" max="<?php echo $max_launch_date; ?>" id="launch_date" placeholder="">
+                <label for="launch_date"><strong style="color:red">* </strong> Launch date</label>
             </div>
             <!-- Tag
             <div class="form-floating mb-3">

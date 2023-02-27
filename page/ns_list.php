@@ -457,13 +457,13 @@ function action_submit_add_new_job_new() {
 
         for (var i = 0; i < elementIds.length; i++) {
             var element = document.getElementById(elementIds[i]);
-            if (!element) {
-                missingValues.push(inputs[i]);
-                inputs[i].classList.add('is-invalid');
+            if (element==='') {
+                missingValues.push(element[i]);
+                element[i].classList.add('is-invalid');
                 var errorMsg = document.createElement('small');
                 errorMsg.innerText = 'This field is required';
                 errorMsg.style.color = 'red';
-                inputs[i].parentNode.insertBefore(errorMsg, inputs[i].nextSibling);
+                element[i].parentNode.insertBefore(errorMsg, element[i].nextSibling);
             }
         }
 
