@@ -79,6 +79,14 @@ function get_attribute_list_filter(){
     </form>
     </div>
 </div>
+<!-- create Modal -->
+<div class="modal fade" id="create_new_ns_modal_new" tabindex="-1" aria-labelledby="create_new_ns_modal_newLabel"
+    aria-hidden="true">
+    <form class="row g-3" >
+            <?php include("../form/form_create_ns_ticket_new.php"); ?>
+    </form>
+    </div>
+</div>
 <!-- create new  -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5" style="border-bottom: 1px #e1dede solid;">
     <div class="row" style="width:100%">
