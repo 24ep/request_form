@@ -489,6 +489,9 @@ function action_submit_add_new_job_new() {
                 )
             }
         });
+    } else {
+        // If missing values, do not send data to server
+        Notiflix.Loading.remove();
     }
     filter_update();
 }
