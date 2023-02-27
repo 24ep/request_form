@@ -95,11 +95,11 @@ $page_count = $count_item / 30;
 
 <?php
 //get parent of id filter
-$parent_list = []
+$parent_list = array();
 $query_parent = "SELECT parent from all_in_one_project.add_new_job where (".$filter.")" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query_parent);
 while($row = mysqli_fetch_array($result)) {
-  $parent_list.array_push($row["parent"]);
+  array_push($parent_list,$row["parent"]);
 }
 $parent_filter = implode(",",$parent_list);
 //get list
