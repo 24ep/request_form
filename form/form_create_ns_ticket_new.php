@@ -131,6 +131,6 @@
         <div class="modal-footer">
             <button type="button" class="btn btn-sm btn-light bg-gradient shadow-sm"
                 data-bs-dismiss="modal">CANCEL</button>
-            <button type="button" data-bs-dismiss="modal" onclick="action_submit_add_new_job_new()" class="btn btn-sm btn-success bg-gradient shadow-sm">SUBMIT</button>
+            <button type="button"  onclick="action_submit_add_new_job_new()" class="btn btn-sm btn-success bg-gradient shadow-sm">SUBMIT</button>
         </div>
     </div>
