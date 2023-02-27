@@ -1,7 +1,7 @@
 <div class="modal-dialog">
     <div class="modal-content shadow rounded  ">
         <div class="modal-header">
-            <h5 class="modal-title" id="create_new_ns_modalLabel"><strong>
+            <h5 class="modal-title" id="create_new_ns_modal_newLabel"><strong>
                     <ion-icon name="rocket-outline"></ion-icon> Add new ticket
                 </strong></h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

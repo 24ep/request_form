@@ -107,7 +107,18 @@ mysqli_close($con);
 
                 </div>
             </div>
-
+            <?php if($_SESSION['username']=='poojaroonwit'){ ?>
+                <button class="btn btn-danger btn-sm bg-gradient position-absolute "
+            type="button" data-bs-toggle="modal" data-bs-target="#create_new_ns_modal_new"
+            style=" right: 55px;">
+                <ion-icon size="small" name="add-outline" style="font-size:12px"
+                role="img" class="md icon-small hydrated" aria-label="add outline">
+                </ion-icon>
+                Create New 2
+            </button>
+        <?php
+        }
+        ?>
             </ul>
             </nav>
         </div>
