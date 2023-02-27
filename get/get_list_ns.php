@@ -105,7 +105,7 @@ $parent_filter = implode(",",$parent_list);
 //get list
 $limit="LIMIT 30";
 $query = "SELECT * FROM add_new_job as anj where (((".$filter.") or id in (".$parent_filter."))
- and anj.parent is null )  ORDER BY anj.config_type DESC ,anj.id DESC  ".$limit." OFFSET ".$start_item
+ and anj.parent is null )  ORDER BY anj.id DESC  ".$limit." OFFSET ".$start_item
 or die("Error:" . mysqli_error($con));
 echo "<script>console.log('".$query."')</script>";
 date_default_timezone_set("Asia/Bangkok");
