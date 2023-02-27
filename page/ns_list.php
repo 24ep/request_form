@@ -463,7 +463,7 @@ function action_submit_add_new_job_new() {
                 var errorMsg = document.createElement('small');
                 errorMsg.innerText = 'This field is required';
                 errorMsg.style.color = 'red';
-                element.parentNode.insertBefore(errorMsg, element[i].nextSibling);
+                element.parentNode.insertBefore(errorMsg, element.nextSibling);
             }
         }
 
