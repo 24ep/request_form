@@ -102,6 +102,7 @@ while($row = mysqli_fetch_array($result)) {
   array_push($parent_list,$row["parent"]);
 }
 $parent_filter = implode(",",$parent_list);
+echo "<script>console.log('".$parent_filter."')</script>";
 //get list
 $limit="LIMIT 30";
 $query = "SELECT * FROM add_new_job as anj where (((".$filter.") )
