@@ -99,7 +99,7 @@ $limit="LIMIT 30";
 $query = "SELECT * FROM add_new_job as anj where ((".$filter.")
  and anj.parent is null )  ORDER BY anj.config_type DESC ,anj.id DESC  ".$limit." OFFSET ".$start_item
 or die("Error:" . mysqli_error($con));
-// echo $query;
+echo "<script>console.log('".$query."')</script>";
 date_default_timezone_set("Asia/Bangkok");
 mysqli_query($con, "SET NAMES 'utf8' ");
 $result = mysqli_query($con, $query);
