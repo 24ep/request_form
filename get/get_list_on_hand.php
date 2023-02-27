@@ -256,7 +256,7 @@ $configurable_map = array (
     array(
         'ac_role'=>'approver',
         'status'=>'pending',
-        'filter'=>'jc.approved_date is not null and jc.approved_editing_status ="correct"',
+        'filter'=>'jc.approved_date is null and jc.approved_editing_status ="correct"',
         'key_stage'=>'jc.approved_by',
         'key_name'=>'null'
     ),
