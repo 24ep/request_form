@@ -112,7 +112,7 @@ function get_attribute_list_filter(){
             </ion-icon>
             Create New
         </button>
-            <?php if($_SESSION['username']=='poojaroowit'){ ?>
+            <?php if($_SESSION['username']=='poojaroonwit'){ ?>
                 <button class="btn btn-danger btn-sm bg-gradient position-absolute "
             type="button" data-bs-toggle="modal" data-bs-target="#create_new_ns_modal_new"
             style=" right: 55px;">
