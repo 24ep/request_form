@@ -460,7 +460,7 @@ function action_submit_add_new_job_new() {
             var element = document.getElementById(elementIds[i]);
 
             if (element.value ===''){
-                console.log(element.value)
+
                 missingValues.push(document.getElementById(elementIds[i]));
                 document.getElementById(elementIds[i]).classList.add('is-invalid');
                 var errorMsg = document.createElement('small');
@@ -468,6 +468,7 @@ function action_submit_add_new_job_new() {
                 errorMsg.style.color = 'red';
                 document.getElementById(elementIds[i]).parentNode.insertBefore(errorMsg, element.nextSibling);
             }else{
+                console.log(element.value)
                 document.getElementById(elementIds[i]).classList.add('is-valid');
             }
         }
