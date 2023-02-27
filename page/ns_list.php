@@ -457,7 +457,7 @@ function action_submit_add_new_job_new() {
 
         for (var i = 0; i < elementIds.length; i++) {
             var element = document.getElementById(elementIds[i]);
-            if (element.value =='') {
+            if (element.value ==='') {
                 missingValues.push(element);
                 element.classList.add('is-invalid');
                 var errorMsg = document.createElement('small');
