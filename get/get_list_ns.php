@@ -96,7 +96,7 @@ $page_count = $count_item / 30;
 <?php
 //get parent of id filter
 $parent_list = array();
-$query_parent = "SELECT parent from all_in_one_project.add_new_job where (".$filter.") and parent is not null" or die("Error:" . mysqli_error($con));
+$query_parent = "SELECT parent from all_in_one_project.add_new_job where (".$filter.")" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query_parent);
 while($row = mysqli_fetch_array($result)) {
   array_push($parent_list,$row["parent"]);
@@ -123,7 +123,7 @@ while($row = mysqli_fetch_array($result)) {
         $data_sum=mysqli_fetch_assoc($result_sum);
         //show warning for parent !=sum of sub ticket sku
         if($row["sku"]<>$data_sum['total']){
-            $badge_alert_sku = "<a data-bs-toggle='tooltip' data-bs-placement='top' title='number of sku in parent ticket not equls sum of childs ticket sku'><ion-icon name='alert-circle-outline' style='color:red!important'  ></ion-icon></a>";
+            $badge_alert_sku = "<a data-bs-toggle='tooltip' data-bs-placement='top' title='number of sku in parent ticket not equals sum of childe ticket sku'><ion-icon name='alert-circle-outline' style='color:red!important'  ></ion-icon></a>";
         }else{
             $badge_alert_sku = "";
         }
