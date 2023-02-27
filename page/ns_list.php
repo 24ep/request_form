@@ -455,6 +455,7 @@ function action_submit_add_new_job_new() {
 
     // Check for missing values and add red small text next to input fields
     for (var i = 0; i < inputs.length; i++) {
+console.log(inputs[i].value)
         if (inputs[i].value =='') {
             missingValues.push(inputs[i]);
             inputs[i].classList.add('is-invalid');
