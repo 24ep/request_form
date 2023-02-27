@@ -450,21 +450,24 @@ function action_submit_add_new_job_new() {
     var link_info = document.getElementById('link_info');
     var remark = document.getElementById('remark');
 
-    var inputs = [brand, sub_department, sku, production_type, project_type, launch_date, bu, contact_buyer, contact_vender, link_info, remark];
+    var elementIds = ['brand', 'sub_department', 'sku', 'production_type', 'project_type', 'launch_date', 'bu', 'contact_buyer', 'contact_vender', 'link_info', 'remark'];
     var missingValues = [];
 
     // Check for missing values and add red small text next to input fields
-    for (var i = 0; i < inputs.length; i++) {
-console.log(inputs[i].value)
-        if (inputs[i].value =='') {
-            missingValues.push(inputs[i]);
-            inputs[i].classList.add('is-invalid');
-            var errorMsg = document.createElement('small');
-            errorMsg.innerText = 'This field is required';
-            errorMsg.style.color = 'red';
-            inputs[i].parentNode.insertBefore(errorMsg, inputs[i].nextSibling);
+
+        for (var i = 0; i < elementIds.length; i++) {
+            var element = document.getElementById(elementIds[i]);
+            if (!element) {
+                missingValues.push(inputs[i]);
+                inputs[i].classList.add('is-invalid');
+                var errorMsg = document.createElement('small');
+                errorMsg.innerText = 'This field is required';
+                errorMsg.style.color = 'red';
+                inputs[i].parentNode.insertBefore(errorMsg, inputs[i].nextSibling);
+            }
         }
-    }
+
+
 
     if (missingValues.length === 0) {
         // If no missing values, send data to server
