@@ -430,56 +430,73 @@ function action_submit_add_new_job() {
 }
 function action_submit_add_new_job_new() {
     Notiflix.Loading.hourglass('Creating new ticket ...');
-    var brand = document.getElementById('brand').value;
-    var sub_department = document.getElementById('sub_department').value;
-    var sku = document.getElementById('sku').value;
-    var production_type = document.getElementById('production_type').value;
-    var project_type = document.getElementById('project_type').value;
-    var launch_date = document.getElementById('launch_date').value;
-    var bu = document.getElementById('bu').value;
-    var contact_buyer = document.getElementById('contact_buyer').value;
-    var contact_vender = document.getElementById('contact_vender').value;
-    var link_info = document.getElementById('link_info').value;
-    var remark = document.getElementById('remark').value;
+    var brand = document.getElementById('brand');
+    var sub_department = document.getElementById('sub_department');
+    var sku = document.getElementById('sku');
+    var production_type = document.getElementById('production_type');
+    var project_type = document.getElementById('project_type');
+    var launch_date = document.getElementById('launch_date');
+    var bu = document.getElementById('bu');
+    var contact_buyer = document.getElementById('contact_buyer');
+    var contact_vender = document.getElementById('contact_vender');
+    var link_info = document.getElementById('link_info');
+    var remark = document.getElementById('remark');
 
-    // Check for missing values
     var inputs = [brand, sub_department, sku, production_type, project_type, launch_date, bu, contact_buyer, contact_vender, link_info, remark];
+    var missingValues = [];
+
+    // Check for missing values and add red small text next to input fields
     for (var i = 0; i < inputs.length; i++) {
-        if (inputs[i] === '') {
-            document.getElementById(inputs[i].id).classList.add('in-valid');
+        if (inputs[i].value === '') {
+            missingValues.push(inputs[i]);
+            inputs[i].classList.add('in-valid');
+            var errorMsg = document.createElement('small');
+            errorMsg.innerText = 'This field is required';
+            errorMsg.style.color = 'red';
+            inputs[i].parentNode.insertBefore(errorMsg, inputs[i].nextSibling);
         }
     }
 
-    if (brand) {
+    if (missingValues.length === 0) {
+        // If no missing values, send data to server
         $.post("../base/action/action_submit_add_new_job.php", {
-            brand: brand,
-            sub_department: sub_department,
-            sku: sku,
-            production_type: production_type,
-            project_type: project_type,
-            launch_date: launch_date,
-            bu : bu ,
-            contact_buyer: contact_buyer,
-            contact_vender: contact_vender,
-            link_info: link_info,
-            remark: remark
+            brand: brand.value,
+            sub_department: sub_department.value,
+            sku: sku.value,
+            production_type: production_type.value,
+            project_type: project_type.value,
+            launch_date: launch_date.value,
+            bu : bu.value,
+            contact_buyer: contact_buyer.value,
+            contact_vender: contact_vender.value,
+            link_info: link_info.value,
+            remark: remark.value
         }, function(data) {
             Notiflix.Loading.remove();
             var result = data.includes("Error");
-                if(result==false){
-                  Notiflix.Notify.success("Ticket have been create already ! NS-"+data);
-                  snapshot_data("all_in_one_project","add_new_job","id",data,"add_new_job");
-                }else{
-                  Notiflix.Report.failure(
-                  'Failure',
-                  data,
-                  'Okay',
-                  )
-                }
+            if(result==false){
+                Notiflix.Notify.success("Ticket has been created already! NS-"+data);
+                snapshot_data("all_in_one_project","add_new_job","id",data,"add_new_job");
+            } else {
+                Notiflix.Report.failure(
+                    'Failure',
+                    data,
+                    'Okay',
+                )
+            }
         });
+    } else {
+        // If missing values, show error message
+        Notiflix.Loading.remove();
+        Notiflix.Report.failure(
+            'Error',
+            'Please fill in all required fields.',
+            'Okay',
+        );
     }
     filter_update();
 }
+
 
 // action_submit_add_new_job
 function itm_confirm_cancel(id, status_change) {
