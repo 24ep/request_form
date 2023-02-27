@@ -104,7 +104,7 @@ while($row = mysqli_fetch_array($result)) {
 $parent_filter = implode(",",$parent_list);
 //get list
 $limit="LIMIT 30";
-$query = "SELECT * FROM add_new_job as anj where (((".$filter.") or parent in (".$parent_filter."))
+$query = "SELECT * FROM add_new_job as anj where (((".$filter.") or id in (".$parent_filter."))
  and anj.parent is null )  ORDER BY anj.config_type DESC ,anj.id DESC  ".$limit." OFFSET ".$start_item
 or die("Error:" . mysqli_error($con));
 echo "<script>console.log('".$query."')</script>";
