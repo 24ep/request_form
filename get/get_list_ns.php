@@ -96,16 +96,15 @@ $page_count = $count_item / 30;
 <?php
 //get parent of id filter
 $parent_list = array();
-$query_parent = "SELECT parent from all_in_one_project.add_new_job where (".$filter.")" or die("Error:" . mysqli_error($con));
+$query_parent = "SELECT parent from all_in_one_project.add_new_job where (".$filter.") and parent is not null" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query_parent);
 while($row = mysqli_fetch_array($result)) {
   array_push($parent_list,$row["parent"]);
 }
 $parent_filter = implode(",",$parent_list);
-echo "<script>console.log('".$parent_filter."')</script>";
 //get list
 $limit="LIMIT 30";
-$query = "SELECT * FROM add_new_job as anj where (((".$filter.") )
+$query = "SELECT * FROM add_new_job as anj where (((".$filter.") or parent in (".$parent_filter."))
  and anj.parent is null )  ORDER BY anj.config_type DESC ,anj.id DESC  ".$limit." OFFSET ".$start_item
 or die("Error:" . mysqli_error($con));
 echo "<script>console.log('".$query."')</script>";
