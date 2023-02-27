@@ -96,7 +96,7 @@ $page_count = $count_item / 30;
 <?php
 //get parent of id filter
 $parent_list = array();
-if($filter<>""){
+if($filter<>"1=1"){
     $filter = $filter.") and";
 }
 $query_parent = "SELECT parent from all_in_one_project.add_new_job where (".$filter." parent is not null" or die("Error:" . mysqli_error($con));
