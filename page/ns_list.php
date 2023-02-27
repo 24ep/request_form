@@ -460,8 +460,7 @@ function action_submit_add_new_job_new() {
         'init_bu',
         'init_contact_buyer',
         'init_contact_vender',
-        'init_link_info',
-        'init_remark'
+        'init_link_info'
     ];
     var missingValues = [];
 
