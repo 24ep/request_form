@@ -243,6 +243,8 @@ while($row = mysqli_fetch_array($result)) {
         if($row["config_type"]=="parent"){
             if( isset($sub_ticket)){
                 echo $ticket.$sub_ticket;
+            }else{
+                echo $ticket.$sub_ticket;
             }
         }else{
             if(isset($sub_ticket)){
