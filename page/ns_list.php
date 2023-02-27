@@ -453,15 +453,11 @@ function action_submit_add_new_job_new() {
     var inputs = [brand, sub_department, sku, production_type, project_type, launch_date, bu, contact_buyer, contact_vender, link_info, remark];
     var missingValues = [];
 
-    // Check for missing values and add red small text next to input fields
+    // Check for missing values and add "in-valid" class to input fields
     for (var i = 0; i < inputs.length; i++) {
         if (inputs[i].value === '') {
             missingValues.push(inputs[i]);
             inputs[i].classList.add('in-valid');
-            var errorMsg = document.createElement('small');
-            errorMsg.innerText = 'This field is required';
-            errorMsg.style.color = 'red';
-            inputs[i].parentNode.insertBefore(errorMsg, inputs[i].nextSibling);
         }
     }
 
@@ -494,16 +490,12 @@ function action_submit_add_new_job_new() {
             }
         });
     } else {
-        // If missing values, show error message
+        // If missing values, do not send data to server
         Notiflix.Loading.remove();
-        Notiflix.Report.failure(
-            'Error',
-            'Please fill in all required fields.',
-            'Okay',
-        );
     }
     filter_update();
 }
+
 
 
 // action_submit_add_new_job
