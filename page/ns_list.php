@@ -457,6 +457,7 @@ function action_submit_add_new_job_new() {
 
         for (var i = 0; i < elementIds.length; i++) {
             var element = document.getElementById(elementIds[i]);
+                console.log(element)
             if (element.value ==='') {
                 missingValues.push(element);
                 element.classList.add('is-invalid');
@@ -466,6 +467,7 @@ function action_submit_add_new_job_new() {
                 element.parentNode.insertBefore(errorMsg, element.nextSibling);
             }else{
                 element.classList.add('is-valid');
+
             }
         }
 
