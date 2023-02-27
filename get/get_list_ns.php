@@ -176,47 +176,59 @@ while($row = mysqli_fetch_array($result)) {
                 // unset($tr_class);
             }
             //check status of brand ticket match with filter or not
-            if($_POST['outputValues']<>""){
-                if(strpos($_POST['outputValues'], "status in ('".$row_child["status"]) !== false){
-                    //data row
-                    if(isset($sub_ticket)){
-                        if(isset($tr_class)){
-                            $sub_ticket .= "<li ".$tr_class.">";
-                        }else{
-                            $sub_ticket .= "<li class='row mb-2'>";
-                        }
-                    }else{
-                        if(isset($tr_class)){
-                            $sub_ticket = "<li ".$tr_class.">";
-                        }else{
-                            $sub_ticket = "<li class='row mb-2' >";
-                        }
-                    }
-                    $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 380px;' ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].") ".$row_child["sku"]." SKUs</span></div>";
-                    $sub_ticket .= "<div class='col'></div>";
-                    $sub_ticket .= "<div class='col'></div>";
-                    $sub_ticket .= "<div class='col'></div>";
-                    $sub_ticket .= "<div class='col'></div>";
-                    $sub_ticket .= "<div class='col'>".$status."</div>";
-                    $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3'  onclick='call_edit_add_new_modal(".$row_child["id"].")' >
-                    Detail </button></div >";
-                    $i++;
-                }
-            }else{
-                //data row
-                if(!isset($sub_ticket)){$sub_ticket ="";}
-                if(!isset($tr_class)){$tr_class="";}
-                $sub_ticket .= "<li ".$tr_class.">";
-                $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 380px;'><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].") ".$row_child["sku"]." SKUs</span></div>";
-                $sub_ticket .= "<div class='col'></div>";
-                $sub_ticket .= "<div class='col'></div>";
-                $sub_ticket .= "<div class='col'></div>";
-                $sub_ticket .= "<div class='col'></div>";
-                $sub_ticket .= "<div class='col' >".$status."</div>";
-                $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
-                Detail </button></div>";
-                $i++;
-            }
+            if(!isset($sub_ticket)){$sub_ticket ="";}
+            if(!isset($tr_class)){$tr_class="";}
+            $sub_ticket .= "<li ".$tr_class.">";
+            $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 380px;'><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].") ".$row_child["sku"]." SKUs</span></div>";
+            $sub_ticket .= "<div class='col'></div>";
+            $sub_ticket .= "<div class='col'></div>";
+            $sub_ticket .= "<div class='col'></div>";
+            $sub_ticket .= "<div class='col'></div>";
+            $sub_ticket .= "<div class='col' >".$status."</div>";
+            $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+            Detail </button></div>";
+            $i++;
+            // if($_POST['outputValues']<>""){
+            //     if(strpos($_POST['outputValues'], "status in ('".$row_child["status"]) !== false){
+            //         //data row
+            //         if(isset($sub_ticket)){
+            //             if(isset($tr_class)){
+            //                 $sub_ticket .= "<li ".$tr_class.">";
+            //             }else{
+            //                 $sub_ticket .= "<li class='row mb-2'>";
+            //             }
+            //         }else{
+            //             if(isset($tr_class)){
+            //                 $sub_ticket = "<li ".$tr_class.">";
+            //             }else{
+            //                 $sub_ticket = "<li class='row mb-2' >";
+            //             }
+            //         }
+            //         $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 380px;' ><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].") ".$row_child["sku"]." SKUs</span></div>";
+            //         $sub_ticket .= "<div class='col'></div>";
+            //         $sub_ticket .= "<div class='col'></div>";
+            //         $sub_ticket .= "<div class='col'></div>";
+            //         $sub_ticket .= "<div class='col'></div>";
+            //         $sub_ticket .= "<div class='col'>".$status."</div>";
+            //         $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3'  onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+            //         Detail </button></div >";
+            //         $i++;
+            //     }
+            // }else{
+            //     //data row
+            //     if(!isset($sub_ticket)){$sub_ticket ="";}
+            //     if(!isset($tr_class)){$tr_class="";}
+            //     $sub_ticket .= "<li ".$tr_class.">";
+            //     $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 380px;'><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].") ".$row_child["sku"]." SKUs</span></div>";
+            //     $sub_ticket .= "<div class='col'></div>";
+            //     $sub_ticket .= "<div class='col'></div>";
+            //     $sub_ticket .= "<div class='col'></div>";
+            //     $sub_ticket .= "<div class='col'></div>";
+            //     $sub_ticket .= "<div class='col' >".$status."</div>";
+            //     $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3' onclick='call_edit_add_new_modal(".$row_child["id"].")' >
+            //     Detail </button></div>";
+            //     $i++;
+            // }
         }
     }
 
