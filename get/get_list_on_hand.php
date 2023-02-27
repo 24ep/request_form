@@ -280,6 +280,13 @@ $configurable_map = array (
         'key_stage'=>'jc.approve_by',
         'key_name'=>'null'
     ),
+    array(
+        'ac_role'=>'approver',
+        'status'=>'rejected',
+        'filter'=>'jc.approved_editing_status  in ("content_studio_editing","studio_editing","content_editing")',
+        'key_stage'=>'jc.approve_by',
+        'key_name'=>'null'
+    ),
 );
 //
 $length_configurable_map = count($configurable_map);
