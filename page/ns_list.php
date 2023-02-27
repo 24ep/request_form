@@ -459,11 +459,11 @@ function action_submit_add_new_job_new() {
             var element = document.getElementById(elementIds[i]);
             if (element.value =='') {
                 missingValues.push(element[i]);
-                element[i].classList.add('is-invalid');
+                element.classList.add('is-invalid');
                 var errorMsg = document.createElement('small');
                 errorMsg.innerText = 'This field is required';
                 errorMsg.style.color = 'red';
-                element[i].parentNode.insertBefore(errorMsg, element[i].nextSibling);
+                element.parentNode.insertBefore(errorMsg, element[i].nextSibling);
             }
         }
 
