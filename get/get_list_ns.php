@@ -95,16 +95,16 @@ $page_count = $count_item / 30;
 
 <?php
 //get parent of id filter
-// $parent_list = array();
-// $query_parent = "SELECT parent from all_in_one_project.add_new_job where (".$filter.")" or die("Error:" . mysqli_error($con));
-// $result = mysqli_query($con, $query_parent);
-// while($row = mysqli_fetch_array($result)) {
-//   array_push($parent_list,$row["parent"]);
-// }
-// $parent_filter = implode(",",$parent_list);
+$parent_list = array();
+$query_parent = "SELECT parent from all_in_one_project.add_new_job where (".$filter.")" or die("Error:" . mysqli_error($con));
+$result = mysqli_query($con, $query_parent);
+while($row = mysqli_fetch_array($result)) {
+  array_push($parent_list,$row["parent"]);
+}
+$parent_filter = implode(",",$parent_list);
 //get list
 $limit="LIMIT 30";
-$query = "SELECT * FROM add_new_job as anj where (((".$filter.") )
+$query = "SELECT * FROM add_new_job as anj where (((".$filter.") or parent in (".$parent_filter."))
  and anj.parent is null )  ORDER BY anj.config_type DESC ,anj.id DESC  ".$limit." OFFSET ".$start_item
 or die("Error:" . mysqli_error($con));
 echo "<script>console.log('".$query."')</script>";
@@ -153,12 +153,12 @@ while($row = mysqli_fetch_array($result)) {
     Detail </button></div>";
     $ticket .=  "</li>";
     //get sub ticket
-    $query_count="SELECT count(*) as total from add_new_job where (".$filter.") and parent = ".$row["id"];
+    $query_count="SELECT count(*) as total from add_new_job where parent = ".$row["id"];
     $result_count = mysqli_query($con, $query_count);
     $data_count=mysqli_fetch_assoc($result_count);
     $subtask_count = $data_count['total'];
     if(isset($subtask_count) and $subtask_count <> 0 and $subtask_count <>null){
-        $query_child = "SELECT * FROM add_new_job where (".$filter.") and  parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error($con));
+        $query_child = "SELECT * FROM add_new_job where  parent = ".$row["id"]." order by id ASC"  or die("Error:" . mysqli_error($con));
         date_default_timezone_set("Asia/Bangkok");
         // $con_get_list= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con_get_list));
         mysqli_query($con, "SET NAMES 'utf8' ");
