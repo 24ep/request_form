@@ -99,7 +99,7 @@ $parent_list = []
 $query_parent = "SELECT parent from all_in_one_project.add_new_job where (".$filter.")" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query_parent);
 while($row = mysqli_fetch_array($result)) {
-  $parent_list.append($row["parent"]);
+  $parent_list.array_push($row["parent"]);
 }
 $parent_filter = implode(",",$parent_list);
 //get list
