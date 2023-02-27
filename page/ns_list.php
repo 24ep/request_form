@@ -104,12 +104,26 @@ function get_attribute_list_filter(){
                 </div>
             </div>
         <div style="width:auto">
-        <button class="btn btn-danger btn-sm bg-gradient position-absolute " type="button" data-bs-toggle="modal" data-bs-target="#create_new_ns_modal" style="
-    right: 55px;
-">
-<ion-icon size="small" name="add-outline" style="font-size:12px" role="img" class="md icon-small hydrated" aria-label="add outline"></ion-icon>
-Create New
-</button>
+        <button class="btn btn-danger btn-sm bg-gradient position-absolute "
+        type="button" data-bs-toggle="modal" data-bs-target="#create_new_ns_modal"
+        style=" right: 55px;">
+            <ion-icon size="small" name="add-outline" style="font-size:12px"
+            role="img" class="md icon-small hydrated" aria-label="add outline">
+            </ion-icon>
+            Create New
+        </button>
+            <?php if($_SESSION['username']=='poojaroowit'){ ?>
+                <button class="btn btn-danger btn-sm bg-gradient position-absolute "
+            type="button" data-bs-toggle="modal" data-bs-target="#create_new_ns_modal_new"
+            style=" right: 55px;">
+                <ion-icon size="small" name="add-outline" style="font-size:12px"
+                role="img" class="md icon-small hydrated" aria-label="add outline">
+                </ion-icon>
+                Create New
+            </button>
+        <?php
+        }
+        ?>
         </div>
      </div>
 </nav>
@@ -414,6 +428,59 @@ function action_submit_add_new_job() {
     }
     filter_update();
 }
+function action_submit_add_new_job_new() {
+    Notiflix.Loading.hourglass('Creating new ticket ...');
+    var brand = document.getElementById('brand').value;
+    var sub_department = document.getElementById('sub_department').value;
+    var sku = document.getElementById('sku').value;
+    var production_type = document.getElementById('production_type').value;
+    var project_type = document.getElementById('project_type').value;
+    var launch_date = document.getElementById('launch_date').value;
+    var bu = document.getElementById('bu').value;
+    var contact_buyer = document.getElementById('contact_buyer').value;
+    var contact_vender = document.getElementById('contact_vender').value;
+    var link_info = document.getElementById('link_info').value;
+    var remark = document.getElementById('remark').value;
+
+    // Check for missing values
+    var inputs = [brand, sub_department, sku, production_type, project_type, launch_date, bu, contact_buyer, contact_vender, link_info, remark];
+    for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i] === '') {
+            document.getElementById(inputs[i].id).classList.add('in-valid');
+        }
+    }
+
+    if (brand) {
+        $.post("../base/action/action_submit_add_new_job.php", {
+            brand: brand,
+            sub_department: sub_department,
+            sku: sku,
+            production_type: production_type,
+            project_type: project_type,
+            launch_date: launch_date,
+            bu : bu ,
+            contact_buyer: contact_buyer,
+            contact_vender: contact_vender,
+            link_info: link_info,
+            remark: remark
+        }, function(data) {
+            Notiflix.Loading.remove();
+            var result = data.includes("Error");
+                if(result==false){
+                  Notiflix.Notify.success("Ticket have been create already ! NS-"+data);
+                  snapshot_data("all_in_one_project","add_new_job","id",data,"add_new_job");
+                }else{
+                  Notiflix.Report.failure(
+                  'Failure',
+                  data,
+                  'Okay',
+                  )
+                }
+        });
+    }
+    filter_update();
+}
+
 // action_submit_add_new_job
 function itm_confirm_cancel(id, status_change) {
     let message = prompt("พิมพ์ " + status_change + " อีกครั้งเพื่อยืนยัน", "");
