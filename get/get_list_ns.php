@@ -97,7 +97,7 @@ $page_count = $count_item / 30;
 //get parent of id filter
 $parent_list = array();
 if($filter<>""){
-    $parent_filter = $filter.") and";
+    $filter = $filter.") and";
 }
 $query_parent = "SELECT parent from all_in_one_project.add_new_job where (".$filter." parent is not null" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query_parent);
@@ -242,8 +242,6 @@ while($row = mysqli_fetch_array($result)) {
 
         if($row["config_type"]=="parent"){
             if( isset($sub_ticket)){
-                echo $ticket.$sub_ticket;
-            }else{
                 echo $ticket.$sub_ticket;
             }
         }else{
