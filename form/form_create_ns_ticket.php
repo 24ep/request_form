@@ -98,7 +98,7 @@
                 <div class="col-md-6">
 
                     <div class="form-floating mb-3">
-                        <textarea class="form-control form-control-sm" required id="init_contact_buyer" name="contact_buyer"
+                        <textarea class="form-control form-control-sm" required id="contact_buyer" name="contact_buyer"
                          rows="4" style="height: 100px"><?php echo $get_contact_buyer; ?>
                     </textarea>
                         <label for="contact_buyer"><strong style="color:red">* </strong>Contact buyer</label>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating mb-3">
-                        <textarea class="form-control form-control-sm" required id="init_contact_vender"
+                        <textarea class="form-control form-control-sm" required id="contact_vender"
                             name="contact_vender"
                             rows="4" style="height: 100px"><?php echo $get_contact_buyer; ?>
 

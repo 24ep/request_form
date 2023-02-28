@@ -691,7 +691,7 @@ tippy('#nav_dashboard', {
     placement: 'right',
     animation: 'fade',
 });
-tippy('#nav_create_new', {
+tippy('#nav_ns_list', {
     content: "Create New content",
     placement: 'right',
     animation: 'fade',

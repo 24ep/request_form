@@ -246,7 +246,7 @@ echo '
             <div class="container-fluid">
                 <small>
                     <a type="button" style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"
-                        onclick="get_page('create_new');">
+                        onclick="get_page('ns_list');">
                         <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
                     </a>
                 </small>
