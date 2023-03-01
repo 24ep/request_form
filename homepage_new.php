@@ -149,7 +149,7 @@ if (!$_SESSION["login_csg"]){
     <!-- body content ... -->
     <script defer src="base/js/cookieconsent-init.js"></script>
     <!-- announcement block -->
-    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- subsc -->
     <!-- <script async custom-element="amp-web-push" src="https://cdn.ampproject.org/v0/amp-web-push-0.1.js"></script>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -203,25 +203,15 @@ if (!$_SESSION["login_csg"]){
 <body>
     <!-- attention model -->
     <?php if($_SESSION['username']=='poojaroonwit'){?>
-    <div class="modal fade" id="AttentionsModalToggle" aria-hidden="true" aria-labelledby="AttentionsModalToggleLabel" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="AttentionsModalToggleLabel">Attentions</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Show a second modal and hide this one with the button below.
-                </div>
-            </div>
-        </div>
-    </div>
+
     <script>
-        // $('#AttentionsModalToggle').modal('show');
-        var myModal = new bootstrap.Modal(document.getElementById("AttentionsModalToggle"), {});
-            document.onreadystatechange = function () {
-            myModal.show();
-        };
+       swal({
+            title: "Attention",
+            icon: "info",
+            button: {
+                text: "รับทราบ",
+            },
+       });
     </script>
     <?php }?>
     <!-- attention model -->
