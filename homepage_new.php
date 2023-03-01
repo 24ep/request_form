@@ -48,7 +48,6 @@ if (!$_SESSION["login_csg"]){
     ?>
 <!doctype html>
 <html lang="en">
-
 <head>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <!-- push notification -->
@@ -149,6 +148,8 @@ if (!$_SESSION["login_csg"]){
     <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.js"></script>
     <!-- body content ... -->
     <script defer src="base/js/cookieconsent-init.js"></script>
+    <!-- announcement block -->
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
     <!-- subsc -->
     <!-- <script async custom-element="amp-web-push" src="https://cdn.ampproject.org/v0/amp-web-push-0.1.js"></script>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -176,36 +177,50 @@ if (!$_SESSION["login_csg"]){
         color: <?php echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
         ?>;
     }
-
     .nav_list_bra-preferance {
         background: <?php echo get_value_main($_SESSION['username'], "menu_shade", "all_in_one_project", "account", "username");
         ?>;
     }
-
     .nav-pills .nav-link.active,
     .nav-pills .show>.nav-link {
         color: <?php echo get_value_main($_SESSION['username'], "primary_front_button_selected", "all_in_one_project", "account", "username");
         ?>;
         border: solid 1px <?php echo get_value_main($_SESSION['username'], "primary_border_button_slected", "all_in_one_project", "account", "username");
         ?>;
-        background:<?php echo get_value_main($_SESSION['username'], "background_selected_button", "all_in_one_project", "account", "username");
+        background: <?php echo get_value_main($_SESSION['username'], "background_selected_button", "all_in_one_project", "account", "username");
         ?>;
     }
-
     .nav-pills .nav-link {
         color: <?php echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
         ?>;
     }
-
-    .header_menu_bra{
+    .header_menu_bra {
         color: <?php echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
-        ?>!important;
+        ?> !important;
     }
     </style>
 </head>
-
 <body>
-
+    <!-- attention model -->
+    <?php if($_SESSION['username']=='poojaroonwit'){?>
+    <div class="modal fade" id="AttentionsModalToggle" aria-hidden="true" aria-labelledby="AttentionsModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="AttentionsModalToggleLabel">Attentions</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Show a second modal and hide this one with the button below.
+            </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    const myModalAlternative = new bootstrap.Modal('#AttentionsModalToggle', options);
+    </script>
+    <?php }?>
+    <!-- attention model -->
     <div class="offcanvas offcanvas-start" style="width:70%" tabindex="-1" id="content_request_canvas"
         aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header" style="background: #313131;color: white;">
@@ -238,7 +253,6 @@ if (!$_SESSION["login_csg"]){
                     <img id="logo_minimize" class="logo_minimize hide" src="base/image/sg_logo_minimize.ico" alt=""
                         width="auto" height="30">
                     <h5 id="logo" class="logo fw-bold m-0" style="position: absolute;">ServiceGate</h5>
-
                     <br><small id="apps_name" style="font-size: small;
         font-weight: 100;
         color: gray;">Task management system
@@ -277,16 +291,16 @@ if (!$_SESSION["login_csg"]){
                         </a>
                     </li>
                     <!-- <li class="nav-item" role="presentation">
-                        <a class="main_bra nav-link nav-link-preferance" id="nav_create_new" data-bs-toggle="pill"
-                            type="button" role="tab" aria-selected="false" onclick="get_page('create_new');">
+        <a class="main_bra nav-link nav-link-preferance" id="nav_create_new" data-bs-toggle="pill"
+        type="button" role="tab" aria-selected="false" onclick="get_page('create_new');">
+        <ion-icon name="rocket"></ion-icon><span class="main-menu-nav">New Products</span>
+        </a>
+        </li> -->
+                    <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_ns_list" data-bs-toggle="pill"
+                            type="button" role="tab" aria-selected="false" onclick="get_page('ns_list');">
                             <ion-icon name="rocket"></ion-icon><span class="main-menu-nav">New Products</span>
                         </a>
-                    </li> -->
-                    <li class="nav-item" role="presentation">
-                            <a class="main_bra nav-link nav-link-preferance" id="nav_ns_list" data-bs-toggle="pill"
-                                type="button" role="tab" aria-selected="false" onclick="get_page('ns_list');">
-                                <ion-icon name="rocket"></ion-icon><span class="main-menu-nav">New Products</span>
-                            </a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_update_content" data-bs-toggle="pill"
@@ -294,9 +308,6 @@ if (!$_SESSION["login_csg"]){
                             <ion-icon name="ticket"></ion-icon><span class="main-menu-nav">Update Content</span>
                         </a>
                     </li>
-
-
-
                     <?php if(strpos($_SESSION["permission"],'ps_internal')!==false){
             ?>
                     <hr class="hr_menu_bra_in">
@@ -325,7 +336,6 @@ if (!$_SESSION["login_csg"]){
                             <ion-icon name="globe"></ion-icon><span class="main-menu-nav">Quick-link</span>
                         </a>
                     </li>
-
                     <?php } ?>
                     <hr class="hr_menu_bra_in">
                     <small class="header_menu_bra">Others</small>
@@ -406,7 +416,6 @@ if (!$_SESSION["login_csg"]){
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
 </body>
-
 </html>
 <script>
 function updateparams(key, value) {
@@ -421,7 +430,6 @@ function updateparams(key, value) {
     // Replace current querystring with the new one.
     history.replaceState(null, null, "?" + queryParams.toString());
 }
-
 function get_page(page) {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
@@ -438,7 +446,6 @@ function get_page(page) {
         Notiflix.Loading.remove();
     });
 }
-
 function get_attribute_config(target_tb, target_db, target_prefix) {
     Notiflix.Loading.hourglass('Loading...');
     $.post("base/page/attribute_config.php", {
@@ -464,19 +471,16 @@ if (urlParams.has('page') && urlParams.get('page') != null) {
     get_page('dashboard');
     // url.searchParams.set('page', 'dashboard');
 }
-
 function update_readed_nt() {
     $.post("base/action/action_update_read_nt.php", {}, function(data) {
         // $('#project_bucket').html(data);
     });
 }
-
 function get_count_read_nt() {
     $.post("base/get/get_count_nt_unread.php", {}, function(data) {
         $('#get_count_nt_unread').html(data);
     });
 }
-
 function get_list_update_job() {
     $.post("base/get/get_list_job_update.php", {}, function(data) {
         $('#get_list_job_update').html(data);
@@ -485,7 +489,6 @@ function get_list_update_job() {
         get_count_read_nt();
     });
 }
-
 function logout() {
     Notiflix.Confirm.show(
         'Confirm ',
@@ -524,7 +527,6 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
 <script>
 document.getElementById("bt_nav_coll_ex").innerHTML =
     '<ion-icon name="chevron-back-outline" style="margin:0px;color:white"></ion-icon>';
-
 function show_sub_menu(sub_menu) {
     if (sub_menu != 'close') {
         //get_sub_menu
@@ -561,7 +563,6 @@ function show_sub_menu(sub_menu) {
         }
     }
 }
-
 function minimize_nav() {
     var minimize_menu = document.getElementById('minimize_menu').value;
     console.log(minimize_menu);
@@ -668,7 +669,6 @@ function minimize_nav() {
         }
     }
 }
-
 function call_edit_add_new_modal(id, brand) {
     Notiflix.Loading.hourglass('Loading...');
     if (id) {
@@ -761,7 +761,6 @@ tippy('#nav_toolkit', {
     placement: 'right',
     animation: 'fade',
 });
-
 function call_model_edit_account(username) {
     Notiflix.Loading.hourglass('Loading...');
     if (username) {
@@ -773,7 +772,6 @@ function call_model_edit_account(username) {
         });
     }
 }
-
 function call_model_edit_add_new(id) {
     Notiflix.Loading.hourglass('Loading...');
     if (id) {
@@ -785,7 +783,6 @@ function call_model_edit_add_new(id) {
         });
     }
 }
-
 function call_model_edit_content_request(id) {
     Notiflix.Loading.hourglass('Loading...');
     if (id) {
@@ -797,7 +794,6 @@ function call_model_edit_content_request(id) {
         });
     }
 }
-
 function search() {
     var input = document.getElementById('input_search').value;
     // Notiflix.Loading.hourglass('Loading...');
