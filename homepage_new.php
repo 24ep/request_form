@@ -206,18 +206,22 @@ if (!$_SESSION["login_csg"]){
     <div class="modal fade" id="AttentionsModalToggle" aria-hidden="true" aria-labelledby="AttentionsModalToggleLabel" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="AttentionsModalToggleLabel">Attentions</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Show a second modal and hide this one with the button below.
-            </div>
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="AttentionsModalToggleLabel">Attentions</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Show a second modal and hide this one with the button below.
+                </div>
             </div>
         </div>
     </div>
     <script>
-        $('#AttentionsModalToggle').modal('show');
+        // $('#AttentionsModalToggle').modal('show');
+        var myModal = new bootstrap.Modal(document.getElementById("AttentionsModalToggle"), {});
+            document.onreadystatechange = function () {
+            myModal.show();
+        };
     </script>
     <?php }?>
     <!-- attention model -->
