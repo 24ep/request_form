@@ -217,7 +217,7 @@ if (!$_SESSION["login_csg"]){
         </div>
     </div>
     <script>
-    const myModal = new bootstrap.Modal(document.getElementById('AttentionsModalToggle'), options)
+        $('#myModal').modal('AttentionsModalToggle');
     </script>
     <?php }?>
     <!-- attention model -->
