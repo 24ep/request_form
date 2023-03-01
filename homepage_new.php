@@ -217,7 +217,7 @@ if (!$_SESSION["login_csg"]){
         </div>
     </div>
     <script>
-        $('#myModal').modal('AttentionsModalToggle');
+        $('#AttentionsModalToggle').modal('show');
     </script>
     <?php }?>
     <!-- attention model -->
