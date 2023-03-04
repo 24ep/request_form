@@ -160,15 +160,17 @@ function get_attachment_cr($id){
     $list_attchment.=  '
     <li class="list-group-item d-flex justify-content-between align-items-left"
       style="border:0px;padding:0px;margin-top:5px;background: transparent;" >
-      <a href="'.$herf.'" download="'.$row['file_name'].'" class="row" style="    background: #f0f0f0;
+      <a href="'.$herf.'" download="'.$row['file_name'].'" class="row" style="background: #f0f0f0;
     padding: 10px;
     border-radius: 5px;
     color: #8c8c8c;
-    width: 150px;
-    overflow-wrap: anywhere;">
+    overflow-wrap: anywhere;
+    height: 70px;
+    width: max-content;">
         <div class="col-3">
-          <ion-icon style="color:white;margin-right:5px"name="document-attach-outline"></ion-icon>
-          '.$row["file_name"].'
+          <ion-icon style="    color: #7e7e7e;
+    margin-right: 5px;
+    font-size: xx-large;"name="document-attach-outline"></ion-icon>
         </div>
         <div class="col-9">
           '.$row["file_name"].'
