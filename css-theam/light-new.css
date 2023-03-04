@@ -633,4 +633,5 @@ select:disabled {
     height: 70px;
     width: 45%;
     margin-left: 1px;
+    text-decoration:auto;
 }
