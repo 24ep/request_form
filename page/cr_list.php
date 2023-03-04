@@ -1,61 +1,6 @@
 
 
 <!doctype html>
-
-    <datalist id="qlistoption">
-        <?php echo $username_op_cr; ?>
-    </datalist>
-    <datalist id="qlistoption_rf">
-        <?php echo $request_for_op; ?>
-    </datalist>
-    <datalist id="qlistoption_status">
-        <?php echo $request_cr_status_op; ?>
-    </datalist>
-    </form>
-                <div class="btn-group btn-group-sm" style="position: inherit;" role="group"
-                    aria-label="Basic checkbox toggle button group">
-
-                    <div class="d-flex align-items-start">
-                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                            <?php
-                                $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-                                mysqli_query($con, "SET NAMES 'utf8' ");
-                                $query = "SELECT id, project_name, prefix , color_project FROM all_in_one_project.project_bucket;" or die("Error:" . mysqli_error($con));
-                                $result = mysqli_query($con, $query);
-                                $bucket  = '<button class="nav-link border  text-start active" id="v-pills-all-tab" data-bs-toggle="pill" data-bs-target="#v-pills-all" type="button" role="tab" aria-controls="v-pills-all" aria-selected="true">';
-                                $bucket  .= '<div class="row"><div style="place-self: center;"class="col-3"><img class="me-2 rounded" src="https://ui-avatars.com/api/?name=ALL>&background=999999&color=fff&rounded=false&size=25">';
-                                $bucket  .= '</div><div class="col-9">All Bucket</div></div></button>';
-                                while($row = mysqli_fetch_array($result)) {
-                                    $bucket  .=
-                                    '<button class="nav-link border text-start" id="v-pills-'.$row['prefix'].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.$row['prefix'].'" type="button" role="tab" aria-controls="v-pills-'.$row['prefix'].'" aria-selected="true">';
-                                    $bucket  .= '
-                                            <div class="row">
-                                                <div style="place-self: center;" class="col-3">
-                                                    <img class="me-2 rounded" src="https://ui-avatars.com/api/?name='.$row['prefix'].'>&background='.str_replace("#","",$row['color_project']).'&color=fff&rounded=false&size=25">
-                                                </div>
-                                                <div class="col-9">';
-                                                        $bucket .= $row['project_name'].'
-                                                </div>
-                                            </div>
-                                    </button>';
-                                }
-                                mysqli_close($con);
-                                echo $bucket;
-                            ?>
-                        </div>
-                        <div class="tab-content" id="v-pills-tabContent">
-                            <?php
-                                $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-                                mysqli_query($con, "SET NAMES 'utf8' ");
-                                $query = "SELECT id, project_name, prefix , color_project FROM all_in_one_project.project_bucket;" or die("Error:" . mysqli_error($con));
-                                $result = mysqli_query($con, $query);
-                                echo '<div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab" tabindex="0">';
-                                echo include("../get/get_list_update_content.php");
-
-                                echo'</div>';
-                                while($row = mysqli_fetch_array($result)) {
-                                    echo'<div class="tab-pane fade" id="v-pills-'.$row['prefix'].'" role="tabpanel" aria-labelledby="v-pills-'.$row['prefix'].'-tab" tabindex="0">';
-?>
 <div class="container-fluid ">
     <div class="input-group input-group-sm p-3" style="position: initial!important;">
         <span class="input-group-text" id="basic-addon1">
@@ -123,9 +68,60 @@
             </li>
         </ul>
     </div>
+    <datalist id="qlistoption">
+        <?php echo $username_op_cr; ?>
+    </datalist>
+    <datalist id="qlistoption_rf">
+        <?php echo $request_for_op; ?>
+    </datalist>
+    <datalist id="qlistoption_status">
+        <?php echo $request_cr_status_op; ?>
+    </datalist>
+    </form>
+                <div class="btn-group btn-group-sm" style="position: inherit;" role="group"
+                    aria-label="Basic checkbox toggle button group">
 
-<?php
-                                    echo include("../get/get_list_update_content.php?bucket=".$row['prefix']);
+                    <div class="d-flex align-items-start">
+                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <?php
+                                $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+                                mysqli_query($con, "SET NAMES 'utf8' ");
+                                $query = "SELECT id, project_name, prefix , color_project FROM all_in_one_project.project_bucket;" or die("Error:" . mysqli_error($con));
+                                $result = mysqli_query($con, $query);
+                                $bucket  = '<button class="nav-link border  text-start active" id="v-pills-all-tab" data-bs-toggle="pill" data-bs-target="#v-pills-all" type="button" role="tab" aria-controls="v-pills-all" aria-selected="true">';
+                                $bucket  .= '<div class="row"><div style="place-self: center;"class="col-3"><img class="me-2 rounded" src="https://ui-avatars.com/api/?name=ALL>&background=999999&color=fff&rounded=false&size=25">';
+                                $bucket  .= '</div><div class="col-9">All Bucket</div></div></button>';
+                                while($row = mysqli_fetch_array($result)) {
+                                    $bucket  .=
+                                    '<button class="nav-link border text-start" onclick="get_list_update_content('.$row['prefix'].')" id="v-pills-'.$row['prefix'].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.$row['prefix'].'" type="button" role="tab" aria-controls="v-pills-'.$row['prefix'].'" aria-selected="true">';
+                                    $bucket  .= '
+                                            <div class="row">
+                                                <div style="place-self: center;" class="col-3">
+                                                    <img class="me-2 rounded" src="https://ui-avatars.com/api/?name='.$row['prefix'].'>&background='.str_replace("#","",$row['color_project']).'&color=fff&rounded=false&size=25">
+                                                </div>
+                                                <div class="col-9">';
+                                                        $bucket .= $row['project_name'].'
+                                                </div>
+                                            </div>
+                                    </button>';
+                                }
+                                mysqli_close($con);
+                                echo $bucket;
+                            ?>
+                        </div>
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <?php
+                                $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+                                mysqli_query($con, "SET NAMES 'utf8' ");
+                                $query = "SELECT id, project_name, prefix , color_project FROM all_in_one_project.project_bucket;" or die("Error:" . mysqli_error($con));
+                                $result = mysqli_query($con, $query);
+                                echo '<div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab" tabindex="0">';
+                                echo include("../get/get_list_update_content.php");
+
+                                echo'</div>';
+                                while($row = mysqli_fetch_array($result)) {
+                                    echo'<div class="tab-pane fade" id="v-pills-'.$row['prefix'].'" role="tabpanel" aria-labelledby="v-pills-'.$row['prefix'].'-tab" tabindex="0">';
+                                    echo '<div id="bucket_'.$row['prefix'].'"></div>'
                                     echo '</div>';
                                 }
                                 mysqli_close($con);
@@ -231,7 +227,13 @@
         }
     }
 
-
+function get_list_update_content(bucket){
+    $.post("base/get/get_list_update_content.php", {
+            bucket: bucket
+        }, function(data) {
+            $('#bucket_'+bucket).html(data);
+        });
+}
     function search_cr_ticket() {
         var cr_search_input = document.getElementById("cr_search_input").value
         var user_cr_filter = document.getElementById("user_cr_filter").value
