@@ -32,9 +32,9 @@ $request_cr_status_op = get_option_return_filter("status","","single","content_r
 session_start();
 include_once("get_function_badge.php");
 include_once("get_default_profile_image.php");
-if($_GET["bucket"] == 'all'){
+if($_POST["bucket"] == 'all'){
   $bucket_filter = "";
-}elseif($_GET["bucket"] ==""){
+}elseif($_POST["bucket"] ==""){
   $bucket_filter="";
 }else{
   $bucket_filter = "and ticket.ticket_template = '".$_GET["bucket"]."'";
