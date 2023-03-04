@@ -624,3 +624,12 @@ select:disabled {
     padding:10px 30px;
     margin:0px!important
 }
+.attachment{
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    color: #8c8c8c;
+    overflow-wrap: anywhere;
+    height: 70px;
+    width: max-content;
+}
