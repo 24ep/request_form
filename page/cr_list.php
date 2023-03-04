@@ -90,9 +90,9 @@
                                 mysqli_query($con, "SET NAMES 'utf8' ");
                                 $query = "SELECT id, project_name, prefix , color_project FROM all_in_one_project.project_bucket;" or die("Error:" . mysqli_error($con));
                                 $result = mysqli_query($con, $query);
-                                $bucket  = '<button class="nav-link active" id="v-pills-all-tab" data-bs-toggle="pill" data-bs-target="#v-pills-all" type="button" role="tab" aria-controls="v-pills-all" aria-selected="true">All Bucket</button>';
+                                $bucket  = '<button class="nav-link text-start active" id="v-pills-all-tab" data-bs-toggle="pill" data-bs-target="#v-pills-all" type="button" role="tab" aria-controls="v-pills-all" aria-selected="true">All Bucket</button>';
                                 while($row = mysqli_fetch_array($result)) {
-                                    $bucket  .= '<button class="nav-link" id="v-pills-'.$row['prefix'].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.$row['prefix'].'" type="button" role="tab" aria-controls="v-pills-'.$row['prefix'].'" aria-selected="true">'.$row['project_name'].'</button>';
+                                    $bucket  .= '<button class="nav-link text-start" id="v-pills-'.$row['prefix'].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.$row['prefix'].'" type="button" role="tab" aria-controls="v-pills-'.$row['prefix'].'" aria-selected="true">'.$row['project_name'].'</button>';
                                 }
                                 mysqli_close($con);
                                 echo $bucket;
@@ -107,7 +107,7 @@
                                 echo '<div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab" tabindex="0">...</div>';
                                 while($row = mysqli_fetch_array($result)) {
                                     echo'<div class="tab-pane fade" id="v-pills-'.$row['prefix'].'" role="tabpanel" aria-labelledby="v-pills-'.$row['prefix'].'-tab" tabindex="0">';
-                                    echo include("get_list_update_content.php?bucket=".$row['prefix']);
+                                    include("get_list_update_content.php?bucket=".$row['prefix']);
                                     echo '</div>';
                                 }
                                 mysqli_close($con);
@@ -235,7 +235,6 @@
         }, function(data) {
             $('#get_ts_admin_console').html(data);
         });
-        update_project_sticky_badge('skip');
         search_cr_data();
         search_cr_username();
         search_cr_request_for();
