@@ -401,7 +401,6 @@ while($row = mysqli_fetch_array($result)) {
   <span>'.$create_date.'</span>
   </div>
   <span class="badge bg-primary" style="background-color:'.$color_project.'!important;margin-bottom:15px;padding:8px 15px;">'.$project_name.'</span>
-  <button class="badge bg-light text-dark" style="border: solid 1px gainsboro;" onclick="prompt(&#39Press Ctrl + C, then Enter to copy to clipboard&#39,&#39https://content-service-gate.cdse-commercecontent.com/base/page/cr_detail.php?id='.$id.'&#39)"><ion-icon name="share-social-outline"></ion-icon>Copie ticket URL</button>
   <button class="badge bg-light text-dark" style="border: solid 1px gainsboro;" id="EditDetailTicket" onclick="EditDetailTicket()"><ion-icon name="pencil-outline"></ion-icon></button>
   <button class="badge bg-primary" style="border: solid 1px gainsboro;display:none;"id="SaveDetailTicket"  onclick="SaveDetailTicket('.$id.')"><ion-icon style="color:white!important;margin-right:5px" name="save-outline"></ion-icon></ion-icon>Save</button>
   <button class="badge bg-secondary" style="border: solid 1px gainsboro;display:none;"id="CancelDetailTicket"  onclick="CancelDetailTicket('.$id.')"><ion-icon style="color:white!important;margin-right:5px" name="close-circle-outline"></ion-icon></ion-icon>Cancel</button>
