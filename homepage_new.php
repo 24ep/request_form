@@ -308,6 +308,12 @@ if (!$_SESSION["login_csg"]){
                             <ion-icon name="ticket"></ion-icon><span class="main-menu-nav">Update Content</span>
                         </a>
                     </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_cr_list" data-bs-toggle="pill"
+                            type="button" role="tab" aria-selected="false" onclick="get_page('cr_list');">
+                            <ion-icon name="ticket"></ion-icon><span class="main-menu-nav">CR List</span>
+                        </a>
+                    </li>
                     <?php if(strpos($_SESSION["permission"],'ps_internal')!==false){
             ?>
                     <hr class="hr_menu_bra_in">
