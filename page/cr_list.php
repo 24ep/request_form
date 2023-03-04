@@ -2,81 +2,7 @@
 
 <!doctype html>
 <div class="container-fluid ">
-    <div class="input-group input-group-sm p-3" style="position: initial!important;">
-        <span class="input-group-text" id="basic-addon1">
-            <ion-icon style="vertical-align: middle;margin-right: 5px;" name="filter-circle-outline">
 
-            </ion-icon> Filter
-        </span>
-        <?php
-            if($_SESSION["ts_query_input"]<>""){
-                $sqb = $_SESSION["ts_query_input"];
-            }else{
-                $sqb =  "";
-            }
-
-            if($_SESSION["ts_username"]<>""){
-                $squser = $_SESSION["ts_username"];
-            }else{
-                $squser="";
-            }
-        ?>
-        <input style="width: 20%;position: initial!important;" type="search" style="position: initial!important;"
-            class="form-control" onsearch="search_cr_data();" id="ts_command" name="ts_command"
-            placeholder="leave your ticket number or message have contain in title" aria-label="Username"
-            aria-describedby="basic-addon1" value="<?php echo $sqb; ?>">
-        <span class="input-group-text">Username</span>
-        <input style="width: 10%;position: initial!important;" list="qlistoption" style="position: initial!important;"
-            type="text" class="form-control" onchange="search_cr_username();" id="ts_username" name="ts_username"
-            placeholder="all user" aria-label="Username" aria-describedby="basic-addon1"
-            value="<?php echo $_SESSION["ts_username"];   ?>">
-        <span class="input-group-text">Request for</span>
-        <input style="width: 10%;position: initial!important;" list="qlistoption_rf"
-            style="position: initial!important;" type="text" class="form-control" onchange="search_cr_request_for();"
-            id="ts_request_for" name="ts_request_for" placeholder="all type" aria-label="Request for"
-            aria-describedby="basic-addon1" value="<?php echo $_SESSION["ts_request_for"];  ?>">
-        <span class="input-group-text">status</span>
-        <input style="width: 10%;position: initial!important;" list="qlistoption_status"
-            style="position: initial!important;" type="text" class="form-control" onchange="search_cr_status();"
-            id="ts_status" name="ts_status" placeholder="all status" aria-label="status" aria-describedby="basic-addon1"
-            value="<?php echo $_SESSION["ts_status"];  ?>">
-        <form class="d-flex">
-            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-            </div>
-            <button class="btn btn-dark btn-sm " style="margin-left:10px;position: initial!important;" type="button"
-                data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
-                <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated"
-                    aria-label="add outline">
-                </ion-icon>
-                New Ticket
-            </button>
-        </form>
-        <ul class="nav nav-pills mb-3 row p-0 me-3" id="pills-tab" style="right: 0;position: absolute;padding: 10px 40px;" role="tablist">
-            <li class="nav-item col p-0" role="presentation">
-                <button class="nav-link ts-view active m-0" id="pills-list_view_ts-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-list_view_ts" type="button" role="tab" aria-controls="pills-list_view_ts"
-                    aria-selected="true">
-                    <ion-icon name="reorder-four-outline" style="margin:0px"></ion-icon>
-                </button>
-            </li>
-            <li class="nav-item col p-0" role="presentation">
-                <button class="nav-link ts-view m-0" id="pills-board_view_ts-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-board_view_ts" type="button" role="tab" aria-controls="pills-board_view_ts"
-                    aria-selected="false">
-                    <ion-icon name="grid-outline" style="margin:0px"></ion-icon>
-                </button>
-            </li>
-        </ul>
-    </div>
-    <datalist id="qlistoption">
-        <?php echo $username_op_cr; ?>
-    </datalist>
-    <datalist id="qlistoption_rf">
-        <?php echo $request_for_op; ?>
-    </datalist>
-    <datalist id="qlistoption_status">
-        <?php echo $request_cr_status_op; ?>
-    </datalist>
     </form>
                 <div class="btn-group btn-group-sm" style="position: inherit;" role="group"
                     aria-label="Basic checkbox toggle button group">
@@ -109,7 +35,10 @@
                                 echo $bucket;
                             ?>
                         </div>
+
                         <div class="tab-content" id="v-pills-tabContent">
+                            <div id="dynamic_filter">
+                            </div>
                             <?php
                                 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
                                 mysqli_query($con, "SET NAMES 'utf8' ");
@@ -237,6 +166,28 @@ function get_list_update_content(bucket){
             $('#bucket_'+bucket).html(data);
         });
 }
+function get_filter_attribute() {
+
+    var selected = [];
+    for (var option of document.getElementById('list_of_filter').options) {
+        if (option.selected) {
+            selected.push("'" + option.value + "'");
+
+        }
+    }
+    var dynamic_filter = selected.toString();
+    var table_name='content_request';
+    console.log(dynamic_filter);
+    // dynamic_filter = "'"+value+"'";
+
+    $.post("../base/get/get_dynamic_filter.php", {
+        dynamic_filter: dynamic_filter,
+        table_name:table_name
+    }, function(data) {
+        $('#dynamic_filter').html(data);
+    });
+    }
+get_filter_attribute();
     function search_cr_ticket() {
         var cr_search_input = document.getElementById("cr_search_input").value
         var user_cr_filter = document.getElementById("user_cr_filter").value

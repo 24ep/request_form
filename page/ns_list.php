@@ -272,11 +272,13 @@ function get_filter_attribute() {
         }
     }
     var dynamic_filter = selected.toString();
+    var table_name='add_new_job';
     console.log(dynamic_filter);
     // dynamic_filter = "'"+value+"'";
 
     $.post("../base/get/get_dynamic_filter.php", {
-        dynamic_filter: dynamic_filter
+        dynamic_filter: dynamic_filter,
+        table_name:table_name
     }, function(data) {
         $('#dynamic_filter').html(data);
     });
