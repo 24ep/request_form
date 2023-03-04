@@ -107,11 +107,10 @@
                                 echo '<div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab" tabindex="0">...</div>';
                                 while($row = mysqli_fetch_array($result)) {
                                     echo'<div class="tab-pane fade" id="v-pills-'.$row['prefix'].'" role="tabpanel" aria-labelledby="v-pills-'.$row['prefix'].'-tab" tabindex="0">';
-                                    echo include("base/get/get_list_update_content.php?bucket=".$row['prefix']);
+                                    echo include("get_list_update_content.php?bucket=".$row['prefix']);
                                     echo '</div>';
                                 }
                                 mysqli_close($con);
-                                echo $bucket;
                             ?>
                         </div>
                     </div>
