@@ -488,7 +488,7 @@ while($row = mysqli_fetch_array($result)) {
     ?>
 <div class="row">
     <div class="col">
-        <strong>Task list</strong><br>
+        <strong>TASK LIST</strong><br>
     </div>
     <div class="col">
         <div class="d-grid gap-1 d-md-flex justify-content-md-end" style="margin-bottom: 8px;">
@@ -564,7 +564,7 @@ while($row = mysqli_fetch_array($result)) {
     ?>
 <hr>
 <div class="col">
-    <strong>Task list</strong><br>
+    <strong>TASK LIST</strong><br>
     <small>Sub task of ticket (for staff)</small>
 </div>
 <ul id="checklist_box" style="padding: 5px;">
