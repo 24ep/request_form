@@ -6,6 +6,45 @@
         <div class="d-flex align-items-start">
             <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <?php
+                function get_attribute_list_filter($table){
+                    $current_value = "";
+                    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+                    $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute
+                    WHERE table_name = '".$table."' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
+                    $result_op = mysqli_query($con, $query_op);
+                    $i=0;
+                    while($option = mysqli_fetch_array($result_op)) {
+                        if($option["default_filter_grid"]==1){
+                        $selected = 'selected';
+                        }else{
+                        $selected = '';
+                        }
+                        if($option["attribute_code"]<>"" and $i==0){
+                        $i++;
+                        $option_element .= "<option ".$selected ." style='color: #ffffff;' value=''></option>";
+                        }
+                        $option_element .= "<option ".$selected ." style='color: #ffffff;' value='".$option["attribute_code"]."'>".$option["attribute_label"]."</option>";
+                    }
+                    $input = '
+                        <select multiple  id="list_of_filter" class="border-0 shadow-sm bg-dark" onchange="get_filter_attribute()">
+                        '.$option_element.'
+                        </select>
+                    <script>
+                    new SlimSelect({
+                    select: "#list_of_filter",
+                    settings: {
+                        maxValuesShown: 1,
+                        maxValuesMessage: "{number} filter selected",
+                        paceholderText: "Add more filter",
+                        maxSelected: 10,
+                        allowDeselect: true
+                    }
+                    })
+                    </script>
+                    ';
+                    return $input;
+                }
+
                                 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
                                 mysqli_query($con, "SET NAMES 'utf8' ");
                                 $query = "SELECT id, project_name, prefix , color_project FROM all_in_one_project.project_bucket;" or die("Error:" . mysqli_error($con));
