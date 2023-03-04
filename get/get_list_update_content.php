@@ -109,7 +109,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         Left join all_in_one_project.project_bucket pb
         on pb.prefix  = ticket.ticket_template
         -- and ticket.status not in ('archive','cancel')
-        where ".$ts_filter."  and lower(ticket.status) not in ('cancel','archive') '".$bucket_filter ."'
+        where ".$ts_filter."  and lower(ticket.status) not in ('cancel','archive') ".$bucket_filter ."
          order by ".$sort_de_status;
         $result = mysqli_query($con, $query);
 
