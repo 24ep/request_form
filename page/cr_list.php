@@ -46,7 +46,7 @@
                 }
                 ?>
 
-                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5"
+                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5 pt-1 border pb-0 mb-2"
                 style="border-bottom: 1px #e1dede solid;">
                 <div class="row" style="width:100%">
                     <div style="width:auto;place-self: center;">

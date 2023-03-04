@@ -32,10 +32,8 @@ $request_cr_status_op = get_option_return_filter("status","","single","content_r
 session_start();
 include_once("get_function_badge.php");
 include_once("get_default_profile_image.php");
-if($_POST["bucket"] == 'all'){
+if($_POST["bucket"] == 'all' or $_POST["bucket"] =="" ){
   $bucket_filter = "";
-}elseif($_POST["bucket"] ==""){
-  $bucket_filter="";
 }else{
   $bucket_filter = "and ticket.ticket_template = '".$_POST["bucket"]."'";
 }
@@ -69,7 +67,7 @@ $filter .= "lower(ticket.id) like lower('%".$_SESSION["ts_query_input"]."%') or 
 $filter .= "lower(ticket.title) like lower('%".$_SESSION["ts_query_input"]."%') or ";
 $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]."%') ";
 
-    function list_ts_non_status($filter,$ts_command_limit ,$status){
+    function list_ts_non_status($filter,$ts_command_limit ,$status,$bucket_filter){
         if(strpos($filter,"ticket.status = 'Close'")!==false){
           // $sort_de_status="-ticket.effective_date DESC ,ticket.id DESC ";
           $sort_de_status= "ticket.id DESC";
@@ -113,7 +111,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         where (".$ts_filter.")  and lower(ticket.status) not in ('cancel','archive') ".$bucket_filter ."
          order by ".$sort_de_status;
         $result = mysqli_query($con, $query);
-echo $query ;
+
         echo "  <li class='row mb-3' style='color: #b3b3b3;font-weight: 600;text-align-last: center;'>
                     <div class='col'>Id</div>
                     <div class='col-4'>Title</div>
@@ -182,7 +180,7 @@ echo $query ;
         }
         echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'"  >
         <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
-        list_ts_non_status("(".$filter.")",$ts_command_limit  ,$row_status["attribute_option"]);
+        list_ts_non_status("(".$filter.")",$ts_command_limit  ,$row_status["attribute_option"],$bucket_filter);
         echo '</div>';
         mysqli_close($con_status);
         ?>
