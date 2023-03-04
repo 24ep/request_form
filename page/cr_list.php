@@ -50,7 +50,7 @@
                 style="border-bottom: 1px #e1dede solid;">
                 <div class="row" style="width:100%">
                     <div style="width:auto;place-self: center;">
-                        <ion-icon name="filter-outline"></ion-icon><strong>Bucket</strong>
+                    <ion-icon name="folder-open-outline"></ion-icon><strong>Bucket</strong>
                     </div>
                 </div>
                 </nav>
@@ -62,7 +62,7 @@
                                 $result = mysqli_query($con, $query);
                                 $bucket  = '<button class="nav-link border  text-start active" id="v-pills-all-tab" data-bs-toggle="pill" data-bs-target="#v-pills-all" type="button" role="tab" aria-controls="v-pills-all" aria-selected="true">';
                                 $bucket  .= '<div class="row"><div style="place-self: center;"class="col-3"><img class="me-2 rounded" src="https://ui-avatars.com/api/?name=ALL>&background=999999&color=fff&rounded=false&size=25">';
-                                $bucket  .= '</div><div class="col-9">All Bucket</div></div></button>';
+                                $bucket  .= '</div><div class="col-9 ps-1">All Bucket</div></div></button>';
                                 while($row = mysqli_fetch_array($result)) {
                                     $bucket  .=
                                     '<button class="nav-link border text-start" onclick="get_list_update_content(&#39;'.$row['prefix'].'&#39;)" id="v-pills-'.$row['prefix'].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.$row['prefix'].'" type="button" role="tab" aria-controls="v-pills-'.$row['prefix'].'" aria-selected="true">';
