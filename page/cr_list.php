@@ -44,6 +44,17 @@
                     ';
                     return $input;
                 }
+                ?>
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5"
+                style="border-bottom: 1px #e1dede solid;">
+                <div class="row" style="width:100%">
+                    <div style="width:auto;place-self: center;">
+                        <ion-icon name="filter-outline"></ion-icon><strong>Bucket</strong>
+                    </div>
+                </div>
+                </nav>
+                    <?php
 
                                 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
                                 mysqli_query($con, "SET NAMES 'utf8' ");
