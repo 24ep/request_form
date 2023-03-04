@@ -37,7 +37,6 @@ if($_POST["bucket"] == 'all' or $_POST["bucket"] =="" ){
 }else{
   $bucket_filter = "and ticket.ticket_template = '".$_POST["bucket"]."'";
 }
-echo $bucket_filter;
 
 
 //query limit
