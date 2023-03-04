@@ -284,28 +284,6 @@ function get_filter_attribute() {
 get_filter_attribute();
 
 
-function filter_update(be) {
-    var pagenation_input = document.getElementById("pagenation_input").value
-
-    $.post("../base/get/get_list_ns.php", {
-        pagenation_input: pagenation_input
-    }, function(data) {
-        $('#job_list').html(data);
-    });
-
-    $.post("../base/get/get_total_page_nj.php", {
-        user_filter: user_filter,
-        status_filter: status_filter,
-        from_post: from_post,
-        pagenation_input: pagenation_input,
-        brand_filter: brand_filter
-    }, function(data) {
-        $('#total_page_nj').html(data);
-    });
-    updateparams('user_filter', user_filter);
-    updateparams('brand_filter', brand_filter);
-
-}
 
 function update_brand_note(dataoutput, brand) {
     $.post("../base/action/action_update_brand_note.php", {
@@ -433,7 +411,6 @@ function action_submit_add_new_job() {
             }
         });
     }
-    filter_update();
 }
 
 function action_submit_add_new_job_new() {
@@ -581,24 +558,12 @@ var status_filter_show_object = new SlimSelect({
 
             }
             document.getElementById("status_filter").value = input_update;
-            filter_update();
         }
     }
 })
 
 
-filter_update();
-//tooltips
-tippy('#brand_filter', {
-    content: "สามารถค้นห้า ticket ของคุณได้ด้วยเลข ID , Department , Sub-Department , Brand ของ Ticket",
-    placement: 'bottom',
-    animation: 'fade',
-});
-tippy('#user_filter', {
-    content: "ป้อน username ของคุณ หรือของผู้ที่คุณต้องการค้นหา",
-    placement: 'bottom',
-    animation: 'fade',
-});
+
 //toolstips create new ticket
 tippy('#brand', {
     content: "ระบุซื่อแบรนด์ของสินค้าที่ใช้สำหรับขึ้นหน้าเว็บไซด์",
