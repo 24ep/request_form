@@ -39,6 +39,7 @@ if($_GET["bucket"] == 'all'){
 }else{
   $bucket_filter = "and ticket.ticket_template = '".$_GET["bucket"]."'";
 }
+echo $bucket_filter;
 
 
 //query limit
