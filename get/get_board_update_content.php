@@ -83,7 +83,7 @@ function listing_ticket_card($result_after_fetch ,$status){
         $officer_display =  explode(",",$row['case_officer']);
         foreach ($officer_display as $officer){
           // $image_profile = profile_image($officer,$row['department'],25,$officer,1);
-          $image_profile = profile_avatar($officer,$row['department'],25);
+          $image_profile = profile_avatar($officer,$row['department'],20);
           echo '<div class="badge-profile">';
           echo '<div class="col">';
           echo $image_profile;

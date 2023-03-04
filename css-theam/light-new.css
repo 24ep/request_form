@@ -250,7 +250,8 @@ label#label_file_cme {
     position: absolute;
     right: 0;
 }
-.badge-profile{
+
+.badge-profile {
     background: #ffffff;
     border-radius: 20px;
     /* border: solid 1px #dddddd; */
@@ -260,6 +261,8 @@ label#label_file_cme {
     display: inherit;
     margin: 1px;
     /* color: white; */
+    font-size: small;
+    color: #707070;
 }
 .ts-view.active {
     background-color: #ea5a5a !important;
