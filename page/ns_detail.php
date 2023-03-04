@@ -478,8 +478,8 @@ echo '
                     }
                     ?>
                                 <a type="button" href="<?php echo $link_info;?>" target="_blank"
-                                    class="btn btn-sm btn-dark shadow-sm bg-gradient">
-                                    <ion-icon name="attach-outline"></ion-icon>Go to files information
+                                    class="attachment">
+                                    <ion-icon style="color: #7e7e7e;margin-right: 5px;"name="document-attach-outline"></ion-icon>Go to files information
                                 </a>
                             </div>
                             <!-- comment ns -->

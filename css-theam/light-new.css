@@ -630,7 +630,7 @@ select:disabled {
     border-radius: 5px;
     color: #8c8c8c;
     overflow-wrap: normal;
-    height: 70px;
+    max-height: 70px;
     width: 45%;
     margin-left: 1px;
     text-decoration:auto;
