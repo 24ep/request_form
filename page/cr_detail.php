@@ -159,7 +159,7 @@ function get_attachment_cr($id){
     $herf = str_replace("../..",'../..',$row['file_path'].$row['file_name']);
     $list_attchment.=  '
     <li class="list-group-item d-flex justify-content-between align-items-left"
-      style="border:0px;padding:0px;margin-top:5px;background: transparent;" >
+      style="border:0px;padding:0px;margin-top:5px;background: transparent;margin-left: 10px;" >
       <a href="'.$herf.'" download="'.$row['file_name'].'" class="row attachment" >
         <div class="col-1" style="place-self: center;">
           <ion-icon style="color: #7e7e7e;margin-right: 5px;font-size: xx-large;"name="document-attach-outline"></ion-icon>
