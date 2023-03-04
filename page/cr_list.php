@@ -4,7 +4,7 @@
     <div class="btn-group btn-group-sm" style="position: inherit;" role="group"
         aria-label="Basic checkbox toggle button group">
         <div class="d-flex align-items-start">
-            <div class="flex-column nav-pills pe-3 bg-white shadow-sm " style="height: 100%;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <div class="nav flex-column nav-pills pe-3 bg-white shadow-sm border " style="height: 100%;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <?php
                 function get_attribute_list_filter($table){
                     $current_value = "";
@@ -136,13 +136,13 @@
                     $query = "SELECT id, project_name, prefix , color_project FROM all_in_one_project.project_bucket;" or die("Error:" . mysqli_error($con));
                     $result = mysqli_query($con, $query);
                     echo '<div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab" tabindex="0">';
-                    echo '<div id="bucket_all">';
+                    echo '<div id="bucket_all" class="m-3">';
                     echo include("../get/get_list_update_content.php");
                     echo '</div>';
                     echo'</div>';
                     while($row = mysqli_fetch_array($result)) {
                         echo'<div class="tab-pane fade" id="v-pills-'.$row['prefix'].'" role="tabpanel" aria-labelledby="v-pills-'.$row['prefix'].'-tab" tabindex="0">';
-                        echo '<div id="bucket_'.$row['prefix'].'"></div>';
+                        echo '<div id="bucket_'.$row['prefix'].'" class="m-3"></div>';
                         echo '</div>';
                     }
                     mysqli_close($con);
