@@ -38,7 +38,7 @@ if($bucket == 'all'){
 }elseif($bucket ==""){
   $bucket_filter="";
 }else{
-  $bucket_filter = "pb.prefix = '".$bucket."'";
+  $bucket_filter = "ticket.ticket_template = '".$bucket."'";
 }
 
 //query limit
