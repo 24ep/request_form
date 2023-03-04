@@ -74,11 +74,11 @@ if(isset($_POST["status"])){$_SESSION["status"]= $_POST["status"];}
    ticket.ticket_template as ticket_template,
    comment.ticket_type as ticket_type,
    ticket.participant as ticket_participant,
-   sum(case when comment.ticket_type='content_request' then 1 else 0 end) as count_comment 
+   sum(case when comment.ticket_type='content_request' then 1 else 0 end) as count_comment
    FROM all_in_one_project.content_request as ticket
    LEFT JOIN all_in_one_project.comment as comment
-   ON ticket.id = comment.ticket_id 
-   where ".$cr_status." 
+   ON ticket.id = comment.ticket_id
+   where ".$cr_status."
    GROUP BY ticket.id
    ORDER by ". $sort_by." ".$sort_code." ".$LIMIT;
    //echo "<script>console.log('".$query."');</script>";
@@ -102,13 +102,12 @@ if(isset($_POST["status"])){$_SESSION["status"]= $_POST["status"];}
                                 <div class="fw-bold" data-bs-toggle="offcanvas" data-card="#detail_cr" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].')"><strong style="color:red;">'.$row["ticket_template"].'-'.$row["id"].'</strong> '.$row["title"]. $badge .'<div class="float-end status_cr_list">'.$row['status'].'</div></div>
                                 <div data-bs-toggle="offcanvas" data-card="#detail_cr" data-bs-target="#detail_cr" aria-controls="offcanvasExample" onclick="cr_id_toggle('.$row['id'].')" style="color:gray;font-size:13px;margin-right:20px;margin-bottom:5px">'.$description.'</div>
                                 <!--<ion-icon name="chatbubbles-outline" class="icon_ocv"></ion-icon> -->
-                                <small style="color: #adb5bd;font-size:12px;">'.$count_comment_cr.' Comment <strong> | Create by '.$row["request_by"].'</strong></small> <small class="timeago" datetime="'.$row["create_date"].'">'.$row["create_date"].'</small>    
-           
+                                <small style="color: #adb5bd;font-size:12px;">'.$count_comment_cr.' Comment <strong> | Create by '.$row["request_by"].'</strong></small> <small class="timeago" datetime="'.$row["create_date"].'">'.$row["create_date"].'</small>
                             </div>
             </li>';
-    } 
+    }
   mysqli_close($con);
   ?>
-  <script>
-    timeago().render(document.querySelectorAll('.timeago'));
-  </script>
+<script>
+timeago().render(document.querySelectorAll('.timeago'));
+</script>

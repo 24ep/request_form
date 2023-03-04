@@ -1,4 +1,5 @@
 
+
 <!doctype html>
 <div class="container-fluid ">
     <div class="input-group input-group-sm p-3" style="position: initial!important;">
@@ -65,7 +66,6 @@
             <div class="col-2">
                 <div class="btn-group btn-group-sm" style="position: inherit;" role="group"
                     aria-label="Basic checkbox toggle button group">
-                    <?php include('../get/get_list_bucket.php'); ?>
                     <ul class="nav nav-pills mb-3 row p-0 me-3" id="pills-tab"
                         style="right: 0;position: absolute;padding: 10px 40px;" role="tablist">
                         <li class="nav-item col p-0" role="presentation">
@@ -83,19 +83,36 @@
                             </button>
                         </li>
                     </ul>
-                </div>
-            </div>
-            <div class="col-10">
-                <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-list_view_ts" role="tabpanel"
-                        aria-labelledby="pills-list_view_ts-tab" tabindex="0">
-                        <div class="row" id="get_ts_admin_console_list_view">
-                            <?php include('../get/get_list_update_content.php'); ?>
+                    <div class="d-flex align-items-start">
+                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <?php
+                                $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+                                mysqli_query($con, "SET NAMES 'utf8' ");
+                                $query = "SELECT id, project_name, prefix , color_project FROM all_in_one_project.project_bucket;" or die("Error:" . mysqli_error($con));
+                                $result = mysqli_query($con, $query);
+                                $bucket  = '<button class="nav-link active" id="v-pills-all-tab" data-bs-toggle="pill" data-bs-target="#v-pills-all" type="button" role="tab" aria-controls="v-pills-all" aria-selected="true">All Bucket</button>';
+                                while($row = mysqli_fetch_array($result)) {
+                                    $bucket  .= '<button class="nav-link" id="v-pills-'.$row['prefix'].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.$row['prefix'].'" type="button" role="tab" aria-controls="v-pills-'.$row['prefix'].'" aria-selected="true">'.$row['project_name'].'</button>';
+                                }
+                                mysqli_close($con);
+                                echo $bucket;
+                            ?>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="pills-board_view_ts" role="tabpanel" aria-labelledby="pills-board_view_ts-tab"
-                        tabindex="0">
-                        <div class="row" id="get_ts_admin_console">
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <?php
+                                $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+                                mysqli_query($con, "SET NAMES 'utf8' ");
+                                $query = "SELECT id, project_name, prefix , color_project FROM all_in_one_project.project_bucket;" or die("Error:" . mysqli_error($con));
+                                $result = mysqli_query($con, $query);
+                                echo '<div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab" tabindex="0">...</div>';
+                                while($row = mysqli_fetch_array($result)) {
+                                    echo'<div class="tab-pane fade" id="v-pills-'.$row['prefix'].'" role="tabpanel" aria-labelledby="v-pills-'.$row['prefix'].'-tab" tabindex="0">';
+                                    echo include("base/get/get_list_update_content.php?bucket=".$row['prefix']);
+                                    echo '</div>';
+                                }
+                                mysqli_close($con);
+                                echo $bucket;
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -197,48 +214,6 @@
         }
     }
 
-    function update_project_sticky_badge(BuketPrefix) {
-        var prefix_project_sticky_array = [];
-        var prefix_project_sticky = "";
-        $.each($("input[name='bucket_checking']:not(:checked)"), function() {
-            if ($(this).val() != BuketPrefix) {
-                var boxes = document.querySelectorAll('[data-bucket="' + $(this).val() + '"]');
-                for (var box of boxes) {
-                    box.className += " bucket-hin";
-                }
-            } else {
-                var boxes = document.querySelectorAll('[data-bucket="' + BuketPrefix + '"]');
-                for (var box of boxes) {
-                    box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '');
-                }
-                prefix_project_sticky_array.push($(this).val());
-            }
-        });
-        $.each($("input[name='bucket_checking']:checked"), function() {
-            if ($(this).val() != BuketPrefix) {
-                var boxes = document.querySelectorAll('[data-bucket="' + $(this).val() + '"]');
-                for (var box of boxes) {
-                    box.className = box.className.replace(/(?:^|\s)bucket-hin(?!\S)/g, '');
-                }
-                prefix_project_sticky_array.push($(this).val());
-            } else {
-                var boxes = document.querySelectorAll('[data-bucket="' + BuketPrefix + '"]');
-                for (var box of boxes) {
-                    box.className += " bucket-hin";
-                }
-            }
-        });
-        prefix_project_sticky = prefix_project_sticky_array.join("','");
-        prefix_project_sticky = "'" + prefix_project_sticky + "'";
-        console.log("is checked: " + prefix_project_sticky_array.join(","));
-        $.post("base/get/get_list_bucket.php", {
-            prefix_project_sticky: prefix_project_sticky
-        }, function(data) {
-            // z-index: -1;
-            // position: absolute!important;
-            // display: none;
-        });
-    }
 
     function search_cr_ticket() {
         var cr_search_input = document.getElementById("cr_search_input").value
@@ -326,25 +301,6 @@
             setup: (ed) => {
                 editor = ed;
             },
-        });
-    }
-
-    function update_project_sticky() {
-        var prefix_project_sticky = "";
-        for (var option of document.getElementById('project_sticky_mse').options) {
-            if (option.selected) {
-                if (prefix_project_sticky == "") {
-                    prefix_project_sticky = "'" + option.value + "'";
-                } else {
-                    prefix_project_sticky = prefix_project_sticky + ",'" + option.value + "'";
-                }
-                // selected.push(option.value);
-            }
-        }
-        $.post("base/get/get_list_project.php", {
-            prefix_project_sticky: prefix_project_sticky
-        }, function(data) {
-            $('#project_bucket').html(data);
         });
     }
 

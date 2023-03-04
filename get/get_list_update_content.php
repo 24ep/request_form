@@ -32,6 +32,13 @@ $request_cr_status_op = get_option_return_filter("status","","single","content_r
 session_start();
 include_once("get_function_badge.php");
 include_once("get_default_profile_image.php");
+$bucket = $_GET["bucket"];
+if($bucket == 'all'){
+  $bucket_fillter = "pb.prefix = '".$bucket."'";
+}else if($bucket ==""){
+  $bucket_fillter="";
+}
+
 //query limit
 if($_POST["ts_command_limit"]<>""){
   $ts_command_limit = $_POST["ts_command_limit"];
@@ -100,17 +107,17 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         Left join all_in_one_project.project_bucket pb
         on pb.prefix  = ticket.ticket_template
         -- and ticket.status not in ('archive','cancel')
-        where ".$ts_filter."  and lower(ticket.status) not in ('cancel','archive')
-         order by ".$sort_de_status."  limit 300";
+        where ".$ts_filter."  and lower(ticket.status) not in ('cancel','archive') and '".$ $bucket_fillter ."'
+         order by ".$sort_de_status;
         $result = mysqli_query($con, $query);
-        
+
         echo "  <li class='row mb-3' style='color: #b3b3b3;font-weight: 600;text-align-last: center;'>
                     <div class='col'>Id</div>
                     <div class='col-4'>Title</div>
                     <div class='col'>STATUS</div>
                     <div class='col'>Request for</div>
                     <div class='col'>Due date</div>
-                    <div class='col'>Assinee</div>
+                    <div class='col'>Assignee</div>
                     <div class='col'>Ticket</div>
                 </li>";
           while( $row = mysqli_fetch_array($result)) {
@@ -123,13 +130,10 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
     data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
     data-cr-title="<?php echo strtolower($row['title']);?>" aria-controls="offcanvasExample">
 
-    <div class="col">
-        <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?>
-    </div>
+    <div class="col"><?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?></div>
     <div class="col-4" style="text-align: -webkit-left;"><?php echo $row['title']; ?></div>
     <div class="col" style="text-align: -webkit-center;"><?php echo badge_ticket_status_cr($row['status']); ?></div>
     <div class="col" style="text-align: -webkit-center;"><?php echo badge_ticket_type_cr($row['ticket_type']); ?></div>
-
     <div class="col" style="text-align: -webkit-center;"><?php echo badge_due_date($row["effective_date"]); ?></div>
     <div class="col" style="inline-size: 10px;">
         <?php
@@ -137,7 +141,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                         $image_profile = "";
                         if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
                             echo '<div class="col card-unassign-bt" >';
-                            echo  '<a type="button" class="btn btn-sm btn-outline-secondary" style="border-radius: 15px;">Unassign</a>';
+                            echo  '<a type="button" class="btn btn-sm btn-outline-secondary">Unassign</a>';
                             echo '</div>';
                         }else{
                           $ef_badge = "";
@@ -158,28 +162,14 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
                         }
                     ?>
 
-
-
     </div>
     <div class="col">
-    <button onclick="cr_id_toggle(<?php echo $row['id'];?>) "  data-card="#detail_cr" 
+    <button onclick="cr_id_toggle(<?php echo $row['id'];?>) "  data-card="#detail_cr"
             data-bucket="<?php echo $row['prefix'];?>" data-cr-request-for="<?php echo $row['ticket_type'];?>"
             data-cr-id="<?php echo $row['id'];?>" data-cr-status="<?php echo $row['status'];?>"
             data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
             data-cr-title="<?php echo strtolower($row['title']);?>"  type="button"
             class="btn btn-dark btn-sm">Detail</button>
-        <!-- <button onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-card="#detail_cr" data-bs-target="#detail_cr"
-            data-bucket="<?php echo $row['prefix'];?>" data-cr-request-for="<?php echo $row['ticket_type'];?>"
-            data-cr-id="<?php echo $row['id'];?>" data-cr-status="<?php echo $row['status'];?>"
-            data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
-            data-cr-title="<?php echo strtolower($row['title']);?>" aria-controls="offcanvasExample" type="button"
-            class="btn btn-dark btn-sm">Detail</button> -->
-          <!-- <button onclick="call_model_edit_content_request(<?php echo $row['id'];?>) " data-bs-toggle="offcanvas" data-card="#detail_cr" data-bs-target="#detail_cr"
-            data-bucket="<?php echo $row['prefix'];?>" data-cr-request-for="<?php echo $row['ticket_type'];?>"
-            data-cr-id="<?php echo $row['id'];?>" data-cr-status="<?php echo $row['status'];?>"
-            data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
-            data-cr-title="<?php echo strtolower($row['title']);?>" aria-controls="offcanvasExample" type="button"
-            class="btn btn-dark btn-sm">Detail</button> -->
     </div>
 </li>
 <!-- ui -->
