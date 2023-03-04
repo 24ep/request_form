@@ -204,7 +204,7 @@ if (!$_SESSION["login_csg"]){
     <!-- attention model -->
     <?php if($_SESSION['username']=='poojaroonwit'){?>
 
-    <script>
+    <!-- <script>
        swal({
             title: "Attention",
             icon: "info",
@@ -213,7 +213,7 @@ if (!$_SESSION["login_csg"]){
             },
             content:(<p>เรียน ทีมจัดชื้อและผู้เเกี่ยวข้อง</p><p>เนื่องด้วยทาง Online Content Team มีการปรับเปลี่ยน การจัดลำดับความสำคัญของงาน สำหรับการสร้างข้อมูลสินค้าใหม่เพื่อนำขึ้นบนระบบ Online <br />โดย วันที่ 16 มีนาคม 2566 เป็นต้นไป ช่อง Launch Date จะถูกปรับเป็น Required feild (จำเป็นต้องกรอกข้อมูล) และ Launch Date จะถูกปรับให้สามารถเลือกได้ล่วงหน้ามากที่สุดไม่เกิน 30 วัน นับจากวันที่เปิด ticket</p><p>จึงเรียนมาเพื่อทราบ และ ขอแสดงความนับถือ<br />Digital Content / Photoshooting</p>),
        });
-    </script>
+    </script> -->
     <!-- <style>
         .swal-overlay {
         background-color: rgba(43, 165, 137, 0.45);

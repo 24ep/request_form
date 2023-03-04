@@ -115,7 +115,19 @@ function get_username_option($current_username){
   }
   return $option_set ;
 }
-function getoption_return_edit_cr($col,$table,$select_option,$sorm,$database) {
+function get_username(){
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
+  mysqli_query($con, "SET NAMES 'utf8' ");
+  $query = "SELECT * FROM account ORDER BY id asc" or die("Error:" . mysqli_error($con));
+  $result = mysqli_query($con, $query);
+  $option_set = '<option value="unassign" selected>unassign</option>';
+  while($row = mysqli_fetch_array($result)) {
+    $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
+  }
+  mysqli_close($con);
+  return $option_set;
+}
+function get_option_return_edit_cr($col,$table,$select_option,$sorm,$database) {
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
   $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
@@ -206,15 +218,14 @@ while($row = mysqli_fetch_array($result)) {
     $assign = '<div style="margin-bottom:15px">assign to '.$case_officer.'</div>';
   }
   $cr_op = return_option_edit_cr($status,"38");
-  $username_op = getoption_return_edit_cr("username","account",$case_officer,"multi","all_in_one_project");
+  $username_op = get_option_return_edit_cr("username","account",$case_officer,"multi","all_in_one_project");
   $username_op_mul = get_username_option($case_officer);
-  //prticipant to string set
+  //participant to string set
   $set_participant = str_replace(",","','",$participant);
   $set_participant = "'".trim($set_participant," ")."'";
   // end
   $type_op = return_option_edit_cr($ticket_type,"39");
-  $content_request_reson_op = getoption_return_edit_cr("content_request_reson","option",$content_request_reson,"single","all_in_one_project");
-  $website_op = getoption_return_edit_cr("product_website","job_option_cms",$platform_issue,"multi","u749625779_cdscontent");
+  $content_request_reason_op = get_option_return_edit_cr("content_request_reson","option",$content_request_reson,"single","all_in_one_project");
   $list_attachment = get_attachment_cr($id);
   $list_image = get_image_cr($id);
   // get contact
@@ -438,7 +449,7 @@ while($row = mysqli_fetch_array($result)) {
       <div class="col-sm-9">
       <input class="form-control form-control-sm" list="datalistOptions"  onchange="update_cr_detail('.$id.','.$cr_edit_content_request_reson.')" id="cr_edit_content_request_reson" name="cr_edit_content_request_reson" placeholder="Type to search..." value="'.$content_request_reson.'">
       <datalist id="datalistOptions">
-      '.$content_request_reson_op.'
+      '.$content_request_reason_op.'
       </datalist>
       </div>
       </div>';
