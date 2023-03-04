@@ -35,7 +35,7 @@ include_once("get_default_profile_image.php");
 $bucket = $_GET["bucket"];
 if($bucket == 'all'){
   $bucket_filter = "pb.prefix = '".$bucket."'";
-}else if($bucket ==""){
+}elseif($bucket ==""){
   $bucket_filter="";
 }
 
