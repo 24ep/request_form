@@ -72,25 +72,51 @@
                             return $input;
                         }
                 ?>
-                <div id="dynamic_filter">
-                </div>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5"
+                    style="border-bottom: 1px #e1dede solid;">
+                    <div class="row" style="width:100%">
+                        <div style="width:auto;place-self: center;">
+                            <ion-icon name="filter-outline"></ion-icon><strong>Dynamic Filter</strong>
+                        </div>
+                        <div style="width:auto">
+                            <?php echo get_attribute_list_filter(); ?>
+                        </div>
+                        <div style="width:auto">
+                            <button class="btn btn-dark btn-sm " style="margin-left:10px;position: initial!important;"
+                                type="button" data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas"
+                                aria-controls="offcanvasExample">
+                                <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated"
+                                    aria-label="add outline">
+                                </ion-icon>
+                                New Ticket
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5">
+                    <div class="row g-3 align-items-center" id="dynamic_filter" style="width: 100%;">
+
+                    </div>
+
+                </nav>
+
                 <?php
-                                $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-                                mysqli_query($con, "SET NAMES 'utf8' ");
-                                $query = "SELECT id, project_name, prefix , color_project FROM all_in_one_project.project_bucket;" or die("Error:" . mysqli_error($con));
-                                $result = mysqli_query($con, $query);
-                                echo '<div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab" tabindex="0">';
-                                echo '<div id="bucket_all">';
-                                echo include("../get/get_list_update_content.php");
-                                echo '</div>';
-                                echo'</div>';
-                                while($row = mysqli_fetch_array($result)) {
-                                    echo'<div class="tab-pane fade" id="v-pills-'.$row['prefix'].'" role="tabpanel" aria-labelledby="v-pills-'.$row['prefix'].'-tab" tabindex="0">';
-                                    echo '<div id="bucket_'.$row['prefix'].'"></div>';
-                                    echo '</div>';
-                                }
-                                mysqli_close($con);
-                            ?>
+                    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+                    mysqli_query($con, "SET NAMES 'utf8' ");
+                    $query = "SELECT id, project_name, prefix , color_project FROM all_in_one_project.project_bucket;" or die("Error:" . mysqli_error($con));
+                    $result = mysqli_query($con, $query);
+                    echo '<div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab" tabindex="0">';
+                    echo '<div id="bucket_all">';
+                    echo include("../get/get_list_update_content.php");
+                    echo '</div>';
+                    echo'</div>';
+                    while($row = mysqli_fetch_array($result)) {
+                        echo'<div class="tab-pane fade" id="v-pills-'.$row['prefix'].'" role="tabpanel" aria-labelledby="v-pills-'.$row['prefix'].'-tab" tabindex="0">';
+                        echo '<div id="bucket_'.$row['prefix'].'"></div>';
+                        echo '</div>';
+                    }
+                    mysqli_close($con);
+                ?>
             </div>
         </div>
     </div>
