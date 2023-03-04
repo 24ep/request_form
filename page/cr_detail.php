@@ -146,22 +146,22 @@ function return_option_edit_cr($current_value,$attr_id){
   return $option_element;
 }
 function get_attachment_cr($id){
-  $list_attchment ="";
+  $list_attachment ="";
   date_default_timezone_set("Asia/Bangkok");
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
   $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image<>1 ORDER BY id ASC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
-  $list_attchment .=  '<hr class="cr_hr_detail">
+  $list_attachment .=  '<hr class="cr_hr_detail">
   <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">ATTACHMENTS</strong></small>
   <ul class="list-group mt-2">';
   while($row = mysqli_fetch_array($result)) {
     $herf = str_replace("../..",'../..',$row['file_path'].$row['file_name']);
-    $list_attchment.=  '
+    $list_attachment.=  '
     <li class="list-group-item d-flex justify-content-between align-items-left"
-      style="border:0px;padding:0px;margin-top:5px;background: transparent;margin-left: 10px;" >
-      <a href="'.$herf.'" download="'.$row['file_name'].'" class="row attachment" >
-        <div class="col-1" style="place-self: center;">
+      style="border:0px;padding:0px;margin-top:5px;background: transparent;" >
+      <a href="'.$herf.'" download="'.$row['file_name'].'" class="row attachment" style="flex-wrap: nowrap;" >
+        <div class="col-1 p-0" style="place-self: center;">
           <ion-icon style="color: #7e7e7e;margin-right: 5px;font-size: xx-large;"name="document-attach-outline"></ion-icon>
         </div>
         <div class="col-11 ps-4">
@@ -171,10 +171,10 @@ function get_attachment_cr($id){
     </li>';
     $pass = true;
   }
-  $list_attchment.= '</ul>';
+  $list_attachment.= '</ul>';
   if(!isset($pass)){$pass=false;}
   if($pass==true){
-    return $list_attchment;
+    return $list_attachment;
   }
 }
 function get_image_cr($id){
@@ -361,12 +361,12 @@ while($row = mysqli_fetch_array($result)) {
     $project_name = $row_project["project_name"];
   }
   echo '
-  <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="image_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
   <div class="modal-content">
   <div class="modal-body">
   <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-  <img src="" class="imagepreview" style="width: 100%;" >
+  <img src="" class="image_preview" style="width: 100%;" >
   </div>
   </div>
   </div>
@@ -398,18 +398,19 @@ while($row = mysqli_fetch_array($result)) {
   <button class="badge bg-light text-dark" style="border: solid 1px gainsboro;" id="EditDetailTicket" onclick="EditDetailTicket()"><ion-icon name="pencil-outline"></ion-icon></button>
   <button class="badge bg-primary" style="border: solid 1px gainsboro;display:none;"id="SaveDetailTicket"  onclick="SaveDetailTicket('.$id.')"><ion-icon style="color:white!important;margin-right:5px" name="save-outline"></ion-icon></ion-icon>Save</button>
   <button class="badge bg-secondary" style="border: solid 1px gainsboro;display:none;"id="CancelDetailTicket"  onclick="CancelDetailTicket('.$id.')"><ion-icon style="color:white!important;margin-right:5px" name="close-circle-outline"></ion-icon></ion-icon>Cancel</button>
-  <div class="mb-3 row" style="font-size: x-large;">
+  <div class="mb-3 row" style="font-size: 20px;">
   <label for="staticEmail" class="col-sm-2 col-form-label" style="width: fit-content;padding: 0px 5px 5px 15px;">
   <strong style="color:'.$color_project.'!important;font-size: smaller;border-bottom: solid 3px;">'.$ticket_template.'-'.$id .'</strong></label>
   <div class="col-sm-10">
-  <input class="input-cr-inactive" id="cr_edit_title" name="cr_edit_title"
+  <input class="input-cr-inactive" id="cr_edit_title" name="cr_edit_title" style="font-weight: bold;"
   type="text" disabled value="'.$title.'">
   </div>
   </div>
   <form method="post">
   <div class="des_cr" id="des_cr_inline" >
   <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">DESCRIPTION</strong></small>
-  '.$description.$list_attachment.$list_image.'</div></form>
+  <div class="m-2">
+  '.$description.$list_attachment.$list_image.'</div></div></form>
   <hr class="cr_hr_detail">
   <small style="font-weight: bolder;color: #adb5bd;margin-bottom:5px">COMMENT</small>
   <ul  class="list-group list-group-flush" style="background: fixed;">

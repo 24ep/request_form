@@ -69,26 +69,26 @@ date_default_timezone_set("Asia/Bangkok");
 
         <?php
         function get_attachment_cr($id){
-            $list_attchment ="";
+            $list_attachment ="";
             date_default_timezone_set("Asia/Bangkok");
             $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
             $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image<>1 ORDER BY id ASC" or die("Error:" . mysqli_error($con));
             $result = mysqli_query($con, $query);
-            $list_attchment .=  '<small style="display:block;margin-bottom:3px"><strong style="color:gray">Attchment</strong></small>
+            $list_attachment .=  '<small style="display:block;margin-bottom:3px"><strong style="color:gray">Attchment</strong></small>
             <ul class="list-group ">';
               while($row = mysqli_fetch_array($result)) {
                 $herf = str_replace("../..",'../..',$row['file_path'].$row['file_name']);
-                $list_attchment.=  ' <li class="list-group-item d-flex justify-content-between align-items-left">
+                $list_attachment.=  ' <li class="list-group-item d-flex justify-content-between align-items-left">
                 <div><ion-icon name="document-attach-outline"></ion-icon>'.$row["file_name"].'</div>
                 <a href="'.$herf.'" download="'.$row['file_name'].'"><ion-icon name="cloud-download-outline" style="color:blue"></ion-icon></a>
                 </li>';
                 $pass = true;
               }
-              $list_attchment.= '</ul>';
+              $list_attachment.= '</ul>';
               if(!isset($pass)){$pass=false;}
               if($pass==true){
-                return $list_attchment;
+                return $list_attachment;
               }else{
                 return '<small><strong style="color:gray">No attachment</strong></small>';
               }

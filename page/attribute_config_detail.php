@@ -75,7 +75,7 @@ echo '
 //options
 echo '
 <div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">
-<div id="attirbute_option_list"> </div>
+<div id="attribute_option_list"> </div>
 ';
 ?>
 <button type="button" class="btn btn-dark btn-sm"
@@ -101,7 +101,7 @@ function get_attribute_option_list() {
             table_name: table_name
         },
         function(data) {
-            $('#attirbute_option_list').html(data);
+            $('#attribute_option_list').html(data);
         });
 }
 

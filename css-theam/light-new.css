@@ -635,3 +635,6 @@ select:disabled {
     margin-left: 1px;
     text-decoration:auto;
 }
+.tox .tox-tinymce .tox-tinymce--toolbar-bottom{
+    border-radius: 5px;
+}
