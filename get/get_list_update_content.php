@@ -37,7 +37,7 @@ if($_POST["bucket"] == 'all'){
 }elseif($_POST["bucket"] ==""){
   $bucket_filter="";
 }else{
-  $bucket_filter = "and ticket.ticket_template = '".$_GET["bucket"]."'";
+  $bucket_filter = "and ticket.ticket_template = '".$_POST["bucket"]."'";
 }
 echo $bucket_filter;
 
