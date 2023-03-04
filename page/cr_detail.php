@@ -410,7 +410,7 @@ while($row = mysqli_fetch_array($result)) {
   <div class="des_cr" id="des_cr_inline" >
   <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Description</strong></small>
   <div class="m-2">
-  '.$description.$list_attachment.$list_image.'</div></div></form>
+  '.$description."</div>".$list_attachment.$list_image.'</div></form>
   <hr class="cr_hr_detail">
   <small style="font-weight: bolder;color: #adb5bd;margin-bottom:5px">Comments</small>
   <ul  class="list-group list-group-flush" style="background: fixed;">
