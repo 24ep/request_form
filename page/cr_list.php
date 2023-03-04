@@ -21,7 +21,7 @@
                 $squser="";
             }
         ?>
-        <input style="width: 30%;position: initial!important;" type="search" style="position: initial!important;"
+        <input style="width: 20%;position: initial!important;" type="search" style="position: initial!important;"
             class="form-control" onsearch="search_cr_data();" id="ts_command" name="ts_command"
             placeholder="leave your ticket number or message have contain in title" aria-label="Username"
             aria-describedby="basic-addon1" value="<?php echo $sqb; ?>">
