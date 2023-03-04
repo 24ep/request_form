@@ -116,14 +116,15 @@
                                 $query = "SELECT id, project_name, prefix , color_project FROM all_in_one_project.project_bucket;" or die("Error:" . mysqli_error($con));
                                 $result = mysqli_query($con, $query);
                                 echo '<div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab" tabindex="0">';
-                                echo '<div id="bucket_'.$row['prefix'].'">
+                                echo '<div id="bucket_'.$row['prefix'].'">';
+                                echo include("../get/get_list_update_content.php");
                                 echo '</div>';
-                               
+
 
                                 echo'</div>';
                                 while($row = mysqli_fetch_array($result)) {
                                     echo'<div class="tab-pane fade" id="v-pills-'.$row['prefix'].'" role="tabpanel" aria-labelledby="v-pills-'.$row['prefix'].'-tab" tabindex="0">';
-                                    echo '<div id="bucket_'.$row['prefix'].'"></div>'
+                                    echo '<div id="bucket_'.$row['prefix'].'"></div>';
                                     echo '</div>';
                                 }
                                 mysqli_close($con);
