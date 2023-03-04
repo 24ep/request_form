@@ -289,7 +289,7 @@
     });
     </script>
     <script>
-    run_ts_command('task');
+    // run_ts_command('task');
     </script>
     <script>
     function load_tiny_comment() {

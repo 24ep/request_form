@@ -41,6 +41,7 @@ if($bucket == 'all'){
   $bucket_filter = "and ticket.ticket_template = '".$bucket."'";
 }
 
+
 //query limit
 if($_POST["ts_command_limit"]<>""){
   $ts_command_limit = $_POST["ts_command_limit"];
@@ -112,6 +113,7 @@ $filter .= "lower(ticket.description) like lower('%".$_SESSION["ts_query_input"]
         where ".$ts_filter."  and lower(ticket.status) not in ('cancel','archive') ".$bucket_filter ."
          order by ".$sort_de_status;
         $result = mysqli_query($con, $query);
+        echo $query;
 
         echo "  <li class='row mb-3' style='color: #b3b3b3;font-weight: 600;text-align-last: center;'>
                     <div class='col'>Id</div>
