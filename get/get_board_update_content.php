@@ -42,9 +42,9 @@ function listing_ticket_card($result_after_fetch ,$status){
       data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
       data-cr-title="<?php echo strtolower($row['title']);?>" aria-controls="offcanvasExample">
       <div class="row" style="padding-right: 0px;">
-      <div class="col-10" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
+      <div class="col-10 cr-card" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
       data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample">
-      <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong> ".$row["title"]; ?>
+      <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong><br> ".$row["title"]; ?>
       </div>
       <div class="col-2" style="padding-right: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>) "
       data-bs-toggle="offcanvas" data-bs-target="#detail_cr" aria-controls="offcanvasExample">
@@ -72,7 +72,7 @@ function listing_ticket_card($result_after_fetch ,$status){
       $image_profile = "";
       if($row['case_officer']==null or $row['case_officer']=="" or $row['case_officer']=="unassign"){
         echo '<div class="col card-unassign-bt" >';
-        echo  '<a type="button" class="btn btn-sm btn-outline-secondary" style="border-radius: 15px;">Unassign</a>';
+        echo  '<a type="button" class="btn btn-sm btn-outline-secondary" style="font-size: smaller;">Unassign</a>';
         echo '</div>';
         echo '<div class="col card-unassign-eft" >';
         echo  badge_due_date($row["effective_date"]);

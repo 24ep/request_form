@@ -327,6 +327,11 @@ label#label_file_cme {
     margin-top: 3px;
     color: #979797;
 }
+.cr-card{
+    padding-right: 0px;
+    font-size: small;
+    font-weight: bold;
+}
 .input-cr-active{
     border: 1px solid #cdcdcd;
     border-radius: 5px;
