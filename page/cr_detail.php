@@ -153,7 +153,7 @@ function get_attachment_cr($id){
   $query = "SELECT * FROM attachment WHERE ticket_type = 'content_request' and ticket_id = ".$id." and is_image<>1 ORDER BY id ASC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $list_attchment .=  '<hr class="cr_hr_detail">
-  <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Attchment</strong></small>
+  <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">ATTACHMENTS</strong></small>
   <ul class="list-group mt-2">';
   while($row = mysqli_fetch_array($result)) {
     $herf = str_replace("../..",'../..',$row['file_path'].$row['file_name']);
@@ -408,10 +408,10 @@ while($row = mysqli_fetch_array($result)) {
   </div>
   <form method="post">
   <div class="des_cr" id="des_cr_inline" >
-  <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Description</strong></small>
+  <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">DESCRIPTION</strong></small>
   '.$description.$list_attachment.$list_image.'</div></form>
   <hr class="cr_hr_detail">
-  <small style="font-weight: bolder;color: #adb5bd;margin-bottom:5px">Comment</small>
+  <small style="font-weight: bolder;color: #adb5bd;margin-bottom:5px">COMMENT</small>
   <ul  class="list-group list-group-flush" style="background: fixed;">
   <div id="comment_box_cr">
   <div id="call_ticket_comment_cr">
