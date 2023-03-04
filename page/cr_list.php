@@ -121,7 +121,7 @@
                                 echo'</div>';
                                 while($row = mysqli_fetch_array($result)) {
                                     echo'<div class="tab-pane fade" id="v-pills-'.$row['prefix'].'" role="tabpanel" aria-labelledby="v-pills-'.$row['prefix'].'-tab" tabindex="0">';
-                                    include("../get/get_list_update_content.php?bucket=".$row['prefix']);
+                                    echo include("../get/get_list_update_content.php?bucket=".$row['prefix']);
                                     echo '</div>';
                                 }
                                 mysqli_close($con);
