@@ -62,8 +62,6 @@
         <?php echo $request_cr_status_op; ?>
     </datalist>
     </form>
-        <div class="row">
-            <div class="col-2">
                 <div class="btn-group btn-group-sm" style="position: inherit;" role="group"
                     aria-label="Basic checkbox toggle button group">
                     <ul class="nav nav-pills mb-3 row p-0 me-3" id="pills-tab"
