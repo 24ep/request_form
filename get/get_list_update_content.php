@@ -33,10 +33,12 @@ session_start();
 include_once("get_function_badge.php");
 include_once("get_default_profile_image.php");
 $bucket = $_GET["bucket"];
-if($bucket <> 'all'){
-  $bucket_filter = "pb.prefix = '".$bucket."'";
-}else{
+if($bucket == 'all'){
+  $bucket_filter = "";
+}elseif($bucket ==""){
   $bucket_filter="";
+}else{
+  $bucket_filter = "pb.prefix = '".$bucket."'";
 }
 
 //query limit
