@@ -1,10 +1,10 @@
 <!doctype html>
-<div class="container-fluid ">
+
     </form>
     <div class="btn-group btn-group-sm" style="position: inherit;" role="group"
         aria-label="Basic checkbox toggle button group">
         <div class="d-flex align-items-start">
-            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <div class="nav flex-column nav-pills pe-3 bg-white shadow-sm " style="height: 100%;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <?php
                 function get_attribute_list_filter($table){
                     $current_value = "";
@@ -120,7 +120,7 @@
             </div>
         </div>
     </div>
-</div>
+
 <script>
 function search_cr_data() {
     var input = document.getElementById('ts_command').value.toLowerCase();;
