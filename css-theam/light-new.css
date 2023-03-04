@@ -629,7 +629,8 @@ select:disabled {
     padding: 10px;
     border-radius: 5px;
     color: #8c8c8c;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
     height: 70px;
-    width: max-content;
+    width: 55%;
+    margin-left: 1px;
 }

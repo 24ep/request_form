@@ -161,10 +161,10 @@ function get_attachment_cr($id){
     <li class="list-group-item d-flex justify-content-between align-items-left"
       style="border:0px;padding:0px;margin-top:5px;background: transparent;" >
       <a href="'.$herf.'" download="'.$row['file_name'].'" class="row attachment" >
-        <div class="col-1">
+        <div class="col-1" style="place-self: center;">
           <ion-icon style="color: #7e7e7e;margin-right: 5px;font-size: xx-large;"name="document-attach-outline"></ion-icon>
         </div>
-        <div class="col-11">
+        <div class="col-11 ps-4">
           '.$row["file_name"].'
         </div>
       </a>
