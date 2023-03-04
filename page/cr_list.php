@@ -93,7 +93,7 @@
                                 $bucket  = '<button class="nav-link text-start active" id="v-pills-all-tab" data-bs-toggle="pill" data-bs-target="#v-pills-all" type="button" role="tab" aria-controls="v-pills-all" aria-selected="true">All Bucket</button>';
                                 while($row = mysqli_fetch_array($result)) {
                                     $bucket  .= '<button class="nav-link text-start" id="v-pills-'.$row['prefix'].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.$row['prefix'].'" type="button" role="tab" aria-controls="v-pills-'.$row['prefix'].'" aria-selected="true">';
-                                    $bucket  .= ' <img src="https://ui-avatars.com/api/?name='.$row['prefix'].'>&background='.str_replace($row['color_project'],"#","").'&color=fff&rounded=false&size=25">';
+                                    $bucket  .= ' <img class="ms-3" src="https://ui-avatars.com/api/?name='.$row['prefix'].'>&background='.str_replace("#","",$row['color_project']).'&color=fff&rounded=false&size=25">';
                                     $bucket .= $row['project_name'].'
                                     </button>';
                                 }
