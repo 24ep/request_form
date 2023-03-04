@@ -19,109 +19,7 @@ if(!isset($_SESSION["username"])){
   $overlay = "off_overlay();";
 }
 $id = $_POST['id'];
-if($id=="" or $id == null){
-  $direct = "external";
-  $id = $_GET['id'];
-  echo '
-  <html lang="en">
-  <head>
-  <title>Content and Studio - Content Request</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/base/images/24ico.ico" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
-  </script>
-  <!-- textarray -->
-  <script src="https://cdn.tiny.cloud/1/cis8560ji58crrbq17zb11gp39qhpn2lka54u0m54s8du1gw/tinymce/5/tinymce.min.js"
-  referrerpolicy="origin"></script>
-  <!-- Bootstrap css -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <!-- end Bootstrap css -->
-  <link href="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-  <script>
-  $(function() {
-    $(".multiple-select").multipleSelect()
-  });
-  </script>
-  <!-- bootstrap js -->
-  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-  crossorigin="anonymous"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-  </script>
-  <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/light.css">
-  <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/light-modern.css">
-  <link rel="stylesheet" type="text/css" href="https://content-service-gate.cdse-commercecontent.com/base/css-theam/tree-ticket.css">
-  <style>
-  #overlay {
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #0000002e;
-    z-index: 2;
-    cursor: pointer;
-  }
-  </style>
-  </head>
-  <body onload="'.$overlay.'">
-  <div id="overlay">
-  <div style="
-  color: white;
-  font-size: 20px;
-  text-align: -webkit-center;
-  top: 100;
-  margin: 25%;">
-  <h1>View only, please login</h1>
-  <a href="https://content-service-gate.cdse-commercecontent.com/login?redirect=https://content-service-gate.cdse-commercecontent.com/base/page/cr_detail.php?id='.$id.'" class="btn btn-danger">Login</a>
-  <a href="https://content-service-gate.cdse-commercecontent.com/signup" target="_blank" class="btn btn-dark">Register</a>
-  </div>
-  </div>
-  <h5 style="position: fixed;background: #00000087;width: 100%;color: #a7f0ff;;padding: 5px 15px;z-index: 2;">Instent view | <a  href="https://content-service-gate.cdse-commercecontent.com/" style="color:white">Return Homepage</a> | </h5>
-  <script>
-  function load_tiny_comment()
-  {
-    tinymce.init({
-      selector: "textarea#comment_input_cr",
-      plugins: "autoresize link lists emoticons",
-      toolbar:
-      "bold italic underline strikethrough  forecolor  numlist bullist  link blockquote emoticons",
-      menubar: false,
-      statusbar: false,
-      width: "100%",
-      toolbar_location: "bottom",
-      autoresize_bottom_margin: 0,
-      contextmenu: false,
-      content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px; } ",
-      setup: (ed) => {
-        editor = ed;
-      },
-    });
-  }
-  </script>
-  ';
-}
+
 // $func = $_POST['func'];
 function return_option_edit_cr($current_value,$attr_id){
   session_start();
@@ -399,7 +297,7 @@ while($row = mysqli_fetch_array($result)) {
   <button class="badge bg-primary" style="border: solid 1px gainsboro;display:none;"id="SaveDetailTicket"  onclick="SaveDetailTicket('.$id.')"><ion-icon style="color:white!important;margin-right:5px" name="save-outline"></ion-icon></ion-icon>Save</button>
   <button class="badge bg-secondary" style="border: solid 1px gainsboro;display:none;"id="CancelDetailTicket"  onclick="CancelDetailTicket('.$id.')"><ion-icon style="color:white!important;margin-right:5px" name="close-circle-outline"></ion-icon></ion-icon>Cancel</button>
   <div class="mb-3 row" style="font-size: 20px;">
-  <label for="staticEmail" class="col-sm-2 col-form-label" style="width: fit-content;padding: 0px 5px 5px 15px;">
+  <label for="staticEmail" class="col-sm-2 col-form-label" style="width: fit-content;padding: 0px 0px 0px 12px">
   <strong style="color:'.$color_project.'!important;font-size: smaller;border-bottom: solid 3px;">'.$ticket_template.'-'.$id .'</strong></label>
   <div class="col-sm-10">
   <input class="input-cr-inactive" id="cr_edit_title" name="cr_edit_title" style="font-weight: bold;"
@@ -408,6 +306,7 @@ while($row = mysqli_fetch_array($result)) {
   </div>
   <form method="post">
   <div class="des_cr" id="des_cr_inline" >
+
   <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Description</strong></small>
   <div class="m-2">
   '.$description."</div>".$list_attachment.$list_image.'</div></form>
