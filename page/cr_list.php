@@ -102,6 +102,25 @@
                                 New Ticket
                             </button>
                         </div>
+                        <div style="width:auto">
+                        <ul class="nav nav-pills mb-3 row p-0 me-3" id="pills-tab"
+                            style="right: 0;position: absolute;padding: 10px 40px;" role="tablist">
+                            <li class="nav-item col p-0" role="presentation">
+                                <button class="nav-link ts-view active m-0" id="pills-list_view_ts-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-list_view_ts" type="button" role="tab" aria-controls="pills-list_view_ts"
+                                    aria-selected="true">
+                                    <ion-icon name="reorder-four-outline" style="margin:0px"></ion-icon>
+                                </button>
+                            </li>
+                            <li class="nav-item col p-0" role="presentation">
+                                <button class="nav-link ts-view m-0" id="pills-board_view_ts-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-board_view_ts" type="button" role="tab" aria-controls="pills-board_view_ts"
+                                    aria-selected="false">
+                                    <ion-icon name="grid-outline" style="margin:0px"></ion-icon>
+                                </button>
+                            </li>
+                        </ul>
+                        </div>
                     </div>
                 </nav>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5">
