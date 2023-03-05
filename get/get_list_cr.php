@@ -59,7 +59,7 @@ document.getElementById('total_page_cr').innerHTML = "<?php echo ceil($page_coun
 <?php
 $ts_command_limit =30;
 
-function list_ts_non_status($filter,$ts_command_limit ,$status,$bucket_filter){
+function list_ts_non_status($filter,$ts_command_limit ,$status,$bucket_filter,$start_item,$limit){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $query = "SELECT ticket.id as id,
@@ -156,7 +156,7 @@ function list_ts_non_status($filter,$ts_command_limit ,$status,$bucket_filter){
 
         mysqli_close($con);
     }
-    list_ts_non_status("(".$filter.")",$ts_command_limit  ,$row_status["attribute_option"],$bucket_filter);
+    list_ts_non_status("(".$filter.")",$ts_command_limit  ,$row_status["attribute_option"],$bucket_filter,$start_item,$limit);
 
     mysqli_close($con_status);
     ?>
