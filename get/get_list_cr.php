@@ -58,16 +58,6 @@ document.getElementById('total_page_cr').innerHTML = "<?php echo ceil($page_coun
 $ts_command_limit =30;
 
 function list_ts_non_status($filter,$ts_command_limit ,$status,$bucket_filter){
-    if(strpos($filter,"ticket.status = 'Close'")!==false){
-        // $sort_de_status="-ticket.effective_date DESC ,ticket.id DESC ";
-        $sort_de_status= "ticket.id DESC";
-    }else{
-        // $sort_de_status="-ticket.effective_date DESC ,ticket.case_officer ASC, ticket.id ASC";
-        $sort_de_status= "ticket.id DESC";
-    }
-    $i=1;
-    //--
-    $ts_filter = $filter;
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $query = "SELECT ticket.id as id,
@@ -98,7 +88,7 @@ function list_ts_non_status($filter,$ts_command_limit ,$status,$bucket_filter){
     Left join all_in_one_project.project_bucket pb
     on pb.prefix  = ticket.ticket_template
     -- and ticket.status not in ('archive','cancel')
-    where (".$filter.")  and lower(ticket.status) not in ('cancel','archive') ".$bucket_filter ."
+    where (".$filter.") and lower(ticket.status) not in ('cancel','archive') ".$bucket_filter ."
     order by ".$sort_de_status;
     $result = mysqli_query($con, $query);
 

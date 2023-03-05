@@ -7,7 +7,7 @@ function datepick($attribute_code,$attribute_label){
         <input  class="form-control form-control-sm" attribute_type="date" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onfocusout="getFilterInputValues()">
     </div>
     <script>
-        const picker = new easepick.create({
+        var picker = new easepick.create({
             element: "#filter_'.$attribute_code.'",
             css: [
                 "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css"
