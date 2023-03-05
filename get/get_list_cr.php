@@ -44,7 +44,7 @@ if($filter==''){
 }
 //count item
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error( $con));
-$query = "SELECT count(*) as count_item FROM content_request as anj where (".$filter.") ".$bucket_filter
+$query = "SELECT count(*) as count_item FROM content_request as ticket where (".$filter.") ".$bucket_filter
 or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
@@ -57,7 +57,7 @@ $page_count = $count_item / 30;
 document.getElementById('total_page_cr').innerHTML = "<?php echo ceil($page_count); ?>"
 </script>
 <?php
-$ts_command_limit =30;
+$ts_command_limit = 30;
 
 function list_ts_non_status($filter,$ts_command_limit ,$status,$bucket_filter,$start_item,$limit){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));

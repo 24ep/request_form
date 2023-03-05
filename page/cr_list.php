@@ -222,6 +222,7 @@ function set_bucket(bucket){
      document.getElementById("bucket_selected").value = bucket;
      getFilterInputValues();
 }
+getFilterInputValues()
 function get_filter_attribute() {
     var selected = [];
     for (var option of document.getElementById('list_of_filter').options) {
