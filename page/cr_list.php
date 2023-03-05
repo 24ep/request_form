@@ -150,21 +150,21 @@
                 </nav>
                 <input type="hidden" id="bucket_selected" name="bucket_selected" value="all">
                 <?php
-                    $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-                    mysqli_query($con, "SET NAMES 'utf8' ");
-                    $query = "SELECT id, project_name, prefix , color_project FROM all_in_one_project.project_bucket;" or die("Error:" . mysqli_error($con));
-                    $result = mysqli_query($con, $query);
+                    // $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+                    // mysqli_query($con, "SET NAMES 'utf8' ");
+                    // $query = "SELECT id, project_name, prefix , color_project FROM all_in_one_project.project_bucket;" or die("Error:" . mysqli_error($con));
+                    // $result = mysqli_query($con, $query);
                     echo '<div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab" tabindex="0">';
-                    echo '<div id="bucket_all" class="m-3">';
+                    echo '<div id="bucket" class="m-3">';
                     echo include("../get/get_list_cr.php");
                     echo '</div>';
                     echo'</div>';
-                    while($row = mysqli_fetch_array($result)) {
-                        echo'<div class="tab-pane fade" id="v-pills-'.$row['prefix'].'" role="tabpanel" aria-labelledby="v-pills-'.$row['prefix'].'-tab" tabindex="0">';
-                        echo '<div id="bucket_'.$row['prefix'].'" class="m-3"></div>';
-                        echo '</div>';
-                    }
-                    mysqli_close($con);
+                    // while($row = mysqli_fetch_array($result)) {
+                    //     echo'<div class="tab-pane fade" id="v-pills-'.$row['prefix'].'" role="tabpanel" aria-labelledby="v-pills-'.$row['prefix'].'-tab" tabindex="0">';
+                    //     echo '<div id="bucket_'.$row['prefix'].'" class="m-3"></div>';
+                    //     echo '</div>';
+                    // }
+                    // mysqli_close($con);
                 ?>
             </div>
         </div>
@@ -225,7 +225,7 @@ function getFilterInputValues() {
         outputValues: outputValues,
         bucket:bucket
     }, function(data) {
-        $('#bucket_'+bucket).html(data);
+        $('#bucket').html(data);
     });
 }
 function set_bucket(bucket){
