@@ -1,4 +1,5 @@
 <?php
+
 function return_input_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id,$require){
   if($site_element=='datetime-local'){
     if($current_value <> null){
@@ -71,6 +72,112 @@ function return_input_color($att_code,$att_name,$site_element,$current_value,$co
   </div>
   </li>
   ';
+  return $element;
+}
+function get_nickname($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id,$require){
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+  $query_op = "SELECT * FROM all_in_one_project.account ORDER BY id ASC" or die("Error:" . mysqli_error($con));
+  $result_op = mysqli_query($con, $query_op);
+  $i=0;
+  while($option = mysqli_fetch_array($result_op)) {
+    if($option["nickname"]==$current_value){
+      $selected = 'selected';
+    }else{
+      $selected = '';
+    }
+    if($option["nickname"]<>"" and $i==0){
+      $i++;
+      $option_element .= "<option ".$selected ." value=''></option>";
+    }
+    $option_element .= "<option ".$selected ." value='".$option["nickname"]."'>".$option["nickname"]."</option>";
+  }
+  if($enable_edit==''){
+    // $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px" name="color-wand-outline"></ion-icon>';
+    $badge_edit_lv  ='';
+  }else{
+    // $badge_edit_lv  ='';
+    $badge_edit_lv  ='style="color:#C0C0C0"';
+  }
+  if($require==1 and $current_value==''){
+    $require = 'is-invalid';
+  }else{
+    $require = '';
+  }
+  $element = '
+  <li class="list-group-item m-2 row" style="display: inline-flex;">
+  <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
+  <div class="col-9">
+  <select
+  class="'.$require.'"
+  id="'.$code_element.'"
+  name="'.$code_element.'"
+  '.$enable_edit.'
+  onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
+  >
+  '.$option_element.'
+  </select>
+  </div>
+  <script>
+  new SlimSelect({
+    select: "#'.$code_element.'"
+  })
+  </script>
+  </li>
+  ';
+  unset($option_element);
+  return $element;
+}
+function get_username($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id,$require){
+  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+  $query_op = "SELECT * FROM all_in_one_project.account ORDER BY id ASC" or die("Error:" . mysqli_error($con));
+  $result_op = mysqli_query($con, $query_op);
+  $i=0;
+  while($option = mysqli_fetch_array($result_op)) {
+    if($option["username"]==$current_value){
+      $selected = 'selected';
+    }else{
+      $selected = '';
+    }
+    if($option["username"]<>"" and $i==0){
+      $i++;
+      $option_element .= "<option ".$selected ." value=''></option>";
+    }
+    $option_element .= "<option ".$selected ." value='".$option["username"]."'>".$option["username"]."</option>";
+  }
+  if($enable_edit==''){
+    // $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px" name="color-wand-outline"></ion-icon>';
+    $badge_edit_lv  ='';
+  }else{
+    // $badge_edit_lv  ='';
+    $badge_edit_lv  ='style="color:#C0C0C0"';
+  }
+  if($require==1 and $current_value==''){
+    $require = 'is-invalid';
+  }else{
+    $require = '';
+  }
+  $element = '
+  <li class="list-group-item m-2 row" style="display: inline-flex;">
+  <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
+  <div class="col-9">
+  <select
+  class="'.$require.'"
+  id="'.$code_element.'"
+  name="'.$code_element.'"
+  '.$enable_edit.'
+  onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
+  >
+  '.$option_element.'
+  </select>
+  </div>
+  <script>
+  new SlimSelect({
+    select: "#'.$code_element.'"
+  })
+  </script>
+  </li>
+  ';
+  unset($option_element);
   return $element;
 }
 function return_s_select_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id,$require){
@@ -253,6 +360,10 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
       $element .= return_s_select_box($row["attribute_code"],$row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
     }elseif($row["attribute_type"]=="multi_select"){
       $element .= return_m_select_box($row["attribute_code"],$row["attribute_label"],"multi_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
+    }elseif($row["attribute_type"]=="username"){
+      $element .= get_username($row["attribute_code"],$row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
+    }elseif($row["attribute_type"]=="nickname"){
+      $element .= get_nickname($row["attribute_code"],$row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
     }
   }
   return $element;

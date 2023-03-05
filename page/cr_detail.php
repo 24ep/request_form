@@ -115,18 +115,7 @@ function get_username_option($current_username){
   }
   return $option_set ;
 }
-function get_username(){
-  $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
-  mysqli_query($con, "SET NAMES 'utf8' ");
-  $query = "SELECT * FROM account ORDER BY id asc" or die("Error:" . mysqli_error($con));
-  $result = mysqli_query($con, $query);
-  $option_set = '<option value="unassign" selected>unassign</option>';
-  while($row = mysqli_fetch_array($result)) {
-    $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
-  }
-  mysqli_close($con);
-  return $option_set;
-}
+
 function get_option_return_edit_cr($col,$table,$select_option,$sorm,$database) {
   $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
   mysqli_query($con, "SET NAMES 'utf8' ");
