@@ -100,6 +100,83 @@ function simple_select($attribute_code,$attribute_label,$type){
 
     return $input;
 }
+function username($attribute_code,$attribute_label,$type){
+    $current_value = "";
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+    $query_op = "SELECT * FROM u749625779_cdscontent.account ORDER BY id ASC" or die("Error:" . mysqli_error($con));
+    $result_op = mysqli_query($con, $query_op);
+    $i=0;
+    while($option = mysqli_fetch_array($result_op)) {
+        if($option["username"]==$current_value){
+        $selected = 'selected';
+        }else{
+        $selected = '';
+        }
+        if($option["username"]<>"" and $i==0){
+        $i++;
+        $option_element .= "<option ".$selected ." value=''></option>";
+        }
+        $option_element .= "<option ".$selected ." value='".$option["username"]."'>".$option["username"]."</option>";
+    }
+    $input = '
+    <div class="col-md">
+
+        <select placeholder="'.$attribute_label.'" '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+        '.$option_element.'
+        </select>
+
+    </div>
+    <script>
+    new SlimSelect({
+      select: "#filter_'.$attribute_code.'",
+      settings: {
+        placeholderText: "'.$attribute_label.'"
+      }
+    })
+    </script>
+    ';
+
+    return $input;
+}
+function username($attribute_code,$attribute_label,$type){
+    $current_value = "";
+    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+    $query_op = "SELECT * FROM u749625779_cdscontent.account ORDER BY id ASC" or die("Error:" . mysqli_error($con));
+    $result_op = mysqli_query($con, $query_op);
+    $i=0;
+    while($option = mysqli_fetch_array($result_op)) {
+        if($option["nickname"]==$current_value){
+        $selected = 'selected';
+        }else{
+        $selected = '';
+        }
+        if($option["nickname"]<>"" and $i==0){
+        $i++;
+        $option_element .= "<option ".$selected ." value=''></option>";
+        }
+        $option_element .= "<option ".$selected ." value='".$option["nickname"]."'>".$option["nickname"]."</option>";
+    }
+    $input = '
+    <div class="col-md">
+
+        <select placeholder="'.$attribute_label.'" '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+        '.$option_element.'
+        </select>
+
+    </div>
+    <script>
+    new SlimSelect({
+      select: "#filter_'.$attribute_code.'",
+      settings: {
+        placeholderText: "'.$attribute_label.'"
+      }
+    })
+    </script>
+    ';
+
+    return $input;
+}
+
 
 
 $dynamic_filter = $_POST['dynamic_filter'];
@@ -119,6 +196,10 @@ while($row = mysqli_fetch_array($result)) {
         echo datepick($row['attribute_code'],$row['attribute_label']);
     }elseif($row['attribute_type']=='date'){
         echo datepick($row['attribute_code'],$row['attribute_label']);
+    }elseif($row['attribute_type']=='username'){
+        echo username($row['attribute_code'],$row['attribute_label'],'multiple');
+    }elseif($row['attribute_type']=='nickname'){
+        echo nickname($row['attribute_code'],$row['attribute_label'],'multiple');
     }else{
         echo text($row['attribute_code'],$row['attribute_label']);
     }
