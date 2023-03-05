@@ -69,7 +69,7 @@
                                                 <div class="row" >
                                                     <div style="place-self: center;"class="col-12">
                                                     <img class="me-2 rounded" src="https://ui-avatars.com/api/?name=ALL>&background=999999&color=fff&rounded=false&size=20">
-                                                    All Bucket
+                                                    <strong>All Bucket</strong>
                                                     </div>
 
                                                 </div>
