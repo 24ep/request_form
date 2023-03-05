@@ -78,7 +78,7 @@
                                                 </div>
                                                 <div class="col-10">';
                                                         $bucket .= $row['project_name'].'
-                                                        <span class="badge rounded-pill bg-danger">'.$row["count_backlog"].'</span>
+                                                        <span class="badge rounded-pill bg-secondary">'.$row["count_backlog"].'</span>
                                                 </div>
                                             </div>
                                     </button>';
