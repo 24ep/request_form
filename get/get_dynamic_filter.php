@@ -3,8 +3,8 @@ session_start();
 function datepick($attribute_code,$attribute_label){
     $input = '
     <div class="col-md-2">
-    <label for="floatingInputValue">'.$attribute_label.'</label>
-        <input  class="form-control form-control-sm" attribute_type="date" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onfocusout="getFilterInputValues()">
+
+        <input  placeholder="'.$attribute_label.'" class="form-control form-control-sm" attribute_type="date" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onfocusout="getFilterInputValues()">
     </div>
     <script>
         var picker = new easepick.create({
@@ -42,8 +42,8 @@ function datepick($attribute_code,$attribute_label){
 function text($attribute_code,$attribute_label){
     $input = '
     <div class="col-md-2">
-    <label for="floatingInputValue">'.$attribute_label.'</label>
-        <input type="text" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+
+        <input placeholder="'.$attribute_label.'" type="text" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
 
     </div>
     ';
@@ -53,8 +53,8 @@ function text($attribute_code,$attribute_label){
 function number($attribute_code,$attribute_label){
     $input = '
     <div class="col-md-2">
-        <label for="floatingInputValue">'.$attribute_label.'</label>
-        <input type="number" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+
+        <input placeholder="'.$attribute_label.'" type="number" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
     </div>
     ';
 
@@ -82,8 +82,8 @@ function simple_select($attribute_code,$attribute_label,$type){
     }
     $input = '
     <div class="col-md-2">
-    <label for="floatingInputValue">'.$attribute_label.'</label>
-        <select '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+
+        <select placeholder="'.$attribute_label.'" '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
         '.$option_element.'
         </select>
 
@@ -92,7 +92,7 @@ function simple_select($attribute_code,$attribute_label,$type){
     new SlimSelect({
       select: "#filter_'.$attribute_code.'",
       settings: {
-        placeholderText: ""
+        placeholderText: "'.$attribute_label.'"
       }
     })
     </script>
