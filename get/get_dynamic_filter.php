@@ -138,7 +138,7 @@ function username($attribute_code,$attribute_label,$type){
 
     return $input;
 }
-function username($attribute_code,$attribute_label,$type){
+function nickname($attribute_code,$attribute_label,$type){
     $current_value = "";
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM u749625779_cdscontent.account ORDER BY id ASC" or die("Error:" . mysqli_error($con));
