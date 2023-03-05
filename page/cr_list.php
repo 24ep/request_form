@@ -55,7 +55,7 @@
                     </div>
                 </div>
             </nav>
-            <button class="btn btn-dark btn-sm " style="margin-left:10px;position: initial!important;" type="button"
+            <button class="btn btn-danger btn-sm bg-gradient" style="margin-left:10px;position: initial!important;" type="button"
                 data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
                 <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated"
                     aria-label="add outline">
