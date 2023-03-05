@@ -14,7 +14,7 @@ $configurable_map = array (
         'description'=>'Manage any register account in system'),
     array(
         'session'=>'General Settings',
-        'icon'=>'folder',
+        'icon'=>'file-tray-stacked',
         'table'=>'project_bucket',
         'database'=>'all_in_one_project',
         'prefix'=>'pb',

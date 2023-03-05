@@ -50,7 +50,7 @@
                 style="border-bottom: 1px #e1dede solid;">
                 <div class="row" style="width:100%">
                     <div style="width:auto;place-self: center;">
-                    <ion-icon name="folder-open-outline"></ion-icon><strong>Bucket</strong>
+                    <ion-icon name="file-tray-stacked-outline"></ion-icon><strong>Bucket</strong>
                     </div>
                 </div>
                 </nav>
