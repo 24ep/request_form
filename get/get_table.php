@@ -29,6 +29,7 @@ function displayTable($host, $username, $password, $database, $table, $columns,$
         foreach ($columns as $column) {
             echo "<td>" . $row[$column] . "</td>";
         }
+        echo "<td><button onclick='myButtonClickFunction(this)'>Click me</button></td>";
         echo "</tr>";
     }
 
