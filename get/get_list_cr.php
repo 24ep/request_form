@@ -59,7 +59,7 @@ $page_count = $count_item / 30;
 document.getElementById('total_page_cr').innerHTML = "<?php echo ceil($page_count); ?>"
 </script>
 <?php
-
+$ts_command_limit =30;
 
 function list_ts_non_status($filter,$ts_command_limit ,$status,$bucket_filter){
     if(strpos($filter,"ticket.status = 'Close'")!==false){
