@@ -77,7 +77,7 @@
                                                     <img class="me-2 rounded" src="https://ui-avatars.com/api/?name='.$row['prefix'].'>&background='.str_replace("#","",$row['color_project']).'&color=fff&rounded=false&size=25">
                                                 </div>
                                                 <div class="col-10">';
-                                                        $bucket .= $row['project_name'].'
+                                                        $bucket .= '<strong>'.$row['project_name'].'</strong>
                                                         <span class="badge rounded-pill bg-secondary">'.$row["count_backlog"].'</span>
                                                 </div>
                                             </div>
@@ -107,6 +107,21 @@
                                 </ion-icon>
                                 New Ticket
                             </button>
+                        </div>
+                        <div style="width:auto">
+                            <div class="input-group input-group-sm" style="position: inherit;">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
+                                <input type="number" class="form-control" style="position: inherit;" id="pagenation_input" min=1
+                                    <?php if($_SESSION["total_page_rcr"]<>""){echo "max=".$_SESSION["total_page_rcr"];}?>
+                                    value="1" onchange="getFilterInputValues()" placeholder=""
+                                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                                    placeholder="Dept , Sub Dept , Brand , ID">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">
+                                    <div id="total_page_cr">
+
+                                    </div>
+                                </span>
+                            </div>
                         </div>
                         <div style="width:auto">
                         <ul class="nav nav-pills mb-3 row p-0 me-3" id="pills-tab"
@@ -166,7 +181,58 @@ function get_list_update_content(bucket) {
         $('#bucket_' + bucket).html(data);
     });
 }
+function getFilterInputValues() {
+    var pagenation_input = document.getElementById("pagenation_input").value
+    var filterPrefix = "filter_";
+    var inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`);
+    var inputValues = {};
+    clearParams();
 
+    inputs.forEach(input => {
+        var name = input.getAttribute("attribute_code");
+        var type = input.getAttribute("attribute_type");
+        var value = input.value;
+
+        if (input.type === "select-multiple") {
+            // handle multi-select element
+            var selectedOptions = Array.from(input.options).filter(option => option.selected);
+            value = selectedOptions.map(option => option.value).join("','");
+        }
+
+
+        if (value !== null && value !== "") {
+            if (type == 'date') {
+                value = value.replace(" ", "");
+                value = value.replace(" ", "");
+                value = value.replace("AND", "' AND '");
+                var formattedValue = `${name} BETWEEN '${value}'`;
+            } else if (input.type == 'text') {
+                value = value.toLowerCase();
+                var formattedValue = `${name} like '%${value}%'`;
+            } else if (input.type == 'number') {
+                var formattedValue = `${name} = ${value}`;
+            } else if (input.type === "select-multiple") {
+                var formattedValue = `${name} in ('${value}')`;
+            }
+
+            inputValues[name] = formattedValue;
+            updateparams("par_" + name, value);
+        }
+
+        //create all display
+
+    });
+
+    var outputValues = Object.values(inputValues).join(" and ");
+    console.log(outputValues);
+    //   return `Filter values: ${outputValues}`;
+    $.post("../base/get/get_list_cr.php", {
+        pagenation_input: pagenation_input,
+        outputValues: outputValues
+    }, function(data) {
+        $('#bucket_all').html(data);
+    });
+}
 function get_filter_attribute() {
     var selected = [];
     for (var option of document.getElementById('list_of_filter').options) {

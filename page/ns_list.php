@@ -100,7 +100,6 @@ function get_attribute_list_filter($table){
                     placeholder="Dept , Sub Dept , Brand , ID">
                 <span class="input-group-text" id="inputGroup-sizing-sm">
                     <div id="total_page_nj">
-                        <?php include('../get/get_total_page_nj.php'); ?>
                     </div>
                 </span>
             </div>

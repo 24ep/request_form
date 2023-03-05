@@ -48,6 +48,18 @@ displayTable(
 
 } );
 
+function attribute_detail_page(id,attribute_code,table_name,action){
+    // create new attribute
+      $.post("base/page/attribute_config_detail.php", {
+                id:id,
+                attribute_code: attribute_code,
+                table_name: table_name,
+                action:action
+            },
+            function(data) {
+                $('#col_detail').html(data);
+            });
+  }
 
 
 </script>
