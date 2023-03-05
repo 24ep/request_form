@@ -173,29 +173,7 @@ function get_attribute_list_filter($table){
 // //add new filter
 
 // }
-function clearParams() {
-    let queryParams = new URLSearchParams(window.location.search);
-    let pageParam = queryParams.get('page');
 
-    // Delete all query parameters
-    queryParams.forEach((value, key) => {
-        if (key !== 'page') {
-            queryParams.delete(key);
-        }
-    });
-
-    // Add the "page" parameter back if it was present
-    if (pageParam !== null) {
-        queryParams.set('page', pageParam);
-    }
-
-    let urlWithoutParams = window.location.origin + window.location.pathname;
-    if (queryParams.toString()) {
-        urlWithoutParams += '?' + queryParams.toString();
-    }
-
-    window.history.replaceState({}, document.title, urlWithoutParams);
-}
 
 
 

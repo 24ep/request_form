@@ -435,6 +435,29 @@ function update_params(key, value) {
     // Replace current querystring with the new one.
     history.replaceState(null, null, "?" + queryParams.toString());
 }
+function clearParams() {
+    let queryParams = new URLSearchParams(window.location.search);
+    let pageParam = queryParams.get('page');
+
+    // Delete all query parameters
+    queryParams.forEach((value, key) => {
+        if (key !== 'page') {
+            queryParams.delete(key);
+        }
+    });
+
+    // Add the "page" parameter back if it was present
+    if (pageParam !== null) {
+        queryParams.set('page', pageParam);
+    }
+
+    let urlWithoutParams = window.location.origin + window.location.pathname;
+    if (queryParams.toString()) {
+        urlWithoutParams += '?' + queryParams.toString();
+    }
+
+    window.history.replaceState({}, document.title, urlWithoutParams);
+}
 function get_page(page) {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
