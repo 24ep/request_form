@@ -152,7 +152,7 @@
                 </nav>
                 <input type="hidden" id="bucket_selected" name="bucket_selected" value="all">
                     <div class="tab-pane fade show active" id="v-pills-bucket" role="tabpanel" aria-labelledby="v-pills-bucket-tab" tabindex="0">
-                        <div id="bucket" class="m-3">
+                        <div id="bucket" class="m-3 mt-0">
                             <?php echo include("../get/get_list_cr.php");?>
                         </div>
                     </div>
