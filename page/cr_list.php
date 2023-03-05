@@ -70,7 +70,7 @@
                                 $bucket  .= '</div><div class="col-10">All Bucket</div></div></button>';
                                 while($row = mysqli_fetch_array($result)) {
                                     $bucket  .=
-                                    '<button class="nav-link border text-start" onclick="getFilterInputValues(&#39;'.$row['prefix'].'&#39;)" id="v-pills-'.$row['prefix'].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.$row['prefix'].'" type="button" role="tab" aria-controls="v-pills-'.$row['prefix'].'" aria-selected="true">';
+                                    '<button class="nav-link border text-start" onclick="set_bucket(&#39;'.$row['prefix'].'&#39;);getFilterInputValues()" id="v-pills-'.$row['prefix'].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.$row['prefix'].'" type="button" role="tab" aria-controls="v-pills-'.$row['prefix'].'" aria-selected="true">';
                                     $bucket  .= '
                                             <div class="row">
                                                 <div style="place-self: center;" class="col-2">
@@ -120,6 +120,7 @@
                                 </span>
                             </div>
                         </div>
+
                         <div style="width:auto">
                         <ul class="nav nav-pills mb-3 row p-0 me-3" id="pills-tab"
                             style="right: 0;position: absolute;padding: 10px 40px;" role="tablist">
@@ -147,7 +148,7 @@
                     </div>
 
                 </nav>
-
+                <input type="hidden" id="bucket_selected" name="bucket_selected" value="all">
                 <?php
                     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
                     mysqli_query($con, "SET NAMES 'utf8' ");
@@ -170,9 +171,13 @@
     </div>
 
 <script>
+function set_bucket(bucket){
+     document.getElementById("bucket_selected").value = bucket;
+}
+function getFilterInputValues() {
 
-function getFilterInputValues(bucket) {
-    var page_navigator_input = document.getElementById("page_navigator_input").value
+    var bucket = document.getElementById("bucket_selected").value;
+    var page_navigator_input = document.getElementById("page_navigator_input").value;
     var filterPrefix = "filter_";
     var inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`);
     var inputValues = {};
