@@ -202,14 +202,14 @@ function getFilterInputValues() {
                 value = value.replace(" ", "");
                 value = value.replace(" ", "");
                 value = value.replace("AND", "' AND '");
-                var formattedValue = `${name} BETWEEN '${value}'`;
+                var formattedValue = `ticket.${name} BETWEEN '${value}'`;
             } else if (input.type == 'text') {
                 value = value.toLowerCase();
-                var formattedValue = `${name} like '%${value}%'`;
+                var formattedValue = `ticket.${name} like '%${value}%'`;
             } else if (input.type == 'number') {
-                var formattedValue = `${name} = ${value}`;
+                var formattedValue = `ticket.${name} = ${value}`;
             } else if (input.type === "select-multiple") {
-                var formattedValue = `${name} in ('${value}')`;
+                var formattedValue = `ticket.${name} in ('${value}')`;
             }
 
             inputValues[name] = formattedValue;

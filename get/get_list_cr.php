@@ -105,10 +105,7 @@ echo $query;
 <!-- ui -->
 <li class='row shadow-sm p-2 m-2 rounded bg-white' style='text-align: -webkit-center;align-items: center;'
     onclick="cr_id_toggle(<?php echo $row['id'];?>) " data-card="#detail_cr" data-bs-toggle="offcanvas"
-    data-bs-target="#detail_cr" data-bucket="<?php echo $row['prefix'];?>" data-cr-status="<?php echo $row['status'];?>"
-    data-cr-request-for="<?php echo $row['ticket_type'];?>" data-cr-id="<?php echo $row['id'];?>"
-    data-cr-participant="<?php echo strtolower($row['participant']);?>" id="crid_<?php echo $row['id'];?>"
-    data-cr-title="<?php echo strtolower($row['title']);?>" aria-controls="offcanvasExample">
+    data-bs-target="#detail_cr"  id="crid_<?php echo $row['id'];?>">
 
     <div class="col">
         <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?>
