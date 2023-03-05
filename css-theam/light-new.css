@@ -336,6 +336,7 @@ label#label_file_cme {
     font-size: small;
     font-weight: bold;
     height: 60px;
+    overflow: hidden;
     /* min-height: 60px; */
 }
 .input-cr-active{
