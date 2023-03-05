@@ -19,6 +19,7 @@ function displayTable($host, $username, $password, $database, $table, $columns,$
     foreach ($columns as $column) {
         echo "<th>" . ucfirst($column) . "</th>"; // Capitalize the column names
     }
+    echo "<th>Action</th>"; // Capitalize the column names
     echo "</tr>";
     echo "</thead>";
     echo "<tbody>";
@@ -29,7 +30,7 @@ function displayTable($host, $username, $password, $database, $table, $columns,$
         foreach ($columns as $column) {
             echo "<td>" . $row[$column] . "</td>";
         }
-        echo "<td><button onclick='myButtonClickFunction(this)'>Click me</button></td>";
+        echo "<td><button class='btn btn-promary btn-sm' onclick='myButtonClickFunction(this)'>Edit</button></td>";
         echo "</tr>";
     }
 
