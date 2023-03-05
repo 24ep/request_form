@@ -72,15 +72,31 @@
                                                     <div class="col-10">All Bucket</div>
                                                 </div>
                                             </button>';
+
+
                                 while($row = mysqli_fetch_array($result)) {
+
+                                    // $bucket  .=
+                                    // '<button class="nav-link border text-start" onclick="set_bucket(&#39;'.$row['prefix'].'&#39;);" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
+                                    //         <div class="row">
+                                    //             <div style="place-self: center;" class="col-2">
+                                    //                 <img class="me-2 rounded" src="https://ui-avatars.com/api/?name='.$row['prefix'].'>&background='.str_replace("#","",$row['color_project']).'&color=fff&rounded=false&size=25">
+                                    //             </div>
+                                    //             <div class="col-10">';
+                                    //                     $bucket .= '<strong>'.$row['project_name'].'</strong>
+                                    //                     <span class="badge rounded-pill bg-secondary">'.$row["count_backlog"].'</span>
+                                    //             </div>
+                                    //         </div>
+                                    // </button>';
                                     $bucket  .=
                                     '<button class="nav-link border text-start" onclick="set_bucket(&#39;'.$row['prefix'].'&#39;);" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
                                             <div class="row">
-                                                <div style="place-self: center;" class="col-2">
-                                                    <img class="me-2 rounded" src="https://ui-avatars.com/api/?name='.$row['prefix'].'>&background='.str_replace("#","",$row['color_project']).'&color=fff&rounded=false&size=25">
+                                                <div style="place-self: center;" class="col-10">
+                                                    <ion-icon name="file-tray-full-outline"></ion-icon>
+                                                    <strong>'.$row['project_name'].'</strong>
                                                 </div>
-                                                <div class="col-10">';
-                                                        $bucket .= '<strong>'.$row['project_name'].'</strong>
+                                                <div class="col-2">';
+                                                        $bucket .= '
                                                         <span class="badge rounded-pill bg-secondary">'.$row["count_backlog"].'</span>
                                                 </div>
                                             </div>
