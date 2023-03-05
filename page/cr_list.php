@@ -65,11 +65,13 @@
                                 where pb.status = 'Open'
                                 group by pb.id, pb.project_name, pb.prefix , pb.color_project;" or die("Error:" . mysqli_error($con));
                                 $result = mysqli_query($con, $query);
-                                $bucket  = '<button class="nav-link border  text-start active" onclick="set_bucket(&#39;all&#39;);getFilterInputValues();" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
+                                $bucket  = '<button class="nav-link text-start active" onclick="set_bucket(&#39;all&#39;);getFilterInputValues();" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
                                                 <div class="row" >
-                                                    <div style="place-self: center;"class="col-2"><img class="me-2 rounded" src="https://ui-avatars.com/api/?name=ALL>&background=999999&color=fff&rounded=false&size=25">
-                                                    </div>
+                                                    <div style="place-self: center;"class="col-9">
+                                                    <img class="me-2 rounded" src="https://ui-avatars.com/api/?name=ALL>&background=999999&color=fff&rounded=false&size=20">
                                                     <div class="col-10">All Bucket</div>
+                                                    </div>
+
                                                 </div>
                                             </button>';
 
