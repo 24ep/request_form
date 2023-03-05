@@ -44,7 +44,7 @@ if($filter==''){
 }
 //count item
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error( $con));
-$query = "SELECT count(*) as count_item FROM content_request as anj where (".$filter.") ".$bucket_filter." ".$limit." OFFSET ".$start_item
+$query = "SELECT count(*) as count_item FROM content_request as anj where (".$filter.") ".$bucket_filter." order by ticket.id DESC ".$limit." OFFSET ".$start_item
 or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
