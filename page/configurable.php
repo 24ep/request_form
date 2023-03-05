@@ -19,7 +19,7 @@ $configurable_map = array (
         'database'=>'all_in_one_project',
         'prefix'=>'pb',
         'title'=>'Project bucket',
-        'function'=>'get_attribute_config',
+        'function'=>'get_page',
         'description'=>'Manage bucket of request'),
     array(
         'session'=>'Table Setting',

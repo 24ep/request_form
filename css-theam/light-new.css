@@ -591,31 +591,38 @@ select:disabled {
 }
 .modern-badge-purple{
     background-color:#d8c5ed;
-     color: #673ab7
+     color: #673ab7;
+     white-space: pre-wrap;
 }
 .modern-badge-red{
     background-color:#ffcbcb;
-     color: red
+     color: red;
+     white-space: pre-wrap;
 }
 .modern-badge-yellow{
     background-color:#ebedc5;
-     color: #eef151
+     color: #eef151;
+     white-space: pre-wrap;
 }
 .modern-badge-blue{
     background-color:#c9d2ff;
-     color: #615bd1
+     color: #615bd1;
+     white-space: pre-wrap;
 }
 .modern-badge-pink{
     background-color:#edc5e7;
-     color: #f160cf
+     color: #f160cf;
+     white-space: pre-wrap;
 }
 .modern-badge-green{
     background-color:#d2edc5;
-     color: #71f160
+     color: #71f160;
+     white-space: pre-wrap;
 }
 .normal-badge-red{
     background-color: #ff0000;
     color: white;
+    white-space: pre-wrap;
 }
 .header_configurable{
     font-weight: bold;
