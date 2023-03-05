@@ -4,7 +4,7 @@
     <div class="btn-group btn-group-sm" style="position: inherit;" role="group"
         aria-label="Basic checkbox toggle button group">
         <div class="d-flex align-items-start">
-            <div class="nav flex-column nav-pills pe-3 bg-white shadow-sm border " style="height: 100%;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <div class="nav flex-column nav-pills pe-3 bg-white shadow-sm border-end " style="height: 100%;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <?php
                 function get_attribute_list_filter($table){
                     $current_value = "";
@@ -46,7 +46,7 @@
                 }
                 ?>
 
-                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5 pt-1 border pb-0 mb-2"
+                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5 pt-1 border-bottom pb-0 mb-2 "
                 style="border-bottom: 1px #e1dede solid;">
                 <div class="row" style="width:100%">
                     <div style="width:auto;place-self: center;">
