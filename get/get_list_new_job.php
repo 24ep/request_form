@@ -43,7 +43,7 @@ if(isset($_POST["from_post"] )){
   if($_POST["from_post"] ==true ){
     $_SESSION["user_filter"] = $_POST["user_filter"];
     $_SESSION["status_filter"] = $_POST["status_filter"];
-    $_SESSION['pagenation'] = $_POST["pagenation_input"];
+    $_SESSION['pagenation'] = $_POST["page_navigator_input"];
     $_SESSION['brand_filter'] = $_POST["brand_filter"];
   }}
   $start_item =  ($_SESSION['pagenation'] -1 )* 30;

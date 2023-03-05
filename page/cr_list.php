@@ -111,11 +111,8 @@
                         <div style="width:auto">
                             <div class="input-group input-group-sm" style="position: inherit;">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
-                                <input type="number" class="form-control" style="position: inherit;" id="pagenation_input" min=1
-                                    <?php if($_SESSION["total_page_rcr"]<>""){echo "max=".$_SESSION["total_page_rcr"];}?>
-                                    value="1" onchange="getFilterInputValues()" placeholder=""
-                                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-                                    placeholder="Dept , Sub Dept , Brand , ID">
+                                <input type="number" class="form-control" style="position: inherit;"
+                                id="page_navigator_input"  min=1 value="1" onchange="getFilterInputValues()">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">
                                     <div id="total_page_cr">
 
@@ -175,14 +172,14 @@
 <script>
 
 function get_list_update_content(bucket) {
-    $.post("base/get/get_list_update_content.php", {
+    $.post("base/get/get_list_cr.php", {
         bucket: bucket
     }, function(data) {
         $('#bucket_' + bucket).html(data);
     });
 }
 function getFilterInputValues() {
-    var pagenation_input = document.getElementById("pagenation_input").value
+    var page_navigator_input = document.getElementById("page_navigator_input").value
     var filterPrefix = "filter_";
     var inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`);
     var inputValues = {};
@@ -216,7 +213,7 @@ function getFilterInputValues() {
             }
 
             inputValues[name] = formattedValue;
-            updateparams("par_" + name, value);
+            update_params("par_" + name, value);
         }
 
         //create all display
@@ -227,7 +224,7 @@ function getFilterInputValues() {
     console.log(outputValues);
     //   return `Filter values: ${outputValues}`;
     $.post("../base/get/get_list_cr.php", {
-        pagenation_input: pagenation_input,
+        page_navigator_input: page_navigator_input,
         outputValues: outputValues
     }, function(data) {
         $('#bucket_all').html(data);

@@ -423,7 +423,7 @@ if (!$_SESSION["login_csg"]){
 </body>
 </html>
 <script>
-function updateparams(key, value) {
+function update_params(key, value) {
     // Construct URLSearchParams object instance from current URL querystring.
     var queryParams = new URLSearchParams(window.location.search);
     // Set new or modify existing parameter value.
@@ -440,7 +440,7 @@ function get_page(page) {
     var urlParams = new URLSearchParams(queryString);
     var brand_filter = urlParams.get('brand_filter');
     var user_filter = urlParams.get('user_filter');
-    updateparams('page', page);
+    update_params('page', page);
     // if (page ===true ) {
     Notiflix.Loading.hourglass('Loading...');
     $.post("base/page/" + page + ".php", {

@@ -93,7 +93,7 @@ function get_attribute_list_filter($table){
         <div style="width:auto">
             <div class="input-group input-group-sm" style="position: inherit;">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
-                <input type="number" class="form-control" style="position: inherit;" id="pagenation_input" min=1
+                <input type="number" class="form-control" style="position: inherit;" id="page_navigator_input" min=1
                     <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
                     value="<?php echo $_SESSION["pagenation"];?>" onchange="getFilterInputValues()" placeholder=""
                     aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
@@ -200,7 +200,7 @@ function clearParams() {
 
 
 function getFilterInputValues() {
-    var pagenation_input = document.getElementById("pagenation_input").value
+    var page_navigator_input = document.getElementById("page_navigator_input").value
     var filterPrefix = "filter_";
     var inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`);
     var inputValues = {};
@@ -234,7 +234,7 @@ function getFilterInputValues() {
             }
 
             inputValues[name] = formattedValue;
-            updateparams("par_" + name, value);
+            update_params("par_" + name, value);
         }
 
         //create all display
@@ -245,7 +245,7 @@ function getFilterInputValues() {
     console.log(outputValues);
     //   return `Filter values: ${outputValues}`;
     $.post("../base/get/get_list_ns.php", {
-        pagenation_input: pagenation_input,
+        page_navigator_input: page_navigator_input,
         outputValues: outputValues
     }, function(data) {
         $('#job_list').html(data);

@@ -39,7 +39,7 @@ if($_POST["bucket"] == 'all' or $_POST["bucket"] =="" ){
 }
 
 //filter
-$start_item =  ($_POST['pagenation_input'] -1 )* 30;
+$start_item =  ($_POST['page_navigator_input'] -1 )* 30;
 $filter = $_POST['outputValues'];
 
 if($filter==''){
