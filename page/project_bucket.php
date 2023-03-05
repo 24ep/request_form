@@ -26,9 +26,9 @@ displayTable(
         "prefix",
         "color_project",
         "project_name",
-        "status",
-        "project_bucket"
-      ));
+        "status"
+      ),
+      "project_bucket");
 ?>
 
   <div class="container-fluid">
