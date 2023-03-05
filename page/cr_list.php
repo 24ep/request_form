@@ -117,7 +117,7 @@
                         <?php echo get_attribute_list_filter('content_request'); ?>
                     </div>
 
-                    <div style="width:auto">
+                    <div style="width:150px">
                         <div class="input-group input-group-sm" style="position: inherit;">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
                             <input type="number" class="form-control" style="position: inherit;"
