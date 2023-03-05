@@ -58,7 +58,11 @@
 
                                 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
                                 mysqli_query($con, "SET NAMES 'utf8' ");
-                                $query = "SELECT id, project_name, prefix , color_project FROM all_in_one_project.project_bucket;" or die("Error:" . mysqli_error($con));
+                                $query = "SELECT pb.id, pb.project_name, pb.prefix , pb.color_project , count(cr.id) as count_backlog FROM all_in_one_project.project_bucket as pb
+                                left join all_in_one_project.content_request cr
+                                on cr.ticket_template = pb.prefix AND
+                                cr.status not in ('archive','cancel','close')
+                                group by pb.id, pb.project_name, pb.prefix , pb.color_project;" or die("Error:" . mysqli_error($con));
                                 $result = mysqli_query($con, $query);
                                 $bucket  = '<button class="nav-link border  text-start active" id="v-pills-all-tab" data-bs-toggle="pill" data-bs-target="#v-pills-all" type="button" role="tab" aria-controls="v-pills-all" aria-selected="true">';
                                 $bucket  .= '<div class="row"><div style="place-self: center;"class="col-2"><img class="me-2 rounded" src="https://ui-avatars.com/api/?name=ALL>&background=999999&color=fff&rounded=false&size=25">';
@@ -73,6 +77,7 @@
                                                 </div>
                                                 <div class="col-10">';
                                                         $bucket .= $row['project_name'].'
+                                                        <span class="badge rounded-pill bg-danger">'.$row["count_backlog"].'</span>
                                                 </div>
                                             </div>
                                     </button>';
@@ -152,101 +157,6 @@
     </div>
 
 <script>
-function search_cr_data() {
-    var input = document.getElementById('ts_command').value.toLowerCase();;
-    if (input != "") {
-        //hide all card
-        var SearchInputQuery = document.querySelectorAll('[data-card="#detail_cr"]');
-        for (var card of SearchInputQuery) {
-            card.className = card.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
-            card.className += " cr-search-hide";
-        }
-        //show title contain
-        var SearchInputQuery = document.querySelectorAll('[data-cr-title*="' + input + '"]');
-        for (var card of SearchInputQuery) {
-            card.className = card.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
-        }
-        //show id equal
-        var SearchInputQuery = document.querySelectorAll('[data-cr-id="' + input + '"]');
-        for (var card of SearchInputQuery) {
-            card.className = card.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
-        }
-    } else {
-        //unhide all card
-        var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
-        for (var card of SearchInputQuery) {
-            card.className = card.className.replace(/(?:^|\s)cr-search-hide(?!\S)/g, '');
-        }
-    }
-}
-
-function search_cr_username() {
-    var username = document.getElementById('ts_username').value.toLowerCase();;
-    if (username != "") {
-        //hide all card
-        var SearchInputQuery = document.querySelectorAll('[data-card="#detail_cr"]');
-        for (var card of SearchInputQuery) {
-            card.className = card.className.replace(/(?:^|\s)cr-username-hide(?!\S)/g, '');
-            card.className += " cr-username-hide";
-        }
-        //show data-cr-participant contain
-        var SearchInputQuery = document.querySelectorAll('[data-cr-participant*="' + username + '"]');
-        for (var card of SearchInputQuery) {
-            card.className = card.className.replace(/(?:^|\s)cr-username-hide(?!\S)/g, '');
-        }
-    } else {
-        //unhide all card
-        var SearchInputQuery = document.querySelectorAll('[data-bs-target="#detail_cr"]');
-        for (var card of SearchInputQuery) {
-            card.className = card.className.replace(/(?:^|\s)cr-username-hide(?!\S)/g, '');
-        }
-    }
-}
-
-function search_cr_request_for() {
-    var request_for = document.getElementById('ts_request_for').value;
-    if (request_for != "") {
-        //hide all card
-        var SearchInputQuery = document.querySelectorAll('[data-card="#detail_cr"]');
-        for (var card of SearchInputQuery) {
-            card.className = card.className.replace(/(?:^|\s)cr-request-for-hide(?!\S)/g, '');
-            card.className += " cr-request-for-hide";
-        }
-        //show data-cr-request contain
-        var SearchInputQuery = document.querySelectorAll('[data-cr-request-for*="' + request_for + '"]');
-        for (var card of SearchInputQuery) {
-            card.className = card.className.replace(/(?:^|\s)cr-request-for-hide(?!\S)/g, '');
-        }
-    } else {
-        //unhide all card
-        var SearchInputQuery = document.querySelectorAll('[data-card="#detail_cr"]');
-        for (var card of SearchInputQuery) {
-            card.className = card.className.replace(/(?:^|\s)cr-request-for-hide(?!\S)/g, '');
-        }
-    }
-}
-
-function search_cr_status() {
-    var status = document.getElementById('ts_status').value;
-    if (status != "") {
-        //hide all card
-        var SearchInputQuery = document.querySelectorAll('[data-card="#detail_cr"]');
-        for (var card of SearchInputQuery) {
-            card.className += " cr-status-hide";
-        }
-        //show data-cr-request contain
-        var SearchInputQuery = document.querySelectorAll('[data-cr-status*="' + status + '"]');
-        for (var card of SearchInputQuery) {
-            card.className = card.className.replace(/(?:^|\s)cr-status-hide(?!\S)/g, '');
-        }
-    } else {
-        //unhide all card
-        var SearchInputQuery = document.querySelectorAll('[data-card="#detail_cr"]');
-        for (var card of SearchInputQuery) {
-            card.className = card.className.replace(/(?:^|\s)cr-status-hide(?!\S)/g, '');
-        }
-    }
-}
 
 function get_list_update_content(bucket) {
     $.post("base/get/get_list_update_content.php", {
@@ -276,32 +186,6 @@ function get_filter_attribute() {
 }
 get_filter_attribute();
 
-function search_cr_ticket() {
-    var cr_search_input = document.getElementById("cr_search_input").value
-    var user_cr_filter = document.getElementById("user_cr_filter").value
-    // if (cr_search_input) {
-    $.post("base/get/get_list_content_request.php", {
-        cr_search_input: cr_search_input,
-        user_cr_filter: user_cr_filter
-    }, function(data) {
-        $('#list_grouping').html(data);
-    });
-}
-
-function run_ts_command(ts_level) {
-    var summary_filter = document.getElementById("ts_command").value;
-    var ts_username = document.getElementById("ts_username").value;
-    $.post("base/get/get_board_update_content.php", {
-        summary_filter: summary_filter,
-        ts_username: ts_username
-    }, function(data) {
-        $('#get_ts_admin_console').html(data);
-    });
-    search_cr_data();
-    search_cr_username();
-    search_cr_request_for();
-    search_cr_status();
-}
 </script>
 <script>
 tinymce.init({
@@ -364,28 +248,7 @@ function load_tiny_comment() {
     });
 }
 
-function filter_cr_ticket(status) {
-    document.getElementById('cr_search_input').value = '';
-    var update = true;
-    if (status) {
-        $.post("base/get/get_list_content_request.php", {
-            status: status,
-            update: update
-        }, function(data) {
-            $('#list_grouping').html(data);
-        });
-    }
-}
 
-function get_project_model(id) {
-    if (id) {
-        $.post("base/get/get_project_model.php", {
-            id: id
-        }, function(data) {
-            $('#return_project_model').html(data);
-        });
-    }
-}
 
 function cr_id_toggle(id) {
     Notiflix.Loading.hourglass('Loading...');
@@ -400,10 +263,6 @@ function cr_id_toggle(id) {
     }
 }
 
-function open_ticket_detail(id) {
-    document.getElementById('user_filter').value = "";
-    document.getElementById("ns_ticket_" + id).click();
-}
 </script>
 <style>
 .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
