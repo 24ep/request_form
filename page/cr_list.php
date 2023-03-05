@@ -70,7 +70,7 @@
                                 $bucket  .= '</div><div class="col-10">All Bucket</div></div></button>';
                                 while($row = mysqli_fetch_array($result)) {
                                     $bucket  .=
-                                    '<button class="nav-link border text-start" onclick="get_list_update_content(&#39;'.$row['prefix'].'&#39;)" id="v-pills-'.$row['prefix'].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.$row['prefix'].'" type="button" role="tab" aria-controls="v-pills-'.$row['prefix'].'" aria-selected="true">';
+                                    '<button class="nav-link border text-start" onclick="getFilterInputValues(&#39;'.$row['prefix'].'&#39;)" id="v-pills-'.$row['prefix'].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.$row['prefix'].'" type="button" role="tab" aria-controls="v-pills-'.$row['prefix'].'" aria-selected="true">';
                                     $bucket  .= '
                                             <div class="row">
                                                 <div style="place-self: center;" class="col-2">
@@ -171,14 +171,7 @@
 
 <script>
 
-function get_list_update_content(bucket) {
-    $.post("base/get/get_list_cr.php", {
-        bucket: bucket
-    }, function(data) {
-        $('#bucket_' + bucket).html(data);
-    });
-}
-function getFilterInputValues() {
+function getFilterInputValues(bucket) {
     var page_navigator_input = document.getElementById("page_navigator_input").value
     var filterPrefix = "filter_";
     var inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`);
@@ -225,9 +218,10 @@ function getFilterInputValues() {
     //   return `Filter values: ${outputValues}`;
     $.post("../base/get/get_list_cr.php", {
         page_navigator_input: page_navigator_input,
-        outputValues: outputValues
+        outputValues: outputValues,
+        bucket:bucket
     }, function(data) {
-        $('#bucket_all').html(data);
+        $('#bucket_'+bucket).html(data);
     });
 }
 function get_filter_attribute() {
