@@ -55,14 +55,14 @@
                     </div>
                 </div>
             </nav>
-            <button class="btn btn-danger btn-sm bg-gradient" style="margin-left:10px;position: initial!important;margin: 0px 10px 10px 10px;" type="button"
+            <button class="btn btn-danger btn-sm bg-gradient" style="margin-left:10px;position: initial!important;margin: 10px 20px 10px 20px;" type="button"
                 data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
                 <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated"
                     aria-label="add outline">
                 </ion-icon>
                 New Ticket
             </button>
-            <hr>
+            <hr style="color: gray;margin: 3px;">
             <?php
 
                                 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
@@ -117,7 +117,7 @@
                         <?php echo get_attribute_list_filter('content_request'); ?>
                     </div>
 
-                    <div style="width:150px">
+                    <div style="width:170px">
                         <div class="input-group input-group-sm" style="position: inherit;">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
                             <input type="number" class="form-control" style="position: inherit;"
@@ -154,7 +154,7 @@
                     </div>
                 </div>
             </nav>
-            <nav class="navbar ps-4 pe-5">
+            <nav class="navbar bg-white shadow-sm ps-4 pe-5 mb-3">
                 <div class="row g-3 align-items-center" id="dynamic_filter" style="width: 100%;">
 
                 </div>

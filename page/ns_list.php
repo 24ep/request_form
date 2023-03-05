@@ -126,7 +126,7 @@ function get_attribute_list_filter($table){
         </div>
     </div>
 </nav>
-<nav class="navbar  ps-4 pe-5">
+<nav class="navbar bg-white shadow-sm ps-4 pe-5 mb-3">
     <div class="row g-3 align-items-center" id="dynamic_filter" style="width: 100%;">
 
     </div>
