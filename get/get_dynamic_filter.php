@@ -107,16 +107,10 @@ function username($attribute_code,$attribute_label,$type){
     $result_op = mysqli_query($con, $query_op);
     $i=0;
     while($option = mysqli_fetch_array($result_op)) {
-        if($option["username"]==$current_value){
-        $selected = 'selected';
-        }else{
-        $selected = '';
-        }
-        if($option["username"]<>"" and $i==0){
-        $i++;
-        $option_element .= "<option ".$selected ." value=''></option>";
-        }
-        $option_element .= "<option ".$selected ." value='".$option["username"]."'>".$option["username"]."</option>";
+
+
+        $option_element .= "<option value=''></option>";
+        $option_element .= "<option value='".$option["username"]."'>".$option["username"]."</option>";
     }
     $input = '
     <div class="col-md">
@@ -145,16 +139,9 @@ function nickname($attribute_code,$attribute_label,$type){
     $result_op = mysqli_query($con, $query_op);
     $i=0;
     while($option = mysqli_fetch_array($result_op)) {
-        if($option["nickname"]==$current_value){
-        $selected = 'selected';
-        }else{
-        $selected = '';
-        }
-        if($option["nickname"]<>"" and $i==0){
-        $i++;
-        $option_element .= "<option ".$selected ." value=''></option>";
-        }
-        $option_element .= "<option ".$selected ." value='".$option["nickname"]."'>".$option["nickname"]."</option>";
+
+        $option_element .= "<option value=''></option>";
+        $option_element .= "<option value='".$option["nickname"]."'>".$option["nickname"]."</option>";
     }
     $input = '
     <div class="col-md">
