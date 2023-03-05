@@ -4,7 +4,7 @@
     <div class="btn-group btn-group-sm" style="position: inherit;" role="group"
         aria-label="Basic checkbox toggle button group">
         <div class="d-flex align-items-start">
-            <div class="nav flex-column nav-pills pe-3 bg-white shadow-sm border-end " style="height: 100%;padding-right: 30px;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <div class="nav flex-column nav-pills pe-3 bg-white shadow-sm border-end " style="height: 100%;width: 300px;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <?php
                 function get_attribute_list_filter($table){
                     $current_value = "";
@@ -66,7 +66,7 @@
                                 group by pb.id, pb.project_name, pb.prefix , pb.color_project;" or die("Error:" . mysqli_error($con));
                                 $result = mysqli_query($con, $query);
                                 $bucket  = '<button class="nav-link border  text-start active" onclick="set_bucket(&#39;all&#39;);getFilterInputValues();" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
-                                                <div class="row">
+                                                <div class="row" >
                                                     <div style="place-self: center;"class="col-2"><img class="me-2 rounded" src="https://ui-avatars.com/api/?name=ALL>&background=999999&color=fff&rounded=false&size=25">
                                                     </div>
                                                     <div class="col-10">All Bucket</div>
@@ -90,12 +90,12 @@
                                     // </button>';
                                     $bucket  .=
                                     '<button class="nav-link mt-0 mb-0text-start" onclick="set_bucket(&#39;'.$row['prefix'].'&#39;);" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
-                                            <div class="row">
-                                                <div style="place-self: center;" class="col-10">
-                                                    <ion-icon name="file-tray-full-outline"></ion-icon>
+                                            <div class="row" style="text-align: left;white-space: nowrap;">
+                                                <div style="place-self: center;" class="col-9">
+                                                    <img class="me-2 rounded" src="https://ui-avatars.com/api/?name='.$row['prefix'].'>&background='.str_replace("#","",$row['color_project']).'&color=fff&rounded=false&size=20">
                                                     <strong>'.$row['project_name'].'</strong>
                                                 </div>
-                                                <div class="col-2">';
+                                                <div class="col-3">';
                                                         $bucket .= '
                                                         <span class="badge rounded-pill bg-secondary">'.$row["count_backlog"].'</span>
                                                 </div>
