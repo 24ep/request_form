@@ -155,9 +155,7 @@ function list_ts_non_status($filter,$ts_command_limit ,$status,$bucket_filter){
 
         mysqli_close($con);
     }
-    echo' <div class="col '.$ts_board_col_left.'" id="col_'.$row_status["attribute_option"].'"  >
-    <small class="row m-3" style="font-weight: 900;">'.$row_status["attribute_option"].'</small>';
     list_ts_non_status("(".$filter.")",$ts_command_limit  ,$row_status["attribute_option"],$bucket_filter);
-    echo '</div>';
+
     mysqli_close($con_status);
     ?>
