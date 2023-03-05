@@ -155,7 +155,7 @@
                     $result = mysqli_query($con, $query);
                     echo '<div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab" tabindex="0">';
                     echo '<div id="bucket_all" class="m-3">';
-                    echo include("../get/get_list_update_content.php");
+                    echo include("../get/get_list_cr.php");
                     echo '</div>';
                     echo'</div>';
                     while($row = mysqli_fetch_array($result)) {
