@@ -13,7 +13,7 @@
     </div>
   </div>
 </nav>
-<h5 class="p-2 ps-4 pb-4 bg-secondary bg-opacity-25 text-secondary  m-0" style="text-transform: uppercase"><strong>Account management</strong></h5>
+<h5 class="p-2 ps-4 pb-4 bg-secondary bg-opacity-25 text-secondary  m-0" style="text-transform: uppercase"><strong>Bucket management</strong></h5>
 
 
 <?php
@@ -26,7 +26,9 @@ displayTable(
         "prefix",
         "color_project",
         "project_name",
-        "status"));
+        "status",
+        "project_bucket"
+      ));
 ?>
 
   <div class="container-fluid">

@@ -1,5 +1,6 @@
 <?php
-$table_id = $_GET['table_id'];
+session_start();
+
 function displayTable($host, $username, $password, $database, $table, $columns,$table_id ) {
     // Establish a connection to the database
     $con = mysqli_connect($host, $username, $password) or die("Error: " . mysqli_error($con));
