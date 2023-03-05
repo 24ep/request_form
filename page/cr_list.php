@@ -218,6 +218,7 @@ function getFilterInputValues() {
 
     var outputValues = Object.values(inputValues).join(" and ");
     console.log(outputValues);
+    console.log(bucket);
     //   return `Filter values: ${outputValues}`;
     $.post("../base/get/get_list_cr.php", {
         page_navigator_input: page_navigator_input,
