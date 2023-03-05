@@ -88,8 +88,7 @@ function list_ts_non_status($filter,$ts_command_limit ,$status,$bucket_filter){
     Left join all_in_one_project.project_bucket pb
     on pb.prefix  = ticket.ticket_template
     -- and ticket.status not in ('archive','cancel')
-    where (".$filter.") and lower(ticket.status) not in ('cancel','archive') ".$bucket_filter ."
-    order by ".$sort_de_status;
+    where (".$filter.") and lower(ticket.status) not in ('cancel','archive') ".$bucket_filter;
     $result = mysqli_query($con, $query);
 echo $query;
     echo "  <li class='row mb-3' style='color: #b3b3b3;font-weight: 600;text-align-last: center;'>
