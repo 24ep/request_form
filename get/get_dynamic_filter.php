@@ -106,10 +106,8 @@ function username($attribute_code,$attribute_label,$type){
     $query_op = "SELECT * FROM all_in_one_project.account ORDER BY id ASC" or die("Error:" . mysqli_error($con));
     $result_op = mysqli_query($con, $query_op);
     $i=0;
+    $option_element .= "<option value=''></option>";
     while($option = mysqli_fetch_array($result_op)) {
-
-
-        $option_element .= "<option value=''></option>";
         $option_element .= "<option value='".$option["username"]."'>".$option["username"]."</option>";
     }
     $input = '
@@ -138,9 +136,8 @@ function nickname($attribute_code,$attribute_label,$type){
     $query_op = "SELECT * FROM all_in_one_project.account ORDER BY id ASC" or die("Error:" . mysqli_error($con));
     $result_op = mysqli_query($con, $query_op);
     $i=0;
+    $option_element .= "<option value=''></option>";
     while($option = mysqli_fetch_array($result_op)) {
-
-        $option_element .= "<option value=''></option>";
         $option_element .= "<option value='".$option["nickname"]."'>".$option["nickname"]."</option>";
     }
     $input = '
