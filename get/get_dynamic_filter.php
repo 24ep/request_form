@@ -1,6 +1,6 @@
 <?php
 session_start();
-function datepick($attribute_code,$attribute_label){
+function datepick($attribute_code,$attribute_label,$table_name){
     $input = '
     <div class="col-md">
 
@@ -39,7 +39,7 @@ function datepick($attribute_code,$attribute_label){
 
     return $input;
 }
-function text($attribute_code,$attribute_label){
+function text($attribute_code,$attribute_label,$table_name){
     $input = '
     <div class="col-md">
 
@@ -50,7 +50,7 @@ function text($attribute_code,$attribute_label){
 
     return $input;
 }
-function number($attribute_code,$attribute_label){
+function number($attribute_code,$attribute_label,$table_name){
     $input = '
     <div class="col-md">
 
@@ -61,11 +61,11 @@ function number($attribute_code,$attribute_label){
     return $input;
 }
 
-function simple_select($attribute_code,$attribute_label,$type){
+function simple_select($attribute_code,$attribute_label,$type,$table_name){
     $current_value = "";
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute_option
-    WHERE attribute_code = '".$attribute_code."' and attribute_table = 'add_new_job' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
+    WHERE attribute_code = '".$attribute_code."' and attribute_table = '".$table_name."' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
     $result_op = mysqli_query($con, $query_op);
     $i=0;
     while($option = mysqli_fetch_array($result_op)) {
@@ -100,7 +100,7 @@ function simple_select($attribute_code,$attribute_label,$type){
 
     return $input;
 }
-function username($attribute_code,$attribute_label,$type){
+function username($attribute_code,$attribute_label,$type,$table_name){
     $current_value = "";
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM all_in_one_project.account ORDER BY id ASC" or die("Error:" . mysqli_error($con));
@@ -130,7 +130,7 @@ function username($attribute_code,$attribute_label,$type){
 
     return $input;
 }
-function nickname($attribute_code,$attribute_label,$type){
+function nickname($attribute_code,$attribute_label,$type,$table_name){
     $current_value = "";
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
     $query_op = "SELECT * FROM all_in_one_project.account ORDER BY id ASC" or die("Error:" . mysqli_error($con));
@@ -171,21 +171,21 @@ $query = "SELECT * FROM u749625779_cdscontent.job_attribute where table_name = '
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     if($row['attribute_type']=='single_select'){
-       echo  simple_select($row['attribute_code'],$row['attribute_label'],'multiple');
+       echo  simple_select($row['attribute_code'],$row['attribute_label'],'multiple',$table_name);
     }elseif($row['attribute_type']=='multiselect'){
-        echo simple_select($row['attribute_code'],$row['attribute_label'],'multiple');
+        echo simple_select($row['attribute_code'],$row['attribute_label'],'multiple',$table_name);
     }elseif($row['attribute_type']=='number'){
-       echo  number($row['attribute_code'],$row['attribute_label']);
+       echo  number($row['attribute_code'],$row['attribute_label'],$table_name);
     }elseif($row['attribute_type']=='datetime'){
-        echo datepick($row['attribute_code'],$row['attribute_label']);
+        echo datepick($row['attribute_code'],$row['attribute_label'],$table_name);
     }elseif($row['attribute_type']=='date'){
-        echo datepick($row['attribute_code'],$row['attribute_label']);
+        echo datepick($row['attribute_code'],$row['attribute_label'],$table_name);
     }elseif($row['attribute_type']=='username'){
-        echo username($row['attribute_code'],$row['attribute_label'],'multiple');
+        echo username($row['attribute_code'],$row['attribute_label'],'multiple',$table_name);
     }elseif($row['attribute_type']=='nickname'){
-        echo nickname($row['attribute_code'],$row['attribute_label'],'multiple');
+        echo nickname($row['attribute_code'],$row['attribute_label'],'multiple',$table_name);
     }else{
-        echo text($row['attribute_code'],$row['attribute_label']);
+        echo text($row['attribute_code'],$row['attribute_label'],$table_name);
     }
 
 }
