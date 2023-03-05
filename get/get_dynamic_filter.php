@@ -2,7 +2,7 @@
 session_start();
 function datepick($attribute_code,$attribute_label){
     $input = '
-    <div class="col-md-2">
+    <div class="col-md">
 
         <input  placeholder="'.$attribute_label.'" class="form-control form-control-sm" attribute_type="date" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onfocusout="getFilterInputValues()">
     </div>
@@ -41,7 +41,7 @@ function datepick($attribute_code,$attribute_label){
 }
 function text($attribute_code,$attribute_label){
     $input = '
-    <div class="col-md-2">
+    <div class="col-md">
 
         <input placeholder="'.$attribute_label.'" type="text" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
 
@@ -52,7 +52,7 @@ function text($attribute_code,$attribute_label){
 }
 function number($attribute_code,$attribute_label){
     $input = '
-    <div class="col-md-2">
+    <div class="col-md">
 
         <input placeholder="'.$attribute_label.'" type="number" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
     </div>
@@ -81,7 +81,7 @@ function simple_select($attribute_code,$attribute_label,$type){
         $option_element .= "<option ".$selected ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
     }
     $input = '
-    <div class="col-md-2">
+    <div class="col-md">
 
         <select placeholder="'.$attribute_label.'" '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
         '.$option_element.'
@@ -125,8 +125,8 @@ while($row = mysqli_fetch_array($result)) {
 
 }
 echo '
-<div class="col-md-3">
-<button type="button" class="btn btn-dark btn-sm mt-3" onclick="getFilterInputValues()">Apply Filter</button>
+<div class="col-md">
+<button type="button" class="btn btn-dark btn-sm" onclick="getFilterInputValues()">Apply Filter</button>
 </div>';
 
 
