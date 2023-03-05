@@ -6,26 +6,26 @@ $request_for_op = get_option_return_filter("ticket_type","","single","content_re
 $request_cr_status_op = get_option_return_filter("status","","single","content_request");
  function badge_ticket_type_cr($type){
     switch ($type) {
-      case "Update Content": $type = '<span class="badge bg-primary" style="background-color: #fdfdfd!important;color: #5f85ff99!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Update Content & Image": $type = '<span class="badge bg-primary" style="background-color: #fdfdfd!important;color: #24929b99!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Free Gift Image": $type = '<span class="badge bg-primary" style="background-color: #fdfdfd!important;color: #f12f6099!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Change status": $type = '<span class="badge bg-primary" style="background-color: #fdfdfd!important;color: #2ff19499!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Product not found": $type = '<span class="badge bg-primary" style="background-color: #fdfdfd!important;color: #5f85ff99!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Update image": $type = '<span class="badge bg-primary" style="background-color: #fdfdfd!important;color: #f12f6099!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Datapump Add Source": $type = '<span class="badge bg-primary" style="background-color: #fdfdfd!important;color: #c567d399!important;padding: 8px;">'.$type.'</span>'; break;
-      case "Datapump Delete Source": $type = '<span class="badge bg-primary" style="background-color: #fdfdfd!important;color: #c567d399!important;padding: 8px;">'.$type.'</span>'; break;
-      default: $type = '<span class="badge bg-primary" style="background-color: #fdfdfd!important;color: #00000099!important;padding: 8px;">'.$type.'</span>';
+      case "Update Content": $type = '<span class="badge bg-primary" style="white-space: pre-wrap;background-color: #fdfdfd!important;color: #5f85ff99!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Update Content & Image": $type = '<span class="badge bg-primary" style="white-space: pre-wrap;background-color: #fdfdfd!important;color: #24929b99!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Free Gift Image": $type = '<span class="badge bg-primary" style="white-space: pre-wrap;background-color: #fdfdfd!important;color: #f12f6099!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Change status": $type = '<span class="badge bg-primary" style="white-space: pre-wrap;background-color: #fdfdfd!important;color: #2ff19499!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Product not found": $type = '<span class="badge bg-primary" style="white-space: pre-wrap;background-color: #fdfdfd!important;color: #5f85ff99!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Update image": $type = '<span class="badge bg-primary" style="white-space: pre-wrap;background-color: #fdfdfd!important;color: #f12f6099!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Datapump Add Source": $type = '<span class="badge bg-primary" style="white-space: pre-wrap;background-color: #fdfdfd!important;color: #c567d399!important;padding: 8px;">'.$type.'</span>'; break;
+      case "Datapump Delete Source": $type = '<span class="badge bg-primary" style="white-space: pre-wrap;background-color: #fdfdfd!important;color: #c567d399!important;padding: 8px;">'.$type.'</span>'; break;
+      default: $type = '<span class="badge bg-primary" style="white-space: pre-wrap;background-color: #fdfdfd!important;color: #00000099!important;padding: 8px;">'.$type.'</span>';
     }
     return $type;
     }
     function badge_ticket_status_cr($status){
         switch ($status) {
-          case "Close": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #0eb32699!important;padding: 8px;color:#0eb32699">'.$status.'</span>'; break;
-          case "Pending": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #afafaf99!important;padding: 8px;color:#afafaf99">'.$status.'</span>'; break;
-          case "Inprogress": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #d7aa3999!important;padding: 8px;color:#d7aa3999">'.$status.'</span>'; break;
-          case "Waiting Buyer": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #cf67e599!important;padding: 8px;color:#cf67e599">'.$status.'</span>'; break;
-          case "Waiting Execution": $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #182bd599!important;padding: 8px;color:#182bd599">'.$status.'</span>'; break;
-          default: $status = '<span class="badge bg-transparent" style="min-width: 120px;border: 1px solid #00000099!important;padding: 8px;color:#00000099">'.$status.'</span>';
+          case "Close": $status = '<span class="badge bg-transparent" style="min-width: -webkit-fill-available;white-space: pre-wrap;border: 1px solid #0eb32699!important;padding: 8px;color:#0eb32699">'.$status.'</span>'; break;
+          case "Pending": $status = '<span class="badge bg-transparent" style="min-width: -webkit-fill-available;white-space: pre-wrap;border: 1px solid #afafaf99!important;padding: 8px;color:#afafaf99">'.$status.'</span>'; break;
+          case "Inprogress": $status = '<span class="badge bg-transparent" style="min-width:  -webkit-fill-available;white-space: pre-wrap;border: 1px solid #d7aa3999!important;padding: 8px;color:#d7aa3999">'.$status.'</span>'; break;
+          case "Waiting Buyer": $status = '<span class="badge bg-transparent" style="min-width:  -webkit-fill-available;white-space: pre-wrap;border: 1px solid #cf67e599!important;padding: 8px;color:#cf67e599">'.$status.'</span>'; break;
+          case "Waiting Execution": $status = '<span class="badge bg-transparent" style="min-width:  -webkit-fill-availablex;white-space: pre-wrap;border: 1px solid #182bd599!important;padding: 8px;color:#182bd599">'.$status.'</span>'; break;
+          default: $status = '<span class="badge bg-transparent" style="min-width:  -webkit-fill-available;white-space: pre-wrap;border: 1px solid #00000099!important;padding: 8px;color:#00000099">'.$status.'</span>';
         }
         return $status;
         }

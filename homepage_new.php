@@ -412,7 +412,7 @@ if (!$_SESSION["login_csg"]){
                     </div>
                 </div>
             </nav>
-            <div id="col_detail">
+            <div id="col_detail" style="height: 100%;">
             </div>
         </div>
     </div>
