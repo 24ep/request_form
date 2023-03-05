@@ -43,7 +43,7 @@ if($filter==''){
 }
 //count item
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error( $con));
-$query = "SELECT count(*) as count_item FROM content_request as anj where (".$filter.")"
+$query = "SELECT count(*) as count_item FROM content_request as anj where (".$filter.") ".$bucket_filter
 or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
@@ -88,7 +88,7 @@ function list_ts_non_status($filter,$ts_command_limit ,$status,$bucket_filter){
     on ac.username = ticket.case_officer
     Left join all_in_one_project.project_bucket pb
     on pb.prefix  = ticket.ticket_template
-    where (".$filter.") and lower(ticket.status) not in ('cancel','archive') ".$bucket_filter;
+    where (".$filter.") ".$bucket_filter;
     $result = mysqli_query($con, $query);
     echo "  <li class='row mb-3' style='color: #b3b3b3;font-weight: 600;text-align-last: center;'>
     <div class='col'>Id</div>
