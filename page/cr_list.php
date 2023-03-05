@@ -70,7 +70,7 @@
                                 $bucket  .= '</div><div class="col-10">All Bucket</div></div></button>';
                                 while($row = mysqli_fetch_array($result)) {
                                     $bucket  .=
-                                    '<button class="nav-link border text-start" onclick="set_bucket(&#39;'.$row['prefix'].'&#39;);getFilterInputValues();" id="v-pills-'.$row['prefix'].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.$row['prefix'].'" type="button" role="tab" aria-controls="v-pills-'.$row['prefix'].'" aria-selected="true">';
+                                    '<button class="nav-link border text-start" onclick="set_bucket(&#39;'.$row['prefix'].'&#39;);" id="v-pills-'.$row['prefix'].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.$row['prefix'].'" type="button" role="tab" aria-controls="v-pills-'.$row['prefix'].'" aria-selected="true">';
                                     $bucket  .= '
                                             <div class="row">
                                                 <div style="place-self: center;" class="col-2">
@@ -171,9 +171,7 @@
     </div>
 
 <script>
-function set_bucket(bucket){
-     document.getElementById("bucket_selected").value = bucket;
-}
+
 function getFilterInputValues() {
 
     var bucket = document.getElementById("bucket_selected").value;
@@ -228,6 +226,10 @@ function getFilterInputValues() {
     }, function(data) {
         $('#bucket_'+bucket).html(data);
     });
+}
+function set_bucket(bucket){
+     document.getElementById("bucket_selected").value = bucket;
+     getFilterInputValues();
 }
 function get_filter_attribute() {
     var selected = [];
