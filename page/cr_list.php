@@ -65,7 +65,7 @@
                                 where pb.status = 'Open'
                                 group by pb.id, pb.project_name, pb.prefix , pb.color_project;" or die("Error:" . mysqli_error($con));
                                 $result = mysqli_query($con, $query);
-                                $bucket  = '<button class="nav-link border  text-start active" onclick="set_bucket(&#39;all&#39;);getFilterInputValues();" type="button">
+                                $bucket  = '<button class="nav-link border  text-start active" onclick="set_bucket(&#39;all&#39;);getFilterInputValues();" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
                                                 <div class="row">
                                                     <div style="place-self: center;"class="col-2"><img class="me-2 rounded" src="https://ui-avatars.com/api/?name=ALL>&background=999999&color=fff&rounded=false&size=25">
                                                     </div>
@@ -74,7 +74,7 @@
                                             </button>';
                                 while($row = mysqli_fetch_array($result)) {
                                     $bucket  .=
-                                    '<button class="nav-link border text-start" onclick="set_bucket(&#39;'.$row['prefix'].'&#39;);" type="button">
+                                    '<button class="nav-link border text-start" onclick="set_bucket(&#39;'.$row['prefix'].'&#39;);" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
                                             <div class="row">
                                                 <div style="place-self: center;" class="col-2">
                                                     <img class="me-2 rounded" src="https://ui-avatars.com/api/?name='.$row['prefix'].'>&background='.str_replace("#","",$row['color_project']).'&color=fff&rounded=false&size=25">
@@ -151,7 +151,7 @@
                     </div>
                 </nav>
                 <input type="hidden" id="bucket_selected" name="bucket_selected" value="all">
-                    <div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab" tabindex="0">
+                    <div class="tab-pane fade show active" id="v-pills-bucket" role="tabpanel" aria-labelledby="v-pills-bucket-tab" tabindex="0">
                         <div id="bucket" class="m-3">
                             <?php echo include("../get/get_list_cr.php");?>
                         </div>
