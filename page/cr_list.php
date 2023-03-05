@@ -62,6 +62,7 @@
                                 left join all_in_one_project.content_request cr
                                 on cr.ticket_template = pb.prefix AND
                                 cr.status not in ('archive','cancel','close')
+                                where pb.status = 'Open'
                                 group by pb.id, pb.project_name, pb.prefix , pb.color_project;" or die("Error:" . mysqli_error($con));
                                 $result = mysqli_query($con, $query);
                                 $bucket  = '<button class="nav-link border  text-start active" id="v-pills-all-tab" data-bs-toggle="pill" data-bs-target="#v-pills-all" type="button" role="tab" aria-controls="v-pills-all" aria-selected="true">';
