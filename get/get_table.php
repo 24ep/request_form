@@ -30,7 +30,7 @@ function displayTable($host, $username, $password, $database, $table, $columns,$
         foreach ($columns as $column) {
             echo "<td>" . $row[$column] . "</td>";
         }
-        echo "<td><button class='btn btn-promary btn-sm' onclick='myButtonClickFunction(this)'>Edit</button></td>";
+        echo "<td><button class='btn btn-primary btn-sm' onclick='myButtonClickFunction(this)'>Edit</button></td>";
         echo "</tr>";
     }
 
