@@ -167,15 +167,6 @@ function get_attribute_list_filter($table){
     </div>
 </div>
 <script>
-// function update_applyed_filter(){
-// //clear selected
-
-// //add new filter
-
-// }
-
-
-
 
 function getFilterInputValues() {
     var page_navigator_input = document.getElementById("page_navigator_input").value
