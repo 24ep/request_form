@@ -42,6 +42,7 @@ if($filter==''){
     $filter='1=1';
 }
 //count item
+$con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error( $con));
 $query = "SELECT count(*) as count_item FROM content_request as anj where (".$filter.")"
 or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
