@@ -89,7 +89,7 @@
                                     //         </div>
                                     // </button>';
                                     $bucket  .=
-                                    '<button class="nav-link border text-start" onclick="set_bucket(&#39;'.$row['prefix'].'&#39;);" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
+                                    '<button class="nav-link text-start" onclick="set_bucket(&#39;'.$row['prefix'].'&#39;);" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
                                             <div class="row">
                                                 <div style="place-self: center;" class="col-10">
                                                     <ion-icon name="file-tray-full-outline"></ion-icon>
