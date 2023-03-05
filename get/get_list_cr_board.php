@@ -147,6 +147,7 @@ attribute_option_code not in('cancel','routine work','monitor','In-review','clos
 or die("Error:" . mysqli_error($con));
 $result_status = mysqli_query($con, $query_status);
 $i=0;
+echo '<div class="row">';
 while($row_status = mysqli_fetch_array($result_status)) {
   if($i>0){$ts_board_col_left = "ts-board-col-left";}
   $ticket_status=$row_status["attribute_option_code"];
@@ -197,6 +198,7 @@ listing_ticket_card( $result_after_fetch,'Waiting CTO');
 echo '</div>';
 echo '</div>';
 
+echo '</div>';
 echo '</div>';
 
 mysqli_close($con);
