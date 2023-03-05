@@ -126,12 +126,14 @@ function get_attribute_list_filter($table){
         </div>
     </div>
 </nav>
-<nav class="navbar ps-4 pe-5">
+<nav class="navbar  ps-4 pe-5">
     <div class="row g-3 align-items-center" id="dynamic_filter" style="width: 100%;">
 
     </div>
 
 </nav>
+
+<div style="margin-left: 10px;padding: 0px 20px;">
 
     <li class="row mb-3 header_list_add_new">
         <div class="col" scope="col">Ticket ID</div>
