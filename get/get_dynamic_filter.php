@@ -103,7 +103,7 @@ function simple_select($attribute_code,$attribute_label,$type){
 function username($attribute_code,$attribute_label,$type){
     $current_value = "";
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-    $query_op = "SELECT * FROM u749625779_cdscontent.account ORDER BY id ASC" or die("Error:" . mysqli_error($con));
+    $query_op = "SELECT * FROM all_in_one_project.account ORDER BY id ASC" or die("Error:" . mysqli_error($con));
     $result_op = mysqli_query($con, $query_op);
     $i=0;
     while($option = mysqli_fetch_array($result_op)) {
@@ -141,7 +141,7 @@ function username($attribute_code,$attribute_label,$type){
 function nickname($attribute_code,$attribute_label,$type){
     $current_value = "";
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-    $query_op = "SELECT * FROM u749625779_cdscontent.account ORDER BY id ASC" or die("Error:" . mysqli_error($con));
+    $query_op = "SELECT * FROM all_in_one_project.account ORDER BY id ASC" or die("Error:" . mysqli_error($con));
     $result_op = mysqli_query($con, $query_op);
     $i=0;
     while($option = mysqli_fetch_array($result_op)) {
