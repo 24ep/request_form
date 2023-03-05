@@ -62,13 +62,13 @@
                                 $result = mysqli_query($con, $query);
                                 $bucket  = '<button class="nav-link border  text-start active" id="v-pills-all-tab" data-bs-toggle="pill" data-bs-target="#v-pills-all" type="button" role="tab" aria-controls="v-pills-all" aria-selected="true">';
                                 $bucket  .= '<div class="row"><div style="place-self: center;"class="col-2"><img class="me-2 rounded" src="https://ui-avatars.com/api/?name=ALL>&background=999999&color=fff&rounded=false&size=25">';
-                                $bucket  .= '</div><div class="col-10 ps-1">All Bucket</div></div></button>';
+                                $bucket  .= '</div><div class="col-10">All Bucket</div></div></button>';
                                 while($row = mysqli_fetch_array($result)) {
                                     $bucket  .=
                                     '<button class="nav-link border text-start" onclick="get_list_update_content(&#39;'.$row['prefix'].'&#39;)" id="v-pills-'.$row['prefix'].'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.$row['prefix'].'" type="button" role="tab" aria-controls="v-pills-'.$row['prefix'].'" aria-selected="true">';
                                     $bucket  .= '
                                             <div class="row">
-                                                <div style="place-self: center;" class="col-3">
+                                                <div style="place-self: center;" class="col-2">
                                                     <img class="me-2 rounded" src="https://ui-avatars.com/api/?name='.$row['prefix'].'>&background='.str_replace("#","",$row['color_project']).'&color=fff&rounded=false&size=25">
                                                 </div>
                                                 <div class="col-10">';
