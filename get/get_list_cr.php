@@ -36,6 +36,7 @@ if($_POST["bucket"] == 'all' or $_POST["bucket"] =="" ){
 
 //filter
 $start_item =  ($_POST['page_navigator_input'] -1 )* 30;
+$limit="LIMIT 30";
 $filter = $_POST['outputValues'];
 
 if($filter==''){
@@ -43,7 +44,7 @@ if($filter==''){
 }
 //count item
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error( $con));
-$query = "SELECT count(*) as count_item FROM content_request as anj where (".$filter.") ".$bucket_filter
+$query = "SELECT count(*) as count_item FROM content_request as anj where (".$filter.") ".$bucket_filter." ".$limit." OFFSET ".$start_item
 or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
