@@ -182,19 +182,19 @@ $result = mysqli_query($con, $query);
 $result_after_fetch =$result;
 echo '<div class="tab-content" id="pills-tabContent">
 <div class="tab-pane fade show active" id="pills-waiting_buyer" role="tabpanel" aria-labelledby="pills-waiting_buyer-tab" tabindex="0">';
-listing_ticket_card( $result_after_fetch,'Waiting Buyer');
+listing_ticket_card( $result_after_fetch,'Waiting Buyer',$filter, $bucket_filter);
 echo '</div>';
 
 $result = mysqli_query($con, $query);
 $result_after_fetch =$result;
 echo '<div class="tab-pane fade" id="pills-execution" role="tabpanel" aria-labelledby="pills-execution-tab" tabindex="0">';
-listing_ticket_card( $result_after_fetch,'Waiting Execution');
+listing_ticket_card( $result_after_fetch,'Waiting Execution',$filter, $bucket_filter);
 echo '</div>';
 
 $result = mysqli_query($con, $query);
 $result_after_fetch =$result;
 echo '<div class="tab-pane fade" id="pills-cto" role="tabpanel" aria-labelledby="pills-cto-tab" tabindex="0">';
-listing_ticket_card( $result_after_fetch,'Waiting CTO');
+listing_ticket_card( $result_after_fetch,'Waiting CTO',$filter, $bucket_filter);
 echo '</div>';
 echo '</div>';
 

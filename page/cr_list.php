@@ -1,11 +1,12 @@
 <!doctype html>
 
-    </form>
-    <div class="btn-group btn-group-sm" style="position: inherit;" role="group"
-        aria-label="Basic checkbox toggle button group">
-        <div class="d-flex align-items-start">
-            <div class="nav flex-column nav-pills pe-3 shadow-sm border-end " style="height: 100%;width: 300px;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <?php
+</form>
+<div class="btn-group btn-group-sm" style="position: inherit;" role="group"
+    aria-label="Basic checkbox toggle button group">
+    <div class="d-flex align-items-start">
+        <div class="nav flex-column nav-pills pe-3 shadow-sm border-end " style="height: 100%;width: 300px;"
+            id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <?php
                 function get_attribute_list_filter($table){
                     $current_value = "";
                     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
@@ -46,15 +47,22 @@
                 }
                 ?>
 
-                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5 pt-1 border-bottom pb-0 mb-2 "
+            <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5 pt-1 border-bottom pb-0 mb-2 "
                 style="border-bottom: 1px #e1dede solid;">
                 <div class="row" style="width:100%">
                     <div style="width:auto;place-self: center;">
-                    <ion-icon name="file-tray-stacked-outline"></ion-icon><strong>Bucket</strong>
+                        <ion-icon name="file-tray-stacked-outline"></ion-icon><strong>Bucket</strong>
                     </div>
                 </div>
-                </nav>
-                    <?php
+            </nav>
+            <button class="btn btn-dark btn-sm " style="margin-left:10px;position: initial!important;" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas" aria-controls="offcanvasExample">
+                <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated"
+                    aria-label="add outline">
+                </ion-icon>
+                New Ticket
+            </button>
+            <?php
 
                                 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
                                 mysqli_query($con, "SET NAMES 'utf8' ");
@@ -95,80 +103,73 @@
                                 mysqli_close($con);
                                 echo $bucket;
                             ?>
-            </div>
-            <div class="tab-content" id="v-pills-tabContent" style="width: 100%;">
+        </div>
+        <div class="tab-content" id="v-pills-tabContent" style="width: 100%;">
 
-                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5"
-                    style="border-bottom: 1px #e1dede solid;">
-                    <div class="row" style="width:100%">
-                        <div style="width:auto;place-self: center;">
-                            <ion-icon name="filter-outline"></ion-icon><strong>Dynamic Filter</strong>
-                        </div>
-                        <div style="width:auto">
-                            <?php echo get_attribute_list_filter('content_request'); ?>
-                        </div>
-                        <div style="width:auto">
-                            <button class="btn btn-dark btn-sm " style="margin-left:10px;position: initial!important;"
-                                type="button" data-bs-toggle="offcanvas" data-bs-target="#content_request_canvas"
-                                aria-controls="offcanvasExample">
-                                <ion-icon size="small" name="add-outline" role="img" class="md icon-small hydrated"
-                                    aria-label="add outline">
-                                </ion-icon>
-                                New Ticket
-                            </button>
-                        </div>
-                        <div style="width:auto">
-                            <div class="input-group input-group-sm" style="position: inherit;">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
-                                <input type="number" class="form-control" style="position: inherit;"
-                                id="page_navigator_input"  min=1 value="1" onchange="getFilterInputValues()">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">
-                                    <div id="total_page_cr">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ps-4 pe-5"
+                style="border-bottom: 1px #e1dede solid;">
+                <div class="row" style="width:100%">
+                    <div style="width:auto;place-self: center;">
+                        <ion-icon name="filter-outline"></ion-icon><strong>Dynamic Filter</strong>
+                    </div>
+                    <div style="width:auto">
+                        <?php echo get_attribute_list_filter('content_request'); ?>
+                    </div>
 
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
+                    <div style="width:auto">
+                        <div class="input-group input-group-sm" style="position: inherit;">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
+                            <input type="number" class="form-control" style="position: inherit;"
+                                id="page_navigator_input" min=1 value="1" onchange="getFilterInputValues()">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">
+                                <div id="total_page_cr">
 
-                        <div style="width:auto">
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div style="width:auto">
                         <ul class="nav nav-pills mb-3 row p-0 me-3" id="pills-tab"
                             style="right: 0;position: absolute;padding: 10px 40px;" role="tablist">
                             <li class="nav-item col p-0" role="presentation">
-                                <button class="nav-link ts-view active m-0" onclick="set_view_mode('list');" id="pills-list_view_ts-tab" data-bs-toggle="pill"
-                                    data-bs-target="#pills-list_view_ts" type="button" role="tab" aria-controls="pills-list_view_ts"
-                                    aria-selected="true">
+                                <button class="nav-link ts-view active m-0" onclick="set_view_mode('list');"
+                                    id="pills-list_view_ts-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-list_view_ts" type="button" role="tab"
+                                    aria-controls="pills-list_view_ts" aria-selected="true">
                                     <ion-icon name="reorder-four-outline" style="margin:0px"></ion-icon>
                                 </button>
                             </li>
                             <li class="nav-item col p-0" role="presentation">
-                                <button class="nav-link ts-view m-0" onclick="set_view_mode('board');" id="pills-board_view_ts-tab" data-bs-toggle="pill"
-                                    data-bs-target="#pills-board_view_ts" type="button" role="tab" aria-controls="pills-board_view_ts"
-                                    aria-selected="false">
+                                <button class="nav-link ts-view m-0" onclick="set_view_mode('board');"
+                                    id="pills-board_view_ts-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-board_view_ts" type="button" role="tab"
+                                    aria-controls="pills-board_view_ts" aria-selected="false">
                                     <ion-icon name="grid-outline" style="margin:0px"></ion-icon>
                                 </button>
                             </li>
                         </ul>
                         <input type="hidden" id="view_mode" name="view_mode" value="list">
-                        </div>
                     </div>
-                </nav>
-                <nav class="navbar ps-4 pe-5">
-                    <div class="row g-3 align-items-center" id="dynamic_filter" style="width: 100%;">
+                </div>
+            </nav>
+            <nav class="navbar ps-4 pe-5">
+                <div class="row g-3 align-items-center" id="dynamic_filter" style="width: 100%;">
 
-                    </div>
-                </nav>
-                <input type="hidden" id="bucket_selected" name="bucket_selected" value="all">
-                    <div class="tab-pane fade show active" id="v-pills-bucket" role="tabpanel" aria-labelledby="v-pills-bucket-tab" tabindex="0">
-                        <div id="bucket" class="m-3 mt-0">
-                            <?php echo include("../get/get_list_cr.php");?>
-                        </div>
-                    </div>
+                </div>
+            </nav>
+            <input type="hidden" id="bucket_selected" name="bucket_selected" value="all">
+            <div class="tab-pane fade show active" id="v-pills-bucket" role="tabpanel"
+                aria-labelledby="v-pills-bucket-tab" tabindex="0">
+                <div id="bucket" class="m-3 mt-0">
+                    <?php echo include("../get/get_list_cr.php");?>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
 <script>
-
 function getFilterInputValues() {
 
     var bucket = document.getElementById("bucket_selected").value;
@@ -218,28 +219,31 @@ function getFilterInputValues() {
     console.log(bucket);
     //   return `Filter values: ${outputValues}`;
     var view_mode = document.getElementById("view_mode").value;
-    if(view_mode=='list'){
+    if (view_mode == 'list') {
         var path = "../base/get/get_list_cr.php";
-    }else if(view_mode=='board'){
+    } else if (view_mode == 'board') {
         var path = "../base/get/get_list_cr_board.php";
     }
     $.post(path, {
         page_navigator_input: page_navigator_input,
         outputValues: outputValues,
-        bucket:bucket
+        bucket: bucket
     }, function(data) {
         $('#bucket').html(data);
     });
 }
-function set_view_mode(mode){
-     document.getElementById("view_mode").value = mode;
-     getFilterInputValues();
+
+function set_view_mode(mode) {
+    document.getElementById("view_mode").value = mode;
+    getFilterInputValues();
 }
-function set_bucket(bucket){
-     document.getElementById("bucket_selected").value = bucket;
-     getFilterInputValues();
+
+function set_bucket(bucket) {
+    document.getElementById("bucket_selected").value = bucket;
+    getFilterInputValues();
 }
 getFilterInputValues()
+
 function get_filter_attribute() {
     var selected = [];
     for (var option of document.getElementById('list_of_filter').options) {
@@ -259,7 +263,6 @@ function get_filter_attribute() {
     });
 }
 get_filter_attribute();
-
 </script>
 <script>
 tinymce.init({
@@ -336,7 +339,6 @@ function cr_id_toggle(id) {
         });
     }
 }
-
 </script>
 <style>
 .tox.tox-tinymce.tox-tinymce--toolbar-bottom {
