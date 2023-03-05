@@ -13,6 +13,15 @@ $configurable_map = array (
         'function'=>'get_page',
         'description'=>'Manage any register account in system'),
     array(
+        'session'=>'General Settings',
+        'icon'=>'folder',
+        'table'=>'project_bucket',
+        'database'=>'all_in_one_project',
+        'prefix'=>'pb',
+        'title'=>'Project bucket',
+        'function'=>'get_attribute_config',
+        'description'=>'Manage bucket of request'),
+    array(
         'session'=>'Table Setting',
         'icon'=>'rocket',
         'table'=>'add_new_job',
