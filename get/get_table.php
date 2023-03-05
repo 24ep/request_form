@@ -41,17 +41,3 @@ function displayTable($host, $username, $password, $database, $table, $columns,$
 
 
 ?>
- <script>
-  $(document).ready( function () {
-  $('#<?php echo $table_id; ?>').DataTable({
-        lengthMenu: [
-            [10,20, 50, 100, -1],
-            [10, 20,50, 100, 'All'],
-        ],
-    });
-
-} );
-
-
-
-</script>

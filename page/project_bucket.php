@@ -37,5 +37,19 @@ displayTable(
       <!-- <button class="btn btn-outline-success disabled">Create new account</button> -->
     </div>
   </div>
+  <script>
+  $(document).ready( function () {
+  $('#project_bucket').DataTable({
+        lengthMenu: [
+            [10,20, 50, 100, -1],
+            [10, 20,50, 100, 'All'],
+        ],
+    });
+
+} );
+
+
+
+</script>
 
 
