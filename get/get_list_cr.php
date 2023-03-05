@@ -1,9 +1,5 @@
 <?php
 session_start();
-include_once('../get/get_option_function.php');
-$username_op_cr = getoption_return_filter("username","account",$_SESSION["user_cr_filter"],"single","all_in_one_project");
-$request_for_op = get_option_return_filter("ticket_type","","single","content_request");
-$request_cr_status_op = get_option_return_filter("status","","single","content_request");
 function badge_ticket_type_cr($type){
     switch ($type) {
         case "Update Content": $type = '<span class="badge bg-primary" style="white-space: pre-wrap;background-color: #fdfdfd!important;color: #5f85ff99!important;padding: 8px;">'.$type.'</span>'; break;
