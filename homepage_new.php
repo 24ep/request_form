@@ -298,12 +298,12 @@ if (!$_SESSION["login_csg"]){
                             <ion-icon name="rocket"></ion-icon><span class="main-menu-nav">New Products</span>
                         </a>
                     </li>
-                    <li class="nav-item" role="presentation">
+                    <!-- <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_update_content" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('update_content');">
                             <ion-icon name="ticket"></ion-icon><span class="main-menu-nav">Update Content</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_cr_list" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('cr_list');">
