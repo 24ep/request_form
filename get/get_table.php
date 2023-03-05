@@ -13,7 +13,7 @@ function displayTable($host, $username, $password, $database, $table, $columns,$
     $result = mysqli_query($con, $query);
 
     // Create an HTML table to display the data with Bootstrap styles
-    echo "<table class='table table-striped table-bordered' id='".$table_id."'>";
+    echo "<table class='table' id='".$table_id."'>";
     echo "<thead class='thead-dark'>";
     echo "<tr>";
     foreach ($columns as $column) {
