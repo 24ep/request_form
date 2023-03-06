@@ -1,7 +1,7 @@
 <?php
   session_start();
 $department=$_GET["department"];
-
+include_once('../get/get_option_function.php');
 
    $ticket_id = $_GET["id"];
    date_default_timezone_set("Asia/Bangkok");
