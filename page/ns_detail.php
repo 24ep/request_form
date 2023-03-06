@@ -13,34 +13,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
     return $current_cr;
 }
 
-?>
-    <!-- <style>
-    .nav-link-preferance {
-        color: <?php //echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
-        ?>;
-    }
 
-    .nav_list_bra-preferance {
-        background: <?php //echo get_value_main($_SESSION['username'], "menu_shade", "all_in_one_project", "account", "username");
-        ?>;
-    }
-
-    .nav-pills .nav-link.active,
-    .nav-pills .show>.nav-link {
-        color: <?php //echo get_value_main($_SESSION['username'], "primary_front_button_selected", "all_in_one_project", "account", "username");
-        ?>;
-        border: solid 1px <?php// echo get_value_main($_SESSION['username'], "primary_border_button_slected", "all_in_one_project", "account", "username");
-        ?>;
-    }
-
-    .nav-pills .nav-link {
-        color: <?php //echo get_value_main($_SESSION['username'], "menu_front_color", "all_in_one_project", "account", "username");
-        ?>;
-    }
-    </style> -->
-
-
-<?php
   session_start();
 //   include("../get/get_default_profile_image.php");
 //   include("../action/action_send_linenotify.php");
@@ -88,7 +61,6 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
             ac_request.lastname as request_lastname,
             ac_request.office_tell as request_office_tell,
             ac_request.nickname as request_nickname,
-            brand_info.link as brand_info_link,
             brand_editor.body  as brand_editor,
             anj.web_cate as web_cate,
             jc.id as jc_id,
@@ -108,8 +80,6 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
             on ac.username = anj.follow_assign_name
             left join all_in_one_project.account as ac_request
             on ac_request.username = anj.request_username
-            left join all_in_one_project.brand_information as brand_info
-            on brand_info.brand = anj.brand
             left join u749625779_cdscontent.job_cms as jc
             on anj.id = jc.csg_request_new_id
             left join all_in_one_project.brand_editor as brand_editor
@@ -158,7 +128,6 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
       $config_type = $row['config_type'];
       $subject_mail = $row['subject_mail'];
       $follow_assign_nickname = $row['follow_assign_nickname'];
-      $brand_info_link = $row['brand_info_link'];
       $web_cate = $row['web_cate'];
       $brand_editor=$row['brand_editor'];
       $trigger_status=$row['trigger_status'];
@@ -318,14 +287,7 @@ echo '
 <div class="container-fluid ">
     <div class="row">
         <div class="col-8 mt-3 ">
-            <!-- <nav class="p-3 bg-light text-dark bg-gradient shadow-sm  " style="">
-            <div class="container-fluid">
-            <a style="text-decoration: none;color: gray;margin-left: 10px;padding: 5px;"><small>
-                <ion-icon name="person-outline" style="margin: 0px;"></ion-icon> Contact Person
-            </small></a>
-                <h5><a class="navbar-brand" href="#"><?php echo $follow_up_name; ?> <?php echo $office_tell; ?></a></h5>
-            </div>
-        </nav> -->
+
             <?php if($config_type=='parent'){?>
             <div class="row">
                 <div class="officerassingbox">
