@@ -172,7 +172,7 @@
 
 <script>
 function filter_backlogs(){
-    document.getElementById("filter_status").value = 'pending,inprogress,waiting execution,waiting cto'
+    document.getElementById("filter_status").value = 'Pending,Inprogress,Waiting Execution,Waiting CTO,Waiting Buyer'
 }
 function getFilterInputValues() {
 
