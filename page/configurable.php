@@ -22,6 +22,15 @@ $configurable_map = array (
         'function'=>'get_page',
         'description'=>'Manage bucket of request'),
     array(
+        'session'=>'General Settings',
+        'icon'=>'file-tray-stacked',
+        'table'=>'origin_of_issue',
+        'database'=>'all_in_one_project',
+        'prefix'=>'oi',
+        'title'=>'Origin of issue',
+        'function'=>'get_page',
+        'description'=>'Manage origin of issue of request'),
+    array(
         'session'=>'Table Setting',
         'icon'=>'rocket',
         'table'=>'add_new_job',
