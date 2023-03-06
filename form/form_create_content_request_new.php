@@ -20,7 +20,7 @@
 
 
        $project_bucket = project_bucket();
-       $cr_important_op = get_option_attribute_entity("important","content_request","");
+       $cr_important_op = get_option_attribute_entity("piority","content_request","");
        $cr_issue_type_op = get_option_attribute_entity("ticket_type","content_request","");
        $cr_reason_op_add = get_option_attribute_entity_with_filter("issue_resone","","content_request","dp_add");
        $cr_reason_op_remove = get_option_attribute_entity_with_filter("issue_resone","","content_request","dp_remove");
