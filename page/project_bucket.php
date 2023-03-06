@@ -52,13 +52,16 @@ function table_detail_page(id,attribute_code,table_name,action){
     // create new attribute
     var database = 'all_in_one_project';
     var primary_key_id = 'id';
-    var prefix_table = 'oi';
+    var prefix_table = 'pb';
 
       $.post("base/get/get_table_detail.php", {
                 id:id,
                 attribute_code: attribute_code,
-                table_name: table_name,
-                action:action
+                table: table,
+                action:action,
+                database:database,
+                primary_key_id:primary_key_id,
+                prefix_table:prefix_table
             },
             function(data) {
                 $('#col_detail').html(data);
