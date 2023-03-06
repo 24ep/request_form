@@ -8,27 +8,30 @@ include_once('get/get_option_function.php');
    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
    mysqli_query($con, "SET NAMES 'utf8' ");
    $query = "
-    SELECT
-    cl.id,
-    cl.case_officer,
-    cl.inprogress_date,
-    cl.complete_date,
-    cl.status,
-    cl.update_due_reason,
-    cl.update_type,
-    cl.sku,
-    cl.ticket_id,
-    cl.create_date,
-    cl.update_date,
-    cl.description,
-    cl.est_start_date,
-    cl.est_due_date,
-    cr.ticket_template,
-    cl.description
-    FROM all_in_one_project.checklist_of_content_request as cl
-    left join all_in_one_project.content_request as cr
-    on cl.ticket_id = cr.id
-    where ticket_id =".$ticket_id;
+   SELECT
+   cl.id,
+   cl.case_officer,
+   cl.inprogress_date,
+   cl.complete_date,
+   cl.status,
+   cl.update_due_reason,
+   cl.update_type,
+   cl.sku,
+   cl.ticket_id,
+   cl.create_date,
+   cl.update_date,
+   cl.description,
+   cl.est_start_date,
+   cl.est_due_date,
+   cr.ticket_template,
+   cl.description,
+   pb.template_of_task
+   FROM all_in_one_project.checklist_of_content_request as cl
+   left join all_in_one_project.content_request as cr
+   on cl.ticket_id = cr.id
+   left join all_in_one_project.project_bucket as pb
+   on pb.prefix = cr.ticket_template
+   where ticket_id =".$ticket_id;
    $query_count = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where ticket_id =".$ticket_id;
    $query_count_complete = "SELECT count(id) as count_id FROM all_in_one_project.checklist_of_content_request where status = 'Close' and  ticket_id =".$ticket_id;
    $result = mysqli_query($con, $query);
@@ -65,7 +68,7 @@ include_once('get/get_option_function.php');
 
 
      while($row = mysqli_fetch_array($result)) {
-      if($row['ticket_template']=='PJ' and $count_id_fr<>0 and $i == 1){
+      if($row['template_of_task']=='free-style' and $count_id_fr<>0 and $i == 1){
         echo '
         <div class="load_cr_dt progress shadow-sm progress-bar-striped progress-bar-animated" style="margin-bottom:10px">
           <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="background-color: #17b717;width: '.$percent_progress.'%;" aria-valuenow="'.$percent_progress.'" aria-valuemin="0" aria-valuemax="100">Progress '.$percent_progress.'%</div>
@@ -73,7 +76,7 @@ include_once('get/get_option_function.php');
         ';
         }
 
-          if($row['ticket_template']=='CR' and $i == 1){
+          if($row['template_of_task']=='general' and $i == 1){
             if(strpos($department,"Content")!==false or $department==''){
 
               echo '<li class="mb-1 row">
@@ -94,7 +97,7 @@ include_once('get/get_option_function.php');
               </li>';
               }
             }
-            if($row['ticket_template']=='PJ' and $i == 1){
+            if($row['template_of_task']=='free-style' and $i == 1){
 
 
 
@@ -110,7 +113,7 @@ include_once('get/get_option_function.php');
               }
 
 
-                    if($row['ticket_template']=='CR' or $row['ticket_template']=='NPS'){
+                    if($row['template_of_task']=='general'){
                   echo '
                 <li class="mb-3 row shadow-sm bg-white rounded" id="checklist_cr" style="">
                           <div class="col-2" style="padding: 3px;">
@@ -174,7 +177,7 @@ include_once('get/get_option_function.php');
           //card for project
 
  //----------------
-                if($row['ticket_template']=='DT' or  $row['ticket_template']=='DP'){
+                if($row['template_of_task']=='free-style'){
 
 
                   echo '
