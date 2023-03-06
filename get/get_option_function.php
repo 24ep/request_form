@@ -8,50 +8,18 @@
     $query = "SELECT DISTINCT ".$col." FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
-        if($sorm=="multi"){
-            if($col=="store" or $col=="itemmize_type" or $col=="product_website"){
-            $array_store = explode(', ', $select_option);
-            $duplicate_op = false;
-            $loop_in_null = false;
-            foreach($array_store as $store)
-            {
-                if($row[$col] <> '' ) {
-                if($store==$row[$col]){
-                    $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
-                    $duplicate_op = true;
-                }
-                }
-            }
-            if($row[$col] <> ''){
-                if($duplicate_op == false){
-                $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
-                }
-            }
-            }
-        }else{
-            if($loop_in_null==false){
+
             $option_set .= '<option value=""></option>';
-            $loop_in_null=true;
-            }
-            if($row[$col] <> '' )
-            {
+      
                 if($select_option==$row[$col]){
-                    if($col=="username"){
-                        $op_label = $row["nickname"]." ".$row["firstname"]." (".$row["username"].") ";
-                    }else{
-                        $op_label = $row[$col];
-                    }
+
                     $option_set .= '<option value="'.$row[$col].'" selected>'.$op_label.'</option>';
                 }else{
-                    if($col=="username"){
-                        $op_label = $row["nickname"]." ".$row["firstname"]." (".$row["username"].") ";
-                    }else{
-                        $op_label = $row[$col];
-                    }
+                 
                     $option_set .= '<option value="'.$row[$col].'">'.$op_label.'</option>';
                 }
-            }
-    }
+            
+    
     }
     mysqli_close($con);
     return $option_set;
