@@ -33,7 +33,7 @@ displayTable(
         "status",
         "system_related"
       ),
-      "origin_of_issue");
+      "origin_of_ticket");
 ?>
 
   <div class="container-fluid">
