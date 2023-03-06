@@ -25,14 +25,6 @@
       }
 ?>
 
-
-<nav class="p-3 bg-white shadow-sm">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><?php echo $ac_project_name;?></a>
-    <small  href="#"><?php echo $ac_description; ?></small>
-  </div>
-</nav>
-
 <?php
 include('../get/get_attribute.php');
 
