@@ -66,7 +66,7 @@
     function get_option_attribute_entity_with_filter($attr_code,$current_value,$table,$key){
         session_start();
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-          $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute_optionute_option
+          $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute_option
           WHERE attribute_code = '".$attr_code."' and attribute_table = '".$table."' and attribute_option_code like '%".$key."%' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
           $result_op = mysqli_query($con, $query_op);
           if($current_value==""){
