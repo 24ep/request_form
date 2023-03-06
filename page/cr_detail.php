@@ -175,7 +175,7 @@ while($row = mysqli_fetch_array($result)) {
   </div>
   <small>
   <a type="button" style="text-decoration: none;color: gray;"
-  onclick="get_page(&#39;update_content&#39;);">
+  onclick="get_page(&#39;cr_list&#39;);">
   <ion-icon name="chevron-back-outline" style="margin: 0px;"></ion-icon> Back to list
   </a>
   </small>
