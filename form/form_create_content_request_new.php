@@ -56,7 +56,6 @@
         <label for="cr_dp_reason" class="form-label">* Why do you want to do datapump ?</label>
         <select id="cr_dp_reason" required name="cr_dp_reason" class="form-select form-select-sm">
             <?php echo $cr_reason_op_add;?>
-            <hr>
             <?php echo $cr_reason_op_remove;?>
         </select>
     </div>
@@ -89,14 +88,7 @@
                   }
            }
     ?>
-    <!-- <div class="form-group col-md-3">
-        <label for="inputState" class="form-label">*Online Channel</label>
-        <select required="required" multiple="multiple" class="multiple-select" id="cr_online_channel[] "
-            name="cr_online_channel[]">
-            <?php //echo $product_website_op; ?>
-        </select>
-    </div>
-   -->
+
     <div class="form-group col-md-3">
         <label for="cr_ticket_template" class="form-label">Bucket & Project</label>
         <select id="cr_ticket_template" disabled name="cr_ticket_template" class="form-select form-select-sm">
