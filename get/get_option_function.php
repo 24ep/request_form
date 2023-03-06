@@ -7,24 +7,38 @@
     mysqli_query($con, "SET NAMES 'utf8' ");
     $query = "SELECT DISTINCT ".$col." FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
+    $option_set .= '<option value=""></option>';
     while($row = mysqli_fetch_array($result)) {
+        if($select_option==$row[$col]){
+            $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
+        }else{
+            $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
+        }
 
-            $option_set .= '<option value=""></option>';
-      
-                if($select_option==$row[$col]){
-
-                    $option_set .= '<option value="'.$row[$col].'" selected>'.$op_label.'</option>';
-                }else{
-                 
-                    $option_set .= '<option value="'.$row[$col].'">'.$op_label.'</option>';
-                }
-            
-    
     }
     mysqli_close($con);
     return $option_set;
 
     }
+
+    function get_username($col,$select_option) {
+        $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
+        mysqli_query($con, "SET NAMES 'utf8' ");
+        $query = "SELECT DISTINCT * FROM account ORDER BY id asc" or die("Error:" . mysqli_error($con));
+        $result = mysqli_query($con, $query);
+        $option_set .= '<option value=""></option>';
+        while($row = mysqli_fetch_array($result)) {
+            if($select_option==$row[$col]){
+                $option_set .= '<option value="'.$row['username'].'" selected>'.$row['nickname'].' - '.$row['firstname'].' '. substr($row['lastname'],0,2).'. </option>';
+            }else{
+                $option_set .= '<option value="'.$row['username'].'" >'.$row['nickname'].' - '.$row['firstname'].' '. substr($row['lastname'],0,2).'. </option>';
+            }
+
+        }
+        mysqli_close($con);
+        return $option_set;
+
+        }
 
 
     function get_option_attribute_entity($att_code,$table,$current_value){
