@@ -175,7 +175,8 @@ function filter_backlogs(){
     var select = new SlimSelect({
         select: '#filter_status'
     })
-    select.setSelected(['Pending', 'Inprogress', 'Waiting Execution', 'Waiting CTO','Waiting Buyer'])
+    select.setSelected(['Pending', 'Inprogress', 'Waiting Execution', 'Waiting CTO','Waiting Buyer']);
+    console.log(select.getSelected());
 }
 function getFilterInputValues() {
 
