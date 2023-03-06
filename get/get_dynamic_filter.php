@@ -111,6 +111,7 @@ function username($attribute_code,$attribute_label,$type,$table_name){
     $result_op = mysqli_query($con, $query_op);
     $i=0;
     $option_element .= "<option value=''></option>";
+    $option_element .= "<option value='unassign'>Unassign</option>";
     while($option = mysqli_fetch_array($result_op)) {
         $option_element .= "<option value='".$option["username"]."'>".$option["username"]."</option>";
     }
