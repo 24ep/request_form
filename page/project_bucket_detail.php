@@ -36,7 +36,7 @@
 </nav>
 
 <?php
-// include('../get/get_attribute.php');
+include('../get/get_attribute.php');
 
 //get attribute set menu
 $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix FROM u749625779_cdscontent.job_attribute where allow_display= 1 and table_name in ('project_bucket') order by sort_attribute_set" or die("Error:" . mysqli_error($con));
