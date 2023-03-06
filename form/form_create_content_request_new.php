@@ -97,9 +97,13 @@
                return $option_set;
 
               }
-       $cr_important_op = get_option_cr("cr_important","option","Low","single","all_in_one_project");
+
        $project_bucket = project_bucket();
-       $cr_issue_type_op = return_option_create_cr("","39");
+       $cr_important_op = get_option_attribute_entity("important","content_request","");
+       $cr_issue_type_op = get_option_attribute_entity("ticket_type","content_request","");
+
+    //    $cr_important_op = get_option_cr("cr_important","option","Low","single","all_in_one_project");
+    //    $cr_issue_type_op = return_option_create_cr("","39");
        $cr_reason_op_add = return_option_create_filter("","40","dp_add");
        $cr_reason_op_remove = return_option_create_filter("","40","dp_remove");
 ?>
