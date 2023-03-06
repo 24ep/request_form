@@ -74,7 +74,7 @@
                                 where pb.status = 'Open'
                                 group by pb.id, pb.project_name, pb.prefix , pb.color_project;" or die("Error:" . mysqli_error($con));
                                 $result = mysqli_query($con, $query);
-                                $bucket  = '<button class="nav-link text-start active" onclick="set_bucket(&#39;all&#39;);getFilterInputValues();filter_backlogs();" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
+                                $bucket  = '<button class="nav-link text-start active" onclick="set_bucket(&#39;all&#39;);" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
                                                 <div class="row" >
                                                     <div style="place-self: center;"class="col-12">
                                                     <img class="me-2 rounded" src="https://ui-avatars.com/api/?name=ALL>&background=999999&color=fff&rounded=false&size=20">
@@ -88,7 +88,7 @@
                                 while($row = mysqli_fetch_array($result)) {
 
                                     $bucket  .=
-                                    '<button class="nav-link mt-0 mb-0text-start" onclick="set_bucket(&#39;'.$row['prefix'].'&#39;);filter_backlogs();" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
+                                    '<button class="nav-link mt-0 mb-0text-start" onclick="set_bucket(&#39;'.$row['prefix'].'&#39;);" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
                                             <div class="row" style="text-align: left;white-space: nowrap;">
                                                 <div style="place-self: center;" class="col-9">
                                                     <img class="me-2 rounded" src="https://ui-avatars.com/api/?name='.$row['prefix'].'>&background='.str_replace("#","",$row['color_project']).'&color=fff&rounded=false&size=20">
@@ -248,6 +248,7 @@ function set_view_mode(mode) {
 function set_bucket(bucket) {
     document.getElementById("bucket_selected").value = bucket;
     getFilterInputValues();
+    filter_backlogs();
 }
 getFilterInputValues()
 
