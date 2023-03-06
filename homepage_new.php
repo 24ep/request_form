@@ -328,7 +328,7 @@ if (!$_SESSION["login_csg"]){
                     <li class="nav-item" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_configurable" data-bs-toggle="pill"
                             type="button" role="tab" aria-selected="false" onclick="get_page('configurable');">
-                            <ion-icon name="terminal"></ion-icon><span class="main-menu-nav">Configuration</span>
+                            <ion-icon name="terminal"></ion-icon><span class="main-menu-nav">System Configuration</span>
                         </a>
                     </li>
                     <li class="nav-item btn-group dropend" role="presentation">
