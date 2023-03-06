@@ -3,15 +3,6 @@
 <?php
 session_start();
 include_once('../get/get_option_function.php');
-// $username_op = getoption_return_filter("username","account",$_SESSION["user_filter"],"single","all_in_one_project");
-// $brand_op = get_option_return_filter_disting("brand","add_new_job","","single","all_in_one_project");
-// $request_new_status_op = get_option_attribute_entity("status","add_new_job",$_SESSION["status_filter"]);
-// $business_type_op = get_option_return_filter("business_type","","single","add_new");
-// $production_type_op = get_option_return_filter("production_type","","single","add_new");
-// $project_type_op = get_option_return_filter("project_type","New SKU","single","add_new");
-// $sub_department_op = get_option_return_filter("sub_department","","single","add_new");
-// $bu_op = get_option_return_filter("bu","CDS","single","add_new");
-// $tags_op = get_option_return_filter("tags","","multi","add_new");
 // get_contact_requester
 $query = "SELECT * FROM all_in_one_project.account where username = '".$_SESSION['username']."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
