@@ -13,13 +13,9 @@ label#label_file {
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <?php
 session_start();
-if(!isset($_SESSION["username"])){
-  $overlay = "on_overlay();";
-}else{
-  $overlay = "off_overlay();";
-}
+
 $id = $_POST['id'];
-include_once('get/get_option_function.php');
+// include_once('../get/get_option_function.php');
 
 // $func = $_POST['func'];
 function return_option_edit_cr($current_value,$attr_id){
@@ -718,17 +714,4 @@ if (tinyMCE.get('comment_input_cr')) {
 } else {}
 load_tiny_comment();
 </script>
-<?php if( $direct == 'external'){
-                    echo '
-                    <script>
-                    function on_overlay() {
-                      document.getElementById("overlay").style.display = "block";
-                    }
-                    function off_overlay() {
-                      document.getElementById("overlay").style.display = "none";
-                    }
-                    </script>
-                    </body>
-                    </html>';
-                  }
-                  ?>
+
