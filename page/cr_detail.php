@@ -3,6 +3,9 @@
 .multiple-select_cr_edit .ms-choice {
     border: 0px;
 }
+.tox .tox-tinymce .tox-tinymce--toolbar-bottom{
+  border-radius: 10px;
+}
 
 label#label_file {
     color: #adb5bd;

@@ -1,3 +1,9 @@
+<style>
+.tox .tox-tinymce .tox-tinymce--toolbar-sticky-off{
+    border-radius: 10px;
+}
+</style>
+
 <?php
 
 
