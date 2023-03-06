@@ -88,7 +88,7 @@
                                 while($row = mysqli_fetch_array($result)) {
 
                                     $bucket  .=
-                                    '<button class="nav-link mt-0 mb-0text-start" onclick="set_bucket(&#39;'.$row['prefix'].'&#39;);" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
+                                    '<button class="nav-link mt-0 mb-0text-start" onclick="set_bucket(&#39;'.$row['prefix'].'&#39;);filter_backlogs();" data-bs-toggle="pill" data-bs-target="#v-pills-bucket" type="button" role="tab">
                                             <div class="row" style="text-align: left;white-space: nowrap;">
                                                 <div style="place-self: center;" class="col-9">
                                                     <img class="me-2 rounded" src="https://ui-avatars.com/api/?name='.$row['prefix'].'>&background='.str_replace("#","",$row['color_project']).'&color=fff&rounded=false&size=20">
