@@ -2,13 +2,11 @@
 
 <?php
  session_start();
-   $database = 'all_in_one_project';
-   $table = 'project_bucket';
-   $primary_key_id = 'id';
-   $prefix_table = 'pb';
-
+   $database = $_POST['database'];
+   $table = $_POST['table'];
+   $primary_key_id = $_POST['primary_key_id'];
+   $prefix_table =$_POST['prefix_table'];
    $id=$_POST['id'];
-
 
 
    $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
@@ -39,7 +37,7 @@
 include('../get/get_attribute.php');
 
 //get attribute set menu
-$query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix FROM u749625779_cdscontent.job_attribute where allow_display= 1 and table_name in ('project_bucket') order by sort_attribute_set" or die("Error:" . mysqli_error($con));
+$query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix FROM u749625779_cdscontent.job_attribute where allow_display= 1 and table_name in ('".$table ."') order by sort_attribute_set" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $d_attribute_set="";
   $d_attribute_section="";

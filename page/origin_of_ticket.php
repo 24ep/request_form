@@ -3,7 +3,7 @@
   <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a onclick="get_page('configurable')">Configurable</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Origin of issue</li>
+          <li class="breadcrumb-item active" aria-current="page">Origin of ticket</li>
         </ol>
     </nav>
 
@@ -13,14 +13,14 @@
     </div>
   </div>
 </nav>
-<h5 class="p-2 ps-4 pb-4 bg-secondary bg-opacity-25 text-secondary  m-0" style="text-transform: uppercase"><strong>Origin of issue</strong></h5>
+<h5 class="p-2 ps-4 pb-4 bg-secondary bg-opacity-25 text-secondary  m-0" style="text-transform: uppercase"><strong>Origin of ticket</strong></h5>
 
 
 <?php
 include("../get/get_table.php");
 displayTable(
     "localhost", "cdse_admin", "@aA417528639",
-    "all_in_one_project", "origin_of_issue",
+    "all_in_one_project", "origin_of_ticket",
      array(
         "id",
         "origin",
@@ -53,9 +53,13 @@ displayTable(
 
 } );
 
-function project_bucket_detail_page(id,attribute_code,table_name,action){
+function table_detail_page(id,attribute_code,table_name,action){
     // create new attribute
-      $.post("base/page/origin_of_issue_detail.php", {
+    var database = 'all_in_one_project';
+    var primary_key_id = 'id';
+    var prefix_table = 'oi';
+
+      $.post("base/get/get_table_detail.php", {
                 id:id,
                 attribute_code: attribute_code,
                 table_name: table_name,

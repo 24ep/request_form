@@ -24,12 +24,12 @@ $configurable_map = array (
     array(
         'session'=>'General Settings',
         'icon'=>'file-tray-stacked',
-        'table'=>'origin_of_issue',
+        'table'=>'origin_of_ticket',
         'database'=>'all_in_one_project',
         'prefix'=>'oi',
-        'title'=>'Origin of issue',
+        'title'=>'Origin of ticket',
         'function'=>'get_page',
-        'description'=>'Manage origin of issue of request'),
+        'description'=>'Manage origin of request'),
     array(
         'session'=>'Table Setting',
         'icon'=>'rocket',

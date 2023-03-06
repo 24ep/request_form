@@ -48,9 +48,13 @@ displayTable(
 
 } );
 
-function project_bucket_detail_page(id,attribute_code,table_name,action){
+function table_detail_page(id,attribute_code,table_name,action){
     // create new attribute
-      $.post("base/page/project_bucket_detail.php", {
+    var database = 'all_in_one_project';
+    var primary_key_id = 'id';
+    var prefix_table = 'oi';
+
+      $.post("base/get/get_table_detail.php", {
                 id:id,
                 attribute_code: attribute_code,
                 table_name: table_name,
@@ -60,7 +64,6 @@ function project_bucket_detail_page(id,attribute_code,table_name,action){
                 $('#col_detail').html(data);
             });
   }
-
 
 </script>
 
