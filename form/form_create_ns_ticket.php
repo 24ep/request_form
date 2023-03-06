@@ -1,3 +1,10 @@
+<?php
+$brand_op = get_option_return_filter_disting("brand","add_new_job","","single","all_in_one_project");
+$sub_department_op = get_option_attribute_entity("sub_department","add_new_job","");
+$production_type_op = get_option_attribute_entity("production_type","add_new_job","");
+$project_type_op = get_option_attribute_entity("project_type","add_new_job","");
+$bu_op = get_option_attribute_entity("bu","add_new_job","");
+?>
 <div class="modal-dialog">
     <div class="modal-content shadow rounded  ">
         <div class="modal-header">

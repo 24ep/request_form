@@ -22,7 +22,7 @@
     }
 
     function get_username($select_option) {
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_") or die("Error: " . mysqli_error($con));
+        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
         $query = "SELECT DISTINCT * FROM account ORDER BY id asc" or die("Error:" . mysqli_error($con));
         $result = mysqli_query($con, $query);
