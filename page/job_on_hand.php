@@ -22,8 +22,9 @@ while($row = mysqli_fetch_array($result)) {
 }
 
 include_once('../get/get_option_function.php');
-$username_op = getoption_return_filter("username","account",$_SESSION["username"],"single","all_in_one_project");
-$role_op = get_option("role",$_SESSION["role"],"single");
+// $username_op = getoption_return_filter("username","account",$_SESSION["username"],"single","all_in_one_project");
+$role_op = get_option_attribute_entity("role","account",$_SESSION["role"]);
+$username_op = get_option_attribute_entity("username","account",$_SESSION["role"]);
 ?>
 
 <nav class="nav p-2 bg-light shadow" style="border-bottom: 1px solid #e3e3e3;">

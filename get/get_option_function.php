@@ -1,13 +1,13 @@
 <?php
  session_start();
 
- function getoption_return_filter_disting($col,$table,$select_option,$sorm,$database) {
+ //use for pull datafrom record table like brand ,username
+ function get_option_return_filter_disting($col,$table,$select_option,$sorm,$database) {
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
     $query = "SELECT DISTINCT ".$col." FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
-// split array store
         if($sorm=="multi"){
             if($col=="store" or $col=="itemmize_type" or $col=="product_website"){
             $array_store = explode(', ', $select_option);
@@ -156,38 +156,7 @@
             return $option_set;
 
     }
-    function get_option($attribute_code,$default_option,$select_type){
-        $option_set="";
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","content_service_gate") or die("Error: " . mysqli_error($con));
-        mysqli_query($con, "SET NAMES 'utf8' ");
-        $query = "SELECT * FROM u749625779_cdscontent.job_attribute_option where attribute_code =  '".$attribute_code."'" or die("Error:" . mysqli_error($con));
-        $result = mysqli_query($con, $query);
-            if($select_type=="multi"){
-                while($row = mysqli_fetch_array($result)) {
-                $array_default = explode(', ', $default_option);
-                foreach($array_default as $option)
-                  {
-                    if($option==$row["attribute_option_code"]){
-                        $option_set .= '<option selected value="'.$row["attribute_option_code"].'">'.$row["attribute_option_label"].'</option>';
-                    }else{
-                        $option_set .= '<option value="'.$row["attribute_option_code"].'">'.$row["attribute_option_label"].'</option>';
-                    }
-                  }
-                }
-            }else{
-                $option_set .= '<option value=""></option>';
-                while($row = mysqli_fetch_array($result)) {
-                    if($default_option==$row["attribute_option_code"]){
-                        $option_set .= '<option selected value="'.$row["attribute_option_code"].'">'.$row["attribute_option_label"].'</option>';
-                    }else{
-                        $option_set .= '<option value="'.$row["attribute_option_code"].'">'.$row["attribute_option_label"].'</option>';
-                    }
-                }
-            }
-            mysqli_close($con);
-            return $option_set;
 
-    }
 
     function get_option_attribute_entity($att_code,$table,$current_value){
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));

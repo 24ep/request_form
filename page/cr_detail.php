@@ -375,16 +375,9 @@ while($row = mysqli_fetch_array($result)) {
     </select>
     </div>
     </div>';
-    // echo '
-    //     <div class="directorist-select directorist-select-multi" id="multiSelect" data-max="50"
-    //         data-isSearch="true" data-multiSelect="['.$username_op_set.']" style="position: relative!important; z-index: 1!important;" >
-    //         <input value="['.$set_participant.']" type="hidden">
-    //     </div>
-    // ';
+
     echo '<hr>';
-    // $set_participant
-    // end contact
-    // ---check list
+
     ?>
 <div class="row">
     <div class="col">
