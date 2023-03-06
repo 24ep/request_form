@@ -19,6 +19,7 @@ if(!isset($_SESSION["username"])){
   $overlay = "off_overlay();";
 }
 $id = $_POST['id'];
+include_once('get/get_option_function.php');
 
 // $func = $_POST['func'];
 function return_option_edit_cr($current_value,$attr_id){
@@ -206,15 +207,19 @@ while($row = mysqli_fetch_array($result)) {
   }else{
     $assign = '<div style="margin-bottom:15px">assign to '.$case_officer.'</div>';
   }
-  $cr_op = return_option_edit_cr($status,"38");
-  $username_op = get_option_return_edit_cr("username","account",$case_officer,"multi","all_in_one_project");
-  $username_op_mul = get_username_option($case_officer);
+  // $cr_op = return_option_edit_cr($status,"38");
+  $cr_op = get_option_attribute_entity("status","content_request",$status);
+  // $username_op = get_option_return_filter_disting("username","account",$case_officer,"single","all_in_one_project")
+  // $username_op = get_option_return_edit_cr("username","account",$case_officer,"multi","all_in_one_project");
+  $username_op_mul = get_option_return_filter_disting("username","account",$case_officer,"single","all_in_one_project");
   //participant to string set
   $set_participant = str_replace(",","','",$participant);
   $set_participant = "'".trim($set_participant," ")."'";
   // end
-  $type_op = return_option_edit_cr($ticket_type,"39");
-  $content_request_reason_op = get_option_return_edit_cr("content_request_reson","option",$content_request_reson,"single","all_in_one_project");
+  // $type_op = return_option_edit_cr($ticket_type,"39");
+  $type_op = get_option_attribute_entity("ticket_type","content_request",$ticket_type);
+  // $content_request_reason_op = get_option_return_edit_cr("content_request_reson","option",$content_request_reson,"single","all_in_one_project");
+  $content_request_reason_op = get_option_attribute_entity("content_request_reson","content_request",$content_request_reson);
   $list_attachment = get_attachment_cr($id);
   $list_image = get_image_cr($id);
   // get contact
@@ -435,17 +440,7 @@ while($row = mysqli_fetch_array($result)) {
       </datalist>
       </div>
       </div>';
-      // echo'
-      // <div class="mb-3 row">
-      // <label for="exampleDataList" class="col-sm-3 col-form-label">Request by</label>
-      // <div class="col-sm-9">
-      // <input class="form-control form-control-sm" list="datalistOptionsrequestby"
-      // onchange="update_cr_detail('.$id.','.$cr_edit_request_by.')" id="cr_edit_request_by" name="cr_edit_request_by" placeholder="Type to search..." value="'.$request_by.'">
-      //   <datalist id="datalistOptionsrequestby">
-      //   '.$username_op.'
-      //   </datalist>
-      // </div>
-      // </div>';
+
       echo'
       <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">Internal note</label>
