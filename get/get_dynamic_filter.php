@@ -4,7 +4,7 @@ function datepick($attribute_code,$attribute_label,$table_name){
     $input = '
     <div class="col-md">
 
-        <input  placeholder="'.$attribute_label.'" class="form-control form-control-sm" attribute_type="date" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onfocusout="getFilterInputValues()">
+        <input  placeholder="'.$attribute_label.'" class="form-control border-0 form-control-sm" style="background: #f0f0f0;"attribute_type="date" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onfocusout="getFilterInputValues()">
     </div>
     <script>
         var picker = new easepick.create({
@@ -43,7 +43,7 @@ function text($attribute_code,$attribute_label,$table_name){
     $input = '
     <div class="col-md">
 
-        <input placeholder="'.$attribute_label.'" type="text" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+        <input placeholder="'.$attribute_label.'" type="text" class="form-control border-0 form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
 
     </div>
     ';
@@ -54,7 +54,7 @@ function number($attribute_code,$attribute_label,$table_name){
     $input = '
     <div class="col-md">
 
-        <input placeholder="'.$attribute_label.'" type="number" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+        <input placeholder="'.$attribute_label.'" type="number" class="form-control border-0 form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
     </div>
     ';
 
@@ -83,7 +83,7 @@ function simple_select($attribute_code,$attribute_label,$type,$table_name){
     $input = '
     <div class="col-md">
 
-        <select placeholder="'.$attribute_label.'" '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+        <select placeholder="'.$attribute_label.'" '.$type.' class="border-0" style="" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
         '.$option_element.'
         </select>
 
