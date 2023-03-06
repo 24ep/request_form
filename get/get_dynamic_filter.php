@@ -98,7 +98,6 @@ function simple_select($attribute_code,$attribute_label,$type,$table_name){
         maxValuesMessage: "{number} filter selected",
         allowDeselect: true
       }
-
     })
     </script>
     ';
@@ -127,7 +126,10 @@ function username($attribute_code,$attribute_label,$type,$table_name){
     new SlimSelect({
       select: "#filter_'.$attribute_code.'",
       settings: {
-        placeholderText: "'.$attribute_label.'"
+        placeholderText: "'.$attribute_label.'",
+        maxValuesShown: 1,
+        maxValuesMessage: "{number} filter selected",
+        allowDeselect: true
       }
     })
     </script>
@@ -157,7 +159,10 @@ function nickname($attribute_code,$attribute_label,$type,$table_name){
     new SlimSelect({
       select: "#filter_'.$attribute_code.'",
       settings: {
-        placeholderText: "'.$attribute_label.'"
+        placeholderText: "'.$attribute_label.'",
+        maxValuesShown: 1,
+        maxValuesMessage: "{number} filter selected",
+        allowDeselect: true
       }
     })
     </script>
