@@ -15,31 +15,31 @@ label#label_file {
 session_start();
 
 $id = $_POST['id'];
-// include_once('../get/get_option_function.php');
+include_once('../get/get_option_function.php');
 
 // $func = $_POST['func'];
-function return_option_edit_cr($current_value,$attr_id){
-  session_start();
-  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-  $query_op = "SELECT * FROM content_service_gate.attribute_option
-  WHERE attribute_id = ".$attr_id." and function = 'content_request' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
-  $result_op = mysqli_query($con, $query_op);
-  if($current_value==""){
-    $option_element = "<option selected value=''></option>";
-  }else{
-    if($current_value=="unassign"){
-      $option_element = "<option selected value='unassign'>unassign</option>";
-    }
-  }
-  while($option = mysqli_fetch_array($result_op)) {
-    if($option["attribute_option"]==$current_value){
-      $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
-    }else{
-      $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
-    }
-  }
-  return $option_element;
-}
+// function return_option_edit_cr($current_value,$attr_id){
+//   session_start();
+//   $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+//   $query_op = "SELECT * FROM content_service_gate.attribute_option
+//   WHERE attribute_id = ".$attr_id." and function = 'content_request' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
+//   $result_op = mysqli_query($con, $query_op);
+//   if($current_value==""){
+//     $option_element = "<option selected value=''></option>";
+//   }else{
+//     if($current_value=="unassign"){
+//       $option_element = "<option selected value='unassign'>unassign</option>";
+//     }
+//   }
+//   while($option = mysqli_fetch_array($result_op)) {
+//     if($option["attribute_option"]==$current_value){
+//       $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+//     }else{
+//       $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+//     }
+//   }
+//   return $option_element;
+// }
 function get_attachment_cr($id){
   $list_attachment ="";
   date_default_timezone_set("Asia/Bangkok");
@@ -92,87 +92,87 @@ function get_image_cr($id){
   $list_image.= '</div>';
   return $list_image;
 }
-function get_username_option($current_username){
-  $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
-  mysqli_query($con, "SET NAMES 'utf8' ");
-  $query = "SELECT * FROM account  ORDER BY username asc " or die("Error:" . mysqli_error($con));
-  $result = mysqli_query($con, $query);
-  $current_username_list = explode(',', $current_username);
-  if($current_username=="unassign"){
-    $option_set = '<option value="unassign" selected>unassign</option>';
-  }
-  while($row = mysqli_fetch_array($result)) {
-    if(in_array($row['username'],$current_username_list)){
-      $option_set .= '<option value="'.$row['username'].'" selected>
-      '.$row['nickname'].' - '.$row['firstname'].' '.substr($row['lastname'],0,1).'.</option>';
-    }else{
-      $option_set .= '<option value="'.$row['username'].'">
-      '.$row['nickname'].' - '.$row['firstname'].' '.substr($row['lastname'],0,1).'.<option>';
-    }
-  }
-  return $option_set ;
-}
+// function get_username_option($current_username){
+//   $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+//   mysqli_query($con, "SET NAMES 'utf8' ");
+//   $query = "SELECT * FROM account  ORDER BY username asc " or die("Error:" . mysqli_error($con));
+//   $result = mysqli_query($con, $query);
+//   $current_username_list = explode(',', $current_username);
+//   if($current_username=="unassign"){
+//     $option_set = '<option value="unassign" selected>unassign</option>';
+//   }
+//   while($row = mysqli_fetch_array($result)) {
+//     if(in_array($row['username'],$current_username_list)){
+//       $option_set .= '<option value="'.$row['username'].'" selected>
+//       '.$row['nickname'].' - '.$row['firstname'].' '.substr($row['lastname'],0,1).'.</option>';
+//     }else{
+//       $option_set .= '<option value="'.$row['username'].'">
+//       '.$row['nickname'].' - '.$row['firstname'].' '.substr($row['lastname'],0,1).'.<option>';
+//     }
+//   }
+//   return $option_set ;
+// }
 
-function get_option_return_edit_cr($col,$table,$select_option,$sorm,$database) {
-  $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
-  mysqli_query($con, "SET NAMES 'utf8' ");
-  $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
-  $result = mysqli_query($con, $query);
-  while($row = mysqli_fetch_array($result)) {
-    // split array store
-    if($sorm=="multi"){
-      if($col=="store" or $col=="itemmize_type" or $col=="product_website"  or $col=="username"){
-        $array_store = explode(', ', $select_option);
-        $duplicate_op = false;
-        foreach($array_store as $store)
-        {
-          if($row[$col] <> '' ) {
-            if($store==$row[$col]){
-              if(isset($option_set)){
-                $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
-              }else{
-                $option_set = '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
-              }
-              $duplicate_op = true;
-            }
-          }
-        }
-        if($row[$col] <> ''){
-          if($duplicate_op == false){
-            if(isset($option_set)){
-              $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
-            }else{
-              $option_set = '<option value="'.$row[$col].'">'.$row[$col].'</option>';
-            }
-          }
-        }
-      }
-    }else{
-      if($loop_in_null<>true){
-        if(isset($option_set)){
-          $option_set .= '<option value=""></option>';
-        }else{
-          if($select_option=="unassign"){
-            $option_set = '<option value="unassign">unassign</option>';
-          }else{
-            $option_set = '<option value=""></option>';
-          }
-        }
-        $loop_in_null=true;
-      }
-      if($row[$col] <> '' and  $row[$col] <> null)
-      {
-        if($select_option==$row[$col] ){
-          $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
-        }else{
-          $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
-        }
-      }
-    }
-  }
-  mysqli_close($con);
-  return $option_set;
-}
+// function get_option_return_edit_cr($col,$table,$select_option,$sorm,$database) {
+//   $con= mysqli_connect("localhost","cdse_admin","@aA417528639",$database) or die("Error: " . mysqli_error($con));
+//   mysqli_query($con, "SET NAMES 'utf8' ");
+//   $query = "SELECT * FROM $table ORDER BY id asc" or die("Error:" . mysqli_error($con));
+//   $result = mysqli_query($con, $query);
+//   while($row = mysqli_fetch_array($result)) {
+//     // split array store
+//     if($sorm=="multi"){
+//       if($col=="store" or $col=="itemmize_type" or $col=="product_website"  or $col=="username"){
+//         $array_store = explode(', ', $select_option);
+//         $duplicate_op = false;
+//         foreach($array_store as $store)
+//         {
+//           if($row[$col] <> '' ) {
+//             if($store==$row[$col]){
+//               if(isset($option_set)){
+//                 $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
+//               }else{
+//                 $option_set = '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
+//               }
+//               $duplicate_op = true;
+//             }
+//           }
+//         }
+//         if($row[$col] <> ''){
+//           if($duplicate_op == false){
+//             if(isset($option_set)){
+//               $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
+//             }else{
+//               $option_set = '<option value="'.$row[$col].'">'.$row[$col].'</option>';
+//             }
+//           }
+//         }
+//       }
+//     }else{
+//       if($loop_in_null<>true){
+//         if(isset($option_set)){
+//           $option_set .= '<option value=""></option>';
+//         }else{
+//           if($select_option=="unassign"){
+//             $option_set = '<option value="unassign">unassign</option>';
+//           }else{
+//             $option_set = '<option value=""></option>';
+//           }
+//         }
+//         $loop_in_null=true;
+//       }
+//       if($row[$col] <> '' and  $row[$col] <> null)
+//       {
+//         if($select_option==$row[$col] ){
+//           $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
+//         }else{
+//           $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
+//         }
+//       }
+//     }
+//   }
+//   mysqli_close($con);
+//   return $option_set;
+// }
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
