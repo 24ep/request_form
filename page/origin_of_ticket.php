@@ -57,7 +57,7 @@ function table_detail_page(id,attribute_code,table,action){
     // create new attribute
     var database = 'all_in_one_project';
     var primary_key_id = 'id';
-    var prefix_table = 'oi';
+    var prefix_table = 'or';
 
       $.post("base/get/get_table_detail.php", {
                 id:id,
