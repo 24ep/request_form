@@ -172,7 +172,16 @@
 
 <script>
 function filter_backlogs(){
-    document.getElementById("filter_status").value = 'Pending,Inprogress,Waiting Execution,Waiting CTO,Waiting Buyer'
+    var stringFromDB = 'Pending,Inprogress,Waiting Execution,Waiting CTO,Waiting Buyer';
+    var array = stringFromDB.split(",");
+    var select = document.getElementById("filter_status");
+    for(count=0, count<array.length, count++) {
+    for(i=0; i<select.options.length; i++) {
+        if(select.options[i].value == array[count]) {
+        select.options[i].selected="selected";
+        }
+    }
+    }
 }
 function getFilterInputValues() {
 
