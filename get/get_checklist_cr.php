@@ -121,7 +121,7 @@ include_once('get_option_function.php');
                                   ';
 
 
-                                  $op_username_cl = get_username("username", $row["case_officer"]);
+                                  $op_username_cl = get_username( $row["case_officer"]);
                                   echo $op_username_cl;
                                   echo'
                               </select>
@@ -197,7 +197,7 @@ include_once('get_option_function.php');
 
                                           <select  id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">';
 
-                                            $op_username_cl = get_username("username", $row["case_officer"]);
+                                            $op_username_cl = get_username( $row["case_officer"]);
                                             echo $op_username_cl;
                                             echo'
                                           </select>

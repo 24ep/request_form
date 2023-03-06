@@ -101,7 +101,7 @@ while($row = mysqli_fetch_array($result)) {
   }
 
   $cr_op = get_option_attribute_entity("status","content_request",$status);
-  $username_op_mul = get_username("username", $row["case_officer"]);
+  $username_op_mul = get_username( $case_officer);
   $set_participant = str_replace(",","','",$participant);
   $set_participant = "'".trim($set_participant," ")."'";
 
