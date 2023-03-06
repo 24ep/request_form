@@ -1,7 +1,7 @@
 <?php
   session_start();
 $department=$_GET["department"];
-include_once('get/get_option_function.php');
+include_once('get_option_function.php');
 
    $ticket_id = $_GET["id"];
    date_default_timezone_set("Asia/Bangkok");
@@ -121,7 +121,7 @@ include_once('get/get_option_function.php');
                                   ';
 
 
-                                  $op_username_cl = get_option_return_filter_disting("username","account", $row["case_officer"],"single","all_in_one_project")
+                                  $op_username_cl = get_option_return_filter_disting("username","account", $row["case_officer"],"single","all_in_one_project");
                                   echo $op_username_cl;
                                   echo'
                               </select>
@@ -197,7 +197,7 @@ include_once('get/get_option_function.php');
 
                                           <select  id="cl_edit_case_officer_'.$row["id"].'" name="cl_edit_case_officer_'.$row["id"].'" onchange="update_cl_detail('.$row["id"].','.$cl_edit_case_officer.')" class="form-select form-select-sm" aria-label="Default select example">';
 
-                                            $op_username_cl = get_option_return_filter_disting("username","account", $row["case_officer"],"single","all_in_one_project")
+                                            $op_username_cl = get_option_return_filter_disting("username","account", $row["case_officer"],"single","all_in_one_project");
                                             echo $op_username_cl;
                                             echo'
                                           </select>
