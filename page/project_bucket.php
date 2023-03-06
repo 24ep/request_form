@@ -48,9 +48,9 @@ displayTable(
 
 } );
 
-function attribute_detail_page(id,attribute_code,table_name,action){
+function project_bucket_detail_page(id,attribute_code,table_name,action){
     // create new attribute
-      $.post("base/page/attribute_config_detail.php", {
+      $.post("base/page/project_bucket_detail.php", {
                 id:id,
                 attribute_code: attribute_code,
                 table_name: table_name,
