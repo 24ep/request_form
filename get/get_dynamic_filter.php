@@ -4,8 +4,7 @@ function datepick($attribute_code,$attribute_label,$table_name){
     $input = '
     <div class="col-md">
 
-        <input  placeholder="'.$attribute_label.'" class="form-control form-control-sm" style="background: #f0f0f0;
-"attribute_type="date" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onfocusout="getFilterInputValues()">
+        <input  placeholder="'.$attribute_label.'" class="form-control form-control-sm" attribute_type="date" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onfocusout="getFilterInputValues()">
     </div>
     <script>
         var picker = new easepick.create({
