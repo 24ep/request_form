@@ -95,7 +95,7 @@ function simple_select($attribute_code,$attribute_label,$type,$table_name){
       settings: {
         placeholderText: "'.$attribute_label.'",
         maxValuesShown: 1,
-        maxValuesMessage: "{number} filter selected",
+        maxValuesMessage: "{number} selected",
         allowDeselect: true
       }
     })
@@ -128,7 +128,7 @@ function username($attribute_code,$attribute_label,$type,$table_name){
       settings: {
         placeholderText: "'.$attribute_label.'",
         maxValuesShown: 1,
-        maxValuesMessage: "{number} filter selected",
+        maxValuesMessage: "{number} selected",
         allowDeselect: true
       }
     })
@@ -161,7 +161,7 @@ function nickname($attribute_code,$attribute_label,$type,$table_name){
       settings: {
         placeholderText: "'.$attribute_label.'",
         maxValuesShown: 1,
-        maxValuesMessage: "{number} filter selected",
+        maxValuesMessage: "{number} selected",
         allowDeselect: true
       }
     })
