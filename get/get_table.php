@@ -30,7 +30,7 @@ function displayTable($host, $username, $password, $database, $table, $columns,$
         foreach ($columns as $column) {
             echo '<td><input class="border-0 bg-white"
             update_value_attribute('.$row['id'] .', &#39;na_edit_'.$row[$column].'&#39; , &#39;na&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;id&#39;);
-            value="' .$row[$column] . '"</td>';
+            value="' .$row[$column] . '"></td>';
         }
         echo "<td><button class='btn btn-dark btn-sm' onclick='table_detail_page(".$row['id'].",&#39;". $row[$column] ."&#39;,&#39;".$table_id."&#39;,&#39;update&#39;)'>Edit</button></td>";
         echo "</tr>";
