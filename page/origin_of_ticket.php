@@ -53,7 +53,7 @@ displayTable(
 
 } );
 
-function table_detail_page(id,attribute_code,table_name,action){
+function table_detail_page(id,attribute_code,table,action){
     // create new attribute
     var database = 'all_in_one_project';
     var primary_key_id = 'id';
