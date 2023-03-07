@@ -616,8 +616,6 @@ new SlimSelect({
     select: '#origin_of_ticket',
     settings: {
         closeOnSelect: false,
-        allowDeselectOption: true,
-        contentPosition: 'relative'
     }
 })
 </script>
