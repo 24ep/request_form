@@ -652,3 +652,12 @@ select:disabled {
 .tox .tox-tinymce .tox-tinymce--toolbar-bottom{
     border-radius: 5px;
 }
+.origin_block {
+    padding: 10px;
+    align-items: self-start;
+    background: #d6d6d6;
+    border-radius: 10px;
+    /* width: 170px; */
+    text-align: start;
+    border: 0px;
+}

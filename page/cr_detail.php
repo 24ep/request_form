@@ -205,15 +205,13 @@ while($row = mysqli_fetch_array($result)) {
   <div class="des_cr" id="des_cr_inline" >';
   if($_SESSION['username']=='poojaroonwit'){
     echo '
-    <div class="row" >
-      <span style="padding: 0px 0px 5px 25px;"><strong>'.$sj.' Owner</strong></span>
-      <div class="col " style=" padding-left: 25px;text-align-last: right;">
+    <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Root Cause</strong></small>
+      <div style="border: 0px;padding-left: 25px;text-align-last: left;">
         <select  id="origin_of_ticket" aria-label=".form-select-lg example">
         <option data-placeholder="true"></option>
           '.$origin_of_ticket_op.'
         </select>
-      </div>
-    </div>';
+      </div>';
 
   }
 
