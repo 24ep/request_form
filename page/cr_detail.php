@@ -207,7 +207,7 @@ while($row = mysqli_fetch_array($result)) {
     echo '
     <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Root Cause</strong></small>
       <div style="border: 0px;padding-left: 25px;text-align-last: left;">
-        <select  id="origin_of_ticket" aria-label=".form-select-lg example">
+        <select  id="origin_of_ticket" class="origin_block" aria-label=".form-select-lg example">
         <option data-placeholder="true"></option>
           '.$origin_of_ticket_op.'
         </select>
@@ -617,6 +617,7 @@ new SlimSelect({
     settings: {
         closeOnSelect: false,
         allowDeselectOption: true,
+        contentPosition: 'relative'
     }
 })
 </script>
