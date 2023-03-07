@@ -94,6 +94,7 @@ while($row = mysqli_fetch_array($result)) {
   $ticket_template = $row["ticket_template"];
   $participant = $row["participant"];
   $effective_date = $row["effective_date"];
+  $origin_of_ticket = $row["origin_of_ticket"];
   $effective_date_edit =  str_replace(' ','T',$row["effective_date"]);
   $content_request_reson = $row["content_request_reson"];
   $ticket_template =$row["ticket_template"];
@@ -109,6 +110,7 @@ while($row = mysqli_fetch_array($result)) {
   $set_participant = "'".trim($set_participant," ")."'";
 
   $type_op = get_option_attribute_entity("ticket_type","content_request",$ticket_type);
+  $origin_of_ticket_op= get_option_return_filter_disting("origin","origin_of_ticket",$origin_of_ticket,"single","all_in_one_project")
   $content_request_reason_op = get_option_attribute_entity("content_request_reson","content_request",$content_request_reson);
   $list_attachment = get_attachment_cr($id);
   $list_image = get_image_cr($id);
@@ -200,8 +202,22 @@ while($row = mysqli_fetch_array($result)) {
   </div>
   </div>
   <form method="post">
-  <div class="des_cr" id="des_cr_inline" >
+  <div class="des_cr" id="des_cr_inline" >';
+  if($_SESSION['username']=='poojaroonwit'){
+    echo '
+    <div class="row" >
+      <span style="padding: 0px 0px 5px 25px;"><strong>'.$sj.' Owner</strong></span>
+      <div class="col " style=" padding-left: 25px;text-align-last: right;">
+        <select  multiple aria-label=".form-select-lg example">
+        <option data-placeholder="true"></option>
+          '.$origin_of_ticket_op.'
+        </select>
+      </div>
+    </div>';
 
+  }
+
+  echo '
   <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Description</strong></small>
   <div class="m-2">
   '.$description."</div>".$list_attachment.$list_image.'</div></form>
