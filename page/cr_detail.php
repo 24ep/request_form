@@ -110,7 +110,7 @@ while($row = mysqli_fetch_array($result)) {
   $set_participant = "'".trim($set_participant," ")."'";
 
   $type_op = get_option_attribute_entity("ticket_type","content_request",$ticket_type);
-  $origin_of_ticket_op= get_option_return_filter_disting("origin","origin_of_ticket",$origin_of_ticket,"single","all_in_one_project");
+  $origin_of_ticket_op= get_origin_of_ticket("origin","origin_of_ticket",$origin_of_ticket,"single","all_in_one_project");
   $content_request_reason_op = get_option_attribute_entity("content_request_reson","content_request",$content_request_reson);
   $list_attachment = get_attachment_cr($id);
   $list_image = get_image_cr($id);
@@ -208,7 +208,7 @@ while($row = mysqli_fetch_array($result)) {
     <div class="row" >
       <span style="padding: 0px 0px 5px 25px;"><strong>'.$sj.' Owner</strong></span>
       <div class="col " style=" padding-left: 25px;text-align-last: right;">
-        <select  multiple aria-label=".form-select-lg example">
+        <select  id="origin_of_ticket" aria-label=".form-select-lg example">
         <option data-placeholder="true"></option>
           '.$origin_of_ticket_op.'
         </select>
@@ -612,6 +612,13 @@ new SlimSelect({
             document.getElementById("cr_edit_case_officer").value = input_update;
             update_cr_detail(<?php echo $id; ?>, <?php echo $cr_edit_case_officer; ?>)
         }
+    }
+})
+new SlimSelect({
+    select: '#origin_of_ticket',
+    settings: {
+        closeOnSelect: false,
+        allowDeselectOption: true,
     }
 })
 </script>
