@@ -663,6 +663,7 @@ select:disabled {
 } */
 .origin_block_in{
 border-bottom:1px solid rgb(160, 160, 160);
+background:white;
 }
 .origin_block_out {
     padding: 10px;
