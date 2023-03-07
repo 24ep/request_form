@@ -30,11 +30,11 @@ function get_origin_of_ticket($col,$table,$select_option,$sorm,$database) {
     while($row = mysqli_fetch_array($result)) {
         if($select_option==$row[$col]){
             $option_set .= '<option value="'.$row[$col].'" selected
-            data-html="<div class=&#39;origin_block&#39;><strong>'.$row['origin'].'</strong><br>'.$row['description'].'</div>"
+            data-html="<div class=&#39;origin_block_in&#39;><strong>'.$row['origin'].'</strong><br>'.$row['description'].'</div>"
             >'.$row[$col].'</option>';
         }else{
             $option_set .= '<option value="'.$row[$col].'"
-            data-html="<div class=&#39;origin_block&#39;><strong>'.$row['origin'].'</strong><br>'.$row['description'].'</div>">'.$row[$col].'</option>';
+            data-html="<div class=&#39;origin_block_in&#39;><strong>'.$row['origin'].'</strong><br>'.$row['description'].'</div>">'.$row[$col].'</option>';
         }
 
     }

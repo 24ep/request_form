@@ -661,7 +661,10 @@ select:disabled {
     border: 0px!important;
 
 } */
-.origin_block {
+.origin_block_in{
+border-bottom:1px solid rgb(160, 160, 160);
+}
+.origin_block_out {
     padding: 10px;
     align-items: self-start;
     /* background: #d30d20!important; */
