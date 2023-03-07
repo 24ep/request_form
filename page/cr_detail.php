@@ -211,7 +211,8 @@ while($row = mysqli_fetch_array($result)) {
         <option data-placeholder="true"></option>
           '.$origin_of_ticket_op.'
         </select>
-      </div>';
+      </div>
+      <hr class="cr_hr_detail">';
 
   }
 
