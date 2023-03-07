@@ -33,7 +33,8 @@ function get_origin_of_ticket($col,$table,$select_option,$sorm,$database) {
             data-html="<div><strong>'.$row['origin'].'</strong><br>'.$row['description'].'</div>"
             >'.$row[$col].'</option>';
         }else{
-            $option_set .= '<option value="'.$row[$col].'" data-html="<div><strong>'.$row['origin'].'</strong><br>'.$row['description'].'</div>>'.$row[$col].'</option>';
+            $option_set .= '<option value="'.$row[$col].'"
+            data-html="<div><strong>'.$row['origin'].'</strong><br>'.$row['description'].'</div>">'.$row[$col].'</option>';
         }
 
     }
