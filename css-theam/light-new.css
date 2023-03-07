@@ -655,10 +655,9 @@ select:disabled {
 .origin_block {
     padding: 10px;
     align-items: self-start;
-    background: #d6d6d6;
+    background: #d6d6d6!important;
     border-radius: 10px;
-    /* width: 170px; */
     text-align: start;
-    border: 0px;
+    border: 0px!important;
 
 }
