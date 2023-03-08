@@ -205,9 +205,9 @@ while($row = mysqli_fetch_array($result)) {
   <div class="des_cr" id="des_cr_inline" >';
   if($_SESSION['username']=='poojaroonwit'){
     echo '
-    <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Root Cause</strong></small>
+    <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Origin of ticket</strong></small>
       <div style="border: 0px;text-align-last: left;" class="mt-2 mb-4 pt-2 pt-2">
-        <select  id="origin_of_ticket" class="origin_block_out" aria-label=".form-select-lg example">
+        <select  id="origin_of_ticket" class="origin_block_out" aria-label=".form-select-lg example" onchange="update_cr_detail('.$id.','.$cr_edit_origin_of_ticket.'))">
         <option data-placeholder="true"></option>
           '.$origin_of_ticket_op.'
         </select>
@@ -265,6 +265,7 @@ while($row = mysqli_fetch_array($result)) {
   $cr_edit_effective_date = "'cr_edit_effective_date'";
   $cr_edit_content_request_reson= "'cr_edit_content_request_reson'";
   $cr_edit_request_by= "'cr_edit_request_by'";
+  $cr_edit_origin_of_ticket = "'cr_edit_origin_of_ticket'";
   // echo "<script>console.log('".$_SESSION["department"]."');</script>";
   if(strpos($_SESSION["department"],"Content")!==false or $_SESSION["department"]==""){
     echo '<select class="form-select form-select-lg mt-2" id="cr_edit_status" name="cr_edit_status" onchange="update_cr_detail('.$id.','.$cr_edit_status.')" style="border: 0px;font-weight: bold;padding-left: 0.6rem;font-size: xx-large;background-color: transparent;" aria-label=".form-select-lg example">
