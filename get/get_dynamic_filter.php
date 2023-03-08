@@ -96,7 +96,8 @@ function simple_select($attribute_code,$attribute_label,$type,$table_name){
         placeholderText: "'.$attribute_label.'",
         maxValuesShown: 1,
         maxValuesMessage: "{number} selected",
-        allowDeselect: true
+        allowDeselect: true,
+        closeOnSelect: false
       }
     })
     </script>
