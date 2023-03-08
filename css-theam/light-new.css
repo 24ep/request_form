@@ -674,8 +674,9 @@ background:white;
     color: #e90000!important;
     width: fit-content!important;
     border: 0px!important;
-    background: transparent!important;
+    background: white!important;
     padding: 10px!important;
     border: 1px solid red!important;
     font-size: smaller;
+
 }
