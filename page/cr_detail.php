@@ -203,7 +203,7 @@ while($row = mysqli_fetch_array($result)) {
   </div>
   <form method="post">
   <div class="des_cr" id="des_cr_inline" >';
-  if($_SESSION['username']=='poojaroonwit'){
+
     echo '
     <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Origin of ticket</strong></small>
       <div style="border: 0px;text-align-last: left;" class="mt-2 mb-4 pt-2 pt-2">
@@ -214,7 +214,6 @@ while($row = mysqli_fetch_array($result)) {
       </div>
       <hr class="cr_hr_detail">';
 
-  }
 
   echo '
   <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Description</strong></small>
