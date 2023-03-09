@@ -25,7 +25,7 @@ if($_POST['action_data']=="24ep"){;
     
   }
 }elseif($_POST['action_data']=="csg"){
-  $query = "SELECT * FROM all_in_one_project.log where action_table= ('job_cms','add_new_job') and action_data_id =".$id." order by id DESC" or die("Error:" . mysqli_error($con));
+  $query = "SELECT * FROM all_in_one_project.log where action_table in ('job_cms','add_new_job') and action_data_id =".$id." order by id DESC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
     //  $tr .= 
