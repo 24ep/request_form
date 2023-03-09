@@ -614,10 +614,17 @@ new SlimSelect({
     }
 })
 new SlimSelect({
-    select: '#cr_edit_case_officer',
+    select: '#cr_edit_origin_of_ticket',
     settings: {
         closeOnSelect: false,
         placeholderText: 'Select origin of ticket',
+    },
+    events: {
+        afterChange: (info) => {
+           
+            document.getElementById("cr_edit_origin_of_ticket").value = info;
+            update_cr_detail(<?php echo $id; ?>, <?php echo $cr_edit_origin_of_ticket; ?>)
+        }
     }
 })
 </script>
