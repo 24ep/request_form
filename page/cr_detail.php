@@ -622,7 +622,7 @@ new SlimSelect({
     events: {
         afterChange: (info) => {
            
-            document.getElementById("cr_edit_origin_of_ticket").value = info;
+            document.getElementById("cr_edit_origin_of_ticket").value = info.value;
             update_cr_detail(<?php echo $id; ?>, <?php echo $cr_edit_origin_of_ticket; ?>)
         }
     }
