@@ -614,7 +614,7 @@ new SlimSelect({
     }
 })
 new SlimSelect({
-    select: '#cr_edit_origin_of_ticket',
+    select: '#cr_edit_origin_of_ticket_show',
     settings: {
         closeOnSelect: false,
         placeholderText: 'Select origin of ticket',
