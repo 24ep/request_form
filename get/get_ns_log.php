@@ -6,7 +6,7 @@ $actiob_data = $_POST['action_data'];
 $job_number = $_POST['job_number'];
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 if($_POST['action_data']=="24ep"){;
-  $query = "SELECT * FROM u749625779_cdscontent.log_cms where action_at_table='".$action_table."' and job_number ='".$job_number."' order by id DESC" or die("Error:" . mysqli_error($con));
+  $query = "SELECT * FROM u749625779_cdscontent.log_cms where action_at_table in ('job_cms','add_new_job') and job_number ='".$job_number."' order by id DESC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
     //  $tr .= 
@@ -25,7 +25,7 @@ if($_POST['action_data']=="24ep"){;
     
   }
 }elseif($_POST['action_data']=="csg"){
-  $query = "SELECT * FROM all_in_one_project.log where action_table='".$action_table."' and action_data_id =".$id." order by id DESC" or die("Error:" . mysqli_error($con));
+  $query = "SELECT * FROM all_in_one_project.log where action_table= ('job_cms','add_new_job') and action_data_id =".$id." order by id DESC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
     //  $tr .= 
