@@ -3,7 +3,7 @@
 </form>
 <div class="btn-group btn-group-sm" style="position: inherit;width:100%" role="group"
     aria-label="Basic checkbox toggle button group" >
-    <div class="d-flex align-items-start">
+    <div class="d-flex align-items-start" style="width:100%">
         <div class="nav flex-column nav-pills pe-3 shadow-sm border-end " style="height: 100%;width: 300px;"
             id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <?php

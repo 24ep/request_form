@@ -203,11 +203,11 @@ while($row = mysqli_fetch_array($result)) {
   </div>
   <form method="post">
   <div class="des_cr" id="des_cr_inline" >';
-
     echo '
     <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Origin of ticket</strong></small>
       <div style="border: 0px;text-align-last: left;" class="mt-2 mb-3 pt-2 pt-2">
-        <select  id="cr_edit_case_officer" class="origin_block_out" aria-label=".form-select-lg example" onchange="update_cr_detail('.$id.',&#39;cr_edit_origin_of_ticket&#39;)">
+        <input type="hidden" id="cr_edit_origin_of_ticket" name="cr_edit_origin_of_ticket" value="'.$origin_of_ticket.'">
+        <select  id="cr_edit_origin_of_ticket_show" class="origin_block_out" aria-label=".form-select-lg example" onchange="update_cr_detail('.$id.',&#39;cr_edit_origin_of_ticket&#39;)">
         <option data-placeholder="true"></option>
           '.$origin_of_ticket_op.'
         </select>
