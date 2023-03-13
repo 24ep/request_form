@@ -187,7 +187,7 @@ function send_file_to_convert_multi() {
     form_data.append("multiselectfile", multiselectfile);
     console.log('append already');
     $.ajax({
-        url: 'convert_linesheet/phpexcel/datapump_multi_convert.php',
+        url: '../base/convert/phpexcel/datapump_multi_convert.php',
         dataType: 'text',
         cache: false,
         contentType: false,
