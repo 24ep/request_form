@@ -1,5 +1,6 @@
 <?php
 $id=$_POST['id'];
+
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 include('../get/get_attribute.php');
 
