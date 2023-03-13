@@ -259,7 +259,6 @@
         </div>
     </div>
     <?php } ?>
-    <?php } ?>
 </div>
 <script>
 function action_transfer_to_job_cms() {
