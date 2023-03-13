@@ -5,7 +5,7 @@ $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " .
 include('../get/get_attribute.php');
 
 //get attribute set menu
-$query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix,set_complete_attribute FROM u749625779_cdscontent.job_attribute where allow_display=1 and table_name = ".$table_name." order by sort_attribute_set" or die("Error:" . mysqli_error($con));
+$query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix,set_complete_attribute FROM u749625779_cdscontent.job_attribute where allow_display=1 and table_name in (".$table_name.") order by sort_attribute_set" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $d_attribute_set="";
   $d_attribute_section="";
