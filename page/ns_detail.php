@@ -150,7 +150,7 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
         $status_style = 'style="background: #ea79f7;color:#6a2e71"';
     }
   }
-  $query = "SELECT * FROM account where username = '".$follow_up_by."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
+  $query = "SELECT * FROM all_in_one_project.account where username = '".$follow_up_by."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
     $follow_up_nickname = $row['nickname'];
