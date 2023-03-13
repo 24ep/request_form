@@ -493,9 +493,9 @@ var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
 console.log(queryString);
 if (urlParams.has('page') && urlParams.get('page') != null) {
-    document.getElementById('nav_' + urlParams.get('page')).click();
     get_page(urlParams.get('page'));
     var url = new URL(window.location.href);
+    document.getElementById('nav_' + urlParams.get('page')).click();
     // url.searchParams.set('page', urlParams.get('page'));
 } else {
     document.getElementById('nav_dashboard').click();
