@@ -80,19 +80,19 @@ class="shadow-sm span-ifram">https://cdse-commercecontent.com/base/page_convert_
                         <select size="15" class="form-select" id="multiselectfile" name="multiselectfile" multiple
                             aria-label="multiple select example">
                             <?php
-                             date_default_timezone_set("Asia/Bangkok");
-                             $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
-                             mysqli_query($con, "SET NAMES 'utf8' ");
-                             $query = "SELECT file.job_number , job_cms.brand as brand, job_cms.sku ,file.id, file.file_name, file.file_path, file.create_at,  file.remark,  file.file_owner
-                             FROM u749625779_cdscontent.file_manage as file
-                             left join all_in_one_project.add_new_job as job_cms
-                             on job_cms.job_number = file.job_number
-                             where lower(job_cms.datapump)  in ('unsuccessful','wait pump') and job_cms.approved_date is null and file.file_type in ('Buyerfile') ORDER BY job_cms.job_number DESC" or die("Error:" . mysqli_error($con));
-                             $result = mysqli_query($con, $query);
-                             while($row = mysqli_fetch_array($result)) {
-                                $herf = $row['file_path'].$row['file_name'];
-                                echo "<option value='".htmlentities($herf,ENT_QUOTES)."' >".htmlentities($row["file_name"],ENT_QUOTES)."</option>";
-                             }
+                            //  date_default_timezone_set("Asia/Bangkok");
+                            //  $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
+                            //  mysqli_query($con, "SET NAMES 'utf8' ");
+                            //  $query = "SELECT file.job_number , job_cms.brand as brand, job_cms.sku ,file.id, file.file_name, file.file_path, file.create_at,  file.remark,  file.file_owner
+                            //  FROM u749625779_cdscontent.file_manage as file
+                            //  left join all_in_one_project.add_new_job as job_cms
+                            //  on job_cms.job_number = file.job_number
+                            //  where lower(job_cms.datapump)  in ('unsuccessful','wait pump') and job_cms.approved_date is null and file.file_type in ('Buyerfile') ORDER BY job_cms.job_number DESC" or die("Error:" . mysqli_error($con));
+                            //  $result = mysqli_query($con, $query);
+                            //  while($row = mysqli_fetch_array($result)) {
+                            //     $herf = $row['file_path'].$row['file_name'];
+                            //     echo "<option value='".htmlentities($herf,ENT_QUOTES)."' >".htmlentities($row["file_name"],ENT_QUOTES)."</option>";
+                            //  }
                                 ?>
                             <hr>
                              <?php
