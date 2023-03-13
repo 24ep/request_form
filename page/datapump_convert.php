@@ -106,7 +106,7 @@ class="shadow-sm span-ifram">https://cdse-commercecontent.com/base/page_convert_
                              where lower(job_cms.datapump)  in ('unsuccessful','wait pump') and job_cms.approved_date is null and file.file_group in ('Original') ORDER BY job_cms.job_number DESC" or die("Error:" . mysqli_error($con));
                              $result = mysqli_query($con, $query);
                              while($row = mysqli_fetch_array($result)) {
-                                $file_path = str_replace('../../','../../../',$row['file_path']);
+                                $file_path = str_replace('../../','../',$row['file_path']);
                                 $herf = $file_path.$row['file_name'];
                                 // $herf = "https://content-service-gate.cdse-commercecontent.com/".$file_path.$row['file_name'];
                                 echo "<option value='".htmlentities($herf,ENT_QUOTES)."' >".htmlentities($row["file_name"],ENT_QUOTES)."</option>";
