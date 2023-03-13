@@ -2,7 +2,7 @@
 
 <?php
 echo "<script>console.log('gettingfile')</script>";
-include("../../insert_log.php");
+// include("../../insert_log.php");
 require 'vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 //- Create export fiel
