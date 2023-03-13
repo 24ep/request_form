@@ -6,7 +6,7 @@ function max_job_by_bu($bu_job) {
     date_default_timezone_set("Asia/Bangkok");
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
-    $query_text = "SELECT MAX(substring(job_number,9,4)) AS max_job FROM `all_in_one_project`.`job_cms` WHERE  substring(job_number,1,3) ='".$bu_job."' and substring(job_number,4,2) = substring(YEAR(current_timestamp),3,2)";
+    $query_text = "SELECT MAX(substring(job_number,9,4)) AS max_job FROM `all_in_one_project`.`add_new_job` WHERE  substring(job_number,1,3) ='".$bu_job."' and substring(job_number,4,2) = substring(YEAR(current_timestamp),3,2)";
     $query = mysqli_query($con,$query_text);
     $row = mysqli_fetch_assoc($query);
     $largestNumber = $row["max_job"];

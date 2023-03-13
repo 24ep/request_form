@@ -5,15 +5,11 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
     $query_cr = "SELECT * FROM ".$db.".".$table." where ".$primary_key_id." = '".$crid."' ORDER BY id DESC" or die("Error:" . mysqli_error($con_cr));
     $result_cr = mysqli_query($con_cr, $query_cr);
     while($row_cr = mysqli_fetch_array($result_cr)) {
-
                 $current_cr = $row_cr[$col_re];
-
     }
     mysqli_close($con_cr);
     return $current_cr;
 }
-
-
   session_start();
 //   include("../get/get_default_profile_image.php");
 //   include("../action/action_send_linenotify.php");
