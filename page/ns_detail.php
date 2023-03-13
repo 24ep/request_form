@@ -948,10 +948,10 @@ function get_files(id) {
 }
 // get_detail_more
 function form_production(id) {
-    var table_name = "add_new_job";
+    var table_name = "'add_new_job'";
     $.post("base/form/form_value.php", {
             id: id,
-            table_name
+            table_name:table_name
         },
         function(data) {
             $('#form_production').html(data);
