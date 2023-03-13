@@ -41,7 +41,7 @@ class="shadow-sm span-ifram">https://cdse-commercecontent.com/base/page_convert_
         width: 100%;
     }
     </style>
-
+<div class="container-md p3">
     <h4>Datapump <span class="template-generate-header-s"> | Template Generate</span></h4>
     <small class="template-generate-sub-s">Please use lastest Linesheet<small>
             <hr>
@@ -102,7 +102,7 @@ class="shadow-sm span-ifram">https://cdse-commercecontent.com/base/page_convert_
                              $query = "SELECT file.ticket_id , job_cms.brand as brand, job_cms.sku ,file.id, file.file_name, file.file_path
                              FROM all_in_one_project.attachment as file
                              left join all_in_one_project.add_new_job as job_cms
-                             on job_cms.csg_request_new_id  = file.ticket_id
+                             on job_cms.id  = file.ticket_id
                              where lower(job_cms.datapump)  in ('unsuccessful','wait pump') and job_cms.approved_date is null and file.file_group in ('Original') ORDER BY job_cms.job_number DESC" or die("Error:" . mysqli_error($con));
                              $result = mysqli_query($con, $query);
                              while($row = mysqli_fetch_array($result)) {
@@ -122,12 +122,7 @@ class="shadow-sm span-ifram">https://cdse-commercecontent.com/base/page_convert_
                     <div id="call_preview_respone"></div>
                 </div>
             </div>
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-                crossorigin="anonymous"></script>
-</body>
-</html>
+</div>
 <script>
 function send_file_to_convert() {
     document.getElementById('convert_bt').innerHTML =
