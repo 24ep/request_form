@@ -41,7 +41,7 @@ class="shadow-sm span-ifram">https://cdse-commercecontent.com/base/page_convert_
         width: 100%;
     }
     </style>
-<div class="container-md p3">
+<div class="container-md p3 bg-white">
     <h4>Datapump <span class="template-generate-header-s"> | Template Generate</span></h4>
     <small class="template-generate-sub-s">Please use lastest Linesheet<small>
             <hr>
