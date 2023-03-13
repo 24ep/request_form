@@ -94,7 +94,7 @@ class="shadow-sm span-ifram">https://cdse-commercecontent.com/base/page_convert_
                             //     echo "<option value='".htmlentities($herf,ENT_QUOTES)."' >".htmlentities($row["file_name"],ENT_QUOTES)."</option>";
                             //  }
                                 ?>
-                            <hr>
+
                              <?php
                              date_default_timezone_set("Asia/Bangkok");
                              $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
