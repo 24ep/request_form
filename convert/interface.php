@@ -8,7 +8,7 @@ $content_assign_name = $_POST["content_assign_name "];
 function get_value($crid,$col_re,$db){
     $con_cr= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con_cr));
     mysqli_query($con_cr, "SET NAMES 'utf8' ");
-    $query_cr = "SELECT * FROM u749625779_cdscontent.".$db." ORDER BY id DESC" or die("Error:" . mysqli_error($con_cr));
+    $query_cr = "SELECT * FROM all_in_one_project.".$db." ORDER BY id DESC" or die("Error:" . mysqli_error($con_cr));
     $result_cr = mysqli_query($con_cr, $query_cr);
     while($row_cr = mysqli_fetch_array($result_cr)) {
             if($crid==$row_cr["id"]){

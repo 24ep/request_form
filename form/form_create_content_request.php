@@ -1,4 +1,4 @@
-<?php 
+<?php
   function return_option_create_cr($current_value,$attr_id){
     session_start();
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
@@ -46,7 +46,7 @@
               }else{
                 $option .=  "<option value='".$row["prefix"]."'>".$row["project_name"]."</option>";
               }
-              
+
             }
             return $option;
 
@@ -95,13 +95,9 @@
             }
                mysqli_close($con);
                return $option_set;
-               
-              }
-       //$department_op = get_option_cr("department","job_option_cms",$department,"single","u749625779_cdscontent");
-      //  $product_website_op = get_option_cr("product_website","job_option_cms","CDS","multi","u749625779_cdscontent");
+
        $cr_important_op = get_option_cr("cr_important","option","Low","single","all_in_one_project");
-      //  $cr_issue_type_op = get_option_cr("issue_type","option","","single","all_in_one_project");
-      //  $cr_product_category_op = get_option_cr("product_category","option","","single","all_in_one_project");
+
 
        $project_bucket = project_bucket();
        $cr_issue_type_op = return_option_create_cr("","39");
@@ -157,7 +153,7 @@
         $work_day = date("Y-m-d\Th:i"); //---get current day
         while($i != 1) //---loop 7 day for set min date
         {
-          $work_day = date('Y-m-d\Th:i', strtotime('+1 day', strtotime($work_day))); 
+          $work_day = date('Y-m-d\Th:i', strtotime('+1 day', strtotime($work_day)));
           $day_name = date('l', strtotime($work_day));
                  if($day_name != 'Saturday' && $day_name != 'Sunday' && !isset($holiday[$work_day]))
                   {
