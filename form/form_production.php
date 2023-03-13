@@ -4,7 +4,7 @@ $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " .
 include('../get/get_attribute.php');
 
 //get attribute set menu
-$query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix,set_complete_attribute FROM u749625779_cdscontent.job_attribute where allow_display=1 and table_name in ('add_new_job','job_cms') order by sort_attribute_set" or die("Error:" . mysqli_error($con));
+$query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix,set_complete_attribute FROM u749625779_cdscontent.job_attribute where allow_display=1 and table_name = 'add_new_job' order by sort_attribute_set" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   $d_attribute_set="";
   $d_attribute_section="";
@@ -35,17 +35,17 @@ $query = "SELECT distinct attribute_set,table_name,db_name,primary_key_id,prefix
       if($j==0){
         $section_badge = '<ion-icon style="color:#c9c9c9" name="remove-circle-outline"></ion-icon>';
       }
-      
+
     }
     $d_attribute_set .=  '  <button style="text-align:-webkit-left" class="nav-link '.$active_section_bt.'" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab" data-bs-toggle="pill" data-bs-target="#v-pills-'.str_replace(" ","_",$row['attribute_set']).'" type="button" role="tab" aria-controls="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" aria-selected="false">'.ucwords($row['attribute_set'])." ".$section_badge.'</button>';
     $d_attribute_section .= '<div class="tab-pane fade  shadow-sm bg-white p-3 rounded '.$active_section_bd.'" id="v-pills-'.str_replace(" ","_",$row['attribute_set']).'" role="tabpanel" aria-labelledby="v-pills-'.str_replace(" ","_",$row['attribute_set']).'-tab">'.get_attribute_section($row['attribute_set'],$row['table_name'],$row['db_name'],$row['primary_key_id'],$row['prefix']).'</div>';
     echo '</ul>';
-    
+
   }
   echo'
   <div class="d-flex align-items-start">
       <div class="nav flex-column nav-pills me-3 pe-4 p-2 bg-white shadow-sm rounded" style="min-width: 210px;text-align-last: left;font-weight: 600;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-     
+
       '.$d_attribute_set.'
       </div>
       <div class="tab-content" id="v-pills-tabContent">
