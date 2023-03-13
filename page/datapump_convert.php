@@ -41,7 +41,7 @@ class="shadow-sm span-ifram">https://cdse-commercecontent.com/base/page_convert_
         width: 100%;
     }
     </style>
-<div class="container-md p3 bg-white">
+<div class="container-md p-3 bg-white">
     <h4>Datapump <span class="template-generate-header-s"> | Template Generate</span></h4>
     <small class="template-generate-sub-s">Please use lastest Linesheet<small>
             <hr>
@@ -148,7 +148,7 @@ function send_file_to_convert() {
     // form_data.append("multifile_id", multifile_id_lists);
     // console.log(multifile_id);
     $.ajax({
-        url: "convert_linesheet/phpexcel/datapump_convert_new.php",
+        url: "../base/convert/phpexcel/datapump_multi_convert.php",
         dataType: 'text',
         cache: false,
         contentType: false,

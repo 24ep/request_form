@@ -64,7 +64,7 @@ function convert_datapump(){
     global $export_workbook_backup;
     global $fullpath_template;
 
-$query = "SELECT * FROM all_in_one_project.add_new_job where job_number = '".substr($file_name,0,12)."' ORDER BY id DESC" or die("Error:" . mysqli_error($con));
+$query = "SELECT * FROM u749625779_cdscontent.job_cms where job_number = '".substr($file_name,0,12)."' ORDER BY id DESC" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
   $id_24 = $row["id"];
@@ -75,7 +75,7 @@ while($row = mysqli_fetch_array($result)) {
   $website_24 = $row["product_website"];
   $bu_24 = $row["bu"];
   $sku_24 = $row["sku"];
-  $csg_request_new_id = $row["id"];
+  $csg_request_new_id = $row["csg_request_new_id"];
 }
 $website_24 = str_replace(", ",",",$website_24);
 $query = "SELECT * FROM all_in_one_project.add_new_job where id = ".$csg_request_new_id." ORDER BY id DESC" or die("Error:" . mysqli_error($con));
