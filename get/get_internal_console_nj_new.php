@@ -13,14 +13,6 @@
         unset($help_cancel);
     }
 ?>
-<?php if($status == 'waiting traffic'){ ?>
-<hr>
-<h6><strong>Create Writer & Studio - 24ep</strong></h6>
-<form action="base/action/action_create_job_cms.php" method="POST" target="_blank">
-    <input type="hidden" id="id_adj" name="id_adj" value="<?php echo  $_POST['id']; ?>">
-    <?php include('../form/form_create_job_cms.php')?>
-</form>
-<?php }else{ ?>
 <div class="accordion accordion-flush" id="accordionFlushExample">
     <?php
                     if($start_checking_date<>"" and $start_checking_date<>null){
@@ -120,63 +112,63 @@
               if($recive_item_date == null){
                 $bt_recive_item = '<button
                   onclick="
-                  update_value_attribute('.$id.', &#39;cs_edit_recive_item_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
-                  update_value_attribute('.$id.', &#39;cs_edit_product_check_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
-                  update_value_attribute('.$id.', &#39;cs_edit_studio_sku&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                  update_value_attribute('.$id.', &#39;cs_edit_recive_item_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                  update_value_attribute('.$id.', &#39;cs_edit_product_check_by&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                  update_value_attribute('.$id.', &#39;cs_edit_studio_sku&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                   "
                   class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded">Recived</button>';
               }
               if($content_start_date == null){
                 $bt_content = '<button
                 onclick="
-                update_value_attribute('.$id.', &#39;cs_edit_content_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
-                update_value_attribute('.$id.', &#39;cs_edit_content_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                update_value_attribute('.$id.', &#39;cs_edit_content_start_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                update_value_attribute('.$id.', &#39;cs_edit_content_assign_name&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                 "
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>'.$text_start_jc.'</button>';
               }else{
                 $bt_content = '
                 <button   data-bs-toggle="modal" data-bs-target="#exampleModal" style="right: 110px;position: absolute;"
-                onclick="convert_to_akeneo_template('.$jc_id.',&#39;'.$job_number.'&#39;,&#39;'.$launch_date.'&#39;,&#39;'.$content_assign_name.'&#39;)"
+                onclick="convert_to_akeneo_template('.$id.',&#39;'.$job_number.'&#39;,&#39;'.$actual_launch_date.'&#39;,&#39;'.$content_assign_name.'&#39;)"
                 class="btn btn-sm btn-outline-dark shadow-sm bg-gradient rounded">Convert to PIM template</button>
                 <button
                 onclick="
-                update_value_attribute('.$id.', &#39;cs_edit_content_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                update_value_attribute('.$id.', &#39;cs_edit_content_complete_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                 "
                 class="btn btn-sm btn-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($shoots_start_date == null){
                 $bt_shoots = '<button
                 onclick="
-                update_value_attribute('.$id.', &#39;cs_edit_shoots_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
-                update_value_attribute('.$id.', &#39;cs_edit_shoots_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                update_value_attribute('.$id.', &#39;cs_edit_shoots_start_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                update_value_attribute('.$id.', &#39;cs_edit_shoots_assign_name&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                 "
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded"'.$bt_disabled_jc.'>'.$text_start_jc.'</button>';
               }else{
                 $bt_shoots= '<button
                 onclick="
-                update_value_attribute('.$id.', &#39;cs_edit_shoots_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                update_value_attribute('.$id.', &#39;cs_edit_shoots_complete_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                 "
                 class="btn btn-sm btn-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($retouch_start_date == null){
                 $bt_retouch = '<button
                 onclick="
-                update_value_attribute('.$id.', &#39;cs_edit_retouch_start_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
-                update_value_attribute('.$id.', &#39;cs_edit_retouch_assign_name&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                update_value_attribute('.$id.', &#39;cs_edit_retouch_start_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                update_value_attribute('.$id.', &#39;cs_edit_retouch_assign_name&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                 "
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded" '.$bt_disabled_jc.'>'.$text_start_jc.'</button>';
               }else{
                 $bt_retouch = '<button
                 onclick="
-                update_value_attribute('.$id.', &#39;cs_edit_retouch_complete_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                update_value_attribute('.$id.', &#39;cs_edit_retouch_complete_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                 "
                 class="btn btn-sm btn-success shadow-sm bg-gradient rounded">Complete</button>';
               }
               if($upload_image_date == null){
                 $bt_upload_image = '<button
                 onclick="
-                update_value_attribute('.$id.', &#39;cs_edit_upload_image_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
-                update_value_attribute('.$id.', &#39;cs_edit_upload_image_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                update_value_attribute('.$id.', &#39;cs_edit_upload_image_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                update_value_attribute('.$id.', &#39;cs_edit_upload_image_by&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                 "
                 class="btn btn-sm btn-outline-primary shadow-sm bg-gradient rounded" '.$bt_disabled_jc.' >Uploaded</button>';
               }
@@ -185,8 +177,8 @@
                 <button
                 onclick="
                 align_stage_status(&#39;approved&#39;);
-                update_value_attribute('.$id.', &#39;cs_edit_approved_date&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
-                update_value_attribute('.$id.', &#39;cs_edit_approved_by&#39; , &#39;cs&#39; , &#39;u749625779_cdscontent&#39; , &#39;job_cms&#39; , &#39;csg_request_new_id&#39;);
+                update_value_attribute('.$id.', &#39;cs_edit_approved_date&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
+                update_value_attribute('.$id.', &#39;cs_edit_approved_by&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                 update_value_attribute('.$id.', &#39;cs_edit_status&#39; , &#39;cs&#39; , &#39;all_in_one_project&#39; , &#39;add_new_job&#39; , &#39;id&#39;);
                 "
                 class="btn btn-sm btn-success shadow-sm bg-gradient rounded" style="right: 90px;position: absolute;" '.$bt_disabled_jc.' >Approve</button>
@@ -271,13 +263,13 @@
 </div>
 <script>
 function action_transfer_to_job_cms() {
-    csg_request_new_id = document.getElementById('anj_edit_id').value;
+    id = document.getElementById('anj_edit_id').value;
     bu = document.getElementById('anj_edit_bu').value;
     transfer_type = "Data and Photo";
     production_type = document.getElementById('anj_edit_production_type').value;
     department = document.getElementById('anj_edit_department').value;
     sub_department = document.getElementById('anj_edit_sub_department').value;
-    luanch_date = document.getElementById('anj_edit_launch_date').value;
+    actual_launch_date = document.getElementById('anj_edit_actual_launch_date').value;
     sku = document.getElementById('anj_edit_sku').value;
     product_sell_type = "Normall";
     // product_sorting = "Product";
@@ -286,14 +278,14 @@ function action_transfer_to_job_cms() {
     product_website = document.getElementById('anj_edit_online_channel').value;
     recive_mail_date = document.getElementById('anj_edit_create_date').value;
     project_type = document.getElementById('anj_edit_project_type').value;
-    $.post("base/action/action_create_job_cms_new.php", {
-            csg_request_new_id: csg_request_new_id,
+    $.post("base/action/action_create_job_cms.php", {
+            id: id,
             bu: bu,
             transfer_type: transfer_type,
             production_type: production_type,
             department: department,
             sub_department: sub_department,
-            luanch_date: luanch_date,
+            actual_launch_date: actual_launch_date,
             sku: sku,
             product_sell_type: product_sell_type,
             job_status_filter: job_status_filter,

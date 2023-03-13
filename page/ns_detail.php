@@ -63,33 +63,29 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
             ac_request.nickname as request_nickname,
             brand_editor.body  as brand_editor,
             anj.web_cate as web_cate,
-            jc.id as jc_id,
-            jc.approved_date as approved_date,
-            jc.job_number as job_number,
-            jc.luanch_date as luanchdate,
-            jc.content_start_date as content_start_date,
-            jc.content_complete_date as content_complete_date,
-            jc.content_assign_name as content_assign_name,
-            jc.shoots_start_date as shoots_start_date,
-            jc.shoots_complete_date as shoots_complete_date,
-            jc.retouch_start_date as retouch_start_date,
-            jc.retouch_complete_date as retouch_complete_date,
-            jc.upload_image_date as upload_image_date
+            anj.approved_date as approved_date,
+            anj.job_number as job_number,
+            anj.actual_launch_date as actual_launch_date,
+            anj.content_start_date as content_start_date,
+            anj.content_complete_date as content_complete_date,
+            anj.content_assign_name as content_assign_name,
+            anj.shoots_start_date as shoots_start_date,
+            anj.shoots_complete_date as shoots_complete_date,
+            anj.retouch_start_date as retouch_start_date,
+            anj.retouch_complete_date as retouch_complete_date,
+            anj.upload_image_date as upload_image_date
             FROM all_in_one_project.add_new_job as anj
             left join all_in_one_project.account as ac
             on ac.username = anj.follow_assign_name
             left join all_in_one_project.account as ac_request
             on ac_request.username = anj.request_username
-            left join u749625779_cdscontent.job_cms as jc
-            on anj.id = jc.csg_request_new_id
             left join all_in_one_project.brand_editor as brand_editor
             on brand_editor.brand = anj.brand
             where anj.id = ".$_POST['id']." ORDER BY anj.id DESC " or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
-      $jc_id = $row['jc_id'];
       $id = $row['id'];
-      $luanchdate=$row['luanchdate'];
+      $actual_launch_date=$row['actual_launch_date'];
       $brand = $row['brand'];
       $request_username = $row['request_username'];
       $request_firstname = $row['request_firstname'];
@@ -360,7 +356,7 @@ echo '
                     <button class="nav-link" id="pills-productions-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-productions" type="button" role="tab" aria-controls="pills-productions"
                         aria-selected="false">
-                        <ion-icon name="file-tray-stacked-outline"></ion-icon>Informations
+                        <ion-icon name="file-tray-stacked-outline"></ion-icon>Information
                     </button>
                 </li>
             </ul>
@@ -956,7 +952,7 @@ function get_files(id) {
 }
 // get_detail_more
 function form_production(id) {
-    var table_name = "'add_new_job','job_cms'";
+    var table_name = "'add_new_job'";
     $.post("base/form/form_value.php", {
             id: id,
             table_name

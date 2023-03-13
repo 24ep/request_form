@@ -41,15 +41,6 @@ $configurable_map = array (
         'description'=>'Manage attribute of new product creation (NS ticket)'),
     array(
         'session'=>'Table Setting',
-        'icon'=>'grid',
-        'table'=>'job_cms',
-        'title'=>'job_cms',
-        'database'=>'u749625779_cdscontent',
-        'prefix'=>'jc',
-        'function'=>'get_attribute_config',
-        'description'=>'manage attribute of new product creation (production job)'),
-    array(
-        'session'=>'Table Setting',
         'icon'=>'ticket',
         'table'=>'content_request',
         'database'=>'all_in_one_project',

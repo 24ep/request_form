@@ -40,12 +40,12 @@ function shipping_methods(){
   global $row_get_ls;
   $brand = $ws_linesheet->getCellByColumnAndRow($IMFORM_column_number_brand,  $row_get_ls)->getValue();
   //get brand from ticket
-  $query_job_cms = "SELECT jc.id,jc.brand,jc.department,jc.sub_department ,dm.`number` as number_dm ,
-  sdm.`number` as number_sdm , sm.one_hr ,sm.tree_hr  FROM u749625779_cdscontent.job_cms as jc
+  $query_job_cms = "SELECT anj.id,anj.brand,anj.department,anj.sub_department ,dm.`number` as number_dm ,
+  sdm.`number` as number_sdm , sm.one_hr ,sm.tree_hr  FROM all_in_one_project.add_new_job anj
   left join content_service_gate.dept_subdept_number_mapping dm
-  on dm.name = jc.department
+  on dm.name = anj.department
   left join content_service_gate.dept_subdept_number_mapping sdm
-  on sdm.name = jc.sub_department
+  on sdm.name = anj.sub_department
   left join u749625779_cdscontent.shipping_mapping sm
   on sdm.`number` = sm.sub_department and lower(jc.brand) = lower(sm.brand_group)
   where id = ".$id or die("Error:" . mysqli_error($con));
@@ -609,7 +609,7 @@ function shipping_methods(){
       $pdb .= "</ul>";
       // end add bullet ---
       //get brand from ticket
-      $query_job_cms = "SELECT * FROM job_cms where id = ".$id or die("Error:" . mysqli_error($con));
+      $query_job_cms = "SELECT * FROM add_new_job where id = ".$id or die("Error:" . mysqli_error($con));
       $result = mysqli_query($con, $query_job_cms);
       while($row = mysqli_fetch_array($result)) {
         $brand_name = $row["brand"];
@@ -696,7 +696,7 @@ function shipping_methods(){
       $pdb .= "</ul>";
       // end add bullet ---
       //get brand from ticket
-      $query_job_cms = "SELECT * FROM job_cms where id = ".$id or die("Error:" . mysqli_error($con));
+      $query_job_cms = "SELECT * FROM add_new_job where id = ".$id or die("Error:" . mysqli_error($con));
       $result = mysqli_query($con, $query_job_cms);
       while($row = mysqli_fetch_array($result)) {
         $brand_name = $row["brand"];

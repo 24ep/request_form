@@ -182,8 +182,8 @@ if($row["allow_ex_edit"]==1){
             brand_info.link as brand_info_link,
             brand_editor.body  as brand_editor,
             anj.web_cate as web_cate,
-            jc.approved_date as approved_date,
-            jc.job_number as job_number
+            anj.approved_date as approved_date,
+            anj.job_number as job_number
             FROM all_in_one_project.add_new_job as anj
             left join all_in_one_project.account as ac
             on ac.username = anj.follow_assign_name
@@ -191,8 +191,6 @@ if($row["allow_ex_edit"]==1){
             on ac_request.username = anj.request_username
             left join all_in_one_project.brand_information as brand_info
             on brand_info.brand = anj.brand
-            left join u749625779_cdscontent.job_cms as jc
-            on anj.id = jc.csg_request_new_id
             left join all_in_one_project.brand_editor as brand_editor
             on brand_editor.brand = anj.brand
             where anj.id = ".$id." ORDER BY anj.id DESC " or die("Error:" . mysqli_error($con));

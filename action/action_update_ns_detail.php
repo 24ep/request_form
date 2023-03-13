@@ -14,9 +14,9 @@
     $query = mysqli_query($con,$sql);
 	if($query) {
         if($value_name=="sub_department"){
-            $con_job_cms= mysqli_connect("localhost","cdse_admin","@aA417528639","u749625779_cdscontent") or die("Error: " . mysqli_error($con_job_cms));
+            $con_job_cms= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con_job_cms));
             mysqli_query($con_job_cms, "SET NAMES 'utf8' ");
-            $sql_job_cms = "UPDATE u749625779_cdscontent.job_cms SET ".$value_name." = '".str_replace("'","''",$value_change)."'  WHERE csg_request_new_id=".$id;
+            $sql_job_cms = "UPDATE all_in_one_project.add_new_job SET ".$value_name." = '".str_replace("'","''",$value_change)."'  WHERE id=".$id;
             $query_time_zone = mysqli_query($con,"SET time_zone = 'Asia/Bangkok';");
             $query = mysqli_query($con_job_cms,$sql_job_cms);
         }
@@ -41,7 +41,7 @@
               }
               if($key<>"" and $key<>null){
                 sent_line_noti("\nNS-".$id." ".$topic."  \n----------------------------\n".$_SESSION["nickname"]." changed ".$value_name." to ".$value_change,$key);
-                send_ms_team("NS-".$id,$topic,$_SESSION["nickname"]." changed ".$value_name." to ".$value_change);  
+                send_ms_team("NS-".$id,$topic,$_SESSION["nickname"]." changed ".$value_name." to ".$value_change);
             }
          }
       }

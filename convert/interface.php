@@ -4,6 +4,7 @@ $id = $_POST["id"];
 $job_number = $_POST["job_number"];
 $launch_date = $_POST["launch_date"];
 $content_assign_name = $_POST["content_assign_name "];
+
 function get_value($crid,$col_re,$db){
     $con_cr= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con_cr));
     mysqli_query($con_cr, "SET NAMES 'utf8' ");
@@ -68,7 +69,7 @@ function get_value($crid,$col_re,$db){
                                     '.$option_function.'
                             </select>
                           </div>
-                        
+
                       </div>';
                 //       <div class="col-auto">
                 //       <small id="'.$row_pim["code"].'HelpInline" class="text-muted" style="margin-left:10px">

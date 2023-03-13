@@ -29,9 +29,15 @@ $username_op = get_username( $_SESSION["username"]);
 
 <nav class="nav p-2 bg-light shadow" style="border-bottom: 1px solid #e3e3e3;">
     <ul class="nav nav-pills" id="pills-tab" role="tablist">
-        <li role="presentation" class="pe-3 ps-3 border-end align-self-center" onclick="get_list_job_on_hand('pending');">
+        <li role="presentation" class="pe-3 ps-3 border-end align-self-center" onclick="get_list_job_on_hand('non-assign');">
             <button class="nav-link nav-task active" data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
-                Pending
+                Non-assign
+                <span id="c_pending" class="badge text-bg-dark ms-2"></span>
+            </button>
+        </li>
+        <li role="presentation" class="pe-3 ps-3 border-end align-self-center" onclick="get_list_job_on_hand('assigned');">
+            <button class="nav-link nav-task active" data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
+                Assigned
                 <span id="c_pending" class="badge text-bg-dark ms-2"></span>
             </button>
         </li>

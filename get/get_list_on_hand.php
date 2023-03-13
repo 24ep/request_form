@@ -46,8 +46,6 @@ function count_ticket_per_status($primary_key_id,$id,$end_key,$status){
 
     $query = "
     SELECT count(*) as count_ticket FROM all_in_one_project.add_new_job as anj
-    left join u749625779_cdscontent.job_cms as jc
-    on anj.id = jc.csg_request_new_id
     where (".$person_key.") and (".$end_key.")" or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
@@ -77,13 +75,12 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
     anj.launch_date as anj_launch_date,
     anj.create_date as anj_create_date,
     anj.status as anj_status,
-    jc.job_status_filter as jc_job_status_filter,
-    jc.job_number as jc_job_number,
+    anj.job_number as jc_job_number,
     CASE
     when TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 <= 3 then 0
-    when jc.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 <= 5  then 1
-    when jc.upload_image_date is not null and  anj.launch_date is null and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 10 then 2
-    when jc.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 < 5 and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 10 then 3
+    when anj.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 <= 5  then 1
+    when anj.upload_image_date is not null and  anj.launch_date is null and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 10 then 2
+    when anj.upload_image_date is not null and  TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 < 5 and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 10 then 3
     when TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 < 4 then 4
     when anj.launch_date is null and TIMESTAMPDIFF( day ,anj.create_date,CURRENT_DATE())+1 > 9 and lower(anj.project_type ) like '%new%' then 5
     when TIMESTAMPDIFF( day ,CURRENT_DATE(),anj.launch_date)+1 < 10  then 6
@@ -91,8 +88,6 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
     when anj.launch_date is not null then 8
     else 9 end as priority
     FROM all_in_one_project.add_new_job as anj
-    left join u749625779_cdscontent.job_cms as jc
-    on anj.id = jc.csg_request_new_id
     where (".$person_key.") and (".$end_key.")
     order by priority ASC,anj.launch_date is null ,anj.launch_date ASC,anj.create_date ASC,anj.sku DESC limit ".$limit or die("Error:" . mysqli_error($con));
     $result = mysqli_query($con, $query);
@@ -178,113 +173,134 @@ $configurable_map = array (
     ),
     array(
         'ac_role'=>'writer',
-        'status'=>'pending',
-        'filter'=>'jc.content_start_date is null and anj.status ="on-productions"',
-        'key_stage'=>'jc.content_assign_name',
+        'status'=>'non-assign',
+        'filter'=>'anj.content_start_date is null and anj.status ="on-productions"',
+        'key_stage'=>'anj.content_assign_name',
         'key_name'=>'null'
     ),
     array(
         'ac_role'=>'writer',
-        'status'=>'inprogress',
-        'filter'=>'jc.content_start_date is not null and jc.content_complete_date is null and anj.status ="on-productions"',
+        'status'=>'assigned',
+        'filter'=>'jc.content_start_date is null and anj.status ="on-productions"',
         'key_stage'=>'jc.content_assign_name',
+        'key_name'=>$ac_username
+    ),
+    array(
+        'ac_role'=>'writer',
+        'status'=>'inprogress',
+        'filter'=>'anj.content_start_date is not null and anj.content_complete_date is null and anj.status ="on-productions"',
+        'key_stage'=>'anj.content_assign_name',
         'key_name'=>$ac_nickname
     ),
     array(
         'ac_role'=>'shoot',
         'status'=>'waiting for other stage',
-        'filter'=>'jc.shoot_complete_date is null and jc.approved_by is null and anj.status ="on-productions"',
-        'key_stage'=>'jc.shoot_assign_name',
+        'filter'=>'anj.shoot_complete_date is null and anj.approved_by is null and anj.status ="on-productions"',
+        'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>$ac_nickname
     ),
     array(
         'ac_role'=>'recive_item',
         'status'=>'pending',
-        'filter'=>'jc.recive_item_date is null ',
-        'key_stage'=>'jc.shoot_assign_name',
+        'filter'=>'anj.recive_item_date is null ',
+        'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>'null'
     ),
     array(
         'ac_role'=>'shoot',
-        'status'=>'pending',
-        'filter'=>'jc.shoot_assign_name is null and anj.status ="on-productions"',
-        'key_stage'=>'jc.shoot_assign_name',
+        'status'=>'non-assign',
+        'filter'=>'anj.shoot_assign_name is null and anj.status ="on-productions"',
+        'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>'null'
+    ),
+    array(
+        'ac_role'=>'shoot',
+        'status'=>'assigned',
+        'filter'=>'anj.shoot_assign_name is null and anj.status ="on-productions"',
+        'key_stage'=>'anj.shoot_assign_name',
+        'key_name'=>$ac_nickname
     ),
     array(
         'ac_role'=>'shoot',
         'status'=>'inprogress',
-        'filter'=>'jc.shoot_start_date is not null and jc.shoot_complete_date is null and anj.status ="on-productions"',
-        'key_stage'=>'jc.shoot_assign_name',
+        'filter'=>'anj.shoot_start_date is not null and anj.shoot_complete_date is null and anj.status ="on-productions"',
+        'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>$ac_nickname
     ),
     array(
         'ac_role'=>'shoot',
         'status'=>'waiting for other stage',
-        'filter'=>'jc.shoot_complete_date is null and jc.approved_by is null and anj.status ="on-productions"',
-        'key_stage'=>'jc.shoot_assign_name',
+        'filter'=>'anj.shoot_complete_date is null and jc.approved_by is null and anj.status ="on-productions"',
+        'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>$ac_nickname
     ),
     array(
         'ac_role'=>'retouch',
-        'status'=>'pending',
-        'filter'=>'jc.shoot_complete_date is not null and jc.retouch_assign_name is null  and anj.status ="on-productions"',
-        'key_stage'=>'jc.retouch_assign_name',
+        'status'=>'non-assign',
+        'filter'=>'anj.shoot_complete_date is not null and jc.retouch_assign_name is null  and anj.status ="on-productions"',
+        'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>'null'
     ),
     array(
         'ac_role'=>'retouch',
+        'status'=>'assigned',
+        'filter'=>'anj.shoot_complete_date is not null and jc.retouch_assign_name is null  and anj.status ="on-productions"',
+        'key_stage'=>'anj.retouch_assign_name',
+        'key_name'=>$ac_nickname
+    ),
+    array(
+        'ac_role'=>'retouch',
         'status'=>'inprogress',
-        'filter'=>'jc.retouch_start_date is not null and jc.retouch_complete_date is null',
-        'key_stage'=>'jc.retouch_assign_name',
+        'filter'=>'anj.retouch_start_date is not null and anj.retouch_complete_date is null',
+        'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>$ac_nickname
     ),
     array(
         'ac_role'=>'retouch',
         'status'=>'waiting for other stage',
-        'filter'=>'jc.retouch_complete_date is null and jc.approved_by is null',
-        'key_stage'=>'jc.retouch_assign_name',
+        'filter'=>'anj.retouch_complete_date is null and anj.approved_by is null',
+        'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>$ac_nickname
     ),
     array(
         'ac_role'=>'image_uploader',
         'status'=>'pending',
-        'filter'=>'jc.retouch_complete_date is null and jc.upload_image <> "Yes"',
-        'key_stage'=>'jc.retouch_assign_name',
+        'filter'=>'anj.retouch_complete_date is null and anj.upload_image <> "Yes"',
+        'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>'null'
     ),
     array(
         'ac_role'=>'approver',
         'status'=>'pending',
-        'filter'=>'jc.approved_date is null and jc.approved_editing_status ="correct"
+        'filter'=>'anj.approved_date is null and anj.approved_editing_status ="correct"
                    and anj.status = "on-productions"
                    and (
-                    (anj.production_type = "Data only" and jc.content_complete_date is not null ) or
-                    (anj.production_type <> "Data only" and jc.content_complete_date is not null and
-                    jc.upload_image_date is not null)
+                    (anj.production_type = "Data only" and anj.content_complete_date is not null ) or
+                    (anj.production_type <> "Data only" and anj.content_complete_date is not null and
+                    anj.upload_image_date is not null)
                    )',
-        'key_stage'=>'jc.approved_by',
+        'key_stage'=>'anj.approved_by',
         'key_name'=>'null'
     ),
     array(
         'ac_role'=>'writer',
         'status'=>'rejected',
-        'filter'=>'jc.approved_editing_status  in ("content_studio_editing","content_editing")',
-        'key_stage'=>'jc.approve_by',
-        'key_name'=>'null'
+        'filter'=>'anj.approved_editing_status  in ("content_studio_editing","content_editing")',
+        'key_stage'=>'anj.content_assign_name',
+        'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'retouch',
         'status'=>'rejected',
-        'filter'=>'jc.approved_editing_status  in ("content_studio_editing","studio_editing")',
-        'key_stage'=>'jc.approve_by',
-        'key_name'=>'null'
+        'filter'=>'anj.approved_editing_status  in ("content_studio_editing","studio_editing")',
+        'key_stage'=>'anj.retouch_assign_name',
+        'key_name'=>$ac_nickname
     ),
     array(
         'ac_role'=>'approver',
         'status'=>'rejected',
-        'filter'=>'jc.approved_editing_status  in ("content_studio_editing","studio_editing","content_editing")',
-        'key_stage'=>'jc.approve_by',
+        'filter'=>'anj.approved_editing_status  in ("content_studio_editing","studio_editing","content_editing")',
+        'key_stage'=>'anj.approve_by',
         'key_name'=>'null'
     ),
 );

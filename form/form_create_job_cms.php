@@ -1,5 +1,5 @@
 
-<?php 
+<?php
  session_start();
 function mapping_house_department($sub_department){
     $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
@@ -63,7 +63,7 @@ function getoption_return_create_job($col,$table,$select_option,$sorm,$database)
     }
        mysqli_close($con);
        return $option_set;
-       
+
       }
 
       if(strpos($tags,"Free Gift")!==false){
@@ -167,7 +167,7 @@ function getoption_return_create_job($col,$table,$select_option,$sorm,$database)
     <div class="col">
         <label for="exampleInputEmail1">Launch date</label>
         <input style="background: #f1f1f1" type="date" class="form-control form-control-sm placeholder="
-            value="<?php echo str_replace(" ","T",$launch_date); ?>" id="luanch_date_adj" name="luanch_date_adj">
+            value="<?php echo str_replace(" ","T",$launch_date); ?>" id="actual_launch_date_adj" name="actual_launch_date_adj">
     </div>
     <div class="col">
         <label for="exampleInputEmail1">Wrong ls from buyer</label>
@@ -243,7 +243,7 @@ function getoption_return_create_job($col,$table,$select_option,$sorm,$database)
 <div class="row">
   <div class="col-3">
         <label for="exampleInputEmail1">Content Writer assign name</label>
-        <select style="background: #ffe9b2" class="form-select form-select-sm" id="content_assign_name_adj" 
+        <select style="background: #ffe9b2" class="form-select form-select-sm" id="content_assign_name_adj"
             name="content_assign_name_adj">
             <?php echo $content_nickname_op; ?>
         </select>

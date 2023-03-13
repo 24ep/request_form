@@ -36,7 +36,7 @@ foreach ($array_file as $file) {
 $tmpfname_csv_string =  implode(",",$array_file_csv);
 echo 'Convert complete : '.$num_count.' files';
 // echo 'Generate new zip for datapump already <a href="../../../attachment/datapump/datapump">download here !</a>';
-// echo '<span ><a target="_blank" href="download_zip_files.php?files='.$tmpfname_csv_string .'" class="btn btn-warning btn-sm"  style="margin-top:10px;"  > <ion-icon name="cloud-download-outline" style="margin-right: 1px;"></ion-icon> Download for_pump_'.date("Y-m-d-hhmm").'.zip</a></span>';  
+// echo '<span ><a target="_blank" href="download_zip_files.php?files='.$tmpfname_csv_string .'" class="btn btn-warning btn-sm"  style="margin-top:10px;"  > <ion-icon name="cloud-download-outline" style="margin-right: 1px;"></ion-icon> Download for_pump_'.date("Y-m-d-hhmm").'.zip</a></span>';
 echo '<div class="accordion" id="accordionExample">';
 $num_count = 1;
 foreach ($array_file_loop  as $filebuyer) {
@@ -64,7 +64,7 @@ function convert_datapump(){
     global $export_workbook_backup;
     global $fullpath_template;
 
-$query = "SELECT * FROM u749625779_cdscontent.job_cms where job_number = '".substr($file_name,0,12)."' ORDER BY id DESC" or die("Error:" . mysqli_error($con));
+$query = "SELECT * FROM all_in_one_project.add_new_job where job_number = '".substr($file_name,0,12)."' ORDER BY id DESC" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
   $id_24 = $row["id"];
@@ -75,7 +75,7 @@ while($row = mysqli_fetch_array($result)) {
   $website_24 = $row["product_website"];
   $bu_24 = $row["bu"];
   $sku_24 = $row["sku"];
-  $csg_request_new_id = $row["csg_request_new_id"];
+  $csg_request_new_id = $row["id"];
 }
 $website_24 = str_replace(", ",",",$website_24);
 $query = "SELECT * FROM all_in_one_project.add_new_job where id = ".$csg_request_new_id." ORDER BY id DESC" or die("Error:" . mysqli_error($con));
@@ -180,11 +180,11 @@ for($col_linesheet = 1; $col_linesheet  <=  $LastColumnData_ls  ; $col_linesheet
                           $export_workbook-> getActiveSheet()->setCellValueByColumnAndRow($col_number,$lastRow_tm+$row_linesheet-$header_row+1,$get_ls_value);
                           $export_workbook_backup-> getActiveSheet()->setCellValueByColumnAndRow($col_number,$lastRow_tm+$row_linesheet-$header_row+1,$get_ls_value);
                       }elseif($col_name=="IBC"){
-                          $get_ls_value = $ws_linesheet->getCellByColumnAndRow($column_ls_ibc, $row_linesheet)->getValue(); 
+                          $get_ls_value = $ws_linesheet->getCellByColumnAndRow($column_ls_ibc, $row_linesheet)->getValue();
                           $export_workbook-> getActiveSheet()->setCellValueByColumnAndRow($col_number,$lastRow_tm+$row_linesheet-$header_row+1,$get_ls_value);
                           $export_workbook_backup-> getActiveSheet()->setCellValueByColumnAndRow($col_number,$lastRow_tm+$row_linesheet-$header_row+1,$get_ls_value);
                       }elseif($col_name=="SBC"){
-                          $get_ls_value = $ws_linesheet->getCellByColumnAndRow($column_ls_barcode_sbc, $row_linesheet)->getValue(); 
+                          $get_ls_value = $ws_linesheet->getCellByColumnAndRow($column_ls_barcode_sbc, $row_linesheet)->getValue();
                           $export_workbook-> getActiveSheet()->setCellValueByColumnAndRow($col_number,$lastRow_tm+$row_linesheet-$header_row+1,$get_ls_value);
                           $export_workbook_backup-> getActiveSheet()->setCellValueByColumnAndRow($col_number,$lastRow_tm+$row_linesheet-$header_row+1,$get_ls_value);
                       }elseif($col_name=="StoreStock"){
@@ -200,7 +200,7 @@ for($col_linesheet = 1; $col_linesheet  <=  $LastColumnData_ls  ; $col_linesheet
                           $export_workbook-> getActiveSheet()->setCellValueByColumnAndRow($col_number,$lastRow_tm+$row_linesheet-$header_row+1,$get_ls_value);
                           $export_workbook_backup-> getActiveSheet()->setCellValueByColumnAndRow($col_number,$lastRow_tm+$row_linesheet-$header_row+1,$get_ls_value);
                       }elseif($col_name=="SKU MDC"){
-                        $get_ls_value = $ws_linesheet->getCellByColumnAndRow($column_ls_ibc, $row_linesheet)->getValue(); 
+                        $get_ls_value = $ws_linesheet->getCellByColumnAndRow($column_ls_ibc, $row_linesheet)->getValue();
                         $export_workbook_backup-> getActiveSheet()->setCellValueByColumnAndRow($col_number,$lastRow_tm+$row_linesheet-$header_row+1,$bu.$get_ls_value);
                       }elseif($col_name=="job_number"){
                         $get_ls_value = substr($file_name,0,12);
@@ -212,7 +212,7 @@ for($col_linesheet = 1; $col_linesheet  <=  $LastColumnData_ls  ; $col_linesheet
                         $get_ls_value = $brand_24;
                         $export_workbook_backup-> getActiveSheet()->setCellValueByColumnAndRow($col_number,$lastRow_tm+$row_linesheet-$header_row+1,$get_ls_value);
                       }elseif($col_name=="SKU-JDA"){
-                        $get_ls_value = $ws_linesheet->getCellByColumnAndRow($column_ls_sku, $row_linesheet)->getValue(); 
+                        $get_ls_value = $ws_linesheet->getCellByColumnAndRow($column_ls_sku, $row_linesheet)->getValue();
                         $export_workbook_backup-> getActiveSheet()->setCellValueByColumnAndRow($col_number,$lastRow_tm+$row_linesheet-$header_row+1,$get_ls_value);
                       }
                 }
@@ -246,8 +246,8 @@ for($col_linesheet = 1; $col_linesheet  <=  $LastColumnData_ls  ; $col_linesheet
           // }
           $fullpath_template = '../../../attachment/datapump/'.date("Y-m-d").'/template/';
           $fullpath_backup = '../../../attachment/datapump/'.date("Y-m-d").'/backup/';
-          $writer->save($fullpath_template.$file_name_without_type.".".$_POST['file_type_gen']); 
-          $writer_backup->save($fullpath_backup.$file_name_without_type."_backup.".$_POST['file_type_gen']); 
+          $writer->save($fullpath_template.$file_name_without_type.".".$_POST['file_type_gen']);
+          $writer_backup->save($fullpath_backup.$file_name_without_type."_backup.".$_POST['file_type_gen']);
          // get template display
          echo "<hr>";
          $ws_tm = $export_workbook->getSheetByName('Datapump');
@@ -256,7 +256,7 @@ for($col_linesheet = 1; $col_linesheet  <=  $LastColumnData_ls  ; $col_linesheet
          for($row_tm = 2; $row_tm  <=  $lastRow_tm  ; $row_tm++){
           $tabel_row .="<tr>";
             for($col_tm = 1; $col_tm  <=  $count_col  ; $col_tm++){
-              $get_tm_value = $ws_tm->getCellByColumnAndRow($col_tm, $row_tm)->getValue(); 
+              $get_tm_value = $ws_tm->getCellByColumnAndRow($col_tm, $row_tm)->getValue();
               $tabel_row .="<td>".$get_tm_value."</td>";
             }
           $tabel_row .="</tr>";
@@ -333,7 +333,7 @@ for($col_linesheet = 1; $col_linesheet  <=  $LastColumnData_ls  ; $col_linesheet
                             <td><?php echo str_replace(",","<br>",$store_stock);?></td>
                             <td><?php echo  str_replace(", ","<br>",$store_stock_24); ?></td>
                             <td><?php echo  str_replace(", ","<br>",$store_stock_csg); ?></td>
-                            <td><?php 
+                            <td><?php
                             //check array 1
                             $stores_arr_1 = explode(",",str_replace(", ",",",$store_stock));
                             $stores_arr_2 = explode(",",str_replace(", ",",",$store_stock_24));
@@ -412,26 +412,26 @@ unset($writer);
 unset($writer_backup);
 $vars = array_keys(get_defined_vars());
 for ($i = 0; $i < sizeOf($vars); $i++) {
-    if( $vars[$i]<>'array_file' and 
+    if( $vars[$i]<>'array_file' and
         $vars[$i]<>'nickname' and
         $vars[$i]<>'con' and
         $vars[$i]<>'file_name' and
         $vars[$i]<>'file_type_gen' and
         // $vars[$i]<>'export_workbook' and
-        // $vars[$i]<>'export_workbook_backup' and 
+        // $vars[$i]<>'export_workbook_backup' and
         $vars[$i]<>'num_count' and
-        $vars[$i]<>'count_array_loop' and 
+        $vars[$i]<>'count_array_loop' and
         $vars[$i]<>'fullpath_linesheet' and
         $vars[$i]<>'fullpath_template'and
-        $vars[$i]<>'array_file_string' and 
+        $vars[$i]<>'array_file_string' and
         $vars[$i]<>'array_file_loop'
         ){
-      
+
         unset( ${"$vars[$i]"} );
         if(${"$vars[$i]"}){
           echo ${"$vars[$i]"}.",";
         }
-        
+
     }
 }
 unset($vars,$i);

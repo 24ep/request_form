@@ -20,25 +20,25 @@ $day_time = $say_hi.$time;
 //    $tmr_day_display_tmr = date("l j F" , time() + 86400 );
 //    $tmr_day_display_tmr_nt = date("l j F" , time() + 86400 + 86400);
    $query_cr = "SELECT * FROM all_in_one_project.content_request WHERE effective_date like '%". $current_day  ."%' ORDER BY id DESC" or die("Error:" . mysqli_error($con));
-   $query_job = "SELECT * FROM u749625779_cdscontent.job_cms WHERE luanch_date = '". $current_day  ."' ORDER BY id DESC" or die("Error:" . mysqli_error($con));
+   $query_job = "SELECT * FROM all_in_one_project.add_new_job WHERE actual_launch_date = '". $current_day  ."' ORDER BY id DESC" or die("Error:" . mysqli_error($con));
   // loop old
   $result =  mysqli_query($con, $query_cr);
   $massage_line = "\n😗Content Request ที่มี effective date วันนี้\n";
   while($row = mysqli_fetch_array($result)) {
     $eff_date = substr(substr($row["effective_date"],11),0,5)." น.";
     $massage_line .= $eff_date." > CR-".$row["id"]." > ".$row["status"]."\n";
-  }  
+  }
   $result_new =  mysqli_query($con, $query_job);
   $massage_line_new = "\n😗New job Enable for Today ".$current_day ."\n";
   while($row_new = mysqli_fetch_array($result_new)) {
     // $eff_date = substr(substr($row["effective_date"],11),0,5)." น.";
     $massage_line_new .= $row_new["job_number"]." > ".$row_new["product_website"]."\n";
-  }  
+  }
    mysqli_close($con);
    //  $post_line = $massage_line_old."".$massage_line_current."".$massage_line_tmr."".$massage_line_tmr_nt."\n⠭ แสดงเพียง Job ที่ SKU มากที่สุด 3 อันดับแรก \n⠭ ดูเพิ่มเติมที่นี่ http://bit.ly/3eCAwqr";
    // line noti api
-   // content 
-   $curl = curl_init();   
+   // content
+   $curl = curl_init();
    curl_setopt_array($curl, array(
      CURLOPT_URL => 'https://notify-api.line.me/api/notify',
      CURLOPT_RETURNTRANSFER => true,
@@ -54,7 +54,7 @@ $day_time = $say_hi.$time;
        'Authorization: Bearer 0YGrwiJuSNzYEv3cmjCDXhZ6ebxDjZyGhMl2Uo9EUTV'
      ),
    ));
-   $response = curl_exec($curl); 
+   $response = curl_exec($curl);
    curl_close($curl);
    //studio
    $curl = curl_init();
