@@ -181,8 +181,8 @@ $configurable_map = array (
     array(
         'ac_role'=>'writer',
         'status'=>'assigned',
-        'filter'=>'jc.content_start_date is null and anj.status ="on-productions"',
-        'key_stage'=>'jc.content_assign_name',
+        'filter'=>'anj.content_start_date is null and anj.status ="on-productions"',
+        'key_stage'=>'anj.content_assign_name',
         'key_name'=>$ac_username
     ),
     array(

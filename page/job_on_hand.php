@@ -36,7 +36,7 @@ $username_op = get_username( $_SESSION["username"]);
             </button>
         </li>
         <li role="presentation" class="pe-3 ps-3 border-end align-self-center" onclick="get_list_job_on_hand('assigned');">
-            <button class="nav-link nav-task active" data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
+            <button class="nav-link nav-task" data-bs-toggle="pill" type="button" role="tab" aria-selected="true">
                 Assigned
                 <span id="c_pending" class="badge text-bg-dark ms-2"></span>
             </button>
