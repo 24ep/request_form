@@ -25,10 +25,16 @@ function badge_status($status){
     }
     return $status;
 }
-function display_launch_date($launch_date){
+function display_launch_date($launch_date,$actual_launch_date){
     //launch date
-    if($launch_date<>""){
-        $launch_date = date('d/m/y',strtotime($launch_date));
+    if($launch_date<>"" or $actual_launch_date<>""){
+
+        if($actual_launch_date<>""){
+            $launch_date = date('d/m/y',strtotime($actual_launch_date));
+        }else{
+            $launch_date = date('d/m/y',strtotime($launch_date));
+        }
+
     }else{
         $launch_date = "<span style='color:#E0E0E0'>No launch date</span>";
     }
@@ -149,7 +155,7 @@ while($row = mysqli_fetch_array($result)) {
     $ticket .= "<div class='col'>".$row["brand"]."</div>";
     $ticket .= "<div class='col'>".$subtask_sum."</div>";
     $ticket .= "<div class='col'>".$row["production_type"]."</div>";
-    $ticket .= "<div class='col'>".display_launch_date($row["launch_date"])."</div>";
+    $ticket .= "<div class='col'>".display_launch_date($row["launch_date"],$row["actual_launch_date"])."</div>";
     $ticket .= "<div class='col' style='min-width: 160px;'>".$p_badge."</div>";
     $ticket .= "<div class='col' style='min-width: 140px;'>".$task_status."</div>";
     $ticket .= "<div class='col'>";
