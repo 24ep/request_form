@@ -103,7 +103,10 @@ class="shadow-sm span-ifram">https://cdse-commercecontent.com/base/page_convert_
                              FROM all_in_one_project.attachment as file
                              left join all_in_one_project.add_new_job as job_cms
                              on job_cms.id  = file.ticket_id
-                             where lower(job_cms.datapump)  in ('unsuccessful','wait pump') and job_cms.approved_date is null and file.file_group in ('Original') ORDER BY job_cms.job_number DESC" or die("Error:" . mysqli_error($con));
+                             where lower(job_cms.datapump)  in ('unsuccessful','wait pump')
+                             and job_cms.approved_date is null
+                             and job_cms.status<>'cancel'
+                             and file.file_group in ('Original') ORDER BY job_cms.job_number DESC" or die("Error:" . mysqli_error($con));
                              $result = mysqli_query($con, $query);
                              while($row = mysqli_fetch_array($result)) {
                                 $file_path = str_replace('../../','../',$row['file_path']);
