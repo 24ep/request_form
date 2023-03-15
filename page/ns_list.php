@@ -44,7 +44,7 @@ function get_attribute_list_filter($table){
     settings: {
         maxValuesShown: 1,
         maxValuesMessage: "{number} filter selected",
-        paceholderText: "Add more filter",
+        placeholderText: "Add more filter",
         maxSelected: 10,
         allowDeselect: true
     }

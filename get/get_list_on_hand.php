@@ -276,6 +276,7 @@ $configurable_map = array (
                    and anj.status = "on-productions"
                    and (
                     (anj.production_type = "Data only" and anj.content_complete_date is not null ) or
+                    (anj.production_type = "Photo only" and anj.upload_image_date is not null ) or
                     (anj.production_type <> "Data only" and anj.content_complete_date is not null and
                     anj.upload_image_date is not null)
                    )',
