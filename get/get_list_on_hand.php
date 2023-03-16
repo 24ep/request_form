@@ -181,35 +181,35 @@ $configurable_map = array (
     array(
         'ac_role'=>'writer',
         'status'=>'non-assign',
-        'filter'=>'anj.content_start_date is null and anj.status ="on-productions"',
+        'filter'=>'anj.content_start_date is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%data%"',
         'key_stage'=>'anj.content_assign_name',
         'key_name'=>'null'
     ),
     array(
         'ac_role'=>'writer',
         'status'=>'assigned',
-        'filter'=>'anj.content_start_date is null and anj.status ="on-productions"',
+        'filter'=>'anj.content_start_date is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%data%"',
         'key_stage'=>'anj.content_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'writer',
         'status'=>'inprogress',
-        'filter'=>'anj.content_start_date is not null and anj.content_complete_date is null and anj.status ="on-productions"',
+        'filter'=>'anj.content_start_date is not null and anj.content_complete_date is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%data%"',
         'key_stage'=>'anj.content_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'shooter',
         'status'=>'waiting for other stage',
-        'filter'=>'anj.shoot_complete_date is null and anj.approved_by is null and anj.status ="on-productions"',
+        'filter'=>'anj.shoot_complete_date is null and anj.approved_by is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'recive_item',
         'status'=>'pending',
-        'filter'=>'anj.recive_item_date is null ',
+        'filter'=>'anj.recive_item_date is null and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>'null'
     ),
