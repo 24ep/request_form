@@ -214,14 +214,14 @@
                         <input type="hidden" id="cs_edit_content_start_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_content_complete_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_content_assign_name"
-                            value="<?php echo $_SESSION['nickname'];?>">
+                            value="<?php echo $_SESSION['username'];?>">
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center"
                         <?php echo $bt_recive_item_date; ?>>
                         Recive Item <?php echo $bt_recive_item; ?>
                         <input type="hidden" id="cs_edit_recive_item_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_studio_sku" value="<?php echo $sku;?>">
-                        <input type="hidden" id="cs_edit_product_check_by" value="<?php echo $_SESSION['nickname'];?>">
+                        <input type="hidden" id="cs_edit_product_check_by" value="<?php echo $_SESSION['username'];?>">
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center"
                         <?php echo $bt_shoots_complete_date; ?>>
@@ -229,7 +229,7 @@
                         <input type="hidden" id="cs_edit_shoots_start_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_shoots_complete_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_shoots_assign_name"
-                            value="<?php echo $_SESSION['nickname'];?>">
+                            value="<?php echo $_SESSION['username'];?>">
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center"
                         <?php echo $bt_retouch_complete_date; ?>>
@@ -237,21 +237,21 @@
                         <input type="hidden" id="cs_edit_retouch_start_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_retouch_complete_date" value="CURRENT_TIMESTAMP">
                         <input type="hidden" id="cs_edit_retouch_assign_name"
-                            value="<?php echo $_SESSION['nickname'];?>">
+                            value="<?php echo $_SESSION['username'];?>">
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center"
                         <?php echo $bt_upload_image_date; ?>>
                         Upload image <?php echo $bt_upload_image; ?>
                         <input type="hidden" id="cs_edit_upload_image_date" value="CURRENT_TIMESTAMP">
-                        <input type="hidden" id="cs_edit_upload_image_by" value="<?php echo $_SESSION['nickname'];?>">
-                        <input type="hidden" id="cs_edit_upload_image_by" value="<?php echo $_SESSION['nickname'];?>"
+                        <input type="hidden" id="cs_edit_upload_image_by" value="<?php echo $_SESSION['username'];?>">
+                        <input type="hidden" id="cs_edit_upload_image_by" value="<?php echo $_SESSION['username'];?>"
                             <input type="hidden" id="cs_edit_check_image" value="Yes">
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center"
                         <?php echo $bt_approved_date; ?>>
                         QC <?php echo $bt_approve; ?> </li>
                     <input type="hidden" id="cs_edit_approved_date" value="CURRENT_TIMESTAMP">
-                    <input type="hidden" id="cs_edit_approved_by" value="<?php echo $_SESSION['nickname'];?>">
+                    <input type="hidden" id="cs_edit_approved_by" value="<?php echo $_SESSION['username'];?>">
                     <input type="hidden" id="cs_edit_approved_editing_status" value="approved">
                     <input type="hidden" id="cs_edit_status" value="approved">
                 </ul>
