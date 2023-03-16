@@ -174,7 +174,7 @@ $configurable_map = array (
     array(
         'ac_role'=>'follow',
         'status'=>'waiting for other stage',
-        'filter'=>'anj.accept_date is not null and anj.approved_by is null',
+        'filter'=>'anj.accept_date is not null and anj.approved_by is null and anj.status not like "cancel"',
         'key_stage'=>'anj.follow_up_by',
         'key_name'=>$ac_username
     ),
@@ -202,70 +202,70 @@ $configurable_map = array (
     array(
         'ac_role'=>'shooter',
         'status'=>'waiting for other stage',
-        'filter'=>'anj.shoot_complete_date is null and anj.approved_by is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
+        'filter'=>'anj.recive_item_date is not null and anj.shoot_complete_date is null and anj.approved_by is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'recive_item',
         'status'=>'pending',
-        'filter'=>'anj.recive_item_date is null and lower(anj.transfer_type) like "%photo%"',
+        'filter'=>'anj.recive_item_date is null and lower(anj.transfer_type) like "%photo%" and anj.status not like "cancel"',
         'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>'null'
     ),
     array(
         'ac_role'=>'shooter',
         'status'=>'non-assign',
-        'filter'=>'anj.shoots_assign_name is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
+        'filter'=>'anj.recive_item_date is not null and anj.shoots_assign_name is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.shoots_assign_name',
         'key_name'=>'null'
     ),
     array(
         'ac_role'=>'shooter',
         'status'=>'assigned',
-        'filter'=>'anj.shoots_assign_name is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
+        'filter'=>'anj.recive_item_date is not null and anj.shoots_assign_name is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.shoots_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'shooter',
         'status'=>'inprogress',
-        'filter'=>'anj.shoots_start_date is not null and anj.shoots_complete_date is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
+        'filter'=>' anj.recive_item_date is not null and  anj.shoots_start_date is not null and anj.shoots_complete_date is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.shoots_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'shooter',
         'status'=>'waiting for other stage',
-        'filter'=>'anj.shoots_complete_date is null and anj.approved_by is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
+        'filter'=>' anj.recive_item_date is not null and  anj.shoots_complete_date is null and anj.approved_by is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.shoots_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'retoucher',
         'status'=>'non-assign',
-        'filter'=>'anj.shoots_complete_date is not null and anj.retouch_assign_name is null  and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
+        'filter'=>'anj.recive_item_date is not null and  anj.shoots_complete_date is not null and anj.retouch_assign_name is null  and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>'null'
     ),
     array(
         'ac_role'=>'retoucher',
         'status'=>'assigned',
-        'filter'=>'anj.shoots_complete_date is not null and anj.retouch_assign_name is null  and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
+        'filter'=>'anj.recive_item_date is not null and  anj.shoots_complete_date is not null and anj.retouch_assign_name is null  and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'retoucher',
         'status'=>'inprogress',
-        'filter'=>'anj.retouch_start_date is not null and anj.retouch_complete_date is null and lower(anj.transfer_type) like "%photo%"',
+        'filter'=>'anj.recive_item_date is not null and  anj.retouch_start_date is not null and anj.retouch_complete_date is null and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'retoucher',
         'status'=>'waiting for other stage',
-        'filter'=>'anj.retouch_complete_date is null and anj.approved_by is null and lower(anj.transfer_type) like "%photo%"',
+        'filter'=>'anj.recive_item_date is not null and  anj.retouch_complete_date is null and anj.approved_by is null and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>$ac_username
     ),
@@ -282,9 +282,9 @@ $configurable_map = array (
         'filter'=>'anj.approved_date is null and anj.approved_editing_status ="correct"
                    and anj.status = "on-productions"
                    and (
-                    (anj.production_type = "Data only" and anj.content_complete_date is not null ) or
-                    (anj.production_type = "Photo only" and anj.upload_image_date is not null ) or
-                    (anj.production_type <> "Data only" and anj.content_complete_date is not null and
+                    (anj.transfer_type = "Data only" and anj.content_complete_date is not null ) or
+                    (anj.transfer_type = "Photo only" and anj.upload_image_date is not null ) or
+                    (anj.transfer_type <> "Data only" and anj.content_complete_date is not null and
                     anj.upload_image_date is not null)
                    )',
         'key_stage'=>'anj.approved_by',
