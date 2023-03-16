@@ -190,14 +190,14 @@ $configurable_map = array (
         'status'=>'inprogress',
         'filter'=>'anj.content_start_date is not null and anj.content_complete_date is null and anj.status ="on-productions"',
         'key_stage'=>'anj.content_assign_name',
-        'key_name'=>$ac_nickname
+        'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'shooter',
         'status'=>'waiting for other stage',
         'filter'=>'anj.shoot_complete_date is null and anj.approved_by is null and anj.status ="on-productions"',
         'key_stage'=>'anj.shoot_assign_name',
-        'key_name'=>$ac_nickname
+        'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'recive_item',
@@ -218,21 +218,21 @@ $configurable_map = array (
         'status'=>'assigned',
         'filter'=>'anj.shoot_assign_name is null and anj.status ="on-productions"',
         'key_stage'=>'anj.shoot_assign_name',
-        'key_name'=>$ac_nickname
+        'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'shooter',
         'status'=>'inprogress',
         'filter'=>'anj.shoot_start_date is not null and anj.shoot_complete_date is null and anj.status ="on-productions"',
         'key_stage'=>'anj.shoot_assign_name',
-        'key_name'=>$ac_nickname
+        'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'shooter',
         'status'=>'waiting for other stage',
         'filter'=>'anj.shoot_complete_date is null and jc.approved_by is null and anj.status ="on-productions"',
         'key_stage'=>'anj.shoot_assign_name',
-        'key_name'=>$ac_nickname
+        'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'retoucher',
@@ -246,21 +246,21 @@ $configurable_map = array (
         'status'=>'assigned',
         'filter'=>'anj.shoot_complete_date is not null and jc.retouch_assign_name is null  and anj.status ="on-productions"',
         'key_stage'=>'anj.retouch_assign_name',
-        'key_name'=>$ac_nickname
+        'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'retoucher',
         'status'=>'inprogress',
         'filter'=>'anj.retouch_start_date is not null and anj.retouch_complete_date is null',
         'key_stage'=>'anj.retouch_assign_name',
-        'key_name'=>$ac_nickname
+        'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'retoucher',
         'status'=>'waiting for other stage',
         'filter'=>'anj.retouch_complete_date is null and anj.approved_by is null',
         'key_stage'=>'anj.retouch_assign_name',
-        'key_name'=>$ac_nickname
+        'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'image_uploader',
@@ -295,7 +295,7 @@ $configurable_map = array (
         'status'=>'rejected',
         'filter'=>'anj.approved_editing_status  in ("content_studio_editing","studio_editing")',
         'key_stage'=>'anj.retouch_assign_name',
-        'key_name'=>$ac_nickname
+        'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'approver',
