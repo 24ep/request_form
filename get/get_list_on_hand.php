@@ -145,10 +145,17 @@ function get_panel_card($primary_key_id,$id,$end_key,$limit){
 $configurable_map = array (
     array(
         'ac_role'=>'follow',
-        'status'=>'pending',
-        'filter'=>'anj.status = "pending"',
+        'status'=>'non-assign',
+        'filter'=>'anj.status = "pending" and anj.follow_up_by is null',
         'key_stage'=>'anj.follow_up_by',
         'key_name'=>'null'
+    ),
+    array(
+        'ac_role'=>'follow',
+        'status'=>'assigned',
+        'filter'=>'anj.status = "pending"',
+        'key_stage'=>'anj.follow_assign_name',
+        'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'follow',
@@ -209,63 +216,63 @@ $configurable_map = array (
     array(
         'ac_role'=>'shooter',
         'status'=>'non-assign',
-        'filter'=>'anj.shoots_assign_name is null and anj.status ="on-productions"',
+        'filter'=>'anj.shoots_assign_name is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>'null'
     ),
     array(
         'ac_role'=>'shooter',
         'status'=>'assigned',
-        'filter'=>'anj.shoots_assign_name is null and anj.status ="on-productions"',
+        'filter'=>'anj.shoots_assign_name is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'shooter',
         'status'=>'inprogress',
-        'filter'=>'anj.shoots_start_date is not null and anj.shoots_complete_date is null and anj.status ="on-productions"',
+        'filter'=>'anj.shoots_start_date is not null and anj.shoots_complete_date is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'shooter',
         'status'=>'waiting for other stage',
-        'filter'=>'anj.shoots_complete_date is null and jc.approved_by is null and anj.status ="on-productions"',
+        'filter'=>'anj.shoots_complete_date is null and jc.approved_by is null and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'retoucher',
         'status'=>'non-assign',
-        'filter'=>'anj.shoots_complete_date is not null and jc.retouch_assign_name is null  and anj.status ="on-productions"',
+        'filter'=>'anj.shoots_complete_date is not null and jc.retouch_assign_name is null  and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>'null'
     ),
     array(
         'ac_role'=>'retoucher',
         'status'=>'assigned',
-        'filter'=>'anj.shoots_complete_date is not null and jc.retouch_assign_name is null  and anj.status ="on-productions"',
+        'filter'=>'anj.shoots_complete_date is not null and jc.retouch_assign_name is null  and anj.status ="on-productions" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'retoucher',
         'status'=>'inprogress',
-        'filter'=>'anj.retouch_start_date is not null and anj.retouch_complete_date is null',
+        'filter'=>'anj.retouch_start_date is not null and anj.retouch_complete_date is null and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'retoucher',
         'status'=>'waiting for other stage',
-        'filter'=>'anj.retouch_complete_date is null and anj.approved_by is null',
+        'filter'=>'anj.retouch_complete_date is null and anj.approved_by is null and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'image_uploader',
         'status'=>'pending',
-        'filter'=>'anj.retouch_complete_date is null and anj.upload_image <> "Yes"',
+        'filter'=>'anj.retouch_complete_date is null and anj.upload_image <> "Yes" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>'null'
     ),
