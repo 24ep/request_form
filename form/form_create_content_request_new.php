@@ -131,23 +131,23 @@ function SelectedBucket() {
         document.getElementById('cr_dp_reason_block').style.display = "block";
         document.getElementById('cr_dp_brand_block').style.display = "block";
 
-    } else if (cr_ticket_type == "System development") {
+    } else if(cr_ticket_type == "System development") {
         document.getElementById('cr_ticket_template').value = "DT";
         document.getElementById('cr_dp_reason_block').style.display = "none";
         document.getElementById('cr_dp_brand_block').style.display = "none";
-    } else if (cr_ticket_type == "NPS") {
+    } else if(cr_ticket_type == "NPS") {
         document.getElementById('cr_ticket_template').value = "NPS";
         document.getElementById('cr_dp_reason_block').style.display = "none";
         document.getElementById('cr_dp_brand_block').style.display = "none";
-    } else if (cr_ticket_type == "ServiceGate issue") {
+    } else if(cr_ticket_type == "ServiceGate issue") {
         document.getElementById('cr_ticket_template').value = "ISI";
         document.getElementById('cr_dp_reason_block').style.display = "none";
         document.getElementById('cr_dp_brand_block').style.display = "none";
-    }else if (cr_ticket_type == "Convertor issue") {
+    }else if(cr_ticket_type == "Convertor issue") {
         document.getElementById('cr_ticket_template').value = "ISI";
         document.getElementById('cr_dp_reason_block').style.display = "none";
         document.getElementById('cr_dp_brand_block').style.display = "none";
-    }else if (cr_ticket_type == "Linesheet issue") {
+    }else if(cr_ticket_type == "Linesheet issue") {
         document.getElementById('cr_ticket_template').value = "ISI";
         document.getElementById('cr_dp_reason_block').style.display = "none";
         document.getElementById('cr_dp_brand_block').style.display = "none";

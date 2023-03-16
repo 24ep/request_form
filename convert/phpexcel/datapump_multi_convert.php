@@ -75,7 +75,7 @@ while($row = mysqli_fetch_array($result)) {
   $website_24 = $row["product_website"];
   $bu_24 = $row["bu"];
   $sku_24 = $row["sku"];
-  $csg_request_new_id = $row["csg_request_new_id"];
+  $csg_request_new_id = $row["id"];
 }
 $website_24 = str_replace(", ",",",$website_24);
 $query = "SELECT * FROM all_in_one_project.add_new_job where id = ".$csg_request_new_id." ORDER BY id DESC" or die("Error:" . mysqli_error($con));
