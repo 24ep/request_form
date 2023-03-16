@@ -47,6 +47,7 @@ $export_workbook_backup->getActiveSheet()->setTitle('Datapump_Backup');
     echo "<script>console.log('file ".$num_count." : ".$filebuyer."')</script>";
     $tmpfname = "../../".$filebuyer;
     $file_name = substr($filebuyer,37);
+    echo "<script>console.log('file name : ".$file_name."')</script>";
     convert_datapump();
     $num_count ++;
 }
