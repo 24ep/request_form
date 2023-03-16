@@ -139,7 +139,19 @@ function SelectedBucket() {
         document.getElementById('cr_ticket_template').value = "NPS";
         document.getElementById('cr_dp_reason_block').style.display = "none";
         document.getElementById('cr_dp_brand_block').style.display = "none";
-    } else {
+    } else if (cr_ticket_type == "ServiceGate issue") {
+        document.getElementById('cr_ticket_template').value = "ISI";
+        document.getElementById('cr_dp_reason_block').style.display = "none";
+        document.getElementById('cr_dp_brand_block').style.display = "none";
+    }else if (cr_ticket_type == "Convertor issue") {
+        document.getElementById('cr_ticket_template').value = "ISI";
+        document.getElementById('cr_dp_reason_block').style.display = "none";
+        document.getElementById('cr_dp_brand_block').style.display = "none";
+    }else if (cr_ticket_type == "Linesheet issue") {
+        document.getElementById('cr_ticket_template').value = "ISI";
+        document.getElementById('cr_dp_reason_block').style.display = "none";
+        document.getElementById('cr_dp_brand_block').style.display = "none";
+    }else {
         document.getElementById('cr_ticket_template').value = "CR";
         document.getElementById('cr_dp_reason_block').style.display = "none";
         document.getElementById('cr_dp_brand_block').style.display = "none";
