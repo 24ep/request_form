@@ -209,42 +209,42 @@ $configurable_map = array (
     array(
         'ac_role'=>'shooter',
         'status'=>'non-assign',
-        'filter'=>'anj.shoot_assign_name is null and anj.status ="on-productions"',
+        'filter'=>'anj.shoots_assign_name is null and anj.status ="on-productions"',
         'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>'null'
     ),
     array(
         'ac_role'=>'shooter',
         'status'=>'assigned',
-        'filter'=>'anj.shoot_assign_name is null and anj.status ="on-productions"',
+        'filter'=>'anj.shoots_assign_name is null and anj.status ="on-productions"',
         'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'shooter',
         'status'=>'inprogress',
-        'filter'=>'anj.shoot_start_date is not null and anj.shoot_complete_date is null and anj.status ="on-productions"',
+        'filter'=>'anj.shoots_start_date is not null and anj.shoots_complete_date is null and anj.status ="on-productions"',
         'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'shooter',
         'status'=>'waiting for other stage',
-        'filter'=>'anj.shoot_complete_date is null and jc.approved_by is null and anj.status ="on-productions"',
+        'filter'=>'anj.shoots_complete_date is null and jc.approved_by is null and anj.status ="on-productions"',
         'key_stage'=>'anj.shoot_assign_name',
         'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'retoucher',
         'status'=>'non-assign',
-        'filter'=>'anj.shoot_complete_date is not null and jc.retouch_assign_name is null  and anj.status ="on-productions"',
+        'filter'=>'anj.shoots_complete_date is not null and jc.retouch_assign_name is null  and anj.status ="on-productions"',
         'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>'null'
     ),
     array(
         'ac_role'=>'retoucher',
         'status'=>'assigned',
-        'filter'=>'anj.shoot_complete_date is not null and jc.retouch_assign_name is null  and anj.status ="on-productions"',
+        'filter'=>'anj.shoots_complete_date is not null and jc.retouch_assign_name is null  and anj.status ="on-productions"',
         'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>$ac_username
     ),
