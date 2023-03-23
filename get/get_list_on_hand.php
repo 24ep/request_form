@@ -271,15 +271,15 @@ $configurable_map = array (
     ),
     array(
         'ac_role'=>'image_uploader',
-        'status'=>'pending',
+        'status'=>'unassign',
         'filter'=>'anj.retouch_complete_date is null and anj.upload_image <> "Yes" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>'null'
     ),
     array(
         'ac_role'=>'approver',
-        'status'=>'pending',
-        'filter'=>'anj.approved_date is null and anj.approved_editing_status ="correct"
+        'status'=>'unassign',
+        'filter'=>'anj.approved_date is null and anj.approved_editing_status ="correct" and anj.approved_assign_name is null
                    and anj.status = "on-productions"
                    and (
                     (anj.transfer_type = "Data only" and anj.content_complete_date is not null ) or
@@ -287,8 +287,22 @@ $configurable_map = array (
                     (anj.transfer_type <> "Data only" and anj.content_complete_date is not null and
                     anj.upload_image_date is not null)
                    )',
-        'key_stage'=>'anj.approved_by',
+        'key_stage'=>'anj.approved_assign_name',
         'key_name'=>'null'
+    ),
+    array(
+        'ac_role'=>'approver',
+        'status'=>'assigned',
+        'filter'=>'anj.approved_date is null and anj.approved_editing_status ="correct" and anj.approved_assign_name is not null
+                   and anj.status = "on-productions"
+                   and (
+                    (anj.transfer_type = "Data only" and anj.content_complete_date is not null ) or
+                    (anj.transfer_type = "Photo only" and anj.upload_image_date is not null ) or
+                    (anj.transfer_type <> "Data only" and anj.content_complete_date is not null and
+                    anj.upload_image_date is not null)
+                   )',
+        'key_stage'=>'anj.approved_assign_name',
+        'key_name'=>$ac_username
     ),
     array(
         'ac_role'=>'writer',
