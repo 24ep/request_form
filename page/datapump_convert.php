@@ -99,14 +99,15 @@ class="shadow-sm span-ifram">https://cdse-commercecontent.com/base/page_convert_
                              date_default_timezone_set("Asia/Bangkok");
                              $con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
                              mysqli_query($con, "SET NAMES 'utf8' ");
-                             $query = "SELECT file.ticket_id , job_cms.brand as brand, job_cms.sku ,file.id, file.file_name, file.file_path
+                             $query = "SELECT job_cms.datapump,file.ticket_id , job_cms.brand as brand, job_cms.sku ,file.id, file.file_name, file.file_path
                              FROM all_in_one_project.attachment as file
                              left join all_in_one_project.add_new_job as job_cms
                              on job_cms.id  = file.ticket_id
-                             where lower(job_cms.datapump)  in ('unsuccessful','wait pump')
+                             WHERE lower(job_cms.datapump)  in ('unsuccessful','wait pump')
                              and job_cms.approved_date is null
                              and job_cms.status<>'cancel'
-                             and file.file_group in ('Original') ORDER BY job_cms.job_number DESC" or die("Error:" . mysqli_error($con));
+                             and file.file_group in ('Original')  
+                             ORDER BY job_cms.job_number DESC" or die("Error:" . mysqli_error($con));
                              $result = mysqli_query($con, $query);
                              while($row = mysqli_fetch_array($result)) {
                                 $file_path = str_replace('../../','../',$row['file_path']);
