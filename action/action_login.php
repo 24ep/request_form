@@ -23,6 +23,8 @@ if((mysqli_fetch_array($result) === null)){
     $query = "SELECT * FROM all_in_one_project.account WHERE username = '".$username."' and password = '".$password_encode."'"or die("Error:" . mysqli_error($con));
     $result =  mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
+
+        $_SESSION["username"]=$row["username"];
         $_SESSION["nickname"]=$row["nickname"];
         $_SESSION["firstname"]=$row["firstname"];
         $_SESSION["lastname"]=$row["lastname"];
@@ -47,7 +49,7 @@ if((mysqli_fetch_array($result) === null)){
     }else{
         $_SESSION["user_cr_filter"] = $username;
     }
-    $_SESSION["username"] = $username;
+    // $_SESSION["username"] = $username;
     $_SESSION["request_by_filter"] = $username;
     $_SESSION["request_status"] = "pending";
     $request_by = $_SESSION["username"];
