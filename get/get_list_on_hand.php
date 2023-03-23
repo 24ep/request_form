@@ -271,14 +271,14 @@ $configurable_map = array (
     ),
     array(
         'ac_role'=>'image_uploader',
-        'status'=>'unassign',
+        'status'=>'non-assign',
         'filter'=>'anj.retouch_complete_date is null and anj.upload_image <> "Yes" and lower(anj.transfer_type) like "%photo%"',
         'key_stage'=>'anj.retouch_assign_name',
         'key_name'=>'null'
     ),
     array(
         'ac_role'=>'approver',
-        'status'=>'unassign',
+        'status'=>'non-assign',
         'filter'=>'anj.approved_date is null and anj.approved_editing_status ="correct" and anj.approved_assign_name is null
                    and anj.status = "on-productions"
                    and (
