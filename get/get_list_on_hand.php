@@ -282,10 +282,9 @@ $configurable_map = array (
         'filter'=>'anj.approved_date is null and anj.approved_editing_status ="correct" and anj.approved_assign_name is null
                    and anj.status = "on-productions"
                    and (
-                    (anj.transfer_type = "Data only" and anj.content_complete_date is not null ) or
-                    (anj.transfer_type = "Photo only" and anj.upload_image_date is not null ) or
-                    (anj.transfer_type <> "Data only" and anj.content_complete_date is not null and
-                    anj.upload_image_date is not null)
+                    (anj.transfer_type like "%data and photo%" and ( anj.upload_image_date is not null and anj.content_complete_date is not null ) ) or
+                    (lower(anj.transfer_type) like "%data only%" and anj.content_complete_date is not null and anj.approved_by is null ) or
+                    (lower(anj.transfer_type) like "%photo only%" and anj.upload_image_date is not null and anj.approved_by is null)
                    )',
         'key_stage'=>'anj.approved_assign_name',
         'key_name'=>'null'
