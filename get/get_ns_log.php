@@ -9,7 +9,7 @@ if($_POST['action_data']=="24ep"){;
   $query = "SELECT * FROM u749625779_cdscontent.log_cms where action_at_table in ('job_cms','add_new_job') and job_number ='".$job_number."' order by id DESC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
-    //  $tr .= 
+    //  $tr .=
     //  '<tr>
     //    <td>'.$row["action_date"].'</td>
     //    <td>'.$row["value_change"].'</td>
@@ -22,13 +22,13 @@ if($_POST['action_data']=="24ep"){;
     $tr .= " <small class='ms-1'>".$row["action_date"]."</small>"."<br>";
     $tr .= "<span class='ms-2'>".$row["value_change"]."</span><br>";
     $tr .= "</li>";
-    
+
   }
 }elseif($_POST['action_data']=="csg"){
   $query = "SELECT * FROM all_in_one_project.log where action_table in ('job_cms','add_new_job') and action_data_id =".$id." order by id DESC" or die("Error:" . mysqli_error($con));
   $result = mysqli_query($con, $query);
   while($row = mysqli_fetch_array($result)) {
-    //  $tr .= 
+    //  $tr .=
     //  '<tr>
     //    <td>'.$row["action_date"].'</td>
     //    <td>'.$row["action"].'</td>
@@ -40,7 +40,7 @@ if($_POST['action_data']=="24ep"){;
     $action = str_replace("update ","<span class='badge rounded-pill bg-dark m-1' >Update</span>",$action);
     $action = str_replace("New comment","<span class='badge rounded-pill bg-secondary m-1' >Comment</span>",$action);
     $action = str_replace("add_new_job","<span class='badge rounded-pill bg-primary m-1' >NS</span>",$action);
-    $tr .= "<li class='list-group-item list-group-item border-bottom p-2' >";
+    $tr .= "<li class='list-group-item list-group-item border-bottom ps-4 pe-4 p-2' >";
     $tr .=  $image_profile;
     $tr .= "<strong class='ms-2'>".$row["action_by"]."</strong>";
     $tr .= " <small class='ms-1'>".$row["action_date"]."</small>"."<br>";
@@ -53,7 +53,7 @@ if($_POST['action_data']=="24ep"){;
 ?>
 
 
-    
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 

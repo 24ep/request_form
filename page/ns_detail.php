@@ -499,7 +499,7 @@ echo '
             </div>
         </div>
         <div class="col-4"
-            style="height: auto;background-color: white;border-left: solid 1px #fde5e5;margin-top: 2.5px;padding: 10px;">
+            style="height: auto;background-color: white;border-left: solid 1px #fde5e5;margin-top: 2.5px;padding: 0px;">
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-note-tab" data-bs-toggle="tab" data-bs-target="#nav-note"
@@ -545,7 +545,7 @@ echo '
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-logs" role="tabpanel" aria-labelledby="nav-logs-tab" tabindex="0">
-                    <div class="container" style="padding: 20px!important;">
+                    <div class="container p-0 m-0" >
                         <div id="get_ns_log">
                         </div>
                     </div>
