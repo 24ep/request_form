@@ -60,7 +60,7 @@ if($_POST['action_data']=="24ep"){;
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <div >
     <ion-icon name="time-outline"></ion-icon>
-    <h6 class="border-bottom p-3">Logs of <?php echo "NS-".$id;?></h6>
+    <h6 class="border-bottom p-3"><strong>Logs of <?php echo "NS-".$id;?></strong></h6>
     <!-- <table class="table table-bordered"> -->
       <!-- <thead>
         <tr>
