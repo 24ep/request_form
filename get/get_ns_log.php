@@ -40,7 +40,7 @@ if($_POST['action_data']=="24ep"){;
     $action = str_replace("update ","<span class='badge rounded-pill bg-dark m-1' >Update</span>",$action);
     $action = str_replace("New comment","<span class='badge rounded-pill bg-secondary m-1' >Comment</span>",$action);
     $action = str_replace("add_new_job","<span class='badge rounded-pill bg-primary m-1' >NS</span>",$action);
-    $tr .= "<li class='list-group-item list-group-item border-bottom ps-4 pe-4 p-2' >";
+    $tr .= "<li class='list-group-item list-group-item border-bottom ps-4 pe-4 p-3' >";
     $tr .=  $image_profile;
     $tr .= "<strong class='ms-2'>".$row["action_by"]."</strong>";
     $tr .= " <small class='ms-1'>".$row["action_date"]."</small>"."<br>";
@@ -58,8 +58,9 @@ if($_POST['action_data']=="24ep"){;
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <div class="container-md" style="padding:10px">
-    <h6>log <?php echo "NS-".$id;?></h6>
+    <div >
+    <ion-icon name="time-outline"></ion-icon>
+    <h6 class="border-bottom p-3">Logs of <?php echo "NS-".$id;?></h6>
     <!-- <table class="table table-bordered"> -->
       <!-- <thead>
         <tr>
