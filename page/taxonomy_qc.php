@@ -53,6 +53,7 @@ function updateSheetData(sku, status) {
             discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
             clientId: '514529310578-jkv0lqnhr27jkaec3e0qu292d2ip295g.apps.googleusercontent.com',
             scope: 'https://www.googleapis.com/auth/spreadsheets'
+            plugin_name: 'streamy'
         }).then(function() {
             // Call the Sheets API to update a value in a cell
             var spreadsheetId = '15yMjoMYxKVomcIs9beZvBG6BcwVO4kdzwEd';
