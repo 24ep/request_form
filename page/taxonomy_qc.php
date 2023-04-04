@@ -71,35 +71,36 @@
         request.then(function(response) {
             var data = response.result.values;
             if (data && data.length > 0) {
-            // Get the column indexes for the 'status' and 'check_date' columns
-            var headerRow = data[0];
-            var statusIndex = headerRow.indexOf('status');
-            var checkDateIndex = headerRow.indexOf('check_date');
-            for (var i = 0; i < data.length; i++) {
-                var row = data[i];
-                if (row[0] === sku) {
-                row[statusIndex] = status; // Set the status value in the 'status' column
-                row[checkDateIndex] = checkDate; // Set the check date in the 'check_date' column
-                values.push(row);
-                break; // Exit the loop once the SKU is found
+                // Get the column indexes for the 'status' and 'check_date' columns
+                var headerRow = data[0];
+                var statusIndex = headerRow.indexOf('status');
+                var checkDateIndex = headerRow.indexOf('check_date');
+                for (var i = 0; i < data.length; i++) {
+                    var row = data[i];
+                    if (row[0] === sku) {
+                        console.log(row[statusIndex])
+                        row[statusIndex] = status; // Set the status value in the 'status' column
+                        row[checkDateIndex] = checkDate; // Set the check date in the 'check_date' column
+                        values.push(row);
+                        break; // Exit the loop once the SKU is found
+                    }
                 }
-            }
-            var requestBody = {
-                range: range,
-                values: values,
-                majorDimension: 'ROWS'
-            };
-            var updateRequest = gapi.client.sheets.spreadsheets.values.update({
-                spreadsheetId: spreadsheetId,
-                range: range,
-                valueInputOption: 'USER_ENTERED',
-                requestBody: requestBody
-            });
-            updateRequest.then(function(response) {
-                console.log(response.result);
-            }, function(reason) {
-                console.error('Error: ' + reason.result.error.message);
-            });
+                var requestBody = {
+                    range: range,
+                    values: values,
+                    majorDimension: 'ROWS'
+                };
+                var updateRequest = gapi.client.sheets.spreadsheets.values.update({
+                    spreadsheetId: spreadsheetId,
+                    range: range,
+                    valueInputOption: 'USER_ENTERED',
+                    requestBody: requestBody
+                });
+                updateRequest.then(function(response) {
+                    console.log(response.result);
+                }, function(reason) {
+                    console.error('Error: ' + reason.result.error.message);
+                });
             } else {
             console.log('No data found.');
             }
