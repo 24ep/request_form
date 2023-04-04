@@ -48,7 +48,7 @@
         // Initialize the API client library
         gapi.client.init({
             discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-            clientId: 'YOUR_CLIENT_ID',
+            clientId: '514529310578-jkv0lqnhr27jkaec3e0qu292d2ip295g.apps.googleusercontent.com',
             scope: 'https://www.googleapis.com/auth/spreadsheets',
         }).then(function() {
             // Call the Sheets API to update a value in a cell
