@@ -49,7 +49,7 @@ function updateSheetData(sku, status) {
         function start() {
             // Initialize the API client library
             gapi.client.init({
-            apiKey: 'be3634d69d0b220bdd04f949e22be12380493327',
+            apiKey: 'AIzaSyB0sTxGv1N6vNFfUeij9U6KycrfezZi92U',
             discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
             clientId: '111769852072012883129',
             scope: 'https://www.googleapis.com/auth/spreadsheets'
