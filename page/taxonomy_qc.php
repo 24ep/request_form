@@ -42,10 +42,10 @@
 </html>
 
 <script>
-    function updateSheetData(sku, status) {
+
         // Load the Google Sheets API client library
         gapi.load('client', start);
-
+        function start() {
             // Initialize the API client library
             gapi.client.init({
             apiKey: 'AIzaSyB0sTxGv1N6vNFfUeij9U6KycrfezZi92U',
@@ -108,6 +108,8 @@
 
         // Call the updateSheetData() function with the SKU, status, and checkDate values as arguments
 
-
+            function updateSheetData(sku, status, checkDate) {
+                start(sku, status); // Call the start() function to initialize the API client library
+            }
 
 </script>
