@@ -339,6 +339,12 @@ if (!$_SESSION["login_csg"]){
                             <ion-icon name="globe"></ion-icon><span class="main-menu-nav">Quick-link</span>
                         </a>
                     </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_taxonomy_qc" data-bs-toggle="pill"
+                            type="button" role="tab" aria-selected="false" onclick="get_page('taxonomy_qc');">
+                            <ion-icon name="grid"></ion-icon><span class="main-menu-nav">Taxonomy QC</span>
+                        </a>
+                    </li>
                     <?php } ?>
                     <hr class="hr_menu_bra_in">
                     <small class="header_menu_bra">Others</small>

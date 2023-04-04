@@ -53,8 +53,6 @@ if($_POST['action_data']=="24ep"){;
 ?>
 
 
-
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
