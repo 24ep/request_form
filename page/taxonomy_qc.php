@@ -93,7 +93,7 @@
                 spreadsheetId: spreadsheetId,
                 range: range,
                 valueInputOption: 'USER_ENTERED',
-                requestBody: requestBody
+                resource: requestBody
             });
             updateRequest.then(function(response) {
                 console.log(response.result);
