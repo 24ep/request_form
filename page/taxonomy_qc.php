@@ -43,7 +43,7 @@
 
 
 
-<!-- <script>
+<script>
 
     // Load the Google Sheets API client library
     gapi.load('client', start);
@@ -117,72 +117,7 @@
 
 
 
-</script> -->
-
-<script>
-    function updateSheetData(sku, status){
-    // Load the Google Sheets API client library
-    gapi.load('client', function() {
-
-        // Initialize the API client library
-        gapi.client.init({
-            apiKey: 'AIzaSyB0sTxGv1N6vNFfUeij9U6KycrfezZi92U',
-            discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-            clientId: '514529310578-jkv0lqnhr27jkaec3e0qu292d2ip295g.apps.googleusercontent.com',
-            scope: 'https://www.googleapis.com/auth/spreadsheets'
-        }).then(function() {
-            // Call the Sheets API to update a value in a cell
-            var spreadsheetId = '15yMjoMYxKVomcIs9beZvBG6BcwVO4kdzwEd-Kt0ICws';
-            var range = 'original_data!A:F';
-            var checkDate = new Date().toISOString(); // Replace with the new check date
-            var values = [];
-            var request = gapi.client.sheets.spreadsheets.values.get({
-                spreadsheetId: spreadsheetId,
-                range: range
-            });
-            request.then(function(response) {
-                var data = response.result.values;
-                if (data && data.length > 0) {
-                    // Get the column indexes for the 'status' and 'check_date' columns
-                    var headerRow = data[0];
-                    var statusIndex = headerRow.indexOf('status');
-                    var checkDateIndex = headerRow.indexOf('check_date');
-                    for (var i = 0; i < data.length; i++) {
-                        var row = data[i];
-                        if (row[0] === sku) {
-                            row[statusIndex] = status; // Set the status value in the 'status' column
-                            row[checkDateIndex] = checkDate; // Set the check date in the 'check_date' column
-                            values.push(row);
-                            break; // Exit the loop once the SKU is found
-                        }
-                    }
-                    var requestBody = {
-                        range: range,
-                        values: values,
-                        majorDimension: 'ROWS'
-                    };
-                    var updateRequest = gapi.client.sheets.spreadsheets.values.update({
-                        spreadsheetId: spreadsheetId,
-                        range: range,
-                        valueInputOption: 'USER_ENTERED',
-                        requestBody: requestBody
-                    });
-                    updateRequest.then(function(response) {
-                        console.log(response.result);
-                    }, function(reason) {
-                        console.error('Error: ' + reason.result.error.message);
-                    });
-                } else {
-                    console.log('No data found.');
-                }
-            }, function(reason) {
-                console.error('Error: ' + reason.result.error.message);
-            });
-        });
-    });
-}
-
-// Call the updateSheetData() function with the SKU, status, and checkDate values as arguments
+</script>
 
 
-    </script>
+
