@@ -150,7 +150,7 @@
         spreadsheetId: spreadsheetId,
         range: range,
         valueInputOption: 'USER_ENTERED',
-        requestBody: requestBody,
+        resource: requestBody,
       });
 
       request.then(function(response) {
