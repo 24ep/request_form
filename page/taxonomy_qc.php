@@ -120,7 +120,7 @@
 </script> -->
 
 <script>
-    function updateSheetData(sku, status, checkDate){
+    function updateSheetData(sku, status){
     // Load the Google Sheets API client library
     gapi.load('client', function() {
 
@@ -183,6 +183,5 @@
 
 // Call the updateSheetData() function with the SKU, status, and checkDate values as arguments
 
-updateSheetData('YOUR_SKU', 'YOUR_STATUS', 'YOUR_CHECK_DATE');
 
     </script>
