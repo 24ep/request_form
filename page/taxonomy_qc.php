@@ -47,7 +47,7 @@
 
     // Load the Google Sheets API client library
     gapi.load('client', start);
-       function start() {
+       function start(sku, status) {
 
             // Initialize the API client library
             gapi.client.init({
@@ -76,12 +76,12 @@
             var statusIndex = headerRow.indexOf('status');
             var checkDateIndex = headerRow.indexOf('check_date');
             for (var i = 0; i < data.length; i++) {
-                var row = data[i];
-                if (row[0] === sku) {
-                row[statusIndex] = status; // Set the status value in the 'status' column
-                row[checkDateIndex] = checkDate; // Set the check date in the 'check_date' column
-                values.push(row);
-                break; // Exit the loop once the SKU is found
+                    var row = data[i];
+                    if (row[0] === sku) {
+                    row[statusIndex] = status; // Set the status value in the 'status' column
+                    row[checkDateIndex] = checkDate; // Set the check date in the 'check_date' column
+                    values.push(row);
+                    break; // Exit the loop once the SKU is found
                 }
             }
             var requestBody = {
@@ -112,7 +112,7 @@
         // Call the updateSheetData() function with the SKU, status, and checkDate values as arguments
 
         function updateSheetData(sku, status){
-            start();
+            start(sku, status);
         }
 
 
