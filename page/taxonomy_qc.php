@@ -62,7 +62,7 @@
             var sheetName = 'original_data';
 
             var checkDate = new Date().toISOString(); // Replace with the new check date
-            var range_get = sheetName + '!A:A';
+            var range = sheetName + '!A' + (i + 1) + ':F' + (i + 1);
             var values = [];
             var request = gapi.client.sheets.spreadsheets.values.get({
                 spreadsheetId: spreadsheetId,
