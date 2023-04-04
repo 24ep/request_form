@@ -133,7 +133,7 @@
         }).then(function() {
             // Call the Sheets API to update a value in a cell
             var spreadsheetId = '15yMjoMYxKVomcIs9beZvBG6BcwVO4kdzwEd-Kt0ICws';
-            var range = 'Sheet1!A:F';
+            var range = 'original_data!A:F';
             var values = [];
             var request = gapi.client.sheets.spreadsheets.values.get({
                 spreadsheetId: spreadsheetId,
