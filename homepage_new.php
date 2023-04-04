@@ -149,6 +149,9 @@ if (!$_SESSION["login_csg"]){
     <!-- announcement block -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- subsc -->
+<!-- googlesheet_API -->
+<script src="https://apis.google.com/js/api.js"></script>
+
     <!-- <script async custom-element="amp-web-push" src="https://cdn.ampproject.org/v0/amp-web-push-0.1.js"></script>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <meta name="viewport" content="width=device-width">
