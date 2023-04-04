@@ -79,6 +79,7 @@
                     var row = data[i];
                     if (row[0] === sku) {
                         console.log(row[0])
+                        console.log(status)
                         row[statusIndex] = status; // Set the status value in the 'status' column
                         row[checkDateIndex] = checkDate; // Set the check date in the 'check_date' column
                         values.push(row);
