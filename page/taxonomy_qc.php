@@ -66,7 +66,7 @@
             var values = [];
             var request = gapi.client.sheets.spreadsheets.values.get({
                 spreadsheetId: spreadsheetId,
-                range: range_get,
+                range: range,
                 majorDimension: 'ROWS',
             });
         request.then(function(response) {
