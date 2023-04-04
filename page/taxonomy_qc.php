@@ -40,7 +40,73 @@
 	</form>
 </body>
 </html>
+<script>
+    // Load the Google Sheets API client library
+    gapi.load('client', init);
 
+    function init() {
+        // Initialize the API client library
+        gapi.client.init({
+            discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+            clientId: 'YOUR_CLIENT_ID',
+            scope: 'https://www.googleapis.com/auth/spreadsheets',
+        }).then(function() {
+            // Call the Sheets API to update a value in a cell
+            var spreadsheetId = 'YOUR_SPREADSHEET_ID';
+            var range = 'YOUR_RANGE';
+            var checkDate = new Date().toISOString();
+            var values = [];
+            var request = gapi.client.sheets.spreadsheets.values.get({
+                spreadsheetId: spreadsheetId,
+                range: range,
+            });
+
+            request.then(function(response) {
+                var data = response.result.values;
+                if (data && data.length > 0) {
+                    // Get the column indexes for the 'status' and 'check_date' columns
+                    var headerRow = data[0];
+                    var statusIndex = headerRow.indexOf('status');
+                    var checkDateIndex = headerRow.indexOf('check_date');
+                    for (var i = 0; i < data.length; i++) {
+                        var row = data[i];
+                        if (row[0] === sku) {
+                            row[statusIndex] = status;
+                            row[checkDateIndex] = checkDate;
+                            values.push(row);
+                            break;
+                        }
+                    }
+                    var requestBody = {
+                        range: range,
+                        values: values,
+                        majorDimension: 'ROWS',
+                    };
+                    var updateRequest = gapi.client.sheets.spreadsheets.values.update({
+                        spreadsheetId: spreadsheetId,
+                        range: range,
+                        valueInputOption: 'USER_ENTERED',
+                        requestBody: requestBody,
+                    });
+                    updateRequest.then(function(response) {
+                        console.log(response.result);
+                    }, function(reason) {
+                        console.error('Error: ' + reason.result.error.message);
+                    });
+                } else {
+                    console.log('No data found.');
+                }
+            }, function(reason) {
+                console.error('Error: ' + reason.result.error.message);
+            });
+        });
+    }
+
+    function updateSheetData(sku, status) {
+        init();
+    }
+</script>
+<!--
 <script>
 
         // Load the Google Sheets API client library
@@ -115,4 +181,4 @@
 
 
 
-</script>
+</script> -->
