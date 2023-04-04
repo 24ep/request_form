@@ -45,13 +45,13 @@
 
         // Load the Google Sheets API client library
         gapi.load('client', start);
-        window.validate =  function updateSheetData(sku, status) {
+       function updateSheetData(sku, status) {
             // Initialize the API client library
             gapi.client.init({
             apiKey: 'AIzaSyB0sTxGv1N6vNFfUeij9U6KycrfezZi92U',
             discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
             clientId: '514529310578-jkv0lqnhr27jkaec3e0qu292d2ip295g.apps.googleusercontent.com',
-            scope: 'https://www.googleapis.com/auth/spreadsheets'
+            scope: 'https://www.googleapis.com/auth/spreadsheets',
             plugin_name: 'streamy'
         }).then(function() {
             // Call the Sheets API to update a value in a cell
