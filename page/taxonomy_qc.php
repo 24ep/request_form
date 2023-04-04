@@ -91,9 +91,11 @@
             };
             var updateRequest = gapi.client.sheets.spreadsheets.values.update({
                 spreadsheetId: spreadsheetId,
-                range: range,
+                range: sheetName + '!A' + (i + 1) + ':F' + (i + 1),
                 valueInputOption: 'USER_ENTERED',
-                resource: requestBody
+                resource: {
+                  values: [row]
+                }
             });
             updateRequest.then(function(response) {
                 console.log(response.result);
