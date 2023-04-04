@@ -44,8 +44,9 @@
 <script>
 
         // Load the Google Sheets API client library
-        gapi.load('client', start);
+
        function updateSheetData(sku, status) {
+        gapi.load('client', start);
             // Initialize the API client library
             gapi.client.init({
             apiKey: 'AIzaSyB0sTxGv1N6vNFfUeij9U6KycrfezZi92U',
