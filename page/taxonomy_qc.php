@@ -47,7 +47,7 @@
 
     // Load the Google Sheets API client library
     gapi.load('client', start);
-       function start() {
+       function start(sku, status) {
 
             // Initialize the API client library
             gapi.client.init({
@@ -114,7 +114,7 @@
         // Call the updateSheetData() function with the SKU, status, and checkDate values as arguments
 
         function updateSheetData(sku, status){
-            start();
+            start(sku, status);
         }
 
 
