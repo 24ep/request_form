@@ -68,8 +68,10 @@
                 range: range,
                 majorDimension: 'ROWS',
             });
+
         request.then(function(response) {
             var data = response.result.values;
+            console.log(data)
             if (data && data.length > 0) {
             // Get the column indexes for the 'status' and 'check_date' columns
             var headerRow = data[0];
