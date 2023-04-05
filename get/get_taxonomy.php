@@ -11,7 +11,7 @@ $query = "
 SELECT tr.* ,image_url.image_url tr FROM taxonomy_raw_demo as tr
 left join taxonomy_image_url as image_url
 where
-(tr.in_80_sale_contribute = 'Y' or in_top_200 = 'Y') and
+(tr.in_80_sale_contribute = 'Y' or in_top_200 = 'Y' or  in_top_200 = 'Top 200') and
 (check_by is null or check_by =='".$_SESSION['username']."')
 order by sale limit 1" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
@@ -75,7 +75,7 @@ $query = mysqli_query($con,$sql);
     <div class="row">
         <div class="col-2">Image</div>
         <div class="col-10">
-        <img src="<?php echo $image_url ;?>" class="rounded float-start" >
+        <img src="<?php echo $image_url;?>" class="rounded float-start" >
         </div>
     </div>
     <div class="row">
