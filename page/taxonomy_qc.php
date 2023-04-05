@@ -81,6 +81,7 @@
                     row[statusIndex] = status; // Set the status value in the 'status' column
                     row[checkDateIndex] = checkDate; // Set the check date in the 'check_date' column
                     values.push(row);
+                    console.log(row)
                     break; // Exit the loop once the SKU is found
                 }
             }
