@@ -6,12 +6,12 @@
 <body class="container-md p-2">
     <div id="get_taxonomy">
     </div>
-
 		<input type="button" value="Submit" onclick="updateSheetData('CDS10000946', 'PASS_TEST');">
 </body>
 </html>
 
 <script>
+
 function query_data(){
 
     var stage = document.getElementById(stage).value;
@@ -139,6 +139,8 @@ var value_washing_machine_type = document.getElementById('washing_machine_type')
                 Notiflix.Loading.remove();
             });
   }
+
+  query_data();
 </script>
 
 
