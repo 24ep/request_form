@@ -63,7 +63,7 @@ $query = mysqli_query($con,$sql);
             <div class="col-10"><?php echo $description;?></div>
         </div>
         <div class="row">
-            <div class="col-2">Image</div>
+            <div class="col-2"><strong>Image</strong></div>
             <div class="col-10">
                 <img src="<?php echo $image_url;?>" class="rounded float-start">
             </div>
