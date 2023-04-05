@@ -14,7 +14,7 @@
 
 function query_data(){
 
-    var stage = document.getElementById(stage).value;
+    // var stage = document.getElementById(stage).value;
     // stage ='qc'
     // stage ='enrichment'
     $.post("base/get/get_taxonomy.php", {
