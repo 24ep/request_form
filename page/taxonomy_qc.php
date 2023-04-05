@@ -113,7 +113,7 @@
                 range: sheetName + '!J' + (i +1),
                 valueInputOption: 'USER_ENTERED',
                 resource: {
-                  values: <?php date('d/m/Y');?>
+                  values: <?php echo date('d/m/Y');?>
                 }
             });
             updateRequest.then(function(response) {
