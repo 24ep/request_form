@@ -6,7 +6,7 @@
 <body class="container-md p-2">
     <div id="get_taxonomy">
     </div>
-		<input type="button" value="Submit" onclick="updateSheetData('CDS10000946', 'PASS_TEST');">
+
 </body>
 </html>
 

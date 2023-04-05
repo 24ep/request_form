@@ -63,7 +63,9 @@ $query = mysqli_query($con,$sql);
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1 fixed-top bg-white "><?php echo $sku;?></span>
   </div>
-  <div class="container-fluid">
+
+</nav>
+<div class="container-fluid">
     <div class="row">
         <div class="col-2">Name (english)</div>
         <div class="col-10"><?php echo $name_en;?></div>
@@ -86,7 +88,7 @@ $query = mysqli_query($con,$sql);
         <div>
     <div>
   </div>
-</nav>
+<input type="button" value="Submit" onclick="updateSheetData(<?php echo $sku;?>, 'PASS_TEST');">
 <!-- product information -->
 
 
