@@ -51,7 +51,7 @@ $query = mysqli_query($con,$sql);
     <!-- nav bra -->
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-            <span class="navbar-brand mb-0 h4 bg-white "><?php echo $sku;?></span>
+            <span class="navbar-brand mb-0 ms-0 h4 "><?php echo $sku;?></span>
         </div>
     </nav>
     <div class="container-fluid border-bottom pb-3">
@@ -64,7 +64,7 @@ $query = mysqli_query($con,$sql);
             <div class="col-9"><?php echo $description;?></div>
         </div>
         <div class="row">
-            <div class="col-2"><strong>Image</strong></div>
+            <div class="col-3"><strong>Image</strong></div>
             <div class="col-9">
                 <img src="<?php echo $image_url;?>" class="rounded float-start" width="120px" height="120px">
             </div>
