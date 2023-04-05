@@ -3,9 +3,7 @@ session_start();
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
-
 $new_attribute="";
-
 //query
 $query = "
 SELECT tr.* ,image_url.image_url tr FROM taxonomy_raw_demo as tr
@@ -16,12 +14,10 @@ where
 order by tr.sale DESC limit 1" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
-
     //product information session
     $sku = $row['sku'];
     $name_en = $row['name_en'];
     $image_url = $row['image_url'];
-
     $query_att = "SELECT DISTINCT  attribute_code FROM taxonomy.attribute_option;";
     $result_att = mysqli_query($con, $query_att);
     while($row_att = mysqli_fetch_array($result_att)) {
@@ -37,59 +33,49 @@ while($row = mysqli_fetch_array($result)) {
                 }else{
                     $new_attribute .= "<option value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_option']."</option>";
                 }
-
             }
             $new_attribute .= "</select>";
         }
     }
-
 }
-
 echo $new_attribute;
-
 //stamp name
 $query = "update all_in_one_project.taxonomy_demo set
 check_by = '".$_SESSION['username']."' ,
 where sku = ".$sku
 or die("Error:" . mysqli_error($con));
 $query = mysqli_query($con,$sql);
-
 ?>
-
 <div class="container-md">
-
-<!-- nav bra -->
-<nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1 fixed-top bg-white "><?php echo $sku;?></span>
-  </div>
-
-</nav>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-2">Name (english)</div>
-        <div class="col-10"><?php echo $name_en;?></div>
-    </div>
-    <div class="row">
-        <div class="col-2">Description</div>
-        <div class="col-10"><?php echo $description;?></div>
-    </div>
-    <div class="row">
-        <div class="col-2">Image</div>
-        <div class="col-10">
-        <img src="<?php echo $image_url;?>" class="rounded float-start" >
+    <!-- nav bra -->
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1 fixed-top bg-white "><?php echo $sku;?></span>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">Name (english)</div>
+            <div class="col-10"><?php echo $name_en;?></div>
+        </div>
+        <div class="row">
+            <div class="col-2">Description</div>
+            <div class="col-10"><?php echo $description;?></div>
+        </div>
+        <div class="row">
+            <div class="col-2">Image</div>
+            <div class="col-10">
+                <img src="<?php echo $image_url;?>" class="rounded float-start">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+            </div>
+            <div class="col-6">
+                <?php echo $new_attribute ;?>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-6">
-        <div>
-        <div class="col-6">
-            <?php echo $new_attribute ;?>
-        <div>
-    <div>
-  </div>
-<input type="button" value="Submit" onclick="updateSheetData(<?php echo $sku;?>, 'PASS_TEST');">
-<!-- product information -->
-
-
+    <input type="button" value="Submit" onclick="updateSheetData(<?php echo $sku;?>, 'PASS_TEST');">
+    <!-- product information -->
 </div>
