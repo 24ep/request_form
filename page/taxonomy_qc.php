@@ -104,7 +104,7 @@
                 range: sheetName + '!H' + (i +1),
                 valueInputOption: 'USER_ENTERED',
                 resource: {
-                  values: <?php echo $_SESSION['username'];?>
+                  values: <?php session_start();echo $_SESSION['username'];?>
                 }
             });
             //update check_date
