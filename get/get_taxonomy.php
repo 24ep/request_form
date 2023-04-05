@@ -6,7 +6,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 $new_attribute="";
 //query
 $query = "
-SELECT tr.* ,image_url.image_url tr FROM taxonomy.taxonomy_demo as tr
+SELECT tr.* ,image_url.image_url as image_url FROM taxonomy.taxonomy_demo as tr
 left join taxonomy.taxonomy_image_url as image_url
 on image_url.sku = tr.sku
 where(
