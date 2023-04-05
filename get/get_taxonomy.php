@@ -29,7 +29,7 @@ while($row = mysqli_fetch_array($result)) {
             $new_attribute .= "<label>".$row_att['attribute_code']."</label>";
             $new_attribute .= "
             <select class='form-select form-select-sm id='".$row_att['attribute_code']."' >";
-            $query_att_option = "SELECT DISTINCT  attribute_option FROM taxonomy.attribute_option where attribute_code='".$row_att['attribute_code']."';"
+            $query_att_option = "SELECT DISTINCT  attribute_option FROM taxonomy.attribute_option where attribute_code='".$row_att['attribute_code']."';";
             $result_att_option = mysqli_query($con, $query_att);
             while($row_att_option = mysqli_fetch_array($result_att_option)) {
                 if($row[$row_att['attribute_code']]==$row_att_option['attribute_option']){
