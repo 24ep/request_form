@@ -51,7 +51,7 @@ $query = mysqli_query($con,$sql);
     <!-- nav bra -->
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1 fixed-top bg-white "><?php echo $sku;?></span>
+            <span class="navbar-brand mb-0 h4 bg-white "><?php echo $sku;?></span>
         </div>
     </nav>
     <div class="container-fluid">
