@@ -6,7 +6,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 $new_attribute="";
 //query
 $query = "
-SELECT tr.* ,image_url.image_url tr FROM taxonomy_raw_demo as tr
+SELECT tr.* ,image_url.image_url tr FROM taxonomy_demo as tr
 left join taxonomy_image_url as image_url
 where
 (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y' or  tr.in_top_200 = 'Top 200') and
@@ -55,11 +55,11 @@ $query = mysqli_query($con,$sql);
     </nav>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2">Name (english)</div>
+            <div class="col-2"><strong>Name (english)</strong></div>
             <div class="col-10"><?php echo $name_en;?></div>
         </div>
         <div class="row">
-            <div class="col-2">Description</div>
+            <div class="col-2"><strong>Description</strong></div>
             <div class="col-10"><?php echo $description;?></div>
         </div>
         <div class="row">
