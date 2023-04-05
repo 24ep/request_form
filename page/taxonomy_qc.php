@@ -110,10 +110,10 @@
             //update check_date
             var updateRequest = gapi.client.sheets.spreadsheets.values.update({
                 spreadsheetId: spreadsheetId,
-                range: sheetName + '!J' + (i +1),
+                range: sheetName + '!I' + (i +1),
                 valueInputOption: 'USER_ENTERED',
                 resource: {
-                  values: <?php echo date('d/m/Y');?>
+                  values: '<?php echo date('d/m/Y');?>'
                 }
             });
             updateRequest.then(function(response) {
