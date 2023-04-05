@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Product Attributes</title>
-</head>
+
 <body class="container-md p-2">
     <div id="get_taxonomy">
     </div>
 
 </body>
-</html>
+
 
 <script>
 
@@ -17,14 +13,14 @@ function query_data(){
     // var stage = document.getElementById(stage).value;
     // stage ='qc'
     // stage ='enrichment'
-    $.post("base/get/get_taxonomy.php", {
-                stage : stage
-            },
-            function(data) {
-                Notiflix.Loading.hourglass('Loading...');
-                $('#get_taxonomy').html(data);
-                Notiflix.Loading.remove();
-            });
+        $.post("base/get/get_taxonomy.php", {
+
+        },
+        function(data) {
+            Notiflix.Loading.hourglass('Loading...');
+            $('#get_taxonomy').html(data);
+            Notiflix.Loading.remove();
+        });
 
 
 }
