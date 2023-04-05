@@ -11,9 +11,9 @@ $query = "
 SELECT tr.* ,image_url.image_url tr FROM taxonomy_raw_demo as tr
 left join taxonomy_image_url as image_url
 where
-(tr.in_80_sale_contribute = 'Y' or in_top_200 = 'Y' or  in_top_200 = 'Top 200') and
-(check_by is null or check_by =='".$_SESSION['username']."')
-order by sale limit 1" or die("Error:" . mysqli_error($con));
+(tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y' or  tr.in_top_200 = 'Top 200') and
+(tr.check_by is null or tr.check_by =='".$_SESSION['username']."')
+order by tr.sale DESC limit 1" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
 
