@@ -77,11 +77,11 @@
             var checkDateIndex = headerRow.indexOf('check_date');
             for (var i = 0; i < data.length; i++) {
                     var row = data[i];
-                    if (row[0] === sku) {
-                        row[statusIndex] = status; // Set the status value in the 'status' column
-                        row[checkDateIndex] = checkDate; // Set the check date in the 'check_date' column
-                        values.push(row);
-                        break; // Exit the loop once the SKU is found
+                    if (row[0] == sku) {
+                    row[statusIndex] = status; // Set the status value in the 'status' column
+                    row[checkDateIndex] = checkDate; // Set the check date in the 'check_date' column
+                    values.push(row);
+                    break; // Exit the loop once the SKU is found
                 }
             }
             var requestBody = {
@@ -93,13 +93,12 @@
             var updateRequest = gapi.client.sheets.spreadsheets.values.update({
                 spreadsheetId: spreadsheetId,
                 range: sheetName + '!J' + (i+1 ),
-                valueInputOption: 'USER_ENTERED'
-
+                valueInputOption: 'USER_ENTERED',
+                resource: {
+                  values: [row]
+                }
             });
-            updateRequest.setValueInputOption('PASS_TEST2');
-            UpdateValuesResponse response = request.execute();
-
-            // //update check_by
+            //update check_by
             // var updateRequest = gapi.client.sheets.spreadsheets.values.update({
             //     spreadsheetId: spreadsheetId,
             //     range: sheetName + '!H' + (i+1 ),
@@ -109,7 +108,7 @@
             //         values:[row][1]
             //     }
             // });
-            //update check_date
+            // //update check_date
             // var currentDate = new Date();
             // var isoString = currentDate.toISOString();
             // var withoutMillis = isoString.substring(0, isoString.length - 5) + "Z";
