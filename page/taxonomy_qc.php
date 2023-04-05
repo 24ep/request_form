@@ -5,14 +5,9 @@
 
 </body>
 
-
 <script>
 
 function query_data(){
-
-    // var stage = document.getElementById(stage).value;
-    // stage ='qc'
-    // stage ='enrichment'
         $.post("base/get/get_taxonomy.php", {
 
         },
@@ -21,9 +16,8 @@ function query_data(){
             $('#get_taxonomy').html(data);
             Notiflix.Loading.remove();
         });
-
-
 }
+
 function ShowSmallOriginalValue(element_id){
     var no_elements = document.getElementById("no_"+element_id)
     var elements = document.getElementById(element_id)
