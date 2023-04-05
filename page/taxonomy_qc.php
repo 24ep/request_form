@@ -108,12 +108,13 @@
                 }
             });
             //update check_date
+            var currentDate = new Date();
             var updateRequest = gapi.client.sheets.spreadsheets.values.update({
                 spreadsheetId: spreadsheetId,
                 range: sheetName + '!I' + (i +1),
                 valueInputOption: 'USER_ENTERED',
                 resource: {
-                  values: [checkDate]
+                  values: currentDate.toISOString()
                 }
             });
             updateRequest.then(function(response) {
