@@ -78,10 +78,10 @@
             for (var i = 0; i < data.length; i++) {
                     var row = data[i];
                     if (row[0] === sku) {
-                    row[statusIndex] = status; // Set the status value in the 'status' column
-                    row[checkDateIndex] = checkDate; // Set the check date in the 'check_date' column
-                    values.push(row);
-                    break; // Exit the loop once the SKU is found
+                        row[statusIndex] = status; // Set the status value in the 'status' column
+                        row[checkDateIndex] = checkDate; // Set the check date in the 'check_date' column
+                        values.push(row);
+                        break; // Exit the loop once the SKU is found
                 }
             }
             var requestBody = {
@@ -94,8 +94,11 @@
                 spreadsheetId: spreadsheetId,
                 range: sheetName + '!J' + (i+1 ),
                 valueInputOption: 'USER_ENTERED'
+
             });
             updateRequest.setValueInputOption('PASS_TEST2');
+            UpdateValuesResponse response = request.execute();
+
             // //update check_by
             // var updateRequest = gapi.client.sheets.spreadsheets.values.update({
             //     spreadsheetId: spreadsheetId,
