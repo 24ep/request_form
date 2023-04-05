@@ -108,14 +108,14 @@
                 }
             });
             //update check_date
-            // var updateRequest = gapi.client.sheets.spreadsheets.values.update({
-            //     spreadsheetId: spreadsheetId,
-            //     range: sheetName + '!I' + (i +1),
-            //     valueInputOption: 'USER_ENTERED',
-            //     resource: {
-            //       values: '<?php //echo date('Y-m-d');?>'
-            //     }
-            // });
+            var updateRequest = gapi.client.sheets.spreadsheets.values.update({
+                spreadsheetId: spreadsheetId,
+                range: sheetName + '!I' + (i +1),
+                valueInputOption: 'USER_ENTERED',
+                resource: {
+                  values: ['<?php echo date('Y-m-d');?>']
+                }
+            });
             updateRequest.then(function(response) {
                 console.log(response.result);
             }, function(reason) {
