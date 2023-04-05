@@ -109,12 +109,15 @@
             });
             //update check_date
             var currentDate = new Date();
+            var isoString = currentDate.toISOString();
+            var withoutMillis = isoString.substring(0, isoString.length - 5) + "Z";
+
             var updateRequest = gapi.client.sheets.spreadsheets.values.update({
                 spreadsheetId: spreadsheetId,
                 range: sheetName + '!I' + (i +1),
                 valueInputOption: 'USER_ENTERED',
                 resource: {
-                  values: currentDate.toISOString()
+                  values: withoutMillis
                 }
             });
             updateRequest.then(function(response) {
