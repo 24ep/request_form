@@ -19,14 +19,14 @@ while($row = mysqli_fetch_array($result)) {
     $sku = $row['sku'];
     $name_en = $row['name_EN'];
     $image_url = $row['image_url'];
-    $query_att = "SELECT DISTINCT  attribute_code FROM taxonomy.attribute_option;";
+    $query_att = "SELECT DISTINCT attribute_code FROM taxonomy.attribute_option;";
     $result_att = mysqli_query($con, $query_att);
     while($row_att = mysqli_fetch_array($result_att)) {
         if($row[$row_att['attribute_code']]<>Null){
             $new_attribute .= "<label>".$row_att['attribute_code']."</label>";
             $new_attribute .= "
             <select class='form-select form-select-sm id='".$row_att['attribute_code']."' >";
-            $query_att_option = "SELECT DISTINCT  attribute_option FROM taxonomy.attribute_option where attribute_code='".$row_att['attribute_code']."';";
+            $query_att_option = "SELECT DISTINCT attribute_option FROM taxonomy.attribute_option where attribute_code='".$row_att['attribute_code']."';";
             $result_att_option = mysqli_query($con, $query_att);
             while($row_att_option = mysqli_fetch_array($result_att_option)) {
                 if($row[$row_att['attribute_code']]==$row_att_option['attribute_option']){
@@ -39,7 +39,7 @@ while($row = mysqli_fetch_array($result)) {
         }
     }
 }
-echo $new_attribute;
+// echo $new_attribute;
 //stamp name
 $query = "update all_in_one_project.taxonomy_demo set
 check_by = '".$_SESSION['username']."' ,
@@ -54,7 +54,7 @@ $query = mysqli_query($con,$sql);
             <span class="navbar-brand mb-0 h4 bg-white "><?php echo $sku;?></span>
         </div>
     </nav>
-    <div class="container-fluid">
+    <div class="container-fluid border-bottom pb-3">
         <div class="row">
             <div class="col-3"><strong>Name (english)</strong></div>
             <div class="col-9"><?php echo $name_en;?></div>
@@ -66,7 +66,7 @@ $query = mysqli_query($con,$sql);
         <div class="row">
             <div class="col-2"><strong>Image</strong></div>
             <div class="col-9">
-                <img src="<?php echo $image_url;?>" class="rounded float-start" width="7px" height="75px">
+                <img src="<?php echo $image_url;?>" class="rounded float-start" width="120px" height="120px">
             </div>
         </div>
         <div class="row">
