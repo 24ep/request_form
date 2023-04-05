@@ -77,11 +77,11 @@
             var checkDateIndex = headerRow.indexOf('check_date');
             for (var i = 0; i < data.length; i++) {
                     var row = data[i];
-                    if (row[0] == sku) {
+                    if (row[0] === sku) {
                         row[statusIndex] = status; // Set the status value in the 'status' column
                         row[checkDateIndex] = checkDate; // Set the check date in the 'check_date' column
                         values.push(row);
-                        console.log(row)
+                        console.log(row[0])
                         break; // Exit the loop once the SKU is found
                 }
             }
