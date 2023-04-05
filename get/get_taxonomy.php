@@ -17,7 +17,7 @@ $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     //product information session
     $sku = $row['sku'];
-    $name_en = $row['name_en'];
+    $name_en = $row['name_EN'];
     $image_url = $row['image_url'];
     $query_att = "SELECT DISTINCT  attribute_code FROM taxonomy.attribute_option;";
     $result_att = mysqli_query($con, $query_att);
