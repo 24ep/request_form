@@ -92,7 +92,7 @@
             //update status
             var updateRequest = gapi.client.sheets.spreadsheets.values.update({
                 spreadsheetId: spreadsheetId,
-                range: sheetName + '!J' + (i +1),
+                range: sheetName + '!J' + (i ),
                 valueInputOption: 'USER_ENTERED',
                 resource: {
                   values: [row]
@@ -101,7 +101,7 @@
             //update check_by
             var updateRequest = gapi.client.sheets.spreadsheets.values.update({
                 spreadsheetId: spreadsheetId,
-                range: sheetName + '!H' + (i +1),
+                range: sheetName + '!H' + (i ),
                 valueInputOption: 'USER_ENTERED',
                 resource: {
                 //   values: ['<?php //session_start();echo $_SESSION['username'];?>']
