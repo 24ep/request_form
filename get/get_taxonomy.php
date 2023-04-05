@@ -8,6 +8,7 @@ $new_attribute="";
 $query = "
 SELECT tr.* ,image_url.image_url tr FROM taxonomy.taxonomy_demo as tr
 left join taxonomy.taxonomy_image_url as image_url
+on image_url.sku = tr.sku
 where
 (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y' or  tr.in_top_200 = 'Top 200') and
 (tr.check_by is null or tr.check_by ='".$_SESSION['username']."')
