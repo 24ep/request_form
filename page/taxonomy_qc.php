@@ -113,7 +113,7 @@
                 range: sheetName + '!I' + (i +1),
                 valueInputOption: 'USER_ENTERED',
                 resource: {
-                  values: ['<?php echo date('Y-m-d');?>']
+                  values: [checkDate]
                 }
             });
             updateRequest.then(function(response) {
