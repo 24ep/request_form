@@ -56,16 +56,16 @@ $query = mysqli_query($con,$sql);
     </nav>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2"><strong>Name (english)</strong></div>
-            <div class="col-10"><?php echo $name_en;?></div>
+            <div class="col-3"><strong>Name (english)</strong></div>
+            <div class="col-9"><?php echo $name_en;?></div>
         </div>
         <div class="row">
-            <div class="col-2"><strong>Description</strong></div>
-            <div class="col-10"><?php echo $description;?></div>
+            <div class="col-3"><strong>Description</strong></div>
+            <div class="col-9"><?php echo $description;?></div>
         </div>
         <div class="row">
             <div class="col-2"><strong>Image</strong></div>
-            <div class="col-10">
+            <div class="col-9">
                 <img src="<?php echo $image_url;?>" class="rounded float-start">
             </div>
         </div>
