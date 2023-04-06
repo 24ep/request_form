@@ -111,6 +111,7 @@ $query = mysqli_query($con,$sql);
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
             <span class="navbar-brand mb-0 ms-0 h4 "><?php echo $sku;?></span>
+            <ion-icon name="open-outline"></ion-icon>
         </div>
     </nav>
     <div class="container-fluid border-bottom pb-3">
@@ -144,9 +145,10 @@ $query = mysqli_query($con,$sql);
         </div>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary me-md-2" type="button">Button</button>
-        <button class="btn btn-primary" type="button">Button</button>
+        <!-- <button class="btn btn-primary me-md-2" type="button">Button</button>
+        <button class="btn btn-primary" type="button">Button</button> -->
+        <input type="button btn-danger rounded-fill" value="Submit" onclick="summit_taxonomy(<?php echo $sku;?>)">
     </div>
-    <input type="button btn-danger rounded-fill" value="Submit" onclick="summit_taxonomy(<?php echo $sku;?>)">
+
     <!-- product information -->
 </div>
