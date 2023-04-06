@@ -139,7 +139,7 @@ $new_cate = $_POST['new_cate'];
         '".$value_towels_type."',
         '".$value_vacuum_cleaner_type."',
         '".$value_washing_machine_type."',
-        '".$new_Cate."')"
+        '".$new_cate."')"
         or die("Error:" . mysqli_error($con));
         $query = mysqli_query($con,$sql);
         if($query){
