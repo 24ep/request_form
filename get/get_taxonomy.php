@@ -111,6 +111,7 @@ $query = mysqli_query($con,$sql);
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
             <span class="navbar-brand mb-0 ms-0 h4 "><?php echo $sku;?></span>
+<input type="hidden" id="sku" value="<?php echo $sku;?>">
             <ion-icon name="open-outline"></ion-icon>
         </div>
     </nav>
