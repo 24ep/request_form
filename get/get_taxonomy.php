@@ -88,7 +88,7 @@ while($row = mysqli_fetch_array($result)) {
 
 
             $new_attribute .= "
-            <select  onchange='auto_select_no('".$row_att['attribute_code']."')' ".$multiple." ".$select_style." class='".$class."' id='".$row_att['attribute_code']."' >";
+            <select  onchange='auto_select_no(&#39;".$row_att['attribute_code']."&#39;)' ".$multiple." ".$select_style." class='".$class."' id='".$row_att['attribute_code']."' >";
             $query_att_option = "SELECT DISTINCT attribute_option,attribute_label FROM taxonomy.attribute_option where attribute_code='".$row_att['attribute_code']."';";
             $result_att_option = mysqli_query($con, $query_att_option);
             $new_attribute .= "<option value=''></option>";
