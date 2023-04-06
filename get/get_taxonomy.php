@@ -62,8 +62,8 @@ while($row = mysqli_fetch_array($result)) {
     $result_att = mysqli_query($con, $query_att);
     while($row_att = mysqli_fetch_array($result_att)) {
         if($row[$row_att['attribute_code']]<>"" and $row[$row_att['attribute_code']]<>Null){
-            $new_attribute . ="<div class='row'>"
-            $new_attribute . ="<div class='col-6'>"
+            $new_attribute . ="<div class='row'>";
+            $new_attribute . ="<div class='col-6'>";
             $new_attribute .= "<label>".$row_att['attribute_code']."</label>";
             $new_attribute .= "
             <select class='form-select form-select-sm id='".$row_att['attribute_code']."' >";
@@ -79,8 +79,8 @@ while($row = mysqli_fetch_array($result)) {
             }
 
             $new_attribute .= "</select>";
-            $new_attribute . ="</div>"
-            $new_attribute . ="<div class='col-6'>"
+            $new_attribute . ="</div>";
+            $new_attribute . ="<div class='col-6'>";
             $new_attribute . ='<input type="radio" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
                                 id="no_'.$row_att["attribute_code"].'" autocomplete="off" >
                                 <label class="btn btn-outline-danger btn-sm"
@@ -88,9 +88,9 @@ while($row = mysqli_fetch_array($result)) {
                                 <input type="radio" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
                                     id="yes_'.$row_att["attribute_code"].'" autocomplete="off">
                                 <label class="btn btn-outline-success btn-sm"
-                                style=" border-radius: 0%;" for="yes_attribute_1">Yes</label>''
-            $new_attribute . ="</div>"
-            $new_attribute . ="</div>"
+                                style=" border-radius: 0%;" for="yes_attribute_1">Yes</label>';
+            $new_attribute . ="</div>";
+            $new_attribute . ="</div>";
         }
     }
 }
