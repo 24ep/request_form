@@ -31,7 +31,7 @@ while($row = mysqli_fetch_array($result)) {
         if($query){
                 echo "update completed";
         }else{
-                echo "error: can't update revised record ".$con->error.", please contact jaroonwit - sku  ".$sku;
+                echo "error: can't update revised record Error->".$con->error.", please contact jaroonwit - sku  ".$sku;
         }
 
 
