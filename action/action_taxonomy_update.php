@@ -142,6 +142,11 @@ $value_new_cate = $_POST['value_new_cate'];
         '".$new_Cate."')"
         or die("Error:" . mysqli_error($con));
         $query = mysqli_query($con,$sql);
+        if($query){
+                echo "update completed";
+        }else{
+                echo "error: can't update , please contact jaroonwit - sku  ".$sku;
+        }
 
 
 ?>

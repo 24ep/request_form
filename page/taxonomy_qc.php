@@ -165,10 +165,21 @@ var new_cate = document.getElementById('new_cate').value
                 new_cate : new_cate
             },
             function(data) {
-                Notiflix.Loading.hourglass('Loading...');
-                // $('#col_detail').html(data);
-                query_data();
-                Notiflix.Loading.remove();
+                if(data.includes("error")){
+                    Notiflix.Report.failure(
+                        'Updated Failure',
+                         data,
+                        'Okay',
+                    );
+
+                }else{
+                    Notify.success('data updated');
+                    Notiflix.Loading.hourglass('Loading...');
+                    // $('#col_detail').html(data);
+                    query_data();
+                    Notiflix.Loading.remove();
+                }
+
             });
 }else{
     Notiflix.Report.failure(
