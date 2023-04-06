@@ -143,6 +143,6 @@ $query = mysqli_query($con,$sql);
             <?php echo $new_attribute ;?>
         </div>
     </div>
-    <input type="button" value="Submit" onclick="updateSheetData(<?php echo $sku;?>, 'PASS_TEST');">
+    <input type="button btn-danger rounded-fill" value="Submit" onclick="summit_taxonomy(<?php echo $sku;?>)">
     <!-- product information -->
 </div>
