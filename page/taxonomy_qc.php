@@ -79,7 +79,7 @@ function CheckYesNoElements() {
 function summit_taxonomy(sku){
 var validate_checked = CheckYesNoElements();
 if(validate_checked=="ALL_CHECKED"){
-    var status = CheckRevisedElements();
+var status = CheckRevisedElements();
 var sku = document.getElementById('sku').value
 var value_accessory_watches_style = document.getElementById('accessory_watches_style').value
 var value_air_conditioner_type = document.getElementById('air_conditioner_type').value
