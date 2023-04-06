@@ -100,7 +100,7 @@ while($row = mysqli_fetch_array($result)) {
 }
 // echo $new_attribute;
 //stamp name
-$query = "update taxonomy.taxonomy_demo set
+$sql = "update taxonomy.taxonomy_demo set
 check_by = '".$_SESSION['username']."' ,
 where sku = ".$sku
 or die("Error:" . mysqli_error($con));
@@ -133,12 +133,12 @@ $query = mysqli_query($con,$sql);
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-6 border-left">
+    <div class="row row mt-4">
+        <div class="col-4 border-left">
         <h3 style="font-weight: bolder;">OLD</h3>
             <?php echo $old_attribute ;?>
         </div>
-        <div class="col-6">
+        <div class="col-8">
         <h3 style="font-weight: bolder;">NEW</h3>
             <?php echo $new_attribute ;?>
         </div>
