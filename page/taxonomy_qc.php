@@ -43,16 +43,18 @@ function CheckYesNoElements() {
   const elements_yes = document.querySelectorAll('[id^="yes_"]');
   var count_yes = 0;
   var count_no = 0;
+  var count_elements=0;
   for (let i = 0; i < elements_no.length; i++) {
+    count_elements = count_elements+1;
     if (elements_no[i].checked) {
-        count_no=count_no+1
+        count_no=count_no+1;
     }
     if (elements_yes[i].checked) {
-        count_yes=count_yes+1
+        count_yes=count_yes+1;
     }
   }
   var count_checked = count_yes + count_no;
-  if(count_checked==i){
+  if(count_checked==count_elements){
     return "ALL_CHECKED";
   }else{
     return "MISSING_CHECKED";
