@@ -2,14 +2,14 @@
 //remove form sql
     session_start();
     // include("insert_log.php");
-    $id=$_POST["id"]; 
+    $id=$_POST["id"];
     $file_path = str_replace('../..','public_html',$_POST["path"]);
 
     $file_name = $_POST["name"];
     $file = $file_path.$file_name ;
 //remove form FTP
 // ftp://admin_base_csg@localhost/public_html/attachment/csg/attachments/ns/15359
-$ftp_server = "localhost";
+$ftp_server = "156.67.217.3";
 $ftp_conn = ftp_connect($ftp_server) or die("Error : 1Could not connect to $ftp_server");
 $login = ftp_login($ftp_conn, 'admin_base_csg', '@aA417528639');
 // try to delete file
