@@ -95,12 +95,6 @@ function revised_record(sku){
                         'Okay',
                     );
 
-                }else{
-                    Notiflix.Notify.success('data updated');
-                    Notiflix.Loading.hourglass('Loading...');
-                    // $('#col_detail').html(data);
-                    query_data();
-                    Notiflix.Loading.remove();
                 }
             });
         }
