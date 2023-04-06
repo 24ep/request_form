@@ -101,7 +101,7 @@ while($row = mysqli_fetch_array($result)) {
 }
 // echo $new_attribute;
 //stamp name
-$query = "update all_in_one_project.taxonomy_demo set
+$query = "update taxonomy.taxonomy_demo set
 check_by = '".$_SESSION['username']."' ,
 where sku = ".$sku
 or die("Error:" . mysqli_error($con));
