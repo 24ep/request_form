@@ -143,6 +143,10 @@ $query = mysqli_query($con,$sql);
             <?php echo $new_attribute ;?>
         </div>
     </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary me-md-2" type="button">Button</button>
+        <button class="btn btn-primary" type="button">Button</button>
+    </div>
     <input type="button btn-danger rounded-fill" value="Submit" onclick="summit_taxonomy(<?php echo $sku;?>)">
     <!-- product information -->
 </div>
