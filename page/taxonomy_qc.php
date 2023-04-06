@@ -39,7 +39,7 @@ function CheckRevisedElements() {
       return "REVISED";
     }
   }
-  return "QC_PASS";
+  return "QC_PASSED";
 }
 function CheckYesNoElements() {
 
