@@ -18,6 +18,7 @@ while($row = mysqli_fetch_array($result)) {
     //product information session
     $sku = $row['sku'];
     $name_en = $row['name_EN'];
+    $name_th = $row['name_TH'];
     $image_url = $row['image_url'];
     $query_att = "SELECT DISTINCT attribute_code FROM taxonomy.attribute_option;";
     $result_att = mysqli_query($con, $query_att);
@@ -58,6 +59,10 @@ $query = mysqli_query($con,$sql);
         <div class="row">
             <div class="col-3"><strong>Name (english)</strong></div>
             <div class="col-9"><?php echo $name_en;?></div>
+        </div>
+        <div class="row">
+            <div class="col-3"><strong>Name (Thai)</strong></div>
+            <div class="col-9"><?php echo $name_th;?></div>
         </div>
         <div class="row">
             <div class="col-3"><strong>Description</strong></div>

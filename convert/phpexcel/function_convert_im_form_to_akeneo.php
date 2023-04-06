@@ -612,7 +612,7 @@ if($_POST["record_linesheet"]=="Yes"){
     echo '<strong style="margin-left:5px;"><a href="../../../attachment/'.$_POST["job_number"].'/Template/'.$file_name_without_type_shade.'.xlsx" class="btn btn-info btn-sm"  style="margin-bottom:15px;background:#060e17;border-color:#060e17;" > <ion-icon name="cloud-download-outline" style="margin-right: 1px;"></ion-icon> Download Shade Template</a></strong>';
     //remove file linesheet from ftp
     if($_POST["record_linesheet"]=="No"){
-      $ftp_server = "156.67.217.3";
+      $ftp_server = "localhost";
       $ftp_conn = ftp_connect($ftp_server) or die("Remove linesheet - Could not connect to $ftp_server");
       $login = ftp_login($ftp_conn, 'admin_convert_module', 'a417528639');
       ftp_delete($ftp_conn,$fullpath.$file_name);
@@ -622,7 +622,7 @@ if($_POST["record_linesheet"]=="Yes"){
     }
     //remove file linesheet from ftp
     if($_POST["record_template"]=="No"){
-      $ftp_server = "156.67.217.3";
+      $ftp_server = "localhost";
       $ftp_conn = ftp_connect($ftp_server) or die("Remove template Could not connect to $ftp_server");
       $login = ftp_login($ftp_conn, 'admin_convert_module', 'a417528639');
       ftp_delete($ftp_conn,"../../../attachment/".$_POST["job_number"]."/Template/".$file_name_without_type.'.xlsx');
