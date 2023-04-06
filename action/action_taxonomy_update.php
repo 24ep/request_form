@@ -51,13 +51,13 @@ $value_new_cate = $_POST['value_new_cate'];
         $sql = "update taxonomy.taxonomy_demo set
         check_by = ".$_SESSION['username'].",
         check_date = CURRENT_TIMESTAMP,
-        status = ".$status.",
+        status = ".$status."
         where sku = ".$sku
         or die("Error:" . mysqli_error($con));
         $query = mysqli_query($con,$sql);
 
         //insert to complete data
-        $query = "INSERT INTO taxonomy.taxonomy_complete_demo
+        $sql = "INSERT INTO taxonomy.taxonomy_complete_demo
         (sku,
         accessory_watches_style,
         air_conditioner_type,
