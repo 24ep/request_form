@@ -105,9 +105,9 @@ while($row = mysqli_fetch_array($result)) {
 
                 }else{
                     if($row[$row_att['attribute_code']]==$row_att_option['attribute_option']){
-                        $new_attribute .= "<option selected value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_option']."</option>";
+                        $new_attribute .= "<option selected value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_label']."</option>";
                     }else{
-                        $new_attribute .= "<option value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_option']."</option>";
+                        $new_attribute .= "<option value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_label']."</option>";
                     }
                 }
 
