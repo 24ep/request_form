@@ -90,11 +90,11 @@ while($row = mysqli_fetch_array($result)) {
             $new_attribute .= "</select>";
             $new_attribute .="</div>";
             $new_attribute .="<div class='col-6 mt-4' style='display:".$display."'>";
-            $new_attribute .='<input type="radio" style="display:'.$display.'"> class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
+            $new_attribute .='<input type="radio" style="display:'.$display.'" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
                                 id="no_'.$row_att["attribute_code"].'" autocomplete="off" >
                                 <label class="btn btn-outline-danger btn-sm"
                                 style=" border-radius: 0%;" for="no_'.$row_att["attribute_code"].'">No</label>
-                                <input style="display:'.$display.'"> type="radio" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
+                                <input style="display:'.$display.'" type="radio" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
                                     id="yes_'.$row_att["attribute_code"].'" autocomplete="off">
                                 <label class="btn btn-outline-success btn-sm"
                                 style=" border-radius: 0%;" for="yes_'.$row_att["attribute_code"].'">Yes</label>';
