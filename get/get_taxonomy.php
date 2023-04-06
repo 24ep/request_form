@@ -77,17 +77,18 @@ while($row = mysqli_fetch_array($result)) {
                     $new_attribute .= "<option value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_option']."</option>";
                 }
             }
+
             $new_attribute .= "</select>";
             $new_attribute . ="</div>"
             $new_attribute . ="<div class='col-6'>"
-            $new_attribute . ='<input type="radio" class="btn-check" name="options-outlined"
-                                id="no_attribute_1" autocomplete="off" >
-                            <label class="btn btn-outline-danger btn-sm"
-                            style=" border-radius: 0%;" for="no_attribute_1">No</label>
-                            <input type="radio" class="btn-check" name="options-outlined"
-                                id="yes_attribute_1" autocomplete="off">
-                            <label class="btn btn-outline-success btn-sm"
-                            style=" border-radius: 0%;" for="yes_attribute_1">Yes</label>''
+            $new_attribute . ='<input type="radio" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
+                                id="no_'.$row_att["attribute_code"].'" autocomplete="off" >
+                                <label class="btn btn-outline-danger btn-sm"
+                                style=" border-radius: 0%;" for="no_attribute_1">No</label>
+                                <input type="radio" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
+                                    id="yes_'.$row_att["attribute_code"].'" autocomplete="off">
+                                <label class="btn btn-outline-success btn-sm"
+                                style=" border-radius: 0%;" for="yes_attribute_1">Yes</label>''
             $new_attribute . ="</div>"
             $new_attribute . ="</div>"
         }
