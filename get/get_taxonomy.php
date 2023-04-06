@@ -93,11 +93,24 @@ while($row = mysqli_fetch_array($result)) {
             $result_att_option = mysqli_query($con, $query_att_option);
             $new_attribute .= "<option value=''></option>";
             while($row_att_option = mysqli_fetch_array($result_att_option)) {
-                if($row[$row_att['attribute_code']]==$row_att_option['attribute_option']){
-                    $new_attribute .= "<option selected value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_option']."</option>";
+                if($multiple =="multiple";){
+                    $attribute_option_selected = explode(" ",$row[$row_att['attribute_code']]);
+                    foreach ($selectd_option as $attribute_option_selected) {
+                        if($selectd_option==$row_att_option['attribute_option']){
+                            $new_attribute .= "<option selected value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_option']."</option>";
+                        }else{
+                            $new_attribute .= "<option value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_option']."</option>";
+                        }
+                      }
+
                 }else{
-                    $new_attribute .= "<option value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_option']."</option>";
+                    if($row[$row_att['attribute_code']]==$row_att_option['attribute_option']){
+                        $new_attribute .= "<option selected value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_option']."</option>";
+                    }else{
+                        $new_attribute .= "<option value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_option']."</option>";
+                    }
                 }
+
             }
 
             $new_attribute .= "</select>";
