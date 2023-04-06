@@ -80,11 +80,21 @@ function CheckYesNoElements() {
 }
 function revised_record(sku){
     const elements_no = document.querySelectorAll('[id^="no_"]:not([style*="display:none"])');
+
+
+
     var element_name = "";
     for (let i = 0; i <= elements_no.length-1; i++) {
 
         if (elements_no[i].checked) {
             element_name = elements_no[i].value;
+            // handle multi-select element
+            if(element_name=='new_cate'){
+                var new_cate_element = document.getElementById('new_cate')
+                var selectedOptions = Array.from(new_cate_element.options).filter(option => new_cate_element.selected);
+                var new_value = selectedOptions.map(option => option.value).join("','");
+            }
+
             var new_value = document.getElementById(element_name).value;
             $.post("base/action/action_taxonomy_revised_record.php", {
                 element_name:element_name,
@@ -105,7 +115,10 @@ function revised_record(sku){
   }
 }
 function summit_taxonomy(sku){
+
 revised_record(sku)
+
+
 var validate_checked = CheckYesNoElements();
 if(validate_checked=="ALL_CHECKED"){
 var status = CheckRevisedElements();
@@ -148,7 +161,14 @@ var value_tea_coffee_equipment_type = document.getElementById('tea_coffee_equipm
 var value_towels_type = document.getElementById('towels_type').value
 var value_vacuum_cleaner_type = document.getElementById('vacuum_cleaner_type').value
 var value_washing_machine_type = document.getElementById('washing_machine_type').value
-var new_cate = document.getElementById('new_cate').value
+// var new_cate = document.getElementById('new_cate').value
+
+
+    // handle multi-select element
+    var new_cate_element = document.getElementById('new_cate')
+    var selectedOptions = Array.from(new_cate_element.options).filter(option => new_cate_element.selected);
+    var new_cate = selectedOptions.map(option => option.value).join("','");
+
 
       $.post("base/action/action_taxonomy_update.php", {
                 sku : sku,
