@@ -65,7 +65,7 @@ while($row = mysqli_fetch_array($result)) {
 // old attribute
             $old_attribute .= "<label>".$row_att['attribute_code']."</label>";
             $old_attribute .= '<input type="text" id="olf'.$row_att['attribute_code'].'"  class="form-control form-control-sm"
-                                disabled>'
+                                disabled>';
 //new attribute
             $new_attribute . ="<div class='row'>";
             $new_attribute . ="<div class='col-6'>";
