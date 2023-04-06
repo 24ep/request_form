@@ -173,7 +173,7 @@ var new_cate = document.getElementById('new_cate').value
                     );
 
                 }else{
-                    Notify.success('data updated');
+                    Notiflix.success('data updated');
                     Notiflix.Loading.hourglass('Loading...');
                     // $('#col_detail').html(data);
                     query_data();
