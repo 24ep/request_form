@@ -11,7 +11,45 @@ left join taxonomy.taxonomy_image_url as image_url
 on image_url.sku = tr.sku
 where(
 (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y' or  tr.in_top_200 = 'Top 200') and
-(tr.check_by is null or tr.check_by ='".$_SESSION['username']."')) and `Auto enrichment` = 'Y'
+(tr.check_by is null or tr.check_by ='".$_SESSION['username']."')) and `Auto enrichment` = 'Y' and
+(accessory_watches_style is not null or
+air_conditioner_type is not null or
+air_purifier_type is not null or
+ball_type is not null or
+beauty_set_type is not null or
+book_genre is not null or
+coffee_machine_type is not null or
+console_type is not null or
+dress_length is not null or
+face_mask_type is not null or
+facial_part is not null or
+fan_type is not null or
+fashion_occasion is not null or
+fryer_type is not null or
+gender is not null or
+haircare_type is not null or
+hat_type is not null or
+headphone_type is not null or
+irons_type is not null or
+life_pen_type is not null or
+material_clothing is not null or
+maternity is not null or
+pencil_type is not null or
+pet_type is not null or
+refrigerator_doors is not null or
+ring_type is not null or
+screen_resolution is not null or
+shoes_occasion is not null or
+skirt_length is not null or
+speaker_type is not null or
+sport_type is not null or
+storage_drive_type is not null or
+stove_type is not null or
+swimming_goggle_type is not null or
+tea_coffee_equipment_type is not null or
+towels_type is not null or
+vacuum_cleaner_type is not null or
+washing_machine_type is not null)
 order by tr.sale DESC limit 1" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
@@ -23,12 +61,12 @@ while($row = mysqli_fetch_array($result)) {
     $query_att = "SELECT DISTINCT attribute_code FROM taxonomy.attribute_option;";
     $result_att = mysqli_query($con, $query_att);
     while($row_att = mysqli_fetch_array($result_att)) {
-        // if($row[$row_att['attribute_code']]<>"" and $row[$row_att['attribute_code']]<>Null){
+        if($row[$row_att['attribute_code']]<>"" and $row[$row_att['attribute_code']]<>Null){
             $new_attribute .= "<label>".$row_att['attribute_code']."</label>";
             $new_attribute .= "
             <select class='form-select form-select-sm id='".$row_att['attribute_code']."' >";
             $query_att_option = "SELECT DISTINCT attribute_option FROM taxonomy.attribute_option where attribute_code='".$row_att['attribute_code']."';";
-            $result_att_option = mysqli_query($con, $query_att);
+            $result_att_option = mysqli_query($con, $query_att_option);
             while($row_att_option = mysqli_fetch_array($result_att_option)) {
                 if($row[$row_att['attribute_code']]==$row_att_option['attribute_option']){
                     $new_attribute .= "<option selected value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_option']."</option>";
@@ -37,7 +75,7 @@ while($row = mysqli_fetch_array($result)) {
                 }
             }
             $new_attribute .= "</select>";
-        // }
+        }
     }
 }
 // echo $new_attribute;
