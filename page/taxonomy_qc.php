@@ -88,6 +88,7 @@ function revised_record(sku){
 
         if (elements_no[i].checked) {
             element_name = elements_no[i].value;
+            var new_value = document.getElementById(element_name).value;
             // handle multi-select element
             if(element_name=='new_cate'){
                 var new_cate_element = document.getElementById('new_cate')
@@ -95,7 +96,7 @@ function revised_record(sku){
                 var new_value = selectedOptions.map(option => option.value).join("','");
             }
 
-            var new_value = document.getElementById(element_name).value;
+
             $.post("base/action/action_taxonomy_revised_record.php", {
                 element_name:element_name,
                 sku:sku,
