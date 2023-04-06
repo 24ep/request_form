@@ -88,6 +88,7 @@ while($row = mysqli_fetch_array($result)) {
             }
 
             $new_attribute .= "</select>";
+            $new_attribute .= "<small style='font-size:10px;display:".$display."'>Original value : ".$row[$row_att['attribute_code']]."</small>";
             $new_attribute .="</div>";
             $new_attribute .="<div class='col-6 mt-4' style='display:".$display."'>";
             $new_attribute .='<input type="radio" style="display:'.$display.'" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
