@@ -49,7 +49,7 @@ function CheckYesNoElements() {
   var count_no = 0;
   var count_elements=0;
   for (let i = 0; i < elements_no.length; i++) {
-    if(elements_no.style.display != "none"){
+    if(elements_no[i].style.display != "none"){
         count_elements = count_elements+1;
         if (elements_no[i].checked) {
             count_no=count_no+1;
