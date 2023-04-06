@@ -84,7 +84,7 @@ while($row = mysqli_fetch_array($result)) {
 
             $new_attribute .= "</select>";
             $new_attribute .="</div>";
-            $new_attribute .="<div class='col-6'>";
+            $new_attribute .="<div class='col-6 mt-4'>";
             $new_attribute .='<input type="radio" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
                                 id="no_'.$row_att["attribute_code"].'" autocomplete="off" >
                                 <label class="btn btn-outline-danger btn-sm"
@@ -135,11 +135,11 @@ $query = mysqli_query($con,$sql);
     </div>
     <div class="row">
         <div class="col-6 border-left">
-        <h3>OLD</h3>
+        <h3 style="font-weight: bolder;">OLD</h3>
             <?php echo $old_attribute ;?>
         </div>
         <div class="col-6">
-        <h3>NEW</h3>
+        <h3 style="font-weight: bolder;">NEW</h3>
             <?php echo $new_attribute ;?>
         </div>
     </div>
