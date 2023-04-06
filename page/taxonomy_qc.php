@@ -29,8 +29,7 @@ function ShowSmallOriginalValue(element_id){
     }
 }
 function auto_select_no(element_id){
-    var no_elements = document.getElementById("no_"+element_id)
-    no_elements.checked = true;
+    document.getElementById("no_"+element_id).checked = true;
 }
 function CheckRevisedElements() {
 //   const elements = document.querySelectorAll('[id^="no_"]');
