@@ -83,9 +83,9 @@ while($row = mysqli_fetch_array($result)) {
             }
 
             $new_attribute .= "</select>";
-            $new_attribute . ="</div>";
-            $new_attribute . ="<div class='col-6'>";
-            $new_attribute . ='<input type="radio" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
+            $new_attribute .="</div>";
+            $new_attribute .="<div class='col-6'>";
+            $new_attribute .='<input type="radio" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
                                 id="no_'.$row_att["attribute_code"].'" autocomplete="off" >
                                 <label class="btn btn-outline-danger btn-sm"
                                 style=" border-radius: 0%;" for="no_attribute_1">No</label>
@@ -93,8 +93,8 @@ while($row = mysqli_fetch_array($result)) {
                                     id="yes_'.$row_att["attribute_code"].'" autocomplete="off">
                                 <label class="btn btn-outline-success btn-sm"
                                 style=" border-radius: 0%;" for="yes_attribute_1">Yes</label>';
-            $new_attribute . ="</div>";
-            $new_attribute . ="</div>";
+            $new_attribute .="</div>";
+            $new_attribute .="</div>";
         }
     }
 }
