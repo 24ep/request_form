@@ -1,7 +1,7 @@
 <?php
  session_start();
- $sku = $_POST['sku'];
- $status = $_POST['status'];
+$sku = $_POST['sku'];
+$status = $_POST['status'];
  $value_accessory_watches_style = $_POST['value_accessory_watches_style'];
 $value_air_conditioner_type = $_POST['value_air_conditioner_type'];
 $value_air_purifier_type = $_POST['value_air_purifier_type'];
@@ -49,9 +49,9 @@ $value_new_cate = $_POST['value_new_cate'];
 
         //update_exsiting_status
         $sql = "update taxonomy.taxonomy_demo set
-        check_by = ".$_SESSION['username'].",
+        check_by = '".$_SESSION['username']."',
         check_date = CURRENT_TIMESTAMP,
-        status = ".$status."
+        status = '".$status."'
         where sku = '".$sku."'"
         or die("Error:" . mysqli_error($con));
         $query = mysqli_query($con,$sql);
