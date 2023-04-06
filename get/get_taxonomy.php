@@ -180,6 +180,10 @@ $query = mysqli_query($con,$sql);
 
 <script>
 new SlimSelect({
-  select: '#new_cate'
+  select: '#new_cate',
+  settings: {
+    showSearch: true,
+    searchHighlight: true
+  }
 })
 </script>
