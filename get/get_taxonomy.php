@@ -62,11 +62,14 @@ while($row = mysqli_fetch_array($result)) {
     $result_att = mysqli_query($con, $query_att);
     while($row_att = mysqli_fetch_array($result_att)) {
         if($row[$row_att['attribute_code']]<>"" and $row[$row_att['attribute_code']]<>Null){
+            $new_attribute . ="<div class='row'>"
+            $new_attribute . ="<div class='col-6'>"
             $new_attribute .= "<label>".$row_att['attribute_code']."</label>";
             $new_attribute .= "
             <select class='form-select form-select-sm id='".$row_att['attribute_code']."' >";
             $query_att_option = "SELECT DISTINCT attribute_option FROM taxonomy.attribute_option where attribute_code='".$row_att['attribute_code']."';";
             $result_att_option = mysqli_query($con, $query_att_option);
+            $new_attribute .= "<option value=''></option>";
             while($row_att_option = mysqli_fetch_array($result_att_option)) {
                 if($row[$row_att['attribute_code']]==$row_att_option['attribute_option']){
                     $new_attribute .= "<option selected value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_option']."</option>";
@@ -75,6 +78,18 @@ while($row = mysqli_fetch_array($result)) {
                 }
             }
             $new_attribute .= "</select>";
+            $new_attribute . ="</div>"
+            $new_attribute . ="<div class='col-6'>"
+            $new_attribute . ='<input type="radio" class="btn-check" name="options-outlined"
+                                id="no_attribute_1" autocomplete="off" >
+                            <label class="btn btn-outline-danger btn-sm"
+                            style=" border-radius: 0%;" for="no_attribute_1">No</label>
+                            <input type="radio" class="btn-check" name="options-outlined"
+                                id="yes_attribute_1" autocomplete="off">
+                            <label class="btn btn-outline-success btn-sm"
+                            style=" border-radius: 0%;" for="yes_attribute_1">Yes</label>''
+            $new_attribute . ="</div>"
+            $new_attribute . ="</div>"
         }
     }
 }
@@ -112,12 +127,12 @@ $query = mysqli_query($con,$sql);
                 <img src="<?php echo $image_url;?>" class="rounded float-start" width="120px" height="120px">
             </div>
         </div>
-        <div class="row">
-            <div class="col-6">
-            </div>
-            <div class="col-6">
-                <?php echo $new_attribute ;?>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+        </div>
+        <div class="col-6">
+            <?php echo $new_attribute ;?>
         </div>
     </div>
     <input type="button" value="Submit" onclick="updateSheetData(<?php echo $sku;?>, 'PASS_TEST');">
