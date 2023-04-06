@@ -114,7 +114,7 @@ $query = mysqli_query($con,$sql);
 
 
 ?>
-<div class="container-md">
+<div class="container-md me-5 ms-5">
     <!-- nav bra -->
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
@@ -157,7 +157,7 @@ $query = mysqli_query($con,$sql);
                 <div class="col-6">
                 </div>
                 <div class="col-6">
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <div class="mt-3">
                         <input type="button" class=" btn btn-sm btn-danger rounded-fill" value="Submit"
                             onclick="summit_taxonomy('<?php echo $sku;?>')">
                     </div>
