@@ -88,14 +88,14 @@ while($row = mysqli_fetch_array($result)) {
             }
 
             $new_attribute .= "</select>";
-            $new_attribute .= "<small style='font-size:10px;display:none;color: #c3c3c3;'>Original value : ".$row[$row_att['attribute_code']]."</small>";
+            $new_attribute .= "<small id='original_'".$row_att["attribute_code"]."' style='font-size:10px;display:none;color: #c3c3c3;'>Original value : ".$row[$row_att['attribute_code']]."</small>";
             $new_attribute .="</div>";
             $new_attribute .="<div class='col-6 mt-4' style='display:".$display."'>";
             $new_attribute .='<input type="radio"  style="display:'.$display.'" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
                                 id="no_'.$row_att["attribute_code"].'" autocomplete="off" >
                                 <label class="btn btn-outline-danger btn-sm"
                                 style=" border-radius: 0%;" for="no_'.$row_att["attribute_code"].'">No</label>
-                                <input  style="display:'.$display.'" type="radio" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
+                                <input  onclick="ShowSmallOriginalValue(&#39;'.$row_att["attribute_code"].'&#39;)" style="display:'.$display.'" type="radio" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
                                     id="yes_'.$row_att["attribute_code"].'" autocomplete="off">
                                 <label class="btn btn-outline-success btn-sm"
                                 style=" border-radius: 0%;" for="yes_'.$row_att["attribute_code"].'">Yes</label>';
