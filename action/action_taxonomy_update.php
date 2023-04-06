@@ -57,7 +57,7 @@ function update_taxonomy_qc(
         $query = mysqli_query($con,$sql);
 
         //insert to complete data
-        $query = "INSERT INTO taxonomy.data_completed
+        $query = "INSERT INTO taxonomy.taxonomy_complete_demo
         (sku,
         accessory_watches_style,
         air_conditioner_type,
