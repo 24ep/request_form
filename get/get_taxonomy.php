@@ -110,6 +110,7 @@ where sku = '".$sku."'"
 or die("Error:" . mysqli_error($con));
 $query = mysqli_query($con,$sql);
 
+
 ?>
 <div class="container-md">
     <!-- nav bra -->

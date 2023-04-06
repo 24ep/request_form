@@ -47,8 +47,8 @@ function update_taxonomy_qc(
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","taxonomy") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
 
-        //update_exsit_status
-        $query = "update taxonomy.taxonomy_demo set
+        //update_exsiting_status
+        $sql = "update taxonomy.taxonomy_demo set
         check_by = ".$_SESSION['username'].",
         check_date = CURRENT_TIMESTAMP,
         status = ".$status.",
