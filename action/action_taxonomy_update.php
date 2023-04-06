@@ -96,7 +96,8 @@ $value_new_cate = $_POST['value_new_cate'];
         tea_coffee_equipment_type,
         towels_type,
         vacuum_cleaner_type,
-        washing_machine_type)
+        washing_machine_type,
+        new_cate)
         values
         (
         '".$value_sku."',
@@ -137,7 +138,8 @@ $value_new_cate = $_POST['value_new_cate'];
         '".$value_tea_coffee_equipment_type."',
         '".$value_towels_type."',
         '".$value_vacuum_cleaner_type."',
-        '".$value_washing_machine_type."')"
+        '".$value_washing_machine_type."',
+        '".$new_Cate."')"
         or die("Error:" . mysqli_error($con));
         $query = mysqli_query($con,$sql);
 
