@@ -114,19 +114,19 @@ $query = mysqli_query($con,$sql);
         </div>
     </nav>
     <div class="container-fluid border-bottom pb-3">
-        <div class="row">
+        <div class="row mt-1">
             <div class="col-3"><strong>Name (english)</strong></div>
             <div class="col-9"><?php echo $name_en;?></div>
         </div>
-        <div class="row">
+        <div class="row mt-1">
             <div class="col-3"><strong>Name (Thai)</strong></div>
             <div class="col-9"><?php echo $name_th;?></div>
         </div>
-        <div class="row">
+        <div class="row mt-1">
             <div class="col-3"><strong>Description</strong></div>
             <div class="col-9"><?php echo $description;?></div>
         </div>
-        <div class="row">
+        <div class="row mt-1">
             <div class="col-3"><strong>Image</strong></div>
             <div class="col-9">
                 <img src="<?php echo $image_url;?>" class="rounded float-start" width="120px" height="120px">
