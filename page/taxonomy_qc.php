@@ -96,6 +96,7 @@ function revised_record(sku){
                 var new_value = selectedOptions.map(option => option.value).join("','");
             }
 
+            console.log(new_cate);
 
             $.post("base/action/action_taxonomy_revised_record.php", {
                 element_name:element_name,
@@ -169,7 +170,7 @@ var value_washing_machine_type = document.getElementById('washing_machine_type')
     var new_cate_element = document.getElementById('new_cate')
     var selectedOptions = Array.from(new_cate_element.options).filter(option => option.selected);
     var new_cate = selectedOptions.map(option => option.value).join("','");
-    console.log(new_cate);
+
 
 
       $.post("base/action/action_taxonomy_update.php", {
