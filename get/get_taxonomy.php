@@ -67,6 +67,14 @@ while($row = mysqli_fetch_array($result)) {
         }else{
                 $display = "none";
         }
+
+        if($row_att['attribute_code']=='new_cate'){
+            $class="";
+            $multiple ="multiple";
+        }else{
+            $class="form-select form-select-sm";
+            $multiple ="";
+        }
 // old attribute
             $old_attribute .= "<label class='mb-1' style='display:".$display."'>".str_replace("new","old",$row_att['attribute_code'])."</label>";
             $old_attribute .= '<input type="text" value="'.$row["old_".$row_att['attribute_code']].'" style="display:'.$display.'" id="old_'.$row_att['attribute_code'].'"  class="form-control form-control-sm" disabled>';
@@ -75,7 +83,7 @@ while($row = mysqli_fetch_array($result)) {
             $new_attribute .="<div class='col-6'>";
             $new_attribute .= "<label style='display:".$display."' class='mb-1'>".$row_att['attribute_code']."</label>";
             $new_attribute .= "
-            <select  style='display:".$display."' class='form-select form-select-sm' id='".$row_att['attribute_code']."' >";
+            <select  ".$multiple." style='display:".$display."' class='".$class."' id='".$row_att['attribute_code']."' >";
             $query_att_option = "SELECT DISTINCT attribute_option FROM taxonomy.attribute_option where attribute_code='".$row_att['attribute_code']."';";
             $result_att_option = mysqli_query($con, $query_att_option);
             $new_attribute .= "<option value=''></option>";
