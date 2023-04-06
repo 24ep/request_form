@@ -31,9 +31,10 @@ function ShowSmallOriginalValue(element_id){
 
 function CheckRevisedElements() {
 //   const elements = document.querySelectorAll('[id^="no_"]');
-  const elements_no = document.querySelectorAll('[id^="no_"]:not([style*="display:none"])');
+  const elements_no = document.querySelectorAll('[id^="no_"])');
 
   for (let i = 0; i < elements_no.length; i++) {
+
     if (elements_no[i].checked) {
       return "REVISED";
     }
@@ -42,19 +43,22 @@ function CheckRevisedElements() {
 }
 function CheckYesNoElements() {
 
-  const elements_no = document.querySelectorAll('[id^="no_"]:not([style*="display:none"])');
-  const elements_yes = document.querySelectorAll('[id^="yes_"]:not([style*="display:none"])');
+  const elements_no = document.querySelectorAll('[id^="no_"])');
+  const elements_yes = document.querySelectorAll('[id^="yes_"])');
   var count_yes = 0;
   var count_no = 0;
   var count_elements=0;
   for (let i = 0; i < elements_no.length; i++) {
-    count_elements = count_elements+1;
-    if (elements_no[i].checked) {
-        count_no=count_no+1;
+    if(elements_no.style.display != "none"){
+        count_elements = count_elements+1;
+        if (elements_no[i].checked) {
+            count_no=count_no+1;
+        }
+        if (elements_yes[i].checked) {
+            count_yes=count_yes+1;
+        }
     }
-    if (elements_yes[i].checked) {
-        count_yes=count_yes+1;
-    }
+
   }
   var count_checked = count_yes + count_no;
     console.log(count_yes)
