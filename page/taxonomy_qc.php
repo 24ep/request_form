@@ -168,7 +168,7 @@ var value_washing_machine_type = document.getElementById('washing_machine_type')
     var new_cate_element = document.getElementById('new_cate')
     var selectedOptions = Array.from(new_cate_element.options).filter(option => new_cate_element.selected);
     var new_cate = selectedOptions.map(option => option.value).join("','");
-    console.log(new_cate);
+    // console.log(new_cate);
 
 
       $.post("base/action/action_taxonomy_update.php", {
