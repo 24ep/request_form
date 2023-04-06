@@ -30,17 +30,20 @@ function ShowSmallOriginalValue(element_id){
 }
 
 function CheckRevisedElements() {
-  const elements = document.querySelectorAll('[id^="no_"]');
-  for (let i = 0; i < elements.length; i++) {
-    if (elements[i].checked) {
+//   const elements = document.querySelectorAll('[id^="no_"]');
+  const elements_no = document.querySelectorAll('[id^="no_"]:not([style*="display:none"])');
+
+  for (let i = 0; i < elements_no.length; i++) {
+    if (elements_no[i].checked) {
       return "REVISED";
     }
   }
   return "QC_PASS";
 }
 function CheckYesNoElements() {
-  const elements_no = document.querySelectorAll('[id^="no_"]');
-  const elements_yes = document.querySelectorAll('[id^="yes_"]');
+
+  const elements_no = document.querySelectorAll('[id^="no_"]:not([style*="display:none"])');
+  const elements_yes = document.querySelectorAll('[id^="yes_"]:not([style*="display:none"])');
   var count_yes = 0;
   var count_no = 0;
   var count_elements=0;
