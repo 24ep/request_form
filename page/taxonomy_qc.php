@@ -81,7 +81,7 @@ function CheckYesNoElements() {
 function revised_record(sku){
     const elements_no = document.querySelectorAll('[id^="no_"]:not([style*="display:none"])');
     var element_name = "";
-    for (let i = 0; i < elements_no.length; i++) {
+    for (let i = 0; i <= elements_no.length-1; i++) {
 
         if (elements_no[i].checked) {
             element_name = elements_no[i].value;
