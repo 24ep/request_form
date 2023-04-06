@@ -86,7 +86,7 @@ function revised_record(sku){
             $.post("base/action/action_taxonomy_revised_record.php", {
                 element_name:element_name,
                 sku:sku,
-                new_value : element_name
+                new_value : new_value
             },
             function(data) {
                 if(data.includes("error")){
