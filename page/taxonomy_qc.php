@@ -31,7 +31,7 @@ function ShowSmallOriginalValue(element_id){
 
 function CheckRevisedElements() {
 //   const elements = document.querySelectorAll('[id^="no_"]');
-  const elements_no = document.querySelectorAll('[id^="no_"])');
+  const elements_no = document.querySelectorAll('[id^="no_"]');
 
   for (let i = 0; i < elements_no.length; i++) {
 
@@ -43,8 +43,8 @@ function CheckRevisedElements() {
 }
 function CheckYesNoElements() {
 
-  const elements_no = document.querySelectorAll('[id^="no_"])');
-  const elements_yes = document.querySelectorAll('[id^="yes_"])');
+  const elements_no = document.querySelectorAll('[id^="no_"]');
+  const elements_yes = document.querySelectorAll('[id^="yes_"]');
   var count_yes = 0;
   var count_no = 0;
   var count_elements=0;
