@@ -150,13 +150,12 @@ $query = mysqli_query($con,$sql);
         <div class="col-8">
         <h3 style="font-weight: bolder;">NEW</h3>
             <?php echo $new_attribute ;?>
-        </div>
-    </div>
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <!-- <button class="btn btn-primary me-md-2" type="button">Button</button>
-        <button class="btn btn-primary" type="button">Button</button> -->
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <input type="button" class=" btn btn-sm btn-danger rounded-fill" value="Submit" onclick="summit_taxonomy('<?php echo $sku;?>')">
     </div>
+        </div>
+    </div>
+
 
     <!-- product information -->
 </div>
