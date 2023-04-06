@@ -38,9 +38,32 @@ function CheckRevisedElements() {
   }
   return "QC_PASS";
 }
-function summit_taxonomy(sku){
+function CheckYesNoElements() {
+  const elements_no = document.querySelectorAll('[id^="no_"]');
+  const elements_yes = document.querySelectorAll('[id^="yes_"]');
+  var count_yes = 0;
+  var count_no = 0;
+  for (let i = 0; i < elements_no.length; i++) {
+    if (elements_no[i].checked) {
+        count_no=count_no+1
+    }
+    if (elements_yes[i].checked) {
+        count_yes=count_yes+1
+    }
+  }
+  var count_checked = count_yes + count_no;
+  if(count_checked==i){
+    return "ALL_CHECKED";
+  }else{
+    return "MISSING_CHECKED";
+  }
 
-var status = CheckRevisedElements();
+}
+
+function summit_taxonomy(sku){
+var validate_checked = CheckYesNoElements();
+if(validate_checked=="ALL_CHECKED"){
+    var status = CheckRevisedElements();
 var sku = document.getElementById('sku').value
 var value_accessory_watches_style = document.getElementById('accessory_watches_style').value
 var value_air_conditioner_type = document.getElementById('air_conditioner_type').value
@@ -128,6 +151,14 @@ var value_washing_machine_type = document.getElementById('washing_machine_type')
                 query_data();
                 Notiflix.Loading.remove();
             });
+}else{
+    Notiflix.Report.failure(
+        'Missing some check',
+        '"Please check for all attribute before submit',
+        'Okay',
+    );
+}
+
   }
 
   query_data();
