@@ -75,7 +75,25 @@ function CheckYesNoElements() {
   }
 
 }
+function revised_record(sku){
+    const elements_no = document.querySelectorAll('[id^="no_"]:not([style*="display:none"])');
+    var element_name = ""
+    for (let i = 0; i < elements_no.length; i++) {
 
+        if (elements_no[i].checked) {
+            element_name = elements_no[i].value
+            var new_value = document.getElementById(element_name).value
+            $.post("base/action/action_taxonomy_revised_record.php", {
+                element_name:element_name,
+                sku:sku,
+new_value : element_name
+
+            }function(data) {
+
+            });
+        }
+  }
+}
 function summit_taxonomy(sku){
 var validate_checked = CheckYesNoElements();
 if(validate_checked=="ALL_CHECKED"){
