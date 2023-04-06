@@ -40,7 +40,7 @@ $value_tea_coffee_equipment_type = $_POST['value_tea_coffee_equipment_type'];
 $value_towels_type = $_POST['value_towels_type'];
 $value_vacuum_cleaner_type = $_POST['value_vacuum_cleaner_type'];
 $value_washing_machine_type = $_POST['value_washing_machine_type'];
-$value_new_cate = $_POST['value_new_cate'];
+$new_cate = $_POST['new_cate'];
 
 
         date_default_timezone_set("Asia/Bangkok");
