@@ -92,7 +92,7 @@ function revised_record(sku){
             // handle multi-select element
             if(element_name=='new_cate'){
                 var new_cate_element = document.getElementById('new_cate')
-                var selectedOptions = Array.from(new_cate_element.options).filter(option => new_cate_element.selected);
+                var selectedOptions = Array.from(new_cate_element.options).filter(option => option.selected);
                 var new_value = selectedOptions.map(option => option.value).join("','");
             }
 
@@ -167,7 +167,7 @@ var value_washing_machine_type = document.getElementById('washing_machine_type')
 
     // handle multi-select element
     var new_cate_element = document.getElementById('new_cate')
-    var selectedOptions = Array.from(new_cate_element.options).filter(option => new_cate_element.selected);
+    var selectedOptions = Array.from(new_cate_element.options).filter(option => option.selected);
     var new_cate = selectedOptions.map(option => option.value).join("','");
     console.log(new_cate);
 
