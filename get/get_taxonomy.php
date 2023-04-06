@@ -118,8 +118,10 @@ $query = mysqli_query($con,$sql);
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
             <span class="navbar-brand mb-0 ms-0 h4 "><?php echo $sku;?></span>
-<input type="hidden" id="sku" value="<?php echo $sku;?>">
-            <a href="<?php echo $product_url;?>" target="_blank"><ion-icon name="open-outline"></ion-icon></a>
+            <input type="hidden" id="sku" value="<?php echo $sku;?>">
+            <a href="<?php echo $product_url;?>" target="_blank">
+                <ion-icon name="open-outline"></ion-icon>
+            </a>
         </div>
     </nav>
     <div class="container-fluid border-bottom pb-3">
@@ -144,15 +146,22 @@ $query = mysqli_query($con,$sql);
     </div>
     <div class="row row mt-4">
         <div class="col-4 border-left">
-        <h3 style="font-weight: bolder;">OLD</h3>
+            <h3 style="font-weight: bolder;">OLD</h3>
             <?php echo $old_attribute ;?>
         </div>
         <div class="col-8">
-        <h3 style="font-weight: bolder;">NEW</h3>
+            <h3 style="font-weight: bolder;">NEW</h3>
             <?php echo $new_attribute ;?>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <input type="button" class=" btn btn-sm btn-danger rounded-fill" value="Submit" onclick="summit_taxonomy('<?php echo $sku;?>')">
-    </div>
+            <div class="row">
+                <div class="col-6">
+                </div>
+                <div class="col-6">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <input type="button" class=" btn btn-sm btn-danger rounded-fill" value="Submit"
+                            onclick="summit_taxonomy('<?php echo $sku;?>')">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
