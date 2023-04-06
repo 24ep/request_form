@@ -52,7 +52,7 @@ $value_new_cate = $_POST['value_new_cate'];
         check_by = ".$_SESSION['username'].",
         check_date = CURRENT_TIMESTAMP,
         status = ".$status."
-        where sku = ".$sku
+        where sku = '".$sku."'";
         or die("Error:" . mysqli_error($con));
         $query = mysqli_query($con,$sql);
 
