@@ -169,3 +169,9 @@ $query = mysqli_query($con,$sql);
 
     <!-- product information -->
 </div>
+
+<script>
+new SlimSelect({
+  select: '#new_cate'
+})
+</script>
