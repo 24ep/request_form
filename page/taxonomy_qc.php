@@ -86,10 +86,22 @@ function revised_record(sku){
             $.post("base/action/action_taxonomy_revised_record.php", {
                 element_name:element_name,
                 sku:sku,
-new_value : element_name
-
+                new_value : element_name
             }function(data) {
+                if(data.includes("error")){
+                    Notiflix.Report.failure(
+                        'Updated Failure',
+                         data,
+                        'Okay',
+                    );
 
+                }else{
+                    Notiflix.Notify.success('data updated');
+                    Notiflix.Loading.hourglass('Loading...');
+                    // $('#col_detail').html(data);
+                    query_data();
+                    Notiflix.Loading.remove();
+                }
             });
         }
   }
