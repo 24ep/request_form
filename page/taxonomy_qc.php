@@ -28,7 +28,10 @@ function ShowSmallOriginalValue(element_id){
         elements.style.display = "none";
     }
 }
-
+function auto_select_no(element_id){
+    var no_elements = document.getElementById("no_"+element_id)
+    no_elements.checked = true;
+}
 function CheckRevisedElements() {
 //   const elements = document.querySelectorAll('[id^="no_"]');
   const elements_no = document.querySelectorAll('[id^="no_"]');
