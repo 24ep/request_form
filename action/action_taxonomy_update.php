@@ -44,11 +44,11 @@ function update_taxonomy_qc(
         ){
 
         date_default_timezone_set("Asia/Bangkok");
-        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+        $con= mysqli_connect("localhost","cdse_admin","@aA417528639","taxonomy") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
 
         //update_exsit_status
-        $query = "update all_in_one_project.taxonomy_demo set
+        $query = "update taxonomy.taxonomy_demo set
         check_by = ".$_SESSION['username'].",
         check_date = CURRENT_TIMESTAMP,
         status = ".$status.",
