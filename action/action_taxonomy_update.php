@@ -100,7 +100,7 @@ $value_new_cate = $_POST['value_new_cate'];
         new_cate)
         values
         (
-        '".$value_sku."',
+        '".$sku."',
         '".$value_accessory_watches_style."',
         '".$value_air_conditioner_type."',
         '".$value_air_purifier_type."',
