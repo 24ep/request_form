@@ -119,6 +119,7 @@ var value_tea_coffee_equipment_type = document.getElementById('tea_coffee_equipm
 var value_towels_type = document.getElementById('towels_type').value
 var value_vacuum_cleaner_type = document.getElementById('vacuum_cleaner_type').value
 var value_washing_machine_type = document.getElementById('washing_machine_type').value
+var new_cate = document.getElementById('new_cate').value
 
       $.post("base/action/action_taxonomy_update.php", {
                 sku : sku,
@@ -159,7 +160,8 @@ var value_washing_machine_type = document.getElementById('washing_machine_type')
                 value_tea_coffee_equipment_type : value_tea_coffee_equipment_type,
                 value_towels_type : value_towels_type,
                 value_vacuum_cleaner_type : value_vacuum_cleaner_type,
-                value_washing_machine_type : value_washing_machine_type
+                value_washing_machine_type : value_washing_machine_type,
+                new_cate : new_cate
             },
             function(data) {
                 Notiflix.Loading.hourglass('Loading...');
