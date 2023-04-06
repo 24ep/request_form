@@ -89,7 +89,7 @@ while($row = mysqli_fetch_array($result)) {
 
             $new_attribute .= "
             <select  ".$multiple." ".$select_style." class='".$class."' id='".$row_att['attribute_code']."' >";
-            $query_att_option = "SELECT DISTINCT attribute_option FROM taxonomy.attribute_option where attribute_code='".$row_att['attribute_code']."';";
+            $query_att_option = "SELECT DISTINCT attribute_option,attribute_label FROM taxonomy.attribute_option where attribute_code='".$row_att['attribute_code']."';";
             $result_att_option = mysqli_query($con, $query_att_option);
             $new_attribute .= "<option value=''></option>";
             while($row_att_option = mysqli_fetch_array($result_att_option)) {
