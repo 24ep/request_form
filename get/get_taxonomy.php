@@ -102,7 +102,7 @@ while($row = mysqli_fetch_array($result)) {
 //stamp name
 $sql = "update taxonomy.taxonomy_demo set
 check_by = '".$_SESSION['username']."' ,
-where sku = '".$sku."'";
+where sku = '".$sku."'"
 or die("Error:" . mysqli_error($con));
 $query = mysqli_query($con,$sql);
 ?>
