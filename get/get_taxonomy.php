@@ -62,9 +62,9 @@ while($row = mysqli_fetch_array($result)) {
     $result_att = mysqli_query($con, $query_att);
     while($row_att = mysqli_fetch_array($result_att)) {
         if($row[$row_att['attribute_code']]<>"" and $row[$row_att['attribute_code']]<>Null){
-                $visibility = "hidden";
-        }else{
                 $visibility = "visible";
+        }else{
+                $visibility = "hidden";
         }
 // old attribute
             $old_attribute .= "<label class='mb-1' style='visibility:".$visibility."'>".$row_att['attribute_code']."</label>";
