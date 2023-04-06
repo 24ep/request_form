@@ -64,11 +64,10 @@ while($row = mysqli_fetch_array($result)) {
         if($row[$row_att['attribute_code']]<>"" and $row[$row_att['attribute_code']]<>Null){
 // old attribute
             $old_attribute .= "<label>".$row_att['attribute_code']."</label>";
-            $old_attribute .= '<input type="text" id="olf'.$row_att['attribute_code'].'"  class="form-control form-control-sm"
-                                disabled>';
+            $old_attribute .= '<input type="text" id="old_'.$row_att['attribute_code'].'"  class="form-control form-control-sm" disabled>';
 //new attribute
-            $new_attribute . ="<div class='row'>";
-            $new_attribute . ="<div class='col-6'>";
+            $new_attribute .="<div class='row'>";
+            $new_attribute .="<div class='col-6'>";
             $new_attribute .= "<label>".$row_att['attribute_code']."</label>";
             $new_attribute .= "
             <select class='form-select form-select-sm id='".$row_att['attribute_code']."' >";
