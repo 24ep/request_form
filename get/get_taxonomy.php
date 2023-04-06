@@ -62,15 +62,19 @@ while($row = mysqli_fetch_array($result)) {
     $result_att = mysqli_query($con, $query_att);
     while($row_att = mysqli_fetch_array($result_att)) {
         if($row[$row_att['attribute_code']]<>"" and $row[$row_att['attribute_code']]<>Null){
+                $visibility = "hidden";
+        }else{
+                $visibility = "visible";
+        }
 // old attribute
-            $old_attribute .= "<label class='mb-1'>".$row_att['attribute_code']."</label>";
-            $old_attribute .= '<input type="text" id="old_'.$row_att['attribute_code'].'"  class="form-control form-control-sm" disabled>';
+            $old_attribute .= "<label class='mb-1' style='visibility:".$visibility."'>".$row_att['attribute_code']."</label>";
+            $old_attribute .= '<input type="text" style='visibility:".$visibility."' id="old_'.$row_att['attribute_code'].'"  class="form-control form-control-sm" disabled>';
 //new attribute
             $new_attribute .="<div class='row'>";
             $new_attribute .="<div class='col-6'>";
-            $new_attribute .= "<label  class='mb-1'>".$row_att['attribute_code']."</label>";
+            $new_attribute .= "<label style='visibility:".$visibility."' class='mb-1'>".$row_att['attribute_code']."</label>";
             $new_attribute .= "
-            <select class='form-select form-select-sm id='".$row_att['attribute_code']."' >";
+            <select  style='visibility:".$visibility."' class='form-select form-select-sm id='".$row_att['attribute_code']."' >";
             $query_att_option = "SELECT DISTINCT attribute_option FROM taxonomy.attribute_option where attribute_code='".$row_att['attribute_code']."';";
             $result_att_option = mysqli_query($con, $query_att_option);
             $new_attribute .= "<option value=''></option>";
@@ -84,7 +88,7 @@ while($row = mysqli_fetch_array($result)) {
 
             $new_attribute .= "</select>";
             $new_attribute .="</div>";
-            $new_attribute .="<div class='col-6 mt-4'>";
+            $new_attribute .="<div class='col-6 mt-4' style='visibility:".$visibility."'>";
             $new_attribute .='<input type="radio" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
                                 id="no_'.$row_att["attribute_code"].'" autocomplete="off" >
                                 <label class="btn btn-outline-danger btn-sm"
@@ -95,7 +99,7 @@ while($row = mysqli_fetch_array($result)) {
                                 style=" border-radius: 0%;" for="yes_'.$row_att["attribute_code"].'">Yes</label>';
             $new_attribute .="</div>";
             $new_attribute .="</div>";
-        }
+
     }
 }
 // echo $new_attribute;
