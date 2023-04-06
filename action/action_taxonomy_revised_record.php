@@ -7,7 +7,7 @@ $sku = $_POST['sku'];
 $element_name = $_POST['element_name'];
 $new_value = $_POST['new_value'];
 //select taxonomy
-$query = "SELECT ".$element_name." from taxonomy.taxonomy_demo where sku=".$sku
+$query = "SELECT ".$element_name." from taxonomy.taxonomy_demo where sku='".$sku."'"
 or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
