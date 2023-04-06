@@ -55,6 +55,7 @@ $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     //product information session
     $sku = $row['sku'];
+    $product_url = $row['product_url'];
     $name_en = $row['name_EN'];
     $name_th = $row['name_TH'];
     $image_url = $row['image_url'];
@@ -118,7 +119,7 @@ $query = mysqli_query($con,$sql);
         <div class="container-fluid">
             <span class="navbar-brand mb-0 ms-0 h4 "><?php echo $sku;?></span>
 <input type="hidden" id="sku" value="<?php echo $sku;?>">
-            <ion-icon name="open-outline"></ion-icon>
+            <a href="<?php echo $product_url;?>" target="_blank"><ion-icon name="open-outline"></ion-icon></a>
         </div>
     </nav>
     <div class="container-fluid border-bottom pb-3">
