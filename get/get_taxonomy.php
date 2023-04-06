@@ -22,7 +22,7 @@ while($row = mysqli_fetch_array($result)) {
     $query_att = "SELECT DISTINCT attribute_code FROM taxonomy.attribute_option;";
     $result_att = mysqli_query($con, $query_att);
     while($row_att = mysqli_fetch_array($result_att)) {
-        if($row[$row_att['attribute_code']]<>Null){
+        if($row[$row_att['attribute_code']]<>"" and $row[$row_att['attribute_code']]<>Null ){
             $new_attribute .= "<label>".$row_att['attribute_code']."</label>";
             $new_attribute .= "
             <select class='form-select form-select-sm id='".$row_att['attribute_code']."' >";
