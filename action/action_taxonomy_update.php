@@ -57,7 +57,7 @@ $value_new_cate = $_POST['value_new_cate'];
         $query = mysqli_query($con,$sql);
 
         //insert to complete data
-        $sql = "INSERT INTO taxonomy.taxonomy_complete_demo
+        $sql = "INSERT INTO taxonomy.taxonomy_completed_demo
         (sku,
         accessory_watches_style,
         air_conditioner_type,
