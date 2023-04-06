@@ -123,7 +123,7 @@ var new_cate = document.getElementById('new_cate').value
 
       $.post("base/action/action_taxonomy_update.php", {
                 sku : sku,
-                status : sku,
+                status : stutus,
                 value_accessory_watches_style : value_accessory_watches_style,
                 value_air_conditioner_type : value_air_conditioner_type,
                 value_air_purifier_type : value_air_purifier_type,
