@@ -57,6 +57,9 @@ function CheckYesNoElements() {
     }
   }
   var count_checked = count_yes + count_no;
+    console.log(count_yes)
+    console.log(count_no)
+    console.log(count_elements)
   if(count_checked==count_elements){
     return "ALL_CHECKED";
   }else{
