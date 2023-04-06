@@ -74,7 +74,7 @@ while($row = mysqli_fetch_array($result)) {
             $new_attribute .="<div class='col-6'>";
             $new_attribute .= "<label style='display:".$display."' class='mb-1'>".$row_att['attribute_code']."</label>";
             $new_attribute .= "
-            <select  style='display:".$display."' class='form-select form-select-sm id='".$row_att['attribute_code']."' >";
+            <select  style='display:".$display."' class='form-select form-select-sm' id='".$row_att['attribute_code']."' >";
             $query_att_option = "SELECT DISTINCT attribute_option FROM taxonomy.attribute_option where attribute_code='".$row_att['attribute_code']."';";
             $result_att_option = mysqli_query($con, $query_att_option);
             $new_attribute .= "<option value=''></option>";
@@ -109,6 +109,7 @@ check_by = '".$_SESSION['username']."'
 where sku = '".$sku."'"
 or die("Error:" . mysqli_error($con));
 $query = mysqli_query($con,$sql);
+
 ?>
 <div class="container-md">
     <!-- nav bra -->
