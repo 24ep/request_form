@@ -102,6 +102,7 @@ function revised_record(sku){
   }
 }
 function summit_taxonomy(sku){
+revised_record(sku)
 var validate_checked = CheckYesNoElements();
 if(validate_checked=="ALL_CHECKED"){
 var status = CheckRevisedElements();
