@@ -11,7 +11,7 @@ left join taxonomy.taxonomy_image_url as image_url
 on image_url.sku = tr.sku
 where(((tr.status <> 'QC_PASSED' and tr.status <> 'REVISED') or tr.status is null) and
 (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y' or  tr.in_top_200 = 'Top 200') and
-(tr.check_by is null or tr.check_by ='".$_SESSION['username']."')) and `Auto enrichment` = 'Y' and
+(tr.check_by is null or tr.check_by ='".$_SESSION['username']."')) and `auto_enrichment` = 'Y' and
 (accessory_watches_style is not null or
 air_conditioner_type is not null or
 air_purifier_type is not null or
