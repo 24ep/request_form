@@ -145,7 +145,7 @@ $new_cate = $_POST['new_cate'];
         if($query){
                 echo "update completed";
         }else{
-                echo "error: can't update , please contact jaroonwit - sku  ".$sku;
+                echo "error: can't update ,".$con.", please contact jaroonwit - sku  ".$sku;
         }
 
 

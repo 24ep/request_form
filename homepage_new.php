@@ -167,6 +167,8 @@ Copy into the head of all HTML pages you wish to display the widget -->
   }(window,document,"script","https://stonly.com/js/widget/v2/");
 
   StonlyWidget('identify', 'd238ec14-d524-11ed-871a-0a52ff1ec764');
+
+
 </script>
 
     <!-- <script async custom-element="amp-web-push" src="https://cdn.ampproject.org/v0/amp-web-push-0.1.js"></script>
