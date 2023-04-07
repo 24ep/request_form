@@ -153,7 +153,22 @@ if (!$_SESSION["login_csg"]){
     <!-- subsc -->
 <!-- googlesheet_API -->
 <script src="https://apis.google.com/js/api.js"></script>
-<script id='pixel-script-poptin' src='https://cdn.popt.in/pixel.js?id=f9c6e3421d6fe' async='true'></script>
+<!-- <script id='pixel-script-poptin' src='https://cdn.popt.in/pixel.js?id=f9c6e3421d6fe' async='true'></script>
+Copy into the head of all HTML pages you wish to display the widget -->
+
+<!-- stonly-widget - copy into the head -->
+<script>window.STONLY_WID = "d238ec14-d524-11ed-871a-0a52ff1ec764";</script>
+<script>
+!function(s,t,o,n,l,y,w,g){s.StonlyWidget||((w=s.StonlyWidget=function(){
+  w._api?w._api.apply(w,arguments):w.queue.push(arguments)}).scriptPath=n,w.queue=[],(y=t.createElement(o)).async=!0,
+  (g=new XMLHttpRequest).open("GET",n+"version?v="+Date.now(),!0),g.onreadystatechange=function(){
+  4===g.readyState&&(y.src=n+"stonly-widget.js?v="+(200===g.status?g.responseText:Date.now()),
+  (l=t.getElementsByTagName(o)[0]).parentNode.insertBefore(y,l))},g.send())
+  }(window,document,"script","https://stonly.com/js/widget/v2/");
+
+  StonlyWidget('identify', 'd238ec14-d524-11ed-871a-0a52ff1ec764');
+</script>
+
     <!-- <script async custom-element="amp-web-push" src="https://cdn.ampproject.org/v0/amp-web-push-0.1.js"></script>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <meta name="viewport" content="width=device-width">
