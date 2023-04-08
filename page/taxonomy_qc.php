@@ -19,8 +19,8 @@ function query_data(){
 }
 
 function ShowSmallOriginalValue(element_id){
-    var no_elements = document.getElementById("no_new_"+element_id)
-    var elements = document.getElementById("original_new_"+element_id)
+    var no_elements = document.getElementById("no_"+element_id)
+    var elements = document.getElementById("original_"+element_id)
 
     if (no_elements.checked==true) {
         elements.style.display = "block";

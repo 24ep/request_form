@@ -10,7 +10,7 @@ SELECT tr.* ,image_url.image_url as image_url FROM taxonomy.taxonomy_raw as tr
 left join taxonomy.taxonomy_image_url as image_url
 on image_url.sku = tr.sku
 where(((tr.status <> 'QC_PASSED' and tr.status <> 'REVISED') or tr.status is null) and
-(tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y' or  tr.in_top_200 = 'Top 200') and
+(tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y') and
 (tr.check_by is null or tr.check_by ='".$_SESSION['username']."')) and `auto_enrichment` = 'Y' and
 (new_accessory_watches_style is not null or
 new_air_conditioner_type is not null or
@@ -80,21 +80,21 @@ while($row = mysqli_fetch_array($result)) {
         }
 // old attribute
             $old_attribute .= "<label class='mb-1' style='display:".$display."'>".str_replace("new","old",$row_att['attribute_code'])."</label>";
-            $old_attribute .= '<input type="text" value="'.$row["old_".$row_att['attribute_code']].'" style="display:'.$display.'" id="old_'.$row_att['attribute_code'].'"  class="form-control form-control-sm" disabled>';
+            $old_attribute .= '<input type="text" value="'.$row["old_".$row_att['pim_attribute_code']].'" style="display:'.$display.'" id="old_'.$row_att['pim_attribute_code'].'"  class="form-control form-control-sm" disabled>';
 //new attribute
             $new_attribute .="<div class='row'>";
             $new_attribute .="<div class='col-6'>";
-            $new_attribute .= "<label style='display:".$display."' class='mb-1'>".$row_att['attribute_code']."</label>";
+            $new_attribute .= "<label style='display:".$display."' class='mb-1'>old_".$row_att['pim_attribute_code']."</label>";
 
 
             $new_attribute .= "
-            <select  onchange='auto_select_no(&#39;new_".$row_att['attribute_code']."&#39;)' ".$multiple." ".$select_style." class='".$class."' id='new_".$row_att['attribute_code']."' >";
-            $query_att_option = "SELECT DISTINCT attribute_option,attribute_label FROM taxonomy.attribute_option where attribute_code='new_".$row_att['attribute_code']."';";
+            <select  onchange='auto_select_no(&#39;".$row_att['attribute_code']."&#39;)' ".$multiple." ".$select_style." class='".$class."' id='".$row_att['attribute_code']."' >";
+            $query_att_option = "SELECT DISTINCT attribute_option,attribute_label FROM taxonomy.attribute_option where attribute_code='".$row_att['attribute_code']."';";
             $result_att_option = mysqli_query($con, $query_att_option);
             $new_attribute .= "<option value=''></option>";
             while($row_att_option = mysqli_fetch_array($result_att_option)) {
                 if($multiple =="multiple"){
-                    $attribute_option_selected = explode(",",$row["new_".$row_att['attribute_code']]);
+                    $attribute_option_selected = explode(",",$row[$row_att['attribute_code']]);
                     foreach ( $attribute_option_selected as $selected_option) {
                         if($selected_option==$row_att_option['attribute_option']){
                             $new_attribute .= "<option selected value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_label']."</option>";
@@ -104,7 +104,7 @@ while($row = mysqli_fetch_array($result)) {
                       }
 
                 }else{
-                    if($row["new_".$row_att['attribute_code']]==$row_att_option['attribute_option']){
+                    if($row[$row_att['attribute_code']]==$row_att_option['attribute_option']){
                         $new_attribute .= "<option selected value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_label']."</option>";
                     }else{
                         $new_attribute .= "<option value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_label']."</option>";
@@ -114,17 +114,17 @@ while($row = mysqli_fetch_array($result)) {
             }
 
             $new_attribute .= "</select>";
-            $new_attribute .= "<small id='original_new_".$row_att["attribute_code"]."' style='font-size:10px;display:none;color: #c3c3c3;'>Original value : ".$row["new_".$row_att['attribute_code']]."</small>";
+            $new_attribute .= "<small id='original_".$row_att["attribute_code"]."' style='font-size:10px;display:none;color: #c3c3c3;'>Original value : ".$row[$row_att['attribute_code']]."</small>";
             $new_attribute .="</div>";
             $new_attribute .="<div class='col-6 mt-4' style='display:".$display."'>";
-            $new_attribute .='<input  value="new_'.$row_att["attribute_code"].'" onclick="ShowSmallOriginalValue(&#39;new_'.$row_att["attribute_code"].'&#39;)" type="radio"  style="display:'.$display.'" class="btn-check" name="options-outlined-new_'.$row_att["attribute_code"].'"
-                                id="no_new_'.$row_att["attribute_code"].'" autocomplete="off" >
+            $new_attribute .='<input  value="'.$row_att["attribute_code"].'" onclick="ShowSmallOriginalValue(&#39;'.$row_att["attribute_code"].'&#39;)" type="radio"  style="display:'.$display.'" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
+                                id="no_'.$row_att["attribute_code"].'" autocomplete="off" >
                                 <label class="btn btn-outline-danger btn-sm"
-                                style=" border-radius: 0%;" for="no_new_'.$row_att["attribute_code"].'">No</label>
-                                <input   value="new_'.$row_att["attribute_code"].'" onclick="ShowSmallOriginalValue(&#39;new_'.$row_att["attribute_code"].'&#39;)" style="display:'.$display.'" type="radio" class="btn-check" name="options-outlined-new_'.$row_att["attribute_code"].'"
-                                    id="yes_new_'.$row_att["attribute_code"].'" autocomplete="off">
+                                style=" border-radius: 0%;" for="no_'.$row_att["attribute_code"].'">No</label>
+                                <input   value="'.$row_att["attribute_code"].'" onclick="ShowSmallOriginalValue(&#39;'.$row_att["attribute_code"].'&#39;)" style="display:'.$display.'" type="radio" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
+                                    id="yes_'.$row_att["attribute_code"].'" autocomplete="off">
                                 <label class="btn btn-outline-success btn-sm"
-                                style=" border-radius: 0%;" for="yes_new_'.$row_att["attribute_code"].'">Yes</label>';
+                                style=" border-radius: 0%;" for="yes_'.$row_att["attribute_code"].'">Yes</label>';
             $new_attribute .="</div>";
             $new_attribute .="</div>";
 

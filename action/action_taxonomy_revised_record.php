@@ -15,7 +15,7 @@ while($row = mysqli_fetch_array($result)) {
 }
 
         //insert to complete data
-        $sql = "INSERT INTO taxonomy.taxonomy_revised_record_demo
+        $sql = "INSERT INTO taxonomy.taxonomy_revised_record
         (sku,
         attribute_code,
         old_value,
