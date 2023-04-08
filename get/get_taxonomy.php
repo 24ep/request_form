@@ -217,9 +217,9 @@ $query = mysqli_query($con,$sql);
             <h3 style="font-weight: bolder;">NEW</h3>
             <?php echo $new_attribute ;?>
             <div class="row">
-                <div class="col-6">
+                <div class="col-10">
                 </div>
-                <div class="col-6">
+                <div class="col-2">
                     <div class="mt-3">
                         <input type="button" class=" btn btn-sm btn-danger rounded-fill" value="Submit"
                             onclick="summit_taxonomy('<?php echo $sku;?>')">
