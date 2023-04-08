@@ -83,10 +83,15 @@ while($row = mysqli_fetch_array($result)) {
         }
 // old attribute
             $old_attribute .= "<label class='mb-1' style='display:".$display."'>old_".$row_att['pim_attribute_code']."</label>";
-            $old_attribute .= '<input type="text" value="'.$row["old_".$row_att['pim_attribute_code']].'" style="display:'.$display.'" id="old_'.$row_att['pim_attribute_code'].'"  class="form-control form-control-sm" disabled>';
+            if($row_att['pim_attribute_code']=='cate'){
+                $old_attribute .= '<textarea  style="display:'.$display.'" id="old_'.$row_att['pim_attribute_code'].'"  class="form-control form-control-sm" readonly>'.$row["old_".$row_att['pim_attribute_code']].'</textarea>';
+            }else{
+                $old_attribute .= '<input type="text" value="'.$row["old_".$row_att['pim_attribute_code']].'" style="display:'.$display.'" id="old_'.$row_att['pim_attribute_code'].'"  class="form-control form-control-sm" readonly>';
+            }
+
 //new attribute
             $new_attribute .="<div class='row'>";
-            $new_attribute .="<div class='col-6'>";
+            $new_attribute .="<div class='col-10'>";
             $new_attribute .= "<label style='display:".$display."' class='mb-1'>".$row_att['attribute_code']."</label>";
 
 
@@ -119,7 +124,7 @@ while($row = mysqli_fetch_array($result)) {
             $new_attribute .= "</select>";
             $new_attribute .= "<small id='original_".$row_att["attribute_code"]."' style='font-size:10px;display:none;color: #c3c3c3;'>Original value : ".$row[$row_att['attribute_code']]."</small>";
             $new_attribute .="</div>";
-            $new_attribute .="<div class='col-6 mt-4' style='display:".$display."'>";
+            $new_attribute .="<div class='col-2 mt-4 ps-0 pe-0' style='display:".$display."'>";
             $new_attribute .='<input  value="'.$row_att["attribute_code"].'" onclick="ShowSmallOriginalValue(&#39;'.$row_att["attribute_code"].'&#39;)" type="radio"  style="display:'.$display.'" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
                                 id="no_'.$row_att["attribute_code"].'" autocomplete="off" >
                                 <label class="btn btn-outline-danger btn-sm"
