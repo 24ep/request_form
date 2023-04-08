@@ -6,9 +6,11 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 $new_attribute="";
 //query
 $query = "
-SELECT tr.* ,image_url.image_url as image_url FROM taxonomy.taxonomy_raw as tr
+SELECT tr.* ,image_url.image_url as image_url , description.clean_text_th as description FROM taxonomy.taxonomy_raw as tr
 left join taxonomy.taxonomy_image_url as image_url
 on image_url.sku = tr.sku
+left join taxonomy.taxonomy_description as description
+on description.sku = tr.sku
 where(((tr.status <> 'QC_PASSED' and tr.status <> 'REVISED') or tr.status is null) and
 (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y') and
 (tr.check_by is null or tr.check_by ='".$_SESSION['username']."')) and `auto_enrichment` = 'Y' and
@@ -58,6 +60,7 @@ while($row = mysqli_fetch_array($result)) {
     $product_url = $row['product_url'];
     $name_en = $row['name_EN'];
     $name_th = $row['name_TH'];
+    $description = $row['description'];
     $image_url = $row['image_url'];
     $query_att = "SELECT DISTINCT attribute_code,pim_attribute_code FROM taxonomy.attribute_option;";
     $result_att = mysqli_query($con, $query_att);
@@ -171,6 +174,28 @@ $query = mysqli_query($con,$sql);
             </div>
         </div>
     </div>
+<!-- categories -->
+    <!-- <div class="row row mt-4">
+        <div class="col-4 border-left">
+            <h3 style="font-weight: bolder;">OLD</h3>
+            <?php //echo $old_attribute ;?>
+        </div>
+        <div class="col-8">
+            <h3 style="font-weight: bolder;">NEW</h3>
+            <?php //echo $new_attribute ;?>
+            <div class="row">
+                <div class="col-6">
+                </div>
+                <div class="col-6">
+                    <div class="mt-3">
+                        <input type="button" class=" btn btn-sm btn-danger rounded-fill" value="Submit"
+                            onclick="summit_taxonomy('<?php //echo $sku;?>')">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- attribute -->
     <div class="row row mt-4">
         <div class="col-4 border-left">
             <h3 style="font-weight: bolder;">OLD</h3>
