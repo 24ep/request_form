@@ -19,8 +19,8 @@ function query_data(){
 }
 
 function ShowSmallOriginalValue(element_id){
-    var no_elements = document.getElementById("no_"+element_id)
-    var elements = document.getElementById("original_"+element_id)
+    var no_elements = document.getElementById("no_new_"+element_id)
+    var elements = document.getElementById("original_new_"+element_id)
 
     if (no_elements.checked==true) {
         elements.style.display = "block";
@@ -126,44 +126,44 @@ var validate_checked = CheckYesNoElements();
 if(validate_checked=="ALL_CHECKED"){
 var status = CheckRevisedElements();
 var sku = document.getElementById('sku').value
-var value_accessory_watches_style = document.getElementById('accessory_watches_style').value
-var value_air_conditioner_type = document.getElementById('air_conditioner_type').value
-var value_air_purifier_type = document.getElementById('air_purifier_type').value
-var value_ball_type = document.getElementById('ball_type').value
-var value_beauty_set_type = document.getElementById('beauty_set_type').value
-var value_book_genre = document.getElementById('book_genre').value
-var value_coffee_machine_type = document.getElementById('coffee_machine_type').value
-var value_console_type = document.getElementById('console_type').value
-var value_dress_length = document.getElementById('dress_length').value
-var value_face_mask_type = document.getElementById('face_mask_type').value
-var value_facial_part = document.getElementById('facial_part').value
-var value_fan_type = document.getElementById('fan_type').value
-var value_fashion_occasion = document.getElementById('fashion_occasion').value
-var value_fryer_type = document.getElementById('fryer_type').value
-var value_gender = document.getElementById('gender').value
-var value_haircare_type = document.getElementById('haircare_type').value
-var value_hat_type = document.getElementById('hat_type').value
-var value_headphone_type = document.getElementById('headphone_type').value
-var value_irons_type = document.getElementById('irons_type').value
-var value_life_pen_type = document.getElementById('life_pen_type').value
-var value_material_clothing = document.getElementById('material_clothing').value
-var value_maternity = document.getElementById('maternity').value
-var value_pencil_type = document.getElementById('pencil_type').value
-var value_pet_type = document.getElementById('pet_type').value
-var value_refrigerator_doors = document.getElementById('refrigerator_doors').value
-var value_ring_type = document.getElementById('ring_type').value
-var value_screen_resolution = document.getElementById('screen_resolution').value
-var value_shoes_occasion = document.getElementById('shoes_occasion').value
-var value_skirt_length = document.getElementById('skirt_length').value
-var value_speaker_type = document.getElementById('speaker_type').value
-var value_sport_type = document.getElementById('sport_type').value
-var value_storage_drive_type = document.getElementById('storage_drive_type').value
-var value_stove_type = document.getElementById('stove_type').value
-var value_swimming_goggle_type = document.getElementById('swimming_goggle_type').value
-var value_tea_coffee_equipment_type = document.getElementById('tea_coffee_equipment_type').value
-var value_towels_type = document.getElementById('towels_type').value
-var value_vacuum_cleaner_type = document.getElementById('vacuum_cleaner_type').value
-var value_washing_machine_type = document.getElementById('washing_machine_type').value
+var value_new_accessory_watches_style = document.getElementById('new_accessory_watches_style').value
+var value_new_air_conditioner_type = document.getElementById('new_air_conditioner_type').value
+var value_new_air_purifier_type = document.getElementById('new_air_purifier_type').value
+var value_new_ball_type = document.getElementById('new_ball_type').value
+var value_new_beauty_set_type = document.getElementById('new_beauty_set_type').value
+var value_new_book_genre = document.getElementById('new_book_genre').value
+var value_new_coffee_machine_type = document.getElementById('new_coffee_machine_type').value
+var value_new_console_type = document.getElementById('new_console_type').value
+var value_new_dress_length = document.getElementById('new_dress_length').value
+var value_new_face_mask_type = document.getElementById('new_face_mask_type').value
+var value_new_facial_part = document.getElementById('new_facial_part').value
+var value_new_fan_type = document.getElementById('new_fan_type').value
+var value_new_fashion_occasion = document.getElementById('new_fashion_occasion').value
+var value_new_fryer_type = document.getElementById('new_fryer_type').value
+var value_new_gender = document.getElementById('new_gender').value
+var value_new_haircare_type = document.getElementById('new_haircare_type').value
+var value_new_hat_type = document.getElementById('new_hat_type').value
+var value_new_headphone_type = document.getElementById('new_headphone_type').value
+var value_new_irons_type = document.getElementById('new_irons_type').value
+var value_new_life_pen_type = document.getElementById('new_life_pen_type').value
+var value_new_material_clothing = document.getElementById('new_material_clothing').value
+var value_new_maternity = document.getElementById('new_maternity').value
+var value_new_pencil_type = document.getElementById('new_pencil_type').value
+var value_new_pet_type = document.getElementById('new_pet_type').value
+var value_new_refrigerator_doors = document.getElementById('new_refrigerator_doors').value
+var value_new_ring_type = document.getElementById('new_ring_type').value
+var value_new_screen_resolution = document.getElementById('new_screen_resolution').value
+var value_new_shoes_occasion = document.getElementById('new_shoes_occasion').value
+var value_new_skirt_length = document.getElementById('new_skirt_length').value
+var value_new_speaker_type = document.getElementById('new_speaker_type').value
+var value_new_sport_type = document.getElementById('new_sport_type').value
+var value_new_storage_drive_type = document.getElementById('new_storage_drive_type').value
+var value_new_stove_type = document.getElementById('new_stove_type').value
+var value_new_swimming_goggle_type = document.getElementById('new_swimming_goggle_type').value
+var value_new_tea_coffee_equipment_type = document.getElementById('new_tea_coffee_equipment_type').value
+var value_new_towels_type = document.getElementById('new_towels_type').value
+var value_new_vacuum_cleaner_type = document.getElementById('new_vacuum_cleaner_type').value
+var value_new_washing_machine_type = document.getElementById('new_washing_machine_type').value
 // var new_cate = document.getElementById('new_cate').value
 
 
@@ -178,44 +178,44 @@ var value_washing_machine_type = document.getElementById('washing_machine_type')
       $.post("base/action/action_taxonomy_update.php", {
                 sku : sku,
                 status : status,
-                value_accessory_watches_style : value_accessory_watches_style,
-                value_air_conditioner_type : value_air_conditioner_type,
-                value_air_purifier_type : value_air_purifier_type,
-                value_ball_type : value_ball_type,
-                value_beauty_set_type : value_beauty_set_type,
-                value_book_genre : value_book_genre,
-                value_coffee_machine_type : value_coffee_machine_type,
-                value_console_type : value_console_type,
-                value_dress_length : value_dress_length,
-                value_face_mask_type : value_face_mask_type,
-                value_facial_part : value_facial_part,
-                value_fan_type : value_fan_type,
-                value_fashion_occasion : value_fashion_occasion,
-                value_fryer_type : value_fryer_type,
-                value_gender : value_gender,
-                value_haircare_type : value_haircare_type,
-                value_hat_type : value_hat_type,
-                value_headphone_type : value_headphone_type,
-                value_irons_type : value_irons_type,
-                value_life_pen_type : value_life_pen_type,
-                value_material_clothing : value_material_clothing,
-                value_maternity : value_maternity,
-                value_pencil_type : value_pencil_type,
-                value_pet_type : value_pet_type,
-                value_refrigerator_doors : value_refrigerator_doors,
-                value_ring_type : value_ring_type,
-                value_screen_resolution : value_screen_resolution,
-                value_shoes_occasion : value_shoes_occasion,
-                value_skirt_length : value_skirt_length,
-                value_speaker_type : value_speaker_type,
-                value_sport_type : value_sport_type,
-                value_storage_drive_type : value_storage_drive_type,
-                value_stove_type : value_stove_type,
-                value_swimming_goggle_type : value_swimming_goggle_type,
-                value_tea_coffee_equipment_type : value_tea_coffee_equipment_type,
-                value_towels_type : value_towels_type,
-                value_vacuum_cleaner_type : value_vacuum_cleaner_type,
-                value_washing_machine_type : value_washing_machine_type,
+                value_new_accessory_watches_style : value_new_accessory_watches_style,
+                value_new_air_conditioner_type : value_new_air_conditioner_type,
+                value_new_air_purifier_type : value_new_air_purifier_type,
+                value_new_ball_type : value_new_ball_type,
+                value_new_beauty_set_type : value_new_beauty_set_type,
+                value_new_book_genre : value_new_book_genre,
+                value_new_coffee_machine_type : value_new_coffee_machine_type,
+                value_new_console_type : value_new_console_type,
+                value_new_dress_length : value_new_dress_length,
+                value_new_face_mask_type : value_new_face_mask_type,
+                value_new_facial_part : value_new_facial_part,
+                value_new_fan_type : value_new_fan_type,
+                value_new_fashion_occasion : value_new_fashion_occasion,
+                value_new_fryer_type : value_new_fryer_type,
+                value_new_gender : value_new_gender,
+                value_new_haircare_type : value_new_haircare_type,
+                value_new_hat_type : value_new_hat_type,
+                value_new_headphone_type : value_new_headphone_type,
+                value_new_irons_type : value_new_irons_type,
+                value_new_life_pen_type : value_new_life_pen_type,
+                value_new_material_clothing : value_new_material_clothing,
+                value_new_maternity : value_new_maternity,
+                value_new_pencil_type : value_new_pencil_type,
+                value_new_pet_type : value_new_pet_type,
+                value_new_refrigerator_doors : value_new_refrigerator_doors,
+                value_new_ring_type : value_new_ring_type,
+                value_new_screen_resolution : value_new_screen_resolution,
+                value_new_shoes_occasion : value_new_shoes_occasion,
+                value_new_skirt_length : value_new_skirt_length,
+                value_new_speaker_type : value_new_speaker_type,
+                value_new_sport_type : value_new_sport_type,
+                value_new_storage_drive_type : value_new_storage_drive_type,
+                value_new_stove_type : value_new_stove_type,
+                value_new_swimming_goggle_type : value_new_swimming_goggle_type,
+                value_new_tea_coffee_equipment_type : value_new_tea_coffee_equipment_type,
+                value_new_towels_type : value_new_towels_type,
+                value_new_vacuum_cleaner_type : value_new_vacuum_cleaner_type,
+                value_new_washing_machine_type : value_new_washing_machine_type,
                 new_cate : new_cate
             },
             function(data) {

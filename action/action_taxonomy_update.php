@@ -2,44 +2,44 @@
  session_start();
 $sku = $_POST['sku'];
 $status = $_POST['status'];
- $value_accessory_watches_style = $_POST['value_accessory_watches_style'];
-$value_air_conditioner_type = $_POST['value_air_conditioner_type'];
-$value_air_purifier_type = $_POST['value_air_purifier_type'];
-$value_ball_type = $_POST['value_ball_type'];
-$value_beauty_set_type = $_POST['value_beauty_set_type'];
-$value_book_genre = $_POST['value_book_genre'];
-$value_coffee_machine_type = $_POST['value_coffee_machine_type'];
-$value_console_type = $_POST['value_console_type'];
-$value_dress_length = $_POST['value_dress_length'];
-$value_face_mask_type = $_POST['value_face_mask_type'];
-$value_facial_part = $_POST['value_facial_part'];
-$value_fan_type = $_POST['value_fan_type'];
-$value_fashion_occasion = $_POST['value_fashion_occasion'];
-$value_fryer_type = $_POST['value_fryer_type'];
-$value_gender = $_POST['value_gender'];
-$value_haircare_type = $_POST['value_haircare_type'];
-$value_hat_type = $_POST['value_hat_type'];
-$value_headphone_type = $_POST['value_headphone_type'];
-$value_irons_type = $_POST['value_irons_type'];
-$value_life_pen_type = $_POST['value_life_pen_type'];
-$value_material_clothing = $_POST['value_material_clothing'];
-$value_maternity = $_POST['value_maternity'];
-$value_pencil_type = $_POST['value_pencil_type'];
-$value_pet_type = $_POST['value_pet_type'];
-$value_refrigerator_doors = $_POST['value_refrigerator_doors'];
-$value_ring_type = $_POST['value_ring_type'];
-$value_screen_resolution = $_POST['value_screen_resolution'];
-$value_shoes_occasion = $_POST['value_shoes_occasion'];
-$value_skirt_length = $_POST['value_skirt_length'];
-$value_speaker_type = $_POST['value_speaker_type'];
-$value_sport_type = $_POST['value_sport_type'];
-$value_storage_drive_type = $_POST['value_storage_drive_type'];
-$value_stove_type = $_POST['value_stove_type'];
-$value_swimming_goggle_type = $_POST['value_swimming_goggle_type'];
-$value_tea_coffee_equipment_type = $_POST['value_tea_coffee_equipment_type'];
-$value_towels_type = $_POST['value_towels_type'];
-$value_vacuum_cleaner_type = $_POST['value_vacuum_cleaner_type'];
-$value_washing_machine_type = $_POST['value_washing_machine_type'];
+ $value_new_accessory_watches_style = $_POST['value_new_accessory_watches_style'];
+$value_new_air_conditioner_type = $_POST['value_new_air_conditioner_type'];
+$value_new_air_purifier_type = $_POST['value_new_air_purifier_type'];
+$value_new_ball_type = $_POST['value_new_ball_type'];
+$value_new_beauty_set_type = $_POST['value_new_beauty_set_type'];
+$value_new_book_genre = $_POST['value_new_book_genre'];
+$value_new_coffee_machine_type = $_POST['value_new_coffee_machine_type'];
+$value_new_console_type = $_POST['value_new_console_type'];
+$value_new_dress_length = $_POST['value_new_dress_length'];
+$value_new_face_mask_type = $_POST['value_new_face_mask_type'];
+$value_new_facial_part = $_POST['value_new_facial_part'];
+$value_new_fan_type = $_POST['value_new_fan_type'];
+$value_new_fashion_occasion = $_POST['value_new_fashion_occasion'];
+$value_new_fryer_type = $_POST['value_new_fryer_type'];
+$value_new_gender = $_POST['value_new_gender'];
+$value_new_haircare_type = $_POST['value_new_haircare_type'];
+$value_new_hat_type = $_POST['value_new_hat_type'];
+$value_new_headphone_type = $_POST['value_new_headphone_type'];
+$value_new_irons_type = $_POST['value_new_irons_type'];
+$value_new_life_pen_type = $_POST['value_new_life_pen_type'];
+$value_new_material_clothing = $_POST['value_new_material_clothing'];
+$value_new_maternity = $_POST['value_new_maternity'];
+$value_new_pencil_type = $_POST['value_new_pencil_type'];
+$value_new_pet_type = $_POST['value_new_pet_type'];
+$value_new_refrigerator_doors = $_POST['value_new_refrigerator_doors'];
+$value_new_ring_type = $_POST['value_new_ring_type'];
+$value_new_screen_resolution = $_POST['value_new_screen_resolution'];
+$value_new_shoes_occasion = $_POST['value_new_shoes_occasion'];
+$value_new_skirt_length = $_POST['value_new_skirt_length'];
+$value_new_speaker_type = $_POST['value_new_speaker_type'];
+$value_new_sport_type = $_POST['value_new_sport_type'];
+$value_new_storage_drive_type = $_POST['value_new_storage_drive_type'];
+$value_new_stove_type = $_POST['value_new_stove_type'];
+$value_new_swimming_goggle_type = $_POST['value_new_swimming_goggle_type'];
+$value_new_tea_coffee_equipment_type = $_POST['value_new_tea_coffee_equipment_type'];
+$value_new_towels_type = $_POST['value_new_towels_type'];
+$value_new_vacuum_cleaner_type = $_POST['value_new_vacuum_cleaner_type'];
+$value_new_washing_machine_type = $_POST['value_new_washing_machine_type'];
 $new_cate = $_POST['new_cate'];
 
 
@@ -48,7 +48,7 @@ $new_cate = $_POST['new_cate'];
         mysqli_query($con, "SET NAMES 'utf8' ");
 
         //update_exsiting_status
-        $sql = "update taxonomy.taxonomy_demo set
+        $sql = "update taxonomy.taxonomy_raw set
         check_by = '".$_SESSION['username']."',
         check_date = CURRENT_TIMESTAMP,
         status = '".$status."'
@@ -57,7 +57,7 @@ $new_cate = $_POST['new_cate'];
         $query = mysqli_query($con,$sql);
 
         //insert to complete data
-        $sql = "INSERT INTO taxonomy.taxonomy_completed_demo
+        $sql = "INSERT INTO taxonomy.taxonomy_completed
         (sku,
         accessory_watches_style,
         air_conditioner_type,
@@ -101,44 +101,44 @@ $new_cate = $_POST['new_cate'];
         values
         (
         '".$sku."',
-        '".$value_accessory_watches_style."',
-        '".$value_air_conditioner_type."',
-        '".$value_air_purifier_type."',
-        '".$value_ball_type."',
-        '".$value_beauty_set_type."',
-        '".$value_book_genre."',
-        '".$value_coffee_machine_type."',
-        '".$value_console_type."',
-        '".$value_dress_length."',
-        '".$value_face_mask_type."',
-        '".$value_facial_part."',
-        '".$value_fan_type."',
-        '".$value_fashion_occasion."',
-        '".$value_fryer_type."',
-        '".$value_gender."',
-        '".$value_haircare_type."',
-        '".$value_hat_type."',
-        '".$value_headphone_type."',
-        '".$value_irons_type."',
-        '".$value_life_pen_type."',
-        '".$value_material_clothing."',
-        '".$value_maternity."',
-        '".$value_pencil_type."',
-        '".$value_pet_type."',
-        '".$value_refrigerator_doors."',
-        '".$value_ring_type."',
-        '".$value_screen_resolution."',
-        '".$value_shoes_occasion."',
-        '".$value_skirt_length."',
-        '".$value_speaker_type."',
-        '".$value_sport_type."',
-        '".$value_storage_drive_type."',
-        '".$value_stove_type."',
-        '".$value_swimming_goggle_type."',
-        '".$value_tea_coffee_equipment_type."',
-        '".$value_towels_type."',
-        '".$value_vacuum_cleaner_type."',
-        '".$value_washing_machine_type."',
+        '".$value_new_accessory_watches_style."',
+        '".$value_new_air_conditioner_type."',
+        '".$value_new_air_purifier_type."',
+        '".$value_new_ball_type."',
+        '".$value_new_beauty_set_type."',
+        '".$value_new_book_genre."',
+        '".$value_new_coffee_machine_type."',
+        '".$value_new_console_type."',
+        '".$value_new_dress_length."',
+        '".$value_new_face_mask_type."',
+        '".$value_new_facial_part."',
+        '".$value_new_fan_type."',
+        '".$value_new_fashion_occasion."',
+        '".$value_new_fryer_type."',
+        '".$value_new_gender."',
+        '".$value_new_haircare_type."',
+        '".$value_new_hat_type."',
+        '".$value_new_headphone_type."',
+        '".$value_new_irons_type."',
+        '".$value_new_life_pen_type."',
+        '".$value_new_material_clothing."',
+        '".$value_new_maternity."',
+        '".$value_new_pencil_type."',
+        '".$value_new_pet_type."',
+        '".$value_new_refrigerator_doors."',
+        '".$value_new_ring_type."',
+        '".$value_new_screen_resolution."',
+        '".$value_new_shoes_occasion."',
+        '".$value_new_skirt_length."',
+        '".$value_new_speaker_type."',
+        '".$value_new_sport_type."',
+        '".$value_new_storage_drive_type."',
+        '".$value_new_stove_type."',
+        '".$value_new_swimming_goggle_type."',
+        '".$value_new_tea_coffee_equipment_type."',
+        '".$value_new_towels_type."',
+        '".$value_new_vacuum_cleaner_type."',
+        '".$value_new_washing_machine_type."',
         '".$new_cate."')"
         or die("Error:" . mysqli_error($con));
         $query = mysqli_query($con,$sql);
