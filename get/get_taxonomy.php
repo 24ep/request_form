@@ -62,7 +62,7 @@ while($row = mysqli_fetch_array($result)) {
     $query_att = "SELECT DISTINCT attribute_code FROM taxonomy.attribute_option;";
     $result_att = mysqli_query($con, $query_att);
     while($row_att = mysqli_fetch_array($result_att)) {
-        if($row["new_".$row_att['attribute_code']]<>"" and $row["new_".$row_att['attribute_code']]<>Null){
+        if($row["new_".$row_att['pim_attribute_code']]<>"" and $row["new_".$row_att['pim_attribute_code']]<>Null){
                 $display = "block";
         }else{
                 $display = "none";
@@ -79,7 +79,7 @@ while($row = mysqli_fetch_array($result)) {
 
         }
 // old attribute
-            $old_attribute .= "<label class='mb-1' style='display:".$display."'>".str_replace("new","old",$row_att['attribute_code'])."</label>";
+            $old_attribute .= "<label class='mb-1' style='display:".$display."'>".$row_att['pim_attribute_code']."</label>";
             $old_attribute .= '<input type="text" value="'.$row["old_".$row_att['pim_attribute_code']].'" style="display:'.$display.'" id="old_'.$row_att['pim_attribute_code'].'"  class="form-control form-control-sm" disabled>';
 //new attribute
             $new_attribute .="<div class='row'>";
