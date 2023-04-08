@@ -59,7 +59,7 @@ while($row = mysqli_fetch_array($result)) {
     $name_en = $row['name_EN'];
     $name_th = $row['name_TH'];
     $image_url = $row['image_url'];
-    $query_att = "SELECT DISTINCT attribute_code FROM taxonomy.attribute_option;";
+    $query_att = "SELECT DISTINCT attribute_code,pim_attribute_code FROM taxonomy.attribute_option;";
     $result_att = mysqli_query($con, $query_att);
     while($row_att = mysqli_fetch_array($result_att)) {
         if($row["new_".$row_att['pim_attribute_code']]<>"" and $row["new_".$row_att['pim_attribute_code']]<>Null){
