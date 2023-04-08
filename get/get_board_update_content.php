@@ -138,7 +138,7 @@ order by ".$sort_de_status."  limit 500";
 // getting by status
 $query_status = "SELECT attribute_option_code FROM u749625779_cdscontent.job_attribute_option
 where attribute_code= 'status' and attribute_table = 'content_request' and
-attribute_option_code not in('cancel','routine work','monitor','In-review','close','Waiting Buyer', 'Waiting Execution','Waiting CTO','Wait Sync')"
+attribute_option_code not in('cancel','routine work','monitor','In-review','close','Waiting Buyer', 'Waiting Execution','Waiting CTO','wait Sync')"
 or die("Error:" . mysqli_error($con));
 $result_status = mysqli_query($con, $query_status);
 $i=0;
@@ -169,6 +169,9 @@ echo'<ul class="nav nav-pills mb-3 align-items-center" id="pills-tab" role="tabl
 </li>
 <li class="nav-item" role="presentation" style="width: fit-content;">
   <button class="nav-link" id="pills-cto-tab" data-bs-toggle="pill" data-bs-target="#pills-cto" type="button" role="tab" aria-controls="pills-cto" aria-selected="false">CTO</button>
+</li>
+<li class="nav-item" role="presentation" style="width: fit-content;">
+  <button class="nav-link" id="pills-sync-tab" data-bs-toggle="pill" data-bs-target="#pills-cto" type="button" role="tab" aria-controls="pills-cto" aria-selected="false">sync</button>
 </li>
 </ul>';
 
