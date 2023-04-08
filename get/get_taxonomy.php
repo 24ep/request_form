@@ -132,7 +132,7 @@ while($row = mysqli_fetch_array($result)) {
 }
 // echo $new_attribute;
 //stamp name
-$sql = "update taxonomy.taxonomy_demo set
+$sql = "update taxonomy.taxonomy_raw set
 check_by = '".$_SESSION['username']."'
 where sku = '".$sku."'"
 or die("Error:" . mysqli_error($con));
