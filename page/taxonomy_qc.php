@@ -170,7 +170,7 @@ var value_new_washing_machine_type = document.getElementById('new_washing_machin
     // handle multi-select element
     var new_cate_element = document.getElementById('new_cate')
     var selectedOptions = Array.from(new_cate_element.options).filter(option => option.selected);
-    var new_cate = selectedOptions.map(option => option.value).join(",");
+    var value_new_cate = selectedOptions.map(option => option.value).join(",");
     // var new_cate="'"+new_cate+"'";
 
 
@@ -216,7 +216,7 @@ var value_new_washing_machine_type = document.getElementById('new_washing_machin
                 value_new_towels_type : value_new_towels_type,
                 value_new_vacuum_cleaner_type : value_new_vacuum_cleaner_type,
                 value_new_washing_machine_type : value_new_washing_machine_type,
-                new_cate : new_cate
+                value_new_cate : value_new_cate
             },
             function(data) {
                 if(data.includes("error")){
