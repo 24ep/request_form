@@ -103,11 +103,12 @@ while($row = mysqli_fetch_array($result)) {
                     $attribute_option_selected = explode(",",$row[$row_att['attribute_code']]);
                     foreach ( $attribute_option_selected as $selected_option) {
                         if($selected_option==$row_att_option['attribute_option']){
-                            $new_attribute .= "<option selected value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_label']."</option>";
+                            $selected ='selected';
                         }else{
-                            $new_attribute .= "<option value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_label']."</option>";
+                            $selected ='';
                         }
                       }
+                      $new_attribute .= "<option ".$selected." value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_label']."</option>";
 
                 }else{
                     if($row[$row_att['attribute_code']]==$row_att_option['attribute_option']){
