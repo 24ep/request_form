@@ -84,7 +84,7 @@ while($row = mysqli_fetch_array($result)) {
 //new attribute
             $new_attribute .="<div class='row'>";
             $new_attribute .="<div class='col-6'>";
-            $new_attribute .= "<label style='display:".$display."' class='mb-1'>old_".$row_att['pim_attribute_code']."</label>";
+            $new_attribute .= "<label style='display:".$display."' class='mb-1'>".$row_att['attribute_code']."</label>";
 
 
             $new_attribute .= "
