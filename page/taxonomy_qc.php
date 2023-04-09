@@ -28,8 +28,11 @@ function change_attribute_cate() {
         cate_value:cate_value
         },
         function(data) {
+            console.log(data);
             var tobeHideAttribteArray = data.split(",");
+            console.log(tobeHideAttribteArray);
             for (let pim_attribute_code of tobeHideAttribteArray) {
+                console.log(pim_attribute_code);
                 document.getElementById(pim_attribute_code).style.display = "block";
                 document.getElementById("no_"+pim_attribute_code).style.display = "block";
                 document.getElementById("yes_"+pim_attribute_code).style.display = "block";
