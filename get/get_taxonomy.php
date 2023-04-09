@@ -77,18 +77,19 @@ while($row = mysqli_fetch_array($result)) {
             $class="";
             $multiple ="multiple";
             $select_style = "";
+            $onchangecate = 'onchange="change_attribute_cate();"';
         }else{
             $class="form-select form-select-sm";
             $multiple ="";
             $select_style = "style='display:".$display."'";
-
+            $onchangecate = '';
         }
         //old attribute
         $old_attribute .= "<label class='mb-1' id='label_old_".$row_att['pim_attribute_code']."' style='display:".$display."'>old_".$row_att['pim_attribute_code']."</label>";
         if($row_att['pim_attribute_code']=='cate'){
             $old_attribute .= '<textarea  style="display:'.$display.'" id="old_'.$row_att['pim_attribute_code'].'"  class="form-control form-control-sm" readonly>'.$row["old_".$row_att['pim_attribute_code']].'</textarea>';
         }else{
-            $old_attribute .= '<input type="text" value="'.$row["old_".$row_att['pim_attribute_code']].'" style="display:'.$display.'" id="old_'.$row_att['pim_attribute_code'].'"  class="form-control form-control-sm" readonly>';
+            $old_attribute .= '<input type="text" '.$onchangecate.' value="'.$row["old_".$row_att['pim_attribute_code']].'" style="display:'.$display.'" id="old_'.$row_att['pim_attribute_code'].'"  class="form-control form-control-sm" readonly>';
         }
 
         //new attribute
