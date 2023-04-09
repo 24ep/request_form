@@ -51,8 +51,8 @@ function change_attribute_cate() {
                 document.getElementById("yes_new_cate").style.display = "block";
                 document.getElementById("no_new_cate").style.display = "block";
                 document.getElementById("yesno_new_cate").style.display = "block";
-                // document.getElementById("label_old_cate").style.display = "block";
-                // document.getElementById("label_new_cate").style.display = "block";
+                document.getElementById("label_old_cate").style.display = "block";
+                document.getElementById("label_new_cate").style.display = "block";
 
                 document.getElementById("new_"+pim_attribute_code).style.display = "block";
                 document.getElementById("old_"+pim_attribute_code).style.display = "block";
