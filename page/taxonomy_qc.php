@@ -28,19 +28,25 @@ function change_attribute_cate() {
         cate_value:cate_value
         },
         function(data) {
-            console.log(data);
+
             var tobeHideAttribteArray = data.split(",");
             console.log(tobeHideAttribteArray);
-            document.querySelectorAll('[id^="new_"]').style.display = 'none';
-                document.querySelectorAll('[id^="old_"]').style.display = 'none';
-                document.querySelectorAll('[id^="no_new_"]').style.display = 'none';
-                document.querySelectorAll('[id^="yes_new_"]').style.display = 'none';
-                document.querySelectorAll('[id^="label_old_"]').style.display = 'none';
-                document.querySelectorAll('[id^="label_new_"]').style.display = 'none';
-                document.querySelectorAll('[id^="yesno_new_"]').style.display = 'none';
-                
+
+            [
+            '[id^="new_"]',
+            '[id^="old_"]',
+            '[id^="no_new_"]',
+            '[id^="yes_new_"]',
+            '[id^="label_old_"]',
+            '[id^="label_new_"]',
+            '[id^="yesno_new_"]'
+            ].forEach(selector => {
+            document.querySelectorAll(selector).forEach(el => el.style.display = 'none');
+            });
+
+
             for (let pim_attribute_code of tobeHideAttribteArray) {
-                console.log(pim_attribute_code);
+
 
 
                 document.getElementById("new_"+pim_attribute_code).style.display = "block";
