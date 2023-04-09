@@ -17,7 +17,7 @@ $query = "SELECT backend_cate_code , require_attribute
                 array_push($select_attribute,$row["require_attribute"]);
             }
         }
- $selected_attribute_string =  implode(",",$select_attribute);
+ $selected_attribute_string =  implode(",",array_filter(array_unique($select_attribute)));
  echo $selected_attribute_string;
 
 ?>
