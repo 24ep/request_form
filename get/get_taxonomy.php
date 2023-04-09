@@ -77,7 +77,7 @@ while($row = mysqli_fetch_array($result)) {
             $class="";
             $multiple ="multiple";
             $select_style = "";
-            $onchangecate = 'onchange="change_attribute_cate();"';
+            $onchangecate = 'change_attribute_cate();';
         }else{
             $class="form-select form-select-sm";
             $multiple ="";
@@ -89,7 +89,7 @@ while($row = mysqli_fetch_array($result)) {
         if($row_att['pim_attribute_code']=='cate'){
             $old_attribute .= '<textarea  style="display:'.$display.'" id="old_'.$row_att['pim_attribute_code'].'"  class="form-control form-control-sm" readonly>'.$row["old_".$row_att['pim_attribute_code']].'</textarea>';
         }else{
-            $old_attribute .= '<input type="text" '.$onchangecate.' value="'.$row["old_".$row_att['pim_attribute_code']].'" style="display:'.$display.'" id="old_'.$row_att['pim_attribute_code'].'"  class="form-control form-control-sm" readonly>';
+            $old_attribute .= '<input type="text"  value="'.$row["old_".$row_att['pim_attribute_code']].'" style="display:'.$display.'" id="old_'.$row_att['pim_attribute_code'].'"  class="form-control form-control-sm" readonly>';
         }
 
         //new attribute
@@ -99,7 +99,7 @@ while($row = mysqli_fetch_array($result)) {
 
 
         $new_attribute .= "
-        <select  onchange='auto_select_no(&#39;".$row_att['attribute_code']."&#39;)' ".$multiple." ".$select_style." class='".$class."' id='".$row_att['attribute_code']."' >";
+        <select  onchange='auto_select_no(&#39;".$row_att['attribute_code']."&#39;);".$onchangecate."' ".$multiple." ".$select_style." class='".$class."' id='".$row_att['attribute_code']."' >";
         $query_att_option = "SELECT DISTINCT attribute_option,attribute_label FROM taxonomy.attribute_option where attribute_code='".$row_att['attribute_code']."';";
         $result_att_option = mysqli_query($con, $query_att_option);
         $new_attribute .= "<option value=''></option>";
