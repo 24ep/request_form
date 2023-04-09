@@ -9,8 +9,7 @@ $select_attribute =array();
 
 
 $query = "SELECT backend_cate_code , require_attribute
-          FROM taxonomy.categories_attribute_rule_mapping
-          where backend_cate_code;";
+          FROM taxonomy.categories_attribute_rule_mapping";
           $result = mysqli_query($con, $query);
           $new_cate_array = explode(",",  $selected_categories);
           while($row = mysqli_fetch_array($result)) {
