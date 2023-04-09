@@ -33,7 +33,8 @@ function change_attribute_cate() {
             console.log(tobeHideAttribteArray);
             for (let pim_attribute_code of tobeHideAttribteArray) {
                 console.log(pim_attribute_code);
-                document.getElementById(pim_attribute_code).style.display = "block";
+                document.getElementById("new_"+pim_attribute_code).style.display = "block";
+                document.getElementById("old_"+pim_attribute_code).style.display = "block";
                 document.getElementById("no_"+pim_attribute_code).style.display = "block";
                 document.getElementById("yes_"+pim_attribute_code).style.display = "block";
                 document.getElementById("label_old_"+pim_attribute_code).style.display = "block";
@@ -49,6 +50,7 @@ function query_data() {
         function(data) {
             Notiflix.Loading.hourglass('Loading...');
             $('#get_taxonomy').html(data);
+            change_attribute_cate();
             Notiflix.Loading.remove();
         });
 }
