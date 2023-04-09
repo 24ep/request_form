@@ -148,7 +148,8 @@ while($row = mysqli_fetch_array($result)) {
 // echo $new_attribute;
 //stamp name
 $sql = "update taxonomy.taxonomy_raw set
-check_by = '".$_SESSION['username']."'
+check_by = '".$_SESSION['username']."',
+feed_time = CURRENT_TIMESTAMP
 where sku = '".$sku."'"
 or die("Error:" . mysqli_error($con));
 $query = mysqli_query($con,$sql);
