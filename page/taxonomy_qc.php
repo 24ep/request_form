@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand">Navbar</a>
+    <a class="navbar-brand">Taxonomy QC</a>
     <form class="d-flex">
 
       <a class="btn btn-outline-secondary" href="https://docs.google.com/spreadsheets/d/15yMjoMYxKVomcIs9beZvBG6BcwVO4kdzwEd-Kt0ICws/edit#gid=1938593248" target="_blank">Categories & Attribute option</a>
