@@ -39,6 +39,8 @@ function change_attribute_cate() {
                 document.getElementById("yes_new_"+pim_attribute_code).style.display = "block";
                 document.getElementById("label_old_"+pim_attribute_code).style.display = "block";
                 document.getElementById("label_new_"+pim_attribute_code).style.display = "block";
+                document.getElementById("yesno_new_"+pim_attribute_code).style.display = "block";
+
             }
         });
 }

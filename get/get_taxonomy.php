@@ -124,7 +124,7 @@ while($row = mysqli_fetch_array($result)) {
         $new_attribute .= "</select>";
         $new_attribute .= "<small id='original_".$row_att["attribute_code"]."' style='font-size:10px;display:none;color: #c3c3c3;'>Original value : ".$row[$row_att['attribute_code']]."</small>";
         $new_attribute .="</div>";
-        $new_attribute .="<div class='col-2 mt-4 ps-0 pe-0' style='display:".$display."'>";
+        $new_attribute .="<div class='col-2 mt-4 ps-0 pe-0' id='yesno_".$row_att["attribute_code"]."' style='display:".$display."'>";
         $new_attribute .='<input  value="'.$row_att["attribute_code"].'" onclick="ShowSmallOriginalValue(&#39;'.$row_att["attribute_code"].'&#39;)" type="radio"  style="display:'.$display.'" class="btn-check" name="options-outlined-'.$row_att["attribute_code"].'"
         id="no_'.$row_att["attribute_code"].'" autocomplete="off" >
         <label class="btn btn-outline-danger btn-sm"
