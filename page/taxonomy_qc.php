@@ -1,4 +1,14 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Navbar</a>
+    <form class="d-flex">
 
+      <a class="btn btn-outline-secondary" href="https://docs.google.com/spreadsheets/d/15yMjoMYxKVomcIs9beZvBG6BcwVO4kdzwEd-Kt0ICws/edit#gid=1938593248" target="_blank">Categories & Attribute option</a>
+      <!-- <a class="btn btn-outline-secondary" href="" target="_blank">SiteMap</a> -->
+      <a class="btn btn-outline-secondary" href="https://lookerstudio.google.com/u/1/reporting/04d93777-6c5c-4c71-8f30-63d87acb077d/page/pQvLD" target="_blank">Dashboard</a>
+    </form>
+  </div>
+</nav>
 <body class="container-md p-2">
     <div id="get_taxonomy">
     </div>
