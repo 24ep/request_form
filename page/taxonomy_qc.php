@@ -48,7 +48,7 @@ function change_attribute_cate() {
             for (let pim_attribute_code of tobeHideAttribteArray) {
 
                 document.getElementById("old_cate").style.display = "block";
-                document.getElementById("new_cate").style.display = "block";
+                document.getElementById("yes_new_cate").style.display = "block";
                 document.getElementById("new_"+pim_attribute_code).style.display = "block";
                 document.getElementById("old_"+pim_attribute_code).style.display = "block";
                 document.getElementById("no_new_"+pim_attribute_code).style.display = "block";
