@@ -31,8 +31,18 @@ function change_attribute_cate() {
             console.log(data);
             var tobeHideAttribteArray = data.split(",");
             console.log(tobeHideAttribteArray);
+            document.querySelectorAll('[id^="new_"]').style.display = 'none';
+                document.querySelectorAll('[id^="old_"]').style.display = 'none';
+                document.querySelectorAll('[id^="no_new_"]').style.display = 'none';
+                document.querySelectorAll('[id^="yes_new_"]').style.display = 'none';
+                document.querySelectorAll('[id^="label_old_"]').style.display = 'none';
+                document.querySelectorAll('[id^="label_new_"]').style.display = 'none';
+                document.querySelectorAll('[id^="yesno_new_"]').style.display = 'none';
+                
             for (let pim_attribute_code of tobeHideAttribteArray) {
                 console.log(pim_attribute_code);
+
+
                 document.getElementById("new_"+pim_attribute_code).style.display = "block";
                 document.getElementById("old_"+pim_attribute_code).style.display = "block";
                 document.getElementById("no_new_"+pim_attribute_code).style.display = "block";
