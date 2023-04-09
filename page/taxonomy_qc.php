@@ -35,8 +35,8 @@ function change_attribute_cate() {
                 console.log(pim_attribute_code);
                 document.getElementById("new_"+pim_attribute_code).style.display = "block";
                 document.getElementById("old_"+pim_attribute_code).style.display = "block";
-                document.getElementById("no_"+pim_attribute_code).style.display = "block";
-                document.getElementById("yes_"+pim_attribute_code).style.display = "block";
+                document.getElementById("no_new_"+pim_attribute_code).style.display = "block";
+                document.getElementById("yes_new_"+pim_attribute_code).style.display = "block";
                 document.getElementById("label_old_"+pim_attribute_code).style.display = "block";
                 document.getElementById("label_new_"+pim_attribute_code).style.display = "block";
             }
