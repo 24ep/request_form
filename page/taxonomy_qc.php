@@ -45,7 +45,7 @@ function change_attribute_cate() {
             });
 
 
-            document.getElementById("old_cate").style.display = "block";
+                document.getElementById("old_cate").style.display = "block";
                 document.getElementById("yes_new_cate").style.display = "block";
                 document.getElementById("no_new_cate").style.display = "block";
                 document.getElementById("yesno_new_cate").style.display = "block";
@@ -120,15 +120,15 @@ function CheckYesNoElements() {
     var count_no = 0;
     var count_elements = 0;
     for (let i = 0; i < elements_no.length; i++) {
-        // if(elements_no[i].style.display != "none"){
-        count_elements = count_elements + 1;
-        if (elements_no[i].checked) {
-            count_no = count_no + 1;
+        if(elements_no[i].style.display != "none"){
+            count_elements = count_elements + 1;
+            if (elements_no[i].checked) {
+                count_no = count_no + 1;
+            }
+            if (elements_yes[i].checked) {
+                count_yes = count_yes + 1;
+            }
         }
-        if (elements_yes[i].checked) {
-            count_yes = count_yes + 1;
-        }
-        // }
 
     }
     var count_checked = count_yes + count_no;
