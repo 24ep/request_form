@@ -53,7 +53,7 @@ new_tea_coffee_equipment_type is not null or
 new_towels_type is not null or
 new_vacuum_cleaner_type is not null or
 new_washing_machine_type is not null)
-order by tr.brand , tr.new_cate , tr.sale DESC limit 1" or die("Error:" . mysqli_error($con));
+order by  tr.sale DESC limit 1" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     //product information session
