@@ -4,13 +4,7 @@ $selected_categories = $_POST['selected_categories'];
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","taxonomy") or die("Error: " . mysqli_error($con));
 
-//stamp name
-$sql = "update taxonomy.taxonomy_raw set
-check_by = '".$_SESSION['username']."',
-feed_time = CURRENT_TIMESTAMP
-where sku = '".$sku."'"
-or die("Error:" . mysqli_error($con));
-$query = mysqli_query($con,$sql);
+
 
 mysqli_query($con, "SET NAMES 'utf8' ");
 $new_attribute="";
@@ -149,7 +143,13 @@ while($row = mysqli_fetch_array($result)) {
 }
 // echo $new_attribute;
 
-
+//stamp name
+$sql = "update taxonomy.taxonomy_raw set
+check_by = '".$_SESSION['username']."',
+feed_time = CURRENT_TIMESTAMP
+where sku = '".$sku."'"
+or die("Error:" . mysqli_error($con));
+$query = mysqli_query($con,$sql);
 
 ?>
 <div class="vstack gap-2 col-md-9 mx-auto">
