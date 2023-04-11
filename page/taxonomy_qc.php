@@ -10,6 +10,20 @@
                 href="https://lookerstudio.google.com/u/1/reporting/04d93777-6c5c-4c71-8f30-63d87acb077d/page/pQvLD"
                 target="_blank">Dashboard</a>
         </form>
+<?php
+    if($_SESSION['taxonomy_model_selected']=="retail"){
+            $retail_selected ='selected';
+    }elseif($_SESSION['taxonomy_model_selected']=="mkp"){
+            $mkp_selected ='selected';
+    }else{
+            $non_selected ='selected';
+    }
+?>
+        <select id="model_selected" class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option value="retail" <?php echo $retail_selected;?>>Retail</option>
+            <option value="mkp" <?php echo $mkp_selected;?>>MKP</option>
+            <option value="non_selected" <?php echo $non_selected;?>>non-selected</option>
+        </select>
     </div>
 </nav>
 
@@ -44,7 +58,6 @@ function change_attribute_cate() {
             document.querySelectorAll(selector).forEach(el => el.style.display = 'none');
             });
 
-
                 document.getElementById("old_cate").style.display = "block";
                 document.getElementById("yes_new_cate").style.display = "block";
                 document.getElementById("no_new_cate").style.display = "block";
@@ -53,7 +66,6 @@ function change_attribute_cate() {
                 document.getElementById("label_new_cate").style.display = "block";
 
             for (let pim_attribute_code of tobeHideAttribteArray) {
-
 
                 document.getElementById("new_"+pim_attribute_code).style.display = "block";
                 document.getElementById("old_"+pim_attribute_code).style.display = "block";
@@ -68,8 +80,9 @@ function change_attribute_cate() {
 }
 
 function query_data() {
+    var model_selected = document.getElementById("model_selected").value
     $.post("base/get/get_taxonomy.php", {
-
+            model_selected:model_selected
         },
         function(data) {
             Notiflix.Loading.hourglass('Loading...');

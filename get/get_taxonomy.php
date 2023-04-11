@@ -1,10 +1,11 @@
 <?php
 session_start();
+$_SESSION['taxonomy_model_selected'] = $_POST['model_selected'];
 $selected_categories = $_POST['selected_categories'];
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","taxonomy") or die("Error: " . mysqli_error($con));
 
-
+$model_selected =  $_POST['model_selected'];
 
 mysqli_query($con, "SET NAMES 'utf8' ");
 $new_attribute="";
