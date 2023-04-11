@@ -13,7 +13,7 @@ if($model_selected=="retail"){
     $model_selected = "('retail')";
     $query_condition ="tr.model = 'retail' and ((tr.status <> 'QC_PASSED' and tr.status <> 'REVISED') or tr.status is null) and
     (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y') and
-    (tr.check_by is null or tr.check_by ='".$_SESSION['username']."')) and tr.auto_enrichment = 'Y' ";
+    (tr.check_by is null or tr.check_by ='".$_SESSION['username']."')) and tr.auto_enrichment = 'Y'";
 }
 if($model_selected=="mkp"){
     $model_selected = "('mkp')";
@@ -21,7 +21,7 @@ if($model_selected=="mkp"){
     (tr.check_by is null or tr.check_by ='".$_SESSION['username']."') and tr.model = 'retail'";
 }
 if($model_selected=="non_selected"){
-    $model_selected = "('retail','mkp')";
+    $model_selected = "('retail')";
     $query_condition ="tr.model = 'retail' and ((tr.status <> 'QC_PASSED' and tr.status <> 'REVISED') or tr.status is null) and
     (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y') and
     (tr.check_by is null or tr.check_by ='".$_SESSION['username']."')) and tr.auto_enrichment = 'Y'";
