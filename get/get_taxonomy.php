@@ -61,6 +61,7 @@ $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     //product information session
     $sku = $row['sku'];
+    $brand = $row['brand'];
     $product_url = $row['product_url'];
     $name_en = $row['name_EN'];
     $name_th = $row['name_TH'];
@@ -142,6 +143,13 @@ while($row = mysqli_fetch_array($result)) {
     }
 }
 // echo $new_attribute;
+
+//stamp name
+$sql = "update taxonomy.taxonomy_raw set
+check_by = '".$_SESSION['username']."'
+where brand = '".$brand."'"
+or die("Error:" . mysqli_error($con));
+$query = mysqli_query($con,$sql);
 
 //stamp name
 $sql = "update taxonomy.taxonomy_raw set
