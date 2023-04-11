@@ -9,20 +9,6 @@ $model_selected =  $_POST['model_selected'];
 
 if($model_selected=="non_selected"){
     $model_selected = "('retail','mkp')";
-    $query_condition ="((tr.status <> 'QC_PASSED' and tr.status <> 'REVISED') or tr.status is null) and
-    (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y') and
-    (tr.check_by is null or tr.check_by ='".$_SESSION['username']."')) and `auto_enrichment` = 'Y')"
-}
-if($model_selected=="retail"){
-    $model_selected = "('retail')";
-    $query_condition ="((tr.status <> 'QC_PASSED' and tr.status <> 'REVISED') or tr.status is null) and
-    (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y') and
-    (tr.check_by is null or tr.check_by ='".$_SESSION['username']."')) and `auto_enrichment` = 'Y')"
-}
-if($model_selected=="mkp"){
-    $model_selected = "('mkp')";
-    $query_condition ="((tr.status = 'PENDING' ) and
-    (tr.check_by is null or tr.check_by ='".$_SESSION['username']."'))"
 }
 mysqli_query($con, "SET NAMES 'utf8' ");
 $new_attribute="";
@@ -33,7 +19,9 @@ left join taxonomy.taxonomy_image_url as image_url
 on image_url.sku = tr.sku
 left join taxonomy.taxonomy_description  as des
 on des.sku = tr.sku
-where (".$query_condition." and
+where (((tr.status <> 'QC_PASSED' and tr.status <> 'REVISED') or tr.status is null) and
+(tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y') and
+(tr.check_by is null or tr.check_by ='".$_SESSION['username']."')) and `auto_enrichment` = 'Y' and
 (new_accessory_watches_style is not null or
 new_air_conditioner_type is not null or
 new_air_purifier_type is not null or
