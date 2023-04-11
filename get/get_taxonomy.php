@@ -7,6 +7,9 @@ $con= mysqli_connect("localhost","cdse_admin","@aA417528639","taxonomy") or die(
 
 $model_selected =  $_POST['model_selected'];
 
+if($model_selected==""){
+    $model_selected = 'retail';
+}
 mysqli_query($con, "SET NAMES 'utf8' ");
 $new_attribute="";
 //query
