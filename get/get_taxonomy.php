@@ -18,7 +18,7 @@ if($model_selected=="retail"){
 if($model_selected=="mkp"){
     $model_selected = "('mkp')";
     $query_condition ="((tr.status = 'PENDING' ) and
-    (tr.check_by is null or tr.check_by ='".$_SESSION['username']."'))";
+    (tr.check_by is null or tr.check_by ='".$_SESSION['username']."')";
 }
 if($model_selected=="non_selected"){
     $model_selected = "('retail','mkp')";
