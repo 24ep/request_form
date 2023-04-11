@@ -9,7 +9,7 @@
             <a class="btn btn-outline-secondary btn-sm"
                 href="https://lookerstudio.google.com/u/1/reporting/04d93777-6c5c-4c71-8f30-63d87acb077d/page/pQvLD"
                 target="_blank">Dashboard</a>
-        </form>
+
 <?php
     if($_SESSION['taxonomy_model_selected']=="retail"){
             $retail_selected ='selected';
@@ -19,11 +19,12 @@
             $non_selected ='selected';
     }
 ?>
-        <select id="model_selected" class="form-select form-select-sm" aria-label=".form-select-sm example">
+        <select id="model_selected" onchange="query_data();" class="form-select form-select-sm" aria-label=".form-select-sm example">
             <option value="retail" <?php echo $retail_selected;?>>Retail</option>
             <option value="mkp" <?php echo $mkp_selected;?>>MKP</option>
             <option value="non_selected" <?php echo $non_selected;?>>non-selected</option>
         </select>
+        </form>
     </div>
 </nav>
 
