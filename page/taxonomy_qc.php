@@ -80,7 +80,7 @@ function change_attribute_cate() {
 }
 
 function query_data() {
-    var model_selected = document.getElementById("model_selected").value
+    var model_selected = document.getElementById("model_selected").value;
     $.post("base/get/get_taxonomy.php", {
             model_selected:model_selected
         },
