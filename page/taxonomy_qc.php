@@ -43,6 +43,7 @@ function change_attribute_cate() {
         cate_value:cate_value
         },
         function(data) {
+            console.log(data);
 
             var tobeHideAttribteArray = data.split(",");
             console.log(tobeHideAttribteArray);
@@ -67,7 +68,7 @@ function change_attribute_cate() {
                 document.getElementById("label_new_cate").style.display = "block";
 
             for (let pim_attribute_code of tobeHideAttribteArray) {
-
+                console.log(pim_attribute_code);
                 document.getElementById("new_"+pim_attribute_code).style.display = "block";
                 document.getElementById("old_"+pim_attribute_code).style.display = "block";
                 document.getElementById("no_new_"+pim_attribute_code).style.display = "block";
