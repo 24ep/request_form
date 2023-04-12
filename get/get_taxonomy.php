@@ -11,7 +11,7 @@ $model_selected =  $_POST['model_selected'];
 
 if($model_selected=="retail"){
     $model_selected = "retail";
-    $query_condition ="tr.model = 'retail' and ((tr.status <> 'QC_PASSED' and tr.status <> 'REVISED') or tr.status is null) and
+    $query_condition ="tr.qty > 0 and tr.model = 'retail' and ((tr.status <> 'QC_PASSED' and tr.status <> 'REVISED') or tr.status is null) and
     (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y') and
     (tr.check_by is null or tr.check_by ='".$_SESSION['username']."')) and tr.auto_enrichment = 'Y'";
 }
