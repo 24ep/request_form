@@ -199,16 +199,23 @@ function skip_taxonomy(sku){
     $.post("base/action/action_taxonomy_skip.php", {
                     sku: sku
                 },
-                function(data) {
-                    if (data.includes("error")) {
-                        Notiflix.Report.failure(
-                            'Updated Failure',
-                            data,
-                            'Okay',
-                        );
+                function(data)  {
+                if (data.includes("error")) {
+                    Notiflix.Report.failure(
+                        'Updated Failure',
+                        data,
+                        'Okay',
+                    );
 
-                    }
-                });
+                } else {
+                    Notiflix.Notify.success('data updated');
+                    Notiflix.Loading.hourglass('Loading...');
+                    // $('#col_detail').html(data);
+                    query_data();
+                    Notiflix.Loading.remove();
+                }
+
+            });
 
 }
 
