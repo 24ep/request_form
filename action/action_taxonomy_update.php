@@ -2,7 +2,7 @@
  session_start();
 $sku = $_POST['sku'];
 $status = $_POST['status'];
- $value_new_accessory_watches_style = $_POST['value_new_accessory_watches_style'];
+$value_new_accessory_watches_style = $_POST['value_new_accessory_watches_style'];
 $value_new_air_conditioner_type = $_POST['value_new_air_conditioner_type'];
 $value_new_air_purifier_type = $_POST['value_new_air_purifier_type'];
 $value_new_ball_type = $_POST['value_new_ball_type'];

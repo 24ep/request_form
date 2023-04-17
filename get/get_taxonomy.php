@@ -4,11 +4,7 @@ $_SESSION['taxonomy_model_selected'] = $_POST['model_selected'];
 $selected_categories = $_POST['selected_categories'];
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","taxonomy") or die("Error: " . mysqli_error($con));
-
 $model_selected =  $_POST['model_selected'];
-
-
-
 if($model_selected=="retail"){
     $model_selected = "retail";
     $query_condition ="tr.qty > 0 and tr.model = 'retail' and (tr.status = 'WAITING FOR QC' ) and
@@ -51,13 +47,11 @@ while($row = mysqli_fetch_array($result)) {
     $query_att = "SELECT DISTINCT attribute_code,pim_attribute_code FROM taxonomy.attribute_option;";
     $result_att = mysqli_query($con, $query_att);
     while($row_att = mysqli_fetch_array($result_att)) {
-
         if((($row["new_".$row_att['pim_attribute_code']]<>"" and $row["new_".$row_att['pim_attribute_code']]<>Null ) or $row_att['attribute_code']=='new_cate')){
             $display = "block";
         }else{
             $display = "none";
         }
-
         if($row_att['attribute_code']=='new_cate'){
             $class="";
             $multiple ="multiple";
@@ -76,13 +70,10 @@ while($row = mysqli_fetch_array($result)) {
         }else{
             $old_attribute .= '<input type="text"  value="'.$row["old_".$row_att['pim_attribute_code']].'" style="display:'.$display.'" id="old_'.$row_att['pim_attribute_code'].'"  class="form-control form-control-sm" readonly>';
         }
-
         //new attribute
         $new_attribute .="<div class='row'>";
         $new_attribute .="<div class='col-10'>";
         $new_attribute .= "<label id='label_new_".$row_att['pim_attribute_code']."' style='display:".$display."' class='mb-1'>".$row_att['attribute_code']."</label>";
-
-
         $new_attribute .= "
         <select  onchange='auto_select_no(&#39;".$row_att['attribute_code']."&#39;);".$onchangecate."' ".$multiple." ".$select_style." class='".$class."' id='".$row_att['attribute_code']."' >";
         $query_att_option = "SELECT DISTINCT attribute_option,attribute_label FROM taxonomy.attribute_option where model like '%".$model."%' and attribute_code='".$row_att['attribute_code']."';";
@@ -96,7 +87,6 @@ while($row = mysqli_fetch_array($result)) {
                 }else{
                     $new_attribute .= "<option value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_label']."</option>";
                 }
-
             }else{
                 if($row[$row_att['attribute_code']]==$row_att_option['attribute_option']){
                     $new_attribute .= "<option selected value='".$row_att_option['attribute_option']."'>".$row_att_option['attribute_label']."</option>";
@@ -105,7 +95,6 @@ while($row = mysqli_fetch_array($result)) {
                 }
             }
         }
-
         $new_attribute .= "</select>";
         $new_attribute .= "<small id='original_".$row_att["attribute_code"]."' style='font-size:10px;display:none;color: #c3c3c3;'>Original value : ".$row[$row_att['attribute_code']]."</small>";
         $new_attribute .="</div>";
@@ -120,18 +109,15 @@ while($row = mysqli_fetch_array($result)) {
         style=" border-radius: 0%;" for="yes_'.$row_att["attribute_code"].'">Yes</label>';
         $new_attribute .="</div>";
         $new_attribute .="</div>";
-
     }
 }
 // echo $new_attribute;
-
 //stamp name
 $sql = "update taxonomy.taxonomy_raw set
 check_by = '".$_SESSION['username']."'
 where brand = '".$brand."'"
 or die("Error:" . mysqli_error($con));
 $query = mysqli_query($con,$sql);
-
 //stamp name
 $sql = "update taxonomy.taxonomy_raw set
 check_by = '".$_SESSION['username']."',
@@ -139,7 +125,6 @@ feed_time = CURRENT_TIMESTAMP
 where sku = '".$sku."'"
 or die("Error:" . mysqli_error($con));
 $query = mysqli_query($con,$sql);
-
 ?>
 <div class="vstack gap-2 col-md-9 mx-auto">
     <!-- nav bra -->
@@ -172,27 +157,6 @@ $query = mysqli_query($con,$sql);
             </div>
         </div>
     </div>
-    <!-- categories -->
-    <!-- <div class="row row mt-4">
-<div class="col-4 border-left">
-<h3 style="font-weight: bolder;">OLD</h3>
-<?php //echo $old_attribute ;?>
-</div>
-<div class="col-8">
-<h3 style="font-weight: bolder;">NEW</h3>
-<?php //echo $new_attribute ;?>
-<div class="row">
-<div class="col-6">
-</div>
-<div class="col-6">
-<div class="mt-3">
-<input type="button" class=" btn btn-sm btn-danger rounded-fill" value="Submit"
-onclick="summit_taxonomy('<?php //echo $sku;?>')">
-</div>
-</div>
-</div>
-</div>
-</div> -->
     <!-- attribute -->
     <div class="row row mt-4">
         <div class="col-4 border-left">
@@ -207,7 +171,7 @@ onclick="summit_taxonomy('<?php //echo $sku;?>')">
                 </div>
                 <div class="col-2 p-0">
                     <div class="mt-3">
-                       <input type="button" class=" btn btn-sm btn-secondary rounded-fill me-1" value="Skip"
+                        <input type="button" class=" btn btn-sm btn-secondary rounded-fill me-1" value="Skip"
                             onclick="skip_taxonomy('<?php echo $sku;?>')">
                         <input type="button" class=" btn btn-sm btn-danger rounded-fill " value="Submit"
                             onclick="summit_taxonomy('<?php echo $sku;?>')">
@@ -216,11 +180,8 @@ onclick="summit_taxonomy('<?php //echo $sku;?>')">
             </div>
         </div>
     </div>
-
-
     <!-- product information -->
 </div>
-
 <script>
 new SlimSelect({
     select: '#new_cate',
