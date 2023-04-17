@@ -35,45 +35,7 @@ left join taxonomy.taxonomy_image_url as image_url
 on image_url.sku = tr.sku
 left join taxonomy.taxonomy_description  as des
 on des.sku = tr.sku
-where ( ".$query_condition." and
-(new_accessory_watches_style is not null or
-new_air_conditioner_type is not null or
-new_air_purifier_type is not null or
-new_ball_type is not null or
-new_beauty_set_type is not null or
-new_book_genre is not null or
-new_coffee_machine_type is not null or
-new_console_type is not null or
-new_dress_length is not null or
-new_face_mask_type is not null or
-new_facial_part is not null or
-new_fan_type is not null or
-new_fashion_occasion is not null or
-new_fryer_type is not null or
-new_gender is not null or
-new_haircare_type is not null or
-new_hat_type is not null or
-new_headphone_type is not null or
-new_irons_type is not null or
-new_life_pen_type is not null or
-new_material_clothing is not null or
-new_maternity is not null or
-new_pencil_type is not null or
-new_pet_type is not null or
-new_refrigerator_doors is not null or
-new_ring_type is not null or
-new_screen_resolution is not null or
-new_shoes_occasion is not null or
-new_skirt_length is not null or
-new_speaker_type is not null or
-new_sport_type is not null or
-new_storage_drive_type is not null or
-new_stove_type is not null or
-new_swimming_goggle_type is not null or
-new_tea_coffee_equipment_type is not null or
-new_towels_type is not null or
-new_vacuum_cleaner_type is not null or
-new_washing_machine_type is not null)
+where ( ".$query_condition."
 order by tr.qty , tr.brand_name , tr.new_cate , tr.sale DESC limit 1" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
