@@ -245,9 +245,9 @@ onclick="summit_taxonomy('<?php //echo $sku;?>')">
                 </div>
                 <div class="col-2 p-0">
                     <div class="mt-3">
-                       <input type="button" class=" btn btn-sm btn-secondary rounded-fill w-75" value="Submit"
+                       <input type="button" class=" btn btn-sm btn-secondary rounded-fill me-1" value="Skip"
                             onclick="skip_taxonomy('<?php echo $sku;?>')">
-                        <input type="button" class=" btn btn-sm btn-danger rounded-fill w-75" value="Submit"
+                        <input type="button" class=" btn btn-sm btn-danger rounded-fill " value="Submit"
                             onclick="summit_taxonomy('<?php echo $sku;?>')">
                     </div>
                 </div>
