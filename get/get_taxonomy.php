@@ -17,7 +17,7 @@ if($model_selected=="retail"){
 }
 if($model_selected=="mkp"){
     $model_selected = "mkp";
-    $query_condition ="tr.mkp_qc = 'Y' and tr.status = 'PENDING'  and
+    $query_condition ="tr.mkp_qc = 'Y' and tr.status = 'WAITING FOR QC'  and
     (tr.check_by is null or tr.check_by ='".$_SESSION['username']."') and tr.model = 'mkp')";
 }
 if($model_selected=="non_selected"){
