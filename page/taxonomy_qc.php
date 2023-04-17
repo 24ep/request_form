@@ -194,6 +194,23 @@ function revised_record(sku) {
         }
     }
 }
+function skip_taxonomy(sku){
+
+    $.post("base/action/action_taxonomy_skip.php", {
+                    sku: sku
+                },
+                function(data) {
+                    if (data.includes("error")) {
+                        Notiflix.Report.failure(
+                            'Updated Failure',
+                            data,
+                            'Okay',
+                        );
+
+                    }
+                });
+
+}
 
 function summit_taxonomy(sku) {
 
