@@ -39,6 +39,7 @@ function change_attribute_cate() {
     var new_cate_element = document.getElementById('new_cate')
     var selectedOptions = Array.from(new_cate_element.options).filter(option => option.selected);
     var cate_value = selectedOptions.map(option => option.value).join(",");
+    console.log(cate_value);
     $.post("base/get/get_taxonomy_cate_att_map.php", {
         cate_value:cate_value
         },
