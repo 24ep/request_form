@@ -47,7 +47,7 @@ $new_cate = $_POST['new_cate'];
         $con= mysqli_connect("localhost","cdse_admin","@aA417528639","taxonomy") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
 
-        //update_exsiting_status
+        //update_existing_status
         $sql = "update taxonomy.taxonomy_raw set
         check_by = '".$_SESSION['username']."',
         check_date = CURRENT_TIMESTAMP,
