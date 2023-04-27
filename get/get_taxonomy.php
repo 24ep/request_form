@@ -7,7 +7,7 @@ $con= mysqli_connect("localhost","cdse_admin","@aA417528639","taxonomy") or die(
 $model_selected =  $_POST['model_selected'];
 if($model_selected=="retail"){
     $model_selected = "retail";
-    $query_condition ="batch is null and tr.qty > 0 and tr.model = 'retail' and (tr.status = 'WAITING FOR QC' or tr.status = 'SKIP' ) and
+    $query_condition ="batch is null and tr.qty > 0 and tr.model = 'retail' and (tr.status = 'WAITING FOR QC'  ) and
     (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y') and
     (tr.check_by is null or tr.check_by ='".$_SESSION['username']."'))";
 }
