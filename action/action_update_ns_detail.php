@@ -3,6 +3,7 @@
  $value_change = $_POST['value_change'];
  $value_name = $_POST['id_name'];
  $value_name =  str_replace("ns_edit_","",$value_name);
+ $value_name =  str_replace("rj_edit_","",$value_name);
  include('action_add_participant.php');
  session_start();
     include("connect.php");
