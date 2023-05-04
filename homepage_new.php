@@ -356,6 +356,12 @@ Copy into the head of all HTML pages you wish to display the widget -->
                         </a>
                     </li>
                     <li class="nav-item btn-group dropend" role="presentation">
+                        <a class="main_bra nav-link nav-link-preferance" id="nav_3rd_party_config" type="button"
+                            onclick="show_sub_menu('3rd_party_config');">
+                            <ion-icon name="globe"></ion-icon><span class="main-menu-nav">3rd party config</span>
+                        </a>
+                    </li>
+                    <li class="nav-item btn-group dropend" role="presentation">
                         <a class="main_bra nav-link nav-link-preferance" id="nav_quicklink" type="button"
                             onclick="show_sub_menu('quicklink');">
                             <ion-icon name="globe"></ion-icon><span class="main-menu-nav">Quick-link</span>
@@ -601,6 +607,11 @@ function show_sub_menu(sub_menu) {
             });
         } else if (sub_menu == 'quicklink') {
             $.post("base/get/get_sub_menu_quicklink.php", {}, function(data) {
+                $('#sub_menu').html(data);
+            });
+        }
+        else if (sub_menu == '3rd_party_config') {
+            $.post("base/get/get_sub_menu_3rd_party_config.php", {}, function(data) {
                 $('#sub_menu').html(data);
             });
         }
