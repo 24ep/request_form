@@ -18,7 +18,7 @@ if($model_selected=="mkp"){
 }
 if($model_selected=="non_selected"){
     $model_selected = "non_selected";
-    $query_condition ="tr.enrichment_solution = 'Manual enrichment by content team' and tr.batch is not null and tr.model = 'retail' and (tr.status = 'WAITING FOR QC' )
+    $query_condition ="tr.enrichment_solution = 'Manual enrichment by content team' and tr.batch is not null and (tr.status = 'WAITING FOR QC' )
     and
     (tr.check_by is null or tr.check_by ='".$_SESSION['username']."'))";
 }
