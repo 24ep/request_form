@@ -18,7 +18,7 @@ if($model_selected=="mkp"){
 }
 if($model_selected=="non_selected"){
     $model_selected = "non_selected";
-    $query_condition =" tr.batch is not null and (tr.status = 'WAITING FOR QC' ) and (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y')
+    $query_condition =" tr.batch is not null and (tr.status = 'WAITING FOR QC' ) and (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y') and tr.qty > 0
     and
     (tr.check_by is null or tr.check_by ='".$_SESSION['username']."'))";
 }
