@@ -14,5 +14,8 @@
         </a></li>
     <li><a id="nav_stonly" href="https://app.stonly.com/app/general/-1/guides/321636" class="dropdown-item dp-link" type="button">
         <img class="me-2" src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://app.stonly.com/&size=16">Annoucement model
-        </a></li>
+    </a></li>
+    <li><a id="nav_stonly" href="https://app.anystack.sh/products/9934de97-8f51-4518-8c9d-7fad7a0006c7" class="dropdown-item dp-link" type="button">
+        <img class="me-2" src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://app.anystack.sh/&size=16">SPEAR PACKAGE
+    </a></li>
 </div>
