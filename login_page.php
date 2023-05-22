@@ -74,12 +74,13 @@
                 style="width: fit-content;margin: initial;margin-left: 50px;height: unset;color: #ffffff;">
                 <!-- get from list -->
                 <?php //include("get/linesheet_download.php"); ?>
-                    <h6>New Linesheet | Re-platform</h6><br>
-                    <h3>Pre-release<><br>
+
+                    <h3>PRE-RELEASE<br>
+                    <h6><strong>New Linesheet | Re-platform</strong></h6><br>
                     <h3><strong>SPEAR 2.0.0</strong></h3>
                     <strong>Feature available</strong>
                     <ul>
-                        <li>Dynamic linesheet</li>
+                        <li>Dynamic Linesheet</li>
                         <li>Size guide generator</li>
                         <li>Dimension guide generator</li>
                     </ul>
