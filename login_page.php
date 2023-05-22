@@ -47,7 +47,7 @@
     </style>
 </head>
 <body>
-    <?php 
+    <?php
      session_start();
                                 if($_GET["respond"]<>""){
                                     if($_GET["respond"]=="already register ! please login"){
@@ -73,7 +73,17 @@
             <div class="container-sm"
                 style="width: fit-content;margin: initial;margin-left: 50px;height: unset;color: #ffffff;">
                 <!-- get from list -->
-                <?php include("get/linesheet_download.php"); ?>
+                <?php //include("get/linesheet_download.php"); ?>
+                    <h6>New Linesheet | Re-platform</h6><br>
+                    <h3>Pre-release<><br>
+                    <h3><strong>SPEAR 2.0.0</strong></h3>
+                    <strong>Feature available</strong>
+                    <ul>
+                        <li>Dynamic linesheet</li>
+                        <li>Size guide generator</li>
+                        <li>Dimension guide generator</li>
+                    </ul>
+                    <button type="button" disabled class="btn btn-danger btn-sm">Download soon</button>
             </div>
         </div>
         <div class="col-4" style="height : 100vh;background-color:white;">
