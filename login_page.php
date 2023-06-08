@@ -49,23 +49,23 @@
 <body>
     <?php
      session_start();
-                                if($_GET["respond"]<>""){
-                                    if($_GET["respond"]=="already register ! please login"){
-                                        echo "<div class='alert alert-success' role='alert'>
-                                    <ion-icon name='checkmark-done-circle-outline' style='border-radius: 0px;;margin-right: 10px;
-                                    font-size: 25px;
-                                    position: absolute;'>
-                                    </ion-icon><strong style='padding-left: 30px;'>".htmlspecialchars($_GET["respond"],  ENT_QUOTES, 'UTF-8')."</strong>
-                                    </div>";
-                                    }else{
-                                        echo "<div class='alert alert-danger' role='alert'>
-                                        <ion-icon name='alert-circle-outline' style='border-radius: 0px;;margin-right: 10px;
-                                        font-size: 25px;
-                                        position: absolute;'>
-                                        </ion-icon><strong style='padding-left: 30px;'>".htmlspecialchars($_GET["respond"],  ENT_QUOTES, 'UTF-8')."</strong>
-                                        </div>";
-                                    }
-                                }
+            if($_GET["respond"]<>""){
+                if($_GET["respond"]=="already register ! please login"){
+                    echo "<div class='alert alert-success' role='alert'>
+                <ion-icon name='checkmark-done-circle-outline' style='border-radius: 0px;;margin-right: 10px;
+                font-size: 25px;
+                position: absolute;'>
+                </ion-icon><strong style='padding-left: 30px;'>".htmlspecialchars($_GET["respond"],  ENT_QUOTES, 'UTF-8')."</strong>
+                </div>";
+                }else{
+                    echo "<div class='alert alert-danger' role='alert'>
+                    <ion-icon name='alert-circle-outline' style='border-radius: 0px;;margin-right: 10px;
+                    font-size: 25px;
+                    position: absolute;'>
+                    </ion-icon><strong style='padding-left: 30px;'>".htmlspecialchars($_GET["respond"],  ENT_QUOTES, 'UTF-8')."</strong>
+                    </div>";
+                }
+            }
                 ?>
     <div class="container-lg row" style="margin: 0px;padding: 0px;width: 100%;max-width: 100%;">
         <div class="col" style="background-color: firebrick;background-image: linear-gradient(225deg,#960000,#b94a67);">
