@@ -110,7 +110,7 @@ while($row = mysqli_fetch_array($result)) {
   $set_participant = "'".trim($set_participant," ")."'";
 
   $type_op = get_option_attribute_entity("ticket_type","content_request",$ticket_type);
-  $origin_of_ticket_op= get_origin_of_ticket("origin","origin_of_ticket",$origin_of_ticket,"single","all_in_one_project"); 
+  $origin_of_ticket_op= get_origin_of_ticket("origin","origin_of_ticket",$origin_of_ticket,"single","all_in_one_project");
   $content_request_reason_op = get_option_attribute_entity("content_request_reson","content_request",$content_request_reson);
   $list_attachment = get_attachment_cr($id);
   $list_image = get_image_cr($id);
@@ -203,16 +203,7 @@ while($row = mysqli_fetch_array($result)) {
   </div>
   <form method="post">
   <div class="des_cr" id="des_cr_inline" >';
-    echo '
-    <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Origin of ticket</strong></small>
-      <div style="border: 0px;text-align-last: left;" class="mt-2 mb-3 pt-2 pt-2">
-        <input type="hidden" id="cr_edit_origin_of_ticket" name="cr_edit_origin_of_ticket" value="'.$origin_of_ticket.'">
-        <select  id="cr_edit_origin_of_ticket_show" class="origin_block_out" aria-label=".form-select-lg example" onchange="update_cr_detail('.$id.',&#39;cr_edit_origin_of_ticket&#39;)">
-        <option data-placeholder="true"></option>
-          '.$origin_of_ticket_op.'
-        </select>
-      </div>
-      <hr class="cr_hr_detail">';
+
 
 
   echo '
@@ -287,6 +278,26 @@ while($row = mysqli_fetch_array($result)) {
     </div>';
 
     echo '<hr>';
+   echo '
+    <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Origin of ticket</strong></small>
+      <div style="border: 0px;text-align-last: left;" class="mt-2 mb-3 pt-2 pt-2">
+        <input type="hidden" id="cr_edit_origin_of_ticket" name="cr_edit_origin_of_ticket" value="'.$origin_of_ticket.'">
+        <select  id="cr_edit_origin_of_ticket_show" class="origin_block_out" aria-label=".form-select-lg example" onchange="update_cr_detail('.$id.',&#39;cr_edit_origin_of_ticket&#39;)">
+        <option data-placeholder="true"></option>
+          '.$origin_of_ticket_op.'
+        </select>
+      </div>
+      <hr class="cr_hr_detail">';
+      echo '
+      <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Origin of ticket</strong></small>
+        <div style="border: 0px;text-align-last: left;" class="mt-2 mb-3 pt-2 pt-2">
+          <input type="hidden" id="cr_edit_origin_of_ticket" name="cr_edit_origin_of_ticket" value="'.$origin_of_ticket.'">
+          <select  id="cr_edit_origin_of_ticket_show" class="origin_block_out" aria-label=".form-select-lg example" onchange="update_cr_detail('.$id.',&#39;cr_edit_origin_of_ticket&#39;)">
+          <option data-placeholder="true"></option>
+            '.$origin_of_ticket_op.'
+          </select>
+        </div>
+        <hr class="cr_hr_detail">';
 
     ?>
 <div class="row">
@@ -621,7 +632,7 @@ new SlimSelect({
     },
     events: {
         afterChange: (info) => {
-           
+
             document.getElementById("cr_edit_origin_of_ticket").value = info[0].value;
             update_cr_detail(<?php echo $id; ?>, <?php echo $cr_edit_origin_of_ticket; ?>)
         }
