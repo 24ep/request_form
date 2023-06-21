@@ -7,7 +7,7 @@ $sku = $_POST['sku'];
 $element_name = $_POST['element_name'];
 $new_value = $_POST['new_value'];
 //select taxonomy
-$query = "SELECT ".$element_name." from taxonomy.taxonomy_raw where sku='".$sku."'"
+$query = "SELECT ".$element_name." from taxonomy.taxonomy_raw_f2 where sku='".$sku."'"
 or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
@@ -15,7 +15,7 @@ while($row = mysqli_fetch_array($result)) {
 }
 
         //insert to complete data
-        $sql = "INSERT INTO taxonomy.taxonomy_revised_record
+        $sql = "INSERT INTO taxonomy.taxonomy_revised_record_f2
         (sku,
         attribute_code,
         old_value,
