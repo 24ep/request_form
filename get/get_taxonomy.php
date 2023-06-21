@@ -61,6 +61,7 @@ while($row = mysqli_fetch_array($result)) {
     $query_att = "SELECT DISTINCT attribute_code,pim_attribute_code FROM taxonomy.attribute_option;";
     $result_att = mysqli_query($con, $query_att);
     while($row_att = mysqli_fetch_array($result_att)) {
+echo 1;
         if((($row["new_".$row_att['pim_attribute_code']]<>"" and $row["new_".$row_att['pim_attribute_code']]<>Null ) or $row_att['attribute_code']=='new_cate')){
             $display = "block";
         }else{
