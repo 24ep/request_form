@@ -1,6 +1,6 @@
 <?php
+echo '<script>console.log("")</script>'
 session_start();
-echo 'ddd';
 $_SESSION['taxonomy_model_selected'] = $_POST['model_selected'];
 $selected_categories = $_POST['selected_categories'];
 date_default_timezone_set("Asia/Bangkok");
@@ -15,7 +15,7 @@ if($model_selected=="retail"){
 }
 if($model_selected=="mkp"){
     $model_selected = "mkp";
-    $query_condition ="tr.mkp_qc = 'Y' and tr.status = 'WAITING FOR QC'  and
+    $query_condition ="tr.mkp_qc = 'Y' and tr.status = 'WAITING FOR QC' and
     (tr.check_by is null or tr.check_by ='".$_SESSION['username']."') and tr.model = 'mkp')";
 }
 
