@@ -5,6 +5,7 @@ $selected_categories = $_POST['selected_categories'];
 date_default_timezone_set("Asia/Bangkok");
 $con= mysqli_connect("localhost","cdse_admin","@aA417528639","taxonomy") or die("Error: " . mysqli_error($con));
 $model_selected =  $_POST['model_selected'];
+
 if($model_selected=="retail"){
     $model_selected = "retail";
     $query_condition ="  tr.batch is not null and tr.qty > 0 and tr.model = 'retail' and (tr.status = 'WAITING FOR QC') and
