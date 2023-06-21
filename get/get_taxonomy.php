@@ -32,6 +32,7 @@ $model_selected =  $_POST['model_selected'];
 //     and
 //     (tr.check_by is null or tr.check_by ='".$_SESSION['username']."'))";
 // }
+
 mysqli_query($con, "SET NAMES 'utf8' ");
 $new_attribute="";
 //query
@@ -44,8 +45,8 @@ $new_attribute="";
 // where ( ".$query_condition."
 // order by tr.qty , tr.brand_name , tr.new_cate , tr.sale DESC limit 1" or die("Error:" . mysqli_error($con));
 $query = "
-SELECT tr.*  FROM taxonomy.taxonomy_raw_f2 as tr
-where ( tr.status = 'WAITING FOR QC' and tr.priority in ('P1','P2','P3','P4') and tr.already_qc = 'N' and (tr.check_by ='' or tr.check_by ='".$_SESSION['username']."'))
+SELECT tr.* FROM taxonomy.taxonomy_raw_f2 as tr
+where ( tr.status = 'WAITING FOR QC' and tr.priority in ('P1','P2','P3','P4') and tr.already_qc = 'N' and (tr.check_by ='' ))
 order by tr.priority , tr.brand , tr.new_cate DESC limit 1" or die("Error:" . mysqli_error($con));
 echo $query;
 $result = mysqli_query($con, $query);
