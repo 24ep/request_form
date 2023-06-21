@@ -45,7 +45,7 @@ $new_attribute="";
 $query = "
 SELECT tr.*  FROM taxonomy.taxonomy_raw_f2 as tr
 where ( tr.status = 'WAITING FOR QC' and tr.priority in ('P1','P2','P3','P4') and tr.already_qc = 'N' and (tr.check_by ='' or tr.check_by ='".$_SESSION['username']."'))
-order by tr.priority , tr.brand_name , tr.new_cate DESC limit 1" or die("Error:" . mysqli_error($con));
+order by tr.priority , tr.brand , tr.new_cate DESC limit 1" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     //product information session
