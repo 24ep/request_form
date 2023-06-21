@@ -48,7 +48,7 @@ $new_cate = $_POST['new_cate'];
         mysqli_query($con, "SET NAMES 'utf8' ");
 
         //update_existing_status
-        $sql = "update taxonomy.taxonomy_raw set
+        $sql = "update taxonomy.taxonomy_raw_f2 set
         check_by = '".$_SESSION['username']."',
         check_date = CURRENT_TIMESTAMP,
         status = '".$status."'
@@ -57,7 +57,7 @@ $new_cate = $_POST['new_cate'];
         $query = mysqli_query($con,$sql);
 
         //insert to complete data
-        $sql = "INSERT INTO taxonomy.taxonomy_completed
+        $sql = "INSERT INTO taxonomy.taxonomy_completed_f2
         (sku,
         accessory_watches_style,
         air_conditioner_type,

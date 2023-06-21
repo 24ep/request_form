@@ -7,7 +7,7 @@ $con= mysqli_connect("localhost","cdse_admin","@aA417528639","taxonomy") or die(
 mysqli_query($con, "SET NAMES 'utf8' ");
 
 //update_exsiting_status
-$sql = "update taxonomy.taxonomy_raw set
+$sql = "update taxonomy.taxonomy_raw_f2 set
 check_by = '".$_SESSION['username']."',
 check_date = CURRENT_TIMESTAMP,
 status = 'SKIP'
