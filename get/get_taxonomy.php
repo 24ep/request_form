@@ -45,7 +45,7 @@ order by tr.priority , tr.brand , tr.new_cate DESC limit 1" or die("Error:" . my
 
 $result = mysqli_query($con, $query);
 
-if (!$result) {
+if ($result === false) {
     die("Error: " . mysqli_error($con));
 }
 
