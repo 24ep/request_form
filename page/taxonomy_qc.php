@@ -37,7 +37,7 @@
 <script>
 function change_attribute_cate() {
     var new_cate_element = document.getElementById('new_cate')
-    console.log(new_cate_element)
+    console.log(new_cate_element.value)
     var selectedOptions = Array.from(new_cate_element.options).filter(option => option.selected);
     var cate_value = selectedOptions.map(option => option.value).join(",");
     console.log(cate_value);
