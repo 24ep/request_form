@@ -92,8 +92,7 @@ while($row = mysqli_fetch_array($result)) {
         $new_attribute .= "<label id='label_new_".$row_att['pim_attribute_code']."' style='display:".$display."' class='mb-1'>".$row_att['attribute_code']."</label>";
         $new_attribute .= "
         <select  onchange='auto_select_no(&#39;".$row_att['attribute_code']."&#39;);".$onchangecate."' ".$multiple." ".$select_style." class='".$class."' id='".$row_att['attribute_code']."' >";
-        $query_att_option = "SELECT DISTINCT attribute_option,attribute_label FROM taxonomy.attribute_option
-        where  attribute_code='".$row_att['attribute_code']."';";
+        $query_att_option = "SELECT DISTINCT attribute_option,attribute_label FROM taxonomy.attribute_option where model like '%".$model."%' and attribute_code='".$row_att['attribute_code']."';";
         $result_att_option = mysqli_query($con, $query_att_option);
         $new_attribute .= "<option value=''></option>";
         while($row_att_option = mysqli_fetch_array($result_att_option)) {
