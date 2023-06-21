@@ -1,10 +1,9 @@
 <?php
-echo '<script>console.log("test")</script>';
 session_start();
 $_SESSION['taxonomy_model_selected'] = $_POST['model_selected'];
 $selected_categories = $_POST['selected_categories'];
 date_default_timezone_set("Asia/Bangkok");
-$con= mysqli_connect("localhost","cdse_admin","@aA417528639","taxonomy") or die("Error: " . mysqli_error($con));
+$con= mysqli_connect("localhost","cdse_admin","@aA417528639") or die("Error: " . mysqli_error($con));
 $model_selected =  $_POST['model_selected'];
 
 // if($model_selected=="retail"){
@@ -26,12 +25,6 @@ $model_selected =  $_POST['model_selected'];
 // //     (tr.check_by is null or tr.check_by ='".$_SESSION['username']."'))";
 // // }
 
-// if($model_selected=="non_selected"){
-//     $model_selected = "non_selected";
-//     $query_condition =" tr.batch is not null and (tr.status = 'WAITING FOR QC' ) and (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y') and tr.qty > 0 and tr.sku like '%CDS%'
-//     and
-//     (tr.check_by is null or tr.check_by ='".$_SESSION['username']."'))";
-// }
 
 mysqli_query($con, "SET NAMES 'utf8' ");
 $new_attribute="";
@@ -45,10 +38,12 @@ $new_attribute="";
 // where ( ".$query_condition."
 // order by tr.qty , tr.brand_name , tr.new_cate , tr.sale DESC limit 1" or die("Error:" . mysqli_error($con));
 $query = "
-SELECT tr.* FROM taxonomy.taxonomy_raw_f2 as tr
+SELECT tr.* FROM taxonomy_raw_f2 as tr
 where ( tr.status = 'WAITING FOR QC' and tr.priority in ('P1','P2','P3','P4') and tr.already_qc = 'N' and (tr.check_by ='' or tr.check_by ='".$_SESSION['username']."'))
 order by tr.priority , tr.brand , tr.new_cate DESC limit 1" or die("Error:" . mysqli_error($con));
+
 echo $query;
+
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     //product information session
@@ -63,7 +58,6 @@ while($row = mysqli_fetch_array($result)) {
     $query_att = "SELECT DISTINCT attribute_code,pim_attribute_code FROM taxonomy.attribute_option;";
     $result_att = mysqli_query($con, $query_att);
     while($row_att = mysqli_fetch_array($result_att)) {
-echo 1;
         if((($row["new_".$row_att['pim_attribute_code']]<>"" and $row["new_".$row_att['pim_attribute_code']]<>Null ) or $row_att['attribute_code']=='new_cate')){
             $display = "block";
         }else{
