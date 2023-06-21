@@ -86,14 +86,17 @@ function change_attribute_cate() {
 function query_data() {
     var model_selected = document.getElementById("model_selected").value;
     $.post("base/get/get_taxonomy.php", {
-            model_selected:model_selected
-        },
-        function(data) {
-            Notiflix.Loading.hourglass('Loading...');
-            $('#get_taxonomy').html(data);
-            // change_attribute_cate();
-            Notiflix.Loading.remove();
-        });
+        model_selected: model_selected
+    }, function(data) {
+        Notiflix.Loading.hourglass('Loading...');
+        $('#get_taxonomy').html(data);
+        // change_attribute_cate();
+        Notiflix.Loading.remove();
+    }).fail(function(xhr, textStatus, error) {
+        var errorMessage = "Error: " + error;
+        $('#get_taxonomy').html(errorMessage);
+        Notiflix.Loading.remove();
+    });
 }
 
 function ShowSmallOriginalValue(element_id) {
