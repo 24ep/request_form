@@ -1,5 +1,5 @@
 <?php
-echo '<script>console.log("test")</script>'
+echo '<script>console.log("test")</script>';
 session_start();
 $_SESSION['taxonomy_model_selected'] = $_POST['model_selected'];
 $selected_categories = $_POST['selected_categories'];
