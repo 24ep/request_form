@@ -1,5 +1,6 @@
 <?php
 session_start();
+echo 'ddd';
 $_SESSION['taxonomy_model_selected'] = $_POST['model_selected'];
 $selected_categories = $_POST['selected_categories'];
 date_default_timezone_set("Asia/Bangkok");
