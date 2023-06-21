@@ -91,7 +91,7 @@ function query_data() {
         function(data) {
             Notiflix.Loading.hourglass('Loading...');
             $('#get_taxonomy').html(data);
-            change_attribute_cate();
+            // change_attribute_cate();
             Notiflix.Loading.remove();
         });
 }
