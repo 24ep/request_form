@@ -17,6 +17,13 @@ if($model_selected=="mkp"){
     (tr.check_by is null or tr.check_by ='".$_SESSION['username']."') and tr.model = 'mkp')";
 }
 
+// if($model_selected=="non_selected"){
+//     $model_selected = "non_selected";
+//     $query_condition =" tr.batch is not null and (tr.status = 'WAITING FOR QC' ) and (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y') and tr.qty > 0 and tr.sku like '%CDS%'
+//     and
+//     (tr.check_by is null or tr.check_by ='".$_SESSION['username']."'))";
+// }
+
 if($model_selected=="non_selected"){
     $model_selected = "non_selected";
     $query_condition =" tr.batch is not null and (tr.status = 'WAITING FOR QC' ) and (tr.in_80_sale_contribute = 'Y' or tr.in_top_200 = 'Y') and tr.qty > 0 and tr.sku like '%CDS%'
@@ -26,25 +33,29 @@ if($model_selected=="non_selected"){
 mysqli_query($con, "SET NAMES 'utf8' ");
 $new_attribute="";
 //query
+// $query = "
+// SELECT tr.* ,image_url.image_url as image_url ,des.clean_text_th as description FROM taxonomy.taxonomy_raw as tr
+// left join taxonomy.taxonomy_image_url as image_url
+// on image_url.sku = tr.sku
+// left join taxonomy.taxonomy_description  as des
+// on des.sku = tr.sku
+// where ( ".$query_condition."
+// order by tr.qty , tr.brand_name , tr.new_cate , tr.sale DESC limit 1" or die("Error:" . mysqli_error($con));
 $query = "
-SELECT tr.* ,image_url.image_url as image_url ,des.clean_text_th as description FROM taxonomy.taxonomy_raw as tr
-left join taxonomy.taxonomy_image_url as image_url
-on image_url.sku = tr.sku
-left join taxonomy.taxonomy_description  as des
-on des.sku = tr.sku
-where ( ".$query_condition."
-order by tr.qty , tr.brand_name , tr.new_cate , tr.sale DESC limit 1" or die("Error:" . mysqli_error($con));
+SELECT tr.*  FROM taxonomy.taxonomy_raw_f2 as tr
+where ( tr.priority in ('P1','P2','P3','P4'))
+order by tr.priority , tr.brand_name , tr.enrich_categories DESC limit 1" or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
     //product information session
     $sku = $row['sku'];
     $brand = $row['brand'];
-    $product_url = $row['product_url'];
-    $name_en = $row['name_EN'];
-    $name_th = $row['name_TH'];
+    $product_url = $row['url_key'];
+    $name_en = $row['product_name_th'];
+    $name_th = $row['product_name_th'];
     $model= $row['model'];
-    $description = $row['description'];
-    $image_url = $row['image_url'];
+    $description = $row['description_th'];
+    $image_url = $row['image'];
     $query_att = "SELECT DISTINCT attribute_code,pim_attribute_code FROM taxonomy.attribute_option;";
     $result_att = mysqli_query($con, $query_att);
     while($row_att = mysqli_fetch_array($result_att)) {
