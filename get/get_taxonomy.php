@@ -160,11 +160,11 @@ $query = mysqli_query($con,$sql);
     </nav>
     <div class="container-fluid border-bottom pb-3">
         <div class="row mt-1">
-            <div class="col-3"><strong>Name (endglish)</strong></div>
+            <div class="col-3"><strong>Name (EN)</strong></div>
             <div class="col-9"><?php echo $name_en;?></div>
         </div>
         <div class="row mt-1">
-            <div class="col-3"><strong>Name (Thai)</strong></div>
+            <div class="col-3"><strong>Name (TH)</strong></div>
             <div class="col-9"><?php echo $name_th;?></div>
         </div>
         <div class="row mt-1">
