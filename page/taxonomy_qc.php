@@ -1,8 +1,8 @@
 <nav class="navbar navbar-light bg-light shadow-sm">
     <div class="container-fluid">
         <a class="navbar-brand m-0 ms-3">Taxonomy QC</a>
-        <form class="d-flex">
-            <a class="btn btn-outline-secondary btn-sm me-5"
+        <form class="d-flex w-50">
+            <a class="btn btn-outline-secondary btn-sm me-5 w-100"
                 href="https://docs.google.com/spreadsheets/d/15yMjoMYxKVomcIs9beZvBG6BcwVO4kdzwEd-Kt0ICws/edit#gid=1938593248"
                 target="_blank">Categories & Attribute option</a>
             <!-- <a class="btn btn-outline-secondary" href="" target="_blank">SiteMap</a> -->
