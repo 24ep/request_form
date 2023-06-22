@@ -14,8 +14,6 @@ $result = mysqli_query($con, $query);
 if ($result === false) {
     die("Error: " . mysqli_error($con));
 }
-
-
 while($row = mysqli_fetch_array($result)) {
     echo $row['sku'];
 
