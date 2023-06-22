@@ -49,6 +49,11 @@ if ($result === false) {
     die("Error: " . mysqli_error($con));
 }
 
+?>
+
+<div>test</div>
+
+<?php
 
 while($row = mysqli_fetch_array($result)) {
     //product information session
