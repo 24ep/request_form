@@ -151,7 +151,7 @@ $sql_count = "SELECT count(sku) as sku FROM taxonomy.taxonomy_raw_f2 where date(
 $query_count = mysqli_query($con,$sql_count);
 while($row_count = mysqli_fetch_array($query_count)) {
 
-echo '<span class="badge rounded-pill text-bg-primary">Your summit today is : '.$row_count['sku'].' SKUs</span>';
+echo '<span class="badge rounded-pill text-bg-primary m-3">Your summit today is : '.$row_count['sku'].' SKUs</span>';
 
 }
 ?>
