@@ -51,7 +51,6 @@ if ($result === false) {
 
 ?>
 
-<div>test</div>
 
 <?php
 
@@ -96,7 +95,7 @@ while($row = mysqli_fetch_array($result)) {
         $new_attribute .="<div class='col-10'>";
         $new_attribute .= "<label id='label_new_".$row_att['pim_attribute_code']."' style='display:".$display."' class='mb-1'>".$row_att['attribute_code']."</label>";
         $new_attribute .= "
-        <select  onchange='auto_select_no(&#39;".$row_att['attribute_code']."&#39;);".$onchangecate."' ".$multiple." ".$select_style." class='".$class."' id='".$row_att['attribute_code']."' >";
+        <select onchange='auto_select_no(&#39;".$row_att['attribute_code']."&#39;);".$onchangecate."' ".$multiple." ".$select_style." class='".$class."' id='".$row_att['attribute_code']."' >";
         $query_att_option = "SELECT DISTINCT attribute_option,attribute_label FROM taxonomy.attribute_option where model like '%".$model."%' and attribute_code='".$row_att['attribute_code']."';";
         $result_att_option = mysqli_query($con, $query_att_option);
         $new_attribute .= "<option value=''></option>";
@@ -146,7 +145,18 @@ feed_time = CURRENT_TIMESTAMP
 where sku = '".$sku."'"
 or die("Error:" . mysqli_error($con));
 $query = mysqli_query($con,$sql);
+
+
+$sql_count = "SELECT count(sku) FROM taxonomy.taxonomy_raw_f2 where date(check_date) = current_date  and check_by  = '".$_SESSION['username']."'" or die("Error:" . mysqli_error($con));
+$query_count = mysqli_query($con,$sql_count);
+while($row_count = mysqli_fetch_array($query_count)) {
+
+echo '<span class="badge rounded-pill text-bg-primary">Your summit today is : '.$row_count;.' SKUs</span>';
+
+}
 ?>
+
+
 <div class="vstack gap-2 col-md-9 mx-auto">
     <!-- nav bra -->
     <nav class="navbar bg-body-tertiary">

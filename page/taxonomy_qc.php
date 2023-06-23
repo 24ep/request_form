@@ -282,7 +282,6 @@ function summit_taxonomy(sku) {
         // var new_cate="'"+new_cate+"'";
 
 
-
         $.post("base/action/action_taxonomy_update.php", {
                 sku: sku,
                 status: status,
