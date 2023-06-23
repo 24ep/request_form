@@ -147,11 +147,11 @@ or die("Error:" . mysqli_error($con));
 $query = mysqli_query($con,$sql);
 
 
-$sql_count = "SELECT count(sku) FROM taxonomy.taxonomy_raw_f2 where date(check_date) = current_date  and check_by  = '".$_SESSION['username']."'" or die("Error:" . mysqli_error($con));
+$sql_count = "SELECT count(sku) as sku FROM taxonomy.taxonomy_raw_f2 where date(check_date) = current_date  and check_by  = '".$_SESSION['username']."'" or die("Error:" . mysqli_error($con));
 $query_count = mysqli_query($con,$sql_count);
 while($row_count = mysqli_fetch_array($query_count)) {
 
-echo '<span class="badge rounded-pill text-bg-primary">Your summit today is : '.$row_count;.' SKUs</span>';
+echo '<span class="badge rounded-pill text-bg-primary">Your summit today is : '.$row_count['sku'];.' SKUs</span>';
 
 }
 ?>
