@@ -133,11 +133,11 @@ while($row = mysqli_fetch_array($result)) {
 }
 // echo $new_attribute;
 //stamp name
-$sql = "update taxonomy.taxonomy_raw_f2 set
-check_by = '".$_SESSION['username']."'
-where brand = '".$brand."'"
-or die("Error:" . mysqli_error($con));
-$query = mysqli_query($con,$sql);
+// $sql = "update taxonomy.taxonomy_raw_f2 set
+// check_by = '".$_SESSION['username']."'
+// where brand = '".$brand."' "
+// or die("Error:" . mysqli_error($con));
+// $query = mysqli_query($con,$sql);
 //stamp name
 $sql = "update taxonomy.taxonomy_raw_f2 set
 check_by = '".$_SESSION['username']."',
