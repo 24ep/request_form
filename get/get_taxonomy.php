@@ -40,7 +40,7 @@ $new_attribute="";
 $model_selected = "non_selected";
 $query = "
 SELECT tr.* FROM taxonomy.taxonomy_raw_f2 as tr
-where batch = 'Batch 7' and ( tr.status = 'WAITING FOR QC' and tr.priority in ('P1','P2','P3','P4') and tr.already_qc = 'N' and (tr.check_by ='' or tr.check_by ='".$_SESSION['username']."'))
+where tr.batch = 'Batch 7' and ( tr.status = 'WAITING FOR QC' and tr.priority in ('P1','P2','P3','P4') and tr.already_qc = 'N' and (tr.check_by ='' or tr.check_by ='".$_SESSION['username']."'))
 order by tr.priority , tr.brand , tr.new_cate DESC limit 1" or die("Error:" . mysqli_error($con));
 
 $result = mysqli_query($con, $query);
