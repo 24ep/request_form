@@ -93,6 +93,7 @@ function list_ts_non_status($filter,$ts_command_limit ,$status,$bucket_filter,$s
     $result = mysqli_query($con, $query);
     echo "  <li class='row mb-3' style='color: #b3b3b3;font-weight: 600;text-align-last: center;'>
     <div class='col'>Id</div>
+    <div class='col'>Create Date</div>
     <div class='col-4'>Title</div>
     <div class='col'>STATUS</div>
     <div class='col'>Request for</div>
@@ -110,6 +111,7 @@ function list_ts_non_status($filter,$ts_command_limit ,$status,$bucket_filter,$s
     <div class="col">
         <?php echo "<strong style='color: ".$row["color_project"].";'>".$row["ticket_template"]."-".$row["id"]."</strong>";?>
     </div>
+    <div class="col" style="text-align: -webkit-center;"><?php echo $row['create_date']; ?></div>
     <div class="col-4" style="text-align: -webkit-left;"><?php echo $row['title']; ?></div>
     <div class="col" style="text-align: -webkit-center;"><?php echo badge_ticket_status_cr($row['status']); ?></div>
     <div class="col" style="text-align: -webkit-center;"><?php echo badge_ticket_type_cr($row['ticket_type']); ?></div>
