@@ -74,17 +74,58 @@
                 style="width: fit-content;margin: initial;margin-left: 50px;height: unset;color: #ffffff;">
                 <!-- get from list -->
                 <?php //include("get/linesheet_download.php"); ?>
-
-                    <h3>PRE-RELEASE<br>
-                    <h6><strong>New Linesheet | Re-platform</strong></h6><br>
-                    <h3><strong>SPEAR 2.0.0</strong></h3>
-                    <strong>Feature available</strong>
-                    <ul>
-                        <li>Dynamic Linesheet</li>
-                        <li>Size guide generator</li>
-                        <li>Dimension guide generator</li>
-                    </ul>
-                    <button type="button" disabled class="btn btn-danger btn-sm">Download soon</button>
+                <div class="x_elementToProof">Hi All Service-Gate user,&nbsp;</div>
+<div class="x_elementToProof">&nbsp;</div>
+<div class="x_elementToProof">I'm writing this for notic everyone about the service-gate changing backend environments.</div>
+<div class="x_elementToProof">&nbsp;</div>
+<div class="x_elementToProof">According to current service will end of service at 23 Jan 2024. we have set up a new environment for the system and already do migrate any sturcture to the new environmnts.&nbsp;<strong><u>So the new service-gate will have the UI , any workflows , any data ticket same as current service-gate.</u></strong></div>
+<div id="x_Signature">
+<div>&nbsp;</div>
+<div>however we have some change a bit on the system due to limitations of capacity of system. so you can find the detail of this at below.</div>
+<div>&nbsp;</div>
+<div><strong>Service Change :</strong></div>
+<ul>
+<li>
+<div>New Url -&gt;&nbsp;&nbsp;&nbsp;<a id="OWA841cefb3-6506-40d7-3319-cfa9fed1566b" class="x_x_x_OWAAutoLink x_x_x_ContentPasted0 x_x_ContentPasted0" href="https://service-gate.infinityfreeapp.com/" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-loopstyle="linkonly" data-linkindex="0">https://service-gate.infinityfreeapp.com/</a></div>
+</li>
+<li>
+<div>Dark mode -&gt;&nbsp;&nbsp;<strong>Suspended</strong></div>
+</li>
+<li>
+<div>Attachment files -&gt;&nbsp;<strong>Suspended</strong></div>
+</li>
+<li>
+<div>Attachment images -&gt;&nbsp;<strong>Suspended</strong></div>
+</li>
+<li>
+<div>Speed -&gt;&nbsp;<strong>lower than current</strong></div>
+</li>
+<li>
+<div>Max connection for data query-&gt;<strong>&nbsp;lower than current (impact is dashboard not loading somtime)</strong></div>
+</li>
+</ul>
+<div>So, for smoot transtion we will have the&nbsp;<strong><u>current system</u></strong><u>&nbsp;</u><strong><u>cut-off&nbsp; at 19 Jan 23 , 4:00 PM</u></strong><u>&nbsp;</u>for do some activity such as migrations to current data and change any configulation of 3<sup>rd</sup>&nbsp;party&nbsp;intregrations.</div>
+<div>&nbsp;</div>
+<div>and the&nbsp;<strong><u>new system will start using at 23 Jan 24 5:00 AM</u></strong></div>
+<div><strong>&nbsp;</strong></div>
+<div><strong>Concludtion :</strong></div>
+<ul data-editing-info="{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:2}">
+<li>any data exclude attachments file and image has migration to the new system.</li>
+<li>workflows not changing</li>
+<li>the ticket that you open still there</li>
+<li>any logs of activity still there</li>
+<li>your account and line notifiction still there</li>
+<li>
+<div>you can use the current user and password to login new system</div>
+</li>
+<li>
+<div>auto create ticket from email still there</div>
+</li>
+</ul>
+<div>&nbsp;</div>
+<p><strong>Best Regards,</strong><strong>&nbsp;</strong></p>
+<div>Jaroonwit poolnai - bos</div>
+</div>
             </div>
         </div>
         <div class="col-4" style="height : 100vh;background-color:white;">
