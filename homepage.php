@@ -12,7 +12,7 @@ session_start();
 <!doctype html>
 <html lang="en">
 <?php
-ini_set('allow_url_include', '1');
+// ini_set('allow_url_include', '1');
 
 if (!isset($_SESSION["login_csg"])){
     // echo  "no session" ; 
