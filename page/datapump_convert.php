@@ -112,7 +112,7 @@ class="shadow-sm span-ifram">https://cdse-commercecontent.com/page_convert_datap
 
                             <label for="floatingSelect">Input file</label>
 
-                        </div>https://phpstack-1223668-4355262.cloudwaysapps.com/
+                        </div>
 
                         <input class="form-control" type="file" id="inputfile" name="inputfile">
 
@@ -226,7 +226,7 @@ class="shadow-sm span-ifram">https://cdse-commercecontent.com/page_convert_datap
 
                                 $herf = $file_path.$row['file_name'];
 
-                                // $herf = "https://servicegate.000webhostapp.com/".$file_path.$row['file_name'];
+                                // $herf = "https://phpstack-1223668-4355262.cloudwaysapps.com/".$file_path.$row['file_name'];
 
                                 echo "<option value='".htmlentities($herf,ENT_QUOTES)."' >".htmlentities($row["file_name"],ENT_QUOTES)."</option>";
 

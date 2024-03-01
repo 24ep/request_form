@@ -11,7 +11,7 @@ $con_update= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com
 mysqli_query($con, "SET NAMES 'utf8' ");
 
 
-https://phpstack-1223668-4355262.cloudwaysapps.com/
+
 $sql_update  = "UPDATE account SET verify_code = 'verified' WHERE verify_code='".$verify_code."'";
 
 $query_update = mysqli_query($con_update,$sql_update);
@@ -24,7 +24,7 @@ if($query_update ){
 
     $_SESSION['verify_code'] = $verify_code_verified;
 
-    Header("Location: https://servicegate.000webhostapp.com/");
+    Header("Location: https://phpstack-1223668-4355262.cloudwaysapps.com/");
 
     exit();
 

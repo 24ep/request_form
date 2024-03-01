@@ -27,7 +27,7 @@ if ($fileSize > 2000000) {
     echo "<script>
 
     Notiflix.Report.failure(
-https://phpstack-1223668-4355262.cloudwaysapps.com/
+
         'Failure',
 
         'Error: You cannot upload this file because its size exceeds the maximum limit of 2 MB.',
@@ -56,7 +56,7 @@ if (empty($errors)) {
 
     if ($didUpload) {
 
-        $arr=array("success"=>1,"file"=>array("url"=>"https://servicegate.000webhostapp.com/attachment/brand_editor/".$filename));
+        $arr=array("success"=>1,"file"=>array("url"=>"https://phpstack-1223668-4355262.cloudwaysapps.com/attachment/brand_editor/".$filename));
 
         echo json_encode($arr);
 

@@ -18,8 +18,8 @@ session_start();
     <meta name="x-apple-disable-message-reformatting" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-    <link rel="stylesheet" href="https://phpstack-1223668-4355262.cloudwaysapps.com//action/notiflix/dist/notiflix-3.2.5.min.css" />
-    <script src="https://phpstack-1223668-4355262.cloudwaysapps.com//action/notiflix/dist/notiflix-3.2.5.min.js"></script>
+    <link rel="stylesheet" href="https://phpstack-1223668-4355262.cloudwaysapps.com/action/notiflix/dist/notiflix-3.2.5.min.css" />
+    <script src="https://phpstack-1223668-4355262.cloudwaysapps.com/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
     <!--[if mso]>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <![endif]-->
@@ -825,7 +825,7 @@ session_start();
             sessionStorage.setItem('work_email', clientAnswer);
 
             update_value_attribute('<?php echo $_SESSION['username']; ?>', 'ac_edit_work_email', 'ac', 'all_in_one_project', 'account', 'username');
-            window.location.href ='https://phpstack-1223668-4355262.cloudwaysapps.com//verify?email='+clientAnswer;
+            window.location.href ='https://phpstack-1223668-4355262.cloudwaysapps.com/verify?email='+clientAnswer;
         },
         function cancelCb() {
             // alert('😪 ...');

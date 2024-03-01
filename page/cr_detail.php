@@ -518,7 +518,7 @@ while($row = mysqli_fetch_array($result)) {
 
   $cr_edit_content_request_reson= "'cr_edit_content_request_reson'";
 
-  $cr_edit_reqhttps://phpstack-1223668-4355262.cloudwaysapps.com/
+  $cr_edit_request_by= "'cr_edit_request_by'";
 
   $cr_edit_origin_of_ticket = "'cr_edit_origin_of_ticket'";
 
@@ -1038,7 +1038,7 @@ function comment_cr_id_with_file(id) {
 
     $.ajax({
 
-        url: "https://servicegate.000webhostapp.com/action/action_comment_cr.php",
+        url: "https://phpstack-1223668-4355262.cloudwaysapps.com/action/action_comment_cr.php",
 
         dataType: 'text',
 

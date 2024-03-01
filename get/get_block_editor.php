@@ -114,8 +114,8 @@ var editor = new EditorJS({
 
             },
 
-            header: {https://phpstack-1223668-4355262.cloudwaysapps.com/
-https://phpstack-1223668-4355262.cloudwaysapps.com/
+            header: {
+
                 class: Header,
 
                 config: {
@@ -230,9 +230,9 @@ https://phpstack-1223668-4355262.cloudwaysapps.com/
 
                     endpoints: {
 
-                        byFile: 'https://servicegate.000webhostapp.com/action/action_endpoint_uploadfiles.php', // Your backend file uploader endpoint
+                        byFile: 'https://phpstack-1223668-4355262.cloudwaysapps.com/action/action_endpoint_uploadfiles.php', // Your backend file uploader endpoint
 
-                        byUrl: 'https://servicegate.000webhostapp.com/action/action_endpoint_uploadfiles.php', // Your endpoint that provides uploading by Url
+                        byUrl: 'https://phpstack-1223668-4355262.cloudwaysapps.com/action/action_endpoint_uploadfiles.php', // Your endpoint that provides uploading by Url
 
                     }
 

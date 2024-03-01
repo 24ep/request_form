@@ -58,7 +58,7 @@ if (!$_SESSION["login_csg"]){
 
     }else{
 
-        Header("Location: https://phpstack-1223668-4355262.cloudwaysapps.com//verify?work_email=".$_SESSION['work_email']);
+        Header("Location: https://phpstack-1223668-4355262.cloudwaysapps.com/verify?work_email=".$_SESSION['work_email']);
 
     }
 
@@ -142,7 +142,7 @@ if (!$_SESSION["login_csg"]){
 
     <link rel="icon" type="image/ocp"
 
-        href="https://phpstack-1223668-4355262.cloudwaysapps.com//image/sg_logo_minimize.ico" />
+        href="https://phpstack-1223668-4355262.cloudwaysapps.com/image/sg_logo_minimize.ico" />
 
     <!-- textarray -->
 
@@ -222,7 +222,7 @@ if (!$_SESSION["login_csg"]){
 
     <link rel="stylesheet" type="text/css"
 
-        href="https://phpstack-1223668-4355262.cloudwaysapps.com//css-theam/tree-ticket.css">
+        href="https://phpstack-1223668-4355262.cloudwaysapps.com/css-theam/tree-ticket.css">
 
     <!-- time ago -->
 

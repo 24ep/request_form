@@ -54,11 +54,11 @@ curl_setopt_array($curl, array(
 
   CURLOPT_URL => 'http://notix.io/api/send?app=10052dd0063417a1645897f10306381',
 
-  CURLOPT_RETURNTRANSFER => true,https://phpstack-1223668-4355262.cloudwaysapps.com/
+  CURLOPT_RETURNTRANSFER => true,
 
   CURLOPT_ENCODING => '',
 
-  CURLOPT_MAXREDIRS => 10,https://phpstack-1223668-4355262.cloudwaysapps.com/
+  CURLOPT_MAXREDIRS => 10,
 
   CURLOPT_TIMEOUT => 0,
 
@@ -110,7 +110,7 @@ function sendline($id,$value_name,$value_change,$prefix){
 
         if($prefix=='ANJ' or $prefix=='JC' or $prefix=='NS' or $prefix=='RJ' ){
 
-                $callback_url  = 'https://servicegate.000webhostapp.com/?env=poojaroonwit&page=create_new&prefix=NS&direct='.$id;
+                $callback_url  = 'https://phpstack-1223668-4355262.cloudwaysapps.com/?env=poojaroonwit&page=create_new&prefix=NS&direct='.$id;
 
                 $prefix_post = 'NS';
 
@@ -118,7 +118,7 @@ function sendline($id,$value_name,$value_change,$prefix){
 
         if($prefix=='CR'){
 
-            $callback_url  = 'https://servicegate.000webhostapp.com/?env=poojaroonwit&page=update_content&prefix=CR&direct='.$id;
+            $callback_url  = 'https://phpstack-1223668-4355262.cloudwaysapps.com/?env=poojaroonwit&page=update_content&prefix=CR&direct='.$id;
 
             $prefix_post = 'CR';
 

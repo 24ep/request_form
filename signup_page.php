@@ -366,11 +366,11 @@
 
                 </div>
 
-                <div class="row ">https://phpstack-1223668-4355262.cloudwaysapps.com/
+                <div class="row ">
 
                     <div class="col-6">
 
-                     https://phpstack-1223668-4355262.cloudwaysapps.com/</label>
+                        <label for="email">E-mail for work</label>
 
                         <input type="email" class="form-control form-control-sm"
 
@@ -734,7 +734,7 @@ function Auth(type_action) {
 
                 URL +=
 
-                    '&redirect_uri=https://servicegate.000webhostapp.com/action/action_register_account.php';
+                    '&redirect_uri=https://phpstack-1223668-4355262.cloudwaysapps.com/action/action_register_account.php';
 
                 window.location.href = URL;
 
@@ -742,7 +742,7 @@ function Auth(type_action) {
 
                 window.location.href =
 
-                    'https://servicegate.000webhostapp.com/action/action_register_account.php?state=' +
+                    'https://phpstack-1223668-4355262.cloudwaysapps.com/action/action_register_account.php?state=' +
 
                     firstname + ',' + lastname + ',' + nickname + ',' + username + ',' + password + ',' + department +
 

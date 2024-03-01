@@ -16,7 +16,7 @@ $username = $account_array[3];
 
 $password = $account_array[4];
 
-$department = $account_array[5];https://phpstack-1223668-4355262.cloudwaysapps.com/
+$department = $account_array[5];
 
 $workemail = $account_array[6];
 
@@ -34,7 +34,7 @@ $curl = curl_init();
 
 curl_setopt_array($curl, array(
 
-  CURLOPT_URL => 'https://notify-bot.line.me/oauth/token?grant_type=authorization_code&code='.$_GET["code"].'&redirect_uri=https://servicegate.000webhostapp.com/action/action_register_account.php&client_id=XPPcPQZGP76t3eLNrQ944w&client_secret=vng1Flh2DcFp4nYNluxOJZMTQ6kQh8qHBYzgQiBPdOO',
+  CURLOPT_URL => 'https://notify-bot.line.me/oauth/token?grant_type=authorization_code&code='.$_GET["code"].'&redirect_uri=https://phpstack-1223668-4355262.cloudwaysapps.com/action/action_register_account.php&client_id=XPPcPQZGP76t3eLNrQ944w&client_secret=vng1Flh2DcFp4nYNluxOJZMTQ6kQh8qHBYzgQiBPdOO',
 
   CURLOPT_RETURNTRANSFER => true,
 

@@ -14,7 +14,7 @@ FilePond.setOptions({
 
     allowReplace: true,
 
-    instantUplhttps://phpstack-1223668-4355262.cloudwaysapps.com/
+    instantUpload: true,
 
     allowReoder: true,
 
@@ -30,7 +30,7 @@ FilePond.setOptions({
 
     server: {
 
-        url: 'https://servicegate.000webhostapp.com/',
+        url: 'https://phpstack-1223668-4355262.cloudwaysapps.com/',
 
         process: '/action/action_upload_files.php?id='+<?php echo $_POST['id']; ?>,
 

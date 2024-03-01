@@ -2,11 +2,11 @@
 
  session_start();
 
-function profile_https://phpstack-1223668-4355262.cloudwaysapps.com/sername,$position_image){
+function profile_image($firstname,$department,$size,$username,$position_image){
 
 
 
-$ch = curl_init("https://servicegate.000webhostapp.com/image/user_profile/".$username.".jpg");
+$ch = curl_init("https://phpstack-1223668-4355262.cloudwaysapps.com/image/user_profile/".$username.".jpg");
 
 curl_setopt($ch, CURLOPT_HEADER, true);    // we want headers
 

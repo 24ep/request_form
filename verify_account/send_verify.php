@@ -44,7 +44,7 @@ function send_verify_email($username,$email,$firstname,$lastname){
 
         CURLOPT_RETURNTRANSFER => true,
 
-        CURLOPT_ENCODING => 'https://phpstack-1223668-4355262.cloudwaysapps.com/
+        CURLOPT_ENCODING => '',
 
         CURLOPT_MAXREDIRS => 10,
 
@@ -90,7 +90,7 @@ function send_verify_email($username,$email,$firstname,$lastname){
 
             }
 
-        // header("Location: https://servicegate.000webhostapp.com/verify_account/waiting_verify.php?email=".$_SESSION['work_email'],TRUE, 301);
+        // header("Location: https://phpstack-1223668-4355262.cloudwaysapps.com/verify_account/waiting_verify.php?email=".$_SESSION['work_email'],TRUE, 301);
 
         // exit();
 
