@@ -14,12 +14,12 @@ session_start();
 <?php
 // ini_set('allow_url_include', '1');
 
-if (!isset($_SESSION["login_csg"])){
-    // echo  "no session" ; 
-    Header("Location: /login");
+// if (!isset($_SESSION["login_csg"])){
+//     // echo  "no session" ; 
+//     Header("Location: /login");
 
-}else{
-    include($_SERVER['DOCUMENT_ROOT'].'/homepage_new.php');
-}
+// }else{
+//     include($_SERVER['DOCUMENT_ROOT'].'/homepage_new.php');
+// }
 
  ?>
