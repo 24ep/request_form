@@ -1,40 +1,40 @@
-/* add test */
-.tree_label {
-    padding-left: 15px;
-    color: gray;
-}
-
-.tree_label:after {
-    position: absolute;
-    top: 0em;
-    left: -2px;
-    display: table-column-group;
-    height: 10px;
-    width: 20px;
-    border-bottom: 2px solid #b1b1b1;
-    border-left: 2px solid #b1b1b1;
-    border-radius: 0 0 0 .4em;
-    content: '';
-    padding-top: 23px;
-}
-
-.tree_lift {
-    left: 0px;
-    position: relative;
-    border-left: 2px solid #b1b1b1;
-}
-
-.tree_lift_end {
-    left: 0px;
-    position: relative;
-    border-left: 2px solid transparent;
-}
-
-.sub-ticket {
-    border: 0px solid transparent;
-    align-items: center;
-}
-
-label.tree_label:hover {
-    color: #666;
+/* add test */
+.tree_label {
+    padding-left: 15px;
+    color: gray;
+}
+
+.tree_label:after {
+    position: absolute;
+    top: 0em;
+    left: -2px;
+    display: table-column-group;
+    height: 10px;
+    width: 20px;
+    border-bottom: 2px solid #b1b1b1;
+    border-left: 2px solid #b1b1b1;
+    border-radius: 0 0 0 .4em;
+    content: '';
+    padding-top: 23px;
+}
+
+.tree_lift {
+    left: 0px;
+    position: relative;
+    border-left: 2px solid #b1b1b1;
+}
+
+.tree_lift_end {
+    left: 0px;
+    position: relative;
+    border-left: 2px solid transparent;
+}
+
+.sub-ticket {
+    border: 0px solid transparent;
+    align-items: center;
+}
+
+label.tree_label:hover {
+    color: #666;
 }

@@ -8,7 +8,7 @@
 
 
   function project_bucket(){
-            $con= mysqli_connect("localhost","cdse_admin","@aA417528639","all_in_one_project") or die("Error: " . mysqli_error($con));
+            $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
             mysqli_query($con, "SET NAMES 'utf8' ");
             $query = "SELECT * FROM project_bucket where status <> 'Close' ORDER BY id asc" or die("Error:" . mysqli_error($con));
             $result = mysqli_query($con, $query);
@@ -33,7 +33,7 @@
 ?>
 <div class="row">
     <div class="form-group">
-        <label for="cr_title" class="cr_title">Topic</label>
+        <label for="cr_title" class="cr_title"><strong>Topic</strong></label>
         <input type="text" class="form-control form-control-sm" placeholder="ใส่หัวข้อเรื่องของคุณที่นี่" id="cr_title"
             name="cr_title" aria-describedby="emailHelp">
         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
@@ -113,7 +113,7 @@
     </div>
     <div class="form-group col-md-6">
         <label for="formFileMultiple" class="form-label">Multiple files input</label>
-        <input class="form-control form-control-sm" type="file" id="cr_attachment" name="cr_attachment[]"
+        <input disabled class="form-control form-control-sm" type="file" id="cr_attachment" name="cr_attachment[]"
             multiple="multiple">
         <small>ขนาดไฟล์ต้องไม่เกิน 2MB</small>
     </div>
@@ -189,7 +189,7 @@ function submit_cr_form(id) {
     form_data.append("cr_brand", cr_brand)
     form_data.append("id", id)
     $.ajax({
-        url: "base/action/action_submit_add_content_request.php",
+        url: "/action/action_submit_add_content_request.php",
         dataType: 'text',
         cache: false,
         contentType: false,

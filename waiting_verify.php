@@ -1,8 +1,8 @@
 <?php
 // chdir("..");
 session_start();
- include("verify_account/send_verify.php");
- include("get/get_attribute.php");
+ include($_SERVER['DOCUMENT_ROOT']."/verify_account/send_verify.php");
+ include($_SERVER['DOCUMENT_ROOT']."/get/get_attribute.php");
  $work_email = $_GET['work_email'];
  send_verify_email($_SESSION['username'],$work_email ,$_SESSION['firstname'],$_SESSION['lastname']);
 
@@ -18,8 +18,8 @@ session_start();
     <meta name="x-apple-disable-message-reformatting" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-    <link rel="stylesheet" href="https://content-service-gate.cdse-commercecontent.com/base/action/notiflix/dist/notiflix-3.2.5.min.css" />
-    <script src="https://content-service-gate.cdse-commercecontent.com/base/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
+    <link rel="stylesheet" href="https://servicegate.000webhostapp.com/action/notiflix/dist/notiflix-3.2.5.min.css" />
+    <script src="https://servicegate.000webhostapp.com/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
     <!--[if mso]>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <![endif]-->
@@ -112,7 +112,7 @@ session_start();
     }
 
     /*
-      This optional section will be hidden in your email but the text will appear after the subject line. 
+      This optional section will be hidden in your email but the text will appear after the subject line.
       */
     #preheader {
         display: none !important;
@@ -811,7 +811,7 @@ session_start();
 
 <script>
     function change_email_address(){
-        
+
         Notiflix.Confirm.prompt(
         'Change your Email',
         'Please fill a new email that you want to change',
@@ -823,9 +823,9 @@ session_start();
             // sessionStorage.work_email = clientAnswer;
             // <%Session["work_email"] = "' + clientAnswer + '"; %>;
             sessionStorage.setItem('work_email', clientAnswer);
-     
+
             update_value_attribute('<?php echo $_SESSION['username']; ?>', 'ac_edit_work_email', 'ac', 'all_in_one_project', 'account', 'username');
-            window.location.href ='https://content-service-gate.cdse-commercecontent.com/verify?email='+clientAnswer;
+            window.location.href ='https://servicegate.000webhostapp.com/verify?email='+clientAnswer;
         },
         function cancelCb() {
             // alert('😪 ...');
