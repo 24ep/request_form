@@ -1,93 +1,185 @@
-.col-2.list_bra.shadow {
-    background-color: transparent !important;
-    padding: 30px;
-    box-shadow: none !important;
-}
-
-.nav-pills .nav-link.active,
-.nav-pills .show .nav-link {
-    /* background-color: #dc3545 !important; */
-    background-color: #ffabb3 !important;
-    color: #fcfcfc !important;
-    width: 100%;
-}
-
-.list_bra .nav-pills .nav-link {
-    color: #212529 !important;
-    font-weight: 700;
-}
-
-.nav-.list_bra .nav-link:hover {
-    color: #dc3545 !important;
-    font-weight: bolder;
-}
-
-ion-icon {
-    color: black !important;
-}
-
-ion-icon:hover {
-    color: #dc3545;
-}
-
-.nav-link.active {
-    color: white;
-}
-
-button.btn.btn-toggle.align-items-center.rounded.collapsed {
-    color: black !important;
-    font-weight: 700;
-}
-
-button.btn.btn-toggle.align-items-center.rounded {
-    color: black !important;
-    font-weight: 300;
-}
-
-.link-light {
-    color: black;
-    padding: 0.2rem;
-    padding-left: 40px;
-    font-weight: 400;
-    line-height: 1.5;
-    font-size: 14px;
-    font-family: 'Prompt', sans-serif !important;
-}
-
-.hr_nav_bra {
-    width: 80%
-}
-
-.hydrated {
-    visibility: inherit;
-    margin: 0px;
-    vertical-align: middle;
-}
-
-.navbar-brand {
-    color: #6c757d !important;
-}
-
-.list_bra .nav-pills .nav-link.active,
-.list_bra .nav-pills .show .nav-link {
-    color: white;
-    border-radius: unset;
-    background-color: #f8f9faed !important;
-    font-weight: bolder;
-    border-radius: 5px;
-}
-.list_bra {
-    width: fit-content;
-    padding: 10px;
-    padding-top: 30px;
-    position: absolute;
-    z-index:1; 
-    position: fixed;
-    height: -webkit-fill-available;
-    background-image: url('https://servicegate.000webhostapp.com//image/11.jpg');
-}
-.ts-view.active {
-    background-color: #ebebeb !important;
-    color: #fcfcfc !important;
-    width: 100%;
+.col-2.list_bra.shadow {
+
+    background-color: transparent !important;
+
+    padding: 30px;
+
+    box-shadow: none !important;
+
+}
+
+
+
+.nav-pills .nav-link.active,
+
+.nav-pills .show .nav-link {
+
+    /* background-color: #dc3545 !important; */
+
+    background-color: #ffabb3 !important;
+
+    color: #fcfcfc !important;
+
+    width: 100%;
+
+}
+
+
+
+.list_bra .nav-pills .nav-link {
+
+    color: #212529 !important;
+
+    font-weight: 700;
+
+}
+
+
+
+.nav-.list_bra .nav-link:hover {
+
+    color: #dc3545 !important;
+
+    font-weight: bolder;
+
+}
+
+
+
+ion-icon {
+
+    color: black !important;
+
+}
+
+
+
+ion-icon:hover {
+
+    color: #dc3545;
+
+}
+
+
+
+.nav-link.active {
+
+    color: white;
+
+}
+
+
+
+button.btn.btn-toggle.align-items-center.rounded.collapsed {
+
+    color: black !important;
+
+    font-weight: 700;
+
+}
+
+
+
+button.btn.btn-toggle.align-items-center.rounded {
+
+    color: black !important;
+
+    font-weight: 300;https://phpstack-1223668-4355262.cloudwaysapps.com/
+
+}
+
+
+
+.link-light {
+
+    color: black;
+
+    padding: 0.2rem;
+
+    padding-left: 40px;
+
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+
+    font-family: 'Prompt', sans-serif !important;
+
+}
+
+
+
+.hr_nav_bra {
+
+    width: 80%
+
+}
+
+
+
+.hydrated {
+
+    visibility: inherit;
+
+    margin: 0px;
+
+    vertical-align: middle;
+
+}
+
+
+
+.navbar-brand {
+
+    color: #6c757d !important;
+
+}
+
+
+
+.list_bra .nav-pills .nav-link.active,
+
+.list_bra .nav-pills .show .nav-link {
+
+    color: white;
+
+    border-radius: unset;
+
+    background-color: #f8f9faed !important;
+
+    font-weight: bolder;
+
+    border-radius: 5px;
+
+}
+
+.list_bra {
+
+    width: fit-content;
+
+    padding: 10px;
+
+    padding-top: 30px;
+
+    position: absolute;
+
+    z-index:1; 
+
+    position: fixed;
+
+    height: -webkit-fill-available;
+
+    background-image: url('https://servicegate.000webhostapp.com//image/11.jpg');
+
+}
+
+.ts-view.active {
+
+    background-color: #ebebeb !important;
+
+    color: #fcfcfc !important;
+
+    width: 100%;
+
 }
