@@ -1,5 +1,5 @@
 # php_flag output_buffering on
-# RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTPS} !=on
 RewriteRule ^/?(.*) https://%{SERVER_NAME}/ [R,L]
 ### End CyberPanel Generated Rules.
 
