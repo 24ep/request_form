@@ -138,7 +138,7 @@ if (!$_SESSION["login_csg"]){
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- <link rel="icon" type="image/ocp" href="https://cdse-commercecontent.com/images/24ico.ico" /> -->
+    <!-- <link rel="icon" type="image/ocp" href="https://phpstack-1224828-4360872.cloudwaysapps.com/images/24ico.ico" /> -->
 
     <link rel="icon" type="image/ocp"
 
