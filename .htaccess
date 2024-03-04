@@ -1,18 +1,18 @@
-# php_flag output_buffering on
-# RewriteCond %{HTTPS} !=on
-# RewriteRule ^/?(.*) https://%{SERVER_NAME}/ [R,L]
+php_flag output_buffering on
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/ [R,L]
 ### End CyberPanel Generated Rules.
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    # RewriteCond %{SCRIPT_FILENAME} !-d
-    # RewriteCond %{SCRIPT_FILENAME} !-f
-    RewriteRule ^login$ /login_page.php
-    RewriteRule ^login_page$ /login_page.php
-    RewriteRule ^signup$ /signup_page.php
-    RewriteRule ^verify$ /waiting_verify.php
-    RewriteRule ^verified$ /verify_by_email.php
-    RewriteRule ^$ /homepage.php
+    RewriteCond %{SCRIPT_FILENAME} !-d
+    RewriteCond %{SCRIPT_FILENAME} !-f
+    RewriteRule ^login$ login_page.php
+    RewriteRule ^login_page$ login_page.php
+    RewriteRule ^signup$ signup_page.php
+    RewriteRule ^verify$ waiting_verify.php
+    RewriteRule ^verified$ verify_by_email.php
+    RewriteRule ^$ homepage.php
 
 </IfModule>
 
