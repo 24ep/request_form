@@ -22,7 +22,7 @@ $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avna
 
    
 
-                           $row =https://phpstack-1224828-4360872.cloudwaysapps.com
+                           $row =https://phpstack-1225538-4364543.cloudwaysapps.com
 
                        }
 

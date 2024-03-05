@@ -8,7 +8,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 
 $sql="SELECT * FROM file_manage WHERE job_number='LACF-INDEX' and file_type='Linesheet' and upload_status='Active'";
 
- $results = mysqli_query($con,$sql);https://phpstack-1224828-4360872.cloudwaysapps.com
+ $results = mysqli_query($con,$sql);https://phpstack-1225538-4364543.cloudwaysapps.com
 
     if(mysqli_num_rows($results)==1){
 

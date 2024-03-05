@@ -18,7 +18,7 @@
 
     <meta charset="utf-8">
 
-    <link rel="icon" type="image/ocp" href="https://phpstack-1224828-4360872.cloudwaysapps.com/images/24ico.ico" />
+    <link rel="icon" type="image/ocp" href="https://phpstack-1225538-4364543.cloudwaysapps.com/images/24ico.ico" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -314,7 +314,7 @@
 
                 <form
 
-                    action="https://phpstack-1224828-4360872.cloudwaysapps.com/action/action_login.php?redirect=<?php echo htmlspecialchars($_GET["redirect"],  ENT_QUOTES, 'UTF-8'); ?>&id=<?php echo htmlspecialchars($_GET["id"],  ENT_QUOTES, 'UTF-8'); ?>"
+                    action="https://phpstack-1225538-4364543.cloudwaysapps.com/action/action_login.php?redirect=<?php echo htmlspecialchars($_GET["redirect"],  ENT_QUOTES, 'UTF-8'); ?>&id=<?php echo htmlspecialchars($_GET["id"],  ENT_QUOTES, 'UTF-8'); ?>"
 
                     method="POST">
 

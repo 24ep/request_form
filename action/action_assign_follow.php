@@ -56,7 +56,7 @@
 
           $sent_to = explode(",",$participant);
 
-          foreach ($sent_https://phpstack-1224828-4360872.cloudwaysapps.com
+          foreach ($sent_https://phpstack-1225538-4364543.cloudwaysapps.com
 
           if($sent_to_username<>$_SESSION["username"] and $sent_to_username<>$request_username){
 

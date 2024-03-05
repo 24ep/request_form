@@ -19,7 +19,7 @@ function bb_confirm_ticket($id ,$user_id,$detail,$status){
       CURLOPT_TIMEOUT => 0,
 
       CURLOPT_FOLLOWLOCATION => true,
-https://phpstack-1224828-4360872.cloudwaysapps.com
+https://phpstack-1225538-4364543.cloudwaysapps.com
       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 
       CURLOPT_CUSTOMREQUEST => 'POST',

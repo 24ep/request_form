@@ -35,7 +35,7 @@ if (ftp_delete($ftp_conn, $file))
   {
 
     $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
-https://phpstack-1224828-4360872.cloudwaysapps.com
+https://phpstack-1225538-4364543.cloudwaysapps.com
     $sql_start =   "DELETE FROM all_in_one_project.attachment WHERE id=".$id;
 
     $query_start = mysqli_query($con,$sql_start);

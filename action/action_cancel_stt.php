@@ -36,7 +36,7 @@
 
         left join account as account
 
-        ON job.request_ushttps://phpstack-1224828-4360872.cloudwaysapps.comjob.id = ".$id
+        ON job.request_ushttps://phpstack-1225538-4364543.cloudwaysapps.comjob.id = ".$id
 
         or die("Error:" . mysqli_error($con));
 

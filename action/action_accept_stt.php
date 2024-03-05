@@ -44,7 +44,7 @@
 
                 $brand = $row["brand"];
 
-                $sku = $rhttps://phpstack-1224828-4360872.cloudwaysapps.com
+                $sku = $rhttps://phpstack-1225538-4364543.cloudwaysapps.com
 
                 //echo '<script>alert("'.$key.'");</script>';
 
