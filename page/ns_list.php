@@ -8,8 +8,8 @@ $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avna
 $query = "SELECT * FROM all_in_one_project.account where username = '".$_SESSION['username']."' ORDER BY id DESC " or die("Error:" . mysqli_error($con));
 $result = mysqli_query($con, $query);
 while($row = mysqli_fetch_array($result)) {
-    $nickname = $row['nickname']
-    $department = $row['department'];
+    $nickname = $row['nickname'];
+    // $department = $row['department'];
     $office_tell = $row['office_tell'];
     $work_email = $row['work_email'];
     $get_contact_buyer = $row['firstname']." ".$row['lastname']." ( ".$nickname." )\nEmail: ".$row['work_email']."\nOffice tell: ".$row['office_tell'];
