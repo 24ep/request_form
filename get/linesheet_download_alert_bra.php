@@ -2,7 +2,7 @@
 
 session_start();
 
-$con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","u749625779_cdscontent") or die("Error: " . mysqli_error($con));
+$con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project") or die("Error: " . mysqli_error($con));
 
 mysqli_query($con, "SET NAMES 'utf8' ");
 

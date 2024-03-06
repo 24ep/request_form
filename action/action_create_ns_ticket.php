@@ -38,7 +38,7 @@
     //calculate job number
 //get department
         date_default_timezone_set("Asia/Bangkok");
-        $con_map_sub_dept = mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","content_service_gate") or die("Error: " . mysqli_error($con));
+        $con_map_sub_dept = mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project") or die("Error: " . mysqli_error($con));
         mysqli_query($con_map_sub_dept, "SET NAMES 'utf8' ");
         $query_map_sub_dept = "SELECT * FROM mapping_dept_subdept where sub_department = '".$_POST["sub_department"]."'";
         $result_map_sub_dept =  mysqli_query($con_map_sub_dept, $query_map_sub_dept);
