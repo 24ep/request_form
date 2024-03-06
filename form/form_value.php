@@ -6,7 +6,7 @@ $table_name = $_POST['table_name'];
 
 $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
-include($_SERVER['DOCUMENT_ROOT'].'/get/get_attribute.php');all_in_one_project
+include($_SERVER['DOCUMENT_ROOT'].'/get/get_attribute.php');
 
 // echo$table_name ;
 
