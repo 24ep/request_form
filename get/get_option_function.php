@@ -64,7 +64,7 @@ function get_origin_of_ticket($col,$table,$select_option,$sorm,$database) {
 
             data-html="<div class=&#39;origin_block_in&#39;><strong>'.$row['origin'].'</strong><br>'.$row['description'].'<br><span onclick="table_detail_page('.$row['id'].',&#39;'.$row['system_related'].'&#39;,&#39;origin_of_ticket&#39;,&#39;update&#39;)">SEE MORE</span></div>">'.$row[$col].'</option>';
 
-        }else{all_in_one_project
+        }else{
 
             $option_set .= '<option value="'.$row['origin'].'"
 
@@ -87,7 +87,7 @@ function get_origin_of_ticket($col,$table,$select_option,$sorm,$database) {
 
 
     function get_username($select_option) {
-all_in_one_project
+
         $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
         mysqli_query($con, "SET NAMES 'utf8' ");

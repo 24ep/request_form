@@ -6,7 +6,7 @@ $id = $_GET['id'];
 
 $action_table = $_GET['action_table'];
 
-$actiob_data = $_GET['actiall_in_one_project
+$actiob_data = $_GET['action_data'];
 
 $job_number = $_GET['job_number'];
 
