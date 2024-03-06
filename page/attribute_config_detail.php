@@ -7,7 +7,7 @@ $id = $_POST['id'];
 $attribute_code = $_POST['attribute_code'];
 
 $table_name = $_POST['table_name'];
-all_in_one_project
+
 date_default_timezone_set("Asia/Bangkok");
 
 $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
@@ -16,7 +16,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 
 $query = "SELECT *
 
-FROM all_in_one_project.job_attribute where attribute_code='".$attribute_code."' and table_name = '".$table_name."'"  or die("Error:" . mysqli_error());
+FROM u749625779_cdscontent.job_attribute where attribute_code='".$attribute_code."' and table_name = '".$table_name."'"  or die("Error:" . mysqli_error());
 
 $result =  mysqli_query($con, $query);
 
@@ -79,7 +79,7 @@ echo '
 <li class="breadcrumb-item"><a onclick="get_attribute_config(&#39;'.$table_name.'&#39;)">'.$table_name.'</a></li>
 
 <li class="breadcrumb-item active" aria-current="page">'.$attribute_code.'</li>
-all_in_one_project
+
 </ol>
 
 </nav>
@@ -126,10 +126,10 @@ echo '
 
 echo '
 
-</div>';all_in_one_project
-all_in_one_project
+</div>';
+
 if($release_attribute<>'1' ){
-all_in_one_project
+
   ?>
 
 <button type="button" class="btn btn-success btn-sm" id="release_attribute_bt" onclick="release_attribute()">
@@ -160,7 +160,7 @@ echo '
 
 <button type="button" class="btn btn-dark btn-sm"
 
-    onclick="add_new_option('all_in_one_project','job_attribute_option')" data-bs-toggle="modal"
+    onclick="add_new_option('u749625779_cdscontent','job_attribute_option')" data-bs-toggle="modal"
 
     data-bs-target="#exampleModal">
 
@@ -213,7 +213,7 @@ function get_attribute_option_list() {
 
 
 function properties_form() {
-all_in_one_project
+
     var id = document.getElementById('id').value;
 
     var table_name = "'job_attribute'";
@@ -254,13 +254,13 @@ function insert_attribute_option_config(id) {
 
     document.getElementById('jao_edit_db_name').value = db_name;
 
-    update_value_attribute(id, 'jao_edit_attribute_code', 'jao', 'all_in_one_project', 'job_attribute_option', 'id');
+    update_value_attribute(id, 'jao_edit_attribute_code', 'jao', 'u749625779_cdscontent', 'job_attribute_option', 'id');
 
-    update_value_attribute(id, 'jao_edit_attribute_table', 'jao', 'all_in_one_project', 'job_attribute_option',
+    update_value_attribute(id, 'jao_edit_attribute_table', 'jao', 'u749625779_cdscontent', 'job_attribute_option',
 
     'id');
 
-    update_value_attribute(id, 'jao_edit_db_name', 'jao', 'all_in_one_project', 'job_attribute_option', 'id');
+    update_value_attribute(id, 'jao_edit_db_name', 'jao', 'u749625779_cdscontent', 'job_attribute_option', 'id');
 
     get_attribute_option_list();
 
@@ -428,7 +428,7 @@ function release_attribute() {
 
                 document.getElementById('ja_edit_release_attribute').value = 1;
 
-                update_value_attribute(id, 'ja_edit_release_attribute', 'ja', 'all_in_one_project',
+                update_value_attribute(id, 'ja_edit_release_attribute', 'ja', 'u749625779_cdscontent',
 
                     'job_attribute', 'id');
 

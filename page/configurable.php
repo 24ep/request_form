@@ -178,7 +178,7 @@ all_in_one_project
 
         'table'=>'job_attribute',
 
-        'database'=>'all_in_one_project',
+        'database'=>'u749625779_cdscontent',
 
         'prefix'=>'ja',
 
@@ -196,7 +196,7 @@ all_in_one_project
 
         'table'=>'job_attribute_option',
 
-        'database'=>'all_in_one_project',
+        'database'=>'u749625779_cdscontent',
 
         'prefix'=>'jao',
 

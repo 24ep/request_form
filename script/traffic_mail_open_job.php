@@ -125,9 +125,9 @@ function check_account(){
          ";
 
         $query = mysqli_query($con,$sql);
-all_in_one_project
+
         $username =  $username_replace;
-all_in_one_project
+
 
 
     }else{
@@ -252,11 +252,11 @@ $count_conversion_id = count_conversion_id($conversation_id);
 
 //     date_default_timezone_set("Asia/Bangkok");
 
-//     $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
+//     $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","u749625779_cdscontent","10628") or die("Error: " . mysqli_error($con));
 
 //     mysqli_query($con, "SET NAMES 'utf8' ");
 
-//     $sql = "SELECT store_label,system_label from all_in_one_project.datapump_store_mapping";
+//     $sql = "SELECT store_label,system_label from u749625779_cdscontent.datapump_store_mapping";
 
 //     $result =  mysqli_query($con, $sql);
 
@@ -278,7 +278,7 @@ function mapping_department($department){
 
     date_default_timezone_set("Asia/Bangkok");
 
-    $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","content_service_gate","10628") or die("Error: " . mysqli_error($con));
 
     mysqli_query($con, "SET NAMES 'utf8' ");
 

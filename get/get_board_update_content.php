@@ -136,7 +136,7 @@ function listing_ticket_card($result_after_fetch ,$status){
 
       data-bs-toggle="offcanvas" data-bs-target="#detail_cr">
 
-      <?phpall_in_one_project
+      <?php
 
       $ef_badge = "";
 
@@ -274,7 +274,7 @@ order by ".$sort_de_status."  limit 500";
 
 // getting by status
 
-$query_status = "SELECT attribute_option_code FROM all_in_one_project.job_attribute_option
+$query_status = "SELECT attribute_option_code FROM u749625779_cdscontent.job_attribute_option
 
 where attribute_code= 'status' and attribute_table = 'content_request' and
 

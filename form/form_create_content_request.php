@@ -2,7 +2,7 @@
 
   function return_option_create_cr($current_value,$attr_id){
 
-    session_start();all_in_one_project
+    session_start();
 
     $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
@@ -20,7 +20,7 @@
 
       while($option = mysqli_fetch_array($result_op)) {
 
-        if($option["attribute_optall_in_one_projecte){
+        if($option["attribute_option"]==$current_value){
 
             $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
 

@@ -7,7 +7,7 @@ $attribute_code = $_POST['attribute_code'];
 $table_name = $_POST['table_name'];
 
 date_default_timezone_set("Asia/Bangkok");
-all_in_one_project
+
 $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
 mysqli_query($con, "SET NAMES 'utf8' ");
@@ -16,11 +16,11 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 
 $query = "SELECT *
 
-FROM all_in_one_project.job_attribute_option
+FROM u749625779_cdscontent.job_attribute_option
 
 where attribute_code='".$attribute_code."'  and attribute_table = '".$table_name."'"  or die("Error:" . mysqli_error());
 
-$result =  mysqli_query($con, $query);all_in_one_project
+$result =  mysqli_query($con, $query);
 
 while($row = mysqli_fetch_array($result)) { 
 
@@ -42,7 +42,7 @@ while($row = mysqli_fetch_array($result)) {
 
 
 
-    <button type="button"  class="btn btn-danger btn-sm" onclick="delete_option(&#39;all_in_one_project&#39;,&#39;job_attribute_option&#39;,'. $row['id'].',&#39;id&#39;)" >
+    <button type="button"  class="btn btn-danger btn-sm" onclick="delete_option(&#39;u749625779_cdscontent&#39;,&#39;job_attribute_option&#39;,'. $row['id'].',&#39;id&#39;)" >
 
     <ion-icon name="trash-outline" style="margin: 0;"></ion-icon></button>
 

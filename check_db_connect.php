@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 ini_set('display_errors', 1);
 
-all_in_one_project
+
 
 $host = "service-gate-cds-omni-service-gate.a.aivencloud.com";
 

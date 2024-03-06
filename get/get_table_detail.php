@@ -29,7 +29,7 @@
       $result = mysqli_query($con, $query);
 
       while($row = mysqli_fetch_array($result)) {
-all_in_one_project
+
           $query_column = "SELECT `COLUMN_NAME`
 
           FROM `INFORMATION_SCHEMA`.`COLUMNS`
@@ -60,7 +60,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/get/get_attribute.php');
 
 //get attribute set menu
 
-$query = "SELECT distinct sort_attribute_set , attribute_set,table_name,db_name,primary_key_id,prefix FROM all_in_one_project.job_attribute where allow_display= 1 and table_name in ('".$table ."') order by sort_attribute_set" or die("Error:" . mysqli_error($con));
+$query = "SELECT distinct sort_attribute_set , attribute_set,table_name,db_name,primary_key_id,prefix FROM u749625779_cdscontent.job_attribute where allow_display= 1 and table_name in ('".$table ."') order by sort_attribute_set" or die("Error:" . mysqli_error($con));
 
   $result = mysqli_query($con, $query);
 

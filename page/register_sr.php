@@ -5,14 +5,14 @@ session_start();
 date_default_timezone_set("Asia/Bangkok");
 
 $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
-all_in_one_project
+
 mysqli_query($con, "SET NAMES 'utf8' ");
 
 
 
 $query = "SELECT attribute_code
 
-FROM all_in_one_project.job_attribute;" or die("Error:" . mysqli_error());
+FROM u749625779_cdscontent.job_attribute;" or die("Error:" . mysqli_error());
 
 $result =  mysqli_query($con, $query);
 

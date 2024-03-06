@@ -132,7 +132,7 @@ function simple_select($attribute_code,$attribute_label,$type,$table_name){
 
     $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
-    $query_op = "SELECT * FROM all_in_one_project.job_attribute_option
+    $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute_option
 
     WHERE attribute_code = '".$attribute_code."' and attribute_table = '".$table_name."' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
 
@@ -360,7 +360,7 @@ $filter_where =  $dynamic_filter;
 
 $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
-$query = "SELECT * FROM all_in_one_project.job_attribute where table_name = '".$table_name ."' and attribute_code in (".$filter_where.")" or die("Error:" . mysqli_error($con));
+$query = "SELECT * FROM u749625779_cdscontent.job_attribute where table_name = '".$table_name ."' and attribute_code in (".$filter_where.")" or die("Error:" . mysqli_error($con));
 
 $result = mysqli_query($con, $query);
 

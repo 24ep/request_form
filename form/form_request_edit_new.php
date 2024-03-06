@@ -27,7 +27,7 @@ function return_input_box($att_name,$site_element,$current_value,$code_element,$
         class="form-control form-control-sm"
 
         id="'.$code_element.'"
-all_in_one_project
+
         name="'.$code_element.'"
 
         type="'.$site_element.'"
@@ -56,11 +56,11 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
 
   $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
-    $query_op = "SELECT * FROM all_in_one_project.attribute_option
+    $query_op = "SELECT * FROM content_service_gate.attribute_option
 
     WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
 
-    $result_op = mysqli_query($all_in_one_project
+    $result_op = mysqli_query($con, $query_op);
 
     while($option = mysqli_fetch_array($result_op)) {
 
@@ -111,7 +111,7 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
   ';
 
 
-all_in_one_project
+
   unset($option_element);
 
   return $element;
@@ -122,7 +122,7 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
 
   $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
-    $query_op = "SELECT * FROM all_in_one_project.attribute_option
+    $query_op = "SELECT * FROM content_service_gate.attribute_option
 
     WHERE attribute_id = ".$attr_id." and function = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
 
@@ -224,7 +224,7 @@ function return_textarea_box($att_name,$site_element,$current_value,$code_elemen
 
 }
 
-$query = "SELECT * FROM all_in_one_project.attribute_entity
+$query = "SELECT * FROM content_service_gate.attribute_entity
 
           WHERE allow_display = 1 and attribute_function = 'add_new'  ORDER BY attribute_id ASC" or die("Error:" . mysqli_error($con));
 

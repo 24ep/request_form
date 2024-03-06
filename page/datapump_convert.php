@@ -12,9 +12,9 @@
 
     z-index: 1;"
 
-class="shadow-sm span-ifram">https://phpstack-1225538-4364543.cloudwaysapps.com/page_convert_datapump_new.php</span> -->
+class="shadow-sm span-ifram">https://phpstack-1224828-4360872.cloudwaysapps.com/page_convert_datapump_new.php</span> -->
 
-<!-- <iframe src="https://phpstack-1225538-4364543.cloudwaysapps.com/page_convert_datapump_new.php"
+<!-- <iframe src="https://phpstack-1224828-4360872.cloudwaysapps.com/page_convert_datapump_new.php"
 
     style="
 
@@ -170,7 +170,7 @@ class="shadow-sm span-ifram">https://phpstack-1225538-4364543.cloudwaysapps.com/
 
                             //  $query = "SELECT file.job_number , job_cms.brand as brand, job_cms.sku ,file.id, file.file_name, file.file_path, file.create_at,  file.remark,  file.file_owner
 
-                            //  FROM all_in_one_project.file_manage as file
+                            //  FROM u749625779_cdscontent.file_manage as file
 
                             //  left join all_in_one_project.add_new_job as job_cms
 
@@ -214,7 +214,7 @@ class="shadow-sm span-ifram">https://phpstack-1225538-4364543.cloudwaysapps.com/
 
                              and job_cms.status<>'cancel'
 
-                             and file.file_group in ('Original')  
+                             and file.file_group in ('Original')
 
                              ORDER BY job_cms.job_number DESC" or die("Error:" . mysqli_error($con));
 

@@ -14,7 +14,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/get/get_attribute.php');all_in_one_project
 
 $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
-$query = "SELECT DISTINCT attribute_set,table_name,db_name,primary_key_id,prefix,set_complete_attribute,sort_attribute_set FROM all_in_one_project.job_attribute
+$query = "SELECT DISTINCT attribute_set,table_name,db_name,primary_key_id,prefix,set_complete_attribute,sort_attribute_set FROM u749625779_cdscontent.job_attribute
 
 where allow_display=1 and table_name in (".$table_name.") order by sort_attribute_set" or die("Error:" . mysqli_error($con));
 
