@@ -65,7 +65,7 @@ function datepick($attribute_code,$attribute_label,$table_name){
                     other: "days",
 
                   },
-all_in_one_project
+
             },
 
 
@@ -179,7 +179,7 @@ function simple_select($attribute_code,$attribute_label,$type,$table_name){
 
 
     </div>
-all_in_one_project
+
     <script>
 
     new SlimSelect({

@@ -180,7 +180,7 @@ function get_nickname($att_code,$att_name,$site_element,$current_value,$code_ele
 
     }
 
-    $option_element .= "<optiall_in_one_projectue='".$option["nickname"]."'>".$option["nickname"]."</option>";
+    $option_element .= "<option ".$selected ." value='".$option["nickname"]."'>".$option["nickname"]."</option>";
 
   }
 
@@ -235,7 +235,7 @@ function get_nickname($att_code,$att_name,$site_element,$current_value,$code_ele
   </select>
 
   </div>
-all_in_one_project
+
   <script>
 
   new SlimSelect({
@@ -330,7 +330,7 @@ function get_username($att_code,$att_name,$site_element,$current_value,$code_ele
 
   name="'.$code_element.'"
 
-  '.$enable_edit.'all_in_one_project
+  '.$enable_edit.'
 
   onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
 
@@ -367,7 +367,7 @@ function return_s_select_box($att_code,$att_name,$site_element,$current_value,$c
   WHERE attribute_code = '".$att_code."' and attribute_table = '".$table."' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
 
   $result_op = mysqli_query($con, $query_op);
-all_in_one_project
+
   $i=0;
 
   while($option = mysqli_fetch_array($result_op)) {

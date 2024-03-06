@@ -88,7 +88,7 @@ $configurable_map = array (
 
         'table'=>'content_request',
 
-        'database'=>'all_in_one_project
+        'database'=>'all_in_one_project',
 
         'prefix'=>'cr',
 
@@ -97,7 +97,7 @@ $configurable_map = array (
         'function'=>'get_attribute_config',
 
         'description'=>'Manage attribute of new product update (CR,DP ticket)'),
-all_in_one_project
+
     array(
 
         'session'=>'Table Setting',
