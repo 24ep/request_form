@@ -14,7 +14,7 @@ $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avna
 
 if($_GET['action_data']=="24ep"){;
 
-  $query = "SELECT * FROM u749625779_cdscontent.log_cms where action_at_table='".$action_table."' and job_number ='".$job_number."'" or die("Error:" . mysqli_error($con));
+  $query = "SELECT * FROM all_in_one_project.log_cms where action_at_table='".$action_table."' and job_number ='".$job_number."'" or die("Error:" . mysqli_error($con));
 
   $result = mysqli_query($con, $query);
 

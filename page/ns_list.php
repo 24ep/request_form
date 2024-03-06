@@ -42,7 +42,7 @@ function get_attribute_list_filter($table){
 
     $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
-    $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute
+    $query_op = "SELECT * FROM all_in_one_project.job_attribute
 
     WHERE table_name = '".$table."' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
 

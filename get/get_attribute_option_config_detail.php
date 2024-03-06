@@ -16,7 +16,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 
 $query = "SELECT *
 
-FROM u749625779_cdscontent.job_attribute_option
+FROM all_in_one_project.job_attribute_option
 
 where attribute_code='".$attribute_code."'  and attribute_table = '".$table_name."'"  or die("Error:" . mysqli_error());
 
@@ -42,7 +42,7 @@ while($row = mysqli_fetch_array($result)) {
 
 
 
-    <button type="button"  class="btn btn-danger btn-sm" onclick="delete_option(&#39;u749625779_cdscontent&#39;,&#39;job_attribute_option&#39;,'. $row['id'].',&#39;id&#39;)" >
+    <button type="button"  class="btn btn-danger btn-sm" onclick="delete_option(&#39;all_in_one_project&#39;,&#39;job_attribute_option&#39;,'. $row['id'].',&#39;id&#39;)" >
 
     <ion-icon name="trash-outline" style="margin: 0;"></ion-icon></button>
 

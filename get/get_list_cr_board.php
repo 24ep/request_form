@@ -141,7 +141,7 @@ function listing_ticket_card($result_after_fetch ,$status,$filter, $bucket_filte
       </div>
 
       </div>
-all_in_one_project
+
       <hr style="margin: 5px;color: #6c757d8c;">
 
       <div class="row" style="margin-bottom: 0px;" onclick="cr_id_toggle(<?php echo $row['id'];?>)"
@@ -284,7 +284,7 @@ order by ".$sort_de_status."  limit 500";
 
 // getting by status
 
-$query_status = "SELECT attribute_option_code FROM u749625779_cdscontent.job_attribute_option
+$query_status = "SELECT attribute_option_code FROM all_in_one_project.job_attribute_option
 
 where attribute_code= 'status' and attribute_table = 'content_request' and
 

@@ -16,7 +16,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 
 $query = "SELECT *
 
-FROM u749625779_cdscontent.job_attribute where attribute_code='".$attribute_code."' and table_name = '".$table_name."'"  or die("Error:" . mysqli_error());
+FROM all_in_one_project.job_attribute where attribute_code='".$attribute_code."' and table_name = '".$table_name."'"  or die("Error:" . mysqli_error());
 
 $result =  mysqli_query($con, $query);
 
@@ -160,7 +160,7 @@ echo '
 
 <button type="button" class="btn btn-dark btn-sm"
 
-    onclick="add_new_option('u749625779_cdscontent','job_attribute_option')" data-bs-toggle="modal"
+    onclick="add_new_option('all_in_one_project','job_attribute_option')" data-bs-toggle="modal"
 
     data-bs-target="#exampleModal">
 
@@ -254,13 +254,13 @@ function insert_attribute_option_config(id) {
 
     document.getElementById('jao_edit_db_name').value = db_name;
 
-    update_value_attribute(id, 'jao_edit_attribute_code', 'jao', 'u749625779_cdscontent', 'job_attribute_option', 'id');
+    update_value_attribute(id, 'jao_edit_attribute_code', 'jao', 'all_in_one_project', 'job_attribute_option', 'id');
 
-    update_value_attribute(id, 'jao_edit_attribute_table', 'jao', 'u749625779_cdscontent', 'job_attribute_option',
+    update_value_attribute(id, 'jao_edit_attribute_table', 'jao', 'all_in_one_project', 'job_attribute_option',
 
     'id');
 
-    update_value_attribute(id, 'jao_edit_db_name', 'jao', 'u749625779_cdscontent', 'job_attribute_option', 'id');
+    update_value_attribute(id, 'jao_edit_db_name', 'jao', 'all_in_one_project', 'job_attribute_option', 'id');
 
     get_attribute_option_list();
 
@@ -428,7 +428,7 @@ function release_attribute() {
 
                 document.getElementById('ja_edit_release_attribute').value = 1;
 
-                update_value_attribute(id, 'ja_edit_release_attribute', 'ja', 'u749625779_cdscontent',
+                update_value_attribute(id, 'ja_edit_release_attribute', 'ja', 'all_in_one_project',
 
                     'job_attribute', 'id');
 

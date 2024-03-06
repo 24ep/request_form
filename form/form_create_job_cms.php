@@ -10,7 +10,7 @@ function mapping_house_department($sub_department){
 
     mysqli_query($con, "SET NAMES 'utf8' ");
 
-    $query = "SELECT * FROM content_service_gate.mapping_dept_subdept where sub_department = '".$sub_department."' ORDER BY id asc" or die("Error:" . mysqli_error($con));
+    $query = "SELECT * FROM all_in_one_project.mapping_dept_subdept where sub_department = '".$sub_department."' ORDER BY id asc" or die("Error:" . mysqli_error($con));
 
     $result = mysqli_query($con, $query);
 
@@ -158,33 +158,33 @@ function getoption_return_create_job($col,$table,$select_option,$sorm,$database)
 
       }
 
-       $bu_op = getoption_return_create_job("bu","job_option_cms",$bu,"single","u749625779_cdscontent");
+       $bu_op = getoption_return_create_job("bu","job_option_cms",$bu,"single","all_in_one_project");
 
-       $transfer_type_op = getoption_return_create_job("transfer_type","job_option_cms","Data and Photo","single","u749625779_cdscontent");
+       $transfer_type_op = getoption_return_create_job("transfer_type","job_option_cms","Data and Photo","single","all_in_one_project");
 
-       $sub_department_op = getoption_return_create_job("sub_department","job_option_cms",$sub_department,"single","u749625779_cdscontent");
+       $sub_department_op = getoption_return_create_job("sub_department","job_option_cms",$sub_department,"single","all_in_one_project");
 
-       $product_sell_type_op = getoption_return_create_job("product_sell_type","job_option_cms",$df_type,"single","u749625779_cdscontent");
+       $product_sell_type_op = getoption_return_create_job("product_sell_type","job_option_cms",$df_type,"single","all_in_one_project");
 
-       $product_sorting_op = getoption_return_create_job("product_sorting","job_option_cms",$df_psort,"single","u749625779_cdscontent");
+       $product_sorting_op = getoption_return_create_job("product_sorting","job_option_cms",$df_psort,"single","all_in_one_project");
 
-       $job_status_filter_op = getoption_return_create_job("job_status_filter","job_option_cms","Wait image","single","u749625779_cdscontent");
+       $job_status_filter_op = getoption_return_create_job("job_status_filter","job_option_cms","Wait image","single","all_in_one_project");
 
-       $product_website_op = getoption_return_create_job("product_website","job_option_cms","","multi","u749625779_cdscontent");
+       $product_website_op = getoption_return_create_job("product_website","job_option_cms","","multi","all_in_one_project");
 
-       $department_op = getoption_return_create_job("department","job_option_cms",mapping_house_department($sub_department),"single","u749625779_cdscontent");
+       $department_op = getoption_return_create_job("department","job_option_cms",mapping_house_department($sub_department),"single","all_in_one_project");
 
-       $production_type_op = getoption_return_create_job("production_type","job_option_cms",$production_type,"single","u749625779_cdscontent");
+       $production_type_op = getoption_return_create_job("production_type","job_option_cms",$production_type,"single","all_in_one_project");
 
-       $business_type_op = getoption_return_create_job("itemmize_type","job_option_cms",$business_type,"multi","u749625779_cdscontent");
+       $business_type_op = getoption_return_create_job("itemmize_type","job_option_cms",$business_type,"multi","all_in_one_project");
 
-       $project_type_op = getoption_return_create_job("itemmize_type","job_option_cms",$project_type,"multi","u749625779_cdscontent");
+       $project_type_op = getoption_return_create_job("itemmize_type","job_option_cms",$project_type,"multi","all_in_one_project");
 
-       $store_op = getoption_return_create_job("store","job_option_cms",$stock_source,"multi","u749625779_cdscontent");
+       $store_op = getoption_return_create_job("store","job_option_cms",$stock_source,"multi","all_in_one_project");
 
-       $product_website_op = getoption_return_create_job("product_website","job_option_cms",$online_channel,"multi","u749625779_cdscontent");
+       $product_website_op = getoption_return_create_job("product_website","job_option_cms",$online_channel,"multi","all_in_one_project");
 
-       $content_nickname_op = getoption_return_create_job("nickname","user_cms",$follow_assign_nickname,"single","u749625779_cdscontent");
+       $content_nickname_op = getoption_return_create_job("nickname","user_cms",$follow_assign_nickname,"single","all_in_one_project");
 
   ?>
 

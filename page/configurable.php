@@ -178,7 +178,7 @@ $configurable_map = array (
 
         'table'=>'job_attribute',
 
-        'database'=>'u749625779_cdscontent',
+        'database'=>'all_in_one_project',
 
         'prefix'=>'ja',
 
@@ -196,7 +196,7 @@ $configurable_map = array (
 
         'table'=>'job_attribute_option',
 
-        'database'=>'u749625779_cdscontent',
+        'database'=>'all_in_one_project',
 
         'prefix'=>'jao',
 

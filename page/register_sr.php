@@ -12,7 +12,7 @@ mysqli_query($con, "SET NAMES 'utf8' ");
 
 $query = "SELECT attribute_code
 
-FROM u749625779_cdscontent.job_attribute;" or die("Error:" . mysqli_error());
+FROM all_in_one_project.job_attribute;" or die("Error:" . mysqli_error());
 
 $result =  mysqli_query($con, $query);
 

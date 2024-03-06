@@ -170,7 +170,7 @@ class="shadow-sm span-ifram">https://phpstack-1224828-4360872.cloudwaysapps.com/
 
                             //  $query = "SELECT file.job_number , job_cms.brand as brand, job_cms.sku ,file.id, file.file_name, file.file_path, file.create_at,  file.remark,  file.file_owner
 
-                            //  FROM u749625779_cdscontent.file_manage as file
+                            //  FROM all_in_one_project.file_manage as file
 
                             //  left join all_in_one_project.add_new_job as job_cms
 

@@ -362,7 +362,7 @@ function return_s_select_box($att_code,$att_name,$site_element,$current_value,$c
 
   $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
-  $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute_option
+  $query_op = "SELECT * FROM all_in_one_project.job_attribute_option
 
   WHERE attribute_code = '".$att_code."' and attribute_table = '".$table."' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
 
@@ -472,7 +472,7 @@ function return_m_select_box($att_code,$att_name,$site_element,$current_value,$c
 
   $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
-  $query_op = "SELECT * FROM u749625779_cdscontent.job_attribute_option
+  $query_op = "SELECT * FROM all_in_one_project.job_attribute_option
 
   WHERE attribute_code = '".$att_code."' and attribute_table = '".$table."' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
 
@@ -662,7 +662,7 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
 
   $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
-  $query = "SELECT  * FROM u749625779_cdscontent.job_attribute
+  $query = "SELECT  * FROM all_in_one_project.job_attribute
 
   where allow_display=1 and attribute_set = '".$attribute_set."' and section_group ='".$section_group."' and table_name='".$table."'"  or die("Error:" . mysqli_error($con));
 
@@ -736,7 +736,7 @@ function get_attribute_section($attribute_set,$table,$database,$primary_key_id,$
 
   $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
-  $query = "SELECT distinct sort_section , section_group FROM u749625779_cdscontent.job_attribute
+  $query = "SELECT distinct sort_section , section_group FROM all_in_one_project.job_attribute
 
   where allow_display=1 and attribute_set = '".$attribute_set."' and table_name='".$table."' order by sort_section ASC" or die("Error:" . mysqli_error($con));
 

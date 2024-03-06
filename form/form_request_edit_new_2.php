@@ -60,7 +60,7 @@ function return_s_select_box($att_name,$site_element,$current_value,$code_elemen
 
   $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
-    $query_op = "SELECT * FROM content_service_gate.attribute_option
+    $query_op = "SELECT * FROM all_in_one_project.attribute_option
 
     WHERE attribute_id = ".$attr_id." and `function` = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
 
@@ -124,7 +124,7 @@ function return_m_select_box($att_name,$site_element,$current_value,$code_elemen
 
   $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
-    $query_op = "SELECT * FROM content_service_gate.attribute_option
+    $query_op = "SELECT * FROM all_in_one_project.attribute_option
 
     WHERE attribute_id = ".$attr_id." and `function` = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
 
@@ -230,7 +230,7 @@ function get_list_element($group,$id){
 
     $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
-    $query = "SELECT * FROM content_service_gate.attribute_entity
+    $query = "SELECT * FROM all_in_one_project.attribute_entity
 
     WHERE allow_display = 1 and attribute_function = 'add_new'  and group_attribute = '".$group."' ORDER BY attribute_id ASC" or die("Error:" . mysqli_error($con));
 
@@ -566,7 +566,7 @@ echo '<div class="accordion accordion-flush" id="accordionFlushExample">';
 
 $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 
-$query = "SELECT distinct sort , group_attribute  FROM content_service_gate.attribute_entity
+$query = "SELECT distinct sort , group_attribute  FROM all_in_one_project.attribute_entity
 
 WHERE allow_display = 1 and attribute_function = 'add_new' ORDER BY sort ASC" or die("Error:" . mysqli_error($con));
 

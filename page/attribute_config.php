@@ -32,7 +32,7 @@ $target_prefix = $_POST['target_prefix'];
 
       <!-- <button class="btn btn-outline-success" onclick="attribute_detail_page('','','','create')" >Create new attribute</button> -->
 
-      <button class="btn btn-secondary shadow-sm" onclick="add_new_attribute('u749625779_cdscontent','job_attribute','<?php echo $target_tb; ?>','<?php echo $target_db; ?>','<?php echo $target_prefix; ?>');" ><ion-icon name="add-outline"></ion-icon>Create new attribute</button>
+      <button class="btn btn-secondary shadow-sm" onclick="add_new_attribute('all_in_one_project','job_attribute','<?php echo $target_tb; ?>','<?php echo $target_db; ?>','<?php echo $target_prefix; ?>');" ><ion-icon name="add-outline"></ion-icon>Create new attribute</button>
 
     </div>
 
@@ -102,7 +102,7 @@ $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avna
 
 mysqli_query($con, "SET NAMES 'utf8' ");
 
-$query = "SELECT * FROM u749625779_cdscontent.job_attribute where table_name = '".$target_tb."';" or die("Error:" . mysqli_error());
+$query = "SELECT * FROM all_in_one_project.job_attribute where table_name = '".$target_tb."';" or die("Error:" . mysqli_error());
 
 $result =  mysqli_query($con, $query);
 
@@ -198,11 +198,11 @@ echo '</tbody>
 
           document.getElementById('ja_edit_prefix').value = target_prefix;
 
-          update_value_attribute(data, 'ja_edit_table_name' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id');
+          update_value_attribute(data, 'ja_edit_table_name' , 'ja' , 'all_in_one_project' , 'job_attribute' , 'id');
 
-          update_value_attribute(data, 'ja_edit_db_name' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id');
+          update_value_attribute(data, 'ja_edit_db_name' , 'ja' , 'all_in_one_project' , 'job_attribute' , 'id');
 
-          update_value_attribute(data, 'ja_edit_prefix' , 'ja' , 'u749625779_cdscontent' , 'job_attribute' , 'id');
+          update_value_attribute(data, 'ja_edit_prefix' , 'ja' , 'all_in_one_project' , 'job_attribute' , 'id');
 
 
 
@@ -278,7 +278,7 @@ function delete_attribute(db,table,id,primary_key_id,release_attribute,column) {
 
   var table_record = "job_attribute";
 
-  var db_record = "u749625779_cdscontent";
+  var db_record = "all_in_one_project";
 
   var primary_key_id_record = "id";
 
