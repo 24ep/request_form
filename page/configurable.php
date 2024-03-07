@@ -1,5 +1,5 @@
 <?php
-$configurable_session_map = array("General Settings","Table Setting","Tools Setting","Table Settings");
+$configurable_session_map = array("General Settings","Table Setting","Table Settings");
 //  session |icon | table | header | description
 $configurable_map = array (
     array(
