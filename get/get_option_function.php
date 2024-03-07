@@ -59,15 +59,15 @@ function get_origin_of_ticket($col,$table,$select_option,$sorm,$database) {
         $i=0;
         while($option = mysqli_fetch_array($result_op)) {
           if($option["attribute_option_code"]==$current_value){
-              $selectd = 'selected';
+              $selected = 'selected';
           }else{
-              $selectd = '';
+              $selected = '';
           }
           if($option["attribute_option_code"]<>"" and $i==0){
               $i++;
-              $option_element .= "<option ".$selectd ." value=''></option>";
+              $option_element .= "<option ".$selected ." value=''></option>";
           }
-          $option_element .= "<option ".$selectd ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
+          $option_element .= "<option ".$selected ." value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
           }
         //   mysqli_close($con);
           return $option_element;
