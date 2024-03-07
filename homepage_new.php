@@ -890,11 +890,11 @@ tippy('#nav_toolkit', {
     placement: 'right',
     animation: 'fade',
 });
-function call_model_edit_account(username) {
+function call_model_edit_account(username_id) {
     Notiflix.Loading.hourglass('Loading...');
-    if (username) {
+    if (username_id) {
         $.post("/page/setting.php", {
-            username: username
+            username_id: username_id
         }, function(data) {
             $('#model_lg').html(data);
             Notiflix.Loading.remove();

@@ -4,7 +4,7 @@
    $database = 'all_in_one_project';
    $table = 'account';
    $primary_key_id = 'id';
-   if($_POST['username']==""){
+   if($_POST['username_id']==""){
     $id=$_SESSION['username_id'];
    }else{
     $id=$_POST['username_id'];
