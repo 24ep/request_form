@@ -1,36 +1,36 @@
 <?php
-  function return_option_create_cr($current_value,$attr_id){
+  function return_option_create_cr($current_value,$attr_code){
     session_start();
     $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
-      $query_op = "SELECT * FROM all_in_one_project.attribute_option
-      WHERE attribute_id = ".$attr_id." and function = 'content_request' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
+      $query_op = "SELECT * FROM all_in_one_project.job_attribute_option
+      WHERE attribute_code = ".$attr_code." and attribute_table = 'content_request' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
       $result_op = mysqli_query($con, $query_op);
       if($current_value==""){
         $option_element = "<option selected value=''></option>";
       }
       while($option = mysqli_fetch_array($result_op)) {
         if($option["attribute_option"]==$current_value){
-            $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+            $option_element .= "<option selected value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
           }else{
-            $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+            $option_element .= "<option value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
           }
       }
     return $option_element;
   }
-  function return_option_create_filter($current_value,$attr_id,$key){
+  function return_option_create_filter($current_value,$attr_code,$key){
     session_start();
     $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
-      $query_op = "SELECT * FROM all_in_one_project.attribute_option
-      WHERE attribute_id = ".$attr_id." and function = 'content_request' and attribute_option like '%".$key."%' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
+      $query_op = "SELECT * FROM all_in_one_project.job_attribute_option
+      WHERE attribute_code = ".$attr_code." and attribute_table = 'content_request' and attribute_option_code like '%".$key."%' ORDER BY id ASC" or die("Error:" . mysqli_error($con));
       $result_op = mysqli_query($con, $query_op);
       if($current_value==""){
         $option_element = "<option selected value=''></option>";
       }
       while($option = mysqli_fetch_array($result_op)) {
-        if($option["attribute_option"]==$current_value){
-            $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_label"]."</option>";
+        if($option["attribute_option_code"]==$current_value){
+            $option_element .= "<option selected value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
           }else{
-            $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_label"]."</option>";
+            $option_element .= "<option value='".$option["attribute_option_code"]."'>".$option["attribute_option_label"]."</option>";
           }
       }
     return $option_element;
@@ -95,9 +95,9 @@
                return $option_set;
        $cr_important_op = get_option_cr("cr_important","option","Low","single","all_in_one_project");
        $project_bucket = project_bucket();
-       $cr_issue_type_op = return_option_create_cr("","39");
-       $cr_reason_op_add = return_option_create_filter("","40","dp_add");
-       $cr_reason_op_remove = return_option_create_filter("","40","dp_remove");
+       $cr_issue_type_op = return_option_create_cr("","ticket_type");
+       $cr_reason_op_add = return_option_create_filter("","issue_resone","dp_add");
+       $cr_reason_op_remove = return_option_create_filter("","issue_resone","dp_remove");
 ?>
 <div class="row">
     <div class="form-group">

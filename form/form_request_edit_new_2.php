@@ -1,115 +1,115 @@
 <?php
- session_start();
- $id = $_POST['id'];
-$con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
-function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
-  if($site_element=='datetime-local'){
-    $current_value = str_replace(" ","T",$current_value);
-  }
-  $element = '
-  <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
-    <div class="col-3 fw-bold">'.$att_name.'</div>
-    <div class="col-9">
-      <input
-        class="form-control form-control-sm"
-        id="'.$code_element.'"
-        name="'.$code_element.'"
-        type="'.$site_element.'"
-        style="border: 0px"
-        value="'.$current_value.'"
-        '.$enable_edit.'
-        onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
-      />
-    </div>
-  </li>
-  ';
-  return $element;
-}
-function return_s_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit,$id){
-  $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
-    $query_op = "SELECT * FROM all_in_one_project.attribute_option
-    WHERE attribute_id = ".$attr_id." and `function` = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
-    $result_op = mysqli_query($con, $query_op);
-    while($option = mysqli_fetch_array($result_op)) {
-    if($option["attribute_option"]==$current_value){
-        $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
-      }else{
-        $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
-      }
-    }
-  $element = '
-  <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
-    <div class="col-3 fw-bold">'.$att_name.'</div>
-    <div class="col-9">
-      <select
-        class="form-select form-select-sm"
-        id="'.$code_element.'"
-        name="'.$code_element.'"
-        style="border: 0px"
-        '.$enable_edit.'
-        onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
-      >
-      '.$option_element.'
-      </select>
-    </div>
-  </li>
-  ';
-  unset($option_element);
-  return $element;
-}
-function return_m_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit,$id){
-  $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
-    $query_op = "SELECT * FROM all_in_one_project.attribute_option
-    WHERE attribute_id = ".$attr_id." and `function` = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
-    $result_op = mysqli_query($con, $query_op);
-    while($option = mysqli_fetch_array($result_op)) {
-    if(strpos($current_value ,$option["attribute_option"])!==false){
-        $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
-      }else{
-        $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
-      }
-    }
-  $element = '
-  <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
-    <div class="col-3 fw-bold">'.$att_name.'</div>
-    <div class="col-9">
-      <select
-        multiple="multiple"
-        class="form-select"
-        id="'.$code_element.'"
-        name="'.$code_element.'"
-        style="border: 0px"
-        '.$enable_edit.'
-        onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
-      >
-      '.$option_element.'
-      </select>
-    </div>
-  </li>
-  ';
-  unset($option_element);
-  return $element;
-}
-function return_textarea_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
-  $element = '
-  <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
-    <div class="col-3 fw-bold">'.$att_name.'</div>
-    <div class="col-9">
-      <textarea
-        class="form-control"
-        id="'.$code_element.'"
-        name="'.$code_element.'"
-        style="border: 0px"
-        rows="4"
-        '.$enable_edit.'
-        onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
-      >'.$current_value.'
-      </textarea>
-    </div>
-  </li>
-  ';
-  return $element;
-}
+//  session_start();
+//  $id = $_POST['id'];
+// $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
+// function return_input_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
+//   if($site_element=='datetime-local'){
+//     $current_value = str_replace(" ","T",$current_value);
+//   }
+//   $element = '
+//   <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
+//     <div class="col-3 fw-bold">'.$att_name.'</div>
+//     <div class="col-9">
+//       <input
+//         class="form-control form-control-sm"
+//         id="'.$code_element.'"
+//         name="'.$code_element.'"
+//         type="'.$site_element.'"
+//         style="border: 0px"
+//         value="'.$current_value.'"
+//         '.$enable_edit.'
+//         onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
+//       />
+//     </div>
+//   </li>
+//   ';
+//   return $element;
+// }
+// function return_s_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit,$id){
+//   $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
+//     $query_op = "SELECT * FROM all_in_one_project.job_attribute_option
+//     WHERE attribute_code = ".$attr_id." and `function` = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
+//     $result_op = mysqli_query($con, $query_op);
+//     while($option = mysqli_fetch_array($result_op)) {
+//     if($option["attribute_option"]==$current_value){
+//         $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+//       }else{
+//         $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+//       }
+//     }
+//   $element = '
+//   <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
+//     <div class="col-3 fw-bold">'.$att_name.'</div>
+//     <div class="col-9">
+//       <select
+//         class="form-select form-select-sm"
+//         id="'.$code_element.'"
+//         name="'.$code_element.'"
+//         style="border: 0px"
+//         '.$enable_edit.'
+//         onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
+//       >
+//       '.$option_element.'
+//       </select>
+//     </div>
+//   </li>
+//   ';
+//   unset($option_element);
+//   return $element;
+// }
+// function return_m_select_box($att_name,$site_element,$current_value,$code_element,$attr_id,$enable_edit,$id){
+//   $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
+//     $query_op = "SELECT * FROM all_in_one_project.attribute_option
+//     WHERE attribute_id = ".$attr_id." and `function` = 'add_new' ORDER BY option_id ASC" or die("Error:" . mysqli_error($con));
+//     $result_op = mysqli_query($con, $query_op);
+//     while($option = mysqli_fetch_array($result_op)) {
+//     if(strpos($current_value ,$option["attribute_option"])!==false){
+//         $option_element .= "<option selected value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+//       }else{
+//         $option_element .= "<option value='".$option["attribute_option"]."'>".$option["attribute_option"]."</option>";
+//       }
+//     }
+//   $element = '
+//   <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
+//     <div class="col-3 fw-bold">'.$att_name.'</div>
+//     <div class="col-9">
+//       <select
+//         multiple="multiple"
+//         class="form-select"
+//         id="'.$code_element.'"
+//         name="'.$code_element.'"
+//         style="border: 0px"
+//         '.$enable_edit.'
+//         onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
+//       >
+//       '.$option_element.'
+//       </select>
+//     </div>
+//   </li>
+//   ';
+//   unset($option_element);
+//   return $element;
+// }
+// function return_textarea_box($att_name,$site_element,$current_value,$code_element,$enable_edit,$id){
+//   $element = '
+//   <li class="list-group-item" style="display: inline-flex; background: #f9fafb">
+//     <div class="col-3 fw-bold">'.$att_name.'</div>
+//     <div class="col-9">
+//       <textarea
+//         class="form-control"
+//         id="'.$code_element.'"
+//         name="'.$code_element.'"
+//         style="border: 0px"
+//         rows="4"
+//         '.$enable_edit.'
+//         onchange="update_ns_detail('.$id.',&#39;'.$code_element.'&#39;)"
+//       >'.$current_value.'
+//       </textarea>
+//     </div>
+//   </li>
+//   ';
+//   return $element;
+// }
 // function get_list_element($group,$id){
 //     $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 //     $query = "SELECT * FROM all_in_one_project.attribute_entity
