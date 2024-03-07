@@ -466,8 +466,8 @@ label.form-check-label{
             <?php
             $database = 'all_in_one_project';
             $table = 'account';
-            $primary_key_id = 'username';
-            $id=$_SESSION['username'];
+            $primary_key_id = 'id';
+            $id=$_SESSION['username_id'];
             $prefix_table = 'ac';
             $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
             $query = "SELECT  * FROM ".$database.".".$table." where ".$primary_key_id." = '".$id."'" or die("Error:" . mysqli_error($con));
