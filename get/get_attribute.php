@@ -177,6 +177,61 @@ function get_username($att_code,$att_name,$site_element,$current_value,$code_ele
   unset($option_element);
   return $element;
 }
+
+function return_list_of_attribute($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id,$require){
+  $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
+  $query_op = "SELECT * FROM all_in_one_project.job_attribute ORDER BY id ASC" or die("Error:" . mysqli_error($con));
+  $result_op = mysqli_query($con, $query_op);
+  $i=0;
+  while($option = mysqli_fetch_array($result_op)) {
+    if($option["attribute_code"]==$current_value){
+      $selected = 'selected';
+    }else{
+      $selected = '';
+    }
+    if($option["attribute_code"]<>"" and $i==0){
+      $i++;
+      $option_element .= "<option ".$selected ." value=''></option>";
+    }
+    $option_element .= "<option ".$selected ." value='".$option["attribute_code"]."'>".$option["attribute_code"]."</option>";
+  }
+  if($enable_edit==''){
+    // $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px" name="color-wand-outline"></ion-icon>';
+    $badge_edit_lv  ='';
+  }else{
+    // $badge_edit_lv  ='';
+    $badge_edit_lv  ='style="color:#C0C0C0"';
+  }
+  if($require==1 and $current_value==''){
+    $require = 'is-invalid';
+  }else{
+    $require = '';
+  }
+  $element = '
+  <li class="list-group-item m-2 row" style="display: inline-flex;">
+  <div class="col-3 fw-bold" '.$badge_edit_lv.'>'.$att_name.'</div>
+  <div class="col-9">
+  <select
+  class="'.$require.' sg_dropdown_'.$code_element.'"
+  id="'.$code_element.'"
+  name="'.$code_element.'"
+  '.$enable_edit.'
+  onchange="update_value_attribute(&#39;'.$id.'&#39;, &#39;'.$code_element.'&#39; , &#39;'.$prefix.'&#39; , &#39;'.$database.'&#39; , &#39;'.$table.'&#39; , &#39;'.$primary_key_id.'&#39;)"
+  >
+  '.$option_element.'
+  </select>
+  </div>
+  <script>
+  new TomSelect(".sg_dropdown_'.$code_element.'",{})
+  </script>
+  </li>
+  ';
+  // new SlimSelect({
+  //   select: "#'.$code_element.'"
+  // })
+  unset($option_element);
+  return $element;
+}
 function return_s_select_box($att_code,$att_name,$site_element,$current_value,$code_element,$enable_edit,$id,$prefix,$database,$table,$primary_key_id,$require){
   $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
   $query_op = "SELECT * FROM all_in_one_project.job_attribute_option
@@ -358,7 +413,8 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
       $element .= get_username($row["attribute_code"],$row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
     }elseif($row["attribute_type"]=="nickname"){
       $element .= get_nickname($row["attribute_code"],$row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
-    }
+    }elseif($row["attribute_type"]=="attribute_list"){
+      $element .= return_list_of_attribute($row["attribute_code"],$row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
   }
   return $element;
 }
