@@ -55,6 +55,7 @@
         if($_POST["business_type"]<>""){ $insert_head .= ",business_type";$insert_value .= ",'".$_POST["business_type"]."'";}
         if($_POST["project_type"]<>""){ $insert_head .= ",project_type";$insert_value .= ",'".$_POST["project_type"]."'";}
         if($_POST["launch_date"]<>""){ $insert_head .= ",launch_date";$insert_value .= ",'".$_POST["launch_date"]."'";}
+        if($_POST["launch_date"]<>""){ $insert_head .= ",actual_launch_date";$insert_value .= ",'".$_POST["launch_date"]."'";}
         if($sum_store<>""){ $insert_head .= ",stock_source";$insert_value .= ",'".$sum_store."'";}
         if($_POST["bu"]<>""){ $insert_head .= ",bu";$insert_value .= ",'".$_POST["bu"]."'";}
         if($sum_product_website<>""){ $insert_head .= ",online_channel";$insert_value .= ",'".$sum_product_website."'";}
