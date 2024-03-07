@@ -413,8 +413,9 @@ function get_attribute($attribute_set,$section_group,$table,$database,$primary_k
       $element .= get_username($row["attribute_code"],$row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
     }elseif($row["attribute_type"]=="nickname"){
       $element .= get_nickname($row["attribute_code"],$row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
-    }elseif($row["attribute_type"]=="attribute_list"){
+    }elseif($row["attribute_type"]=="list_attribute"){
       $element .= return_list_of_attribute($row["attribute_code"],$row["attribute_label"],"single_select",${$prefix_table."_".$row["attribute_code"]},$prefix_table."_edit_".$row["attribute_code"],$allow_in_edit,$id,$row["prefix"],$row["db_name"],$row["table_name"],$row["primary_key_id"],$row["require_value"]);
+    }
   }
   return $element;
 }
