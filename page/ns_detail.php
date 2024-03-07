@@ -53,6 +53,8 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
             anj.trigger_status as trigger_status,
             anj.subject_mail as subject_mail,
             ac.nickname as follow_assign_nickname,
+            ac_request.id as request_user_id,
+            ac_follow.id as follow_user_id,
             ac_request.firstname as request_firstname,
             ac_request.lastname as request_lastname,
             ac_request.office_tell as request_office_tell,
@@ -80,6 +82,8 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
             on ac.username = anj.follow_assign_name
             left join all_in_one_project.account as ac_request
             on ac_request.username = anj.request_username
+            left join all_in_one_project.account as ac_follow
+            on ac_follow.username = anj.follow_up_by
             left join all_in_one_project.brand_editor as brand_editor
             on brand_editor.brand = anj.brand
             where anj.id = ".$_POST['id']." ORDER BY anj.id DESC " or die("Error:" . mysqli_error($con));
@@ -88,6 +92,8 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
       $id = $row['id'];
       $actual_launch_date=$row['actual_launch_date'];
       $brand = $row['brand'];
+      $request_user_id = $row['request_user_id'];
+      $follow_user_id = $row['follow_user_id'];
       $request_username = $row['request_username'];
       $request_firstname = $row['request_firstname'];
       $request_lastname = $row['request_lastname'];
@@ -246,7 +252,7 @@ echo '
                         <?php echo $request_firstname." ".substr($request_lastname,0,2).". ( ".$request_nickname." ) " ?>
                         <ion-icon type="button" class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal"
                             data-bs-target="#exampleModal"
-                            onclick="call_model_edit_account('<?php echo $request_username; ?>')" name="open-outline">
+                            onclick="call_model_edit_account('<?php echo $request_user_id; ?>')" name="open-outline">
                     </li>
                     <li style="margin-top: 5px;">
                         <ion-icon name="call-outline"></ion-icon> <?php echo $request_office_tell; ?>
@@ -271,7 +277,7 @@ echo '
                         <ion-icon name="person-outline"></ion-icon><?php echo $follow_up_name; ?>
                         <ion-icon type="button" class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal"
                             data-bs-target="#exampleModal"
-                            onclick="call_model_edit_account('<?php echo $follow_up_by; ?>')" name="open-outline">
+                            onclick="call_model_edit_account('<?php echo $follow_user_id; ?>')" name="open-outline">
                     </li>
                     <li style="margin-top: 5px;">
                         <ion-icon name="call-outline"></ion-icon> <?php echo $office_tell; ?>

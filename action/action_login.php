@@ -23,6 +23,7 @@ if((mysqli_fetch_array($result) === null)){
     $query = "SELECT * FROM all_in_one_project.account WHERE username = '".$username."' and password = '".$password_encode."'"or die("Error:" . mysqli_error($con));
     $result =  mysqli_query($con, $query);
     while($row = mysqli_fetch_array($result)) {
+        $_SESSION["username_id"]=$row["id"];
         $_SESSION["username"]=$row["username"];
         $_SESSION["nickname"]=$row["nickname"];
         $_SESSION["firstname"]=$row["firstname"];

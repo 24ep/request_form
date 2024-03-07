@@ -490,7 +490,7 @@ label.form-check-label{
                     <a class="navbar-brand ms-1" style="" href="#"><?php echo $ac_firstname." ".$ac_lastname; ?></a>
                     <small href="#"><?php echo $ac_department; ?> | <?php echo $ac_role; ?></small>
                     <ion-icon type="button" class="btn btn-outline-dark border-0 btn-sm" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" onclick="call_model_edit_account('<?php echo $ac_username; ?>')"
+                        data-bs-target="#exampleModal" onclick="call_model_edit_account('<?php echo $ac_id; ?>')"
                         name="open-outline">
                     </ion-icon>
                     <div class="dropdown">
