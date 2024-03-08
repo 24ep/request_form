@@ -277,7 +277,9 @@ function return_s_select_box($att_code,$att_name,$site_element,$current_value,$c
   </select>
   </div>
   <script>
-  new TomSelect(".sg_dropdown_'.$code_element.'",{})
+  new TomSelect(".sg_dropdown_'.$code_element.'",{
+    plugins: ["dropdown_input"],
+  })
   </script>
   </li>
   ';
@@ -327,7 +329,16 @@ function return_m_select_box($att_code,$att_name,$site_element,$current_value,$c
   </select>
   </div>
   <script>
-  new TomSelect(".sg_dropdown_'.$code_element.'",{})
+  new TomSelect(".sg_dropdown_'.$code_element.'",{
+    plugins: ["dropdown_input"],
+    plugins: {
+      remove_button:{
+        title:'Remove this item',
+      }
+    },
+    persist: false,
+    create: true,
+  })
   </script>
   </li>
   ';
