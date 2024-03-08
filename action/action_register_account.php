@@ -68,10 +68,10 @@ if((mysqli_fetch_array($result) === null)){
                     //$issue_create_id = $con->insert_id;
                     if($query_list) {
                           $replyerror =  'already register ! please login';
-                          header("Location:/login?username=".$username."&respone=".$replyerror);
+                          header("Location:/login?username=".$username."&respond=".$replyerror);
                 	}else{
                 	      $replyerror =   $con->error;
-                          header("Location:/login?username=".$username."&respone=".$replyerror);
+                          header("Location:/login?username=".$username."&respond=".$replyerror);
                     }
 exit();
 }else{
