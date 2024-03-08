@@ -13,7 +13,7 @@ function return_input_box($att_code,$att_name,$site_element,$current_value,$code
     // $badge_edit_lv  ='';
     $badge_edit_lv  ='style="color:#C0C0C0"';
   }
-  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null ){
+  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null )){
     $require = 'is-invalid';
   }else{
     $require = '';
