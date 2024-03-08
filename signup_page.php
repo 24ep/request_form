@@ -306,11 +306,11 @@ function Auth(type_action) {
                 URL += '&state=' + firstname + ',' + lastname + ',' + nickname + ',' + username + ',' + password + ',' +
                     department + ',' + workemail + ',' + office_tell;
                 URL +=
-                    '&redirect_uri=https://phpstack-1223668-4355262.cloudwaysapps.com/action/action_register_account.php';
+                    '&redirect_uri=/action/action_register_account.php';
                 window.location.href = URL;
             } else {
                 window.location.href =
-                    'https://phpstack-1223668-4355262.cloudwaysapps.com/action/action_register_account.php?state=' +
+                    '/action/action_register_account.php?state=' +
                     firstname + ',' + lastname + ',' + nickname + ',' + username + ',' + password + ',' + department +
                     ',' + workemail + ',' + office_tell;
             }
