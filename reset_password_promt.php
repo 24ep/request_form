@@ -55,12 +55,14 @@
     }
     </style>
 </head>
+<div class="container-sm p-5">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <button type="submit" class="btn btn-primary" onclick="check_exist_email()">Submit</button>
+</div>
 <body>
 
 </body>

@@ -83,7 +83,7 @@ $check =
     </style>
 </head>
 <body>
-    <div class="container-sm">
+    <div class="container-sm p-5">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email</label>
             <input disable type="text" value="<?php echo $_GET['email']; ?>" class="form-control" id="email" aria-describedby="emailHelp">
