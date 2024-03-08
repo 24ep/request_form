@@ -25,7 +25,7 @@ if (!$_SESSION["login_csg"]){
     if($_SESSION['verify_code']=="verified"){
         echo '<script>console.log("account verified")</script>';
     }else{
-        Header("Location: https://phpstack-1225538-4364543.cloudwaysapps.com/verify?work_email=".$_SESSION['work_email']);
+        Header("Location: /verify?work_email=".$_SESSION['work_email']);
     }
     include_once($_SERVER['DOCUMENT_ROOT'].'/get/get_option_function.php');
     $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
@@ -63,9 +63,9 @@ if (!$_SESSION["login_csg"]){
     <title>SG | Service gate</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- <link rel="icon" type="image/ocp" href="https://phpstack-1225538-4364543.cloudwaysapps.com/images/24ico.ico" /> -->
+
     <link rel="icon" type="image/ocp"
-        href="https://phpstack-1225538-4364543.cloudwaysapps.com/image/sg_logo_minimize.ico" />
+        href="/image/sg_logo_minimize.ico" />
     <!-- textarray -->
     <script src="https://cdn.tiny.cloud/1/cis8560ji58crrbq17zb11gp39qhpn2lka54u0m54s8du1gw/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
@@ -104,7 +104,7 @@ if (!$_SESSION["login_csg"]){
         integrity="sha512-FbW9TrdqAZVgIOrQeqDRnCe+l0g+aMBP7pWEt/zLWx8zgafpBwvJ6F1rsU+mkvbXuB4mBwS2ehlkZHE9cknTrg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" type="text/css"
-        href="https://phpstack-1225538-4364543.cloudwaysapps.com/css-theam/tree-ticket.css">
+        href="/css-theam/tree-ticket.css">
     <!-- time ago -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.2/timeago.js"
         integrity="sha512-N3oYWQZs8pMSQhQtB13XHSIry/zDIUimpMqX4QMULawuaAYgRWSiU17cLHh7f51xgkGY18jQtY2ph98HtKeWaA=="
