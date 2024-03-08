@@ -277,7 +277,7 @@ function return_s_select_box($att_code,$att_name,$site_element,$current_value,$c
   </select>
   </div>
   <script>
-  new TomSelect(".'.$require.'.sg_dropdown_'.$code_element.'",{})
+  new TomSelect(".sg_dropdown_'.$code_element.'",{})
   </script>
   </li>
   ';
