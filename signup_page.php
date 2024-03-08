@@ -53,62 +53,8 @@
     </style>
 </head>
 <?php
-       function getoption_return_edit_job($col,$table,$select_option,$sorm,$database) {
-        include($_SERVER['DOCUMENT_ROOT']."/connect.php");
-            $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4",$database,"10628") or die("Error: " . mysqli_error($con));
-        //    mysqli_query($con, "SET NAMES 'utf8' ");
-           $query = "SELECT * FROM ".$database.".".$table." ORDER BY id asc" or die("Error:" . mysqli_error($con));
-           $result = mysqli_query($con, $query);
-           while($row = mysqli_fetch_array($result)) {
-                            if($sorm=="multi"){
-                            if($col=="store" or $col=="itemmize_type" or $col=="product_website"){
-                                $array_store = explode(', ', $select_option);
-                                $duplicate_op = false;
-                                $loop_in_null = false;
-                                foreach($array_store as $store)
-                                {
-                                if($row[$col] <> '' ) {
-                                    if($store==$row[$col]){
-                                    $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
-                                    $duplicate_op = true;
-                                    }
-                                }
-                                }
-                                if($row[$col] <> ''){
-                                if($duplicate_op == false){
-                                    $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
-                                }
-                                }
-                            }
-                            }else{
-                            if($loop_in_null==false){
-                                $option_set .= '<option value=""></option>';
-                                $loop_in_null=true;
-                            }
-                                if($row[$col] <> '' )
-                                {
-                                    if($col=="account_dept_team"){
-                                        if($_GET["internal"]=="content"){
-                                            $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
-                                        }else{
-                                            if( strpos($row[$col],"Content")===false){
-                                                $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
-                                            }
-                                        }
-                                    }else{
-                                        if($select_option==$row[$col]){
-                                            $option_set .= '<option value="'.$row[$col].'" selected>'.$row[$col].'</option>';
-                                            }else{
-                                                $option_set .= '<option value="'.$row[$col].'">'.$row[$col].'</option>';
-                                            }
-                                    }
-                                }
-                        }
-           }
-           mysqli_close($con);
-           return $option_set;
-             }
-      $department_op = getoption_return_edit_job("account_dept_team","option","","single","all_in_one_project");
+      include('get/get_option_function.php');
+      $department_op = get_option_attribute_entity("department","account","");
 ?>
 <body>
     <?php
