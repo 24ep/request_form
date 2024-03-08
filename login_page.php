@@ -118,17 +118,8 @@
     margin-top: 40%;
     font-size: 40px;
     font-family: 'Poppins', sans-serif;"
-   >ServiceGate</h6>
-   <h6 style="
-    color: white;
-    margin: 50px;
-    /* font-weight: 100; */
-    color: #ffffff;
-    text-align-last: center;
-    /* margin-top: 40%; */
-    font-size: 40px;
-    font-family: 'Poppins', sans-serif;
-">Start using 23 Jan 24 5:00 AM</h6>
+   >Hi!</h6>
+
             <div class="container-sm"
                 style="width: fit-content;margin: initial;margin-left: 50px;height: unset;color: #ffffff;">
                 <!-- get from list -->

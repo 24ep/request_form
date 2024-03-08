@@ -20,7 +20,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
     <style>
     body {
-        background-image: url(image/11.jpg);
+        background-color: firebrick;
+        background-image: linear-gradient(225deg, #960000, #b94a67);
+
         /* font-family: 'Quicksand', sans-serif!important; */
         font-family: 'Prompt', sans-serif;
     }
