@@ -12,6 +12,9 @@ DirectoryIndex homepage.php
     RewriteRule ^signup$ /signup_page.php
     RewriteRule ^verify$ /waiting_verify.php
     RewriteRule ^verified$ /verify_by_email.php
+    RewriteRule ^reset_password_confirm_code$ /reset_password_confirm.php
+    RewriteRule ^reset_password$ /reset_password_promt.php
+    RewriteRule ^verify$ /waiting_verify.php
     RewriteRule ^$ /homepage.php
 
 </IfModule>
