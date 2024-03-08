@@ -176,7 +176,7 @@ function getFilterInputValues() {
         $('#job_list').html(data);
     });
 }
-getFilterInputValues();
+// getFilterInputValues();
 function get_filter_attribute() {
     var selected = [];
     for (var option of document.getElementById('list_of_filter').options) {
