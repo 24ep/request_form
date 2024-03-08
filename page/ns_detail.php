@@ -674,8 +674,8 @@ echo '
                         class: ImageTool,
                         config: {
                             endpoints: {
-                                byFile: 'https://phpstack-1225538-4364543.cloudwaysapps.com/action/action_endpoint_uploadfiles.php', // Your backend file uploader endpoint
-                                byUrl: 'https://phpstack-1225538-4364543.cloudwaysapps.com/action/action_endpoint_uploadfiles.php', // Your endpoint that provides uploading by Url
+                                byFile: '<?php echo $_SERVER['DOCUMENT_ROOT'];?>/action/action_endpoint_uploadfiles.php', // Your backend file uploader endpoint
+                                byUrl: '<?php echo $_SERVER['DOCUMENT_ROOT']; ?>/action/action_endpoint_uploadfiles.php', // Your endpoint that provides uploading by Url
                             }
                         }
                     },

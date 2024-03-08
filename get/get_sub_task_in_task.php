@@ -39,7 +39,7 @@
     if($row["firstname"]==""){
       $subtask .='
         <tr >
-              <td ><a href="https://phpstack-1225538-4364543.cloudwaysapps.com/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'">
+              <td ><a href="'.$_SERVER['DOCUMENT_ROOT'].'/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'">
                NS-'.$row["parent"].'-'.$i.' ('.$row["id"].')</a></td>
               <td >'. $row["sku"].'</td>
               <td >'. $status .'</td>
@@ -49,7 +49,7 @@
     }else{
       $subtask .='
         <tr >
-              <td ><a href="https://phpstack-1225538-4364543.cloudwaysapps.com/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'">
+              <td ><a href="'.$_SERVER['DOCUMENT_ROOT'].'/homepage.php?tab=v-pills-request_list&fopenticket='.$row["id"].'">
                NS-'.$row["parent"].'-'.$i.' ('.$row["id"].')</a></td>
               <td>'. $row["sku"].'</td>
               <td >'.$status.'</td>
