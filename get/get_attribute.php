@@ -50,7 +50,7 @@ function return_input_color($att_code,$att_name,$site_element,$current_value,$co
     // $badge_edit_lv  ='';
     $badge_edit_lv  ='style="color:#C0C0C0"';
   }
-  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null ){
+  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null )){
     $require = 'is-invalid';
   }else{
     $require = '';
@@ -97,7 +97,7 @@ function get_nickname($att_code,$att_name,$site_element,$current_value,$code_ele
     // $badge_edit_lv  ='';
     $badge_edit_lv  ='style="color:#C0C0C0"';
   }
-  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null ){
+  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null )){
     $require = 'is-invalid';
   }else{
     $require = '';
@@ -150,7 +150,7 @@ function get_username($att_code,$att_name,$site_element,$current_value,$code_ele
     // $badge_edit_lv  ='';
     $badge_edit_lv  ='style="color:#C0C0C0"';
   }
-  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null ){
+  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null )){
     $require = 'is-invalid';
   }else{
     $require = '';
@@ -202,7 +202,7 @@ function return_list_of_attribute($att_code,$att_name,$site_element,$current_val
     // $badge_edit_lv  ='';
     $badge_edit_lv  ='style="color:#C0C0C0"';
   }
-  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null ){
+  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null )){
     $require = 'is-invalid';
   }else{
     $require = '';
@@ -257,7 +257,7 @@ function return_s_select_box($att_code,$att_name,$site_element,$current_value,$c
     // $badge_edit_lv  ='';
     $badge_edit_lv  ='style="color:#C0C0C0"';
   }
-  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null ){
+  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null )){
     $require = 'is-invalid';
   }else{
     $require = '';
@@ -306,7 +306,7 @@ function return_m_select_box($att_code,$att_name,$site_element,$current_value,$c
     // $badge_edit_lv  ='';
     $badge_edit_lv  ='style="color:#C0C0C0"';
   }
-  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null ){
+  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null )){
     $require = 'is-invalid';
   }else{
     $require = '';
@@ -342,7 +342,7 @@ function return_textarea_box($att_code,$att_name,$site_element,$current_value,$c
     // $badge_edit_lv  ='';
     $badge_edit_lv  ='style="color:#C0C0C0"';
   }
-  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null ){
+  if(($require==1 or  $require=='1' ) and ($current_value=='' or $current_value == null )){
     $require = 'is-invalid';
   }else{
     $require = '';
