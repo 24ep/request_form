@@ -85,7 +85,7 @@ mysqli_close($con);
     <div class="container-sm p-5">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input disable type="text" value="<?php echo $_GET['email']; ?>" class="form-control" id="email" aria-describedby="emailHelp">
+            <input disable type="hidden" value="<?php echo $_GET['email']; ?>" class="form-control" id="email" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">New password</label>
