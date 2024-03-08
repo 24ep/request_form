@@ -56,7 +56,8 @@
 </head>
 <div class="container-sm p-5">
   <div class="mb-3">
-    <h6>Reset password</h6><br>
+    <h3>Reset password</h3>
+    <hr>
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text">We'll send you specific reset password link to you email.</div>
