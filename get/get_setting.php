@@ -1,6 +1,6 @@
 <?php
  session_start();
- $con= mysqli_connect("seall_in_one_projectservice-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
+ $con= mysqli_connect("service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
  mysqli_query($con, "SET NAMES 'utf8' ");
  $query = "SELECT * FROM all_in_one_project.setting_menu" or die("Error:" . mysqli_error($con));
  $result = mysqli_query($con, $query);
