@@ -87,7 +87,7 @@ function get_attribute_list_filter($table){
                 <span class="input-group-text" id="inputGroup-sizing-sm">Page</span>
                 <input type="number" class="form-control" style="position: inherit;" id="page_navigator_input" min=1
                     <?php if($_SESSION["total_page_rnj"]<>""){echo "max=".$_SESSION["total_page_rnj"];}?>
-                    value="<?php echo $_SESSION["pagenation"];?>" onchange="getFilterInputValues()" placeholder=""
+                    value="<?php echo $_SESSION["pagenation"];?>" onchange="getFilterInputValues('skip_clear_param')" placeholder=""
                     aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
                     placeholder="Dept , Sub Dept , Brand , ID">
                 <span class="input-group-text" id="inputGroup-sizing-sm">
@@ -128,7 +128,7 @@ function get_attribute_list_filter($table){
     </div>
 </div>
 <script>
-function getFilterInputValues() {
+function getFilterInputValues($clear_param) {
     var page_navigator_input = document.getElementById("page_navigator_input").value
     if(page_navigator_input==""){
         document.getElementById("page_navigator_input").value  =1;
@@ -137,7 +137,10 @@ function getFilterInputValues() {
     var filterPrefix = "filter_";
     var inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`);
     var inputValues = {};
-    clearParams();
+    if($clear_param=='clear_param'){
+        clearParams();
+    }
+    
     inputs.forEach(input => {
         var name = input.getAttribute("attribute_code");
         var type = input.getAttribute("attribute_type");
@@ -176,7 +179,7 @@ function getFilterInputValues() {
         $('#job_list').html(data);
     });
 }
-getFilterInputValues();
+getFilterInputValues("skip_clear_param");
 function get_filter_attribute() {
     var selected = [];
     for (var option of document.getElementById('list_of_filter').options) {
@@ -305,7 +308,7 @@ function action_submit_add_new_job() {
             var result = data.includes("Error");
             if (result == false) {
                 Notiflix.Notify.success("Ticket have been create already ! NS-" + data);
-                getFilterInputValues();
+                getFilterInputValues("clear_param");
                 snapshot_data("all_in_one_project", "add_new_job", "id", data, "add_new_job");
             } else {
                 Notiflix.Report.failure(

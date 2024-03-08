@@ -3,7 +3,7 @@ session_start();
 function datepick($attribute_code,$attribute_label,$table_name){
     $input = '
     <div class="col-md">
-        <input  placeholder="'.$attribute_label.'" class="form-control form-control-sm" attribute_type="date" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onfocusout="getFilterInputValues()">
+        <input  placeholder="'.$attribute_label.'" class="form-control form-control-sm" attribute_type="date" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onfocusout="getFilterInputValues(&#39;clear_param&#39;)">
     </div>
     <script>
         var picker = new easepick.create({
@@ -40,7 +40,7 @@ function datepick($attribute_code,$attribute_label,$table_name){
 function text($attribute_code,$attribute_label,$table_name){
     $input = '
     <div class="col-md">
-        <input placeholder="'.$attribute_label.'" type="text" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+        <input placeholder="'.$attribute_label.'" type="text" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues(&#39;clear_param&#39;)">
     </div>
     ';
     return $input;
@@ -48,7 +48,7 @@ function text($attribute_code,$attribute_label,$table_name){
 function number($attribute_code,$attribute_label,$table_name){
     $input = '
     <div class="col-md">
-        <input placeholder="'.$attribute_label.'" type="number" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+        <input placeholder="'.$attribute_label.'" type="number" class="form-control form-control-sm" attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues(&#39;clear_param&#39;)">
     </div>
     ';
     return $input;
@@ -74,7 +74,7 @@ function simple_select($attribute_code,$attribute_label,$type,$table_name){
     }
     $input = '
     <div class="col-md">
-        <select placeholder="'.$attribute_label.'" '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+        <select placeholder="'.$attribute_label.'" '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues(&#39;clear_param&#39;)">
         '.$option_element.'
         </select>
     </div>
@@ -106,7 +106,7 @@ function username($attribute_code,$attribute_label,$type,$table_name){
     }
     $input = '
     <div class="col-md">
-        <select placeholder="'.$attribute_label.'" '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+        <select placeholder="'.$attribute_label.'" '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues(&#39;clear_param&#39;)">
         '.$option_element.'
         </select>
     </div>
@@ -136,7 +136,7 @@ function nickname($attribute_code,$attribute_label,$type,$table_name){
     }
     $input = '
     <div class="col-md">
-        <select placeholder="'.$attribute_label.'" '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues()">
+        <select placeholder="'.$attribute_label.'" '.$type.' attribute_code="'.$attribute_code.'" id="filter_'.$attribute_code.'" onchange="getFilterInputValues(&#39;clear_param&#39;)">
         '.$option_element.'
         </select>
     </div>
@@ -181,6 +181,6 @@ while($row = mysqli_fetch_array($result)) {
 }
 echo '
 <div class="col-md">
-<button type="button" class="btn btn-dark btn-sm" style="width: max-content;" onclick="getFilterInputValues()">Apply Filter</button>
+<button type="button" class="btn btn-dark btn-sm" style="width: max-content;" onclick="getFilterInputValues(&#39;clear_param&#39;)">Apply Filter</button>
 </div>';
 ?>
