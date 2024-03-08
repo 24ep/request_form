@@ -34,7 +34,7 @@ function send_email_to_reset_password($email,$random_code) {
     curl_close($curl);
 }
 $randomCode = generateRandomCode(10);
-send_email_to_reset_password($_POST['email'],$randomCode)
+send_email_to_reset_password($_POST['email'],$randomCode);
 
 
 
