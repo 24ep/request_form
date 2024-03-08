@@ -159,7 +159,7 @@
                     <div class="text-center">
                         <button  type="submit" id="login_bt" class="btn btn-dark"
                             style="width:100%;margin-bottom:20px;margin-top:20px;background: #810000;border: solid 0px;">Login</button>
-                        <a href="signup"  style="text-align: left!important;">Signup</a>
+                        <a href="signup"  style="text-align: left!important;">Signup</a> | 
                         <a href="reset_password"  style="text-align: left!important;">Reset password</a>
                     </div>
                 </form>
