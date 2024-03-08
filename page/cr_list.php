@@ -217,7 +217,9 @@ function getFilterInputValues($clear_param) {
         bucket: bucket
     }, function(data) {
         $('#bucket').html(data);
+        timeago().render(document.querySelectorAll('.timeago'));
     });
+    
 }
 function set_view_mode(mode) {
     document.getElementById("view_mode").value = mode;
