@@ -101,9 +101,12 @@ function check_exist_email() {
                 Notiflix.Report.success(
                     'Check your inbox',
                     'the email was send , please check on your inbox and click the link to reset password',
-                    'Back to login page'
+                    'Back to login page',
+                    function cb() {
+                        window.location.href = "/";
+                    },
                 );
-                window.location.href = "/"; // Change to navigate to the login page
+             
             }); // <-- Missing closing parenthesis here
         }
     });
