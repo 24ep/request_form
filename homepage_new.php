@@ -983,15 +983,15 @@ document.head.append(s)
 </script>
 
 
-    <!-- <script>
+    <script>
         // Periodically check session status on the client side
         setInterval(function () {
-           var session_check = <?php //if(isset($_SESSION['username'])){echo 'in';}else{echo 'out'}; ?>;
+           var session_check = <?php if(isset($_SESSION['username'])){echo 'in';}else{echo 'out';}; ?>;
            if(session_check=='out'){
             window.location.href = "login?timeout=true";
            }
         }, 1000); // Check every second, you can adjust the interval as needed
-    </script> -->
+    </script>
 
 <!-- <script>
                             Notiflix.Report.warning(
