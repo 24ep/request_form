@@ -20,8 +20,7 @@ if (mysqli_num_rows($result) > 0) {
 
 // Close the database connection
 mysqli_close($con);
-
-$check =  
+ 
 
 ?>
 <!DOCTYPE html>
