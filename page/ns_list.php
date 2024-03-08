@@ -104,17 +104,7 @@ function get_attribute_list_filter($table){
                 </ion-icon>
                 Create New
             </button>
-            <!-- <?php //if($_SESSION['username']=='poojaroonwit'){ ?>
-            <button class="btn btn-danger btn-sm bg-gradient position-absolute " type="button" data-bs-toggle="modal"
-                data-bs-target="#create_new_ns_modal_new" style=" right: 55px;">
-                <ion-icon size="small" name="add-outline" style="font-size:12px" role="img"
-                    class="md icon-small hydrated" aria-label="add outline">
-                </ion-icon>
-                Create New 2
-            </button>
-            <?php
-        //}
-        ?> -->
+    
         </div>
     </div>
 </nav>
@@ -147,7 +137,7 @@ function getFilterInputValues() {
     var filterPrefix = "filter_";
     var inputs = document.querySelectorAll(`input[id^="${filterPrefix}"], select[id^="${filterPrefix}"]`);
     var inputValues = {};
-    clearParams();
+    // clearParams();
     inputs.forEach(input => {
         var name = input.getAttribute("attribute_code");
         var type = input.getAttribute("attribute_type");
