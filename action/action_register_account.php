@@ -16,7 +16,7 @@ $state = $_GET["state"];
 echo "<script>console.log("."111".$token_line.")</script>";
 $curl = curl_init();
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://notify-bot.line.me/oauth/token?grant_type=authorization_code&code='.$_GET["code"].'&redirect_uri=https://phpstack-1223668-4355262.cloudwaysapps.com/action/action_register_account.php&client_id=XPPcPQZGP76t3eLNrQ944w&client_secret=vng1Flh2DcFp4nYNluxOJZMTQ6kQh8qHBYzgQiBPdOO',
+  CURLOPT_URL => 'https://notify-bot.line.me/oauth/token?grant_type=authorization_code&code='.$_GET["code"].'&redirect_uri=https://phpstack-1225538-4364543.cloudwaysapps.com/action/action_register_account.php&client_id=XPPcPQZGP76t3eLNrQ944w&client_secret=vng1Flh2DcFp4nYNluxOJZMTQ6kQh8qHBYzgQiBPdOO',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,

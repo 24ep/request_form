@@ -226,8 +226,7 @@ class="shadow-sm span-ifram">https://phpstack-1224828-4360872.cloudwaysapps.com/
 
                                 $herf = $file_path.$row['file_name'];
 
-                                // $herf = "https://phpstack-1223668-4355262.cloudwaysapps.com/".$file_path.$row['file_name'];
-
+                               
                                 echo "<option value='".htmlentities($herf,ENT_QUOTES)."' >".htmlentities($row["file_name"],ENT_QUOTES)."</option>";
 
                              }

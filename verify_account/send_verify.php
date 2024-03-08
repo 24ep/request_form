@@ -36,7 +36,6 @@ function send_verify_email($username,$email,$firstname,$lastname){
         curl_close($curl);
         // echo $response;
             }
-        // header("Location: https://phpstack-1223668-4355262.cloudwaysapps.com/verify_account/waiting_verify.php?email=".$_SESSION['work_email'],TRUE, 301);
-        // exit();
+    
 }
 ?>

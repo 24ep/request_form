@@ -110,7 +110,7 @@ function sendline($id,$value_name,$value_change,$prefix){
 
         if($prefix=='ANJ' or $prefix=='JC' or $prefix=='NS' or $prefix=='RJ' ){
 
-                $callback_url  = 'https://phpstack-1223668-4355262.cloudwaysapps.com/?env=poojaroonwit&page=create_new&prefix=NS&direct='.$id;
+                $callback_url  = 'https://phpstack-1225538-4364543.cloudwaysapps.com/?env=poojaroonwit&page=create_new&prefix=NS&direct='.$id;
 
                 $prefix_post = 'NS';
 
@@ -118,7 +118,7 @@ function sendline($id,$value_name,$value_change,$prefix){
 
         if($prefix=='CR'){
 
-            $callback_url  = 'https://phpstack-1223668-4355262.cloudwaysapps.com/?env=poojaroonwit&page=update_content&prefix=CR&direct='.$id;
+            $callback_url  = 'https://phpstack-1225538-4364543.cloudwaysapps.com/?env=poojaroonwit&page=update_content&prefix=CR&direct='.$id;
 
             $prefix_post = 'CR';
 

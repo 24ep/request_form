@@ -230,9 +230,9 @@ var editor = new EditorJS({
 
                     endpoints: {
 
-                        byFile: 'https://phpstack-1223668-4355262.cloudwaysapps.com/action/action_endpoint_uploadfiles.php', // Your backend file uploader endpoint
+                        byFile: 'https://phpstack-1225538-4364543.cloudwaysapps.com/action/action_endpoint_uploadfiles.php', // Your backend file uploader endpoint
 
-                        byUrl: 'https://phpstack-1223668-4355262.cloudwaysapps.com/action/action_endpoint_uploadfiles.php', // Your endpoint that provides uploading by Url
+                        byUrl: 'https://phpstack-1225538-4364543.cloudwaysapps.com/action/action_endpoint_uploadfiles.php', // Your endpoint that provides uploading by Url
 
                     }
 

@@ -56,9 +56,9 @@ if (empty($errors)) {
 
     if ($didUpload) {
 
-        $arr=array("success"=>1,"file"=>array("url"=>"https://phpstack-1223668-4355262.cloudwaysapps.com/attachment/brand_editor/".$filename,"size"=>$fileSize,"name"=>$filename,"title"=>$filename,"extension"=>$extension));
+        $arr=array("success"=>1,"file"=>array("url"=>"https://phpstack-1225538-4364543.cloudwaysapps.com/attachment/brand_editor/".$filename,"size"=>$fileSize,"name"=>$filename,"title"=>$filename,"extension"=>$extension));
 
-        // $arr=array("success"=>1,"file"=>array("url"=>"https://phpstack-1223668-4355262.cloudwaysapps.com/attachment/brand_editor/".$filename,"size"=>$fileSize,"name"=>$filename,"title"=>$filename,"extension"=>$extension));
+        // $arr=array("success"=>1,"file"=>array("url"=>"https://phpstack-1225538-4364543.cloudwaysapps.com/attachment/brand_editor/".$filename,"size"=>$fileSize,"name"=>$filename,"title"=>$filename,"extension"=>$extension));
 
         echo json_encode($arr);
 

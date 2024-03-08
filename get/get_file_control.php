@@ -30,7 +30,7 @@ FilePond.setOptions({
 
     server: {
 
-        url: 'https://phpstack-1223668-4355262.cloudwaysapps.com/',
+        url: 'https://phpstack-1225538-4364543.cloudwaysapps.com/',
 
         process: '/action/action_upload_files.php?id='+<?php echo $_POST['id']; ?>,
 

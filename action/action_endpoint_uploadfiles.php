@@ -56,7 +56,7 @@ if (empty($errors)) {
 
     if ($didUpload) {
 
-        $arr=array("success"=>1,"file"=>array("url"=>"https://phpstack-1223668-4355262.cloudwaysapps.com/attachment/brand_editor/".$filename));
+        $arr=array("success"=>1,"file"=>array("url"=>"https://phpstack-1225538-4364543.cloudwaysapps.com/attachment/brand_editor/".$filename));
 
         echo json_encode($arr);
 
