@@ -91,8 +91,8 @@
 </head>
 <body>
     <?php
-            if($_GET["respond"]<>""){
-                if($_GET["respond"]=="already register ! please login"){
+            if(isset($_GET["respond"])){
+                if(isset($_GET["respond"])=="already register ! please login"){
                     echo "<div class='alert alert-success' role='alert'>
                 <ion-icon name='checkmark-done-circle-outline' style='border-radius: 0px;;margin-right: 10px;
                 font-size: 25px;
