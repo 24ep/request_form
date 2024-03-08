@@ -278,7 +278,6 @@ function return_s_select_box($att_code,$att_name,$site_element,$current_value,$c
   </div>
   <script>
   new TomSelect(".sg_dropdown_'.$code_element.'",{
-    plugins: ["dropdown_input"],
   })
   </script>
   </li>
