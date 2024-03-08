@@ -3,7 +3,7 @@
 $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
  mysqli_query($con, "SET NAMES 'utf8' ");
 
-$query = "SELECT verify_code FROM all_in_one_project.account where verify_code='".$_GET['verify_code']."'";
+$query = "SELECT verify_code FROM all_in_one_project.account where verify_code='".$_GET['verify_code']."' and work_email='".$_GET['email']."'";
 $result = mysqli_query($con, $query) or die("Error: " . mysqli_error($con));
 
 // Check if there are rows returned
