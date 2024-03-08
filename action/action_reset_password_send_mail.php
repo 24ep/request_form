@@ -31,16 +31,22 @@ function send_email_to_reset_password($email,$random_code) {
         ),
     ));
     $response = curl_exec($curl);
+    if ($response === false) {
+        die('Curl error: ' . curl_error($curl));
+    }
+    
     curl_close($curl);
 }
 $randomCode = generateRandomCode(10);
 send_email_to_reset_password($_POST['email'],$randomCode);
 
 
-
 $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
 mysqli_query($con, "SET NAMES 'utf8' ");
+
+$email = $_POST['email'];
 $sql  = "UPDATE account SET verify_code = '".$randomCode."' WHERE work_email='".$email."'";
+
 $query = mysqli_query($con,$sql);
 
 
