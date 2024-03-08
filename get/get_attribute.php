@@ -333,9 +333,16 @@ function return_m_select_box($att_code,$att_name,$site_element,$current_value,$c
     plugins: ["dropdown_input"],
     plugins: {
       remove_button:{
-        title:'Remove this item',
+        title:"Remove this item",
       }
     },
+    plugins: ["drag_drop"],
+    plugins: {
+      "clear_button":{
+        "title":"Remove all selected options",
+      }
+    },
+    plugins: ["no_active_items"],
     persist: false,
     create: true,
   })
