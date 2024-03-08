@@ -56,6 +56,7 @@
 </head>
 <div class="container-sm p-5">
   <div class="mb-3">
+    <h6>Reset password</h6><br>
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
