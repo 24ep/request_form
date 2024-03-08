@@ -59,7 +59,7 @@
     <h6>Reset password</h6><br>
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <div id="emailHelp" class="form-text">We'll send you specific reset password link to you email.</div>
   </div>
   <button type="submit" class="btn btn-primary" onclick="check_exist_email()">Submit</button>
 </div>
