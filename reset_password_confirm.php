@@ -45,7 +45,10 @@ $check =
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/action/notiflix/dist/notiflix-3.2.5.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
     <script src="/action/notiflix/dist/notiflix-3.2.5.min.js"></script>
+    
     <style>
     body {
         background-image: url(image/11.jpg);
