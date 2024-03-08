@@ -982,6 +982,17 @@ s.onload = function(sdk) {
 document.head.append(s)
 </script>
 
+
+<script>
+        // Periodically check session status on the client side
+        setInterval(function () {
+           var session_check = <?php if(isset($_SESSION['username']){echo 'in';}else{echo 'out'};) ?>;
+           if(session_check=='out'){
+            window.location.href = "login_page.php?timeout=true";
+           }
+        }, 1000); // Check every second, you can adjust the interval as needed
+    </script>
+
 <!-- <script>
                             Notiflix.Report.warning(
                                 'แจ้งปิดรับงาน',
