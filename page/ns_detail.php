@@ -76,7 +76,12 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
             anj.shoots_complete_date as shoots_complete_date,
             anj.retouch_start_date as retouch_start_date,
             anj.retouch_complete_date as retouch_complete_date,
-            anj.upload_image_date as upload_image_date
+            anj.upload_image_date as upload_image_date,
+            anj.studio_status as studio_status,
+            anj.image_renaming_assign_name as image_renaming_assign_name,
+            anj.image_renaming_assign_date as image_renaming_assign_name,
+            anj.image_renaming_start_date as image_renaming_start_date,
+            anj.image_renaming_complete_date as image_renaming_complete_date
             FROM all_in_one_project.add_new_job as anj
             left join all_in_one_project.account as ac
             on ac.username = anj.follow_assign_name
@@ -148,6 +153,11 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
       $retouch_start_date = $row['retouch_start_date'];
       $retouch_complete_date = $row['retouch_complete_date'];
       $upload_image_date = $row['upload_image_date'];
+      $studio_status = $row['studio_status'];
+      $image_renaming_assign_name = $row['image_renaming_assign_name'];
+      $image_renaming_assign_date = $row['image_renaming_assign_date'];
+      $image_renaming_start_date = $row['image_renaming_start_date'];
+      $image_renaming_complete_date = $row['image_renaming_complete_date'];
     //stamp color status
     if($row["status"]=="pending"){
     $status_style = 'style="background: #a9a9a94f;color:#8f8f8f"';
@@ -679,7 +689,7 @@ echo '
                             }
                         }
                     },
-                  
+
                 },
                 <?php if($brand_editor<>"")
                 {
