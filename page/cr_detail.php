@@ -256,30 +256,21 @@ while($row = mysqli_fetch_array($result)) {
     </select>';
     ?>
 <?php
+//  <input type="hidden" id="cr_edit_case_officer" name="cr_edit_case_officer" value="'.$case_officer.'">
     echo '
     <div class="row" >
     <span style="padding: 0px 0px 5px 25px;"><strong>'.$sj.' Owner</strong></span>
     <div class="col " style=" padding-left: 25px;text-align-last: right;">
-    <input type="hidden" id="cr_edit_case_officer" name="cr_edit_case_officer" value="'.$case_officer.'">
-    <select  multiple id="cr_edit_case_officer_show"
-    name="cr_edit_case_officer_show"
-    aria-label=".form-select-lg example">
+
+    <select  class="sg_case_officer_assign" multiple id="cr_edit_case_officer" name="cr_edit_case_officer"
+    onchange="update_cr_detail('.$id.', '.$cr_edit_case_officer.')"
+    >
     <option data-placeholder="true"></option>
     '.$username_op_mul.'
     </select>
     </div>
     </div>';
     echo '<hr>';
-  //  echo '
-  //   <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Origin of ticket</strong></small>
-  //     <div style="border: 0px;text-align-last: left;" class="mt-2 mb-3 pt-2 pt-2">
-  //       <input type="hidden" id="cr_edit_origin_of_ticket" name="cr_edit_origin_of_ticket" value="'.$origin_of_ticket.'">
-  //       <select  id="cr_edit_origin_of_ticket_show" class="origin_block_out" aria-label=".form-select-lg example" onchange="update_cr_detail('.$id.',&#39;cr_edit_origin_of_ticket&#39;)">
-  //       <option data-placeholder="true"></option>
-  //         '.$origin_of_ticket_op.'
-  //       </select>
-  //     </div>
-  //     <hr class="cr_hr_detail">';
       echo '
       <small style="display:block;margin-bottom:3px"><strong class="cr_detail_with_attachment">Origin of ticket</strong></small>
         <div style="border: 0px;text-align-last: left;" class="mt-2 mb-3 pt-2 pt-2">
@@ -606,27 +597,30 @@ window.onresize = function(event) {
 // });
 // baguetteBox.run('.baguetteBoxFour'); //preview image
 // pureScriptSelect('#multiSelect'); //multi select
-new SlimSelect({
-    select: '#cr_edit_case_officer_show',
-    settings: {
-        closeOnSelect: false,
-        allowDeselectOption: true,
-    },
-    events: {
-        afterChange: (info) => {
-            var input_update = "";
-            for (let i = 0; i < info.length; i++) {
-                if (input_update == "") {
-                    input_update = info[i].value;
-                } else {
-                    input_update = input_update + ',' + info[i].value;
-                }
-            }
-            document.getElementById("cr_edit_case_officer").value = input_update;
-            update_cr_detail(<?php echo $id; ?>, <?php echo $cr_edit_case_officer; ?>)
-        }
-    }
-})
+// new SlimSelect({
+//     select: '#cr_edit_case_officer_show',
+//     settings: {
+//         closeOnSelect: false,
+//         allowDeselectOption: true,
+//     },
+//     events: {
+//         afterChange: (info) => {
+//             var input_update = "";
+//             for (let i = 0; i < info.length; i++) {
+//                 if (input_update == "") {
+//                     input_update = info[i].value;
+//                 } else {
+//                     input_update = input_update + ',' + info[i].value;
+//                 }
+//             }
+//             document.getElementById("cr_edit_case_officer").value = input_update;
+//             update_cr_detail(<?php //echo $id; ?>, <?php //echo $cr_edit_case_officer; ?>)
+//         }
+//     }
+// })
+
+new TomSelect(".sg_case_officer_assign",{})
+
 new SlimSelect({
     select: '#cr_edit_origin_of_ticket_show',
     settings: {
