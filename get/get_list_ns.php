@@ -27,6 +27,23 @@ function badge_status($status){
     }
     return $status;
 }
+
+function writer_status_calculation($content_assign_date,$content_start_date,$content_complete_date){
+    if($content_assign_date=="" or $content_assign_date==Null){
+        return 'no-assignment';
+    }else{
+        if($content_start_date=="" or $content_start_date==Null){
+            return 'waiting for job start';
+        }else{
+            if($content_start_date=="" or $content_start_date==Null){
+                return 'in-progress';
+            }else{
+                return 'completed';
+            }
+        }
+    }
+}
+
 function display_launch_date($launch_date,$actual_launch_date){
     //launch date
     if($launch_date<>"" or $actual_launch_date<>""){
@@ -137,6 +154,9 @@ while($row = mysqli_fetch_array($result)) {
     }else{
         $tr_class = "class='row shadow-sm p-2 mb-2 rounded ".$style_cancel."' style='background: white;align-items: center;text-align-last: center;'";
         $task_status = badge_status($row["status"]);
+        $studio_status = "<span type='button' class='badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-pending' style='min-width: 115px;'>".$row['studio_status']."</span>";
+        $writer_status_cal = writer_status_calculation($row["content_assign_date"],$row["content_start_date"],$row["content_complete_date"]);
+        $writer_status = "<span type='button' class='badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-pending' style='min-width: 115px;'>".$writer_status_cal."</span>";
         $subtask_sum = $row["sku"];
     }
     $p_badge = alert_badge($row['create_date'],$row['launch_date'],$row["status"],$row["config_type"]);
@@ -150,10 +170,10 @@ while($row = mysqli_fetch_array($result)) {
     $ticket .= "<div class='col'>".$subtask_sum."</div>";
     $ticket .= "<div class='col'>".$row["production_type"]."</div>";
     $ticket .= "<div class='col'>".display_launch_date($row["launch_date"],$row["actual_launch_date"])."</div>";
-    $ticket .= "<div class='col' style='min-width: 160px;'>".$p_badge."</div>";
-    $ticket .= "<div class='col' style='min-width: 140px;'>".$task_status."</div>";
 
-    $ticket .= "<div class='col' style='min-width: 140px;'><span type='button' class='badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-pending' style='min-width: 115px;'>".$row['studio_status']."</span></div>";
+    $ticket .= "<div class='col' style='min-width: 160px;'>".$writer_status."</div>";
+    $ticket .= "<div class='col' style='min-width: 140px;'>".$task_status."</div>";
+    $ticket .= "<div class='col' style='min-width: 140px;'>".$studio_status."</div>";
     $ticket .= "<div class='col'>";
 if($_SESSION['display_ticket_detail']!='popup'){
     $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3'  onclick='call_edit_add_new_modal(".$row["id"].")'> Detail </button>";
@@ -211,6 +231,7 @@ if($_SESSION['display_ticket_detail']!='popup'){
                     $sub_ticket .= "<div class='col'></div>";
                     $sub_ticket .= "<div class='col'></div>";
                     $sub_ticket .= "<div class='col'></div>";
+                    $sub_ticket .= "<div class='col'></div>";
                     $sub_ticket .= "<div class='col'>".$status."</div>";
                     $sub_ticket .= "<div class='col'>". "<button type='button' id='ns_ticket_".$row_child['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3'  onclick='call_edit_add_new_modal(".$row_child["id"].")' >
                     Detail </button></div >";
@@ -221,6 +242,7 @@ if($_SESSION['display_ticket_detail']!='popup'){
                 if(!isset($tr_class)){$tr_class="";}
                 $sub_ticket .= "<li ".$tr_class.">";
                 $sub_ticket .= "<div scope='row' ".$th_class." style='min-width: 380px;'><span class='tree_label'>NS-".$row["id"]."-".$i." (".$row_child["id"].") ".$row_child["sku"]." SKUs</span></div>";
+                $sub_ticket .= "<div class='col'></div>";
                 $sub_ticket .= "<div class='col'></div>";
                 $sub_ticket .= "<div class='col'></div>";
                 $sub_ticket .= "<div class='col'></div>";
