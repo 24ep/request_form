@@ -120,9 +120,9 @@ function get_attribute_list_filter($table){
         <div class="col" scope="col">SKU</div>
         <div class="col" scope="col">Production</div>
         <div class="col" scope="col">launch date</div>
-        <div class="col" scope="col">Badge</div>
-        <div class="col" scope="col">Status</div>
+        <div class="col" scope="col">writer status</div>
         <div class="col" scope="col">Studio Status</div>
+        <div class="col" scope="col">Overall Status</div>
         <div class="col" scope="col">Action</div>
     </li>
     <div id="job_list">
