@@ -262,7 +262,7 @@ while($row = mysqli_fetch_array($result)) {
     <span style="padding: 0px 0px 5px 25px;"><strong>'.$sj.' Owner</strong></span>
     <div class="col " style=" padding-left: 25px;text-align-last: right;">
 
-    <select  class="sg_case_officer_assign"  multiple="multiple" id="cr_edit_case_officer" name="cr_edit_case_officer"
+    <select  class="sg_case_officer_assign"  multiple id="cr_edit_case_officer" name="cr_edit_case_officer[]"
     onchange="update_cr_detail('.$id.', '.$cr_edit_case_officer.')"
     >
     <option data-placeholder="true"></option>
@@ -620,21 +620,16 @@ window.onresize = function(event) {
 // })
 
 new TomSelect(".sg_case_officer_assign",{
-  plugins: ["dropdown_input"],
-    plugins: {
-      remove_button:{
-        title:"Remove this item",
-      }
-    },
-    plugins: ["drag_drop"],
-    plugins: {
-      "clear_button":{
-        "title":"Remove all selected options",
-      }
-    },
-    plugins: ["no_active_items"],
-    persist: false,
-    create: true,
+  plugins: ['dropdown_input'],
+  plugins: {
+		remove_button:{
+			title:'Remove this item',
+		}
+	},
+  persist: false,
+  onDelete: function(values) {
+		return confirm(values.length > 1 ? 'Are you sure you want to remove these ' + values.length + ' items?' : 'Are you sure you want to remove "' + values[0] + '"?');
+	}
 })
 
 new SlimSelect({
