@@ -104,7 +104,7 @@ function get_attribute_list_filter($table){
                 </ion-icon>
                 Create New
             </button>
-    
+
         </div>
     </div>
 </nav>
@@ -122,6 +122,7 @@ function get_attribute_list_filter($table){
         <div class="col" scope="col">launch date</div>
         <div class="col" scope="col">Badge</div>
         <div class="col" scope="col">Status</div>
+        <div class="col" scope="col">Studio Status</div>
         <div class="col" scope="col">Action</div>
     </li>
     <div id="job_list">
@@ -140,7 +141,7 @@ function getFilterInputValues($clear_param) {
     if($clear_param=='clear_param'){
         clearParams();
     }
-    
+
     inputs.forEach(input => {
         var name = input.getAttribute("attribute_code");
         var type = input.getAttribute("attribute_type");
