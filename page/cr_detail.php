@@ -619,7 +619,23 @@ window.onresize = function(event) {
 //     }
 // })
 
-new TomSelect(".sg_case_officer_assign",{})
+new TomSelect(".sg_case_officer_assign",{
+  plugins: ["dropdown_input"],
+    plugins: {
+      remove_button:{
+        title:"Remove this item",
+      }
+    },
+    plugins: ["drag_drop"],
+    plugins: {
+      "clear_button":{
+        "title":"Remove all selected options",
+      }
+    },
+    plugins: ["no_active_items"],
+    persist: false,
+    create: true,
+})
 
 new SlimSelect({
     select: '#cr_edit_origin_of_ticket_show',
