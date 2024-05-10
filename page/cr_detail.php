@@ -522,8 +522,11 @@ function update_cr_detail(id, id_name) {
       value_change = Array.from(element.selectedOptions)
         .map(option => option.value);
       break;
+    case 'number':
+      value_change = element.value; // Handle number input (decimal)
+      break;
     default:
-      console.warn("Unsupported input type for update_cr_detail:", element.type);
+      value_change = element.value; // Handle number input (decimal)
       return; // Handle unsupported type gracefully (optional)
   }
 
