@@ -505,41 +505,20 @@ function comment_cr_id_with_file(id) {
     });
 }
 function update_cr_detail(id, id_name) {
-  // Get the element based on id_name
-  var element = document.getElementById(id_name);
-
-  // Determine the input type for appropriate value retrieval
-  var value_change;
-  switch (element.type) {
-    case 'select-one':
-      value_change = element.value; // Single select
-      break;
-    case 'text':
-      value_change = element.value; // Free text
-      break;
-    case 'select-multiple':
-      // Handle multi-select as an array
-      value_change = Array.from(element.selectedOptions)
-        .map(option => option.value);
-      break;
-    case 'number':
-      value_change = element.value; // Handle number input (decimal)
-      break;
-    default:
-      value_change = element.value; // Handle number input (decimal)
-      return; // Handle unsupported type gracefully (optional)
-  }
-
-  if (id) {
-    $.post("/action/action_update_cr_detail.php", {
-      id: id,
-      value_change: value_change,
-      id_name: id_name
-    }, function(data) {
-      $('#call_update_complete').html(data);
-    });
-  }
+    var id_name = id_name;
+    var value_change = document.getElementById(id_name).value;
+    if (id) {
+        $.post("/action/action_update_cr_detail.php", {
+                id: id,
+                value_change: value_change,
+                id_name: id_name
+            },
+            function(data) {
+                $('#call_update_complete').html(data);
+            });
+    }
 }
+
 function update_cl_detail(id, id_name) {
     var id_name = id_name;
     var value_change = document.getElementById(id_name + '_' + id).value;
