@@ -263,7 +263,7 @@ while($row = mysqli_fetch_array($result)) {
     <div class="col " style=" padding-left: 25px;text-align-last: right;">
 
     <select  class="sg_case_officer_assign" multiple id="cr_edit_case_officer" name="cr_edit_case_officer[]"
-    onchange="update_cr_detail('.$id.', '.$cr_edit_case_officer.')"
+    onchange="update_cr_detail_multi('.$id.', '.$cr_edit_case_officer.')"
     >
     <option data-placeholder="true"></option>
     '.$username_op_mul.'
@@ -518,6 +518,34 @@ function update_cr_detail(id, id_name) {
             });
     }
 }
+
+function update_cr_detail_multi(id, id_name) {
+  // Get the selected values from the element with the given id_name
+  var selectedValues = [];
+  if (document.getElementById(id_name).tagName === 'SELECT' && document.getElementById(id_name).multiple) {
+    // Handle multi-select element
+    var options = document.getElementById(id_name).options;
+    for (var i = 0; i < options.length; i++) {
+      if (options[i].selected) {
+        selectedValues.push(options[i].value);
+      }
+    }
+  } else {
+    // Handle single-select or non-select element (fallback)
+    selectedValues.push(document.getElementById(id_name).value);
+  }
+
+  if (id) {
+    $.post("/action/action_update_cr_detail.php", {
+      id: id,
+      value_change: selectedValues.join(","), // Join selected values into a comma-separated string
+      id_name: id_name
+    }, function(data) {
+      $('#call_update_complete').html(data);
+    });
+  }
+}
+
 
 function update_cl_detail(id, id_name) {
     var id_name = id_name;
