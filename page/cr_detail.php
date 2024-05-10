@@ -262,7 +262,7 @@ while($row = mysqli_fetch_array($result)) {
     <span style="padding: 0px 0px 5px 25px;"><strong>'.$sj.' Owner</strong></span>
     <div class="col " style=" padding-left: 25px;text-align-last: right;">
 
-    <select  class="sg_case_officer_assign"  multiple id="cr_edit_case_officer" name="cr_edit_case_officer[]"
+    <select  class="sg_case_officer_assign" multiple id="cr_edit_case_officer" name="cr_edit_case_officer[]"
     onchange="update_cr_detail('.$id.', '.$cr_edit_case_officer.')"
     >
     <option data-placeholder="true"></option>
@@ -505,19 +505,37 @@ function comment_cr_id_with_file(id) {
     });
 }
 function update_cr_detail(id, id_name) {
-    var id_name = id_name;
-    var value_change = document.getElementById(id_name).value;
-    if (id) {
-        $.post("/action/action_update_cr_detail.php", {
-                id: id,
-                value_change: value_change,
-                id_name: id_name
-            },
-            function(data) {
-                $('#call_update_complete').html(data);
-                // document.getElementById('comment_box_cr').scrollBy(0, document.getElementById("call_ticket_comment_cr").offsetHeight);
-            });
-    }
+  // Get the element based on id_name
+  var element = document.getElementById(id_name);
+
+  // Determine the input type for appropriate value retrieval
+  var value_change;
+  switch (element.type) {
+    case 'select-one':
+      value_change = element.value; // Single select
+      break;
+    case 'text':
+      value_change = element.value; // Free text
+      break;
+    case 'select-multiple':
+      // Handle multi-select as an array
+      value_change = Array.from(element.selectedOptions)
+        .map(option => option.value);
+      break;
+    default:
+      console.warn("Unsupported input type for update_cr_detail:", element.type);
+      return; // Handle unsupported type gracefully (optional)
+  }
+
+  if (id) {
+    $.post("/action/action_update_cr_detail.php", {
+      id: id,
+      value_change: value_change,
+      id_name: id_name
+    }, function(data) {
+      $('#call_update_complete').html(data);
+    });
+  }
 }
 function update_cl_detail(id, id_name) {
     var id_name = id_name;
