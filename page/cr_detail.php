@@ -262,7 +262,7 @@ while($row = mysqli_fetch_array($result)) {
     <span style="padding: 0px 0px 5px 25px;"><strong>'.$sj.' Owner</strong></span>
     <div class="col " style=" padding-left: 25px;text-align-last: right;">
 
-    <select  class="sg_case_officer_assign"  multiple id="cr_edit_case_officer[]" name="cr_edit_case_officer[]"
+    <select  class="sg_case_officer_assign"  multiple id="cr_edit_case_officer" name="cr_edit_case_officer[]"
     onchange="update_cr_detail('.$id.', '.$cr_edit_case_officer.')"
     >
     <option data-placeholder="true"></option>
