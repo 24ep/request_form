@@ -35,21 +35,7 @@ function get_origin_of_ticket($col,$table,$select_option,$sorm,$database) {
     // mysqli_close($con);
     return $option_set;
     }
-    function is_match($select_option, $username_string) {
-        """
-        Checks if the select_option matches any value in the comma-separated username_string.
 
-        Args:
-            $select_option: The value to be matched (string).
-            $username_string: A comma-separated string containing usernames (string).
-
-        Returns:
-            True if select_option matches any username in the string, False otherwise (boolean).
-        """
-
-        $usernames = explode(",", $username_string);  // Split the string into a list of usernames
-        return in_array($select_option, $usernames);  // Check if select_option is present in the list
-      }
     function get_username($select_option) {
         $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
         mysqli_query($con, "SET NAMES 'utf8' ");
@@ -57,7 +43,7 @@ function get_origin_of_ticket($col,$table,$select_option,$sorm,$database) {
         $result = mysqli_query($con, $query);
         $option_set .= '<option value=""></option>';
         while($row = mysqli_fetch_array($result)) {
-            if(is_match($select_option, $row['username'])){
+            if($select_option==$row['username']){
                 $option_set .= '<option value="'.$row['username'].'" selected>'.$row['nickname'].' - '.$row['firstname'].' '.$row['lastname'].'. </option>';
             }else{
                 $option_set .= '<option value="'.$row['username'].'" >'.$row['nickname'].' - '.$row['firstname'].' '.$row['lastname'].'. </option>';
