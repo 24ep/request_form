@@ -81,7 +81,9 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
             anj.image_renaming_assign_name as image_renaming_assign_name,
             anj.image_renaming_assign_date as image_renaming_assign_name,
             anj.image_renaming_start_date as image_renaming_start_date,
-            anj.image_renaming_complete_date as image_renaming_complete_date
+            anj.image_renaming_complete_date as image_renaming_complete_date,
+            anj.mao_pump_date as mao_pump_date,
+            anj.mao_pump_status as mao_pump_status
             FROM all_in_one_project.add_new_job as anj
             left join all_in_one_project.account as ac
             on ac.username = anj.follow_assign_name
@@ -158,6 +160,8 @@ function get_value_main($crid,$col_re,$db,$table,$primary_key_id){
       $image_renaming_assign_date = $row['image_renaming_assign_date'];
       $image_renaming_start_date = $row['image_renaming_start_date'];
       $image_renaming_complete_date = $row['image_renaming_complete_date'];
+      $mao_pump_date = $row['mao_pump_date'];
+      $mao_pump_status = $row['mao_pump_status'];
     //stamp color status
     if($row["status"]=="pending"){
     $status_style = 'style="background: #a9a9a94f;color:#8f8f8f"';
