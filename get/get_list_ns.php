@@ -28,35 +28,20 @@ function badge_status($status){
     return $status;
 }
 
-function writer_status_calculation($content_assign_date,$content_start_date,$content_complete_date){
-    if($content_assign_date=="" or $content_assign_date==Null){
-        return 'no-assignment';
-    }else{
-        if($content_start_date=="" or $content_start_date==Null){
-            return 'waiting for job start';
-        }else{
-            if($content_start_date=="" or $content_start_date==Null){
-                return 'in-progress';
-            }else{
-                return 'completed';
-            }
-        }
-    }
-}
 
 function writer_status_calculation($content_assign_date,$content_start_date,$content_complete_date){
     if($content_complete_date=="" or $content_complete_date==Null){
         if($content_start_date=="" or $content_start_date==Null){
             if($content_assign_date=="" or $content_assign_date==Null){
-                return 'no-assignment';
+                return   '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-pending" style="min-width: 115px;">no-assignments</span>';
             }else{
-                return 'waiting for job starting';
+                return '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-waiting-traffic" style="min-width: 115px;">waiting for job starting</span>';
             }
         }else{
-            return 'in-progress';
+            return '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-checking" style="min-width: 115px;">in-progress</span>';
         }
     }else{
-        return 'completed';
+        return '<span type="button" class="badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-approved" style="min-width: 115px;">completed</span>';
     }
 }
 
@@ -172,7 +157,6 @@ while($row = mysqli_fetch_array($result)) {
         $task_status = badge_status($row["status"]);
         $studio_status = "<span type='button' class='badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-pending' style='min-width: 115px;'>".$row['studio_status']."</span>";
         $writer_status_cal = writer_status_calculation($row["content_assign_date"],$row["content_start_date"],$row["content_complete_date"]);
-        $writer_status = "<span type='button' class='badge rounded p-2 ps-3 pe-3 mb-1 ml-1 shadow-sm status-pending' style='min-width: 115px;'>".$writer_status_cal."</span>";
         $subtask_sum = $row["sku"];
     }
     $p_badge = alert_badge($row['create_date'],$row['launch_date'],$row["status"],$row["config_type"]);
@@ -187,7 +171,7 @@ while($row = mysqli_fetch_array($result)) {
     $ticket .= "<div class='col'>".$row["production_type"]."</div>";
     $ticket .= "<div class='col'>".display_launch_date($row["launch_date"],$row["actual_launch_date"])."</div>";
 
-    $ticket .= "<div class='col' style='min-width: 160px;'>".$writer_status."</div>";
+    $ticket .= "<div class='col' style='min-width: 160px;'>".$writer_status_cal."</div>";
     $ticket .= "<div class='col' style='min-width: 140px;'>".$studio_status."</div>";
     $ticket .= "<div class='col' style='min-width: 140px;'>".$task_status."</div>";
     $ticket .= "<div class='col'>";
