@@ -44,6 +44,22 @@ function writer_status_calculation($content_assign_date,$content_start_date,$con
     }
 }
 
+function writer_status_calculation($content_assign_date,$content_start_date,$content_complete_date){
+    if($content_complete_date=="" or $content_complete_date==Null){
+        if($content_start_date=="" or $content_start_date==Null){
+            if($content_assign_date=="" or $content_assign_date==Null){
+                return 'no-assignment';
+            }else{
+                return 'waiting for job starting';
+            }
+        }else{
+            return 'in-progress';
+        }
+    }else{
+        return 'completed';
+    }
+}
+
 function display_launch_date($launch_date,$actual_launch_date){
     //launch date
     if($launch_date<>"" or $actual_launch_date<>""){
