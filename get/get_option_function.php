@@ -43,15 +43,15 @@ function get_origin_of_ticket($col,$table,$select_option,$sorm,$database) {
         $result = mysqli_query($con, $query);
         $option_set .= '<option value=""></option>';
         while($row = mysqli_fetch_array($result)) {
-            if($select_option==$row['username']){
-                $option_set .= '<option value="'.$row['username'].'" selected>'.$row['nickname'].' - '.$row['firstname'].' '.$row['lastname'].'. </option>';
-            }else{
-                $option_set .= '<option value="'.$row['username'].'" >'.$row['nickname'].' - '.$row['firstname'].' '.$row['lastname'].'. </option>';
+            $selected = '';
+            if(in_array($row['username'], explode(',', $select_option))){
+                $selected = 'selected';
             }
+            $option_set .= '<option value="'.$row['username'].'" '.$selected.'>'.$row['nickname'].' - '.$row['firstname'].' '.$row['lastname'].'. </option>';
         }
-        // mysqli_close($con);
+        mysqli_close($con);
         return $option_set;
-        }
+    }
     function get_option_attribute_entity($att_code,$table,$current_value){
         $con= mysqli_connect("service-gate-cds-omni-service-gate.a.aivencloud.com","avnadmin","AVNS_lAORtpjxYyc9Pvhm5O4","all_in_one_project","10628") or die("Error: " . mysqli_error($con));
         $query_op = "SELECT * FROM all_in_one_project.job_attribute_option
