@@ -141,7 +141,7 @@ function get_username($att_code,$att_name,$site_element,$current_value,$code_ele
       $i++;
       $option_element .= "<option ".$selected ." value=''></option>";
     }
-    $option_element .= "<option ".$selected ." value='".$option["username"]."'>".$option["username"]."</option>";
+    $option_element .= "<option ".$selected ." value='".$option["username"]."'>".$row['nickname'].' - '.$row['firstname'].' '.$row['lastname']." </option>";
   }
   if($enable_edit==''){
     // $badge_edit_lv = '<ion-icon style="color:#707684;margin-left:3px" name="color-wand-outline"></ion-icon>';

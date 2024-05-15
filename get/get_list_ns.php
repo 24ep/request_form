@@ -173,7 +173,7 @@ while($row = mysqli_fetch_array($result)) {
 
     $ticket .= "<div class='col' style='min-width: 160px;'>".$writer_status_cal."</div>";
     $ticket .= "<div class='col' style='min-width: 140px;'>".$studio_status."</div>";
-    $ticket .= "<div class='col' style='min-width: 140px;'>".$task_status."</div>";
+    $ticket .= "<div class='col' style='min-width: 140px;border-left: #b3b3b3 solid 1px;'>".$task_status."</div>";
     $ticket .= "<div class='col'>";
 if($_SESSION['display_ticket_detail']!='popup'){
     $ticket .= "<button type='button' id='ns_ticket_".$row['id']."' class='badge rounded bg-gradient bg-dark p-2 ps-3 pe-3'  onclick='call_edit_add_new_modal(".$row["id"].")'> Detail </button>";
